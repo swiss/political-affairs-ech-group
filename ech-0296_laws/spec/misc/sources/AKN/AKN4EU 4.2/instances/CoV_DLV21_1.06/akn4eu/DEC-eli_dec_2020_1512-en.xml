@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?><akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+   <act name="DEC">
+      <meta>
+      	<identification source="~PUBL">
+      		<FRBRWork>
+      			<FRBRthis value=""/>
+      			<FRBRuri value=""/>
+      			<FRBRdate date="2999-01-01" name=""/>
+      			<FRBRauthor href=""/>
+      			<FRBRcountry value="EU"/>
+      			<FRBRnumber value="eli/dec/2020/1512"/>
+      			<FRBRprescriptive value="true"/>
+      		</FRBRWork>
+      		<FRBRExpression>
+      			<FRBRthis value=""/>
+      			<FRBRuri value=""/>
+      			<FRBRdate date="2999-01-01" name=""/>
+      			<FRBRauthor href=""/>
+      			<FRBRlanguage language="en"/>
+      		</FRBRExpression>
+      		<FRBRManifestation>
+      			<FRBRthis value=""/>
+      			<FRBRuri value=""/>
+      			<FRBRdate date="2999-01-01" name=""/>
+      			<FRBRauthor href=""/>
+      		   <preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+      		      <akn4eu:akn4euVersion value="4.2.0.0"/>
+      		      <akn4eu:akn4euDocumentation href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/akn4eu"/>
+      		   </preservation>
+      		</FRBRManifestation>
+      	</identification>
+         <references source="~PUBL">
+            <TLCReference name="language" href="http://publications.europa.eu/resource/authority/language/ENG" showAs="en"/>
+            <TLCReference xml:id="legalBasis" name="contentSubject" href="http://eurovoc.europa.eu/5456" showAs="Legal basis"/>
+            <TLCOrganization xml:id="PUBL" href="http://publications.europa.eu/resource/authority/corporate-body/PUBL" showAs="Publications Office of the European Union"/>
+            <TLCOrganization xml:id="CONSIL" href="http://publications.europa.eu/resource/authority/corporate-body/CONSIL" showAs="Council of the European Union"/>
+            <TLCRole xml:id="PRESID" href="http://publications.europa.eu/resource/authority/role/PRESID" showAs="President"/>
+         	<TLCLocation xml:id="LUX_LUX" href="http://publications.europa.eu/resource/authority/place/LUX_LUX" showAs="Luxembourg"/>
+            <TLCReference xml:id="DEC" name="docType" href="http://publications.europa.eu/resource/authority/resource-type/DEC" showAs="Decision"/>
+         </references>
+      </meta>
+      <preface xml:id="d1e78">
+         <longTitle xml:id="d1e80">
+            <p xml:id="d1e82">
+            	<docType xml:id="d1e84" refersTo="~DEC">COUNCIL DECISION <docNumber xml:id="d1e86">(EU) 2020/1512</docNumber></docType> 
+            	of <date xml:id="d1e88" date="2020-10-13">13 October 2020</date> 
+            	<docPurpose xml:id="d1e91">on guidelines for the employment policies of the Member States</docPurpose></p>
+         </longTitle>
+      </preface>
+      <preamble xml:id="d1e95">
+         <formula xml:id="d1e97" name="actingEntity">
+            <p xml:id="d1e99">THE COUNCIL OF THE EUROPEAN UNION, </p>
+         </formula>
+         <citations xml:id="d1e102">
+            <citation xml:id="d1e104" refersTo="~legalBasis">
+               <p xml:id="d1e106">Having regard to the Treaty on the Functioning of the European Union, and in particular Article 148(2) thereof,</p>
+            </citation>
+            <citation xml:id="d1e109">
+               <p xml:id="d1e111">Having regard to the proposal from the European Commission,</p>
+            </citation>
+            <citation xml:id="d1e114">
+               <p xml:id="d1e116">Having regard to the opinion of the European Parliament<authorialNote xml:id="d1e118" marker="1" placement="bottom">
+                     <p xml:id="d1e120">Opinion of 10 July 2020 (not yet published in the Official Journal).</p>
+                  </authorialNote>,</p>
+            </citation>
+            <citation xml:id="d1e125">
+               <p xml:id="d1e127">Having regard to the opinion of the European Economic and Social Committee<authorialNote xml:id="d1e129" marker="2" placement="bottom">
+                     <p xml:id="d1e131">OJ C 232, 14.7.2020, p. 18.</p>
+                  </authorialNote>,</p>
+            </citation>
+            <citation xml:id="d1e136">
+               <p xml:id="d1e138">After consulting the Committee of the Regions,</p>
+            </citation>
+            <citation xml:id="d1e142">
+               <p xml:id="d1e144">Having regard to the opinion of the Employment Committee<authorialNote xml:id="d1e146" marker="3" placement="bottom">
+                     <p xml:id="d1e148">Opinion of 18 September 2020 (not yet published in the Official Journal).</p>
+                  </authorialNote>,</p>
+            </citation>
+         </citations>
+         <recitals xml:id="d1e154">
+            <intro xml:id="d1e156">
+               <p xml:id="d1e158">Whereas:</p>
+            </intro>
+            <recital xml:id="d1e161">
+               <num xml:id="d1e163">(1)</num>
+               <p xml:id="d1e165">Member States and the Union are to work towards developing a coordinated strategy for employment and particularly for promoting a skilled, trained and adaptable workforce, as well as labour markets that are future-oriented and responsive to economic change, with a view to achieving the objectives of full employment and social progress, balanced growth, a high level of protection and improvement of the quality of the environment laid down in Article 3 of the Treaty on European Union. Member States are to regard promoting employment as a matter of common concern and are to coordinate their action in this respect within the Council, taking into account national practices related to the responsibilities of management and labour.</p>
+            </recital>
+            <recital xml:id="d1e168">
+               <num xml:id="d1e170">(2)</num>
+               <p xml:id="d1e172">The Union is to combat social exclusion and discrimination and promote social justice and protection, as well as equality between women and men, solidarity between generations and the protection of the rights of the child. In defining and implementing its policies and activities, the Union is to take into account requirements linked to the promotion of a high level of employment, the guarantee of adequate social protection, the fight against poverty and social exclusion, a high level of education and training and protection of human health as laid down in Article 9 of the Treaty on the Functioning of the European Union (TFEU).</p>
+            </recital>
+            <recital xml:id="d1e175">
+               <num xml:id="d1e177">(3)</num>
+               <p xml:id="d1e179">In accordance with the TFEU, the Union has developed and implemented policy coordination instruments for economic and employment policies. As part of these instruments, the Guidelines for the Employment Policies of the Member States (the ‘Guidelines’) set out in the Annex to this Decision, together with the Broad Guidelines for the Economic Policies of the Member States and of the Union set out in Council Recommendation (EU) 2015/1184<authorialNote xml:id="d1e181" marker="4" placement="bottom">
+                     <p xml:id="d1e183">Council Recommendation (EU) 2015/1184 of 14 July 2015 on broad guidelines for the economic policies of the Member States and of the European Union (OJ L 192, 18.7.2015, p. 27).</p>
+                  </authorialNote>, form the Integrated Guidelines. They are to guide policy implementation in the Member States and in the Union, reflecting the interdependence between the Member States. The resulting set of coordinated European and national policies and reforms are to constitute an appropriate overall sustainable economic and employment policy mix, which should achieve positive spill-over effects.</p>
+            </recital>
+            <recital xml:id="d1e188">
+               <num xml:id="d1e190">(4)</num>
+               <p xml:id="d1e192">The Guidelines are consistent with the Stability and Growth Pact, existing Union legislation and various Union initiatives, including Council Recommendation of 22 April 2013<authorialNote xml:id="d1e194" marker="5" placement="bottom">
+                     <p xml:id="d1e196">Council Recommendation of 22 April 2013 on establishing a Youth Guarantee (OJ C 120, 26.4.2013, p. 1).</p>
+                  </authorialNote>) (the ‘Youth Guarantee’),Council Recommendation of 15 February 2016<authorialNote xml:id="d1e199" marker="6" placement="bottom">
+                     <p xml:id="d1e201">Council Recommendation of 15 February 2016 on the integration of the long-term unemployed into the labour market (OJ C 67, 20.2.2016, p. 1).</p>
+                  </authorialNote>, Council Recommendation of 19 December 2016<authorialNote xml:id="d1e204" marker="7" placement="bottom">
+                     <p xml:id="d1e206">Council Recommendation of 19 December 2016 on Upskilling Pathways (OJ C 484, 24.12.2016, p. 1).</p>
+                  </authorialNote>, Council Recommendation of 15 March 2018<authorialNote xml:id="d1e209" marker="8" placement="bottom">
+                     <p xml:id="d1e211">Council Recommendation of 15 March 2018 on a European Framework for Quality and Effective Apprenticeships (OJ C 153, 2.5.2018, p. 1).</p>
+                  </authorialNote>, Council Recommendation of 22 May 2018 on Key Competences and Lifelong Learning<authorialNote xml:id="d1e214" marker="9" placement="bottom">
+                     <p xml:id="d1e216">Council Recommendation of 22 May 2018 on Key Competences and Lifelong Learning (OJ C 189, 4.6.2018, p. 1).</p>
+                  </authorialNote>, Council Recommendation of 22 May 2019<authorialNote xml:id="d1e220" marker="10" placement="bottom">
+                     <p xml:id="d1e222">Council Recommendation of 22 May 2019 on High Quality Early Childhood Education and Care System (OJ C 189, 5.6.2019, p. 4).</p>
+                  </authorialNote>, Council Recommendation of 8 November 2019<authorialNote xml:id="d1e225" marker="11" placement="bottom">
+                     <p xml:id="d1e227">Council Recommendation of 8 November 2019 on Access to Social Protection (OJ C 387, 15.11.2019, p. 1).</p>
+                  </authorialNote> and Council Recommendation of 10 March 2014<authorialNote xml:id="d1e230" marker="12" placement="bottom">
+                     <p xml:id="d1e232">Council Recommendation of 10 March 2014 on a Quality Framework for Traineeships (OJ C 88, 27.3.2014, p. 1).</p>
+                  </authorialNote>.</p>
+            </recital>
+            <recital xml:id="d1e238">
+               <num xml:id="d1e240">(5)</num>
+               <p xml:id="d1e242">The European Semester combines the different instruments in an overarching framework for integrated multilateral coordination and surveillance of economic and employment policies. While pursuing environmental sustainability, productivity, fairness and stability, the European Semester integrates the principles of the European Pillar of Social Rights, including strong engagement with social partners, civil society and other stakeholders. It supports the delivery of the Sustainable Development Goals. The Union’s and Member States’ employment and economic policies should go hand in hand with Europe’s transition to a climate neutral, environmentally sustainable and digital economy, improving competitiveness, fostering innovation, promoting social justice and equal opportunities, as well as tackling inequalities and regional disparities.</p>
+            </recital>
+            <recital xml:id="d1e245">
+               <num xml:id="d1e247">(6)</num>
+               <p xml:id="d1e249">Climate change and environmental related challenges, globalisation, digitalisation and demographic change will transform European economies and societies. The Union and its Member States should work together to effectively address these structural factors and adapt existing systems as needed, recognising the close interdependence of the Member States’ economies and labour markets, and related policies. This requires a coordinated, ambitious and effective policy action at both Union and national levels, in accordance with the TFEU and the Union’s provisions on economic governance. Such policy action should encompass a boost in sustainable investment, a renewed commitment to appropriately sequenced structural reforms that improve productivity, economic growth, social and territorial cohesion, upward convergence, resilience and the exercise of fiscal responsibility. It should combine supply-and demand-side measures, while taking into account their environmental, employment and social impact.</p>
+            </recital>
+            <recital xml:id="d1e252">
+               <num xml:id="d1e254">(7)</num>
+               <p xml:id="d1e256">The European Parliament, the Council and the Commission proclaimed the European Pillar of Social Rights<authorialNote xml:id="d1e258" marker="13" placement="bottom">
+                     <p xml:id="d1e260">Interinstitutional Proclamation on the European Pillar of Social Rights (OJ C 428, 13.12.2017, p. 10).</p>
+                  </authorialNote> (the ‘Pillar’). The Pillar sets out twenty principles and rights to support well-functioning and fair labour markets and welfare systems, structured around three categories: equal opportunities and access to the labour market, fair working conditions, and social protection and inclusion. The principles and rights give direction to the Union’s strategy, making sure that the transitions to climate-neutrality and environmental sustainability, digitalisation and demographic change are socially fair and just. The Pillar constitutes a reference framework to monitor the employment and social performance of Member States, to drive reforms at national, regional and local level and to reconcile the ‘social’ and the ‘market’ in today’s modern economy, including by promoting the social economy.</p>
+            </recital>
+            <recital xml:id="d1e265">
+               <num xml:id="d1e267">(8)</num>
+               <p xml:id="d1e269">Reforms to the labour market, including the national wage-setting mechanisms, should follow national practices of social dialogue and allow the necessary opportunity for a broad consideration of socioeconomic issues, including improvements in sustainability, competitiveness, innovation, job creation, lifelong learning and training policies, working conditions, education and skills, public health and inclusion and real incomes.</p>
+            </recital>
+            <recital xml:id="d1e272">
+               <num xml:id="d1e274">(9)</num>
+               <p xml:id="d1e276">Member States and the Union should ensure that the social, employment and economic impact of the COVID-19 crisis is mitigated and that the transformations are fair and socially just, strengthening recovery and the drive towards an inclusive and resilient society in which people are protected and empowered to anticipate and manage change, and in which they can actively participate in society and the economy. Discrimination in all its forms should be tackled. Access and opportunities for all should be ensured and poverty and social exclusion, including that of children, should be reduced, in particular by ensuring an effective functioning of labour markets and of social protection systems, and by removing barriers to education, training and labour-market participation, including through investments in early childhood education and care and in digital skills. Timely and equal access to affordable long-term care and healthcare services, including prevention and healthcare promotion, are particularly relevant, in light of the COVID-19 crisis and in a context of ageing societies. The potential of people with disabilities to contribute to economic growth and social development should be further realised. As new economic and business models take hold in Union workplaces, employment relationships are also changing. Member States should ensure that employment relationships stemming from new forms of work maintain and strengthen Europe’s social model.</p>
+            </recital>
+            <recital xml:id="d1e279">
+               <num xml:id="d1e281">(10)</num>
+               <p xml:id="d1e283">The Integrated Guidelines should form the basis for country-specific recommendations that the Council may address to the Member States. Member States should make full use of the European Social Fund Plus and other Union funds, including the Just Transition Fund and InvestEU, to foster employment, social investments, social inclusion, accessibility, promote upskilling and reskilling opportunities of the workforce, lifelong learning and high quality education and training for all, including digital literacy and skills. While the Integrated Guidelines are addressed to Member States and the Union, they should be implemented in partnership with all national, regional and local authorities, closely involving parliaments, as well as the social partners and representatives of civil society.</p>
+            </recital>
+            <recital xml:id="d1e287">
+               <num xml:id="d1e289">(11)</num>
+               <p xml:id="d1e291">The Employment Committee and the Social Protection Committee should monitor how the relevant policies are implemented in light of the guidelines for employment policies, in line with their respective Treaty-based mandates. Those committees and other Council preparatory bodies involved in the coordination of economic and social policies should work closely together. Policy dialogue between the European Parliament, the Council and the Commission should be maintained, in particular as regards the guidelines for the employment policies of the Member States.</p>
+            </recital>
+            <recital xml:id="d1e294">
+               <num xml:id="d1e296">(12)</num>
+               <p xml:id="d1e298">The Social Protection Committee was consulted,</p>
+            </recital>
+         </recitals>
+         <formula xml:id="d1e302" name="enactingFormula">
+            <p xml:id="d1e304">HAVE ADOPTED THIS DECISION:</p>
+         </formula>
+      </preamble>
+      <body xml:id="d1e308">
+         <article xml:id="d1e310">
+            <num xml:id="d1e312">Article 1</num>
+            <paragraph xml:id="d1e314">
+               <content xml:id="d1e316">
+                  <p xml:id="d1e318">The Guidelines for the Employment Policies of the Member States (the ‘Guidelines’), as set out in the Annex, are hereby adopted. The Guidelines shall form part of the Integrated Guidelines.</p>
+               </content>
+            </paragraph>
+         </article>
+         <article xml:id="d1e323">
+            <num xml:id="d1e325">Article 2</num>
+            <paragraph xml:id="d1e327">
+               <content xml:id="d1e329">
+                  <p xml:id="d1e331">The Member States shall take the Guidelines into account in their employment policies and reform programmes, which shall be reported in accordance with Article 148(3) TFEU.</p>
+               </content>
+            </paragraph>
+         </article>
+         <article xml:id="d1e336">
+            <num xml:id="d1e338">Article 3</num>
+            <paragraph xml:id="d1e340">
+               <content xml:id="d1e342">
+                  <p xml:id="d1e344">This Decision is addressed to the Member States.</p>
+               </content>
+            </paragraph>
+         </article>
+      </body>
+      <conclusions xml:id="d1e350">
+      	<p xml:id="d1e352">Done at <location xml:id="d1e354" refersTo="~LUX_LUX">Luxembourg</location>, <date xml:id="d1e357" date="2020-10-13">13 October 2020</date></p>
+         <block xml:id="d1e360" name="signatory">
+            <signature xml:id="d1e362">
+               <organization xml:id="d1e364" refersTo="~CONSIL">For the Council</organization>
+               <role xml:id="d1e367" refersTo="~PRESID">The President</role>
+            	<person xml:id="d1e370" refersTo="">M. ROTH</person>
+            </signature>
+         </block>
+      </conclusions>
+      <attachments>
+         <attachment xml:id="d1e379">
+            <documentRef xml:id="d1e381" href="ANNEX-ckylbnre200dy396bvhp2a1hk-en.xml" showAs="ANNEX"/>
+         </attachment>
+      </attachments>
+   </act>
+</akomaNtoso>

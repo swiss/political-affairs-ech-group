@@ -1,0 +1,696 @@
+{ "$schema": "urn:eli-annotation-tool:form-schema:default:20170916T120100Z",
+  "id": "urn:eli-annotation-tool:form-schema:default:20170916T120100Z",
+  "type": "object",
+  "eligible_uri_properties": ["eli:type_document", "eli:number", "eli:date_document", "eli:date_publication", "eli:version", "eli:version_date", "eli:id_local", "eli:language", "eli:format"],
+  "properties": {
+    "elix:languages_list": {
+        "title": "urn:eli-annotation-tool:eli:ontology-extension:languages_list",
+        "type": "array",
+        "enabled": true,
+        "mandatory": true,
+        "minItems": 1,
+        "items": {
+            "type": "string" },
+        "vocab": "http://publications.europa.eu/resource/authority/language"
+    },
+    "elix:formats_list": {
+        "title": "urn:eli-annotation-tool:eli:ontology-extension:formats_list",
+        "type": "array",
+        "enabled": true,
+        "mandatory": true,
+        "minItems": 1,
+        "items": {
+            "type": "string" },
+        "vocab": "https://www.iana.org/assignments/media-types"
+    },
+    "elix:abstractLegalResourceUriScheme": {
+        "title": "urn:eli-annotation-tool:eli:ontology-extension:abstractLegalResourceUriScheme",
+        "type": "urischeme",
+        "validators": ["eliUriScheme"],
+        "enabled": true,
+        "mandatory": true
+    },
+    "elix:legalResourceUriScheme": {
+        "title": "urn:eli-annotation-tool:eli:ontology-extension:legalResourceUriScheme",
+        "type": "urischeme",
+        "validators": ["eliUriScheme"],
+        "enabled": true,
+        "mandatory": true
+    },
+    "elix:legalExpressionUriScheme": {
+        "title": "urn:eli-annotation-tool:eli:ontology-extension:legalExpressionUriScheme",
+        "type": "urischeme",
+        "validators": ["eliUriScheme"],
+        "enabled": true,
+        "mandatory": true
+    },
+    "elix:formatUriScheme": {
+        "title": "urn:eli-annotation-tool:eli:ontology-extension:formatUriScheme",
+        "type": "urischeme",
+        "validators": ["eliUriScheme"],
+        "enabled": true,
+        "mandatory": true
+    },
+    "eli:type_document": {
+        "title": "http://data.europa.eu/eli/ontology#type_document",
+        "type": "string",
+        "enabled": true,
+        "vocab": null
+    },
+    "eli:number": {
+        "title": "http://data.europa.eu/eli/ontology#number",
+        "type": "string",
+        "enabled": true
+    },
+    "eli:version": {
+        "title": "http://data.europa.eu/eli/ontology#version",
+        "type": "string",
+        "enabled": true,
+        "vocab": null
+    },
+    "eli:date_document": {
+        "title": "http://data.europa.eu/eli/ontology#date_document",
+        "type": "string",
+        "enabled": true,
+        "validators": ["eliDate"]
+    },
+    "eli:version_date": {
+        "title": "http://data.europa.eu/eli/ontology#version_date",
+        "type": "string",
+        "enabled": true,
+        "validators": ["eliDate"]
+    },
+    "eli:date_publication": {
+        "title": "http://data.europa.eu/eli/ontology#date_publication",
+        "type": "string",
+        "enabled": true,
+        "validators": ["eliDate"]
+    },
+    "eli:date_applicability": {
+        "title": "http://data.europa.eu/eli/ontology#date_applicability",
+        "type": "string",
+        "enabled": true,
+        "validators": ["eliDate"]
+    },
+    "eli:in_force": {
+        "title": "http://data.europa.eu/eli/ontology#in_force",
+        "type": "string",
+        "enabled": true,
+        "vocab": null
+    },
+    "eli:first_date_entry_in_force": {
+        "title": "http://data.europa.eu/eli/ontology#first_entry_in_force",
+        "type": "string",
+        "enabled": true,
+        "validators": ["eliDate"]
+    },
+    "eli:date_no_longer_in_force": {
+        "title": "http://data.europa.eu/eli/ontology#date_no_longer_in_force",
+        "type": "string",
+        "enabled": true,
+        "validators": ["eliDate"]
+    },
+    "eli:id_local": {
+        "title": "http://data.europa.eu/eli/ontology#id_local",
+        "type": "array",
+        "enabled": true,
+        "items": {
+            "type": "string" },
+        "minItems": 0
+    },
+    "eli:is_about": {
+        "title": "http://data.europa.eu/eli/ontology#is_about",
+        "type": "array",
+        "enabled": true,
+        "items": {
+            "type": "string"
+        },
+        "minItems": 0,
+        "vocab": null
+    },
+    "eli:relevant_for": {
+        "title": "http://data.europa.eu/eli/ontology#relevant_for",
+        "type": "array",
+        "enabled": true,
+        "items": {
+            "type": "string"
+        },
+        "minItems": 0,
+        "vocab": null
+    },
+    "eli:juridiction": {
+        "title": "http://data.europa.eu/eli/ontology#juridiction",
+        "type": "array",
+        "enabled": true,
+        "items": {
+            "type": "string"
+        },
+        "minItems": 0,
+        "vocab": null
+    },
+    "eli:passed_by": {
+        "title": "http://data.europa.eu/eli/ontology#passed_by",
+        "type": "array",
+        "enabled": true,
+        "items": {
+            "type": "string"
+        },
+        "minItems": 0,
+        "vocab": null
+    },
+    "eli:responsibility_of": {
+        "title": "http://data.europa.eu/eli/ontology#responsibility_of",
+        "type": "array",
+        "enabled": true,
+        "items": {
+            "type": "string"
+        },
+        "minItems": 0
+    },
+    "eli:responsibility_of_agent": {
+        "title": "http://data.europa.eu/eli/ontology#responsibility_of_agent",
+        "type": "array",
+        "enabled": true,
+        "items": {
+            "type": "string"
+        },
+        "minItems": 0,
+        "vocab": null
+    },
+    "eli:transposes": {
+        "title": "http://data.europa.eu/eli/ontology#transposes",
+        "type": "array",
+        "enabled": true,
+        "items": {
+            "type": "string",
+            "format": "uri"
+        },
+        "minItems": 0
+    },
+    "eli:applies": {
+        "title": "http://data.europa.eu/eli/ontology#applies",
+        "type": "array",
+        "enabled": true,
+        "items": {
+            "type": "string",
+            "format": "uri"
+        },
+        "minItems": 0
+    },
+    "eli:consolidates": {
+        "title": "http://data.europa.eu/eli/ontology#consolidates",
+        "type": "array",
+        "enabled": true,
+        "items": {
+            "type": "string",
+            "format": "uri"
+        },
+        "minItems": 0
+    },
+    "eli:based_on": {
+        "title": "http://data.europa.eu/eli/ontology#based_on",
+        "type": "array",
+        "enabled": true,
+        "items": {
+            "type": "string",
+            "format": "uri"
+        },
+        "minItems": 0
+    },
+    "eli:changes": {
+        "title": "http://data.europa.eu/eli/ontology#changes",
+        "type": "array",
+        "enabled": true,
+        "items": {
+            "type": "string",
+            "format": "uri"
+        },
+        "minItems": 0
+    },
+    "eli:commences": {
+        "title": "http://data.europa.eu/eli/ontology#commences",
+        "type": "array",
+        "enabled": true,
+        "items": {
+            "type": "string",
+            "format": "uri"
+        },
+        "minItems": 0
+    },
+    "eli:repeals": {
+        "title": "http://data.europa.eu/eli/ontology#repeals",
+        "type": "array",
+        "enabled": true,
+        "items": {
+            "type": "string",
+            "format": "uri"
+        },
+        "minItems": 0
+    },
+    "eli:corrects": {
+        "title": "http://data.europa.eu/eli/ontology#corrects",
+        "type": "array",
+        "enabled": true,
+        "items": {
+            "type": "string",
+            "format": "uri"
+        },
+        "minItems": 0
+    },
+    "eli:amends": {
+        "title": "http://data.europa.eu/eli/ontology#amends",
+        "type": "array",
+        "enabled": true,
+        "items": {
+            "type": "string",
+            "format": "uri"
+        },
+        "minItems": 0
+    },
+    "eli:is_another_publication_of": {
+        "title": "http://data.europa.eu/eli/ontology#is_another_publication_of",
+        "type": "array",
+        "enabled": true,
+        "items": {
+            "type": "string",
+            "format": "uri"
+        },
+        "minItems": 0
+    },
+    "eli:cites": {
+        "title": "http://data.europa.eu/eli/ontology#cites",
+        "type": "array",
+        "enabled": true,
+        "items": {
+            "type": "string",
+            "format": "uri"
+        },
+        "minItems": 0
+    },
+    "eli:related_to": {
+        "title": "http://data.europa.eu/eli/ontology#related_to",
+        "type": "array",
+        "enabled": true,
+        "items": {
+            "type": "string",
+            "format": "uri"
+        },
+        "minItems": 0
+    },
+    "eli:is_part_of": {
+        "title": "http://data.europa.eu/eli/ontology#is_part_of",
+        "type": "array",
+        "enabled": true,
+        "items": {
+            "type": "string",
+            "format": "uri"
+        },
+        "minItems": 0
+    },
+    "eli:has_part": {
+        "title": "http://data.europa.eu/eli/ontology#has_part",
+        "type": "array",
+        "enabled": true,
+        "items": {
+            "type": "string",
+            "format": "uri"
+        },
+        "minItems": 0
+    },
+    "eli:is_member_of": {
+        "title": "http://data.europa.eu/eli/ontology#is_member_of",
+        "type": "array",
+        "enabled": true,
+        "items": {
+            "type": "string",
+            "format": "uri"
+        },
+        "minItems": 0
+    },
+    "eli:has_member": {
+        "title": "http://data.europa.eu/eli/ontology#has_member",
+        "type": "array",
+        "enabled": true,
+        "items": {
+            "type": "string",
+            "format": "uri"
+        },
+        "minItems": 0
+    },
+    "eli:description": {
+        "title": "http://data.europa.eu/eli/ontology#description",
+        "type": "array",
+        "enabled": false,
+        "items": {
+            "type": "string"
+        },
+        "minItems": 0
+    }
+  },
+  "factories": {
+      "lang_": {
+        "title": "replace with language URI",
+        "type": "object",
+        "properties": {
+            "eli:language": {
+                "title": "http://data.europa.eu/eli/ontology#language",
+                "type": "hidden",
+                "enabled": true
+            },
+            "eli:title": {
+                "title": "http://data.europa.eu/eli/ontology#title",
+                "type": "string",
+                "enabled": true,
+                "mandatory": true
+            },
+            "eli:title_short": {
+                "title": "http://data.europa.eu/eli/ontology#title_short",
+                "type": "string",
+                "enabled": true
+            },
+            "eli:title_alternative": {
+                "title": "http://data.europa.eu/eli/ontology#title_alternative",
+                "type": "array",
+                "enabled": true,
+                "items": {
+                    "type": "string"
+                },
+                "minItems": 0
+            },
+            "eli:description": {
+                "title": "http://data.europa.eu/eli/ontology#description",
+                "type": "array",
+                "enabled": true,
+                "items": {
+                    "type": "string"
+                },
+                "minItems": 0
+            },
+            "eli:id_local": {
+                "title": "http://data.europa.eu/eli/ontology#id_local",
+                "type": "array",
+                "enabled": false,
+                "items": {
+                    "type": "string" },
+                "minItems": 0
+            },
+            "eli:number": {
+                "title": "http://data.europa.eu/eli/ontology#number",
+                "type": "array",
+                "enabled": false,
+                "items": {
+                    "type": "string" },
+                "minItems": 0
+            },
+            "eli:relevant_for": {
+                "title": "http://data.europa.eu/eli/ontology#relevant_for",
+                "type": "array",
+                "enabled": false,
+                "items": {
+                    "type": "string"
+                },
+                "minItems": 0,
+                "vocab": null
+            },
+            "eli:juridiction": {
+                "title": "http://data.europa.eu/eli/ontology#juridiction",
+                "type": "array",
+                "enabled": false,
+                "items": {
+                    "type": "string"
+                },
+                "minItems": 0,
+                "vocab": null
+            },
+            "eli:version": {
+                "title": "http://data.europa.eu/eli/ontology#version",
+                "type": "string",
+                "enabled": false,
+                "vocab": null
+            },
+            "eli:version_date": {
+                "title": "http://data.europa.eu/eli/ontology#version_date",
+                "type": "string",
+                "enabled": false,
+                "validators": ["eliDate"]
+            },
+            "eli:date_publication": {
+                "title": "http://data.europa.eu/eli/ontology#date_publication",
+                "type": "string",
+                "enabled": false,
+                "validators": ["eliDate"]
+            },
+            "eli:date_applicability": {
+                "title": "http://data.europa.eu/eli/ontology#date_applicability",
+                "type": "string",
+                "enabled": false,
+                "validators": ["eliDate"]
+            },
+            "eli:in_force": {
+                "title": "http://data.europa.eu/eli/ontology#in_force",
+                "type": "string",
+                "enabled": false,
+                "vocab": null
+            },
+            "eli:first_date_entry_in_force": {
+                "title": "http://data.europa.eu/eli/ontology#first_entry_in_force",
+                "type": "string",
+                "enabled": false,
+                "validators": ["eliDate"]
+            },
+            "eli:date_no_longer_in_force": {
+                "title": "http://data.europa.eu/eli/ontology#date_no_longer_in_force",
+                "type": "string",
+                "enabled": false,
+                "validators": ["eliDate"]
+            },
+            "eli:publisher_agent": {
+                "title": "http://data.europa.eu/eli/ontology#publisher_agent",
+                "type": "array",
+                "enabled": false,
+                "items": {
+                    "type": "string"
+                },
+                "minItems": 0,
+                "vocab": null
+            },
+            "eli:publisher": {
+                "title": "http://data.europa.eu/eli/ontology#publisher",
+                "type": "array",
+                "enabled": false,
+                "items": {
+                    "type": "string"
+                },
+                "minItems": 0
+            },
+            "eli:transposes": {
+                "title": "http://data.europa.eu/eli/ontology#transposes",
+                "type": "array",
+                "enabled": false,
+                "items": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "minItems": 0
+            },
+            "eli:applies": {
+                "title": "http://data.europa.eu/eli/ontology#applies",
+                "type": "array",
+                "enabled": false,
+                "items": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "minItems": 0
+            },
+            "eli:consolidates": {
+                "title": "http://data.europa.eu/eli/ontology#consolidates",
+                "type": "array",
+                "enabled": false,
+                "items": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "minItems": 0
+            },
+            "eli:changes": {
+                "title": "http://data.europa.eu/eli/ontology#changes",
+                "type": "array",
+                "enabled": false,
+                "items": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "minItems": 0
+            },
+            "eli:commences": {
+                "title": "http://data.europa.eu/eli/ontology#commences",
+                "type": "array",
+                "enabled": false,
+                "items": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "minItems": 0
+            },
+            "eli:repeals": {
+                "title": "http://data.europa.eu/eli/ontology#repeals",
+                "type": "array",
+                "enabled": false,
+                "items": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "minItems": 0
+            },
+            "eli:corrects": {
+                "title": "http://data.europa.eu/eli/ontology#corrects",
+                "type": "array",
+                "enabled": false,
+                "items": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "minItems": 0
+            },
+            "eli:amends": {
+                "title": "http://data.europa.eu/eli/ontology#amends",
+                "type": "array",
+                "enabled": false,
+                "items": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "minItems": 0
+            },
+            "eli:cites": {
+                "title": "http://data.europa.eu/eli/ontology#cites",
+                "type": "array",
+                "enabled": false,
+                "items": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "minItems": 0
+            },
+            "eli:related_to": {
+                "title": "http://data.europa.eu/eli/ontology#related_to",
+                "type": "array",
+                "enabled": false,
+                "items": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "minItems": 0
+            }
+        }
+      },
+      "format_": {
+          "title": "replace with format URI",
+          "type": "object",
+          "properties": {
+              "eli:format": {
+                  "title": "http://data.europa.eu/eli/ontology#format",
+                  "type": "hidden",
+                  "enabled": true
+              },
+              "eli:is_exemplified_by": {
+                  "title": "http://data.europa.eu/eli/ontology#is_exemplified_by",
+                  "type": "array",
+                  "enabled": true,
+                  "items": {
+                      "type": "string",
+                      "format": "uri"
+                  },
+                  "minItems": 0
+              },
+              "eli:id_local": {
+                  "title": "http://data.europa.eu/eli/ontology#id_local",
+                  "type": "array",
+                  "enabled": false,
+                  "items": {
+                      "type": "string" },
+                  "minItems": 0
+              },
+              "eli:legal_value": {
+                  "title": "http://data.europa.eu/eli/ontology#legal_value",
+                  "type": "string",
+                  "enabled": true,
+                  "vocab": null
+              },
+              "eli:published_in": {
+                  "title": "http://data.europa.eu/eli/ontology#published_in",
+                  "type": "array",
+                  "enabled": true,
+                  "items": {
+                      "type": "string"
+                  },
+                  "minItems": 0
+              },
+              "eli:published_in_format": {
+                  "title": "http://data.europa.eu/eli/ontology#published_in_format",
+                  "type": "array",
+                  "enabled": true,
+                  "items": {
+                      "type": "string",
+                      "format": "uri"
+                  },
+                  "minItems": 0
+              },
+              "eli:publisher_agent": {
+                  "title": "http://data.europa.eu/eli/ontology#publisher_agent",
+                  "type": "array",
+                  "enabled": true,
+                  "items": {
+                      "type": "string"
+                  },
+                  "minItems": 0,
+                  "vocab": null
+              },
+              "eli:publisher": {
+                  "title": "http://data.europa.eu/eli/ontology#publisher",
+                  "type": "array",
+                  "enabled": true,
+                  "items": {
+                      "type": "string"
+                  },
+                  "minItems": 0
+              },
+              "eli:licence": {
+                  "title": "http://data.europa.eu/eli/ontology#licence",
+                  "type": "array",
+                  "enabled": true,
+                  "items": {
+                      "type": "string",
+                      "format": "uri"
+                  },
+                  "minItems": 0
+              },
+              "eli:rights": {
+                  "title": "http://data.europa.eu/eli/ontology#rights",
+                  "type": "string",
+                  "enabled": true
+              },
+              "eli:rightsholder": {
+                  "title": "http://data.europa.eu/eli/ontology#rightsholder",
+                  "type": "array",
+                  "enabled": true,
+                  "items": {
+                      "type": "string"
+                  },
+                  "minItems": 0
+              },
+              "eli:rightsholder_agent": {
+                  "title": "http://data.europa.eu/eli/ontology#rightsholder_agent",
+                  "type": "array",
+                  "enabled": true,
+                  "items": {
+                      "type": "string"
+                  },
+                  "minItems": 0,
+                  "vocab": null
+              }
+          }
+      }
+  }
+}

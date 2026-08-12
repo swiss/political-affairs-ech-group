@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+	<documentCollection name="INTERNAL_DOC_CONSIL">  		
+		<meta>
+			<identification source="~PUBL">
+				<FRBRWork>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<FRBRcountry value="EU"/>
+					<FRBRnumber value="12955/17"/>								
+					<FRBRprescriptive value="false"/>
+				</FRBRWork>
+				<FRBRExpression>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<FRBRlanguage xml:id="FRBRlanguage" language="en"/>
+				</FRBRExpression>
+				<FRBRManifestation>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+						<akn4eu:akn4euVersion value="4.2.0.0"/>
+						<akn4eu:akn4euDocumentation href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/akn4eu"/>
+					</preservation>
+				</FRBRManifestation>
+			</identification>
+			<analysis source="~PUBL">
+				<otherReferences source="~PUBL">
+					<implicitReference for="~COM_2017_10" refersTo="~PROP_ACT" href="http://data.europa.eu/eli/prop_act/2017/10" showAs="COM (2017) 10"/>
+				</otherReferences>
+			</analysis>
+			<references source="~PUBL">
+				<TLCReference name="language" href="http://publications.europa.eu/resource/authority/language/ENG" showAs="en"/>
+				<TLCOrganization xml:id="PUBL" href="http://publications.europa.eu/resource/authority/corporate-body/PUBL" showAs="Publications Office"/>
+				<TLCOrganization xml:id="CONSIL" href="http://publications.europa.eu/resource/authority/corporate-body/CONSIL" showAs="Council of the European Union"/>
+				<TLCOrganization xml:id="CONSIL_PRES" href="http://publications.europa.eu/resource/authority/corporate-body/CONSIL_PRES" showAs="Presidency of the Council of the EU"/>
+				<TLCReference xml:id="INTERNAL_DOC_CONSIL" name="docType" href="http://publications.europa.eu/resource/authority/resource-type/INTERNAL_DOC_CONSIL" showAs="Council internal document"/>
+				<TLCReference xml:id="NOTE" name="docType" href="http://publications.europa.eu/resource/authority/resource-type/NOTE" showAs="Note"/>
+				<TLCLocation xml:id="BEL_BRU" href="http://publications.europa.eu/resource/authority/place/BEL_BRU" showAs="Brussels"/>
+				<TLCReference xml:id="procedure_2017_3" name="procedureReference" href="http://eur-lex.europa.eu/procedure/EN/2017_3" showAs="2017/0003 (COD)" shortForm="2017/3/COD"/>
+				<TLCReference xml:id="COM_2017_10" name="identifier" href="http://publications.europa.eu/resource/authority/document-identifier-format/COM_NUMBER" showAs="COM (2017) 10" shortForm="COM/2017/10"/>
+				<TLCReference xml:id="PROP_ACT" name="docType" href="http://publications.europa.eu/resource/authority/resource-type/PROP_ACT" showAs="Proposal for an act"/>
+			</references>
+		</meta>
+		<coverPage xml:id="d1e94">
+			<container xml:id="d1e96" name="logo">
+				<p xml:id="d1e98"><img xml:id="d1e99" src="COUNCIL.png"/></p>
+			</container>
+			<container xml:id="d1e102" name="actingEntity">
+				<p xml:id="d1e104"><organization xml:id="d1e105" refersTo="~CONSIL">COUNCIL OF THE EUROPEAN UNION</organization></p>
+			</container>
+			<container xml:id="d1e109" name="mainDoc">
+				<block xml:id="d1e111" name="placeAndDate">
+					<location xml:id="d1e113" refersTo="~BEL_BRU">Brussels</location>, <date xml:id="d1e116" date="2017-10-06">6 October 2017</date>
+				</block>
+				<block xml:id="d1e120" name="mainDocOriginalLanguage">(OR. <inline xml:id="d1e122" name="language" refersTo="~FRBRlanguage">en</inline>)</block>
+			</container>
+			<container xml:id="d1e127" name="procedureIdentifier">
+				<p xml:id="d1e129"><inline xml:id="d1e130" name="label">Interinstitutional File:</inline> <docketNumber xml:id="d1e133" refersTo="~procedure_2017_3">2017/0003 (COD)</docketNumber></p>
+			</container>
+			<container xml:id="d1e137" name="mainDocReference">
+				<block xml:id="d1e139" name="reference">
+					<docNumber xml:id="d1e141">12955/17</docNumber>
+				</block>
+			</container>
+			<container xml:id="d1e146" name="subjectMatter">
+				<p xml:id="d1e148"><inline xml:id="d1e149" name="subjectCode">TELECOM</inline> 223</p>
+				<p xml:id="d1e153"><inline xml:id="d1e154" name="subjectCode">COMPET</inline> 648</p>
+				<p xml:id="d1e158"><inline xml:id="d1e159" name="subjectCode">MI</inline> 681</p>
+				<p xml:id="d1e163"><inline xml:id="d1e164" name="subjectCode">DATAPROTECT</inline> 148</p>
+				<p xml:id="d1e168"><inline xml:id="d1e169" name="subjectCode">CONSOM</inline> 311</p>
+				<p xml:id="d1e174"><inline xml:id="d1e175" name="subjectCode">CONSOM</inline> 355</p>
+				<p xml:id="d1e179"><inline xml:id="d1e180" name="subjectCode">JAI</inline> 886</p>
+				<p xml:id="d1e184"><inline xml:id="d1e185" name="subjectCode">DIGIT</inline> 201</p>
+				<p xml:id="d1e189"><inline xml:id="d1e190" name="subjectCode">FREMP</inline> 111</p>
+				<p xml:id="d1e194"><inline xml:id="d1e195" name="subjectCode">CYBER</inline> 140</p>
+				<p xml:id="d1e199"><inline xml:id="d1e200" name="subjectCode">CODEC</inline> 1531</p>
+			</container>
+			<container xml:id="d1e205" name="docHeader">
+				<container xml:id="d1e207" name="typeOfDocument">
+					<p xml:id="d1e209"><docType xml:id="d1e210" refersTo="~NOTE">NOTE</docType></p>
+				</container>
+			<container xml:id="d1e214" name="stakeholders">
+				<block xml:id="d1e216" name="issuer">
+					<inline xml:id="d1e218" name="label">From:</inline>
+					<organization xml:id="d1e221" refersTo="~CONSIL_PRES">Presidency</organization>
+				</block>
+				<block xml:id="d1e225" name="addressee">
+					<inline xml:id="d1e227" name="label">To:</inline>
+					<organization xml:id="d1e230" refersTo="">Delegations</organization>
+				</block>
+			</container>
+				<container xml:id="d1e235" name="otherReferences">
+					<block xml:id="d1e237" name="prevDoc">
+						<inline xml:id="d1e239" name="label">No. prev. doc.:</inline>
+						<docNumber xml:id="d1e242">11995/17</docNumber>
+						<inline xml:id="d1e244" name="subjectCode">TELECOM</inline> 200 <inline xml:id="d1e247" name="subjectCode">COMPET</inline>
+						591 <inline xml:id="d1e250" name="subjectCode">MI</inline> 612 <inline xml:id="d1e254" name="subjectCode">DATAPROTECT</inline> 136 <inline xml:id="d1e257" name="subjectCode">CONSOM</inline> 297 <inline xml:id="d1e260" name="subjectCode"> JAI</inline> 770 <inline xml:id="d1e263" name="subjectCode">DIGIT</inline> 185
+						<inline xml:id="d1e266" name="subjectCode">FREMP</inline> 92 <inline xml:id="d1e269" name="subjectCode">CYBER</inline>
+						122 <inline xml:id="d1e273" name="subjectCode">CODEC</inline> 1354 </block>
+					<block xml:id="d1e277" name="cionDoc">
+						<inline xml:id="d1e279" name="label">No. Cion doc.:</inline>
+						<docNumber xml:id="d1e282">6967/17</docNumber>
+						<inline xml:id="d1e284" name="subjectCode">TELECOM</inline> 53 <inline xml:id="d1e287" name="subjectCode">COMPET</inline>
+						159 <inline xml:id="d1e290" name="subjectCode">MI</inline> 184 <inline xml:id="d1e294" name="subjectCode">DATAPROTECT</inline> 23 <inline xml:id="d1e297" name="subjectCode">CONSOM</inline> 67 <inline xml:id="d1e300" name="subjectCode">JAI</inline> 192 <inline xml:id="d1e303" name="subjectCode">DIGIT</inline> 37 <inline xml:id="d1e306" name="subjectCode">FREMP</inline> 22 <inline xml:id="d1e309" name="subjectCode">CYBER</inline> 29
+						<inline xml:id="d1e313" name="subjectCode">IA</inline> 34 <inline xml:id="d1e316" name="subjectCode">CODEC</inline> 319
+					</block>
+				</container>
+				<container xml:id="d1e321" name="titleOfDocument">
+					<p xml:id="d1e323"><inline xml:id="d1e324" name="label">Subject:</inline>
+						<docTitle xml:id="d1e327">Proposal for a Regulation of the European Parliament and of the Council
+							concerning the respect for private life and the protection of personal data in
+							electronic communications and repealing Directive 2002/58/EC (Regulation on Privacy and
+							Electronic Communications)<eol xml:id="d1e329"/>- Examination of the Presidency text (Art. 1-5 and related
+							recitals)</docTitle>
+					</p>
+				</container>
+			</container>
+			<container xml:id="d1e335" name="mainDocLanguage">
+				<p xml:id="d1e337"><inline xml:id="d1e338" name="language" refersTo="~FRBRlanguage">EN</inline></p>
+			</container>
+			<container xml:id="d1e342" name="responsible">
+				<p xml:id="d1e344"><organization xml:id="d1e345" refersTo="">DGE 2B</organization></p>
+				<p xml:id="d1e348"><person xml:id="d1e349" refersTo="">KM</person>/<person xml:id="d1e352" refersTo="">ek</person></p>
+			</container>
+		</coverPage>
+		<collectionBody xml:id="d1e357">
+			<component xml:id="d1e359">
+				<documentRef xml:id="d1e361" href="EXPLANATORY_COUNCIL-cl6caiyaf000b3a6knz4q6ktz-en.xml" showAs="Explanatory"/>
+			</component>
+			<component xml:id="d1e364">
+				<num xml:id="d1e366">ANNEX A</num>
+				<documentRef xml:id="d1e368" href="REG-clin7twxs000a2a6czxjeombz-en.xml" showAs="REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE      COUNCIL"/>
+			</component>
+			<component xml:id="d1e371">
+				<num xml:id="d1e373">ANNEX B</num>
+				<documentRef xml:id="d1e375" href="DOC-clij224gn00072a6c5o50jsfk-en.xml" showAs="Definition referred to in art. 4(1)(c) and 4(1)(d)"/>
+			</component>
+		</collectionBody>
+	</documentCollection>
+</akomaNtoso>

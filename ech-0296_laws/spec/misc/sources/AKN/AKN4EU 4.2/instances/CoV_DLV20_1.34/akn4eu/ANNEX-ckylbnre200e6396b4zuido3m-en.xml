@@ -1,0 +1,1099 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+	<doc name="ANNEX">
+		<meta>
+			<identification source="~PUBL">
+				<FRBRWork>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+						<akn4eu:fileCUID value="ckylbnre200e6396b4zuido3m"/>
+					</preservation>
+					<FRBRcountry value="EU"/>
+					<FRBRprescriptive value="true"/>
+				</FRBRWork>
+				<FRBRExpression>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+						<akn4eu:fileDraftVersion value="proposal 1"/>
+					</preservation>
+					<FRBRlanguage language="en"/>
+				</FRBRExpression>
+				<FRBRManifestation>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+						<akn4eu:akn4euVersion value="4.2.0.0"/>
+						<akn4eu:akn4euDocumentation href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/akn4eu"/>
+					</preservation>
+				</FRBRManifestation>
+			</identification>
+			<references source="~PUBL">
+				<TLCReference name="language" href="http://publications.europa.eu/resource/authority/language/ENG" showAs="en"/>
+				<TLCReference xml:id="ANNEX" name="docType" href="http://publications.europa.eu/resource/authority/resource-type/ANNEX" showAs="Annex"/>
+				<TLCOrganization xml:id="PUBL" href="http://publications.europa.eu/resource/authority/corporate-body/PUBL" showAs="Publications Office"/>
+				<TLCConcept xml:id="INP" href="http://publications.europa.eu/resource/authority/subdivision/INP" showAs="introductory part"/>
+			</references>
+		</meta>
+		<preface xml:id="d1e80">
+			<container xml:id="d1e82" name="headerOfAnnex">
+				<block xml:id="d1e84" name="num">ANNEX II</block>
+				<block xml:id="d1e87" name="heading">FISHING EFFORT FOR VESSELS IN THE CONTEXT OF THE MANAGEMENT OF WESTERN
+					CHANNEL SOLE STOCKS IN ICES DIVISION 7e</block>
+			</container>
+		</preface>
+		<mainBody xml:id="d1e92">
+			<chapter xml:id="d1e94">
+				<num xml:id="d1e96">CHAPTER I</num>
+				<heading xml:id="d1e98">
+					<b xml:id="d1e100">General provisions</b>
+				</heading>
+				<level xml:id="d1e103">
+					<num xml:id="d1e105">1.</num>
+					<content xml:id="d1e107">
+						<p xml:id="d1e109">SCOPE</p>
+					</content>
+				</level>
+				<level xml:id="d1e113">
+					<num xml:id="d1e115">1.1.</num>
+					<content xml:id="d1e117">
+						<p xml:id="d1e119">This Annex shall apply to Union fishing vessels of 10 metres length overall or more
+							carrying on board or deploying beam trawls of mesh size equal to or greater than 80 mm
+							and static nets, including gillnets, trammel-nets and tangle-nets, with mesh size
+							equal to or less than 220 mm in accordance with Regulation (EC) No 509/2007, and
+							present in ICES division 7e.</p>
+					</content>
+				</level>
+				<level xml:id="d1e123">
+					<num xml:id="d1e125">1.2.</num>
+					<list xml:id="d1e127">
+						<subparagraph xml:id="d1e129" refersTo="~INP">
+							<content xml:id="d1e131">
+								<p xml:id="d1e133">Vessels fishing with static nets with mesh size equal to or larger than 120 mm
+									and with track records of less than 300 kg live weight of sole per year during the
+									three previous years, according to their fishing records, shall be exempt from the
+									application of this Annex subject to the following conditions:</p>
+							</content>
+						</subparagraph>
+						<point xml:id="d1e137">
+							<num xml:id="d1e139">(a)</num>
+							<content xml:id="d1e141">
+								<p xml:id="d1e143">such vessels caught less than 300 kg live weight of sole during the 2018
+									management period;</p>
+							</content>
+						</point>
+						<point xml:id="d1e147">
+							<num xml:id="d1e149">(b)</num>
+							<content xml:id="d1e151">
+								<p xml:id="d1e153">such vessels do not tranship any fish at sea to another vessel;</p>
+							</content>
+						</point>
+						<point xml:id="d1e157">
+							<num xml:id="d1e159">(c)</num>
+							<content xml:id="d1e161">
+								<p xml:id="d1e163">by 31 July 2020 and 31 January 2021 each Member State concerned makes a report to
+									the Commission on those vessels' catch records for sole in the three previous
+									years as well as on catches of sole in 2020.</p>
+							</content>
+						</point>
+					</list>
+					<subparagraph xml:id="d1e168">
+						<content xml:id="d1e170">
+							<p xml:id="d1e172">Where any of those conditions is not met, the vessels concerned shall cease to be
+								exempt from the application of this Annex, with immediate effect.</p>
+						</content>
+					</subparagraph>
+				</level>
+				<level xml:id="d1e178">
+					<num xml:id="d1e180">2.</num>
+					<subparagraph xml:id="d1e182">
+						<content xml:id="d1e184">
+							<p xml:id="d1e186">DEFINITIONS</p>
+						</content>
+					</subparagraph>
+					<list xml:id="d1e190">
+						<subparagraph xml:id="d1e192" refersTo="~INP">
+							<content xml:id="d1e194">
+								<p xml:id="d1e196">For the purposes of this Annex, the following definitions apply:</p>
+							</content>
+						</subparagraph>
+						<point xml:id="d1e200">
+							<num xml:id="d1e202">(a)</num>
+							<list xml:id="d1e204">
+								<subparagraph xml:id="d1e206" refersTo="~INP">
+									<content xml:id="d1e208">
+										<p xml:id="d1e210">‘gear grouping’ means the grouping consisting of the following two gear
+											categories:</p>
+									</content>
+								</subparagraph>
+								<point xml:id="d1e214">
+									<num xml:id="d1e216">(i)</num>
+									<content xml:id="d1e218">
+										<p xml:id="d1e220">beam trawls of mesh size equal to or greater than 80 mm, and</p>
+									</content>
+								</point>
+								<point xml:id="d1e224">
+									<num xml:id="d1e226">(ii)</num>
+									<content xml:id="d1e228">
+										<p xml:id="d1e230">static nets, including gillnets, trammel nets and tangle-nets, with mesh size
+											equal to or less than 220 mm;</p>
+									</content>
+								</point>
+							</list>
+						</point>
+						<point xml:id="d1e236">
+							<num xml:id="d1e238">(b)</num>
+							<content xml:id="d1e240">
+								<p xml:id="d1e242">‘regulated gear’ means any of the two gear categories belonging to the gear
+									grouping;</p>
+							</content>
+						</point>
+						<point xml:id="d1e246">
+							<num xml:id="d1e248">(c)</num>
+							<content xml:id="d1e250">
+								<p xml:id="d1e252">‘area’ means ICES division 7e;</p>
+							</content>
+						</point>
+						<point xml:id="d1e256">
+							<num xml:id="d1e258">(d)</num>
+							<content xml:id="d1e260">
+								<p xml:id="d1e262">‘current management period’ means the period from 1 February 2020 to 31 January
+									2021</p>
+							</content>
+						</point>
+					</list>
+				</level>
+				<level xml:id="d1e268">
+					<num xml:id="d1e270">3.</num>
+					<subparagraph xml:id="d1e272">
+						<content xml:id="d1e274">
+							<p xml:id="d1e276">LIMITATION IN ACTIVITY</p>
+						</content>
+					</subparagraph>
+					<subparagraph xml:id="d1e280">
+						<content xml:id="d1e282">
+							<p xml:id="d1e284">Without prejudice to Article 29 of Regulation (EC) No 1224/2009, each Member State
+								shall ensure that, when carrying on board any regulated gear, Union fishing vessels
+								flying its flag and registered in the Union shall be present within the area for no
+								more than the number of days set out in Chapter III of this Annex.</p>
+						</content>
+					</subparagraph>
+				</level>
+			</chapter>
+			<chapter xml:id="d1e290">
+				<num xml:id="d1e292">CHAPTER II</num>
+				<heading xml:id="d1e294">
+					<b xml:id="d1e296">Authorisations</b>
+				</heading>
+				<level xml:id="d1e299">
+					<num xml:id="d1e301">4.</num>
+					<content xml:id="d1e303">
+						<p xml:id="d1e305">AUTHORISED VESSELS</p>
+					</content>
+				</level>
+				<level xml:id="d1e309">
+					<num xml:id="d1e311">4.1</num>
+					<content xml:id="d1e313">
+						<p xml:id="d1e315">A Member State shall not authorise fishing with regulated gear in the area by any
+							vessel flying its flag which has no record of such fishing activity in the area in the
+							period from 2002 to 2018, excluding the record of fishing activities as a result of
+							transfer of days between fishing vessels, unless it ensures that equivalent capacity,
+							measured in kilowatts, is prevented from fishing in the area.</p>
+					</content>
+				</level>
+				<level xml:id="d1e319">
+					<num xml:id="d1e321">4.2</num>
+					<content xml:id="d1e323">
+						<p xml:id="d1e325">However, a vessel with a track record of using a regulated gear may be authorised to
+							use a different fishing gear, provided that the number of days allocated to this
+							latter gear is greater than or equal to the number of days allocated to the regulated
+							gear.</p>
+					</content>
+				</level>
+				<level xml:id="d1e330">
+					<num xml:id="d1e332">4.3</num>
+					<content xml:id="d1e334">
+						<p xml:id="d1e336">A vessel flying the flag of a Member State having no quotas in the area shall not be
+							authorised to fish in the area with regulated gear, unless the vessel is allocated a
+							quota after a transfer as permitted in accordance with Article 16(8) of Regulation
+							(EU) No 1380/2013 and is allocated days at sea in accordance with point 10 or 11 of
+							this Annex.</p>
+					</content>
+				</level>
+			</chapter>
+			<chapter xml:id="d1e341">
+				<num xml:id="d1e343">CHAPTER III</num>
+				<heading xml:id="d1e345">
+					<b xml:id="d1e347">Number of days present within the area allocated to Union fishing vessels</b>
+				</heading>
+				<level xml:id="d1e350">
+					<num xml:id="d1e352">5.</num>
+					<subparagraph xml:id="d1e354">
+						<content xml:id="d1e356">
+							<p xml:id="d1e358">MAXIMUM NUMBER OF DAYS</p>
+						</content>
+					</subparagraph>
+					<subparagraph xml:id="d1e362">
+						<content xml:id="d1e364">
+							<p xml:id="d1e366">During the current management period, the maximum number of days at sea for which a
+								Member State may authorise a vessel flying its flag to be present within the area
+								carrying on board any regulated gear is shown in Table I.</p>
+						</content>
+					</subparagraph>
+					<hcontainer xml:id="d1e370" name="BLOCK_TAB">
+						<num xml:id="d1e372">Table I</num>
+						<heading xml:id="d1e374">Maximum number of days a vessel may be present within the area by category of
+							regulated gear per year</heading>
+						<hcontainer xml:id="d1e376" name="TAB">
+							<content xml:id="d1e378">
+								<table xml:id="d1e380">
+									<tr xml:id="d1e382">
+										<th xml:id="d1e384">
+											<p xml:id="d1e386">Regulated gear</p>
+										</th>
+										<th xml:id="d1e389" colspan="2">
+											<p xml:id="d1e391">Maximum number of days</p>
+										</th>
+									</tr>
+									<tr xml:id="d1e395">
+										<td xml:id="d1e397" rowspan="3">
+											<p xml:id="d1e399">Beam trawls of mesh size ≥ 80 mm</p>
+										</td>
+										<td xml:id="d1e402">
+											<p xml:id="d1e404">Belgium</p>
+										</td>
+										<td xml:id="d1e407">
+											<p xml:id="d1e409">176</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e413">
+										<td xml:id="d1e415">
+											<p xml:id="d1e417">France</p>
+										</td>
+										<td xml:id="d1e420">
+											<p xml:id="d1e422">188</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e426">
+										<td xml:id="d1e428">
+											<p xml:id="d1e430">United Kingdom</p>
+										</td>
+										<td xml:id="d1e433">
+											<p xml:id="d1e435">222</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e439">
+										<td xml:id="d1e441" rowspan="3">
+											<p xml:id="d1e443">Static nets with mesh size ≤ 220 mm</p>
+										</td>
+										<td xml:id="d1e446">
+											<p xml:id="d1e448">Belgium</p>
+										</td>
+										<td xml:id="d1e451">
+											<p xml:id="d1e453">176</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e458">
+										<td xml:id="d1e460">
+											<p xml:id="d1e462">France</p>
+										</td>
+										<td xml:id="d1e465">
+											<p xml:id="d1e467">191</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e471">
+										<td xml:id="d1e473">
+											<p xml:id="d1e475">United Kingdom</p>
+										</td>
+										<td xml:id="d1e478">
+											<p xml:id="d1e480">176</p>
+										</td>
+									</tr>
+								</table>
+							</content>
+						</hcontainer>
+					</hcontainer>
+				</level>
+				<level xml:id="d1e489">
+					<num xml:id="d1e491">6.</num>
+					<content xml:id="d1e493">
+						<p xml:id="d1e495">KILOWATT DAY SYSTEM</p>
+					</content>
+				</level>
+				<level xml:id="d1e499">
+					<num xml:id="d1e501">6.1.</num>
+					<content xml:id="d1e503">
+						<p xml:id="d1e505">During the current management period, a Member State may manage its fishing effort
+							allocations in accordance with a kilowatt days system. Through that system it may
+							authorise any vessel concerned by any regulated gear as set out in Table I to be
+							present within the area for a maximum number of days which is different from that set
+							out in that Table, provided that the overall amount of kilowatt days corresponding to
+							the regulated gear is respected.</p>
+					</content>
+				</level>
+				<level xml:id="d1e510">
+					<num xml:id="d1e512">6.2.</num>
+					<content xml:id="d1e514">
+						<p xml:id="d1e516">This overall amount of kilowatt days shall be the sum of all individual fishing
+							efforts allocated to the vessels flying the flag of that Member State and qualified
+							for the regulated gear. Such individual fishing efforts shall be calculated in
+							kilowatt days by multiplying the engine power of each vessel by the number of days at
+							sea it would benefit from, according to Table I, if point 6.1 were not applied.</p>
+					</content>
+				</level>
+				<level xml:id="d1e520">
+					<num xml:id="d1e522">6.3.</num>
+					<list xml:id="d1e524">
+						<subparagraph xml:id="d1e526" refersTo="~INP">
+							<content xml:id="d1e528">
+								<p xml:id="d1e530">A Member State wishing to benefit from the system referred to in point 6.1 shall
+									submit a request to the Commission, for the regulated gear as laid down in Table
+									I, with reports in electronic format containing the details of the calculation
+									based on:</p>
+							</content>
+						</subparagraph>
+						<point xml:id="d1e534">
+							<num xml:id="d1e536">(a)</num>
+							<content xml:id="d1e538">
+								<p xml:id="d1e540">the list of vessels authorised to fish by indicating their Union fishing fleet
+									register number (CFR) and their engine power;</p>
+							</content>
+						</point>
+						<point xml:id="d1e544">
+							<num xml:id="d1e546">(b)</num>
+							<content xml:id="d1e548">
+								<p xml:id="d1e550">the number of days at sea for which each vessel would have initially been
+									authorised to fish according to Table I and the number of days at sea which each
+									vessel would benefit from in application of point 6.1.</p>
+							</content>
+						</point>
+					</list>
+				</level>
+				<level xml:id="d1e556">
+					<num xml:id="d1e558">6.4.</num>
+					<content xml:id="d1e560">
+						<p xml:id="d1e562">On the basis of that request, the Commission shall assess whether the conditions
+							referred to in point 6 are complied with and, where applicable, may authorise that
+							Member State to benefit from the system referred to in point 6.1.</p>
+					</content>
+				</level>
+				<level xml:id="d1e566">
+					<num xml:id="d1e568">7.</num>
+					<content xml:id="d1e570">
+						<p xml:id="d1e572">ALLOCATION OF ADDITIONAL DAYS FOR PERMANENT CESSATION OF FISHING ACTIVITIES</p>
+					</content>
+				</level>
+				<level xml:id="d1e576">
+					<num xml:id="d1e578">7.1.</num>
+					<content xml:id="d1e580">
+						<p xml:id="d1e582">An additional number of days at sea on which a vessel may be authorised by its flag
+							Member State to be present within the area when carrying on board any regulated gear
+							may be allocated to a Member State by the Commission on the basis of permanent
+							cessations of fishing activities that have taken place during the preceding management
+							period either in accordance with Article 23 of Regulation (EC) No 1198/2006 or with
+							Regulation (EC) No 744/2008. Permanent cessations resulting from any other
+							circumstances may be considered by the Commission on a case-by-case basis, following a
+							written and duly motivated request from the Member State concerned. Such written
+							request shall identify the vessels concerned and confirm, for each of them, that they
+							shall never return to fishing activities.</p>
+					</content>
+				</level>
+				<level xml:id="d1e586">
+					<num xml:id="d1e588">7.2.</num>
+					<content xml:id="d1e590">
+						<p xml:id="d1e592">The effort expended in 2003 measured in kilowatt days of the withdrawn vessels using
+							a given gear grouping shall be divided by the effort expended by all vessels using
+							that gear grouping during 2003. The additional number of days at sea shall be then
+							calculated by multiplying the ratio so obtained by the number of days that would have
+							been allocated according to Table I. Any part of a day resulting from that calculation
+							shall be rounded to the nearest whole day.</p>
+					</content>
+				</level>
+				<level xml:id="d1e597">
+					<num xml:id="d1e599">7.3.</num>
+					<content xml:id="d1e601">
+						<p xml:id="d1e603">Points 7.1 and 7.2 shall not apply where a vessel has been replaced in accordance
+							with point 4.2, or when the withdrawal has already been used in previous years to
+							obtain additional days at sea.</p>
+					</content>
+				</level>
+				<level xml:id="d1e607">
+					<num xml:id="d1e609">7.4.</num>
+					<list xml:id="d1e611">
+						<subparagraph xml:id="d1e613" refersTo="~INP">
+							<content xml:id="d1e615">
+								<p xml:id="d1e617">A Member State wishing to benefit from the allocations referred to in point 7.1
+									shall submit a request to the Commission, by 15 June of the current management
+									period, with reports in electronic format containing for the gear grouping as laid
+									down in Table I, the details of the calculation based on:</p>
+							</content>
+						</subparagraph>
+						<point xml:id="d1e621">
+							<num xml:id="d1e623">(a)</num>
+							<content xml:id="d1e625">
+								<p xml:id="d1e627">lists of withdrawn vessels with their Union fishing fleet register number (CFR)
+									and their engine power;</p>
+							</content>
+						</point>
+						<point xml:id="d1e631">
+							<num xml:id="d1e633">(b)</num>
+							<content xml:id="d1e635">
+								<p xml:id="d1e637">the fishing activity deployed by such vessels in 2003 calculated in days at sea
+									according to the grouping of fishing gear.</p>
+							</content>
+						</point>
+					</list>
+				</level>
+				<level xml:id="d1e643">
+					<num xml:id="d1e645">7.5.</num>
+					<content xml:id="d1e647">
+						<p xml:id="d1e649">During the current management period, a Member State may re-allocate any additionally
+							granted days at sea to all or part of the vessels remaining in fleet and qualified for
+							the regulated gear.</p>
+					</content>
+				</level>
+				<level xml:id="d1e653">
+					<num xml:id="d1e655">7.6.</num>
+					<content xml:id="d1e657">
+						<p xml:id="d1e659">When the Commission allocates additional days at sea due to a permanent cessation of
+							fishing activities during the preceding management period the maximum number of days
+							per Member State and gear shown in Table I shall be adjusted accordingly for the
+							current management period.</p>
+					</content>
+				</level>
+				<level xml:id="d1e663">
+					<num xml:id="d1e665">8.</num>
+					<content xml:id="d1e667">
+						<p xml:id="d1e669">ALLOCATION OF ADDITIONAL DAYS FOR ENHANCED SCIENTIFIC OBSERVER COVERAGE</p>
+					</content>
+				</level>
+				<level xml:id="d1e673">
+					<num xml:id="d1e675">8.1.</num>
+					<content xml:id="d1e677">
+						<p xml:id="d1e679">Three additional days on which a vessel may be present within the area when carrying
+							on board any regulated gear may be allocated between 1 February 2020 and 31 January
+							2021 to a Member State by the Commission on the basis of an enhanced programme of
+							scientific observer coverage in partnership between scientists and the fishing
+							industry. Such a programme shall focus in particular on levels of discarding and on
+							catch composition and go beyond the requirements on data collection, as laid down in
+							Regulation (EC) No 199/2008 and its implementing rules for national programmes.</p>
+					</content>
+				</level>
+				<level xml:id="d1e684">
+					<num xml:id="d1e686">8.2.</num>
+					<content xml:id="d1e688">
+						<p xml:id="d1e690">Scientific observers shall be independent from the owner, the master of the fishing
+							vessel and any crew member.</p>
+					</content>
+				</level>
+				<level xml:id="d1e694">
+					<num xml:id="d1e696">8.3.</num>
+					<content xml:id="d1e698">
+						<p xml:id="d1e700">A Member State wishing to benefit from the allocations referred to in point 8.1 shall
+							submit a description of its enhanced scientific observer coverage programme to the
+							Commission for approval.</p>
+					</content>
+				</level>
+				<level xml:id="d1e704">
+					<num xml:id="d1e706">8.4.</num>
+					<content xml:id="d1e708">
+						<p xml:id="d1e710">If an enhanced scientific observer coverage programme submitted by a Member State has
+							been approved by the Commission in the past and the Member State concerned wishes to
+							continue its application without changes, it shall inform the Commission of the
+							continuation of that programme four weeks before the beginning of the period for which
+							the programme applies.</p>
+					</content>
+				</level>
+			</chapter>
+			<chapter xml:id="d1e715">
+				<num xml:id="d1e717">CHAPTER IV</num>
+				<heading xml:id="d1e719">
+					<b xml:id="d1e721">Management</b>
+				</heading>
+				<level xml:id="d1e724">
+					<num xml:id="d1e726">9.</num>
+					<subparagraph xml:id="d1e728">
+						<content xml:id="d1e730">
+							<p xml:id="d1e732">GENERAL OBLIGATION</p>
+						</content>
+					</subparagraph>
+					<subparagraph xml:id="d1e736">
+						<content xml:id="d1e738">
+							<p xml:id="d1e740">Member States shall manage the maximum allowable effort in accordance with Articles
+								26 to 35 of Regulation (EC) No 1224/2009.</p>
+						</content>
+					</subparagraph>
+				</level>
+				<level xml:id="d1e745">
+					<num xml:id="d1e747">10.</num>
+					<content xml:id="d1e749">
+						<p xml:id="d1e751">MANAGEMENT PERIODS</p>
+					</content>
+				</level>
+				<level xml:id="d1e755">
+					<num xml:id="d1e757">10.1.</num>
+					<content xml:id="d1e759">
+						<p xml:id="d1e761">A Member State may divide the days present within the area set out in Table I into
+							management periods of durations of one or more calendar months.</p>
+					</content>
+				</level>
+				<level xml:id="d1e766">
+					<num xml:id="d1e768">10.2.</num>
+					<content xml:id="d1e770">
+						<p xml:id="d1e772">The number of days or hours for which a vessel may be present within the area during
+							a management period shall be fixed by the Member State concerned.</p>
+					</content>
+				</level>
+				<level xml:id="d1e776">
+					<num xml:id="d1e778">10.3.</num>
+					<content xml:id="d1e780">
+						<p xml:id="d1e782">Where a Member State authorises vessels flying its flag to be present within the area
+							by hours, the Member State shall continue measuring the consumption of days as
+							specified in point 9. Upon request by the Commission, the Member State shall
+							demonstrate its precautionary measures taken to avoid an excessive consumption of days
+							within the area due to a vessel terminating presences in the area before the end of a
+							24-hour period.</p>
+					</content>
+				</level>
+			</chapter>
+			<chapter xml:id="d1e787">
+				<num xml:id="d1e789">CHAPTER V</num>
+				<heading xml:id="d1e791">
+					<b xml:id="d1e793">Exchanges of fishing effort allocations</b>
+				</heading>
+				<level xml:id="d1e796">
+					<num xml:id="d1e798">11.</num>
+					<content xml:id="d1e800">
+						<p xml:id="d1e802">TRANSFER OF DAYS BETWEEN FISHING VESSELS FLYING THE FLAG OF A MEMBER STATE</p>
+					</content>
+				</level>
+				<level xml:id="d1e806">
+					<num xml:id="d1e808">11.1.</num>
+					<content xml:id="d1e810">
+						<p xml:id="d1e812">A Member State may permit any fishing vessel flying its flag to transfer days present
+							within the area for which it has been authorised to another vessel flying its flag
+							within the area, provided that the product of the number of days received by a vessel
+							and its engine power in kilowatts (kilowatt days) is equal to or less than the product
+							of the number of days transferred by the donor vessel and its engine power in
+							kilowatts. The engine power in kilowatts of the vessels shall be that recorded for
+							each vessel in the Union fishing fleet register.</p>
+					</content>
+				</level>
+				<level xml:id="d1e816">
+					<num xml:id="d1e818">11.2.</num>
+					<content xml:id="d1e820">
+						<p xml:id="d1e822">The total number of days present within the area transferred in accordance with point
+							11.1, multiplied by the engine power in kilowatts of the donor vessel, shall not be
+							higher than the donor vessel's average annual days track record in the area as
+							verified by the fishing logbook in the years 2001, 2002, 2003, 2004 and 2005
+							multiplied by the engine power in kilowatts of that vessel.</p>
+					</content>
+				</level>
+				<level xml:id="d1e827">
+					<num xml:id="d1e829">11.3.</num>
+					<content xml:id="d1e831">
+						<p xml:id="d1e833">The transfer of days in accordance with point 11.1 shall be permitted between vessels
+							operating with any regulated gear and during the same management period.</p>
+					</content>
+				</level>
+				<level xml:id="d1e837">
+					<num xml:id="d1e839">11.4.</num>
+					<content xml:id="d1e841">
+						<p xml:id="d1e843">On request from the Commission, Member States shall provide information on the
+							transfers that have taken place. Formats of spreadsheet for the collection and
+							transmission of that information may be established by the Commission, by means of
+							implementing acts. Those implementing acts shall be adopted in accordance with the
+							examination procedure referred to in Article 53(2).</p>
+					</content>
+				</level>
+				<level xml:id="d1e847">
+					<num xml:id="d1e849">12.</num>
+					<subparagraph xml:id="d1e851">
+						<content xml:id="d1e853">
+							<p xml:id="d1e855">TRANSFER OF DAYS BETWEEN FISHING VESSELS FLYING THE FLAG OF DIFFERENT MEMBER
+								STATES</p>
+						</content>
+					</subparagraph>
+					<subparagraph xml:id="d1e859">
+						<content xml:id="d1e861">
+							<p xml:id="d1e863">Member States may permit transfer of days present within the area for the same
+								management period and within the area between any fishing vessels flying their flags
+								provided that points 4.2, 4.4, 5, 6 and 10 apply <i xml:id="d1e865">mutatis mutandis</i>. Where
+								Member States decide to authorise such a transfer, they shall notify, before the
+								transfer takes place, the Commission of the details of the transfer, including the
+								number of days to be transferred, the fishing effort and, where applicable, the
+								fishing quotas relating thereto.</p>
+						</content>
+					</subparagraph>
+				</level>
+			</chapter>
+			<chapter xml:id="d1e873">
+				<num xml:id="d1e875">CHAPTER VI</num>
+				<heading xml:id="d1e877">
+					<b xml:id="d1e879">Reporting obligations</b>
+				</heading>
+				<level xml:id="d1e882">
+					<num xml:id="d1e884">13.</num>
+					<subparagraph xml:id="d1e886">
+						<content xml:id="d1e888">
+							<p xml:id="d1e890">FISHING EFFORT REPORT</p>
+						</content>
+					</subparagraph>
+					<subparagraph xml:id="d1e894">
+						<content xml:id="d1e896">
+							<p xml:id="d1e898">Article 28 of Regulation (EC) No 1224/2009 shall apply to vessels falling under the
+								scope of this Annex. The geographical area referred to in that Article shall be
+								understood as the area specified in point 2 of this Annex.</p>
+						</content>
+					</subparagraph>
+				</level>
+				<level xml:id="d1e903">
+					<num xml:id="d1e905">14.</num>
+					<subparagraph xml:id="d1e907">
+						<content xml:id="d1e909">
+							<p xml:id="d1e911">COLLECTION OF RELEVANT DATA</p>
+						</content>
+					</subparagraph>
+					<subparagraph xml:id="d1e915">
+						<content xml:id="d1e917">
+							<p xml:id="d1e919">Member States shall collect on a quarterly basis the information about total
+								fishing effort deployed within the area for towed gear and static gear, effort
+								deployed by vessels using different types of gear in the area, and the engine power
+								of those vessels in kilowatt days, on the basis of information used for the
+								management of fishing days present within the area as set out in this Annex.</p>
+						</content>
+					</subparagraph>
+				</level>
+				<level xml:id="d1e924">
+					<num xml:id="d1e926">15.</num>
+					<subparagraph xml:id="d1e928">
+						<content xml:id="d1e930">
+							<p xml:id="d1e932">COMMUNICATION OF RELEVANT DATA</p>
+						</content>
+					</subparagraph>
+					<subparagraph xml:id="d1e936">
+						<content xml:id="d1e938">
+							<p xml:id="d1e940">Upon request from the Commission, Member States shall make available to the
+								Commission a spreadsheet with data specified in point 14 in the format specified in
+								Tables II and III by sending it to the appropriate electronic mailbox address, which
+								shall be communicated to the Member States by the Commission. Member States shall,
+								upon the Commission's request, send detailed information to the Commission on effort
+								allocated and consumed covering all or parts of the 2018 and 2019 management
+								periods, using the data format specified in Tables IV and V.</p>
+						</content>
+					</subparagraph>
+					<hcontainer xml:id="d1e944" name="BLOCK_TAB">
+						<num xml:id="d1e946">Table II</num>
+						<heading xml:id="d1e948">Reporting format kW-day information by management period</heading>
+						<hcontainer xml:id="d1e950" name="TAB">
+							<content xml:id="d1e952">
+								<table xml:id="d1e954">
+									<tr xml:id="d1e956">
+										<th xml:id="d1e958">
+											<p xml:id="d1e960">Member State</p>
+										</th>
+										<th xml:id="d1e963">
+											<p xml:id="d1e965">Gear</p>
+										</th>
+										<th xml:id="d1e968">
+											<p xml:id="d1e970">Management period</p>
+										</th>
+										<th xml:id="d1e973">
+											<p xml:id="d1e975">Cumulative effort declaration</p>
+										</th>
+									</tr>
+									<tr xml:id="d1e979">
+										<td xml:id="d1e981">
+											<p xml:id="d1e983">(1)</p>
+										</td>
+										<td xml:id="d1e986">
+											<p xml:id="d1e988">(2)</p>
+										</td>
+										<td xml:id="d1e991">
+											<p xml:id="d1e993">(3)</p>
+										</td>
+										<td xml:id="d1e996">
+											<p xml:id="d1e998">(4)</p>
+										</td>
+									</tr>
+								</table>
+							</content>
+						</hcontainer>
+					</hcontainer>
+					<hcontainer xml:id="d1e1006" name="BLOCK_TAB">
+						<num xml:id="d1e1008">Table III</num>
+						<heading xml:id="d1e1010">Data format kW-day information by management period</heading>
+						<hcontainer xml:id="d1e1012" name="TAB">
+							<content xml:id="d1e1014">
+								<table xml:id="d1e1016">
+									<tr xml:id="d1e1018">
+										<th xml:id="d1e1020">
+											<p xml:id="d1e1022">Name of field</p>
+										</th>
+										<th xml:id="d1e1025">
+											<p xml:id="d1e1027">Maximum number of characters/digits</p>
+										</th>
+										<th xml:id="d1e1030">
+											<p xml:id="d1e1032">Alignment<authorialNote xml:id="d1e1034" marker="1" placement="bottom" placementBase="~table_d22e562">
+													<p xml:id="d1e1036">Information relevant for transmission of data by fixed-length
+														formatting.</p>
+												</authorialNote> L(eft)/R(ight)</p>
+										</th>
+										<th xml:id="d1e1041">
+											<p xml:id="d1e1043">Definition and comments</p>
+										</th>
+									</tr>
+									<tr xml:id="d1e1047">
+										<td xml:id="d1e1049">
+											<p xml:id="d1e1051">(1) Member State</p>
+										</td>
+										<td xml:id="d1e1054">
+											<p xml:id="d1e1056">3</p>
+										</td>
+										<td xml:id="d1e1059">
+											<p xml:id="d1e1061"/>
+										</td>
+										<td xml:id="d1e1064">
+											<p xml:id="d1e1066">Member State (Alpha-3 ISO code) in which the vessel is registered</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e1070">
+										<td xml:id="d1e1072">
+											<p xml:id="d1e1074">(2) Gear</p>
+										</td>
+										<td xml:id="d1e1077">
+											<p xml:id="d1e1079">2</p>
+										</td>
+										<td xml:id="d1e1082">
+											<p xml:id="d1e1084"/>
+										</td>
+										<td xml:id="d1e1087">
+											<p xml:id="d1e1089">One of the following gear types:</p>
+											<p xml:id="d1e1091">BT = beam trawls ≥ 80 mm</p>
+											<p xml:id="d1e1093">GN = gillnet &lt; 220 mm</p>
+											<p xml:id="d1e1095">TN = trammel net or entangling net &lt; 220 mm</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e1099">
+										<td xml:id="d1e1101">
+											<p xml:id="d1e1103">(3) Management period</p>
+										</td>
+										<td xml:id="d1e1106">
+											<p xml:id="d1e1108">4</p>
+										</td>
+										<td xml:id="d1e1111">
+											<p xml:id="d1e1113"/>
+										</td>
+										<td xml:id="d1e1116">
+											<p xml:id="d1e1118">One year in the period from the 2006 management period to the current
+												management period</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e1122">
+										<td xml:id="d1e1124">
+											<p xml:id="d1e1126">(4) Cumulative effort declaration</p>
+										</td>
+										<td xml:id="d1e1129">
+											<p xml:id="d1e1131">7</p>
+										</td>
+										<td xml:id="d1e1134">
+											<p xml:id="d1e1136">R</p>
+										</td>
+										<td xml:id="d1e1139">
+											<p xml:id="d1e1141">Cumulative amount of fishing effort expressed in kilowatt days deployed
+												from 1 February until 31 January of the relevant management period</p>
+										</td>
+									</tr>
+								</table>
+							</content>
+						</hcontainer>
+					</hcontainer>
+					<hcontainer xml:id="d1e1150" name="BLOCK_TAB">
+						<num xml:id="d1e1152">Table IV</num>
+						<heading xml:id="d1e1154">Reporting format for vessel-related information</heading>
+						<hcontainer xml:id="d1e1156" name="TAB">
+							<content xml:id="d1e1158">
+								<table xml:id="d1e1160">
+									<tr xml:id="d1e1162">
+										<th xml:id="d1e1164" rowspan="2">
+											<p xml:id="d1e1166">Member State</p>
+										</th>
+										<th xml:id="d1e1169" rowspan="2">
+											<p xml:id="d1e1171">CFR</p>
+										</th>
+										<th xml:id="d1e1174" rowspan="2">
+											<p xml:id="d1e1176">External marking</p>
+										</th>
+										<th xml:id="d1e1179" rowspan="2">
+											<p xml:id="d1e1181">Length of management period</p>
+										</th>
+										<th xml:id="d1e1184" colspan="4">
+											<p xml:id="d1e1186">Gear notified</p>
+										</th>
+										<th xml:id="d1e1190" colspan="4">
+											<p xml:id="d1e1192">Days eligible using notified gear(s)</p>
+										</th>
+										<th xml:id="d1e1195" colspan="4">
+											<p xml:id="d1e1197">Days spent with notified gear(s)</p>
+										</th>
+										<th xml:id="d1e1200" rowspan="2">
+											<p xml:id="d1e1202">Transfer of days</p>
+										</th>
+									</tr>
+									<tr xml:id="d1e1206">
+										<th xml:id="d1e1208">
+											<p xml:id="d1e1210">No 1</p>
+										</th>
+										<th xml:id="d1e1213">
+											<p xml:id="d1e1215">No 2</p>
+										</th>
+										<th xml:id="d1e1218">
+											<p xml:id="d1e1220">No 3</p>
+										</th>
+										<th xml:id="d1e1223">
+											<p xml:id="d1e1225">…</p>
+										</th>
+										<th xml:id="d1e1228">
+											<p xml:id="d1e1230">No 1</p>
+										</th>
+										<th xml:id="d1e1234">
+											<p xml:id="d1e1236">No 2</p>
+										</th>
+										<th xml:id="d1e1239">
+											<p xml:id="d1e1241">No 3</p>
+										</th>
+										<th xml:id="d1e1244">
+											<p xml:id="d1e1246">…</p>
+										</th>
+										<th xml:id="d1e1249">
+											<p xml:id="d1e1251">No 1</p>
+										</th>
+										<th xml:id="d1e1254">
+											<p xml:id="d1e1256">No 2</p>
+										</th>
+										<th xml:id="d1e1259">
+											<p xml:id="d1e1261">No 3</p>
+										</th>
+										<th xml:id="d1e1265">
+											<p xml:id="d1e1267">…</p>
+										</th>
+									</tr>
+									<tr xml:id="d1e1271">
+										<td xml:id="d1e1273">
+											<p xml:id="d1e1275">(1)</p>
+										</td>
+										<td xml:id="d1e1278">
+											<p xml:id="d1e1280">(2)</p>
+										</td>
+										<td xml:id="d1e1283">
+											<p xml:id="d1e1285">(3)</p>
+										</td>
+										<td xml:id="d1e1288">
+											<p xml:id="d1e1290">(4)</p>
+										</td>
+										<td xml:id="d1e1293">
+											<p xml:id="d1e1295">(5)</p>
+										</td>
+										<td xml:id="d1e1299">
+											<p xml:id="d1e1301">(5)</p>
+										</td>
+										<td xml:id="d1e1304">
+											<p xml:id="d1e1306">(5)</p>
+										</td>
+										<td xml:id="d1e1309">
+											<p xml:id="d1e1311">(5)</p>
+										</td>
+										<td xml:id="d1e1314">
+											<p xml:id="d1e1316">(6)</p>
+										</td>
+										<td xml:id="d1e1319">
+											<p xml:id="d1e1321">(6)</p>
+										</td>
+										<td xml:id="d1e1324">
+											<p xml:id="d1e1326">(6)</p>
+										</td>
+										<td xml:id="d1e1330">
+											<p xml:id="d1e1332">(6)</p>
+										</td>
+										<td xml:id="d1e1335">
+											<p xml:id="d1e1337">(7)</p>
+										</td>
+										<td xml:id="d1e1340">
+											<p xml:id="d1e1342">(7)</p>
+										</td>
+										<td xml:id="d1e1345">
+											<p xml:id="d1e1347">(7)</p>
+										</td>
+										<td xml:id="d1e1350">
+											<p xml:id="d1e1352">(7)</p>
+										</td>
+										<td xml:id="d1e1355">
+											<p xml:id="d1e1357">(8)</p>
+										</td>
+									</tr>
+								</table>
+							</content>
+						</hcontainer>
+					</hcontainer>
+					<hcontainer xml:id="d1e1365" name="BLOCK_TAB">
+						<num xml:id="d1e1367">Table V</num>
+						<heading xml:id="d1e1369">Data format for vessel-related information</heading>
+						<hcontainer xml:id="d1e1371" name="TAB">
+							<content xml:id="d1e1373">
+								<table xml:id="d1e1375">
+									<tr xml:id="d1e1377">
+										<th xml:id="d1e1379">
+											<p xml:id="d1e1381">Name of field</p>
+										</th>
+										<th xml:id="d1e1384">
+											<p xml:id="d1e1386">Maximum number of characters/digits</p>
+										</th>
+										<th xml:id="d1e1389">
+											<p xml:id="d1e1391">Alignment<authorialNote xml:id="d1e1393" marker="1" placement="bottom" placementBase="~table_d22e562">
+													<p xml:id="d1e1395">Information relevant for transmission of data by fixed-length
+														formatting.</p>
+												</authorialNote> L(eft)/R(ight)</p>
+										</th>
+										<th xml:id="d1e1400">
+											<p xml:id="d1e1402">Definition and comments</p>
+										</th>
+									</tr>
+									<tr xml:id="d1e1406">
+										<td xml:id="d1e1408">
+											<p xml:id="d1e1410">(1) Member State</p>
+										</td>
+										<td xml:id="d1e1413">
+											<p xml:id="d1e1415">3</p>
+										</td>
+										<td xml:id="d1e1418">
+											<p xml:id="d1e1420"/>
+										</td>
+										<td xml:id="d1e1423">
+											<p xml:id="d1e1425">Member State (Alpha-3 ISO code) in which vessel is registered</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e1429">
+										<td xml:id="d1e1431">
+											<p xml:id="d1e1433">(2) CFR</p>
+										</td>
+										<td xml:id="d1e1436">
+											<p xml:id="d1e1438">12</p>
+										</td>
+										<td xml:id="d1e1441">
+											<p xml:id="d1e1443"/>
+										</td>
+										<td xml:id="d1e1446">
+											<p xml:id="d1e1448">Union fishing fleet register number (CFR)</p>
+											<p xml:id="d1e1450">Unique identification number of a fishing vessel</p>
+											<p xml:id="d1e1452">Member State (Alpha-3 ISO code) followed by an identifying series (9
+												characters). Where a series has fewer than 9 characters, additional zeros
+												shall be inserted on the left hand side</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e1456">
+										<td xml:id="d1e1458">
+											<p xml:id="d1e1460">(3) External marking</p>
+										</td>
+										<td xml:id="d1e1463">
+											<p xml:id="d1e1465">14</p>
+										</td>
+										<td xml:id="d1e1468">
+											<p xml:id="d1e1470">L</p>
+										</td>
+										<td xml:id="d1e1473">
+											<p xml:id="d1e1475">Under Implementing Regulation (EU) No 404/2011</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e1479">
+										<td xml:id="d1e1481">
+											<p xml:id="d1e1483">(4) Length of management period</p>
+										</td>
+										<td xml:id="d1e1486">
+											<p xml:id="d1e1488">2</p>
+										</td>
+										<td xml:id="d1e1491">
+											<p xml:id="d1e1493">L</p>
+										</td>
+										<td xml:id="d1e1496">
+											<p xml:id="d1e1498">Length of the management period measured in months</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e1503">
+										<td xml:id="d1e1505">
+											<p xml:id="d1e1507">(5) Gear notified</p>
+										</td>
+										<td xml:id="d1e1510">
+											<p xml:id="d1e1512">2</p>
+										</td>
+										<td xml:id="d1e1515">
+											<p xml:id="d1e1517">L</p>
+										</td>
+										<td xml:id="d1e1520">
+											<p xml:id="d1e1522">One of the following gear types:</p>
+											<p xml:id="d1e1524">BT = beam trawls ≥ 80 mm</p>
+											<p xml:id="d1e1526">GN = gillnet &lt; 220 mm</p>
+											<p xml:id="d1e1528">TN = trammel net or entangling net &lt; 220 mm</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e1532">
+										<td xml:id="d1e1534">
+											<p xml:id="d1e1536">(6) Special condition applying to notified gear(s)</p>
+										</td>
+										<td xml:id="d1e1539">
+											<p xml:id="d1e1541">3</p>
+										</td>
+										<td xml:id="d1e1544">
+											<p xml:id="d1e1546">L</p>
+										</td>
+										<td xml:id="d1e1549">
+											<p xml:id="d1e1551">Number of days for which the vessel is eligible under Annex II for the
+												choice of gear and length of management period notified</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e1555">
+										<td xml:id="d1e1557">
+											<p xml:id="d1e1559">(7) Days spent with notified gear(s)</p>
+										</td>
+										<td xml:id="d1e1562">
+											<p xml:id="d1e1564">3</p>
+										</td>
+										<td xml:id="d1e1567">
+											<p xml:id="d1e1569">L</p>
+										</td>
+										<td xml:id="d1e1572">
+											<p xml:id="d1e1574">Number of days the vessel actually spent present within the area and using
+												a gear corresponding to gear notified during the notified management
+												period</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e1578">
+										<td xml:id="d1e1580">
+											<p xml:id="d1e1582">(8) Transfers of days</p>
+										</td>
+										<td xml:id="d1e1585">
+											<p xml:id="d1e1587">4</p>
+										</td>
+										<td xml:id="d1e1590">
+											<p xml:id="d1e1592">L</p>
+										</td>
+										<td xml:id="d1e1595">
+											<p xml:id="d1e1597">For days transferred indicate ‘– number of days transferred’ and for days
+												received indicate ‘+ number of days transferred’</p>
+										</td>
+									</tr>
+								</table>
+							</content>
+						</hcontainer>
+					</hcontainer>
+				</level>
+			</chapter>
+		</mainBody>
+	</doc>
+</akomaNtoso>

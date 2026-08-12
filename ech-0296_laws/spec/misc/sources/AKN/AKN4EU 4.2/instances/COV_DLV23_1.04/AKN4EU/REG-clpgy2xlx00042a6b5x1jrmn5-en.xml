@@ -1,0 +1,943 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+   <bill name="REG">
+      <meta>
+         <identification source="~PUBL">
+            <FRBRWork>
+               <FRBRthis value=""/>
+               <FRBRuri value=""/>
+               <FRBRdate date="2999-01-01" name=""/>
+               <FRBRauthor href=""/>
+               <preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+                  <akn4eu:fileCUID value="clpgy2xlx00042a6b5x1jrmn5"/>
+               </preservation>
+               <FRBRcountry value="EU"/>
+               <FRBRnumber value="JOIN(2022) 19"/>
+               <FRBRprescriptive value="true"/>
+            </FRBRWork>
+            <FRBRExpression>
+               <FRBRthis value=""/>
+               <FRBRuri value=""/>
+               <FRBRdate date="2999-01-01" name=""/>
+               <FRBRauthor href=""/>
+               <FRBRlanguage language="en"/>
+            </FRBRExpression>
+            <FRBRManifestation>
+               <FRBRthis value=""/>
+               <FRBRuri value=""/>
+               <FRBRdate date="2999-01-01" name=""/>
+               <FRBRauthor href=""/>
+               <preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+                  <akn4eu:akn4euVersion value="4.2.0.0"/>
+                  <akn4eu:akn4euDocumentation href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/akn4eu"/>
+               </preservation>
+            </FRBRManifestation>
+         </identification>
+         <references source="~PUBL">
+            <TLCReference name="language" href="http://publications.europa.eu/resource/authority/language/ENG" showAs="en"/>
+            <TLCReference xml:id="legalBasis" name="contentSubject" href="http://eurovoc.europa.eu/5456" showAs="Legal basis"/>
+            <TLCOrganization xml:id="PUBL" href="http://publications.europa.eu/resource/authority/corporate-body/PUBL" showAs="Publications Office"/>
+            <TLCOrganization xml:id="CONSIL" href="http://publications.europa.eu/resource/authority/corporate-body/CONSIL" showAs="Council of the European Union"/>
+            <TLCRole xml:id="PRESID" href="http://publications.europa.eu/resource/authority/role/PRESID" showAs="President"/>
+            <TLCLocation xml:id="BEL_BRU" href="http://publications.europa.eu/resource/authority/place/BEL_BRU" showAs="Brussels"/>
+            <TLCReference xml:id="REG" name="docType" href="http://publications.europa.eu/resource/authority/resource-type/REG" showAs="Regulation"/>
+            <TLCConcept xml:id="INP" href="http://publications.europa.eu/resource/authority/subdivision/INP" showAs="introductory part"/>
+            <TLCReference xml:id="proc_2022_0055_NLE" name="procedureReference" href="http://eur-lex.europa.eu/procedure/EN/2022_55" showAs="2022/0055 (NLE)" shortForm="2022/55/NLE"/>
+         </references>
+      </meta>
+      <preface xml:id="d1e87">
+         <container xml:id="d1e89" name="procedureIdentifier">
+            <p xml:id="d1e91"><docketNumber xml:id="d1e92" refersTo="~proc_2022_0055_NLE">2022/0055 (NLE)</docketNumber></p>
+         </container>
+         <longTitle xml:id="d1e96">
+            <p xml:id="d1e98"><docStage xml:id="d1e99">Joint Proposal for a </docStage>
+               <docType xml:id="d1e102" refersTo="~REG">COUNCIL REGULATION</docType> 
+               <docPurpose xml:id="d1e105">concerning restrictive measures in response
+                  to the recognition of the non-government controlled areas of Donetsk and Luhansk
+                  oblasts of Ukraine and the ordering of Russian armed forces into the area</docPurpose></p>
+         </longTitle>
+      </preface>
+      <preamble xml:id="d1e110">
+         <formula xml:id="d1e112" name="actingEntity">
+            <p xml:id="d1e114">THE COUNCIL OF THE EUROPEAN UNION,</p>
+         </formula>
+         <citations xml:id="d1e118">
+            <citation xml:id="d1e120" refersTo="~legalBasis">
+               <p xml:id="d1e122">Having regard to the Treaty on the Functioning of the European Union, and in
+                  particular Article 215 thereof,</p>
+            </citation>
+            <citation xml:id="d1e126">
+               <p xml:id="d1e128">Having regard to Decision (CFSP) 2022/XXX of XX February 2022 concerning
+                  restrictive measures in response to the recognition of the non-government
+                  controlled areas of Donetsk and Luhansk oblasts of Ukraine and the ordering of
+                  Russian armed forces into the area<authorialNote xml:id="d1e130" marker="1" placement="bottom">
+                     <p xml:id="d1e132">OJ L , , p. .</p>
+                  </authorialNote>,</p>
+            </citation>
+            <citation xml:id="d1e138">
+               <p xml:id="d1e140">Having regard to the joint proposal of the High Representative of the Union for
+                  Foreign Affairs and Security Policy and of the European Commission,</p>
+            </citation>
+         </citations>
+         <recitals xml:id="d1e145">
+            <intro xml:id="d1e147">
+               <p xml:id="d1e149">Whereas:</p>
+            </intro>
+            <recital xml:id="d1e153">
+               <num xml:id="d1e155">(1)</num>
+               <p xml:id="d1e158"> On XX February 2022, in response to the signing by the President of the Russian
+                  Federation of a decree recognising the “independence and sovereignty” of the
+                  non-government controlled areas of Donetsk and Luhansk oblasts of Ukraine and
+                  ordering the Russian armed forces into the area, the Council adopted Decision
+                  (CFSP) 2022/XXX [new title]</p>
+            </recital>
+            <recital xml:id="d1e162">
+               <num xml:id="d1e164">(2)</num>
+               <p xml:id="d1e167"> Decision (CFSP) 2022/XXX imposes restrictions on goods originating in the
+                  specified territories and on the provision, directly or indirectly, of financing
+                  or financial assistance, as well as insurance and reinsurance, related to the
+                  import of such goods, with the exception of goods having been granted a
+                  certificate of origin by the Government of Ukraine.</p>
+            </recital>
+            <recital xml:id="d1e171">
+               <num xml:id="d1e173">(3)</num>
+               <p xml:id="d1e176"> In addition, Decision (CFSP) 2022/XXX restricts trade in goods and technology for
+                  use in certain sectors in the specified territories, and prohibits services in the
+                  sectors of transport, telecommunications, energy or the prospection, exploration
+                  and production of oil, gas and mineral resources, as well as services related to
+                  tourism activities in the specified territories.</p>
+            </recital>
+            <recital xml:id="d1e180">
+               <num xml:id="d1e182">(4)</num>
+               <p xml:id="d1e185"> In order to ensure uniform conditions for the implementation of this Regulation,
+                  implementing powers should be conferred on the Commission.</p>
+            </recital>
+            <recital xml:id="d1e190">
+               <num xml:id="d1e192">(5)</num>
+               <p xml:id="d1e195"> Member States and the Commission should inform each other of the measures taken
+                  pursuant to this Regulation and of other relevant information at their disposal in
+                  connection with this Regulation.</p>
+            </recital>
+            <recital xml:id="d1e199">
+               <num xml:id="d1e201">(6)</num>
+               <p xml:id="d1e204"> Member States should lay down rules on penalties applicable to infringements of
+                  the provisions of this Regulation and make sure that they are implemented. Those
+                  penalties should be effective, proportionate and dissuasive.</p>
+            </recital>
+            <recital xml:id="d1e208">
+               <num xml:id="d1e210">(7)</num>
+               <p xml:id="d1e213"> These measures fall within the scope of the Treaty and, therefore, notably with a
+                  view to ensuring their uniform application in all Member States, regulatory action
+                  at the level of the Union is necessary in order to implement them.</p>
+            </recital>
+            <recital xml:id="d1e217">
+               <num xml:id="d1e219">(8)</num>
+               <p xml:id="d1e222"> In order to ensure that the measures provided for in this Regulation are
+                  effective, it should enter into force on the day following that of its
+                  publication,</p>
+            </recital>
+         </recitals>
+         <formula xml:id="d1e227" name="enactingFormula">
+            <p xml:id="d1e229">HAS ADOPTED THIS DIRECTIVE:</p>
+         </formula>
+      </preamble>
+      <body xml:id="d1e234">
+         <article xml:id="d1e236">
+            <num xml:id="d1e238">Article 1</num>
+            <paragraph xml:id="d1e241">
+               <list xml:id="d1e243">
+                  <subparagraph xml:id="d1e245" refersTo="~INP">
+                     <content xml:id="d1e247">
+                        <p xml:id="d1e249">For the purposes of this Regulation, the following definitions apply:</p>
+                     </content>
+                  </subparagraph>
+                  <point xml:id="d1e254">
+                     <num xml:id="d1e256">(a)</num>
+                     <list xml:id="d1e259">
+                        <subparagraph xml:id="d1e261" refersTo="~INP">
+                           <content xml:id="d1e263">
+                              <p xml:id="d1e265">‘brokering services’ means:</p>
+                           </content>
+                        </subparagraph>
+                        <point xml:id="d1e270">
+                           <num xml:id="d1e272">(i)</num>
+                           <content xml:id="d1e275">
+                              <p xml:id="d1e277">the negotiation or arrangement of transactions for the purchase,
+                                 sale or supply of goods and technology or of financial and
+                                 technical services, including from a third country to any other
+                                 third country; or </p>
+                           </content>
+                        </point>
+                        <point xml:id="d1e282">
+                           <num xml:id="d1e284">(ii)</num>
+                           <content xml:id="d1e287">
+                              <p xml:id="d1e289">the selling or buying of goods and technology or of financial and
+                                 technical services, including where they are located in third
+                                 countries for their transfer to another third country; </p>
+                           </content>
+                        </point>
+                     </list>
+                  </point>
+                  <point xml:id="d1e296">
+                     <num xml:id="d1e298">(b)</num>
+                     <list xml:id="d1e301">
+                        <subparagraph xml:id="d1e303" refersTo="~INP">
+                           <content xml:id="d1e305">
+                              <p xml:id="d1e307">‘claim’ means any claim, whether asserted by legal proceedings or
+                                 not, made before or after [date of entry into force], under or in
+                                 connection with a contract or transaction, and includes in
+                                 particular:</p>
+                           </content>
+                        </subparagraph>
+                        <point xml:id="d1e312">
+                           <num xml:id="d1e314">(i)</num>
+                           <content xml:id="d1e317">
+                              <p xml:id="d1e319">a claim for performance of any obligation arising under or in
+                                 connection with a contract or transaction; </p>
+                           </content>
+                        </point>
+                        <point xml:id="d1e324">
+                           <num xml:id="d1e326">(ii)</num>
+                           <content xml:id="d1e329">
+                              <p xml:id="d1e331">a claim for extension or payment of a bond, financial guarantee or
+                                 indemnity of whatever form; </p>
+                           </content>
+                        </point>
+                        <point xml:id="d1e336">
+                           <num xml:id="d1e338">(iii)</num>
+                           <content xml:id="d1e341">
+                              <p xml:id="d1e343">a claim for compensation in respect of a contract or transaction;
+                              </p>
+                           </content>
+                        </point>
+                        <point xml:id="d1e348">
+                           <num xml:id="d1e350">(iv)</num>
+                           <content xml:id="d1e353">
+                              <p xml:id="d1e355">a counterclaim; </p>
+                           </content>
+                        </point>
+                        <point xml:id="d1e361">
+                           <num xml:id="d1e363">(v)</num>
+                           <content xml:id="d1e366">
+                              <p xml:id="d1e368">a claim for the recognition or enforcement, including by the
+                                 procedure of exequatur, of a judgment, an arbitration award or an
+                                 equivalent decision, wherever made or given; </p>
+                           </content>
+                        </point>
+                     </list>
+                  </point>
+                  <point xml:id="d1e375">
+                     <num xml:id="d1e377">(c)</num>
+                     <content xml:id="d1e380">
+                        <p xml:id="d1e382"> ‘contract or transaction’ means any transaction of whatever form,
+                           whatever the applicable law, and whether comprising one or more contracts
+                           or similar obligations made between the same or different parties; for
+                           this purpose ‘contract’ includes a bond, guarantee or indemnity,
+                           particularly a financial guarantee or financial indemnity, and credit,
+                           whether legally independent or not, as well as any related provision
+                           arising under, or in connection with, the transaction; </p>
+                     </content>
+                  </point>
+                  <point xml:id="d1e387">
+                     <num xml:id="d1e389">(d)</num>
+                     <content xml:id="d1e392">
+                        <p xml:id="d1e394"> ‘specified territories’ means the non-government controlled areas of the
+                           Donetsk and Luhansk oblasts of Ukraine subject to aggression; </p>
+                     </content>
+                  </point>
+                  <point xml:id="d1e400">
+                     <num xml:id="d1e402">(e)</num>
+                     <content xml:id="d1e405">
+                        <p xml:id="d1e407"> ‘entity in the specified territories’ means any entity having its
+                           registered office, central administration or principal place of business
+                           in the specified territories, its subsidiaries or affiliates under its
+                           control in the specified territories, as well as branches and other
+                           entities operating in the specified territories; </p>
+                     </content>
+                  </point>
+                  <point xml:id="d1e412">
+                     <num xml:id="d1e414">(f)</num>
+                     <content xml:id="d1e417">
+                        <p xml:id="d1e419"> ‘goods originating in the specified territories’ means goods which are
+                           wholly obtained in the specified territories or which have undergone
+                           their last substantial transformation there, in accordance, mutatis
+                           mutandis, with Article 60 of Regulation (EU) No 952/2013 of the European
+                           Parliament and of the Council of 9 October 2013 laying down the Union
+                           Customs Code<authorialNote xml:id="d1e421" marker="2" placement="bottom">
+                              <p xml:id="d1e423">OJ L</p>
+                           </authorialNote>; </p>
+                     </content>
+                  </point>
+                  <point xml:id="d1e430">
+                     <num xml:id="d1e432">(g)</num>
+                     <list xml:id="d1e435">
+                        <subparagraph xml:id="d1e437" refersTo="~INP">
+                           <content xml:id="d1e439">
+                              <p xml:id="d1e441">‘investment services’ means the following services and
+                                 activities:</p>
+                           </content>
+                        </subparagraph>
+                        <point xml:id="d1e446">
+                           <num xml:id="d1e448">(i)</num>
+                           <content xml:id="d1e451">
+                              <p xml:id="d1e453">reception and transmission of orders in relation to one or more
+                                 financial instruments, </p>
+                           </content>
+                        </point>
+                        <point xml:id="d1e458">
+                           <num xml:id="d1e460">(ii)</num>
+                           <content xml:id="d1e463">
+                              <p xml:id="d1e465">execution of orders on behalf of clients, </p>
+                           </content>
+                        </point>
+                        <point xml:id="d1e470">
+                           <num xml:id="d1e472">(iii)</num>
+                           <content xml:id="d1e475">
+                              <p xml:id="d1e477">dealing on own account, </p>
+                           </content>
+                        </point>
+                        <point xml:id="d1e482">
+                           <num xml:id="d1e484">(iv)</num>
+                           <content xml:id="d1e487">
+                              <p xml:id="d1e489">portfolio management, </p>
+                           </content>
+                        </point>
+                        <point xml:id="d1e495">
+                           <num xml:id="d1e497">(v)</num>
+                           <content xml:id="d1e500">
+                              <p xml:id="d1e502">investment advice, </p>
+                           </content>
+                        </point>
+                        <point xml:id="d1e507">
+                           <num xml:id="d1e509">(vi)</num>
+                           <content xml:id="d1e512">
+                              <p xml:id="d1e514">underwriting of financial instruments and/or placing of financial
+                                 instruments on a firm commitment basis, </p>
+                           </content>
+                        </point>
+                        <point xml:id="d1e519">
+                           <num xml:id="d1e521">(vii)</num>
+                           <content xml:id="d1e524">
+                              <p xml:id="d1e526">placing of financial instruments without a firm commitment basis,
+                              </p>
+                           </content>
+                        </point>
+                     </list>
+                  </point>
+                  <point xml:id="d1e533">
+                     <num xml:id="d1e535">(h)</num>
+                     <content xml:id="d1e538">
+                        <p xml:id="d1e540"> ‘technical assistance’ means any technical support related to repairs,
+                           development, manufacture, assembly, testing, maintenance, or any other
+                           technical service, and may take forms such as instruction, advice,
+                           training, transmission of working knowledge or skills or consulting
+                           services; technical assistance includes verbal forms of assistance; </p>
+                     </content>
+                  </point>
+                  <point xml:id="d1e545">
+                     <num xml:id="d1e547">(i)</num>
+                     <content xml:id="d1e550">
+                        <p xml:id="d1e552"> ‘territory of the Union’ means the territories of the Member States to
+                           which the Treaty is applicable, under the conditions laid down in the
+                           Treaty, including their airspace; </p>
+                     </content>
+                  </point>
+                  <point xml:id="d1e557">
+                     <num xml:id="d1e559">(j)</num>
+                     <content xml:id="d1e562">
+                        <p xml:id="d1e564"> ‘competent authorities’ means the competent authorities of the Member
+                           States as identified on the websites listed in Annex I; </p>
+                     </content>
+                  </point>
+               </list>
+            </paragraph>
+
+         </article>
+         <article xml:id="d1e572">
+            <num xml:id="d1e574">Article 2</num>
+            <paragraph xml:id="d1e577">
+               <num xml:id="d1e579">1.</num>
+               <list xml:id="d1e582">
+                  <subparagraph xml:id="d1e584" refersTo="~INP">
+                     <content xml:id="d1e586">
+                        <p xml:id="d1e588">It shall be prohibited:</p>
+                     </content>
+                  </subparagraph>
+                  <point xml:id="d1e593">
+                     <num xml:id="d1e595">(a)</num>
+                     <content xml:id="d1e598">
+                        <p xml:id="d1e600">to import into the European Union goods originating in the specified
+                           territories; </p>
+                     </content>
+                  </point>
+                  <point xml:id="d1e605">
+                     <num xml:id="d1e607">(b)</num>
+                     <content xml:id="d1e610">
+                        <p xml:id="d1e612">to provide, directly or indirectly, financing or financial assistance as
+                           well as insurance and reinsurance related to the import of the goods
+                           referred to in point (a). </p>
+                     </content>
+                  </point>
+               </list>
+            </paragraph>
+            <paragraph xml:id="d1e619">
+               <num xml:id="d1e621">2.</num>
+               <list xml:id="d1e624">
+                  <subparagraph xml:id="d1e626" refersTo="~INP">
+                     <content xml:id="d1e628">
+                        <p xml:id="d1e630">The prohibitions in paragraph 1 shall not apply in respect of:</p>
+                     </content>
+                  </subparagraph>
+                  <point xml:id="d1e635">
+                     <num xml:id="d1e637">(a)</num>
+                     <content xml:id="d1e640">
+                        <p xml:id="d1e642">the execution until [three months after entry into force] of trade
+                           contracts concluded before [entry into force], or of ancillary contracts
+                           necessary for the execution of such contracts, provided that the natural
+                           or legal persons, entity or body seeking to perform the contract have
+                           notified, at least 10 working days in advance, the activity or
+                           transaction to the competent authority of the Member State in which they
+                           are established. </p>
+                     </content>
+                  </point>
+                  <point xml:id="d1e647">
+                     <num xml:id="d1e649">(b)</num>
+                     <content xml:id="d1e652">
+                        <p xml:id="d1e654">goods originating in the specified territories which have been made
+                           available to the Ukrainian authorities for examination, for which
+                           compliance with the conditions conferring entitlement to preferential
+                           origin has been verified and for which a certificate of origin has been
+                           issued in accordance with the EU-Ukraine Association Agreement. </p>
+                     </content>
+                  </point>
+               </list>
+            </paragraph>
+         </article>
+         <article xml:id="d1e662">
+            <num xml:id="d1e664">Article 3</num>
+            <paragraph xml:id="d1e667">
+               <num xml:id="d1e669">1.</num>
+               <list xml:id="d1e672">
+                  <subparagraph xml:id="d1e674" refersTo="~INP">
+                     <content xml:id="d1e676">
+                        <p xml:id="d1e678">It shall be prohibited to:</p>
+                     </content>
+                  </subparagraph>
+                  <point xml:id="d1e683">
+                     <num xml:id="d1e685">(c)</num>
+                     <content xml:id="d1e688">
+                        <p xml:id="d1e690">acquire any new or extend any existing participation in ownership of real
+                           estate located in the specified territories; </p>
+                     </content>
+                  </point>
+                  <point xml:id="d1e695">
+                     <num xml:id="d1e697">(d)</num>
+                     <content xml:id="d1e700">
+                        <p xml:id="d1e702">acquire any new or extend any existing participation in ownership or
+                           control of an entity in the specified territories, including the
+                           acquisition in full of such entity or the acquisition of shares, and
+                           other securities of a participating nature of such entity; </p>
+                     </content>
+                  </point>
+                  <point xml:id="d1e707">
+                     <num xml:id="d1e709">(e)</num>
+                     <content xml:id="d1e712">
+                        <p xml:id="d1e714">grant or be part of any arrangement to grant any loan or credit or
+                           otherwise provide financing, including equity capital, to an entity in
+                           the specified territories, or for the documented purpose of financing
+                           such entity; </p>
+                     </content>
+                  </point>
+                  <point xml:id="d1e719">
+                     <num xml:id="d1e721">(f)</num>
+                     <content xml:id="d1e724">
+                        <p xml:id="d1e726">create any joint venture in the specified territories or with an entity
+                           in the specified territories; </p>
+                     </content>
+                  </point>
+                  <point xml:id="d1e732">
+                     <num xml:id="d1e734">(g)</num>
+                     <content xml:id="d1e737">
+                        <p xml:id="d1e739">provide investment services directly related to the activities referred
+                           to in points (a) to (d). </p>
+                     </content>
+                  </point>
+               </list>
+            </paragraph>
+            <paragraph xml:id="d1e746">
+               <num xml:id="d1e748">2.</num>
+               <content xml:id="d1e751">
+                  <p xml:id="d1e753"> The prohibitions and restrictions in this Article do not apply to the conduct
+                     of legitimate business with entities outside the specified territories where
+                     the related investments are not destined to entities in the specified
+                     territories. </p>
+               </content>
+            </paragraph>
+            <paragraph xml:id="d1e758">
+               <num xml:id="d1e760">3.</num>
+               <content xml:id="d1e763">
+                  <p xml:id="d1e765"> The prohibitions in paragraph 1 shall be without prejudice to the execution of
+                     an obligation arising from a contract concluded before [entry into force], or
+                     ancillary contracts necessary for the execution of such a contract, provided
+                     that the competent authority has been informed at least five working days in
+                     advance. </p>
+               </content>
+            </paragraph>
+         </article>
+         <article xml:id="d1e771">
+            <num xml:id="d1e773">Article 4</num>
+            <paragraph xml:id="d1e776">
+               <num xml:id="d1e778">1.</num>
+               <list xml:id="d1e781">
+                  <subparagraph xml:id="d1e783" refersTo="~INP">
+                     <content xml:id="d1e785">
+                        <p xml:id="d1e787">It shall be prohibited to sell, supply, transfer, or export goods and
+                           technology as listed in Annex II:</p>
+                     </content>
+                  </subparagraph>
+                  <point xml:id="d1e792">
+                     <num xml:id="d1e794">(a)</num>
+                     <content xml:id="d1e797">
+                        <p xml:id="d1e799">to any natural or legal person, entity or body in the specified
+                           territories, or </p>
+                     </content>
+                  </point>
+                  <point xml:id="d1e804">
+                     <num xml:id="d1e806">(b)</num>
+                     <content xml:id="d1e809">
+                        <p xml:id="d1e811">for use in the specified territories. </p>
+                     </content>
+                  </point>
+               </list>
+               <list xml:id="d1e817">
+                  <subparagraph xml:id="d1e819" refersTo="~INP">
+                     <content xml:id="d1e821">
+                        <p xml:id="d1e823">Annex II shall include certain goods and technologies suited for use in
+                           the following key sectors:</p>
+                     </content>
+                  </subparagraph>
+                  <point xml:id="d1e828">
+                     <num xml:id="d1e830">(i)</num>
+                     <content xml:id="d1e833">
+                        <p xml:id="d1e835">transport; </p>
+                     </content>
+                  </point>
+                  <point xml:id="d1e840">
+                     <num xml:id="d1e842">(ii)</num>
+                     <content xml:id="d1e845">
+                        <p xml:id="d1e847">telecommunications; </p>
+                     </content>
+                  </point>
+                  <point xml:id="d1e852">
+                     <num xml:id="d1e854">(iii)</num>
+                     <content xml:id="d1e857">
+                        <p xml:id="d1e859">energy; </p>
+                     </content>
+                  </point>
+                  <point xml:id="d1e864">
+                     <num xml:id="d1e866">(iv)</num>
+                     <content xml:id="d1e869">
+                        <p xml:id="d1e871">the prospection, exploration and production of oil, gas and mineral
+                           resources. </p>
+                     </content>
+                  </point>
+               </list>
+            </paragraph>
+            <paragraph xml:id="d1e878">
+               <num xml:id="d1e880">2.</num>
+               <list xml:id="d1e883">
+                  <subparagraph xml:id="d1e885" refersTo="~INP">
+                     <content xml:id="d1e887">
+                        <p xml:id="d1e889">It shall be prohibited to:</p>
+                     </content>
+                  </subparagraph>
+                  <point xml:id="d1e894">
+                     <num xml:id="d1e896">(a)</num>
+                     <content xml:id="d1e899">
+                        <p xml:id="d1e901">provide, directly or indirectly, technical assistance or brokering
+                           services related to the goods and technology as listed in Annex II, or
+                           related to the provision, manufacture, maintenance and use of such items
+                           to any natural or legal person, entity or body in the specified
+                           territories or for use in the specified territories; </p>
+                     </content>
+                  </point>
+                  <point xml:id="d1e906">
+                     <num xml:id="d1e908">(b)</num>
+                     <content xml:id="d1e911">
+                        <p xml:id="d1e913">provide, directly or indirectly, financing or financial assistance
+                           related to the goods and technology as listed in Annex II to any natural
+                           or legal person, entity or body in the specified territories or for use
+                           in the specified territories. </p>
+                     </content>
+                  </point>
+               </list>
+            </paragraph>
+            <paragraph xml:id="d1e920">
+               <num xml:id="d1e922">3.</num>
+               <content xml:id="d1e925">
+                  <p xml:id="d1e927"> The prohibitions in paragraphs 1 and 2 shall be without prejudice to the
+                     execution until [three months after entry into force] of an obligation arising
+                     from a contract concluded before [entry into force], or by ancillary contracts
+                     necessary for the execution of such contracts, provided that the competent
+                     authority has been informed at least five working days in advance. </p>
+               </content>
+            </paragraph>
+         </article>
+         <article xml:id="d1e933">
+            <num xml:id="d1e935">Article 5</num>
+            <paragraph xml:id="d1e938">
+               <num xml:id="d1e940">1.</num>
+               <content xml:id="d1e943">
+                  <p xml:id="d1e945"> It shall be prohibited to provide technical assistance, or brokering,
+                     construction or engineering services directly relating to infrastructure in the
+                     specified territories in the sectors referred to in Article 4(1) as defined on
+                     the basis of Annex II, independently of the origin of the goods and technology.
+                  </p>
+               </content>
+            </paragraph>
+            <paragraph xml:id="d1e950">
+               <num xml:id="d1e952">2.</num>
+               <content xml:id="d1e955">
+                  <p xml:id="d1e957"> The prohibition in paragraph 1 shall be without prejudice to the execution
+                     until [three months after entry into force] of an obligation arising from a
+                     contract concluded before [entry into force], or by ancillary contracts
+                     necessary for the execution of such a contract. </p>
+               </content>
+            </paragraph>
+            <paragraph xml:id="d1e962">
+               <num xml:id="d1e964">3.</num>
+               <content xml:id="d1e967">
+                  <p xml:id="d1e969"> It shall be prohibited to participate, knowingly or intentionally, in
+                     activities the object or effect of which is to circumvent the prohibitions
+                     referred to in paragraphs 1 and 2. </p>
+               </content>
+            </paragraph>
+         </article>
+         <article xml:id="d1e976">
+            <num xml:id="d1e978">Article 6</num>
+            <paragraph xml:id="d1e981">
+               <num xml:id="d1e983">1.</num>
+               <content xml:id="d1e986">
+                  <p xml:id="d1e988"> It shall be prohibited to provide services directly related to tourism
+                     activities in the specified territories. </p>
+               </content>
+            </paragraph>
+            <paragraph xml:id="d1e993">
+               <num xml:id="d1e995">2.</num>
+               <content xml:id="d1e998">
+                  <p xml:id="d1e1000"> The prohibition in paragraph 1 shall be without prejudice to the execution
+                     until [three months after entry into force] of an obligation arising from a
+                     contract or an ancillary contract concluded before [entry into force], or
+                     ancillary contracts necessary for the execution of such contracts, provided
+                     that the competent authority has been informed at least five working days in
+                     advance. </p>
+               </content>
+            </paragraph>
+         </article>
+         <article xml:id="d1e1006">
+            <num xml:id="d1e1008">Article 7</num>
+            <paragraph xml:id="d1e1011">
+               <num xml:id="d1e1013">1.</num>
+               <list xml:id="d1e1016">
+                  <subparagraph xml:id="d1e1018" refersTo="~INP">
+                     <content xml:id="d1e1020">
+                        <p xml:id="d1e1022">The competent authorities may grant, under such terms and conditions as
+                           they deem appropriate, an authorisation in relation to the activities
+                           referred to in Article 3(1) and Article 4(2), and to the goods and
+                           technology referred to in Article 4(1) provided that they are</p>
+                     </content>
+                  </subparagraph>
+                  <point xml:id="d1e1027">
+                     <num xml:id="d1e1029">(a)</num>
+                     <content xml:id="d1e1032">
+                        <p xml:id="d1e1034">necessary for official purposes of consular missions or international
+                           organisations enjoying immunities in accordance with international law
+                           located in the specified territories; </p>
+                     </content>
+                  </point>
+                  <point xml:id="d1e1039">
+                     <num xml:id="d1e1041">(b)</num>
+                     <content xml:id="d1e1044">
+                        <p xml:id="d1e1046">related to projects exclusively in support of hospitals, or other public
+                           health institutions providing medical services or civilian education
+                           establishments located in the specified territories; or </p>
+                     </content>
+                  </point>
+                  <point xml:id="d1e1051">
+                     <num xml:id="d1e1053">(c)</num>
+                     <content xml:id="d1e1056">
+                        <p xml:id="d1e1058">appliances or equipment for medical use. </p>
+                     </content>
+                  </point>
+               </list>
+            </paragraph>
+            <paragraph xml:id="d1e1065">
+               <num xml:id="d1e1067">2.</num>
+               <content xml:id="d1e1070">
+                  <p xml:id="d1e1072"> The competent authorities may also grant, under such terms and conditions as
+                     they deem appropriate, an authorisation in relation to the activities referred
+                     to in Article 3(1), provided that the transaction is for the purpose of the
+                     maintenance in order to ensure safety of existing infrastructure. </p>
+               </content>
+            </paragraph>
+            <paragraph xml:id="d1e1077">
+               <num xml:id="d1e1079">3.</num>
+               <subparagraph xml:id="d1e1082">
+                  <content xml:id="d1e1084">
+                     <p xml:id="d1e1086">The competent authorities may also grant, under such terms and conditions as
+                        they deem appropriate, an authorisation in relation to the activities
+                        referred to in Article 3(1) and in Article 4(2), and to the goods and
+                        technology referred to in Article 4(1) and to the services referred to in
+                        Article 5, where the sale, supply, transfer or export of the items or the
+                        carrying out of those activities is necessary for the urgent prevention or
+                        mitigation of an event likely to have a serious and significant impact on
+                        human health and safety, including the safety of existing infrastructure, or
+                        the environment. In duly justified cases of emergency, the sale, supply,
+                        transfer or export may proceed without prior authorisation, provided that
+                        the exporter notifies the competent authority within five working days after
+                        the sale, supply, transfer or export has taken place, providing detail about
+                        the relevant justification for the sale, supply, transfer or export without
+                        prior authorisation.</p>
+                  </content>
+               </subparagraph>
+               <subparagraph xml:id="d1e1091">
+                  <content xml:id="d1e1093">
+                     <p xml:id="d1e1095">The Commission and the Members States shall inform each other of the
+                        measures taken under this paragraph and share any other relevant information
+                        at their disposal.</p>
+                  </content>
+               </subparagraph>
+            </paragraph>
+         </article>
+         <article xml:id="d1e1102">
+            <num xml:id="d1e1104">Article 8</num>
+            <paragraph xml:id="d1e1107">
+               <content xml:id="d1e1109">
+                  <p xml:id="d1e1111">It shall be prohibited to participate, knowingly and intentionally, including
+                     indirectly, in activities the object or effect of which is to circumvent the
+                     prohibitions laid down in this Regulation.</p>
+               </content>
+            </paragraph>
+         </article>
+         <article xml:id="d1e1117">
+            <num xml:id="d1e1119">Article 9</num>
+            <paragraph xml:id="d1e1122">
+               <content xml:id="d1e1124">
+                  <p xml:id="d1e1126">Actions by natural or legal persons, entities or bodies shall not give rise to
+                     any liability of any kind on their part if they did not know, and had no
+                     reasonable cause to suspect, that their actions would infringe the measures set
+                     out in this Regulation.</p>
+               </content>
+            </paragraph>
+         </article>
+         <article xml:id="d1e1132">
+            <num xml:id="d1e1134">Article 10</num>
+            <paragraph xml:id="d1e1137">
+               <num xml:id="d1e1139">1.</num>
+               <list xml:id="d1e1142">
+                  <subparagraph xml:id="d1e1144" refersTo="~INP">
+                     <content xml:id="d1e1146">
+                        <p xml:id="d1e1148">No claims in connection with any contract or transaction the performance
+                           of which has been affected, directly or indirectly, in whole or in part,
+                           by the measures imposed under this Regulation, including claims for
+                           indemnity or any other claim of this type, such as a claim for
+                           compensation or a claim under a guarantee, particularly a claim for
+                           extension or payment of a bond, guarantee or indemnity, particularly a
+                           financial guarantee or financial indemnity, of whatever form, shall be
+                           satisfied, if they are made by:</p>
+                     </content>
+                  </subparagraph>
+                  <point xml:id="d1e1153">
+                     <num xml:id="d1e1155">(a)</num>
+                     <content xml:id="d1e1158">
+                        <p xml:id="d1e1160">designated natural or legal persons, entities or bodies listed in Annex I
+                           to Council Regulation (EU) No 269/2014; </p>
+                     </content>
+                  </point>
+                  <point xml:id="d1e1165">
+                     <num xml:id="d1e1167">(b)</num>
+                     <content xml:id="d1e1170">
+                        <p xml:id="d1e1172">any natural or legal person, entity or body acting through or on behalf
+                           of one of the persons, entities or bodies referred to in point (a); </p>
+                     </content>
+                  </point>
+                  <point xml:id="d1e1177">
+                     <num xml:id="d1e1179">(c)</num>
+                     <content xml:id="d1e1182">
+                        <p xml:id="d1e1184">any natural or legal person, entity or body which has been found by an
+                           arbitral, judicial or administrative decision to have infringed the
+                           prohibitions set out in this Regulation; </p>
+                     </content>
+                  </point>
+                  <point xml:id="d1e1189">
+                     <num xml:id="d1e1191">(d)</num>
+                     <content xml:id="d1e1194">
+                        <p xml:id="d1e1196">any natural or legal person, entity or body, if the claim relates to
+                           goods the import of which is prohibited under Article 2(1). </p>
+                     </content>
+                  </point>
+               </list>
+            </paragraph>
+            <paragraph xml:id="d1e1203">
+               <num xml:id="d1e1205">2.</num>
+               <content xml:id="d1e1208">
+                  <p xml:id="d1e1210"> In any proceedings for the enforcement of a claim, the onus of proving that
+                     satisfying the claim is not prohibited by paragraph 1 shall be on the natural
+                     or legal person, entity or body seeking the enforcement of that claim. </p>
+               </content>
+            </paragraph>
+            <paragraph xml:id="d1e1215">
+               <num xml:id="d1e1217">3.</num>
+               <content xml:id="d1e1220">
+                  <p xml:id="d1e1222"> This Article is without prejudice to the right of natural or legal persons,
+                     entities or bodies referred to in paragraph 1 to judicial review of the
+                     legality of the non-performance of contractual obligations in accordance with
+                     this Regulation. </p>
+               </content>
+            </paragraph>
+         </article>
+         <article xml:id="d1e1228">
+            <num xml:id="d1e1230">Article 11</num>
+            <paragraph xml:id="d1e1233">
+               <num xml:id="d1e1235">1.</num>
+               <content xml:id="d1e1238">
+                  <p xml:id="d1e1240"> The Commission and the Member States shall inform each other of the measures
+                     taken under this Regulation and share any other relevant information at their
+                     disposal in connection with this Regulation, in particular information in
+                     respect of violation and enforcement problems and judgments handed down by
+                     national courts. </p>
+               </content>
+            </paragraph>
+            <paragraph xml:id="d1e1245">
+               <num xml:id="d1e1247">2.</num>
+               <content xml:id="d1e1250">
+                  <p xml:id="d1e1252"> The Member States shall immediately inform each other and the Commission of
+                     any other relevant information at their disposal which might affect the
+                     effective implementation of this Regulation. </p>
+               </content>
+            </paragraph>
+         </article>
+         <article xml:id="d1e1259">
+            <num xml:id="d1e1261">Article 12</num>
+            <paragraph xml:id="d1e1264">
+               <num xml:id="d1e1266">1.</num>
+               <content xml:id="d1e1269">
+                  <p xml:id="d1e1271"> Member States shall lay down the rules on penalties applicable to
+                     infringements of the provisions of this Regulation and shall take all measures
+                     necessary to ensure that they are implemented. The penalties provided for must
+                     be effective, proportionate and dissuasive. </p>
+               </content>
+            </paragraph>
+            <paragraph xml:id="d1e1276">
+               <num xml:id="d1e1278">2.</num>
+               <content xml:id="d1e1281">
+                  <p xml:id="d1e1283"> Member States shall notify the rules referred to in paragraph 1 to the
+                     Commission without delay after the entry into force of this Regulation and
+                     shall notify it of any subsequent amendment. </p>
+               </content>
+            </paragraph>
+         </article>
+         <article xml:id="d1e1289">
+            <num xml:id="d1e1291">Article 13</num>
+            <paragraph xml:id="d1e1294">
+               <num xml:id="d1e1296">1.</num>
+               <content xml:id="d1e1299">
+                  <p xml:id="d1e1301"> Member States shall designate the competent authorities referred to in this
+                     Regulation and identify them on the websites listed in Annex I. Member States
+                     shall notify the Commission of any changes in the addresses of their websites
+                     listed in Annex I. </p>
+               </content>
+            </paragraph>
+            <paragraph xml:id="d1e1306">
+               <num xml:id="d1e1308">2.</num>
+               <content xml:id="d1e1311">
+                  <p xml:id="d1e1313"> Member States shall notify the Commission of their competent authorities,
+                     including the contact details of those competent authorities, without delay
+                     after the entry into force of this Regulation, and shall notify it of any
+                     subsequent amendment. </p>
+               </content>
+            </paragraph>
+            <paragraph xml:id="d1e1318">
+               <num xml:id="d1e1320">3.</num>
+               <content xml:id="d1e1323">
+                  <p xml:id="d1e1325"> Where this Regulation sets out a requirement to notify, inform or otherwise
+                     communicate with the Commission, the address and other contact details to be
+                     used for such communication shall be those indicated in Annex I. </p>
+               </content>
+            </paragraph>
+         </article>
+         <article xml:id="d1e1331">
+            <num xml:id="d1e1333">Article 14</num>
+            <paragraph xml:id="d1e1336">
+               <list xml:id="d1e1338">
+                  <subparagraph xml:id="d1e1340" refersTo="~INP">
+                     <content xml:id="d1e1342">
+                        <p xml:id="d1e1344">This Regulation shall apply:</p>
+                     </content>
+                  </subparagraph>
+                  <point xml:id="d1e1349">
+                     <num xml:id="d1e1351">(a)</num>
+                     <content xml:id="d1e1354">
+                        <p xml:id="d1e1356">within the territory of the Union, including its airspace; </p>
+                     </content>
+                  </point>
+                  <point xml:id="d1e1361">
+                     <num xml:id="d1e1363">(b)</num>
+                     <content xml:id="d1e1366">
+                        <p xml:id="d1e1368">on board any aircraft or any vessel under the jurisdiction of a Member
+                           State; </p>
+                     </content>
+                  </point>
+                  <point xml:id="d1e1373">
+                     <num xml:id="d1e1375">(c)</num>
+                     <content xml:id="d1e1378">
+                        <p xml:id="d1e1380">to any person inside or outside the territory of the Union who is a
+                           national of a Member State; </p>
+                     </content>
+                  </point>
+                  <point xml:id="d1e1385">
+                     <num xml:id="d1e1387">(d)</num>
+                     <content xml:id="d1e1390">
+                        <p xml:id="d1e1392">to any legal person, entity or body, inside or outside the territory of
+                           the Union, which is incorporated or constituted under the law of a Member
+                           State; </p>
+                     </content>
+                  </point>
+                  <point xml:id="d1e1398">
+                     <num xml:id="d1e1400">(e)</num>
+                     <content xml:id="d1e1403">
+                        <p xml:id="d1e1405">to any legal person, entity or body in respect of any business done in
+                           whole or in part within the Union. </p>
+                     </content>
+                  </point>
+               </list>
+            </paragraph>
+         </article>
+         <article xml:id="d1e1413">
+            <num xml:id="d1e1415">Article 15</num>
+            <paragraph xml:id="d1e1418">
+               <content xml:id="d1e1420">
+                  <p xml:id="d1e1422">This Regulation shall enter into force on the day following that of its
+                     publication in the Official Journal of the European Union.</p>
+               </content>
+            </paragraph>
+         </article>
+         <clause xml:id="d1e1428">
+            <content xml:id="d1e1430">
+               <p xml:id="d1e1432">This Regulation shall be binding in its entirety and directly applicable in all
+                  Member States.</p>
+            </content>
+         </clause>
+      </body>
+      <conclusions xml:id="d1e1438">
+         <p xml:id="d1e1440">Done at <location xml:id="d1e1442" refersTo="~BEL_BRU">Brussels</location>,</p>
+         <block xml:id="d1e1446" name="signatory">
+            <signature xml:id="d1e1448">
+               <organization xml:id="d1e1450" refersTo="~CONSIL">For the Council</organization>
+               <role xml:id="d1e1453" refersTo="~PRESID">The President</role>
+               <person xml:id="d1e1456" refersTo=""/>
+            </signature>
+         </block>
+      </conclusions>
+   </bill>
+</akomaNtoso>

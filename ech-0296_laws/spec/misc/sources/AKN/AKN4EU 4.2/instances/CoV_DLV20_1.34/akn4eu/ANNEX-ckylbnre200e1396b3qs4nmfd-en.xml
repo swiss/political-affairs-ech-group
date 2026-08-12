@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+	<doc name="ANNEX">
+		<meta>
+			<identification source="~PUBL">
+				<FRBRWork>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+						<akn4eu:fileCUID value="ckylbnre200e1396b3qs4nmfd"/>
+					</preservation>
+					<FRBRcountry value="EU"/>
+					<FRBRprescriptive value="true"/>
+				</FRBRWork>
+				<FRBRExpression>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<FRBRlanguage language="en"/>
+				</FRBRExpression>
+				<FRBRManifestation>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+						<akn4eu:akn4euVersion value="4.2.0.0"/>
+						<akn4eu:akn4euDocumentation href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/akn4eu"/>
+					</preservation>
+				</FRBRManifestation>
+			</identification>
+			<references source="~PUBL">
+				<TLCReference name="language" href="http://publications.europa.eu/resource/authority/language/ENG" showAs="en"/>
+				<TLCReference xml:id="ANNEX" name="docType" href="http://publications.europa.eu/resource/authority/resource-type/ANNEX" showAs="Annex"/>
+				<TLCOrganization xml:id="PUBL" href="http://publications.europa.eu/resource/authority/corporate-body/PUBL" showAs="Publications Office"/>
+			</references>
+		</meta>
+		<preface xml:id="d1e72">
+			<container xml:id="d1e74" name="headerOfAnnex">
+				<block xml:id="d1e76" name="num">ANNEX III</block>
+				<block xml:id="d1e79" name="heading">MANAGEMENT AREAS FOR SANDEEL IN ICES DIVISIONS 2a, 3a AND ICES
+					SUBAREA 4</block>
+			</container>
+		</preface>
+		<mainBody xml:id="d1e84">
+			<paragraph xml:id="d1e86">
+				<content xml:id="d1e88">
+					<p xml:id="d1e90">For the purposes of the management of the fishing opportunities of sandeel in
+						ICES divisions 2a, 3a and ICES subarea 4 fixed in Annex IA, the management
+						areas within which specific catch limits apply are defined as shown below
+						and in the Appendix to this Annex:</p>
+				</content>
+			</paragraph>
+			<paragraph xml:id="d1e94">
+				<hcontainer xml:id="d1e96" name="BLOCK_TAB">
+					<hcontainer xml:id="d1e98" name="TAB">
+						<content xml:id="d1e100">
+							<table xml:id="d1e102">
+								<tr xml:id="d1e104">
+									<th xml:id="d1e106">
+										<p xml:id="d1e108">Sandeel management area</p>
+									</th>
+									<th xml:id="d1e111">
+										<p xml:id="d1e113">ICES statistical rectangles</p>
+									</th>
+								</tr>
+								<tr xml:id="d1e117">
+									<td xml:id="d1e119">
+										<p xml:id="d1e121">1r</p>
+									</td>
+									<td xml:id="d1e124">
+										<p xml:id="d1e126">31–33 E9–F4; 33 F5; 34–37 E9–F6; 38–40 F0–F5; 41
+											F4–F5</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e130">
+									<td xml:id="d1e132">
+										<p xml:id="d1e134">2r</p>
+									</td>
+									<td xml:id="d1e137">
+										<p xml:id="d1e139">35 F7–F8; 36 F7–F9; 37 F7–F8; 38-41 F6–F8; 42 F6–F9; 43
+											F7–F9; 44 F9–G0; 45 G0–G1; 46 G1</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e143">
+									<td xml:id="d1e145">
+										<p xml:id="d1e147">3r</p>
+									</td>
+									<td xml:id="d1e150">
+										<p xml:id="d1e152">41–46 F1–F3; 42–46 F4–F5; 43–46 F6; 44–46 F7–F8; 45–46
+											F9; 46–47 G0; 47 G1 and 48 G0</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e156">
+									<td xml:id="d1e158">
+										<p xml:id="d1e160">4</p>
+									</td>
+									<td xml:id="d1e163">
+										<p xml:id="d1e165">38–40 E7–E9 and 41–46 E6–F0</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e170">
+									<td xml:id="d1e172">
+										<p xml:id="d1e174">5r</p>
+									</td>
+									<td xml:id="d1e177">
+										<p xml:id="d1e179">47–52 F1–F5</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e183">
+									<td xml:id="d1e185">
+										<p xml:id="d1e187">6</p>
+									</td>
+									<td xml:id="d1e190">
+										<p xml:id="d1e192">41–43 G0–G3; 44 G1</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e196">
+									<td xml:id="d1e198">
+										<p xml:id="d1e200">7r</p>
+									</td>
+									<td xml:id="d1e203">
+										<p xml:id="d1e205">47–52 E6–F0</p>
+									</td>
+								</tr>
+							</table>
+						</content>
+					</hcontainer>
+				</hcontainer>
+			</paragraph>
+		</mainBody>
+		<attachments>
+			<attachment xml:id="d1e217">
+				<documentRef xml:id="d1e219" href="ANNEX-ckylbnre200e2396b4hkem25d-en.xml" showAs="Appendix"/>
+			</attachment>
+		</attachments>
+	</doc>
+</akomaNtoso>

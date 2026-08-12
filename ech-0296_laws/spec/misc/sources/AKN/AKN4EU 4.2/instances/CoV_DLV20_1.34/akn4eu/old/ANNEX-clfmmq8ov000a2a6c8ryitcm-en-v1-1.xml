@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?><akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+    <doc name="ANNEX">
+        <meta>
+            <identification source="~PUBL">
+                <FRBRWork>
+                    <FRBRthis value=""/>
+                    <FRBRuri value=""/>
+                    <FRBRdate date="2999-01-01" name=""/>
+                    <FRBRauthor href=""/>
+                    <preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+                        <akn4eu:fileCUID value="ckylbnre200dx396bqogjjmfj"/>
+                    </preservation>
+                    <FRBRcountry value="EU"/>
+                    <FRBRprescriptive value="true"/>
+                </FRBRWork>
+                <FRBRExpression>
+                    <FRBRthis value=""/>
+                    <FRBRuri value=""/>
+                    <FRBRdate date="2999-01-01" name=""/>
+                    <FRBRauthor href=""/>
+                    <FRBRlanguage language="en"/>
+                </FRBRExpression>
+                <FRBRManifestation>
+                    <FRBRthis value=""/>
+                    <FRBRuri value=""/>
+                    <FRBRdate date="2999-01-01" name=""/>
+                    <FRBRauthor href=""/>
+                    <preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+                        <akn4eu:akn4euVersion value="4.1.1.0"/>
+                        <akn4eu:akn4euDocumentation href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/akn4eu"/>
+                    </preservation>
+                </FRBRManifestation>
+            </identification>
+            <references source="~PUBL">
+                <TLCReference name="language" href="http://publications.europa.eu/resource/authority/language/ENG" showAs="en"/>
+                <TLCReference xml:id="ANNEX" name="docType" href="http://publications.europa.eu/resource/authority/resource-type/ANNEX" showAs="Annex"/>
+                <TLCOrganization xml:id="PUBL" href="http://publications.europa.eu/resource/authority/corporate-body/PUBL" showAs="Publications Office"/>
+            </references>
+        </meta>
+        <preface xml:id="d1e72">
+            <container xml:id="d1e74" name="headerOfAnnex">
+                <block xml:id="d1e76" name="num">ANNEX VII</block>
+                <block xml:id="d1e79" name="heading">CCAMLR CONVENTION AREA</block>
+            </container>
+        </preface>
+        <mainBody xml:id="d1e84">
+            <paragraph xml:id="d1e86">
+                <content xml:id="d1e88">
+                    <p xml:id="d1e90">Exploratory fishing for toothfish in the CCAMLR Convention Area in 2019/2020
+                        shall be limited to the following:</p>
+                </content>
+            </paragraph>
+            <paragraph xml:id="d1e94">
+                <hcontainer xml:id="d1e96" name="BLOCK_TAB">
+                    <num xml:id="d1e98">Table A</num>
+                    <heading xml:id="d1e100">Authorised Member States, subareas and maximum number of vessels</heading>
+                    <hcontainer xml:id="d1e102" name="TAB">
+                        <content xml:id="d1e104">
+                            <table xml:id="d1e106">
+                                <tr xml:id="d1e108">
+                                    <th xml:id="d1e110">
+                                        <p xml:id="d1e112">Member State</p>
+                                    </th>
+                                    <th xml:id="d1e115">
+                                        <p xml:id="d1e117">Area</p>
+                                    </th>
+                                    <th xml:id="d1e120">
+                                        <p xml:id="d1e122">Maximum number of vessels</p>
+                                    </th>
+                                </tr>
+                                <tr xml:id="d1e126">
+                                    <td xml:id="d1e128">
+                                        <p xml:id="d1e130">Spain</p>
+                                    </td>
+                                    <td xml:id="d1e133">
+                                        <p xml:id="d1e135">48.6</p>
+                                    </td>
+                                    <td xml:id="d1e138">
+                                        <p xml:id="d1e140">1</p>
+                                    </td>
+                                </tr>
+                                <tr xml:id="d1e144">
+                                    <td xml:id="d1e146">
+                                        <p xml:id="d1e148">Spain</p>
+                                    </td>
+                                    <td xml:id="d1e151">
+                                        <p xml:id="d1e153">88.1</p>
+                                    </td>
+                                    <td xml:id="d1e156">
+                                        <p xml:id="d1e158">1</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </content>
+                    </hcontainer>
+                </hcontainer>
+            </paragraph>
+            <paragraph xml:id="d1e167">
+                <hcontainer xml:id="d1e169" name="BLOCK_TAB">
+                    <num xml:id="d1e171">Table B</num>
+                    <heading xml:id="d1e173">TACs and by-catch limits</heading>
+                    <subparagraph xml:id="d1e175">
+                        <content xml:id="d1e177">
+                            <p xml:id="d1e179">The TACs set out below, which are adopted by CCAMLR, are not allocated to CCAMLR members and hence the Union’s 
+                                share is undetermined. Catches are monitored by the CCAMLR Secretariat which will communicate to the Contracting 
+                                Parties when fishing is to be ceased due to TAC exhaustion</p>
+                        </content>
+                    </subparagraph>
+                    <hcontainer xml:id="d1e183" name="TAB">
+                    <content xml:id="d1e185">
+                        <table xml:id="d1e187">
+                            <tr xml:id="d1e189">
+                                <th xml:id="d1e191" rowspan="2">
+                                    <p xml:id="d1e193">Subarea</p>
+                                </th>
+                                <th xml:id="d1e196" rowspan="2">
+                                    <p xml:id="d1e198">Region</p>
+                                </th>
+                                <th xml:id="d1e201" rowspan="2">
+                                    <p xml:id="d1e203">Season</p>
+                                </th>
+                                <th xml:id="d1e206" rowspan="2">
+                                    <p xml:id="d1e208">SSRUs (48.6) or research blocks (88.1)</p>
+                                </th>
+                                <th xml:id="d1e211" rowspan="2">
+                                    <p xml:id="d1e213"><i xml:id="d1e214">Dissostichus mawsoni</i> catch limit (in tonnes)/SSRUs
+                                        (48.6) or research blocks (88.1)</p>
+                                </th>
+                                <th xml:id="d1e219" rowspan="2">
+                                    <p xml:id="d1e221"><i xml:id="d1e222">Dissostichus mawsoni</i> catch limit (in tonnes)/whole
+                                        subarea</p>
+                                </th>
+                                <th xml:id="d1e226" colspan="3">
+                                    <p xml:id="d1e228">By-catch limit (in tonnes)/SSRUs (48.6) or research blocks
+                                        (88.1)</p>
+                                </th>
+                            </tr>
+                            <tr xml:id="d1e232">
+                                <th xml:id="d1e234">
+                                    <p xml:id="d1e236">Skates and rays</p>
+                                </th>
+                                <th xml:id="d1e239">
+                                    <p xml:id="d1e241"><i xml:id="d1e242">Macrourus</i> spp.<authorialNote xml:id="d1e244" marker="1" placement="bottom" placementBase="~table_d22e77"><p xml:id="d1e245">In
+                                            area 88.1, where the catch of <i xml:id="d1e247">Macrourus</i> spp.
+                                            taken by a single vessel in any two 10-day periods
+                                            (i.e. from day 1 to day 10, day 11 to day 20, or day
+                                            21 to the last day of the month) in any SSRU exceeds
+                                            1 500 kg in each 10-day period and exceeds 16 % of
+                                            the catch of <i xml:id="d1e249">Dissostichus</i> spp. by that vessel
+                                            in that SSRU, the vessel shall cease fishing in that
+                                            SSRU for the remainder of the
+                                            season.</p></authorialNote></p>
+                                </th>
+                                <th xml:id="d1e253">
+                                    <p xml:id="d1e255">Other species</p>
+                                </th>
+                            </tr>
+                            <tr xml:id="d1e259">
+                                <td xml:id="d1e261" rowspan="4">
+                                    <p xml:id="d1e263">48.6</p>
+                                </td>
+                                <td xml:id="d1e266" rowspan="4">
+                                    <p xml:id="d1e268">Whole subarea</p>
+                                </td>
+                                <td xml:id="d1e271" rowspan="4">
+                                    <p xml:id="d1e273">1 December 2019 to 30 November 2020</p>
+                                </td>
+                                <td xml:id="d1e276">
+                                    <p xml:id="d1e278">48.6_2</p>
+                                </td>
+                                <td xml:id="d1e281">
+                                    <p xml:id="d1e283">140</p>
+                                </td>
+                                <td xml:id="d1e287" rowspan="4">
+                                    <p xml:id="d1e289">670</p>
+                                </td>
+                                <td xml:id="d1e292">
+                                    <p xml:id="d1e294">7</p>
+                                </td>
+                                <td xml:id="d1e297">
+                                    <p xml:id="d1e299">22</p>
+                                </td>
+                                <td xml:id="d1e302">
+                                    <p xml:id="d1e304">22</p>
+                                </td>
+                            </tr>
+                            <tr xml:id="d1e308">
+                                <td xml:id="d1e310">
+                                    <p xml:id="d1e312">48.6_3</p>
+                                </td>
+                                <td xml:id="d1e315">
+                                    <p xml:id="d1e317">38</p>
+                                </td>
+                                <td xml:id="d1e320">
+                                    <p xml:id="d1e322">2</p>
+                                </td>
+                                <td xml:id="d1e325">
+                                    <p xml:id="d1e327">6</p>
+                                </td>
+                                <td xml:id="d1e330">
+                                    <p xml:id="d1e332">6</p>
+                                </td>
+                            </tr>
+                            <tr xml:id="d1e336">
+                                <td xml:id="d1e338">
+                                    <p xml:id="d1e340">48.6_4</p>
+                                </td>
+                                <td xml:id="d1e343">
+                                    <p xml:id="d1e345">163</p>
+                                </td>
+                                <td xml:id="d1e348">
+                                    <p xml:id="d1e350">8</p>
+                                </td>
+                                <td xml:id="d1e353">
+                                    <p xml:id="d1e355">26</p>
+                                </td>
+                                <td xml:id="d1e358">
+                                    <p xml:id="d1e360">26</p>
+                                </td>
+                            </tr>
+                            <tr xml:id="d1e365">
+                                <td xml:id="d1e367">
+                                    <p xml:id="d1e369">48.6_5</p>
+                                </td>
+                                <td xml:id="d1e372">
+                                    <p xml:id="d1e374">329</p>
+                                </td>
+                                <td xml:id="d1e377">
+                                    <p xml:id="d1e379">16</p>
+                                </td>
+                                <td xml:id="d1e382">
+                                    <p xml:id="d1e384">53</p>
+                                </td>
+                                <td xml:id="d1e387">
+                                    <p xml:id="d1e389">23</p>
+                                </td>
+                            </tr>
+                            <tr xml:id="d1e393">
+                                <td xml:id="d1e395" rowspan="3">
+                                    <p xml:id="d1e397">88.1.</p>
+                                </td>
+                                <td xml:id="d1e400" rowspan="3">
+                                    <p xml:id="d1e402">Whole subarea</p>
+                                </td>
+                                <td xml:id="d1e405" rowspan="3">
+                                    <p xml:id="d1e407">1 December 2019 to 31 August 2020</p>
+                                </td>
+                                <td xml:id="d1e410">
+                                    <p xml:id="d1e412">A, B, C, G<authorialNote xml:id="d1e414" marker="2" placement="bottom" placementBase="~table_d22e77"><p xml:id="d1e415">All areas outside the
+                                            Ross Sea region marine protected area and north of
+                                            70° S.</p></authorialNote></p>
+                                </td>
+                                <td xml:id="d1e418">
+                                    <p xml:id="d1e420">597</p>
+                                </td>
+                                <td xml:id="d1e424" rowspan="3">
+                                    <p xml:id="d1e426">3 140<authorialNote xml:id="d1e428" marker="3" placement="bottom" placementBase="~table_d22e77"><p xml:id="d1e429">The target species is
+                                            <i xml:id="d1e431">Dissostichus mawsoni</i>. Any <i xml:id="d1e433">Dissostichus
+                                                eleginoides</i> caught shall be counted towards
+                                            the overall catch limit for <i xml:id="d1e435">Dissostichus
+                                                mawsoni</i></p></authorialNote></p>
+                                </td>
+                                <td xml:id="d1e438">
+                                    <p xml:id="d1e440">30</p>
+                                </td>
+                                <td xml:id="d1e443">
+                                    <p xml:id="d1e445">96</p>
+                                </td>
+                                <td xml:id="d1e448">
+                                    <p xml:id="d1e450">30</p>
+                                </td>
+                            </tr>
+                            <tr xml:id="d1e454">
+                                <td xml:id="d1e456">
+                                    <p xml:id="d1e458">G, H, I, J, K<authorialNote xml:id="d1e460" marker="4" placement="bottom" placementBase="~table_d22e77"><p xml:id="d1e461">All areas outside the
+                                            Ross Sea region marine protected area and south of
+                                            70° S.</p></authorialNote></p>
+                                </td>
+                                <td xml:id="d1e464">
+                                    <p xml:id="d1e466">2 072</p>
+                                </td>
+                                <td xml:id="d1e469">
+                                    <p xml:id="d1e471">104</p>
+                                </td>
+                                <td xml:id="d1e474">
+                                    <p xml:id="d1e476">317</p>
+                                </td>
+                                <td xml:id="d1e479">
+                                    <p xml:id="d1e481">104</p>
+                                </td>
+                            </tr>
+                            <tr xml:id="d1e485">
+                                <td xml:id="d1e487">
+                                    <p xml:id="d1e489">Special Research Zone of the Ross Sea Region marine protected
+                                        area</p>
+                                </td>
+                                <td xml:id="d1e492">
+                                    <p xml:id="d1e494">426</p>
+                                </td>
+                                <td xml:id="d1e497">
+                                    <p xml:id="d1e499">23</p>
+                                </td>
+                                <td xml:id="d1e502">
+                                    <p xml:id="d1e504">72</p>
+                                </td>
+                                <td xml:id="d1e507">
+                                    <p xml:id="d1e509">23</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </content>
+                    </hcontainer>
+                </hcontainer>
+            </paragraph>
+        </mainBody>
+        <attachments>
+            <attachment xml:id="d1e521">
+                <documentRef xml:id="d1e523" href="???" showAs="Appendix"/>
+            </attachment>
+        </attachments>
+    </doc>
+</akomaNtoso>

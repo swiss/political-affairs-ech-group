@@ -1,0 +1,59 @@
+{
+  "_comment": "Swiss Federal Government – AKN FRBR URI profile",
+  "tags": "akn, frbr, switzerland, federal",
+  "jurisdiction": "ch",
+  "level": "federal",
+  "name": "Schweizerische Eidgenossenschaft / Confédération suisse",
+  "country": "CH",
+  "base_uri": "https://fedlex.data.admin.ch/eli",
+  "akn_country": "ch",
+  "akn_prefix": "/akn/ch",
+  "language_codes": {
+    "de": "deu",
+    "fr": "fra",
+    "it": "ita",
+    "rm": "roh"
+  },
+  "default_language": "de",
+  "subdivisions": {},
+  "document_types": {
+    "act": {
+      "akn_type": "act",
+      "subtype": "lei",
+      "label_de": "Gesetz",
+      "label_fr": "Loi",
+      "label_it": "Legge"
+    },
+    "ordinance": {
+      "akn_type": "act",
+      "subtype": "verordnung",
+      "label_de": "Verordnung",
+      "label_fr": "Ordonnance",
+      "label_it": "Ordinanza"
+    },
+    "constitution": {
+      "akn_type": "act",
+      "subtype": "verfassung",
+      "label_de": "Verfassung",
+      "label_fr": "Constitution",
+      "label_it": "Costituzione"
+    },
+    "decision": {
+      "akn_type": "judgment",
+      "subtype": "entscheid",
+      "label_de": "Entscheid",
+      "label_fr": "Décision",
+      "label_it": "Decisione"
+    }
+  },
+  "numbering": {
+    "sr_prefix": "SR",
+    "eli_pattern": "/eli/cc/{year}/{number}"
+  },
+  "uri_templates": {
+    "work":         "/akn/ch/{doc_type}/{date}/{number}",
+    "expression":   "/akn/ch/{doc_type}/{date}/{number}/{lang}@{version}",
+    "manifestation":"/akn/ch/{doc_type}/{date}/{number}/{lang}@{version}.{format}",
+    "item":         "/akn/ch/{doc_type}/{date}/{number}/{lang}@{version}.{format}/{component}"
+  }
+}

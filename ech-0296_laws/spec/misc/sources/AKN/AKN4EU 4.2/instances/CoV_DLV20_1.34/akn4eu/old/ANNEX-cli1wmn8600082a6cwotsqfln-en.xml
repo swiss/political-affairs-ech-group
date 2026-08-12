@@ -1,0 +1,1916 @@
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+    <doc name="ANNEX">
+        <meta>
+            <identification source="~PUBL">
+                <FRBRWork>
+                    <FRBRthis value=""/>
+                    <FRBRuri value=""/>
+                    <FRBRdate date="2999-01-01" name=""/>
+                    <FRBRauthor href=""/>
+                    <preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+                        <akn4eu:fileCUID value="cli1wmn8600082a6cwotsqfln"/>
+                    </preservation>
+                    <FRBRcountry value="EU"/>
+                    <FRBRprescriptive value="true"/>
+                </FRBRWork>
+                <FRBRExpression>
+                    <FRBRthis value=""/>
+                    <FRBRuri value=""/>
+                    <FRBRdate date="2999-01-01" name=""/>
+                    <FRBRauthor href=""/>
+                    <FRBRlanguage language="en"/>
+                </FRBRExpression>
+                <FRBRManifestation>
+                    <FRBRthis value=""/>
+                    <FRBRuri value=""/>
+                    <FRBRdate date="2999-01-01" name=""/>
+                    <FRBRauthor href=""/>
+                    <preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+                        <akn4eu:akn4euVersion value="4.2.0.0"/>
+                        <akn4eu:akn4euDocumentation
+                            href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/akn4eu"
+                        />
+                    </preservation>
+                </FRBRManifestation>
+            </identification>
+            <references source="~PUBL">
+                <TLCReference name="language"
+                    href="http://publications.europa.eu/resource/authority/language/ENG" showAs="en"/>
+                <TLCReference xml:id="ANNEX" name="docType"
+                    href="http://publications.europa.eu/resource/authority/resource-type/ANNEX"
+                    showAs="Annex"/>
+                <TLCOrganization xml:id="PUBL"
+                    href="http://publications.europa.eu/resource/authority/corporate-body/PUBL"
+                    showAs="Publications Office"/>
+            </references>
+        </meta>
+        <preface>
+            <container name="headerOfAnnex">
+                <block name="num">ANNEX IC</block>
+                <block name="heading">NORTH WEST ATLANTIC – NAFO CONVENTION AREA</block>
+            </container>
+        </preface>
+        <mainBody>
+            <paragraph>
+                <hcontainer name="BLOCK_TAB">
+                    <hcontainer name="TAB">
+                        <content>
+                        <table xml:id="_table_d22e36">
+                        <tr>
+                            <th>
+                                <p><b>Species:</b></p>
+                            </th>
+                            <th colspan="2">
+                                <p>Cod</p>
+                                <p><i>Gadus morhua</i></p>
+                            </th>
+                            <th>
+                                <p><b>Zone:</b></p>
+                            </th>
+                            <th>
+                                <p>NAFO 2J3KL</p>
+                                <p>(COD/N2J3KL)</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Union</p>
+                            </td>
+                            <td>
+                                <p>0</p>
+                            </td>
+                            <td>
+                                <p><authorialNote marker="1" placement="bottom"
+                                        placementBase="~_table_d22e36"><p>No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the following limits: a maximum
+                                            of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                            <td colspan="2" rowspan="2">
+                                <p>Analytical TAC</p>
+                                <p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+                                <p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>TAC</p>
+                            </td>
+                            <td>
+                                <p>0</p>
+                            </td>
+                            <td>
+                                <p><authorialNote marker="1" placement="bottom"
+                                        placementBase="~_table_d22e36"><p>No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the following limits: a maximum
+                                            of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                        </tr>
+                    </table>
+                        </content>
+                    </hcontainer>
+                </hcontainer>
+            </paragraph>
+            <paragraph>
+                <hcontainer name="BLOCK_TAB">
+                    <hcontainer name="TAB">
+                        <content>
+                        <table xml:id="_table_d22e84">
+                        <tr>
+                            <th>
+                                <p><b>Species:</b></p>
+                            </th>
+                            <th colspan="2">
+                                <p>Cod</p>
+                                <p><i>Gadus morhua</i></p>
+                            </th>
+                            <th>
+                                <p><b>Zone:</b></p>
+                            </th>
+                            <th>
+                                <p>NAFO 3NO</p>
+                                <p>(COD/N3NO.)</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Union</p>
+                            </td>
+                            <td>
+                                <p>0</p>
+                            </td>
+                            <td>
+                                <p><authorialNote marker="2" placement="bottom"
+                                        placementBase="~_table_d22e84"><p>No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the limits of a maximum of 1
+                                            000 kg or 4 %, whichever is
+                                    greater.</p></authorialNote></p>
+                            </td>
+                            <td colspan="2" rowspan="2">
+                                <p>Analytical TAC</p>
+                                <p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+                                <p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>TAC</p>
+                            </td>
+                            <td>
+                                <p>0</p>
+                            </td>
+                            <td>
+                                <p><authorialNote marker="2" placement="bottom"
+                                        placementBase="~_table_d22e84"><p>No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the limits of a maximum of 1
+                                            000 kg or 4 %, whichever is
+                                    greater.</p></authorialNote></p>
+                            </td>
+                        </tr>
+                    </table>
+                       </content>
+                    </hcontainer>
+                </hcontainer>
+            </paragraph>
+            <paragraph>
+                <hcontainer name="BLOCK_TAB">
+                    <hcontainer name="TAB">
+                        <content>
+                        <table>
+                        <tr>
+                            <th>
+                                <p><b>Species:</b></p>
+                            </th>
+                            <th colspan="2">
+                                <p>Cod</p>
+                                <p><i>Gadus morhua</i></p>
+                            </th>
+                            <th>
+                                <p><b>Zone:</b></p>
+                            </th>
+                            <th>
+                                <p>NAFO 3M</p>
+                                <p>(COD/N3M.)</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Estonia</p>
+                            </td>
+                            <td>
+                                <p>95</p>
+                            </td>
+                            <td/>
+                            <td colspan="2" rowspan="11">
+                                <p>Analytical TAC</p>
+                                <p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+                                <p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Germany</p>
+                            </td>
+                            <td>
+                                <p>397</p>
+                            </td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Latvia</p>
+                            </td>
+                            <td>
+                                <p>95</p>
+                            </td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Lithuania</p>
+                            </td>
+                            <td>
+                                <p>95</p>
+                            </td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Poland</p>
+                            </td>
+                            <td>
+                                <p>324</p>
+                            </td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Spain</p>
+                            </td>
+                            <td>
+                                <p>1 221</p>
+                            </td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>France</p>
+                            </td>
+                            <td>
+                                <p>170</p>
+                            </td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Portugal</p>
+                            </td>
+                            <td>
+                                <p>1 673</p>
+                            </td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>United Kingdom</p>
+                            </td>
+                            <td>
+                                <p>795</p>
+                            </td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Union</p>
+                            </td>
+                            <td>
+                                <p>4 865</p>
+                            </td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>TAC</p>
+                            </td>
+                            <td>
+                                <p>8 531</p>
+                            </td>
+                            <td/>
+                        </tr>
+                    </table>
+                         </content>
+                    </hcontainer>
+                </hcontainer>
+            </paragraph>
+            <paragraph>
+                <hcontainer name="BLOCK_TAB">
+                    <hcontainer name="TAB">
+                        <content>
+                        <table xml:id="_table_d22e241">
+                        <tr>
+                            <th>
+                                <p><b>Species:</b></p>
+                            </th>
+                            <th colspan="2">
+                                <p>Witch flounder</p>
+                                <p><i>Glyptocephalus cynoglossus</i></p>
+                            </th>
+                            <th>
+                                <p><b>Zone:</b></p>
+                            </th>
+                            <th>
+                                <p>NAFO 3L</p>
+                                <p>(WIT/N3L.)</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Union</p>
+                            </td>
+                            <td>
+                                <p>0</p>
+                            </td>
+                            <td>
+                                <p><authorialNote marker="3" placement="bottom"
+                                        placementBase="~_table_d22e241"><p>No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the following limits: a maximum
+                                            of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                            <td colspan="2" rowspan="2">
+                                <p>Analytical TAC</p>
+                                <p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+                                <p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>TAC</p>
+                            </td>
+                            <td>
+                                <p>0</p>
+                            </td>
+                            <td>
+                                <p><authorialNote marker="3" placement="bottom"
+                                        placementBase="~_table_d22e241"><p>No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the following limits: a maximum
+                                            of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                        </tr>
+                    </table>
+                        </content>
+                    </hcontainer>
+                </hcontainer>
+            </paragraph>
+            <paragraph>
+                <hcontainer name="BLOCK_TAB">
+                    <hcontainer name="TAB">
+                        <content>
+                        <table>
+                        <tr>
+                            <th>
+                                <p><b>Species:</b></p>
+                            </th>
+                            <th colspan="2">
+                                <p>Witch flounder</p>
+                                <p><i>Glyptocephalus cynoglossus</i></p>
+                            </th>
+                            <th>
+                                <p><b>Zone:</b></p>
+                            </th>
+                            <th>
+                                <p>NAFO 3NO</p>
+                                <p>(WIT/N3NO.)</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Estonia</p>
+                            </td>
+                            <td>
+                                <p>52</p>
+                            </td>
+                            <td/>
+                            <td colspan="2" rowspan="5">
+                                <p>Analytical TAC</p>
+                                <p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+                                <p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Latvia</p>
+                            </td>
+                            <td>
+                                <p>52</p>
+                            </td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Lithuania</p>
+                            </td>
+                            <td>
+                                <p>52</p>
+                            </td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Union</p>
+                            </td>
+                            <td>
+                                <p>156</p>
+                            </td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>TAC</p>
+                            </td>
+                            <td>
+                                <p>1 175</p>
+                            </td>
+                            <td/>
+                        </tr>
+                    </table>
+                        </content>
+                    </hcontainer>
+                </hcontainer>
+            </paragraph>
+            <paragraph>
+                <hcontainer name="BLOCK_TAB">
+                    <hcontainer name="TAB">
+                        <content>
+                        <table xml:id="_table_d22e352">
+                        <tr>
+                            <th>
+                                <p><b>Species:</b></p>
+                            </th>
+                            <th colspan="2">
+                                <p>American plaice</p>
+                                <p><i>Hippoglossoides platessoides</i></p>
+                            </th>
+                            <th>
+                                <p><b>Zone:</b></p>
+                            </th>
+                            <th>
+                                <p>NAFO 3M</p>
+                                <p>(PLA/N3M.)</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Union</p>
+                            </td>
+                            <td>
+                                <p>0</p>
+                            </td>
+                            <td>
+                                <p><authorialNote marker="4" placement="bottom"
+                                        placementBase="~_table_d22e352"><p>No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the following limits: a maximum
+                                            of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                            <td colspan="2" rowspan="2">
+                                <p>Analytical TAC</p>
+                                <p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+                                <p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>TAC</p>
+                            </td>
+                            <td>
+                                <p>0</p>
+                            </td>
+                            <td>
+                                <p><authorialNote marker="4" placement="bottom"
+                                        placementBase="~_table_d22e352"><p>No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the following limits: a maximum
+                                            of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                        </tr>
+                    </table>
+                        </content>
+                    </hcontainer>
+                </hcontainer>
+            </paragraph>
+            <paragraph>
+                <hcontainer name="BLOCK_TAB">
+                    <hcontainer name="TAB">
+                        <content>
+                        <table xml:id="_table_d22e400">
+                        <tr>
+                            <th>
+                                <p><b>Species:</b></p>
+                            </th>
+                            <th colspan="2">
+                                <p>American plaice</p>
+                                <p><i>Hippoglossoides platessoides</i></p>
+                            </th>
+                            <th>
+                                <p><b>Zone:</b></p>
+                            </th>
+                            <th>
+                                <p>NAFO 3LNO</p>
+                                <p>(PLA/N3LNO.)</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Union</p>
+                            </td>
+                            <td>
+                                <p>0</p>
+                            </td>
+                            <td>
+                                <p><authorialNote marker="5" placement="bottom"
+                                        placementBase="~_table_d22e400"><p>No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the following limits: a maximum
+                                            of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                            <td colspan="2" rowspan="2">
+                                <p>Analytical TAC</p>
+                                <p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+                                <p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>TAC</p>
+                            </td>
+                            <td>
+                                <p>0</p>
+                            </td>
+                            <td>
+                                <p><authorialNote marker="5" placement="bottom"
+                                        placementBase="~_table_d22e400"><p>No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the following limits: a maximum
+                                            of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                        </tr>
+                    </table>
+                        </content>
+                    </hcontainer>
+                </hcontainer>
+            </paragraph>
+            <paragraph>
+                <hcontainer name="BLOCK_TAB">
+                    <hcontainer name="TAB">
+                        <content>
+                        <table xml:id="_table_d22e448">
+                        <tr>
+                            <th>
+                                <p><b>Species:</b></p>
+                            </th>
+                            <th colspan="2">
+                                <p>Shortfin squid</p>
+                                <p><i>Illex illecebrosus</i></p>
+                            </th>
+                            <th>
+                                <p><b>Zone:</b></p>
+                            </th>
+                            <th>
+                                <p>NAFO Subareas 3 and 4</p>
+                                <p>(SQI/N34.)</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Estonia</p>
+                            </td>
+                            <td>
+                                <p>128</p>
+                            </td>
+                            <td>
+                                <p><authorialNote marker="6" placement="bottom"
+                                        placementBase="~_table_d22e448"><p>To be fished between 1
+                                            July and 31 December 2020</p></authorialNote></p>
+                            </td>
+                            <td colspan="2" rowspan="6">
+                                <p>Analytical TAC</p>
+                                <p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+                                <p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Latvia</p>
+                            </td>
+                            <td>
+                                <p>128</p>
+                            </td>
+                            <td>
+                                <p><authorialNote marker="6" placement="bottom"
+                                        placementBase="~_table_d22e448"><p>To be fished between 1
+                                            July and 31 December 2020</p></authorialNote></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Lithuania</p>
+                            </td>
+                            <td>
+                                <p>128</p>
+                            </td>
+                            <td>
+                                <p><authorialNote marker="6" placement="bottom"
+                                        placementBase="~_table_d22e448"><p>To be fished between 1
+                                            July and 31 December 2020</p></authorialNote></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Poland</p>
+                            </td>
+                            <td>
+                                <p>227</p>
+                            </td>
+                            <td>
+                                <p><authorialNote marker="6" placement="bottom"
+                                        placementBase="~_table_d22e448"><p>To be fished between 1
+                                            July and 31 December 2020</p></authorialNote></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Union</p>
+                            </td>
+                            <td>
+                                <p>Not relevant</p>
+                            </td>
+                            <td>
+                                <p><authorialNote marker="6" placement="bottom"
+                                        placementBase="~_table_d22e448"><p>To be fished between 1
+                                            July and 31 December
+                                        2020</p></authorialNote><authorialNote marker="7"
+                                        placement="bottom" placementBase="~_table_d22e448"><p>No
+                                            specified Union’s share. The amount specified below, in
+                                            tonnes, is available to Canada and the Member States of
+                                            the Union except Estonia, Latvia, Lithuania and
+                                            Poland:29 467</p></authorialNote></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>TAC</p>
+                            </td>
+                            <td>
+                                <p>34 000</p>
+                            </td>
+                            <td/>
+                        </tr>
+                    </table>
+                        </content>
+                    </hcontainer>   
+                </hcontainer>
+            </paragraph>
+            <paragraph>
+                <hcontainer name="BLOCK_TAB">
+                    <hcontainer name="TAB">
+                        <content>
+                       <table xml:id="_table_d22e535">
+                        <tr>
+                            <th>
+                                <p><b>Species:</b></p>
+                            </th>
+                            <th colspan="2">
+                                <p>Yellowtail flounder</p>
+                                <p><i>Limanda ferruginea</i></p>
+                            </th>
+                            <th>
+                                <p><b>Zone:</b></p>
+                            </th>
+                            <th>
+                                <p>NAFO 3LNO</p>
+                                <p>(YEL/N3LNO.)</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Union</p>
+                            </td>
+                            <td>
+                                <p>0</p>
+                            </td>
+                            <td>
+                                <p><authorialNote marker="8" placement="bottom"
+                                        placementBase="~_table_d22e535"><p>No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the following limits: a maximum
+                                            of 2 500 kg or 10 %, whichever is greater. However, when
+                                            the yellowtail flounder quota assigned by NAFO to
+                                            Contracting Parties without a specific share of the
+                                            stock is exhausted, by-catch limits shall be: a maximum
+                                            of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                            <td colspan="2" rowspan="2">
+                                <p>Analytical TAC</p>
+                                <p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+                                <p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>TAC</p>
+                            </td>
+                            <td>
+                                <p>17 000</p>
+                            </td>
+                            <td/>
+                        </tr>
+                    </table>
+                        </content>
+                    </hcontainer>
+                </hcontainer>
+            </paragraph>
+            <paragraph>
+                <hcontainer name="BLOCK_TAB">
+                    <hcontainer name="TAB">
+                        <content>
+                        <table xml:id="_table_d22e587">
+                        <tr>
+                            <th>
+                                <p><b>Species:</b></p>
+                            </th>
+                            <th colspan="2">
+                                <p>Capelin</p>
+                                <p><i>Mallotus villosus</i></p>
+                            </th>
+                            <th>
+                                <p><b>Zone:</b></p>
+                            </th>
+                            <th>
+                                <p>NAFO 3NO</p>
+                                <p>(CAP/N3NO.)</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Union</p>
+                            </td>
+                            <td>
+                                <p>0</p>
+                            </td>
+                            <td>
+                                <p><authorialNote marker="9" placement="bottom"
+                                        placementBase="~_table_d22e587"><p>No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the following limits: a maximum
+                                            of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                            <td colspan="2" rowspan="2">
+                                <p>Analytical TAC</p>
+                                <p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+                                <p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>TAC</p>
+                            </td>
+                            <td>
+                                <p>0</p>
+                            </td>
+                            <td>
+                                <p><authorialNote marker="9" placement="bottom"
+                                        placementBase="~_table_d22e587"><p>No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the following limits: a maximum
+                                            of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                        </tr>
+                    </table>
+                        </content>
+                    </hcontainer>
+                </hcontainer>
+            </paragraph>
+            <paragraph>
+                <hcontainer name="BLOCK_TAB">
+                    <hcontainer name="TAB">
+                        <content>
+                        <table xml:id="_table_d22e635">
+                        <tr>
+                            <th>
+                                <p><b>Species:</b></p>
+                            </th>
+                            <th colspan="2">
+                                <p>Northern prawn</p>
+                                <p><i>Pandalus borealis</i></p>
+                            </th>
+                            <th>
+                                <p><b>Zone:</b></p>
+                            </th>
+                            <th>
+                                <p>NAFO 3LNO<authorialNote marker="1" placement="bottom"
+                                    placementBase="~_table_d22e635">
+                                    <block name="complexContent"><subFlow name="structuredContent">
+                                        <hcontainer name="BLOCK_TAB">
+                                            <subparagraph>
+                                                <content>
+                                                    <p>Not including the box bounded by the following oordinates:</p>
+                                                </content>
+                                            </subparagraph>
+                                            <hcontainer name="TAB">
+                                                <content>
+                                                    <table>
+                                                        <tr>
+                                                            <th>
+                                                                <p>Point No</p>
+                                                            </th>
+                                                            <th>
+                                                                <p>Latitude N</p>
+                                                            </th>
+                                                            <th>
+                                                                <p>Longitude W</p>
+                                                            </th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><p>1</p></td>
+                                                            <td><p>47° 20' 0</p></td>
+                                                            <td><p>46° 40' 0</p></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><p>2</p></td>
+                                                            <td><p>47° 20' 0</p></td>
+                                                            <td><p>46° 30' 0</p></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><p>3</p></td>
+                                                            <td><p>46° 00' 0</p></td>
+                                                            <td><p>46° 30' 0</p></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><p>4</p></td>
+                                                            <td><p>46° 00' 0</p></td>
+                                                            <td><p>46° 40' 0</p></td>
+                                                        </tr>
+                                                    </table>
+                                                </content>
+                                            </hcontainer>                                            
+                                        </hcontainer>
+                                    </subFlow>
+                                    </block></authorialNote>
+                                    <authorialNote marker="2"
+                                        placement="bottom" placementBase="~_table_d22e635"
+                                        ><block name="complexContent"><subFlow name="structuredContent">
+                                            <hcontainer name="BLOCK_TAB">
+                                                <subparagraph>
+                                                    <content>
+                                                        <p>Fishing is prohibited at a depth less than 200 metres in the area West of a line bound by the following coordinates:</p>
+                                                    </content>
+                                                </subparagraph>
+                                                <hcontainer name="TAB">
+                                                    <content>
+                                                        <table>
+                                                            <tr>
+                                                                <th>
+                                                                    <p>Point No</p>
+                                                                </th>
+                                                                <th>
+                                                                    <p>Latitude N</p>
+                                                                </th>
+                                                                <th>
+                                                                    <p>Longitude W</p>
+                                                                </th>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><p>1</p></td>
+                                                                <td><p>46° 00' 0</p></td>
+                                                                <td><p>47° 49' 0</p></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><p>2</p></td>
+                                                                <td><p>46° 25' 0</p></td>
+                                                                <td><p>47° 27' 0</p></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><p>3</p></td>
+                                                                <td><p>46 °42' 0</p></td>
+                                                                <td><p>47° 25' 0</p></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><p>4</p></td>
+                                                                <td><p>46° 48' 0</p></td>
+                                                                <td><p>47° 25' 50</p></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><p>5</p></td>
+                                                                <td><p>47° 16' 50</p></td>
+                                                                <td><p>47° 43' 50</p></td>
+                                                            </tr>
+                                                        </table>
+                                                    </content>
+                                                </hcontainer>                                            
+                                            </hcontainer>                                                                                
+                                        </subFlow></block></authorialNote></p>
+                                <p>(PRA/N3LNO.)</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Estonia</p>
+                            </td>
+                            <td>
+                                <p>0</p>
+                            </td>
+                            <td>
+                                <p><authorialNote marker="3" placement="bottom"
+                                        placementBase="~_table_d22e635"><p>No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the following limits: a maximum
+                                            of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                            <td colspan="2" rowspan="8">
+                                <p>Analytical TAC</p>
+                                <p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+                                <p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Latvia</p>
+                            </td>
+                            <td>
+                                <p>0</p>
+                            </td>
+                            <td>
+                                <p><authorialNote marker="3" placement="bottom"
+                                        placementBase="~_table_d22e635"><p>No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the following limits: a maximum
+                                            of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Lithuania</p>
+                            </td>
+                            <td>
+                                <p>0</p>
+                            </td>
+                            <td>
+                                <p><authorialNote marker="3" placement="bottom"
+                                        placementBase="~_table_d22e635"><p>No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the following limits: a maximum
+                                            of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Poland</p>
+                            </td>
+                            <td>
+                                <p>0</p>
+                            </td>
+                            <td>
+                                <p><authorialNote marker="3" placement="bottom"
+                                        placementBase="~_table_d22e635"><p>No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the following limits: a maximum
+                                            of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Spain</p>
+                            </td>
+                            <td>
+                                <p>0</p>
+                            </td>
+                            <td>
+                                <p><authorialNote marker="3" placement="bottom"
+                                        placementBase="~_table_d22e635"><p>No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the following limits: a maximum
+                                            of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Portugal</p>
+                            </td>
+                            <td>
+                                <p>0</p>
+                            </td>
+                            <td>
+                                <p><authorialNote marker="3" placement="bottom"
+                                        placementBase="~_table_d22e635"><p>No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the following limits: a maximum
+                                            of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Union</p>
+                            </td>
+                            <td>
+                                <p>0</p>
+                            </td>
+                            <td>
+                                <p><authorialNote marker="3" placement="bottom"
+                                        placementBase="~_table_d22e635"><p>No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the following limits: a maximum
+                                            of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>TAC</p>
+                            </td>
+                            <td>
+                                <p>0</p>
+                            </td>
+                            <td>
+                                <p><authorialNote marker="3" placement="bottom"
+                                        placementBase="~_table_d22e635"><p>No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the following limits: a maximum
+                                            of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                        </tr>
+                    </table>
+                        </content>
+                    </hcontainer>   
+                </hcontainer>
+            </paragraph>
+            <paragraph>
+                <hcontainer name="BLOCK_TAB">
+                    <hcontainer name="TAB">
+                        <content>
+                        <table xml:id="_table_d22e815">
+                        <tr>
+                            <th>
+                                <p><b>Species:</b></p>
+                            </th>
+                            <th colspan="2">
+                                <p>Northern prawn</p>
+                                <p><i>Pandalus borealis</i></p>
+                            </th>
+                            <th>
+                                <p><b>Zone:</b></p>
+                            </th>
+                            <th>
+                                <p>NAFO 3M<authorialNote marker="1" placement="bottom"
+                                    placementBase="~_table_d22e815"><block name="complexContent"><subFlow name="structuredContent">
+                                        <hcontainer name="BLOCK_TAB">
+                                            <subparagraph><content><p>Vessels may also fish
+                                            this stock in Division 3L in the box bounded by the
+                                            following coordinates:</p></content>
+                                    </subparagraph>
+                                            <hcontainer name="TAB">
+                                                <content>
+                                                    <table>
+                                                        <tr>
+                                                            <th>
+                                                                <p>Point No</p>
+                                                            </th>
+                                                            <th>
+                                                                <p>Latitude N</p>
+                                                            </th>
+                                                            <th>
+                                                                <p>Longitude W</p>
+                                                            </th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><p>1</p></td>
+                                                            <td><p>46° 00' 0</p></td>
+                                                            <td><p>47° 49' 0</p></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><p>2</p></td>
+                                                            <td><p>46° 25' 0</p></td>
+                                                            <td><p>47° 27' 0</p></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><p>3</p></td>
+                                                            <td><p>46 °42' 0</p></td>
+                                                            <td><p>47° 25' 0</p></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><p>4</p></td>
+                                                            <td><p>46° 48' 0</p></td>
+                                                            <td><p>47° 25' 50</p></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><p>5</p></td>
+                                                            <td><p>47° 16' 50</p></td>
+                                                            <td><p>47° 43' 50</p></td>
+                                                        </tr>
+                                                    </table>
+                                                </content>
+                                            </hcontainer>                                                                              </hcontainer>
+                                        <hcontainer name="BLOCK_TAB">
+                                            <subparagraph>
+                                                <content>
+                                                    <p>Moreover, fishing for shrimp is
+                                                        prohibited from 1 June to 31 December in the area bounded by the following coordinates:</p>
+                                                </content>
+                                            </subparagraph>
+                                        </hcontainer>
+                                        <hcontainer name="TAB">
+                                            <content>
+                                                <table>
+                                                    <tr>
+                                                        <th>
+                                                            <p>Point No</p>
+                                                        </th>
+                                                        <th>
+                                                            <p>Latitude N</p>
+                                                        </th>
+                                                        <th>
+                                                            <p>Longitude W</p>
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><p>1</p></td>
+                                                        <td><p>47° 55' 0</p></td>
+                                                        <td><p>45° 00' 0</p></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><p>2</p></td>
+                                                        <td><p>47° 30' 0</p></td>
+                                                        <td><p>44° 15' 0</p></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><p>3</p></td>
+                                                        <td><p>46° 55' 0</p></td>
+                                                        <td><p>44° 15' 0</p></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><p>4</p></td>
+                                                        <td><p>46° 35' 0</p></td>
+                                                        <td><p>44° 30' 0</p></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><p>5</p></td>
+                                                        <td><p>46° 35' 0</p></td>
+                                                        <td><p>45° 40' 0</p></td>
+                                                    </tr>
+                                                </table>
+                                            </content>
+                                        </hcontainer>                                            
+                                    </subFlow>
+                                    </block>
+                                </authorialNote></p>
+                                <p>(PRA/*N3M.)</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>TAC</p>
+                            </td>
+                            <td>
+                                <p>Not relevant</p>
+                            </td>
+                            <td>
+                                <p><authorialNote marker="2" placement="bottom"
+                                    placementBase="~_table_d22e815">                                            <hcontainer name="BLOCK_TAB">
+                                        <subparagraph>
+                                            <content>
+                                                <p>Not relevant. Fishery managed by limitations in fishing effort (EFF/*N3M.). The Member States concerned shall issue fishing authorisations for their fishing vessels engaging in this fishery and shall notify those authorisations to the Commission prior to the commencement of the vessel’s activity, in accordance with Regulation (EC) No 1224/2009.</p>
+                                            </content>
+                                        </subparagraph>
+                                        <hcontainer name="TAB">
+                                            <content>
+                                                <table xml:id="_table_j902e635">
+                                                    <tr>
+                                                        <th>
+                                                            <p>Member State</p>
+                                                        </th>
+                                                        <th>
+                                                            <p>Maximum number of fishing days</p>
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><p>Denmark</p></td>
+                                                        <td><p>33</p></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><p>Estonia</p></td>
+                                                        <td><p>391 <authorialNote marker="*"
+                                                            placement="bottom" placementBase="~_table_j902e635"><p>The NAFO Commission agreed at its 2019 Annual Meeting that the European Union (Estonia) will transfer 25 fishing days of its fishing days allocation for 2020 to France, in respect of St Pierre et Miquelon. Those 25 fishing days have been deducted from Estonia’s number of fishing days, which would otherwise have been 416 days, under this interim regime for 2020 that will not create any catch history.</p></authorialNote></p></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><p>Spain</p></td>
+                                                        <td><p>64</p></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><p>1</p></td>
+                                                        <td><p>46° 00' 0</p></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><p>Latvia</p></td>
+                                                        <td><p>123</p></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><p>Lithuania</p></td>
+                                                        <td><p>145</p></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><p>Poland</p></td>
+                                                        <td><p>25</p></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><p>Portuga</p></td>
+                                                        <td><p>17</p></td>
+                                                    </tr>
+                                                </table>
+                                            </content>
+                                        </hcontainer>                                            
+                                    </hcontainer>                                    
+                                </authorialNote></p>
+                            </td>
+                            <td colspan="2">
+                                <p>Analytical TAC</p>
+                            </td>
+                        </tr>
+                    </table>
+                        </content>
+                    </hcontainer>
+                </hcontainer>
+            </paragraph>
+            <paragraph>
+                <content>
+                    <table>
+                        <tr>
+                            <th>
+                                <p><b>Species:</b></p>
+                            </th>
+                            <th colspan="2">
+                                <p>Greenland halibut</p>
+                                <p><i>Reinhardtius hippoglossoides</i></p>
+                            </th>
+                            <th>
+                                <p><b>Zone:</b></p>
+                            </th>
+                            <th>
+                                <p>NAFO 3LMNO</p>
+                                <p>(GHL/N3LMNO)</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Estonia</p>
+                            </td>
+                            <td>
+                                <p>340</p>
+                            </td>
+                            <td/>
+                            <td colspan="2" rowspan="8">
+                                <p>Analytical TAC</p>
+                                <p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+                                <p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Germany</p>
+                            </td>
+                            <td>
+                                <p>347</p>
+                            </td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Latvia</p>
+                            </td>
+                            <td>
+                                <p>48</p>
+                            </td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Lithuania</p>
+                            </td>
+                            <td>
+                                <p>24</p>
+                            </td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Spain</p>
+                            </td>
+                            <td>
+                                <p>4 650</p>
+                            </td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Portugal</p>
+                            </td>
+                            <td>
+                                <p>1 944</p>
+                            </td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Union</p>
+                            </td>
+                            <td>
+                                <p>7 353</p>
+                            </td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>TAC</p>
+                            </td>
+                            <td>
+                                <p>12 542</p>
+                            </td>
+                            <td/>
+                        </tr>
+                    </table>
+                </content>
+            </paragraph>
+            <paragraph>
+                <content>
+                    <table>
+                        <tr>
+                            <th>
+                                <p><b>Species:</b></p>
+                            </th>
+                            <th colspan="2">
+                                <p>Skate</p>
+                                <p><i>Rajidae</i></p>
+                            </th>
+                            <th>
+                                <p><b>Zone:</b></p>
+                            </th>
+                            <th>
+                                <p>NAFO 3LNO</p>
+                                <p>(SKA/N3LNO.)</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Estonia</p>
+                            </td>
+                            <td>
+                                <p>283</p>
+                            </td>
+                            <td/>
+                            <td colspan="2" rowspan="6">
+                                <p>Analytical TAC</p>
+                                <p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+                                <p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Lithuania</p>
+                            </td>
+                            <td>
+                                <p>62</p>
+                            </td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Spain</p>
+                            </td>
+                            <td>
+                                <p>3 403</p>
+                            </td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Portugal</p>
+                            </td>
+                            <td>
+                                <p>660</p>
+                            </td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Union</p>
+                            </td>
+                            <td>
+                                <p>4 408</p>
+                            </td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>TAC</p>
+                            </td>
+                            <td>
+                                <p>7 000</p>
+                            </td>
+                            <td/>
+                        </tr>
+                    </table>
+                </content>
+            </paragraph>
+            <paragraph>
+                <content>
+                    <table>
+                        <tr>
+                            <th>
+                                <p><b>Species:</b></p>
+                            </th>
+                            <th colspan="2">
+                                <p>Redfish</p>
+                                <p><i>Sebastes</i> spp.</p>
+                            </th>
+                            <th>
+                                <p><b>Zone:</b></p>
+                            </th>
+                            <th>
+                                <p>NAFO 3LN</p>
+                                <p>(RED/N3LN.)</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Estonia</p>
+                            </td>
+                            <td>
+                                <p>895</p>
+                            </td>
+                            <td/>
+                            <td colspan="2" rowspan="6">
+                                <p>Analytical TAC</p>
+                                <p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+                                <p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Germany</p>
+                            </td>
+                            <td>
+                                <p>615</p>
+                            </td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Latvia</p>
+                            </td>
+                            <td>
+                                <p>895</p>
+                            </td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Lithuania</p>
+                            </td>
+                            <td>
+                                <p>895</p>
+                            </td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Union</p>
+                            </td>
+                            <td>
+                                <p>3 300</p>
+                            </td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>TAC</p>
+                            </td>
+                            <td>
+                                <p>18 100</p>
+                            </td>
+                            <td/>
+                        </tr>
+                    </table>
+                </content>
+            </paragraph>
+            <paragraph>
+                <content>
+                    <table xml:id="_table_d22e1242">
+                        <tr>
+                            <th>
+                                <p><b>Species:</b></p>
+                            </th>
+                            <th colspan="2">
+                                <p>Redfish</p>
+                                <p><i>Sebastes</i> spp.</p>
+                            </th>
+                            <th>
+                                <p><b>Zone:</b></p>
+                            </th>
+                            <th>
+                                <p>NAFO 3M</p>
+                                <p>(RED/N3M.)</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Estonia</p>
+                            </td>
+                            <td>
+                                <p>1 571</p>
+                            </td>
+                            <td>
+                                <p><authorialNote marker="16" placement="bottom"
+                                        placementBase="~_table_d22e1242"><p>This quota is subject to
+                                            compliance with the TAC as shown, which is established
+                                            for this stock for all NAFO Contracting Parties. Within
+                                            that TAC, no more than the following mid-term limit may
+                                            be fished before 1 July 2020: 4
+                                    295</p></authorialNote></p>
+                            </td>
+                            <td colspan="2" rowspan="8">
+                                <p>Analytical TAC</p>
+                                <p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+                                <p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Germany</p>
+                            </td>
+                            <td>
+                                <p>513</p>
+                            </td>
+                            <td>
+                                <p><authorialNote marker="16" placement="bottom"
+                                        placementBase="~_table_d22e1242"><p>This quota is subject to
+                                            compliance with the TAC as shown, which is established
+                                            for this stock for all NAFO Contracting Parties. Within
+                                            that TAC, no more than the following mid-term limit may
+                                            be fished before 1 July 2020: 4
+                                    295</p></authorialNote></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Latvia</p>
+                            </td>
+                            <td>
+                                <p>1 571</p>
+                            </td>
+                            <td>
+                                <p><authorialNote marker="16" placement="bottom"
+                                        placementBase="~_table_d22e1242"><p>This quota is subject to
+                                            compliance with the TAC as shown, which is established
+                                            for this stock for all NAFO Contracting Parties. Within
+                                            that TAC, no more than the following mid-term limit may
+                                            be fished before 1 July 2020: 4
+                                    295</p></authorialNote></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Lithuania</p>
+                            </td>
+                            <td>
+                                <p>1 571</p>
+                            </td>
+                            <td>
+                                <p><authorialNote marker="16" placement="bottom"
+                                        placementBase="~_table_d22e1242"><p>This quota is subject to
+                                            compliance with the TAC as shown, which is established
+                                            for this stock for all NAFO Contracting Parties. Within
+                                            that TAC, no more than the following mid-term limit may
+                                            be fished before 1 July 2020: 4
+                                    295</p></authorialNote></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Spain</p>
+                            </td>
+                            <td>
+                                <p>233</p>
+                            </td>
+                            <td>
+                                <p><authorialNote marker="16" placement="bottom"
+                                        placementBase="~_table_d22e1242"><p>This quota is subject to
+                                            compliance with the TAC as shown, which is established
+                                            for this stock for all NAFO Contracting Parties. Within
+                                            that TAC, no more than the following mid-term limit may
+                                            be fished before 1 July 2020: 4
+                                    295</p></authorialNote></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Portugal</p>
+                            </td>
+                            <td>
+                                <p>2 354</p>
+                            </td>
+                            <td>
+                                <p><authorialNote marker="16" placement="bottom"
+                                        placementBase="~_table_d22e1242"><p>This quota is subject to
+                                            compliance with the TAC as shown, which is established
+                                            for this stock for all NAFO Contracting Parties. Within
+                                            that TAC, no more than the following mid-term limit may
+                                            be fished before 1 July 2020: 4
+                                    295</p></authorialNote></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Union</p>
+                            </td>
+                            <td>
+                                <p>7 813</p>
+                            </td>
+                            <td>
+                                <p><authorialNote marker="16" placement="bottom"
+                                        placementBase="~_table_d22e1242"><p>This quota is subject to
+                                            compliance with the TAC as shown, which is established
+                                            for this stock for all NAFO Contracting Parties. Within
+                                            that TAC, no more than the following mid-term limit may
+                                            be fished before 1 July 2020: 4
+                                    295</p></authorialNote></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>TAC</p>
+                            </td>
+                            <td>
+                                <p>8 590</p>
+                            </td>
+                            <td>
+                                <p><authorialNote marker="16" placement="bottom"
+                                        placementBase="~_table_d22e1242"><p>This quota is subject to
+                                            compliance with the TAC as shown, which is established
+                                            for this stock for all NAFO Contracting Parties. Within
+                                            that TAC, no more than the following mid-term limit may
+                                            be fished before 1 July 2020: 4
+                                    295</p></authorialNote></p>
+                            </td>
+                        </tr>
+                    </table>
+                </content>
+            </paragraph>
+            <paragraph>
+                <content>
+                    <table>
+                        <tr>
+                            <th>
+                                <p><b>Species:</b></p>
+                            </th>
+                            <th colspan="2">
+                                <p>Redfish</p>
+                                <p><i>Sebastes</i> spp.</p>
+                            </th>
+                            <th>
+                                <p><b>Zone:</b></p>
+                            </th>
+                            <th>
+                                <p>NAFO 3O</p>
+                                <p>(RED/N3O.)</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Spain</p>
+                            </td>
+                            <td>
+                                <p>1 771</p>
+                            </td>
+                            <td/>
+                            <td colspan="2" rowspan="4">
+                                <p>Analytical TAC</p>
+                                <p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+                                <p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Portugal</p>
+                            </td>
+                            <td>
+                                <p>5 229</p>
+                            </td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Union</p>
+                            </td>
+                            <td>
+                                <p>7 000</p>
+                            </td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>TAC</p>
+                            </td>
+                            <td>
+                                <p>20 000</p>
+                            </td>
+                            <td/>
+                        </tr>
+                    </table>
+                </content>
+            </paragraph>
+            <paragraph>
+                <content>
+                    <table xml:id="_table_d22e1401">
+                        <tr>
+                            <th>
+                                <p><b>Species:</b></p>
+                            </th>
+                            <th colspan="2">
+                                <p>Redfish</p>
+                                <p><i>Sebastes</i> spp.</p>
+                            </th>
+                            <th>
+                                <p><b>Zone:</b></p>
+                            </th>
+                            <th>
+                                <p>NAFO Subarea 2, Divisions 1F and 3K</p>
+                                <p>(RED/N1F3K.)</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Latvia</p>
+                            </td>
+                            <td>
+                                <p>0</p>
+                            </td>
+                            <td>
+                                <p><authorialNote marker="17" placement="bottom"
+                                        placementBase="~_table_d22e1401"><p>No directed fisheries
+                                            are permitted under this quota. This species shall only
+                                            be taken as by-catch within the following limits: a
+                                            maximum of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                            <td colspan="2" rowspan="4">
+                                <p>Analytical TAC</p>
+                                <p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+                                <p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Lithuania</p>
+                            </td>
+                            <td>
+                                <p>0</p>
+                            </td>
+                            <td>
+                                <p><authorialNote marker="17" placement="bottom"
+                                        placementBase="~_table_d22e1401"><p>No directed fisheries
+                                            are permitted under this quota. This species shall only
+                                            be taken as by-catch within the following limits: a
+                                            maximum of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Union</p>
+                            </td>
+                            <td>
+                                <p>0</p>
+                            </td>
+                            <td>
+                                <p><authorialNote marker="17" placement="bottom"
+                                        placementBase="~_table_d22e1401"><p>No directed fisheries
+                                            are permitted under this quota. This species shall only
+                                            be taken as by-catch within the following limits: a
+                                            maximum of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>TAC</p>
+                            </td>
+                            <td>
+                                <p>0</p>
+                            </td>
+                            <td>
+                                <p><authorialNote marker="17" placement="bottom"
+                                        placementBase="~_table_d22e1401"><p>No directed fisheries
+                                            are permitted under this quota. This species shall only
+                                            be taken as by-catch within the following limits: a
+                                            maximum of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                        </tr>
+                    </table>
+                </content>
+            </paragraph>
+            <paragraph>
+                <content>
+                    <table xml:id="_table_d22e1464">
+                        <tr>
+                            <th>
+                                <p><b>Species:</b></p>
+                            </th>
+                            <th colspan="2">
+                                <p>White hake</p>
+                                <p><i>Urophycis tenuis</i></p>
+                            </th>
+                            <th>
+                                <p><b>Zone:</b></p>
+                            </th>
+                            <th>
+                                <p>NAFO 3NO</p>
+                                <p>(HKW/N3NO.)</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Spain</p>
+                            </td>
+                            <td>
+                                <p>255</p>
+                            </td>
+                            <td/>
+                            <td colspan="2" rowspan="4">
+                                <p>Analytical TAC</p>
+                                <p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+                                <p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Portugal</p>
+                            </td>
+                            <td>
+                                <p>333</p>
+                            </td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Union</p>
+                            </td>
+                            <td>
+                                <p>588</p>
+                            </td>
+                            <td>
+                                <p><authorialNote marker="18" placement="bottom"
+                                        placementBase="~_table_d22e1464"><p>Where, in accordance
+                                            with Annex IA of the NAFO Conservation and Enforcement
+                                            Measures, a positive vote by the Contracting Parties
+                                            confirms the TAC to be 2 000 tonnes, the corresponding
+                                            Union and Member State quotas shall be deemed to be as
+                                            below:</p></authorialNote></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>TAC</p>
+                            </td>
+                            <td>
+                                <p>1 000</p>
+                            </td>
+                            <td/>
+                        </tr>
+                    </table>
+                </content>
+            </paragraph>
+        </mainBody>
+    </doc>
+</akomaNtoso>

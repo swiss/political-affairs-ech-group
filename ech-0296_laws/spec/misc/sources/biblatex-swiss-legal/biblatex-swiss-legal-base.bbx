@@ -1,0 +1,1497 @@
+	%%%%%% BIBLATEX-SWISS-LEGAL-BASE : BIBLIOGRAPHY %%%%%%%
+
+
+% Copyright 2014 Adrien Vion
+  %
+  % This work may be distributed and/or modified under the
+  % conditions of the LaTeX Project Public License, either version 1.3
+  % of this license or (at your option) any later version.
+  % The latest version of this license is in
+  %   http://www.latex-project.org/lppl.txt
+  % and version 1.3 or later is part of all distributions of LaTeX
+  % version 2005/12/01 or later.
+  %
+  % This work has the LPPL maintenance status 'maintained'.
+  % 
+  % The Current Maintainer of this work is Adrien Vion.
+
+% Encoding of this file: UTF-8. Code is ASCII compatible.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+												
+
+\ProvidesFile{biblatex-swiss-legal-base.bbx}[2014/01/21 v1.1.2 alpha]
+
+\RequireBiber[2]
+
+% Ce paquet est conçu pour fonctionner avec biber. Il devrait pouvoir fonctionner avec bibtex, mais certaines de ses fonctionnalités ne fonctionneront pas (par exemple, le tri de la jurisprudence).
+
+\RequirePackage{xstring}%
+
+
+% Commande choisissant le fichier .lbx
+\DeclareLanguageMapping{french}{biblatex-swiss-legal-fr}
+\DeclareLanguageMapping{german}{biblatex-swiss-legal-de}
+\DeclareLanguageMapping{germanb}{biblatex-swiss-legal-de}
+\DeclareLanguageMapping{ngerman}{biblatex-swiss-legal-de}
+
+%%%%%%%%%%% NOUVELLES COMMANDES DE BIBLIOGRAPHIE %%%%%%%%%%%%%%%%
+
+\newcommand{\printpaperbibliography}{\printbibliography[nottype=online, title=Bibliographie]}
+\newcommand{\printonlinebibliography}{\printbibliography[type=online, title=Sources en ligne]}
+
+\newcommand{\printsepbibliography}{%
+\printbibheading
+
+\printbibliography[nottype=online, heading=subbibliography, title=Sources physiques]
+
+\printbibliography[type=online, heading=subbibliography, title=Sources en ligne]
+
+\bigskip
+}
+
+% Commandes pour la citation uniforme des numéros
+
+
+\providecommand{\chaN}[2]{\S~#1 #2}
+\providecommand{\chaparN}[2]{\S~#1 \parN #2}
+\providecommand{\chaparNN}[2]{\S~#1 \parNN #2}
+
+
+%%%%%%%%%%% OPTIONS DE BIBLIOGRAPHIE ET DE CITATION %%%%%%%%%%%%%%%%
+
+% Création des variables
+
+\newtoggle{bbx:abrjournal}
+\newtoggle{bbx:abstracts}
+\newtoggle{bbx:adarticle}
+\newtoggle{bbx:bookspages}
+\newtoggle{bbx:editorssc}
+\newtoggle{bbx:firstnames}
+\newtoggle{bbx:jstitles}
+\newtoggle{bbx:jurisdictionindex}
+\newtoggle{bbx:library}
+\newtoggle{bbx:notes}
+\newtoggle{bbx:shortform}
+\newtoggle{bbx:titleit}
+\newtoggle{bbx:subtitles}
+
+\newcount\blx@punctsubtitle% 		Compteurs pour options à choix multiples
+\newcount\blx@commentarystyle%
+
+
+% Création des options
+
+\DeclareBibliographyOption{abrjournal}[true]{%
+  \settoggle{bbx:abrjournal}{#1}}
+  
+    \DeclareBibliographyOption{abstracts}[true]{%
+  \settoggle{bbx:abstracts}{#1}}
+  
+      \DeclareBibliographyOption{adarticle}[true]{%
+  \settoggle{bbx:adarticle}{#1}}
+  
+  \DeclareBibliographyOption{bookspages}[true]{%
+  \settoggle{bbx:bookspages}{#1}}  
+
+ \DeclareBibliographyOption{editorssc}[true]{%
+  \settoggle{bbx:editorssc}{#1}}
+
+ \DeclareBibliographyOption{firstnames}[true]{%
+  \settoggle{bbx:firstnames}{#1}}
+  
+  \DeclareBibliographyOption{jstitles}[true]{%
+  \settoggle{bbx:jstitles}{#1}}
+
+  \DeclareBibliographyOption{jurisdictionindex}[true]{%
+  \settoggle{bbx:jurisdictionindex}{#1}}
+
+  \DeclareBibliographyOption{library}[true]{%
+  \settoggle{bbx:library}{#1}}
+
+  \DeclareBibliographyOption{notes}[true]{%
+  \settoggle{bbx:notes}{#1}}
+
+  \DeclareBibliographyOption{shortform}[true]{%
+  \settoggle{bbx:shortform}{#1}}
+  
+    \DeclareBibliographyOption{subtitles}[true]{%
+  \settoggle{bbx:subtitles}{#1}}
+
+  \DeclareBibliographyOption{titleit}[true]{%
+  \settoggle{bbx:titleit}{#1}}
+
+
+\DeclareBibliographyOption{punctsubtitle}{%			Option à choix multiples pour la ponctuation titre - sous-titre
+ \ifcsdef{blx@opt@punctsubtitle@#1}
+   {\blx@punctsubtitle\csuse{blx@opt@punctsubtitle@#1}}
+   {\blx@err@invopt{punctsubtitle=#1}{}}}
+\cslet{blx@opt@punctsubtitle@fulldash}\z@
+\let\blx@opt@punctsubtitle@halfdash\@ne
+\let\blx@opt@punctsubtitle@comma\tw@
+
+\DeclareBibliographyOption{commentarystyle}{%			Option à choix multiples pour le style de citation de commentaire
+ \ifcsdef{blx@opt@commentarystyle@#1}
+   {\blx@commentarystyle\csuse{blx@opt@commentarystyle@#1}}
+   {\blx@err@invopt{commentarystyle=#1}{}}}
+\cslet{blx@opt@commentarystyle@styleA}\z@
+\let\blx@opt@commentarystyle@styleB\@ne
+\let\blx@opt@commentarystyle@styleC\tw@
+
+
+
+% Sélection d'options par défaut
+
+\ExecuteBibliographyOptions{%
+abbreviate=true,
+date=long,
+dateabbrev=false,
+ibidtracker=context,
+maxbibnames=99,
+maxcitenames=4,
+mincrossrefs=1,
+singletitle=true,
+uniquename=full,
+uniquelist=true,
+urldate=long,
+abrjournal=true,
+abstracts=true,
+adarticle=false,
+bookspages=false,
+commentarystyle=styleA,
+editorssc=true,
+firstnames=true,
+jstitles=true,
+jurisdictionindex=false,
+library=true,
+notes=true,
+punctsubtitle=fulldash,
+shortform=true,
+subtitles=true,
+titleit=true
+}
+
+%%%%%%%%%%% FORMATAGE GENERAL DE LA BIBLIOGRAPHIE %%%%%%%%%%%%%
+
+
+
+\newcommand{\longbibtype}{%
+\defbibenvironment{bibliography}
+{\list{}
+{\setlength{\leftmargin}{\bibhang}%
+\setlength{\itemindent}{-\leftmargin}%
+\setlength{\itemsep}{\bibitemsep}%
+\setlength{\parsep}{\bibparsep}}}
+{\endlist}
+{\item}
+\setlength{\bibitemsep}{10pt}
+}
+
+\usepackage{amssymb}
+
+\newcommand{\shortbibglyphformat}[1]{\raisebox{0.15ex}{#1}}
+\newcommand{\shortbibglyph}{\shortbibglyphformat{$\blacktriangleright$}}
+
+
+
+\newcommand{\shortbibtype}{%
+\defbibenvironment{bibliography}%
+{\footnotesize\noindent}{\adddot\textnormal}{\hspace{0.6em}\shortbibglyph\addnbspace}%
+\renewcommand{\finentrypunct}{}%
+}
+
+\newcommand{\nobibtype}{%
+\renewcommand{\printbibliography}{}
+}
+
+
+
+%%%%%%%%%%% COMMANDES DE TRI %%%%%%%%%%% 
+
+\DeclareSortingScheme{ntyintro}{% Code en test non mentionné dans le manuel
+\sort{
+\field{presort}
+}
+\sort[final]{
+\field{sortkey}
+}
+\sort{
+\name{sortname}
+\name{introduction}
+\name{author}
+\name{editor}
+\name{translator}
+\field{sorttitle}
+\field{title}
+}
+\sort{
+\field{sorttitle}
+\field{title}
+}
+\sort{
+\field{sortyear}
+\field{year}
+}
+}
+
+
+\DeclareSortingScheme{ntyjurisdiction}{% Code en test non mentionné dans le manuel
+  \sort{
+    \field{presort}
+  }
+  \sort[final]{
+    \field{sortkey}
+  }
+  \sort{
+    \name{sortname}
+    \name{introduction}
+    \name{author}
+    \name{editor}
+    \name{translator}
+  }
+  \sort[direction=descending]{
+    \field{usera}
+  }
+  \sort{
+    \field[padside=left, padwidth=3, padchar=0]{userb}
+  }
+    \sort{
+    \field{userc}
+  }
+     \sort{
+    \field{userd}
+  }
+  \sort{
+    \field{sorttitle}
+    \field{title}
+  }
+  \sort{
+    \field{sortyear}
+    \field{year}
+  }
+  \sort{
+    \field[padside=left,padwidth=4,padchar=0]{volume}
+    \literal{0000}
+  }
+}
+
+
+\DeclareSortingScheme{chronological}{
+  \sort{
+    \field{presort}
+  }
+  \sort{
+    \name{sortname}
+    \name{introduction}
+    \name{author}
+    \name{editor}
+    \name{translator}
+  }
+  \sort[direction=ascending]{
+    \field{origyear}
+  }
+    \sort[direction=ascending]{
+    \field{origmonth}
+  }
+    \sort[direction=ascending]{
+    \field{origday}
+  }
+}
+
+
+%%%%%%%%%%% FORMATAGE DES DONNEES %%%%%%%%%%%%%
+
+% Ponctuation
+
+\renewcommand{\newblockpunct}{\addcomma\addspace}%
+\renewcommand{\newunitpunct}{\addspace}%
+\renewcommand{\subtitlepunct}{%
+{\ifnum\blx@punctsubtitle=\z@% 	Si on a choisi l'option punctsubtitle=fulldash (activée par défaut)
+	  	\addnbspace\printtext{---}\addspace%		Alors un tiret cadratin est imprimé
+	     	\else%						Dans les autres cas
+	 		\ifnum\blx@punctsubtitle=\@ne%  Si on a choisi l'option halfdash
+				\addnbspace\printtext{--}\addspace%		Alors un tiret demi-cadratin est imprimé
+			 	\else%				Dans les autres cas = on a choisi l'option comma
+					\addcomma\addspace%		une virgule et une espace sont imprimées
+			\fi%
+	\fi}%
+}
+
+
+
+% Format des séparateurs entre les noms: des slash
+
+\renewcommand*{\multinamedelim}{\ifcitation{\slash}{\addnbspace\slash\addspace}}% Dans les citations, pas d'espaces entre les slash (contrairement à la bibliographie)
+\renewcommand*{\finalnamedelim}{\multinamedelim}%
+
+
+% Adaptation de la macro last-first
+
+\renewbibmacro*{name:last-first}[4]{%
+  \ifuseprefix
+    {\usebibmacro{name:delim}{#3#1}%
+     \usebibmacro{name:hook}{#3#1}%
+     \ifblank{#3}{}{%
+       \ifcapital
+         {\mkbibnameprefix{\MakeCapital{#3}}\isdot}
+	 {\mkbibnameprefix{#3}\isdot}%
+       \ifpunctmark{'}{}{\bibnamedelimc}}%
+     \mkbibnamelast{#1}\isdot
+     \ifblank{#4}{}{\bibnamedelimd\mkbibnameaffix{#4}\isdot}%
+     \ifblank{#2}{}{\addcomma\bibnamedelimd\mkbibnamefirst{#2}\isdot}}
+    {\usebibmacro{name:delim}{#1}%
+     \usebibmacro{name:hook}{#1}%
+     \mkbibnamelast{#1}\isdot
+     \ifblank{#4}{}{\bibnamedelimd\mkbibnameaffix{#4}\isdot}%
+     \ifblank{#2#3}{}{}%\addcomma}% Suppression de la virgule entre le nom et prénom
+     \ifblank{#2}{}{\bibnamedelimd\mkbibnamefirst{#2}\isdot}%
+     \ifblank{#3}{}{\bibnamedelimd\mkbibnameprefix{#3}\isdot}}}
+
+
+% Format du labelname
+
+\DeclareNameFormat{labelname}{%
+  \ifcase\value{uniquename}%
+   \usebibmacro{name:last}{\ifblank{#5}{}{\textsc{#5}\addspace}\textsc{#1}}{#3}{#5}{#7}%
+  \or
+    \ifuseprefix
+      {\usebibmacro{name:last-first}{\ifblank{#5}{}{\textsc{#5}\addspace}\textsc{#1}}{#4}{#5}{#8}}
+      {\usebibmacro{name:last-first}{\ifblank{#5}{}{\textsc{#5}\addspace}\textsc{#1}}{#4}{#6}{#8}}%
+  \or
+    \usebibmacro{name:last-first}{\ifblank{#5}{}{\textsc{#5}\addspace}\textsc{#1}}{#3}{#5}{#7}%
+  \fi
+  \usebibmacro{name:andothers}}
+
+
+% Liste des auteurs
+
+\DeclareNameFormat*{author}{%
+\iftoggle{bbx:firstnames}%
+	{\usebibmacro{name:last-first}{\ifblank{#5}{}{\textsc{#5}\addspace}\textsc{#1}}{#3}{}{#7}}%
+	{\ifcase\value{uniquename}%
+   \usebibmacro{name:last}{\ifblank{#5}{}{\textsc{#5}\addspace}#1}{#3}{}{#7}%
+  \or%
+    \ifuseprefix
+      {\usebibmacro{name:last-first}{\ifblank{#5}{}{\textsc{#5}\addspace}#1}{#4}{}{#8}}
+      {\usebibmacro{name:last-first}{\ifblank{#5}{}{\textsc{#5}\addspace}#1}{#4}{#6}{#8}}%
+  \or
+    \usebibmacro{name:last-first}{\ifblank{#5}{}{\textsc{#5}\addspace}#1}{#3}{}{#7}%
+  \fi
+  \usebibmacro{name:andothers}}%
+}
+
+% Introducteurs: idem auteurs
+
+\DeclareNameAlias{introduction}{author}%
+
+% Traducteurs (le prénom apparaît d'abord, avant le nom)
+
+\DeclareNameFormat*{translator}{%
+\iftoggle{bbx:firstnames}%
+	{\usebibmacro{name:first-last}{\ifblank{#5}{}{\textsc{#5}\addspace}\textsc{#1}}{#3}{}{#7}}%
+	{\ifcase\value{uniquename}%
+   \usebibmacro{name:last}{\ifblank{#5}{}{\textsc{#5}\addspace}#1}{#3}{}{#7}%
+  \or%
+    \ifuseprefix
+      {\usebibmacro{name:first-last}{\ifblank{#5}{}{\textsc{#5}\addspace}#1}{#4}{}{#8}}
+      {\usebibmacro{name:first-last}{\ifblank{#5}{}{\textsc{#5}\addspace}#1}{#4}{#6}{#8}}%
+  \or
+    \usebibmacro{name:first-last}{\ifblank{#5}{}{\textsc{#5}\addspace}#1}{#3}{}{#7}%
+  \fi
+  \usebibmacro{name:andothers}}%
+}
+
+
+%Si on veut qu'ils apparaissent comme les auteurs, simplement activer la ligne suivante et commenter le code précédent
+%\DeclareNameAlias{translator}{author}
+
+
+% Liste des éditeurs
+
+\DeclareNameFormat*{editor}{%
+\ifnamesequal{editor}{author}%	a) Test vérifiant si la liste des auteurs et des éditeurs est exactement la même.
+	{\ifthenelse{%						a => SI OUI :
+		\value{listcount}=\value{liststop}%		aa) Test vérifiant si on est à la fin de la liste (ce test sert à ce que le string "idem" ne soit imprimé qu'une seule fois)
+		}
+		{% Si on est à la fin de la liste, le string idem est imprimé.
+		\iftoggle{bbx:editorssc}%			<= test pour savoir si l'option editorssc est activée.
+			{\bibcpstring[\textsc]{idem}}
+			{\bibcpstring{idem}}
+		}%
+		{}% Si on n'est pas à la fin de la liste, rien ne se passe.
+	}%
+	{%	b =>	SI NON: 
+\iftoggle{bbx:firstnames}%
+	{% Les prénoms sont imprimés donc pas besoin de désambiguation.
+	\usebibmacro{name:last-first}{%
+	\iftoggle{bbx:editorssc}%			<= test pour savoir si l'option editorssc est activée.
+		{\ifblank{#5}{}{\textsc{#5}\addspace}\textsc{#1}}% Si oui: particule et nom en petites capitales
+		{\ifblank{#5}{}{\textnormal{#5}\addspace}\textnormal{#1}}%
+	}{#3}{}{#7}% Prénom
+	\ignorespaces}%
+	{% Les prénoms ne sont pas imprimés donc potentiel besoin de désambiguation
+	\ifcase\value{uniquename}% A) PAS de désambiguation nécessaire
+  		 \usebibmacro{name:last}{%
+		 \iftoggle{bbx:editorssc}%			<= test pour savoir si l'option editorssc est activée.
+			{\ifblank{#5}{}{\textsc{#5}\addspace}\textsc{#1}}% Si oui: particule et nom en petites capitales
+			{\ifblank{#5}{}{\textnormal{#5}\addspace}\textnormal{#1}}%
+		 }{#3}{}{#7}%
+ 	 \or% B) DESAMBIGUATION avec initiales
+  		  \ifuseprefix
+   			   {\usebibmacro{name:last-first}{%
+				\iftoggle{bbx:editorssc}%			<= test pour savoir si l'option editorssc est activée.
+					{\ifblank{#5}{}{\textsc{#5}\addspace}\textsc{#1}}% Si oui: particule et nom en petites capitales
+					{\ifblank{#5}{}{\textnormal{#5}\addspace}\textnormal{#1}}%
+				}{#4}{}{#8}}
+   			   {\usebibmacro{name:last-first}{%
+				 \iftoggle{bbx:editorssc}%			<= test pour savoir si l'option editorssc est activée.
+					{\ifblank{#5}{}{\textsc{#5}\addspace}\textsc{#1}}% Si oui: particule et nom en petites capitales
+					{\ifblank{#5}{}{\textnormal{#5}\addspace}\textnormal{#1}}%
+				}{#4}{#6}{#8}}%
+	  \or% C) DESAMBIGUATION avec prénoms complets
+ 	   	\usebibmacro{name:last-first}{%
+	   	\iftoggle{bbx:editorssc}%			<= test pour savoir si l'option editorssc est activée.
+			{\ifblank{#5}{}{\textsc{#5}\addspace}\textsc{#1}}% Si oui: particule et nom en petites capitales
+			{\ifblank{#5}{}{\textnormal{#5}\addspace}\textnormal{#1}}%
+	   	}{#3}{}{#7}%
+	  \fi%
+	  }
+  \usebibmacro{name:andothers}\ignorespaces% Séparations entre les noms
+  	}
+  \ifthenelse{\value{listcount}=\value{liststop}}% Mention "(éditeur)": seulement à la fin de la liste
+  	{\ifthenelse{\value{listtotal}=1}%			si la liste ne comporte qu'un nom
+		{\addspace\mkbibparens{\bibstring{editor}}}% 	alors on utilise le string editor
+		{\addspace\mkbibparens{\bibstring{editors}}}% sinon, on utilise le string editors
+	}%
+	{}%
+}
+
+
+% Format des titres et sous-titres: en italique, si titleit est activée
+
+\DeclareFieldFormat*{title}{%
+	\iftoggle{bbx:titleit}%
+		{\emph{#1}}%
+		{#1}%
+	}%
+\DeclareFieldAlias{subtitle}{title}%
+\DeclareFieldAlias{shorttitle}{title}%
+\DeclareFieldAlias{labeltitle}{title}%
+\DeclareFieldAlias{booktitle}{title}%
+\DeclareFieldAlias{booksubtitle}{title}%
+\DeclareFieldAlias{origtitle}{title}%
+
+\DeclareFieldFormat[legislation]{title}{#1}% Dans les entrées legislation et online, le titre, sous-titre et titre court n'est pas en italique mais en romain.
+\DeclareFieldFormat[legislation]{subtitle}{#1}%
+\DeclareFieldFormat[legislation]{shorttitle}{#1}%
+\DeclareFieldFormat[online]{title}{#1}%
+\DeclareFieldFormat[online]{subtitle}{#1}%
+\DeclareFieldFormat[online]{shorttitle}{#1}%
+
+% Format des listes de villes
+
+\DeclareListFormat{location}{%
+#1%
+\ifthenelse{%
+	\value{listcount}<\value{liststop}%
+	}%
+	{\addnbspace\slash\addspace}%
+	{}%
+}
+
+
+% Format de l'édition
+
+\DeclareFieldFormat*{edition}{\mkbibordinal{#1}\addspace\bibstring{edition}}
+
+
+% Format du volume
+
+\DeclareFieldFormat{volume}{\bibstring{volume}\addspace#1}
+\DeclareFieldFormat[article]{volume}{#1}
+\DeclareFieldFormat[jurisdiction]{volume}{#1}
+\DeclareFieldFormat[customb]{volume}{#1}
+\DeclareFieldFormat[legislation]{volume}{%
+\ifboolexpr{% Cas où on cite la FF ou le RO, BOCN, BOCE
+	test {\iffieldequalstr{series}{ff}}
+	or
+	test {\iffieldequalstr{series}{ro}}
+	or
+	test {\iffieldequalstr{series}{bocn}}
+	or
+	test {\iffieldequalstr{series}{boce}}
+	}
+	{#1}
+	{\bibstring{volume}\addspace#1}
+}
+
+
+% Format du nom de revue
+
+\DeclareFieldFormat*{journaltitle}{#1}
+
+
+% Format des champs part et type (pour les commentaires)
+
+\DeclareFieldFormat{part}{#1}
+
+
+% Format des pages
+
+% Les mentions "pages" ne seront jamais imprimées en toutes lettres, que l'option abbreviate soit activée ou non. Cela peut être modifié dans le fichier .lbx (redéfinir les strings page et pages).
+
+\DeclareFieldFormat{pages}{%
+\ifnumeral{#1}%
+	{\pno~#1}%
+	{\ifnumerals{#1}%
+		{\ppno~#1}%
+		{#1}%
+	}%
+}
+
+
+
+
+% Crossref
+
+\DeclareDataInheritance{jurisdiction}{customb}{%
+}
+
+\DeclareDataInheritance{commentary}{customa}{%
+}
+
+
+%%%%%%%%%%% MACROS %%%%%%%%%%%%%
+
+
+% Auteurs
+
+\newbibmacro{authors}{%
+\ifnameundef{author}%
+	{}%
+	{\printnames{author}%
+	\printtext{,}\addspace}% <= Exceptionnellement, c'est pas la commande \newblock qui est utilisée, cela pour éviter d'avoir pas de virgule après un prénom abrégé.
+}
+
+
+% Titre et sous-titre avec subtitlepunct
+
+\newbibmacro{title+subtitle}{%
+\printfield{title}%
+\iftoggle{bbx:subtitles}
+	{%
+	\iffieldundef{subtitle}%
+		{}%
+		{\subtitlepunct%
+		\printfield{subtitle}}%
+	}%
+	{}%
+\newblock%
+}
+
+
+
+% Edition
+
+\newbibmacro{edition}{%
+\printfield{edition}%
+\newblock%
+}
+
+
+% In
+
+\newbibmacro{printin}{\bibstring{in}\addnbthinspace\addcolon\newunit}
+\newbibmacro{in}{%
+\iffieldequalstr{entrytype}{article}%
+{\usebibmacro{printin}}%
+{\ifboolexpr{%
+	not test {\ifnameundef{author}}%		l'auteur est défini
+	and%							et
+	(%
+		not test {\ifnameundef{editor}}%	l'éditeur est défini
+		or%							ou
+		not test {\iflistundef{organization}}%	l'organisation est définie
+	)%
+	}%
+	{\usebibmacro{printin}}%				alors in est imprimé
+	{\ifboolexpr{%						sinon
+		not test {\ifnameundef{author}}%	si l'auteur est défini
+		and%						et
+		not test {\iffieldundef{booktitle}}%	le titre de l'ouvrage est défini
+		}%							
+		{\usebibmacro{printin}}%			alors in est aussi imprimé
+		{}%
+		}%
+	}%
+}
+
+
+% Éditeurs
+
+\newbibmacro{editors}{%
+\ifnameundef{editor}%
+	{}%
+	{\printnames{editor}\newblock}%
+}%
+
+
+% Titre et sous-titre de l'ouvrage
+
+\newbibmacro{booktitle+booksubtitle}{%
+\printfield{booktitle}%
+\iftoggle{bbx:subtitles}
+	{%
+	\iffieldundef{booksubtitle}%
+		{}%
+		{\subtitlepunct%
+		\printfield{booksubtitle}}%
+	}%
+	{}%
+\newblock%
+}
+
+
+% Collection / série + numéro
+
+\newbibmacro{serienum}{%
+\iffieldbibstring{series}%
+	{\biblstring{\thefield{series}}}%
+	{\printfield{series}}%
+\iffieldundef{number}
+	{}
+	{%								<= Refaire ce bout de code au propre avec setunit.
+	\addspace%
+	\no%
+	\printfield{number}%
+	}%
+\newblock%
+}
+
+
+% Volume
+
+\newbibmacro{volume}{%
+\printfield{volume}%
+\newblock%
+}
+
+
+% Thèse
+
+\newbibmacro{thesis}{%
+\iffieldequalstr{entrysubtype}{habilitation}%		Test pour savoir si le champ entrysubtype contient "habilitation"
+	{\bibstring{habth}}%
+	{\bibstring{phdthesis}}%
+\iflistundef{institution}%
+	{}%
+	{\iflistsequal{institution}{location}%
+		{}%
+		{\addspace\printlist{institution}}%
+	}%
+\newblock%
+}
+
+
+
+% Villes et année
+\newbibmacro{cities+date}{%
+\ifboolexpr{%						1) Cas normal: ville(s), année
+	not test {\iflistundef{location}}%		si la liste ville est définie
+	and%						et
+	not test {\iffieldundef{year}}%		si le champ année est défini
+	}%
+	{\printlist{location}\addspace\newunit\printdate\newblock}% alors la liste des villes et l'année sont imprimées
+	{\ifboolexpr{%						2) sinon:
+		test {\iflistundef{location}}%		si la liste ville n'est pas définie
+		and%						et
+		not test {\iffieldundef{year}}%		si le champ année est défini
+		}%
+		{\bibstring{sineloco}\newblock\printdate\newblock}%	alors "sine loco, année" est imprimé
+		{\ifboolexpr{%							3) sinon:
+			not test  {\iflistundef{location}}%		si la liste ville est définie
+			and%							et
+			test {\iffieldundef{year}}%				si le champ année n'est pas défini
+			}%
+			{\printlist{location}\newblock\bibstring{sineanno}\newblock}% alors la liste des villes et "sine anno" est imprimé
+			{\bibstring{sinelocoetanno}\newblock}%				 4) sinon "sine loco et anno" est imprimé
+		}%			
+	}%
+}	
+
+
+% Etat de la publication
+
+\newbibmacro{pubstate}{%
+\newunit%
+\iffieldundef{pubstate}%
+	{}%
+	{\setunit{\nopunct}\printtext{\addspace}%
+	\mkbibparens{%
+		\setunit{\nopunct}%
+	\iffieldbibstring{pubstate}%
+		{%
+		\bibsstring{\thefield{pubstate}}%
+		}%
+		{%
+		\printfield{pubstate}%
+		\newunit%
+		}%
+		}%
+	}%
+}
+
+
+% Revues (stable)
+
+\newbibmacro{journals}{%
+\iftoggle{bbx:abrjournal}%
+	{% a) Cas o˘ l'option abrjournal est activée => on vérifie s'il existe un string (cas échéant, on imprime le string en abrégé), puis on imprime la référence de manière raccourcie
+	\iffieldbibstring{journaltitle}
+		{% aa) s'il existe un string pour le nom de la revue
+		\midsentence\bibsstring{\thefield{journaltitle}}% le midsentence empêche la capitalisation automatique après les deux points en allemand
+		}%
+		{% bb) s'il n'existe pas de string pour le nom de la revue
+		\printfield{journaltitle}%
+		}%
+	\newunit%	
+	\usebibmacro{date}%
+	\newunit%
+	\printfield{volume}%
+	\newunit%
+	\iffieldundef{number}%
+		{}%
+		{\bibsstring{number}\addnbthinspace\printfield{number}}%
+	\newunit%
+	\printfield{pages}%
+	\newblock%
+	}%
+	{% b) Cas o˘ l'option abrjournal n'est pas activée
+	\iffieldbibstring{journaltitle}%
+		{% aa) s'il existe un string pour le nom de la revue
+		\biblstring{\thefield{journaltitle}}%
+		}%
+		{% bb) s'il n'existe pas de string pour le nom de la revue
+		\printfield{journaltitle}%
+		}%
+	\newblock%
+	\usebibmacro{date}%
+	\newblock%
+	\iffieldundef{volume}%
+		{}%
+		{\bibstring{volume}\addspace\printfield{volume}}%
+	\newblock%
+	\iffieldundef{number}%
+		{}%
+		{\bibstring{number}\addspace\printfield{number}}%
+	\newblock%
+	\printfield{pages}%
+	\newblock%
+	}%
+}
+
+
+% considérant et page topique dans la jurisprudence
+
+\newbibmacro{recitalandpage}{%
+\iffieldundef{usere}% Considérant et page topique 
+	{}%
+	{\addcomma\addspace\bibsstring{recital}\addspace\printfield{usere}%
+	\iffieldundef{userf}%
+		{}%
+		{\addspace\mkbibparens{\printfield{userf}}}%
+	}%
+}
+
+% Référence principale de la jurisprudence
+
+\newbibmacro{mainref}{%
+\iffieldbibstring{usera}% Si le champ usera correspond à un string (p.ex. atf ou atc)
+		{\bibstring{\thefield{usera}}}% Alors on imprime le string correspondant
+		{\printfield{usera}}% Sinon: on imprime le champ brut
+\iffieldundef{userb}%
+	{}%
+	{\newunit%
+	\iffieldbibstring{userb}% Si le champ usera correspond à un string (p.ex. vd ou vs)
+		{\bibstring{\thefield{userb}}}% Alors on imprime le string correspondant
+		{\printfield{userb}}% Sinon: on imprime le champ brut
+	}%
+\iffieldundef{userc}%
+	{}%
+	{\newunit\printfield{userc}}%
+\iffieldundef{userd}%
+	{}%
+	{\newunit\printfield{userd}}%
+\iffieldequalstr{usera}{atf}% <= La date ne s'imprime que s'il ne s'agit pas d'un ATF.
+	{}%
+	{\iffieldundef{origyear}%
+		{}%
+		{\addspace\mkbibparens{\printfield{origday}\adddot\printfield{origmonth}\adddot\printfield{origyear}}}% %%%% Possibilité d'utiliser \mkbibmonth si on veut avoir un mois en toutes lettres, cf. manuel biblatex.
+	}%
+\iftoggle{bbx:jstitles}% Option pour activer / désactiver la mention du "surnom" dans les citations d'arrêts
+	{\iffieldundef{title}%			 
+		{}%
+		{\newunit%
+		\printfield{title}}%
+	}%
+	{}%
+\iflistundef{language}% Langue de l'arrêt original
+	{}%
+	{\addspace\mkbibbrackets{\thelist{language}}}%
+\usebibmacro{recitalandpage}%
+}
+
+
+% Liaison entre référence principale et référence secondaire
+
+\newbibmacro{interref}{%
+\iffieldundef{howpublished}{}%
+{%
+\iffieldequalstr{howpublished}{publ}% Liaison entre référence principale et secondaire
+			{\iftoggle{bbx:abrjournal}%
+				{\newunit}%
+				{\newblock}%
+			}%
+			{\newblock}%
+\iffieldbibstring{howpublished}%
+		{\iftoggle{bbx:abrjournal}%
+			{\bibsstring{\thefield{howpublished}}}%
+			{\biblstring{\thefield{howpublished}}}%
+		}% 
+		{\printfield{howpublished}}%
+\newunit%
+}}
+
+
+% Pages
+
+\newbibmacro{pages}{%
+\printfield{pages}%
+\newblock%
+}
+
+
+% Url and Url pour les sources papier
+
+\DeclareFieldFormat{urldate}{#1}
+
+\newbibmacro{stringurldate}{%
+\iffieldundef{urlyear}%
+	{}%
+	{\newblock\bibstring{urlseen}\newunit\printurldate}%
+}
+
+\newbibmacro{paper:url+urldate}{%
+\iffieldundef{url}%
+	{}%
+	{\setunit{\nopunct}\printtext{\addspace}%
+	\mkbibparens{\printfield{url}\usebibmacro{stringurldate}}%
+	}%
+}
+
+% URL and URLDATE pour les sources online
+\newbibmacro{online:url+urldate}{%
+\printfield{url}\usebibmacro{stringurldate}%
+}
+
+% INTRODUCTION
+
+\DeclareLabelname{%
+\field{introduction}%
+\field{shortauthor}%
+\field{author}%
+\field{shorteditor}%
+\field{editor}%
+\field{translator}%
+}% On redéfinit Labelname avec le nom de l'introducteur
+
+\newbibmacro{introby}{%
+\ifnameundef{introduction}%
+	{}%
+	{%
+	\printnames{introduction}%
+	\newblock%
+	\mkbibemph{\bibcplstring{introduction}}%
+	\newblock%
+	\usebibmacro{printin}}%
+}
+
+%% Vieux code, pour avoir le nom des introducteurs après.
+%\newbibmacro{introby}{%
+%\ifnameundef{introduction}%
+%	{}%
+%	{\newblock\biblstring{withintroduction}\addspace\printnames{introduction}\newblock}%
+%}
+
+
+% Traductions
+
+\newbibmacro{translation}{%
+\ifnameundef{translator}%
+	{}%
+	{\setunit{\nopunct}\printtext{\addspace}%
+	\mkbibparens{%
+	\setunit{\nopunct}%
+	\bibstring{bytranslator}%
+	\newunit%
+	\printnames{translator}%
+	\newunit%
+	\iffieldsequal{title}{origtitle}% Variantes selon que le titre original et traduit sont les mêmes ou pas (des fois que le titre ne soit pas traduit)
+		{%
+		\bibstring{sametitle}% 
+		\newunit%
+		\printlist{origlocation}%
+		\newunit%
+		\bibstring{inyear}%
+		\newunit%
+		\printfield{origyear}%
+		}%
+		{%
+		\iffieldundef{origtitle}{}{%Test pour ne pas imprimer de string si le titre original n'est pas défini
+		\bibstring{othertitle}% 
+		\newunit%
+		\printfield{origtitle}%
+		\newblock%
+		\printlist{origlocation}%
+		\newunit%
+		\printfield{origyear}%
+		}}%
+	}%
+}%
+}
+
+% Abrégé
+
+\newbibmacro{shortform}{%
+\iftoggle{bbx:shortform}%
+	{%
+	\ifboolexpr%
+	{%
+	test {\ifsingletitle}% S'il n'y qu'une seule référence du même auteur / éditeur
+%	and% 			ET
+%	test {\value{uniquename}=0}% S'il n'y a pas besoin de désambiguer les noms des auteurs
+	}%
+		{}%	ALORS rien n'est imprimé
+		{\setunit{\nopunct}\printtext{\addspace}% SINON (abr.: ...) est imprimé
+		\mkbibparens{%
+			\setunit{\nopunct}%
+			\bibstring{shortform}%
+			\addnbthinspace%
+			\addcolon%
+			\addspace%
+			\printnames{labelname}%
+			\printtext{,}\addspace% <= Exceptionnellement, c'est pas la commande \newblock qui est utilisée, cela pour éviter d'avoir pas de virgule après un prénom abrégé.
+			\printfield{labeltitle}%
+			}%
+		}%
+	}%
+	{}%
+}%
+
+
+% Cote en bibliothèque
+\newbibmacro{library}{%
+\ifcitation{}{%							N'est utilisé que si l'on n'est PAS dans une citation
+\iftoggle{bbx:library}%
+	{%
+	\iffieldundef{library}%
+		{}%
+		{\adddot\\%
+		\setunit{\nopunct}\footnotesize{\bibcpstring{library}\addnbthinspace\addcolon\addspace\printfield{library}}%
+		}%
+	}%
+	{}%
+}}
+
+
+
+% Résumé
+
+\newbibmacro{resume}{%
+\ifcitation{}{%							N'est utilisé que si l'on n'est PAS dans une citation
+\iftoggle{bbx:abstracts}
+	{\iffieldundef{abstract}%
+		{}%
+		{\adddot\\%
+		\setunit{\nopunct}\footnotesize{\bibcpstring{abstract}\addnbthinspace\addcolon\addspace\printfield{abstract}}%
+		}%
+	}%
+	{}%
+}}
+
+
+% Note
+\newbibmacro{note}{%
+\ifcitation{}{%							N'est utilisé que si l'on n'est PAS dans une citation
+\iftoggle{bbx:notes}%
+	{%
+	\iffieldundef{note}%
+		{}%
+		{\adddot\\%
+		\setunit{\nopunct}\footnotesize{\bibcpstring{note}\addnbthinspace\addcolon\addspace\printfield{note}}%
+		}%
+	}%
+	{}%
+}}%
+
+
+% Ibidem
+
+\newcommand{\bbltxsl@lastrulingcited@text}{}
+\newcommand{\bbltxsl@lastrulingcited@foot}{}
+
+\newcommand{\testibid}[1]{%
+\ifcitation{% N'est utilisé que si l'on est dans une citation
+\ifdefequal{\blx@imc@ifciteibid}{\@secondoftwo}% Si l'option ibidtracker=false est activée
+	{#1}% La citation est imprimée sans autre contrôle
+	{% Si n'importe quelle autre variable est utilisée
+\ifthenelse{%
+	\iffieldequalstr{entrytype}{jurisdiction}%
+	}% 		
+		{% Si type = @jurisdiction
+				\ifdefequal{\blx@imc@ifciteibid}{\blx@ifciteibid@context}% Option ibidtracker=context
+				{%
+				\iftoggle{blx@footnote}%
+					{\iffieldequals{entrykey}{\bbltxsl@lastrulingcited@foot}%
+						{\bibcpstring{lastruling}}% oui = string lastruling
+						{#1\savefield{entrykey}{\bbltxsl@lastrulingcited@foot}}}%
+					{\iffieldequals{entrykey}{\bbltxsl@lastrulingcited@text}%
+						{\bibcpstring{lastruling}}% oui = string lastruling
+						{#1\savefield{entrykey}{\bbltxsl@lastrulingcited@text}}}%
+				}%
+				{%
+					\ifdefequal{\blx@imc@ifciteibid}{\blx@ifciteibid@constrict}% Option ibidtracker=constrict
+					{%
+					\iftoggle{blx@footnote}%
+						{\iffieldequals{entrykey}{\bbltxsl@lastrulingcited@foot}%
+							{\bibcpstring{lastruling}}% oui = string lastruling
+							{#1\savefield{entrykey}{\bbltxsl@lastrulingcited@foot}}}%
+						{\iffieldequals{entrykey}{\bbltxsl@lastrulingcited@text}%
+							{\bibcpstring{lastruling}}% oui = string lastruling
+							{#1\savefield{entrykey}{\bbltxsl@lastrulingcited@text}}}%
+					}%
+					{% Option ibidtracker=true ou Option ibidtracker=strict
+					\iffieldequals{entrykey}{\bbltxsl@lastrulingcited@text}% Si l'arrêt actuel est le même que le précédent cité
+						{\bibcpstring{lastruling}}% oui = string lastruling
+						{#1\savefield{entrykey}{\bbltxsl@lastrulingcited@text}\savefield{crossref}{\bbltxsl@lastrulingcited@foot}}% non = référence normale + enregistrement de l'entrykey actuelle pour le test dans l'entrée suivante
+					}%
+				}%
+		}
+		{% Si type n'est pas @ jurisdiction
+			\iffieldequalstr{entrytype}{customb}% Si type = @customb
+				{%
+					\ifdefequal{\blx@imc@ifciteibid}{\blx@ifciteibid@context}% Option ibidtracker=context
+				{%
+				\iftoggle{blx@footnote}%
+					{\iffieldequals{crossref}{\bbltxsl@lastrulingcited@foot}%
+						{\bibcpstring{lastruling}\newblock\usebibmacro{recitalandpage}}% oui = string lastruling + consid et page
+						{#1\savefield{crossref}{\bbltxsl@lastrulingcited@foot}}}%
+					{\iffieldequals{crossref}{\bbltxsl@lastrulingcited@text}%
+						{\bibcpstring{lastruling}\newblock\usebibmacro{recitalandpage}}% oui = string lastruling + consid et page
+						{#1\savefield{crossref}{\bbltxsl@lastrulingcited@text}}}%
+				}%
+				{%
+					\ifdefequal{\blx@imc@ifciteibid}{\blx@ifciteibid@constrict}% Option ibidtracker=constrict
+					{%
+					\iftoggle{blx@footnote}%
+						{\iffieldequals{crossref}{\bbltxsl@lastrulingcited@foot}%
+							{\bibcpstring{lastruling}\newblock\usebibmacro{recitalandpage}}% oui = string lastruling + consid et page
+							{#1\savefield{crossref}{\bbltxsl@lastrulingcited@foot}}}%
+						{\iffieldequals{crossref}{\bbltxsl@lastrulingcited@text}%
+							{\bibcpstring{lastruling}\newblock\usebibmacro{recitalandpage}}% oui = string lastruling + consid et page
+							{#1\savefield{crossref}{\bbltxsl@lastrulingcited@text}}}%
+					}%
+					{% Option ibidtracker=true ou Option ibidtracker=strict
+					\iffieldequals{crossref}{\bbltxsl@lastrulingcited@text}% Si l'arrêt actuel est le même que le précédent cité
+						{\bibcpstring{lastruling}\newblock\usebibmacro{recitalandpage}}% oui = string lastruling + consid et page
+						{#1\savefield{crossref}{\bbltxsl@lastrulingcited@text}\savefield{crossref}{\bbltxsl@lastrulingcited@foot}}% non = référence normale + enregistrement de l'entrykey actuelle pour le test dans l'entrée suivante
+					}%
+				}%
+				}%	
+				{\ifciteibid% Si le type n'est ni @jurisdiction ni @customb. 
+				{\emph{\bibcpstring{ibidem}}}%
+				{#1}%
+				\savefield{entrykey}{\bbltxsl@lastrulingcited@text}% Enregistrement de l'entrykey actuelle
+				\savefield{entrykey}{\bbltxsl@lastrulingcited@foot}% Enregistrement de l'entrykey actuelle
+				}% 
+		}%
+}}%
+{#1}%		
+}
+
+
+
+
+%%%%%%%%%%% DRIVERS %%%%%%%%%%%%%
+
+\DeclareBibliographyAlias{*}{book}
+
+% Générique
+
+\newbibmacro{generic:short}{%
+\testibid{%
+\ifnameundef{labelname}%
+	{}%
+	{\printnames{labelname}\newblock}%
+\ifsingletitle%
+	{}%
+	{\newblock\printfield{labeltitle}}%
+}}
+
+
+% @book
+
+\newbibmacro{book:full}{%
+\testibid{%
+	\usebibmacro{introby}%
+	\usebibmacro{authors}%
+	\usebibmacro{title+subtitle}%
+	\usebibmacro{edition}%
+	\usebibmacro{serienum}%
+	\usebibmacro{volume}%
+	\usebibmacro{cities+date}%
+	\usebibmacro{pubstate}%
+	\iftoggle{bbx:bookspages}%
+		{\usebibmacro{pages}}%
+		{}%
+	\usebibmacro{translation}%
+	\usebibmacro{paper:url+urldate}%
+	\usebibmacro{shortform}%
+	\usebibmacro{library}%
+	\usebibmacro{resume}%
+	\usebibmacro{note}%
+%	\finentry%
+}}
+
+
+% @thesis
+
+\newbibmacro{thesis:full}{%
+\testibid{%
+	\usebibmacro{introby}%
+	\usebibmacro{authors}%
+	\usebibmacro{title+subtitle}%
+	\usebibmacro{edition}%
+	\usebibmacro{serienum}%
+	\usebibmacro{volume}%
+	\usebibmacro{thesis}%
+	\usebibmacro{cities+date}%
+	\usebibmacro{pubstate}%
+	\iftoggle{bbx:bookspages}%
+		{\usebibmacro{pages}}%
+		{}%
+	\usebibmacro{translation}%
+	\usebibmacro{paper:url+urldate}%
+	\usebibmacro{shortform}%
+	\usebibmacro{library}%
+	\usebibmacro{resume}%
+	\usebibmacro{note}%
+%	\finentry%
+}}
+
+
+% @inbook
+
+\newbibmacro{inbook:full}{%
+\testibid{%
+	\usebibmacro{introby}% Est-ce justifié? Qui fait une introduction dans un ouvrage collectif qui n'est pas un article? à supprimer.
+	\usebibmacro{authors}%
+	\usebibmacro{title+subtitle}%
+	\usebibmacro{in}%
+	\usebibmacro{editors}%
+	\usebibmacro{booktitle+booksubtitle}%
+	\usebibmacro{edition}%
+	\usebibmacro{serienum}%
+	\usebibmacro{volume}%
+	\usebibmacro{cities+date}%
+	\usebibmacro{pubstate}%
+	\usebibmacro{pages}%
+	\usebibmacro{translation}%
+	\usebibmacro{paper:url+urldate}%
+	\usebibmacro{shortform}%
+	\usebibmacro{library}%
+	\usebibmacro{resume}%
+	\usebibmacro{note}%
+%	\finentry%
+}}
+
+
+% @article
+
+\newbibmacro{article:full}{%
+\testibid{%
+	\usebibmacro{introby}% Là encore, ça paraît douteux que ce soit nécessaire.
+	\usebibmacro{authors}%
+	\usebibmacro{title+subtitle}%
+	\usebibmacro{in}%
+	\usebibmacro{editors}%
+	\usebibmacro{journals}%
+	\usebibmacro{shortform}%
+	\usebibmacro{paper:url+urldate}%
+	\usebibmacro{library}%
+	\usebibmacro{resume}%
+	\usebibmacro{note}%
+%	\finentry%
+}}
+
+
+% @commentary
+
+\newbibmacro{commentary:full}{%
+\testibid{%
+	\usebibmacro{introby}%
+	\usebibmacro{authors}%
+	\usebibmacro{title+subtitle}%
+	\usebibmacro{in}%
+	\usebibmacro{editors}%
+	\usebibmacro{booktitle+booksubtitle}%
+	\usebibmacro{edition}%
+	\usebibmacro{serienum}%
+	\usebibmacro{volume}%
+	\usebibmacro{cities+date}%
+	\usebibmacro{pubstate}%
+	\iftoggle{bbx:bookspages}%
+		{\usebibmacro{pages}}%
+		{}%
+	\usebibmacro{translation}%
+	\usebibmacro{paper:url+urldate}%
+	\usebibmacro{library}%
+	\usebibmacro{resume}%
+	\usebibmacro{note}%
+%	\finentry%
+}}
+
+
+% @customa
+
+\newbibmacro{customa:styleA}{% Format "BK-Kramer, 1 CO, n° ...."
+\iffieldbibstring{series}%
+	{\bibsstring{\thefield{series}}}%
+	{\printfield{series}}%
+\iffieldundef{series}{}{\printtext{-}}%
+\printnames{labelname}%
+\iffieldundef{type}%
+	{%
+	\iftoggle{bbx:adarticle}%
+		{\newunit}%
+		{\newblock}%
+	}%
+	{\newblock%
+	\iffieldbibstring{type}{\bibsstring{\thefield{type}}}{\printfield{type}}%
+	\newunit}%
+\iffieldundef{part}%
+	{}%
+	{\iftoggle{bbx:adarticle}%
+		{\bibsstring{ad}\newunit}%
+		{}%
+	\ifboolexpr{%
+	test {\iffieldequalstr{series}{beckkuko}}
+	or
+	test {\iffieldequalstr{series}{mnk}}
+	or
+	test {\iffieldequalstr{series}{nmk}}
+	or
+	test {\iffieldequalstr{series}{palandt}}
+	or
+	test {\iffieldequalstr{series}{stk}} 
+	}
+	{% Si le commentaire est allemand
+		\ifboolexpr{% Test pour savoir s'il y a plusieurs articles
+		test {\IfSubStr{\thefield{part}}{-}}
+		or 
+		test {\IfSubStr{\thefield{part}}{f.}}
+		or 
+		test {\IfSubStr{\thefield{part}}{ff}}
+		or 
+		test {\IfSubStr{\thefield{part}}{\psq}}
+		or 
+		test {\IfSubStr{\thefield{part}}{\psqq}}
+		}
+		{\bibstring{articlesde}}
+		{\bibstring{articlede}}
+	}% 
+	{\bibsstring{article}}% Si le commentaire n'est pas allemand
+	\addspace\printfield{part}%
+	}%
+\newunit%
+\printfield{titleaddon}%
+}
+
+
+\newbibmacro{customa:styleB}{%
+\iffieldundef{series}
+	{\usebibmacro{customa:styleA}}% Si les séries ne sont pas définies, utilisation du style A
+	{\iffieldbibstring{series}%
+	{\bibsstring{\thefield{series}}\printtext{-}}%
+	{\iffieldundef{series}%
+		{}%
+		{\printfield{series}\printtext{-}}%
+	}%
+\iffieldundef{titleaddon}%
+	{}%
+	{\printfield{titleaddon}\addspace}%
+\iffieldundef{volume}%
+	{}%
+	{\thefield{volume}}%
+\newblock%
+\printnames{labelname}%
+\iffieldundef{type}%
+	{%
+	\iftoggle{bbx:adarticle}%
+		{\newunit}%
+		{\newblock}%
+	}%
+	{\newblock%
+	\iffieldbibstring{type}{\bibsstring{\thefield{type}}}{\printfield{type}}%
+	\newunit}%
+\iffieldundef{part}%
+	{}%
+	{\iftoggle{bbx:adarticle}%
+		{\bibsstring{ad}\newunit}%
+		{}%
+	\bibsstring{article}\addspace\printfield{part}%
+	}%
+}}%
+
+
+
+\newbibmacro{customa:styleC}{%
+\iftoggle{bbx:firstnames}
+	{\printnames{author}}%
+	{\printnames{labelname}}%
+\iffieldundef{series}%
+	{}%
+	{\newblock\usebibmacro{printin}%
+	\iffieldbibstring{series}%
+		{\biblstring{\thefield{series}}}%
+		{\printfield{series}}%
+	}%
+\iffieldundef{type}%
+	{%
+	\iftoggle{bbx:adarticle}%
+		{\newunit}%
+		{\newblock}%
+	}%
+	{\newblock%
+	\iffieldbibstring{type}{\bibsstring{\thefield{type}}}{\printfield{type}}%
+	\newunit}%
+\iffieldundef{part}%
+	{}%
+	{\iftoggle{bbx:adarticle}%
+		{\bibsstring{ad}\newunit}%
+		{}%
+	\bibsstring{article}\addspace\printfield{part}%
+	}%
+\newunit%
+\printfield{titleaddon}%
+}
+
+
+
+\newbibmacro{customa:full}{%
+\testibid{% 
+{\ifnum\blx@commentarystyle=\z@% 	Si on a choisi le style A (par défaut, c'est le cas)
+	  	\usebibmacro{customa:styleA}%		
+	     	\else%						Dans les autres cas
+	 		\ifnum\blx@commentarystyle=\@ne%  Si on a choisi l'option halfdash
+				\usebibmacro{customa:styleB}%		Alors un tiret demi-cadratin est imprimé
+			 	\else%				Dans les autres cas = on a choisi l'option comma
+					\usebibmacro{customa:styleC}%		une virgule et une espace sont imprimées
+			\fi%
+	\fi}%
+}}
+
+% @jurisdiction
+
+\newbibmacro{jurisdiction:full}{%
+\testibid{%
+	\usebibmacro{mainref}%
+	\usebibmacro{interref}%
+	\usebibmacro{journals}% référence secondaire de l'arrêt = publication, traduction ou commentaire dans une revue.
+	\usebibmacro{paper:url+urldate}%
+	\usebibmacro{library}%
+	\usebibmacro{resume}%
+	\usebibmacro{note}%
+%	\finentry%
+}}
+
+
+
+
+% @online
+
+\newbibmacro{online:full}{%
+\testibid{%
+	\usebibmacro{authors}%
+	\usebibmacro{title+subtitle}%
+	\usebibmacro{online:url+urldate}%
+	\usebibmacro{library}%
+	\usebibmacro{resume}%
+	\usebibmacro{note}%
+%	\finentry%
+}}
+
+
+% @legislation
+
+\newbibmacro{legislation:full}{%
+\testibid{%
+\ifboolexpr{% Cas où on cite la FF ou le RO, BOCN, BOCE
+	test {\iffieldequalstr{series}{ff}}
+	or
+	test {\iffieldequalstr{series}{ro}}
+	or
+	test {\iffieldequalstr{series}{bocn}}
+	or
+	test {\iffieldequalstr{series}{boce}}
+	}
+	{%
+	\bibstring{\thefield{series}}%
+	\newunit%
+	\printdate%
+	\newunit%
+	\printfield{volume}%
+	\newunit%
+	\printfield{pages}%
+	}
+	{%
+	\usebibmacro{authors}%
+	\usebibmacro{title+subtitle}%
+	\newblock
+	\iffieldundef{origyear}%
+		{}%
+		{\printorigdate\newblock}%
+	\ifboolexpr{% Si le titre et la série sont définis et que la série correspond à un bibstring, alors "in:" s'imprime. Cela permet d'avoir un in quand le document est publié dans une collection, tout en gardant une flexibilité s'il ne l'est pas.
+		not test {\iffieldundef{title}}%
+		and%
+		not test {\iffieldundef{series}}%
+		and%
+		test {\iffieldbibstring{series}}%
+		}%
+		{\usebibmacro{printin}}%
+		{}%
+	\newblock%
+	\iffieldbibstring{series}%
+		{\bibstring{\thefield{series}}}%
+		{\printfield{series}}%
+	\newblock%
+	\printdate%
+	\newunit%
+	\printfield{volume}%
+	\newblock%
+	\printfield{number}%
+	\newunit%
+	\printfield{pages}%
+	}%
+	\usebibmacro{online:url+urldate}%
+	\usebibmacro{pubstate}%
+	\usebibmacro{resume}%
+	\usebibmacro{note}%
+	\usebibmacro{library}%
+%	\finentry%
+}}
+
+
+
+
+\endinput

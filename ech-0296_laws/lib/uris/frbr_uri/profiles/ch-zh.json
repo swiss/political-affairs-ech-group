@@ -1,0 +1,54 @@
+{
+  "_comment": "Kanton Zürich – AKN FRBR URI profile",
+  "tags": "akn, frbr, switzerland, kanton-zuerich",
+  "jurisdiction": "ch-zh",
+  "level": "canton",
+  "name": "Kanton Zürich",
+  "country": "CH",
+  "subdivision": "ZH",
+  "base_uri": "https://www.zh.ch/eli",
+  "akn_country": "ch",
+  "akn_prefix": "/akn/ch-zh",
+  "language_codes": {
+    "de": "deu"
+  },
+  "default_language": "de",
+  "document_types": {
+    "act": {
+      "akn_type": "act",
+      "subtype": "gesetz",
+      "label_de": "Gesetz"
+    },
+    "ordinance": {
+      "akn_type": "act",
+      "subtype": "verordnung",
+      "label_de": "Verordnung"
+    },
+    "constitution": {
+      "akn_type": "act",
+      "subtype": "verfassung",
+      "label_de": "Kantonsverfassung"
+    },
+    "decision": {
+      "akn_type": "judgment",
+      "subtype": "beschluss",
+      "label_de": "Beschluss"
+    },
+    "decree": {
+      "akn_type": "act",
+      "subtype": "erlass",
+      "label_de": "Erlass"
+    }
+  },
+  "numbering": {
+    "ls_prefix": "LS",
+    "os_prefix": "OS",
+    "eli_pattern": "/eli/zh/{year}/{number}"
+  },
+  "uri_templates": {
+    "work":         "/akn/ch-zh/{doc_type}/{date}/{number}",
+    "expression":   "/akn/ch-zh/{doc_type}/{date}/{number}/{lang}@{version}",
+    "manifestation":"/akn/ch-zh/{doc_type}/{date}/{number}/{lang}@{version}.{format}",
+    "item":         "/akn/ch-zh/{doc_type}/{date}/{number}/{lang}@{version}.{format}/{component}"
+  }
+}

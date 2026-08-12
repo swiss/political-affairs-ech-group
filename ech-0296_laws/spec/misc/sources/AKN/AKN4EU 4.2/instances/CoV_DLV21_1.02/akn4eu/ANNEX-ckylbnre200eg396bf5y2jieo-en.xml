@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?><akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+   <doc name="ANNEX">
+      <meta>
+         <identification source="~PUBL">
+            <FRBRWork>
+               <FRBRthis value=""/>
+               <FRBRuri value=""/>
+               <FRBRdate date="2999-01-01" name=""/>
+               <FRBRauthor href=""/>
+               <preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+                  <akn4eu:fileCUID value="ckylbnre200eg396bf5y2jieo"/>
+               </preservation>
+               <FRBRcountry value="EU"/>
+               <FRBRnumber value="COM(2020) 70"/>
+               <FRBRprescriptive value="true"/>
+            </FRBRWork>
+            <FRBRExpression>
+               <FRBRthis value=""/>
+               <FRBRuri value=""/>
+               <FRBRdate date="2999-01-01" name=""/>
+               <FRBRauthor href=""/>
+               <FRBRversionNumber value="final"/>
+               <FRBRlanguage language="en"/>
+            </FRBRExpression>
+            <FRBRManifestation>
+               <FRBRthis value=""/>
+               <FRBRuri value=""/>
+               <FRBRdate date="2999-01-01" name=""/>
+               <FRBRauthor href=""/>
+               <preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+                  <akn4eu:akn4euVersion value="4.2.0.0"/>
+                  <akn4eu:akn4euDocumentation href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/akn4eu"/>
+               </preservation>
+            </FRBRManifestation>
+         </identification>
+         <references source="~PUBL">
+            <TLCReference name="language" href="http://publications.europa.eu/resource/authority/language/ENG" showAs="en"/>
+            <TLCOrganization xml:id="PUBL" href="http://publications.europa.eu/resource/authority/corporate-body/PUBL" showAs="Publications Office"/>
+            <TLCReference xml:id="ANNEX" name="docType" href="http://publications.europa.eu/resource/authority/resource-type/ANNEX" showAs="Annex"/>
+         </references>
+      </meta>
+      <preface xml:id="d1e77">
+         <container xml:id="d1e79" name="headerOfAnnex">
+            <block xml:id="d1e81" name="num">ANNEX</block>
+         </container>
+      </preface>
+      <mainBody xml:id="d1e86">
+         <paragraph xml:id="d1e88">
+            <content xml:id="d1e90">
+               <p xml:id="d1e92">Guideline 5: Boosting the demand for labour</p>
+            </content>
+         </paragraph>
+         <paragraph xml:id="d1e96">
+            <content xml:id="d1e98">
+               <p xml:id="d1e100">Member States should actively promote a sustainable social market economy and
+                  facilitate and support investment in the creation of quality jobs. To this end,
+                  they should reduce the barriers that businesses face in hiring people, foster
+                  responsible entrepreneurship and genuine self-employment and, in particular,
+                  support the creation and growth of micro-, small- and medium-sized enterprises,
+                  including through access to finance. Member States should actively promote the
+                  development of the social economy, foster social innovation, social enterprises,
+                  and encourage those innovative forms of work, creating quality job opportunities
+                  and generating social benefits at local level.</p>
+            </content>
+         </paragraph>
+         <paragraph xml:id="d1e104">
+            <content xml:id="d1e106">
+               <p xml:id="d1e108">The tax burden should be shifted away from labour to other sources more supportive
+                  to employment and inclusive growth and at the same time aligned with climate and
+                  environmental objectives, taking account of the redistributive effect of the tax
+                  system, while protecting revenue for adequate social protection and
+                  growth-enhancing expenditure.</p>
+            </content>
+         </paragraph>
+         <paragraph xml:id="d1e112">
+            <content xml:id="d1e114">
+               <p xml:id="d1e116">Member States having in place national mechanisms for the setting of statutory
+                  minimum wages should ensure an effective involvement of social partners in a
+                  transparent and predictable manner allowing for an adequate responsiveness of
+                  wages to productivity developments and providing fair wages for a decent standard
+                  of living, paying particular attention to lower and middle income groups with a
+                  view to upward convergence. These mechanisms should take into account economic
+                  performance across regions and sectors. Member States should promote social
+                  dialogue and collective bargaining with a view to wage setting. Respecting
+                  national practices, Member States and social partners should ensure that all
+                  workers are entitled to adequate and fair wages through collective agreements or
+                  adequate statutory minimum wages, taking into account their impact on
+                  competitiveness, job creation and in-work poverty.</p>
+            </content>
+         </paragraph>
+         <paragraph xml:id="d1e120">
+            <content xml:id="d1e122">
+               <p xml:id="d1e124">Guideline 6: Enhancing labour supply and improving access to employment, skills
+                  and competences</p>
+            </content>
+         </paragraph>
+         <paragraph xml:id="d1e129">
+            <content xml:id="d1e131">
+               <p xml:id="d1e133">In the context of technological and environmental transitions, as well as
+                  demographic change, Member States should promote sustainability, productivity,
+                  employability and human capital, fostering relevant knowledge, skills and
+                  competences throughout people's lives, responding to current and future labour
+                  market needs. Member States should also adapt and invest in their education and
+                  training systems to provide high quality and inclusive education, including
+                  vocational education and training. Member States should work together with the
+                  social partners, education and training providers, enterprises and other
+                  stakeholders to address structural weaknesses in education and training systems
+                  and improve their quality and labour market relevance, also with a view to
+                  enabling the environmental transition. Particular attention should be paid to
+                  challenges of the teaching profession. Education and training systems should equip
+                  all learners with key competences, including basic and digital skills as well as
+                  transversal competences to lay the foundations for adaptability later in life.
+                  Member States should seek to ensure the transfer of training entitlements during
+                  professional career changes, including, where appropriate, through individual
+                  learning accounts. They should enable everyone to anticipate and better adapt to
+                  labour market needs notably through continuous reskilling and upskilling, with a
+                  view to supporting fair and just transitions for all, strengthening social
+                  outcomes, addressing labour market shortages and improving the overall resilience
+                  of the economy to shocks.</p>
+            </content>
+         </paragraph>
+         <paragraph xml:id="d1e137">
+            <content xml:id="d1e139">
+               <p xml:id="d1e141">Member States should foster equal opportunities for all by addressing inequalities
+                  in education and training systems, including by providing access to good quality
+                  early childhood education. They should raise overall education levels, reduce the
+                  number of young people leaving school early, increase access to and completion of
+                  tertiary education and increase adult participation in continuing learning,
+                  particularly among learners from disadvantaged backgrounds, the least qualified.
+                  Taking into account new requirements in digital, green and ageing societies,
+                  Member States should strengthen work-based learning in their vocational education
+                  and training systems (VET) (including through quality and effective
+                  apprenticeships) and increase the number of Science, Technology, Engineering and
+                  Mathematics (STEM) graduates both in medium-level VET and in tertiary education.
+                  Furthermore, Member States should enhance the labourmarket relevance of tertiary
+                  education and research, improve skills monitoring and forecasting, make skills
+                  more visible and qualifications comparable, including those acquired abroad, and
+                  increase opportunities for recognising and validating skills and competences
+                  acquired outside formal education and training. They should upgrade and increase
+                  the supply and take-up of flexible continuing vocational education and training.
+                  Member States should also support low skilled adults to maintain or develop their
+                  longterm employability by boosting access to and take up of quality learning
+                  opportunities, through the implementation of Upskilling Pathways, including a
+                  skills assessment, an offer of education and training matching labour market
+                  opportunities, and the validation and recognition of the skills acquired.</p>
+            </content>
+         </paragraph>
+         <paragraph xml:id="d1e145">
+            <content xml:id="d1e147">
+               <p xml:id="d1e149">Member States should provide unemployed and inactive people with effective,
+                  timely, coordinated and tailor-made assistance based on support for job-search,
+                  training, requalification and access to other enabling services. Comprehensive
+                  strategies that include in-depth individual assessment of unemployment should be
+                  pursued as soon as possible with a view to significantly reducing and preventing
+                  long-term and structural unemployment. Youth unemployment and the issue of young
+                  people not in employment, education or training, should continue to be addressed
+                  through prevention of early school leaving and structural improvement in the
+                  school-to-work transition, including through the full implementation of the Youth
+                  Guarantee (<authorialNote xml:id="d1e151" marker="15" placement="bottom">
+                     <p xml:id="d1e153">OJ C 120, 26.4.2013, p. 1.</p>
+                  </authorialNote>).</p>
+            </content>
+         </paragraph>
+         <paragraph xml:id="d1e159">
+            <content xml:id="d1e161">
+               <p xml:id="d1e163">Member States should aim to remove barriers and disincentives to, and provide
+                  incentives for, participation in the labour market, in particular for low income,
+                  second earners and those furthest away from the labour market. Member States
+                  should support an adapted work environment for people with disabilities, including
+                  through targeted financial support and services that enable them to participate in
+                  the labour market and in society.</p>
+            </content>
+         </paragraph>
+         <paragraph xml:id="d1e167">
+            <content xml:id="d1e169">
+               <p xml:id="d1e171">Member States should ensure gender equality and increased labour market
+                  participation of women, including through ensuring equal opportunities and career
+                  progression and eliminating barriers to participation in leadership at all levels
+                  of decision-making. The gender pay gap should be tackled. Equal pay for equal
+                  work, or work of equal value, and pay-transparency should be ensured. The
+                  reconciliation of work, family and private life for both women and men should be
+                  promoted, in particular through access to affordable quality long-term care and
+                  early childhood education and care services. Member States should ensure that
+                  parents and other people with caring responsibilities have access to suitable
+                  family leave and flexible working arrangements in order to balance work, family
+                  and private life, and promote a balanced use of these entitlements between women
+                  and men.</p>
+            </content>
+         </paragraph>
+         <paragraph xml:id="d1e175">
+            <content xml:id="d1e177">
+               <p xml:id="d1e179">Guideline 7: Enhancing the functioning of labour markets and the effectiveness of
+                  social dialogue</p>
+            </content>
+         </paragraph>
+         <paragraph xml:id="d1e184">
+            <content xml:id="d1e186">
+               <p xml:id="d1e188">In order to benefit from a dynamic and productive workforce, new work patterns and
+                  business models, Member States should work together with the social partners on
+                  fair, transparent and predictable working conditions, balancing rights and
+                  obligations. They should reduce and prevent segmentation within labour markets,
+                  fight undeclared work and foster the transition towards open-ended forms of
+                  employment. Employment protection rules, labour law and institutions should all
+                  provide both a suitable environment for recruitment, and the necessary flexibility
+                  for employers to adapt swiftly to changes in the economic context, while
+                  preserving appropriate security and healthy, safe and well-adapted working
+                  environments for workers, protecting labour rights and ensuring social protection.
+                  Employment relationships that lead to precarious working conditions should be
+                  prevented, including in the case of platform workers and by fighting the abuse of
+                  atypical contracts. Access to effective and impartial dispute resolution and a
+                  right to redress, including adequate compensation, should be ensured in cases of
+                  unfair dismissal.</p>
+            </content>
+         </paragraph>
+         <paragraph xml:id="d1e192">
+            <content xml:id="d1e194">
+               <p xml:id="d1e196">Policies should aim to improve and support labour-market participation, matching
+                  and transitions. Member States should effectively activate and enable those who
+                  can participate in the labour market. Member States should strengthen the
+                  effectiveness of active labour-market policies by increasing their targeting,
+                  outreach, coverage and better linking them with income support for the unemployed,
+                  whilst they are seeking work and based on their rights and responsibilities.
+                  Member States should aim for more effective and efficient public employment
+                  services by ensuring timely and tailor-made assistance to support jobseekers,
+                  supporting labour-market demand and implementing performance-based management.</p>
+            </content>
+         </paragraph>
+         <paragraph xml:id="d1e200">
+            <content xml:id="d1e202">
+               <p xml:id="d1e204">Member States should provide the unemployed with adequate unemployment benefits of
+                  reasonable duration, in line with their contributions and national eligibility
+                  rules. Such benefits should not dis-incentivise a prompt return to employment and
+                  should be accompanied by active labour market policies</p>
+            </content>
+         </paragraph>
+         <paragraph xml:id="d1e208">
+            <content xml:id="d1e210">
+               <p xml:id="d1e212">The mobility of learners and workers should be adequately supported with the aim
+                  of enhancing employability, skills and exploiting the full potential of the
+                  European labour market, while also ensuring fair conditions for all those pursuing
+                  a cross-border activity and stepping up administrative cooperation between
+                  national administrations with regard to mobile workers. Barriers to mobility in
+                  education and training, in occupational and personal pensions and in the
+                  recognition of qualifications should be removed and recognition of qualifications
+                  made easier. Member States should take action to ensure that administrative
+                  procedures are not an unnecessary obstacle to workers from other Member States
+                  taking up employment, including for cross-border workers. Member States should
+                  also prevent abuse of the existing rules and address underlying causes of ‘brain
+                  drain’ from certain regions including through appropriate regional development
+                  measures.</p>
+            </content>
+         </paragraph>
+         <paragraph xml:id="d1e216">
+            <content xml:id="d1e218">
+               <p xml:id="d1e220">Building on existing national practices, and in order to achieve more effective
+                  social dialogue, and better socioeconomic outcomes, Member States should ensure
+                  the timely and meaningful involvement of the social partners in the design and
+                  implementation of employment, social and, where relevant, economic reforms and
+                  policies, including by supporting increased capacity of the social partners.
+                  Member States should foster social dialogue and collective bargaining. The social
+                  partners should be encouraged to negotiate and conclude collective agreements in
+                  matters relevant to them, fully respecting their autonomy and the right to
+                  collective action.</p>
+            </content>
+         </paragraph>
+         <paragraph xml:id="d1e224">
+            <content xml:id="d1e226">
+               <p xml:id="d1e228">Where relevant and building on existing national practices, Member States should
+                  take into account the experience on employment and social issues of relevant civil
+                  society organisations.</p>
+            </content>
+         </paragraph>
+         <paragraph xml:id="d1e233">
+            <content xml:id="d1e235">
+               <p xml:id="d1e237">Guideline 8: Promoting equal opportunities for all, fostering social inclusion and
+                  fighting poverty</p>
+            </content>
+         </paragraph>
+         <paragraph xml:id="d1e241">
+            <content xml:id="d1e243">
+               <p xml:id="d1e245">Member States should promote inclusive labour markets, open to all, by putting in
+                  place effective measures to fight all forms of discrimination and promote equal
+                  opportunities for under-represented groups in the labour market, with due
+                  attention to the regional and territorial dimension. They should ensure equal
+                  treatment regarding employment, social protection, health and long-term care,
+                  education and access to goods and services, regardless of gender, racial or ethnic
+                  origin, religion or belief, disability, age or sexual orientation.</p>
+            </content>
+         </paragraph>
+         <paragraph xml:id="d1e249">
+            <content xml:id="d1e251">
+               <p xml:id="d1e253">Member States should modernise social protection systems to provide adequate,
+                  effective, efficient, and sustainable social protection throughout all stages of
+                  an individual's life, fostering social inclusion and upward social mobility,
+                  incentivising labour market participation and addressing inequalities, including
+                  through the design of their tax and benefit systems. Complementing universal
+                  approaches with selective ones will improve effectiveness of social protection
+                  systems. The modernisation of social protection systems should lead to better
+                  access, quality, adequacy and sustainability.</p>
+            </content>
+         </paragraph>
+         <paragraph xml:id="d1e257">
+            <content xml:id="d1e259">
+               <p xml:id="d1e261">Member States should develop and integrate the three strands of active inclusion:
+                  adequate income support, inclusive labour markets and access to quality enabling
+                  services, meeting individual needs. Social protection systems should ensure
+                  adequate minimum income benefits for everyone lacking sufficient resources and
+                  promote social inclusion by encouraging people to actively participate in the
+                  labour market and society, including through targeted social services.</p>
+            </content>
+         </paragraph>
+         <paragraph xml:id="d1e265">
+            <content xml:id="d1e267">
+               <p xml:id="d1e269">The availability of affordable, accessible and quality services such as early
+                  childhood education and care, out-of-school care, education, training, housing,
+                  health and longterm care is a necessary condition for ensuring equal
+                  opportunities. Particular attention should be given to fighting poverty and social
+                  exclusion, including in-work and child poverty. Member States should ensure that
+                  everyone, including children, has access to essential services. For those in need
+                  or in a vulnerable situation, Member States should ensure access to adequate
+                  social housing or housing assistance. The specific needs of people with
+                  disabilities including accessibility should be taken into account in relation to
+                  these services. Homelessness should be tackled specifically.</p>
+            </content>
+         </paragraph>
+         <paragraph xml:id="d1e273">
+            <content xml:id="d1e275">
+               <p xml:id="d1e277">Member States should ensure timely access to affordable preventive and curative
+                  health care and long-term care of good quality, while safeguarding sustainability
+                  over the long run.</p>
+            </content>
+         </paragraph>
+         <paragraph xml:id="d1e282">
+            <content xml:id="d1e284">
+               <p xml:id="d1e286">In a context of increasing longevity and demographic change, Member States should
+                  secure the adequacy and sustainability of pension systems for workers and
+                  selfemployed, providing equal opportunities for women and men to acquire pension
+                  rights, including through supplementary schemes to ensure an adequate income.
+                  Pension reforms should be supported by measures that extend working lives, such as
+                  by raising the effective retirement age, and be framed within active ageing
+                  strategies. Member States should establish a constructive dialogue with social
+                  partners and other relevant stakeholders, and allow an appropriate phasing in of
+                  the reforms.</p>
+            </content>
+         </paragraph>
+      </mainBody>
+   </doc>
+</akomaNtoso>

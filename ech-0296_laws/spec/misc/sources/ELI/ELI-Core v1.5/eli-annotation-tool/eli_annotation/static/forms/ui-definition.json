@@ -1,0 +1,393 @@
+{ "type": "page",
+  "id": "eliFormUI",
+  "uiElement": "main",
+  "definitions": {
+      "main" :{
+          "type": "form",
+          "id": "main",
+          "content": [
+              { "type": "section",
+                "l10n_domain": "uiMessages",
+                "id": "generalInformation",
+                "content": [
+                    {"type": "zone",
+                     "id": "gI1",
+                     "content": [
+                         { "type": "selectField",
+                           "l10n_domain": "eliOntology",
+                           "id": "eli:type_document"
+                         },
+                         { "type": "textField",
+                           "l10n_domain": "eliOntology",
+                           "id": "eli:number"
+                         },
+                         { "type": "selectField",
+                           "l10n_domain": "eliOntology",
+                           "id": "eli:version"
+                         }
+                     ] },
+                    {"type": "zone",
+                     "id": "gI2",
+                     "content": [
+                         { "type": "dateField",
+                           "l10n_domain": "eliOntology",
+                           "id": "eli:date_document"
+                         },
+                         { "type": "dateField",
+                           "l10n_domain": "eliOntology",
+                           "id": "eli:version_date"
+                         },
+                         { "type": "dateField",
+                           "l10n_domain": "eliOntology",
+                           "id": "eli:date_publication"
+                         },
+                         { "type": "dateField",
+                           "l10n_domain": "eliOntology",
+                           "id": "eli:date_applicability"
+                         }
+                     ] },
+                    {"type": "zone",
+                     "id": "gI3",
+                     "content": [
+                         { "type": "selectField",
+                           "l10n_domain": "eliOntology",
+                           "id": "eli:in_force"
+                         },
+                         { "type": "dateField",
+                           "l10n_domain": "eliOntology",
+                           "id": "eli:first_date_entry_in_force"
+                         },
+                         { "type": "dateField",
+                           "l10n_domain": "eliOntology",
+                           "id": "eli:date_no_longer_in_force"
+                         }
+                     ] },
+                    {"type": "zone",
+                     "id": "gI4",
+                     "content": [
+                         {"type": "textField",
+                          "l10n_domain": "eliOntology",
+                          "id": "eli:id_local"
+                         },
+                         {"type": "textField",
+                          "l10n_domain": "eliOntology",
+                          "id": "eli:description"
+                         }
+                     ] }
+                ] },
+              { "type": "section",
+                "l10n_domain": "uiMessages",
+                "id": "domainContext",
+                "content": [
+                    {"type": "zone",
+                     "id": "dC1",
+                     "content": [
+                         { "type": "selectField",
+                           "l10n_domain": "eliOntology",
+                           "id": "eli:is_about"
+                         },
+                         { "type": "selectField",
+                           "l10n_domain": "eliOntology",
+                           "id": "eli:relevant_for"
+                         }
+                     ] },
+                    {"type": "zone",
+                     "id": "dC2",
+                     "content": [
+                         { "type": "selectField",
+                           "l10n_domain": "eliOntology",
+                           "id": "eli:juridiction"
+                         },
+                         { "type": "selectField",
+                           "l10n_domain": "eliOntology",
+                           "id": "eli:passed_by"
+                         },
+                         { "type": "selectField",
+                           "l10n_domain": "eliOntology",
+                           "id": "eli:responsibility_of_agent"
+                         },
+                         { "type": "textField",
+                           "l10n_domain": "eliOntology",
+                           "id": "eli:responsibility_of"
+                         }
+                     ] }
+                ] },
+              { "type": "section",
+                "l10n_domain": "uiMessages",
+                "id": "relationships",
+                "content": [
+                          { "type": "textField",
+                            "l10n_domain": "eliOntology",
+                            "id": "eli:is_part_of"
+                          },
+                          { "type": "textField",
+                            "l10n_domain": "eliOntology",
+                            "id": "eli:has_part"
+                          },
+                          { "type": "textField",
+                            "l10n_domain": "eliOntology",
+                            "id": "eli:is_member_of"
+                          },
+                          { "type": "textField",
+                            "l10n_domain": "eliOntology",
+                            "id": "eli:has_member"
+                          },
+                          { "id": "eli:transposes",
+                            "l10n_domain": "eliOntology",
+                            "type": "textField"
+                          },
+                          { "id": "eli:applies",
+                            "l10n_domain": "eliOntology",
+                            "type": "textField"
+                          },
+                          { "id": "eli:consolidates",
+                            "l10n_domain": "eliOntology",
+                            "type": "textField"
+                          },
+                          { "id": "eli:based_on",
+                            "l10n_domain": "eliOntology",
+                            "type": "textField"
+                          },
+                          { "id": "eli:changes",
+                            "l10n_domain": "eliOntology",
+                            "type": "textField"
+                          },
+                          { "id": "eli:commences",
+                            "l10n_domain": "eliOntology",
+                            "type": "textField"
+                          },
+                          { "id": "eli:repeals",
+                            "l10n_domain": "eliOntology",
+                            "type": "textField"
+                          },
+                          { "id": "eli:corrects",
+                            "l10n_domain": "eliOntology",
+                            "type": "textField"
+                          },
+                          { "id": "eli:amends",
+                            "l10n_domain": "eliOntology",
+                            "type": "textField"
+                          },
+                          { "id": "eli:is_another_publication_of",
+                            "l10n_domain": "eliOntology",
+                            "type": "textField"
+                          },
+                          { "id": "eli:cites",
+                            "l10n_domain": "eliOntology",
+                            "type": "textField"
+                          },
+                          { "id": "eli:related_to",
+                            "l10n_domain": "eliOntology",
+                            "type": "textField"
+                          }
+                ] },
+              { "type": "section",
+                "l10n_domain": "uiMessages",
+                "id": "descriptionDocuments",
+                "content": [
+                    {"type": "tabs",
+                     "idPrefix": "lang_",
+                     "uiElement": "lang"
+                    }
+                ]
+              }
+          ]
+      },
+      "lang": {
+          "type": "tab",
+          "miniaturesLib": "languages",
+          "content": [
+              {"type": "zone",
+               "id": "lng1",
+               "content": [
+                   { "type": "textField",
+                     "l10n_domain": "eliOntology",
+                     "id": "eli:title"
+                   },
+                   { "type": "textField",
+                     "l10n_domain": "eliOntology",
+                     "id": "eli:title_short"
+                   },
+                   { "type": "textField",
+                     "l10n_domain": "eliOntology",
+                     "id": "eli:title_alternative"
+                   },
+                   { "type": "textField",
+                     "l10n_domain": "eliOntology",
+                     "id": "eli:description"
+                   }
+               ] },
+              {"type": "zone",
+               "id": "lng2",
+               "content": [
+                   { "type": "textField",
+                     "l10n_domain": "eliOntology",
+                     "id": "eli:id_local"
+                   },
+                   { "type": "textField",
+                     "l10n_domain": "eliOntology",
+                     "id": "eli:number"
+                   },
+                   {"type": "textField",
+                    "l10n_domain": "eliOntology",
+                    "id": "eli:version"
+                   }
+               ] },
+              {"type": "zone",
+               "id": "lng3",
+               "content": [
+                   { "type": "dateField",
+                     "l10n_domain": "eliOntology",
+                     "id": "eli:version_date"
+                   },
+                   { "type": "dateField",
+                     "l10n_domain": "eliOntology",
+                     "id": "eli:date_publication"
+                   },
+                   { "type": "dateField",
+                     "l10n_domain": "eliOntology",
+                     "id": "eli:date_applicability"
+                   }
+               ] },
+              {"type": "zone",
+               "id": "lng4",
+               "content": [
+                   { "type": "selectField",
+                     "l10n_domain": "eliOntology",
+                     "id": "eli:in_force"
+                   },
+                   { "type": "dateField",
+                     "l10n_domain": "eliOntology",
+                     "id": "eli:first_date_entry_in_force"
+                   },
+                   { "type": "dateField",
+                     "l10n_domain": "eliOntology",
+                     "id": "eli:date_no_longer_in_force"
+                   }
+               ] },
+              {"type": "zone",
+               "id": "lng5",
+               "content": [
+                   { "type": "selectField",
+                     "l10n_domain": "eliOntology",
+                     "id": "eli:publisher_agent"
+                   },
+                   { "type": "textField",
+                     "l10n_domain": "eliOntology",
+                     "id": "eli:publisher"
+                   }
+               ] },
+              {"type": "zone",
+               "id": "lng6",
+               "content": [
+                   { "id": "eli:transposes",
+                     "l10n_domain": "eliOntology",
+                     "type": "textField"
+                   },
+                   { "id": "eli:applies",
+                     "l10n_domain": "eliOntology",
+                     "type": "textField"
+                   },
+                   { "id": "eli:consolidates",
+                     "l10n_domain": "eliOntology",
+                     "type": "textField"
+                   },
+                   { "id": "eli:changes",
+                     "l10n_domain": "eliOntology",
+                     "type": "textField"
+                   },
+                   { "id": "eli:commences",
+                     "l10n_domain": "eliOntology",
+                     "type": "textField"
+                   },
+                   { "id": "eli:repeals",
+                     "l10n_domain": "eliOntology",
+                     "type": "textField"
+                   },
+                   { "id": "eli:corrects",
+                     "l10n_domain": "eliOntology",
+                     "type": "textField"
+                   },
+                   { "id": "eli:amends",
+                     "l10n_domain": "eliOntology",
+                     "type": "textField"
+                   },
+                   { "id": "eli:cites",
+                     "l10n_domain": "eliOntology",
+                     "type": "textField"
+                   },
+                   { "id": "eli:related_to",
+                     "l10n_domain": "eliOntology",
+                     "type": "textField"
+                   }
+               ] },
+              { "type": "subSections",
+                "idPrefix": "format_",
+                "uiElement": "format"
+              }
+          ]
+      },
+      "format": {
+          "type": "subSection",
+          "miniaturesLib": "formats",
+          "content": [
+              {"type": "zone",
+               "id": "frm1",
+               "content": [
+                   {"type": "textField",
+                    "l10n_domain": "eliOntology",
+                    "id": "eli:id_local"
+                   },
+                   { "type": "textField",
+                     "l10n_domain": "eliOntology",
+                     "id": "eli:is_exemplified_by"
+                   },
+                   { "type": "selectField",
+                     "l10n_domain": "eliOntology",
+                     "id": "eli:legal_value"
+                   }
+               ] },
+              {"type": "zone",
+               "id": "frm2",
+               "content": [
+                   { "type": "textField",
+                     "l10n_domain": "eliOntology",
+                     "id": "eli:published_in_format"
+                   },
+                   { "type": "textField",
+                     "l10n_domain": "eliOntology",
+                     "id": "eli:published_in"
+                   },
+                   { "type": "selectField",
+                     "l10n_domain": "eliOntology",
+                     "id": "eli:publisher_agent"
+                   },
+                   { "type": "textField",
+                     "l10n_domain": "eliOntology",
+                     "id": "eli:publisher"
+                   }
+               ] },
+              {"type": "zone",
+               "id": "frm3",
+               "content": [
+                   { "type": "textField",
+                     "l10n_domain": "eliOntology",
+                     "id": "eli:licence"
+                   },
+                   { "type": "textField",
+                     "l10n_domain": "eliOntology",
+                     "id": "eli:rights"
+                   },
+                   { "type": "selectField",
+                     "l10n_domain": "eliOntology",
+                     "id": "eli:rightsholder_agent"
+                   },
+                   { "type": "textField",
+                     "l10n_domain": "eliOntology",
+                     "id": "eli:rightsholder"
+                   }
+               ] }
+          ]
+      }
+  }
+}

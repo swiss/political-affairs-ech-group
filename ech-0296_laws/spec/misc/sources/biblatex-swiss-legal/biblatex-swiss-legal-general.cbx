@@ -1,0 +1,48 @@
+
+					
+					
+			%%%%%% BIBLATEX-SWISS-LEGAL-GENERAL : CITATIONS %%%%%%%
+
+
+% Copyright 2014 Adrien Vion
+  %
+  % This work may be distributed and/or modified under the
+  % conditions of the LaTeX Project Public License, either version 1.3
+  % of this license or (at your option) any later version.
+  % The latest version of this license is in
+  %   http://www.latex-project.org/lppl.txt
+  % and version 1.3 or later is part of all distributions of LaTeX
+  % version 2005/12/01 or later.
+  %
+  % This work has the LPPL maintenance status 'maintained'.
+  % 
+  % The Current Maintainer of this work is Adrien Vion.
+  
+  % Encoding of this file: UTF8. Code is ASCII compatible. 
+  
+
+		%%%%%%%%%% PREAMBULE / REGLES GENERALES %%%%%%%%%%
+
+
+\ProvidesFile{biblatex-swiss-legal-general.cbx}[2014/01/21 v1.1.2 alpha]
+
+\RequireCitationStyle{biblatex-swiss-legal-base}
+\RequireBibliographyStyle{biblatex-swiss-legal-general}
+
+
+% MACROS PAR TYPE D'ENTRÉE
+
+\newbibmacro{book:cite}{\usebibmacro{generic:short}}
+\newbibmacro{thesis:cite}{\usebibmacro{generic:short}}
+\newbibmacro{inbook:cite}{\usebibmacro{generic:short}}
+\newbibmacro{article:cite}{\usebibmacro{generic:short}}
+\newbibmacro{commentary:cite}{\usebibmacro{generic:short}}
+\newbibmacro{customa:cite}{\usebibmacro{customa:full}}
+\newbibmacro{jurisdiction:cite}{\usebibmacro{jurisdiction:full}}
+\newbibmacro{customb:cite}{\usebibmacro{jurisdiction:full}}
+\newbibmacro{online:cite}{\usebibmacro{online:full}}
+\newbibmacro{legislation:cite}{\usebibmacro{legislation:full}}
+
+
+\endinput
+

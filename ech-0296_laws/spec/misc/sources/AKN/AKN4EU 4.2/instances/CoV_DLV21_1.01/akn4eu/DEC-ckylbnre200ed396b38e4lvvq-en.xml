@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?><akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+	<bill name="DEC">
+		<meta xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<identification source="~PUBL">
+				<FRBRWork>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+						<akn4eu:fileCUID value="ckylbnre200ed396b38e4lvvq"/>
+					</preservation>
+					<FRBRcountry value="EU"/>
+					<FRBRnumber value="COM(2021) 354"/>
+					<FRBRprescriptive value="true"/>
+				</FRBRWork>
+				<FRBRExpression>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<FRBRlanguage language="en"/>
+				</FRBRExpression>
+				<FRBRManifestation>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+						<akn4eu:akn4euVersion value="4.1.1.0"/>
+						<akn4eu:akn4euDocumentation href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/akn4eu"/>
+					</preservation>
+				</FRBRManifestation>
+			</identification>
+			<analysis source="~PUBL">
+				<activeModifications>
+					<textualMod type="insertion">
+						<source href="~mod1"/>
+						<destination href="http://data.europa.eu/eli/prot/1994/1(31)/art_5/par_13" pos="after"/>
+					</textualMod>
+					<textualMod type="substitution" incomplete="true">
+						<source href="~mod2"/>
+						<destination href="http://data.europa.eu/eli/prot/1994/1(31)/art_5/par_5"/>
+					</textualMod>
+					<textualMod type="substitution" incomplete="true">
+						<source href="~mod3"/>
+						<destination href="http://data.europa.eu/eli/prot/1994/1(31)/art_5/par_6"/>
+						<destination href="http://data.europa.eu/eli/prot/1994/1(31)/art_5/par_7"/>
+					</textualMod>
+				</activeModifications>
+			</analysis>
+			<references source="~PUBL">
+				<TLCReference name="language" href="http://publications.europa.eu/resource/authority/language/ENG" showAs="en"/>
+				<TLCReference xml:id="legalBasis" name="contentSubject" href="http://eurovoc.europa.eu/5456" showAs="Legal basis"/>
+				<TLCOrganization xml:id="PUBL" href="http://publications.europa.eu/resource/authority/corporate-body/PUBL" showAs="Publications Office of the European Union"/>
+				<TLCOrganization xml:id="CMT_MIX_EEAREA" href="http://publications.europa.eu/resource/authority/corporate-body/CMT_MIX_EEAREA" showAs="EEA Joint Committee"/>
+				<TLCRole xml:id="PRESID" href="http://publications.europa.eu/resource/authority/role/PRESID" showAs="President"/>
+				<TLCLocation xml:id="BEL_BRU" href="http://publications.europa.eu/resource/authority/place/BEL_BRU" showAs="Brussels"/>
+				<TLCReference xml:id="DEC" name="docType" href="http://publications.europa.eu/resource/authority/resource-type/DEC" showAs="Decision"/>
+				<TLCConcept xml:id="INP" href="http://publications.europa.eu/resource/authority/subdivision/INP" showAs="introductory part"/>
+			</references>
+		</meta>
+		<preface xml:id="d1e118">
+			<longTitle xml:id="d1e120">
+				<p xml:id="d1e122"><docType xml:id="d1e123" refersTo="~DEC">DECISION OF THE EEA JOINT COMMITTEE</docType>
+					<placeholder xml:id="d1e126">No […]</placeholder> 
+					of <placeholder xml:id="d1e128">[…]</placeholder>
+					<docPurpose xml:id="d1e130">amending <ref xml:id="d1e132" href="http://data.europa.eu/eli/prot/1994/1(31)">Protocol 31 to the EEA Agreement, on cooperation in specific fields
+						outside the four freedoms</ref></docPurpose></p>
+			</longTitle>
+		</preface>
+		<preamble xml:id="d1e138">
+			<formula xml:id="d1e140" name="actingEntity">
+				<p xml:id="d1e142">THE EEA JOINT COMMITTEE,</p>
+			</formula>
+			<citations xml:id="d1e145">
+				<citation xml:id="d1e147" refersTo="~legalBasis">
+					<p xml:id="d1e149">Having regard to the Agreement on the European Economic Area (“the EEA Agreement”), and
+						in particular Articles 86 and 98 thereof,</p>
+				</citation>
+			</citations>
+			<recitals xml:id="d1e153">
+				<intro xml:id="d1e155">
+					<p xml:id="d1e157">Whereas:</p>
+				</intro>
+				<recital xml:id="d1e160">
+					<num xml:id="d1e162">(1)</num>
+					<p xml:id="d1e164">It is appropriate to continue the cooperation of the Contracting Parties to the EEA
+						Agreement in Union actions funded from the general budget of the Union regarding the
+						free movement of workers, coordination of social security schemes and measures for
+						migrants, including migrants from third countries.</p>
+				</recital>
+				<recital xml:id="d1e167">
+					<num xml:id="d1e169">(2)</num>
+					<p xml:id="d1e171">It is appropriate that this cooperation should continue beyond 31 December 2020,
+						irrespective of when this Decision is adopted or whether the fulfilment of
+						constitutional requirements for this Decision, if any, is notified after 10 July
+						2021.</p>
+				</recital>
+				<recital xml:id="d1e174">
+					<num xml:id="d1e176">(3)</num>
+					<p xml:id="d1e178">Entities established in the EFTA States should be entitled to participate in
+						activities, which start before the entry into force of this Decision. The costs incurred
+						for such activities, the implementation of which starts after 1 January 2021, may be
+						considered eligible under the same conditions as those applicable to costs incurred by
+						entities established in the EU Member States provided that this Decision enters into
+						force before the end of the action concerned.</p>
+				</recital>
+				<recital xml:id="d1e181">
+					<num xml:id="d1e183">(4)</num>
+					<p xml:id="d1e185">Protocol 31 to the EEA Agreement should therefore be amended in order to allow for that
+						extended cooperation to take place from 1 January 2021,</p>
+				</recital>
+			</recitals>
+			<formula xml:id="d1e189" name="enactingFormula">
+				<p xml:id="d1e191">HAVE ADOPTED THIS DECISION:</p>
+			</formula>
+		</preamble>
+		<body xml:id="d1e195">
+			<article xml:id="d1e197">
+				<num xml:id="d1e199">Article 1</num>
+				<paragraph xml:id="d1e201">
+					<list xml:id="d1e203">
+						<subparagraph xml:id="d1e205" refersTo="~INP">
+							<content xml:id="d1e207">
+								<p xml:id="d1e209">Article 5 of <affectedDocument xml:id="d1e211" href="http://data.europa.eu/eli/agree_internation/...">Protocol 31 to the EEA Agreement</affectedDocument> shall be amended as follows:</p>
+							</content>
+						</subparagraph>
+						<point xml:id="d1e217">
+							<num xml:id="d1e219">1.</num>
+							<content xml:id="d1e221">
+								<p xml:id="d1e223"><mod xml:id="mod1">The following paragraph is inserted after paragraph 13: <quotedStructure xml:id="d1e226" startQuote="‘" endQuote="’">
+											<paragraph xml:id="d1e228">
+												<num xml:id="d1e230">14.</num>
+												<list xml:id="d1e232">
+													<subparagraph xml:id="d1e234" refersTo="~INP">
+														<content xml:id="d1e236">
+															<p xml:id="d1e238">The EFTA States shall, as from 1 January 2021, participate in the
+																actions funded from the following budget line, entered into the
+																general budget of the European Union for the financial year
+																2021:</p>
+														</content>
+													</subparagraph>
+													<indent xml:id="d1e242">
+														<num xml:id="d1e244">-</num>
+														<content xml:id="d1e246">
+															<p xml:id="d1e248">Budget line 07 20 03 01: “Free movement of workers, coordination
+																of social security schemes and measures for migrants including
+																migrants from third countries”.</p>
+														</content>
+													</indent>
+												</list>
+												<subparagraph xml:id="d1e253">
+													<content xml:id="d1e255">
+														<p xml:id="d1e257">The costs incurred for activities the implementation of which starts
+															after 1 January 2021, may be considered eligible as from the beginning
+															of the action under the grant EN 2 EN agreement or the grаnt decision
+															concerned provided that Decision of the EEA Joint Committee No XX/2021
+															of […][This decision] enters into force before the end of the
+															action.</p>
+													</content>
+												</subparagraph>
+											</paragraph>
+										</quotedStructure></mod></p>
+							</content>
+						</point>
+						<point xml:id="d1e265">
+							<num xml:id="d1e267">2.</num>
+							<content xml:id="d1e269">
+								<p xml:id="d1e271"><mod xml:id="mod2">In paragraph 5, the words <quotedText xml:id="d1e274" startQuote="‘" endQuote="’">and in the
+											actions funded from the budget line for the financial years 2014, 2015, 2016,
+											2017, 2018, 2019 and 2020 referred to in paragraph 13 as from 1 January
+											2014</quotedText> are replaced by the words <quotedText xml:id="d1e277" startQuote="‘" endQuote="’">, in the actions funded from the budget line for the financial
+											years 2014, 2015, 2016, 2017, 2018, 2019, 2020, and 2021 referred to in
+											paragraph 13 as from 1 January 2014 and in the actions funded from the budget
+											line for the financial year 2021 referred to in paragraph 14 as from 1 January
+											2021</quotedText><inline xml:id="d1e279" name="punctuationMod">.</inline></mod></p>
+							</content>
+						</point>
+						<point xml:id="d1e284">
+							<num xml:id="d1e286">3.</num>
+							<content xml:id="d1e288">
+								<p xml:id="d1e290"><mod xml:id="mod3">In paragraphs 6 and 7, the words <quotedText xml:id="d1e293" startQuote="‘" endQuote="’">paragraphs 8, 12 and 13</quotedText> are replaced by the words <quotedText xml:id="d1e296" startQuote="‘" endQuote="’">paragraphs 8, 12, 13 and
+												14</quotedText><inline xml:id="d1e298" name="punctuationMod">.</inline></mod></p>
+							</content>
+						</point>
+					</list>
+				</paragraph>
+			</article>
+			<article xml:id="d1e306">
+				<num xml:id="d1e308">Article 2</num>
+				<paragraph xml:id="d1e310">
+					<content xml:id="d1e312">
+						<p xml:id="d1e314">This Decision shall enter into force on the day following the last notification under
+							Article 103(1) of the EEA Agreement<authorialNote xml:id="d1e316" marker="1" placement="bottom">
+								<p xml:id="d1e318">[No constitutional requirements indicated.] [Constitutional requirements
+									indicated.]</p>
+							</authorialNote>.</p>
+					</content>
+				</paragraph>
+				<paragraph xml:id="d1e324">
+					<content xml:id="d1e326">
+						<p xml:id="d1e328">It shall apply from 1 January 2021.</p>
+					</content>
+				</paragraph>
+			</article>
+			<article xml:id="d1e333">
+				<num xml:id="d1e335">Article 3</num>
+				<paragraph xml:id="d1e337">
+					<content xml:id="d1e339">
+						<p xml:id="d1e341">This Decision shall be published in the EEA Section of, and in the EEA Supplement to,
+							the Official Journal of the European Union.</p>
+					</content>
+				</paragraph>
+			</article>
+		</body>
+		<conclusions xml:id="d1e347">
+			<p xml:id="d1e349">Done at <location xml:id="d1e351" refersTo="~BEL_BRU">Brussels</location>,</p>
+			<block xml:id="d1e355" name="signatory">
+				<signature xml:id="d1e357">
+					<organization xml:id="d1e359" refersTo="~CMT_MIX_EEAREA">For the EEA Joint Committee</organization>
+					<role xml:id="d1e362" refersTo="~PRESID">The President</role>
+					<person xml:id="d1e365" refersTo=""/>
+					<role xml:id="d1e367" refersTo="">The Secretaries To the EEA
+						Joint Committee</role>
+					<person xml:id="d1e371" refersTo=""/>
+				</signature>
+			</block>
+		</conclusions>
+	</bill>
+</akomaNtoso>

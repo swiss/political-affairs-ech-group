@@ -1,0 +1,1324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Part of CoV 4.1(2021-11-18)
+-->
+<regulation xmlns="http://ifc.europa.eu/common_vocabulary">
+	<title_of_the_document>
+		Council <type_of_document>Regulation</type_of_document> (EU) 2020/123 of <date>27 January 2020</date> fixing for 2020 the fishing opportunities for certain fish stocks and groups of fish stocks, applicable in Union waters and, for Union fishing vessels, in certain non-Union waters</title_of_the_document>
+	<preamble>
+		<acting_entity>THE COUNCIL OF THE EUROPEAN UNION,</acting_entity>
+		<citation>Having regard to the <legal_basis>Treaty on the Functioning of the European Union, and in particular Article 43(3) thereof,</legal_basis>
+		</citation>
+		<citation>Having regard to the proposal from the European Commission,</citation>
+		<introduction_to_the_recitals>Whereas:</introduction_to_the_recitals>
+		<recital>
+			<numbering>(1)</numbering>Article 43(3) of the Treaty provides that the Council, on a proposal from the Commission, is to adopt measures on the fixing and allocation of fishing opportunities.</recital>
+		<recital>
+			<numbering>(2)</numbering>Regulation (EU) No 1380/2013 of the European Parliament and of the Council<note>Regulation (EU) No 1380/2013 of the European Parliament and of the Council of 11 December 2013 on the Common Fisheries Policy, amending Council Regulations (EC) No 1954/2003 and (EC) No 1224/2009 and repealing Council Regulations (EC) No 2371/2002 and (EC) No 639/2004 and Council Decision 2004/585/EC (OJ L 354, 28.12.2013, p. 22).</note> requires that conservation measures be adopted, taking into account available scientific, technical and economic advice, including, where relevant, reports drawn up by the Scientific, Technical and Economic Committee for Fisheries (STECF) and other advisory bodies, as well as any advice received from advisory councils.</recital>
+		<recital>
+			<numbering>(3)</numbering>It is incumbent upon the Council to adopt measures on the fixing and allocation of fishing opportunities, including certain conditions functionally linked thereto, as appropriate. In accordance with Article 16(4) of Regulation (EU) No 1380/2013, fishing opportunities should be fixed in accordance with the objectives of the Common Fisheries Policy (CFP) established in Article 2(2) of that Regulation. In accordance with Article 16(1) of that Regulation, fishing opportunities should be allocated to Member States in such a way as to ensure relative stability of fishing activities of each Member State for each fish stock or fishery.</recital>
+		<recital>
+			<numbering>(4)</numbering>The total allowable catch (TAC) should therefore be established, in line with Regulation (EU) No 1380/2013, on the basis of available scientific advice, taking into account biological and socio-economic aspects whilst ensuring fair treatment between fishing sectors, as well as in the light of the opinions expressed during the consultation of stakeholders, in particular at the meetings of the advisory councils.</recital>
+		<recital>
+			<numbering>(5)</numbering>In accordance with Article 15 of Regulation (EU) No 1380/2013, the landing obligation applies fully from 1 January 2019 and all species subject to catch limits should be landed. Article 16(2) of Regulation (EU) No 1380/2013 provides that, when the landing obligation in respect of a fish stock applies, fishing opportunities are to be fixed taking into account the change from fixing fishing opportunities that reflect landings to fixing fishing opportunities that reflect catches. On the basis of the joint recommendations submitted by the Member States and in accordance with Article 15 of Regulation (EU) No 1380/2013, the Commission adopted a number of delegated Regulations laying down details for the implementation of the landing obligation in the form of specific discard plans applicable on a temporary basis for a maximum period of three years.</recital>
+		<recital>
+			<numbering>(6)</numbering>The fishing opportunities for stocks of species falling under the landing obligation should take into account the fact that discarding is in principle no longer allowed. Therefore, the fishing opportunities should be based on the advice figure for total catches (instead of the advice figure for wanted catches), as provided by the International Council for the Exploration of the Sea (ICES). The amounts that, by way of exception, may continue to be discarded during the operation of the landing obligation should be deducted from that advice figure for total catches.</recital>
+		<recital>
+			<numbering>(7)</numbering>There are certain stocks for which ICES has issued scientific advice for no catches. If TACs for those stocks are established at the level indicated in the scientific advice, the obligation to land all catches, including by-catches from those stocks, in mixed fisheries would lead to the phenomenon of ‘choke species’. In order to strike the right balance between continuing fisheries in view of the potentially severe socio-economic implications, and the need to achieve a good biological status for those stocks, taking into account the difficulty of fishing all stocks in a mixed fishery at maximum sustainable yield (MSY) at the same time, it is appropriate to establish specific TACs for by-catches for those stocks. The level of those TACs should be such that mortality for those stocks is decreased and that it provides incentives for improvements in selectivity and avoidance. In order to guarantee to the extent possible the use of fishing opportunities in mixed fisheries in accordance with Article 16(2) of Regulation (EU) No 1380/2013, it is appropriate to establish a pool for quota exchanges for those Member States that have no quota to cover their unavoidable by-catches.</recital>
+		<recital>
+			<numbering>(8)</numbering>In order to reduce catches of the stocks for which by-catch TACs are set, fishing opportunities for the fisheries in which fish from those stocks is caught should be set at levels that help the biomass of vulnerable stocks to recover to sustainable levels. Technical and control measures that are intrinsically linked to fishing opportunities should also be established to prevent illegal discarding.</recital>
+		<recital>
+			<numbering>(9)</numbering>According to scientific advice, the spawning-stock biomass of European seabass (Dicentrarchus labrax) in the Celtic Sea, Channel, Irish Sea and southern North Sea (ICES divisions 4b, 4c, 7a, and 7d to 7h) has been declining since 2009 and is currently below MSY Btrigger and just above Blim. The fishing mortality, due to the measures taken by the Union has decreased and is currently below FMSY. However, recruitment is low, fluctuating without trend since 2008. Therefore, the catch limits should be continued, while ensuring that the target fishing mortality for this stock is in line with MSY.</recital>
+		<recital>
+			<numbering>(10)</numbering>In accordance with the Western Waters multiannual plan established by Regulation (EU) 2019/472 of the European Parliament and of the Council<note>Regulation (EU) 2019/472 of the European Parliament and of the Council of 19 March 2019 establishing a multiannual plan for stocks fished in the Western Waters and adjacent waters, and for fisheries exploiting those stocks, amending Regulations (EU) 2016/1139 and (EU) 2018/973, and repealing Council Regulations (EC) No 811/2004, (EC) No 2166/2005, (EC) No 388/2006, (EC) No 509/2007 and (EC) No 1300/2008 (OJ L 83, 25.3.2019, p. 1).</note>, the target fishing mortality, in line with the ranges of FMSY defined in Article 2 of that Regulation, is to be achieved as soon as possible, and on progressive and incremental basis by 2020 for the stocks listed in Article 1(1) of that Regulation and shall be maintained thereafter within the ranges of FMSY, in accordance with Article 4 of that Regulation. The overall fishing mortality for seabass in ICES divisions 8a and 8b should therefore be set in line with MSY, taking into account commercial and recreational catches and including discards (2533 tonnes altogether according to the ICES advice). Member States are to take appropriate measures to ensure that the fishing mortality from their fleets and from their recreational fishermen does not exceed FMSY point value, as required by Article 4(3) of Regulation (EU) 2019/472.</recital>
+		<recital>
+			<numbering>(11)</numbering>Measures for recreational fisheries for European seabass should also be continued, taking account of the significant impact of such fisheries on the stocks concerned. Within the limits of the scientific advice, the catch-and-release practice and the bag limits should be continued. Considering the lack of sufficient selectivity and that higher number of specimens are likely to be caught than the established limits, fixed nets should be excluded. When only the catch-and-release practice is allowed, only the gear ensuring high survival rates should be permitted. Having considered environmental, social and economic circumstances, and especially the dependency of commercial fishermen on those stocks in coastal communities, those measures on European seabass would strike an appropriate balance between the interests of commercial and recreational fishermen. In particular, those measures would allow recreational fishermen to exercise their fishing activities by taking into account their impact on those stocks.</recital>
+		<recital>
+			<numbering>(12)</numbering>As regards the European eel (Anguilla anguilla) stock, ICES has advised that all anthropogenic mortalities, including recreational and commercial fisheries, should be reduced to zero, or kept as close to zero as possible. Moreover, the General Fisheries Commission for the Mediterranean (GFCM) adopted Recommendation GFCM/42/2018/1 establishing management measures for European eel in the Mediterranean. It is appropriate to maintain the level-playing field across the Union and hence to maintain also for the Union waters of the ICES area as well as brackish waters such as estuaries, coastal lagoons and transitional waters a consecutive three-month closure period for all fisheries of European eel at all life stages. As the fishing closure period should be consistent with the conservation objectives set out in Council Regulation (EC) No 1100/2007<note>Council Regulation (EC) No 1100/2007 of 18 September 2007 establishing measures for the recovery of the stock of European eel OJ L 248, 22.9.2007, p. 17).</note> and with the temporal migration patterns of European eel, for the Union waters of the ICES area it is appropriate to set it in the period between 1 August 2020 and 28 February 2021.</recital>
+		<recital>
+			<numbering>(13)</numbering>For some years, certain TACs for stocks of elasmobranchs (skates, sharks, rays) have been set at zero, with a linked provision establishing an obligation to immediately release accidental catches. The reason for that specific treatment was the poor conservation status of those stocks and the assumption that discarding, because of high survival rates, would not raise fishing mortality rates and would be beneficial for the conservation of those species. As of 1 January 2019, however, catches of those species have to be landed, unless they are covered by any of the derogations from the landing obligation provided for in Article 15 of Regulation (EU) No 1380/2013. Point (a) of Article 15(4) of that Regulation allows such derogations for species in respect of which fishing is prohibited and which are identified as such in a Union legal act adopted in the area of the CFP. Therefore, it is appropriate to prohibit fishing of those species in the areas concerned.</recital>
+		<recital>
+			<numbering>(14)</numbering>Pursuant to Article 16(4) of Regulation (EU) No 1380/2013, for stocks subject to specific multiannual plans the TACs should be established in accordance with the rules laid down in those plans.</recital>
+		<recital>
+			<numbering>(15)</numbering>The North Sea multiannual plan was established by Regulation (EU) 2018/973 of the European Parliament and of the Council<note>Regulation (EU) 2018/973 of the European Parliament and of the Council of 4 July 2018 establishing a multiannual plan for demersal stocks in the North Sea and the fisheries exploiting those stocks, specifying details of the implementation of the landing obligation in the North Sea and repealing Council Regulations (EC) No 676/2007 and (EC) No 1342/2008 (OJ L 179, 16.7.2018, p. 1).</note> and entered into force in 2018. The Western Waters multiannual plan entered into force in 2019. Fishing opportunities for stocks listed in Article 1 of those plans should be established in accordance with targets (ranges of FMSY) and safeguards in compliance with conditions provided for in those plans. The ranges of FMSY have been identified in the relevant ICES advice. Where no adequate scientific information is available, fishing opportunities for by-catch stocks should be established in accordance with the precautionary approach, as set out in the multiannual plans. In order to limit variations in fishing opportunities between consecutive years, in accordance with point (c) of Article 4(5) of Regulation (EU) 2019/472, it is appropriate to use the upper range of FMSY for the stocks of northern hake and southern hake.</recital>
+		<recital>
+			<numbering>(16)</numbering>In accordance with Article 8 of the Western Waters multiannual plan, where scientific advice indicates that the spawning stock biomass of any of the stocks referred to in Article 1(1) of that plan is below the Blim, further remedial measures must be taken to ensure rapid return of the stock to levels above the level capable of producing MSY. In particular, those remedial measures may include suspending the targeted fishery for the stock concerned and the adequate reduction of fishing opportunities for those stocks and/or other stocks in the fisheries having by-catches of cod or whiting.</recital>
+		<recital>
+			<numbering>(17)</numbering>In its advice, ICES indicated that stocks of cod and whiting in the Celtic Sea are below Blim. Therefore, further remedial measures should be taken for those stocks. Those measures should contribute to the recovery of the stocks concerned and should replace further reduction of fishing opportunities for fisheries in which those stocks are caught. As regards whiting in the Celtic Sea, those measures should consist of technical modifications to characteristics of gear to decrease by-catches of whiting, which are functionally linked to fishing opportunities for fisheries in which those species are being caught.</recital>
+		<recital>
+			<numbering>(18)</numbering>Remedial measures have been taken in 2019 fishing opportunities in respect of the Celtic Sea cod. On that occasion, the TAC for this stock was reserved for by-catches only. However, since the stock is under Blim, further remedial measures should be taken in order to bring the stock above the level capable of producing MSY, in accordance with Article 8(2) of the Western Waters multiannual plan. Such measures would improve selectivity by making the usage of gear that have lower levels of by-catches of cod mandatory in the areas where cod catches are significant, thus decreasing the fishing mortality of this stock in mixed fisheries. The level of the TAC should be established to avoid premature closure of the fishery in early 2020. In addition, the TAC should be such as to avoid potential discarding, which could undermine data collection and scientific assessment of the stock. Establishing the TAC at 805 tonnes would ensure a considerable increase in the stock spawning biomass in 2020 of at least 100 %, in order to ensure rapid return of the stock to levels capable of producing MSY (Btrigger).</recital>
+		<recital>
+			<numbering>(19)</numbering>The TACs for bluefin tuna in the eastern Atlantic and Mediterranean should be established in accordance with the rules laid down in Regulation (EU) 2016/1627 of the European Parliament and of the Council<note>Regulation (EU) 2016/1627 of the European Parliament and of the Council of 14 September 2016 on a multiannual recovery plan for bluefin tuna in the eastern Atlantic and the Mediterranean, and repealing Council Regulation (EC) No 302/2009 (OJ L 252, 16.9.2016, p. 1).</note>.</recital>
+		<recital>
+			<numbering>(20)</numbering>As a result of a benchmark exercise on the stock of herring to the west of Scotland, ICES has provided advice for the combined herring stocks in divisions 6a, 7b and 7c (West of Scotland, West of Ireland). The advice covers two separate TACs (for divisions 6aS, 7b and 7c on the one hand, and for divisions 5b, 6b and 6aN on the other). According to ICES, a rebuilding plan has to be developed for those stocks. Therefore, a TAC should be established to permit limited catches in the framework of a commercially operated scientific sampling programme.</recital>
+		<recital>
+			<numbering>(21)</numbering>According to scientific advice by ICES, the Celtic Sea herring (Clupea harengus) stock (in ICES divisions 7a South of 52° 30' N, 7g–h, and 7j–k) is below Blim. Therefore, ICES advised that catches in 2020 should be zero tonnes. ICES suggested that a monitoring fishery should be conducted to maximise the contribution to scientific data collection, including assisting with the acoustic survey and that the minimum level of catches should be 869 tonnes. This figure could provide the minimum number of at least 17 samples required for a TAC monitoring. It is thus appropriate to set a TAC for a sentinel fishery for Celtic Sea herring to collect uninterrupted fisheries-dependent catch data, without impairing the recovery of the stock.</recital>
+		<recital>
+			<numbering>(22)</numbering>On 17 December 2018 ICES has published scientific advice on the inter-area flexibility for horse mackerel (Trachurus spp.) between ICES divisions 8c and 9a. ICES advised the inter-area flexibility between those two stocks should not exceed the difference between the catch corresponding to a fishing mortality of Fp.05 and the established TAC. There should also be no transfer of TAC to a stock with a spawning-stock biomass below the limit reference point (Blim). Under the conditions of that scientific advice, the inter-area flexibility (special condition) for horse mackerel between ICES subarea 9 and ICES division 8c for 2020 should be established at 10 %.</recital>
+		<recital>
+			<numbering>(23)</numbering>For stocks for which there is no sufficient or reliable data in order to provide size estimates, management measures and TAC levels should follow the precautionary approach to fisheries management as defined in point (8) of Article 4(1) of Regulation (EU) No 1380/2013, while taking into account stock-specific factors, including, in particular, available information on stock trends and mixed fisheries considerations.</recital>
+		<recital>
+			<numbering>(24)</numbering>Council Regulation (EC) No 847/96<note>Council Regulation (EC) No 847/96 of 6 May 1996 introducing additional conditions for year-to-year management of TACs and quotas (OJ L 115, 9.5.1996, p. 3).</note> introduced additional conditions for year-to-year management of TACs including, under Articles 3 and 4 of that Regulation, flexibility provisions for precautionary and analytical TACs. Under Article 2 of that Regulation, when establishing the TACs, the Council is to decide to which stocks Article 3 or 4 of that Regulation is not to apply, in particular on the basis of the biological status of the stocks. In 2014, a further year-to-year flexibility mechanism was introduced by Article 15(9) of Regulation (EU) No 1380/2013 for all stocks that are subject to the landing obligation. Therefore, in order to avoid excessive flexibility that would undermine the principle of rational and responsible exploitation of marine biological resources, hinder the achievement of the objectives of the CFP and deteriorate the biological status of the stocks, it should be established that Articles 3 and 4 of Regulation (EC) No 847/96 apply to analytical TACs only where the year-to-year flexibility provided for in Article 15(9) of Regulation (EU) No 1380/2013 is not used.</recital>
+		<recital>
+			<numbering>(25)</numbering>The inter-annual flexibility under Article 15(9) of Regulation (EU) No 1380/2013 should be excluded where the application of this flexibility would undermine the achievement of the CFP objectives, in particular for stocks with spawning biomass below Blim.</recital>
+		<recital>
+			<numbering>(26)</numbering>Moreover, given that the biomass of the stocks of COD/03AS; COD/5BE6A; WHG/56-14; WHG/07A and PLE/7HJK is below Blim and that only by-catch and scientific fisheries are permitted in 2020, Member States have undertaken not to apply Article 15(9) of Regulation (EU) No 1380/2013 for those stocks in 2020 so that catches in 2020 would not exceed the established TACs.</recital>
+		<recital>
+			<numbering>(27)</numbering>Where a TAC relating to a stock is allocated to one Member State only, it is appropriate to empower that Member State, in accordance with Article 2(1) of the Treaty, to determine the level of such TAC. Provisions should be made to ensure that, when fixing that TAC level, the Member State concerned acts in a manner fully consistent with the principles and rules of the CFP.</recital>
+		<recital>
+			<numbering>(28)</numbering>It is necessary to establish the fishing effort ceilings for 2020 in accordance with Articles 5, 6, 7 and 9 of, and Annex I to, Regulation (EU) 2016/1627.</recital>
+		<recital>
+			<numbering>(29)</numbering>In order to guarantee full use of fishing opportunities, it is appropriate to allow for the implementation of a flexible arrangement between certain TAC areas where the same biological stock is concerned.</recital>
+		<recital>
+			<numbering>(30)</numbering>For certain species, such as certain species of sharks, even a limited fishing activity could result in a serious conservation risk. Fishing opportunities for such species should therefore be fully restricted through a general prohibition on fishing those species.</recital>
+		<recital>
+			<numbering>(31)</numbering>At the 12th Conference of the Parties of the Convention on the Conservation of Migratory Species of Wild Animals, held in Manila from 23 to 28 October 2017, a number of species were added to the lists of protected species in Appendices I and II to that Convention. Therefore, it is appropriate to provide for the protection of those species with respect to Union fishing vessels fishing in all waters and non-Union fishing vessels fishing in Union waters.</recital>
+		<recital>
+			<numbering>(32)</numbering>The use of fishing opportunities available to Union fishing vessels set out in this Regulation is subject to Council Regulation (EC) No 1224/2009<note>Council Regulation (EC) No 1224/2009 of 20 November 2009 establishing a Community control system for ensuring compliance with the rules of the common fisheries policy, amending Regulations (EC) No 847/96, (EC) No 2371/2002, (EC) No 811/2004, (EC) No 768/2005, (EC) No 2115/2005, (EC) No 2166/2005, (EC) No 388/2006, (EC) No 509/2007, (EC) No 676/2007, (EC) No 1098/2007, (EC) No 1300/2008, (EC) No 1342/2008 and repealing Regulations (EEC) No 2847/93, (EC) No 1627/94 and (EC) No 1966/2006 (OJ L 343, 22.12.2009, p. 1).</note>, and in particular to Articles 33 and 34 of that Regulation, concerning the recording of catches and fishing effort and the notification of data on the exhaustion of fishing opportunities. It is therefore necessary to specify the codes to be used by Member States when sending data to the Commission relating to landings of stocks subject to this Regulation.</recital>
+		<recital>
+			<numbering>(33)</numbering>It is appropriate, following advice from ICES, to maintain a specific system to manage sandeel and associated by-catches in Union waters of ICES divisions 2a and 3a and ICES subarea 4. Given that the ICES scientific advice is expected to become available only in February 2020, it is appropriate to set the TAC and quotas for that stock provisionally at zero until such advice is released.</recital>
+		<recital>
+			<numbering>(34)</numbering>In accordance with the procedure provided for in the agreements or protocols on fisheries relations with Norway<note>Agreement on fisheries between the European Economic Community and the Kingdom of Norway (OJ L 226, 29.8.1980, p. 48).</note> and the Faroe Islands<note>Agreement on fisheries between the European Economic Community, of the one part, and the Government of Denmark and the Home Government of the Faeroe Islands, of the other part (OJ L 226, 29.8.1980, p. 12).</note>, the Union has held consultations on fishing rights with those partners. In accordance with the procedure provided for in the agreement and protocol on fisheries relations with Greenland<note>Fisheries Partnership Agreement between the European Community on the one hand, and the Government of Denmark and the Home Rule Government of Greenland, on the other hand (OJ L 293, 23.10.2012, p. 5).</note>, the Joint Committee has established the level of fishing opportunities available for the Union in Greenland waters in 2020. It is therefore necessary to include those fishing opportunities in this Regulation.</recital>
+		<recital>
+			<numbering>(35)</numbering>The Union TAC for Greenland Halibut in international waters of 1 and 2 is without prejudice to the Union’s position on the appropriate Union share in this fishery.</recital>
+		<recital>
+			<numbering>(36)</numbering>At its annual meeting in 2019, the North-East Atlantic Fisheries Commission (NEAFC) was unable to adopt conservation measures for the two redfish stocks in the Irminger Sea. The relevant TACs should be established for those stocks, in line with the positions expressed by the Union in NEAFC.</recital>
+		<recital>
+			<numbering>(37)</numbering>At its annual meeting in 2017, the International Commission for the Conservation of Atlantic Tunas (ICCAT) agreed that in 2018 and 2019, the ICCAT may distribute the unallocated reserves for bluefin tuna for 2019 and 2020, considering in particular the needs of coastal developing ICCAT contracting parties and cooperating non-contracting parties, entities or fishing entities (CPCs) in their artisanal fisheries. That distribution was agreed at the inter-sessional meeting of Panel 2 of ICCAT (Madrid, March 2018) based, for the Union allocation, on the information received from three Member States: Greece, Spain and Portugal. As a result, the Union received specific additional fishing opportunities of 87 tonnes for 2019 and 100 tonnes for 2020 to be used by the Union artisanal fleets in certain Union regions. That allocation of fishing opportunities to the Union was endorsed by ICCAT at its annual meetings in 2018 and 2019. The parameters established by the Council for establishing an allocation key for 2019 between Greece, Spain and Portugal remain valid for 2020.</recital>
+		<recital>
+			<numbering>(38)</numbering>The ICCAT Recommendation 16-05, decreasing for 2020 the TAC for Mediterranean swordfish, should be implemented in Union law. As it is already the case for the stock of bluefin tuna in the eastern Atlantic and Mediterranean, it is appropriate that catches in recreational fisheries of all other ICCAT stocks should be subject to the catch limits as adopted by the ICCAT.</recital>
+		<recital>
+			<numbering>(39)</numbering>At its annual meeting in 2019, ICCAT agreed for the first time on a TAC for the North Atlantic blue shark caught in association with ICCAT fisheries, and on the allocation key. The fishing opportunities for that stock should thus be allocated to the Member States. In addition, ICCAT agreed on an unallocated TAC for Southern Atlantic blue shark caught in association with ICCAT fisheries. Moreover, annual landing limits were allocated among Contracting Parties for the stocks of blue marlin and white marlin/spearfish in the Atlantic Ocean. Those measures should be implemented in Union law.</recital>
+		<recital>
+			<numbering>(40)</numbering>At its annual meeting in 2019, the Parties to the Commission for the Conservation of Antarctic Marine Living Resources (CCAMLR) adopted catch limits for both target and by-catch species for the period from 30 November 2020. The uptake of the quotas during 2019 should be considered when setting fishing opportunities for 2020.</recital>
+		<recital>
+			<numbering>(41)</numbering>At its annual meeting in 2019, the Indian Ocean Tuna Commission (IOTC) adopted new catch limits for yellowfin tuna (Thunnus albacares) that do not affect the Union catch limits in the framework of IOTC. However, it reduced possibilities for using fish aggregating devices (FADs) and supply vessels. Measures on the retention of Mobulid rays were adopted. Those measures should be implemented in Union law.</recital>
+		<recital>
+			<numbering>(42)</numbering>The annual meeting of the South Pacific Regional Fisheries Management Organisation (SPRFMO) will be held from 18 February 2020. The current measures in the SPRFMO Convention Area should be provisionally maintained until such annual meeting is held.</recital>
+		<recital>
+			<numbering>(43)</numbering>At its annual meeting in 2017, the Inter-American Tropical Tuna Commission (IATTC) adopted a conservation measure for yellowfin tuna, bigeye tuna and skipjack tuna for the period 2018–2020. It was not revised at its annual meeting in 2019 and should thus continue being implemented in Union law.</recital>
+		<recital>
+			<numbering>(44)</numbering>At its annual meeting in 2019, the Commission for the Conservation of Southern Bluefin Tuna (CCSBT) confirmed the TAC for the southern bluefin tuna for the period 2018–2020 adopted at the annual meeting in 2016. Those measures should be implemented in Union law.</recital>
+		<recital>
+			<numbering>(45)</numbering>At its annual meeting in 2019, the South East Atlantic Fisheries Organisation (SEAFO) adopted TACs for the main species under its purview. Those measures should be implemented in Union law.</recital>
+		<recital>
+			<numbering>(46)</numbering>At its annual meeting in 2019, the Western and Central Pacific Fisheries Commission (WCPFC) kept the previously adopted conservation and management measures. Those measures should continue being implemented in Union law.</recital>
+		<recital>
+			<numbering>(47)</numbering>At its 41st annual meeting in 2019, the Northwest Atlantic Fisheries Organisation (NAFO) adopted a number of fishing opportunities for 2020 for certain stocks in subareas 1 to 4 of the NAFO Convention Area. Those measures should be implemented in the Union law.</recital>
+		<recital>
+			<numbering>(48)</numbering>The 6th Meeting of the Parties of the Southern Indian Ocean Fisheries Agreement (SIOFA) in 2019 adopted conservation and management measures for the stocks under the scope of the Agreement. Those measures should be implemented in Union law.</recital>
+		<recital>
+			<numbering>(49)</numbering>As regards the fishing opportunities for snow crab around the area of Svalbard, the Treaty of Paris of 1920 grants equal and non-discriminatory access to resources for all parties to that Treaty, including with respect to fishing. The view of the Union concerning that access, as regards fishing for snow crab on the continental shelf around Svalbard, has been set out in two notes verbales to Norway dated 24 February 2017. In order to ensure that the exploitation of snow crab within the area of Svalbard is made consistent with such non-discriminatory management rules as may be set out by Norway, which enjoys sovereignty and jurisdiction in the area within the limits of the said Treaty, it is appropriate to fix the number of vessels that are authorised to conduct such fishery. The allocation of such fishing opportunities among Member States is limited to 2020. It is recalled that in the Union primary responsibility for ensuring compliance with applicable law lies with the flag Member States.</recital>
+		<recital>
+			<numbering>(50)</numbering>In accordance with the declaration by the Union addressed to the Bolivarian Republic of Venezuela<note>Council Decision (EU) 2015/1565 of 14 September 2015 on the approval, on behalf of the European Union, of the Declaration on the granting of fishing opportunities in EU waters to fishing vessels flying the flag of the Bolivarian Republic of Venezuela in the exclusive economic zone off the coast of French Guiana (OJ L 244, 19.9.2015, p. 55).</note>, it is necessary to fix the fishing opportunities for snapper available to Venezuela in Union waters.</recital>
+		<recital>
+			<numbering>(51)</numbering>Given that certain provisions are to be applied on a continuous basis, and in order to avoid legal uncertainty during the period between the end of 2020 and the date of entry into force of the Regulation fixing the fishing opportunities for 2021, the provisions concerning prohibitions and closed seasons set out in this Regulation should continue to apply at the beginning of 2021, until the entry into force of the Regulation fixing the fishing opportunities for 2021.</recital>
+		<recital>
+			<numbering>(52)</numbering>In order to ensure uniform conditions for the implementation of this Regulation, implementing powers should be conferred on the Commission as regards authorising individual Member States to manage fishing effort allocations in accordance with a kilowatt-day system. Those powers should be exercised in accordance with Regulation (EU) No 182/2011 of the European Parliament and of the Council<note>Regulation (EU) No 182/2011 of the European Parliament and of the Council of 16 February 2011 laying down the rules and general principles concerning mechanisms for control by Member States of the Commission’s exercise of implementing powers (OJ L 55, 28.2.2011, p. 13).</note>.</recital>
+		<recital>
+			<numbering>(53)</numbering>In order to ensure uniform conditions for the implementation of this Regulation, implementing powers should be conferred on the Commission as regards granting of additional days at sea for permanent cessation of fishing activities and for enhanced scientific observer coverage as well as establishing formats of spreadsheets for the collection and transmission of information concerning transfer of days at sea between fishing vessels flying the flag of a Member State. Those powers should be exercised in accordance with Regulation (EU) No 182/2011.</recital>
+		<recital>
+			<numbering>(54)</numbering>In order to avoid the interruption of fishing activities and to ensure the livelihood of the fishermen of the Union, this Regulation should apply from 1 February 2020, and certain provisions concerning particular regions, which should have a specific date of application. For reasons of urgency, this Regulation should enter into force immediately after its publication.</recital>
+		<recital>
+			<numbering>(55)</numbering>Certain international measures which create or restrict fishing opportunities for the Union are adopted by the relevant regional fisheries management organisations (RFMOs) at the end of the year and become applicable before the entry into force of this Regulation. It is therefore necessary for the provisions that implement such measures in Union law to apply retroactively. In particular, since the fishing season in the CCAMLR Convention Area runs from 1 December to 30 November, and thus certain fishing opportunities or prohibitions in the CCAMLR Convention Area are laid down for a period of time starting from 1 December 2019, it is appropriate that the relevant provisions of this Regulation apply from that date. Such retroactive application does not prejudice the principle of legitimate expectations as CCAMLR members are forbidden to fish in the CCAMLR Convention Area without authorisation.</recital>
+		<recital>
+			<numbering>(56)</numbering>Fishing opportunities should be used in full compliance with Union law,</recital>
+		<enacting_formula>HAS ADOPTED THIS REGULATION:</enacting_formula>
+	</preamble>
+	<enacting_terms>
+		<title>
+			<heading>TITLE <numbering>I</numbering>
+			</heading>
+			<subject>GENERAL PROVISIONS</subject>
+			<article>
+				<heading>Article <numbering>1</numbering>
+				</heading>
+				<subject>Subject matter</subject>
+				<numbered_paragraph>
+					<numbering>1.</numbering>This Regulation fixes the fishing opportunities available in Union waters and to Union fishing vessels in certain non-Union waters, for certain fish stocks and groups of fish stocks.</numbered_paragraph>
+				<numbered_paragraph>
+					<numbering>2.</numbering>
+					<introductory_part>The fishing opportunities referred to in paragraph 1 include:</introductory_part>
+					<point>
+						<numbering>(a)</numbering>catch limits for the year 2020 and, where specified in this Regulation, for the year 2021;</point>
+					<point>
+						<numbering>(b)</numbering>fishing effort limits for the year 2020, except the fishing effort limits set out in Annex II, which will apply from 31 January 2021;</point>
+					<point>
+						<numbering>(c)</numbering>fishing opportunities for the period from 30 November 2020 for certain stocks in the CCAMLR Convention Area;</point>
+					<point>
+						<numbering>(d)</numbering>fishing opportunities for certain stocks in the IATTC Convention Area set out in Article 30 for the periods in 2019 and 2020 specified in that Article.</point>
+				</numbered_paragraph>
+			</article>
+			<article>
+				<heading>Article <numbering>2</numbering>
+				</heading>
+				<subject>Scope</subject>
+				<numbered_paragraph>
+					<numbering>1.</numbering>
+						<introductory_part>This Regulation applies to the following vessels:</introductory_part>
+						<point>
+							<numbering>(a)</numbering>Union fishing vessels;</point>
+						<point>
+							<numbering>(b)</numbering>third-country vessels in Union waters.</point>
+				</numbered_paragraph>
+				<numbered_paragraph>
+					<numbering>2.</numbering>This Regulation also applies to recreational fisheries where such fisheries are expressly referred to in its relevant provisions.</numbered_paragraph>
+			</article>
+			<article>
+				<heading>Article <numbering>3</numbering>
+				</heading>
+				<subject>Definitions</subject>
+				<unnumbered_paragraph>
+					<introductory_part>For the purposes of this Regulation, the definitions set out in Article 4 of Regulation (EU) No 1380/2013 apply. In addition, the following definitions apply:</introductory_part>
+					<point>
+						<numbering>(a)</numbering>‘third-country vessel’ means a fishing vessel flying the flag of, and registered in, a third country;</point>
+					<point>
+						<numbering>(b)</numbering>‘recreational fisheries’ means non-commercial fishing activities exploiting marine biological resources such as recreation, tourism or sport;</point>
+					<point>
+						<numbering>(c)</numbering>‘international waters’ means waters falling outside the sovereignty or jurisdiction of any State;</point>
+					<point>
+						<numbering>(d)</numbering>
+							<introductory_part>‘total allowable catch’ (TAC) means:</introductory_part>
+							<point>
+								<numbering>(i)</numbering>in fisheries subject to the exemption of the landing obligation referred to in Article 15(4) to (7) of Regulation (EU) No 1380/2013, the quantity of fish that may be landed from each stock each year;</point>
+							<point>
+								<numbering>(ii)</numbering>in all other fisheries, the quantity of fish that may be caught from each stock each year;</point>
+					</point>
+					<point>
+						<numbering>(e)</numbering>‘quota’ means a proportion of the TAC allocated to the Union, a Member State or a third country;</point>
+					<point>
+						<numbering>(f)</numbering>‘analytical assessment’ means quantitative evaluation of trends in a given stock, based on data about the stock’s biology and exploitation, which scientific review has indicated to be of sufficient quality to provide scientific advice on options for future catches;</point>
+					<point>
+						<numbering>(g)</numbering>‘mesh size’ means the mesh size of fishing nets as defined in point (34) of Article 6 of Regulation (EU) 2019/1241 of the European Parliament and of the Council<note>Regulation (EU) 2019/1241 of the European Parliament and of the Council of 20 June 2019 on the conservation of fisheries resources and the protection of marine ecosystems through technical measures, amending Council Regulations (EC) No 1967/2006, (EC) No 1224/2009 and Regulations (EU) No 1380/2013, (EU) 2016/1139, (EU) 2018/973, (EU) 2019/472 and (EU) 2019/1022 of the European Parliament and of the Council, and repealing Council Regulations (EC) No 894/97, (EC) No 850/98, (EC) No 2549/2000, (EC) No 254/2002, (EC) No 812/2004 and (EC) No 2187/2005 (OJ L 198, 25.7.2019, p. 105).</note>;</point>
+					<point>
+						<numbering>(h)</numbering>‘Union fishing fleet register’ means the register set up by the Commission in accordance with Article 24(3) of Regulation (EU) No 1380/2013;</point>
+					<point>
+						<numbering>(i)</numbering>‘fishing logbook’ means the logbook referred to in Article 14 of Regulation (EC) No 1224/2009.</point>
+				</unnumbered_paragraph>
+			</article>
+			<article>
+				<heading>Article <numbering>4</numbering>
+				</heading>
+				<subject>Fishing zones</subject>
+				<unnumbered_paragraph>
+					<introductory_part>For the purposes of this Regulation, the following zone definitions apply:</introductory_part>
+					<point>
+						<numbering>(a)</numbering>ICES (International Council for the Exploration of the Sea) zones are the geographical areas specified in Annex III to Regulation (EC) No 218/2009 of the European Parliament and of the Council<note>Regulation (EC) No 218/2009 of the European Parliament and of the Council of 11 March 2009 on the submission of nominal catch statistics by Member States fishing in the north-east Atlantic (OJ L 87, 31.3.2009, p. 70).</note>;</point>
+					<point>
+						<numbering>(b)</numbering>‘Skagerrak’ means the geographical area bounded on the west by a line drawn from the Hanstholm lighthouse to the Lindesnes lighthouse and on the south by a line drawn from the Skagen lighthouse to the Tistlarna lighthouse and from that point to the nearest point on the Swedish coast;</point>
+					<point>
+						<numbering>(c)</numbering>‘Kattegat’ means the geographical area bounded on the north by a line drawn from the Skagen lighthouse to the Tistlarna lighthouse and from that point to the nearest point on the Swedish coast and on the south by a line drawn from Hasenøre to Gnibens Spids, from Korshage to Spodsbjerg and from Gilbjerg Hoved to Kullen;</point>
+					<point>
+						<numbering>(d)</numbering>
+						<introductory_part>‘Functional Unit 16 of ICES subarea 7’ means the geographical area bounded by rhumb lines sequentially joining the following positions:</introductory_part>
+						<indent>— 53° 30' N 15° 00' W,</indent>
+						<indent>— 53° 30' N 11° 00' W,</indent>
+						<indent>— 51° 30' N 11° 00' W,</indent>
+						<indent>— 51° 30' N 13° 00' W,</indent>
+						<indent>— 51° 00' N 13° 00' W,</indent>
+						<indent>— 51° 00' N 15° 00' W;</indent>
+					</point>
+					<point>
+						<numbering>(e)</numbering>
+						<introductory_part>‘Functional Unit 25 of ICES division 8c’ means the geographical sea area bounded by rhumb lines sequentially joining he following positions:</introductory_part>
+						<indent>— 43° 00' N 9° 00' W,</indent>
+						<indent>— 43° 00' N 10° 00' W,</indent>
+						<indent>— 43° 30' N 10° 00' W,</indent>
+						<indent>— 43° 30' N 9° 00' W,</indent>
+						<indent>— 44° 00' N 9° 00' W,</indent>
+						<indent>— 44° 00' N 8° 00' W,</indent>
+						<indent>— 43° 30' N 8° 00' W;</indent>
+					</point>
+					<point>
+						<numbering>(f)</numbering>
+						<introductory_part>‘Functional Unit 26 of ICES division 9a’ means the geographical area bounded by rhumb lines sequentially joining the following positions:</introductory_part>
+						<indent>— 43° 00' N 8° 00' W,</indent>
+						<indent>— 43° 00' N 10° 00' W,</indent>
+						<indent>— 42° 00' N 10° 00' W,</indent>
+						<indent>— 42° 00' N 8° 00' W;</indent>
+					</point>
+					<point>
+						<numbering>(g)</numbering>
+						<introductory_part>‘Functional Unit 27 of ICES division 9a’ means the geographical area bounded by rhumb lines sequentially joining the following positions:</introductory_part>								
+						<indent>— 42° 00' N 8° 00' W,</indent>
+						<indent>— 42° 00' N 10° 00' W,</indent>
+						<indent>— 38° 30' N 10° 00' W,</indent>
+						<indent>— 38° 30' N 9° 00' W,</indent>
+						<indent>— 40° 00' N 9° 00' W,</indent>
+						<indent>— 40° 00' N 8° 00' W;</indent>
+					</point>
+					<point>
+						<numbering>(h)</numbering>‘Functional Unit 30 of ICES division 9a’ means the geographical area under the jurisdiction of Spain in the Gulf of Cádiz and in the adjacent waters of 9a;</point>
+					<point>
+						<numbering>(i)</numbering>
+						<introductory_part>‘Functional Unit 31 of ICES division 8c’ means the geographical sea area bounded by rhumb lines sequentially joining the following positions:</introductory_part>
+						<indent>— 43° 30' N 6° 00' W,</indent>
+						<indent>— 44° 00' N 6° 00' W,</indent>
+						<indent>— 44° 00' N 2° 00' W,</indent>
+						<indent>— 43° 30' N 2° 00' W;</indent>
+					</point>
+					<point>
+						<numbering>(j)</numbering>‘Gulf of Cádiz’ means the geographical area of ICES division 9a east of longitude 7° 23' 48″ W;</point>
+					<point>
+						<numbering>(k)</numbering>‘CCAMLR Convention Area’ is the geographical area defined in point (a) of Article 2of Council Regulation (EC) No 601/2004<note>Council Regulation (EC) No 601/2004 of 22 March 2004 laying down certain control measures applicable to fishing activities in the area covered by the Convention on the conservation of Antarctic marine living resources and repealing Regulations (EEC) No 3943/90, (EC) No 66/98 and (EC) No 1721/1999 (OJ L 97, 1.4.2004, p. 16).</note>;</point>
+					<point>
+						<numbering>(l)</numbering>CECAF (Committee for Eastern Central Atlantic Fisheries) areas are the geographical areas specified in Annex II to Regulation (EC) No 216/2009 of the European Parliament and of the Council<note>Regulation (EC) No 216/2009 of the European Parliament and of the Council of 11 March 2009 on the submission of nominal catch statistics by Member States fishing in certain areas other than those of the North Atlantic (OJ L 87, 31.3.2009, p. 1).</note>;</point>
+					<point>
+						<numbering>(m)</numbering>‘IATTC Convention Area’ is the geographical area defined in the Convention for the Strengthening of the Inter-American Tropical Tuna Commission established by the 1949 Convention between the United States of America and the Republic of Costa Rica<note>Concluded by Council Decision 2006/539/EC of 22 May 2006 on the conclusion, on behalf of the European Community of the Convention for the Strengthening of the Inter-American Tropical Tuna Commission established by the 1949 Convention between the United States of America and the Republic of Costa Rica (OJ L 224, 16.8.2006, p. 22).</note>;</point>
+					<point>
+						<numbering>(n)</numbering>‘ICCAT Convention Area’ is the geographical area defined in the International Convention for the Conservation of Atlantic Tunas<note>The Union acceded by Council Decision 86/238/EEC of 10 July 1984 (OJ L 162, 18.6.1986, p. 33).</note>;</point>
+					<point>
+						<numbering>(o)</numbering>‘IOTC Area of Competence’ is the geographical area defined in the Agreement for the establishment of the Indian Ocean Tuna Commission<note>The Union acceded by Council Decision 95/399/EC of 18 September 1995 on the accession of the Community to the Agreement for the establishment of the Indian Ocean Tuna Commission (OJ L 236, 5.10.1995, p. 24).</note>;</point>
+					<point>
+						<numbering>(p)</numbering>NAFO areas are the geographical areas specified in Annex III to Regulation (EC) No 217/2009 of the European Parliament and of the Council<note>Regulation (EC) No 217/2009 of the European Parliament and of the Council of 11 March 2009 on the submission of catch and activity statistics by Member States fishing in the north-west Atlantic (OJ L 87, 31.3.2009, p. 42).</note>;</point>
+					<point>
+						<numbering>(q)</numbering>‘SEAFO Convention Area’ is the geographical area defined in the Convention on the Conservation and Management of Fishery Resources in the South-East Atlantic Ocean<note>Concluded by Council Decision 2002/738/EC of 22 July 2002 on the conclusion by the European Community of the Convention on the Conservation and Management of Fishery Resources in the South-East Atlantic Ocean (OJ L 234, 31.8.2002, p. 39).</note>;</point>
+					<point>
+						<numbering>(r)</numbering>‘SIOFA Agreement Area’ is the geographic area defined in the Southern Indian Ocean Fisheries Agreement<note>The Union acceded by Council Decision 2008/780/EC of 29 September 2008 on the conclusion, on behalf of the European Community, of the Southern Indian Ocean Fisheries Agreement (OJ L 268, 9.10.2008, p. 27).</note>;</point>
+					<point>
+						<numbering>(s)</numbering>‘SPRFMO Convention Area’ is the geographical area defined in the Convention on the Conservation and Management of High Seas Fishery Resources in the South Pacific Ocean<note>The Union acceded by Council Decision 2012/130/EU of 3 October 2011 on the approval, on behalf of the European Union, of the Convention on the Conservation and Management of High Seas Fishery Resources in the South Pacific Ocean (OJ L 67, 6.3.2012, p. 1).</note>;</point>
+					<point>
+						<numbering>(t)</numbering>‘WCPFC Convention Area’ is the geographical area defined in the Convention on the Conservation and Management of Highly Migratory Fish Stocks in the Western and Central Pacific Ocean<note>The Union acceded by Council Decision 2005/75/EC of 26 April 2004 on the accession of the Community to the Convention on the Conservation and Management of Highly Migratory Fish Stocks in the Western and Central Pacific Ocean (OJ L 32, 4.2.2005, p. 1).</note>;</point>
+					<point>
+						<numbering>(u)</numbering>‘high seas of the Bering Sea’ is the geographical area of the high seas of the Bering Sea beyond 200 nautical miles from the baselines from which the breadth of the territorial sea of the coastal States of the Bering Sea is measured;</point>
+					<point>
+						<numbering>(v)</numbering>
+						<introductory_part>‘overlap area between IATTC and WCPFC’ is the geographical area defined by the following limits:</introductory_part>								
+						<indent>— longitude 150° W,</indent>
+						<indent>— longitude 130° W,</indent>
+						<indent>— latitude 4° S,</indent>
+						<indent>— latitude 50° S.</indent>
+					</point>
+				</unnumbered_paragraph>
+			</article>
+		</title>
+		<title>
+			<heading>TITLE <numbering>II</numbering>
+			</heading>
+			<subject>FISHING OPPORTUNITIES FOR UNION FISHING VESSELS</subject>
+			<chapter>
+				<heading>CHAPTER <numbering>I</numbering>
+				</heading>
+				<subject>General provisions</subject>
+				<article>
+					<heading>Article <numbering>5</numbering>
+					</heading>
+					<subject>TACs and allocations</subject>
+					<numbered_paragraph>
+						<numbering>1.</numbering>The TACs for Union fishing vessels in Union waters or in certain non-Union waters and the allocation of such TACs among Member States, and the conditions functionally linked thereto, where appropriate, are set out in Annex I.</numbered_paragraph>
+					<numbered_paragraph>
+						<numbering>2.</numbering>Union fishing vessels shall be authorised to fish, within the TACs set out in Annex I to this Regulation, in waters falling within the fisheries jurisdiction of the Faroe Islands, Greenland and Norway, and the fishing zone around Jan Mayen, subject to the condition set out in Article 18 of, and Part A of Annex V to, this Regulation and in Regulation (EU) 2017/2403 of the European Parliament and of the Council<note>Regulation (EU) 2017/2403 of the European Parliament and of the Council of 12 December 2017 on the sustainable management of external fishing fleets, and repealing Council Regulation (EC) No 1006/2008 (OJ L 347, 28.12.2017, p. 81).</note> and its implementing provisions.</numbered_paragraph>
+				</article>
+				<article>
+					<heading>Article <numbering>6</numbering>
+					</heading>
+					<subject>TACs to be determined by Member States</subject>
+					<numbered_paragraph>
+						<numbering>1.</numbering>The TACs for certain fish stocks shall be determined by the Member State concerned. Those stocks are identified in Annex I.</numbered_paragraph>
+					<numbered_paragraph>
+						<numbering>2.</numbering>
+						<introductory_part>The TACs to be determined by a Member State shall:</introductory_part>
+						<point>
+							<numbering>(a)</numbering>be consistent with the principles and rules of the CFP, in particular the principle of sustainable exploitation of the stock; and</point>
+						<point>
+							<numbering>(b)</numbering>
+							<introductory_part>result:</introductory_part>
+							<point>
+								<numbering>(i)</numbering>if an analytical assessment is available, in the exploitation of the stock in line with MSY from 2020 onwards, with as high a probability as possible, or</point>
+							<point>
+								<numbering>(ii)</numbering>if an analytical assessment is unavailable or incomplete, in the exploitation of the stock consistent with the precautionary approach to fisheries management.</point>
+						</point>
+					</numbered_paragraph>
+					<numbered_paragraph>
+						<numbering>3.</numbering>
+						<introductory_part>By 15 March 2020, each Member State concerned shall submit the following information to the Commission:</introductory_part>
+						<point>
+							<numbering>(a)</numbering>the TACs adopted;</point>
+						<point>
+							<numbering>(b)</numbering>the data collected and assessed by the Member State concerned on which the TACs adopted are based;</point>
+						<point>
+							<numbering>(c)</numbering>details on how the TACs adopted comply with paragraph 2.</point>
+					</numbered_paragraph>
+				</article>
+				<article>
+					<heading>Article <numbering>7</numbering>
+					</heading>
+					<subject>Conditions for landing catches and by-catches</subject>
+					<numbered_paragraph>
+						<numbering>1.</numbering>
+						<introductory_part>Catches that are not subject to the landing obligation under Article 15 of Regulation (EU) No 1380/2013 shall be retained on board or landed only if they:</introductory_part>
+						<point>
+							<numbering>(a)</numbering>have been taken by vessels flying the flag of a Member State having a quota and that quota has not been exhausted, or</point>
+						<point>
+							<numbering>(b)</numbering>consist of a share in a Union quota which has not been allocated by quota among Member States, and that Union quota has not been exhausted.</point>
+					</numbered_paragraph>
+					<numbered_paragraph>
+						<numbering>2.</numbering>The stocks of non-target species within safe biological limits referred to in Article 15(8) of Regulation (EU) No 1380/2013 are identified in Annex I to this Regulation for the purposes of the derogation from the obligation to count catches against the relevant quotas provided for in that Article.</numbered_paragraph>
+				</article>
+				<article>
+					<heading>Article <numbering>8</numbering>
+					</heading>
+					<subject>Quota-exchange mechanism for TACs for unavoidable by-catches with regard to the landing obligation</subject>
+					<numbered_paragraph>
+						<numbering>1.</numbering>In order to take into account the introduction of the landing obligation and to make quotas for certain by-catches available to Member States without a quota, the quota-exchange mechanism set out in paragraphs 2–5 of this Article shall apply to the TACs identified in Annex IA.</numbered_paragraph>
+					<numbered_paragraph>
+						<numbering>2.</numbering>6 % of each quota from the TACs for cod in the Celtic Sea, cod in the West of Scotland, whiting in the Irish Sea and plaice in ICES divisions 7h, 7j and 7k, and 3 % of each quota from the TAC for West of Scotland whiting, allocated to each Member State, shall be made available for a pool for quota exchanges, which shall open as of 31 March 2020.</numbered_paragraph>
+					<numbered_paragraph>
+						<numbering>3.</numbering>The quantities drawn from the pool may not be exchanged or transferred to the following year. Any unused quantities shall be returned, after 31 March 2020, to those Member States that have initially contributed to the pool for quota exchanges.</numbered_paragraph>
+					<numbered_paragraph>
+						<numbering>4.</numbering>The quotas provided in return shall be preferably taken from a list of TACs identified by each Member State contributing to the pool as listed in the Appendix to Annex IA.</numbered_paragraph>
+					<numbered_paragraph>
+						<numbering>5.</numbering>Those quotas shall be of equivalent commercial value by using a market exchange rate or other mutually acceptable exchange rates. In absence of alternatives, the equivalent economic value in accordance to the average Union prices of the previous year, as provided by the European Market Observatory for Fisheries and Aquaculture Products, shall be used.</numbered_paragraph>
+					<numbered_paragraph>
+						<numbering>6.</numbering>In cases where the quota-exchange mechanism set out in paragraphs 2–5 of this Article does not allow Member States to cover their unavoidable by-catches to a similar extent, Member States shall endeavour to agree on quota exchanges pursuant to Article 16(8) of Regulation (EU) No 1380/2013, ensuring that quotas exchanged are of equivalent commercial value.</numbered_paragraph>
+				</article>
+				<article>
+					<heading>Article <numbering>9</numbering>
+					</heading>
+					<subject>Fishing effort limits in ICES division 7e</subject>
+					<numbered_paragraph>
+						<numbering>1.</numbering>For the periods referred to in point (b) of Article 1(2), the technical aspects of the rights and obligations related to Annex II for the management of the sole stock in ICES division 7e are set out in Annex II.</numbered_paragraph>
+					<numbered_paragraph>
+						<numbering>2.</numbering>The Commission may, by means of implementing acts, allocate a requesting Member State a number of days at sea additional to those referred to in point 5 of Annex II, on which a vessel may be authorised by its flag Member State to be present within ICES division 7e when carrying on board any regulated gear, on the basis of such a request by that Member State, in accordance with point 7.4 of Annex II. Those implementing acts shall be adopted in accordance with the examination procedure referred to in Article 53(2).</numbered_paragraph>
+					<numbered_paragraph>
+						<numbering>3.</numbering>The Commission may, by means of implementing acts, allocate a requesting Member State a maximum of three days between 31 January 2021 additional to those referred to in point 5 of Annex II, on which a vessel may be present within ICES division 7e on the basis of an enhanced programme of scientific observer coverage as referred to in point 8.1 of Annex II. Such an allocation shall be done on the basis of the description submitted by the Member State in accordance with point 8.3 of Annex II and following consultation with the STECF. Those implementing acts shall be adopted in accordance with the examination procedure referred to in Article 53(2).</numbered_paragraph>
+				</article>
+				<article>
+					<heading>Article <numbering>10</numbering>
+					</heading>
+					<subject>Measures on European seabass fisheries</subject>
+					<numbered_paragraph>
+						<numbering>1.</numbering>It shall be prohibited for Union fishing vessels, as well as for any commercial fisheries from shore, to fish for European seabass in ICES divisions 4b and 4c, and in ICES subarea 7. It shall be prohibited to retain, tranship, relocate or land European seabass caught in that area.</numbered_paragraph>
+					<numbered_paragraph>
+						<numbering>2.</numbering>
+						<subparagraph>
+							<introductory_part>By way of derogation from paragraph 1, in January 2020 and from 31 December 2020, Union fishing vessels in ICES divisions 4b, 4c, 7d, 7e, 7f and 7h and in waters within 12 nautical miles from baselines under the sovereignty of the United Kingdom in ICES divisions 7a and 7g may fish for European seabass, and retain, tranship, relocate or land European seabass caught in that area with the following gear and within the following limits:</introductory_part>
+							<point>
+								<numbering>(a)</numbering>using demersal trawls<note>All types of demersal trawls (OTB, OTT, PTB, TBB, TBN, TBS and TB).</note>, for unavoidable by-catches not exceeding 520 kilogrammes per two months and 5 % of the weight of the total catches of marine organisms on board caught by that vessel per fishing trip;</point>
+							<point>
+								<numbering>(b)</numbering>using seines<note>All types of seines (SSC, SDN, SPR, SV, SB and SX).</note>, for unavoidable by-catches not exceeding 520 kilogrammes per two months and 5 % of the weight of the total catches of marine organisms on board caught by that vessel per fishing trip;</point>
+							<point>
+								<numbering>(c)</numbering>using hooks and lines<note>All long lines or pole and line or rod and line fisheries (LHP, LHM, LLD, LL, LTL, LX and LLS).</note>, not exceeding 5,7 tonnes per vessel per year;</point>
+							<point>
+								<numbering>(d)</numbering>using fixed gillnets<note>All fixed gillnets and traps (GTR, GNS, GNC, FYK, FPN and FIX).</note>, for unavoidable by-catches not exceeding 1,4 tonnes per vessel per year.</point>
+						</subparagraph>
+						<subparagraph>The derogations set out in the first subparagraph shall apply to Union fishing vessels that have recorded catches of European seabass over the period from 30 September 2016: in point (c) with recorded catches using hooks and lines, and in point (d) with recorded catches using fixed gillnets. In the case of a replacement of a Union fishing vessel, Member States may allow the derogation to apply to another fishing vessel provided that the number of Union fishing vessels subject to the derogation and their overall fishing capacity do not increase.</subparagraph>
+					</numbered_paragraph>
+					<numbered_paragraph>
+						<numbering>3.</numbering>
+						<subparagraph>The catch limits set out in paragraph 2 shall not be transferable between vessels and, where a monthly limit applies, from one month to another. For Union fishing vessels using more than one gear in a single calendar month, the lowest catch limit set out in paragraph 2 for either gear shall apply.</subparagraph>
+						<subparagraph>Member States shall report to the Commission all catches of European seabass per type of gear no later than 15 days after the end of each month.</subparagraph>
+					</numbered_paragraph>
+					<numbered_paragraph>
+						<numbering>4.</numbering>France and Spain shall ensure that fishing mortality of seabass stock in ICES divisions 8a and 8b from their commercial and recreational fisheries do not exceed the FMSY point value resulting in 2533 tonnes of total catches, as required by Article 4(3) of Regulation (EU) 2019/472.
+					</numbered_paragraph>
+					<numbered_paragraph>
+						<numbering>5.</numbering>
+						<subparagraph>
+							<introductory_part>In recreational fisheries, including from shore, in ICES divisions 4b, 4c, 6a, 7a to 7k:</introductory_part>
+							<point>
+								<numbering>(a)</numbering>from 31 December 2020, only catch-and-release fishing with a rod or a handline for European seabass shall be allowed. During those periods, it shall be prohibited to retain, relocate, tranship or land European seabass caught in that area;</point>
+							<point>
+								<numbering>(b)</numbering>from 30 November 2020, not more than two specimens of European seabass may be caught and retained per fisherman per day; the minimum size of European seabass retained shall be 42 cm.</point>
+						</subparagraph>
+						<subparagraph>Point (b) of the first subparagraph shall not apply to fixed nets, which may not be used to catch or retain European seabass during the period referred to in that point.</subparagraph>
+					</numbered_paragraph>
+					<numbered_paragraph>
+						<numbering>6.</numbering>In recreational fisheries in ICES divisions 8a and 8b, a maximum of two specimens of European seabass may be caught and retained per fisherman per day. The minimum size of European seabass retained shall be 42 cm. This paragraph shall not apply to fixed nets, which may not be used to catch or retain European seabass.</numbered_paragraph>
+					<numbered_paragraph>
+						<numbering>7.</numbering>Paragraphs 5 and 6 shall be without prejudice to more stringent national measures on recreational fisheries.</numbered_paragraph>
+				</article>
+				<article>
+					<heading>Article <numbering>11</numbering>
+					</heading>
+					<subject>Measures on European eel fisheries in Union waters of the ICES area</subject>
+					<unnumbered_paragraph>Any targeted, incidental and recreational fishery of European eel shall be prohibited in Union waters of the ICES area and brackish waters such as estuaries, coastal lagoons and transitional waters for a consecutive three-month period to be determined by each Member State concerned between 1 June 2020.</unnumbered_paragraph>
+				</article>
+				<article>
+					<heading>Article <numbering>12</numbering>
+					</heading>
+					<subject>Special provisions on allocations of fishing opportunities</subject>
+					<numbered_paragraph>
+						<numbering>1.</numbering>
+						<introductory_part>The allocation of fishing opportunities among Member States as set out in this Regulation shall be without prejudice to:</introductory_part>
+						<point>
+							<numbering>(a)</numbering>exchanges made pursuant to Article 16(8) of Regulation (EU) No 1380/2013;</point>
+						<point>
+							<numbering>(b)</numbering>deductions and reallocations made pursuant to Article 37 of Regulation (EC) No 1224/2009;</point>
+						<point>
+							<numbering>(c)</numbering>reallocations made pursuant to Articles 12 and 47 of Regulation (EU) 2017/2403;</point>
+						<point>
+							<numbering>(d)</numbering>additional landings allowed under Article 3 of Regulation (EC) No 847/96 and Article 15(9) of Regulation (EU) No 1380/2013;</point>
+						<point>
+							<numbering>(e)</numbering>quantities withheld in accordance with Article 4 of Regulation (EC) No 847/96 and Article 15(9) of Regulation (EU) No 1380/2013;</point>
+						<point>
+							<numbering>(f)</numbering>deductions made pursuant to Articles 105, 106 and 107 of Regulation (EC) No 1224/2009;</point>
+						<point>
+							<numbering>(g)</numbering>quota transfers and exchanges pursuant to Article 19 of this Regulation.</point>
+					</numbered_paragraph>
+					<numbered_paragraph>
+						<numbering>2.</numbering>Stocks which are subject to precautionary or analytical TACs are identified in Annex I to this Regulation for the purposes of the year-to-year management of TACs and quotas provided for in Regulation (EC) No 847/96.</numbered_paragraph>
+					<numbered_paragraph>
+						<numbering>3.</numbering>Except where otherwise specified in Annex I to this Regulation, Article 3 of Regulation (EC) No 847/96 shall apply to stocks subject to a precautionary TAC, and Article 3(2) and (3) and Article 4 of that Regulation shall apply to stocks subject to an analytical TAC.</numbered_paragraph>
+					<numbered_paragraph>
+						<numbering>4.</numbering>Articles 3 and 4 of Regulation (EC) No 847/96 shall not apply where a Member State uses the year-to-year flexibility provided for in Article 15(9) of Regulation (EU) No 1380/2013.</numbered_paragraph>
+				</article>
+				<article>
+					<heading>Article <numbering>13</numbering>
+					</heading>
+					<subject>Remedial measures for cod and whiting in the Celtic Sea</subject>
+					<numbered_paragraph>
+						<numbering>1.</numbering>
+						<introductory_part>The following measures shall apply to Union vessels fishing with bottom trawls and seines in ICES divisions from 7f, 7g, the part of 7h North of latitude 49° 30' North and the part of 7j North of latitude 49° 30' North and East of longitude 11° West:</introductory_part>
+						<point>
+							<numbering>(a)</numbering>
+							<introductory_part>Union vessels fishing with bottom trawls whose catches consist of at least 20 % of haddock shall be prohibited from fishing in the area referred to in paragraph 1 unless they use gear with one of the following mesh sizes:</introductory_part>
+							<indent>— 110 mm cod-end with 120 mm square-mesh panel,</indent>
+							<indent>— 100 mm T90 cod-end,</indent>
+							<indent>— 120 mm cod-end,</indent>
+							<indent>— 100 mm with 160 mm square-mesh panel until 31 May 2020;</indent>
+						</point>
+						<point>
+							<numbering>(b)</numbering>As from 1 June 2020, in addition to measures referred to in point (a), Union vessels shall use: (i) a fishing gear that is constructed with a minimum of one meter spacing between the fishing line and ground gear, or (ii) any means proven to be at least equally selective for avoidance of cod, according to the assessment by ICES or the STECF;</point>
+						<point>
+							<numbering>(c)</numbering>
+							<introductory_part>Union vessels fishing with bottom seines whose catches consist of at least 20 % of haddock shall be prohibited from fishing in the area referred to in paragraph 1 unless they use gear with one of the following mesh sizes:</introductory_part>
+							<indent>— 110 mm cod-end with 120 mm square-mesh panel,</indent>
+							<indent>— 100 mm T90 cod-end,</indent>
+							<indent>— 120 mm cod-end.</indent>
+						</point>
+				</numbered_paragraph>
+					<numbered_paragraph>
+						<numbering>2.</numbering>Except vessels falling within the scope of Article 9(2) of the Commission Delegated Regulation (EU) 2018/2034<note>Commission Delegated Regulation (EU) 2018/2034 of 18 October 2018 establishing a discard plan for certain demersal fisheries in North-Western waters for the period 2019-2021 (OJ L 327, 21.12.2018, p. 8).</note>, Union vessels fishing with bottom trawls and seines in ICES divisions from 7f to 7k and in the area west of 5° W longitude in ICES division 7e, or Union vessels fishing with bottom trawls in the area of paragraph 1 whose catches consist of less than 20 % of haddock, shall be prohibited from fishing unless they use a minimum cod-end mesh size of at least 100 mm. This minimum cod-end mesh size requirement does not apply to vessels whose by-catches of cod do not exceed 1,5 %, as assessed by the STECF.</numbered_paragraph>
+					<numbered_paragraph>
+						<numbering>3.</numbering>According to Article 15 of Regulation (EU) No 1380/2013 and Article 27(2) of Regulation (EU) 2019/1241, the catch percentages shall be calculated as the proportion by live weight of all marine biological resources landed after each fishing trip.</numbered_paragraph>
+					<numbered_paragraph>
+						<numbering>4.</numbering>Union vessels may deploy an alternative highly selective gear to those listed in points (a) and (b) of paragraph 1, the technical attributes of which result, according to a scientific study assessed by the STECF, in catches of less than 1 % of cod.</numbered_paragraph>
+				</article>
+				<article>
+					<heading>Article <numbering>14</numbering>
+					</heading>
+					<subject>Remedial measures for cod in the North Sea</subject>
+					<unnumbered_paragraph>The closed areas to fishing, except with pelagic gear (purse seines and trawls), and the periods during which the closures apply are set out in Annex IV.</unnumbered_paragraph>
+				</article>
+				<article>
+					<heading>Article <numbering>15</numbering>
+					</heading>
+					<subject>Remedial measures for cod in Kattegat</subject>
+					<numbered_paragraph>
+						<numbering>1.</numbering>
+						<introductory_part>As from 31 May 2020, Union vessels fishing with bottom trawls (gear codes: OTB, OTT, OT, TBN, TBS, TB, TX and PTB) with minimum mesh size of 70 mm shall use one of the following selective gear:</introductory_part>
+						<point>
+							<numbering>(a)</numbering>a sorting grid with maximum 35 mm bar spacing, with an unblocked fish outlet;</point>
+						<point>
+							<numbering>(b)</numbering>a sorting grid with maximum 50 mm bar spacing separating flatfish and roundfish, with an unblocked fish outlet for roundfish;</point>
+						<point>
+							<numbering>(c)</numbering>Seltra panel with 300 mm square-mesh size;</point>
+						<point>
+							<numbering>(d)</numbering>a regulated highly selective gear, the technical attributes of which result, according to the scientific study assessed by the STECF, in catches of less than 1,5 % of cod, if it is the only gear that the vessel carries on board.</point>
+					</numbered_paragraph>
+					<numbered_paragraph>
+						<numbering>2.</numbering>By 31 December 2020, equipment installed for fully documented fisheries. Those Union vessels may use gear in accordance with Regulation (EU) 2019/1241. Member States concerned shall communicate the list of those vessels to the Commission.</numbered_paragraph>
+				</article>
+				<article>
+					<heading>Article <numbering>16</numbering>
+					</heading>
+					<subject>Prohibited species</subject>
+					<numbered_paragraph>
+						<numbering>1.</numbering>
+						<introductory_part>It shall be prohibited for Union fishing vessels to fish for, to retain on board, to tranship or to land the following species:</introductory_part>
+						<point>
+							<numbering>(a)</numbering>starry ray (Amblyraja radiata) in Union waters of ICES divisions 2a, 3a and 7d and ICES subarea 4;</point>
+						<point>
+							<numbering>(b)</numbering>leafscale gulper shark (Centrophorus squamosus) in Union waters of ICES division 2a and subarea 4 and in Union and international waters of ICES subareas 1 and 14;</point>
+						<point>
+							<numbering>(c)</numbering>Portuguese dogfish (Centroscymnus coelolepis) in Union waters of ICES division 2a and subarea 4 and in Union and international waters of ICES subareas 1 and 14;</point>
+						<point>
+							<numbering>(d)</numbering>kitefin shark (Dalatias licha) in Union waters of ICES division 2a and subarea 4 and in Union and international waters of ICES subareas 1 and 14;</point>
+						<point>
+							<numbering>(e)</numbering>birdbeak dogfish (Deania calcea) in Union waters of ICES division 2a and subarea 4 and in Union and international waters of ICES subareas 1 and 14;</point>
+						<point>
+							<numbering>(f)</numbering>common skate (Dipturus batis) complex (Dipturus cf. flossada and Dipturus cf. intermedia) in Union waters of ICES division 2a and ICES subareas 3, 4, 6, 7, 8, 9 and 10;</point>
+						<point>
+							<numbering>(g)</numbering>great lanternshark (Etmopterus princeps) in Union waters of ICES division 2a and subarea 4 and in Union and international waters of ICES subareas 1 and 14;</point>
+						<point>
+							<numbering>(h)</numbering>tope shark (Galeorhinus galeus) when taken with longlines in Union waters of ICES division 2a and subarea 4 and in Union and international waters of ICES subareas 1, 5, 6, 7, 8, 12 and 14;</point>
+						<point>
+							<numbering>(i)</numbering>porbeagle (Lamna nasus) in all waters;</point>
+						<point>
+							<numbering>(j)</numbering>thornback ray (Raja clavata) in Union waters of ICES division 3a;</point>
+						<point>
+							<numbering>(k)</numbering>undulate ray (Raja undulata) in Union waters of ICES subareas 6 and 10;</point>
+						<point>
+							<numbering>(l)</numbering>whale shark (Rhincodon typus) in all waters;</point>
+						<point>
+							<numbering>(m)</numbering>common guitarfish (Rhinobatos rhinobatos) in the Mediterranean;</point>
+						<point>
+							<numbering>(n)</numbering>picked dogfish (Squalus acanthias) in Union waters of ICES subareas 2, 3, 4, 5, 6, 7, 8, 9 and 10, with the exception of avoidance programmes as set out in Annex IA.</point>
+					</numbered_paragraph>
+					<numbered_paragraph>
+						<numbering>2.</numbering>When accidentally caught, species referred to in paragraph 1 shall not be harmed. Specimens shall be promptly released.</numbered_paragraph>
+				</article>
+				<article>
+					<heading>Article <numbering>17</numbering>
+					</heading>
+					<subject>Data transmission</subject>
+					<unnumbered_paragraph>When, pursuant to Articles 33 and 34 of Regulation (EC) No 1224/2009, Member States submit to the Commission data relating to landings of quantities of stocks caught and fishing effort, they shall use the stock codes set out in Annex I to this Regulation.</unnumbered_paragraph>
+				</article>
+			</chapter>
+			<chapter>
+				<heading>CHAPTER <numbering>II</numbering>
+				</heading>
+				<subject>Fishing authorisations in third-country waters</subject>
+				<article>
+					<heading>Article <numbering>18</numbering>
+					</heading>
+					<subject>Fishing authorisations</subject>
+					<numbered_paragraph>
+						<numbering>1.</numbering>The maximum number of fishing authorisations for Union fishing vessels in third-country waters is set out in Part A of Annex V.</numbered_paragraph>
+					<numbered_paragraph>
+						<numbering>2.</numbering>Where one Member State transfers quota to another Member State (‘swap’) in the fishing areas set out in Part A of Annex V to this Regulation on the basis of Article 16(8) of Regulation (EU) No 1380/2013, the transfer shall include an appropriate transfer of fishing authorisations and shall be notified to the Commission. However, the total number of fishing authorisations for each fishing area, as set out in Part A of Annex V to this Regulation, shall not be exceeded.</numbered_paragraph>
+				</article>
+			</chapter>
+			<chapter>
+				<heading>CHAPTER <numbering>III</numbering>
+				</heading>
+				<subject>Fishing opportunities in waters of regional fisheries management organisations</subject>
+				<section>
+					<heading>Section <numbering>1</numbering>
+					</heading>
+					<subject>General provisions</subject>
+					<article>
+						<heading>Article <numbering>19</numbering>
+						</heading>
+						<subject>Quota transfers and exchanges</subject>
+						<numbered_paragraph>
+							<numbering>1.</numbering>Where, under the rules of a regional fisheries management organisation (RFMO), quota transfers or exchanges between the Contracting Parties to the RFMO are permitted, a Member State (‘the Member State concerned’) may discuss with a Contracting Party to the RFMO and, as appropriate, establish a possible outline of an intended quota transfer or exchange.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>2.</numbering>Upon notification to the Commission by the Member State concerned, the Commission may endorse the outline of the intended quota transfer or exchange that the Member State has discussed with the relevant Contracting Party to the RFMO. Thereupon, the Commission shall express, without undue delay, the consent to be bound by such quota transfer or exchange with the relevant Contracting Party to the RFMO. The Commission shall notify the secretariat of the RFMO of the agreed quota transfer or exchange in accordance with the rules of that organisation.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>3.</numbering>The Commission shall inform the Member States of the agreed quota transfer or exchange.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>4.</numbering>The fishing opportunities received from or transferred to the relevant Contracting Party to the RFMO under the quota transfer or exchange shall be deemed to be quotas allocated to, or deducted from, the allocation of the Member State concerned, as of the moment that the quota transfer or exchange takes effect in accordance with the terms of the agreement reached with the relevant Contracting Party to the RFMO or in accordance with the rules of the relevant RFMO, as appropriate. Such allocation shall not change the existing distribution key for the purpose of allocating fishing opportunities among Member States in accordance with the principle of relative stability of fishing activities.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>5.</numbering>This Article shall apply until 31 January 2021 for quota transfers from a RFMO Contracting Party to the Union and their subsequent allocation to Member States.</numbered_paragraph>
+					</article>
+				</section>
+				<section>
+					<heading>Section <numbering>2</numbering>
+					</heading>
+					<subject>ICCAT Convention Area</subject>
+					<article>
+						<heading>Article <numbering>20</numbering>
+						</heading>
+						<subject>Fishing, farming and fattening capacity limitations</subject>
+						<numbered_paragraph>
+							<numbering>1.</numbering>The number of Union bait boats and trolling boats authorised to fish actively for bluefin tuna between 8 kg/75 cm and 30 kg/115 cm in the eastern Atlantic shall be limited as set out in point 1 of Annex VI.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>2.</numbering>The number of Union coastal artisanal fishing vessels authorised to fish actively for bluefin tuna between 8 kg/75 cm and 30 kg/115 cm in the Mediterranean shall be limited as set out in point 2 of Annex VI.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>3.</numbering>The number of Union fishing vessels fishing for bluefin tuna in the Adriatic Sea for farming purposes authorised to fish actively for bluefin tuna between 8 kg/75 cm and 30 kg/115 cm shall be limited as set out in point 3 of Annex VI.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>4.</numbering>The number of fishing vessels authorised to fish for, retain on board, tranship, transport, or land bluefin tuna in the eastern Atlantic and Mediterranean shall be limited as set out in point 4 of Annex VI.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>5.</numbering>The number of traps engaged in bluefin tuna fishery in the eastern Atlantic and Mediterranean shall be limited as set out in point 5 of Annex VI.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>6.</numbering>The bluefin tuna total farming capacity, and the maximum input of wild caught bluefin tuna allocated to the farms in the eastern Atlantic and Mediterranean shall be limited as set out in point 6 of Annex VI.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>7.</numbering>The maximum number of Union fishing vessels authorised to fish for northern albacore as a target species in accordance with Article 12 of Council Regulation (EC) No 520/2007<note>Council Regulation (EC) No 520/2007 of 7 May 2007 laying down technical measures for the conservation of certain stocks of highly migratory species and repealing Regulation (EC) No 973/2001 (OJ L 123, 12.5.2007, p. 3).</note> shall be limited as set out in point 7 of Annex VI to this Regulation.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>8.</numbering>The maximum number of Union fishing vessels of at least 20 metres length that fish for bigeye tuna in the ICCAT Convention Area shall be limited as set out in point 8 of Annex VI.</numbered_paragraph>
+					</article>
+					<article>
+						<heading>Article <numbering>21</numbering>
+						</heading>
+						<subject>Recreational fisheries</subject>
+						<unnumbered_paragraph>Where appropriate, Member States shall allocate a specific share for recreational fisheries from their allocated quotas as set out in Annex ID.</unnumbered_paragraph>
+					</article>
+					<article>
+						<heading>Article <numbering>22</numbering>
+						</heading>
+						<subject>Sharks</subject>
+						<numbered_paragraph>
+							<numbering>1.</numbering>Retaining on board, transhipping or landing any part or whole carcass of bigeye thresher sharks (Alopias superciliosus) caught in any fishery shall be prohibited.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>2.</numbering>It shall be prohibited to undertake a directed fishery for species of thresher sharks of the Alopias genus.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>3.</numbering>Retaining on board, transhipping or landing any part or whole carcass of hammerhead sharks of the Sphyrnidae family (except for the Sphyrna tiburo) caught in fisheries in the ICCAT Convention Area shall be prohibited.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>4.</numbering>Retaining on board, transhipping or landing any part or whole carcass of oceanic whitetip sharks (Carcharhinus longimanus) taken in any fishery shall be prohibited.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>5.</numbering>Retaining on board silky sharks (Carcharhinus falciformis) caught in any fishery shall be prohibited.</numbered_paragraph>
+					</article>
+				</section>
+				<section>
+					<heading>Section <numbering>3</numbering>
+					</heading>
+					<subject>CCAMLR Convention Area</subject>
+					<article>
+						<heading>Article <numbering>23</numbering>
+						</heading>
+						<subject>Exploratory fisheries notifications</subject>
+						<unnumbered_paragraph>If a Member State intends to participate in longline exploratory fisheries for toothfish (Dissostichus spp.) in FAO subareas 88.1 and 88.2 as well as in divisions 58.4.1, 58.4.2 and 58.4.3a outside areas of national jurisdiction in 2020, it shall notify the CCAMLR Secretariat in accordance with Articles 7 and 7a of Regulation (EC) No 601/2004 no later than 1 June 2020.</unnumbered_paragraph>
+					</article>
+					<article>
+						<heading>Article <numbering>24</numbering>
+						</heading>
+						<subject>Limits on exploratory fisheries for toothfish</subject>
+						<numbered_paragraph>
+							<numbering>1.</numbering>Fishing for toothfish during the 2019-2020 fishing season shall be limited to the Member States, subareas and number of vessels set out in table A of Annex VII for the species, TACs and by-catch limits set out in table B of that Annex.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>2.</numbering>Direct fishing of shark species for purposes other than scientific research shall be prohibited. Any by-catch of shark, especially juveniles and gravid females, taken accidentally in the toothfish fishery shall be released alive.</numbered_paragraph>
+						<numbered_paragraph>						
+							<numbering>3.</numbering>Where applicable, fishing in any small-scale research unit (SSRU) shall be ceased when the reported catch reaches the specified TAC, and the SSRU shall be closed to fishing for the remainder of the season.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>4.</numbering>Fishing shall take place over as large a geographical and bathymetric range as possible to obtain the information necessary to determine fishery potential and to avoid over-concentration of catch and fishing effort. However, fishing in FAO subareas 88.1 and 88.2 as well as in divisions 58.4.1, 58.4.2 and 58.4.3a, where permitted in accordance with paragraph 1, shall be prohibited in depths less than 550 metres.</numbered_paragraph>
+					</article>
+					<article>
+						<heading>Article <numbering>25</numbering>
+						</heading>
+						<subject>Krill fishery during the 2020-2021 fishing season</subject>
+						<numbered_paragraph>
+							<numbering>1.</numbering>If a Member State intends to fish for krill (Euphausia superba) in the CCAMLR Convention Area during the 2020-2021 fishing season, it shall notify the Commission, no later than 30 May 2020.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>2.</numbering>The notification referred to in paragraph 1 of this Article shall include the information provided for in Article 3 of Regulation (EC) No 601/2004 for each vessel to be authorised by the Member State to participate in the krill fishery.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>3.</numbering>A Member State intending to fish for krill in the CCAMLR Convention Area shall notify its intention to do so only in respect of authorised vessels either flying its flag at the time of the notification or flying the flag of another CCAMLR member that are expected, at the time the fishery takes place, to be flying the flag of that Member State.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>4.</numbering>
+							<introductory_part>Member States shall be entitled to authorise participation in a krill fishery by vessels other than those notified to CCAMLR Secretariat in accordance with paragraphs 1, 2 and 3 of this Article, if an authorised vessel is prevented from participation due to legitimate operational reasons or force majeure. In such circumstances the Member States concerned shall immediately inform the CCAMLR Secretariat and the Commission, providing:</introductory_part>
+							<point>
+								<numbering>(a)</numbering>full details of the intended replacement vessel(s), including information provided for in Article 3 of Regulation (EC) No 601/2004;</point>
+							<point>
+								<numbering>(b)</numbering>a comprehensive account of the reasons justifying the replacement and any relevant supporting evidence or references.</point>
+						</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>5.</numbering>Member States shall not authorise a vessel placed on any CCAMLR illegal, unreported and unregulated (IUU) fishing vessel list to participate in krill fisheries.</numbered_paragraph>
+					</article>
+				</section>
+				<section>
+					<heading>Section <numbering>4</numbering>
+					</heading>
+					<subject>IOTC Area of Competence</subject>
+					<article>
+						<heading>Article <numbering>26</numbering>
+						</heading>
+						<subject>Limitation of fishing capacity of vessels fishing in the IOTC Area of Competence</subject>
+						<numbered_paragraph>
+							<numbering>1.</numbering>The maximum number of Union fishing vessels fishing for tropical tunas in the IOTC Area of Competence and the corresponding capacity in gross tonnage shall be as set out in point 1 of Annex VIII.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>2.</numbering>The maximum number of Union fishing vessels fishing for swordfish (Xiphias gladius) and albacore (Thunnus alalunga) in the IOTC Area of Competence and the corresponding capacity in gross tonnage shall be as set out in point 2 of Annex VIII.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>3.</numbering>Member States may reallocate vessels assigned to one of the two fisheries referred to in paragraphs 1 and 2 to the other fishery, provided that they can demonstrate to the Commission that such change does not lead to an increase of fishing effort on the fish stocks involved.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>4.</numbering>Member States shall ensure that, where there is a proposed transfer of capacity to their fleet, vessels to be transferred are on the IOTC record of authorised vessels or on the record of vessels of other tuna RFMOs. Furthermore, no vessels placed on the list of vessels engaged in IUU fishing activities of any RFMO may be transferred.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>5.</numbering>Member States may only increase their fishing capacity beyond the ceilings referred to in paragraphs 1 and 2 within the limits set out in the development plans submitted to the IOTC.</numbered_paragraph>
+					</article>
+					<article>
+						<heading>Article <numbering>27</numbering>
+						</heading>
+						<subject>Drifting FADs and supply vessels</subject>
+						<numbered_paragraph>
+							<numbering>1.</numbering>A purse seiner shall not deploy more than 300 active drifting FADs at any time.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>2.</numbering>The number of supply vessels shall be no more than two supply vessels in support of not less than five purse seiners, all flying the flag of the same Member State. This provision shall not apply to Member States using only one supply vessel.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>3.</numbering>A single purse seiner shall not be supported by more than one single supply vessel of the same flag Member State at any time.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>4.</numbering>The Union shall not register new or additional supply vessels in the IOTC record of authorised vessels.</numbered_paragraph>
+					</article>
+					<article>
+						<heading>Article <numbering>28</numbering>
+						</heading>
+						<subject>Sharks</subject>
+						<numbered_paragraph>
+							<numbering>1.</numbering>Retaining on board, transhipping or landing any part or whole carcass of thresher sharks of all the species of the Alopiidae family in any fishery shall be prohibited.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>2.</numbering>Retaining on board, transhipping or landing any part or whole carcass of oceanic whitetip sharks (Carcharhinus longimanus) in any fishery shall be prohibited, except for vessels under 24 metres overall length engaged solely in fishing operations within the exclusive economic zone (EEZ) of the Member State whose flag they fly, and provided that their catch is destined solely for local consumption.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>3.</numbering>When accidentally caught, species referred to in paragraphs 1 and 2 shall not be harmed. Specimens shall be promptly released.</numbered_paragraph>
+					</article>
+				</section>
+				<section>
+					<heading>Section  <numbering>5</numbering>
+					</heading>
+					<subject>SPRFMO Convention Area</subject>
+					<article>
+						<heading>Article <numbering>29</numbering>
+						</heading>
+						<subject>Pelagic fisheries</subject>
+						<numbered_paragraph>
+							<numbering>1.</numbering>Only those Member States which have actively exercised pelagic fisheries activities in the SPRFMO Convention Area in 2007, 2008 or 2009 may fish for pelagic stocks in that area in accordance with the TACs set out in Annex IH.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>2.</numbering>The Member States referred to in paragraph 1 shall limit the total level of gross tonnage of vessels flying their flag and fishing for pelagic stocks in 2020 to the total Union level of 78600 gross tonnage in that area.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>3.</numbering>The fishing opportunities set out in Annex IH may only be used under the condition that Member States send to the Commission the list of vessels actively fishing or engaged in transhipment in the SPRFMO Convention Area, records from vessel monitoring systems, monthly catch reports and, where available, port calls, at the latest by the fifth day of the following month, with the aim of communicating that information to the SPRFMO Secretariat.</numbered_paragraph>
+					</article>
+					<article>
+						<heading>Article <numbering>30</numbering>
+						</heading>
+						<subject>Mobulid rays</subject>
+						<numbered_paragraph>
+							<numbering>1.</numbering>It shall be prohibited for Union fishing vessels to fish for, to retain on board, to tranship, to land, to store, to offer for sale or to sell any part or whole carcass of Mobulid rays (Mobulidae family which includes the genera Manta and Mobula), except for fishing vessels carrying out subsistence fishery (where the fish caught are consumed directly by the families of the fishermen). By way of derogation from the first sentence, Mobulid rays that are unintentionally caught by artisanal fishing (fisheries other than longline or surface fisheries, i.e. purse seines, pole and line, gillnet fisheries, hand-line and trolling vessels, and registered in the IOTC record of authorised vessels) may be landed for purposes of local consumption only.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>2.</numbering>All fishing vessels, other than those carrying out subsistence fishery, shall promptly release alive and unharmed, to the extent practicable, Mobulid rays as soon as they are seen in the net, on the hook, or on the deck, and shall do it in a manner that will result in the least possible harm to the individuals captured.</numbered_paragraph>
+					</article>
+					<article>
+						<heading>Article <numbering>31</numbering>
+						</heading>
+						<subject>Bottom fisheries</subject>
+						<numbered_paragraph>
+							<numbering>1.</numbering>Member States shall limit their bottom fishing catch or effort in 2020 in the SPRFMO Convention Area to those parts of the Convention Area where bottom fishing has occurred from 31 December 2006 and to a level that does not exceed the annual average levels of catches or effort parameters in that period. They may fish beyond the track record only if SPRFMO endorses their plan to fish beyond the track record.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>2.</numbering>Member States without a track record in bottom fishing catch or effort in the SPRFMO Convention Area over the period from 31 December 2006 shall not fish, unless SPRFMO endorses their plan to fish without a track record.</numbered_paragraph>
+					</article>
+					<article>
+						<heading>Article <numbering>32</numbering>
+						</heading>
+						<subject>Exploratory fisheries</subject>
+						<numbered_paragraph>
+							<numbering>1.</numbering>Member States may participate in longline exploratory fisheries for toothfish (Dissostichus spp.) in the SPRFMO Convention Area in 2020 only if the SPRFMO has approved their application for such fisheries that includes a fisheries operation plan and commitment to implement a data collection plan.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>2.</numbering>Fishing shall take place only in the research blocks specified by SPRFMO. Fishing shall be prohibited in depths less than 750 metres and more than 2000 metres.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>3.</numbering>The TAC shall be as set out in Annex IH. Fishing shall be limited to one trip of a maximum duration of 21 consecutive days and to a maximum number of 5000 hooks per set, with a maximum of 20 sets per research block. Fishing shall be ceased either when the TAC is reached or if 100 sets have been set and hauled, whichever is earlier.</numbered_paragraph>
+					</article>
+				</section>
+				<section>
+					<heading>Section <numbering>6</numbering>
+					</heading>
+					<subject>IATTC Convention Area</subject>
+					<article>
+						<heading>Article <numbering>33</numbering>
+						</heading>
+						<subject>Purse-seine fisheries</subject>
+						<numbered_paragraph>
+							<numbering>1.</numbering>
+							<introductory_part>Fishing by purse seiners for yellowfin tuna (Thunnus albacares), bigeye tuna (Thunnus obesus) and skipjack tuna (Katsuwonus pelamis) shall be prohibited:</introductory_part>
+							<point>
+								<numbering>(a)</numbering>
+								<introductory_part>from 00.00 hours on 19 January 2021 in the area defined by the following limits:</introductory_part>
+								<indent>— the Pacific coastlines of the Americas,</indent>
+								<indent>— longitude 150° W,</indent>
+								<indent>— latitude 40° N,</indent>
+								<indent>— latitude 40° S;</indent>
+							</point>
+							<point>
+								<numbering>(b)</numbering>
+								<introductory_part>from 00.00 hours on 8 November 2020 in the area defined by the following limits:</introductory_part>
+								<indent>— longitude 96° W,</indent>
+								<indent>— longitude 110° W,</indent>
+								<indent>— latitude 4° N,</indent>
+								<indent>— latitude 3° S.</indent>
+							</point>
+					</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>2.</numbering>For each of their vessels, Member States concerned shall notify to the Commission before 1 April 2020 the selected period of closure referred to in point (a) of paragraph 1. All purse seiners of the Member States concerned shall stop purse-seine fishing in the areas defined in paragraph 1 during the selected period.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>3.</numbering>Purse seiners fishing for tuna in the IATTC Convention Area shall retain on board and then land or tranship all yellowfin, bigeye and skipjack tuna caught.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>4.</numbering>
+							<introductory_part>Paragraph 3 shall not apply in the following cases:</introductory_part>
+							<point>
+								<numbering>(a)</numbering>where the fish is considered unfit for human consumption for reasons other than size, or</point>
+							<point>
+								<numbering>(b)</numbering>during the final set of a trip when there may be insufficient well space remaining to accommodate all the tuna caught in that set.</point>
+						</numbered_paragraph>
+					</article>
+					<article>
+						<heading>Article <numbering>34</numbering>
+						</heading>
+						<subject>Drifting FADs</subject>
+						<numbered_paragraph>
+							<numbering>1.</numbering>A purse seiner shall not have more than 450 FADs active at any time in the IATTC Convention Area. A FAD shall be considered active when it is deployed at sea, starts transmitting its location and is being tracked by the vessel, its owner or operator. A FAD shall only be activated on board a purse seiner.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>2.</numbering>A purse seiner may not deploy FADs during the 15 days before the start of the selected closure period referred to in point (a) of Article 33(1), and it shall recover the same number of FADs as initially deployed within 15 days prior to the start of the closure period.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>3.</numbering>Member States shall report to the Commission, on a monthly basis, daily information on all active FADs as required by the IATTC. The reports shall be submitted with a delay of at least 60 days, but not longer than 75 days. The Commission shall transmit that information to the IATTC Secretariat without delay.</numbered_paragraph>
+					</article>
+					<article>
+						<heading>Article <numbering>35</numbering>
+						</heading>
+						<subject>Catch limits for bigeye tuna in longline fisheries</subject>
+						<unnumbered_paragraph>The total annual catches of bigeye tuna by longline vessels of each Member State in the IATTC Convention Area are established in Annex IL.</unnumbered_paragraph>
+					</article>
+					<article>
+						<heading>Article <numbering>36</numbering>
+						</heading>
+						<subject>Prohibition of fishing for oceanic whitetip sharks</subject>
+						<numbered_paragraph>
+							<numbering>1.</numbering>It shall be prohibited to fish for oceanic whitetip sharks (Carcharhinus longimanus) in the IATTC Convention Area, and to retain on board, to tranship, to land, to store, to offer for sale or to sell any part or whole carcass of oceanic whitetip sharks caught in that area.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>2.</numbering>When accidentally caught, the species referred to in paragraph 1 shall not be harmed. Specimens shall be promptly released by vessel operators.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>3.</numbering>
+							<introductory_part>Vessel operators shall:</introductory_part>
+							<point>
+								<numbering>(a)</numbering>record the number of releases with indication of status (dead or alive);</point>
+							<point>
+								<numbering>(b)</numbering>report the information specified in point (a) to the Member State of which they are nationals. Member States shall transmit the information collected during the previous year to the Commission by 31 January.</point>
+						</numbered_paragraph>
+					</article>
+					<article>
+						<heading>Article <numbering>37</numbering>
+						</heading>
+						<subject>Prohibition of fishing for Mobulid rays</subject>
+						<unnumbered_paragraph>It shall be prohibited for Union fishing vessels in the IATTC Convention Area to fish for, to retain on board, to tranship, to land, to store, to offer for sale or to sell any part or whole carcass of Mobulid rays (Mobulidae family which includes the genera Manta and Mobula). As soon as Union fishing vessels notice that Mobulid rays have been caught, they shall, wherever possible, promptly release them alive and unharmed.</unnumbered_paragraph>
+					</article>
+				</section>
+				<section>
+					<heading>Section <numbering>7</numbering>
+					</heading>
+					<subject>SEAFO Convention Area</subject>
+					<article>
+						<heading>Article <numbering>38</numbering>
+						</heading>
+						<subject>Prohibition of fishing for deep-water sharks</subject>
+						<unnumbered_paragraph>
+							<introductory_part>Directed fishing for the following deep-water sharks in the SEAFO Convention Area shall be prohibited:</introductory_part>
+							<point>
+								<numbering>(a)</numbering>ghost catshark (Apristurus manis);</point>
+							<point>
+								<numbering>(b)</numbering>blurred smooth lanternshark (Etmopterus bigelowi);</point>
+							<point>
+								<numbering>(c)</numbering>shorttail lanternshark (Etmopterus brachyurus);</point>
+							<point>
+								<numbering>(d)</numbering>great lanternshark (Etmopterus princeps);</point>
+							<point>
+								<numbering>(e)</numbering>smooth lanternshark (Etmopterus pusillus);</point>
+							<point>
+								<numbering>(f)</numbering>skates (Rajidae);</point>
+							<point>
+								<numbering>(g)</numbering>velvet dogfish (Scymnodon squamulosus);</point>
+							<point>
+								<numbering>(h)</numbering>deep-sea sharks of the Selachimorpha super-order;</point>
+							<point>
+								<numbering>(i)</numbering>picked dogfish (Squalus acanthias).</point>
+						</unnumbered_paragraph>
+					</article>
+				</section>
+				<section>
+					<heading>Section <numbering>8</numbering>
+					</heading>
+					<subject>WCPFC Convention Area</subject>
+					<article>
+						<heading>Article <numbering>39</numbering>
+						</heading>
+						<subject>Conditions for bigeye tuna, yellowfin tuna, skipjack tuna and south Pacific albacore fisheries</subject>
+						<numbered_paragraph>
+							<numbering>1.</numbering>Member States shall ensure that the number of fishing days allocated to purse seiners fishing for bigeye tuna (Thunnus obesus), yellowfin tuna (Thunnus albacares) and skipjack tuna (Katsuwonus pelamis) in the part of the WCPFC Convention Area located in the high seas between 20° N and 20° S does not exceed 403 days.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>2.</numbering>Union fishing vessels shall not target south Pacific albacore (Thunnus alalunga) in the WCPFC Convention Area south of 20° S.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>3.</numbering>Member States shall ensure that catches of bigeye tuna (Thunnus obesus) by longliners do not exceed 2000 tonnes in 2020.</numbered_paragraph>
+					</article>
+					<article>
+						<heading>Article <numbering>40</numbering>
+						</heading>
+						<subject>Management of fishing with FADs</subject>
+						<numbered_paragraph>
+							<numbering>1.</numbering>In the part of the WCPFC Convention Area located between 20° N and 20° S, it shall be prohibited for purse seiners to deploy, service or set on FADs between 00.00 hours on 30 September 2020.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>2.</numbering>In addition to the prohibition set out in paragraph 1, it shall be prohibited to set on FADs on the high seas of the WCPFC Convention Area, between 20° N and 20° S, for an additional two months: either from 00.00 hours on 31 December 2020.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>3.</numbering>
+							<introductory_part>Paragraph 2 shall not apply in the following cases:</introductory_part>
+							<point>
+								<numbering>(a)</numbering>in the final set of a trip, if the vessel has insufficient well space left to accommodate all fish;</point>
+							<point>
+								<numbering>(b)</numbering>where the fish is unfit for human consumption for reasons other than size, or</point>
+							<point>
+								<numbering>(c)</numbering>when a serious malfunction of freezer equipment occurs.</point>
+						</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>4.</numbering>Member States shall ensure that each of its purse seiners have deployed at sea, at any time, no more than 350 FADs with activated instrumented buoys. The buoy shall be activated exclusively on board a vessel.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>5.</numbering>All purse seiners fishing in the part of the WCPFC Convention Area referred to in paragraph 1 shall retain on board, tranship and land all bigeye, yellowfin and skipjack tuna caught.</numbered_paragraph>
+					</article>
+					<article>
+						<heading>Article <numbering>41</numbering>
+						</heading>
+						<subject>Limitations to the number of Union fishing vessels authorised to fish for swordfish</subject>
+						<unnumbered_paragraph>The maximum number of Union fishing vessels authorised to fish for swordfish (Xiphias gladius) in areas south of 20° S of the WCPFC Convention Area shall be as set out in Annex IX.</unnumbered_paragraph>
+					</article>
+					<article>
+						<heading>Article <numbering>42</numbering>
+						</heading>
+						<subject>Catch limits for swordfish in longline fisheries south of 20° S</subject>
+						<unnumbered_paragraph>Member States shall ensure that catches of swordfish (Xiphias gladius) south of 20° S by longliners do not exceed in 2020 the limit set out in Annex IG. Member States shall also ensure that there is no shift of the fishing effort for swordfish to the area north of the 20° S, as a result of that measure.</unnumbered_paragraph>
+					</article>
+					<article>
+						<heading>Article <numbering>43</numbering>
+						</heading>
+						<subject>Silky sharks and oceanic whitetip sharks</subject>
+						<numbered_paragraph>
+							<numbering>1.</numbering>
+							<introductory_part>Retaining on board, transhipping, landing or storing any part or whole carcass of the following species in the WCPFC Convention Area shall be prohibited:</introductory_part>
+							<point>
+								<numbering>(a)</numbering>silky sharks (Carcharhinus falciformis);</point>
+							<point>
+								<numbering>(b)</numbering>oceanic whitetip sharks (Carcharhinus longimanus).</point>
+						</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>2.</numbering>When accidentally caught, species referred to in paragraph 1 shall not be harmed. Specimens shall be promptly released.</numbered_paragraph>
+					</article>
+					<article>
+						<heading>Article <numbering>44</numbering>
+						</heading>
+						<subject>Overlap area between IATTC and WCPFC</subject>
+						<numbered_paragraph>
+							<numbering>1.</numbering>Vessels listed exclusively in the WCPFC register shall apply the measures set out in this Section when fishing in the overlap area between IATTC and WCPFC as defined in point (v) of Article 4.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>2.</numbering>Vessels listed in both the WCPFC register and the IATTC register and vessels listed exclusively in the IATTC register shall apply the measures set out in Article 33(1)(a), (2), (3) and (4) and Articles 34, 35 and 36 when fishing in the overlap area between IATTC and WCPFC as defined in point (v) of Article 4.</numbered_paragraph>
+					</article>
+				</section>
+				<section>
+					<heading>Section <numbering>9</numbering>
+					</heading>
+					<subject>Bering Sea</subject>
+					<article>
+						<heading>Article <numbering>45</numbering>
+						</heading>
+						<subject>Prohibition on fishing in the high seas of the Bering Sea</subject>
+						<unnumbered_paragraph>Fishing for pollock (Gadus chalcogrammus) in the high seas of the Bering Sea shall be prohibited.</unnumbered_paragraph>
+					</article>
+				</section>
+				<section>
+					<heading>Section <numbering>10</numbering>
+					</heading>
+					<subject>SIOFA Agreement Area</subject>
+					<article>
+						<heading>Article <numbering>46</numbering>
+						</heading>
+						<subject>Interim bottom fishing measures</subject>
+						<numbered_paragraph>
+							<numbering>1.</numbering>Member States whose vessels have fished for more than 40 days in any given year in the SIOFA Agreement Area up to 2016 shall ensure that fishing vessels flying their flag limit their annual bottom fishing effort and/or catch to its average annual level and that fishing activities take place within the area assessed in their impact assessment submitted to SIOFA.</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>2.</numbering>Member States whose vessels have not fished for more than 40 days in any given single year in the SIOFA Agreement Area up to 2016 shall ensure that vessels flying their flag limit their bottom fishing effort and/or catch and spatial distribution in accordance with their historical fishing record.</numbered_paragraph>
+					</article>
+				</section>
+			</chapter>
+		</title>
+		<title>
+			<heading>TITLE <numbering>III</numbering>
+			</heading>
+			<subject>FISHING OPPORTUNITIES FOR THIRD-COUNTRY VESSELS IN UNION WATERS</subject>
+			<article>
+				<heading>Article <numbering>47</numbering>
+				</heading>
+				<subject>Fishing vessels flying the flag of Norway and fishing vessels registered in the Faroe Islands</subject>
+				<unnumbered_paragraph>Fishing vessels flying the flag of Norway and fishing vessels registered in the Faroe Islands shall be authorised to fish in Union waters within the TACs set out in Annex I to this Regulation and shall be subject to the conditions provided for in this Regulation and in Title III of Regulation (EU) 2017/2403.</unnumbered_paragraph>
+			</article>
+			<article>
+				<heading>Article <numbering>48</numbering>
+				</heading>
+				<subject>Fishing vessels flying the flag of Venezuela</subject>
+				<unnumbered_paragraph>Fishing vessels flying the flag of Venezuela shall be subject to the conditions provided for in this Regulation and in Title III of Regulation (EU) 2017/2403.</unnumbered_paragraph>
+			</article>
+			<article>
+				<heading>Article <numbering>49</numbering>
+				</heading>
+				<subject>Fishing authorisations</subject>
+				<unnumbered_paragraph>The maximum number of fishing authorisations for third-country vessels fishing in Union waters shall be as set out in Part B of Annex V.</unnumbered_paragraph>
+			</article>
+			<article>
+				<heading>Article <numbering>50</numbering>
+				</heading>
+				<subject>Conditions for landing catches and by-catches</subject>
+				<unnumbered_paragraph>The conditions specified in Article 7 shall apply to catches and by-catches of third-country vessels fishing under the authorisations referred to in Article 49.</unnumbered_paragraph>
+			</article>
+			<article>
+				<heading>Article <numbering>51</numbering>
+				</heading>
+				<subject>Closed fishing seasons</subject>
+				<unnumbered_paragraph>Third-country vessels authorised to fish for sandeel and associated by-catches in Union waters of ICES subarea 4 shall not fish for sandeel in that area with demersal trawl, seine or similar towed gear with a mesh size of less than 16 mm from 31 December 2020.</unnumbered_paragraph>
+			</article>
+			<article>
+				<heading>Article <numbering>52</numbering>
+				</heading>
+				<subject>Prohibited species</subject>
+				<numbered_paragraph>
+					<numbering>1.</numbering>
+					<introductory_part>It shall be prohibited for third-country vessels to fish for, to retain on board, to tranship or to land the following species whenever they are found in Union waters:</introductory_part>
+					<point>
+						<numbering>(a)</numbering>starry ray (Amblyraja radiata) in Union waters of ICES divisions 2a, 3a and 7d and ICES subarea 4;</point>
+					<point>
+						<numbering>(b)</numbering>common skate (Dipturus batis) complex (Dipturus cf. flossada and Dipturus cf. intermedia) in Union waters of ICES division 2a and ICES subareas 3, 4, 6, 7, 8, 9 and 10;</point>
+					<point>
+						<numbering>(c)</numbering>tope shark (Galeorhinus galeus) when taken with longlines in Union waters of ICES division 2a and ICES subareas 1, 4, 5, 6, 7, 8, 12 and 14;</point>
+					<point>
+						<numbering>(d)</numbering>kitefin shark (Dalatias licha), birdbeak dogfish (Deania calcea), leafscale gulper shark (Centrophorus squamosus), great lanternshark (Etmopterus princeps) and Portuguese dogfish (Centroscymnus coelolepis) in Union waters of ICES division 2a and ICES subareas 1, 4 and 14;</point>
+					<point>
+						<numbering>(e)</numbering>porbeagle (Lamna nasus) in Union waters;</point>
+					<point>
+						<numbering>(f)</numbering>thornback ray (Raja clavata) in Union waters of ICES division 3a;</point>
+					<point>
+						<numbering>(g)</numbering>undulate ray (Raja undulata) in Union waters of ICES subareas 6, 9 and 10;</point>
+					<point>
+						<numbering>(h)</numbering>common guitarfish (Rhinobatos rhinobatos) in the Mediterranean;</point>
+					<point>
+						<numbering>(i)</numbering>whale shark (Rhincodon typus) in all waters;</point>
+					<point>
+						<numbering>(j)</numbering>picked dogfish (Squalus acanthias) in Union waters of ICES subareas 2, 3, 4, 5, 6, 7, 8, 9 and 10.</point>
+				</numbered_paragraph>
+				<numbered_paragraph>
+					<numbering>2.</numbering>When accidentally caught, the species referred to in paragraph 1 shall not be harmed. Specimens shall be promptly released.</numbered_paragraph>
+			</article>
+		</title>
+		<title>
+			<heading>TITLE <numbering>IV</numbering>
+			</heading>
+			<subject>FINAL PROVISIONS</subject>
+			<article>
+				<heading>Article <numbering>53</numbering>
+				</heading>
+				<subject>Committee procedure</subject>
+				<numbered_paragraph>
+					<numbering>1.</numbering>The Commission shall be assisted by the Committee for Fisheries and Aquaculture established by Regulation (EU) No 1380/2013. That committee shall be a committee within the meaning of Regulation (EU) No 182/2011.</numbered_paragraph>
+				<numbered_paragraph>
+					<numbering>2.</numbering>Where reference is made to this paragraph, Article 5 of Regulation (EU) No 182/2011 shall apply.</numbered_paragraph>
+			</article>
+			<article>
+				<heading>Article <numbering>54</numbering>
+				</heading>
+				<subject>Transitional provision</subject>
+				<unnumbered_paragraph>Article 10, Article 12(2), Articles 16, 22, 23, 28, 36, 37, 38, 43, 45 and 52 shall continue to apply, mutatis mutandis, in 2021 until the entry into force of the Regulation fixing the fishing opportunities for 2021.</unnumbered_paragraph>
+			</article>
+			<article>
+				<heading>Article <numbering>55</numbering>
+				</heading>
+				<subject>Entry into force</subject>
+				<unnumbered_paragraph>This Regulation shall enter into force on the day following that of its publication in the Official Journal of the European Union.</unnumbered_paragraph>
+				<unnumbered_paragraph>It shall apply from 1 December 2019.</unnumbered_paragraph>
+			</article>
+		</title>
+	</enacting_terms>
+	<direct_applicability>This Regulation shall be binding in its entirety and directly applicable in all Member States.</direct_applicability>
+	<signature>					
+		<place_and_date>Done at Brussels, <date>27 January 2020</date>.</place_and_date>
+		<signatory>For the Council The President M. Vučković</signatory>
+	</signature>
+	<!-- List of annexes - abridged-->	
+	<annex/>
+	<!-- Annex I -->	
+	<annex>
+		<heading>ANNEX <numbering>I</numbering>
+		</heading>
+		<subject>TACs APPLICABLE TO UNION FISHING VESSELS IN AREAS WHERE TACs EXIST BY SPECIES AND BY AREA</subject>
+		<unnumbered_paragraph>The tables in this Annex set out the TACs and quotas (in tonnes live weight, except where otherwise specified) by stock, and, where appropriate, the conditions functionally linked thereto.</unnumbered_paragraph>
+		<unnumbered_paragraph>All fishing opportunities set out in this Annex shall be subject to the rules set out in Regulation (EC) No 1224/2009, and in particular Articles 33 and 34 of that Regulation.</unnumbered_paragraph>
+		<unnumbered_paragraph>The references to fishing zones are references to ICES zones, unless otherwise specified. Within each area, fish stocks are referred to according to the alphabetical order of the Latin names of the species. Only Latin names identify species for regulatory purposes; vernacular names are provided for ease of reference.</unnumbered_paragraph>
+		<unnumbered_paragraph>For the purposes of this Regulation, the following comparative table of Latin names and common names is provided:</unnumbered_paragraph>
+		<!-- table: in CoV instances only the wrapper "table" is used, without marking the content -->
+		<table/>
+		<unnumbered_paragraph>The following comparative table of common names and Latin names is provided exclusively for explanatory purposes:</unnumbered_paragraph>
+		<!-- table: in CoV instances only the wrapper "table" is used, without marking the content -->
+		<table/>
+		<!-- Annex IA - abridged-->	
+		<annex/>	
+		<!-- Annex IB - abridged-->	
+		<annex/>
+		<!-- Annex IC -->	
+		<annex>
+			<heading>ANNEX <numbering>IC</numbering>
+			</heading>
+			<subject>NORTH WEST ATLANTIC – NAFO CONVENTION AREA</subject>
+			<!-- table: in CoV instances only the wrapper "table" is used, without marking the content -->
+			<table/>
+			<!-- table: in CoV instances only the wrapper "table" is used, without marking the content -->
+			<table/>
+			<!-- table: in CoV instances only the wrapper "table" is used, without marking the content -->
+			<table/>
+			<!-- table: in CoV instances only the wrapper "table" is used, without marking the content -->
+			<table/>
+			<!-- table: in CoV instances only the wrapper "table" is used, without marking the content -->
+			<table/>
+			<!-- table: in CoV instances only the wrapper "table" is used, without marking the content -->
+			<table/>
+			<!-- table: in CoV instances only the wrapper "table" is used, without marking the content -->
+			<table/>
+			<!-- table: in CoV instances only the wrapper "table" is used, without marking the content -->
+			<table/>
+			<!-- table: in CoV instances only the wrapper "table" is used, without marking the content -->
+			<table/>
+			<!-- table: in CoV instances only the wrapper "table" is used, without marking the content -->
+			<table/>
+			<!-- table: in CoV instances only the wrapper "table" is used, without marking the content -->
+			<table/>
+			<!-- table: in CoV instances only the wrapper "table" is used, without marking the content -->
+			<table/>
+			<!-- table: in CoV instances only the wrapper "table" is used, without marking the content -->
+			<table/>
+			<!-- table: in CoV instances only the wrapper "table" is used, without marking the content -->
+			<table/>
+			<!-- table: in CoV instances only the wrapper "table" is used, without marking the content -->
+			<table/>
+			<!-- table: in CoV instances only the wrapper "table" is used, without marking the content -->
+			<table/>
+			<!-- table: in CoV instances only the wrapper "table" is used, without marking the content -->
+			<table/>
+			<!-- table: in CoV instances only the wrapper "table" is used, without marking the content -->
+			<table/>
+			<!-- table: in CoV instances only the wrapper "table" is used, without marking the content -->
+			<table/>
+		</annex>
+		<!-- Annex ID - abridged-->	
+		<annex/>
+		<!-- Annex IE -->	
+		<annex>
+			<heading>ANNEX <numbering>IE</numbering>
+			</heading>
+			<subject>SOUTH-EAST ATLANTIC OCEAN – SEAFO CONVENTION AREA</subject>
+			<unnumbered_paragraph>The TACs set out below are not allocated to the members of SEAFO and hence the Union’s share is undetermined. Catches are monitored by the SEAFO Secretariat which will communicate to the Contracting Parties when fishing is to be ceased due to a TAC exhaustion</unnumbered_paragraph>
+			<!-- table: in CoV instances only the wrapper "table" is used, without marking the content -->
+			<table/>
+			<!-- table: in CoV instances only the wrapper "table" is used, without marking the content -->
+			<table/>
+			<!-- table: in CoV instances only the wrapper "table" is used, without marking the content -->
+			<table/>
+			<!-- table: in CoV instances only the wrapper "table" is used, without marking the content -->
+			<table/>
+			<!-- table: in CoV instances only the wrapper "table" is used, without marking the content -->
+			<table/>
+			<!-- table: in CoV instances only the wrapper "table" is used, without marking the content -->
+			<table/>
+			<!-- table: in CoV instances only the wrapper "table" is used, without marking the content -->
+			<table/>
+			<!-- table: in CoV instances only the wrapper "table" is used, without marking the content -->
+			<table/>
+		</annex>
+		<!-- Annex IF - abridged-->	
+		<annex/>
+		<!-- Annex IG - abridged-->	
+		<annex/>
+		<!-- Annex IH - abridged-->	
+		<annex/>
+		<!-- Annex IJ - abridged-->	
+		<annex/>
+		<!-- Annex IK - abridged-->	
+		<annex/>
+		<!-- Annex IL - abridged-->	
+		<annex/>
+	</annex>	
+	<!-- Annex II - abridged-->	
+	<annex/>
+	<!-- Annex III -->	
+	<annex>
+		<heading>ANNEX <numbering>III</numbering>
+		</heading>
+		<subject>MANAGEMENT AREAS FOR SANDEEL IN ICES DIVISIONS 2a, 3a AND ICES SUBAREA 4</subject>
+		<unnumbered_paragraph>For the purposes of the management of the fishing opportunities of sandeel in ICES divisions 2a, 3a and ICES subarea 4 fixed in Annex IA, the management areas within which specific catch limits apply are defined as shown below and in the Appendix to this Annex:</unnumbered_paragraph>
+		<!-- table: in CoV instances only the wrapper "table" is used, without marking the content -->
+		<table/>
+		<annex>
+			<heading>Appendix</heading>
+			<subject>Sandeel management areas</subject>
+			<image>L_2020025EN.01013602.tif:OTHER</image>
+		</annex>
+	</annex>
+	<!-- Annex IV - abridged-->	
+	<annex/>
+	<!-- Annex V - abridged-->	
+	<annex/>
+	<!-- Annex VI - abridged-->	
+	<annex/>
+	<annex>
+		<heading>ANNEX <numbering>VII</numbering>
+		</heading>
+		<subject>CCAMLR CONVENTION AREA</subject>
+		<unnumbered_paragraph>Exploratory fishing for toothfish in the CCAMLR Convention Area in 2019/2020 shall be limited to the following:</unnumbered_paragraph>		
+		<!-- table: in CoV instances only the wrapper "table" is used, without marking the content -->
+		<table>
+			<heading>Table <numbering>A</numbering>
+			</heading>
+			<subject>Authorised Member States, subareas and maximum number of vessels</subject>
+		</table>
+		<!-- table: in CoV instances only the wrapper "table" is used, without marking the content -->
+		<table>
+			<heading>Table <numbering>B</numbering>
+			</heading>
+			<subject>TACs and by-catch limits</subject>
+			<subparagraph>The TACs set out below, which are adopted by CCAMLR, are not allocated to CCAMLR members and hence the Union’s share is undetermined. Catches are monitored by the CCAMLR Secretariat which will communicate to the Contracting Parties when fishing is to be ceased due to TAC exhaustion</subparagraph>
+		</table>
+		<annex>
+			<heading>Appendix</heading>
+			<part>
+				<heading>PART <numbering>A</numbering>
+				</heading>
+				<subject>Research blocks 48.6 coordinates</subject>
+				<subject>Research block 48.6_2 coordinates</subject>
+				<unnumbered_paragraph>54° 00' S 01° 00' E</unnumbered_paragraph>
+				<unnumbered_paragraph>55° 00' S 01° 00' E</unnumbered_paragraph>
+				<unnumbered_paragraph>55° 00' S 02° 00' E</unnumbered_paragraph>
+				<unnumbered_paragraph>55° 30' S 02° 00' E</unnumbered_paragraph>
+				<unnumbered_paragraph>55° 30' S 04° 00' E</unnumbered_paragraph>
+				<unnumbered_paragraph>56° 30' S 04° 00' E</unnumbered_paragraph>
+				<unnumbered_paragraph>56° 30' S 07° 00' E</unnumbered_paragraph>
+				<unnumbered_paragraph>56° 00' S 07° 00' E</unnumbered_paragraph>
+				<unnumbered_paragraph>56° 00' S 08° 00' E</unnumbered_paragraph>
+				<unnumbered_paragraph>54° 00' S 08° 00' E</unnumbered_paragraph>
+				<unnumbered_paragraph>54° 00' S 09° 00' E</unnumbered_paragraph>
+				<unnumbered_paragraph>53° 00' S 09° 00' E</unnumbered_paragraph>
+				<unnumbered_paragraph>53° 00' S 03° 00' E</unnumbered_paragraph>
+				<unnumbered_paragraph>53° 30' S 03° 00' E</unnumbered_paragraph>
+				<unnumbered_paragraph>53° 30' S 02° 00' E</unnumbered_paragraph>
+				<unnumbered_paragraph>54° 00' S 02° 00' E</unnumbered_paragraph>
+				<subject>Research block 48.6_3 coordinates</subject>
+				<unnumbered_paragraph>64° 30' S 01° 00' E</unnumbered_paragraph>
+				<unnumbered_paragraph>66° 00' S 01° 00' E</unnumbered_paragraph>
+				<unnumbered_paragraph>66° 00' S 04° 00' E</unnumbered_paragraph>
+				<unnumbered_paragraph>65° 00' S 04° 00' E</unnumbered_paragraph>
+				<unnumbered_paragraph>65° 00' S 07° 00' E</unnumbered_paragraph>
+				<unnumbered_paragraph>64° 30' S 07° 00' E</unnumbered_paragraph>
+				<subject>Research block 48.6_4 coordinates</subject>
+				<unnumbered_paragraph>68° 20' S 10° 00' E</unnumbered_paragraph>
+				<unnumbered_paragraph>68° 20' S 13° 00' E</unnumbered_paragraph>
+				<unnumbered_paragraph>69° 30' S 13° 00' E</unnumbered_paragraph>
+				<unnumbered_paragraph>69° 30' S 10° 00' E</unnumbered_paragraph>
+				<unnumbered_paragraph>69° 45' S 10° 00' E</unnumbered_paragraph>
+				<unnumbered_paragraph>69° 45' S 06° 00' E</unnumbered_paragraph>
+				<unnumbered_paragraph>69° 00' S 06° 00' E</unnumbered_paragraph>
+				<unnumbered_paragraph>69° 00' S 10° 00' E</unnumbered_paragraph>
+				<subject>Research block 48.6_5 coordinates</subject>
+				<unnumbered_paragraph>71° 00' S 15° 00' W</unnumbered_paragraph>
+				<unnumbered_paragraph>71° 00' S 13° 00' W</unnumbered_paragraph>
+				<unnumbered_paragraph>70° 30' S 13° 00' W</unnumbered_paragraph>
+				<unnumbered_paragraph>70° 30' S 11° 00' W</unnumbered_paragraph>
+				<unnumbered_paragraph>70° 30' S 10° 00' W</unnumbered_paragraph>
+				<unnumbered_paragraph>69° 30' S 10° 00' W</unnumbered_paragraph>
+				<unnumbered_paragraph>69° 30' S 09° 00' W</unnumbered_paragraph>
+				<unnumbered_paragraph>70° 00' S 09° 00' W</unnumbered_paragraph>
+				<unnumbered_paragraph>70° 00' S 08° 00' W</unnumbered_paragraph>
+				<unnumbered_paragraph>69° 30' S 08° 00' W</unnumbered_paragraph>
+				<unnumbered_paragraph>69° 30' S 07° 00' W</unnumbered_paragraph>
+				<unnumbered_paragraph>70° 30' S 07° 00' W</unnumbered_paragraph>
+				<unnumbered_paragraph>70° 30' S 10° 00' W</unnumbered_paragraph>
+				<unnumbered_paragraph>71° 00' S 10° 00' W</unnumbered_paragraph>
+				<unnumbered_paragraph>71° 00' S 11° 00' W</unnumbered_paragraph>
+				<unnumbered_paragraph>71° 30' S 11° 00' W</unnumbered_paragraph>
+				<unnumbered_paragraph>71° 30' S 15° 00' W</unnumbered_paragraph>
+				<subject>List of small-scale research units (SSRUs)</subject>
+				<!-- table: in CoV instances only the wrapper "table" is used, without marking the content -->
+				<table/>
+			</part>
+			<part>
+				<heading>PART <numbering>B</numbering>
+				</heading>
+				<subject>NOTIFICATION OF INTENT TO PARTICIPATE IN A FISHERY FOR EUPHAUSIA SUPERBA</subject>
+				<!-- Forms are rendered in a table -->
+				<table/>
+				<subject>GUIDELINES FOR ESTIMATING THE GREEN WEIGHT OF KRILL CAUGHT</subject>
+				<!-- table: in CoV instances only the wrapper "table" is used, without marking the content -->
+				<table/>
+				<unnumbered_paragraph>Observation steps and frequency</unnumbered_paragraph>
+				<!-- table: in CoV instances only the wrapper "table" is used, without marking the content -->
+				<table/>
+			</part>
+		</annex>
+	</annex>
+	<!-- Annex VIII - abridged-->	
+	<annex/>
+	<!-- Annex IX - abridged-->	
+	<annex/>
+</regulation>

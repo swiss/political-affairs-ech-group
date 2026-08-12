@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+   <doc name="EXPL_MEMORANDUM">
+      <meta>
+         <identification source="~PUBL">
+            <FRBRWork>
+               <FRBRthis value=""/>
+               <FRBRuri value=""/>
+               <FRBRdate date="2999-01-01" name=""/>
+               <FRBRauthor href=""/>
+               <preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+                  <akn4eu:fileCUID value="clo5skgaw00082a6dpozv7oue"/>
+               </preservation>
+               <FRBRcountry value="EU"/>
+               <FRBRnumber value="COM(2023) 203"/>
+               <FRBRprescriptive value="false"/>
+            </FRBRWork>
+            <FRBRExpression>
+               <FRBRthis value=""/>
+               <FRBRuri value=""/>
+               <FRBRdate date="2999-01-01" name=""/>
+               <FRBRauthor href=""/>
+               <FRBRlanguage language="en"/>
+            </FRBRExpression>
+            <FRBRManifestation>
+               <FRBRthis value=""/>
+               <FRBRuri value=""/>
+               <FRBRdate date="2999-01-01" name=""/>
+               <FRBRauthor href=""/>
+               <preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+                  <akn4eu:akn4euVersion value="4.2.0.0"/>
+                  <akn4eu:akn4euDocumentation href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/akn4eu"/>
+               </preservation>
+            </FRBRManifestation>
+         </identification>
+         <references source="~PUBL">
+            <TLCReference xml:id="EXPL_MEMORANDUM" name="docType" href="http://publications.europa.eu/resource/authority/resource-type/EXPL_MEMORANDUM" showAs="Explanatory memorandum"/>            <TLCReference name="language" href="http://publications.europa.eu/resource/authority/language/ENG" showAs="en"/>
+            <TLCOrganization xml:id="PUBL" href="http://publications.europa.eu/resource/authority/corporate-body/PUBL" showAs="Publications Office"/>
+         </references>
+      </meta>
+      <preface xml:id="d1e74">
+         <longTitle xml:id="d1e76">
+            <p xml:id="d1e78">
+               <docType xml:id="d1e80" refersTo="~EXPL_MEMORANDUM">EXPLANATORY MEMORANDUM</docType>
+            </p>
+         </longTitle>
+      </preface>
+      <mainBody xml:id="d1e86">
+         <p xml:id="d1e88"> Pursuant to Article 287, point (12), of Directive 2006/112/EC<authorialNote xml:id="d1e90" marker="1" placement="bottom">
+               <p xml:id="d1e92">OJ
+				L 347, 11.12.2006, p. 1.</p>
+            </authorialNote> (‘the VAT Directive’), Hungary may exempt from value
+			added tax (VAT) taxable persons whose annual turnover is no higher than the equivalent
+			in national currency of EUR 35 000 at the conversion rate on the day of its accession
+			Pursuant to Council Implementing </p>
+         <p xml:id="d1e96">Decision 2022/73 of 18 January 2022<authorialNote xml:id="d1e98" marker="2" placement="bottom">
+               <p xml:id="d1e100">Council Implementing Decision
+				(EU) 2022/73 of 18 January 2022 amending Implementing Decision (EU) 2018/1490 as
+				regards authorisation to Hungary to apply for a further period the special measure
+				derogating from Article 287 of Directive 2006/112/EC on the common system of value
+				added tax (OJ L 12, 19.1.2022, p. 148–150).</p>
+            </authorialNote>, Hungary is currently authorised
+			to apply a special measure derogating from Article 287 of the VAT Directive to exempt
+			from VAT taxable persons whose annual turnover is no higher than the equivalent in
+			national currency of EUR 48 000 at the conversion rate on the day of its accession to
+			the Union until 31 December 2024. </p>
+         <p xml:id="d1e104">By letter registered with the Commission on 15 December 2022, Hungary
+			requested an authorisation to increase the threshold of the above-mentioned existing
+			measure to EUR 71 500 until 31 December 2024 (‘the special measure’). </p>
+         <p xml:id="d1e106">In accordance with Article 395(2) of the VAT Directive, the Commission
+			informed the other Member States by letter dated 11 January 2023 of the request made by
+			Hungary. By letter dated 12 January 2023, the Commission notified Hungary that it had
+			all the information it considered necessary for the appraisal of the request. </p>
+         <tblock xml:id="d1e108">
+            <num xml:id="d1e110">1.</num>
+            <heading xml:id="d1e112">CONTEXT OF THE PROPOSAL</heading>
+            <tblock xml:id="d1e114">
+               <num xml:id="d1e116">.</num>
+               <heading xml:id="d1e118">Reasons for and objectives of the proposal</heading>
+               <blockContainer xml:id="d1e120">
+                  <p xml:id="d1e122"> Chapter 1 of Title XII of the VAT Directive allows for the
+					possibility for Member States to apply a special scheme for small enterprises,
+					which includes the possibility to exempt from VAT taxable persons below a
+					certain annual turnover. Taxable persons falling under this exemption do not
+					have to charge VAT on their supplies and, consequently, cannot deduct VAT on
+					their inputs. </p>
+                  <p xml:id="d1e124">Under Article 287 of the VAT Directive, Member States which
+					acceded after 1 January 1978 may exempt taxable persons whose annual turnover is
+					no higher than the equivalent in national currency of the amounts at the
+					conversion rate on the day of their accession as specified in that provision. </p>
+                  <p xml:id="d1e126">Under point 12 of Article 287 of the VAT Directive, Hungary
+					may exempt from VAT taxable persons whose annual turnover is no higher than the
+					equivalent in national currency of EUR 35 000 at the conversion rate on the day
+					of its accession (this is referred to as the “personal exemption”). </p>
+                  <p xml:id="d1e128">By virtue of Council Implementing Decision
+						2018/1490/EU<authorialNote xml:id="d1e130" marker="3" placement="bottom">
+                        <p xml:id="d1e132">Council Implementing Decision (EU) 2018/1490 of 2 October
+						2018 authorising Hungary to introduce a special measure derogating from
+						Article 287 of Directive 2006/112/EC on the common system of value added tax
+						(OJ L 252, 8.10.2018, p. 38-39).</p>
+                     </authorialNote> Hungary was authorised, until 31
+					December 2021, to apply a higher threshold, exempting from VAT taxable persons
+					whose annual turnover is no higher than the equivalent in national currency of
+					EUR 48 000 at the conversion rate on the day of its accession. Hungary was
+					subsequently authorised to extend the expiry date of the derogating measure
+					until 31 December 2024, by Council Implementing Decision 2022/73 of 18 January
+						2022<authorialNote xml:id="d1e135" marker="4" placement="bottom">
+                        <p xml:id="d1e137">Council Implementing Decision (EU) 2022/73 of 18 January 2022
+						amending Implementing Decision (EU) 2018/1490 as regards authorisation to
+						Hungary to apply for a further period the special measure derogating from
+						Article 287 of Directive 2006/112/EC on the common system of value added tax
+						(OJ L 12, 19.1.2022, p. 148–150).</p>
+                     </authorialNote>. </p>
+                  <p xml:id="d1e141">The higher threshold of EUR 71 500 here requested by Hungary
+					would be consistent with a threshold used in a Hungarian tax on income tax
+					(specific tax on small companies: “kata”), therefore simplifying the compliance
+					for eligible businesses. Moreover, Hungary states that the exemption threshold
+					should follow the increase in revenue among taxable persons created by the
+					economic growth and that a valorization of that threshold would be justified in
+					view of the inflationary pressures. </p>
+                  <p xml:id="d1e144">The special measure, simplifying the obligations of small
+					operators, is in line with the objectives set out by the European Union for
+					small businesses, as laid out in Commission Communication "Think small first” -
+					A “Small Business Act” for Europe. </p>
+                  <p xml:id="d1e146">The special measure is optional for taxable persons.
+					Therefore, small businesses whose turnover does not exceed the threshold would
+					still have the possibility to exercise their right to apply the normal VAT
+					arrangements. </p>
+                  <p xml:id="d1e148">Hungary reports that the threshold increase of the special
+					measure could potentially affect around 35 000 taxable persons. Moreover,
+					Hungary states that on the basis of the experience of previous years, it can be
+					assumed that, even if the threshold is increased, as requested, a significant
+					increase in the proportion of taxable persons actually opting for it, is not
+					expected. </p>
+                  <p xml:id="d1e150">According to estimates provided by Hungary, the introduction
+					of the special measure would lead to a loss of budgetary revenue of HUF 15
+					billion per year (i.e. around 0.05 % of VAT accrual (ESA) revenue in 2021) and
+					would therefore not significantly affect the total amount of revenue from VAT
+					collected at the stage of final consumption. </p>
+                  <p xml:id="d1e152">In light of the above, it is appropriate to authorise Hungary
+					to apply the special measure until 31 December 2024. </p>
+               </blockContainer>
+            </tblock>
+            <tblock xml:id="d1e156">
+               <num xml:id="d1e158">.</num>
+               <heading xml:id="d1e160">Consistency with existing policy provisions in the policy area</heading>
+               <blockContainer xml:id="d1e162">
+                  <p xml:id="d1e164"> The derogating measure is in line with Directive (EU)
+						2020/285<authorialNote xml:id="d1e166" marker="5" placement="bottom">
+                        <p xml:id="d1e168">Council Directive (EU) 2020/285 of 18 February 2020 amending
+						Directive 2006/112/EC on the common system of value added tax as regards the
+						special scheme for small enterprises and Regulation (EU) No 904/2010 as
+						regards the administrative cooperation and exchange of information for the
+						purpose of monitoring the correct application of the special scheme for
+						small enterprises (OJ L 62, 2.3.2020, p. 13).</p>
+                     </authorialNote> which resulted from the
+					Commission’s VAT action plan<authorialNote xml:id="d1e171" marker="6" placement="bottom">
+                        <p xml:id="d1e173">Communication from the Commission to the
+						European Parliament, the Council and the European Economic and Social
+						Committee on an action plan on VAT – Towards a single EU VAT area – Time to
+						decide COM(2016)148 final.</p>
+                     </authorialNote>, and aims to create a modern, simplified
+					scheme for those businesses. In particular, it seeks to reduce VAT compliance
+					costs and distortions of competition both domestically and at EU level, reduce
+					the negative impact of the threshold effect, and facilitate business compliance
+					as well as monitoring by tax administrations. </p>
+                  <p xml:id="d1e177">Moreover, the threshold of EUR 71 500 is consistent with
+					Directive (EU) 2020/285, insofar as it allows Member States to set the annual
+					turnover threshold required for an exemption from VAT at a level no higher than
+					EUR 85 000 (or the equivalent in national currency). </p>
+                  <p xml:id="d1e179">Similar derogations, exempting from VAT taxable persons whose
+					annual turnover is below a certain threshold, as provided for in Articles 285
+					and 287 of the VAT Directive, have been granted to other Member States such as
+					the Netherlands<authorialNote xml:id="d1e181" marker="7" placement="bottom">
+                        <p xml:id="d1e183">Council Implementing Decision (EU) 2018/1904 of 4 December
+						2018 authorising the Netherlands to introduce a special measure derogating
+						from Article 285 of Directive 2006/112/EC on the common system of value
+						added tax (OJ L 310, 6.12.2018, p. 25).</p>
+                     </authorialNote> and Belgium<authorialNote xml:id="d1e186" marker="8" placement="bottom">
+                        <p xml:id="d1e188">Council
+						Implementing Decision (EU) 2022/88 of 18 January 2022 amending Implementing
+						Decision 2013/53/EU as regards authorisation to the Kingdom of Belgium to
+						apply for a further period the special measure derogating from Article 285
+						of Directive 2006/112/EC on the common system of value added tax (OJ L 14,
+						21.1.2022, p. 23).</p>
+                     </authorialNote> who have been granted a threshold of EUR 25 000.
+						Luxembourg<authorialNote xml:id="d1e191" marker="9" placement="bottom">
+                        <p xml:id="d1e193">Council Implementing Decision (EU) 2019/2210 of 19 December
+						2019 amending Implementing Decision 2013/677/EU authorising Luxembourg to
+						introduce a special measure derogating from Article 285 of Directive
+						2006/112/EC on the common system of value added tax (OJ L 332, 23.12.2019,
+						p. 155).</p>
+                     </authorialNote> as been granted a threshold of EUR 35 000 and
+						Poland<authorialNote xml:id="d1e196" marker="10" placement="bottom">
+                        <p xml:id="d1e198">Council Implementing Decision (EU) 2021/1780 of 5 October 2021
+						amending Implementing Decision 2009/790/EC authorising the Republic of
+						Poland to apply a measure derogating from Article 287 of Directive
+						2006/112/EC on the common system of value added tax (OJ L 360, 11.10.2021,
+						p. 122).</p>
+                     </authorialNote>, Latvia<authorialNote xml:id="d1e201" marker="11" placement="bottom">
+                        <p xml:id="d1e203">Council Implementing Decision (EU) 2020/1261 of
+						4 September 2020 amending Implementing Decision (EU) 2017/2408 authorising
+						the Republic of Latvia to apply a special measure derogating from Article
+						287 of Directive 2006/112/EC on the common system of value added tax (OJ L
+						296, 10.9.2020, p. 4).</p>
+                     </authorialNote> and Estonia<authorialNote xml:id="d1e207" marker="12" placement="bottom">
+                        <p xml:id="d1e209">Council Implementing Decision
+						(EU) 2021/358 of 22 February 2021 amending Implementing Decision (EU)
+						2017/563 authorising the Republic of Estonia to apply a special measure
+						derogating from Article 287 of Directive 2006/112/EC on the common system of
+						value added tax (OJ L 69, 26.2.2021, p. 4).</p>
+                     </authorialNote> have been granted a
+					threshold of EUR 40 000. Lithuania<authorialNote xml:id="d1e212" marker="13" placement="bottom">
+                        <p xml:id="d1e214">Council Implementing Decision (EU)
+						2021/86 of 22 January 2021 authorising the Republic of Lithuania to apply a
+						special measure derogating from Article 287 of Directive 2006/112/EC on the
+						common system of value added tax (OJ L 30, 28.1.2021, p. 2).</p>
+                     </authorialNote> has been
+					granted a threshold of EUR 55 000; Croatia<authorialNote xml:id="d1e217" marker="14" placement="bottom">
+                        <p xml:id="d1e219">Council Implementing Decision
+						(EU) 2020/1661 of 3 November 2020 amending Implementing Decision (EU)
+						2017/1768 authorising the Republic of Croatia to introduce a special measure
+						derogating from Article 287 of Directive 2006/112/EC on the common system of
+						value added tax (OJ L 374, 10.11.2020, p. 4).</p>
+                     </authorialNote> a threshold of EUR 45
+					000; Malta<authorialNote xml:id="d1e222" marker="15" placement="bottom">
+                        <p xml:id="d1e224">Council Implementing Decision (EU) 2021/753 of 6 May 2021
+						authorising Malta to apply a special measure derogating from Article 287 of
+						Directive 2006/112/EC on the common system of value added tax, and repealing
+						Implementing Decision (EU) 2018/279 (OJ L 163, 10.5.2021, p. 1).</p>
+                     </authorialNote> a
+					threshold of EUR 30 000; Slovenia<authorialNote xml:id="d1e227" marker="16" placement="bottom">
+                        <p xml:id="d1e229">Council Implementing Decision (EU)
+						2022/464 of 21 March 2022 amending Implementing Decision 2013/54/EU as
+						regards the authorisation granted to the Republic of Slovenia to continue to
+						apply the special measure derogating from Article 287 of Directive
+						2006/112/EC on the common system of value added tax (OJ L 94, 23.3.2022, p.
+						4).</p>
+                     </authorialNote> a threshold of EUR 50 000; Czech Republic<authorialNote xml:id="d1e232" marker="17" placement="bottom">
+                        <p xml:id="d1e234">Council
+						Implementing Decision (EU) 2022/865 of 24 May 2022 authorising the Czech
+						Republic to introduce a special measure derogating from Article 287 of
+						Directive 2006/112/EC on the common system of value added tax (OJ L 151,
+						2.6.2022, p. 66).</p>
+                     </authorialNote> a threshold of EUR 85 000; and Romania<authorialNote xml:id="d1e238" marker="18" placement="bottom">
+                        <p xml:id="d1e240">Council
+						Implementing Decision (EU) 2020/1260 of 4 September 2020 amending
+						Implementing Decision (EU) 2017/1855 authorising Romania to apply a special
+						measure derogating from Article 287 of Directive 2006/112/EC on the common
+						system of value added tax (OJ L 296, 10.9.2020, p. 1).</p>
+                     </authorialNote> a threshold of
+					EUR 88 500. </p>
+                  <p xml:id="d1e244">Derogations from the VAT Directive should always be limited in
+					time so that their effects can be assessed. In addition, the inclusion of an
+					expiry date of the special measure until 31 December 2024, as requested by
+					Hungary, is aligned with the date set up by Directive (EU) 2020/285. That
+					directive provides for 1 January 2025 as the date on which Member States will
+					have to apply the national provisions, which they are required to adopt to
+					comply with it. </p>
+                  <p xml:id="d1e246">The proposed measure is therefore consistent with the
+					provisions of the VAT Directive. </p>
+               </blockContainer>
+            </tblock>
+            <tblock xml:id="d1e250">
+               <num xml:id="d1e252">.</num>
+               <heading xml:id="d1e254">Consistency with other Union policies</heading>
+               <blockContainer xml:id="d1e256">
+                  <p xml:id="d1e258">The Commission has been consistently stressing the need for
+					simpler rules for small enterprises. In this respect, the Commission adopted in
+					March 2020 an SME Strategy for a sustainable and digital
+						Europe<authorialNote xml:id="d1e260" marker="19" placement="bottom">
+                        <p xml:id="d1e262">Communication from the Commission to the European Parliament,
+						the Council, the European Economic and Social Committee and the Committee of
+						the Regions – An SME Strategy for a sustainable and digital Europe
+						(COM(2020) 103 final).</p>
+                     </authorialNote>, where it committed to continue to work on
+					reducing the burden on SMEs. The objective to reduce the regulatory burden for
+					SMEs is one of the pillars of that strategy. This special measure is in line
+					with such objectives, as far as fiscal rules are concerned. It is also
+					consistent with the 2020 Action Plan on fair and simple taxation supporting the
+					recovery strategy<authorialNote xml:id="d1e265" marker="20" placement="bottom">
+                        <p xml:id="d1e267">Communication from the Commission to the European
+						Parliament and the Council – An Action Plan for fair and simple taxation
+						supporting the Recovery Strategy (COM(2020) 312 final).</p>
+                     </authorialNote>, which
+					acknowledges that tax compliance costs remain high in the EU, and that
+					compliance costs are typically substantially higher for small than for large
+					companies. </p>
+               </blockContainer>
+            </tblock>
+         </tblock>
+         <tblock xml:id="d1e275">
+            <num xml:id="d1e277">2.</num>
+            <heading xml:id="d1e279">LEGALBASIS,SUBSIDIARITYANDPROPORTIONALITY</heading>
+            <tblock xml:id="d1e281">
+               <num xml:id="d1e283">.</num>
+               <heading xml:id="d1e285">Legalbasis</heading>
+               <blockContainer xml:id="d1e287">
+                  <p xml:id="d1e289">Article 395 of the VAT Directive. </p>
+               </blockContainer>
+            </tblock>
+            <tblock xml:id="d1e293">
+               <num xml:id="d1e295">.</num>
+               <heading xml:id="d1e297">Subsidiarity(fornon-exclusivecompetence)</heading>
+               <blockContainer xml:id="d1e299">
+                  <p xml:id="d1e301">Considering the provision of the VAT Directive on which it is
+					based, theproposal falls under the exclusive competence of the European Union.
+					Hence, the subsidiarity principle does not apply. </p>
+               </blockContainer>
+            </tblock>
+            <tblock xml:id="d1e305">
+               <num xml:id="d1e307">.</num>
+               <heading xml:id="d1e309">Proportionality</heading>
+               <blockContainer xml:id="d1e311">
+                  <p xml:id="d1e313">The Decision concerns an authorisation granted to a Member
+					State upon its own request and does not constitute any obligation. </p>
+                  <p xml:id="d1e315">Given the limited scope of the derogation, the special measure
+					is proportionate to the aim pursued, i.e. to simplify tax collection for small
+					taxable persons and for the tax administration. </p>
+               </blockContainer>
+            </tblock>
+            <tblock xml:id="d1e320">
+               <num xml:id="d1e322">.</num>
+               <heading xml:id="d1e324">Choice of the instrument</heading>
+               <blockContainer xml:id="d1e326">
+                  <p xml:id="d1e328">The instrument proposed is a Council Implementing Decision. </p>
+                  <p xml:id="d1e330">Under Article 395 of the VAT Directive, a derogation from the
+					common VAT rules is only possible upon authorisation by the Council, which is
+					acting unanimously on a proposal from the Commission. A Council Implementing
+					Decision is the most suitable instrument since it can be addressed to an
+					individual Member State. </p>
+               </blockContainer>
+            </tblock>
+         </tblock>
+         <tblock xml:id="d1e335">
+            <num xml:id="d1e337">3.</num>
+            <heading xml:id="d1e339">RESULTS OF EX-POST EVALUATIONS, STAKEHOLDER CONSULTATIONS AND IMPACT
+				ASSESSMENTS</heading>
+            <tblock xml:id="d1e341">
+               <num xml:id="d1e343">.</num>
+               <heading xml:id="d1e345">Stakeholder consultations</heading>
+               <blockContainer xml:id="d1e347">
+                  <p xml:id="d1e349">No stakeholder consultation has been conducted. The present
+					proposal is based on a request made by Hungary and concerns only this particular
+					Member State. </p>
+               </blockContainer>
+            </tblock>
+            <tblock xml:id="d1e353">
+               <num xml:id="d1e355">.</num>
+               <heading xml:id="d1e357">Impact assessment</heading>
+               <blockContainer xml:id="d1e359">
+                  <p xml:id="d1e361">The proposal for a Council Implementing Decision aims at
+					increasing the current exemption threshold to EUR 71 500. This increase of the
+					threshold is a simplification measure which removes many of the VAT obligations
+					for businesses operating with an annual turnover no higher than that threshold.
+					It will therefore have a positive impact on the reduction of administrative
+					burden for both businesses and the tax administration without a major impact on
+					the total VAT revenue. Because of the narrow scope of the derogation and its
+					limited application in time, the impact of the measure will in any case be
+					limited. </p>
+                  <p xml:id="d1e363">Currently, based on data available from 2021, the increase in
+					proposed threshold would lead to a decrease in VAT revenue of approximately 0.05
+					%. </p>
+                  <p xml:id="d1e365">The derogating measure will be optional for taxable persons.
+					Taxable persons will be able to opt for the regular VAT arrangements in
+					accordance with Article 290 of Directive 2006/112/EC. </p>
+               </blockContainer>
+            </tblock>
+            <tblock xml:id="d1e369">
+               <num xml:id="d1e371">.</num>
+               <heading xml:id="d1e373">Fundamental rights</heading>
+               <blockContainer xml:id="d1e375">
+                  <p xml:id="d1e377">The proposal does not have any consequences for the protection
+					of fundamental rights. </p>
+               </blockContainer>
+            </tblock>
+         </tblock>
+         <tblock xml:id="d1e382">
+            <num xml:id="d1e384">4.</num>
+            <heading xml:id="d1e386">BUDGETARY IMPLICATIONS</heading>
+            <blockContainer xml:id="d1e388">
+               <p xml:id="d1e390">Following entry into force of Council Regulation (EU, Euratom)
+				2021/769 of 30 April 2021 amending Regulation (EEC, Euratom) No 1553/89 on the
+				definitive uniform arrangements for the collection of own resources accruing from
+				value added tax21, there will be no compensation calculation carried out by Hungary
+				as of VAT own resource statement for the financial year 2021 onwards.
+			</p>
+            </blockContainer>
+         </tblock>
+      </mainBody>
+   </doc>
+</akomaNtoso>

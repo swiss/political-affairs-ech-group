@@ -1,0 +1,54 @@
+{
+  "_comment": "Kanton Zug – AKN FRBR URI profile",
+  "tags": "akn, frbr, switzerland, kanton-zug",
+  "jurisdiction": "ch-zg",
+  "level": "canton",
+  "name": "Kanton Zug",
+  "country": "CH",
+  "subdivision": "ZG",
+  "base_uri": "https://www.zg.ch/eli",
+  "akn_country": "ch",
+  "akn_prefix": "/akn/ch-zg",
+  "language_codes": {
+    "de": "deu"
+  },
+  "default_language": "de",
+  "document_types": {
+    "act": {
+      "akn_type": "act",
+      "subtype": "gesetz",
+      "label_de": "Gesetz"
+    },
+    "ordinance": {
+      "akn_type": "act",
+      "subtype": "verordnung",
+      "label_de": "Verordnung"
+    },
+    "constitution": {
+      "akn_type": "act",
+      "subtype": "verfassung",
+      "label_de": "Kantonsverfassung"
+    },
+    "decision": {
+      "akn_type": "judgment",
+      "subtype": "beschluss",
+      "label_de": "Beschluss"
+    },
+    "regulation": {
+      "akn_type": "act",
+      "subtype": "reglement",
+      "label_de": "Reglement"
+    }
+  },
+  "numbering": {
+    "gs_prefix": "GS",
+    "bgs_prefix": "BGS",
+    "eli_pattern": "/eli/zg/{year}/{number}"
+  },
+  "uri_templates": {
+    "work":         "/akn/ch-zg/{doc_type}/{date}/{number}",
+    "expression":   "/akn/ch-zg/{doc_type}/{date}/{number}/{lang}@{version}",
+    "manifestation":"/akn/ch-zg/{doc_type}/{date}/{number}/{lang}@{version}.{format}",
+    "item":         "/akn/ch-zg/{doc_type}/{date}/{number}/{lang}@{version}.{format}/{component}"
+  }
+}

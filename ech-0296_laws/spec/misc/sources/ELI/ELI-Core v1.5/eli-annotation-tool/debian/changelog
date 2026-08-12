@@ -1,0 +1,89 @@
+eli-annotation (1.0.0-1) unstable; urgency=medium
+
+  * new upstream release
+
+ -- Nicolas Chauvat <nico@volans.logilab.fr>  Fri, 08 Dec 2017 16:14:39 +0100
+
+eli-annotation (0.14.0-1) UNRELEASED; urgency=medium
+
+  * new upstream release
+
+ -- Nicolas Chauvat <nico@volans.logilab.fr>  Tue, 07 Nov 2017 17:00:43 +0100
+
+eli-annotation (0.13.0-1) UNRELEASED; urgency=medium
+
+  * new upstream release
+
+ -- Nicolas Chauvat <nico@volans.logilab.fr>  Tue, 10 Oct 2017 16:39:13 +0200
+
+eli-annotation (0.12.0-1) UNRELEASED; urgency=medium
+
+  * new upstream release
+
+ -- Nicolas Chauvat <nico@volans.logilab.fr>  Wed, 27 Sep 2017 08:00:52 +0200
+
+eli-annotation (0.11.0-1) UNRELEASED; urgency=medium
+
+  * new upstream release
+
+ -- Nicolas Chauvat <nico@volans.logilab.fr>  Fri, 15 Sep 2017 11:39:32 +0200
+
+eli-annotation (0.10.0-1) UNRELEASED; urgency=medium
+
+  * new upstream release
+
+ -- Nicolas Chauvat <nicolas.chauvat@logilab.fr>  Thu, 29 Jun 2017 16:07:50 +0200
+
+eli-annotation (0.9.0-1) UNRELEASED; urgency=medium
+
+  * new upstream release
+
+ -- Nicolas Chauvat <nicolas.chauvat@logilab.fr>  Mon, 26 Jun 2017 23:48:55 +0200
+
+eli-annotation (0.8.0-1) UNRELEASED; urgency=medium
+
+  * new upstream release
+
+ -- Nicolas Chauvat <nicolas.chauvat@logilab.fr>  Tue, 20 Jun 2017 12:51:10 +0200
+
+eli-annotation (0.7.0-1) UNRELEASED; urgency=medium
+
+  * new upstream release
+
+ -- Nicolas Chauvat <nicolas.chauvat@logilab.fr>  Sat, 10 Jun 2017 21:53:08 +0200
+
+eli-annotation (0.6.0-1) UNRELEASED; urgency=medium
+
+  * new upstream release
+
+ -- Nicolas Chauvat <nicolas.chauvat@logilab.fr>  Mon, 29 May 2017 23:01:33 +0200
+
+eli-annotation (0.5.0-1) UNRELEASED; urgency=medium
+
+  * new upstream release
+
+ -- Nicolas Chauvat <nicolas.chauvat@logilab.fr>  Wed, 17 May 2017 20:46:59 +0200
+
+eli-annotation (0.4.0-1) UNRELEASED; urgency=medium
+
+  * new upstream release
+
+ -- Nicolas Chauvat <nicolas.chauvat@logilab.fr>  Tue, 09 May 2017 22:22:31 +0200
+
+eli-annotation (0.3.0-1) UNRELEASED; urgency=medium
+
+  * new upstream release
+
+ -- Nicolas Chauvat <nicolas.chauvat@logilab.fr>  Tue, 02 May 2017 14:19:41 +0200
+
+eli-annotation (0.2.0-1) UNRELEASED; urgency=medium
+
+  * new upstream release
+
+ -- Nicolas Chauvat <nicolas.chauvat@logilab.fr>  Sat, 01 Apr 2017 23:10:29 +0200
+
+eli-annotation (0.1.0-1) UNRELEASED; urgency=medium
+
+  * Initial release after iteration 1.
+
+ -- Nicolas Chauvat <nicolas.chauvat@logilab.fr>  Thu, 23 Feb 2017 12:08:39 +0100

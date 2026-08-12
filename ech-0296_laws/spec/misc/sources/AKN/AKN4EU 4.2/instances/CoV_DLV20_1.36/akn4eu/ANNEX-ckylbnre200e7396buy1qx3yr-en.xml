@@ -1,0 +1,1013 @@
+<?xml version="1.0" encoding="UTF-8"?><akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+	<doc name="ANNEX">
+		<meta>
+			<identification source="~PUBL">
+				<FRBRWork>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+						<akn4eu:fileCUID value="ckylbnre200e7396buy1qx3yr"/>
+					</preservation>
+					<FRBRcountry value="EU"/>
+					<FRBRprescriptive value="true"/>
+				</FRBRWork>
+				<FRBRExpression>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<FRBRlanguage language="en"/>
+				</FRBRExpression>
+				<FRBRManifestation>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+						<akn4eu:akn4euVersion value="4.1.1.0"/>
+						<akn4eu:akn4euDocumentation href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/akn4eu"/>
+					</preservation>
+				</FRBRManifestation>
+			</identification>
+			<references source="~PUBL">
+				<TLCReference name="language" href="http://publications.europa.eu/resource/authority/language/ENG" showAs="en"/>
+				<TLCOrganization xml:id="PUBL" href="http://publications.europa.eu/resource/authority/corporate-body/PUBL" showAs="Publications Office of European Union"/>
+				<TLCReference xml:id="ANNEX" name="docType" href="http://publications.europa.eu/resource/authority/resource-type/ANNEX" showAs="Annex"/>
+				<TLCConcept xml:id="INP" href="http://publications.europa.eu/resource/authority/subdivision/INP" showAs="introductory part"/>
+			</references>		
+		</meta>
+		<preface xml:id="d1e74">
+			<container xml:id="d1e76" name="headerOfAnnex">
+				<block xml:id="d1e78" name="num">ADDENDUM</block>
+				<block xml:id="d1e81" name="heading">Negotiating directives for the negotiation of Economic Partnership Agreements with the African, Caribbean and Pacific countries and regions</block>
+			</container>
+		</preface>
+		<mainBody xml:id="d1e86">
+			<level xml:id="d1e88">
+				<num xml:id="d1e90">1.</num>
+				<heading xml:id="d1e92">Preamble</heading>
+				<list xml:id="d1e94">
+					<subparagraph xml:id="d1e96" refersTo="~INP">
+						<content xml:id="d1e98">
+							<p xml:id="d1e100">Apart from the general reference to the Cotonou Agreement<authorialNote xml:id="d1e102" marker="2" placement="bottom">
+									<p xml:id="d1e104">The ACP-EU Partnership Agreement was amended by the Agreement signed in
+										Luxembourg on 25 June 2005 (OJ L 209, 11.8.2005, p. 27) and by the Agreement
+										signed in Ouagadougou on 22 June 2010 (OJ L 287, 4.11.2010, p. 3).</p>
+								</authorialNote>, and its successor agreement, once applicable, special reference
+								will be made, inter alia, to the following:</p>
+						</content>
+					</subparagraph>
+					<indent xml:id="d1e110">
+						<num xml:id="d1e112">—</num>
+						<content xml:id="d1e114">
+							<p xml:id="d1e116">The commitment of the parties to promote and expedite the economic, cultural and
+								social development of the ACP States, with a view to contributing to peace,
+								prosperity, security and sustainable development, as well as to promoting a stable
+								and democratic political environment;</p>
+						</content>
+					</indent>
+					<indent xml:id="d1e120">
+						<num xml:id="d1e122">—</num>
+						<content xml:id="d1e124">
+							<p xml:id="d1e126">The commitment of the parties to the respect for human rights, including core
+								labour rights, democratic principles and the rule of law, which constitute the
+								essential elements of the ACP-EU Partnership, to good governance, including
+								anti-corruption, which constitutes a fundamental element of the ACP-EU
+								Partnership;</p>
+						</content>
+					</indent>
+					<indent xml:id="d1e130">
+						<num xml:id="d1e132">—</num>
+						<content xml:id="d1e134">
+							<p xml:id="d1e136">The commitment of the parties to a set of internationally agreed principles and
+								rules aimed at fostering a mutually supportive relationship between trade and
+								sustainable development, including supporting the 2030 Agenda for Sustainable
+								Development (2030 Agenda) and its Sustainable Development Goals, international
+								labour agreements and standards, including the promotion of full and productive
+								employment and decent work for all, and international climate agreements, such as
+								the Paris Agreement and the UN Framework Convention on Climate Change;</p>
+						</content>
+					</indent>
+					<indent xml:id="d1e140">
+						<num xml:id="d1e142">—</num>
+						<content xml:id="d1e144">
+							<p xml:id="d1e146">The commitment of the parties to centre their partnership on the objective of
+								reducing and eradicating poverty, consistent with the objectives of sustainable
+								development and the gradual integration of the ACP countries into the world economy;
+								to build, therefore, ACP-EU economic and trade co-operation on regional integration
+								initiatives existing within the ACP countries;</p>
+						</content>
+					</indent>
+					<indent xml:id="d1e151">
+						<num xml:id="d1e153">—</num>
+						<content xml:id="d1e155">
+							<p xml:id="d1e157">The objective of ACP-EU economic and trade co-operation to foster the smooth and
+								gradual integration of ACP States into the world economy, with due regard for their
+								political choices and development priorities, and in particular their own poverty
+								reduction strategies, thereby promoting their sustainable development and
+								contributing to poverty eradication in the ACP countries;</p>
+						</content>
+					</indent>
+					<indent xml:id="d1e161">
+						<num xml:id="d1e163">—</num>
+						<content xml:id="d1e165">
+							<p xml:id="d1e167">The commitment of the parties to support the regional integration process within
+								the ACP Group of States and to foster regional integration as a key instrument for
+								the integration of ACP countries into the world economy;</p>
+						</content>
+					</indent>
+					<indent xml:id="d1e171">
+						<num xml:id="d1e173">—</num>
+						<content xml:id="d1e175">
+							<p xml:id="d1e177">The commitment of the parties to strengthen economic, trade and investment
+								co-operation and to create a new trading and investment dynamic between them, with a
+								view to facilitating the transition of the ACP countries to a liberalised global
+								economy and to foster the development of the private sector and in particular micro,
+								small and medium-size enterprises (MSMEs);</p>
+						</content>
+					</indent>
+					<indent xml:id="d1e181">
+						<num xml:id="d1e183">—</num>
+						<content xml:id="d1e185">
+							<p xml:id="d1e187">The commitment of the parties to take account of the different needs and levels of
+								development of the ACP countries and regions;</p>
+						</content>
+					</indent>
+					<indent xml:id="d1e191">
+						<num xml:id="d1e193">—</num>
+						<content xml:id="d1e195">
+							<p xml:id="d1e197">The commitment of the parties to respect their obligations assumed within the
+								framework of the World Trade Organisation (WTO) and to further the objectives of the
+								WTO;</p>
+						</content>
+					</indent>
+					<indent xml:id="d1e201">
+						<num xml:id="d1e203">—</num>
+						<content xml:id="d1e205">
+							<p xml:id="d1e207">The joint objective of the parties to enhance co-operation and capacity-building,
+								as appropriate, in all areas relevant to sustainable trade and investment, and to
+								achieve progressive and reciprocal liberalisation of trade in goods and services, in
+								accordance with WTO rules, taking into account the level of development of the ACP
+								countries and the economic, social and environmental constraints they are
+								facing;</p>
+						</content>
+					</indent>
+					<indent xml:id="d1e212">
+						<num xml:id="d1e214">—</num>
+						<content xml:id="d1e216">
+							<p xml:id="d1e218">The commitments of the parties to ensure that efforts undertaken in the framework
+								of the Cotonou Agreement and its successor agreement and those undertaken in the
+								framework of Economic Partnership Agreements (EPAs) are mutually reinforcing;</p>
+						</content>
+					</indent>
+					<indent xml:id="d1e222">
+						<num xml:id="d1e224">—</num>
+						<content xml:id="d1e226">
+							<p xml:id="d1e228">The right to regulate economic activity in the public interest in accordance with
+								international obligations, to achieve legitimate public policy objectives such as
+								the protection and promotion of public health, social services, public education,
+								safety, the environment, public morals, social or consumer protection, privacy and
+								data protection and the promotion and protection of cultural diversity.</p>
+						</content>
+					</indent>
+				</list>
+			</level>
+			<level xml:id="d1e234">
+				<num xml:id="d1e236">2.</num>
+				<heading xml:id="d1e238">Nature and Scope of the EPAs</heading>
+				<subparagraph xml:id="d1e240">
+					<content xml:id="d1e242">
+						<p xml:id="d1e244">The purpose of the negotiations is to conclude EPAs between the European Union and
+							its Member States of the one part, and the countries and regions of Africa, the
+							Caribbean and the Pacific of the other part. EPAs shall aim at fostering the smooth
+							and gradual integration of the ACP States into the world economy, with due regard for
+							their political choices and development priorities, thereby promoting their
+							sustainable development and contributing to poverty eradication in the ACP
+							countries.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e248">
+					<content xml:id="d1e250">
+						<p xml:id="d1e252">Pursuant to the provisions of Article 36(1) of the Cotonou Agreement and the relevant
+							provisions of its successor agreement, once applicable, negotiations shall aim at
+							establishing and, where applicable, deepening EPAs with ACP sub-groups defined in
+							accordance with the provisions of Article 37(3) of the Cotonou Agreement and the
+							relevant provisions of its successor agreement, once applicable, taking into account
+							the regional integration process within the ACP.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e256">
+					<content xml:id="d1e258">
+						<p xml:id="d1e260">EPAs shall be directed at fostering closer economic integration between the parties,
+							by removing progressively barriers to trade between them and enhancing co-operation in
+							all areas relevant to trade, in full conformity with the provisions of the WTO.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e265">
+					<content xml:id="d1e267">
+						<p xml:id="d1e269">EPAs shall be based on the objectives and principles of the Cotonou Agreement, and in
+							particular with its essential and fundamental elements, and the provisions of Part
+							III, Title II thereof, and the relevant provisions of its successor agreement, once
+							applicable. Negotiations of EPAs shall therefore notably take account of the different
+							levels of development of the parties, as well as of the particular economic, social
+							and environmental constraints of the ACP countries and of the capacity to adapt and to
+							adjust their economies to the liberalisation process.</p>
+					</content>
+				</subparagraph>
+			</level>
+			<level xml:id="d1e274">
+				<num xml:id="d1e276">3.</num>
+				<heading xml:id="d1e278">Trade in Goods</heading>
+			</level>
+			<level xml:id="d1e281">
+				<num xml:id="d1e283">3.1.</num>
+				<heading xml:id="d1e285">Objective</heading>
+					<content xml:id="d1e287">
+						<p xml:id="d1e289">EPAs shall be directed at establishing free trade areas between the parties, based on
+							the development objectives of the Cotonou Agreement and its successor agreement, in
+							conformity with the provisions of the WTO. It is understood, therefore, that the
+							following market access conditions would be available only in the context of these
+							EPAs. Any future EPA negotiations on trade in goods shall build on the acquis of
+							already negotiated provisions.</p>
+					</content>
+			</level>
+			<level xml:id="d1e293">
+				<num xml:id="d1e295">3.2.</num>
+				<heading xml:id="d1e297">Import duties</heading>
+				<crossHeading xml:id="d1e299">— Imports into the European Union</crossHeading>
+				<subparagraph xml:id="d1e301">
+					<content xml:id="d1e303">
+						<p xml:id="d1e305">EPAs shall build upon and further enhance the market access conditions currently
+							provided. The specific arrangements for further tariff dismantling shall be fixed in
+							the course of the negotiations, taking account of the existing and potential export
+							interests of the ACP countries and of the impact of trade liberalisation measures in
+							particular on regional integration within the ACP.</p>
+					</content>
+				</subparagraph>
+				<crossHeading xml:id="d1e309">— Imports into the ACP countries</crossHeading>
+				<subparagraph xml:id="d1e312">
+					<content xml:id="d1e314">
+						<p xml:id="d1e316">EPAs shall build upon and further enhance the market access conditions currently
+							provided. The specific arrangements for further tariff dismantling shall be fixed in
+							the course of the negotiations, taking account of the existing and potential export
+							interests of the ACP countries and of the impWith the overriding objective of
+							promoting sustainable development through regional economic integration and adequate
+							policies, negotiations will pursue (1) the elimination of customs duties on imports
+							from the European Union for substantially all trade over the course of a transitional
+							period, (2) the abolishing of all charges having equivalent effect to customs duties
+							upon the application of EPAs and (3) the removal of quantitative restrictions and
+							measures having equivalent effect upon the application of the EPAs.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e320">
+					<content xml:id="d1e322">
+						<p xml:id="d1e324">EPAs shall build upon and further enhance the market access conditions currently
+							provided. The specific arrangements for further tariff dismantling shall be fixed in
+							the course of the negotiations, taking account of the existing and potential export
+							interests of the ACP countries and of the impThe timetable for tariff dismantling and
+							the final product coverage of trade liberalisation by the ACP countries will reflect
+							the economic, social and environmental constraints they are facing as well as their
+							capacity to adapt their economies to the liberalisation process. Therefore, a
+							transitional period, compatible with the objectives of the Cotonou Agreement, its
+							successor agreement and WTO rules, will be applied in a flexible way, to take into
+							account specific constraints of the ACP countries concerned. The same flexibility will
+							be applied in relation to product coverage and the calendar/rhythm of liberalisation
+							commitments by the ACP countries.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e328">
+					<content xml:id="d1e330">
+						<p xml:id="d1e332">EPAs shall build upon and further enhance the market access conditions currently
+							provided. The specific arrangements for further tariff dismantling shall be fixed in
+							the course of the negotiations, taking account of the existing and potential export
+							interests of the ACP countries and of the impNotwithstanding the above, ACP countries
+							shall grant to the European Union at any time treatment no less favourable than MFN
+							treatment. This does not apply with respect to concessions made between ACP countries
+							or by ACP countries to other developing countries, which are not major trading
+							economies, in the framework of regional agreements or other trade provisions
+							compatible with WTO requirements.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e336">
+					<content xml:id="d1e338">
+						<p xml:id="d1e340">EPAs shall build upon and further enhance the market access conditions currently
+							provided. The specific arrangements for further tariff dismantling shall be fixed in
+							the course of the negotiations, taking account of the existing and potential export
+							interests of the ACP countries and of the impDuring the negotiations, and in the light
+							of Article 349 of the Treaty on the Functioning of the European Union and the EPAs
+							reached in the framework of the Cotonou Agreement and its successor agreement, once
+							applicable, account will be taken of the specific interests of the European Union’s
+							outermost regions. In this context, EPAs may in particular provide for specific
+							measures in favour of products from these regions, aimed at their integration into
+							intra-regional trade in the short term, in accordance with the provision of the WTO.
+							In the light of the Overseas Association Decision<authorialNote xml:id="d1e342" marker="3" placement="bottom">
+								<p xml:id="d1e344">Decision No 2013/755/EU of 25 November 2013 on the association of the overseas
+									countries and territories with the European Union ('Overseas Association
+									Decision'), OJ L 344, 19.12.2013, p. 1.</p>
+							</authorialNote>, overseas countries' and territories' interests should also be taken
+							into account.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e350">
+					<content xml:id="d1e352">
+						<p xml:id="d1e354">EPAs shall build upon and further enhance the market access conditions currently
+							provided. The specific arrangements for further tariff dismantling shall be fixed in
+							the course of the negotiations, taking account of the existing and potential export
+							interests of the ACP countries and of the impThe ACP countries shall undertake, at
+							least, to extend automatically the treatment granted to the European Union to all
+							other parties of the EPA concerned, preferably ahead of trade liberalisation vis-à-vis
+							the European Union.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e358">
+					<content xml:id="d1e360">
+						<p xml:id="d1e362">EPAs shall build upon and further enhance the market access conditions currently
+							provided. The specific arrangements for further tariff dismantling shall be fixed in
+							the course of the negotiations, taking account of the existing and potential export
+							interests of the ACP countries and of the impWhere serious difficulties occur as a
+							result of trade liberalisation, the ACP countries may, in consultation with the
+							European Union, temporarily suspend the application of the liberalisation schedule
+							and, where necessary, re-modulate or adjust the rate of progress towards the ultimate
+							establishment of the free trade area, in full conformity with the provisions of the
+							WTO.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e367">
+					<content xml:id="d1e369">
+						<p xml:id="d1e371">EPAs shall build upon and further enhance the market access conditions currently
+							provided. The specific arrangements for further tariff dismantling shall be fixed in
+							the course of the negotiations, taking account of the existing and potential export
+							interests of the ACP countries and of the impThe trade liberalisation plans and
+							schedule of the ACP countries shall be part of EPAs. It shall include the appropriate
+							product lists, as well as timetables for tariff dismantling. These lists and
+							timetables will be finalised during the negotiations.</p>
+					</content>
+				</subparagraph>
+				<crossHeading xml:id="d1e375">— Basic duties</crossHeading>
+				<subparagraph xml:id="d1e377">
+					<content xml:id="d1e379">
+						<p xml:id="d1e381">The basic duties to which the agreed reductions are to be applied shall be the MFN
+							duties effectively applied by the ACP countries on the day of the signature of the
+							EPAs. They shall be defined in a list attached to each EPA.</p>
+					</content>
+				</subparagraph>
+			</level>
+			<level xml:id="d1e387">
+				<num xml:id="d1e389">3.3.</num>
+				<heading xml:id="d1e391">General provisions</heading>
+				<subparagraph xml:id="d1e393">
+					<content xml:id="d1e395">
+						<p xml:id="d1e397">Export Duties. Any export duties applied in trade between the parties shall be
+							eliminated on an agreed timetable that will not exceed ten years.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e401">
+					<content xml:id="d1e403">
+						<p xml:id="d1e405">Quantitative Restrictions and measures having equivalent effect applied to exports or
+							imports in trade between the parties shall be abolished upon the application of
+							EPAs.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e409">
+					<content xml:id="d1e411">
+						<p xml:id="d1e413">National Treatment and Fiscal Measures. A standard national treatment provision,
+							ensuring parties' products receive treatment no less favourable than that accorded to
+							like products of national origin, will be included in the EPAs. Any discriminatory
+							internal fiscal measures or practices already in existence will be eliminated from the
+							application of EPAs.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e418">
+					<content xml:id="d1e420">
+						<p xml:id="d1e422">Taxation. EPAs should include provisions on exception regarding taxation based on the
+							relevant articles of WTO agreements.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e426">
+					<content xml:id="d1e428">
+						<p xml:id="d1e430">Variable Speed. Where compatible with the integration objectives of the ACP regions
+							concerned, EPAs shall provide for variable speed in trade liberalisation, taking into
+							account the level of development of the ACP countries concerned, as well as of the
+							different intensities of integration that may exist within the region, in line with
+							the region's internal integration process.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e434">
+					<content xml:id="d1e436">
+						<p xml:id="d1e438">Food Security Clause. EPAs shall include provisions aimed at fostering food security
+							in accordance with WTO rules.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e442">
+					<content xml:id="d1e444">
+						<p xml:id="d1e446">Safeguards. Safeguard provisions shall apply, in accordance with the relevant
+							provisions of the WTO.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e450">
+					<content xml:id="d1e452">
+						<p xml:id="d1e454">Anti-dumping. If one of the parties finds that injurious dumping or subsidisation is
+							taking place in trade by the other party within the meaning of the provisions of GATT,
+							it may take appropriate measures against this practice, in accordance with the
+							GATT/WTO rules and practices. In this context, the European Union shall have special
+							regard to the particular economic and social situation of the ACP countries
+							concerned.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e458">
+					<content xml:id="d1e460">
+						<p xml:id="d1e462">Stand-still. The parties will agree that no new duties will be introduced nor
+							existing duties be increased and that no new quantitative restrictions nor measures
+							having equivalent effect will be introduced by either party after the application of
+							the EPAs between the regional grouping and the European Union. The parties should take
+							into account this principle from the beginning of the negotiations.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e467">
+					<content xml:id="d1e469">
+						<p xml:id="d1e471">Transparency. Both sides will be required to communicate to each other their customs
+							tariff schedule and any subsequent amendments made to it.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e475">
+					<content xml:id="d1e477">
+						<p xml:id="d1e479">Classification of Goods. The Harmonised System shall be applied to the classification
+							of goods in trade between the parties.</p>
+					</content>
+				</subparagraph>
+			</level>
+			<level xml:id="d1e484">
+				<num xml:id="d1e486">3.4.</num>
+				<heading xml:id="d1e488">Rules of origin, administrative cooperation</heading>
+				<subparagraph xml:id="d1e490">
+					<content xml:id="d1e492">
+						<p xml:id="d1e494">Negotiations on the rules of origin and administrative co-operation shall take into
+							account the latest developments in EU rules of origin, as well as the existing rules
+							of origin under each EPA. In this context the European Union shall assess any specific
+							request for changes to the rules of origin, presented by the ACP State(s), aimed at
+							simplifying existing rules and improving current market access for the ACP, taking
+							into account the country situations and, in particular, the experience and structure
+							of their preferential trade relations.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e498">
+					<content xml:id="d1e500">
+						<p xml:id="d1e502">NEPAs will empower the parties to take appropriate measures in the event of lack of
+							administrative co-operation or mismanagement. With respect to the issue of losses of
+							customs duties linked to the mismanagement of preferential imports, appropriate
+							measures could be identified on the basis of a horizontal Council decision.</p>
+					</content>
+				</subparagraph>
+			</level>
+			<level xml:id="d1e507">
+				<num xml:id="d1e509">3.5.</num>
+				<heading xml:id="d1e511">Customs, trade facilitation, anti-fraud measures and financial
+					responsibility</heading>
+					<content xml:id="d1e513">
+						<p xml:id="d1e515">Negotiations shall aim at simplifying all requirements and procedures related to
+							imports and exports, in particular with regard to customs processes, import licensing,
+							customs valuation, transit rules and pre-shipment inspection, drawing on the highest
+							international standards and in conformity with the provisions of the WTO Trade
+							Facilitation Agreement. EPAs will include a Protocol on mutual administrative
+							assistance in customs matters. They will also include an anti-fraud clause to prevent
+							the abuse of tariff preferences.</p>
+					</content>
+			</level>
+			<level xml:id="d1e519">
+				<num xml:id="d1e521">4.</num>
+				<heading xml:id="d1e523">Trade in Services, Investment and Digital Trade</heading>
+			</level>
+			<level xml:id="d1e526">
+				<num xml:id="d1e528">4.1.</num>
+				<heading xml:id="d1e530">Scope</heading>
+				<subparagraph xml:id="d1e532">
+					<content xml:id="d1e534">
+						<p xml:id="d1e536">EPAs will provide for a progressive and reciprocal liberalisation of trade in
+							services and investment aiming at assuring a comparable level of market access
+							opportunities, consistent with the relevant WTO rules, in particular Article V of the
+							GATS, taking into account the level of development of the ACP countries concerned.
+							EPAs should cover all modes of supply.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e540">
+					<content xml:id="d1e542">
+						<p xml:id="d1e544">The high quality of the EU's public utilities should be preserved in accordance with
+							the TFEU and in particular Protocol no 26 on Services of General Interest, and taking
+							into account the EU's commitments in this area, including GATS. Services supplied in
+							the exercise of governmental authority as defined by Article I-3 of the GATS shall be
+							excluded from these negotiations. The EPAs reaffirm the parties' right to regulate
+							economic activity in the public interest in accordance with international
+							obligations.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e548">
+					<content xml:id="d1e550">
+						<p xml:id="d1e552">In addition, EPAs should contain regulatory disciplines intended to address behind
+							the border barriers, including, where applicable, in the field of domestic regulation.
+							EPAs may also include disciplines on performance requirements related to
+							investments.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e557">
+					<content xml:id="d1e559">
+						<p xml:id="d1e561">In the context of the increasing digitalisation of trade and strong development
+							dimensions of digital trade, the negotiations should result in rules covering digital
+							trade, including cross-border data flows, while neither negotiating nor affecting the
+							EU's personal data protection rules and without prejudice to the EU legislation. These
+							rules should aim to improve the conditions for digital trade for the benefit of
+							business and consumers, and to increase the participation of micro, small and
+							medium-sized (MSMEs) enterprises, as well as to create new opportunities to promote
+							inclusive and sustainable growth and development. EPAs should provide for appropriate
+							flexibility, cooperation and dialogue on regulatory issues raised by digital
+							trade.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e565">
+					<content xml:id="d1e567">
+						<p xml:id="d1e569">EPAs will provide for audio-visual services to be dealt with separately in specific
+							agreements for cultural cooperation and partnership between the parties. Such
+							agreements will ensure the possibility for the European Union and its Member States as
+							well as for the ACP to preserve and develop their capacity to define and implement
+							their cultural and audio-visual policies for the preservation of their cultural
+							diversity, while recognizing, preserving and promoting the cultural values and
+							identities of the ACP to foster intercultural dialogue by improving market access
+							opportunities for the cultural goods and services of these countries, in accordance
+							with the provisions of Article 27 of the Cotonou Agreement and the relevant provision
+							of its successor agreement, once applicable.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e573">
+					<content xml:id="d1e575">
+						<p xml:id="d1e577">The parties will agree that no new or more discriminatory measures will be introduced
+							by either party after the application of the EPAs between the regional grouping and
+							the European Union. The parties should take into account this principle from the
+							beginning of the negotiations.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e581">
+					<content xml:id="d1e583">
+						<p xml:id="d1e585">The liberalisation process will take place on an asymmetrical basis. The ACP
+							countries will be allowed a certain measure of flexibility depending on their level of
+							development, in overall terms as well as in terms of sector and sub-sector in
+							accordance with the provisions of the GATS, in particular those relating to developing
+							countries' participation in the liberalisation agreements.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e589">
+					<content xml:id="d1e591">
+						<p xml:id="d1e593">For the European Union, the transition period should not exceed 10 years.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e597">
+					<content xml:id="d1e599">
+						<p xml:id="d1e601">For the ACP side, a transition period, compatible with the objectives of the Cotonou
+							Agreement, its successor agreement and WTO rules, will be applied in a flexible way,
+							to take into account specific constraints of the ACP countries concerned, but should
+							not in principle exceed 15 years.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e606">
+					<content xml:id="d1e608">
+						<p xml:id="d1e610">ACP countries belonging to an EPA will undertake to apply at least the same
+							arrangements between them as they apply to the European Union.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e614">
+					<content xml:id="d1e616">
+						<p xml:id="d1e618">EPAs will reconfirm the commitments related to services made under the Cotonou
+							Agreement and the relevant provisions of its successor agreement, once applicable.</p>
+					</content>
+				</subparagraph>
+			</level>
+			<level xml:id="d1e623">
+				<num xml:id="d1e625">4.2.</num>
+				<heading xml:id="d1e627">Practical arrangements</heading>
+					<content xml:id="d1e629">
+						<p xml:id="d1e631">Where justified by particular economic, social and environmental constraints
+							encountered by the ACP countries, the negotiations may be postponed. In such an event
+							the parties will regularly assess the situation in the course of the EPA negotiations.
+							They will ensure that the preparatory phase to these negotiations is actively used to
+							prepare for the negotiations, in particular by mobilising appropriate support for the
+							development of services in line with the provisions of the Cotonou Agreement, in
+							particular Article 41(5) thereof, and the relevant provisions of its successor
+							agreement, once applicable.</p>
+					</content>
+			</level>
+			<level xml:id="d1e636">
+				<num xml:id="d1e638">5.</num>
+				<heading xml:id="d1e640">Current Payments and Capital Movements</heading>
+				<subparagraph xml:id="d1e642">
+					<content xml:id="d1e644">
+						<p xml:id="d1e646">EPAs will reconfirm the commitments undertaken in the framework of Article 12 of
+							Annex II to the Cotonou Agreement and the relevant provisions of its successor
+							agreement, once applicable.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e650">
+					<content xml:id="d1e652">
+						<p xml:id="d1e654">EPAs should aim for full liberalisation of current payments and capital movements
+							related to transactions covered under the EPAs. They should include all safeguard and
+							carve-out provisions (e.g. concerning the Union's economic and monetary union and
+							balance of payments), which should be in accordance with the provisions of the TFEU on
+							the free movement of capital.</p>
+					</content>
+				</subparagraph>
+			</level>
+			<level xml:id="d1e659">
+				<num xml:id="d1e661">6.</num>
+				<heading xml:id="d1e663">Trade-related Areas</heading>
+			</level>
+			<level xml:id="d1e666">
+				<num xml:id="d1e668">6.1.</num>
+				<heading xml:id="d1e670">General</heading>
+					<content xml:id="d1e672">
+						<p xml:id="d1e674">EPAs will reconfirm the respective commitments in trade-related areas undertaken in
+							the framework of the Cotonou Agreement<authorialNote xml:id="d1e676" marker="4" placement="bottom">
+								<p xml:id="d1e678">Articles 45 to 51 and 78 of the Cotonou Agreement and the relevant provisions of
+									its successor agreement, once applicable.</p>
+							</authorialNote> and its successor agreement, in particular with regard to competition
+							policy, protection of intellectual property rights (including geographical
+							indications), standardisation and certification, sanitary and phytosanitary measures,
+							trade and environment, trade and labour standards, consumer policy and protection of
+							consumer health. These provisions in the EPAs will be reviewed in the light of the
+							results of multilateral, plurilateral and bilateral trade negotiations.</p>
+					</content>
+			</level>
+			<level xml:id="d1e684">
+				<num xml:id="d1e686">6.2.</num>
+				<heading xml:id="d1e688">Specific areas</heading>
+				<subparagraph xml:id="d1e690">
+					<content xml:id="d1e692">
+						<p xml:id="d1e694">In addition, the following shall apply with regard to the following areas:</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e698">
+					<content xml:id="d1e700">
+						<p xml:id="d1e702">Investment. In accordance with the objective of "reducing and eventually eradicating
+							poverty consistent with the objective of sustainable development" (and with regard to
+							articles 1, 29, 75 to 78, and to Annex II to the Cotonou Agreement and the relevant
+							provisions of its successor agreement, once applicable) the parties agree to establish
+							a framework which shall facilitate, enhance and stimulate mutually beneficial
+							sustainable investment between them, taking into account multilateral initiatives on
+							investment facilitation. This framework will be based on principles of
+							non-discrimination, openness, transparency and stability. The parties will foster the
+							development of attractive and stable investment environments by supporting stable and
+							transparent rules for investors, and seek to improve financial inclusion and access to
+							finance.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e706">
+					<content xml:id="d1e708">
+						<p xml:id="d1e710">Where identified by both parties as an area for negotiation, and subject to
+							additional country- or region-specific negotiating directives, provisions on
+							investment protection may be negotiated. They shall be in line with the EU's reformed
+							approach to investment protection, including investment dispute settlement. Those
+							provisions shall also ensure a strong protection of investors and investments, while
+							fully preserving the parties' right to regulate within their territories to achieve
+							legitimate policy objectives. Possible negotiations should also take into account
+							relevant internationally recognised principles and guidelines related to sustainable
+							development and responsible business conduct, as referred to in the European Union's
+							reformed approach to investment protection.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e715">
+					<content xml:id="d1e717">
+						<p xml:id="d1e719">Public Procurement. EPAs will aim to ensure full transparency in procurement rules
+							and methods at all government levels, following the principles of the Government
+							Procurement Agreement (WTO). In addition, the parties may seek progressive
+							liberalisation of their procurement markets on the basis of the principle of
+							non-discrimination and taking into account their development levels.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e723">
+					<content xml:id="d1e725">
+						<p xml:id="d1e727">Standards, Technical Regulations and Conformity Assessments. EPAs should contain a
+							comprehensive chapter on Technical Barriers to Trade (TBT), building on and going
+							beyond the WTO Agreement on TBT. This chapter should aim at, inter alia, compatibility
+							and convergence of technical regulations through the application of international
+							standards, streamlining testing and certification requirements through the adoption of
+							risk based conformity assessment procedures and strengthening transparency.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e731">
+					<content xml:id="d1e733">
+						<p xml:id="d1e735">Sanitary and Phytosanitary Standards. EPAs should contain a comprehensive chapter on
+							Sanitary and Phytosanitary Standards (SPS), in line with other recent EU agreements.
+							Building on the principles of the WTO Agreement on SPS, the negotiations should aim to
+							include issues, such as the use of international standards (IPPC, OIE and Codex),
+							transparency and non-discrimination, avoidance of undue delay, harmonization, the
+							recognition of equivalence, the recognition of the parties' health and pest status,
+							regionalisation (zoning), control, inspection and approval of procedures,
+							precautionary principle, audit, certification, import checks, emergency measures,
+							pre-listing in the veterinary field, treatment of the European Union as a single
+							entity, technical cooperation, improved cooperation on anti-microbial resistance and
+							animal welfare and the mechanisms to address specific trade concerns related to SPS
+							measures. Furthermore, the chapter should stress the relevance of information exchange
+							between the parties in case of changing standards and the need for flanking policies,
+							including technical cooperation.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e739">
+					<content xml:id="d1e741">
+						<p xml:id="d1e743">Data Protection. EPAs will set the objective of ensuring a high-level of protection
+							of privacy and personal data through appropriate legal regimes and policies, including
+							effective enforcement by independent supervisory authorities, as a central factor of
+							citizens' trust in the digital economy and a key element to facilitate commercial
+							exchanges and enforcement cooperation between the Parties.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e747">
+					<content xml:id="d1e749">
+						<p xml:id="d1e751">Intellectual Property Rights. EPAs should create an adequate, balanced and effective
+							level of protection and provide for civil and border enforcement provisions in the
+							area of intellectual property rights, including geographical indications (GIs), going
+							beyond the WTO Agreement on Trade-related Aspects of Intellectual Property Rights
+							(TRIPS Agreement). EPAs should reaffirm the flexibilities under the TRIPS Agreement.
+							EPAs should recognise the importance of the declaration on the TRIPS Agreement and
+							Public Health, adopted on 14 November 2001 by the Ministerial Conference of the WTO.
+							In interpreting and implementing the rights and obligations under the EPAs, the
+							parties shall ensure consistency with the Doha Declaration. Inter alia, the parties
+							should implement Article 31bis of the TRIPS Agreement, as well as the Annex and
+							Appendix to the Annex related hereto, which entered into force on 23 January 2017.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e755">
+					<content xml:id="d1e757">
+						<p xml:id="d1e759">EPAs should provide direct protection and effective recognition through the agreement
+							of a list of GIs (wines, spirits, agricultural products and foodstuffs), building on
+							the level of protection set out in Article 23 of TRIPS, including against evocation,
+							passing off, appropriate and effective enforcement, co-existence with bona fide prior
+							trademarks, protection against subsequent genericness, and provisions on adding new
+							GIs. Issues concerning individual prior rights, for example related to plant
+							varieties, trademarks, generic or other legitimate prior uses, should be addressed
+							with the aim of solving existing conflicts in a mutually satisfactory manner.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e764">
+					<content xml:id="d1e766">
+						<p xml:id="d1e768">Trade and Competition. EPAs should aim to minimise distortions of competition by
+							means of provisions on competition policy, subsidies and state-owned enterprises. The
+							provisions will not impede the delivery of public services. The provisions will
+							furthermore allow appropriate flexibility to implement measures to foster economic
+							development, tackle poverty or achieve other public policy objectives such as food
+							security.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e772">
+					<content xml:id="d1e774">
+						<p xml:id="d1e776">Trade and Sustainable Development. EPAs should promote the implementation of the 2030
+							Agenda and adhere to the relevant internationally agreed principles and rules on
+							labour rights, including gender non-discrimination.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e780">
+					<content xml:id="d1e782">
+						<p xml:id="d1e784">Therefore, EPAs should include provisions on labour, gender equality and enhancing
+							opportunities for women in trade, and environmental aspects of trade and sustainable
+							development, including sustainable fisheries and aquaculture, biodiversity, forests
+							and forestry products, and those related to climate change, in particular the UNFCCC
+							and the Paris Agreement and climate change mitigation-related initiatives, such as at
+							the International Maritime Organization (IMO).</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e788">
+					<content xml:id="d1e790">
+						<p xml:id="d1e792">EPAs should include provisions that promote adherence to and effective implementation
+							of relevant internationally agreed principles and rules, including the core labour
+							standards and fundamental conventions of the International Labour Organisation (ILO)
+							and multilateral environmental agreements, as well as of health and safety at work,
+							labour inspections and social dialogue as well as social and labour protection. They
+							should include a commitment by each Party to make continued and sustained efforts
+							towards ratifying fundamental ILO conventions.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e796">
+					<content xml:id="d1e798">
+						<p xml:id="d1e800">EPAs should reaffirm the right of the parties to regulate in the labour and
+							environmental areas, consistent with their international commitments, and encouraging
+							high levels of protection, including by taking into account the most environmentally
+							advantageous options. They should reiterate the respect of the precautionary
+							principle. They should include provisions for labour and environmental levels of
+							protection not to be lowered in order to encourage trade and foreign direct
+							investment. These should include a commitment not to derogate from or fail to enforce
+							domestic labour or environmental laws.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e804">
+					<content xml:id="d1e806">
+						<p xml:id="d1e808">EPAs should promote a greater contribution of trade and investment, including foreign
+							direct investment to sustainable development, including by addressing areas such as
+							the facilitation of trade in environmental and climate-friendly goods and services,
+							and the promotion of voluntary sustainability assurance schemes and of corporate
+							social responsibility, having regard to internationally recognised instruments and
+							encouraging parties to use international practices, including OECD and UN Guiding
+							Principles on Business and Human Rights and sector specific guidelines.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e813">
+					<content xml:id="d1e815">
+						<p xml:id="d1e817">EPAs should include provisions for the effective implementation and monitoring of
+							these provisions, as well as a mechanism to address any disputes arising between the
+							parties. EPAs should provide for civil society bodies' participation, including
+							regular consultations and communication action. These bodies should monitor the
+							implementation of the whole Agreement and have an advisory role towards the
+							parties.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e821">
+					<content xml:id="d1e823">
+						<p xml:id="d1e825">Agricultural Dialogue. Given the relevance of the agricultural sector for the
+							socio-economic development and food security of ACP countries, EPAs should foresee a
+							dialogue on agriculture (Agriculture Partnership), which may cover issues like
+							commodities (especially those relevant for food security) and regional value chains,
+							use of new technologies, trade facilitation, market access, responsible investments,
+							research and innovation with due attention to climate change adaptation and mitigation
+							as well as biodiversity and sustainable food systems.</p>
+					</content>
+				</subparagraph>
+			</level>
+			<level xml:id="d1e830">
+				<num xml:id="d1e832">6.3.</num>
+				<heading xml:id="d1e834">Implementation</heading>
+					<content xml:id="d1e836">
+						<p xml:id="d1e838">The EPA Council (see below, point 8), assisted by a Joint Implementation Committee
+							composed of senior technical experts, will monitor the implementation of these
+							provisions. The Joint Implementation Committee will meet on a regular basis and at
+							least once a year. It will draw up annual reports assessing the progress made and
+							formulating recommendations on measures for further achievements, including the
+							provision of development co-operation in accordance with the provisions of the Cotonou
+							Agreement and the relevant provision of its successor agreement, once applicable.
+							Special sub-committees for certain trade-related areas could be considered, if
+							needed.</p>
+					</content>
+			</level>
+			<level xml:id="d1e842">
+				<num xml:id="d1e844">7.</num>
+				<heading xml:id="d1e846">Complementarity</heading>
+					<content xml:id="d1e848">
+						<p xml:id="d1e850">EPAs and the development strategies of ACP partners shall be mutually supportive. In
+							particular, in order to facilitate the achievement of the objectives of EPAs, the ACP
+							parties will undertake to fully integrate EPAs within their development strategies and
+							the European Union to do likewise within its development co-operation strategies. This
+							would encompass fostering support to the private sector development, in particular
+							micro, small and medium-size enterprises (MSMEs), including its gender dimension and
+							stressing the importance of the collection of gender disaggregated data for the
+							follow-up and implementation. The parties will undertake to allocate adequate
+							resources for that purpose within the national and regional indicative programmes, in
+							accordance with the relevant provisions of the Cotonou Agreement and the relevant
+							provisions of its successor agreement, once applicable.</p>
+					</content>
+			</level>
+			<level xml:id="d1e855">
+				<num xml:id="d1e857">8.</num>
+				<heading xml:id="d1e859">Institutional Framework</heading>
+				<list xml:id="d1e861">
+					<subparagraph xml:id="d1e863" refersTo="~INP">
+						<content xml:id="d1e865">
+							<p xml:id="d1e867">A Joint EPA Council will be established for each EPA, which will perform the
+								following functions:</p>
+						</content>
+					</subparagraph>
+					<indent xml:id="d1e871">
+						<num xml:id="d1e873">—</num>
+						<content xml:id="d1e875">
+							<p xml:id="d1e877">ensure that the EPA operates properly;</p>
+						</content>
+					</indent>
+					<indent xml:id="d1e881">
+						<num xml:id="d1e883">—</num>
+						<content xml:id="d1e885">
+							<p xml:id="d1e887">study the development of economic and trade co-operation between the parties;</p>
+						</content>
+					</indent>
+					<indent xml:id="d1e891">
+						<num xml:id="d1e893">—</num>
+						<content xml:id="d1e895">
+							<p xml:id="d1e897">seek appropriate methods of preventing problems which might arise in areas covered
+								by the EPA, in particular with regard to the achievement of the EPA's development
+								objectives;</p>
+						</content>
+					</indent>
+					<indent xml:id="d1e901">
+						<num xml:id="d1e903">—</num>
+						<content xml:id="d1e905">
+							<p xml:id="d1e907">&gt;exchange opinions and make recommendations on any issue of common interest
+								relating to economic and trade co-operation, including future actions for the proper
+								implementation of the EPA and, in particular, the need for development co-operation
+								to be provided in accordance with the relevant provisions of the Cotonou Agreement
+								and the relevant provisions of its successor agreement, once applicable.</p>
+						</content>
+					</indent>
+				</list>
+				<subparagraph xml:id="d1e912">
+					<content xml:id="d1e914">
+						<p xml:id="d1e916">The composition, frequency, agenda and venue of joint EPA Council meetings will be
+							agreed on through consultation between the parties.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e920">
+					<content xml:id="d1e922">
+						<p xml:id="d1e924">The EPA Council will have the power to take decisions in respect of all matters
+							covered by the EPA. It will report to the Council of Ministers established in
+							accordance with the provisions of Article 15 of the Cotonou Agreement and the relevant
+							provisions of its successor agreement, once applicable, on matters of common concern
+							to the entire ACP Group of States and the European Union.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e929">
+					<content xml:id="d1e931">
+						<p xml:id="d1e933">EPAs should provide for regular consultations and communication with civil
+							society.</p>
+					</content>
+				</subparagraph>
+			</level>
+			<level xml:id="d1e938">
+				<num xml:id="d1e940">9.</num>
+				<heading xml:id="d1e942">Exceptions Clause</heading>
+					<content xml:id="d1e944">
+						<p xml:id="d1e946">EPAs will include a standard exceptions clause, applicable to the relevant parts of
+							these agreements, allowing measures to be taken, for instance, on grounds of
+							protection of public order, human, animal or plant life or health, conservation of
+							exhaustible natural resources etc., provided that such measures are applied in
+							conformity with WTO rules.</p>
+					</content>
+			</level>
+			<level xml:id="d1e950">
+				<num xml:id="d1e952">10.</num>
+				<heading xml:id="d1e954">Final Provisions</heading>
+				<list xml:id="d1e956">
+					<subparagraph xml:id="d1e958" refersTo="~INP">
+						<content xml:id="d1e960">
+							<p xml:id="d1e962">EPAs will include:</p>
+						</content>
+					</subparagraph>
+					<indent xml:id="d1e966">
+						<num xml:id="d1e968">—</num>
+						<content xml:id="d1e970">
+							<p xml:id="d1e972">a chapter on dispute settlement and a clause on non-execution, including provisions
+								corresponding to Articles 96 and 97 of the Cotonou Agreement and the relevant
+								provisions of its successor agreement, once applicable. Dispute settlement
+								provisions on trade or trade related matters will not affect the parties’ rights and
+								obligations under WTO rules, in particular the Understanding on Rules and Procedures
+								Governing the Settlement of Disputes;</p>
+						</content>
+					</indent>
+					<indent xml:id="d1e976">
+						<num xml:id="d1e978">—</num>
+						<content xml:id="d1e980">
+							<p xml:id="d1e982">a clause on future developments providing that EPAs may be extended, in particular
+								through accession, or merged, in accordance with the progress made in regional
+								integration;</p>
+						</content>
+					</indent>
+					<indent xml:id="d1e986">
+						<num xml:id="d1e988">—</num>
+						<content xml:id="d1e990">
+							<p xml:id="d1e992">a clause on their entry into force, the duration (unlimited), termination, notice
+								required for denunciation and a territorial application clause.</p>
+						</content>
+					</indent>
+				</list>
+				<subparagraph xml:id="d1e997">
+					<content xml:id="d1e999">
+						<p xml:id="d1e1001">For the purpose of EPAs, the parties on the ACP side shall mean the regional grouping
+							or its Member States or the regional grouping and its Member States, in accordance
+							with their respective spheres of competence. EPAs shall apply as well to measures
+							taken by any state, regional or local authorities within the territories of the
+							parties.</p>
+					</content>
+				</subparagraph>
+			</level>
+			<level xml:id="d1e1006">
+				<num xml:id="d1e1008">11.</num>
+				<heading xml:id="d1e1010">Structure and Organisation of the Negotiations</heading>
+				<subparagraph xml:id="d1e1012">
+					<content xml:id="d1e1014">
+						<p xml:id="d1e1016">In accordance with the relevant provisions of the Cotonou Agreement and the relevant
+							provisions of its successor agreement, once applicable, the period of negotiations
+							will also be used for capacity building in the public and private sector of the ACP
+							countries, with a view to enhance their ability to define and implement appropriate
+							regional and multilateral trade strategies and policies. This will include measures to
+							enhance competitiveness, to strengthen regional organisations and to support regional
+							trade integration initiatives, where appropriate with assistance to budgetary
+							adjustment and fiscal reform, as well as to upgrade infrastructure, and to improve
+							investment. These measures will be monitored at regional level, where appropriate by
+							the regional grouping engaged in EPA negotiations and the European Union. That
+							regional grouping will inter alia provide suggestions to be considered within the
+							national and regional programming dialogue between the European Union and the ACP
+							countries.</p>
+					</content>
+				</subparagraph>
+				<subparagraph xml:id="d1e1020">
+					<content xml:id="d1e1022">
+						<p xml:id="d1e1024">Appropriate mechanisms will be established to ensure that Non-state actors in the
+							European Union and in the ACP countries will be informed and consulted on the content
+							of negotiations and that coordination with ongoing ACP-EU dialogues is ensured.</p>
+					</content>
+				</subparagraph>
+			</level>
+		</mainBody>
+	</doc>
+</akomaNtoso>

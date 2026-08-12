@@ -1,0 +1,90 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Specification of the Excel file describing a vocabulary
+(ConceptScheme)</title>
+<link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="/static/eli-tool.css">
+</head>
+<body>
+<div class="container">
+<h1>Describing a SKOS vocabulary in an Excel file</h1>
+<p class="text-right"><a href="/vocabs" title="Back to ELI Annotation tool"><span class="glyphicon glyphicon-arrow-left"></span></a></p>
+<p>The vocabularies used by the ELI annotation tool must be provided in the SKOS standard. A vocabulary corresponds to a <code>skos:ConceptScheme</code> entity and contains several <code>skos:Concept</code> describing each of the terms inside the vocabulary.</p>
+<p>It is possible to describe a vocabulary with an Excel worksheet. An Excel workbook can contain several worksheets each describing a different vocabulary. The worksheets have to conform to a specific format.</p>
+<h2>General structure of the worksheet</h2>
+<p>The upper part of the worksheet is named the header and contains the metadata describing the <em>Concept Scheme</em>, ie the vocabulary itself. The lower part is named the body and contains the <em>Concepts</em>, ie the terms inside the vocabulary.</p>
+<p>The header ends and the body begins at the line where <code>Concept URI</code> is found in the first column.</p>
+<p>Please note that the cells must contain textual data. Other data types, including for example hyperlinks, may provoke an error and be ignored.</p>
+<h2>Properties describing the entities</h2>
+<p>The <em>Concept Scheme</em> and the <em>Concept</em> entities are described thanks to various properties. These properties can be:</p>
+<ul>
+<li>DCTERMS properties whose name must be prefixed with <code>dct:</code></li>
+<li>SKOS properties whose name must be prefixed with <code>skos:</code></li>
+<li>any customized properties whose prefix has been declared in the header</li>
+</ul>
+<p>For example:</p>
+<pre>dct:title
+skos:prefLabel
+euvoc:status
+</pre>
+<p>In the above example, the <code>euvoc</code> prefix must be declared and associated with <code>http://publications.europa.eu/ontology/euvoc#</code> namespace.</p>
+<p>When the value of the property can be in various languages, it is possible to declare the name of the property and the language of the values. The language is specified with its two-letters code. In such a case, it is possible to declare multiple times the same property with different languages each time. For example:</p>
+<pre>skos:altLabel@en
+skos:altLabel@fr
+</pre>
+<p>Some properties can have multiple values. If such a case, it is possible to declare the name of the property and the character that will be used to separate the multiple values. For example:</p>
+<pre>skos:altLabel@en[separator=&quot;,&quot;]
+skos:narrower[separator=&quot;;&quot;]
+</pre>
+<h2>Header</h2>
+<p>The header describes the <em>Concept Scheme</em>, ie the vocabulary itself. The properties are defined in a set of consecutive rows. The first column always contains the name of the property and the second column the value of this property. Hence the header is a table with two columns and as many rows as needed.</p>
+<p>The first row of the header defines the URI of the <em>Concept Scheme</em>. The name in the first column must be <code>ConceptScheme URI</code> and the second column must give the URI of the <code>skos:ConceptScheme</code>.</p>
+<p>The following rows contains the properties describing the <em>Concept Scheme</em>. These properties are either valid SKOS and DCTERMS properties or custom properties prefixed by a custom prefix.</p>
+<p>The custom prefixes used in the header or the body must be declared in the header, each in a row whose first column is the prefix prefixed
+with <code>prefix:</code> and whose second column is the URI associated to the prefix.</p>
+<p>Invalid properties or properties whose prefix is not declared will be ignored when processing the file.</p>
+<p>Here is an example of header:</p>
+<table class="table table-bordered">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>ConceptScheme URI</td><td>http://data.sparna.fr/vocabularies/days</td></tr>
+<tr><td>dct:title&#64;en</td><td>Weekdays</td></tr>
+<tr><td>dct:description&#64;en</td><td>The days of the week</td></tr>
+<tr><td>dct:description&#64;fr</td><td>Les jours de la semaine</td></tr>
+<tr><td>euvoc:status</td><td>http://publications.europa.eu/resource/authority/concept-status/CURRENT</td></tr>
+<tr><td>prefix:euvoc</td><td>http://publications.europa.eu/ontology/euvoc#</td></tr>
+</tbody>
+</table>
+<h2>Body</h2>
+<p>The body describes the <em>Concepts</em> inside the <em>Concept Scheme</em>, ie the terms in the vocabulary. Each row defines a different <em>Concept</em>, the columns being the various properties describing this <em>Concept</em>. Hence the body is a table with as many columns as there are properties and as many rows as there are <em>Concepts</em>.</p>
+<p>The first row of the body contains the names of the properties used to describe the <em>Concepts</em>. As explained above, the first column of this row must be <code>Concept URI</code>. The following columns are either valid SKOS and DCTERMS properties or custom properties prefixed by a custom prefix. Please keep in mind that the custom prefixes must have been declared in the header.</p>
+<p>Invalid properties or properties whose prefix is not declared will be ignored when processing the file.</p>
+<p>Here is an example of body:</p>
+<table class="table table-bordered">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>Concept URI</td><td>skos:prefLabel&#64;en</td><td>skos:prefLabel&#64;fr</td><td>skos:narrower[separator=&#8217;;&#8217;]</td><td>skos:notation</td></tr>
+<tr><td>http://data.sparna.fr/vocabularies/days#monday</td><td>Monday</td><td>Lundi</td><td>&nbsp;</td><td>MON</td></tr>
+<tr><td>http://data.sparna.fr/vocabularies/days#tuesday</td><td>Tuesday</td><td>Mardi</td><td>&nbsp;</td><td>TUE</td></tr>
+<tr><td>http://data.sparna.fr/vocabularies/days#wednesday</td><td>Wednesday</td><td>Mercredi</td><td>&nbsp;</td><td>WED</td></tr>
+<tr><td>http://data.sparna.fr/vocabularies/days#thursday</td><td>Thursday</td><td>Jeudi</td><td>&nbsp;</td><td>THU</td></tr>
+<tr><td>http://data.sparna.fr/vocabularies/days#friday</td><td>Friday</td><td>Vendredi</td><td>&nbsp;</td><td>FRI</td></tr>
+<tr><td>http://data.sparna.fr/vocabularies/days#saturday</td><td>Saturday</td><td>Samedi</td><td>&nbsp;</td><td>SAT</td></tr>
+<tr><td>http://data.sparna.fr/vocabularies/days#sunday</td><td>Sunday</td><td>Dimanche</td><td>&nbsp;</td><td>SUN</td></tr>
+<tr><td>http://data.sparna.fr/vocabularies/days#week-end</td><td>Week-end</td><td>Fin de semaine</td><td>http://data.sparna.fr/vocabularies/days#saturday ; http://data.sparna.fr/vocabularies/days#sunday</td><td>WKND</td></tr>
+</tbody>
+</table>
+<p class="text-right"><a href="/vocabs" title="Back to ELI Annotation tool"><span class="glyphicon glyphicon-arrow-left"></span></a></p>
+</body>
+</html>

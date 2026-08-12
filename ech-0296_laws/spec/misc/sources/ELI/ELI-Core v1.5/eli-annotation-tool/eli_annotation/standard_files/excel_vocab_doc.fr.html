@@ -1,0 +1,88 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Spécifications du fichier Excel décrivant un vocabulaire (ConceptScheme)<</title>
+<link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="/static/eli-tool.css">
+</head>
+<body>
+<div class="container">
+<h1>Décrire un vocabulaire SKOS dans un fichier Excel</h1>
+<p class="text-right"><a href="/vocabs" title="Retour à l'outil d'annotation ELI"><span class="glyphicon glyphicon-arrow-left"></span></a></p>
+<p>Les vocabulaires utilisés par l'outil d'annotation ELI doivent être fournis dans le format SKOS. Un vocabulaire correspond à une entité <code>skos:ConceptScheme</code> et contient plusieurs <code>skos:Concept</code> décrivant chacun un des termes utilisés dans le vocabulaire.</p>
+<p>Il est possible de décrire un vocabulaire avec une feuille Excel. Un classeur Excel peut contenir plusieurs feuilles, chacune décrivant un vaocabulaire différent. Les feuilles doivent se conformer à un format spécifique décrit ci-après.</p>
+<h2>Structure générale de la feuille</h2>
+<p>La partie supérieure de la feuille est appelée l'entête et contient les métadonnées décrivant le <em>Concept Scheme</em>, c'est-à-dire le vocabulaire lui-même. La partie inférieure est appelée le corps et contient les <em>Concepts</em>, c'est-à-dire les termes présents dans le vocabulaire.</p>
+<p>L'entête se termine et le corps commence à la ligne dont la première colonne contient l'expression <code>Concept URI</code>.</p>
+<p>Les cellules ne doivent contenir que des données textuelles. Les autres types de données, comme par exemple les hyperliens, peuvent provoquer des erreurs et être ignorés.</p>
+<h2>Propriétés décrivant les entités</h2>
+<p>Les entités <em>Concept Scheme</em> et <em>Concept</em> sont décrites grâce à diverses propriétés. Ces propriétés peuvent être :</p>
+<ul>
+<li>des propriétés DCTERMS dont le nom est préfixé par <code>dct:</code></li>
+<li>des propriétés SKOS dont le nom est préfixé par <code>skos:</code></li>
+<li>n'importe quelle autre propriété dont le préfixe a été déclaré dans l'entête</li>
+</ul>
+<p>Par exemple :</p>
+<pre>dct:title
+skos:prefLabel
+euvoc:status
+</pre>
+<p>Dans l'exemple précédent, le préfixe <code>euvoc</code> dont être déclaré et associé à l'espace de nommage <code>http://publications.europa.eu/ontology/euvoc#</code>.</p>
+<p>Lorsqu'une valeur de propriété peut être dans différentes langues, il est possible de déclarer le nom de la propriété et la langue des valeurs. La langue est spécifiée par son code en deux lettres. Dans de tels cas, il est possible de déclarer plusieurs fois une même propriété avec des langues différentes à chaque fois. Par exemple :</p>
+<pre>skos:altLabel@en
+skos:altLabel@fr
+</pre>
+<p>Certaines propriétés peuvent avoir de multiples valeurs. Dans ce cas, il est possible de déclarer le nom de la propriété avec le caractère qui va servir à séparer les différentes valeurs. Par exemple :</p>
+<pre>skos:altLabel@en[separator=&quot;,&quot;]
+skos:narrower[separator=&quot;;&quot;]
+</pre>
+<h2>Entête</h2>
+<p>L'entête décrit le <em>Concept Scheme</em>, c'est-à-dire le vocabulaire lui-même. Les propriétés sont définies dans un ensemble de lignes consécutives. La première colonne contient le nom de la propriété et la deuxième colonne la valeur de cette propriété. Par conséquent, l'entête est un tableau avec deux colonnes et autant de lignes que nécessaire.</p>
+<p>La première ligne de l'entête définit l'URI du <em>Concept Scheme</em>. Le nom dans cette première colonne doit être <code>ConceptScheme URI</code> et la deuxième colonne doit contenir l'URI du <code>skos:ConceptScheme</code>.</p>
+<p>Les lignes suivantes contiennent les propriétés décrivant le <em>Concept Scheme</em>. Ces propriétés sont soit des propriétés SKOS ou DCTERMS valides, soit d'autres propriétés préfixées par un préfixe personnalisé.</p>
+<p>Les préfixes personnalisés utilisés dans l'entête ou dans le corps doivent tous être déclarés dans l'entête, chacun sur une ligne dans la première colonne sera le préfixe lui-même, préfixé par <code>prefix:</code> et dont la seconde colonne sera l'URI associé à ce préfixe.</p>
+<p>Les propriétés invalides et les propriétés dont le préfixe n'a pas été déclaré sont ignorées lors du traitement du fichier.</p>
+<p>Voici un exemple d'entête :</p>
+<table class="table table-bordered">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>ConceptScheme URI</td><td>http://data.sparna.fr/vocabularies/days</td></tr>
+<tr><td>dct:title&#64;en</td><td>Weekdays</td></tr>
+<tr><td>dct:description&#64;en</td><td>The days of the week</td></tr>
+<tr><td>dct:description&#64;fr</td><td>Les jours de la semaine</td></tr>
+<tr><td>euvoc:status</td><td>http://publications.europa.eu/resource/authority/concept-status/CURRENT</td></tr>
+<tr><td>prefix:euvoc</td><td>http://publications.europa.eu/ontology/euvoc#</td></tr>
+</tbody>
+</table>
+<h2>Corps</h2>
+<p>Le corps décrit les <em>Concepts</em> présents dans le <em>Concept Scheme</em>, c'est-à-dire les termes du vocabulaire. Chaque ligne définit un <em>Concept</em> différent, les colonnes correspondant aux diverses propriétés décrivant ce <em>Concept</em>. Par conséquent, le corps est un tableau avec autant de colonnes qu'il y a de propriétés et autant de lignes qu'il y a de <em>Concepts</em>.</p>
+<p>La première ligne du corps contient les noms des propriétés utilisées pour décrire les <em>Concepts</em>. Comme explique plus haut, la première colonne de cette ligne doit contenir l'expression <code>Concept URI</code>. Les colonnes suivantes sont soit des propriétés SKOS ou DCTERMS valides soit d'autres propriétés préfixées par un préfixe personnalisé. Les préfixes personnalisés doivent avoir été déclarés dans l'entête.</p>
+<p>Les propriétés invalides et les propriétés dont le préfixe n'a pas été déclaré sont ignorées lors du traitement du fichier.</p>
+<p>Voici un exemple de corps :</p>
+<table class="table table-bordered">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>Concept URI</td><td>skos:prefLabel&#64;en</td><td>skos:prefLabel&#64;fr</td><td>skos:narrower[separator=&#8217;;&#8217;]</td><td>skos:notation</td></tr>
+<tr><td>http://data.sparna.fr/vocabularies/days#monday</td><td>Monday</td><td>Lundi</td><td>&nbsp;</td><td>MON</td></tr>
+<tr><td>http://data.sparna.fr/vocabularies/days#tuesday</td><td>Tuesday</td><td>Mardi</td><td>&nbsp;</td><td>TUE</td></tr>
+<tr><td>http://data.sparna.fr/vocabularies/days#wednesday</td><td>Wednesday</td><td>Mercredi</td><td>&nbsp;</td><td>WED</td></tr>
+<tr><td>http://data.sparna.fr/vocabularies/days#thursday</td><td>Thursday</td><td>Jeudi</td><td>&nbsp;</td><td>THU</td></tr>
+<tr><td>http://data.sparna.fr/vocabularies/days#friday</td><td>Friday</td><td>Vendredi</td><td>&nbsp;</td><td>FRI</td></tr>
+<tr><td>http://data.sparna.fr/vocabularies/days#saturday</td><td>Saturday</td><td>Samedi</td><td>&nbsp;</td><td>SAT</td></tr>
+<tr><td>http://data.sparna.fr/vocabularies/days#sunday</td><td>Sunday</td><td>Dimanche</td><td>&nbsp;</td><td>SUN</td></tr>
+<tr><td>http://data.sparna.fr/vocabularies/days#week-end</td><td>Week-end</td><td>Fin de semaine</td><td>http://data.sparna.fr/vocabularies/days#saturday ; http://data.sparna.fr/vocabularies/days#sunday</td><td>WKND</td></tr>
+</tbody>
+</table>
+<p class="text-right"><a href="/vocabs" title="Retour à l'outil d'annotation ELI"><span class="glyphicon glyphicon-arrow-left"></span></a></p>
+</body>
+</html>

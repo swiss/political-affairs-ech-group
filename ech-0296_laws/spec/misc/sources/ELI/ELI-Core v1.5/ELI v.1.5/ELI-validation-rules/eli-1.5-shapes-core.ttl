@@ -1,0 +1,1918 @@
+@prefix schema: <http://schema.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix text: <http://www.iana.org/assignments/media-types/text/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix eli: <http://data.europa.eu/eli/ontology#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix xls2rdf: <https://xls2rdf.sparna.fr/vocabulary#> .
+@prefix application: <http://www.iana.org/assignments/media-types/application/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix elish: <http://data.europa.eu/eli/shapes#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+<http://data.europa.eu/eli/shapes> a owl:Ontology, adms:Asset;
+  rdfs:label "ELI validation shapes"@en;
+  dct:title "ELI validation shapes"@en;
+  dct:description "This specification encodes the \"core\" rules that must be followed when publishing ELI metadata inside webpages. As such it does not declare range constraints for properties that link to entities that are not described inside a single webpage. This specification is complemented by a set of \"recommended\" rules, and the additionnal range constraints that are kept in a separate file."@en;
+  owl:versionInfo "45778";
+  dct:conformsTo <https://www.w3.org/TR/shacl>;
+  dct:created "2025-09-26"^^xsd:date;
+  dct:modified "2025-12-12T00:00:00.000Z"^^xsd:dateTime;
+  dct:creator "ELI Taskforce"@en .
+
+eli:LegalResource a rdfs:Class, sh:NodeShape;
+  rdfs:label "Legal resource"@en;
+  sh:nodeKind sh:IRI;
+  sh:pattern "^http[s]?://(.*)/eli/(.*)";
+  sh:severity sh:Violation;
+  sh:property elish:LegalResourceLegalExpressionFormat_uri_schema, elish:LegalResourceLegalExpressionFormat_id_local,
+    elish:LegalResourceLegalExpression_relevant_for, elish:LegalResourceLegalExpression_jurisdiction,
+    elish:LegalResourceLegalExpression_description, elish:LegalResourceLegalExpression_version,
+    elish:LegalResourceLegalExpression_version_date, elish:LegalResourceLegalExpression_date_publication,
+    elish:LegalResourceLegalExpression_in_force, elish:LegalResourceLegalExpression_first_date_entry_in_force,
+    elish:LegalResourceLegalExpression_date_no_longer_in_force, elish:LegalResourceLegalExpression_date_applicability,
+    elish:LegalResourceLegalExpression_related_to, elish:LegalResourceLegalExpression_cites,
+    elish:LegalResourceLegalExpression_inverse_cited_by, elish:LegalResourceLegalExpression_consolidates,
+    elish:LegalResourceLegalExpression_consolidated_by, elish:LegalResourceLegalExpression_transposes,
+    elish:LegalResourceLegalExpression_ensures_implementation_of, elish:LegalResourceLegalExpression_applies,
+    elish:LegalResourceLegalExpression_commences, elish:LegalResourceLegalExpression_commenced_by,
+    elish:LegalResourceLegalExpression_repeals, elish:LegalResourceLegalExpression_repealed_by,
+    elish:LegalResourceLegalExpression_cited_by_case_law, elish:LegalResourceLegalExpression_cited_by_case_law_reference,
+    elish:LegalResource_is_part_of, elish:LegalResource_has_part, elish:LegalResource_is_member_of,
+    elish:LegalResource_has_member, elish:LegalResource_is_realized_by, elish:LegalResource_type_document,
+    elish:LegalResource_passed_by, elish:LegalResource_countersigned_by, elish:LegalResource_responsibility_of,
+    elish:LegalResource_responsibility_of_agent, elish:LegalResource_transposed_by, elish:LegalResource_implementation_ensured_by,
+    elish:LegalResource_applied_by, elish:LegalResource_is_another_publication_of, elish:LegalResource_has_another_publication .
+
+eli:LegalExpression a rdfs:Class, sh:NodeShape;
+  rdfs:label "Legal expression"@en;
+  sh:nodeKind sh:IRI;
+  sh:pattern "^http[s]?://(.*)/eli/(.*)";
+  sh:severity sh:Violation;
+  sh:property elish:LegalResourceLegalExpressionFormat_uri_schema, elish:LegalResourceLegalExpressionFormat_id_local,
+    elish:LegalResourceLegalExpression_relevant_for, elish:LegalResourceLegalExpression_jurisdiction,
+    elish:LegalResourceLegalExpression_description, elish:LegalResourceLegalExpression_version,
+    elish:LegalResourceLegalExpression_version_date, elish:LegalResourceLegalExpression_date_publication,
+    elish:LegalResourceLegalExpression_in_force, elish:LegalResourceLegalExpression_first_date_entry_in_force,
+    elish:LegalResourceLegalExpression_date_no_longer_in_force, elish:LegalResourceLegalExpression_date_applicability,
+    elish:LegalResourceLegalExpression_related_to, elish:LegalResourceLegalExpression_cites,
+    elish:LegalResourceLegalExpression_inverse_cited_by, elish:LegalResourceLegalExpression_consolidates,
+    elish:LegalResourceLegalExpression_consolidated_by, elish:LegalResourceLegalExpression_transposes,
+    elish:LegalResourceLegalExpression_ensures_implementation_of, elish:LegalResourceLegalExpression_applies,
+    elish:LegalResourceLegalExpression_commences, elish:LegalResourceLegalExpression_commenced_by,
+    elish:LegalResourceLegalExpression_repeals, elish:LegalResourceLegalExpression_repealed_by,
+    elish:LegalResourceLegalExpression_cited_by_case_law, elish:LegalResourceLegalExpression_cited_by_case_law_reference,
+    elish:LegalExpression_realizes, elish:LegalExpression_is_embodied_by, elish:LegalExpression_title,
+    elish:LegalExpression_language, elish:LegalExpression_has_translation, elish:LegalExpression_is_translation_of,
+    elish:LegalExpression_realizes_or_inverse_is_realized_by, elish:LegalExpression_is_embodied_by_or_inverse_embodies,
+    elish:LegalExpressionFormat_publisher, elish:LegalExpressionFormat_publisher_agent .
+
+eli:Format a rdfs:Class, sh:NodeShape;
+  rdfs:label "Format"@en;
+  sh:nodeKind sh:IRI;
+  sh:pattern "^http[s]?://(.*)/eli/(.*)";
+  sh:severity sh:Violation;
+  sh:property elish:LegalResourceLegalExpressionFormat_uri_schema, elish:LegalResourceLegalExpressionFormat_id_local,
+    elish:Format_embodies, elish:Format_format, elish:Format_media_type, elish:Format_published_in,
+    elish:Format_published_in_format, elish:Format_publishes, elish:Format_rights, elish:Format_rightsholder,
+    elish:Format_rightsholder_agent, elish:Format_licence, elish:Format_legal_value, elish:Format_embodies_or_inverse_is_embodied_by,
+    elish:LegalExpressionFormat_publisher, elish:LegalExpressionFormat_publisher_agent .
+
+eli:LegalResourceSubdivision a rdfs:Class, sh:NodeShape;
+  rdfs:label "Legal resource subdivision"@en;
+  sh:nodeKind sh:IRI;
+  sh:pattern "^http[s]?://(.*)/eli/(.*)";
+  sh:severity sh:Violation .
+
+eli:Work a rdfs:Class, sh:NodeShape;
+  rdfs:label "Work"@en;
+  sh:nodeKind sh:IRI;
+  sh:property elish:Work_is_part_of, elish:Work_has_part, elish:Work_is_member_of, elish:Work_has_member,
+    elish:Work_is_realized_by, elish:Work_work_type, elish:Work_is_about, elish:Work_date_document,
+    elish:Work_based_on, elish:WorkExpression_number, elish:WorkExpression_refers_to,
+    elish:WorkExpression_inverse_is_referred_to_by, elish:WorkExpression_is_derivative_of,
+    elish:WorkExpression_has_derivative, elish:WorkExpression_has_annex, elish:WorkExpression_is_annex_of,
+    elish:WorkExpression_changes, elish:WorkExpression_changed_by, elish:WorkExpression_basis_for,
+    elish:WorkExpression_corrects, elish:WorkExpression_corrected_by, elish:WorkExpression_amends,
+    elish:WorkExpression_amended_by .
+
+eli:Expression a rdfs:Class, sh:NodeShape;
+  rdfs:label "Expression"@en;
+  sh:nodeKind sh:IRI;
+  sh:property elish:Expression_realizes, elish:Expression_is_embodied_by, elish:Expression_title,
+    elish:Expression_title_short, elish:Expression_title_alternative, elish:WorkExpression_number,
+    elish:WorkExpression_refers_to, elish:WorkExpression_inverse_is_referred_to_by, elish:WorkExpression_is_derivative_of,
+    elish:WorkExpression_has_derivative, elish:WorkExpression_has_annex, elish:WorkExpression_is_annex_of,
+    elish:WorkExpression_changes, elish:WorkExpression_changed_by, elish:WorkExpression_basis_for,
+    elish:WorkExpression_corrects, elish:WorkExpression_corrected_by, elish:WorkExpression_amends,
+    elish:WorkExpression_amended_by .
+
+eli:Manifestation a rdfs:Class, sh:NodeShape;
+  rdfs:label "Manifestation"@en;
+  sh:nodeKind sh:IRI;
+  sh:property elish:Manifestation_embodies, elish:Manifestation_is_exemplified_by, elish:Manifestation_format,
+    elish:Manifestation_media_type .
+
+eli:Person a rdfs:Class, sh:NodeShape;
+  rdfs:label "Person"@en;
+  sh:nodeKind sh:IRI .
+
+eli:Organization a rdfs:Class, sh:NodeShape;
+  rdfs:label "Organization"@en;
+  sh:nodeKind sh:IRI .
+
+elish:AbstractLegalResource a sh:NodeShape;
+  rdfs:label "Abstract Legal resource"@en;
+  rdfs:comment """Legal resources that have at least one other legal resource as member.
+Note : for performance reasons, the rdfs:subClassOf criteria is implemented with a \"?\" rather than a \"*\"."""@en;
+  sh:target elish:AbstractLegalResource-target;
+  sh:property elish:AbstractLegalResource_has_member_or_is_member_of .
+
+elish:AbstractLegalResource-target sh:select """PREFIX eli: <http://data.europa.eu/eli/ontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT $this
+WHERE {
+ $this rdf:type/rdfs:subClassOf? eli:LegalResource .
+ FILTER NOT EXISTS { $this eli:is_realized_by|^eli:realizes ?something . }
+}""" .
+
+elish:IndividualLegalResource a sh:NodeShape;
+  rdfs:label "Individual Legal resource"@en;
+  rdfs:comment """Legal resources that do not have other legal resources as members (and that MUST but realized by at least one Expression).
+Note : for performance reasons, the rdfs:subClassOf criteria is implemented with a \"?\" rather than a \"*\""""@en;
+  sh:target elish:IndividualLegalResource-target;
+  sh:property elish:IndividualLegalResource_is_realized_by_or_inverse_realizes, elish:IndividualLegalResource_zeroorone_is_member_of_or_has_member_then_type_document;
+  sh:sparql elish:BusinessRule_1 .
+
+elish:IndividualLegalResource-target sh:select """PREFIX eli: <http://data.europa.eu/eli/ontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT $this
+WHERE {
+ $this rdf:type/rdfs:subClassOf? eli:LegalResource .
+ FILTER NOT EXISTS { $this eli:has_member|^eli:is_member_of ?something . }
+}""" .
+
+eli:ComplexWork a rdfs:Class, sh:NodeShape;
+  rdfs:label "ComplexWork"@en;
+  sh:nodeKind sh:IRI;
+  sh:pattern "^http[s]?://(.*)/eli/(.*)";
+  sh:severity sh:Violation .
+
+eli:WorkSubdivision a rdfs:Class, sh:NodeShape;
+  rdfs:label "WorkSubdivision"@en;
+  sh:nodeKind sh:IRI;
+  sh:pattern "^http[s]?://(.*)/eli/(.*)";
+  sh:severity sh:Violation;
+  sh:property elish:WorkSubdivision_type_subdivision .
+
+elish:Work_is_part_of sh:path eli:is_part_of;
+  sh:severity sh:Violation;
+  sh:name "is part of"@en;
+  sh:description "eli:is_part_of MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:Work_has_part sh:path eli:has_part;
+  sh:severity sh:Violation;
+  sh:name "has part"@en;
+  sh:description "eli:has_part MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:Work_is_member_of sh:path eli:is_member_of;
+  sh:severity sh:Violation;
+  sh:name "is member of"@en;
+  sh:description "eli:is_member_of MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:Work_has_member sh:path eli:has_member;
+  sh:severity sh:Violation;
+  sh:name "has member"@en;
+  sh:description "eli:has_member MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:Work_is_realized_by sh:path eli:is_realized_by;
+  sh:severity sh:Violation;
+  sh:name "is realized by"@en;
+  sh:description "eli:is_realized_by MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:Work_work_type sh:path eli:work_type;
+  sh:severity sh:Violation;
+  sh:name "work_type"@en;
+  sh:description "eli:work_type MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:Work_is_about sh:path eli:is_about;
+  sh:severity sh:Violation;
+  sh:name "is about"@en;
+  sh:description "eli:is_about MUST be an IRI";
+  sh:nodeKind sh:IRI .
+
+elish:Work_date_document sh:path eli:date_document;
+  sh:severity sh:Violation;
+  sh:name "date document"@en;
+  sh:description """A Work MUST not have more than one date_document.
+eli:date_document MUST have a literal value with datatype xsd:date""";
+  sh:nodeKind sh:Literal;
+  sh:maxCount "1"^^xsd:integer;
+  sh:datatype xsd:date .
+
+elish:Work_based_on sh:path eli:based_on;
+  sh:severity sh:Violation;
+  sh:name "based on"@en;
+  sh:description "eli:based_on MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:Expression_realizes sh:path eli:realizes;
+  sh:severity sh:Violation;
+  sh:name "realizes"@en;
+  sh:description "eli:realizes MUST be an IRI";
+  sh:nodeKind sh:IRI .
+
+elish:Expression_is_embodied_by sh:path eli:is_embodied_by;
+  sh:severity sh:Violation;
+  sh:name "is embodied by"@en;
+  sh:description "eli:is_embodied_by MUST be an IRI";
+  sh:nodeKind sh:IRI .
+
+elish:Expression_title sh:path eli:title;
+  sh:severity sh:Violation;
+  sh:name "title"@en;
+  sh:description "eli:title MUST have a literal value";
+  sh:nodeKind sh:Literal .
+
+elish:Expression_title_short sh:path eli:title_short;
+  sh:severity sh:Violation;
+  sh:name "title short"@en;
+  sh:description "eli:title_short MUST have a literal value";
+  sh:nodeKind sh:Literal .
+
+elish:Expression_title_alternative sh:path eli:title_alternative;
+  sh:severity sh:Violation;
+  sh:name "title alternative"@en;
+  sh:description "eli:title_alternative MUST have a literal value";
+  sh:nodeKind sh:Literal .
+
+elish:WorkExpression_number sh:path eli:number;
+  sh:severity sh:Violation;
+  sh:name "number"@en;
+  sh:description "eli:number MUST have a literal value with datatype xsd:string";
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+elish:WorkExpression_refers_to sh:path eli:refers_to;
+  sh:severity sh:Violation;
+  sh:name "refers_to"@en;
+  sh:description "eli:refers_to MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:WorkExpression_inverse_is_referred_to_by sh:path _:eb559f955f9d4974b990ebae92fed3761193;
+  sh:severity sh:Violation;
+  sh:name "is_referred_to_by (inverse)"@en;
+  sh:nodeKind sh:IRI .
+
+_:eb559f955f9d4974b990ebae92fed3761193 sh:inversePath eli:is_referred_to_by .
+
+elish:WorkExpression_is_derivative_of sh:path eli:is_derivative_of;
+  sh:severity sh:Violation;
+  sh:name "is_derivative_of"@en;
+  sh:description "eli:is_derivative_of MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:WorkExpression_has_derivative sh:path eli:has_derivative;
+  sh:severity sh:Violation;
+  sh:name "has_derivative"@en;
+  sh:description "eli:has_derivative MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:WorkExpression_has_annex sh:path eli:has_annex;
+  sh:severity sh:Violation;
+  sh:name "has_annex"@en;
+  sh:description "eli:has_annex MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:WorkExpression_is_annex_of sh:path eli:is_annex_of;
+  sh:severity sh:Violation;
+  sh:name "is_annex_of"@en;
+  sh:description "eli:is_annex_of MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:WorkExpression_changes sh:path eli:changes;
+  sh:severity sh:Violation;
+  sh:name "changes"@en;
+  sh:description "eli:changes MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:WorkExpression_changed_by sh:path eli:changed_by;
+  sh:severity sh:Violation;
+  sh:name "changed by"@en;
+  sh:description "eli:changed_by MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:WorkExpression_basis_for sh:path eli:basis_for;
+  sh:severity sh:Violation;
+  sh:name "basis for"@en;
+  sh:description "eli:basis_for MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:WorkExpression_corrects sh:path eli:corrects;
+  sh:severity sh:Violation;
+  sh:name "corrects"@en;
+  sh:description "eli:corrects MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:WorkExpression_corrected_by sh:path eli:corrected_by;
+  sh:severity sh:Violation;
+  sh:name "corrected by"@en;
+  sh:description "eli:corrected_by MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:WorkExpression_amends sh:path eli:amends;
+  sh:severity sh:Violation;
+  sh:name "amends"@en;
+  sh:description "eli:amends MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:WorkExpression_amended_by sh:path eli:amended_by;
+  sh:severity sh:Violation;
+  sh:name "amended by"@en;
+  sh:description "eli:amended_by MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:Manifestation_embodies sh:path eli:embodies;
+  sh:severity sh:Violation;
+  sh:name "embodies"@en;
+  sh:description "eli:embodies MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:Manifestation_is_exemplified_by sh:path eli:is_exemplified_by;
+  sh:severity sh:Violation;
+  sh:name "is exemplified by"@en;
+  sh:description "eli:is_exemplified_by MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:Manifestation_format sh:path eli:format;
+  sh:severity sh:Violation;
+  sh:name "format"@en;
+  sh:description "eli:format MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:Manifestation_media_type sh:path eli:media_type;
+  sh:severity sh:Violation;
+  sh:name "media type"@en;
+  sh:description "eli:media_type MUST have an IRI value starting with \"^http://www.iana.org/assignments/media-types/(.*)\"";
+  sh:nodeKind sh:IRI;
+  sh:pattern "^https://www.iana.org/assignments/media-types/(.*)" .
+
+elish:LegalResourceLegalExpressionFormat_uri_schema sh:path eli:uri_schema;
+  sh:severity sh:Violation;
+  sh:name "URI schema"@en;
+  sh:description "A LegalResource, LegalExpression or Format MUST not have more than one uri_schema and MUST be an IRI";
+  sh:nodeKind sh:IRI;
+  sh:maxCount "1"^^xsd:integer .
+
+elish:LegalResourceLegalExpressionFormat_id_local sh:path eli:id_local;
+  sh:severity sh:Violation;
+  sh:name "ID local"@en;
+  sh:description "eli:id_local MUST have a literal value";
+  sh:nodeKind sh:Literal .
+
+elish:LegalResourceLegalExpression_relevant_for sh:path eli:relevant_for;
+  sh:severity sh:Violation;
+  sh:name "relevant for"@en;
+  sh:description "eli:relevant_for MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:LegalResourceLegalExpression_jurisdiction sh:path eli:jurisdiction;
+  sh:severity sh:Violation;
+  sh:name "jusrisdiction"@en;
+  sh:description "eli:jurisdiction CAN MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:LegalResourceLegalExpression_description sh:path eli:description;
+  sh:severity sh:Violation;
+  sh:name "description"@en;
+  sh:description "eli:description MUST have a literal value";
+  sh:nodeKind sh:Literal .
+
+elish:LegalResourceLegalExpression_version sh:path eli:version;
+  sh:severity sh:Violation;
+  sh:name "version"@en;
+  sh:description "eli:version MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:LegalResourceLegalExpression_version_date sh:path eli:version_date;
+  sh:severity sh:Violation;
+  sh:name "version date"@en;
+  sh:description """A LegalResource or LegalExpression MUST not have more than one version_date
+. eli:version_date MUST have a literal value with datatype xsd:date""";
+  sh:nodeKind sh:Literal;
+  sh:maxCount "1"^^xsd:integer;
+  sh:datatype xsd:date .
+
+elish:LegalResourceLegalExpression_date_publication sh:path eli:date_publication;
+  sh:severity sh:Violation;
+  sh:name "date of publication"@en;
+  sh:description """A LegalResource or LegalExpression MUST not have more than one date_publication.
+eli:date_publication MUST have a literal value with datatype xsd:date""";
+  sh:nodeKind sh:Literal;
+  sh:maxCount "1"^^xsd:integer;
+  sh:datatype xsd:date .
+
+elish:LegalResourceLegalExpression_in_force sh:path eli:in_force;
+  sh:severity sh:Violation;
+  sh:name "in force"@en;
+  sh:description """A LegalResource or LegalExpression MUST not have more than one in_force.
+eli:in_force MUST have an IRI value in ( eli:InForce-inForce eli:InForce-partiallyInForce eli:InForce-notInForce )""";
+  sh:nodeKind sh:IRI;
+  sh:maxCount "1"^^xsd:integer;
+  sh:in _:eb559f955f9d4974b990ebae92fed3761194 .
+
+_:eb559f955f9d4974b990ebae92fed3761194 rdf:first eli:InForce-inForce;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761195 .
+
+_:eb559f955f9d4974b990ebae92fed3761195 rdf:first eli:InForce-partiallyInForce;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761196 .
+
+_:eb559f955f9d4974b990ebae92fed3761196 rdf:first eli:InForce-notInForce;
+  rdf:rest rdf:nil .
+
+elish:LegalResourceLegalExpression_first_date_entry_in_force sh:path eli:first_date_entry_in_force;
+  sh:severity sh:Violation;
+  sh:name "first date of entry into force"@en;
+  sh:description """A LegalResource or LegalExpression MUST not have more than one first_date_entry_into_force.
+eli:first_date_entry_in_force MUST have a literal value with datatype xsd:date""";
+  sh:nodeKind sh:Literal;
+  sh:maxCount "1"^^xsd:integer;
+  sh:datatype xsd:date .
+
+elish:LegalResourceLegalExpression_date_no_longer_in_force sh:path eli:date_no_longer_in_force;
+  sh:severity sh:Violation;
+  sh:name "date no longer in force"@en;
+  sh:description """A LegalResource or LegalExpression MUST not have more than one date_no_longer_in_force.
+eli:date_no_longer_in_force MUST have a literal value with datatype xsd:date""";
+  sh:nodeKind sh:Literal;
+  sh:maxCount "1"^^xsd:integer;
+  sh:datatype xsd:date .
+
+elish:LegalResourceLegalExpression_date_applicability sh:path eli:date_applicability;
+  sh:severity sh:Violation;
+  sh:name "date of applicability"@en;
+  sh:description "eli:date_applicability MUST have a literal value with datatype xsd:date";
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:date .
+
+elish:LegalResourceLegalExpression_related_to sh:path eli:related_to;
+  sh:severity sh:Violation;
+  sh:name "related to"@en;
+  sh:description "eli:related_to MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:LegalResourceLegalExpression_cites sh:path eli:cites;
+  sh:severity sh:Violation;
+  sh:name "cites"@en;
+  sh:description "eli:cites MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:LegalResourceLegalExpression_inverse_cited_by sh:path _:eb559f955f9d4974b990ebae92fed3761197;
+  sh:severity sh:Violation;
+  sh:name "cited by (inverse)"@en;
+  sh:nodeKind sh:IRI .
+
+_:eb559f955f9d4974b990ebae92fed3761197 sh:inversePath eli:cited_by .
+
+elish:LegalResourceLegalExpression_consolidates sh:path eli:consolidates;
+  sh:severity sh:Violation;
+  sh:name "consolidates"@en;
+  sh:description "eli:consolidates MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:LegalResourceLegalExpression_consolidated_by sh:path eli:consolidated_by;
+  sh:severity sh:Violation;
+  sh:name "consolidated by"@en;
+  sh:description "eli:consolidated_by MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:LegalResourceLegalExpression_transposes sh:path eli:transposes;
+  sh:severity sh:Violation;
+  sh:name "transposes"@en;
+  sh:description "eli:transposes MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:LegalResourceLegalExpression_ensures_implementation_of sh:path eli:ensures_implementation_of;
+  sh:severity sh:Violation;
+  sh:name "ensures implementation of"@en;
+  sh:description "eli:ensures_implementation_of MUST have an IRI value in";
+  sh:nodeKind sh:IRI .
+
+elish:LegalResourceLegalExpression_applies sh:path eli:applies;
+  sh:severity sh:Violation;
+  sh:name "applies"@en;
+  sh:description "eli:applies MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:LegalResourceLegalExpression_commences sh:path eli:commences;
+  sh:severity sh:Violation;
+  sh:name "commences"@en;
+  sh:description "eli:commences MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:LegalResourceLegalExpression_commenced_by sh:path eli:commenced_by;
+  sh:severity sh:Violation;
+  sh:name "commenced by"@en;
+  sh:description "eli:commenced_by MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:LegalResourceLegalExpression_repeals sh:path eli:repeals;
+  sh:severity sh:Violation;
+  sh:name "repeals"@en;
+  sh:description "eli:repeals MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:LegalResourceLegalExpression_repealed_by sh:path eli:repealed_by;
+  sh:severity sh:Violation;
+  sh:name "repealed by"@en;
+  sh:description "eli:repealed_by MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:LegalResourceLegalExpression_cited_by_case_law sh:path eli:cited_by_case_law;
+  sh:severity sh:Violation;
+  sh:name "cited by case law"@en;
+  sh:description "eli:cited_by_case_law MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:LegalResourceLegalExpression_cited_by_case_law_reference sh:path eli:cited_by_case_law_reference;
+  sh:severity sh:Violation;
+  sh:name "cited by case law reference"@en;
+  sh:description "eli:cited_by_case_law_reference MUST have a literal value";
+  sh:nodeKind sh:Literal .
+
+elish:LegalResource_is_part_of sh:path eli:is_part_of;
+  sh:severity sh:Violation;
+  sh:name "is part of"@en;
+  sh:description "eli:is_part_of MUST be an ELI IRI";
+  sh:nodeKind sh:IRI;
+  sh:pattern "^http[s]?://(.*)/eli/(.*)" .
+
+elish:LegalResource_has_part sh:path eli:has_part;
+  sh:severity sh:Violation;
+  sh:name "has part"@en;
+  sh:description "eli:has_part MUST be an ELI IRI";
+  sh:nodeKind sh:IRI;
+  sh:pattern "^http[s]?://(.*)/eli/(.*)" .
+
+elish:LegalResource_is_member_of sh:path eli:is_member_of;
+  sh:severity sh:Violation;
+  sh:name "is member of"@en;
+  sh:description "eli:is_member_of MUST be an ELI IRI";
+  sh:nodeKind sh:IRI;
+  sh:pattern "^http[s]?://(.*)/eli/(.*)" .
+
+elish:LegalResource_has_member sh:path eli:has_member;
+  sh:severity sh:Violation;
+  sh:name "has member"@en;
+  sh:description "eli:has_member MUST be an ELI IRI";
+  sh:nodeKind sh:IRI;
+  sh:pattern "^http[s]?://(.*)/eli/(.*)" .
+
+elish:LegalResource_is_realized_by sh:path eli:is_realized_by;
+  sh:severity sh:Violation;
+  sh:name "is realized by"@en;
+  sh:description "eli:is_realized_by MUST be an ELI IRI";
+  sh:nodeKind sh:IRI;
+  sh:pattern "^http[s]?://(.*)/eli/(.*)" .
+
+elish:LegalResource_type_document sh:path eli:type_document;
+  sh:severity sh:Violation;
+  sh:name "type document"@en;
+  sh:description "eli:type_document MUST be an IRI";
+  sh:nodeKind sh:IRI .
+
+elish:LegalResource_passed_by sh:path eli:passed_by;
+  sh:severity sh:Violation;
+  sh:name "passed by"@en;
+  sh:description "eli:passed_by MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:LegalResource_countersigned_by sh:path eli:countersigned_by;
+  sh:severity sh:Violation;
+  sh:name "countersigned by"@en;
+  sh:description "eli:countersigned_by MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:LegalResource_responsibility_of sh:path eli:responsibility_of;
+  sh:severity sh:Violation;
+  sh:name "responsibility of"@en;
+  sh:description "eli:responsibility_of MUST have a literal value with datatype xsd:string";
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+elish:LegalResource_responsibility_of_agent sh:path eli:responsibility_of_agent;
+  sh:severity sh:Violation;
+  sh:name "responsibility of agent"@en;
+  sh:description "eli:responsibility_of_agent MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:LegalResource_transposed_by sh:path eli:transposed_by;
+  sh:severity sh:Violation;
+  sh:name "transposed by"@en;
+  sh:description "eli:transposed_by MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:LegalResource_implementation_ensured_by sh:path eli:implementation_ensured_by;
+  sh:severity sh:Violation;
+  sh:name "implementation ensured by"@en;
+  sh:description "eli:implementation_ensured_by MUST have an IRI value in";
+  sh:nodeKind sh:IRI .
+
+elish:LegalResource_applied_by sh:path eli:applied_by;
+  sh:severity sh:Violation;
+  sh:name "applied by"@en;
+  sh:description "eli:applied_by MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:LegalResource_is_another_publication_of sh:path eli:is_another_publication_of;
+  sh:severity sh:Violation;
+  sh:name "is another publication of"@en;
+  sh:description "eli:is_another_publication_of MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:LegalResource_has_another_publication sh:path eli:has_another_publication;
+  sh:severity sh:Violation;
+  sh:name "has another publication"@en;
+  sh:description "eli:has_another_publication MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:AbstractLegalResource_has_member_or_is_member_of sh:path _:eb559f955f9d4974b990ebae92fed3761198;
+  sh:severity sh:Violation;
+  sh:name "link to individual legal resource"@en;
+  sh:description "An abstract LegalResource MUST have at least one other legal resource as a member";
+  sh:minCount "1"^^xsd:integer .
+
+_:eb559f955f9d4974b990ebae92fed3761198 sh:alternativePath _:eb559f955f9d4974b990ebae92fed3761199 .
+
+_:eb559f955f9d4974b990ebae92fed3761199 rdf:first eli:has_member;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761200 .
+
+_:eb559f955f9d4974b990ebae92fed3761200 rdf:first _:eb559f955f9d4974b990ebae92fed3761201;
+  rdf:rest rdf:nil .
+
+_:eb559f955f9d4974b990ebae92fed3761201 sh:inversePath eli:is_member_of .
+
+elish:IndividualLegalResource_is_realized_by_or_inverse_realizes sh:path _:eb559f955f9d4974b990ebae92fed3761202;
+  sh:severity sh:Violation;
+  sh:name "link to expression"@en;
+  sh:description "An individual LegalResource MUST be realized by at least one expression";
+  sh:minCount "1"^^xsd:integer .
+
+_:eb559f955f9d4974b990ebae92fed3761202 sh:alternativePath _:eb559f955f9d4974b990ebae92fed3761203 .
+
+_:eb559f955f9d4974b990ebae92fed3761203 rdf:first eli:is_realized_by;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761204 .
+
+_:eb559f955f9d4974b990ebae92fed3761204 rdf:first _:eb559f955f9d4974b990ebae92fed3761205;
+  rdf:rest rdf:nil .
+
+_:eb559f955f9d4974b990ebae92fed3761205 sh:inversePath eli:realizes .
+
+elish:IndividualLegalResource_zeroorone_is_member_of_or_has_member_then_type_document
+  sh:path _:eb559f955f9d4974b990ebae92fed3761206;
+  sh:severity sh:Violation;
+  sh:name "type of document (of self or abstract legal resource)"@en;
+  sh:description "An individual LegalResource MUST have an eli:type_document on itself or its abstract legal resource";
+  sh:minCount "1"^^xsd:integer .
+
+_:eb559f955f9d4974b990ebae92fed3761206 rdf:first _:eb559f955f9d4974b990ebae92fed3761207;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761212 .
+
+_:eb559f955f9d4974b990ebae92fed3761207 sh:zeroOrOnePath _:eb559f955f9d4974b990ebae92fed3761208 .
+
+_:eb559f955f9d4974b990ebae92fed3761208 sh:alternativePath _:eb559f955f9d4974b990ebae92fed3761209 .
+
+_:eb559f955f9d4974b990ebae92fed3761209 rdf:first eli:is_member_of;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761210 .
+
+_:eb559f955f9d4974b990ebae92fed3761210 rdf:first _:eb559f955f9d4974b990ebae92fed3761211;
+  rdf:rest rdf:nil .
+
+_:eb559f955f9d4974b990ebae92fed3761211 sh:inversePath eli:has_member .
+
+_:eb559f955f9d4974b990ebae92fed3761212 rdf:first eli:type_document;
+  rdf:rest rdf:nil .
+
+elish:WorkSubdivision_type_subdivision sh:path eli:type_subdivision;
+  sh:severity sh:Violation;
+  sh:name "type of subdivision"@en;
+  sh:description "A WorkSubdivision MUST have at the most one subdivision type. eli:type_subdivision MUST have an IRI value";
+  sh:nodeKind sh:IRI;
+  sh:maxCount "1"^^xsd:integer .
+
+elish:LegalExpression_realizes sh:path eli:realizes;
+  sh:severity sh:Violation;
+  sh:name "realizes"@en;
+  sh:description "eli:realizes MUST be an ELI IRI";
+  sh:nodeKind sh:IRI;
+  sh:pattern "^http[s]?://(.*)/eli/(.*)" .
+
+elish:LegalExpression_is_embodied_by sh:path eli:is_embodied_by;
+  sh:severity sh:Violation;
+  sh:name "is embodied by"@en;
+  sh:description "eli:is_embodied_by MUST be an ELI IRI";
+  sh:nodeKind sh:IRI;
+  sh:pattern "^http[s]?://(.*)/eli/(.*)" .
+
+elish:LegalExpression_title sh:path eli:title;
+  sh:severity sh:Violation;
+  sh:name "title"@en;
+  sh:description "A LegalExpression MUST have at least one title.";
+  sh:minCount "1"^^xsd:integer .
+
+elish:LegalExpression_language sh:path eli:language;
+  sh:severity sh:Violation;
+  sh:name "language"@en;
+  sh:description "A LegalExpression MUST have at least one eli:language.";
+  sh:minCount "1"^^xsd:integer .
+
+elish:LegalExpression_has_translation sh:path eli:has_translation;
+  sh:severity sh:Violation;
+  sh:name "has translation"@en;
+  sh:description "eli:has_translation MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:LegalExpression_is_translation_of sh:path eli:is_translation_of;
+  sh:severity sh:Violation;
+  sh:name "is translation of"@en;
+  sh:description "eli:is_translation_of MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:LegalExpression_realizes_or_inverse_is_realized_by sh:path _:eb559f955f9d4974b990ebae92fed3761213;
+  sh:severity sh:Violation;
+  sh:name "link to legal resource"@en;
+  sh:description "A LegalExpression MUST be the realization of one and only one LegalResource";
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer .
+
+_:eb559f955f9d4974b990ebae92fed3761213 sh:alternativePath _:eb559f955f9d4974b990ebae92fed3761214 .
+
+_:eb559f955f9d4974b990ebae92fed3761214 rdf:first eli:realizes;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761215 .
+
+_:eb559f955f9d4974b990ebae92fed3761215 rdf:first _:eb559f955f9d4974b990ebae92fed3761216;
+  rdf:rest rdf:nil .
+
+_:eb559f955f9d4974b990ebae92fed3761216 sh:inversePath eli:is_realized_by .
+
+elish:LegalExpression_is_embodied_by_or_inverse_embodies sh:path _:eb559f955f9d4974b990ebae92fed3761217;
+  sh:severity sh:Violation;
+  sh:name "link to format"@en;
+  sh:description "A LegalExpression MUST be embodied by at least one Format";
+  sh:minCount "1"^^xsd:integer .
+
+_:eb559f955f9d4974b990ebae92fed3761217 sh:alternativePath _:eb559f955f9d4974b990ebae92fed3761218 .
+
+_:eb559f955f9d4974b990ebae92fed3761218 rdf:first eli:is_embodied_by;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761219 .
+
+_:eb559f955f9d4974b990ebae92fed3761219 rdf:first _:eb559f955f9d4974b990ebae92fed3761220;
+  rdf:rest rdf:nil .
+
+_:eb559f955f9d4974b990ebae92fed3761220 sh:inversePath eli:embodies .
+
+elish:Format_embodies sh:path eli:embodies;
+  sh:severity sh:Violation;
+  sh:name "embodies"@en;
+  sh:description "eli:embodies MUST be an ELI IRI";
+  sh:nodeKind sh:IRI;
+  sh:pattern "^http[s]?://(.*)/eli/(.*)" .
+
+elish:Format_format sh:path eli:format;
+  sh:severity sh:Violation;
+  sh:name "format"@en;
+  sh:description "A Format MUST have one and only one value for \"format\".";
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer .
+
+elish:Format_media_type sh:path eli:media_type;
+  sh:severity sh:Violation;
+  sh:name "media type"@en;
+  sh:description "A Format MUST not have more than one value for \"media_type\"";
+  sh:maxCount "1"^^xsd:integer .
+
+elish:Format_published_in sh:path eli:published_in;
+  sh:severity sh:Violation;
+  sh:name "published in"@en;
+  sh:description "eli:published_in MUST have a literal value";
+  sh:nodeKind sh:Literal .
+
+elish:Format_published_in_format sh:path eli:published_in_format;
+  sh:severity sh:Violation;
+  sh:name "published in format"@en;
+  sh:description "eli:published_in_format MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:Format_publishes sh:path eli:publishes;
+  sh:severity sh:Violation;
+  sh:name "published"@en;
+  sh:description "eli:publishes MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:Format_rights sh:path eli:rights;
+  sh:severity sh:Violation;
+  sh:name "rights"@en;
+  sh:description "A Format MUST not have more than one value for eli:rights. eli:rights MUST have a literal value";
+  sh:nodeKind sh:Literal;
+  sh:maxCount "1"^^xsd:integer .
+
+elish:Format_rightsholder sh:path eli:rightsholder;
+  sh:severity sh:Violation;
+  sh:name "rightsholder"@en;
+  sh:description "eli:rightsholder MUST have a literal value";
+  sh:nodeKind sh:Literal .
+
+elish:Format_rightsholder_agent sh:path eli:rightsholder_agent;
+  sh:severity sh:Violation;
+  sh:name "rightsholder agent"@en;
+  sh:description "eli:rightsholder_agent MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:Format_licence sh:path eli:licence;
+  sh:severity sh:Violation;
+  sh:name "licence"@en;
+  sh:description "eli:license MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:Format_legal_value sh:path eli:legal_value;
+  sh:severity sh:Violation;
+  sh:name "legal value"@en;
+  sh:description """A Format MUST not have more than one value for eli:legal_value.
+eli:legal_value MUST have an IRI value in ( eli:LegalValue-unofficial eli:LegalValue-official eli:LegalValue-authoritative eli:LegalValue-definitive )""";
+  sh:nodeKind sh:IRI;
+  sh:maxCount "1"^^xsd:integer;
+  sh:in _:eb559f955f9d4974b990ebae92fed3761221 .
+
+_:eb559f955f9d4974b990ebae92fed3761221 rdf:first eli:LegalValue-unofficial;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761222 .
+
+_:eb559f955f9d4974b990ebae92fed3761222 rdf:first eli:LegalValue-official;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761223 .
+
+_:eb559f955f9d4974b990ebae92fed3761223 rdf:first eli:LegalValue-authoritative;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761224 .
+
+_:eb559f955f9d4974b990ebae92fed3761224 rdf:first eli:LegalValue-definitive;
+  rdf:rest rdf:nil .
+
+elish:Format_embodies_or_inverse_is_embodied_by sh:path _:eb559f955f9d4974b990ebae92fed3761225;
+  sh:severity sh:Violation;
+  sh:name "link to expression"@en;
+  sh:description "A Format MUST embody one and only one LegalExpression";
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer .
+
+_:eb559f955f9d4974b990ebae92fed3761225 sh:alternativePath _:eb559f955f9d4974b990ebae92fed3761226 .
+
+_:eb559f955f9d4974b990ebae92fed3761226 rdf:first eli:embodies;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761227 .
+
+_:eb559f955f9d4974b990ebae92fed3761227 rdf:first _:eb559f955f9d4974b990ebae92fed3761228;
+  rdf:rest rdf:nil .
+
+_:eb559f955f9d4974b990ebae92fed3761228 sh:inversePath eli:is_embodied_by .
+
+elish:LegalExpressionFormat_publisher sh:path eli:publisher;
+  sh:severity sh:Violation;
+  sh:name "publisher"@en;
+  sh:description "eli:publisher MUST have a literal value";
+  sh:nodeKind sh:Literal .
+
+elish:LegalExpressionFormat_publisher_agent sh:path eli:publisher_agent;
+  sh:severity sh:Violation;
+  sh:name "publisher agent"@en;
+  sh:description "eli:publisher_agent MUST have an IRI value";
+  sh:nodeKind sh:IRI .
+
+elish:is_part_of a sh:NodeShape;
+  rdfs:label "is_part_of"@en;
+  sh:order "101"^^xsd:integer;
+  rdfs:comment "eli:is_part_of MUST be expressed on eli:Work"@en;
+  sh:targetSubjectsOf eli:is_part_of;
+  sh:class eli:Work .
+
+elish:has_part a sh:NodeShape;
+  rdfs:label "has_part"@en;
+  sh:order "102"^^xsd:integer;
+  rdfs:comment "eli:has_part MUST be expressed on eli:Work"@en;
+  sh:targetSubjectsOf eli:has_part;
+  sh:class eli:Work .
+
+elish:is_member_of a sh:NodeShape;
+  rdfs:label "is_member_of"@en;
+  sh:order "103"^^xsd:integer;
+  rdfs:comment "eli:is_member_of MUST be expressed on eli:Work"@en;
+  sh:targetSubjectsOf eli:is_member_of;
+  sh:class eli:Work .
+
+elish:has_member a sh:NodeShape;
+  rdfs:label "has_member"@en;
+  sh:order "104"^^xsd:integer;
+  rdfs:comment "eli:has_member MUST be expressed on eli:Work"@en;
+  sh:targetSubjectsOf eli:has_member;
+  sh:class eli:Work .
+
+elish:is_realized_by a sh:NodeShape;
+  rdfs:label "is_realized_by"@en;
+  sh:order "105"^^xsd:integer;
+  rdfs:comment "eli:is_realized_by MUST be expressed on eli:Work"@en;
+  sh:targetSubjectsOf eli:is_realized_by;
+  sh:class eli:Work .
+
+elish:realizes a sh:NodeShape;
+  rdfs:label "realizes"@en;
+  sh:order "106"^^xsd:integer;
+  rdfs:comment "eli:realizes MUST be expressed on eli:Expression"@en;
+  sh:targetSubjectsOf eli:realizes;
+  sh:class eli:Expression .
+
+elish:is_embodied_by a sh:NodeShape;
+  rdfs:label "is_embodied_by"@en;
+  sh:order "107"^^xsd:integer;
+  rdfs:comment "eli:is_embodied_by MUST be expressed on eli:Expression"@en;
+  sh:targetSubjectsOf eli:is_embodied_by;
+  sh:class eli:Expression .
+
+elish:embodies a sh:NodeShape;
+  rdfs:label "embodies"@en;
+  sh:order "108"^^xsd:integer;
+  rdfs:comment "eli:embodies MUST be expressed on eli:Manifestation"@en;
+  sh:targetSubjectsOf eli:embodies;
+  sh:class eli:Manifestation .
+
+elish:is_exemplified_by a sh:NodeShape;
+  rdfs:label "is_exemplified_by"@en;
+  sh:order "109"^^xsd:integer;
+  rdfs:comment "eli:is_exemplified_by MUST be expressed on eli:Manifestation"@en;
+  sh:targetSubjectsOf eli:is_exemplified_by;
+  sh:class eli:Manifestation .
+
+elish:number a sh:NodeShape;
+  rdfs:label "number"@en;
+  sh:order "110"^^xsd:integer;
+  rdfs:comment "eli:number MUST be expressed on eli:Work, eli:Expression"@en;
+  sh:targetSubjectsOf eli:number;
+  sh:or _:eb559f955f9d4974b990ebae92fed3761231 .
+
+_:eb559f955f9d4974b990ebae92fed3761229 sh:class eli:Work .
+
+_:eb559f955f9d4974b990ebae92fed3761230 sh:class eli:Expression .
+
+_:eb559f955f9d4974b990ebae92fed3761231 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761229;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761232 .
+
+_:eb559f955f9d4974b990ebae92fed3761232 rdf:first _:eb559f955f9d4974b990ebae92fed3761230;
+  rdf:rest rdf:nil .
+
+elish:uri_schema a sh:NodeShape;
+  rdfs:label "uri_schema"@en;
+  sh:order "111"^^xsd:integer;
+  rdfs:comment "eli:uri_schema MUST be expressed on eli:LegalResource, eli:LegalExpression, eli:Format"@en;
+  sh:targetSubjectsOf eli:uri_schema;
+  sh:or _:eb559f955f9d4974b990ebae92fed3761236 .
+
+_:eb559f955f9d4974b990ebae92fed3761233 sh:class eli:Format .
+
+_:eb559f955f9d4974b990ebae92fed3761234 sh:class eli:LegalResource .
+
+_:eb559f955f9d4974b990ebae92fed3761235 sh:class eli:LegalExpression .
+
+_:eb559f955f9d4974b990ebae92fed3761236 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761233;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761237 .
+
+_:eb559f955f9d4974b990ebae92fed3761237 rdf:first _:eb559f955f9d4974b990ebae92fed3761234;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761238 .
+
+_:eb559f955f9d4974b990ebae92fed3761238 rdf:first _:eb559f955f9d4974b990ebae92fed3761235;
+  rdf:rest rdf:nil .
+
+elish:id_local a sh:NodeShape;
+  rdfs:label "id_local"@en;
+  sh:order "112"^^xsd:integer;
+  rdfs:comment "eli:id_local MUST be expressed on eli:LegalResource, eli:LegalExpression, eli:Format"@en;
+  sh:targetSubjectsOf eli:id_local;
+  sh:or _:eb559f955f9d4974b990ebae92fed3761242 .
+
+_:eb559f955f9d4974b990ebae92fed3761239 sh:class eli:Format .
+
+_:eb559f955f9d4974b990ebae92fed3761240 sh:class eli:LegalResource .
+
+_:eb559f955f9d4974b990ebae92fed3761241 sh:class eli:LegalExpression .
+
+_:eb559f955f9d4974b990ebae92fed3761242 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761239;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761243 .
+
+_:eb559f955f9d4974b990ebae92fed3761243 rdf:first _:eb559f955f9d4974b990ebae92fed3761240;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761244 .
+
+_:eb559f955f9d4974b990ebae92fed3761244 rdf:first _:eb559f955f9d4974b990ebae92fed3761241;
+  rdf:rest rdf:nil .
+
+elish:type_document a sh:NodeShape;
+  rdfs:label "type_document"@en;
+  sh:order "113"^^xsd:integer;
+  rdfs:comment "eli:type_document MUST be expressed on eli:LegalResource"@en;
+  sh:targetSubjectsOf eli:type_document;
+  sh:class eli:LegalResource .
+
+elish:relevant_for a sh:NodeShape;
+  rdfs:label "relevant_for"@en;
+  sh:order "114"^^xsd:integer;
+  rdfs:comment "eli:relevant_for MUST be expressed on eli:LegalResource, eli:LegalExpression"@en;
+  sh:targetSubjectsOf eli:relevant_for;
+  sh:or _:eb559f955f9d4974b990ebae92fed3761247 .
+
+_:eb559f955f9d4974b990ebae92fed3761245 sh:class eli:LegalResource .
+
+_:eb559f955f9d4974b990ebae92fed3761246 sh:class eli:LegalExpression .
+
+_:eb559f955f9d4974b990ebae92fed3761247 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761245;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761248 .
+
+_:eb559f955f9d4974b990ebae92fed3761248 rdf:first _:eb559f955f9d4974b990ebae92fed3761246;
+  rdf:rest rdf:nil .
+
+elish:jurisdiction a sh:NodeShape;
+  rdfs:label "jurisdiction"@en;
+  sh:order "115"^^xsd:integer;
+  rdfs:comment "eli:jurisdiction MUST be expressed on eli:LegalResource, eli:LegalExpression"@en;
+  sh:targetSubjectsOf eli:jurisdiction;
+  sh:or _:eb559f955f9d4974b990ebae92fed3761251 .
+
+_:eb559f955f9d4974b990ebae92fed3761249 sh:class eli:LegalResource .
+
+_:eb559f955f9d4974b990ebae92fed3761250 sh:class eli:LegalExpression .
+
+_:eb559f955f9d4974b990ebae92fed3761251 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761249;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761252 .
+
+_:eb559f955f9d4974b990ebae92fed3761252 rdf:first _:eb559f955f9d4974b990ebae92fed3761250;
+  rdf:rest rdf:nil .
+
+elish:passed_by a sh:NodeShape;
+  rdfs:label "passed_by"@en;
+  sh:order "116"^^xsd:integer;
+  rdfs:comment "eli:passed_by MUST be expressed on eli:LegalResource"@en;
+  sh:targetSubjectsOf eli:passed_by;
+  sh:class eli:LegalResource .
+
+elish:responsibility_of a sh:NodeShape;
+  rdfs:label "responsibility_of"@en;
+  sh:order "117"^^xsd:integer;
+  rdfs:comment "eli:responsibility_of MUST be expressed on eli:LegalResource"@en;
+  sh:targetSubjectsOf eli:responsibility_of;
+  sh:class eli:LegalResource .
+
+elish:responsibility_of_agent a sh:NodeShape;
+  rdfs:label "responsibility_of_agent"@en;
+  sh:order "118"^^xsd:integer;
+  rdfs:comment "eli:responsibility_of_agent MUST be expressed on eli:LegalResource"@en;
+  sh:targetSubjectsOf eli:responsibility_of_agent;
+  sh:class eli:LegalResource .
+
+elish:is_about a sh:NodeShape;
+  rdfs:label "is_about"@en;
+  sh:order "119"^^xsd:integer;
+  rdfs:comment "eli:is_about MUST be expressed on eli:LegalResource"@en;
+  sh:targetSubjectsOf eli:is_about;
+  sh:class eli:LegalResource .
+
+elish:description a sh:NodeShape;
+  rdfs:label "description"@en;
+  sh:order "120"^^xsd:integer;
+  rdfs:comment "eli:description MUST be expressed on eli:LegalResource, eli:LegalExpression"@en;
+  sh:targetSubjectsOf eli:description;
+  sh:or _:eb559f955f9d4974b990ebae92fed3761255 .
+
+_:eb559f955f9d4974b990ebae92fed3761253 sh:class eli:LegalResource .
+
+_:eb559f955f9d4974b990ebae92fed3761254 sh:class eli:LegalExpression .
+
+_:eb559f955f9d4974b990ebae92fed3761255 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761253;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761256 .
+
+_:eb559f955f9d4974b990ebae92fed3761256 rdf:first _:eb559f955f9d4974b990ebae92fed3761254;
+  rdf:rest rdf:nil .
+
+elish:version a sh:NodeShape;
+  rdfs:label "version"@en;
+  sh:order "121"^^xsd:integer;
+  rdfs:comment "eli:version MUST be expressed on eli:LegalResource, eli:LegalExpression"@en;
+  sh:targetSubjectsOf eli:version;
+  sh:or _:eb559f955f9d4974b990ebae92fed3761259 .
+
+_:eb559f955f9d4974b990ebae92fed3761257 sh:class eli:LegalResource .
+
+_:eb559f955f9d4974b990ebae92fed3761258 sh:class eli:LegalExpression .
+
+_:eb559f955f9d4974b990ebae92fed3761259 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761257;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761260 .
+
+_:eb559f955f9d4974b990ebae92fed3761260 rdf:first _:eb559f955f9d4974b990ebae92fed3761258;
+  rdf:rest rdf:nil .
+
+elish:version_date a sh:NodeShape;
+  rdfs:label "version_date"@en;
+  sh:order "122"^^xsd:integer;
+  rdfs:comment "eli:version_date MUST be expressed on eli:LegalResource, eli:LegalExpression"@en;
+  sh:targetSubjectsOf eli:version_date;
+  sh:or _:eb559f955f9d4974b990ebae92fed3761263 .
+
+_:eb559f955f9d4974b990ebae92fed3761261 sh:class eli:LegalResource .
+
+_:eb559f955f9d4974b990ebae92fed3761262 sh:class eli:LegalExpression .
+
+_:eb559f955f9d4974b990ebae92fed3761263 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761261;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761264 .
+
+_:eb559f955f9d4974b990ebae92fed3761264 rdf:first _:eb559f955f9d4974b990ebae92fed3761262;
+  rdf:rest rdf:nil .
+
+elish:date_document a sh:NodeShape;
+  rdfs:label "date_document"@en;
+  sh:order "123"^^xsd:integer;
+  rdfs:comment "eli:date_document MUST be expressed on eli:Work"@en;
+  sh:targetSubjectsOf eli:date_document;
+  sh:class eli:Work .
+
+elish:date_publication a sh:NodeShape;
+  rdfs:label "date_publication"@en;
+  sh:order "124"^^xsd:integer;
+  rdfs:comment "eli:date_publication MUST be expressed on eli:LegalResource, eli:LegalExpression"@en;
+  sh:targetSubjectsOf eli:date_publication;
+  sh:or _:eb559f955f9d4974b990ebae92fed3761267 .
+
+_:eb559f955f9d4974b990ebae92fed3761265 sh:class eli:LegalResource .
+
+_:eb559f955f9d4974b990ebae92fed3761266 sh:class eli:LegalExpression .
+
+_:eb559f955f9d4974b990ebae92fed3761267 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761265;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761268 .
+
+_:eb559f955f9d4974b990ebae92fed3761268 rdf:first _:eb559f955f9d4974b990ebae92fed3761266;
+  rdf:rest rdf:nil .
+
+elish:in_force a sh:NodeShape;
+  rdfs:label "in_force"@en;
+  sh:order "125"^^xsd:integer;
+  rdfs:comment "eli:in_force MUST be expressed on eli:LegalResource, eli:LegalExpression"@en;
+  sh:targetSubjectsOf eli:in_force;
+  sh:or _:eb559f955f9d4974b990ebae92fed3761271 .
+
+_:eb559f955f9d4974b990ebae92fed3761269 sh:class eli:LegalResource .
+
+_:eb559f955f9d4974b990ebae92fed3761270 sh:class eli:LegalExpression .
+
+_:eb559f955f9d4974b990ebae92fed3761271 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761269;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761272 .
+
+_:eb559f955f9d4974b990ebae92fed3761272 rdf:first _:eb559f955f9d4974b990ebae92fed3761270;
+  rdf:rest rdf:nil .
+
+elish:first_date_entry_in_force a sh:NodeShape;
+  rdfs:label "first_date_entry_in_force"@en;
+  sh:order "126"^^xsd:integer;
+  rdfs:comment "eli:first_date_entry_in_force MUST be expressed on eli:LegalResource, eli:LegalExpression"@en;
+  sh:targetSubjectsOf eli:first_date_entry_in_force;
+  sh:or _:eb559f955f9d4974b990ebae92fed3761275 .
+
+_:eb559f955f9d4974b990ebae92fed3761273 sh:class eli:LegalResource .
+
+_:eb559f955f9d4974b990ebae92fed3761274 sh:class eli:LegalExpression .
+
+_:eb559f955f9d4974b990ebae92fed3761275 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761273;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761276 .
+
+_:eb559f955f9d4974b990ebae92fed3761276 rdf:first _:eb559f955f9d4974b990ebae92fed3761274;
+  rdf:rest rdf:nil .
+
+elish:date_no_longer_in_force a sh:NodeShape;
+  rdfs:label "date_no_longer_in_force"@en;
+  sh:order "127"^^xsd:integer;
+  rdfs:comment "eli:date_no_longer_in_force MUST be expressed on eli:LegalResource, eli:LegalExpression"@en;
+  sh:targetSubjectsOf eli:date_no_longer_in_force;
+  sh:or _:eb559f955f9d4974b990ebae92fed3761279 .
+
+_:eb559f955f9d4974b990ebae92fed3761277 sh:class eli:LegalResource .
+
+_:eb559f955f9d4974b990ebae92fed3761278 sh:class eli:LegalExpression .
+
+_:eb559f955f9d4974b990ebae92fed3761279 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761277;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761280 .
+
+_:eb559f955f9d4974b990ebae92fed3761280 rdf:first _:eb559f955f9d4974b990ebae92fed3761278;
+  rdf:rest rdf:nil .
+
+elish:date_applicability a sh:NodeShape;
+  rdfs:label "date_applicability"@en;
+  sh:order "128"^^xsd:integer;
+  rdfs:comment "eli:date_applicability MUST be expressed on eli:LegalResource, eli:LegalExpression"@en;
+  sh:targetSubjectsOf eli:date_applicability;
+  sh:or _:eb559f955f9d4974b990ebae92fed3761283 .
+
+_:eb559f955f9d4974b990ebae92fed3761281 sh:class eli:LegalResource .
+
+_:eb559f955f9d4974b990ebae92fed3761282 sh:class eli:LegalExpression .
+
+_:eb559f955f9d4974b990ebae92fed3761283 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761281;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761284 .
+
+_:eb559f955f9d4974b990ebae92fed3761284 rdf:first _:eb559f955f9d4974b990ebae92fed3761282;
+  rdf:rest rdf:nil .
+
+elish:related_to a sh:NodeShape;
+  rdfs:label "related_to"@en;
+  sh:order "129"^^xsd:integer;
+  rdfs:comment "eli:related_to MUST be expressed on eli:LegalResource, eli:LegalExpression"@en;
+  sh:targetSubjectsOf eli:related_to;
+  sh:or _:eb559f955f9d4974b990ebae92fed3761287 .
+
+_:eb559f955f9d4974b990ebae92fed3761285 sh:class eli:LegalResource .
+
+_:eb559f955f9d4974b990ebae92fed3761286 sh:class eli:LegalExpression .
+
+_:eb559f955f9d4974b990ebae92fed3761287 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761285;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761288 .
+
+_:eb559f955f9d4974b990ebae92fed3761288 rdf:first _:eb559f955f9d4974b990ebae92fed3761286;
+  rdf:rest rdf:nil .
+
+elish:changes a sh:NodeShape;
+  rdfs:label "changes"@en;
+  sh:order "130"^^xsd:integer;
+  rdfs:comment "eli:changes MUST be expressed on eli:Work, eli:Expression"@en;
+  sh:targetSubjectsOf eli:changes;
+  sh:or _:eb559f955f9d4974b990ebae92fed3761291 .
+
+_:eb559f955f9d4974b990ebae92fed3761289 sh:class eli:Work .
+
+_:eb559f955f9d4974b990ebae92fed3761290 sh:class eli:Expression .
+
+_:eb559f955f9d4974b990ebae92fed3761291 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761289;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761292 .
+
+_:eb559f955f9d4974b990ebae92fed3761292 rdf:first _:eb559f955f9d4974b990ebae92fed3761290;
+  rdf:rest rdf:nil .
+
+elish:changed_by a sh:NodeShape;
+  rdfs:label "changed_by"@en;
+  sh:order "131"^^xsd:integer;
+  rdfs:comment "eli:changed_by MUST be expressed on eli:Work, eli:Expression"@en;
+  sh:targetSubjectsOf eli:changed_by;
+  sh:or _:eb559f955f9d4974b990ebae92fed3761295 .
+
+_:eb559f955f9d4974b990ebae92fed3761293 sh:class eli:Work .
+
+_:eb559f955f9d4974b990ebae92fed3761294 sh:class eli:Expression .
+
+_:eb559f955f9d4974b990ebae92fed3761295 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761293;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761296 .
+
+_:eb559f955f9d4974b990ebae92fed3761296 rdf:first _:eb559f955f9d4974b990ebae92fed3761294;
+  rdf:rest rdf:nil .
+
+elish:basis_for a sh:NodeShape;
+  rdfs:label "basis_for"@en;
+  sh:order "132"^^xsd:integer;
+  rdfs:comment "eli:basis_for MUST be expressed on eli:Work, eli:Expression"@en;
+  sh:targetSubjectsOf eli:basis_for;
+  sh:or _:eb559f955f9d4974b990ebae92fed3761299 .
+
+_:eb559f955f9d4974b990ebae92fed3761297 sh:class eli:Work .
+
+_:eb559f955f9d4974b990ebae92fed3761298 sh:class eli:Expression .
+
+_:eb559f955f9d4974b990ebae92fed3761299 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761297;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761300 .
+
+_:eb559f955f9d4974b990ebae92fed3761300 rdf:first _:eb559f955f9d4974b990ebae92fed3761298;
+  rdf:rest rdf:nil .
+
+elish:based_on a sh:NodeShape;
+  rdfs:label "based_on"@en;
+  sh:order "133"^^xsd:integer;
+  rdfs:comment "eli:based_on MUST be expressed on eli:Work"@en;
+  sh:targetSubjectsOf eli:based_on;
+  sh:class eli:Work .
+
+elish:cites a sh:NodeShape;
+  rdfs:label "cites"@en;
+  sh:order "134"^^xsd:integer;
+  rdfs:comment "eli:cites MUST be expressed on eli:LegalResource, eli:LegalExpression"@en;
+  sh:targetSubjectsOf eli:cites;
+  sh:or _:eb559f955f9d4974b990ebae92fed3761303 .
+
+_:eb559f955f9d4974b990ebae92fed3761301 sh:class eli:LegalResource .
+
+_:eb559f955f9d4974b990ebae92fed3761302 sh:class eli:LegalExpression .
+
+_:eb559f955f9d4974b990ebae92fed3761303 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761301;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761304 .
+
+_:eb559f955f9d4974b990ebae92fed3761304 rdf:first _:eb559f955f9d4974b990ebae92fed3761302;
+  rdf:rest rdf:nil .
+
+elish:cited_by a sh:NodeShape;
+  rdfs:label "cited_by"@en;
+  sh:order "135"^^xsd:integer;
+  rdfs:comment "eli:cited_by MUST be expressed on"@en;
+  sh:targetSubjectsOf eli:cited_by .
+
+elish:consolidates a sh:NodeShape;
+  rdfs:label "consolidates"@en;
+  sh:order "136"^^xsd:integer;
+  rdfs:comment "eli:consolidates MUST be expressed on eli:LegalResource, eli:LegalExpression"@en;
+  sh:targetSubjectsOf eli:consolidates;
+  sh:or _:eb559f955f9d4974b990ebae92fed3761307 .
+
+_:eb559f955f9d4974b990ebae92fed3761305 sh:class eli:LegalResource .
+
+_:eb559f955f9d4974b990ebae92fed3761306 sh:class eli:LegalExpression .
+
+_:eb559f955f9d4974b990ebae92fed3761307 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761305;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761308 .
+
+_:eb559f955f9d4974b990ebae92fed3761308 rdf:first _:eb559f955f9d4974b990ebae92fed3761306;
+  rdf:rest rdf:nil .
+
+elish:consolidated_by a sh:NodeShape;
+  rdfs:label "consolidated_by"@en;
+  sh:order "137"^^xsd:integer;
+  rdfs:comment "eli:consolidated_by MUST be expressed on eli:LegalResource, eli:LegalExpression"@en;
+  sh:targetSubjectsOf eli:consolidated_by;
+  sh:or _:eb559f955f9d4974b990ebae92fed3761311 .
+
+_:eb559f955f9d4974b990ebae92fed3761309 sh:class eli:LegalResource .
+
+_:eb559f955f9d4974b990ebae92fed3761310 sh:class eli:LegalExpression .
+
+_:eb559f955f9d4974b990ebae92fed3761311 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761309;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761312 .
+
+_:eb559f955f9d4974b990ebae92fed3761312 rdf:first _:eb559f955f9d4974b990ebae92fed3761310;
+  rdf:rest rdf:nil .
+
+elish:transposes a sh:NodeShape;
+  rdfs:label "transposes"@en;
+  sh:order "138"^^xsd:integer;
+  rdfs:comment "eli:transposes MUST be expressed on eli:LegalResource, eli:LegalExpression"@en;
+  sh:targetSubjectsOf eli:transposes;
+  sh:or _:eb559f955f9d4974b990ebae92fed3761315 .
+
+_:eb559f955f9d4974b990ebae92fed3761313 sh:class eli:LegalResource .
+
+_:eb559f955f9d4974b990ebae92fed3761314 sh:class eli:LegalExpression .
+
+_:eb559f955f9d4974b990ebae92fed3761315 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761313;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761316 .
+
+_:eb559f955f9d4974b990ebae92fed3761316 rdf:first _:eb559f955f9d4974b990ebae92fed3761314;
+  rdf:rest rdf:nil .
+
+elish:transposed_by a sh:NodeShape;
+  rdfs:label "transposed_by"@en;
+  sh:order "139"^^xsd:integer;
+  rdfs:comment "eli:transposed_by MUST be expressed on eli:LegalResource"@en;
+  sh:targetSubjectsOf eli:transposed_by;
+  sh:class eli:LegalResource .
+
+elish:implements a sh:NodeShape;
+  rdfs:label "implements"@en;
+  sh:order "140"^^xsd:integer;
+  rdfs:comment "eli:implements MUST be expressed on eli:LegalResource"@en;
+  sh:targetSubjectsOf eli:implements;
+  sh:class eli:LegalResource .
+
+elish:implemented_by a sh:NodeShape;
+  rdfs:label "implemented_by"@en;
+  sh:order "141"^^xsd:integer;
+  rdfs:comment "eli:implemented_by MUST be expressed on eli:LegalResource"@en;
+  sh:targetSubjectsOf eli:implemented_by;
+  sh:class eli:LegalResource .
+
+elish:applies a sh:NodeShape;
+  rdfs:label "applies"@en;
+  sh:order "142"^^xsd:integer;
+  rdfs:comment "eli:applies MUST be expressed on eli:LegalResource, eli:LegalExpression"@en;
+  sh:targetSubjectsOf eli:applies;
+  sh:or _:eb559f955f9d4974b990ebae92fed3761319 .
+
+_:eb559f955f9d4974b990ebae92fed3761317 sh:class eli:LegalResource .
+
+_:eb559f955f9d4974b990ebae92fed3761318 sh:class eli:LegalExpression .
+
+_:eb559f955f9d4974b990ebae92fed3761319 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761317;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761320 .
+
+_:eb559f955f9d4974b990ebae92fed3761320 rdf:first _:eb559f955f9d4974b990ebae92fed3761318;
+  rdf:rest rdf:nil .
+
+elish:applied_by a sh:NodeShape;
+  rdfs:label "applied_by"@en;
+  sh:order "143"^^xsd:integer;
+  rdfs:comment "eli:applied_by MUST be expressed on eli:LegalResource"@en;
+  sh:targetSubjectsOf eli:applied_by;
+  sh:class eli:LegalResource .
+
+elish:commences a sh:NodeShape;
+  rdfs:label "commences"@en;
+  sh:order "144"^^xsd:integer;
+  rdfs:comment "eli:commences MUST be expressed on eli:LegalResource, eli:LegalExpression"@en;
+  sh:targetSubjectsOf eli:commences;
+  sh:or _:eb559f955f9d4974b990ebae92fed3761323 .
+
+_:eb559f955f9d4974b990ebae92fed3761321 sh:class eli:LegalResource .
+
+_:eb559f955f9d4974b990ebae92fed3761322 sh:class eli:LegalExpression .
+
+_:eb559f955f9d4974b990ebae92fed3761323 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761321;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761324 .
+
+_:eb559f955f9d4974b990ebae92fed3761324 rdf:first _:eb559f955f9d4974b990ebae92fed3761322;
+  rdf:rest rdf:nil .
+
+elish:commenced_by a sh:NodeShape;
+  rdfs:label "commenced_by"@en;
+  sh:order "145"^^xsd:integer;
+  rdfs:comment "eli:commenced_by MUST be expressed on eli:LegalResource, eli:LegalExpression"@en;
+  sh:targetSubjectsOf eli:commenced_by;
+  sh:or _:eb559f955f9d4974b990ebae92fed3761327 .
+
+_:eb559f955f9d4974b990ebae92fed3761325 sh:class eli:LegalResource .
+
+_:eb559f955f9d4974b990ebae92fed3761326 sh:class eli:LegalExpression .
+
+_:eb559f955f9d4974b990ebae92fed3761327 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761325;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761328 .
+
+_:eb559f955f9d4974b990ebae92fed3761328 rdf:first _:eb559f955f9d4974b990ebae92fed3761326;
+  rdf:rest rdf:nil .
+
+elish:repeals a sh:NodeShape;
+  rdfs:label "repeals"@en;
+  sh:order "146"^^xsd:integer;
+  rdfs:comment "eli:repeals MUST be expressed on eli:LegalResource, eli:LegalExpression"@en;
+  sh:targetSubjectsOf eli:repeals;
+  sh:or _:eb559f955f9d4974b990ebae92fed3761331 .
+
+_:eb559f955f9d4974b990ebae92fed3761329 sh:class eli:LegalResource .
+
+_:eb559f955f9d4974b990ebae92fed3761330 sh:class eli:LegalExpression .
+
+_:eb559f955f9d4974b990ebae92fed3761331 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761329;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761332 .
+
+_:eb559f955f9d4974b990ebae92fed3761332 rdf:first _:eb559f955f9d4974b990ebae92fed3761330;
+  rdf:rest rdf:nil .
+
+elish:repealed_by a sh:NodeShape;
+  rdfs:label "repealed_by"@en;
+  sh:order "147"^^xsd:integer;
+  rdfs:comment "eli:repealed_by MUST be expressed on eli:LegalResource, eli:LegalExpression"@en;
+  sh:targetSubjectsOf eli:repealed_by;
+  sh:or _:eb559f955f9d4974b990ebae92fed3761335 .
+
+_:eb559f955f9d4974b990ebae92fed3761333 sh:class eli:LegalResource .
+
+_:eb559f955f9d4974b990ebae92fed3761334 sh:class eli:LegalExpression .
+
+_:eb559f955f9d4974b990ebae92fed3761335 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761333;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761336 .
+
+_:eb559f955f9d4974b990ebae92fed3761336 rdf:first _:eb559f955f9d4974b990ebae92fed3761334;
+  rdf:rest rdf:nil .
+
+elish:corrects a sh:NodeShape;
+  rdfs:label "corrects"@en;
+  sh:order "148"^^xsd:integer;
+  rdfs:comment "eli:corrects MUST be expressed on eli:Work, eli:Expression"@en;
+  sh:targetSubjectsOf eli:corrects;
+  sh:or _:eb559f955f9d4974b990ebae92fed3761339 .
+
+_:eb559f955f9d4974b990ebae92fed3761337 sh:class eli:Work .
+
+_:eb559f955f9d4974b990ebae92fed3761338 sh:class eli:Expression .
+
+_:eb559f955f9d4974b990ebae92fed3761339 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761337;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761340 .
+
+_:eb559f955f9d4974b990ebae92fed3761340 rdf:first _:eb559f955f9d4974b990ebae92fed3761338;
+  rdf:rest rdf:nil .
+
+elish:corrected_by a sh:NodeShape;
+  rdfs:label "corrected_by"@en;
+  sh:order "149"^^xsd:integer;
+  rdfs:comment "eli:corrected_by MUST be expressed on eli:Work, eli:Expression"@en;
+  sh:targetSubjectsOf eli:corrected_by;
+  sh:or _:eb559f955f9d4974b990ebae92fed3761343 .
+
+_:eb559f955f9d4974b990ebae92fed3761341 sh:class eli:Work .
+
+_:eb559f955f9d4974b990ebae92fed3761342 sh:class eli:Expression .
+
+_:eb559f955f9d4974b990ebae92fed3761343 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761341;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761344 .
+
+_:eb559f955f9d4974b990ebae92fed3761344 rdf:first _:eb559f955f9d4974b990ebae92fed3761342;
+  rdf:rest rdf:nil .
+
+elish:amends a sh:NodeShape;
+  rdfs:label "amends"@en;
+  sh:order "150"^^xsd:integer;
+  rdfs:comment "eli:amends MUST be expressed on eli:Work, eli:Expression"@en;
+  sh:targetSubjectsOf eli:amends;
+  sh:or _:eb559f955f9d4974b990ebae92fed3761347 .
+
+_:eb559f955f9d4974b990ebae92fed3761345 sh:class eli:Work .
+
+_:eb559f955f9d4974b990ebae92fed3761346 sh:class eli:Expression .
+
+_:eb559f955f9d4974b990ebae92fed3761347 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761345;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761348 .
+
+_:eb559f955f9d4974b990ebae92fed3761348 rdf:first _:eb559f955f9d4974b990ebae92fed3761346;
+  rdf:rest rdf:nil .
+
+elish:amended_by a sh:NodeShape;
+  rdfs:label "amended_by"@en;
+  sh:order "151"^^xsd:integer;
+  rdfs:comment "eli:amended_by MUST be expressed on eli:Work, eli:Expression"@en;
+  sh:targetSubjectsOf eli:amended_by;
+  sh:or _:eb559f955f9d4974b990ebae92fed3761351 .
+
+_:eb559f955f9d4974b990ebae92fed3761349 sh:class eli:Work .
+
+_:eb559f955f9d4974b990ebae92fed3761350 sh:class eli:Expression .
+
+_:eb559f955f9d4974b990ebae92fed3761351 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761349;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761352 .
+
+_:eb559f955f9d4974b990ebae92fed3761352 rdf:first _:eb559f955f9d4974b990ebae92fed3761350;
+  rdf:rest rdf:nil .
+
+elish:is_another_publication_of a sh:NodeShape;
+  rdfs:label "is_another_publication_of"@en;
+  sh:order "152"^^xsd:integer;
+  rdfs:comment "eli:is_another_publication_of MUST be expressed on eli:LegalResource"@en;
+  sh:targetSubjectsOf eli:is_another_publication_of;
+  sh:class eli:LegalResource .
+
+elish:has_another_publication a sh:NodeShape;
+  rdfs:label "has_another_publication"@en;
+  sh:order "153"^^xsd:integer;
+  rdfs:comment "eli:has_another_publication MUST be expressed on eli:LegalResource"@en;
+  sh:targetSubjectsOf eli:has_another_publication;
+  sh:class eli:LegalResource .
+
+elish:cited_by_case_law a sh:NodeShape;
+  rdfs:label "cited_by_case_law"@en;
+  sh:order "154"^^xsd:integer;
+  rdfs:comment "eli:cited_by_case_law MUST be expressed on eli:LegalResource, eli:LegalExpression"@en;
+  sh:targetSubjectsOf eli:cited_by_case_law;
+  sh:or _:eb559f955f9d4974b990ebae92fed3761355 .
+
+_:eb559f955f9d4974b990ebae92fed3761353 sh:class eli:LegalResource .
+
+_:eb559f955f9d4974b990ebae92fed3761354 sh:class eli:LegalExpression .
+
+_:eb559f955f9d4974b990ebae92fed3761355 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761353;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761356 .
+
+_:eb559f955f9d4974b990ebae92fed3761356 rdf:first _:eb559f955f9d4974b990ebae92fed3761354;
+  rdf:rest rdf:nil .
+
+elish:cited_by_case_law_reference a sh:NodeShape;
+  rdfs:label "cited_by_case_law_reference"@en;
+  sh:order "155"^^xsd:integer;
+  rdfs:comment "eli:cited_by_case_law_reference MUST be expressed on eli:LegalResource, eli:LegalExpression"@en;
+  sh:targetSubjectsOf eli:cited_by_case_law_reference;
+  sh:or _:eb559f955f9d4974b990ebae92fed3761359 .
+
+_:eb559f955f9d4974b990ebae92fed3761357 sh:class eli:LegalResource .
+
+_:eb559f955f9d4974b990ebae92fed3761358 sh:class eli:LegalExpression .
+
+_:eb559f955f9d4974b990ebae92fed3761359 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761357;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761360 .
+
+_:eb559f955f9d4974b990ebae92fed3761360 rdf:first _:eb559f955f9d4974b990ebae92fed3761358;
+  rdf:rest rdf:nil .
+
+elish:language a sh:NodeShape;
+  rdfs:label "language"@en;
+  sh:order "156"^^xsd:integer;
+  rdfs:comment "eli:language MUST be expressed on eli:Expression"@en;
+  sh:targetSubjectsOf eli:language;
+  sh:class eli:Expression .
+
+elish:title a sh:NodeShape;
+  rdfs:label "title"@en;
+  sh:order "157"^^xsd:integer;
+  rdfs:comment "eli:title MUST be expressed on eli:Expression"@en;
+  sh:targetSubjectsOf eli:title;
+  sh:class eli:Expression .
+
+elish:title_short a sh:NodeShape;
+  rdfs:label "title_short"@en;
+  sh:order "158"^^xsd:integer;
+  rdfs:comment "eli:title_short MUST be expressed on eli:Expression"@en;
+  sh:targetSubjectsOf eli:title_short;
+  sh:class eli:Expression .
+
+elish:title_alternative a sh:NodeShape;
+  rdfs:label "title_alternative"@en;
+  sh:order "159"^^xsd:integer;
+  rdfs:comment "eli:title_alternative MUST be expressed on eli:Expression"@en;
+  sh:targetSubjectsOf eli:title_alternative;
+  sh:class eli:Expression .
+
+elish:has_translation a sh:NodeShape;
+  rdfs:label "has_translation"@en;
+  sh:order "160"^^xsd:integer;
+  rdfs:comment "eli:has_translation MUST be expressed on eli:LegalExpression"@en;
+  sh:targetSubjectsOf eli:has_translation;
+  sh:class eli:LegalExpression .
+
+elish:is_translation_of a sh:NodeShape;
+  rdfs:label "is_translation_of"@en;
+  sh:order "161"^^xsd:integer;
+  rdfs:comment "eli:is_translation_of MUST be expressed on eli:LegalExpression"@en;
+  sh:targetSubjectsOf eli:is_translation_of;
+  sh:class eli:LegalExpression .
+
+elish:published_in a sh:NodeShape;
+  rdfs:label "published_in"@en;
+  sh:order "162"^^xsd:integer;
+  rdfs:comment "eli:published_in MUST be expressed on eli:Format"@en;
+  sh:targetSubjectsOf eli:published_in;
+  sh:class eli:Format .
+
+elish:published_in_format a sh:NodeShape;
+  rdfs:label "published_in_format"@en;
+  sh:order "163"^^xsd:integer;
+  rdfs:comment "eli:published_in_format MUST be expressed on eli:Format"@en;
+  sh:targetSubjectsOf eli:published_in_format;
+  sh:class eli:Format .
+
+elish:publishes a sh:NodeShape;
+  rdfs:label "publishes"@en;
+  sh:order "164"^^xsd:integer;
+  rdfs:comment "eli:publishes MUST be expressed on eli:Format"@en;
+  sh:targetSubjectsOf eli:publishes;
+  sh:class eli:Format .
+
+elish:publisher a sh:NodeShape;
+  rdfs:label "publisher"@en;
+  sh:order "165"^^xsd:integer;
+  rdfs:comment "eli:publisher MUST be expressed on eli:LegalExpression, eli:Format"@en;
+  sh:targetSubjectsOf eli:publisher;
+  sh:or _:eb559f955f9d4974b990ebae92fed3761363 .
+
+_:eb559f955f9d4974b990ebae92fed3761361 sh:class eli:Format .
+
+_:eb559f955f9d4974b990ebae92fed3761362 sh:class eli:LegalExpression .
+
+_:eb559f955f9d4974b990ebae92fed3761363 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761361;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761364 .
+
+_:eb559f955f9d4974b990ebae92fed3761364 rdf:first _:eb559f955f9d4974b990ebae92fed3761362;
+  rdf:rest rdf:nil .
+
+elish:publisher_agent a sh:NodeShape;
+  rdfs:label "publisher_agent"@en;
+  sh:order "166"^^xsd:integer;
+  rdfs:comment "eli:publisher_agent MUST be expressed on eli:LegalExpression, eli:Format"@en;
+  sh:targetSubjectsOf eli:publisher_agent;
+  sh:or _:eb559f955f9d4974b990ebae92fed3761367 .
+
+_:eb559f955f9d4974b990ebae92fed3761365 sh:class eli:Format .
+
+_:eb559f955f9d4974b990ebae92fed3761366 sh:class eli:LegalExpression .
+
+_:eb559f955f9d4974b990ebae92fed3761367 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761365;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761368 .
+
+_:eb559f955f9d4974b990ebae92fed3761368 rdf:first _:eb559f955f9d4974b990ebae92fed3761366;
+  rdf:rest rdf:nil .
+
+elish:format a sh:NodeShape;
+  rdfs:label "format"@en;
+  sh:order "167"^^xsd:integer;
+  rdfs:comment "eli:format MUST be expressed on eli:Manifestation"@en;
+  sh:targetSubjectsOf eli:format;
+  sh:class eli:Manifestation .
+
+elish:media_type a sh:NodeShape;
+  rdfs:label "media_type"@en;
+  sh:order "168"^^xsd:integer;
+  rdfs:comment "eli:media_type MUST be expressed on eli:Manifestation"@en;
+  sh:targetSubjectsOf eli:media_type;
+  sh:class eli:Manifestation .
+
+elish:rights a sh:NodeShape;
+  rdfs:label "rights"@en;
+  sh:order "169"^^xsd:integer;
+  rdfs:comment "eli:rights MUST be expressed on eli:Format"@en;
+  sh:targetSubjectsOf eli:rights;
+  sh:class eli:Format .
+
+elish:rightsholder a sh:NodeShape;
+  rdfs:label "rightsholder"@en;
+  sh:order "170"^^xsd:integer;
+  rdfs:comment "eli:rightsholder MUST be expressed on eli:Format"@en;
+  sh:targetSubjectsOf eli:rightsholder;
+  sh:class eli:Format .
+
+elish:rightsholder_agent a sh:NodeShape;
+  rdfs:label "rightsholder_agent"@en;
+  sh:order "171"^^xsd:integer;
+  rdfs:comment "eli:rightsholder_agent MUST be expressed on eli:Format"@en;
+  sh:targetSubjectsOf eli:rightsholder_agent;
+  sh:class eli:Format .
+
+elish:license a sh:NodeShape;
+  rdfs:label "license"@en;
+  sh:order "172"^^xsd:integer;
+  rdfs:comment "eli:license MUST be expressed on eli:Format"@en;
+  sh:targetSubjectsOf eli:license;
+  sh:class eli:Format .
+
+elish:legal_value a sh:NodeShape;
+  rdfs:label "legal_value"@en;
+  sh:order "173"^^xsd:integer;
+  rdfs:comment "eli:legal_value MUST be expressed on eli:Format"@en;
+  sh:targetSubjectsOf eli:legal_value;
+  sh:class eli:Format .
+
+elish:type_subdivision a sh:NodeShape;
+  rdfs:label "type_subdivision"@en;
+  sh:order "174"^^xsd:integer;
+  rdfs:comment "eli:type_subdivision MUST be expressed on eli:LegalResourceSubdivision"@en;
+  sh:targetSubjectsOf eli:type_subdivision;
+  sh:class eli:LegalResourceSubdivision .
+
+elish:type_contersigned_by a sh:NodeShape;
+  rdfs:label "type_contersigned_by"@en;
+  sh:order "175"^^xsd:integer;
+  rdfs:comment "eli:type_contersigned_by MUST be expressed on eli:LegalResource"@en;
+  sh:targetSubjectsOf eli:type_contersigned_by;
+  sh:class eli:LegalResource .
+
+elish:ensures_implementation_of a sh:NodeShape;
+  rdfs:label "ensures_implementation_of"@en;
+  sh:order "176"^^xsd:integer;
+  rdfs:comment "eli:ensures_implementation_of MUST be expressed on eli:LegalResource, eli:LegalExpression"@en;
+  sh:targetSubjectsOf eli:ensures_implementation_of;
+  sh:or _:eb559f955f9d4974b990ebae92fed3761371 .
+
+_:eb559f955f9d4974b990ebae92fed3761369 sh:class eli:LegalResource .
+
+_:eb559f955f9d4974b990ebae92fed3761370 sh:class eli:LegalExpression .
+
+_:eb559f955f9d4974b990ebae92fed3761371 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761369;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761372 .
+
+_:eb559f955f9d4974b990ebae92fed3761372 rdf:first _:eb559f955f9d4974b990ebae92fed3761370;
+  rdf:rest rdf:nil .
+
+elish:implementation_ensured_by a sh:NodeShape;
+  rdfs:label "implementation_ensured_by"@en;
+  sh:order "177"^^xsd:integer;
+  rdfs:comment "eli:implementation_ensured_by MUST be expressed on eli:LegalResource"@en;
+  sh:targetSubjectsOf eli:implementation_ensured_by;
+  sh:class eli:LegalResource .
+
+elish:work_type a sh:NodeShape;
+  rdfs:label "work_type"@en;
+  sh:order "173"^^xsd:integer;
+  rdfs:comment "eli:work_type MUST be expressed on eli:Work"@en;
+  sh:targetSubjectsOf eli:work_type;
+  sh:class eli:Work .
+
+elish:is_derivative_of a sh:NodeShape;
+  rdfs:label "is_derivative_of"@en;
+  sh:order "174"^^xsd:integer;
+  rdfs:comment "eli:is_derivative_of MUST be expressed on eli:Work"@en;
+  sh:targetSubjectsOf eli:is_derivative_of;
+  sh:class eli:Work .
+
+elish:has_derivative a sh:NodeShape;
+  rdfs:label "has_derivative"@en;
+  sh:order "175"^^xsd:integer;
+  rdfs:comment "eli:has_derivative MUST be expressed on eli:Work"@en;
+  sh:targetSubjectsOf eli:has_derivative;
+  sh:class eli:Work .
+
+elish:has_annex a sh:NodeShape;
+  rdfs:label "has_annex"@en;
+  sh:order "176"^^xsd:integer;
+  rdfs:comment "eli:has_annex MUST be expressed on eli:Work"@en;
+  sh:targetSubjectsOf eli:has_annex;
+  sh:class eli:Work .
+
+elish:is_annex_of a sh:NodeShape;
+  rdfs:label "is_annex_of"@en;
+  sh:order "177"^^xsd:integer;
+  rdfs:comment "eli:is_annex_of MUST be expressed on eli:Work"@en;
+  sh:targetSubjectsOf eli:is_annex_of;
+  sh:class eli:Work .
+
+elish:refers_to a sh:NodeShape;
+  rdfs:label "refers_to"@en;
+  sh:order "177"^^xsd:integer;
+  rdfs:comment "eli:refers_to MUST be expressed on eli:Work, eli:Expression"@en;
+  sh:targetSubjectsOf eli:refers_to;
+  sh:or _:eb559f955f9d4974b990ebae92fed3761375 .
+
+_:eb559f955f9d4974b990ebae92fed3761373 sh:class eli:Work .
+
+_:eb559f955f9d4974b990ebae92fed3761374 sh:class eli:Expression .
+
+_:eb559f955f9d4974b990ebae92fed3761375 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761373;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761376 .
+
+_:eb559f955f9d4974b990ebae92fed3761376 rdf:first _:eb559f955f9d4974b990ebae92fed3761374;
+  rdf:rest rdf:nil .
+
+elish:is_referred_to_by a sh:NodeShape;
+  rdfs:label "is_referred_to_by"@en;
+  sh:order "135"^^xsd:integer;
+  rdfs:comment "eli:is_referred_to_by MUST be expressed on"@en;
+  sh:targetSubjectsOf eli:is_referred_to_by .
+
+elish:BusinessRule_1 a sh:SPARQLConstraint;
+  dct:description "For a given individual LegalResource, we MUST find at least one Format that qualifies for the Pillar 4 full-text retrieval algorithm"@fr;
+  sh:message "No suitable eli:Format has been found on an individual legal resource to retrieve the full-text of the legislation";
+  sh:select """PREFIX eli: <http://data.europa.eu/eli/ontology#>
+SELECT $this
+WHERE {
+ FILTER NOT EXISTS {
+ $this (eli:is_realized_by|^eli:realizes) ?expression .
+ ?expression eli:is_embodied_by|^eli:embodies ?format .
+ ?format eli:media_type|eli:format ?mediaTypeOrFormat .
+ FILTER(?mediaTypeOrFormat IN (
+ <http://www.iana.org/assignments/media-types/text/html>,
+ <http://www.iana.org/assignments/media-types/application/xhtml+xml>,
+ <http://www.iana.org/assignments/media-types/application/xml>,
+ <http://www.iana.org/assignments/media-types/application/pdf>
+ ))
+ }
+}""" .

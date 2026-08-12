@@ -1,0 +1,12 @@
+[project]
+name = "legaldocml-schema-pipeline"
+version = "0.1.0"
+description = "ELI<->AKN crosswalk: SSSOM mappings, generated SKOS concept schemes, LinkML cardinality/range docs"
+requires-python = ">=3.11"
+dependencies = [
+    "linkml",
+    "sssom",
+    "rdflib",
+    "pandas",
+    "jupyter",
+]

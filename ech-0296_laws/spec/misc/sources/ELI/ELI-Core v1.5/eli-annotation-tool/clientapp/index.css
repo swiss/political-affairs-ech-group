@@ -1,0 +1,157 @@
+body {
+  background-color: #FAFAFA;
+  color: #354e54;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  line-height: 1.1;
+  color: #444444;
+}
+
+a {
+  color: #2196f3;
+}
+
+a:hover, a:focus {
+  color: #0a6ebd;
+  text-decoration: underline;
+}
+
+h1 {
+  text-align: center;
+  font-size: 56px;
+  margin-bottom: 50px;
+}
+
+h3 {
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  margin-top: 50px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #087FAA;
+  border-color: #BBB;
+}
+
+.btn.active, .btn:active {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.btn:hover, .btn:active:hover {
+  background-color: #096A8D;
+}
+
+.navbar {
+  background-color: #087FAA;
+  border-radius: 0;
+  margin-bottom: 50px;
+  border: 0;
+  border-bottom: 1px solid #BBB;
+}
+
+.navbar-nav {
+  float: none;
+}
+
+.navbar-default .navbar-brand, .navbar-default .navbar-brand.active .navbar-default .navbar-brand:hover {
+  color: black !important;
+  cursor: default;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: black;
+  font-size: 15px;
+}
+
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a.active {
+  color: black;
+  background-color: #BBB;
+}
+
+.navbar-default .navbar-nav>li:last-child {
+  float: right;
+}
+
+.navbar .navbar-brand {
+  font-size: 24px;
+  color: black;
+}
+
+
+/* home page */
+
+.formLinks {
+  text-align: center;
+}
+
+.formLinks .btn {
+  border: none;
+  margin: 10px;
+  background-color: transparent;
+  color: #444444;
+  width: 100%;
+  border-bottom: 1px solid transparent;
+  border-radius: 0;
+}
+
+.formLinks .btn-primary:hover, .formLinks .btn-primary:active, .formLinks .btn-primary:focus, .formLinks .btn-primary:active:focus, .formLinks .btn-primary.active:hover, .formLinks .btn-primary:active.focus, .formLinks .btn-primary:active:focus {
+  border-color: transparent;
+  background-color: transparent;
+  outline: none;
+}
+
+.formLinks .typeOfForm {
+  font-size: 20px;
+  line-height: 2em;
+  display: block;
+  color: #444444;
+}
+
+.formLinks a {
+  padding-left: 0;
+}
+
+.formLinks .btn:hover .typeOfForm, .formLinks .btn:hover {
+  color: #2196f3;
+}
+
+.formLinks .btn:hover {
+  border-bottom: 1px solid #3ca3f4;
+}
+
+
+/* vocabulary */
+
+#fname {
+  margin-bottom: 20px;
+}
+
+.sr-only {
+  position: relative;
+  width: auto;
+  height: auto;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.add-vocabulary {
+  margin: 20px;
+}
+
+.submit-vocabulary {
+  margin-top: 20px;
+}
+
+.extension {
+  font-weight: lighter;
+  font-size: 12px;
+}
+
+div.Select-menu-outer {
+  z-index: 10;
+}

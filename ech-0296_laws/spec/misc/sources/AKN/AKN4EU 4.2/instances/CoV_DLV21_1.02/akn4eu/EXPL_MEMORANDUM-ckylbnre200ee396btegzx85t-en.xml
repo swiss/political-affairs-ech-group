@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+   <doc name="EXPL_MEMORANDUM">
+      <meta>
+         <identification source="~PUBL">
+            <FRBRWork>
+               <FRBRthis value=""/>
+               <FRBRuri value=""/>
+               <FRBRdate date="2999-01-01" name=""/>
+               <FRBRauthor href=""/>
+               <preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">						
+                  <akn4eu:fileCUID value="ckylbnre200ee396btegzx85t"/>
+               </preservation>
+               <FRBRcountry value="EU"/>
+               <FRBRnumber value="COM(2020) 70"/>
+               <FRBRprescriptive value="false"/>
+            </FRBRWork>
+            <FRBRExpression>
+               <FRBRthis value=""/>
+               <FRBRuri value=""/>
+               <FRBRdate date="2999-01-01" name=""/>
+               <FRBRauthor href=""/>
+               <FRBRversionNumber value="final"/>
+               <FRBRlanguage language="en"/>
+            </FRBRExpression>
+            <FRBRManifestation>
+               <FRBRthis value=""/>
+               <FRBRuri value=""/>
+               <FRBRdate date="2999-01-01" name=""/>
+               <FRBRauthor href=""/>
+               <preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+                  <akn4eu:akn4euVersion value="4.2.0.0"/>
+                  <akn4eu:akn4euDocumentation href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/akn4eu"/>
+               </preservation>
+            </FRBRManifestation>
+         </identification>
+         <references source="~PUBL">
+            <TLCReference name="language" href="http://publications.europa.eu/resource/authority/language/ENG" showAs="en"/>
+            <TLCOrganization xml:id="PUBL" href="http://publications.europa.eu/resource/authority/corporate-body/PUBL" showAs="Publications Office"/>
+            <TLCReference xml:id="EXPL_MEMORANDUM" name="docType" href="http://publications.europa.eu/resource/authority/resource-type/EXPL_MEMORANDUM" showAs="Explanatory memorandum"/>			
+         </references>
+      </meta>
+      <preface xml:id="d1e77">
+         <longTitle xml:id="d1e79">
+            <p xml:id="d1e81">
+               <docType xml:id="d1e83" refersTo="~EXPL_MEMORANDUM">EXPLANATORY MEMORANDUM</docType>
+            </p>
+         </longTitle>
+      </preface>
+      <mainBody xml:id="d1e89">
+         <p xml:id="d1e91">The Treaty on the Functioning of the European Union provides that Member States are to
+            regard their economic policies and promoting employment as a matter of common concern
+            and shall coordinate their action within the Council. It provides that the Council is to
+            adopt employment guidelines (Article 148), specifying that they must be consistent with
+            the broad economic policy guidelines (Article 121).</p>
+         <p xml:id="d1e93">Whilst the broad economic policy guidelines remain valid for any duration of time, the
+            employment guidelines need to be drawn up each year. The guidelines were first adopted
+            together (‘integrated package’) in 2010, underpinning the Europe 2020 strategy. The
+            integrated guidelines remained stable until 2014. Revised integrated guidelines were
+            adopted in 2015. In 2018 the employment guidelines were aligned with the principles of
+            the European Pillar of Social Rights proclaimed in November 2017 by the European
+            Parliament, the Council and the Commission, with a view to drive reforms at national
+            level and to serve as a compass for a renewed process of convergence across Europe and
+            remained unchanged in 2019. The guidelines, other than framing the scope and direction
+            for Member States’ policy coordination, also provide the basis for country specific
+            recommendations in the respective domains. Along with the broad economic policy
+            guidelines, the employment guidelines are presented as a Council Decision on guidelines
+            for the employment policies of the Member States (Part II of the Integrated
+            Guidelines).</p>
+         <p xml:id="d1e95">The guidelines for the employment policies of the Member States have been amended to
+            align the text integrating the four dimensions of the Annual Sustainable Growth Strategy
+            (ASGS) and in particular, the environmental sustainability dimension, reflecting the
+            Stronger Social Europe for Just Transitions narrative and integrating the UN Sustainable
+            Development Goals (SDGs).</p>
+         <block xml:id="d1e97" name="crossHeading">The revised "Employment Guidelines" are the following:</block>
+         <p xml:id="d1e100">Guideline 5: Boosting the demand for labour</p>
+         <p xml:id="d1e103">Guideline 6: Enhancing labour supply and improving access to employment, skills and
+            competences</p>
+         <p xml:id="d1e105">Guideline 7: Enhancing the functioning of labour markets and the effectiveness of social
+            dialogue</p>
+         <p xml:id="d1e107">Guideline 8: Promoting equal opportunities for all, fostering social inclusion and
+            fighting poverty</p>
+      </mainBody>
+   </doc>
+</akomaNtoso>

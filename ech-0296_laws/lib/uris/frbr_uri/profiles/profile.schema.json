@@ -1,0 +1,169 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://akn-pipeline/frbr-uri/profile.schema.json",
+  "title": "FRBR URI Jurisdiction Profile",
+  "description": "Schema for defining an AKN FRBR URI profile for a Swiss jurisdiction (federal, cantonal, or municipal). Communities can create their own profiles by following this schema.",
+  "type": "object",
+  "required": [
+    "jurisdiction",
+    "level",
+    "name",
+    "country",
+    "akn_country",
+    "akn_prefix",
+    "language_codes",
+    "default_language",
+    "document_types",
+    "uri_templates"
+  ],
+  "properties": {
+    "_comment": {
+      "type": "string",
+      "description": "Optional human-readable comment about this profile"
+    },
+    "tags": {
+      "type": "string",
+      "description": "Comma-separated tags for categorization (max 3 recommended)"
+    },
+    "jurisdiction": {
+      "type": "string",
+      "description": "Unique jurisdiction identifier. Use ISO 3166-2 style: 'ch' for federal, 'ch-zh' for canton, 'ch-zh-261' for municipality (canton code + BFS number)",
+      "examples": ["ch", "ch-zh", "ch-zg", "ch-zh-261", "ch-be-351", "ch-vd-5586"]
+    },
+    "level": {
+      "type": "string",
+      "enum": ["federal", "canton", "municipality", "other"],
+      "description": "Administrative level of this jurisdiction"
+    },
+    "name": {
+      "type": "string",
+      "description": "Full official name of the jurisdiction"
+    },
+    "country": {
+      "type": "string",
+      "description": "ISO 3166-1 alpha-2 country code",
+      "const": "CH"
+    },
+    "subdivision": {
+      "type": "string",
+      "description": "ISO 3166-2 canton abbreviation (e.g. 'ZH', 'ZG', 'BE', 'VD'). Omit for federal."
+    },
+    "municipality": {
+      "type": "string",
+      "description": "Official municipality name. Only for level=municipality."
+    },
+    "bfs_number": {
+      "type": "string",
+      "description": "Swiss Federal Statistical Office (BFS/OFS) municipality number. Used as unique identifier in URIs for municipalities.",
+      "pattern": "^[0-9]+$"
+    },
+    "base_uri": {
+      "type": "string",
+      "format": "uri",
+      "description": "Base URI of the jurisdiction's ELI/legal information system"
+    },
+    "akn_country": {
+      "type": "string",
+      "description": "AKN country code component (always 'ch' for Switzerland)",
+      "const": "ch"
+    },
+    "akn_prefix": {
+      "type": "string",
+      "description": "AKN URI prefix for this jurisdiction",
+      "examples": ["/akn/ch", "/akn/ch-zh", "/akn/ch-zh-261"]
+    },
+    "language_codes": {
+      "type": "object",
+      "description": "Mapping from 2-letter ISO 639-1 language codes to 3-letter ISO 639-2 codes used in AKN URIs",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[a-z]{3}$"
+      },
+      "examples": [
+        { "de": "deu", "fr": "fra", "it": "ita" }
+      ]
+    },
+    "default_language": {
+      "type": "string",
+      "description": "Default language code (2-letter) for this jurisdiction"
+    },
+    "document_types": {
+      "type": "object",
+      "description": "Map of document type keys to their AKN metadata. Add new document types specific to your jurisdiction as needed.",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["akn_type", "subtype"],
+        "properties": {
+          "akn_type": {
+            "type": "string",
+            "enum": ["act", "judgment", "debate", "doc", "bill", "amendment"],
+            "description": "AKN top-level document class"
+          },
+          "subtype": {
+            "type": "string",
+            "description": "Jurisdiction-specific subtype identifier (lowercase, no spaces). Used in URI construction."
+          },
+          "label_de": { "type": "string" },
+          "label_fr": { "type": "string" },
+          "label_it": { "type": "string" },
+          "label_rm": { "type": "string" }
+        }
+      }
+    },
+    "numbering": {
+      "type": "object",
+      "description": "Jurisdiction-specific numbering system metadata (e.g. SR prefix for federal, LS for ZH, GS for ZG, BFS number for municipalities)",
+      "additionalProperties": true
+    },
+    "uri_templates": {
+      "type": "object",
+      "description": "FRBR URI templates for the four FRBR levels. Use placeholders: {doc_type}, {date} (YYYY-MM-DD), {number}, {lang} (3-letter), {version} (date or 'current'), {format} (xml, html, pdf), {component}",
+      "required": ["work", "expression", "manifestation"],
+      "properties": {
+        "work":          { "type": "string" },
+        "expression":    { "type": "string" },
+        "manifestation": { "type": "string" },
+        "item":          { "type": "string" }
+      }
+    }
+  },
+  "examples": [
+    {
+      "_comment": "Example: Gemeinde Cham – a community adding their own profile",
+      "tags": "akn, frbr, kanton-zug, cham",
+      "jurisdiction": "ch-zg-1702",
+      "level": "municipality",
+      "name": "Gemeinde Cham",
+      "country": "CH",
+      "subdivision": "ZG",
+      "municipality": "Cham",
+      "bfs_number": "1702",
+      "base_uri": "https://www.cham.ch/eli",
+      "akn_country": "ch",
+      "akn_prefix": "/akn/ch-zg-1702",
+      "language_codes": { "de": "deu" },
+      "default_language": "de",
+      "document_types": {
+        "regulation": {
+          "akn_type": "act",
+          "subtype": "reglement",
+          "label_de": "Reglement"
+        },
+        "decision": {
+          "akn_type": "act",
+          "subtype": "beschluss",
+          "label_de": "Beschluss"
+        }
+      },
+      "numbering": {
+        "eli_pattern": "/eli/zg/1702/{year}/{number}"
+      },
+      "uri_templates": {
+        "work":          "/akn/ch-zg-1702/{doc_type}/{date}/{number}",
+        "expression":    "/akn/ch-zg-1702/{doc_type}/{date}/{number}/{lang}@{version}",
+        "manifestation": "/akn/ch-zg-1702/{doc_type}/{date}/{number}/{lang}@{version}.{format}",
+        "item":          "/akn/ch-zg-1702/{doc_type}/{date}/{number}/{lang}@{version}.{format}/{component}"
+      }
+    }
+  ]
+}

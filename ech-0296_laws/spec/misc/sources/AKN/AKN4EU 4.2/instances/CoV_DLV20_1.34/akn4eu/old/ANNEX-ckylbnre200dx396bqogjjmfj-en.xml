@@ -1,0 +1,2146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+	<!-- L_2020025EN.01002901.xml -->
+	<doc name="ANNEX">
+		<meta>
+			<identification source="~_PUBL">
+				<FRBRWork>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+						<akn4eu:fileCUID value="ckylbnre200dx396bqogjjmfj"/>
+					</preservation>
+					<FRBRcountry value="EU"/>
+					<FRBRprescriptive value="true"/>
+				</FRBRWork>
+				<FRBRExpression>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<FRBRlanguage language="en"/>
+				</FRBRExpression>
+				<FRBRManifestation>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+						<akn4eu:akn4euVersion value="4.2.0.0"/>
+						<akn4eu:akn4euDocumentation
+							href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/akn4eu"
+						/>
+					</preservation>
+				</FRBRManifestation>
+			</identification>
+			<references source="~_PUBL">
+				<TLCReference name="language"
+					href="http://publications.europa.eu/resource/authority/language/ENG" showAs="en"/>
+				<TLCReference xml:id="_ANNEX" name="docType"
+					href="http://publications.europa.eu/resource/authority/resource-type/ANNEX"
+					showAs="Annex"/>
+				<TLCOrganization xml:id="_PUBL"
+					href="http://publications.europa.eu/resource/authority/corporate-body/PUBL"
+					showAs="Publications Office of the European Union"/>
+			</references>
+		</meta>
+		<preface>
+			<container name="headerOfAnnex">
+				<block name="num">ANNEX I</block>
+				<block name="heading">TACs APPLICABLE TO UNION FISHING VESSELS IN AREAS WHERE TACs
+					EXIST BY SPECIES AND BY AREA</block>
+			</container>
+		</preface>
+		<mainBody>
+			<paragraph>
+				<content>
+					<p>The tables in this Annex set out the TACs and quotas (in tonnes live weight,
+						except where otherwise specified) by stock, and, where appropriate, the
+						conditions functionally linked thereto.</p>
+				</content>
+			</paragraph>
+			<paragraph>
+				<content>
+					<p>All fishing opportunities set out in this Annex shall be subject to the rules
+						set out in Regulation (EC) No 1224/2009, and in particular Articles 33 and
+						34 of that Regulation.</p>
+				</content>
+			</paragraph>
+			<paragraph>
+				<content>
+					<p>The references to fishing zones are references to ICES zones, unless
+						otherwise specified. Within each area, fish stocks are referred to according
+						to the alphabetical order of the Latin names of the species. Only Latin
+						names identify species for regulatory purposes; vernacular names are
+						provided for ease of reference.</p>
+				</content>
+			</paragraph>
+			<paragraph>
+				<content>
+					<p>For the purposes of this Regulation, the following comparative table of Latin
+						names and common names is provided:</p>
+				</content>
+			</paragraph>
+			<paragraph>
+				<hcontainer name="BLOCK_TAB">
+					<hcontainer name="TAB">
+						<content>
+							<table>
+								<tr>
+									<th>
+										<p>Scientific name</p>
+									</th>
+									<th>
+										<p>Alpha-3 code</p>
+									</th>
+									<th>
+										<p>Common name</p>
+									</th>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Amblyraja radiata</i></p>
+									</td>
+									<td>
+										<p>RJR</p>
+									</td>
+									<td>
+										<p>Starry ray</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Ammodytes</i> spp.</p>
+									</td>
+									<td>
+										<p>SAN</p>
+									</td>
+									<td>
+										<p>Sandeels</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Argentina silus</i></p>
+									</td>
+									<td>
+										<p>ARU</p>
+									</td>
+									<td>
+										<p>Greater silver smelt</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Beryx</i> spp.</p>
+									</td>
+									<td>
+										<p>ALF</p>
+									</td>
+									<td>
+										<p>Alfonsinos</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Brosme brosme</i></p>
+									</td>
+									<td>
+										<p>USK</p>
+									</td>
+									<td>
+										<p>Tusk</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Caproidae</i>
+										</p>
+									</td>
+									<td>
+										<p>BOR</p>
+									</td>
+									<td>
+										<p>Boarfish</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Centrophorus squamosus</i></p>
+									</td>
+									<td>
+										<p>GUQ</p>
+									</td>
+									<td>
+										<p>Leafscale gulper shark</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Centroscymnus coelolepis</i></p>
+									</td>
+									<td>
+										<p>CYO</p>
+									</td>
+									<td>
+										<p>Portuguese dogfish</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Chaceon</i> spp.</p>
+									</td>
+									<td>
+										<p>GER</p>
+									</td>
+									<td>
+										<p>Deep sea red crab</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Chaenocephalus aceratus</i></p>
+									</td>
+									<td>
+										<p>SSI</p>
+									</td>
+									<td>
+										<p>Blackfin icefish</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Champsocephalus gunnari</i></p>
+									</td>
+									<td>
+										<p>ANI</p>
+									</td>
+									<td>
+										<p>Mackerel icefish</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Channichthys rhinoceratus</i></p>
+									</td>
+									<td>
+										<p>LIC</p>
+									</td>
+									<td>
+										<p>Unicorn icefish</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Chionoecetes</i> spp.</p>
+									</td>
+									<td>
+										<p>PCR</p>
+									</td>
+									<td>
+										<p>Snow crab</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Clupea harengus</i>
+										</p>
+									</td>
+									<td>
+										<p>HER</p>
+									</td>
+									<td>
+										<p>Herring</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Coryphaenoides rupestris</i></p>
+									</td>
+									<td>
+										<p>RNG</p>
+									</td>
+									<td>
+										<p>Roundnose grenadier</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Dalatias licha</i></p>
+									</td>
+									<td>
+										<p>SCK</p>
+									</td>
+									<td>
+										<p>Kitefin shark</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Deania calcea</i></p>
+									</td>
+									<td>
+										<p>DCA</p>
+									</td>
+									<td>
+										<p>Birdbeak dogfish</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Dicentrarchus labrax</i></p>
+									</td>
+									<td>
+										<p>BSS</p>
+									</td>
+									<td>
+										<p>European seabass</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Dipturus batis</i> (<i>Dipturus</i> cf.
+												<i>flossada</i><br/> and <i>Dipturus</i> cf.
+												<i>intermedia</i>)</p>
+									</td>
+									<td>
+										<p>RJB</p>
+									</td>
+									<td>
+										<p>Common skate complex</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Dissostichus eleginoides</i></p>
+									</td>
+									<td>
+										<p>TOP</p>
+									</td>
+									<td>
+										<p>Patagonian toothfish</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Dissostichus mawsoni</i></p>
+									</td>
+									<td>
+										<p>TOA</p>
+									</td>
+									<td>
+										<p>Antarctic toothfish</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Dissostichus</i> spp.</p>
+									</td>
+									<td>
+										<p>TOT</p>
+									</td>
+									<td>
+										<p>Toothfish</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Engraulis encrasicolus</i></p>
+									</td>
+									<td>
+										<p>ANE</p>
+									</td>
+									<td>
+										<p>Anchovy</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Etmopterus princeps</i></p>
+									</td>
+									<td>
+										<p>ETR</p>
+									</td>
+									<td>
+										<p>Great lanternshark</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Etmopterus pusillus</i></p>
+									</td>
+									<td>
+										<p>ETP</p>
+									</td>
+									<td>
+										<p>Smooth lanternshark</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Euphausia superba</i></p>
+									</td>
+									<td>
+										<p>KRI</p>
+									</td>
+									<td>
+										<p>Krill</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Gadus morhua</i></p>
+									</td>
+									<td>
+										<p>COD</p>
+									</td>
+									<td>
+										<p>Cod</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Galeorhinus galeus</i></p>
+									</td>
+									<td>
+										<p>GAG</p>
+									</td>
+									<td>
+										<p>Tope shark</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Glyptocephalus cynoglossus</i></p>
+									</td>
+									<td>
+										<p>WIT</p>
+									</td>
+									<td>
+										<p>Witch flounder</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Hippoglossoides platessoides</i></p>
+									</td>
+									<td>
+										<p>PLA</p>
+									</td>
+									<td>
+										<p>American plaice</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Hoplostethus atlanticus</i></p>
+									</td>
+									<td>
+										<p>ORY</p>
+									</td>
+									<td>
+										<p>Orange roughy</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Illex illecebrosus</i></p>
+									</td>
+									<td>
+										<p>SQI</p>
+									</td>
+									<td>
+										<p>Shortfin squid</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Lamna nasus</i></p>
+									</td>
+									<td>
+										<p>POR</p>
+									</td>
+									<td>
+										<p>Porbeagle</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Lepidorhombus</i> spp.</p>
+									</td>
+									<td>
+										<p>LEZ</p>
+									</td>
+									<td>
+										<p>Megrims</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Leucoraja naevus</i></p>
+									</td>
+									<td>
+										<p>RJN</p>
+									</td>
+									<td>
+										<p>Cuckoo ray</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Limanda ferruginea</i></p>
+									</td>
+									<td>
+										<p>YEL</p>
+									</td>
+									<td>
+										<p>Yellowtail flounder</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Lophiidae</i></p>
+									</td>
+									<td>
+										<p>ANF</p>
+									</td>
+									<td>
+										<p>Anglerfish</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Macrourus</i> spp.</p>
+									</td>
+									<td>
+										<p>GRV</p>
+									</td>
+									<td>
+										<p>Grenadiers</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Makaira nigricans</i></p>
+									</td>
+									<td>
+										<p>BUM</p>
+									</td>
+									<td>
+										<p>Blue marlin</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Mallotus villosus</i></p>
+									</td>
+									<td>
+										<p>CAP</p>
+									</td>
+									<td>
+										<p>Capelin</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Manta birostris</i></p>
+									</td>
+									<td>
+										<p>RMB</p>
+									</td>
+									<td>
+										<p>Giant manta ray</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Martialia hyadesi</i></p>
+									</td>
+									<td>
+										<p>SQS</p>
+									</td>
+									<td>
+										<p>Squid</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Melanogrammus aeglefinus</i></p>
+									</td>
+									<td>
+										<p>HAD</p>
+									</td>
+									<td>
+										<p>Haddock</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Merlangius merlangus</i></p>
+									</td>
+									<td>
+										<p>WHG</p>
+									</td>
+									<td>
+										<p>Whiting</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Merluccius merluccius</i></p>
+									</td>
+									<td>
+										<p>HKE</p>
+									</td>
+									<td>
+										<p>Hake</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Micromesistius poutassou</i></p>
+									</td>
+									<td>
+										<p>WHB</p>
+									</td>
+									<td>
+										<p>Blue whiting</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Microstomus kitt</i></p>
+									</td>
+									<td>
+										<p>LEM</p>
+									</td>
+									<td>
+										<p>Lemon sole</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Molva dypterygia</i></p>
+									</td>
+									<td>
+										<p>BLI</p>
+									</td>
+									<td>
+										<p>Blue ling</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Molva molva</i></p>
+									</td>
+									<td>
+										<p>LIN</p>
+									</td>
+									<td>
+										<p>Ling</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Nephrops norvegicus</i></p>
+									</td>
+									<td>
+										<p>NEP</p>
+									</td>
+									<td>
+										<p>Norway lobster</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Notothenia gibberifrons</i></p>
+									</td>
+									<td>
+										<p>NOG</p>
+									</td>
+									<td>
+										<p>Humped rockcod</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Notothenia rossii</i></p>
+									</td>
+									<td>
+										<p>NOR</p>
+									</td>
+									<td>
+										<p>Marbled rockcod</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Notothenia squamifrons</i></p>
+									</td>
+									<td>
+										<p>NOS</p>
+									</td>
+									<td>
+										<p>Grey rockcod</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Pandalus borealis</i></p>
+									</td>
+									<td>
+										<p>PRA</p>
+									</td>
+									<td>
+										<p>Northern prawn</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Paralomis</i> spp.</p>
+									</td>
+									<td>
+										<p>PAI</p>
+									</td>
+									<td>
+										<p>Crabs</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Penaeus</i> spp.</p>
+									</td>
+									<td>
+										<p>PEN</p>
+									</td>
+									<td>
+										<p>‘Penaeus’ shrimps</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Pleuronectes platessa</i></p>
+									</td>
+									<td>
+										<p>PLE</p>
+									</td>
+									<td>
+										<p>Plaice</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Pleuronectiformes</i></p>
+									</td>
+									<td>
+										<p>FLX</p>
+									</td>
+									<td>
+										<p>Flatfish</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Pollachius pollachius</i></p>
+									</td>
+									<td>
+										<p>POL</p>
+									</td>
+									<td>
+										<p>Pollack</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Pollachius virens</i></p>
+									</td>
+									<td>
+										<p>POK</p>
+									</td>
+									<td>
+										<p>Saithe</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Psetta maxima</i></p>
+									</td>
+									<td>
+										<p>TUR</p>
+									</td>
+									<td>
+										<p>Turbot</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Pseudochaenichthys georgianus</i></p>
+									</td>
+									<td>
+										<p>SGI</p>
+									</td>
+									<td>
+										<p>South Georgia icefish</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Pseudopentaceros</i> spp.</p>
+									</td>
+									<td>
+										<p>EDW</p>
+									</td>
+									<td>
+										<p>Pelagic armourhead</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Raja alba</i>
+										</p>
+									</td>
+									<td>
+										<p>RJA</p>
+									</td>
+									<td>
+										<p>White skate</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Raja brachyura</i></p>
+									</td>
+									<td>
+										<p>RJH</p>
+									</td>
+									<td>
+										<p>Blonde ray</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Raja circularis</i></p>
+									</td>
+									<td>
+										<p>RJI</p>
+									</td>
+									<td>
+										<p>Sandy ray</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Raja clavata</i></p>
+									</td>
+									<td>
+										<p>RJC</p>
+									</td>
+									<td>
+										<p>Thornback ray</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Raja fullonica</i></p>
+									</td>
+									<td>
+										<p>RJF</p>
+									</td>
+									<td>
+										<p>Shagreen ray</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Raja</i> (<i>Dipturus</i>) <i>nidarosiensis</i></p>
+									</td>
+									<td>
+										<p>JAD</p>
+									</td>
+									<td>
+										<p>Norwegian skate</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Raja microocellata</i></p>
+									</td>
+									<td>
+										<p>RJE</p>
+									</td>
+									<td>
+										<p>Small-eyed ray</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Raja montagui</i></p>
+									</td>
+									<td>
+										<p>RJM</p>
+									</td>
+									<td>
+										<p>Spotted ray</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Raja undulata</i></p>
+									</td>
+									<td>
+										<p>RJU</p>
+									</td>
+									<td>
+										<p>Undulate ray</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Rajiformes</i></p>
+									</td>
+									<td>
+										<p>SRX</p>
+									</td>
+									<td>
+										<p>Skates and rays</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Reinhardtius hippoglossoides</i></p>
+									</td>
+									<td>
+										<p>GHL</p>
+									</td>
+									<td>
+										<p>Greenland halibut</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Sardina pilchardus</i></p>
+									</td>
+									<td>
+										<p>PIL</p>
+									</td>
+									<td>
+										<p>Sardine</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Scomber scombrus</i></p>
+									</td>
+									<td>
+										<p>MAC</p>
+									</td>
+									<td>
+										<p>Mackerel</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Scophthalmus rhombus</i></p>
+									</td>
+									<td>
+										<p>BLL</p>
+									</td>
+									<td>
+										<p>Brill</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Sebastes</i> spp.</p>
+									</td>
+									<td>
+										<p>RED</p>
+									</td>
+									<td>
+										<p>Redfish</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Solea solea</i></p>
+									</td>
+									<td>
+										<p>SOL</p>
+									</td>
+									<td>
+										<p>Common sole</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Solea</i> spp.</p>
+									</td>
+									<td>
+										<p>SOO</p>
+									</td>
+									<td>
+										<p>Sole</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Sprattus sprattus</i></p>
+									</td>
+									<td>
+										<p>SPR</p>
+									</td>
+									<td>
+										<p>Sprat</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Squalus acanthias</i></p>
+									</td>
+									<td>
+										<p>DGS</p>
+									</td>
+									<td>
+										<p>Picked dogfish</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Tetrapturus albidus</i></p>
+									</td>
+									<td>
+										<p>WHM</p>
+									</td>
+									<td>
+										<p>White marlin</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Thunnus maccoyii</i></p>
+									</td>
+									<td>
+										<p>SBF</p>
+									</td>
+									<td>
+										<p>Southern bluefin tuna</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Thunnus obesus</i></p>
+									</td>
+									<td>
+										<p>BET</p>
+									</td>
+									<td>
+										<p>Bigeye tuna</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Thunnus thynnus</i></p>
+									</td>
+									<td>
+										<p>BFT</p>
+									</td>
+									<td>
+										<p>Bluefin tuna</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Trachurus murphyi</i></p>
+									</td>
+									<td>
+										<p>CJM</p>
+									</td>
+									<td>
+										<p>Jack mackerel</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Trachurus</i> spp.</p>
+									</td>
+									<td>
+										<p>JAX</p>
+									</td>
+									<td>
+										<p>Horse mackerel</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Trisopterus esmarkii</i></p>
+									</td>
+									<td>
+										<p>NOP</p>
+									</td>
+									<td>
+										<p>Norway pout</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Urophycis tenuis</i></p>
+									</td>
+									<td>
+										<p>HKW</p>
+									</td>
+									<td>
+										<p>White hake</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><i>Xiphias gladius</i></p>
+									</td>
+									<td>
+										<p>SWO</p>
+									</td>
+									<td>
+										<p>Swordfish</p>
+									</td>
+								</tr>
+							</table>
+						</content>
+					</hcontainer>
+				</hcontainer>
+			</paragraph>
+			<paragraph>
+				<content>
+					<p>The following comparative table of common names and Latin names is provided
+						exclusively for explanatory purposes:</p>
+				</content>
+			</paragraph>
+			<paragraph>
+				<hcontainer name="BLOCK_TAB">
+					<hcontainer name="TAB">
+						<content>
+							<table>
+								<tr>
+									<th>
+										<p>Common name</p>
+									</th>
+									<th>
+										<p>Alpha-3 code</p>
+									</th>
+									<th>
+										<p>Scientific name</p>
+									</th>
+								</tr>
+								<tr>
+									<td>
+										<p>Alfonsinos</p>
+									</td>
+									<td>
+										<p>ALF</p>
+									</td>
+									<td>
+										<p><i>Beryx</i> spp.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>American plaice</p>
+									</td>
+									<td>
+										<p>PLA</p>
+									</td>
+									<td>
+										<p><i>Hippoglossoides platessoides</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Anchovy</p>
+									</td>
+									<td>
+										<p>ANE</p>
+									</td>
+									<td>
+										<p><i>Engraulis encrasicolus</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Anglerfish</p>
+									</td>
+									<td>
+										<p>ANF</p>
+									</td>
+									<td>
+										<p><i>Lophiidae</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Antarctic toothfish</p>
+									</td>
+									<td>
+										<p>TOA</p>
+									</td>
+									<td>
+										<p><i>Dissostichus mawsoni</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Bigeye tuna</p>
+									</td>
+									<td>
+										<p>BET</p>
+									</td>
+									<td>
+										<p><i>Thunnus obesus</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Birdbeak dogfish</p>
+									</td>
+									<td>
+										<p>DCA</p>
+									</td>
+									<td>
+										<p><i>Deania calcea</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Blackfin icefish</p>
+									</td>
+									<td>
+										<p>SSI</p>
+									</td>
+									<td>
+										<p><i>Chaenocephalus aceratus</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Blonde ray</p>
+									</td>
+									<td>
+										<p>RJH</p>
+									</td>
+									<td>
+										<p><i>Raja brachyura</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Blue ling</p>
+									</td>
+									<td>
+										<p>BLI</p>
+									</td>
+									<td>
+										<p><i>Molva dypterygia</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Blue marlin</p>
+									</td>
+									<td>
+										<p>BUM</p>
+									</td>
+									<td>
+										<p><i>Makaira nigricans</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Blue whiting</p>
+									</td>
+									<td>
+										<p>WHB</p>
+									</td>
+									<td>
+										<p><i>Micromesistius poutassou</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Bluefin tuna</p>
+									</td>
+									<td>
+										<p>BFT</p>
+									</td>
+									<td>
+										<p><i>Thunnus thynnus</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Boarfish</p>
+									</td>
+									<td>
+										<p>BOR</p>
+									</td>
+									<td>
+										<p><i>Caproidae</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Brill</p>
+									</td>
+									<td>
+										<p>BLL</p>
+									</td>
+									<td>
+										<p><i>Scophthalmus rhombus</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Capelin</p>
+									</td>
+									<td>
+										<p>CAP</p>
+									</td>
+									<td>
+										<p><i>Mallotus villosus</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Cod</p>
+									</td>
+									<td>
+										<p>COD</p>
+									</td>
+									<td>
+										<p><i>Gadus morhua</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Common skate complex</p>
+									</td>
+									<td>
+										<p>RJB</p>
+									</td>
+									<td>
+										<p><i>Dipturus batis</i> (<i>Dipturus</i> cf.
+												<i>flossada</i><br/>and <i>Dipturus</i> cf.
+												<i>intermedia</i>)</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Common sole</p>
+									</td>
+									<td>
+										<p>SOL</p>
+									</td>
+									<td>
+										<p><i>Solea solea</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Crabs</p>
+									</td>
+									<td>
+										<p>PAI</p>
+									</td>
+									<td>
+										<p><i>Paralomis</i> spp.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Cuckoo ray</p>
+									</td>
+									<td>
+										<p>RJN</p>
+									</td>
+									<td>
+										<p><i>Leucoraja naevus</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Deep sea red crab</p>
+									</td>
+									<td>
+										<p>GER</p>
+									</td>
+									<td>
+										<p><i>Chaceon</i> spp.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>European seabass</p>
+									</td>
+									<td>
+										<p>BSS</p>
+									</td>
+									<td>
+										<p><i>Dicentrarchus labrax</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Flatfish</p>
+									</td>
+									<td>
+										<p>FLX</p>
+									</td>
+									<td>
+										<p><i>Pleuronectiformes</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Giant manta ray</p>
+									</td>
+									<td>
+										<p>RMB</p>
+									</td>
+									<td>
+										<p>
+											<i>Manta birostris</i>
+										</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Great lanternshark</p>
+									</td>
+									<td>
+										<p>ETR</p>
+									</td>
+									<td>
+										<p><i>Etmopterus princeps</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Greater silver smelt</p>
+									</td>
+									<td>
+										<p>ARU</p>
+									</td>
+									<td>
+										<p><i>Argentina silus</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Greenland halibut</p>
+									</td>
+									<td>
+										<p>GHL</p>
+									</td>
+									<td>
+										<p><i>Reinhardtius hippoglossoides</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Grenadiers</p>
+									</td>
+									<td>
+										<p>GRV</p>
+									</td>
+									<td>
+										<p><i>Macrourus</i> spp.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Grey rockcod</p>
+									</td>
+									<td>
+										<p>NOS</p>
+									</td>
+									<td>
+										<p><i>Notothenia squamifrons</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Haddock</p>
+									</td>
+									<td>
+										<p>HAD</p>
+									</td>
+									<td>
+										<p><i>Melanogrammus aeglefinus</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Hake</p>
+									</td>
+									<td>
+										<p>HKE</p>
+									</td>
+									<td>
+										<p><i>Merluccius merluccius</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Herring</p>
+									</td>
+									<td>
+										<p>HER</p>
+									</td>
+									<td>
+										<p><i>Clupea harengus</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Horse mackerel</p>
+									</td>
+									<td>
+										<p>JAX</p>
+									</td>
+									<td>
+										<p><i>Trachurus</i> spp.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Humped rockcod</p>
+									</td>
+									<td>
+										<p>NOG</p>
+									</td>
+									<td>
+										<p><i>Notothenia gibberifrons</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Jack mackerel</p>
+									</td>
+									<td>
+										<p>CJM</p>
+									</td>
+									<td>
+										<p><i>Trachurus murphyi</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Kitefin shark</p>
+									</td>
+									<td>
+										<p>SCK</p>
+									</td>
+									<td>
+										<p><i>Dalatias licha</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Krill</p>
+									</td>
+									<td>
+										<p>KRI</p>
+									</td>
+									<td>
+										<p><i>Euphausia superba</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Leafscale gulper shark</p>
+									</td>
+									<td>
+										<p>GUQ</p>
+									</td>
+									<td>
+										<p><i>Centrophorus squamosus</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Lemon sole</p>
+									</td>
+									<td>
+										<p>LEM</p>
+									</td>
+									<td>
+										<p><i>Microstomus kitt</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Ling</p>
+									</td>
+									<td>
+										<p>LIN</p>
+									</td>
+									<td>
+										<p><i>Molva molva</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Mackerel</p>
+									</td>
+									<td>
+										<p>MAC</p>
+									</td>
+									<td>
+										<p><i>Scomber scombrus</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Mackerel icefish</p>
+									</td>
+									<td>
+										<p>ANI</p>
+									</td>
+									<td>
+										<p><i>Champsocephalus gunnari</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Marbled rockcod</p>
+									</td>
+									<td>
+										<p>NOR</p>
+									</td>
+									<td>
+										<p><i>Notothenia rossii</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Megrims</p>
+									</td>
+									<td>
+										<p>LEZ</p>
+									</td>
+									<td>
+										<p><i>Lepidorhombus</i> spp.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Northern prawn</p>
+									</td>
+									<td>
+										<p>PRA</p>
+									</td>
+									<td>
+										<p><i>Pandalus borealis</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Norway lobster</p>
+									</td>
+									<td>
+										<p>NEP</p>
+									</td>
+									<td>
+										<p><i>Nephrops norvegicus</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Norway pout</p>
+									</td>
+									<td>
+										<p>NOP</p>
+									</td>
+									<td>
+										<p><i>Trisopterus esmarkii</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Norwegian skate</p>
+									</td>
+									<td>
+										<p>JAD</p>
+									</td>
+									<td>
+										<p><i>Raja</i> (<i>Dipturus</i>) <i>nidarosiensis</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Orange roughy</p>
+									</td>
+									<td>
+										<p>ORY</p>
+									</td>
+									<td>
+										<p><i>Hoplostethus atlanticus</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Patagonian toothfish</p>
+									</td>
+									<td>
+										<p>TOP</p>
+									</td>
+									<td>
+										<p><i>Dissostichus eleginoides</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Pelagic armourhead</p>
+									</td>
+									<td>
+										<p>EDW</p>
+									</td>
+									<td>
+										<p><i>Pseudopentaceros</i> spp.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>‘Penaeus’ shrimps</p>
+									</td>
+									<td>
+										<p>PEN</p>
+									</td>
+									<td>
+										<p><i>Penaeus</i> spp.</p></td>
+								</tr>
+								<tr>
+									<td>
+										<p>Picked dogfish</p>
+									</td>
+									<td>
+										<p>DGS</p>
+									</td>
+									<td>
+										<p><i>Squalus acanthias</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Plaice</p>
+									</td>
+									<td>
+										<p>PLE</p>
+									</td>
+									<td>
+										<p><i>Pleuronectes platessa</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Pollack</p>
+									</td>
+									<td>
+										<p>POL</p>
+									</td>
+									<td>
+										<p><i>Pollachius pollachius</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Porbeagle</p>
+									</td>
+									<td>
+										<p>POR</p>
+									</td>
+									<td>
+										<p><i>Lamna nasus</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Portuguese dogfish</p>
+									</td>
+									<td>
+										<p>CYO</p>
+									</td>
+									<td>
+										<p><i>Centroscymnus coelolepis</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Redfish</p>
+									</td>
+									<td>
+										<p>RED</p>
+									</td>
+									<td>
+										<p><i>Sebastes</i> spp.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Roundnose grenadier</p>
+									</td>
+									<td>
+										<p>RNG</p>
+									</td>
+									<td>
+										<p><i>Coryphaenoides rupestris</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Saithe</p>
+									</td>
+									<td>
+										<p>POK</p>
+									</td>
+									<td>
+										<p><i>Pollachius virens</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Sandeels</p>
+									</td>
+									<td>
+										<p>SAN</p>
+									</td>
+									<td>
+										<p><i>Ammodytes</i> spp.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Sandy ray</p>
+									</td>
+									<td>
+										<p>RJI</p>
+									</td>
+									<td>
+										<p><i>Raja circularis</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Sardine</p>
+									</td>
+									<td>
+										<p>PIL</p>
+									</td>
+									<td>
+										<p><i>Sardina pilchardus</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Shagreen ray</p>
+									</td>
+									<td>
+										<p>RJF</p>
+									</td>
+									<td>
+										<p><i>Raja fullonica</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Shortfin squid</p>
+									</td>
+									<td>
+										<p>SQI</p>
+									</td>
+									<td>
+										<p><i>Illex illecebrosus</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Skates and rays</p>
+									</td>
+									<td>
+										<p>SRX</p>
+									</td>
+									<td>
+										<p><i>Rajiformes</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Small-eyed ray</p>
+									</td>
+									<td>
+										<p>RJE</p>
+									</td>
+									<td>
+										<p><i>Raja microocellata</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Smooth lanternshark</p>
+									</td>
+									<td>
+										<p>ETP</p>
+									</td>
+									<td>
+										<p><i>Etmopterus pusillus</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Snow crab</p>
+									</td>
+									<td>
+										<p>PCR</p>
+									</td>
+									<td>
+										<p><i>Chionoecetes</i> spp.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Sole</p>
+									</td>
+									<td>
+										<p>SOO</p>
+									</td>
+									<td>
+										<p><i>Solea</i> spp.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>South Georgia icefish</p>
+									</td>
+									<td>
+										<p>SGI</p>
+									</td>
+									<td>
+										<p><i>Pseudochaenichthys georgianus</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Southern bluefin tuna</p>
+									</td>
+									<td>
+										<p>SBF</p>
+									</td>
+									<td>
+										<p><i>Thunnus maccoyii</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Spotted ray</p>
+									</td>
+									<td>
+										<p>RJM</p>
+									</td>
+									<td>
+										<p><i>Raja montagui</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Sprat</p>
+									</td>
+									<td>
+										<p>SPR</p>
+									</td>
+									<td>
+										<p><i>Sprattus sprattus</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Squid</p>
+									</td>
+									<td>
+										<p>SQS</p>
+									</td>
+									<td>
+										<p><i>Martialia hyadesi</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Starry ray</p>
+									</td>
+									<td>
+										<p>RJR</p>
+									</td>
+									<td>
+										<p><i>Amblyraja radiata</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Swordfish</p>
+									</td>
+									<td>
+										<p>SWO</p>
+									</td>
+									<td>
+										<p><i>Xiphias gladius</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Thornback ray</p>
+									</td>
+									<td>
+										<p>RJC</p>
+									</td>
+									<td>
+										<p><i>Raja clavata</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Toothfish</p>
+									</td>
+									<td>
+										<p>TOT</p>
+									</td>
+									<td>
+										<p><i>Dissostichus</i> spp.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Tope shark</p>
+									</td>
+									<td>
+										<p>GAG</p>
+									</td>
+									<td>
+										<p><i>Galeorhinus galeus</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Turbot</p>
+									</td>
+									<td>
+										<p>TUR</p>
+									</td>
+									<td>
+										<p><i>Psetta maxima</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Tusk</p>
+									</td>
+									<td>
+										<p>USK</p>
+									</td>
+									<td>
+										<p><i>Brosme brosme</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Undulate ray</p>
+									</td>
+									<td>
+										<p>RJU</p>
+									</td>
+									<td>
+										<p><i>Raja undulata</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Unicorn icefish</p>
+									</td>
+									<td>
+										<p>LIC</p>
+									</td>
+									<td>
+										<p><i>Channichthys rhinoceratus</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>White hake</p>
+									</td>
+									<td>
+										<p>HKW</p>
+									</td>
+									<td>
+										<p><i>Urophycis tenuis</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>White marlin</p>
+									</td>
+									<td>
+										<p>WHM</p>
+									</td>
+									<td>
+										<p><i>Tetrapturus albidus</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>White skate</p>
+									</td>
+									<td>
+										<p>RJA</p>
+									</td>
+									<td>
+										<p><i>Raja alba</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Whiting</p>
+									</td>
+									<td>
+										<p>WHG</p>
+									</td>
+									<td>
+										<p><i>Merlangius merlangus</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Witch flounder</p>
+									</td>
+									<td>
+										<p>WIT</p>
+									</td>
+									<td>
+										<p><i>Glyptocephalus cynoglossus</i></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Yellowtail flounder</p>
+									</td>
+									<td>
+										<p>YEL</p>
+									</td>
+									<td>
+										<p><i>Limanda ferruginea</i></p>
+									</td>
+								</tr>
+							</table>
+						</content>
+					</hcontainer>
+				</hcontainer>
+			</paragraph>
+		</mainBody>
+	</doc>
+</akomaNtoso>

@@ -1,0 +1,1412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0 https://docs.oasis-open.org/legaldocml/akn-core/v1.0/os/part2-specs/schemas/akomantoso30.xsd">
+
+	<!-- In diesem XML-Dokument werden die AKN Beschreibungen sowie die Verwendung der Tags und Attribute bei Bund und KTZH der vor dem jeweiligen Element gegeben. Der Eintrag unter Swiss Legislation Identifier (SLI) gibt das Mapping der AKN nach SLI, womit die erneute Eingabe der bereits im Laufe der Erarbeitung des XML erzeugten Daten wie z.B. URI, Literale etc.. -->
+	
+	<!--AKN element act: Is used for describing the structure of an act. Attribute name ist required. -->
+	<!--Bund: name hat den Inhalt "publicLaw".-->
+	<!--KTZH: Das Element act, zeigt einen beschlossenen Erlass bzw. eine darauf konsolildierte Fassung an. name gibt die Art des Erlasses an: Grunderlass, Änderungserlass, Mantelerlass, Aufhebungserlass, etc. Bei einem Erlassentwurf wird anstelle des Elementes act, das Element bill mit einer angepassten URI-Naming-Convention verwendet. -->
+	<!--SLI: -->
+	<act name="Grunderlass">
+	
+		<meta>
+			
+			<!--AKN identification: none -->
+			<!--Bund: "#ch.bk" -->
+			<!--KTZH: noch offen -->
+			<!--SLI: none -->	
+			<identification source="">
+			
+				<!--AKN FRBRWork: The abstract concept of the legal resource (e.g., act 3 of 2005). -->
+				<!--Bund: Erstellt für jedes Dokument ein eigenes Work, d.h. für sämtliche Dokumente in der AS und der SR. Nur die Sprachversionen der Dokumente werden mittels FRBRExpression unterschieden. Mit Base-URL "https://fedlex.data.admin.ch", also absolute URI. -->
+				<!--KTZH: Abstrakter Identifikator eines Erlasses (z.B. Gesetz vom 09.09.1999 OS Bandnummer 34 Seite 345) Sämtliche Fassungen (Sprach, Sammlung etc.) werden mittels FRBRExpression unterschieden. Keine Base-URL, also eine globale URI. AKN-URI-Naming Convention muss unabhängig von Base-URL sein. Keine fixe Location. -->
+				<!--SLI: -->
+				<FRBRWork>
+				
+					<!--AKN FRBRthis: Metadata property containing the IRI of the specific component of the document. The attribute type specifies a value to FRBR elements.-->
+					<!--Bund: Verzichtet auf den AKN Component-Indikator "!": eli/.../main-text -->
+					<!--KTZH: akn/FRBRcountry/act/FRBRdate/FRBRnumber/!main> -->
+					<!--SLI: -->
+					<FRBRthis value="/akn/CH-ZH/act/2007-02-12/62-121/!main"/>
+					
+					<!--AKN FRBRuri: Metadata property containing the IRI of the whole document.-->
+					<!--Bund: -->
+					<!--KTZH: akn/FRBRcountry/act/FRBRdate/FRBRnumber -->
+					<!--SLI: -->
+					<FRBRuri value="/akn/CH-ZH/act/2007-02-12/62-121"/>
+					
+					<!--AKN FRBRdate: Metadata property containing a relevant date of the document in the respective level of the FRBR hierarchy. Attribute name specifies which actual date is contained here.-->
+					<!--Bund: Verwendet 3 Tags mit names Anwendungsdatum, Datum Daokument, Datum Inkrafttreten. -->
+					<!--KTZH: date: Beschlussdatum Grunderlass. name:Beschlussdatum.-->
+					<!--SLI: -->
+					<FRBRdate date="2007-02-12" name="Beschlussdatum"/>
+					
+					<!--AKNauthor: Metadata property containing a relevant authro to the document in the respective level ot the FRBR hierarchy. Attribute as specifies teh role to the author. -->
+					<!--Bund: Mehrere FRBRauthor mit Bundeskanzlei als Herausgeber und Rechteinhaber. -->
+					<!--KTZH: Beschlussorgan wie z.B. Kantonsrat, Regierungsrat, Universitätsrat etc. Diese haben die Befugnis, den Erlass in ihrer Rolle als authority zu beschliessen. -->
+					<!--SLI: -->
+					<FRBRauthor href="#kantonsrat" as="#authority"/>
+					
+					<!--AKN FRBRcountry: Metadata property containing the ISO 3166-1 Alpha-2 code for the country or juristiction to be used in the work-level IRI ot this document. -->
+					<!--Bund: Verwendet das Element nicht. -->
+					<!--KTZH: Verwendet ISO mit schweizerischer Abkürzung für Kantone, also ZH. Erweiterung möglich auf Gemeindeebene mit BFS-Gemeindenummer (z.B. Stadt Zürich CH-ZH-261).-->
+					<!--SLI: --> 
+					<FRBRcountry value="CH-ZH"/>
+					
+					<!--AKN FRBRsubtype: Metadata property containing a string for the specific subtype of the document to be used in the work-level IRI of the document. -->
+					<!--Bund: Immer CH, wird aber in der IRI nicht verwendet.-->
+					<!--KTZH: Keine Verwendung in work-level IRI. Erlasstyp (z.B. Gesetz, Verordnung, Studienordnung etc.) für SLI. -->
+					<!--SLI: -->
+					<FRBRsubtype value="Gesetz"/>
+					
+					<!--AKN FRBRnumber: Metadata property containing a string or number for the number to be used in the work-level IRI of this document. -->
+					<!--Bund: Leeres value-Attribut. -->
+					<!--KTZH: Alt: Bandnummer OS sowie Seitenzahl. Neu: Jahr OS-Band und fortlaufende Nummerierung. -->
+					<!--SLI: -->
+					<FRBRnumber value="62-121"/>
+					
+					<!--AKN FRBRname: Metadata property containing a string for the title to be used in the work-level IRI of this document. -->
+					<!--Bund: Mehrere Einträge mit Titel in unterschiedlichen Sprachen. -->
+					<!--KTZH: Wird nicht verwendet, da abstrakter Work-Level-Identifikator keinen Erlasstitel beinhalten soll, der Änderungen unterworfen sein kann. -->
+					<!--SLI: -->
+					<FRBRname value=""/>
+					
+					<!--AKN FRBRauthoritative: Metadata property containing a boolean value to determine whether the document contains authoritative text (e.g., content that is the official, authoritative product of an official workflow from an entity that is entrusted with generating an offical, authoritative version of the document. -->
+					<!--Bund: Wird nur unter FRBRwork verwendet. Macht keinen Unterschied zwischen AS und SR, beides ist true. -->
+					<!--KTZH: Wird nur unter FRBRexpression verwendet. -->
+					<!--SLI: -->
+					<FRBRauthoritative value="true"/>
+					
+				</FRBRWork>
+				
+				<!--AKN -FRBRExpression: Any version of the WORK whose content is specified and different from others for any reason: language, versions, etc. (e.g., act 3 of 2005 as in the version following the amendments entered into force on July 3rd, 2006).-->
+				<!--Bund: Unterscheidet für jede Fassung (jede Fassung ein Work) einzeln die Sprachen über FRBRExpression. -->
+				<!--KTZH: Alle unerschiedlichen Fassungen eines Erlasses (auch OS und LS) werden über Expression gelöst. Dadurch bleibt die gemeinsame WORKuri erhalten. Das ermöglicht, auf Hilfskonstrukte wie jolux:complexWork zu verzichten. (FRBR:ComplexWork, woher jolux:complexWork entlehnt, ist zudem anders definiert.) -->
+				<!--SLI: -->
+				<FRBRExpression>
+				
+					<!--AKN FRBRthis: -->
+					<!--Bund: -->
+					<!--KTZH:  -->
+					<!--SLI: -->
+					<FRBRthis value="/akn/CH-ZH/act/2007-02-12/62-121/deu@/!main"/>
+					
+					<!--AKN FRBRuri: -->
+					<!--Bund: -->
+					<!--KTZH: Als erste Information wird die Sprache der Fassung der Expression angegeben (deu). Das @ ("at" im Sinne eines Point in Time) markiert die Fassung der OS. Folg auf das @ ein Datum, so ist es die konoslidierte Fassung der LS mit dem entsprechenden Point in Time (Datum Inkrafttreten). -->
+					<!--SLI: -->
+					<FRBRuri value="/akn/CH-ZH/act/2007-02-12/62-121/deu@"/>
+					
+					<!--AKN FRBRdate: -->
+					<!--Bund: Verwendet 3 Tags mit names Anwendungsdatum, Datum Dokument, Datum Inkrafttreten. -->
+					<!--KTZH: Bei einem Dokument der OS ist es das Beschlussdatum (vgl. FRBRWork), bei der LS ist es das Datum Inkrafttreten, also das Datum ab dem die Fassung konsolidiert. -->
+					<!--SLI: -->
+					<FRBRdate date="2007-02-12" name="Beschlussdatum/DatumInkrafttreten"/>
+					
+					<!--AKN FRBRauthor: -->
+					<!--Bund: Mehrere FRBRauthor mit Bundeskanzlei als Herausgeber und Rechteinhaber. -->
+					<!--KTZH: Beinhaltet die Zuständigkeit für den Erlass bzw. die Federführende Einheit bei der Entwurfausarabeitung mit as editor. -->
+					<!--SLI: -->
+					<FRBRauthor href="#Sicherheitsdirektion" as="#editor"/>
+					
+					<!--AKN FRBRauthor: -->
+					<!--Bund: Mehrere FRBRauthor mit Bundeskanzlei als Herausgeber und Rechteinhaber. -->
+					<!--KTZH: Beinhaltet weitere Einheiten, die bei der Entwurfausarbeitung offiziell involviert waren. -->
+					<!--SLI: -->
+					<FRBRauthor href="#Finanzdirektion" as="#coEditor"/>
+					
+					<!--AKN FRBRauthoritative: Metadata property containing a boolean value to determine whether the document contains authoritative text (e.g., contnet that is the official, authoritative product of an official workflow from an entity that is entrusted with generating an offical, authoritative version of the document. -->
+					<!--Bund: Wird nur unter FRBRwork verwendet. -->
+					<!--KTZH: Wird nur unter FRBRexpression verwendet. Damit können die Versionen aus OS (true) und LS (false) in ihrem Gehalt unterschieden und eindeutig deklariert werden. -->
+					<!--SLI: -->
+					<FRBRauthoritative value="true"/>
+					
+					<!--AKNFRBRlanguage: Metadata property containing a RFC4646 (three-letter) code of the main humain language used in the content of this expression. -->
+					<!--Bund: Verwendet die Abkürzungen DE, FR, IT, EN etc.-->
+					<!--KTZH: Verwendet die Abkürzungen DEU, ENG etc. -->
+					<!--SLI: -->
+					<FRBRlanguage language="deu"/>
+				</FRBRExpression>
+				
+				<!--AKN FRBRManifestation: Any electronic or physical format of the EXPRESSION: MS Word, Open Office, XML, TIFF, PDF, etc (e.g., PDF representation of act 3 of 2005 as in the version following the amendments entered into force on July 3rd, 2006).-->
+				<!--Bund: Es wird für die URI nur "xml" für die Manifestation verwendet, da das XML aus Word- und Jolux-Daten erzeugt wird und keine Ausleitungen von XML erfolgen. -->
+				<!--KTZH: Bei der URI wird als Manifestations-Format nur "akn" verwendet, da die Ausleitung in alle anderen Formate wie PDF, DOCX etc. auf dem gleichen XML basieren. Es werden keine unterschiedliche XML für bestimmte Ausleitungen geführt. -->
+				<!--SLI: -->
+				<FRBRManifestation>
+				
+					<!--AKN: -->
+					<!--Bund: -->
+					<!--KTZH: -->
+					<!--SLI: -->
+					<FRBRthis value="/akn/CH-ZH/act/2007-02-12/62-121/deu@.akn/!main"/>
+					
+					<!--AKN: -->
+					<!--Bund: -->
+					<!--KTZH: -->
+					<!--SLI: -->
+					<FRBRuri value="/akn/CH-ZH/act/2007-02-12/62-121/deu@.akn"/>
+					
+					<!--AKN: -->
+					<!--Bund: -->
+					<!--KTZH: -->
+					<!--SLI: -->
+					<FRBRdate date="2007-02-12" name=""/>
+					
+					<!--AKN: -->
+					<!--Bund: -->
+					<!--KTZH: -->
+					<!--SLI: -->
+					<FRBRauthor href="#SK-Publ" as="#publisher"/>
+					
+					<!--AKN: -->
+					<!--Bund: -->
+					<!--KTZH: -->
+					<!--SLI: -->
+					<FRBRformat value="#akn" showAs="akn"/>
+				</FRBRManifestation>
+			</identification>
+			
+			<analysis source="#source">
+				<activeModifications>
+					<forceMod eId="amod_1" type="entryIntoForce" period="#tmgr_1">
+						<source href="#title_9__art_43__para_1__content"/>
+						<destination href="#ra_2"/>
+						<!-- WorkIRI des betroffenen Erlasses -->
+					</forceMod>
+					<textualMod eId="amod_2" type="insertion" period="#tmgr_1">
+						<source href="#level_II__art_1__heading"/>
+						<destination href="(aktuelle konsoldierte Fassung)#art_1__para_1" pos="before"/>
+						<new href="#level_II__art_1__heading__mod_1__qstr_1"/>
+					</textualMod>
+					<textualMod eId="amod_3" type="substitution" period="#tmgr_2">
+						<source href="#level_III__art_1__para_1"/>
+						<destination href="(aktueller konsoldierte Fassung)#art_1__para_1__content"/>
+						<old href="/akn/CH-ZH/act/2009-12-09/65-10/ger@2010-03-01/main#art_1__para_1__content"/>
+						<new href="#level_III__art_1__para_1__content__mod_1__qstr_1"/>
+					</textualMod>
+				</activeModifications>
+			</analysis>
+			
+			<temporalData source="#source">
+				<temporalGroup eId="tmgr_1">
+					<timeInterval refersTo="#inForce" start="#date_1" end=""/>
+				</temporalGroup>
+				<temporalGroup eId="tmgr_2">
+					<timeInterval refersTo="#inForce" start="#date_2" end=""/>
+				</temporalGroup>
+				<temporalGroup eId="tmgr_3">
+					<timeInterval refersTo="#inForce" start="#date_3" end=""/>
+				</temporalGroup>
+			</temporalData>
+			
+			<references source="#source">
+				<original eId="ro" href="/akn/CH-ZH/act/EXPRESSION" showAs="Gesetz über .. vom ..."/>
+				<!-- Erste Version/Fassung des vorliegenden Dokumentes -->
+				<activeRef eId="ra_1" href="/akn/CH-ZH/act/WORK" showAs="Gesetz über .. vom ..."/>
+				<!-- WORK URI für die Aufhebung -->
+				<activeRef eId="ra_2" href="/akn/CH-ZH/act/2022-35/cons/(aktuelle konsolidierte Fassung)" showAs="Gesetz über .. vom ..."/>
+				<TLCOrganization eId="kantonsrat" href="https://data.zh.ch/vocabulary/legal-institution/2" showAs="Kantonsrat"/>
+				<TLCOrganization eId="SK" href="https://data.zh.ch/vocabulary/organizational-entity/SK" showAs="Staatskanzlei"/>
+				<TLCOrganization eId="JI" href="https://data.zh.ch/vocabulary/organizational-entity/JI" showAs="Direktion der Justiz und des Innern"/>
+				<TLCOrganization eId="SK-Publ" href="https://data.zh.ch/vocabulary/organizational-entity/SK-Publ" showAs="Abteilung Publikationen der Staatskanzlei"/>
+				<TLCRole eId="authority" href="https://data.zh.ch/vocabulary/role/author" showAs="Beschliessendes Organ"/>
+				<TLCRole eId="editor" href="https://data.zh.ch/vocabulary/role/leadEditor" showAs="Federführende Einheit"/>
+				<TLCRole eId="coEditor" href="https://data.zh.ch/vocabulary/role/coEditor" showAs="Mitwirkende Einheit"/>
+				<TLCRole eId="publisher" href="https://data.zh.ch/vocabulary/role/publisher" showAs="Herausgebende Stelle"/>
+				<!-- untenstehende Konzepte eventuell später -->
+				<TLCReference name="language" href="http://publications.europa.eu/resource/authority/language/DEU" showAs="ger"/>
+				<TLCReference name="xml" href="https://data.zh.ch/vocabulary/user-format/xml" showAs="XML"/>
+				<TLCConcept href="" eId="inForce" showAs=""/>
+				<!-- für temporalData -->
+			</references>
+			
+			<notes source="">
+				<note eId="note_1">
+					<p>
+						<ref href="http://www.amtsblatt.zh.ch/root/t100d.cfm?Recid=5506">ABl 2005, 1283</ref>
+					</p>
+				</note>
+				<note eId="note_2">
+					<p>
+						<ref href="https://www.zhlex.zh.ch">LS 131.1</ref>
+					</p>
+				</note>
+				<note eId="note_3">
+					<p>
+						<ref href="https://www.zhlex.zh.ch">LS 172.71</ref>
+					</p>
+				</note>
+				<note eId="note_4">
+					<p>
+						<ref href="https://www.zhlex.zh.ch">LS 631.1</ref>
+					</p>
+				</note>
+				<note eId="note_5">
+					<p>
+						<ref href="https://www.zhlex.zh.ch">LS 614</ref>
+					</p>
+				</note>
+				<note eId="note_6">
+					<p>
+						<ref href="https://www.zhlex.zh.ch">LS 131.1</ref>
+					</p>
+				</note>
+			</notes>
+		</meta>
+
+		<preface>
+			<p>
+				<docketNumber eId="docketNum_1" title="Orndungsnummer">170.4</docketNumber>
+				<docTitle eId="actTitle" title="Erlasstitel">Gesetz über die Information und den Datenschutz</docTitle>
+				<shortTitle eId="actTitleShort" title="Kurztitel">Datenschutzgesetz</shortTitle>
+				<abbr eId="actTitleAbbr" title="Abkürzung">IDG</abbr>
+				<docDate date="2007-02-12">12. Februar 2007</docDate>
+				<!--Beschlussdatum. Wenn noch nicht vorhanden "..." -->
+			</p>
+		</preface>
+		
+		<preamble>
+			<formula eId="formula_1" name="openFormula">
+				<p><i>Der Kantonsrat,</i></p></formula>
+				<p>nach Einsichtnahme in die Anträge</p>		
+					<citations>
+						<citation eId="cit_1" refersTo="">
+							<p>des Regierungsrates vom 9. November 2005<noteRef href="#note_1" marker="1"/></p>
+						</citation>
+					</citations>	
+							<p>und</p>
+					<citations>		
+						<citation eId="cit_2" refersTo="">
+							<p>Kommission für Staat und Gemeinden vom 15. September 2006</p>
+						</citation>
+					</citations>	
+				<p>,</p>
+			<formula eId="formula_2" name="Verb"><p><i>beschliesst:</i></p></formula>
+		</preamble>
+		
+		<body status="edited" period="tmgr_1">
+				<title eId="title_1">
+					<num>1. Abschnitt:</num>
+					<heading eId="title_1__heading_1">Allgemeine Bestimmungen</heading>
+					<article eId="title_1__art_1">
+						<num>§ 1.</num>
+						<heading>Gegenstand und Zweck</heading>
+						<paragraph eId="title_1__art_1__para_1">
+							<num>1</num>
+							<content>
+								<p>Dieses Gesetz regelt den Umgang der öffentlichen Organe mit Informationen.</p>
+							</content>
+						</paragraph>
+						<paragraph eId="ltitle_1__art_1__para_2">
+							<num>2</num>
+							<content eId="title_1__art_1__content">
+								<p>Es bezweckt,</p>
+								<blockList eId="title_1__art_1__para_2__content__blocklist" style="Buchstaben">
+									<item eId="title_1_art_1__para_2__content__blocklist__item_a">
+										<num>a.</num>
+										<p>das Handeln der öffentlichen Organe<authorialNote eId="authNote_a" marker="a">
+												<p>TEST <ref href="TEST-LINK">HTTP-Link</ref>
+												</p>
+											</authorialNote>  transparent zu gestalten und damit die freie Meinungsbildung und die Wahrnehmung der demokratischen Rechte zu fördern sowie die Kontrolle des staatlichen Handelns zu erleichtern,</p>
+									</item>
+									<item eId="level_I__art_1__para_2__content__blocklist__item_b">
+										<num>b.</num>
+										<p>die Grundrechte von Personen zu schützen, über welche die öffentlichen Organe Daten bearbeiten.</p>
+									</item>
+								</blockList>
+							</content>
+						</paragraph>
+					</article>
+					<article eId="title_1__art_2">
+						<num>§ 2.</num>
+						<heading>Geltungsbereich</heading>
+						<paragraph eId="title_1__art_2__para_1">
+							<num>1</num>
+							<content eId="title_1__art_2__para_1__content">
+								<p>Dieses Gesetz gilt für die öffentlichen Organe. Für die Gerichte gilt es nur, soweit sie Verwaltungsaufgaben erfüllen.</p>
+							</content>
+						</paragraph>
+						<paragraph eId="title_1__art_2__para_2">
+							<num>2</num>
+							<content eId="level_I__art_2__para_2__content">
+								<p>Es gilt nicht, soweit öffentliche Organe am wirtschaftlichen Wettbewerb teilnehmen und dabei nicht hoheitlich handeln.</p>
+							</content>
+						</paragraph>
+					</article>
+					<article eId="title_1__art_3">
+						<num>§ 3.</num>
+						<heading>Begriffe</heading>
+						<paragraph eId="title_1__art_3__para_1">
+							<num>1</num>
+							<content eId="title_1__art_3__para_1__content">
+								<p>In diesem Gesetz bedeuten:</p>
+								<blockList eId="title_1__art_3__para_1__content__blocklist_1" style="">
+									<listIntroduction>
+										<def>Öffentliche Organe</def>:</listIntroduction>
+									<item eId="title_1__art_3__para_1__content__blocklist_1__item_a">
+										<num>a.</num>
+										<p>Der Kantonsrat, die Gemeindeparlamente sowie die Gemeindeversammlungen,</p>
+									</item>
+									<item eId="title_1__art_3__para_1__content__blocklist_1__item_b">
+										<num>b.</num>
+										<p>Behörden und Verwaltungen des Kantons und der Gemeinden,</p>
+									</item>
+									<item eId="title_1__art_3__para_1__content__blocklist_1__item_c">
+										<num>c.</num>
+										<p>Organisationen und Personen des öffentlichen und privaten Rechts, soweit sie mit der Erfüllung öffentlicher Aufgaben betraut sind.</p>
+									</item>
+								</blockList>
+								<blockList eId="title_1__art_3__para_1__content__blocklist_2" style="">
+									<listIntroduction>
+										<def>Informationen</def>:</listIntroduction>
+									<item eId="title_1__art_3__para_1__content__blocklist_2__item_a">
+										<num>1</num>
+										<p>Alle Aufzeichnungen, welche die Erfüllung einer öffentlichen Aufgabe betreffen, unabhängig von ihrer Darstellungsform und ihrem Informationsträger. Ausgenommen sind Aufzeichnungen, die nicht fertig gestellt oder die ausschliesslich zum persönlichen Gebrauch bestimmt sind</p>
+									</item>
+								</blockList>
+								<blockList eId="title_1_art_3__para_1__content__blocklist_3" style="">
+									<listIntroduction>
+										<def>Personendaten</def>:</listIntroduction>
+									<item eId="title_1__art_3__para_1__content__blocklist_3__item_a">
+										<num>1</num>
+										<p>Informationen, die sich auf eine bestimmte oder bestimmbare Person beziehen.</p>
+									</item>
+								</blockList>
+								<blockList eId="title_1__art_3__para_1__content__blocklist_4" style="Grossbuchstaben">
+									<listIntroduction>
+										<def>Besondere Personendaten:</def>:</listIntroduction>
+									<item eId="title_1__art_3__para_1__content__blocklist_4__item_a">
+										<num>a.</num>
+										<p>Informationen, bei denen wegen ihrer Bedeutung, der Art ihrer Bearbeitung oder der Möglichkeit ihrer Verknüpfung mit anderen Informationen die besondere Gefahr einer Persönlichkeitsverletzung besteht, wie Informationen über</p>
+										<blockList eId="level_I__art_3__para_1__content__blocklist_4__item_a__blocklist_1">
+											<item eId="level_I__art_3__para_1__content__blocklist_4__item_a__blocklist_1__item_1">
+												<num>1.</num>
+												<p>die religiösen, weltanschaulichen, politischen oder gewerkschaftlichen Ansichten oder Tätigkeiten,</p>
+											</item>
+											<item eId="level_I__art_3__para_1__content__blocklist_4__item_a__blocklist_1__item_2">
+												<num>2.</num>
+												<p>die Gesundheit, die Intimsphäre, die Rassenzugehörigkeit oder
+die ethnische Herkunft,</p>
+											</item>
+											<item eId="level_I__art_3__para_1__content__blocklist_4__item_a__blocklist_1__item_3">
+												<num>3.</num>
+												<p>Massnahmen der sozialen Hilfe,</p>
+											</item>
+											<item eId="level_I__art_3__para_1__content__blocklist_4__item_a__blocklist_1__item_4">
+												<num>4.</num>
+												<p>administrative oder strafrechtliche Verfolgungen oder Sanktionen.</p>
+											</item>
+										</blockList>
+									</item>
+									<item eId="title_1__art_3__para_1__content__blocklist_4__item_b">
+										<num>b.</num>
+										<p>Zusammenstellungen von Informationen, die eine Beurteilung wesentlicher Aspekte der Persönlichkeit natürlicher Personen erlauben.</p>
+									</item>
+								</blockList>
+								<blockList eId="ltitle_1__art_3__para_1__content__blocklist_5" style="">
+									<listIntroduction>
+										<def>Bearbeiten</def>:</listIntroduction>
+									<item eId="title_1__art_3__para_1__content__blocklist_5__item_a">
+										<num>1</num>
+										<p>Jeder Umgang mit Informationen wie das Beschaffen, Aufbewahren,
+Verwenden, Umarbeiten, Bekanntgeben oder Vernichten.</p>
+									</item>
+								</blockList>
+								<blockList eId="title_1__art_3__para_1__content__blocklist_6" style="">
+									<listIntroduction>
+										<def>Bekanntgeben</def>:</listIntroduction>
+									<item eId="ltitle_1__art_3__para_1__content__blocklist_6__item_a">
+										<num>1</num>
+										<p>Das Zugänglichmachen von Informationen wie das Einsichtgewähren, Weitergeben oder Veröffentlichen.</p>
+									</item>
+								</blockList>
+							</content>
+						</paragraph>
+					</article>
+				</title>
+				<title eId="title_2">
+					<num>2. Abschnitt:</num>
+					<heading eId="title_2__heading_1">Grundsätze im Umgang mit Informationen</heading>
+					<chapter eId="title_2__chp_A">
+						<num>1. Titel:</num>
+						<heading eId="title_2__chp_A__heading">Im Allgemeinen</heading>
+						<article eId="title_2__chp_A__art_4">
+							<num>§ 4.</num>
+							<heading eId="title_2__chp_A__art_4__heading">Transparenzprinzip</heading>
+							<paragraph eId="title_2__chp_A__art_4__para_1">
+								<num/>
+								<content eId="title_2__chp_A__art_4__para_1__content">
+									<p>Das öffentliche Organ gestaltet den Umgang mit Informationen so, dass es rasch, umfassend und sachlich informieren kann.</p>
+								</content>
+							</paragraph>
+						</article>
+						<article eId="title_2__chp_A__art_5">
+							<num>§ 5.</num>
+							<heading eId="title_2__chp_A__art_5__heading">Informationsverwaltung</heading>
+							<paragraph eId="title_2__chp_A__art_5__para_1">
+								<num>1</num>
+								<content eId="title_2__chp_A__art_5__para_1__content">
+									<p>Das öffentliche Organ verwaltet seine Informationen so, dass das Verwaltungshandeln nachvollziehbar und die Rechenschaftsfähigkeit gewährleistet ist. Bearbeiten mehrere öffentliche Organe einen gemeinsamen Informationsbestand, regeln sie die Verantwortlichkeiten.</p>
+								</content>
+							</paragraph>
+							<paragraph eId="title_2__chp_A__art_5__para_2">
+								<num>2</num>
+								<content eId="title_2__chp_A__art_5__para_2__content">
+									<p>Benötigt das öffentliche Organ Informationen und Findmittel für sein Verwaltungshandeln nicht mehr, so bewahrt es diese noch höchstens zehn Jahre lang auf.</p>
+								</content>
+							</paragraph>
+							<paragraph eId="title_2__chp_A__art_5__para_3">
+								<num>3</num>
+								<content eId="title_2__chp_A__art_5__para_3__content">
+									<p>Nach Ablauf der Aufbewahrungsfrist bietet das öffentliche Organ die Informationen und Findmittel dem zuständigen Archiv an. Informationen, die nicht archiviert werden, sind zu vernichten.</p>
+								</content>
+							</paragraph>
+							<paragraph eId="title_2__chp_A__art_5__para_4">
+								<num>4</num>
+								<content eId="title_2__chp_A__art_5__para_4__content">
+									<p>Für die kantonale Verwaltung regelt der Regierungsrat das Nähere in einer Verordnung.</p>
+								</content>
+							</paragraph>
+						</article>
+						<article eId="title_2__chp_A__art_6">
+							<num>§ 6.</num>
+							<heading eId="title_2_chp_A__art_6__heading">Bearbeiten im Auftrag</heading>
+							<paragraph eId="title_2__chp_A__art_6__para_1">
+								<num>1</num>
+								<content eId="title_2__chp_A__art_6__para_1__content">
+									<p>Das öffentliche Organ kann das Bearbeiten von Informationen Dritten übertragen, sofern keine rechtliche Bestimmung oder vertragliche Vereinbarung entgegensteht.</p>
+								</content>
+							</paragraph>
+							<paragraph eId="title_2__chp_A__art_6__para_2">
+								<num>2</num>
+								<content eId="title_2__chp_A__art_6__para_2__content">
+									<p>Es bleibt für den Umgang mit Informationen nach diesem Gesetz verantwortlich.</p>
+								</content>
+							</paragraph>
+						</article>
+						<article eId="title_2__chp_A__art_7">
+							<num>§ 7.</num>
+							<heading eId="title_2__chp_A__art_7__heading">Informationssicherheit</heading>
+							<paragraph eId="title_2__chp_A__art_7__para_1">
+								<num>1</num>
+								<content eId="title_2__chp_A__art_7__para_1__content">
+									<p>Das öffentliche Organ schützt Informationen durch angemessene organisatorische und technische Massnahmen.</p>
+								</content>
+							</paragraph>
+							<paragraph eId="title_2__chp_A__art_7__para_2">
+								<num>2</num>
+								<content eId="title_2__chp_A__art_7__para_2__content">
+									<p>Die Massnahmen richten sich nach den folgenden Schutzzielen:</p>
+									<blockList eId="title_2__chp_A__art_7__para_2__content__blocklist_1">
+										<item eId="title_2__chp_A__art_7__para_2__content__blocklist_1__item_a">
+											<num>a.</num>
+											<p>Informationen dürfen nicht unrechtmässig zur Kenntnis gelangen,</p>
+										</item>
+										<item eId="title_2__chp_A__art_7__para_2__content__blocklist_1__item_b">
+											<num>b.</num>
+											<p>Informationen müssen richtig und vollständig sein,</p>
+										</item>
+										<item eId="title_2__chp_A__art_7__para_2__content__blocklist_1__item_c">
+											<num>c. </num>
+											<p>Informationen müssen bei Bedarf vorhanden sein,</p>
+										</item>
+										<item eId="title_2__chp_A__art_7__para_2__content__blocklist_1__item_d">
+											<num>d.</num>
+											<p>Informationsbearbeitungen müssen einer Person zugerechnet werden können,</p>
+										</item>
+										<item eId="title_2__chp_A__art_7__para_2__content__blocklist_1__item_e">
+											<num>e.</num>
+											<p>Veränderungen von Informationen müssen erkennbar und nachvollziehbar sein.</p>
+										</item>
+									</blockList>
+								</content>
+							</paragraph>
+							<paragraph eId="title_2__chp_A__art_7__para_3">
+								<num>3</num>
+								<content eId="title_2__chp_A__art_7__para_3__content">
+									<p>Die zu treffenden Massnahmen richten sich nach der Art der Information, nach Art und Zweck der Verwendung und nach dem jeweiligen Stand der Technik.</p>
+								</content>
+							</paragraph>
+						</article>
+					</chapter>
+					<chapter eId="title_2__chp_B">
+						<num>2. Kapitel:</num>
+						<heading eId="title_2__chp_B__heading">Besondere Grundsätze im Umgang mit Personendaten</heading>
+						<article eId="title_2__chp_B__art_8">
+							<num>§ 8</num>
+							<heading eId="title_22__chp_B__art_8__heading">Gesetzmässigkeit</heading>
+							<paragraph eId="title_22__chp_B__art_8__para_1">
+								<num>1</num>
+								<content eId="title_22__chp_B__art_8__para_1__content">
+									<p>Das öffentliche Organ darf Personendaten bearbeiten, soweit dies zur Erfüllung seiner gesetzlich umschriebenen Aufgaben geeignet und erforderlich ist.</p>
+								</content>
+							</paragraph>
+							<paragraph eId="title_2__chp_B__art_8__para_2">
+								<num>2</num>
+								<content eId="title_2__chp_B__art_8__para_2__content">
+									<p> Das Bearbeiten besonderer Personendaten bedarf einer hinreichend bestimmten Regelung in einem formellen Gesetz.</p>
+								</content>
+							</paragraph>
+						</article>
+						<article>
+							<num>§ 9</num>
+							<heading eId="title_2__chp_B__art_9__heading">Zweckbindung</heading>
+							<paragraph eId="title_2__chp_B__art_9__para_1">
+								<num>1</num>
+								<content eId="title_2__chp_B__art_9__para_1__content">
+									<p>Das öffentliche Organ darf Personendaten nur zu dem Zweck bearbeiten, zu dem sie erhoben worden sind, soweit nicht eine rechtliche Bestimmung ausdrücklich eine weitere Verwendung vorsieht oder die betroffene Person im Einzelfall einwilligt</p>
+								</content>
+							</paragraph>
+							<paragraph eId="title_2__chp_B__art_9__para_2">
+								<num>2</num>
+								<content eId="title_2__chp_B__art_9__para_2__content">
+									<p> Zu einem nicht personenbezogenen Zweck darf das öffentliche Organ Personendaten bearbeiten, wenn sie anonymisiert werden und aus den Auswertungen keine Rückschlüsse auf betroffene Personen möglich sind.</p>
+								</content>
+							</paragraph>
+						</article>
+						<article>
+							<num>§ 10</num>
+							<heading eId="title_2__chp_B__art_10__heading">Vorabkontrolle</heading>
+							<paragraph eId="title_2__chp_B__art_10__para_1">
+								<num/>
+								<content eId="title_2__chp_B__art_10__para_1__content">
+									<p>Das öffentliche Organ unterbreitet eine beabsichtigte Bearbeitung von Personendaten mit besonderen Risiken für die Rechte und Freiheiten der betroffenen Personen vorab der oder dem Beauftragten für den Datenschutz zur Prüfung.</p>
+								</content>
+							</paragraph>
+						</article>
+						<article>
+							<num>§ 11</num>
+							<heading eId="title_2__chp_B__art_11__heading">Vermeidung des Personenbezugs</heading>
+							<paragraph eId="title_2__chp_B__art_11__para_1">
+								<num>1</num>
+								<content eId="title_2__chp_B__art_11__para_1__content">
+									<p>Das öffentliche Organ gestaltet Datenbearbeitungssysteme und -programme so, dass möglichst wenig Personendaten anfallen, die zur Aufgabenerfüllung nicht notwendig sind.</p>
+								</content>
+							</paragraph>
+							<paragraph eId="title_2__chp_B__art_11__para_2">
+								<num>2</num>
+								<content eId="title_2__chp_B__art_11__para_2__content">
+									<p>Es löscht, anonymisiert oder pseudonymisiert solche Personendaten, sobald und soweit dies möglich ist.</p>
+								</content>
+							</paragraph>
+						</article>
+						<article>
+							<num>§ 12</num>
+							<heading eId="title_2__chp_B__art_12__heading">Erkennbarkeit der Beschaffung</heading>
+							<paragraph eId="title_2__chp_B__art_12__para_1">
+								<num>1 </num>
+								<content eId="title_2__chp_B__art_12__para_1__content">
+									<p>Die Beschaffung von Personendaten und insbesondere der Zweck ihrer Bearbeitung müssen für die betroffene Person erkennbar sein.</p>
+								</content>
+							</paragraph>
+							<paragraph eId="title_2__chp_B__art_12__para_2">
+								<num>2</num>
+								<content eId="title_2__chp_B__art_12__para_2__content">
+									<p>Bei der Beschaffung von besonderen Personendaten ist der Inhaber der Datensammlung verpflichtet, die betroffene Person über
+den Zweck ihrer Bearbeitung zu informieren.</p>
+								</content>
+							</paragraph>
+						</article>
+						<article>
+							<num>§ 13</num>
+							<heading eId="title_2__chp_B__art_13__heading">Qualitätssicherung</heading>
+							<paragraph eId="title_2__chp_B__art_13__para_1">
+								<num>1</num>
+								<content eId="title_2__chp_B__art_13__para_1__content">
+									<p>Das öffentliche Organ kann zur Sicherstellung der Qualität der Informationsbearbeitung seine Verfahren, seine Organisation
+und seine technischen Einrichtungen durch eine unabhängige und anerkannte Stelle prüfen und bewerten lassen.</p>
+								</content>
+							</paragraph>
+							<paragraph eId="title_2__chp_B__art_13__para_2">
+								<num>2</num>
+								<content eId="title_2__chp_B__art_13__para_2__content">
+									<p>Der Regierungsrat regelt das Nähere in einer Verordnung.</p>
+								</content>
+							</paragraph>
+						</article>
+					</chapter>
+				</title>
+				<title eId="title_3">
+					<num>C.</num>
+					<heading eId="title_3__heading">Bekanntgabe von Informationen</heading>
+					<article eId="title_3__art_14">
+						<num>§ 14.</num>
+						<heading eId="title_3__art_14__heading">Informationstätigkeit von Amtes wegen</heading>
+						<paragraph eId="title_3__art_14__para_1">
+							<num>1</num>
+							<content eId="title_3__art_14__para_1__content">
+								<p>Das öffentliche Organ informiert von sich aus über seine Tätigkeiten von allgemeinem Interesse.</p>
+							</content>
+						</paragraph>
+						<paragraph eId="title_3__art_14__para_2">
+							<num>2</num>
+							<content eId="title_3__art_14__para_2__content">
+								<p>Es stellt Informationen über seinen Aufbau, seine Zuständigkeiten und über Ansprechpersonen zur Verfügung.</p>
+							</content>
+						</paragraph>
+						<paragraph eId="title_3__art_14__para_3">
+							<num>3</num>
+							<content eId="title_3__art_14__para_3__content">
+								<p>Über hängige Verfahren darf das öffentliche Organ nur informieren, wenn dies zur Berichtigung oder Vermeidung falscher Meldungen notwendig ist oder wenn in einem besonders schweren oder Aufsehen erregenden Fall die unverzügliche Information angezeigt ist.</p>
+							</content>
+						</paragraph>
+						<paragraph eId="title_3__art_14__para_4">
+							<num>4</num>
+							<content eId="title_3__art_14__para_4__content">
+								<p>Es macht ein Verzeichnis seiner Informationsbestände und deren Zwecke öffentlich zugänglich. Es kennzeichnet Informationsbestände, die Personendaten enthalten.</p>
+							</content>
+						</paragraph>
+					</article>
+					<article eId="title_3__art_15">
+						<num>§ 15.</num>
+						<heading eId="title_3_art_15__heading">Medien</heading>
+						<paragraph eId="title_3__art_15__para_1">
+							<num>1</num>
+							<content eId="title_3__art_15__para_1__content">
+								<p>Das öffentliche Organ nimmt bei seiner Informationstätig- Medienkeit nach Möglichkeit Rücksicht auf die Bedürfnisse der Medien.</p>
+							</content>
+						</paragraph>
+						<paragraph eId="title_3__art_15__para_2">
+							<num>2</num>
+							<content eId="title_3__art_15__para_2__content">
+								<p>Es kann die Akkreditierung von Medienschaffenden vorsehen.</p>
+							</content>
+						</paragraph>
+					</article>
+					<article eId="title_3__art_16">
+						<num>§ 16.</num>
+						<heading eId="title_3__art_16__heading">Bekanntgabe
+von Personendaten</heading>
+						<subheading eId="title_3__art_16__subheading">a. Allgemein</subheading>
+						<paragraph eId="title_3__art_16__para_1">
+							<num>1</num>
+							<content eId="title_3__art_16__para_1__content">
+								<p>Das öffentliche Organ gibt Personendaten bekannt, wenn</p>
+								<blockList eId="title_3__art_16__para_1__content__blocklist_1" style="">
+									<item eId="title_3__art_16__para_1__content__blocklist_1__item_a">
+										<num>a.</num>
+										<p>eine rechtliche Bestimmung dazu ermächtigt,</p>
+									</item>
+									<item eId="title_3__art_16__para_1__content__blocklist_1__item_b">
+										<num>b.</num>
+										<p>die betroffene Person im Einzelfall eingewilligt hat oder</p>
+									</item>
+									<item eId="title_3__art_16__para_1__content__blocklist_1__item_c">
+										<num>c.</num>
+										<p>es zur Abwendung einer unmittelbar drohenden Gefahr für Leib und Leben notwendig ist.</p>
+									</item>
+								</blockList>
+							</content>
+						</paragraph>
+						<paragraph eId="title_3__art_16__para_2">
+							<num>2</num>
+							<content eId="title_3__art_16__para_2__content">
+								<p>Einem anderen öffentlichen Organ sowie den Organen anderer Kantone oder des Bundes gibt es im Einzelfall Personendaten ausserdem bekannt, wenn das Organ, das Personendaten verlangt, diese zur Erfüllung seiner gesetzlichen Aufgaben benötigt.</p>
+							</content>
+						</paragraph>
+					</article>
+					<article eId="title_3__art_17">
+						<num>§ 17.</num>
+						<subheading eId="ttitle_3__art_17__subheading">b. Besondere Personendaten</subheading>
+						<paragraph eId="title_3__art_17__para_1">
+							<num>1</num>
+							<content eId="ttitle_3__art_17__para_1__content">
+								<p>Das öffentliche Organ gibt besondere Personendaten bekannt, wenn</p>
+								<blockList eId="title_3__art_17__para_1__content__blocklist_1" style="">
+									<item eId="title_3__art_17__para_1__content__blocklist_1__item_a">
+										<num>a.</num>
+										<p>eine hinreichend bestimmte Regelung in einem formellen Gesetz dazu ermächtigt,</p>
+									</item>
+									<item eId="title_3__art_17__para_1__content__blocklist_1__item_b">
+										<num>b.</num>
+										<p>die betroffene Person im Einzelfall ausdrücklich in die Bekanntgabe von besonderen Personendaten eingewilligt hat oder</p>
+									</item>
+									<item eId="title_3__art_17__para_1__content__blocklist_1__item_c">
+										<num>c.</num>
+										<p>es zur Abwendung einer unmittelbar drohenden Gefahr für Leib und Leben notwendig ist.</p>
+									</item>
+								</blockList>
+							</content>
+						</paragraph>
+						<paragraph eId="ttitle_3__art_17__para_2">
+							<num>2</num>
+							<content eId="title_3__art_17__para_2__content">
+								<p>Einem anderen öffentlichen Organ sowie den Organen anderer Kantone oder des Bundes gibt es im Einzelfall besondere Personendaten ausserdem bekannt, wenn das Organ, das besondere Personendaten verlangt, diese zur Erfüllung seiner gesetzlichen Aufgaben benötigt.</p>
+							</content>
+						</paragraph>
+					</article>
+					<article eId="title_3__art_18">
+						<num>§ 18.</num>
+						<subheading eId="title_3__art_18__subheading">c. Für nicht personenbezogene Zwecke</subheading>
+						<paragraph eId="title_3__art_18__para_1">
+							<num>1</num>
+							<content eId="title_3__art_18__para_1__content">
+								<p>Das öffentliche Organ kann Personendaten zur Bearbeitung für nicht personenbezogene Zwecke bekannt geben, sofern dies
+nicht durch eine rechtliche Bestimmung ausgeschlossen ist.</p>
+							</content>
+						</paragraph>
+						<paragraph eId="ttitle_3__art_18__para_2">
+							<num>2</num>
+							<content eId="title_3__art_18__para_2__content">
+								<p>Die Empfängerin oder der Empfänger hat nachzuweisen, dass die Personendaten anonymisiert werden, aus den Auswertungen keine
+Rückschlüsse auf betroffene Personen möglich sind und die ursprünglichen Personendaten nach der Auswertung vernichtet werden.</p>
+							</content>
+						</paragraph>
+					</article>
+					<article eId="title_3__art_19">
+						<num>§ 19.</num>
+						<subheading eId="title_3__art_19__subheading">d. Grenzüberschreitend</subheading>
+						<paragraph eId="title_3__art_19__para_1">
+							<num>1</num>
+							<content eId="title_3__art_19__para_1__content">
+								<p>An Empfängerinnen und Empfänger, die dem Europarats-Übereinkommen zum Schutz des Menschen bei der automatischen Verarbeitung personenbezogener Daten nicht unterstehen, gibt das öffentliche Organ Personendaten bekannt, wenn</p>
+								<blockList eId="title_3__art_19__para_1__content__blocklist_1" style="">
+									<item eId="title_3__art_19__para_1__content__blocklist_1__item_a">
+										<num>a.</num>
+										<p>im Empfängerstaat ein angemessener Schutz für die Datenübermittlung gewährleistet ist,</p>
+									</item>
+									<item eId="title_3__art_19__para_1__content__blocklist_1__item_b">
+										<num>b.</num>
+										<p>deine gesetzliche Grundlage dies erlaubt, um bestimmte Interessen der betroffenen Person oder überwiegende öffentliche Interessen zu schützen, oder</p>
+									</item>
+									<item eId="title_3__art_19__para_1__content__blocklist_1__item_c">
+										<num>c.</num>
+										<p>vom öffentlichen Organ angemessene vertragliche Sicherheitsvorkehrungen getroffen werden.</p>
+									</item>
+								</blockList>
+							</content>
+						</paragraph>
+					</article>
+				</title>
+				<title eId="title_4">
+					<num>4.</num>
+					<heading eId="title_2__chp_D__heading">Abschnit: Informationszugangsrecht und weitere Rechtsansprüche</heading>
+					<article eId="title_4__art_20">
+						<num>§ 20.</num>
+						<heading eId="title_4__art_20__heading">Zugang zu Informationen</heading>
+						<paragraph eId="title_4__art_20__para_1">
+							<num>1</num>
+							<content eId="title_4__art_20__para_1__content">
+								<p>Jede Person hat Anspruch auf Zugang zu den bei einem öffentlichen Organ vorhandenen Informationen.</p>
+							</content>
+						</paragraph>
+						<paragraph eId="title_4__art_20__para_2">
+							<num>2</num>
+							<content eId="title_4__art_20__para_2__content">
+								<p>Jede Person hat Anspruch auf Zugang zu den eigenen Personendaten.</p>
+							</content>
+						</paragraph>
+						<paragraph eId="title_4__art_20__para_3">
+							<num>3</num>
+							<content eId="title_4__art_20__para_3__content">
+								<p>In nicht rechtskräftig abgeschlossenen Verwaltungs- und Verwaltungsjustizverfahren richtet sich das Recht auf Zugang zu Information nach dem massgeblichen Verfahrensrecht.</p>
+							</content>
+						</paragraph>
+					</article>
+					<article eId="title_4__art_21">
+						<num>§ 21.</num>
+						<heading eId="title_4__art_21__heading">Schutz eigener Personendaten</heading>
+						<paragraph eId="title_4__art_21__para_1">
+							<num>1</num>
+							<content eId="title_4__art_21__para_1__content">
+								<p>Die betroffene Person kann vom öffentlichen Organ verlangen, dass es</p>
+								<blockList eId="title_4__art_21__para_1__content__blocklist_1" style="">
+									<item eId="ttitle_4__art_21__para_1__content__blocklist_1__item_a">
+										<num>a.</num>
+										<p>unrichtige Personendaten berichtigt oder vernichtet,</p>
+									</item>
+									<item eId="title_4__art_21__para_1__content__blocklist_1__item_b">
+										<num>b.</num>
+										<p>das widerrechtliche Bearbeiten von Personendaten unterlässt,</p>
+									</item>
+									<item eId="title_4__art_21__para_1__content__blocklist_1__item_c">
+										<num>c.</num>
+										<p>die Folgen des widerrechtlichen Bearbeitens beseitigt,</p>
+									</item>
+									<item eId="title_4__art_21__para_1__content__blocklist_1__item_d">
+										<num>d.</num>
+										<p>die Widerrechtlichkeit des Bearbeitens feststellt.</p>
+									</item>
+								</blockList>
+							</content>
+						</paragraph>
+					</article>
+					<article eId="title_4__art_22">
+						<num>§ 22.</num>
+						<heading eId="ttitle_4__art_22__heading">Sperren von Personendaten</heading>
+						<paragraph eId="ttitle_4__art_22__para_1">
+							<num>1</num>
+							<content eId="title_4__art_22__para_1__content">
+								<p>Die betroffene Person kann die Bekanntgabe ihrer Personendaten an Private sperren lassen, wenn das öffentliche Organ auf
+Grund einer spezialgesetzlichen Bestimmung Personendaten voraussetzungslos bekannt geben kann.</p>
+							</content>
+						</paragraph>
+						<paragraph eId="title_4__art_22__para_2">
+							<num>2</num>
+							<content eId="title_4__art_22__para_2__content">
+								<p>Das öffentliche Organ gibt Personendaten trotz Sperrung bekannt, wenn die gesuchstellende Person nachweist, dass die Sperrung sie an der Verfolgung eigener Rechte gegenüber der betroffenen Person hindert.</p>
+							</content>
+						</paragraph>
+					</article>
+				</title>
+				<title eId="title_5">
+					<num>5. Abschnitt:</num>
+					<heading eId="title_5__heading">Interessenabwägung</heading>
+					<article eId="title_5__art_23">
+						<num>§ 23</num>
+						<heading eId="title_5__art_23__heading">Interessenabwägung</heading>
+						<paragraph eId="title_5__art_23__para_1">
+							<num>1</num>
+							<content eId="ttitle_5__art_23__para_1__content">
+								<p>Das öffentliche Organ verweigert die Bekanntgabe von Informationen ganz oder teilweise oder schiebt sie auf, wenn eine
+rechtliche Bestimmung oder ein überwiegendes öffentliches oder privates Interesse entgegensteht.</p>
+							</content>
+						</paragraph>
+						<paragraph eId="title_5__art_23__para_2">
+							<num>2</num>
+							<content eId="title_5__art_23__para_2__content">
+								<p>Ein öffentliches Interesse liegt insbesondere vor, wenn</p>
+								<blockList eId="title_5__art_23__para_2__content__blocklist_1" style="">
+									<item eId="title_5__art_23__para_2__content__blocklist_1__item_a">
+										<num>a.</num>
+										<p>die Information Positionen in Vertragsverhandlungen betrifft,</p>
+									</item>
+									<item eId="title_5__art_23__para_2__content__blocklist_1__item_b">
+										<num>b.</num>
+										<p>die Bekanntgabe der Information den Meinungsbildungsprozess des öffentlichen Organs beeinträchtigt,</p>
+									</item>
+									<item eId="title_5__art_23__para_2__content__blocklist_1__item_c">
+										<num>c.</num>
+										<p>die Bekanntgabe der Information die Wirkung von Untersuchungs-, Sicherheits- oder Aufsichtsmassnahmen gefährdet,</p>
+									</item>
+									<item eId="title_5__art_23__para_2__content__blocklist_1__item_d">
+										<num>d.</num>
+										<p>die Bekanntgabe der Information die Beziehungen unter den Gemeinden, zu einem anderen Kanton, zum Bund oder zum Ausland beeinträchtigt,</p>
+									</item>
+									<item eId="title_5__art_23__para_2__content__blocklist_1__item_e">
+										<num>e.</num>
+										<p>die Bekanntgabe die zielkonforme Durchführung konkreter behördlicher Massnahmen beeinträchtigt.</p>
+									</item>
+								</blockList>
+							</content>
+						</paragraph>
+						<paragraph eId="title_5__art_23__para_3">
+							<num>3</num>
+							<content eId="title_5__art_23__para_3__content">
+								<p>Ein privates Interesse liegt insbesondere vor, wenn durch die Bekanntgabe der Information die Privatsphäre Dritter beeinträchtigt wird.</p>
+							</content>
+						</paragraph>
+					</article>
+				</title>
+				<title eId="title_6">
+					<num>6. Abschnitt:</num>
+					<heading eId="title_2__chp_F__heading">Verfahren auf Zugang zu Information</heading>
+					<article eId="title_6__art_24">
+						<num>§ 24.</num>
+						<heading eId="title_6__art_24__heading">Gesuch</heading>
+						<paragraph eId="title_6__art_24__para_1">
+							<num>1</num>
+							<content eId="title_6__art_24__para_1__content">
+								<p>Wer Zugang zu Informationen gemäss § 20 Abs. 1 will, stellt ein schriftliches Gesuch.</p>
+							</content>
+						</paragraph>
+						<paragraph eId="title_6__art_24__para_2">
+							<num>2</num>
+							<content eId="title_6__art_24__para_2__content">
+								<p>Auf mündliche Anfragen hin kann das öffentliche Organ mündlich Auskunft erteilen.</p>
+							</content>
+						</paragraph>
+					</article>
+					<article eId="ttitle_6__art_25">
+						<num>§ 25.</num>
+						<heading eId="title_6_art_25__heading">Prüfung des Gesuchs</heading>
+						<paragraph eId="ttitle_6__art_25__para_1">
+							<num>1</num>
+							<content eId="title_6__art_25__para_1__content">
+								<p>Das öffentliche Organ kann ein Gesuch ablehnen, wenn es sich auf Informationen bezieht, die bereits öffentlich sind und auf
+angemessene Weise zur Verfügung stehen. Dabei ist diese Quelle anzugeben.</p>
+							</content>
+						</paragraph>
+						<paragraph eId="title_6__art_25__para_2">
+							<num>2</num>
+							<content eId="title_6__art_25__para_2__content">
+								<p>Verursacht die Bearbeitung des Gesuchs dem öffentlichen Organ einen unverhältnismässigen Aufwand, kann es den Zugang zur Information vom Nachweis eines schutzwürdigen Interesses der gesuchstellenden Person abhängig machen.</p>
+							</content>
+						</paragraph>
+					</article>
+					<article eId="title_6__art_26">
+						<num>§ 26.</num>
+						<heading eId="title_6__art_26__heading">Anhörung betroffener Dritter</heading>
+						<paragraph eId="ttitle_6__art_26__para_1">
+							<num>1</num>
+							<content eId="title_6__art_26__para_1__content">
+								<p>Will das öffentliche Organ Zugang zur Information gewähren und betrifft das Gesuch Personendaten oder als vertraulich klassifizierte Informationen, gibt das öffentliche Organ den betroffenen Dritten Gelegenheit zur Stellungnahme innert angemessener Frist.</p>
+							</content>
+						</paragraph>
+						<paragraph eId="title_6__art_26__para_2">
+							<num>2</num>
+							<content eId="title_6__art_26__para_2__content">
+								<p>Betrifft das Gesuch besondere Personendaten, lehnt das öffentliche Organ das Gesuch ab, wenn die betroffenen Dritten dem Zugang nicht ausdrücklich zustimmen.</p>
+							</content>
+						</paragraph>
+					</article>
+					<article eId="title_6__art_27">
+						<num>§ 27.</num>
+						<heading eId="ttitle_6__art_27__heading">Verfügung</heading>
+						<paragraph eId="title_2__chp_F__art_27__para_1">
+							<num>1</num>
+							<content eId="title_6__art_27__para_1__content">
+								<p>Das öffentliche Organ erlässt eine Verfügung, wenn es den Zugang zur gewünschten Information verweigern, einschränken oder
+aufschieben will.</p>
+							</content>
+						</paragraph>
+						<paragraph eId="title_6__art_27__para_2">
+							<num>2</num>
+							<content eId="title_6__art_27__para_2__content">
+								<p>Will es entgegen dem Willen Dritter Informationszugang gewähren, so teilt es dies den betroffenen Dritten mittels Verfügung mit.</p>
+							</content>
+						</paragraph>
+					</article>
+					<article eId="title_6__art_28">
+						<num>§ 28.</num>
+						<heading eId="title_6__art_28__heading">Fristen</heading>
+						<paragraph eId="title_6__art_28__para_1">
+							<num>1</num>
+							<content eId="title_6__art_28__para_1__content">
+								<p>Das öffentliche Organ gewährt innert 30 Tagen seit dem Eingang des Gesuchs Zugang zur Information oder erlässt eine Verfügung über die Beschränkung des Zugangsrechts.</p>
+							</content>
+						</paragraph>
+						<paragraph eId="title_6__art_28__para_2">
+							<num>2</num>
+							<content eId="title_6__art_28__para_2__content">
+								<p>Kann das öffentliche Organ diese Frist nicht einhalten, teilt es vor deren Ablauf der gesuchstellenden Person unter Angabe der Gründe mit, wann der Entscheid über das Gesuch vorliegen wird.</p>
+							</content>
+						</paragraph>
+					</article>
+					<article eId="title_6__art_29">
+						<num>§ 29.</num>
+						<heading eId="title_6__art_29__heading">Gebühren und Entgelte</heading>
+						<paragraph eId="title_6__art_29__para_1">
+							<num>1</num>
+							<content eId="title_6__art_29__para_1__content">
+								<p>Das öffentliche Organ erhebt für die Bearbeitung von Gesuchen Privater eine Gebühr.</p>
+							</content>
+						</paragraph>
+						<paragraph eId="title_6__art_29__para_2">
+							<num>2</num>
+							<content eId="title_6__art_29__para_2__content">
+								<p>Keine Gebühr wird erhoben</p>
+								<blockList eId="title_6__art_29__para_2__content__blocklist_1" style="">
+									<item eId="title_6__art_29__para_2__content__blocklist_1__item_a">
+										<num>a. </num>
+										<p>wenn der Zugang zu Informationen einen geringen Aufwand erfordert,</p>
+									</item>
+									<item eId="title_6__art_29__para_2__content__blocklist_1__item_b">
+										<num>b. </num>
+										<p>für die Bearbeitung von Gesuchen, welche die eigenen Personendaten betreffen,</p>
+									</item>
+									<item eId="title_6__art_29__para_2__content__blocklist_1__item_c">
+										<num>c. </num>
+										<p>wenn das Gesuch wissenschaftlichen Zwecken dient und die Resultate der Bearbeitung für die Öffentlichkeit einen Nutzen erwarten lassen.</p>
+									</item>
+								</blockList>
+							</content>
+						</paragraph>
+						<paragraph eId="title_6__art_29__para_3">
+							<num>3</num>
+							<content eId="title_6__art_29__para_3__content">
+								<p>Ist die Bearbeitung des Gesuchs mit erheblichen Kosten verbunden, weist das öffentliche Organ die gesuchstellende Person darauf hin. In diesem Fall kann es eine angemessene Vorauszahlung verlangen.</p>
+							</content>
+						</paragraph>
+						<paragraph eId="title_6__art_29__para_4">
+							<num>4</num>
+							<content eId="title_6__art_29__para_4__content">
+								<p>Eignen sich Informationen für eine gewerbliche Nutzung, kann ein Entgelt erhoben werden, das sich nach dem Markt richtet.</p>
+							</content>
+						</paragraph>
+					</article>
+				</title>
+				<title eId="title_7">
+					<num>7. Abschnitt</num>
+					<heading eId="title_7__heading">Abschnitt: Beauftragte oder Beauftragter für Datenschutz</heading>
+					<article eId="title_7__art_30">
+						<num>§ 30.</num>
+						<heading eId="title_7__art_30__heading">Stellung</heading>
+						<paragraph eId="title_7__art_30__para_1">
+							<num>1</num>
+							<content eId="ttitle_7__art_30__para_1__content">
+								<p>Der Regierungsrat wählt eine Beauftragte oder einen Beauftragten für den Datenschutz auf eine Amtsdauer von vier Jahren. Die Wahl bedarf der Genehmigung durch den Kantonsrat.</p>
+							</content>
+						</paragraph>
+						<paragraph eId="title_7__art_30__para_2">
+							<num>2</num>
+							<content eId="title_7__art_30__para_2__content">
+								<p>Die oder der Beauftragte für den Datenschutz ist administrativ der Geschäftsleitung des Kantonsrates zugeordnet. Sie oder er ist unabhängig.</p>
+							</content>
+						</paragraph>
+					</article>
+					<article eId="title_7__art_31">
+						<num>§ 31.</num>
+						<heading eId="title_7_art_31__heading">Personal</heading>
+						<paragraph eId="title_7__art_31__para_1">
+							<num>1</num>
+							<content eId="title_7__art_31__para_1__content">
+								<p>Das Personalrecht des Kantons findet auf die Beauftragte Personal oder den Beauftragten und sein Personal Anwendung. Die Bestimmungen dieses Gesetzes bleiben vorbehalten.</p>
+							</content>
+						</paragraph>
+						<paragraph eId="title_7__art_31__para_2">
+							<num>2</num>
+							<content eId="title_7__art_31__para_2__content">
+								<p>Die oder der Beauftragte ist für Einstellungen und Beförderungen seines Personals im Rahmen des vom Kantonsrat genehmigten
+Voranschlags zuständig.</p>
+							</content>
+						</paragraph>
+						<paragraph eId="title_7__art_31__para_3">
+							<num>3</num>
+							<content eId="title_7__art_31__para_3__content">
+								<p>Aufsichtsbehörde über die oder den Beauftragten ist die Geschäftsleitung des Kantonsrates.</p>
+							</content>
+						</paragraph>
+					</article>
+					<article eId="title_7__art_32">
+						<num>§ 32.</num>
+						<heading eId="title_7__art_32__heading">Voranschlag und Haushaltführung</heading>
+						<paragraph eId="title_7__art_32__para_1">
+							<num>1</num>
+							<content eId="title_7__art_32__para_1__content">
+								<p>Die oder der Beauftragte erstellt einen Entwurf zu einem Globalbudget, den der Regierungsrat unverändert in seinen Entwurf
+zum Voranschlag übernimmt..</p>
+							</content>
+						</paragraph>
+						<paragraph eId="title_7__art_32__para_2">
+							<num>2</num>
+							<content eId="title_7__art_32__para_2__content">
+								<p>Die oder der Beauftragte ist bezüglich Ausgabenkompetenzen einer Direktion des Regierungsrates gleichgestellt. Übersteigen Ausgaben die Zuständigkeit der oder des Beauftragten, sind sie auf Antrag der Geschäftsleitung des Kantonsrates zu bewilligen.</p>
+							</content>
+						</paragraph>
+						<paragraph eId="title_7__art_32__para_3">
+							<num>3</num>
+							<content eId="title_7__art_32__para_3__content">
+								<p>Kreditüberschreitungen bewilligt die Geschäftsleitung.</p>
+							</content>
+						</paragraph>
+					</article>
+					<article eId="title_7__art_33">
+						<num>§ 33.</num>
+						<heading eId="title_7__art_33__heading">Beauftragte in Gemeinden und Organisationen</heading>
+						<paragraph eId="title_7__art_33__para_1">
+							<num>1</num>
+							<content eId="title_7__art_33__para_1__content">
+								<p>Die Gemeinden und die Organisationen gemäss § 3 können eigene Beauftragte bestellen. Der Regierungsrat kann Gemeinden mit mindestens 50 000 Einwohnerinnen und Einwohnern dazu verpflichten.</p>
+							</content>
+						</paragraph>
+						<paragraph eId="title_7__art_33__para_2">
+							<num>2</num>
+							<content eId="title_7__art_33__para_2__content">
+								<p>Die Gemeinden und die Organisationen gemäss § 3 regeln Wahl und Organisation selbstständig. Sie stellen sicher, dass die Beauftragten über die notwendigen fachlichen Voraussetzungen verfügen und in der Ausübung ihrer Aufgaben und Befugnisse unabhängig sind. Die oder der kantonale Beauftragte übt die Oberaufsicht aus.</p>
+							</content>
+						</paragraph>
+					</article>
+					<article eId="title_7__art_34">
+						<num>§ 34.</num>
+						<heading eId="title_7__art_34__heading">Aufgaben</heading>
+						<paragraph eId="title_2__chp_G__art_34__para_1">
+							<num>1</num>
+							<content eId="title_7__art_34__para_1__content">
+								<p>Die oder der Beauftragte</p>
+								<blockList eId="title_7__art_34__para_1__content__blocklist_1" style="">
+									<item eId="ttitle_7__art_34__para_2__content__blocklist_1__item_a">
+										<num>a.</num>
+										<p>unterstützt und berät die öffentlichen Organe in Fragen des Datenschutzes,</p>
+									</item>
+									<item eId="title_7__art_34__para_1__content__blocklist_1__item_b">
+										<num>b.</num>
+										<p>berät Privatpersonen über ihre Rechte,</p>
+									</item>
+									<item eId="ttitle_7__art_34__para_1__content__blocklist_1__item_c">
+										<num>c.</num>
+										<p>überwacht die Anwendung der Vorschriften über den Datenschutz,</p>
+									</item>
+									<item eId="title_7__art_34__para_1__content__blocklist_1__item_d">
+										<num>d.</num>
+										<p>vermittelt zwischen betroffenen Personen und öffentlichen Organen bei Streitigkeiten betreffend den Datenschutz,</p>
+									</item>
+									<item eId="title_77__art_34__para_1__content__blocklist_1__item_e">
+										<num>e.</num>
+										<p>informiert die Öffentlichkeit über Anliegen des Datenschutzes,</p>
+									</item>
+									<item eId="title_7__art_34__para_1__content__blocklist_1__item_f">
+										<num>f.</num>
+										<p>beurteilt Erlasse und Vorhaben, die den Datenschutz betreffen,</p>
+									</item>
+									<item eId="title_7__art_34__para_1__content__blocklist_1__item_g">
+										<num>g.</num>
+										<p>bietet Aus- und Weiterbildungen in Fragen des Datenschutzes an.</p>
+									</item>
+								</blockList>
+							</content>
+						</paragraph>
+					</article>
+					<article eId="ttitle_7__art_35">
+						<num>§ 35.</num>
+						<heading eId="title_7__art_35__heading">Kontrollbefugnisse</heading>
+						<paragraph eId="title_7__art_35__para_1">
+							<num>1</num>
+							<content eId="title_7__art_35__para_1__content">
+								<p>Die oder der Beauftragte kann bei öffentlichen Organen und bei beauftragten Dritten gemäss § 6 ungeachtet einer allfälligen
+Geheimhaltungspflicht Auskunft über das Bearbeiten von Daten einholen, Einsicht in die Daten nehmen und sich Bearbeitungen vorführen lassen, soweit es für ihre oder seine Tätigkeit notwendig ist.</p>
+							</content>
+						</paragraph>
+						<paragraph eId="title_7__art_35__para_2">
+							<num>2</num>
+							<content eId="title_7__art_35__para_2__content">
+								<p>Die öffentlichen Organe und die beauftragten Dritten wirken an der Feststellung des Sachverhaltes mit.</p>
+							</content>
+						</paragraph>
+					</article>
+					<article eId="title_7__art_36">
+						<num>§ 36.</num>
+						<heading eId="title_7__art_36__heading">Empfehlungen und Einwirkungsbefugnisse</heading>
+						<paragraph eId="title_7__art_36__para_1">
+							<num>1</num>
+							<content eId="title_7__art_36__para_1__content">
+								<p>Stellt die oder der Beauftragte eine Verletzung von Bestimmungen über den Datenschutz fest, so gibt sie oder er dem öffentlichen Organ eine Empfehlung ab, welche Massnahmen zu ergreifen sind.</p>
+							</content>
+						</paragraph>
+						<paragraph eId="title_7__art_36__para_2">
+							<num>2</num>
+							<content eId="title_7__art_36__para_2__content">
+								<p>Will das öffentliche Organ einer Empfehlung nicht folgen, erlässt
+es eine Verfügung.</p>
+							</content>
+						</paragraph>
+						<paragraph eId="title_7__art_36__para_3">
+							<num>3</num>
+							<content eId="title_7__art_36__para_3__content">
+								<p>Die oder der Beauftragte ist berechtigt, die Verfügung nach Massgabe des Verwaltungsrechtspflegegesetzes vom 24. Mai 19596<noteRef href="#note_2" marker="2"/> anzufechten.</p>
+							</content>
+						</paragraph>
+					</article>
+					<article eId="title_7__art_37">
+						<num>§ 37.</num>
+						<heading eId="title_7__art_37__heading">Zusammenarbeit</heading>
+						<paragraph eId="title_7__art_37__para_1">
+							<num>1</num>
+							<content eId="title_7__art_37__para_1__content">
+								<p>Die oder der Beauftragte arbeitet zur Erfüllung der Kontrollaufgabe gemäss § 35 mit den Organen der anderen Kantone,
+des Bundes und des Auslandes, welche die gleichen Aufgaben erfüllen, zusammen.</p>
+							</content>
+						</paragraph>
+					</article>
+					<article eId="title_7__art_38">
+						<num>§ 37.</num>
+						<heading eId="title_7__art_38__heading">Zusammenarbeit</heading>
+						<paragraph eId="title_7__art_38__para_1">
+							<num/>
+							<content eId="title_7__art_38__para_1__content">
+								<p>Die oder der Beauftragte sowie die Mitarbeitenden sind in Bezug auf Informationen, die sie bei ihrer Tätigkeit zur Kenntnis nehmen, zur gleichen Verschwiegenheit verpflichtet wie das bearbeitende öffentliche Organ.</p>
+							</content>
+						</paragraph>
+					</article>
+					<article eId="title_7__art_39">
+						<num>§ 39.</num>
+						<heading eId="title_7__art_39__heading">Berichterstattung</heading>
+						<paragraph eId="title_7__art_39__para_1">
+							<num>1</num>
+							<content eId="title_7__art_39__para_1__content">
+								<p>Die oder der Beauftragte berichtet dem Wahlorgan periodisch über Umfang und Schwerpunkte der Tätigkeiten, über wichtige
+Feststellungen und Beurteilungen sowie über die Wirkung des Gesetzes. Der Bericht wird veröffentlicht.</p>
+							</content>
+						</paragraph>
+					</article>
+				</title>
+				<title eId="title_8">
+					<num>8. Abschnitt:</num>
+					<heading eId="title_8__heading">Strafbestimmungen</heading>
+					<article eId="title_8__art_40">
+						<num>§ 40.</num>
+						<heading eId="title_8__art_40__heading">Vertragswidriges Bearbeiten von Personendaten</heading>
+						<paragraph eId="title_8__art_40__para_1">
+							<num>1</num>
+							<content eId="title_8__art_40__para_1__content">
+								<p>Wer als beauftragte Person gemäss § 6 ohne ausdrückliche Ermächtigung des auftraggebenden öffentlichen Organs Personendaten für sich oder andere verwendet oder anderen bekannt gibt, wird mit Busse bestraft.</p>
+							</content>
+						</paragraph>
+						<paragraph eId="title_8__art_40__para_2">
+							<num>2</num>
+							<content eId="title_8__art_40__para_2__content">
+								<p>Die Untersuchung und Beurteilung von Widerhandlungen obliegt den Statthalterämtern.</p>
+							</content>
+						</paragraph>
+					</article>
+				</title>
+				<title eId="title_9">
+					<num>9. Abschnitt:</num>
+					<heading eId="title_9__heading">Schluss- und Übergangsbestimmungen</heading>
+					<article eId="title_9__art_41">
+						<num>§ 41.</num>
+						<heading eId="title_9__art_41__heading">Übergangsrecht</heading>
+						<paragraph eId="title_9__art_41__para_1">
+							<num>1</num>
+							<content eId="title_9__art_41__para_1__content">
+								<p>Informationsbestände mit besonderen Personendaten, die  bei Inkrafttreten dieses Gesetzes bestehen, darf das öffentliche Organ während fünf Jahren nach Inkrafttreten dieses Gesetzes bearbeiten oder bekannt geben, ohne dass die Voraussetzungen von § 8 Abs. 2 bzw. § 17 Abs. 1 lit. a erfüllt sind.</p>
+								<blockList eId="title_9__art_41__para_1__content__blocklist_1">
+									<item eId="title_9__art_41__para_1__content_blocklist_1__item_a">
+										<num>a.</num>
+										<p>Informationen dürfen nicht unrechtmässig zur Kenntnis gelangen,</p>
+									</item>
+									<item eId="title_9__art_41__para_1__content__blocklist_1__item_b">
+										<num>b.</num>
+										<p>Informationen müssen richtig und vollständig sein,</p>
+									</item>
+								</blockList>
+							</content>
+						</paragraph>
+					</article>
+					<article eId="title_9__art_42">
+						<num>§ 42.</num>
+						<heading eId="title_9__art_42__heading">Anpassung von Bezeichnungen</heading>
+						<paragraph eId="title_9__art_42__para_1">
+							<num>1</num>
+							<content eId="title_9__art_42__para_1__content">
+								<p>In den folgenden Gesetzen wird der Ausdruck «Datenschutzgesetz» oder «Gesetz über den Schutz der Personendaten» ersetzt durch den Ausdruck «Gesetz über die Information und den Datenschutz»:</p>
+								<blockList eId="title_9__art_42__para_1__content__blocklist_1">
+									<item eId="title_9__art_42__para_1__content__blocklist_1__item_a">
+										<num>a.</num>
+										<p>Gesetz über die Auslagerung von Informatikdienstleistungen<noteRef href="#note_3" marker="3"/>: § 3 Abs. 1 und 2,</p>
+									</item>
+									<item eId="title_9__art_42__para_1__content__blocklist_1__item_b">
+										<num>b.</num>
+										<p>Steuergesetz<noteRef href="#note__4" marker="4"/>: § 122 Abs. 2</p>
+									</item>
+								</blockList>
+							</content>
+						</paragraph>
+						<paragraph eId="title_9__art_42__para_2">
+							<num>2</num>
+							<content eId="title_9__art_42__para_2__content">
+								<p>In den folgenden Gesetzen wird der Ausdruck «besonders schützenswerte Personendaten» oder «besonders schützenswerte Daten» ersetzt durch den Ausdruck «besondere Personendaten»:</p>
+								<blockList eId="title_9__art_42__para_2__content__blocklist_1">
+									<item eId="title_9__art_42__para_2__content__blocklist_1__item_a">
+										<num>a.</num>
+										<p>Gesetz über die Auslagerung von Informatikdienstleistungen: § 3 Abs. 1,</p>
+									</item>
+									<item eId="title_9__art_42__para_2__content__blocklist_1__item_b">
+										<num>b. </num>
+										<p>Finanzkontrollgesetz<noteRef href="#note__5" marker="5"/>: § 25 Abs. 2.</p>
+									</item>
+								</blockList>
+							</content>
+						</paragraph>
+					</article>
+					<article eId="title_9__art_43">
+						<num>§ 43.</num>
+						<heading eId="title_9__art_43__heading">Aufhebung bisherigen Rechts</heading>
+						<paragraph eId="title_9__art_43__para_1">
+							<num>1</num>
+							<content eId="title_9__art_43__para_1__content">
+								<p>Mit Inkrafttreten dieses Gesetzes wird das Datenschutzgesetz vom 6. Juni 1993 aufgehoben.</p>
+							</content>
+						</paragraph>
+					</article>
+					<article eId="title_9__art_44">
+						<num>§ 44.</num>
+						<heading eId="title_9__art_44__heading">Anpassung anderer Erlasse</heading>
+						<paragraph eId="title_9__art_44__para_1">
+							<num>1</num>
+							<content eId="title_9__art_44__para___content">
+								<p>Die nachfolgenden Gesetze werden wie folgt geändert:</p>
+								<blockList eId="title_9__art_44__para___content__blocklist_1">
+									<item eId="title_9__art_44__para___content__blocklist_1__item_a">
+										<num>a.</num>
+										<heading eId="title_9__art_44__para___content__blocklist_1__item_a__heading">
+											<b>Gesetz über das Gemeindewesen (Gemeindegesetz)</b> vom 6. Juni 1926:</heading>
+										<p/>
+									</item>
+								</blockList>
+							</content>
+						</paragraph>
+					</article>
+				</title>
+		</body>
+		<conclusions eId="conclusions">
+			<p>Im Namen des Regierungsrates<eol/>
+<signature>
+					<role refersTo="#ZuerichRegierungsrat" eId="role_1">Die Präsidentin</role>
+					<person as="#ZuerichRegierungsrat" refersTo="#r.Aeppli" eId="person_1">Aeppli</person>
+				</signature>
+<signature>
+					<role refersTo="#Staatsschreiber" eId="role_2">Der Staatschreiber</role>
+					<person as="#Staatsschreiber" refersTo="#b.Husi" eId="person_2">Husi</person>
+				</signature>
+</p>
+			<blockList eId="conclusions__blocklist_1">
+				<listIntroduction>Feststellung der Rechtskraft und Teilinkraftsetzung</listIntroduction>
+				<item eId="conclusions__blocklist_1__item_1">
+					<num>1</num>
+					<p>Das Gesetz über die Information und den Datenschutz (IDG) vom 12. Februar 2007 ist rechtskräftig (<ref eId="ç" href="https://www.amtsblatt.zh.ch">ABl 2007, 723</ref>).</p>
+				</item>
+				<item eId="conclusions__blocklist_1__item_2">
+					<num>2</num>
+					<p>Die §§ 30–33 des Gesetzes über die Information und den Datenschutz vom 12. Februar 2007 treten am <date eId="date_1" date="2007-06-01">1. Juni 2007</date> in Kraft. Die §§ 21 und 22 des Gesetzes über den Datenschutz vom 6. Juni 1993 werden auf den gleichen Zeitpunkt aufgehoben.</p>
+				</item>
+			</blockList>
+			<p>
+				<date eId="date_100" date="2007-05-02" refersTo="whatEverDate">2. Mai 2007</date>
+			
+			
+			<signature>
+					<role refersTo="#ZuerichRegierungsrat" eId="role_3">Die Präsidentin</role>
+					<person as="#ZuerichRegierungsrat" refersTo="#v.Diener" eId="person_3">Diener</person>
+				</signature>
+<signature>
+					<role refersTo="#Staatsschreiber" eId="role_4">Der Staatschreiber</role>
+					<person as="#Staatsschreiber" refersTo="#b.Husi" eId="person_4">Husi</person>
+				</signature>
+			</p>
+			
+		</conclusions>
+		
+		<attachments>
+			<attachment>
+				<act name="">
+					<meta>
+						<identification source="">
+							<FRBRWork>
+								<FRBRthis value="/akn/CH-ZH/act/2007-02-12/62-121/!annexe_1"/>
+								<FRBRuri value="/akn/CH-ZH/act/2007-02-12/62-121"/>
+								<FRBRdate date="2007-02-12" name=""/>
+								<FRBRauthor href="#kantonsrat" as="#authority"/> 
+								<FRBRcountry value="CH-ZH"/>
+								<FRBRsubtype value="Gesetz"/>
+								<FRBRnumber value="62-121"/>
+							</FRBRWork>
+							<FRBRExpression>
+								<FRBRthis value="/akn/CH-ZH/act/2007-02-12/62-121/ger@/!annexe_1"/>
+								<FRBRuri value="/akn/CH-ZH/act/2007-02-12/62-121/ger@"/>
+								<FRBRdate date="2007-02-12" name=""/>
+								<FRBRauthor href="#SK" as="#editor"/>
+								<FRBRauthor href="#JI" as="#coEditor"/>
+								<FRBRlanguage language="ger"/>
+							</FRBRExpression>
+							<FRBRManifestation>
+								<FRBRthis value="/akn/CH-ZH/act/2007-02-12/62-121/ger@.xml/!annexe_1"/>
+								<FRBRuri value="/akn/CH-ZH/act/2007-02-12/62-121/ger@.xml"/>
+								<FRBRdate date="2007-02-12" name=""/>
+								<FRBRauthor href="#SK-Publ" as="#publisher"/>
+								<FRBRformat value="#akn" showAs="akn"/>
+							</FRBRManifestation>
+						</identification>
+					</meta>
+					
+					
+					<body>
+						<componentRef src="" showAs=""></componentRef>
+					</body>
+				</act>
+			</attachment>
+		</attachments>
+		
+		
+	</act>
+</akomaNtoso>

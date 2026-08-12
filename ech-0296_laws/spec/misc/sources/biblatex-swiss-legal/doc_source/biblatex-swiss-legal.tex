@@ -1,0 +1,1485 @@
+\documentclass[a4paper]{ltxdockit}[2011/03/25]
+\usepackage{btxdockit}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[strict]{csquotes}
+\usepackage[parfill]{parskip}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{shortvrb}
+\usepackage{pifont}
+\usepackage{libertine}
+\usepackage[scaled=0.8]{beramono}
+\usepackage{microtype}
+\lstset{basicstyle=\ttfamily,keepspaces=true}
+\KOMAoptions{numbers=noenddot}
+\addtokomafont{paragraph}{\spotcolor}
+\addtokomafont{section}{\spotcolor}
+\addtokomafont{subsection}{\spotcolor}
+\addtokomafont{subsubsection}{\spotcolor}
+\addtokomafont{descriptionlabel}{\spotcolor}
+\pretocmd{\cmd}{\sloppy}{}{}
+\pretocmd{\bibfield}{\sloppy}{}{}
+\pretocmd{\bibtype}{\sloppy}{}{}
+\makeatletter
+\patchcmd{\paragraph}
+  {3.25ex \@plus1ex \@minus.2ex}{-3.25ex\@plus -1ex \@minus -.2ex}{}{}
+\patchcmd{\paragraph}{-1em}{1.5ex \@plus .2ex}{}{}
+\makeatother
+
+\usepackage{geometry}
+\geometry {left=5cm, right=2cm, top=1.5cm, bottom=1.5cm, includeheadfoot}
+
+\newcommand*{\biber}{Biber\xspace}
+\newcommand*{\biblatex}{Biblatex\xspace}
+\newcommand*{\biblatexslctan}{http://http://www.ctan.org/tex-archive/macros/latex/contrib/biblatex-contrib/biblatex-swiss-legal}
+
+\titlepage{%
+  title={Biblatex-swiss-legal},
+  subtitle={},
+  url={\biblatexslctan},
+  author={Adrien Vion \\ Contributor/Translator: Fabian Mörtl},
+  email={adrien[dot]vion3[at]gmail[dot]com},
+  revision={1.1.2a},
+  date={2014-01-21}}
+
+\hypersetup{%
+  pdftitle={Biblatex-swiss-legal},
+  pdfsubject={Citations and Bibliography},
+  pdfauthor={Adrien Vion},
+  pdfkeywords={tex, latex, bibtex, bibliography, references, citation}}
+
+% tables
+
+\newcolumntype{T}{>{\sffamily\large\bfseries\spotcolor}c}
+\newcolumntype{H}{>{\sffamily\bfseries\spotcolor}l}
+\newcolumntype{L}{>{\raggedright\let\\=\tabularnewline}p}
+\newcolumntype{R}{>{\raggedleft\let\\=\tabularnewline}p}
+\newcolumntype{C}{>{\centering\let\\=\tabularnewline}p}
+\newcolumntype{V}{>{\raggedright\let\\=\tabularnewline\ttfamily}p}
+
+\newcommand*{\sorttablesetup}{%
+  \tablesetup
+  \ttfamily
+  \def\new{\makebox[1.25em][r]{\ensuremath\rightarrow}\,}%
+  \def\alt{\par\makebox[1.25em][r]{\ensuremath\hookrightarrow}\,}%
+  \def\note##1{\textrm{##1}}}
+
+\newcommand{\tickmarkyes}{\Pisymbol{psy}{183}}
+\newcommand{\tickmarkno}{\textendash}
+\providecommand*{\textln}[1]{#1}
+\providecommand*{\lnstyle}{}
+
+% markup and misc
+
+\setcounter{secnumdepth}{9}
+
+\makeatletter
+
+\newenvironment{nameparts}
+  {\trivlist\item
+   \tabular{@{}ll@{}}}
+  {\endtabular\endtrivlist}
+
+\newenvironment{namedelims}
+  {\trivlist\item
+   \tabularx{\textwidth}{@{}c@{=}l>{\raggedright\let\\=\tabularnewline}X@{}}}
+  {\endtabularx\endtrivlist}
+
+\newenvironment{namesample}
+  {\def\delim##1##2{\@delim{##1}{\normalfont\tiny\bfseries##2}}%
+   \def\@delim##1##2{{%
+     \setbox\@tempboxa\hbox{##1}%
+     \@tempdima=\wd\@tempboxa
+     \wd\@tempboxa=\z@
+     \box\@tempboxa
+     \begingroup\spotcolor
+     \setbox\@tempboxa\hb@xt@\@tempdima{\hss##2\hss}%
+     \vrule\lower1.25ex\box\@tempboxa
+     \endgroup}}%
+   \ttfamily\trivlist
+   \setlength\itemsep{0.5\baselineskip}}
+  {\endtrivlist}
+
+\makeatother
+
+%\newrobustcmd*{\nXI}{%
+%  \textcolor{spot}{\margnotefont V. 1.1$\alpha$}}
+%\newrobustcmd*{\nXIMark}{%
+%  \leavevmode\marginpar{\nXI}}
+  
+  \newrobustcmd*{\nXI}{}
+  
+  \newrobustcmd*{\nXIone}{%
+  \textcolor{spot}{\margnotefont V. 1.1.1$\alpha$}}
+  
+    \newrobustcmd*{\nXItwo}{%
+  \textcolor{spot}{\margnotefont V. 1.1.2$\alpha$}}
+  
+\newrobustcmd*{\nXIMark}{%
+  \leavevmode\marginpar{\nXI}}
+
+\newcommand{\bbltxslr}{\sty{biblatex{\-}-swiss-{\-}legal-\-ruling}\xspace}
+\newcommand{\bbltxslla}{\sty{biblatex{\-}-swiss-{\-}legal-\-longarticle}\xspace}
+\newcommand{\bbltxslsa}{\sty{biblatex{\-}-swiss-{\-}legal-\-shortarticle}\xspace}
+\newcommand{\bbltxslb}{\sty{biblatex{\-}-swiss-{\-}legal-\-bibliography}\xspace}
+\newcommand{\bbltxslg}{\sty{biblatex{\-}-swiss-{\-}legal-\-general}\xspace}
+\newcommand{\bbltxsl}{\sty{biblatex{\-}-swiss-{\-}legal}\xspace}
+\newcommand{\bbltx}{\sty{bib{\-}la{\-}tex}\xspace}
+\newcommand{\bbtx}{\sty{bib{\-}tex}\xspace}
+\newcommand{\bbtxhuit}{\sty{bib{\-}tex8}\xspace}
+\newcommand{\bbr}{\sty{bi{\-}ber}\xspace}
+\newcommand{\lxrf}{\sty{lexref}\xspace}
+\renewcommand{\tex}{\texttt{.tex}\xspace}
+\newcommand{\bib}{\texttt{.bib}\xspace}
+\newcommand{\bbx}{\texttt{.bbx}\xspace}
+\newcommand{\cbx}{\texttt{.cbx}\xspace}
+\newcommand{\lbx}{\texttt{.lbx}\xspace}
+
+\newcommand{\supra}{\emph{supra}\xspace}
+\newcommand{\infra}{\emph{infra}\xspace}
+\newcommand{\Cf}{\textnormal{Cf. }}
+\newcommand{\cf}{cf.\xspace}
+\newcommand{\GM}{\enquote}
+\newcommand{\pex}{\textnormal{par exemple}\xspace}
+\newcommand{\Pex}{\textnormal{Par exemple}\xspace}
+\newcommand{\marg}[1]{\{\texttt{#1}\}}
+\newcommand{\oarg}[1]{\texttt{[#1]}}
+
+\newcommand{\variable}[1]{$\langle$\textsl{#1}$\rangle$}
+
+\usepackage[%
+style=biblatex-swiss-legal-longarticle,%
+firstnames=true,
+abbreviate=false,
+urldate=long,
+abrjournal=false]%
+{biblatex}
+\addbibresource{biblatex-swiss-legal.bib}
+\nocite{*}
+
+
+
+\begin{document}
+\printtitlepage
+
+\begin{quote}
+Ce document contient des explications relatives à \bbltxsl. Ce package est utilisable dans le package \bbltx, au sein de \LaTeX. Il est destiné à toute personne souhaitant établir une bibliographie juridique respectant les canons suisse en la matière, que le document à rédiger soit une simple bibliographie, un article, un mémoire d'avocat, un jugement ou un ouvrage entier.
+\end{quote} 
+
+\tableofcontents
+
+\printbibliography[title=Liens utiles]
+\label{bibliography}
+
+\section{Introduction}
+
+\subsection{À quoi sert ce package?}
+
+\LaTeX~est un outil puissant, source de gain de temps considérable pour les juristes appelés à manipuler des documents complexes comprenant de nombreuses sources (\cf notamment l'article de \citeauthor{nmgb} cité en p. \pageref{bibliography}). En particulier, les packages \bbr et \bbltx, utilisés conjointement, permettent une gestion très avancée de la bibliographie et des citations.
+
+Le package \bbltxsl contient des styles de bibliographie et de citations conformes aux usages juridiques suisses\footnote{Comme les packages \texttt{biblatex-jura} et \texttt{biblatex-juradiss} pour le droit allemand.}.
+Il a donc pour principaux destinataires les juristes suisses utilisant \LaTeX.
+Il peut être utilisé pour tout type de document: une monographie (thèse, traité, etc.), un article ou un avis de droit, des écritures procédurales, une sentence arbitrale, ou encore une simple bibliographie.
+
+À l'heure actuelle, le package contient un style général (en principe conçu pour une monographie du type thèse de doctorat), un style pour articles juridiques avec bibliographie raccourcie ou avec pleines références en notes de bas de page et un style conçu pour des documents ne comportant qu'une bibliographie (\pex une liste de références). Le développement projeté d'autres styles sera assez aisé à réaliser. Chaque utilisateur peut d'ailleurs créer un style personnalisé.
+
+Ce package est comaptible avec le français et l'allemand [\nXItwo]; nous profitons de remercier Fabian Mörtl pour le remarquable travail de traduction du fichier lbx qu'il a accompli ainsi que pour les diverses corrections de bugs et améliorations qu'il a proposées.
+
+Comment utiliser ce package?
+\begin{enumerate}
+\item Créer un fichier avec l'extension \bib, qui contiendra votre base de données bibliographique, et le remplir conformément aux instructions \infra pp. \pageref{bib} ss.
+\item Utiliser ces informations dans votre document \tex, en suivant les instructions \infra pp. \pageref{tex}.
+\end{enumerate}
+
+\subsection{Contact}
+
+En cas de problème, il est recommandé d'aller chercher dans la (très complète) documentation de biblatex (lien en p. \pageref{bibliography}).
+
+Si vous repérez des bugs ou des incohérences, ou si vous souhaitez le développement de nouvelles fonctions, n'hésitez pas à me contacter: adrien[dot]vion3[at]gmail[dot]com (remplacez les symboles entre crochets par la ponctuation correspondante).
+
+Vous aurez peut-être besoin d'utiliser d'autres revues ou collections que celles se trouvant dans les listes en annexe. Cas échéant, n'hésitez pas à m'envoyer les noms des revues que vous utilisez, c'est très facile de les inclure dans les versions suivantes. Pour gagner encore du temps, vous pouvez me les transmettre au format suivant (une référence par ligne):
+
+\begin{verbatim}
+<abréviation bib> = {{<Nom complet de la revue>}{<Nom abrégé>}},
+\end{verbatim}
+
+\subsection{Licence et mentions juridiques}
+
+\copyright~Adrien Vion 2013. Le fichier biblatex-swiss-legal-de.lbx a été créé par Fabian Mörtl, qui dispose du droit d'auteur à cet égard.
+
+Le package \bbltxsl et ses composants peuvent être distribués et/ou modifiés aux conditions de la licence \GM{\LaTeX~Project Public Licence}, version 1.3 ou toute autre version plus récente. La dernière version est disponible à l'adresse \url{http://www.latex-project.org/lppl.txt}; la version 1.3 ou supérieure de la licence fait partie de toutes les distributions de \LaTeX~version 2005/12/01 ou supérieure.
+
+Le statut de maintenance LPPL du package \bbltxsl est \GM{maintained}.
+
+Le \GM{Current Maintainer} de ce package est Adrien Vion.
+
+Le package \bbltxsl est composé des fichiers \begin{itemize}\item biblatex-swiss-legal-base.bbx \item biblatex-swiss-legal-base.cbx
+\item biblatex-swiss-legal-general.bbx \item biblatex-swiss-legal-general.cbx \item biblatex-swiss-legal-bibliography.bbx \item biblatex-swiss-legal-bibliography.cbx \item biblatex-swiss-legal-longarticle.bbx \item biblatex-swiss-legal-longarticle.cbx \item biblatex-swiss-legal-shortarticle.bbx \item biblatex-swiss-legal-shortarticle.cbx \item biblatex-swiss-legal-fr.lbx \item biblatex-swiss-legal-de.lbx
+\end{itemize} ainsi que du présent fichier d'instructions.
+
+Ce package est fourni à titre gratuit et sans aucune garantie quant à son fonctionnement ou quant aux éventuels préjudices qui pourraient résulter de son utilisation. Les utilisateurs doivent notamment être conscients que le paquet est une version alpha donc expérimentale; la rétrocompatibilité et le maintien du paquet ne sont pas garantis. Toute responsabilité est exclue.
+
+Les références citées en exemple dans le présent document sont pour la plupart inexactes, il s'agit juste d'illustrer la forme des citations et non de faire référence aux contenus.
+
+
+
+
+
+\section{Mise en route}
+
+\subsection{Prérequis}
+
+\subsubsection{Packages nécessaires}
+
+Une distribution standard de \LaTeX~est requise (package développé sous une installation TeXLive 2011). Les packages suivants sont notamment nécessaires :
+\begin{marglist}
+\item[\bbltx]
+Installé par défaut dans \verb/texlive/. Si \bbltxsl v.1.1.1$\alpha$ ou supérieur ne compile pas, vérifiez que vous utilisez la dernière version de \bbltx. Certaines mises à jour de \bbltx ne sont pas pleinement rétrocompatibles et \bbltxsl est en principe adapté pour la version de \bbltx valant au moment de sa mise à jour.
+\item[\bbr]
+Installé par défaut dans \verb/texlive/. Il est possible que \bbltxsl fonctionne également avec les backends \bbtx ou \bbtxhuit mais certaines fonctionnalités ne vont \emph{pas} pouvoir opérer. L'utilisation de \bbr est donc fortement recommandée. [\nXIone] L'option de \bbltx \GM{backend=biber} n'est \textbf{pas activée par défaut} dans \bbltxsl; \textbf{il est donc nécessaire de l'activer} dans les options de biblatex dans votre document \tex. 
+\item[babel]
+Installé par défaut dans \verb/texlive/. L'option \verb/french/ doit être activée pour tout document rédigé en français, pour que \bbltxsl utilise les \verb/strings/ adéquats (notamment les noms de revues, etc.). Les options \verb/german/, \verb/germanb/ ou \verb/ngerman/ conduisent à l'utilisation des strings allemands (situés dans le fichier biblatex-swiss-legal-de.lbx) [\nXItwo].
+\item[xargs]
+J'utilise ce package pour définir la commande \verb/\jdcite/ (pas encore implémentée officiellement car elle souffre de trop graves défauts). Vous devez donc avoir ce package installé (mais pas besoin de charger ce package dans votre document \tex; c'est le style qui s'en charge); ça ne devrait pas poser problème car il est inclus dans les distributions standard de \LaTeX.
+\item[xstring]
+J'utilise ce package pour le formatage des citations de commentaires allemands. Vous devez donc avoir ce package installé (mais pas besoin de charger ce package dans votre document \tex; c'est le style qui s'en charge); ça ne devrait pas poser problème car il est inclus dans les distributions standard de \LaTeX.
+\item[amssymb]
+Ce paquet est utilisé pour obtenir une glyphe dans le style \bbltxslla.  Vous devez donc avoir ce package installé (mais pas besoin de charger ce package dans votre document \tex; c'est le style qui s'en charge); ça ne devrait pas poser problème car il est inclus dans les distributions standard de \LaTeX.
+\end{marglist}
+
+Aucun autre style de \bbltx n'est a priori nécessaire, le package \bbltxsl étant indépendant de tout autre style de bibliographie ou de citation.
+
+\subsubsection{Packages utiles}
+
+Ces packages peuvent être utiles mais ne sont pas nécessaires.
+\begin{marglist}
+\item[hyperref]
+Ce package fonctionne bien avec \bbltx, il permet notamment de créer un lien sur les adresses URL apparaissant dans la bibliographie et les citations.
+\item[nomenclature]
+Ce package\footnote{\url{http://www.cs.brown.edu/system/software/latex/doc/nomencl.pdf}.} permet de créer des tables d'abréviations assez facilement. Pour l'instant, son utilisation est purement manuelle mais une automatisation partielle dans \bbltxsl est envisagée (\cf \infra p. \pageref{nomenclature}).
+
+\end{marglist}
+
+\subsection{Installation}
+
+\subsubsection{Installation automatique}
+
+\nXIMark\bbltxsl a été intégré au printemps 2012 dans les distributions standards de \LaTeX . Si vous avez TeX Live 2012 (sorti début juillet 2012), \bbltxsl est déjà installé. Les utilisateurs utilisant Tex Live 2011 n'ont qu'à faire une mise à jour de leurs paquets avec leur utilitaire habituel pour que le paquet s'installe.
+
+Remarque pour les utilisateurs qui avaient antérieurement suivi la procédure d'installation manuelle: il faut supprimer les fichiers du répertoire local (sur Mac: /usr/local/texlive/texmf-local/tex/latex/biblatex-swiss-legal) ET faire un texhash AVANT de faire une installation automatique. Cela vous permettra d'avoir les mises à jour automatiques du paquet.
+
+\subsubsection{Installation manuelle}
+
+Il est possible de faire une installation manuelle du paquet, ce qui n'est en principe pas utile pour les utilisateurs standards. 
+
+Sur Mac:
+\begin{enumerate}
+\item ouvrir l'application Terminal (ou OnyX)
+\item rendre visibles\footnote{Si l'on veut les rendre à nouveau invisibles, utiliser les mêmes commandes en mettant comme paramètre FALSE à la place de TRUE.} les fichiers et dossiers cachés avec la commande
+\begin{verbatim}
+defaults write com.apple.Finder AppleShowAllFiles TRUE
+\end{verbatim}
+puis relancer le Finder en tapant
+\begin{verbatim}
+killall Finder
+\end{verbatim}
+\item se rendre dans le répertoire /usr/local/texlive/texmf-local/tex/latex et y créer un dossier nommé biblatex-swiss-legal 
+\item copier les fichiers \begin{itemize}
+\item biblatex-swiss-legal-base.bbx \item biblatex-swiss-legal-base.cbx \item biblatex-swiss-legal-general.bbx \item biblatex-swiss-legal-general.cbx \item biblatex-swiss-legal-bibliography.bbx \item biblatex-swiss-legal-bibliography.cbx \item biblatex-swiss-legal-longarticle.bbx \item biblatex-swiss-legal-longarticle.cbx et \item biblatex-swiss-legal-fr.lbx
+\end{itemize} dans ce dossier
+\item retourner dans le terminal et taper
+\begin{verbatim}
+sudo texhash
+\end{verbatim} 
+(nécessite un mot de passe d'administrateur).
+\end{enumerate}
+
+Pour les mises à jour, il suffit de remplacer les fichiers susmentionnés par leurs nouvelles versions dans le répertoire (pas besoin de refaire un texhash tant que le nom des fichiers ne change pas).
+
+Sur les autres plateformes:
+\begin{itemize}
+\item Sous Linux, la procédure est très proche de celle valant sur Mac.
+\item Sous Windows, il faut copier les fichiers \bbx, \cbx et \lbx dans le répertoire
+<TEXMFLOCAL>/\-tex/latex/biblatex-swiss-legal/.
+La commande \verb/texhash/ devrait normalement se trouver dans le répertoire \verb/C:texlive\2011\bin\win32\texhash/. Si vous utilisez Miktex, tous les paquets sont normalement dans le répertoire Miktek et la commande \verb/texhash/ n'a pas besoin d'être exécutée, il suffit d'utiliser l'utilitaire de mise à jour des paquets Miktex.
+\end{itemize}
+
+
+
+
+\section{Entrer des infos dans la base de données \bib}
+\label{bib}
+
+Vous avez deux méthodes: gérer un fichier \bib manuellement, ou via un éditeur de type JabRef. Dans tous les cas, il faut choisir un type d'entrée à chaque nouvelle fiche, avant d'entrer les infos dans les champs correspondants.
+
+Pour rappel, une entrée dans un fichier \bib a la structure suivante (pour une entrée de type @article, avec \GM{nmgb} comme entrykey):
+\begin{verbatim}
+@ARTICLE{nmgb,
+  author = {Niklaus Meier},
+  title = {La révolution de la gestion bibliographique},
+  subtitle = {LaTeX},
+  journal = {jl},
+  date = {2009-05-25},
+  url = {http://jusletter.weblaw.ch/article/fr/_7418?lang=fr},
+  urldate = {2012-04-20},
+}
+\end{verbatim}
+
+
+Pour chaque type d'entrée, les champs listés ci-après sont (dans JabRef) soit requis, soit facultatifs. Les champs \og requis\fg ne sont pas absolument nécessaires; le style fonctionnera normalement si l'un de ces champs n'est pas rempli. Il s'agit plutôt des champs les plus fréquemment remplis. Le style est conçu pour fonctionner avec un minimum d'infos, \pex pour les livres, juste un auteur et un titre suffisent en principe.
+
+Il faut noter que dans tous les types d'entrée, le champ entrykey doit absolument être rempli par une suite de caractères unique.
+
+\subsection{Livres, monographies génériques = type \bibtype{book}}
+
+Champs pouvant être remplis:
+\begin{marglist}
+\item[author] \label{author}Le nom du ou des auteurs. On peut écrire \GM{Nom, Prénom} ou \GM{Prénom Nom}. La première variante est plus précise quand un auteur a plusieurs noms (Garcia Marques dos Santos, Gabriela) ou un nom à particule (von Thur, Peter). Quand il y a plusieurs auteurs, les séparer par \GM{and} (\pex: \GM{Von Thur, Peter and le Poulpe, Paul and George Brassens}). Si l'auteur est une institution, il suffit de mettre l'entier du nom entre accolades, \pex: \verb/{Institut suisse de droit comparé}/. 
+
+
+\item[shortauthor]\label{shortauthor}On peut ici entrer un nom abrégé, qui sera utilisé dans les citations (si on ne met pas de nom abrégé, c'est le champ \bibfield{author} qui est utilisé dans les citations). C'est surtout utile si l'auteur est une institution, \pex on peut écrire \GM{ISDC} pour éviter que le nom complet (Institut suisse de droit comparé) n'apparaisse dans les notes de bas de page. On peut également l'utiliser pour éviter que les particules de noms de certains auteurs n'apparaissent dans les citations (\pex si on souhaite que \GM{\textsc{Savigny}} et non \GM{\textsc{von Savigny}} apparaisse dans les citations).
+
+\item[title]\label{title}Le titre de l'ouvrage.
+
+\item[subtitle]\label{subtitle}L'éventuel sous-titre de l'ouvrage. Si le champ est rempli, il apparaîtra sous la forme \GM{\variable{titre} --- \variable{sous-titre}} dans la bibliographie. On peut changer le tiret long grâce à l'option \opt{punctsubtitle}, \cf \infra p. \pageref{punctsubtitle}.
+
+\item[shorttitle]\label{shorttitle}Le titre abrégé, qui n'est utile que s'il y a plusieurs entrées comportant exactement le ou les mêmes auteur(s). Dans ce cas, les citations se feront avec le nom de l'auteur, et le titre abrégé (ou à défaut, le titre complet), pour qu'il n'y ait pas d'ambiguïté. \Pex: si on a deux ouvrages d'Engel, qui ont comme titre abrégé \GM{Contrats} et respectivement \GM{Obligations}, les citations donneront soit \textsc{Engel}, \emph{Contrats}, soit \textsc{Engel}, \emph{Obligations}. Cela fonctionnera indépendamment du type des entrées en cause (par exemple, un auteur a écrit un article mais également un livre qui sont tous deux cités), à l'exception des types d'entrées sans auteur (jurisprudence, etc.) et des commentaires, qui suivent un mode de citation spécifique (\cf \infra \ref{commentary}).
+
+\item[location]\label{location}Le lieu de publication de l'ouvrage. S'il y en a plusieurs, les séparer par \GM{and} (\pex \GM{Bâle and Genève and Zurich}). Si le champ ne contient rien, la mention \GM{sans lieu} (abrégée s. l.) apparaît. 
+
+\item[date]\label{date}La date de publication de l'ouvrage (\pex: \GM{1999}). S'il y a besoin de mettre un mois ou même un jour, il faut impérativement les rentrer au format ISO 8601 (soit AAAA-MM-JJ). D'éventuels plages de dates (p. ex. 1993-1995) peuvent être spécifiées en séparant les dates par un slash (AAAA-MM-JJ/AAAA-MM-JJ); avec juste un slash sans date après on obtient une plage ouverte (\GM{1999/} donnera \GM{1999-}). Si le champ date est laissé vide, \GM{sans date} (abrégée s. d.) apparaîtra. Enfin, si tant le champ location que le champ date sont vides, c'est la mention \GM{sans lieu ni date} (s. l. n. d.) qui apparaîtra.
+
+\item[edition]\label{edition}Le numéro de l'édition du livre, qui apparaîtra en ordinal. \Pex \GM{5} donnera \GM{5$^e$ éd.}. 
+
+\item[series]\label{series}L'éventuelle collection, \pex \GM{CEDIDAC} ou \GM{Traité de droit privé suisse}. À noter que ce champ fonctionne comme le champ journaltitle (\cf \infra p. \pageref{journaltitle}), c'est-à-dire que certaines collections sont automatiquement reconnues. La liste des collections automatiquement reconnues se trouve en annexe, p. \pageref{listecollections}. \Pex, si l'on écrit juste \GM{tdp} dans le champ series, c'est \GM{Traité de droit privé suisse} qui apparaîtra automatiquement dans la bibliographie.
+
+\item[number]\label{number}L'éventuel numéro de l'ouvrage dans une collection \pex indiquer \GM{CEDIDAC} dans series et \GM{58} dans number donnera : \GM{CEDIDAC \no 58}.
+
+\item[volume]\label{volume}Si l'ouvrage est en plusieurs tomes, on peut indiquer le \no du volume ici. Inscrire \GM{3} donnera \GM{vol. 3}. On peut aussi mettre le numéro de volume d'un ouvrage au sein d'une collection, \pex si on met \GM{tdp}  dans series on peut vouloir mettre \GM{VII/2} dans volume, ce qui donnera \GM{Traité de droit privé suisse, vol. VII/2}.
+
+\item[url]\label{url}On peut y insérer une adresse URL correspondant au document cité. Pour qu'un lien hypertexte soit créé dans la bibliographie et les citations, il faut utiliser le package \sty{hyperref}.
+
+\item[urldate]\label{urldate}La date de la dernière consultation du lien URL. Le format est le même que le champ \bibfield{date} (AAAA-MM-JJ).
+
+\item[pagination]\nXIMark\label{pagination}Si l'on veut que les citations de l'ouvrage apparaissent automatiquement sous la forme \textsc{Auteur}, n° … au lieu de \textsc{Auteur}, p. …, il suffit d'écrire \textbf{paragraph} dans le champ pagination. \Cf aussi \infra p. \pageref{citation}.
+
+\item[pubstate]\label{pubstate}Utile si un ouvrage n'est pas encore sorti. Il suffit d'écrire \GM{forthc} dans ce champ pour que la mention \GM{(à paraître)} apparaisse à la fin de l'entrée, dans la bibliographie. Si le champ contient \GM{inpress}, on obtiendra \GM{sous presse}; s'il contient \GM{inpreparation}, on obtiendra \GM{en préparation}. On peut aussi y écrire autre chose, qui apparaîtra alors textuellement dans les parenthèses (si on veut juste faire une remarque ou un résumé de l'ouvrage, cf. les champs note et abstract qui sont là pour ça).
+
+\item[note]\label{note}On peut écrire n'importe quelle info dans ce champ, qui apparaîtra alors après l'entrée dans la bibliographie, avec un retour à la ligne et en taille réduite, précédée de la mention \GM{Note:}. Ce champ n'apparaît jamais dans les citations. Il est possible de faire en sorte que ces notes restent dans votre fichier \bib et ne soient pas imprimées, grâce à l'option \opt{notes} (\cf p. \pageref{notes}).
+
+\item[abstract]\label{abstract}Exactement pareil que le champ note, sauf que c'est pour y écrire un résumé. La mention \GM{Rés.:} apparaît à la place de \GM{Note:}. Voir aussi l'option \opt{abstracts}, \cf p. \pageref{abstracts}.
+
+\item[library]\label{library}Exactement pareil que le champ note, sauf que c'est pour y écrire la cote de bibliothèque d'un ouvrage. La mention \GM{Cote:} apparaît à la place de \GM{Note:}.  Voir aussi l'option \opt{library}, \cf p. \pageref{optlibrary}.
+
+\item[pages]\label{pagesbook}
+Ce champ ne doit en principe être utilisé que dans le cas où le document ne contient qu'une bibliographie et pas de citations. Par défaut, il n'apparaît d'ailleurs que lorsque le style \bbltxslb est sélectionné.
+Il permet d'indiquer une plage de pages (\pex 12-34) qui apparaîtront dans la bibliographie. Son apparition est contrôlée par l'option \opt{bookspages} (\cf \infra p. \pageref{bookspages}).
+
+\item[translator]\label{translator}Le nom du ou des éventuels traducteurs de l'ouvrage. Le format est le même que pour les noms des auteurs.
+
+\item[origtitle]\label{origtitle}L'éventuel titre original d'un ouvrage traduit.
+
+\item[origlanguage]\label{origlanguage}La langue d'origine de l'ouvrage traduit. Il faut impérativement écrire le nom comme suit: \GM{german} pour l'allemand, \GM{english} pour l'anglais, etc. Remplir ce champ n'est pas toujours utile, surtout si le champ origtitle est déjà rempli\footnote{Tout le monde peut se douter qu'un ouvrage dont le titre original est \pex \GM{Der Zweck des Rechts} n'a pas été écrit en roumain.}.
+
+\item[origlocation]\label{origlocation}L'éventuel lieu de publication d'origine de l'ouvrage traduit. Format identique au champ location.
+
+\item[origdate]\label{origdate}L'éventuelle date de publication d'origine de l'ouvrage traduit. Format identique au champ date.
+
+\end{marglist}
+
+
+\subsection{Thèses de doctorat ou d'habilitation = type \bibtype{thesis}}
+
+Les champs à disposition sont les mêmes que pour @book, sauf les deux champs supplémentaires suivants:
+\begin{marglist}
+\item[institution]
+Pour indiquer l'Université dans laquelle la thèse a été accomplie. À noter qu'en principe, il n'y a besoin de remplir ce champ que si la thèse a été publiée dans une autre ville que celle où se trouve l'uni en question. Le format est identique que pour le champ location.
+Indiquer \GM{Lausanne} dans institution, \GM{Fribourg and Bâle} dans location et \GM{2011} dans date donnera ainsi \GM{\bibellipsis, thèse Lausanne, Fribourg / Bâle 2011}; ce qui sous-entend que la thèse a été accomplie à Lausanne, mais publiée à Bâle et Fribourg.
+\item[entrysubtype]
+Ce champ doit être rempli par la mention \GM{habilitation} si l'ouvrage à citer est une thèse d'habilitation. Si ce champ est laissé vide, le mot \GM{thèse} sera automatiquement imprimé avant le contenu du champ institution. S'il contient \GM{habilitation}, c'est \GM{thèse d'habilitation} qui sera automatiquement imprimé.
+\end{marglist}
+
+Note si vous utilisez JabRef: les types \bibtype{phdthesis} et \bibtype{thesis} sont des équivalents.
+
+\subsection{Ouvrages collectifs et articles parus dans des ouvrages collectifs (par exemple mélanges, recueils, actes de colloque, etc.) = type \bibtype{inbook}}
+
+Les champs sont les mêmes que pour le type \bibtype{book}, avec les champs suivants en plus:
+\begin{marglist}
+\item[editor]\label{editor}
+Le ou les noms des éditeur(s) de l'ouvrage (étant entendu que le champ author est alors utilisé pour le nom de l'auteur de la contribution particulière qu'on veut citer). La mention \GM{(édit.)} est générée automatiquement. Le format est le même que pour les noms d'auteurs. Si l'auteur et l'éditeur sont exactement la ou les mêmes personnes, \GM{\textsc{Idem}} apparaîtra à la place des noms des éditeurs pour éviter une redondance.
+\item[booktitle]\label{booktitle}
+Le titre principal de l'ouvrage (le champ title est utilisé pour le titre de la contribution particulière à citer).
+\item[booksubtitle]\label{booksubtitle}
+Idem que subtitle, mais au niveau de l'ouvrage entier et pas juste d'une contribution en particulier.
+\item[pages]\label{pages}
+Les numéros de pages de la contribution particulière qu'on veut citer. Ce champ se comporte comme les crochets <texte apparaissant après la citation> (format automatique, commandes \verb/\pno/ et \verb/\ppno/, etc., cf. infra p. \pageref{citation}). 
+%\item \textbf{crossref}\label{crossref}: utilisé si on veut citer de nombreuses contributions d'un seul ouvrage collectif. On crée alors une fiche qui contient juste les infos sur l'ouvrage collectif lui-même (éditeurs, titre principal, lieu et date), et une fiche pour chaque contribution particulière à citer. Dans ces fiches individuelles, on remplit juste les infos relatives à chaque contribution (auteur, titre, pages) et dans le champ crossref de chacune d'elles, on inscrit la entrykey de la fiche relative à l'entier de l'ouvrage. Toutes les informations générales sont automatiquement reprises de la fiche principale.
+\end{marglist}
+
+Enfin, pas besoin de vous soucier de la mention \GM{in:}, qui apparaît automatiquement suivant le résultat d'un test à plusieurs niveaux.
+
+\subsection{Articles parus dans des revues = type \bibtype{article}}
+
+Champs pouvant être remplis:
+\begin{marglist}
+\item[author] \Cf \supra p. \pageref{author}. 
+\item[shortauthor] \Cf \supra p. \pageref{shortauthor}. 
+\item[title] \Cf \supra p. \pageref{title}. 
+\item[subtitle] \Cf \supra p. \pageref{subtitle}. 
+\item[shorttitle] \Cf \supra p. \pageref{shorttitle}. 
+\item[date] \Cf \supra p. \pageref{date}. Il s'agit ici de la date de sortie du numéro de la revue citée, ou simplement de l'année pour les revues dont on cite l'année et la page.
+\item[journaltitle]\label{journaltitle}Le titre de la revue. Vous avez deux manières de remplir le champ journaltitle:
+\begin{enumerate}
+\item \textbf{méthode automatique}: le style reconnaît automatiquement les revues quand on écrit simplement quelques lettres en minuscules qui y correspondent (\cf la première colonne du tableau listant les revues \infra p. \pageref{listerevues}). Le style reconnaît tout seul les revues listées. \Pex, écrire \GM{jt} dans le champ journaltitle fera apparaître \GM{Journal des Tribunaux} ou \GM{JdT} dans la bibliographie et les citations.
+Les avantages de cette méthode sont multiples: gain de temps lors de la saisie, uniformité des citations de tous les articles d'une même revue, et surtout vous pouvez choisir à tout moment (même à la fin de la rédaction) de citer les revues sous forme abrégée ou complète, en utilisant l'option \opt{abrjournal} (à ce sujet, \cf \infra p. \pageref{abrjournal}). 
+\item \textbf{méthode manuelle}: si le contenu du champ journaltitle ne correspond pas à une \GM{abréviation bib} (première colonne dans la liste des revues), alors ce contenu est affiché en toutes lettres dans la bibliographie. Il faut noter que ce contenu n'est alors pas sensible à l'option \opt{abrjournal}.
+\end{enumerate}
+\item[volume] \Cf \supra p. \pageref{volume}. On pense ici au volume de la revue (\pex volume I ou II pour le Journal des Tribunaux).
+\item[number] \Cf \supra p. \pageref{number}. On pense ici au numéro de l'exemplaire la revue (\pex 1/12 pour le premier numéro de 2012 de Plaidoyer).
+\item[pages] \Cf \supra p. \pageref{pages}.
+\item[url] \Cf \supra p. \pageref{url}.
+\item[urldate] \Cf \supra p. \pageref{urldate}.
+\item[pagination] \Cf \supra p. \pageref{pagination}.
+\item[abstract] \Cf \supra p. \pageref{abstract}. 
+\item[note] \Cf \supra p. \pageref{note}. 
+\item[library] \Cf \supra p. \pageref{library}.
+\end{marglist}
+
+À noter que les champs relatifs aux traductions ne peuvent pas être utilisés pour les articles, faute d'utilité pratique \emph{a priori}. Il serait toutefois très simple de l'implémenter.
+
+
+\subsection{Commentaires = types \bibtype{commentary} et \bibtype{customa}}\label{commentary}
+
+Les commentaires sont des collections et ouvrages à la structure complexe, qui comprennent parfois de très nombreux auteurs pour chaque volume (\cf notamment les commentaires romand ou bâlois).
+Il existe du reste de nombreuses manières de citer les commentaires. 
+Vous pouvez choisir parmi plusieurs possibilités grâce à l'option \opt{commentarystyle}, \cf \infra p. \pageref{commentarystyle}.
+Quelle que soit la forme choisie, la base de donnée \bib doit être remplie de la même manière.
+
+Concrètement, deux types d'entrées sont utilisés:
+\begin{marglist}
+\item[\bibtype{commentary}] Il contient les informations sur chaque volume, tel qu'elles apparaîtront dans la bibliographie.
+\item[\bibtype{customa}] Il contient les informations sur chaque article commenté dans chaque volume, qui apparaîtront dans les citations.
+\end{marglist}
+
+Il y a donc fréquemment beaucoup plus de fiches de type \bibtype{customa} que de fiches de type \bibtype{commentary}. Les fiches \bibtype{customa} contiennent du reste très peu d'informations; elles en récupèrent une partie de la fiche \bibtype{commentary} à laquelle elles sont reliées, cela au moyen du champ \bibfield{crossref}.
+
+Dès qu'une fiche \bibtype{customa} est citée quelque part dans le document, la fiche \bibtype{commentary} à laquelle elle est reliée apparaît automatiquement dans la bibliographie.
+
+\label{entrykeysyst}Une \textbf{remarque particulière} à propos du champ \textbf{entrykey}: pour ne pas vous perdre, je vous conseille de remplir ces champs suivant une méthode systématique, surtout en matière de commentaires (et de jurisprudence). \Pex, le commentaire bâlois I du CO peut avoir une entrykey du type \GM{bskco1} tandis que chaque entrée aura une entrykey de type \GM{bsk4co} pour l'article 4 CO, \GM{bsk19-20co} pour le commentaire des articles 19-20 CO, etc.
+
+\subsubsection{Dans la bibliographie = type \bibtype{commentary}}
+
+Les champs suivants peuvent être remplis:
+\begin{marglist}
+\item[author] \Cf \supra p. \pageref{author}. Notamment utile pour les volumes des commentaires bernois et zurichois, qui sont souvent rédigés par un nombre restreint d'auteurs. 
+\item[shortauthor] \Cf \supra p. \pageref{shortauthor}.
+\item[title] \Cf \supra p. \pageref{title}. 
+\item[subtitle] \Cf \supra p. \pageref{subtitle}. 
+\item[shorttitle] \Cf \supra p. \pageref{shorttitle}. 
+\item[editor] \Cf \supra p. \pageref{editor}. Notamment utile pour les volumes des commentaires romand, bâlois et du Handkommentar, qui comprennent trop d'auteurs pour que ceux-ci apparaissent dans la bibliographie (usuellement, on met plutôt le nom des éditeurs).
+\item[booktitle] \Cf \supra p. \pageref{booktitle}. 
+\item[booksubtitle] \Cf \supra p. \pageref{booksubtitle}.
+\item[titleaddon] On indique ici le nom abrégé de la loi commentée, \pex CC ou CO ou LPart. Ce champ n'est utilisé que dans les citations.
+\item[edition] \Cf \supra p. \pageref{edition}. 
+\item[series] \Cf \supra p. \pageref{series}. C'est ici que le nom de la série de commentaires est indiqué (par exemple, Commentaire Romand). Ce champ fonctionne comme pour les noms de revues (champ \bibfield{journaltitle}, \cf \supra p. \pageref{journaltitle}); il suffit d'indiquer \pex \GM{cr} dans le champ pour que \GM{Commentaire Romand} apparaisse dans la bibliographie (et que CR-... apparaisse dans les citations). La liste des commentaires automatiquement reconnus se trouve dans le tableau ci-dessous.
+
+\begin{table}[h]\label{listecommentaires}
+\tablesetup
+\caption{Liste des commentaires automatiquement reconnus}
+\begin{tabularx}{\textwidth}{@{}p{2.5cm}@{}p{8.5cm}@{}X@{}}
+\toprule
+\multicolumn{1}{@{}H}{Abrév. bib} &
+\multicolumn{1}{@{}H}{Résultat non abrégé} &
+\multicolumn{1}{@{}H}{Résultat abrégé} \\
+\cmidrule(r){1-1}\cmidrule(r){2-2}\cmidrule{3-3}
+bk & Berner Kommentar & BK \\ %\hline
+bsk & Basler Kommentar & BsK \\ %\hline
+cr & Commentaire Romand & CR \\ %\hline
+hk & Handkommentar zum Schweizer Privatrecht & HK \\ %\hline
+kuko & Kurzkommentar & KuKo \\ %\hline
+beckkuko & Beck'sche Kurz-Kommentare & B'KuKo \\ %\hline
+mnk & M\"{u}nchener Kommentar zum B\"{u}rgerlichen Gesetzbuch & M\"{u}nK \\ %\hline
+nmk & Nomos Kommentar & NomosK \\ %\hline
+ofk & Orell F\"{u}ssli Kommentar & OFK \\ 
+palandt & Beck'sche Kurz-Kommentare (Palandt) & Palandt \\ %\hline
+shk & St\"{a}mpflis Handkommentar & SHK \\
+stk & Staudingers Kommentar zum B\"{u}rgerlichen Gesetzbuch & Staudinger \\ %\hline
+zk & Zürcher Kommentar & ZK \\ %\hline
+\bottomrule
+\end{tabularx}
+\end{table}
+
+
+
+\item[volume] \Cf \supra p. \pageref{volume}. \Pex, pour le commentaire des art. 19-22 CO par \textsc{Kramer}, indiquer \GM{VI/1/2/1a}. 
+\item[location] \Cf \supra p. \pageref{location}. 
+\item[date] \Cf \supra p. \pageref{date}.
+\item[url] \Cf \supra p. \pageref{url}.
+\item[urldate] \Cf \supra p. \pageref{urldate}.
+\item[pubstate] \Cf \supra p. \pageref{pubstate}. 
+\item[abstract] \Cf \supra p. \pageref{abstract}. 
+\item[note] \Cf \supra p. \pageref{note}. 
+\item[library] \Cf \supra p. \pageref{library}.
+\item[pages] \Cf \supra p. \pageref{pagesbook}.
+\item[translator] \Cf \supra p. \pageref{translator}.
+\item[origtitle] \Cf \supra p. \pageref{origtitle}.
+\item[origlanguage] \Cf \supra p. \pageref{origlanguage}.
+\item[origlocation] \Cf \supra p. \pageref{origlocation}.
+\item[origdate] \Cf \supra p. \pageref{origdate}.
+\end{marglist}
+
+\subsubsection{Dans les citations = type \bibtype{customa}}
+
+Il n'y a que quatre champs:
+\begin{marglist}
+\item[crossref] On indique ici la \bibfield{entrykey} de l'ouvrage dans lequel se trouve le commentaire cité. \Pex \GM{bskco1}, si l'on cite un commentaire d'article se trouvant dans le commentaire bâlois I du CO et que l'on avait utilisé cette entrykey pour la fiche @commentary de l'ouvrage entier.
+\item[author] \Cf \supra p. \pageref{author}. Le ou les auteurs du commentaire d'article cité.
+\item[part] On indique le numéro de l'article pour lequel le commentaire est cité (\pex \GM{1} pour l'art. 1 CO ou \GM{336a} pour l'art. 336a CO, \GM{19-20} pour le commentaire des articles 19 et 20 CO). Il y a parfois des parties de commentaires qui ne sont consacrées à aucun article particulier (\pex l'Introduction générale au CO dans les commentaires bernois ou zurichois); il faut alors laisser ce champ vide. On peut aussi utiliser les commandes \cs{psq} et \cs{psqq} pour adjoindre \GM{s.} ou \GM{ss} aux numéros d'articles.
+\item[type] Ce champ n'est utilisé que dans des \textbf{cas particuliers}:
+	\begin{itemize}
+	\item si la partie du commentaire à citer est une \textbf{introduction générale} à toute une loi, auquel cas il faut écrire \GM{genintro} dans le champ type. Le formatage est alors automatique, \pex \GM{Intr. gén. CO}.
+	\item si la partie du commentaire à citer consiste en des \textbf{remarques préliminaires} à certains articles, auquel cas il faut écrire \GM{prelrem} dans le champ type (et les numéros d'articles dans le champ \bibfield{part}). Le formatage est alors automatique, \pex \GM{Rem. prél. art. 184 ss CO}.
+	\item pour introduire toute \textbf{autre précision} avant la mention des articles commentés. Il n'y a alors pas de formatage automatique.
+	\end{itemize}
+\end{marglist}
+
+\label{citationcommentaire}Le numéro de paragraphe que l'on cite est inséré dans chaque citation, comme un numéro de page, soit dans la variable \variable{postnote} de la commande \cs{footcite} (\cf \infra p. \pageref{citation}). À noter que si l'on met juste des numéros dans la variable \variable{postnote}, c'est la mention \parN ou \parNN qui apparaîtra avant les numéros, contrairement aux pages de livres qui sont précédés des mentions p. ou pp.
+
+\subsection{Jurisprudence = types \bibtype{jurisdiction} et \bibtype{customb}}
+
+Le format final de vos citations sera de ce type (\pex):
+
+\begin{center}
+ATF 136 II 432 [de], consid. 2.5 (435), trad. et rés. in JdT 2011 II 123.
+\end{center}
+
+Pour arriver à ce résultat, l'idée est un peu la même que pour les commentaires: on a deux types de fiches. Cela dit, la jurisprudence n'apparaît en principe pas dans la bibliographie\footnote{Il est tout à fait possible de le faire; c'est notamment utile quand on veut faire un document ne contenant qu'une bibliographie, de sorte que cette fonctionnalité est activée dans le style \bbltxslb.}.
+
+La distinction entre ces deux types d'entrées:
+\begin{marglist}
+\item[\bibtype{jurisdiction}] Ce type est utilisé une seule fois par arrêt; il contient toutes les informations de base sur l'arrêt à citer (autorité, date, référence, etc.) et sur son éventuelle publication / traduction / résumé etc.
+\item[\bibtype{customb}] Ce type peut être utilisé plusieurs fois par arrêt, si l'on veut en citer plusieurs considérants différents. Il est nécessairement relié à une fiche de type \bibtype{jurisdiction} au moyen du champ \bibfield{crossref}.
+\end{marglist}
+
+L'idée est d'éviter d'avoir plusieurs fiches parallèles contenant des informations sur le même arrêt, dans le cas où l'on veut en citer plusieurs considérants différents (risque d'erreur de saisie, difficultés de modifications, etc.). Cela peut paraître compliqué mais les fiches @customb sont très vite remplies (seulement trois champs) et cette solution est nécessaire pour avoir le moins d'informations à rentrer dans chaque citation dans le fichier \tex, ainsi que pour avoir une présentation optimale des citations.
+
+La même remarque que pour les commentaires est applicable ici s'agissant du \textbf{champ entrykey} (\cf \supra p. \pageref{entrykeysyst}). \Pex, pour citer l'ATF 136 III 65, on pourra avoir une fiche @jurisdiction avec l'entrykey \GM{atf136iii65}, et pour citer le considérant 2.4.2 de cet arrêt, une fiche @customb avec l'entrykey \GM{atf136iii65c2.4.2}.
+
+\subsubsection{Fiche complète sur un arrêt = type \bibtype{jurisdiction}}
+
+Les champs suivants peuvent être remplis:
+\begin{marglist}
+\item[usera-userd] Remarque générale sur les quatre premiers champs: ceux-ci sont destinés à contenir la référence principale, de manière flexible.
+\item[usera]\label{usera} Le champ \bibfield{usera} en particulier est formaté automatiquement selon son contenu: si \pex on y entre \GM{atf}, on obtiendra \GM{ATF} ou \GM{Arr\^ets du Tribunal F\'ed\'eral} (selon si l'option \opt{abbreviate} de \bbltx est réglée sur \texttt{false} ou \texttt{true}). Voici la liste des contenus reconnus de manière \GM{intelligente}:
+
+\begin{table}[h]
+\tablesetup
+\caption{Liste des mots-clés à utiliser dans le champ \bibfield{usera}}
+\begin{tabularx}{\textwidth}{@{}p{2.5cm}@{}p{8.5cm}@{}X@{}}
+\toprule
+\multicolumn{1}{@{}H}{Abrév. bib} &
+\multicolumn{1}{@{}H}{Résultat non abrégé} &
+\multicolumn{1}{@{}H}{Résultat abrégé} \\
+\cmidrule(r){1-1}\cmidrule(r){2-2}\cmidrule{3-3}
+ataf & Arr\^et du Tribunal administratif f\'ed\'eral & ATAF \\ %\hline
+atc & Arr\^et TC & TC \\ %\hline
+atf & Arr\^ets du Tribunal F\'ed\'eral & ATF \\ %\hline
+atfb & Arr\^et du Tribunal f\'ed\'eral des brevets & ATFB \\ %\hline
+atfnp & Arr\^et du Tribunal F\'ed\'eral non publi\'e & Arr\^et TF non publ. \\ %\hline
+atfpp & Arr\^et du Tribunal F\'ed\'eral (publication aux ATF pr\'evue) & Arr\^et TF (publ. pr\'ev.) \\ %\hline
+atpf & Arr\^et du Tribunal p\'enal f\'ed\'eral & ATPF \\ %\hline
+bge & Arr\^ets du Tribunal F\'ed\'eral & ATF \\ %\hline
+bgeup [\nXItwo]& Arr\^et du Tribunal F\'ed\'eral non publi\'e & Arr\^et TF non publ. \\ %\hline
+cjue & Cour de justice de l'Union europ\'eenne & CJUE \\ %\hline
+\bottomrule
+\end{tabularx}
+\end{table}
+
+
+
+Si le champ usera contient autre chose qu'une des abbréviations de la colonne de gauche, alors ce contenu est imprimé de manière brute.
+
+\item[userb]\label{userb} La suite de la référence. \Pex \GM{133} (année) pour un ATF ou \GM{4C.290/2002} pour un arrêt du TF non publié.
+\item[userc]\label{userc}: Surtout utile pour les ATF, y mettre alors le numéro de volume, \pex \GM{Ia} ou \GM{III}. 
+\item[userd]\label{userd}: Surtout utile pour les ATF, y mettre le numéro de page du début de l'arrêt aux ATF (\pex \GM{465}).
+\item[origdate] Attention, contrairement au type \bibtype{book}, ça n'a rien à voir avec les traductions d'ouvrages. Il faut simplement y mettre la date à laquelle la décision a été rendue (format de la date: \cf \supra p. \pageref{date}). %Si vous voulez faire un index automatique de la jurisprudence citée (\cf \infra p. \pageref{indexjpdce}), il faut impérativement remplir ce champ (en l'état actuel du package).
+\item[title] Là encore, l'arrêt n'a en principe pas de \GM{titre}, mais ce champ peut être utile si vous souhaitez mettre le \GM{petit nom} d'un arrêt célèbre, par exemple \GM{Logistep} pour l'ATF 136 II 509.
+\item[language]\label{language}: vous pouvez mettre la langue originale de l'arrêt (\pex \GM{de} ou \GM{it}), qui apparaît alors entre crochets dans la citation: [de] ou [it].
+\item[howpublished]\label{howpublished}: c'est un champ important car il permet de faire le lien entre la référence principale, pour laquelle les champs ont servi jusque là, et la référence secondaire (traduction, publication, commentaire, résumé de l'arrêt paru dans une revue). Ce champ est \GM{intelligent}, comme le champ \bibfield{journaltitle} pour le nom des revues (\cf tableau ci-dessous).
+
+\begin{table}[h]
+\tablesetup
+\caption{Liste des mots-clés à utiliser dans le champ \bibfield{howpublished}}
+\begin{tabularx}{\textwidth}{@{}p{2.5cm}@{}p{8.5cm}@{}X@{}}
+\toprule
+\multicolumn{1}{@{}H}{Abrév. bib} &
+\multicolumn{1}{@{}H}{Résultat non abrégé} &
+\multicolumn{1}{@{}H}{Résultat abrégé} \\
+\cmidrule(r){1-1}\cmidrule(r){2-2}\cmidrule{3-3}
+publ & publié in & = \\ %\hline
+transl & traduit in & trad. \\ %\hline
+res & résumé in & rés. \\ %\hline
+comm & commenté in & comm. \\ %\hline
+publcomm & publié et commenté in & publ. et comm. \\ %\hline
+rescomm & résumé et commenté in & rés. et comm. \\ %\hline
+translcomm & traduit et commenté in & trad. et comm. \\ %\hline
+translres & traduit et résumé in & trad. et rés. \\ %\hline
+translrescomm & traduit, résumé et commenté in & trad., rés. et comm. \\ %\hline
+\bottomrule
+\end{tabularx}
+\end{table}
+
+
+
+\item[journaltitle] \Cf \supra p. \pageref{journaltitle}. Tous les champs suivants servent à contenir la référence de la revue dans laquelle l'arrêt est publié; on peut donc se référer à ce qui a été dit pour le type \bibtype{article}.
+\item[date] \Cf \supra p. \pageref{date}.
+\item[volume] \Cf \supra p. \pageref{volume}.
+\item[number] \Cf \supra p. \pageref{number}.
+\item[pages] \Cf \supra p. \pageref{pages}.
+\item[url] \Cf \supra p. \pageref{url}.
+\item[urldate] \Cf \supra p. \pageref{urldate}.
+\item[abstract] \Cf \supra p. \pageref{abstract}. 
+\item[note] \Cf \supra p. \pageref{note}. 
+\item[library] \Cf \supra p. \pageref{library}.
+\end{marglist}
+
+\subsubsection{Fiche ne citant qu'un considérant = type \bibtype{customb}}
+
+Il n'y a que trois champs à remplir:
+\begin{marglist}
+\item[crossref] On indique ici la entrykey de la fiche \bibtype{jurisdiction} (fiche principale) de l'arrêt dont on cite un considérant particulier.
+\item[usere] Ce champ sert à indiquer le numéro du considérant cité, \pex \GM{2a} ou \GM{3.2.2}.
+\item[userf] On peut indiquer la page précise à laquelle commence le considérant cité, \pex \GM{449}.
+\end{marglist}
+
+
+\subsection{Documents officiels (FF, RO, etc.) = type \bibtype{legislation}}
+
+% Comme la jurisprudence, il n'apparaîtra pas dans la bibliographie, mais uniquement dans les citations.
+
+Les champs à disposition sont:
+\begin{marglist}
+\item[author] \Cf \supra p. \pageref{author}.
+\item[title] Le titre du document, \pex \GM{Message du Conseil fédéral relatif à la nouvelle loi X}.
+\item[subtitle] \Cf \supra p. \pageref{subtitle}.
+\item[series] La série de publication. Ce champ fonctionne avec des champs intelligents, comme dans les autres types d'entrées (\cf la liste des séries en annexe, p. \pageref{listecollections}). \Pex écrire juste \GM{ro} donnera automatiquement \GM{Recueil officiel du droit fédéral} ou \GM{RO}, selon que l'option \verb/abbreviate/ est activée ou non (option générale de \bbltx).
+\item[date] Indiquer la date de publication (\pex \GM{2010} pour un document paru au RO 2010).
+\item[volume] \Cf \supra p. \pageref{volume}. Si nécessaire, volume de la publication.
+\item[number] \Cf \supra p. \pageref{number}. Si nécessaire, numéro de la publication.
+\item[pages] \Cf \supra p. \pageref{pages}. Numéro de page(s), \pex \GM{2533-2633} pour le RO 2010 pp. 2533-2633.
+\item[url] \Cf \supra p. \pageref{url}.
+\item[urldate] \Cf \supra p. \pageref{urldate}.
+\item[abstract] \Cf \supra p. \pageref{abstract}. 
+\item[note] \Cf \supra p. \pageref{note}.
+\item[library] \Cf \supra p. \pageref{library}.
+\end{marglist}
+
+\subsection{Sources online = type \bibtype{online}}
+
+\begin{marglist}
+\item[author] \Cf \supra p. \pageref{author}. 
+\item[shortauthor] \Cf \supra p. \pageref{shortauthor}.
+\item[title] \Cf \supra p. \pageref{title}. 
+\item[subtitle] \Cf \supra p. \pageref{subtitle}. 
+\item[shorttitle] \Cf \supra p. \pageref{shorttitle}.
+\item[url] \Cf \supra p. \pageref{url}.
+\item[urldate] \Cf \supra p. \pageref{urldate}.
+\item[abstract] \Cf \supra p. \pageref{abstract}. 
+\item[note] \Cf \supra p. \pageref{note}.
+\item[library] \Cf \supra p. \pageref{library}. Pas nécessairement utile, dans la mesure où la source est précisément online et non sur papier.
+\end{marglist}
+
+
+\section{Utiliser ces infos dans le fichier \tex}
+\label{tex}
+
+\subsection{Basique}
+
+\subsubsection{Charger biblatex}
+
+
+Pour un style de \bbltxslg, entrer la commande suivante dans le préambule du document \tex. \label{chargementbiblatex}
+
+\begin{ltxcode}
+<<\usepackage>>[style=biblatex-swiss-legal-general, backend=biber]{biblatex}
+\end{ltxcode}
+
+Pour charger d'autres styles, il suffit d'utiliser le nom du style désiré à la place de \bbltxslg.
+
+%\begin{ltxsyntax}
+%\cmditem{usepackage}[style=biblatex-swiss-legal-\prm{nom du style}]{biblatex}
+%\end{ltxsyntax}
+
+%\cs{usepackage}\oarg{style=biblatex-swiss-legal-\variable{nom du style}}\marg{biblatex}
+
+%\begin{verbatim}
+%\usepackage[style=biblatex-swiss-legal-general]{biblatex}
+%\end{verbatim}
+
+
+
+%\Pex, pour charger le style \bbltxslg:
+%
+%\cs{usepackage}\oarg{style=biblatex-swiss-legal-general}\marg{biblatex}
+
+
+\subsubsection{Charger la base de données}
+
+
+Il faut aussi charger le fichier \bib au moyen de la commande suivante (ne pas oublier l'extension \bib !).
+
+\begin{ltxsyntax}
+\cmditem{addbibresource}{nom du fichier.bib}
+\end{ltxsyntax}
+
+À noter que le fichier \bib doit en principe se trouver dans le même répertoire que le fichier \tex ou dans un sous-répertoire.
+
+\subsection{Choisir un style}
+\label{styles}
+
+Les noms de tous les styles sont formés de la manière \bbltxsl-\prm{extension}. L'\prm{extension} peut être la suivante:
+
+\begin{marglist}
+\item[general] Ce style est conçu pour tout type de monographie générique (traité, thèse, manuel, mémoire, etc.).  
+
+Le style \bbltxslg ne modifie pas le comportement par défaut des options de \bbltx et \bbltxsl.
+
+\item[bibliography] Ce style est conçu pour des listes de références, hors de tout document dans lesquelles ces références seraient citées. À la différence du style général, les commandes de citations sont désactivées (plus précisément: elles sont redéfinies vers un vide) et tous les types de références apparaissent dans la bibliographie.
+
+Il est alors important d'activer la commande suivante dans le préambule pour que la base de données soit prise en compte malgré l'absence de citations:
+\begin{ltxcode}
+<<\nocite>>{*}
+\end{ltxcode}
+
+Par défaut, le style \bbltxslb active les options spécifiques suivantes:
+\kvopt{abrjournal}{false}, \kvopt{bookspages}{true}, \kvopt{shortform}{false}. Il active également les options générales suivantes: \kvopt{singletitle}{false}, \kvopt{sorting}{chronological}.
+
+Pour une présentation séparant les références par type de source, il peut être utile d'utiliser les arguments optionnels \oarg{type=\variable{type d'entrée}},  \oarg{nottype=\variable{type d'entrée}} de la commande \cs{printbibliography} (cf. manuel de \bbltx pour plus de détails).
+\Pex,
+\begin{ltxcode}
+<<\printbibliography>>[type=jurisdiction]
+\end{ltxcode}
+n'imprimera que la liste de la jurisprudence,
+\begin{ltxcode}
+<<\printbibliography>>[type=legislation]
+\end{ltxcode}
+n'imprimera que la liste des travaux officiels, et
+\begin{ltxcode}
+<<\printbibliography>>[nottype=jurisdiction, nottype=legislation]
+\end{ltxcode}
+imprimera tout le reste.
+
+Si l'on veut \pex réaliser un bordereau ou un inventaire de classeur, on peut utiliser les arguments optionnels de \cs{printbibliography} \oarg{keyword=…} et  \oarg{notkeyword=…}.
+On remplit alors, pour chaque entrée, le champ \bibfield{keywords} avec des mots-clés du type \GM{cs1} pour \GM{Classeur 1}, \pex. On crée ensuite une bibliographie avec l'argument optionnel \oarg{keyword=cs1}:\\
+
+\begin{ltxcode}
+<<\printbibliography>>[keyword=cs1]
+\end{ltxcode}
+
+Pour plus de détails, \cf le manuel de \bbltx.
+
+À noter qu'il peut être utile dans ces exemples de supprimer les en-têtes des bibliographies, afin de définir des titres qui peuvent apparaître dans la table des matières. \Pex :
+
+\begin{ltxcode}
+<<\tableofcontents>>
+
+<<\section>>{Documents se trouvant dans le classeur 1}
+<<\printbibliography>>[heading=blank, keyword=cs1]
+
+<<\section>>{Documents se trouvant dans le classeur 2}
+<<\printbibliography>>[heading=blank, keyword=cs2]
+\end{ltxcode}
+
+
+\item[longarticle] Ce style est conçu pour les articles avec bibliographie. En principe, on l'utilisera plutôt pour les articles relativement longs, c'est-à-dire ceux dans lesquels les renvois avec \emph{op. cit.} sont moins pratiques pour le lecteur qu'une bibliographie car les références sont nombreuses.
+
+Par défaut, le style \bbltxslla active les options spécifiques suivantes:
+\kvopt{abstracts}{false}, \kvopt{firstnames}{false}, \kvopt{library}{false}, \kvopt{notes}{false}, \kvopt{shortform}{false}, \kvopt{subtitles}{false}. Il active également les options générales suivantes: \kvopt{date}{short}, \kvopt{urldate}{short}.
+
+Le format de la bibliographie est le plus abrégé possible. La taille des caractères est réduite à la \cs{footnotesize} et la bibliographie forme un bloc d'un seul paragraphe. Pour aider le lecteur à repérer les entrées, une glyphe est insérée avant chaque entrée (par défaut: $\blacktriangleright$). Cette glyphe peut être redéfinie avec la commande suivante (remplacer \cs{blacktriangleright} par la commande correspondant à la glyphe de votre choix), à insérer dans le préambule (après le chargement de biblatex).
+
+
+\begin{ltxcode}
+<<\renewcommand>>{<<\shortbibglyph>>}{<<\shortbibglyphformat>>{$\blacktriangleright$}}
+\end{ltxcode}
+
+\item[shortarticle] \nXItwo{} C
+
+\end{marglist}
+
+\subsection{Chargement éventuel d'options}
+\label{loadoption}
+
+Les options évitent à l'utilisateur de devoir modifier les fichiers de style \bbx et \cbx pour adapter la présentation à leurs désirs.
+Elles se chargent en même que le package, très facilement:
+
+\begin{ltxcode}
+<<\usepackage>>[style=biblatex-swiss-legal-general, option=variable]{biblatex}
+\end{ltxcode}
+
+\Pex, pour activer l'option \opt{abrjournal}:
+\begin{ltxcode}
+<<\usepackage>>[style=biblatex-swiss-legal-general, abrjournal=true]{biblatex}
+\end{ltxcode}
+
+Les différentes options du package \bbltxsl, leurs variables et leurs effets sont décrits \infra p. \pageref{options}. À noter que le package \bbltx contient également de nombreuses autres options, pour lesquelles il faut consulter le manuel \bbltx.
+
+
+\subsection{Bibliographie}
+
+Placer la commande
+
+\begin{ltxcode}
+<<\printbibliography>>
+\end{ltxcode}
+
+
+là où vous voulez une bibliographie\footnote{Tant que vous n'avez cité aucune source dans le document, cette commande n'imprime rien.}.
+
+Si vous souhaitez que vos sources papier et online apparaissent séparées, vous pouvez également utiliser la commande suivante, qui est spécifique à \bbltxsl.
+\begin{ltxcode}
+<<\printsepbibliography>>
+\end{ltxcode}
+
+\subsection{Citations}
+\label{citation}
+
+Pour citer des sources, allez à l'endroit où vous voulez insérer la citation, ce qui se fait au moyen de la commande \cs{cite} et des commandes qui en sont dérivées (notamment \cs{footcite} qui permet de créer directement la citation en note de bas de page, ou encore la commande \cs{citeauthor} qui permet de ne citer que le nom de l'auteur, utile en plein texte). La liste complète des commandes de citations se trouve dans le manuel de \bbltx, section 3.6. La syntaxe des commandes de citation est la suivante.
+
+\begin{ltxsyntax}
+\cmditem{cite}[prenote][postnote]{entrykey}
+\end{ltxsyntax}
+
+Pour une entrée de type \bibtype{book}, le résultat ressemblera à cela:
+
+prenote, \variable{\textsc{Auteur}}, \variable{\emph{(év. titre abrégé)}}, postnote.
+
+À noter que les commandes de citations ont toutes une variante qui permet de citer plusieurs entrées d'un coup, le nombre d'entrées citées n'est pas limité. Le couple de parenthèses juste après la commande \cs{cites} permet d'insérer des \prm{prenote} et \prm{postnote} respectivement avant et après la globalité des entrées citées.
+
+\begin{ltxsyntax}
+\cmditem{cites}()()[prenote1][postnote1]{entrykey1}[prenote2][prenote2]{entrykey2}…
+\end{ltxsyntax}
+
+L'argument obligatoire \prm{entrykey} est la clé de la référence à citer, telle que définie dans le fichier \bib. Les arguments \prm{prenote} et \prm{postnote} peuvent contenir des notes supplémentaires qui apparaîtront avant et après la citation proprement dite.
+
+À noter que si un seul argument optionnel est défini, cet argument sera considéré comme une \prm{postnote}. \Pex: 
+
+\begin{ltxcode}
+<<\footcite>>[23]{engel}
+\end{ltxcode}
+
+donnera \textsc{Engel}, p. 23 (et non p. 23, \textsc{Engel}).
+
+En particulier, l'argument \prm{postnote} permet d'insérer les numéros de pages ou de paragraphes nécessaires à la citation. Cet argument est dans une certaine mesure formaté automatiquement, c'est-à-dire:
+\begin{enumerate}
+\item s'il ne contient qu'un \textbf{chiffre}, la mention \GM{p. } apparaît automatiquement avant. \Pex:
+
+\begin{ltxcode}
+<<\cite>>[23]{engel}
+\end{ltxcode}
+
+donnera \textsc{Engel}, p. 23.
+
+Si le champ \bibfield{pagination} de l'entrée citée contient \GM{paragraph} (\cf \supra p. \pageref{pagination}) \nXIMark ou si l'entrée citée est un commentaire (\cf aussi \supra p. \pageref{citationcommentaire}), alors \GM{\parN} apparaît à la place de \GM{p. }.
+
+\item s'il ne contient qu'une \textbf{suite de chiffres} (\pex \GM{12-16}, ou \GM{12, 16}), la mention \GM{pp. } apparaît automatiquement avant. \Pex:
+\begin{ltxcode}
+<<\cite>>[23-26]{engel}
+\end{ltxcode}
+
+donnera \textsc{Engel}, pp. 23-26.
+
+Si le champ \bibfield{pagination} de l'entrée citée contient \GM{paragraph} (\cf \supra p. \pageref{pagination}) \nXIMark ou si l'entrée citée est un commentaire (\cf aussi \supra p. \pageref{citationcommentaire}), alors \GM{\parNN} apparaît à la place de \GM{pp. }.
+\item dans tous les \textbf{autres cas} (\pex, si vous adjoignez un commentaire personnel au numéro de page), alors il n'y a pas de mise en forme automatique. Dans ce dernier cas, il faut parfois rajouter manuellement diverses mentions dans l'argument \prm{postnote}, grâce aux commandes suivantes:
+
+\begin{tabular}{cccc}
+\begin{ltxcode}
+<<\pno>>
+\end{ltxcode} 
+&
+\begin{ltxcode}
+<<\ppno>>
+\end{ltxcode}
+&
+\begin{ltxcode}
+<<\parN>>
+\end{ltxcode}
+&
+\begin{ltxcode}
+<<\parNN>>
+\end{ltxcode}
+\\
+\hspace{1.7cm}p. & \hspace{1.7cm}pp. & \hspace{1.7cm}\parN & \hspace{1.7cm}\parNN
+\end{tabular}
+
+\bigskip
+\Pex:
+\begin{ltxcode}
+<<\cite>>[<<\pno>>~23, qui dit telle chose]{engel}
+\end{ltxcode}
+donnera \textsc{Engel}, p. 23, qui dit telle chose.
+
+\bigskip
+Ou encore:
+\begin{ltxcode}
+<<\cite>>[<<\ppno>>~23-26, qui dit telle chose]{engel}
+\end{ltxcode}
+donnera \textsc{Engel}, pp. 23-26, qui dit telle chose.
+
+\bigskip
+Il est possible d'obtenir \GM{N} ou \GM{NN} (suivies d'une espace insécable) à la place des \parN ou \parNN en redéfinissant ces commandes (placer le code ci-dessous dans le préambule, après le chargement de biblatex):
+
+\begin{ltxcode}
+<<\renewcommand>>{<<\parN>>}{N<<\addnbspace>>}
+<<\renewcommand>>{<<\parNN>>}{NN<<\addnbspace>>}
+\end{ltxcode}
+\end{enumerate}
+
+
+Dans tous les cas, il est possible de rajouter les mentions \GM{s.} ou \GM{ss} après les numéros grâce aux commandes:
+
+\begin{tabular}{cc}
+
+\begin{ltxcode}
+<<\psq>>
+\end{ltxcode} 
+
+&
+
+\begin{ltxcode}
+<<\psqq>>
+\end{ltxcode}
+
+\\
+s. & ss
+\end{tabular}
+
+\Pex
+\begin{ltxcode}
+<<\cite>>[23<<\psqq>>]{engel}
+\end{ltxcode}
+donnera \textsc{Engel}, pp. 23 ss.
+
+\nXIMark Enfin, certains ouvrages doivent être cités de manière plus complexe, grâce à un numéro de chapitre suivi de numéros de passages. On peut les citer grâce aux macro suivantes, qui prennent toutes deux arguments obligatoires:
+
+\begin{ltxsyntax}
+\cmditem{chaN}{num. chapitre}{num. passage}
+\end{ltxsyntax} 
+
+qui donnera \S~\prm{num. chapitre} \prm{num. passage}. \Pex
+
+\begin{ltxcode}
+<<\cite>>[<<\chaN>>{2}{VII}]{vonthurpeter}
+\end{ltxcode}
+ donnera \textsc{von Thur/Peter}, \S~2 VII.
+
+\begin{ltxsyntax}
+\cmditem{chaparN}{num. chapitre}{num. passage}
+\end{ltxsyntax} 
+
+qui donnera \S~\prm{num. chapitre} \parN \prm{num. passage}. \Pex
+
+\begin{ltxcode}
+<<\cite>>[<<\chaparN>>{3}{101}]{koller}
+\end{ltxcode}
+ donnera \textsc{Koller}, \S~3 \parN 101.
+
+
+\begin{ltxsyntax}
+\cmditem{chaparNN}{num. chapitre}{num. passage}
+\end{ltxsyntax} 
+
+qui donnera \S~\prm{num. chapitre} \parNN \prm{num. passage}. \Pex
+
+\begin{ltxcode}
+<<\cite>>[<<\chaparNN>>{62}{99-127}]{koller}
+\end{ltxcode}
+ donnera \textsc{Koller}, \S~62 \parNN 99-127.
+ 
+ 
+
+ 
+ 
+
+%%%%%%
+
+\section{Options à disposition}
+\label{options}
+
+Sur le chargement des options, \cf \supra p. \pageref{loadoption}.
+
+\subsection{Options spécifiques de \bbltxsl}
+
+Le statut par défaut de ces options indiqué dans cette section peut varier en fonction du style choisi, à ce propos \cf \supra p. \pageref{styles}.
+
+\begin{optionlist}
+
+\boolitem[true]{abrjournal}\label{abrjournal}
+Cette option permet de citer les revues dans un format abrégé ou complet. Elle accepte les variables suivantes:
+\begin{valuelist}
+\item[true] Les revues sont citées dans un format abrégé, \pex \GM{JdT 1994 I 34}.
+\item[false] Les revues sont citées dans un format complet, \GM{Journal des Tribunaux, 1994, vol. I, p. 34}.
+\end{valuelist}
+
+\bigskip
+\boolitem[true]{abstracts}\label{abstracts}
+Cette option permet d'afficher ou de masquer les résumés dans la bibliographie. Elle accepte les variables suivantes:
+\begin{valuelist}
+\item[true] Si le champ \bibfield{abstract} d'une entrée est rempli, son contenu apparaît dans la bibliographie (mais jamais dans les citations).
+\item[false] L'éventuel contenu du champ \bibfield{abstract} n'apparaît jamais dans la bibliographie.
+\end{valuelist}
+
+\bigskip
+\boolitem[false]{adarticle}\label{adarticle}
+Cette option permet d'utiliser \GM{ad art. X} au lieu de \GM{, art. X} dans les citations de commentaires. Elle accepte les variables suivantes:
+\begin{valuelist}
+\item[true] Les citations de commentaires suivent la forme \GM{ad art. X}.
+\item[false] Les citations de commentaires suivent la forme \GM{, art. X}.
+\end{valuelist}
+
+\bigskip
+\boolitem[false]{bookspages}\label{bookspages}
+Cette option permet de faire apparaître le champ \bibfield{pages} dans la bibliographie, pour les entrées de type \bibtype{book}, \bibtype{thesis} et \bibtype{commentary}. Elle accepte les variables suivantes:
+\begin{valuelist}
+\item[true] Ce champ apparaît.
+\item[false] Ce champ n'apparaît pas.
+\end{valuelist}
+
+\bigskip
+\optitem[styleA]{commentarystyle}{\opt{styleA}, \opt{styleB}, \opt{styleC}}\label{commentarystyle}
+Cette option permet de changer la forme des citations de commentaires. Elle accepte les variables suivantes:
+\begin{valuelist}
+\item[styleA] Les citations de commentaires apparaissent sous la forme:
+
+\begin{center}
+\vspace{0.3cm}
+\textsc{ZK-Jäggi/Gauch}, art. 18 CO, n° …
+\vspace{0.3cm}
+
+\textsc{BsK-Amstutz/Morin/Schluep}, Rem. prél. art. 184 ss CO, n° …
+\vspace{0.7cm}
+\end{center}
+
+\item[styleB] Les citations de commentaires apparaissent sous la forme: 
+
+\begin{center}
+\vspace{0.3cm}
+\textsc{ZK-CO} V/I/1b, \textsc{Jäggi/Gauch}, art. 18, n° …
+\vspace{0.3cm}
+
+\textsc{BsK-CO} I, \textsc{Amstutz/Morin/Schluep}, Rem. prél. art. 184 ss, n° …
+\vspace{0.7cm}
+\end{center}
+
+\item[styleC] Les citations de commentaires apparaissent sous la forme:
+\begin{center}
+\vspace{0.3cm}
+\textsc{Jäggi} Peter / \textsc{Gauch} Peter, in: Zürcher Kommentar, art. 18 CO, n° …
+\vspace{0.3cm}
+
+\textsc{Amstutz} Marc / \textsc{Morin} Ariane / \textsc{Schluep} Walter, in: Basler Kommentar, Rem. prél. art. 184 ss CO, n° …
+\end{center}
+
+\end{valuelist}
+
+\bigskip
+\boolitem[true]{editorssc}\label{editorssc}
+Cette option permet d'afficher les noms des éditeurs en caractères romains ou en petites capitales. Elle accepte les variables suivantes:
+\begin{valuelist}
+\item[true] Les noms des éditeurs s'affichent en petites capitales, tout comme les noms des auteurs.
+\item[false] Les noms des éditeurs s'affichent en caractères romains.
+\end{valuelist}
+
+\bigskip
+\boolitem[true]{firstnames}\label{firstnames}
+Cette option permet d'afficher ou de masquer les prénoms des auteurs, éditeurs et traducteurs dans la bibliographie. Elle accepte les variables suivantes:
+\begin{valuelist}
+\item[true] Les prénoms des auteurs, des éditeurs et des traducteurs apparaissent dans les citations complètes, en plus de leurs noms de famille. Dans les citations abrégées, seuls les noms de famille sont en principe visibles, sauf cas de désambiguation.
+\item[false] Ces éléments n'apparaissent pas dans la bibliographie.
+\end{valuelist}
+
+\bigskip
+\boolitem[true]{jstitles}\label{jstitles}
+Cette option permet d'afficher ou de masquer les \GM{surnoms} des arrêts (champ \texttt{title}). Elle accepte les variables suivantes:
+\begin{valuelist}
+\item[true] Les champs \bibfield{title} s'affichent dans les citations d'arrêts.
+\item[false] Les champs \bibfield{title} ne s'affichent pas dans les citations d'arrêts.
+\end{valuelist}
+
+\bigskip
+\boolitem[false]{jurisdictionindex}\label{jurisdictionindex}
+Cette option permettait de faire l'index de la jurisprudence citée. Cette fonctionnalité est pour l'instant désactivée. L'option accepte les variables suivantes:
+\begin{valuelist}
+\item[true] Le code d'indexation de la jurisprudence est activé.
+\item[false]  Le code d'indexation de la jurisprudence est désactivé.
+\end{valuelist}
+
+\bigskip
+\boolitem[true]{library}\label{optlibrary}
+Cette option permet d'afficher ou de masquer les les cotes de bibliothèque dans la bibliographie. Elle accepte les variables suivantes:
+\begin{valuelist}
+\item[true] Si le champ \bibfield{library} d'une entrée est rempli, son contenu apparaît dans la bibliographie (mais jamais dans les citations).
+\item[false] L'éventuel contenu du champ \bibfield{library} n'apparaît jamais dans la bibliographie.
+\end{valuelist}
+
+\bigskip
+\boolitem[true]{notes}\label{notes}
+Cette option permet d'afficher ou de masquer les notes dans la bibliographie. Elle accepte les variables suivantes:
+\begin{valuelist}
+\item[true] Si le champ \bibfield{note} d'une entrée est rempli, son contenu apparaît dans la bibliographie (mais jamais dans les citations).
+\item[false] L'éventuel contenu du champ \bibfield{note} n'apparaît jamais dans la bibliographie.
+\end{valuelist}
+
+\bigskip
+\optitem[fulldash]{punctsubtitle}{\opt{fulldash}, \opt{halfdash}, \opt{comma}}\label{punctsubtitle}
+Cette option permet de changer la ponctuation entre les titres et les sous-titres. Elle accepte les variables suivantes:
+\begin{valuelist}
+\item[fulldash] Le titre et le sous-titre sont séparés par un tiret long (tiret cadratin, --- ).
+\item[halfdash] Le titre et le sous-titre sont séparés par un tiret mi-long (tiret demi-cadratin, -- ).
+\item[comma] Le titre et le sous-titre sont séparés par une virgule.
+\end{valuelist}
+
+\bigskip
+\boolitem[true]{shortform}\label{shortform}
+Cette option permet d'afficher ou de masquer les mentions \GM{(abr. : ...)} dans la bibliographie. Elle accepte les variables suivantes:
+\begin{valuelist}
+\item[true] Les mentions \GM{(abr.: ...)} apparaissent lorsque c'est nécessaire.
+\item[false] Ces mentions n'apparaissent jamais.
+\end{valuelist}
+
+\bigskip
+\boolitem[true]{subtitles}\label{subtitles}
+Cette option permet d'afficher ou de masquer les sous-titres (champ \bibfield{subtitle}) dans la bibliographie et cas échéant dans les citations. Elle accepte les variables suivantes:
+\begin{valuelist}
+\item[true] Le champ \bibfield{subtitle} apparait.
+\item[false] Le champ \bibfield{subtitle} n'apparait pas.
+\end{valuelist}
+
+\bigskip
+\boolitem[true]{titleit}\label{titleit}
+Cette option permet d'afficher les titres en italique ou en romain dans la bibliographie et dans les citations. Elle accepte les variables suivantes:
+\begin{valuelist}
+\item[true] Les champs \bibfield{title}, \bibfield{subtitle}, \bibfield{shorttitle}, \bibfield{booktitle}, \bibfield{booksubtitle} et \bibfield{origtitle} s'affichent en italique, sauf dans les entrées de type \bibtype{legislation} et \bibtype{online}.
+\item[false] Ces champs s'affichent toujours en caractères romains.
+\end{valuelist}
+
+
+
+
+\end{optionlist}
+
+\subsection{Activation d'options de \bbltx}
+
+Il est évidemment possible d'utiliser les options générales de \bbltx. Plus d'informations à cet égard se trouvent dans le manuel de \bbltx, section 3.1.
+
+Par défaut, \bbltxsl active les options suivantes:
+\kvopt{abbreviate}{true},
+\kvopt{date}{long}, 
+\kvopt{dateabbrev}{false}, 
+\kvopt{ibidtracker}{context}, 
+\kvopt{maxbibnames}{99}, 
+\kvopt{maxcitenames}{4}, 
+\kvopt{mincrossrefs}{1}\footnote{Changer ce paramètre est déconseillé car il est nécessaire au traitement optimal des commentaires.}, 
+\kvopt{singletitle}{true}, 
+\kvopt{uniquename}{full}\footnote{C'est l'option qui permet la désambiguation des noms des auteurs, \cf la documentation de \bbltx, sections 3.1.2.3 et 4.6.2.}, 
+\kvopt{uniquelist}{true},
+\kvopt{urldate}{long}. 
+
+Certains de ces paramètres sont modifiés par certains styles, à ce propos \cf \supra p. \pageref{styles}.
+
+\section{En cours de développement / idées / problèmes connus}
+
+\subsection{Dernière entrée citée disparaissant (problème occasionnel)}
+
+Dans certains fichiers, un bug a été constaté: la dernière entrée citée dans le document n'apparaît pas dans la bibliographie, où elle est remplacée par une ligne blanche.
+
+Les circonstances dans lesquelles ce bug survient sont encore mal identifiées, mais j'y travaille. Si vous rencontrez ce bug, vous pouvez essayer les \og solutions\fg suivantes:
+\begin{itemize}
+\item placez la bibliographie au début du document plutôt qu'à la fin (dans certains cas, le problème disparaissait).
+\item Citez en dernier dans votre document une fiche de type @customa ou @customb; le problème disparaît alors en principe. Eventuellement, créez une fiche entièrement vide de l'un de ces types et citez-la en dernier.
+\end{itemize}
+
+Si vous rencontrez ce problème, je serais intéressé à en connaître les circonstances.
+
+\subsection{Inclusion automatique des revues abrégées dans les abréviations}\label{nomenclature}
+
+Je sais comment faire mais n'ai pas encore eu le temps d'implémenter le code, qui risque d'être relativement complexe. Le principe sera le même que pour le paquet \lxrf.
+
+%J'ai essayé sans succès de faire en sorte que les abréviations spécifiques à \bbltxsl, en particulier les noms des revues, soient automatiquement ajoutés à la liste des abréviations créée avec le package \sty{nomenclature}. La commande \cs{nomenclature} ne semble apparemment ne pas pouvoir être incluse dans des environnements quelconques ou dans des boucles.
+
+
+\subsection{Création d'une table des lois citées}
+
+Les utilisateurs sont invités à utiliser le paquet \lxrf pour citer des articles de loi, indexer automatiquement celles-ci et insérer une entrée dans la table des abréviations par loi citée.
+
+%Ce n'est pas à proprement parler lié à la bibliographie mais cela peut intéresser les juristes. J'ai créé un autre paquet expérimental qui permet de citer les articles de loi avec des commandes de type
+%
+%\begin{ltxcode}
+%<<\CO>>{2}[1]
+%\end{ltxcode}
+%
+%pour \GM{art. 2 al. 1 CO} (l'utilisateur peut définir les lois qu'il veut utiliser). À chaque fois, une entrée d'index est créée. Les commandes et l'index différencient les alinéas, chiffres et lettres. Ce paquet fonctionne plutôt bien même si quelques problèmes subsistent; je vous en envoie volontiers une copie si vous voulez essayer et/ou participer à son développement.
+
+\subsection{Création d'une table des arrêts cités}
+
+C'était possible de manière complètement expérimentale auparavant. J'ai désactivé cette fonctionnalité pour l'instant mais n'exclus pas son retour (en mieux) dans les prochaines versions.
+
+[edit 03/12/13: le projet se précise, des obstacles techniques ayant été résolus depuis mon travail sur \lxrf.]
+
+\subsection{Traduction}
+\label{tradpackage}
+
+Le package est utilisable en allemand et en français.
+Il reste à traduire la documentation en allemand; alternativement une traduction anglaise permettrait de ne maintenir un seul fichier d'instruction compréhensible par tous.
+
+Le paquet n'est à l'heure actuelle pas traduit en italien. Une personne souhaitant créer un fichier biblatex-swiss-legal-it.lbx et traduire les \verb/strings/ s'y trouvant en italien serait la bienvenue.
+
+\subsection{Support d'Ibid.}
+
+[\nXItwo{}] Le support d'Ibid. est pleinement actif. Il a été manuellement adapté pour remplacer Ibid. par \og Arrêt précité\fg. Ces mentions sont sensibles à l'option ibidtracker de \bbltx. Les mentions \og Arrêt précité\fg ne sont toutefois pas sensibles à l'élément strict de cette option.
+
+\subsection{Tri des entrées dans la bibliographie}
+
+Le tri par défaut se fait dans l'ordre "auteur-titre-année" (option \kvopt{sorting}{nty}), ce qui convient très bien dans les styles \bbltxslg et \bbltxslla. En revanche, le style \bbltxslb faisant également apparaître la jurisprudence et les documents officiels dans la bibliographie, il faut adapter l'ordre du tri. Actuellement, ce style a donc l'ordre de tri "auteur-date" (plus précisément, c'est le champ \bibfield{origdate} qui est utilisé, d'où l'importance de remplir ce champ lorsque l'on utilise le style \bbltxslb. Ce comportement est perfectible et sera amélioré par la suite.
+
+\subsection{Autres styles}
+
+Le développement d'un style pour jugement ou sentence est projeté, pour les versions suivantes du package.
+
+
+\pagebreak\section{Historique des versions}
+
+\subsection*{Version 1.1.2$\alpha$, 21 janvier 2014}
+\begin{itemize}
+\item Package rendu compatible avec l'allemand (création du fichier \texttt{biblatex-swiss-legal-de.lbx} par Fabian Mörtl) 
+\item Introduction de \bbltxslsa
+\item Correction du comportement d'Ibid. dans les citations de jurisprudence ("Arrêt précité" apparaît indépendamment du type @customb ou @jurisdiction de la dernière entrée citée, si celle-ci est un arrêt); suppression de la commande \cs{jdcite}
+\item Correction d'un bug lié aux noms à particules
+\item Utilisation de \cs{providecommand} pour définir \cs{parN}, etc.
+\item correction de bugs mineurs dans le string lastruling, dans le formatage des noms des éditeurs (merci à Fabian Mörtl), dans la capitalisation des noms de revues et dans le code sur les noms de famille des auteurs
+\item Ajout de divers strings aux listes.
+\end{itemize}
+
+\subsection*{Version 1.1.1$\alpha$, 23 juillet 2013}
+ Correction de deux bugs qui empêchaient la compatibilité avec \bbltx v. 2.7a.
+Note aux utilisateurs antérieurs: vous devez désormais insérer l'option \kvopt{backend}{biber} dans votre document \tex (cf. p. \pageref{chargementbiblatex}).
+ 
+ 
+\subsection*{Version 1.1$\alpha$, 28 décembre 2012}
+\begin{itemize}
+\item inclusion de \bbltxsl dans TeXLive
+\item création des styles \bbltxslb et \bbltxslla
+\item amélioration de la citation des commentaires (notamment si le champ series n'est pas défini), ajout de quelques commentaires de droit allemand (dans ce cas, la mention \GM{art.} est transformée en \S~ou \S\S)
+\item le champ usera dans les arrêts reconnaît les bibstrings de manière automatique
+\item refonte complète du code concernant les noms des auteurs, traducteurs et éditeurs; support de la désambiguation offerte par biblatex
+\item refonte de la documentation
+\item introduction de diverses options
+\item réencodage de tous les fichiers en UTF-8 et code ASCII compatible
+\item ajout de revues et de commentaires étrangers au fichier \lbx (\cf liste complète en annexe)
+\item ajout du champ pagniation dans la documentation
+\item corrections de bugs mineurs:
+\begin{itemize}
+\item redéfinition de la macro \cs{printurldate}
+\item renommage de la bibmacro \verb/abstracts/ en \verb/resume/ car la première était déjà utilisée
+\item utilisation de la macro \cs{printdate} dans la bibmacro \verb/cities+date/
+\end{itemize}
+\end{itemize}
+
+\subsection*{Version 1.0.1$\alpha$, 25 avril 2012}
+
+Premiers tests de compatibilité avec l'\opt{ibidtracker} et création de la commande \cs{jdcite} (qui est encore largement perfectible) et correction de bugs mineurs:
+\begin{itemize}
+\item Activation par défaut de l'option \kvopt{skipbib}{true} pour les types d'entrées \bibtype{jurisdiction}, \bibtype{customb} et \bibtype{legislation}
+\item ajout de \verb/\iffieldundef{url}/ dans la macro \verb/paper:url+urldate/
+\item suppression de l'activation automatique du package \sty{multind}
+\end{itemize}
+
+\subsection*{Version 1.0$\alpha$, 22 avril 2012}
+Première version publique.
+
+
+\pagebreak
+\section{Annexe: liste des revues, commentaires et collections automatiquement reconnus}
+
+\tablesetup 
+
+\subsection{Revues suisses}\label{listerevues}
+
+\begin{tabularx}{\textwidth}{@{}p{2.5cm}@{}p{9cm}@{}X@{}}
+\toprule
+
+\multicolumn{1}{@{}H}{Abrév. bib} &
+\multicolumn{1}{@{}H}{Résultat non abrégé} &
+\multicolumn{1}{@{}H}{Résultat abrégé} \\
+\cmidrule(r){1-1}\cmidrule(r){2-2}\cmidrule{3-3}
+abow & Amtsbericht über die Rechtspflege des Kantons Obwalden & AbR \\ 
+absh & Amtsbericht des Obergerichtes an den Kantonsrat Schaffhausen & Amtsbericht \\ 
+ajp & Pratique Juridique Actuelle / Aktuelle Juristische Praxis & PJA/AJP \\ 
+agve & Aargauische Gerichts- und Verwaltungsentscheide & AGVE \\ 
+arbr & Mitteilung des Instituts für Schweizerisches Arbeitsrecht & ArbR \\ 
+argvp & Ausserrhodische Gerichts- und Verwaltungspraxis & AR GVP \\ 
+asa & Archives de droit fiscal suisse & Archives \\ 
+assistalex & Assistalex & Assistalex \\ 
+asyl & Revue Suisse pour la pratique et le droit d'asile & Asyl \\ 
+bez & BEZ Baurechtsentscheide Kanton Zürich & BEZ \\ 
+blschk & Bulletin des préposés aux poursuites et faillites & BlSchK \\ 
+blvge & Basellandschaftliche Verwaltungsgerichtsentscheide & BLVGE \\ 
+bjm & Basler juristische Mitteilungen & BJM \\ 
+bvr & Jurisprudence administrative bernoise & BVR \\ 
+can & CAN -- Zeitschrift für kantonale Rechtsprechung & CAN \\ 
+caplaw & CapLaw -- Swiss Capital Markets Law & CapLaw \\ 
+cas & Causa Sport & CaS \\ 
+db & Droit du Bail & DB \\ 
+dc & Droit de la Construction & DC \\ 
+dep & Le droit de l'environnement dans la pratique & DEP \\ 
+digma & Zeitschrift für Datenrecht und Informationssicherheit & DIGMA \\ 
+dpc & Droit et politique de la concurrence en pratique & DPC \\ 
+dta & DTA - Revue de droit du travail et d'assurance-chômage & DTA \\ 
+dtao & DTA online - Revue de droit du travail et d'assurance-chômage & DTA \\ 
+egvsz & Entscheide der Gerichts- und Verwaltungsbehörden des Kantons Schwyz & EGV-SZ \\ 
+euz & Zeitschrift für Europarecht & EuZ \\ 
+fampra & La pratique du droit de la famille & FamPra.ch \\ 
+forpen & Forumpoenale & Forumpoenale \\ 
+geskr & Gesellschafts- und Kapitalmarktrecht & GesKR \\ 
+gvpsg & St. Gallische Gerichts- und Verwaltungspraxis & GVP SG \\ 
+gvpzg & Gerichts- und Verwaltungspraxis des Kantons Zug & GVP ZG \\ 
+have & HAVE/REAS -- Responsabilité et assurance & REAS \\ 
+hill & Health Insurance Liability Law & HILL \\ 
+ingres & INGRESnews & INGRESnews \\ 
+ipd & Ipdata & Ipdata \\ 
+iusfocus & ius.focus & ius.focus\\
+jaac & Jurisprudence des autorités administratives de la Confédération & JAAC \\ 
+jl & Jusletter & Jusl. \\ 
+jt & Journal des Tribunaux & JdT \\ 
+leges & LeGes - Législation \& évaluation & LeGes \\ 
+lgve & Luzerner Gerichts- und Verwaltungsentscheide & LGVE \\ 
+medialex & Revue de droit de la communication (Medialex) & Medialex \\ 
+mp & Mietrechtpraxis & mp \\ 
+mra & MietRecht Aktuell & MRA \\ 
+notalex & Not@lex - Revue de droit privé et fiscal du patrimoine & Not@lex \\ 
+pbg & PBG aktuell - Zürcher Zeitschrift für öffentliches Baurecht & PBG \\ 
+pja & Pratique Juridique Actuelle / Aktuelle Juristische Praxis & PJA/AJP \\ 
+pkg & Die Praxis des Kantonsgerichtes von Graubünden & PKG \\ 
+pld & Plaidoyer & Plaid. \\ 
+pra & Die Praxis des Bundesgerichts & Pra \\ 
+pvg & Praxis des Verwaltungsgerichtes des Kantons Graubünden & PVG \\ 
+\bottomrule
+\end{tabularx}
+
+\tablesetup
+\begin{tabularx}{\textwidth}{@{}p{2.5cm}@{}p{9cm}@{}X@{}}
+\toprule
+\multicolumn{1}{@{}H}{Abrév. bib} &
+\multicolumn{1}{@{}H}{Résultat non abrégé} &
+\multicolumn{1}{@{}H}{Résultat abrégé} \\
+\cmidrule(r){1-1}\cmidrule(r){2-2}\cmidrule{3-3}
+rdaf & Revue de droit administratif et de droit fiscal & RDAF \\ 
+rds & Revue de Droit suisse & RDS \\ 
+rdt & Revue du droit de tutelle & RDT \\ 
+reas & HAVE/REAS -- Responsabilité et assurance & REAS \\ 
+reprax & Droit des sociétés et droit du registre du commerce: revue de la législation et de la pratique & REPRAX \\ 
+recht & recht: Zeitschrift für juristische Ausbildung und Praxis & recht \\ 
+rf & Revue fiscale & RF \\ 
+rfj & Revue fribourgeoise de jurisprudence & RFJ \\ 
+rjb & Revue de la Société des juristes bernois & RJB \\ 
+rjj & Revue jurassienne de jurisprudence & RJJ \\ 
+rjn & Recueil de jurisprudence neuchâteloise & RJN \\ 
+rma & Revue de la protection des mineurs et des adultes & RMA \\ 
+rnrf & Revue suisse du notariat et du registre foncier (= ZBGR) & RNRF (= ZBGR) \\ 
+rps & Revue pénale suisse & RPS \\ 
+rsas & Revue suisse des assurances sociales et de la prévoyance professionnelle & RSAS \\ 
+rsc & Revue suisse de criminologie & RSC \\ 
+rsda & Revue suisse de droit des affaires et du marché financier & RSDA \\ 
+rsdie & RSDIE - Revue suisse de droit international et de droit européen & RSDIE \\ 
+rsj & Revue suisse de Jurisprudence & RSJ \\ 
+rspc & Revue suisse de procédure civile & RSPC \\ 
+rvj & Revue valaisanne de jurisprudence & RVJ \\ 
+sd & Sécurité \& droit & Sécurité \& droit \\ 
+sic & sic! Revue du droit de la propriété intellectuelle, de l'information et de la concurrence & sic! \\ 
+sj & Semaine Judiciaire & SJ \\ 
+smi & Schriften zum Medien- und Immaterialg\"uterrecht & SMI\\
+st & L'expert-comptable suisse & ST \\ 
+succ & Successio - Revue de droit des successions & Successio \\ 
+szier & RSDIE - Revue suisse de droit international et de droit europ\'een & RSDIE\\
+trex & TREX - L'expert fiduciaire & TREX \\ 
+zbl & Schweizerisches Zentralblatt für Staats- und Verwaltungsrecht & ZBl \\ 
+zeso & Zeitschrift für Sozialhilfe & ZESO \\ 
+zgrg & Zeitschrift f\"ur Gesetzgebung und Rechtsprechung in Graub\"unden (ZGRG) & ZGRG\\
+zr & Blätter für Zürcherische Rechtsprechung & ZR \\ 
+zsis & Zeitschrift für Schweizerisches und Internationales Steuerrecht & ZSIS\\
+zzz & Revue suisse de droit de proc\'edure civile et d'ex\'ecution forcée (ZZZ) & ZZZ
+ \\ 
+\bottomrule
+\end{tabularx}
+
+\subsection{Revues étrangères}
+
+\tablesetup
+\begin{tabularx}{\textwidth}{@{}p{2.5cm}@{}p{9cm}@{}X@{}}
+\toprule
+\multicolumn{1}{@{}H}{Abrév. bib} &
+\multicolumn{1}{@{}H}{Résultat non abrégé} &
+\multicolumn{1}{@{}H}{Résultat abrégé} \\
+\cmidrule(r){1-1}\cmidrule(r){2-2}\cmidrule{3-3}
+acp  & Archiv f\"ur die civilistische Praxis \mkbibparens{Tubingue} & AcP \\ 
+baur & Zeitschrift f\"ur das gesamte \"offentliche und zivile Baurecht & BauR\\
+bghz  & Entscheidungen des Bundesgerichtshofes in Zivilsachen & BGHZ \\ 
+cur  & Computer und Recht \mkbibparens{Cologne} & CuR \\ 
+elj  & European Law Journal & ELJ \\ 
+ercl  & European Review of Contract Law & ERCL \\ 
+erpl  & European Review of Private Law & ERPL \\ 
+eur  & Europarecht & EuR \\ 
+euvr  & Zeitschrift f\"ur Europ\"aisches Unternehmens- und Verbraucherrecht & euvr \\ 
+euzw  & Europ\"aische Zeitschrift f\"ur Wirtschaftsrecht & EuZW \\ 
+grur & Gewerblicher Rechtsschutz und Urheberrecht (GRUR)& GRUR\\
+grurrr & Gewerblicher Rechtsschutz und Urheberrecht, Rechtsprechungs- Report (GRUR-RR)& GRUR-RR\\
+grurint & Gewerblicher Rechtsschutz und Urheberrecht, Internationaler Teil (GRUR International)& GRUR International\\
+grurprax & Gewerblicher Rechtsschutz und Urheberrecht, Praxis im Immaterialg\"uter- und Wettbewerbsrecht (GRUR-Prax)& GRUR-Prax\\
+jbl  & Juristische Bl\"atter & JBl \\ 
+jde  & Journal de droit europ\'een & J. D. E. \\ 
+jite  & Journal of Institutional and Theoretical Economics & JITE \\ 
+juru  & Juristische Rundschau & JR \\ 
+jurzeit  & Juristen Zeitung \mkbibparens{Heidelberg} & JZ \\ 
+jusch  & Juristische Schulung \mkbibparens{Munich} & JuS \\ 
+njw  & Neue Juristische Wochenschrift & NJW \\ 
+njw-rr  & NJW-Rechtsprechungs-Report Zivilrecht & NJW-RR \\ 
+rabels  & Rabels Zeitschrift f\"ur ausl\"andisches und internationales Privatrecht & RabelsZ \\ 
+redc  & Revue europ\'eenne de droit de la consommation & REDC \\ 
+rida  & Revue Internationale des Droits de l'Antiquit\'e & RIDA \\ 
+zip  & Zeitschrift f\"ur Wirtschaftsrecht & ZIP \\ 
+\bottomrule
+\end{tabularx}
+
+
+\subsection{Liste des collections / séries}
+
+\label{listecollections}\tablesetup
+\begin{tabularx}{\textwidth}{@{}p{2.5cm}@{}p{9cm}@{}X@{}}
+\toprule
+\multicolumn{1}{@{}H}{Abrév. bib} &
+\multicolumn{1}{@{}H}{Résultat non abrégé} &
+\multicolumn{1}{@{}H}{Résultat abrégé} \\
+\cmidrule(r){1-1}\cmidrule(r){2-2}\cmidrule{3-3}
+ableu & Journal officiel de l'Union europ\'eenne & JO UE\\
+abnr & Bulletin officiel du Conseil national & BOCN \\ 
+absr & Bulletin officiel du Conseil des États & BOCE \\ 
+as & Recueil officiel du droit fédéral & RO \\ 
+bbl & Feuille fédérale & FF \\ 
+boce & Bulletin officiel du Conseil des États & BOCE \\ 
+boce & Bulletin officiel du Conseil national & BOCN \\ 
+ff & Feuille fédérale & FF \\ 
+fjs & Fiches juridiques suisses & FJS \\ 
+joue & Journal officiel de l'Union europ\'eenne & JO UE\\
+ro & Recueil officiel du droit fédéral & RO \\ 
+rs & Recueil syst\'ematique du droit f\'ed\'eral & RS\\
+sjk & Fiches juridiques suisses & FJS \\ 
+spr & Traité de droit privé suisse & TDP \\ 
+tdp & Traité de droit privé suisse & TDP \\ 
+siwr & Schweizerisches Immaterialgüter- und Wettbewerbsrecht & SIWR \\ 
+\bottomrule
+\end{tabularx}
+
+
+\end{document}

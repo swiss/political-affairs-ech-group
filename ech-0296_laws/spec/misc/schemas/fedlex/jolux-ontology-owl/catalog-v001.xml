@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://www.w3.org/2008/05/skos-xl" uri="skos-xl.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://purl.org/linked-data/cube" uri="file:/Users/jeandelahousse/Google%20Drive/DGLFLF%20Observatoire%20des%20pratiques%20linguistiques/Ontologie%20odl/odl/cube.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://data.europa.eu/eli/ontology#" uri="eli-v1.1.owl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1688667204193" name="http://data.europa.eu/eli/ontology" uri="eli-v1.1.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1688667204193" name="http://purl.org/NET/c4dm/event.owl" uri="event.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1688667204193" name="http://www.w3.org/2004/02/skos/core" uri="skos.owl"/>
+    </group>
+</catalog>

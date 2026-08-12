@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+data/
+clientapp/node_modules/
+npm-debug.log*

@@ -1,0 +1,54 @@
+{
+  "_comment": "Stadt Bern – AKN FRBR URI profile",
+  "tags": "akn, frbr, switzerland, stadt-bern",
+  "jurisdiction": "ch-be-351",
+  "level": "municipality",
+  "name": "Stadt Bern",
+  "country": "CH",
+  "subdivision": "BE",
+  "municipality": "Bern",
+  "bfs_number": "351",
+  "base_uri": "https://www.bern.ch/eli",
+  "akn_country": "ch",
+  "akn_prefix": "/akn/ch-be-351",
+  "language_codes": {
+    "de": "deu",
+    "fr": "fra"
+  },
+  "default_language": "de",
+  "document_types": {
+    "ordinance": {
+      "akn_type": "act",
+      "subtype": "gemeindeordnung",
+      "label_de": "Gemeindeordnung",
+      "label_fr": "Règlement communal"
+    },
+    "regulation": {
+      "akn_type": "act",
+      "subtype": "reglement",
+      "label_de": "Reglement",
+      "label_fr": "Règlement"
+    },
+    "decision": {
+      "akn_type": "act",
+      "subtype": "beschluss",
+      "label_de": "Beschluss",
+      "label_fr": "Décision"
+    },
+    "bylaw": {
+      "akn_type": "act",
+      "subtype": "satzung",
+      "label_de": "Satzung",
+      "label_fr": "Statuts"
+    }
+  },
+  "numbering": {
+    "eli_pattern": "/eli/be/351/{year}/{number}"
+  },
+  "uri_templates": {
+    "work": "/akn/ch-be-351/{doc_type}/{date}/{number}",
+    "expression": "/akn/ch-be-351/{doc_type}/{date}/{number}/{lang}@{version}",
+    "manifestation": "/akn/ch-be-351/{doc_type}/{date}/{number}/{lang}@{version}.{format}",
+    "item": "/akn/ch-be-351/{doc_type}/{date}/{number}/{lang}@{version}.{format}/{component}"
+  }
+}

@@ -1,0 +1,51 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
+
+<http://data.europa.eu/eli/ontology#LegalValue-> a skos:ConceptScheme ;
+	dct:description "The legal value of a legal resource or a legal expression."@en ;
+	dct:description "La valeur légale d'une ressource légale ou d'une expression légale."@fr ;
+	skos:prefLabel "Legal value"@en ;
+	skos:prefLabel "Valeur légale"@fr .
+
+<http://data.europa.eu/eli/ontology#LegalValue-official> a skos:Concept ;
+	euvoc:status <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+	skos:inScheme <http://data.europa.eu/eli/ontology#LegalValue-> ;
+	skos:notation "official" ;
+	skos:prefLabel "official"@en ;
+	skos:prefLabel "officiel"@fr ;
+        skos:definition "Document is published by an organisation with the public task of making the information available."@en ;
+        skos:definition "Le document est publié par une organisation dont le rôle officiel est de rendre l'information disponible."@fr ;
+	skos:topConceptOf <http://data.europa.eu/eli/ontology#LegalValue-> .
+
+<http://data.europa.eu/eli/ontology#LegalValue-unofficial> a skos:Concept ;
+	euvoc:status <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+	skos:inScheme <http://data.europa.eu/eli/ontology#LegalValue-> ;
+	skos:notation "unofficial" ;
+	skos:prefLabel "unofficial"@en ;
+	skos:prefLabel "non officiel"@fr ;
+        skos:definition "Document has no particular or special standing."@en ;
+        skos:definition "Le document n'a aucune importance particulière ou spéciale."@fr ;
+	skos:topConceptOf <http://data.europa.eu/eli/ontology#LegalValue-> .
+
+<http://data.europa.eu/eli/ontology#LegalValue-authoritative> a skos:Concept ;
+	euvoc:status <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+	skos:inScheme <http://data.europa.eu/eli/ontology#LegalValue-> ;
+	skos:notation "authoritative" ;
+	skos:prefLabel "authoritative"@en ;
+	skos:prefLabel "faisant autorité"@fr ;
+        skos:definition "The publisher gives some special status to the publication of the document. (« The Queens Printer » version of a UK Act of Parliament). This status is specific to UK where no text can be considered « definitive »."@en ;
+        skos:definition "L'éditeur donne un statut particulier à la publication du document. (La version « The Queens Printer » d'un acte du parlement britannique). Ce statut est spécifique au Royaume-Uni où aucun texte ne peut être considéré comme « définitif »."@fr ;
+	skos:broader <http://data.europa.eu/eli/ontology#LegalValue-official> .
+
+<http://data.europa.eu/eli/ontology#LegalValue-definitive> a skos:Concept ;
+	euvoc:status <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+	skos:inScheme <http://data.europa.eu/eli/ontology#LegalValue-> ;
+	skos:notation "definitive" ;
+	skos:prefLabel "definitive"@en ;
+	skos:prefLabel "définitif"@fr ;
+        skos:definition "Document for which the text is conclusively what the law says. (The digitally signed version of an Official Journal.)"@en ;
+        skos:definition "Un document dont le texte est définitivement ce que la loi énonce. (La version signée numériquement d'un Journal Officiel)"@fr ;
+	skos:broader <http://data.europa.eu/eli/ontology#LegalValue-authoritative> .

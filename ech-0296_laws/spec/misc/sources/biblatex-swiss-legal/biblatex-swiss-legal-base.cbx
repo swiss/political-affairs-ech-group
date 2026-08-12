@@ -1,0 +1,293 @@
+	%%%%%% BIBLATEX-SWISS-LEGAL-BASE : CITATIONS %%%%%%%
+
+
+% Copyright 2014 Adrien Vion
+  %
+  % This work may be distributed and/or modified under the
+  % conditions of the LaTeX Project Public License, either version 1.3
+  % of this license or (at your option) any later version.
+  % The latest version of this license is in
+  %   http://www.latex-project.org/lppl.txt
+  % and version 1.3 or later is part of all distributions of LaTeX
+  % version 2005/12/01 or later.
+  %
+  % This work has the LPPL maintenance status 'maintained'.
+  % 
+  % The Current Maintainer of this work is Adrien Vion.
+
+% Encoding of this file: UTF-8. Code is ASCII compatible.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ProvidesFile{biblatex-swiss-legal-base.cbx}[2014/01/21 v1.1.2 alpha]
+
+\RequireBibliographyStyle{biblatex-swiss-legal-base}
+
+
+%%%%%%%%%%% FORMATAGE DES DONNEES %%%%%%%%%%%%%
+
+% Format de postnote (pour les commentaires)
+
+\DeclareFieldFormat[customa]{postnote}{\ifnumeral{#1}{\parN #1}{\ifnumerals{#1}{\parNN #1}{#1}}}
+
+% Dans les commentaires, le champ postnote est automatiquement reformaté avec les n° au lieu de p. Si l'on veut N ou NN à la place, il faut modifier les strings paragraph et paragraphs dans le fichier .lbx
+
+
+
+
+%%%%%%%%%%% MACROS %%%%%%%%%%%%%
+
+% Macros général de citation
+
+\newbibmacro*{cite}%
+{%
+\iffieldequalstr{entrytype}{book}%
+	{\usebibmacro{book:cite}}%
+	{\iffieldequalstr{entrytype}{thesis}%
+		{\usebibmacro{thesis:cite}}%
+		{\iffieldequalstr{entrytype}{inbook}%
+			{\usebibmacro{inbook:cite}}%
+			{\iffieldequalstr{entrytype}{article}%
+				{\usebibmacro{article:cite}}%
+				{\iffieldequalstr{entrytype}{commentary}%
+					{\usebibmacro{commentary:cite}}%
+					{\iffieldequalstr{entrytype}{customa}%
+						{\usebibmacro{customa:cite}}%
+						{\iffieldequalstr{entrytype}{jurisdiction}%
+							{\usebibmacro{jurisdiction:cite}}%
+							{\iffieldequalstr{entrytype}{customb}%
+								{\usebibmacro{customb:cite}}%
+								{\iffieldequalstr{entrytype}{online}%
+									{\usebibmacro{online:cite}}%
+									{\iffieldequalstr{entrytype}{legislation}%
+										{\usebibmacro{legislation:cite}}%
+										{\usebibmacro{book:cite}}%
+									}%
+								}%
+							}%
+						}%
+					}%
+				}%
+			}%
+		}%
+	}%
+}%
+
+
+\newbibmacro*{fullcite}%
+{%
+\iffieldequalstr{entrytype}{book}%
+	{\usebibmacro{book:full}}%
+	{\iffieldequalstr{entrytype}{thesis}%
+		{\usebibmacro{thesis:full}}%
+		{\iffieldequalstr{entrytype}{inbook}%
+			{\usebibmacro{inbook:full}}%
+			{\iffieldequalstr{entrytype}{article}%
+				{\usebibmacro{article:full}}%
+				{\iffieldequalstr{entrytype}{commentary}%
+					{\usebibmacro{commentary:full}}%
+					{\iffieldequalstr{entrytype}{customa}%
+						{\usebibmacro{customa:full}}%
+						{\iffieldequalstr{entrytype}{jurisdiction}%
+							{\usebibmacro{jurisdiction:full}}%
+							{\iffieldequalstr{entrytype}{customb}%
+								{\usebibmacro{customb:full}}%
+								{\iffieldequalstr{entrytype}{online}%
+									{\usebibmacro{online:full}}%
+									{\iffieldequalstr{entrytype}{legislation}%
+										{\usebibmacro{legislation:full}}%
+										{\usebibmacro{book:full}}%
+									}%
+								}%
+							}%
+						}%
+					}%
+				}%
+			}%
+		}%
+	}%
+}%
+
+
+\newbibmacro{citetitle}{\printfield{title}}
+
+
+%%%%%%%%%%% CORRECTION D'UN BUG (POSTNOTE DANS LES TYPES NON STANDARD) %%%%%%%%%%% 
+
+\AtEveryCitekey{%
+\ifboolexpr{%
+test {\iffieldequalstr{entrytype}{online}}%
+or
+test {\iffieldequalstr{entrytype}{legislation}}%
+or
+test {\iffieldequalstr{entrytype}{jurisdiction}}%
+or
+test {\iffieldequalstr{entrytype}{customb}}%
+and
+not test {\iffieldundef{postnote}}
+}%
+{\renewbibmacro{postnote}{\postnotedelim\printfield{postnote}}}
+{}%
+}
+
+%%%%%%%%%%% COMMANDES DE CITATION %%%%%%%%%%% 
+
+\DeclareCiteCommand{\footcite}[\mkbibfootnote]%
+  {\usebibmacro{prenote}}%
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite}}%
+  {\multicitedelim}%
+  {\usebibmacro{postnote}}%
+
+\DeclareCiteCommand{\textcite}[]%
+  {\usebibmacro{prenote}}%
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite}}%
+  {\multicitedelim}%
+  {\usebibmacro{postnote}}%
+
+\DeclareCiteCommand{\cite}[]%
+  {\usebibmacro{prenote}}%
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite}}%
+  {\multicitedelim}%
+  {\usebibmacro{postnote}}%
+
+\DeclareCiteCommand{\parencite}[\mkbibparens]%
+  {\usebibmacro{prenote}}%
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite}}%
+  {\multicitedelim}%
+  {\usebibmacro{postnote}}%
+
+\DeclareCiteCommand{\fullcite}%
+  {\usebibmacro{prenote}}%
+  {\usebibmacro{citeindex}%
+   \usebibmacro{fullcite}}%
+  {\multicitedelim}%
+  {\usebibmacro{postnote}}%
+
+\DeclareCiteCommand{\citetitle}%
+  {\usebibmacro{prenote}}%
+  {\usebibmacro{citeindex}%
+   \usebibmacro{citetitle}}%
+  {\multicitedelim}%
+  {\usebibmacro{postnote}}%
+
+
+
+
+
+%%%%%%%%%%%  INDEXATION AUTOMATIQUE DE LA JURISPRUDENCE (pour l'instant désactivé) %%%%%%%%%%% 
+
+% Une alternative pourrait consister à utiliser l'option indexing de biblatex, à essayer.
+
+%\newcommand{\printjurisdictionindex}{%
+%\printindex{jurisdictionfed}{Arrêts fédéraux}
+%\printindex{jurisdictioncnt}{Arrêts cantonaux}
+%\printindex{jurisdictionfgn}{Arrêts étrangers}
+%}
+
+%\iftoggle{bbx:jurisdictionindex}%
+%{%
+%\usepackage{multind}
+%\usepackage{xstring}
+%\makeindex{jurisdictionfed}%
+%\makeindex{jurisdictioncnt}%
+%\makeindex{jurisdictionfgn}%
+%\AtEveryCitekey{%
+%	\ifboolexpr{%
+%%	test (\iffieldequalstr{usera}{ataf})%
+%%	or%
+%	test (\iffieldequalstr{usera}{atf})%
+%%	or%
+%%	test (\iffieldequalstr{usera}{atfb})%
+%%	or%
+%%	test (\iffieldequalstr{usera}{atfnp})%
+%%	or%
+%%	test (\iffieldequalstr{usera}{atfpp})%
+%%	or%
+%%	test (\iffieldequalstr{usera}{atpf})%
+%%	or%
+%%	test (\iffieldequalstr{usera}{bge})%
+%	}
+%	{% Si arrêt fédéral
+%	\iffieldequalstr{entrytype}{jurisdiction}%
+%	{\StrLen{\thefield{userb}}[\nombreATF]%
+%	\ifdefstring{\nombreATF}{1}
+%		{\index{jurisdictionfed}{ATF 1@\thefield{userb}\addspace\thefield{userc}\addspace\thefield{userd}}}
+%		{\ifdefstring{\nombreATF}{2}
+%			{\index{jurisdictionfed}{ATF 10@\thefield{userb}\addspace\thefield{userc}\addspace\thefield{userd}}}
+%			{\ifdefstring{\nombreATF}{3}
+%				{\index{jurisdictionfed}{ATF 100@\thefield{userb}\addspace\thefield{userc}\addspace\thefield{userd}}}
+%				{}
+%			}
+%		}
+%}{}}{}}}
+
+%	\index{jurisdictionfed}{ATF\addspace%
+%	\thefield{userb}\addspace\thefield{userc}\addspace\thefield{userd}}}
+%	{}
+%	}
+%	{}% Sinon
+%}
+%
+%	\iffieldequalstr{entrytype}{jurisdiction}%
+%		{\index{jurisdiction}{[\thefield{origyear}-\thefield{origmonth}-\thefield{origday}] \thefield{usera}\addspace\thefield{userb}\addspace\thefield{userc}\addspace\thefield{userd}}}%
+%		{%
+%		\iffieldequalstr{entrytype}{customb}%
+%			{\index{jurisdiction}{[\thefield{origyear}-\thefield{origmonth}-\thefield{origday}] \thefield{usera}\addspace\thefield{userb}\addspace\thefield{userc}\addspace\thefield{userd}!-- consid.\addspace\thefield{usere}}}%
+%			{}%
+%		}%
+%	
+%	}%
+%}%
+%{}%
+%
+
+
+
+%%%%%%%%%%%  AJOUT DES REVUES ABREGÉES AUX ABREVIATIONS %%% (essais de code, ne fonctionnant pas)
+%
+%\AtEveryCitekey{%
+%}%
+%\iftoggle{bbx:abrjournal}%
+%	{\nomenclature{\textt{}}{oui ça marche}}%
+%	{}%
+%}%
+
+%
+%\biblstring{\thefield{journaltitle}}
+
+%%%
+
+%\newcommand{\abreviation}[2]{
+%
+%\AtEveryCitekey{%
+%\iffieldundef{journaltitle}%
+%{}%
+%{%
+%%\renewcommand{\titreessai}{\thefield{journaltitle}}%
+%%\xdef\titrecourt{\titreessai}
+%%\xdef\abrintershort{\titrecourt}
+%%\edef{\titreessai}{\thefield{journaltitle}}%
+%%\ifdef{\abrintershort}%							 
+%%	{\renewcommand{\abrintershort}{}%
+%%	{\newcommand{\abrintershort}{\bibsstring{\thefield{journaltitle}}}}%
+%%\ifdef{\abrinterlong}%							 
+%%	{\renewcommand{\abrinterlong}{\biblstring{\thefield{journaltitle}}}}%
+%%	{\newcommand{\abrinterlong}{\biblstring{\thefield{journaltitle}}}}%
+%%\@expandtwoargs\nomenclature{\abrintershort}{TEST}%
+%%
+%\newcommand{\testXIV}[2]{\nomenclature{#1}{#2}}%
+%\expandafter\testXIV{\thefield{journaltitle}}{Test}%
+%%
+%}%
+%}
+
+%\newcommand{\abrintershort}[1]{\bibsstring{\thefield{journaltitle}}}
+
+%\newcommand{\abrinterlong}[1]{\biblstring{\thefield{journaltitle}}}
+
+
+\endinput

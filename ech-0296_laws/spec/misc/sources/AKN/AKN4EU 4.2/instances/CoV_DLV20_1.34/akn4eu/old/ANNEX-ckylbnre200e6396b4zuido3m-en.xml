@@ -1,0 +1,1108 @@
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+	<doc name="ANNEX">
+		<meta>
+			<identification source="~PUBL">
+				<FRBRWork>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+						<akn4eu:fileCUID value="ckylbnre200e6396b4zuido3m"/>
+					</preservation>
+					<FRBRcountry value="EU"/>
+					<FRBRprescriptive value="true"/>
+				</FRBRWork>
+				<FRBRExpression>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+						<akn4eu:fileDraftVersion value="proposal 1"/>
+					</preservation>
+					<FRBRlanguage language="en"/>
+				</FRBRExpression>
+				<FRBRManifestation>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+						<akn4eu:akn4euVersion value="4.2.0.0"/>
+						<akn4eu:akn4euDocumentation
+							href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/akn4eu"
+						/>
+					</preservation>
+				</FRBRManifestation>
+			</identification>
+			<references source="~PUBL">
+				<TLCReference name="language"
+					href="http://publications.europa.eu/resource/authority/language/ENG" showAs="en"/>
+				<TLCReference xml:id="ANNEX" name="docType"
+					href="http://publications.europa.eu/resource/authority/resource-type/ANNEX" showAs="Annex"/>
+				<TLCOrganization xml:id="PUBL"
+					href="http://publications.europa.eu/resource/authority/corporate-body/PUBL"
+					showAs="Publications Office"/>
+				<TLCConcept xml:id="INP"
+					href="http://publications.europa.eu/resource/authority/subdivision/INP"
+					showAs="introductory part"/>
+			</references>
+		</meta>
+		<preface>
+			<container name="headerOfAnnex">
+				<block name="num">ANNEX II</block>
+				<block name="heading">FISHING EFFORT FOR VESSELS IN THE CONTEXT OF THE MANAGEMENT OF WESTERN
+					CHANNEL SOLE STOCKS IN ICES DIVISION 7e</block>
+			</container>
+		</preface>
+		<mainBody>
+			<chapter>
+				<num>CHAPTER I</num>
+				<heading>
+					<b>General provisions</b>
+				</heading>
+				<level>
+					<num>1.</num>
+					<content>
+						<p>SCOPE</p>
+					</content>
+				</level>
+				<level>
+					<num>1.1.</num>
+					<content>
+						<p>This Annex shall apply to Union fishing vessels of 10 metres length overall or more
+							carrying on board or deploying beam trawls of mesh size equal to or greater than 80 mm
+							and static nets, including gillnets, trammel-nets and tangle-nets, with mesh size
+							equal to or less than 220 mm in accordance with Regulation (EC) No 509/2007, and
+							present in ICES division 7e.</p>
+					</content>
+				</level>
+				<level>
+					<num>1.2.</num>
+					<list>
+						<subparagraph refersTo="~INP">
+							<content>
+								<p>Vessels fishing with static nets with mesh size equal to or larger than 120 mm
+									and with track records of less than 300 kg live weight of sole per year during the
+									three previous years, according to their fishing records, shall be exempt from the
+									application of this Annex subject to the following conditions:</p>
+							</content>
+						</subparagraph>
+						<point>
+							<num>(a)</num>
+							<content>
+								<p>such vessels caught less than 300 kg live weight of sole during the 2018
+									management period;</p>
+							</content>
+						</point>
+						<point>
+							<num>(b)</num>
+							<content>
+								<p>such vessels do not tranship any fish at sea to another vessel;</p>
+							</content>
+						</point>
+						<point>
+							<num>(c)</num>
+							<content>
+								<p>by 31 July 2020 and 31 January 2021 each Member State concerned makes a report to
+									the Commission on those vessels' catch records for sole in the three previous
+									years as well as on catches of sole in 2020.</p>
+							</content>
+						</point>
+					</list>
+					<subparagraph>
+						<content>
+							<p>Where any of those conditions is not met, the vessels concerned shall cease to be
+								exempt from the application of this Annex, with immediate effect.</p>
+						</content>
+					</subparagraph>
+				</level>
+				<level>
+					<num>2.</num>
+					<subparagraph>
+						<content>
+							<p>DEFINITIONS</p>
+						</content>
+					</subparagraph>
+					<list>
+						<subparagraph refersTo="~INP">
+							<content>
+								<p>For the purposes of this Annex, the following definitions apply:</p>
+							</content>
+						</subparagraph>
+						<point>
+							<num>(a)</num>
+							<list>
+								<subparagraph refersTo="~INP">
+									<content>
+										<p>‘gear grouping’ means the grouping consisting of the following two gear
+											categories:</p>
+									</content>
+								</subparagraph>
+								<point>
+									<num>(i)</num>
+									<content>
+										<p>beam trawls of mesh size equal to or greater than 80 mm, and</p>
+									</content>
+								</point>
+								<point>
+									<num>(ii)</num>
+									<content>
+										<p>static nets, including gillnets, trammel nets and tangle-nets, with mesh size
+											equal to or less than 220 mm;</p>
+									</content>
+								</point>
+							</list>
+						</point>
+						<point>
+							<num>(b)</num>
+							<content>
+								<p>‘regulated gear’ means any of the two gear categories belonging to the gear
+									grouping;</p>
+							</content>
+						</point>
+						<point>
+							<num>(c)</num>
+							<content>
+								<p>‘area’ means ICES division 7e;</p>
+							</content>
+						</point>
+						<point>
+							<num>(d)</num>
+							<content>
+								<p>‘current management period’ means the period from 1 February 2020 to 31 January
+									2021</p>
+							</content>
+						</point>
+					</list>
+				</level>
+				<level>
+					<num>3.</num>
+					<subparagraph>
+						<content>
+							<p>LIMITATION IN ACTIVITY</p>
+						</content>
+					</subparagraph>
+					<subparagraph>
+						<content>
+							<p>Without prejudice to Article 29 of Regulation (EC) No 1224/2009, each Member State
+								shall ensure that, when carrying on board any regulated gear, Union fishing vessels
+								flying its flag and registered in the Union shall be present within the area for no
+								more than the number of days set out in Chapter III of this Annex.</p>
+						</content>
+					</subparagraph>
+				</level>
+			</chapter>
+			<chapter>
+				<num>CHAPTER II</num>
+				<heading>
+					<b>Authorisations</b>
+				</heading>
+				<level>
+					<num>4.</num>
+					<content>
+						<p>AUTHORISED VESSELS</p>
+					</content>
+				</level>
+				<level>
+					<num>4.1</num>
+					<content>
+						<p>A Member State shall not authorise fishing with regulated gear in the area by any
+							vessel flying its flag which has no record of such fishing activity in the area in the
+							period from 2002 to 2018, excluding the record of fishing activities as a result of
+							transfer of days between fishing vessels, unless it ensures that equivalent capacity,
+							measured in kilowatts, is prevented from fishing in the area.</p>
+					</content>
+				</level>
+				<level>
+					<num>4.2</num>
+					<content>
+						<p>However, a vessel with a track record of using a regulated gear may be authorised to
+							use a different fishing gear, provided that the number of days allocated to this
+							latter gear is greater than or equal to the number of days allocated to the regulated
+							gear.</p>
+					</content>
+				</level>
+				<level>
+					<num>4.3</num>
+					<content>
+						<p>A vessel flying the flag of a Member State having no quotas in the area shall not be
+							authorised to fish in the area with regulated gear, unless the vessel is allocated a
+							quota after a transfer as permitted in accordance with Article 16(8) of Regulation
+							(EU) No 1380/2013 and is allocated days at sea in accordance with point 10 or 11 of
+							this Annex.</p>
+					</content>
+				</level>
+			</chapter>
+			<chapter>
+				<num>CHAPTER III</num>
+				<heading>
+					<b>Number of days present within the area allocated to Union fishing vessels</b>
+				</heading>
+				<level>
+					<num>5.</num>
+					<subparagraph>
+						<content>
+							<p>MAXIMUM NUMBER OF DAYS</p>
+						</content>
+					</subparagraph>
+					<subparagraph>
+						<content>
+							<p>During the current management period, the maximum number of days at sea for which a
+								Member State may authorise a vessel flying its flag to be present within the area
+								carrying on board any regulated gear is shown in Table I.</p>
+						</content>
+					</subparagraph>
+					<hcontainer name="BLOCK_TAB">
+						<num>Table I</num>
+						<heading>Maximum number of days a vessel may be present within the area by category of
+							regulated gear per year</heading>
+						<hcontainer name="TAB">
+							<content>
+								<table>
+									<tr>
+										<th>
+											<p>Regulated gear</p>
+										</th>
+										<th colspan="2">
+											<p>Maximum number of days</p>
+										</th>
+									</tr>
+									<tr>
+										<td rowspan="3">
+											<p>Beam trawls of mesh size ≥ 80 mm</p>
+										</td>
+										<td>
+											<p>Belgium</p>
+										</td>
+										<td>
+											<p>176</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>France</p>
+										</td>
+										<td>
+											<p>188</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>United Kingdom</p>
+										</td>
+										<td>
+											<p>222</p>
+										</td>
+									</tr>
+									<tr>
+										<td rowspan="3">
+											<p>Static nets with mesh size ≤ 220 mm</p>
+										</td>
+										<td>
+											<p>Belgium</p>
+										</td>
+										<td>
+											<p>176</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>France</p>
+										</td>
+										<td>
+											<p>191</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>United Kingdom</p>
+										</td>
+										<td>
+											<p>176</p>
+										</td>
+									</tr>
+								</table>
+							</content>
+						</hcontainer>
+					</hcontainer>
+				</level>
+				<level>
+					<num>6.</num>
+					<content>
+						<p>KILOWATT DAY SYSTEM</p>
+					</content>
+				</level>
+				<level>
+					<num>6.1.</num>
+					<content>
+						<p>During the current management period, a Member State may manage its fishing effort
+							allocations in accordance with a kilowatt days system. Through that system it may
+							authorise any vessel concerned by any regulated gear as set out in Table I to be
+							present within the area for a maximum number of days which is different from that set
+							out in that Table, provided that the overall amount of kilowatt days corresponding to
+							the regulated gear is respected.</p>
+					</content>
+				</level>
+				<level>
+					<num>6.2.</num>
+					<content>
+						<p>This overall amount of kilowatt days shall be the sum of all individual fishing
+							efforts allocated to the vessels flying the flag of that Member State and qualified
+							for the regulated gear. Such individual fishing efforts shall be calculated in
+							kilowatt days by multiplying the engine power of each vessel by the number of days at
+							sea it would benefit from, according to Table I, if point 6.1 were not applied.</p>
+					</content>
+				</level>
+				<level>
+					<num>6.3.</num>
+					<list>
+						<subparagraph refersTo="~INP">
+							<content>
+								<p>A Member State wishing to benefit from the system referred to in point 6.1 shall
+									submit a request to the Commission, for the regulated gear as laid down in Table
+									I, with reports in electronic format containing the details of the calculation
+									based on:</p>
+							</content>
+						</subparagraph>
+						<point>
+							<num>(a)</num>
+							<content>
+								<p>the list of vessels authorised to fish by indicating their Union fishing fleet
+									register number (CFR) and their engine power;</p>
+							</content>
+						</point>
+						<point>
+							<num>(b)</num>
+							<content>
+								<p>the number of days at sea for which each vessel would have initially been
+									authorised to fish according to Table I and the number of days at sea which each
+									vessel would benefit from in application of point 6.1.</p>
+							</content>
+						</point>
+					</list>
+				</level>
+				<level>
+					<num>6.4.</num>
+					<content>
+						<p>On the basis of that request, the Commission shall assess whether the conditions
+							referred to in point 6 are complied with and, where applicable, may authorise that
+							Member State to benefit from the system referred to in point 6.1.</p>
+					</content>
+				</level>
+				<level>
+					<num>7.</num>
+					<content>
+						<p>ALLOCATION OF ADDITIONAL DAYS FOR PERMANENT CESSATION OF FISHING ACTIVITIES</p>
+					</content>
+				</level>
+				<level>
+					<num>7.1.</num>
+					<content>
+						<p>An additional number of days at sea on which a vessel may be authorised by its flag
+							Member State to be present within the area when carrying on board any regulated gear
+							may be allocated to a Member State by the Commission on the basis of permanent
+							cessations of fishing activities that have taken place during the preceding management
+							period either in accordance with Article 23 of Regulation (EC) No 1198/2006 or with
+							Regulation (EC) No 744/2008. Permanent cessations resulting from any other
+							circumstances may be considered by the Commission on a case-by-case basis, following a
+							written and duly motivated request from the Member State concerned. Such written
+							request shall identify the vessels concerned and confirm, for each of them, that they
+							shall never return to fishing activities.</p>
+					</content>
+				</level>
+				<level>
+					<num>7.2.</num>
+					<content>
+						<p>The effort expended in 2003 measured in kilowatt days of the withdrawn vessels using
+							a given gear grouping shall be divided by the effort expended by all vessels using
+							that gear grouping during 2003. The additional number of days at sea shall be then
+							calculated by multiplying the ratio so obtained by the number of days that would have
+							been allocated according to Table I. Any part of a day resulting from that calculation
+							shall be rounded to the nearest whole day.</p>
+					</content>
+				</level>
+				<level>
+					<num>7.3.</num>
+					<content>
+						<p>Points 7.1 and 7.2 shall not apply where a vessel has been replaced in accordance
+							with point 4.2, or when the withdrawal has already been used in previous years to
+							obtain additional days at sea.</p>
+					</content>
+				</level>
+				<level>
+					<num>7.4.</num>
+					<list>
+						<subparagraph refersTo="~INP">
+							<content>
+								<p>A Member State wishing to benefit from the allocations referred to in point 7.1
+									shall submit a request to the Commission, by 15 June of the current management
+									period, with reports in electronic format containing for the gear grouping as laid
+									down in Table I, the details of the calculation based on:</p>
+							</content>
+						</subparagraph>
+						<point>
+							<num>(a)</num>
+							<content>
+								<p>lists of withdrawn vessels with their Union fishing fleet register number (CFR)
+									and their engine power;</p>
+							</content>
+						</point>
+						<point>
+							<num>(b)</num>
+							<content>
+								<p>the fishing activity deployed by such vessels in 2003 calculated in days at sea
+									according to the grouping of fishing gear.</p>
+							</content>
+						</point>
+					</list>
+				</level>
+				<level>
+					<num>7.5.</num>
+					<content>
+						<p>During the current management period, a Member State may re-allocate any additionally
+							granted days at sea to all or part of the vessels remaining in fleet and qualified for
+							the regulated gear.</p>
+					</content>
+				</level>
+				<level>
+					<num>7.6.</num>
+					<content>
+						<p>When the Commission allocates additional days at sea due to a permanent cessation of
+							fishing activities during the preceding management period the maximum number of days
+							per Member State and gear shown in Table I shall be adjusted accordingly for the
+							current management period.</p>
+					</content>
+				</level>
+				<level>
+					<num>8.</num>
+					<content>
+						<p>ALLOCATION OF ADDITIONAL DAYS FOR ENHANCED SCIENTIFIC OBSERVER COVERAGE</p>
+					</content>
+				</level>
+				<level>
+					<num>8.1.</num>
+					<content>
+						<p>Three additional days on which a vessel may be present within the area when carrying
+							on board any regulated gear may be allocated between 1 February 2020 and 31 January
+							2021 to a Member State by the Commission on the basis of an enhanced programme of
+							scientific observer coverage in partnership between scientists and the fishing
+							industry. Such a programme shall focus in particular on levels of discarding and on
+							catch composition and go beyond the requirements on data collection, as laid down in
+							Regulation (EC) No 199/2008 and its implementing rules for national programmes.</p>
+					</content>
+				</level>
+				<level>
+					<num>8.2.</num>
+					<content>
+						<p>Scientific observers shall be independent from the owner, the master of the fishing
+							vessel and any crew member.</p>
+					</content>
+				</level>
+				<level>
+					<num>8.3.</num>
+					<content>
+						<p>A Member State wishing to benefit from the allocations referred to in point 8.1 shall
+							submit a description of its enhanced scientific observer coverage programme to the
+							Commission for approval.</p>
+					</content>
+				</level>
+				<level>
+					<num>8.4.</num>
+					<content>
+						<p>If an enhanced scientific observer coverage programme submitted by a Member State has
+							been approved by the Commission in the past and the Member State concerned wishes to
+							continue its application without changes, it shall inform the Commission of the
+							continuation of that programme four weeks before the beginning of the period for which
+							the programme applies.</p>
+					</content>
+				</level>
+			</chapter>
+			<chapter>
+				<num>CHAPTER IV</num>
+				<heading>
+					<b>Management</b>
+				</heading>
+				<level>
+					<num>9.</num>
+					<subparagraph>
+						<content>
+							<p>GENERAL OBLIGATION</p>
+						</content>
+					</subparagraph>
+					<subparagraph>
+						<content>
+							<p>Member States shall manage the maximum allowable effort in accordance with Articles
+								26 to 35 of Regulation (EC) No 1224/2009.</p>
+						</content>
+					</subparagraph>
+				</level>
+				<level>
+					<num>10.</num>
+					<content>
+						<p>MANAGEMENT PERIODS</p>
+					</content>
+				</level>
+				<level>
+					<num>10.1.</num>
+					<content>
+						<p>A Member State may divide the days present within the area set out in Table I into
+							management periods of durations of one or more calendar months.</p>
+					</content>
+				</level>
+				<level>
+					<num>10.2.</num>
+					<content>
+						<p>The number of days or hours for which a vessel may be present within the area during
+							a management period shall be fixed by the Member State concerned.</p>
+					</content>
+				</level>
+				<level>
+					<num>10.3.</num>
+					<content>
+						<p>Where a Member State authorises vessels flying its flag to be present within the area
+							by hours, the Member State shall continue measuring the consumption of days as
+							specified in point 9. Upon request by the Commission, the Member State shall
+							demonstrate its precautionary measures taken to avoid an excessive consumption of days
+							within the area due to a vessel terminating presences in the area before the end of a
+							24-hour period.</p>
+					</content>
+				</level>
+			</chapter>
+			<chapter>
+				<num>CHAPTER V</num>
+				<heading>
+					<b>Exchanges of fishing effort allocations</b>
+				</heading>
+				<level>
+					<num>11.</num>
+					<content>
+						<p>TRANSFER OF DAYS BETWEEN FISHING VESSELS FLYING THE FLAG OF A MEMBER STATE</p>
+					</content>
+				</level>
+				<level>
+					<num>11.1.</num>
+					<content>
+						<p>A Member State may permit any fishing vessel flying its flag to transfer days present
+							within the area for which it has been authorised to another vessel flying its flag
+							within the area, provided that the product of the number of days received by a vessel
+							and its engine power in kilowatts (kilowatt days) is equal to or less than the product
+							of the number of days transferred by the donor vessel and its engine power in
+							kilowatts. The engine power in kilowatts of the vessels shall be that recorded for
+							each vessel in the Union fishing fleet register.</p>
+					</content>
+				</level>
+				<level>
+					<num>11.2.</num>
+					<content>
+						<p>The total number of days present within the area transferred in accordance with point
+							11.1, multiplied by the engine power in kilowatts of the donor vessel, shall not be
+							higher than the donor vessel's average annual days track record in the area as
+							verified by the fishing logbook in the years 2001, 2002, 2003, 2004 and 2005
+							multiplied by the engine power in kilowatts of that vessel.</p>
+					</content>
+				</level>
+				<level>
+					<num>11.3.</num>
+					<content>
+						<p>The transfer of days in accordance with point 11.1 shall be permitted between vessels
+							operating with any regulated gear and during the same management period.</p>
+					</content>
+				</level>
+				<level>
+					<num>11.4.</num>
+					<content>
+						<p>On request from the Commission, Member States shall provide information on the
+							transfers that have taken place. Formats of spreadsheet for the collection and
+							transmission of that information may be established by the Commission, by means of
+							implementing acts. Those implementing acts shall be adopted in accordance with the
+							examination procedure referred to in Article 53(2).</p>
+					</content>
+				</level>
+				<level>
+					<num>12.</num>
+					<subparagraph>
+						<content>
+							<p>TRANSFER OF DAYS BETWEEN FISHING VESSELS FLYING THE FLAG OF DIFFERENT MEMBER
+								STATES</p>
+						</content>
+					</subparagraph>
+					<subparagraph>
+						<content>
+							<p>Member States may permit transfer of days present within the area for the same
+								management period and within the area between any fishing vessels flying their flags
+								provided that points 4.2, 4.4, 5, 6 and 10 apply <i>mutatis mutandis</i>. Where
+								Member States decide to authorise such a transfer, they shall notify, before the
+								transfer takes place, the Commission of the details of the transfer, including the
+								number of days to be transferred, the fishing effort and, where applicable, the
+								fishing quotas relating thereto.</p>
+						</content>
+					</subparagraph>
+				</level>
+			</chapter>
+			<chapter>
+				<num>CHAPTER VI</num>
+				<heading>
+					<b>Reporting obligations</b>
+				</heading>
+				<level>
+					<num>13.</num>
+					<subparagraph>
+						<content>
+							<p>FISHING EFFORT REPORT</p>
+						</content>
+					</subparagraph>
+					<subparagraph>
+						<content>
+							<p>Article 28 of Regulation (EC) No 1224/2009 shall apply to vessels falling under the
+								scope of this Annex. The geographical area referred to in that Article shall be
+								understood as the area specified in point 2 of this Annex.</p>
+						</content>
+					</subparagraph>
+				</level>
+				<level>
+					<num>14.</num>
+					<subparagraph>
+						<content>
+							<p>COLLECTION OF RELEVANT DATA</p>
+						</content>
+					</subparagraph>
+					<subparagraph>
+						<content>
+							<p>Member States shall collect on a quarterly basis the information about total
+								fishing effort deployed within the area for towed gear and static gear, effort
+								deployed by vessels using different types of gear in the area, and the engine power
+								of those vessels in kilowatt days, on the basis of information used for the
+								management of fishing days present within the area as set out in this Annex.</p>
+						</content>
+					</subparagraph>
+				</level>
+				<level>
+					<num>15.</num>
+					<subparagraph>
+						<content>
+							<p>COMMUNICATION OF RELEVANT DATA</p>
+						</content>
+					</subparagraph>
+					<subparagraph>
+						<content>
+							<p>Upon request from the Commission, Member States shall make available to the
+								Commission a spreadsheet with data specified in point 14 in the format specified in
+								Tables II and III by sending it to the appropriate electronic mailbox address, which
+								shall be communicated to the Member States by the Commission. Member States shall,
+								upon the Commission's request, send detailed information to the Commission on effort
+								allocated and consumed covering all or parts of the 2018 and 2019 management
+								periods, using the data format specified in Tables IV and V.</p>
+						</content>
+					</subparagraph>
+					<hcontainer name="BLOCK_TAB">
+						<num>Table II</num>
+						<heading>Reporting format kW-day information by management period</heading>
+						<hcontainer name="TAB">
+							<content>
+								<table>
+									<tr>
+										<th>
+											<p>Member State</p>
+										</th>
+										<th>
+											<p>Gear</p>
+										</th>
+										<th>
+											<p>Management period</p>
+										</th>
+										<th>
+											<p>Cumulative effort declaration</p>
+										</th>
+									</tr>
+									<tr>
+										<td>
+											<p>(1)</p>
+										</td>
+										<td>
+											<p>(2)</p>
+										</td>
+										<td>
+											<p>(3)</p>
+										</td>
+										<td>
+											<p>(4)</p>
+										</td>
+									</tr>
+								</table>
+							</content>
+						</hcontainer>
+					</hcontainer>
+					<hcontainer name="BLOCK_TAB">
+						<num>Table III</num>
+						<heading>Data format kW-day information by management period</heading>
+						<hcontainer name="TAB">
+							<content>
+								<table xml:id="_table_d22e562">
+									<tr>
+										<th>
+											<p>Name of field</p>
+										</th>
+										<th>
+											<p>Maximum number of characters/digits</p>
+										</th>
+										<th>
+											<p>Alignment<authorialNote marker="1" placement="bottom"
+													placementBase="~_table_d22e562">
+													<p>Information relevant for transmission of data by fixed-length
+														formatting.</p>
+												</authorialNote> L(eft)/R(ight)</p>
+										</th>
+										<th>
+											<p>Definition and comments</p>
+										</th>
+									</tr>
+									<tr>
+										<td>
+											<p>(1) Member State</p>
+										</td>
+										<td>
+											<p>3</p>
+										</td>
+										<td>
+											<p/>
+										</td>
+										<td>
+											<p>Member State (Alpha-3 ISO code) in which the vessel is registered</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>(2) Gear</p>
+										</td>
+										<td>
+											<p>2</p>
+										</td>
+										<td>
+											<p/>
+										</td>
+										<td>
+											<p>One of the following gear types:</p>
+											<p>BT = beam trawls ≥ 80 mm</p>
+											<p>GN = gillnet &lt; 220 mm</p>
+											<p>TN = trammel net or entangling net &lt; 220 mm</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>(3) Management period</p>
+										</td>
+										<td>
+											<p>4</p>
+										</td>
+										<td>
+											<p/>
+										</td>
+										<td>
+											<p>One year in the period from the 2006 management period to the current
+												management period</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>(4) Cumulative effort declaration</p>
+										</td>
+										<td>
+											<p>7</p>
+										</td>
+										<td>
+											<p>R</p>
+										</td>
+										<td>
+											<p>Cumulative amount of fishing effort expressed in kilowatt days deployed
+												from 1 February until 31 January of the relevant management period</p>
+										</td>
+									</tr>
+								</table>
+							</content>
+						</hcontainer>
+					</hcontainer>
+					<hcontainer name="BLOCK_TAB">
+						<num>Table IV</num>
+						<heading>Reporting format for vessel-related information</heading>
+						<hcontainer name="TAB">
+							<content>
+								<table>
+									<tr>
+										<th rowspan="2" >
+											<p>Member State</p>
+										</th>
+										<th rowspan="2" >
+											<p>CFR</p>
+										</th>
+										<th rowspan="2" >
+											<p>External marking</p>
+										</th>
+										<th rowspan="2">
+											<p>Length of management period</p>
+										</th>
+										<th colspan="4">
+											<p>Gear notified</p>
+										</th>
+										<th colspan="4">
+											<p>Days eligible using notified gear(s)</p>
+										</th>
+										<th colspan="4">
+											<p>Days spent with notified gear(s)</p>
+										</th>
+										<th rowspan="2">
+											<p>Transfer of days</p>
+										</th>
+									</tr>
+									<tr>
+										<th>
+											<p>No 1</p>
+										</th>
+										<th>
+											<p>No 2</p>
+										</th>
+										<th>
+											<p>No 3</p>
+										</th>
+										<th>
+											<p>…</p>
+										</th>
+										<th>
+											<p>No 1</p>
+										</th>
+										<th>
+											<p>No 2</p>
+										</th>
+										<th>
+											<p>No 3</p>
+										</th>
+										<th>
+											<p>…</p>
+										</th>
+										<th>
+											<p>No 1</p>
+										</th>
+										<th>
+											<p>No 2</p>
+										</th>
+										<th>
+											<p>No 3</p>
+										</th>
+										<th>
+											<p>…</p>
+										</th>
+									</tr>
+									<tr>
+										<td>
+											<p>(1)</p>
+										</td>
+										<td>
+											<p>(2)</p>
+										</td>
+										<td>
+											<p>(3)</p>
+										</td>
+										<td>
+											<p>(4)</p>
+										</td>
+										<td>
+											<p>(5)</p>
+										</td>
+										<td>
+											<p>(5)</p>
+										</td>
+										<td>
+											<p>(5)</p>
+										</td>
+										<td>
+											<p>(5)</p>
+										</td>
+										<td>
+											<p>(6)</p>
+										</td>
+										<td>
+											<p>(6)</p>
+										</td>
+										<td>
+											<p>(6)</p>
+										</td>
+										<td>
+											<p>(6)</p>
+										</td>
+										<td>
+											<p>(7)</p>
+										</td>
+										<td>
+											<p>(7)</p>
+										</td>
+										<td>
+											<p>(7)</p>
+										</td>
+										<td>
+											<p>(7)</p>
+										</td>
+										<td>
+											<p>(8)</p>
+										</td>
+									</tr>
+								</table>
+							</content>
+						</hcontainer>
+					</hcontainer>
+					<hcontainer name="BLOCK_TAB">
+						<num>Table V</num>
+						<heading>Data format for vessel-related information</heading>
+						<hcontainer name="TAB">
+							<content>
+								<table xml:id="_table_d22e737">
+									<tr>
+										<th>
+											<p>Name of field</p>
+										</th>
+										<th>
+											<p>Maximum number of characters/digits</p>
+										</th>
+										<th>
+											<p>Alignment<authorialNote marker="1" placement="bottom"
+													placementBase="~_table_d22e562">
+													<p>Information relevant for transmission of data by fixed-length
+														formatting.</p>
+												</authorialNote> L(eft)/R(ight)</p>
+										</th>
+										<th>
+											<p>Definition and comments</p>
+										</th>
+									</tr>
+									<tr>
+										<td>
+											<p>(1) Member State</p>
+										</td>
+										<td>
+											<p>3</p>
+										</td>
+										<td>
+											<p/>
+										</td>
+										<td>
+											<p>Member State (Alpha-3 ISO code) in which vessel is registered</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>(2) CFR</p>
+										</td>
+										<td>
+											<p>12</p>
+										</td>
+										<td>
+											<p/>
+										</td>
+										<td>
+											<p>Union fishing fleet register number (CFR)</p>
+											<p>Unique identification number of a fishing vessel</p>
+											<p>Member State (Alpha-3 ISO code) followed by an identifying series (9
+												characters). Where a series has fewer than 9 characters, additional zeros
+												shall be inserted on the left hand side</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>(3) External marking</p>
+										</td>
+										<td>
+											<p>14</p>
+										</td>
+										<td>
+											<p>L</p>
+										</td>
+										<td>
+											<p>Under Implementing Regulation (EU) No 404/2011</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>(4) Length of management period</p>
+										</td>
+										<td>
+											<p>2</p>
+										</td>
+										<td>
+											<p>L</p>
+										</td>
+										<td>
+											<p>Length of the management period measured in months</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>(5) Gear notified</p>
+										</td>
+										<td>
+											<p>2</p>
+										</td>
+										<td>
+											<p>L</p>
+										</td>
+										<td>
+											<p>One of the following gear types:</p>
+											<p>BT = beam trawls ≥ 80 mm</p>
+											<p>GN = gillnet &lt; 220 mm</p>
+											<p>TN = trammel net or entangling net &lt; 220 mm</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>(6) Special condition applying to notified gear(s)</p>
+										</td>
+										<td>
+											<p>3</p>
+										</td>
+										<td>
+											<p>L</p>
+										</td>
+										<td>
+											<p>Number of days for which the vessel is eligible under Annex II for the
+												choice of gear and length of management period notified</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>(7) Days spent with notified gear(s)</p>
+										</td>
+										<td>
+											<p>3</p>
+										</td>
+										<td>
+											<p>L</p>
+										</td>
+										<td>
+											<p>Number of days the vessel actually spent present within the area and using
+												a gear corresponding to gear notified during the notified management
+												period</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>(8) Transfers of days</p>
+										</td>
+										<td>
+											<p>4</p>
+										</td>
+										<td>
+											<p>L</p>
+										</td>
+										<td>
+											<p>For days transferred indicate ‘– number of days transferred’ and for days
+												received indicate ‘+ number of days transferred’</p>
+										</td>
+									</tr>
+								</table>
+							</content>
+						</hcontainer>
+					</hcontainer>
+				</level>
+			</chapter>
+		</mainBody>
+	</doc>
+</akomaNtoso>

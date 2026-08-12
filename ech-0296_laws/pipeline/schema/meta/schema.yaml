@@ -1,0 +1,308 @@
+id: https://ch.paf.link/schema/meta
+name: meta
+description: |
+  [de] Dieses Schema modelliert Meta-Themen für die eCH Standards 0293-0297. In einem ersten Schritt werden FRBR-Entitäten modelliert, um die Verwaltung von Dokumenten und deren Übersetzungen zu ermöglichen.
+prefixes:
+  xsd: http://www.w3.org/2001/XMLSchema#
+  prov: http://www.w3.org/ns/prov#
+  dcterms: http://purl.org/dc/terms/
+  linkml: https://w3id.org/linkml/
+  meta: https://ch.paf.link/schema/meta/
+imports:
+  - linkml:types
+default_prefix: meta
+default_range: string
+  
+classes:
+  
+  Work: # only used if there are still documents, where ever possible the data should directly be structured in the data model
+    slots:
+      - id
+      - work_type
+      - document_category
+      - expressions
+    
+  Expression:
+    slots:
+      - id
+      - dates
+      - expression_language
+      - expression_title
+      - expression_description
+      - manifestations
+
+  Manifestation:
+    slots:
+      - id
+      - dates
+      - format
+      - manifestation_url
+
+  # Renamed from the generic `Container` so it does not collide with the
+  # `Container` tree_root that every consuming schema defines (e.g. ech-0293
+  # imports this schema for the `documents` slot). Newer LinkML treats two
+  # equally-named classes from different schemas as a hard error.
+  # Not a `tree_root`: this schema is imported by consumers (ech-0293) that
+  # define their own tree_root Container, and LinkML allows only one root in
+  # the merged schema. Convert meta's own example data with
+  # `--target-class WorkContainer`.
+  WorkContainer:
+    slots:
+      - id
+      - works
+
+  Date:
+    slots:
+      - xdate
+      - date_type
+
+slots:
+  
+  works:
+    slot_uri: meta:works
+    range: Work
+    multivalued: true
+    inlined_as_list: true
+
+  expressions:
+    slot_uri: meta:expressions
+    range: Expression
+    multivalued: true
+    inlined_as_list: true
+
+  manifestations:
+    slot_uri: meta:manifestations
+    range: Manifestation
+    multivalued: true
+    inlined_as_list: true
+  
+  id:
+    identifier: true
+    required: true
+
+  work_type:
+    slot_uri: meta:workType
+    range: WorkTypesEnum
+
+
+  # Renamed from the generic `language`/`title`/`description` so they do not
+  # collide with same-named slots that consumer schemas (e.g. ech-0293) or
+  # schema_common define; newer LinkML treats import-shadowing of a slot name
+  # as a hard error.
+  expression_language:
+    slot_uri: dcterms:language
+    range: string
+    required: true
+    pattern: ^[a-z]{2}$
+    description: |
+      [en] Language code in ISO 639-1 format.
+      [de] Sprachcode im ISO 639-1-Format.
+
+  expression_title:
+    slot_uri: meta:title
+    range: string
+    required: true
+
+  expression_description:
+    slot_uri: schema:description
+    range: string
+
+  format: #probably from http://publications.europa.eu/resource/authority/file-type
+    slot_uri: meta:format
+    range: string
+    description: |
+      [en] The file format of the manifestation (e.g., pdf, html).
+      [de] Das Dateiformat der Manifestation (z.B. pdf, html).
+
+  # Renamed from the generic `url` to avoid colliding with consumer schemas
+  # that define their own `url` slot (ech-0293's is multilingual).
+  manifestation_url:
+    slot_uri: meta:url
+    range: uri
+
+  dates:
+    slot_uri: meta:dates
+    range: Date
+    multivalued: true
+    inlined_as_list: true
+
+  xdate:
+    slot_uri: dcterms:date
+    range: date
+    required: true
+
+  date_type:
+    slot_uri: meta:dateType
+    range: DateTypesEnum
+    required: true
+
+  document_category:
+    slot_uri: meta:documentCategory
+    description: |
+      [de] Kategorie des Dokuments. Wenn nicht gesetzt, wird automatisch 'other' verwendet.
+      [en] Category of the document. If not set, 'other' is automatically used.
+    range: DocumentCategoryEnum
+    ifabsent: string(other)
+
+  documents:
+    slot_uri: meta:documents
+    description: |
+      [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.
+      [en] List of documents (FRBR Works) linked to the entity.
+    range: Work
+    multivalued: true
+    inlined_as_list: true
+
+enums:
+
+  DateTypesEnum:
+    permissible_values:
+      first_publication:
+        meaning: meta:vocabulary/date_types/FirstPublication
+      last_revision:
+        meaning: meta:vocabulary/date_types/LastRevision
+
+  WorkTypesEnum:
+    permissible_values:
+      pv:
+        meaning: meta:vocabulary/work_types/PV
+      submitted_version:
+        meaning: meta:vocabulary/work_types/SubmittedVersion
+      current_law:
+        meaning: meta:vocabulary/work_types/CurrentLaw
+
+  DocumentCategoryEnum:
+    description: |
+      [de] Kategorien zur Klassifikation von Dokumenten, die in den eCH Standards 0292-0297 referenziert werden. Mehrsprachige Labels (DE/FR/IT/RM/EN) sind über `annotations` (Konvention `label_xx`) abgebildet; Erstvorschläge für FR/IT/RM stehen unter Plenum-Review.
+      [en] Categories for classifying documents referenced in eCH standards 0292-0297. Multilingual labels (DE/FR/IT/RM/EN) are encoded via `annotations` (convention `label_xx`); first proposals for FR/IT/RM are pending plenum review.
+    permissible_values:
+
+      protocol:
+        title: Protocol
+        description: |
+          [de] Protokolle aller Art. Beispiele: Entscheidungsprotokoll, Wortprotokoll, Kurzprotokoll, Tagblatt, Wortlautdokument, Eröffnungsrede, Sprecherliste, Audio- und Videoaufnahmen.
+          [en] Protocols of any kind. Examples: decision protocol, verbatim protocol, short protocol, daily journal (Tagblatt), opening speech, speaker list, audio and video recordings.
+        meaning: meta:vocabulary/document_category/Protocol
+        annotations:
+          label_de: Protokoll
+          label_fr: Procès-verbal
+          label_it: Verbale
+          label_rm: Protocol
+          label_en: Minutes
+
+      voting_result:
+        title: Voting result
+        description: |
+          [de] Abstimmungs- und Wahlergebnisse. Beispiele: Abstimmungsprotokoll, Wahlprotokoll, Protokolle namentlicher Abstimmungen.
+          [en] Voting and election results. Examples: voting protocol, election protocol, roll-call voting protocols.
+        meaning: meta:vocabulary/document_category/VotingResult
+        annotations:
+          label_de: Abstimmungsergebnis
+          label_fr: Résultat du vote
+          label_it: Risultato della votazione
+          label_rm: Resultat da votaziun
+          label_en: Voting result
+
+      meeting_documents:
+        title: Meeting documents
+        description: |
+          [de] Sitzungsunterlagen, die zu Beginn einer Sitzung zu den Geschäften vorliegen. Beispiele: Traktandenliste, Tagesordnung, Sessionsprogramm, Sessionsvorschau, traktandierte Petitionen, Vorstossliste, Vereidigung/Gelübdenahme, Tagblattbeilagen, Geschäftsverzeichnis, Vorschau, Traktandenvorschau, Vorstoss Dringlichkeit.
+          [en] Meeting documents available at the start of a meeting concerning the affairs. Examples: agenda list, daily agenda, session programme, session preview, agendaed petitions, motion list, oath ceremony, daily journal supplements, affairs directory.
+        meaning: meta:vocabulary/document_category/MeetingDocuments
+        annotations:
+          label_de: Sitzungsunterlagen
+          label_fr: Documents de séance
+          label_it: Documenti di seduta
+          label_rm: Documents da sesida
+          label_en: Meeting documents
+
+      meeting_planning:
+        title: Meeting planning
+        description: |
+          [de] Planungsdokumente für Sitzungen und Sessionen. Beispiele: Einladung, Sitzplan, Arbeitsplanung, Zeitbudget, Geschäftsplanung, Freitagsliste, Fristen für Einzelanträge, Liste der Zutrittsberechtigten, Veranstaltungen während der Session.
+          [en] Planning documents for meetings and sessions. Examples: invitation, seating plan, work schedule, time budget, affairs planning, friday list, amendment deadlines, access authorization list, session events.
+        meaning: meta:vocabulary/document_category/MeetingPlanning
+        annotations:
+          label_de: Sitzungsplanung
+          label_fr: Planification de séance
+          label_it: Pianificazione della seduta
+          label_rm: Planisaziun da sesida
+          label_en: Meeting planning
+
+      media_release:
+        title: Media release
+        description: |
+          [de] Medienmitteilungen.
+          [en] Press releases.
+        meaning: meta:vocabulary/document_category/MediaRelease
+        annotations:
+          label_de: Medienmitteilung
+          label_fr: Communiqué de presse
+          label_it: Comunicato stampa
+          label_rm: Communicaziun da medias
+          label_en: Media release
+
+      group_documents:
+        title: Group documents
+        description: |
+          [de] Unterlagen, die zu einer Gruppe (Kommission, Partei, Delegation etc.) gehören. Beispiele: Statuten, Einsetzungsverfügungen, Kommissionszuweisungen, Jahresberichte, Berichte zu internationalen Aktivitäten.
+          [en] Documents belonging to a group (committee, party, delegation, etc.). Examples: statutes, establishment decrees, committee allocations, annual reports, reports on international activities.
+        meaning: meta:vocabulary/document_category/GroupDocuments
+        annotations:
+          label_de: Gruppenunterlagen
+          label_fr: Documents de groupe
+          label_it: Documenti di gruppo
+          label_rm: Documents da gruppa
+          label_en: Group documents
+
+      member_directory:
+        title: Member directory
+        description: |
+          [de] Mitgliederverzeichnisse. Beispiele: Mitglieder der eidgenössischen Räte, Mitgliederverzeichnisse von Kommissionen, Gruppen und Freundschaftsgruppen, Liste aller Bundesrätinnen und Bundesräte.
+          [en] Member directories. Examples: members of the federal councils, member directories of committees, groups and friendship groups, list of all Federal Councillors.
+        meaning: meta:vocabulary/document_category/MemberDirectory
+        annotations:
+          label_de: Mitgliederverzeichnis
+          label_fr: Liste des membres
+          label_it: Elenco dei membri
+          label_rm: Glista dals commembers
+          label_en: Member directory
+
+      person_documents:
+        title: Person documents
+        description: |
+          [de] Personenbezogene Unterlagen. Beispiele: Portraits der Ratsmitglieder, Fotos, Listen der persönlichen Mitarbeitenden.
+          [en] Person-related documents. Examples: portraits of council members, photos, lists of personal staff.
+        meaning: meta:vocabulary/document_category/PersonDocuments
+        annotations:
+          label_de: Personenunterlagen
+          label_fr: Documents personnels
+          label_it: Documenti personali
+          label_rm: Documents da persuna
+          label_en: Person documents
+
+      interest_disclosure:
+        title: Interest disclosure
+        description: |
+          [de] Register der Interessenbindungen von Ratsmitgliedern. Beispiele: Register der Interessenbindungen Nationalrat, Register der Interessenbindungen Ständerat.
+          [en] Registers of interest disclosures of council members. Examples: register of interest disclosures National Council, register of interest disclosures Council of States.
+        meaning: meta:vocabulary/document_category/InterestDisclosure
+        annotations:
+          label_de: Interessenbindungen
+          label_fr: Liens d'intérêts
+          label_it: Relazioni d'interesse
+          label_rm: Colliaziuns d'interess
+          label_en: Interest disclosures
+
+      other:
+        title: Other
+        description: |
+          [de] Dokumenttyp, der keiner der definierten Kategorien zugeordnet werden kann oder bei dem die Kategorie nicht bekannt ist. Default-Wert wenn `document_category` nicht explizit gesetzt wird.
+          [en] Document type that cannot be assigned to any of the defined categories or where the category is unknown. Default value if `document_category` is not set explicitly.
+        meaning: meta:vocabulary/document_category/Other
+        annotations:
+          label_de: Andere
+          label_fr: Autre
+          label_it: Altro
+          label_rm: Auter
+          label_en: Other

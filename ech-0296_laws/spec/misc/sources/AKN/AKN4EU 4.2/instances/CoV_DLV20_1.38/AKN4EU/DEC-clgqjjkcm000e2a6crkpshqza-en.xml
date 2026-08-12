@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?><akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+   <bill name="DEC">
+      <meta>
+         <identification source="~PUBL">
+            <FRBRWork>
+               <FRBRthis value=""/>
+               <FRBRuri value=""/>
+               <FRBRdate date="2999-01-01" name=""/>
+               <FRBRauthor href=""/>
+               <preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+                  <akn4eu:fileCUID value="clgqjjkcm000e2a6crkpshqza"/>
+               </preservation>
+               <FRBRcountry value="EU"/>
+               <FRBRnumber value="9374/20"/>
+               <FRBRprescriptive value="true"/>
+            </FRBRWork>
+            <FRBRExpression>
+               <FRBRthis value=""/>
+               <FRBRuri value=""/>
+               <FRBRdate date="2999-01-01" name=""/>
+               <FRBRauthor href=""/>
+               <FRBRlanguage language="en"/>
+            </FRBRExpression>
+            <FRBRManifestation>
+               <FRBRthis value=""/>
+               <FRBRuri value=""/>
+               <FRBRdate date="2999-01-01" name=""/>
+               <FRBRauthor href=""/>
+               <preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+                  <akn4eu:akn4euVersion value="4.2.0.0"/>
+                  <akn4eu:akn4euDocumentation href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/akn4eu"/>
+               </preservation>
+            </FRBRManifestation>
+         </identification>
+         <analysis source="~PUBL">
+            <activeModifications>
+               <textualMod type="repeal">
+                  <source/>
+                  <destination href="http://data.europa.eu/eli/dec/2019/1264"/>
+               </textualMod>
+            </activeModifications>
+         </analysis>
+         <references source="~PUBL">
+            <TLCReference name="language" href="http://publications.europa.eu/resource/authority/language/ENG" showAs="en"/>
+            <TLCReference xml:id="legalBasis" name="contentSubject" href="http://eurovoc.europa.eu/5456" showAs="Legal basis"/>
+            <TLCOrganization xml:id="PUBL" href="http://publications.europa.eu/resource/authority/corporate-body/PUBL" showAs="Publications Office"/>
+            <TLCOrganization xml:id="CMT_PSC" href="http://publications.europa.eu/resource/authority/corporate-body/CMT_PSC" showAs="Political and Security Committee"/>
+            <TLCRole xml:id="CHAIR" href="http://publications.europa.eu/resource/authority/role/CHAIR" showAs="Chairman"/>
+            <TLCLocation xml:id="BEL_BRU" href="http://publications.europa.eu/resource/authority/place/BEL_BRU" showAs="Brussels"/>
+            <TLCReference xml:id="DEC" name="docType" href="http://publications.europa.eu/resource/authority/resource-type/DEC" showAs="Decision"/>
+         </references>
+      </meta>
+      <preface xml:id="d1e96">
+         <longTitle xml:id="d1e98">
+            <p xml:id="d1e100"><docType xml:id="d1e101" refersTo="~DEC">POLITICAL AND SECURITY COMMITTEE DECISION</docType> 
+               <placeholder xml:id="d1e104">(CFSP) 2020/…</placeholder> 
+               of <placeholder xml:id="d1e106">…</placeholder> 
+               <docPurpose xml:id="d1e108">on the appointment of the EU Mission Force Commander of the European Union military mission 
+                  to contribute to the training of Somali security forces (EUTM Somalia) and 
+                  repealing <ref xml:id="d1e110" href="http://data.europa.eu/eli/dec/2019/1264">Decision (CFSP) 2019/1264</ref> 
+                  (EUTM Somalia/1/2020)</docPurpose></p>
+         </longTitle>
+      </preface>
+      <preamble xml:id="d1e116">
+         <formula xml:id="d1e118" name="actingEntity">
+            <p xml:id="d1e120">THE POLITICAL AND SECURITY COMMITTEE,</p>
+         </formula>
+         <citations xml:id="d1e123">
+            <citation xml:id="d1e125" refersTo="~legalBasis">
+               <p xml:id="d1e127">Having regard to the Treaty on European Union, and in particular Article 38 thereof,</p>
+            </citation>
+            <citation xml:id="d1e130">
+               <p xml:id="d1e132">Having regard to Council Decision 2010/96/CFSP of 15 February 2010 on a European Union military mission to contribute to the training of Somali security forces<authorialNote xml:id="d1e134" marker="1" placement="bottom">
+                     <p xml:id="d1e136">OJ L 44, 19.2.2010, p. 16.</p>
+                  </authorialNote>, and in particular Article 5 thereof,</p>
+            </citation>
+         </citations>
+         <recitals xml:id="d1e142">
+            <intro xml:id="d1e144">
+               <p xml:id="d1e146">Whereas:</p>
+            </intro>
+            <recital xml:id="d1e149">
+               <num xml:id="d1e151">(1)</num>
+               <p xml:id="d1e153">Pursuant to Article 5(1) of Decision 2010/96/CFSP, the Council authorised the Political and Security Committee (PSC), in accordance with Article 38 of the Treaty on European Union, to take the relevant decisions concerning the political control and strategic direction of the European Union military mission to contribute to the training of Somali security forces (EUTM Somalia), including the decisions to appoint the subsequent EU Mission Force Commanders.</p>
+            </recital>
+            <recital xml:id="d1e156">
+               <num xml:id="d1e158">(2)</num>
+               <p xml:id="d1e160">Council Decision (CFSP) 2017/971<authorialNote xml:id="d1e162" marker="2" placement="bottom">
+                     <p xml:id="d1e164">Council Decision (CFSP) 2017/971 of 8 June 2017 determining the planning and conduct arrangements for EU non-executive military CSDP missions and amending Decisions 2010/96/CFSP on a European Union military mission to contribute to the training of Somali security forces, 2013/34/CFSP on a European Union military mission to contribute to the training of the Malian armed forces (EUTM Mali) and (CFSP) 2016/610 on a European Union CSDP military training mission in the Central African Republic (EUTM RCA) (OJ L 146, 9.6.2017, p. 133).</p>
+                  </authorialNote> amended the chain of command of EUTM Somalia.</p>
+            </recital>
+            <recital xml:id="d1e169">
+               <num xml:id="d1e171">(3)</num>
+               <p xml:id="d1e173">On 23 July 2019, the PSC adopted Decision (CFSP) 2019/1264<authorialNote xml:id="d1e175" marker="3" placement="bottom">
+                     <p xml:id="d1e177">Political and Security Committee Decision (CFSP) 2019/1264 of 23 July 2019 on the appointment of the EU Mission Force Commander of the European Union military mission to contribute to the training of Somali security forces (EUTM Somalia) (EUTM Somalia/1/2019) (OJ L 199, 26.7.2019, p. 6).</p>
+                  </authorialNote> appointing Brigadier General Antonello DE SIO as the EU Mission Force Commander of EUTM Somalia.</p>
+            </recital>
+            <recital xml:id="d1e182">
+               <num xml:id="d1e184">(4)</num>
+               <p xml:id="d1e186">On 26 June 2020, the Director of the Military Planning and Conduct Capability proposed the appointment of Brigadier General Fabiano ZINZONE to succeed Brigadier General Antonello DE SIO as the EU Mission Force Commander of EUTM Somalia as from 9 August 2020.</p>
+            </recital>
+            <recital xml:id="d1e190">
+               <num xml:id="d1e192">(5)</num>
+               <p xml:id="d1e194">On 1 July 2020, the EU Military Committee agreed to recommend that the PSC approve this proposal.</p>
+            </recital>
+            <recital xml:id="d1e197">
+               <num xml:id="d1e199">(6)</num>
+               <p xml:id="d1e201">A decision on the appointment of Brigadier General Fabiano ZINZONE should be taken. Decision (CFSP) 2019/1264 should be repealed.</p>
+            </recital>
+            <recital xml:id="d1e204">
+               <num xml:id="d1e206">(7)</num>
+               <p xml:id="d1e208">In accordance with Article 5 of Protocol No 22 on the position of Denmark, annexed to the Treaty on European Union and to the Treaty on the Functioning of the European Union, Denmark does not participate in the elaboration and the implementation of decisions and actions of the Union which have defence implications. Consequently, Denmark is not participating in the adoption of this Decision and is neither bound by it nor subject to its application,</p>
+            </recital>
+         </recitals>
+         <formula xml:id="d1e212" name="enactingFormula">
+            <p xml:id="d1e214">HAS ADOPTED THIS DECISION:</p>
+         </formula>
+      </preamble>
+      <body xml:id="d1e218">
+         <article xml:id="d1e220">
+            <num xml:id="d1e222">Article 1
+				</num>
+            <paragraph xml:id="d1e224">
+               <content xml:id="d1e226">
+                  <p xml:id="d1e228">Brigadier General Fabiano ZINZONE is hereby appointed as the EU Mission Force Commander of the European Union military mission to contribute to the training of Somali security forces (EUTM Somalia) as from 9 August 2020.</p>
+               </content>
+            </paragraph>
+         </article>
+         <article xml:id="d1e233">
+            <num xml:id="d1e235">Article 2
+				</num>
+            <paragraph xml:id="d1e237">
+               <content xml:id="d1e239">
+                  <p xml:id="d1e241">Decision (CFSP) 2019/1264 is repealed as from <date xml:id="d1e243" date="2020-08-09">9 August 2020</date>.</p>
+               </content>
+            </paragraph>
+         </article>
+         <article xml:id="d1e250">
+            <num xml:id="d1e252">Article 3
+				</num>
+            <paragraph xml:id="d1e254">
+               <content xml:id="d1e256">
+                  <p xml:id="d1e258">This Decision shall enter into force on the date of its adoption.</p>
+               </content>
+            </paragraph>
+         </article>
+      </body>
+      <conclusions xml:id="d1e264">
+         <p xml:id="d1e266">Done at <location xml:id="d1e268" refersTo="~BEL_BRU">Brussels</location>,</p>
+         <block xml:id="d1e272" name="signatory">
+            <signature xml:id="d1e274">
+               <organization xml:id="d1e276" refersTo="~CMT_PSC">For the Political and Security Committee</organization>
+               <role xml:id="d1e279" refersTo="~CHAIR">The Chairperson</role>
+               <person xml:id="d1e282" refersTo=""/>
+            </signature>
+         </block>
+      </conclusions>
+   </bill>
+</akomaNtoso>

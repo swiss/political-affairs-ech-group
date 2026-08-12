@@ -1,0 +1,533 @@
+
+%%% BIBLATEX-SWISS-LEGAL : GERMAN STRINGS %%%
+
+
+% Copyright 2014 Adrien Vion / Fabian Mörtl
+  %
+  % This work may be distributed and/or modified under the
+  % conditions of the LaTeX Project Public License, either version 1.3
+  % of this license or (at your option) any later version.
+  % The latest version of this license is in
+  %   http://www.latex-project.org/lppl.txt
+  % and version 1.3 or later is part of all distributions of LaTeX
+  % version 2005/12/01 or later.
+  %
+  % This work has the LPPL maintenance status 'maintained'.
+  % 
+  % The Current Maintainer of this work is Adrien Vion.
+  
+% Encoding of this file: UTF8. Code is ASCII compatible. 
+
+\ProvidesFile{biblatex-swiss-legal-de.lbx}[2014/01/21 v1.1.2 alpha]
+
+\InheritBibliographyStrings{ngerman}
+\InheritBibliographyExtras{ngerman}
+
+%%%%%%%%%%% NOUVEAUX STRINGS %%%%%%%%%%%%%%
+
+% Allgemeine Abk\"urzungen
+
+\NewBibliographyString{%
+ad,
+article,%
+articlede,%
+articles,%
+articlesde,%
+inyear,
+forthc,%
+genintro,%
+habth,%
+library,%
+note,%
+othertitle,
+prelrem,%
+sametitle,
+shortform,
+sineloco,%
+sineanno,%
+sinelocoetanno,%
+}
+
+% Rechtsprechung
+
+\NewBibliographyString{%
+ataf,
+atc,%
+atf,%
+atfb,%
+atfnp,%
+atfpp,
+atpf,
+bge,%
+bgeup,
+cjue,%
+comm,%
+lastruling,%
+recital,%
+publ,%
+publcomm,%
+res,%
+rescomm,
+transl,%
+translcomm,
+translres,%
+translrescomm,
+}
+
+% Kantone
+\NewBibliographyString{%
+ag,
+ai,
+ar,
+be,
+bl,
+bs,
+fr,
+ge,
+gl,
+gr,
+ju,
+lu,
+ne,
+nw,
+ow,
+sg,
+sh,
+so,
+sz,
+tg,
+ti,
+ur,
+vd,
+vs,
+zg,
+zh,
+}
+
+% Kommentare
+\NewBibliographyString{%
+bk,
+bsk,
+cr,
+hk,
+kuko,
+beckkuko,
+mnk,
+nmk,
+ofk,
+palandt,
+shk,
+stk,
+zk,
+}
+
+% Sammlungen
+\NewBibliographyString{%
+ableu,
+abnr,
+absr,
+as,
+bbl,
+boce,
+bocn,
+ff,
+fjs,
+joue,
+ro,
+rs,
+sjk,
+spr,
+sr,
+tdp,
+siwr,
+}
+
+% Schweizerische Zeitschriften
+\NewBibliographyString{%
+abow,
+absh,
+agve,
+ajp,
+arbr,
+argvp,
+asa,
+assistalex,
+asyl,
+bez,
+blschk,
+blvge,
+bjm,
+bvr,
+can,
+caplaw,
+cas,
+dc,
+db,
+dep,
+digma,
+dpc,
+dta,
+dtao,
+egvsz,
+euz,
+fampra,
+forpen,
+geskr,
+gvpsg,
+gvpzg,
+have,
+hill,
+ingres,
+ipd,
+iusfocus, %%%%
+jaac,
+jar,
+jl,
+jt,
+leges,
+lgve,
+mbvn,
+medialex,
+mp,
+mra,
+notalex,
+pbg,
+pja,
+pkg,
+pld,
+pra,
+pvg,
+ranb,
+rdaf,
+rds,
+rdt,
+reas,
+recht,
+reprax,
+rf,
+rfj,
+rjb,
+rjj,
+rjn,
+rma,
+rnrf,
+rps,
+rsas,
+rsc,
+rsda,
+rsdie,
+rsj,
+rspc,
+rvj,
+sd,
+sic,
+sj,
+smi,%%%
+st,
+succ,
+szier,%%%
+trex,
+zbl,
+zeso,
+zgrg,%%%%
+zr,
+zsis,
+zzz,%%%%
+}
+
+% Ausl\"andische Zeitschriften
+\NewBibliographyString{%
+acp,
+baur,
+bghz,
+cur,
+elj,
+ercl,
+erpl,
+eur,
+euvr,
+euzw,
+grur,
+grurrr,
+grurint,
+grurprax,
+jbl,
+jde,
+jite,
+juru,
+jurzeit,
+jusch,
+njw,
+njw-rr,
+rabels,
+redc,
+rida,
+zip,
+}
+
+%%%%%%%%%%% (UM)DEFINIERUNG DER STRINGS %%%%%%%%%%%%%%
+
+
+\DeclareBibliographyStrings{%
+inherit = {ngerman},
+% Allgemeine Abk\"urzungen
+ad = {{zu}{zu}},
+article = {{Artikel}{Art\adddot}},
+articlede = {{\S}{\S}},
+articles = {{Artikel}{Art\adddot}},
+articlesde = {{\S\S}{\S\S}},
+shortform = {{zitiert}{zit\adddot}},
+abstract = {{Zusammenfassung}{Zusammenf\adddot}},
+andothers = {{\mkbibemph{et alii}}{\mkbibemph{et\addabbrvspace al\adddot}}},
+forthc = {{noch nicht erschienen}{noch nicht erschienen}},
+bytranslator = {{\"Ubersetzung \lbx@lfromlang von}{\"Ubersetzung \lbx@sfromlang von}},
+edition = {{Auflage}{Aufl\adddot}},
+editor = {{Herausgeber}{Hrsg\adddot}},
+editors = {{Herausgeber}{Hrsg\adddot}},
+genintro = {{Allgemeine Einleitung}{Allg\adddot\addabbrvspace Einl\adddot}},
+in = {{in}{in}},
+inpress = {{im Druck}{im Druck}},
+inpreparation = {{in Vorbereitung}{in Vorbereitung}},
+inyear = {{in}{in}},
+library = {{Signatur}{Sig\adddot}},%
+note = {{Notiz}{Notiz}},
+othertitle = {{des Werks erschienen unter dem Titel}{des Werks erschienen unter dem Titel}}, %% not sure
+page = {{S\adddot}{S\adddot}},
+pages = {{S\adddot}{S\adddot}},
+paragraph = {{\parN}{\parN}},
+paragraphs = {{\parNN}{\parNN}},
+phdthesis = {{Dissertation}{Diss\adddot}},
+prelrem = {{Vorbemerkungen}{Vorb\adddot}},
+sametitle = {{des Werks erschienen unter dem gleichen Titel}{des Werks erschienen unter dem gleichen Titel}}, %% not sure
+seenote = {{siehe Fussnote}{s\adddot\addabbrvspace Fn}},
+sequens = {{f\adddot}{f\adddot}},
+sequentes = {{ff}{ff}}, %% no \adddot here?
+sineanno = {{ohne Jahr}{o\adddot\addabbrvspace J\adddot}},
+sineloco = {{ohne Ort}{o\adddot\addabbrvspace O\adddot}},
+sinelocoetanno = {{ohne Ort und Jahr}{o\adddot\addabbrvspace O\adddot\addabbrvspace u\adddot\addabbrvspace J\adddot}},
+shorthands = {{Abk\"urzungen}{Abk\"urzungen}},
+habth = {{Habilitationsschrift}{Habil\adddot}},
+urlseen = {{letztmals abgerufen am}{letztm\adddot\addabbrvspace abg.\adddot\addabbrvspace am}},
+volume = {{Band}{Bd\adddot}},
+% RECHTSPRECHUNG
+ataf = {{Entscheid des Bundesverwaltungsgerichts}{BVGE}},
+atc = {{Kantonsgerichtsentscheid}{KGE}},
+atf = {{Entscheid des Bundesgerichts}{BGE}}, %% Im Original wurde Plural verwendet.
+atfb = {{Entscheid des Bundespatentgerichts}{BPGE}}, %% there's not really a (widely) used abbreviation yet
+atfnp = {{Urteil des Bundesgerichts}{BGer, Urteil}},
+atfpp = {{Urteil des Bundesgerichts (zur Publikation vorgesehen))}{BGer, Urteil (Publ\adddot\addabbrvspace vorg\adddot)}},
+atpf = {{Entscheid des Bundesstrafgerichts}{TPF}},
+bge = {{Entscheid des Bundesgerichts}{BGE}},
+bgeup = {{Urteil des Bundesgerichts}{BGer, Urteil}},
+cjue = {{Gerichtshof der Europ\"aischen Gemeinschaften}{EuGH}},
+comm = {{kommentiert in}{komm\adddot}},
+lastruling = {{Oben erw\"ahnter Entscheid}{O\adddot\addabbrvspace erw\adddot\addabbrvspace Ent\adddot}}, %% What does this stand for?
+recital = {{Erw\"agung}{E\adddot}}, %% = Erwägung?
+publ = {{publiziert in\addcolon}{=}},
+publcomm = {{publiziert und kommentiert in\addcolon}{publ\adddot\addspace und komm\adddot}},
+res = {{zusammengefasst in\addcolon}{zusammeng.\adddot}},
+rescomm = {{zusammengefasst und kommentiert in\addcolon}{zusammeng\adddot\addspace und komm\adddot}},
+transl = {{\"ubersetzt in\addcolon}{\"ubers\adddot}},
+translcomm = {{\"ubersetzt und kommentiert in\addcolon}{\"ubers\adddot\addspace und komm\adddot}},
+translres = {{\"ubersetzt und zusammengefasst in\addcolon}{\"ubers\adddot\addspace und zusammeng\adddot}},
+translrescomm = {{\"ubersetzt, zusammengefasst und kommentiert in\addcolon}{\"ubers\adddot\addcomma\addspace zusammeng\adddot\addspace und komm\adddot}},
+% Kantone
+ag = {{Aargau}{AG}},
+ai = {{Appenzell Innerrhoden}{AI}},
+ar = {{Appenzell Ausserrhoden}{AR}},
+be = {{Bern}{BE}},
+bl = {{Basel-Landschaft}{BL}},
+bs = {{Basel-Stadt}{BS}},
+fr = {{Freiburg}{FR}},
+ge = {{Genf}{GE}},
+gl = {{Glarus}{GL}},
+gr = {{Graub\"unden}{GR}},
+ju = {{Jura}{JU}},
+lu = {{Luzern}{LU}},
+ne = {{Neuenburg}{NE}},
+nw = {{Nidwalden}{NW}},
+ow = {{Obwalden}{OW}},
+sg = {{St.\,Gallen}{SG}},
+sh = {{Schaffhausen}{SH}},
+so = {{Solothurn}{SO}},
+sz = {{Schwyz}{SZ}},
+tg = {{Thurgau}{TG}},
+ti = {{Tessin}{TI}},
+ur = {{Uri}{UR}},
+vd = {{Waadt}{VD}},
+vs = {{Wallis}{VS}},
+zg = {{Zug}{ZG}},
+zh = {{Z\"urich}{ZH}},
+% Kommentare
+bk = {{Berner Kommentar}{BK}},
+bsk = {{Basler Kommentar}{BsK}},
+cr = {{Commentaire Romand}{CR}},
+hk = {{Handkommentar zum Schweizer Privatrecht}{HK}},
+kuko = {{Kurzkommentar}{KuKo}},
+beckkuko = {{Beck'sche Kurz-Kommentare}{B'KuKo}},
+mnk = {{M\"{u}nchener Kommentar zum B\"{u}rgerlichen Gesetzbuch}{M\"{u}nK}},
+nmk = {{Nomos Kommentar}{NomosK}},
+ofk = {{Orell F\"{u}ssli Kommentar}{OFK}},
+palandt = {{Beck'sche Kurz-Kommentare (Palandt)}{Palandt}},
+shk = {{St\"{a}mpflis Handkommentar}{SHK}},
+stk = {{Staudingers Kommentar zum B\"{u}rgerlichen Gesetzbuch}{Staudinger}},
+zk = {{Z\"urcher Kommentar}{ZK}},
+% Sammlungen
+ableu = {{Amtsblatt der Europ\"airschen Union}{ABl. EU}},
+abnr = {{Amtliches Bulletin des Nationalrats}{AmtlBull NR}},
+absr = {{Amtliches Bulletin des St\"anderats}{AmtlBull SR}},
+as = {{Amtliche Sammlung des Bundesrechts}{AS}},
+bbl = {{Bundesblatt}{BBl}},
+boce = {{Amtliches Bulletin des St\"anderats}{AmtlBull SR}},
+bocn = {{Amtliches Bulletin des Nationalrats}{AmtlBull NR}},
+ff = {{Bundesblatt}{BBl}}, 
+fjs = {{Schweizerische Juristische Kartothek}{SJK}},
+joue = {{Amtsblatt der Europ\"airschen Union}{ABl. EU}},
+ro = {{Amtliche Sammlung des Bundesrechts}{AS}},
+rs = {{Systematische Rechtssammlung}{SR}},
+sjk = {{Schweizerische Juristische Kartothek}{SJK}},
+spr = {{Schweizerisches Privatrecht}{SPR}},
+sr = {{Systematische Rechtssammlung}{SR}},
+tdp = {{Schweizerisches Privatrecht}{SPR}},
+siwr = {{Schweizerisches Immaterialg\"uter- und Wettbewerbsrecht}{SIWR}},
+% = {{}{}},
+% = {{}{}},
+% Schweizerische Zeitschriften
+abow = {{Amtsbericht \"uber die Rechtspflege des Kantons Obwalden}{AbR}},
+absh = {{Amtsbericht des Obergerichtes an den Kantonsrat Schaffhausen}{Amtsbericht}},
+agve = {{Aargauische Gerichts- und Verwaltungsentscheide}{AGVE}},
+ajp = {{Aktuelle Juristische Praxis\addslash Pratique Juridique Actuelle}{AJP\addslash PJA}},
+arbr = {{Mitteilung des Instituts f\"ur Schweizerisches Arbeitsrecht}{ArbR}},
+argvp = {{Ausserrhodische Gerichts- und Verwaltungspraxis}{AR GVP}},
+asa = {{Archiv f\"ur schweizerisches Abgaberecht}{ASA}},
+assistalex = {{Assistalex}{Assistalex}},
+asyl = {{Schweizerische Zeitschrift f\"ur Asylrecht und -praxis}{Asyl}},
+bez = {{BEZ Baurechtsentscheide Kanton Z\"urich}{BEZ}},
+blschk = {{Bl\"atter f\"ur Schuldbetreibung und Konkurs}{BlSchK}},
+blvge = {{Basellandschaftliche Verwaltungsgerichtsentscheide}{BLVGE}},
+bjm = {{Basler juristische Mitteilungen}{BJM}},
+bvr = {{Bernische Verwaltungsrechtsprechung}{BVR}},
+can = {{CAN~-- Zeitschrift f\"ur kantonale Rechtsprechung}{CAN}},
+caplaw = {{CapLaw~-- Swiss Capital Markets Law}{CapLaw}},
+cas = {{Causa Sport}{CaS}},
+db = {{Droit du Bail}{DB}},
+dc = {{Baurecht}{BR}},
+dep = {{Umweltrecht in der Praxis}{URP}},
+digma = {{Zeitschrift f\"ur Datenrecht und Informationssicherheit}{Digma}},
+dpc = {{Recht und Politik des Wettbewerbs}{RPW}},
+dta = {{Arbeitsrecht und Arbeitslosenversicherung}{ARV}},
+dtao = {{ARV online -- Arbeitsrecht und Arbeitslosenversicherung}{ARVO}},
+egvsz = {{Entscheide der Gerichts- und Verwaltungsbeh\"orden des Kantons Schwyz}{EGV-SZ}},
+euz = {{Zeitschrift f\"ur Europarecht}{EuZ}},
+fampra = {{Die Praxis des Familienrechts}{FamPra.ch}},
+forpen = {{Forumpoenale}{Forumpoenale}},
+geskr = {{Gesellschafts- und Kapitalmarktrecht}{GesKR}},
+gvpsg = {{St.\,Gallische Gerichts- und Verwaltungspraxis}{GVP~SG}},
+gvpzg = {{Gerichts- und Verwaltungspraxis des Kantons Zug}{GVP~ZG}},
+have = {{HAVE~-- Haftung und Versicherung}{HAVE}},
+hill = {{Health Insurance Liability Law}{HILL}},
+ingres = {{INGRESnews}{INGRESnews}},
+ipd = {{Ipdata}{Ipdata}},
+iusfocus = {{ius.focus}{ius.focus}},
+jaac = {{Verwaltungspraxis der Bundesbeh\"orden}{VPB}},
+jar = {{Jahrbuch des schweizerischen Arbeitsrechts}{JAR}},
+jl = {{Jusletter}{Jusl.}},
+jt = {{Journal des Tribunaux}{JdT}},
+leges = {{LeGes -- L\'egislation \& \'evaluation}{LeGes}},
+lgve = {{Luzerner Gerichts- und Verwaltungsentscheide}{LGVE}},
+mbvn = {{Monatsschrift f\"ur Bernisches Verwaltungsrecht und Notariatswesen}{MBVN}},
+medialex = {{Zeitschrift f\"ur Medienrecht}{Medialex}},
+mp = {{Mietrechtpraxis}{mp}},
+mra = {{MietRecht Aktuell}{MRA}},
+notalex = {{Not@lex -- Revue de droit priv\'e et fiscal du patrimoine}{Not@lex}},
+pbg = {{PBG aktuell -- Z\"urcher Zeitschrift f\"ur \"offentliches Baurecht}{PBG}},
+pja = {{Aktuelle Juristische Praxis\addslash Pratique Juridique Actuelle}{AJP\addslash PJA}},
+pkg = {{Die Praxis des Kantonsgerichtes von Graub\"unden}{PKG}},
+pld = {{Pl\"adoyer}{Pl\"ad\adddot}},
+pra = {{Die Praxis des Bundesgerichts}{Pra}},
+pvg = {{Praxis des Verwaltungsgerichtes des Kantons Graub\"unden}{PVG}},
+ranb = {{Monatsschrift f\"ur Bernisches Verwaltungsrecht und Notariatswesen}{MBVN}},
+rdaf = {{Revue de droit administratif et de droit fiscal}{RDAF}},
+rds = {{Zeitschrift f\"ur Schweizerisches Recht}{ZSR}},
+rdt = {{Zeitschrift f\"ur Vormundschaftswesen}{ZVW}},
+reas = {{HAVE~-- Haftung und Versicherung}{HAVE}},
+reprax = {{Zeitschrift zur Rechtsetzung und Praxis im Gesellschafts- und Handelsregisterrecht}{Reprax}},
+recht = {{recht: Zeitschrift f\"ur juristische Ausbildung und Praxis}{recht}},
+rf = {{Steuerrevue}{StR}},
+rfj = {{Freiburger Zeitschrift f\"ur Rechtsprechung}{FZR}},
+rjb = {{Zeitschrift des Bernischen Juristenvereins}{ZBJV}},
+rjj = {{Revue jurassienne de jurisprudence}{RJJ}},
+rjn = {{Recueil de jurisprudence neuchâteloise}{RJN}},
+rma = {{Zeitschrift f\"ur Kindes- und Erwachsenenschutz}{ZKE}},
+rnrf = {{Schweizerische Zeitschrift f\"ur Beurkundungs- und Grundbuchrecht}{ZBGR}},
+rps = {{Schweizerische Zeitschrift f\"ur Strafrecht}{ZStrR}},
+rsas = {{Schweizerische Zeitschrift f\"ur Sozialversicherung und berufliche Vorsorge}{SZS}}, 
+rsc = {{Schweizerische Zeitschrift f\"ur Kriminologie}{SZK}},
+rsda = {{Schweizerische Zeitschrift f\"ur Wirtschafts- und Finanzmarktrecht}{SZW}}, 
+rsdie = {{Schweizerische Zeitschrift f\"ur internationales und europ\"aisches Recht}{SZIER}},
+rsj = {{Schweizerische Juristen-Zeitung}{SJZ}}, 
+rspc = {{Schweizerische Zeitschrift f\"ur Zivilprozessrecht}{SZZP}}, 
+rvj = {{Zeitschrift f\"ur Walliser Rechtsprechung}{ZWR}}, 
+sd = {{Sicherheit & Recht}{Sicherheit & Recht}},
+sic = {{sic! Zeitschrift f\"r Immaterialgüter,- Informations- und Wettbewerbsrecht}{sic!}},
+sj = {{Semaine Judiciaire}{SJ}},
+smi = {{Schriften zum Medien- und Immaterialg\"uterrecht}{SMI}},
+st = {{Der Schweizer Treuh\"ander}{ST}},
+succ = {{Successio -- Zeitschrift f\"ur Erbrecht}{Successio}},
+szier = {{Schweizerische Zeitschrift f\"ur internationales und europ\"aisches Recht}{SZIER}},
+trex = {{TREX -- Der Treuhandexperte}{TREX}},
+zbl = {{Schweizerisches Zentralblatt f\"ur Staats- und Verwaltungsrecht}{ZBl}},
+zeso = {{Zeitschrift f\"ur Sozialhilfe}{ZESO}},
+zgrg = {{Zeitschrift f\"ur Gesetzgebung und Rechtsprechung in Graub\"unden (ZGRG)}{ZGRG}},
+zr = {{Bl\"atter f\"ur Z\"urcherische Rechtsprechung}{ZR}},
+zsis = {{Zeitschrift f\"ur Schweizerisches und Internationales Steuerrecht}{ZSIS}},
+zzz = {{Schweizerische Zeitschrift f\"ur Zivilprozess- und Zwangsvollstreckungsrecht}{ZZZ}},
+% Ausl\"andische Zeitschriften
+acp = {{Archiv f\"ur die civilistische Praxis \mkbibparens{T\"ubingen}}{AcP}},
+baur = {{Zeitschrift f\"ur das gesamte \"offentliche und zivile Baurecht}{BauR}},
+bghz = {{Entscheidungen des (deutschen) Bundesgerichtshofes in Zivilsachen}{BGHZ}},
+cur = {{Computer und Recht \mkbibparens{K\"oln}}{CuR}},
+elj = {{European Law Journal}{ELJ}},
+ercl = {{European Review of Contract Law}{ERCL}},
+erpl = {{European Review of Private Law}{ERPL}},
+eur = {{Europarecht}{EuR}},
+euvr = {{Zeitschrift f\"ur Europ\"aisches Unternehmens- und Verbraucherrecht}{euvr}},
+euzw = {{Europ\"aische Zeitschrift f\"ur Wirtschaftsrecht}{EuZW}},
+grur = {{Gewerblicher Rechtsschutz und Urheberrecht}{GRUR}},
+grurrr = {{Gewerblicher Rechtsschutz und Urheberrecht, Rechtsprechungs- Report}{GRUR-RR}},
+grurint = {{Gewerblicher Rechtsschutz und Urheberrecht, Internationaler Teil}{GRUR International}},
+grurprax = {{Gewerblicher Rechtsschutz und Urheberrecht, Praxis im Immaterialg\"uter- und Wettbewerbsrecht}{GRUR-Prax}},
+jbl = {{Juristische Bl\"atter}{JBl}},
+jde = {{Journal de droit europ\'een}{J\adddot D\adddot E\adddot}},
+jite = {{Journal of Institutional and Theoretical Economics}{JITE}},
+juru = {{Juristische Rundschau}{JR}},
+jurzeit = {{Juristen Zeitung \mkbibparens{Heidelberg}}{JZ}},
+jusch = {{Juristische Schulung \mkbibparens{M\"unchen}}{JuS}},
+njw = {{Neue Juristische Wochenschrift}{NJW}},
+njw-rr = {{NJW-Rechtsprechungs-Report Zivilrecht}{NJW-RR}},
+rabels = {{Rabels Zeitschrift f\"ur ausl\"andisches und internationales Privatrecht}{RabelsZ}},
+redc = {{Revue europ\'eenne de droit de la consommation}{REDC}},
+rida = {{Revue Internationale des Droits de l'Antiquit\'e}{RIDA}},
+zip = {{Zeitschrift f\"ur Wirtschaftsrecht}{ZIP}},
+% = {{}{}},
+% = {{}{}},
+% = {{}{}},
+}
+
+% Format de la date courte: séparation par des points et non des slash
+\DeclareBibliographyExtras{%
+  \protected\def\mkbibdateshort#1#2#3{%
+    \iffieldundef{#3}
+      {}
+      {\mkdatezeros{\thefield{#3}}%
+       \iffieldundef{#2}{}{.}}%
+    \iffieldundef{#2}
+      {}
+      {\mkdatezeros{\thefield{#2}}%
+       \iffieldundef{#1}{}{.}}%
+    \mkdatezeros{\thefield{#1}}}%
+    \protecting{\providecommand{\parN}{N\addnbthinspace}
+\providecommand{\parNN}{NN\addnbthinspace}}
+    }
+    
+\endinput

@@ -1,0 +1,136 @@
+# This file contains a mapping from the ELI ontology 1.4 to schema.org legal extension
+# (see http://schema.org/Legislation)
+
+@prefix schema: <http://schema.org/> .
+@prefix eli: <http://data.europa.eu/eli/ontology#>  .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>  .
+@prefix owl: <http://www.w3.org/2002/07/owl#>  .
+
+eli:Work				rdfs:subClassOf		schema:CreativeWork .
+eli:ComplexWork			rdfs:subClassOf		schema:CreativeWork .
+eli:WorkSubdivision		rdfs:subClassOf		schema:CreativeWork .
+eli:Expression			rdfs:subClassOf		schema:CreativeWork .
+eli:Manifestation		rdfs:subClassOf		schema:MediaObject .
+eli:LegalResource		rdfs:subClassOf		schema:Legislation .
+eli:LegalResourceSubdivision rdfs:subClassOf		schema:Legislation .
+eli:LegalExpression		rdfs:subClassOf		schema:Legislation .
+eli:Format				rdfs:subClassOf		schema:LegislationObject .
+# eli:Agent not mapped
+eli:Person				owl:equivalentClass	schema:Person .
+eli:Organization		owl:equivalentClass	schema:Organization .
+eli:is_part_of			rdfs:subPropertyOf	schema:isPartOf .
+eli:has_part			rdfs:subPropertyOf	schema:hasPart .
+eli:is_member_of		rdfs:subPropertyOf	schema:exampleOfWork .
+eli:has_member			rdfs:subPropertyOf	schema:workExample .
+eli:is_realized_by		rdfs:subPropertyOf	schema:workExample .
+eli:realizes			rdfs:subPropertyOf	schema:exampleOfWork .
+eli:is_embodied_by		rdfs:subPropertyOf	schema:encoding .
+eli:embodies			rdfs:subPropertyOf	schema:encodesCreativeWork .
+eli:is_exemplified_by	rdfs:subPropertyOf	schema:contentUrl .
+eli:number				rdfs:subPropertyOf	schema:legislationIdentifier .
+# eli:uri_schema not mapped
+eli:id_local			rdfs:subPropertyOf	schema:legislationIdentifier .
+eli:work_type			rdfs:subPropertyOf	schema:genre .
+eli:type_document		owl:equivalentProperty	schema:legislationType .
+eli:type_subdivision	owl:equivalentProperty	schema:legislationType .
+eli:relevant_for		rdfs:subPropertyOf	schema:spatialCoverage .
+eli:jurisdiction		rdfs:subPropertyOf	schema:spatialCoverage .
+eli:passed_by			owl:equivalentProperty	schema:legislationPassedBy .
+# eli:countersigned_by not mapped
+eli:responsibility_of	rdfs:subPropertyOf	schema:legislationResponsible .
+eli:responsibility_of_agent	rdfs:subPropertyOf	schema:legislationResponsible .
+eli:is_about			rdfs:subPropertyOf	schema:about .
+eli:description			rdfs:subPropertyOf	schema:description .
+eli:version				rdfs:subPropertyOf	schema:version .
+eli:versionDate	owl:equivalentProperty	schema:legislationDateVersion .
+eli:date_document		owl:equivalentProperty	schema:legislationDate .
+eli:date_publication	rdfs:subPropertyOf	schema:datePublished .
+eli:in_force			owl:equivalentProperty	schema:legislationLegalForce .
+# eli:first_date_entry_in_force and eli:date_no_longer_in_force are a special case since they should be concatenated in schema:temporalCoverage.
+# eli:first_date_entry_in_force	rdfs:subPropertyOf	schema:temporalCoverage .
+# eli:date_no_longer_in_force		rdfs:subPropertyOf	schema:temporalCoverage .
+# eli:date_applicability not mapped
+eli:refers_to			owl:equivalentProperty	schema:mentions .
+eli:is_referred_to_by			owl:equivalentProperty	[ owl:inverseOf schema:mentions ] .
+# eli:related_to not mapped
+eli:is_derivative_of	rdfs:subPropertyOf	schema:isBasedOn .
+eli:has_derivative		rdfs:subPropertyOf	[ owl:inverseOf schema:isBasedOn ] .
+# eli:has_annex not mapped
+# eli:is_annex_of not mapped
+eli:changes				owl:equivalentProperty	schema:legislationChanges .
+eli:changed_by			owl:equivalentProperty [ owl:inverseOf schema:legislationChanges ] .
+eli:basis_for			owl:equivalentProperty [ owl:inverseOf schema:isBasedOn ] .
+eli:based_on			rdfs:subPropertyOf	schema:isBasedOn .
+eli:cites				rdfs:subPropertyOf	schema:citation .
+eli:cited_by 			rdfs:subPropertyOf  [ owl:inverseOf schema:citation ] .
+eli:consolidates		owl:equivalentProperty	schema:legislationConsolidates .
+eli:consolidated_by		owl:equivalentProperty [ owl:inverseOf schema:legislationConsolidates ] .
+eli:transposes			owl:equivalentProperty	schema:legislationTransposes .
+eli:transposed_by		owl:equivalentProperty [ owl:inverseOf schema:legislationTransposes ] .
+# eli:ensures_implementation_of
+# eli:implementation_ensured_by
+eli:applies				owl:equivalentProperty	schema:legislationApplies .
+eli:applied_by			owl:equivalentProperty [ owl:inverseOf schema:legislationApplies ] .
+eli:commences			rdfs:subPropertyOf	schema:legislationChanges .
+eli:commenced_by		rdfs:subPropertyOf [ owl:inverseOf schema:legislationChanges ] .
+eli:repeals				rdfs:subPropertyOf	schema:legislationChanges .
+eli:repealed_by			rdfs:subPropertyOf [ owl:inverseOf schema:legislationChanges ] .
+# eli:corrects
+# eli:corrected_by
+eli:amends				rdfs:subPropertyOf	schema:legislationChanges .
+eli:amended_by			rdfs:subPropertyOf [ owl:inverseOf schema:legislationChanges ] .
+# eli:is_another_publication_of
+# eli:has_another_publication
+eli:cited_by_case_law	rdfs:subPropertyOf  [ owl:inverseOf schema:citation ] .
+eli:cited_by_case_law_reference	rdfs:subPropertyOf  [ owl:inverseOf schema:citation ] .
+eli:language			rdfs:subPropertyOf	schema:inLanguage .
+eli:title				rdfs:subPropertyOf	schema:name .
+eli:title_short			rdfs:subPropertyOf	schema:alternateName .
+eli:title_alternative	rdfs:subPropertyOf	schema:alternateName .
+eli:has_translation		rdfs:subPropertyOf	schema:workTranslation .
+eli:is_translation_of	rdfs:subPropertyOf	schema:translationOfWork .
+eli:published_in		rdfs:subPropertyOf	schema:isPartOf .
+eli:published_in_format	rdfs:subPropertyOf	schema:isPartOf .
+eli:publishes			rdfs:subPropertyOf	schema:hasPart .
+eli:publisher			rdfs:subPropertyOf	schema:publisher .
+eli:publisher_agent		rdfs:subPropertyOf	schema:publisher .
+# Starting with ELI 1.2 eli:media_type encodes the technical format
+# but eli:format might also contain this information
+eli:format				rdfs:subPropertyOf	schema:encodingFormat .
+eli:media_type			rdfs:subPropertyOf	schema:encodingFormat .
+# eli:rights not mapped
+eli:rightsholder		rdfs:subPropertyOf	schema:copyrightHolder .
+eli:rightsholder_agent	rdfs:subPropertyOf	schema:copyrightHolder .
+eli:licence				rdfs:subPropertyOf	schema:license .
+eli:legal_value			owl:equivalentProperty	schema:legislationLegalValue .
+
+# Mapping of values and set of concepts
+# eli:AdministrativeArea not mapped
+eli:InForce				owl:equivalentClass	schema:LegalForceStatus .
+# eli:Language not mapped
+# eli:ResourceType not mapped
+# eli:Version not mapped
+eli:LegalValue				owl:equivalentClass	schema:LegalValueLevel .
+eli:InForce-InForce				owl:sameAs	schema:InForce .
+eli:InForce-PartiallyInForce	owl:sameAs	schema:PartiallyInForce .
+eli:InForce-NotInForce			owl:sameAs	schema:NotInForce .
+eli:LegalValue-unofficial		owl:sameAs	schema:UnofficialLegalValue .
+eli:LegalValue-official			owl:sameAs	schema:OfficialLegalValue .
+eli:LegalValue-authoritative	owl:sameAs	schema:AuthoritativeLegalValue .
+eli:LegalValue-definitive		owl:sameAs	schema:DefinitiveLegalValue .
+
+
+
+
+
+
+
+
+
+
+# Properties not mapped :
+
+
+
+
+

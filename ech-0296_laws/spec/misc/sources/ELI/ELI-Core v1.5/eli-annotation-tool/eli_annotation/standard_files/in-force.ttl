@@ -1,0 +1,41 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
+
+<http://data.europa.eu/eli/ontology#InForce-> a skos:ConceptScheme ;
+	dct:description "A value indicating the legal force of a legal resource or a legal expression."@en ;
+	dct:description "Une valeur indiquant le caractère applicable ou non d'une ressource légale ou d'une expression légale."@fr ;
+	dct:title "In force status"@en ;
+	dct:title "Statut de mise en application"@fr .
+
+<http://data.europa.eu/eli/ontology#InForce-inForce> a skos:Concept ;
+	euvoc:status <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+	skos:inScheme <http://data.europa.eu/eli/ontology#InForce-> ;
+	skos:notation "in-force" ;
+	skos:prefLabel "in force"@en ;
+	skos:prefLabel "applicable"@fr ;
+        skos:definition "Indicates that a legal resource is currently in force."@en ;
+        skos:definition "Indique qu'une ressource légale est actuellement applicable."@fr ;
+	skos:topConceptOf <http://data.europa.eu/eli/ontology#InForce-> .
+
+<http://data.europa.eu/eli/ontology#InForce-notInForce> a skos:Concept ;
+	euvoc:status <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+	skos:inScheme <http://data.europa.eu/eli/ontology#InForce-> ;
+	skos:notation "not-in-force" ;
+	skos:prefLabel "not in force"@en ;
+	skos:prefLabel "non applicable"@fr ;
+        skos:definition "Indicates that a legal resource is currently not in force."@en ;
+        skos:definition "Indique qu'une ressource légale n'est actuellement pas applicable."@fr ;
+	skos:topConceptOf <http://data.europa.eu/eli/ontology#InForce-> .
+
+<http://data.europa.eu/eli/ontology#InForce-partiallyInForce> a skos:Concept ;
+	euvoc:status <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+	skos:inScheme <http://data.europa.eu/eli/ontology#InForce-> ;
+	skos:notation "partially-in-force" ;
+	skos:prefLabel "partially in force"@en ;
+	skos:prefLabel "partiellement applicable"@fr ;
+        skos:definition "Indicates that parts of the legal resource are currently in force, and parts are not."@en ;
+        skos:definition "Indique qu'actuellement certaines parties d'une ressource légale sont applicables et d'autres ne le sont pas."@fr ;
+	skos:topConceptOf <http://data.europa.eu/eli/ontology#InForce-> .

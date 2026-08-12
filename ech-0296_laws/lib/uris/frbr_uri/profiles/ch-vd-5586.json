@@ -1,0 +1,54 @@
+{
+  "_comment": "Ville de Lausanne – AKN FRBR URI profile",
+  "tags": "akn, frbr, switzerland, lausanne",
+  "jurisdiction": "ch-vd-5586",
+  "level": "municipality",
+  "name": "Ville de Lausanne",
+  "country": "CH",
+  "subdivision": "VD",
+  "municipality": "Lausanne",
+  "bfs_number": "5586",
+  "base_uri": "https://www.lausanne.ch/eli",
+  "akn_country": "ch",
+  "akn_prefix": "/akn/ch-vd-5586",
+  "language_codes": {
+    "fr": "fra"
+  },
+  "default_language": "fr",
+  "document_types": {
+    "ordinance": {
+      "akn_type": "act",
+      "subtype": "reglement",
+      "label_fr": "Règlement"
+    },
+    "regulation": {
+      "akn_type": "act",
+      "subtype": "directive",
+      "label_fr": "Directive"
+    },
+    "decision": {
+      "akn_type": "act",
+      "subtype": "arrete",
+      "label_fr": "Arrêté"
+    },
+    "bylaw": {
+      "akn_type": "act",
+      "subtype": "statuts",
+      "label_fr": "Statuts"
+    },
+    "plan": {
+      "akn_type": "act",
+      "subtype": "plan",
+      "label_fr": "Plan"
+    }
+  },
+  "numbering": {
+    "eli_pattern": "/eli/vd/5586/{year}/{number}"
+  },
+  "uri_templates": {
+    "work": "/akn/ch-vd-5586/{doc_type}/{date}/{number}",
+    "expression": "/akn/ch-vd-5586/{doc_type}/{date}/{number}/{lang}@{version}",
+    "manifestation": "/akn/ch-vd-5586/{doc_type}/{date}/{number}/{lang}@{version}.{format}",
+    "item": "/akn/ch-vd-5586/{doc_type}/{date}/{number}/{lang}@{version}.{format}/{component}"
+  }
+}

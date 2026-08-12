@@ -1,0 +1,15 @@
+[project]
+name = "legaldocml-uri-pipeline"
+version = "0.1.0"
+description = "AKN+ELI URI construction template generation and resolver-config sync for lib/uris/"
+requires-python = ">=3.11"
+dependencies = [
+    "pandas",
+    "pyyaml",
+    "jupyter",
+    "jupyterlab",
+    "pytest",
+]
+
+# eli_annotation isn't on PyPI — install it editable from its vendored location, see USAGE.md:
+#   pip install -e ../../spec/misc/sources/ELI/ELI/eli-annotation-tool

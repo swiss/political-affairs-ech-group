@@ -1,0 +1,10 @@
+# curie_map:
+#   eli: http://data.europa.eu/eli/ontology#
+#   akn: https://docs.oasis-open.org/legaldocml/ns/akn/3.0#
+#   schema: https://schema.org/
+#   skos: http://www.w3.org/2004/02/skos/core#
+#   owl: http://www.w3.org/2002/07/owl#
+#   semapv: https://w3id.org/semapv/vocab/
+# license: https://creativecommons.org/publicdomain/zero/1.0/
+# mapping_set_id: https://legaldocml.ch/pipeline/schema/mappings/eli-akn.sssom.tsv
+subject_id	predicate_id	object_id	mapping_justification	confidence	subject_label	object_label	comment	conformance_level

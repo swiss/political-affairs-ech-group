@@ -1,0 +1,226 @@
+{
+    "$defs": {
+        "AgendaItem": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "items": {
+                        "$ref": "#/$defs/MultilingualString"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "votes": {
+                    "items": {
+                        "$ref": "#/$defs/Vote"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "AgendaItem",
+            "type": "object"
+        },
+        "Container": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "agenda_items": {
+                    "items": {
+                        "$ref": "#/$defs/AgendaItem"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "type": "string"
+                },
+                "sessions": {
+                    "items": {
+                        "$ref": "#/$defs/Session"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "votes": {
+                    "items": {
+                        "$ref": "#/$defs/Vote"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "Container",
+            "type": "object"
+        },
+        "MultilingualString": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "language": {
+                    "description": "[en] Language code in ISO 639-1 format.\n[de] Sprachcode im ISO 639-1-Format.\n",
+                    "pattern": "^[a-z]{2}$",
+                    "type": "string"
+                },
+                "text": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "text",
+                "language"
+            ],
+            "title": "MultilingualString",
+            "type": "object"
+        },
+        "ResultEnum": {
+            "description": "",
+            "enum": [
+                "yes",
+                "no"
+            ],
+            "title": "ResultEnum",
+            "type": "string"
+        },
+        "Session": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "agenda_items": {
+                    "items": {
+                        "$ref": "#/$defs/AgendaItem"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "end_date": {
+                    "description": "[en] The end date of the session.\n[de] Das Enddatum der Sitzung.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "items": {
+                        "$ref": "#/$defs/MultilingualString"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "start_date": {
+                    "description": "[en] The start date of the session.\n[de] Das Startdatum der Sitzung.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "Session",
+            "type": "object"
+        },
+        "Vote": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "question": {
+                    "type": "string"
+                },
+                "result": {
+                    "$ref": "#/$defs/ResultEnum"
+                },
+                "vote_time": {
+                    "description": "[en] The date and time when the vote was cast.\n[de] Das Datum und die Uhrzeit, zu der die Abstimmung abgegeben wurde.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id",
+                "question"
+            ],
+            "title": "Vote",
+            "type": "object"
+        }
+    },
+    "$id": "https://ch.paf.link/schema/tutorial",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "additionalProperties": true,
+    "description": "",
+    "metamodel_version": "1.7.0",
+    "properties": {
+        "agenda_items": {
+            "items": {
+                "$ref": "#/$defs/AgendaItem"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        },
+        "id": {
+            "type": "string"
+        },
+        "sessions": {
+            "items": {
+                "$ref": "#/$defs/Session"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        },
+        "votes": {
+            "items": {
+                "$ref": "#/$defs/Vote"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        }
+    },
+    "required": [
+        "id"
+    ],
+    "title": "tutorial",
+    "type": "object",
+    "version": null
+}

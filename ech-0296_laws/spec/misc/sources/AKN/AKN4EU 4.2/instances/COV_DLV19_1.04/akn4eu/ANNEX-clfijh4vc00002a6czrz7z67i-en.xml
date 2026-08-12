@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+   <doc name="ANNEX">
+      <meta>
+         <identification source="~PUBL">
+            <FRBRWork>
+               <FRBRthis value=""/>
+               <FRBRuri value=""/>
+               <FRBRdate date="2999-01-01" name=""/>
+               <FRBRauthor href=""/>
+               <preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+                  <akn4eu:fileCUID value="clfijh4vc00002a6czrz7z67i"/>
+               </preservation>
+               <FRBRcountry value="EU"/>
+               <FRBRprescriptive value="true"/>
+            </FRBRWork>
+            <FRBRExpression>
+               <FRBRthis value=""/>
+               <FRBRuri value=""/>
+               <FRBRdate date="2999-01-01" name=""/>
+               <FRBRauthor href=""/>
+               <FRBRlanguage language="en"/>
+            </FRBRExpression>
+            <FRBRManifestation>
+               <FRBRthis value=""/>
+               <FRBRuri value=""/>
+               <FRBRdate date="2999-01-01" name=""/>
+               <FRBRauthor href=""/>
+               <preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+                  <akn4eu:akn4euVersion value="4.2.0.0"/>
+                  <akn4eu:akn4euDocumentation href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/akn4eu"/>
+               </preservation>
+            </FRBRManifestation>
+         </identification>
+         <references source="~PUBL">
+            <TLCReference name="language" href="http://publications.europa.eu/resource/authority/language/ENG" showAs="en"/>
+            <TLCOrganization xml:id="PUBL" href="http://publications.europa.eu/resource/authority/corporate-body/PUBL" showAs="Publications Office"/>
+            <TLCConcept xml:id="INP" href="http://publications.europa.eu/resource/authority/subdivision/INP" showAs="introductory part"/>
+            <TLCReference xml:id="ANNEX" name="docType" href="http://publications.europa.eu/resource/authority/resource-type/ANNEX" showAs="Annex"/>
+         </references>
+      </meta>
+      <preface xml:id="d1e74">
+         <container xml:id="d1e76" name="headerOfAnnex">
+            <block xml:id="d1e78" name="num">ANNEX II</block>
+            <block xml:id="d1e81" name="heading">CONTENT AND FORMAT OF THE TYRE LABEL</block>
+         </container>
+      </preface>
+      <mainBody xml:id="d1e86">
+         <level xml:id="d1e88">
+            <num xml:id="d1e90">1.</num>
+            <content xml:id="d1e92">
+               <p xml:id="d1e94">Content of the tyre label</p>
+            </content>
+         </level>
+         <level xml:id="d1e98">
+            <num xml:id="d1e100">1.1.</num>
+            <subparagraph xml:id="d1e102"><content xml:id="d1e103"><p xml:id="d1e104">Information to be included in the upper part of
+                     the tyre label:</p></content></subparagraph>
+            <hcontainer xml:id="d1e106" name="FGR">
+               <hcontainer xml:id="d1e108" name="IMG">
+                  <content xml:id="d1e110"><p xml:id="d1e111"><img xml:id="d1e112" src="RSC_SVG-clfijh4vc00022a6ck0v52brv-en.svg"/></p></content>
+               </hcontainer>
+               <hcontainer xml:id="d1e115" name="LGD">
+                  <hcontainer xml:id="d1e117" name="LLG"><content xml:id="d1e118"><p xml:id="d1e119">I. QR code;</p></content></hcontainer>
+                  <hcontainer xml:id="d1e121" name="LLG"><content xml:id="d1e122"><p xml:id="d1e123">II. Trade name or trademark of the supplier;</p></content></hcontainer>
+                  <hcontainer xml:id="d1e125" name="LLG"><content xml:id="d1e126"><p xml:id="d1e127">III. Tyre type identifier;</p></content></hcontainer>
+                  <hcontainer xml:id="d1e129" name="LLG"><content xml:id="d1e130"><p xml:id="d1e131">IV. Tyre size designation, load-capacity index and speed category
+                     symbol, as indicated in Regulation No 30 of the Economic Commission for Europe of the
+                     United Nations (UN/ECE) <authorialNote xml:id="d1e133" marker="1" placement="bottom">
+                        <p xml:id="d1e135">Regulation No 30 of the Economic Commission for Europe of the United Nations
+                           (UN/ECE) – Uniform provisions concerning the approval of pneumatic tyres for motor
+                           vehicles and their trailers (OJ L 201, 30.7.2008, p. 70).</p>
+                     </authorialNote>, in its most up-to-date version applicable to the Union, (UNECE
+                     Regulation No 30) and Regulation No 54 of the Economic Commission for Europe of the
+                     United Nations (UNECE)<authorialNote xml:id="d1e138" marker="2" placement="bottom">
+                        <p xml:id="d1e140">Regulation No 54 of the Economic Commission for Europe of the United Nations
+                           (UNECE) – Uniform provisions concerning the approval of pneumatic tyres for
+                           commercial vehicles and their trailers (OJ L 183, 11.7.2008, p. 41).</p>
+                     </authorialNote>, in its most up‐to‐date version applicable to the Union, (UNECE
+                     Regulation No 54) for C1 tyres, C2 tyres and C3 tyres, as applicable;</p></content></hcontainer>
+                  <hcontainer xml:id="d1e144" name="LLG"><content xml:id="d1e145"><p xml:id="d1e146">V. Tyre class: i.e. C1, C2 or C3;</p></content></hcontainer>
+                  <hcontainer xml:id="d1e149" name="LLG"><content xml:id="d1e150"><p xml:id="d1e151">VI. Fuel efficiency pictogram, scale and performance class;</p></content></hcontainer>
+                  <hcontainer xml:id="d1e153" name="LLG"><content xml:id="d1e154"><p xml:id="d1e155">VII. Wet grip pictogram, scale and performance class.</p></content></hcontainer>
+               </hcontainer>
+            </hcontainer>
+            </level>
+         <level xml:id="d1e160">
+            <num xml:id="d1e162">1.2.</num><subparagraph xml:id="d1e163"><content xml:id="d1e164"><p xml:id="d1e165">Information to be included in the bottom part
+                     of the tyre label for all tyres other than tyres which satisfy the minimum snow
+                     grip index values set out in UNECE Regulation No 117, or the relevant minimum
+                     ice grip index values, or both:</p></content></subparagraph>
+            <hcontainer xml:id="d1e167" name="FGR">
+               <hcontainer xml:id="d1e169" name="IMG">
+                  <content xml:id="d1e171"><p xml:id="d1e172"><img xml:id="d1e173" src="RSC_SVG-clfijh4vc00032a6ceg7n1u07-en.svg"/></p></content>
+               </hcontainer>
+               <hcontainer xml:id="d1e176" name="LGD">
+                  <hcontainer xml:id="d1e178" name="LLG"><content xml:id="d1e179"><p xml:id="d1e180">I. External rolling noise pictogram, value (expressed in dB(A)
+                     and rounded to the nearest integer) and performance class;</p></content></hcontainer>
+                  <hcontainer xml:id="d1e182" name="LLG"><content xml:id="d1e183"><p xml:id="d1e184">II. The serial number of this Regulation: ‘2020/740’.</p></content></hcontainer>
+               </hcontainer>
+            </hcontainer>
+         </level>
+         <level xml:id="d1e189">
+            <num xml:id="d1e191">1.3.</num><subparagraph xml:id="d1e192"><content xml:id="d1e193"><p xml:id="d1e194">Information to be included in the bottom part
+                     of the tyre label for tyres which satisfy the minimum snow grip index values
+                     set out in UNECE Regulation No 117:</p></content></subparagraph>
+            <hcontainer xml:id="d1e196" name="FGR">
+               <hcontainer xml:id="d1e198" name="IMG">
+                  <content xml:id="d1e200"><p xml:id="d1e201"><img xml:id="d1e202" src="RSC_SVG-clfijh4vc00042a6c4toz9cc3-en.svg"/></p></content>
+               </hcontainer>
+               <hcontainer xml:id="d1e205" name="LGD">
+                  <hcontainer xml:id="d1e207" name="LLG"><content xml:id="d1e208"><p xml:id="d1e209">I. External rolling noise pictogram, value (expressed in dB(A)
+                     and rounded to the nearest integer) and performance class;</p></content></hcontainer>
+                  <hcontainer xml:id="d1e211" name="LLG"><content xml:id="d1e212"><p xml:id="d1e213">II. Snow grip pictogram;</p></content></hcontainer>
+                  <hcontainer xml:id="d1e215" name="LLG"><content xml:id="d1e216"><p xml:id="d1e217">III. The serial number of this Regulation: ‘2020/740’.</p></content></hcontainer>
+               </hcontainer>
+            </hcontainer>
+         </level>
+         <level xml:id="d1e222">
+            <num xml:id="d1e224">1.4.</num>
+            <subparagraph xml:id="d1e226"><content xml:id="d1e227"><p xml:id="d1e228">Information to be included in the bottom part
+                     of the tyre label for tyres which satisfy the relevant minimum ice grip index
+                     values:</p></content></subparagraph>
+            <hcontainer xml:id="d1e230" name="FGR">
+               <hcontainer xml:id="d1e232" name="IMG">
+                  <content xml:id="d1e234"><p xml:id="d1e235"><img xml:id="d1e236" src="RSC_SVG-clfijh4vc000n2a6cp4mfk4xd-en.svg"/></p></content>
+               </hcontainer>
+               <hcontainer xml:id="d1e239" name="LGD">
+                  <hcontainer xml:id="d1e241" name="LLG"><content xml:id="d1e242"><p xml:id="d1e243">I. External rolling noise pictogram, value (expressed in dB(A)
+                     and rounded to the nearest integer) and performance class;</p></content></hcontainer>
+                  <hcontainer xml:id="d1e245" name="LLG"><content xml:id="d1e246"><p xml:id="d1e247">II. Ice grip pictogram;</p></content></hcontainer>
+                  <hcontainer xml:id="d1e249" name="LLG"><content xml:id="d1e250"><p xml:id="d1e251">III. The serial number of this Regulation: ‘2020/740’.</p></content></hcontainer>
+               </hcontainer>
+            </hcontainer>
+         </level>
+         <level xml:id="d1e257">
+            <num xml:id="d1e259">1.5.</num><subparagraph xml:id="d1e260"><content xml:id="d1e261"><p xml:id="d1e262">Information to be included in the bottom part
+                     of the tyre label for tyres which satisfy both the relevant minimum snow grip
+                     index values set out in UNECE Regulation No 117 and the minimum ice grip index
+                     values:</p></content></subparagraph>
+            <hcontainer xml:id="d1e264" name="FGR">
+               <hcontainer xml:id="d1e266" name="IMG">
+                  <content xml:id="d1e268"><p xml:id="d1e269"><img xml:id="d1e270" src="RSC_SVG-clfijh4vc000m2a6cmeukni0j-en.svg"/></p></content>
+               </hcontainer>
+               <hcontainer xml:id="d1e273" name="LGD">
+                  <hcontainer xml:id="d1e275" name="LLG"><content xml:id="d1e276"><p xml:id="d1e277">I. External rolling noise pictogram, value (expressed in dB(A)
+                     and rounded to the nearest integer) and performance class;</p></content></hcontainer>
+                  <hcontainer xml:id="d1e279" name="LLG"><content xml:id="d1e280"><p xml:id="d1e281">II. Snow grip pictogram;</p></content></hcontainer>
+                  <hcontainer xml:id="d1e283" name="LLG"><content xml:id="d1e284"><p xml:id="d1e285">III. Ice grip pictogram;</p></content></hcontainer>
+                  <hcontainer xml:id="d1e287" name="LLG"><content xml:id="d1e288"><p xml:id="d1e289">IV. The serial number of this Regulation: ‘2020/740’.</p></content></hcontainer>
+               </hcontainer>
+            </hcontainer>
+         </level>
+         <level xml:id="d1e294">
+            <num xml:id="d1e296">2.</num>
+            <content xml:id="d1e298">
+               <p xml:id="d1e300">Format of the tyre label</p>
+            </content>
+         </level>
+         <level xml:id="d1e304">
+            <num xml:id="d1e306">2.1.</num>
+            <subparagraph xml:id="d1e308">
+               <content xml:id="d1e310">
+                  <p xml:id="d1e312">Format of the upper part of the tyre label:</p>
+               </content>
+            </subparagraph>
+            <hcontainer xml:id="d1e316" name="FGR">
+               <hcontainer xml:id="d1e318" name="IMG">
+                  <content xml:id="d1e320"><p xml:id="d1e321"><img xml:id="d1e322" src="RSC_SVG-clfijh4vc000l2a6ccalwjwdu-en.svg"/></p></content>
+               </hcontainer>
+            </hcontainer>
+         </level>
+         <level xml:id="d1e327">
+            <num xml:id="d1e329">2.1.1.</num>
+            <subparagraph xml:id="d1e331">
+               <content xml:id="d1e333">
+                  <p xml:id="d1e335">Format of the bottom part of the tyre label for all tyres other than tyres
+                     which satisfy the minimum snow grip index values set out in UNECE Regulation No
+                     117, or the relevant minimum ice grip index values, or both:</p>
+               </content>
+            </subparagraph>
+            <hcontainer xml:id="d1e339" name="FGR">
+               <hcontainer xml:id="d1e341" name="IMG">
+                  <content xml:id="d1e343"><p xml:id="d1e344"><img xml:id="d1e345" src="RSC_SVG-clfijh4vc000k2a6c9m0pz3jq-en.svg"/></p></content></hcontainer></hcontainer>
+         </level>
+         <level xml:id="d1e348">
+            <num xml:id="d1e350">2.1.2.</num>
+            <subparagraph xml:id="d1e352">
+               <content xml:id="d1e354">
+                  <p xml:id="d1e356">Format of the bottom part of the tyre label for tyres which satisfy the
+            minimum snow grip index values set out in UNECE Regulation No 117:</p>
+               </content>
+            </subparagraph> 
+            <hcontainer xml:id="d1e360" name="FGR">
+               <hcontainer xml:id="d1e362" name="IMG">
+                  <content xml:id="d1e364"><p xml:id="d1e365"><img xml:id="d1e366" src="RSC_SVG-clfijh4vc000j2a6cc4luh1ju-en.svg"/></p></content></hcontainer></hcontainer>
+         </level>
+         <level xml:id="d1e369">
+            <num xml:id="d1e371">2.1.3.</num>
+            <subparagraph xml:id="d1e373">
+               <content xml:id="d1e375">
+                  <p xml:id="d1e377">Format of the bottom part of the tyre label for tyres which satisfy the minimum
+                     ice grip index values:</p>
+               </content>
+            </subparagraph>
+            <hcontainer xml:id="d1e381" name="FGR">
+               <hcontainer xml:id="d1e383" name="IMG">
+                  <content xml:id="d1e385"><p xml:id="d1e386"><img xml:id="d1e387" src="RSC_SVG-clfijh4vc000i2a6clwr1rw5z-en.svg"/></p></content></hcontainer>
+            </hcontainer>
+         </level>
+         <level xml:id="d1e392">
+            <num xml:id="d1e394">2.1.4.</num>
+            <subparagraph xml:id="d1e396">
+               <content xml:id="d1e398">
+                  <p xml:id="d1e400">Format of the bottom part of the tyre label for tyres which satisfy both the
+                     relevant minimum snow grip index values set out in UNECE Regulation No 117 and
+                     the minimum ice grip index values:</p>
+               </content>
+            </subparagraph>
+            <hcontainer xml:id="d1e404" name="FGR">
+               <hcontainer xml:id="d1e406" name="IMG">
+                  <content xml:id="d1e408"><p xml:id="d1e409"><img xml:id="d1e410" src="RSC_SVG-clfijh4vc000h2a6ckgxyxnbk-en.svg"/></p></content></hcontainer>
+            </hcontainer>
+         </level>
+         <level xml:id="d1e414">
+            <num xml:id="d1e416">2.2.</num>
+            <list xml:id="d1e418">
+               <subparagraph xml:id="d1e420" refersTo="~INP">
+                  <content xml:id="d1e422">
+                     <p xml:id="d1e424">For the purposes of point 2.1:</p>
+                  </content>
+               </subparagraph>
+               <point xml:id="d1e428">
+                  <num xml:id="d1e430">(a)</num>
+                  <content xml:id="d1e432">
+                     <p xml:id="d1e434">Tyre label minimal size: 75 mm wide and 110 mm high. Where the tyre label is
+                        printed in a larger format, its content shall nevertheless remain
+                        proportionate to the specifications above;</p>
+                  </content>
+               </point>
+               <point xml:id="d1e438">
+                  <num xml:id="d1e440">(b)</num>
+                  <content xml:id="d1e442">
+                     <p xml:id="d1e444">Background of the tyre label: 100 % white;</p>
+                  </content>
+               </point>
+               <point xml:id="d1e448">
+                  <num xml:id="d1e450">(c)</num>
+                  <content xml:id="d1e452">
+                     <p xml:id="d1e454">Typefaces: Verdana and Calibri;</p>
+                  </content>
+               </point>
+               <point xml:id="d1e458">
+                  <num xml:id="d1e460">(d)</num>
+                  <content xml:id="d1e462">
+                     <p xml:id="d1e464">Dimensions and specifications of the elements constituting the tyre label:
+                        as specified above;</p>
+                  </content>
+               </point>
+               <point xml:id="d1e469">
+                  <num xml:id="d1e471">(e)</num>
+                  <list xml:id="d1e473">
+                     <subparagraph xml:id="d1e475" refersTo="~INP">
+                        <content xml:id="d1e477">
+                           <p xml:id="d1e479">Colour codes, using CMYK – cyan, magenta, yellow and black, shall
+                              fulfil all the following requirements:</p>
+                        </content>
+                     </subparagraph>
+                     <indent xml:id="d1e483">
+                        <num xml:id="d1e485">—</num>
+                        <list xml:id="d1e487">
+                           <subparagraph xml:id="d1e489" refersTo="~INP">
+                              <content xml:id="d1e491">
+                                 <p xml:id="d1e493">colours of the EU logo as follows:</p>
+                              </content>
+                           </subparagraph>
+                           <indent xml:id="d1e497">
+                              <num xml:id="d1e499">—</num>
+                              <content xml:id="d1e501">
+                                 <p xml:id="d1e503">background: 100,80,0,0;</p>
+                              </content>
+                           </indent>
+                           <indent xml:id="d1e507">
+                              <num xml:id="d1e509">—</num>
+                              <content xml:id="d1e511">
+                                 <p xml:id="d1e513">stars: 0,0,100,0;</p>
+                              </content>
+                           </indent>
+                        </list>
+                     </indent>
+                     <indent xml:id="d1e519">
+                        <num xml:id="d1e521">—</num>
+                        <content xml:id="d1e523">
+                           <p xml:id="d1e525">colour of the energy logo: 100,80,0,0;</p>
+                        </content>
+                     </indent>
+                     <indent xml:id="d1e529">
+                        <num xml:id="d1e531">—</num>
+                        <content xml:id="d1e533">
+                           <p xml:id="d1e535">QR code: 100 % black;</p>
+                        </content>
+                     </indent>
+                     <indent xml:id="d1e539">
+                        <num xml:id="d1e541">—</num>
+                        <content xml:id="d1e543">
+                           <p xml:id="d1e545">trade name or trademark of the supplier: 100 % black and in Verdana
+                              Bold 7 pt;</p>
+                        </content>
+                     </indent>
+                     <indent xml:id="d1e550">
+                        <num xml:id="d1e552">—</num>
+                        <content xml:id="d1e554">
+                           <p xml:id="d1e556">tyre type identifier: 100 % black and in Verdana Regular 7 pt;</p>
+                        </content>
+                     </indent>
+                     <indent xml:id="d1e560">
+                        <num xml:id="d1e562">—</num>
+                        <content xml:id="d1e564">
+                           <p xml:id="d1e566">tyre size designation, load-capacity index and speed category symbol:
+                              100 % black and in Verdana Regular 10 pt;</p>
+                        </content>
+                     </indent>
+                     <indent xml:id="d1e570">
+                        <num xml:id="d1e572">—</num>
+                        <content xml:id="d1e574">
+                           <p xml:id="d1e576">tyre class: 100 % black and in Verdana Regular 7 pt, aligned to the
+                              right;</p>
+                        </content>
+                     </indent>
+                     <indent xml:id="d1e580">
+                        <num xml:id="d1e582">—</num>
+                        <content xml:id="d1e584">
+                           <p xml:id="d1e586">letters of the fuel efficiency scale and of the wet grip scale: 100 %
+                              white and in Calibri Bold 19 pt; the letters shall be centred on an
+                              axis at 4,5 mm from the left side of the arrows;</p>
+                        </content>
+                     </indent>
+                     <indent xml:id="d1e590">
+                        <num xml:id="d1e592">—</num>
+                        <list xml:id="d1e594">
+                           <subparagraph xml:id="d1e596" refersTo="~INP">
+                              <content xml:id="d1e598">
+                                 <p xml:id="d1e600">CMYK colour codes of arrows for the A to E fuel efficiency scale
+                                    as follows:</p>
+                              </content>
+                           </subparagraph>
+                           <indent xml:id="d1e604">
+                              <num xml:id="d1e606">—</num>
+                              <content xml:id="d1e608">
+                                 <p xml:id="d1e610">A-class: 100,0,100,0;</p>
+                              </content>
+                           </indent>
+                           <indent xml:id="d1e614">
+                              <num xml:id="d1e616">—</num>
+                              <content xml:id="d1e618">
+                                 <p xml:id="d1e620">B-class: 45,0,100,0;</p>
+                              </content>
+                           </indent>
+                           <indent xml:id="d1e624">
+                              <num xml:id="d1e626">—</num>
+                              <content xml:id="d1e628">
+                                 <p xml:id="d1e630">C-class: 0,0,100,0;</p>
+                              </content>
+                           </indent>
+                           <indent xml:id="d1e634">
+                              <num xml:id="d1e636">—</num>
+                              <content xml:id="d1e638">
+                                 <p xml:id="d1e640">D-class: 0,30,100,0;</p>
+                              </content>
+                           </indent>
+                           <indent xml:id="d1e645">
+                              <num xml:id="d1e647">—</num>
+                              <content xml:id="d1e649">
+                                 <p xml:id="d1e651">E-class: 0,100,100,0;</p>
+                              </content>
+                           </indent>
+                        </list>
+                     </indent>
+                     <indent xml:id="d1e657">
+                        <num xml:id="d1e659">—</num>
+                        <list xml:id="d1e661">
+                           <subparagraph xml:id="d1e663" refersTo="~INP">
+                              <content xml:id="d1e665">
+                                 <p xml:id="d1e667">CMYK colour codes of arrows for the A to E wet grip scale as
+                                    follows:</p>
+                              </content>
+                           </subparagraph>
+                           <indent xml:id="d1e671">
+                              <num xml:id="d1e673">—</num>
+                              <content xml:id="d1e675">
+                                 <p xml:id="d1e677">A: 100,60,0,0;</p>
+                              </content>
+                           </indent>
+                           <indent xml:id="d1e681">
+                              <num xml:id="d1e683">—</num>
+                              <content xml:id="d1e685">
+                                 <p xml:id="d1e687">B: 90,40,0,0;</p>
+                              </content>
+                           </indent>
+                           <indent xml:id="d1e691">
+                              <num xml:id="d1e693">—</num>
+                              <content xml:id="d1e695">
+                                 <p xml:id="d1e697">C: 65,20,0,0;</p>
+                              </content>
+                           </indent>
+                           <indent xml:id="d1e701">
+                              <num xml:id="d1e703">—</num>
+                              <content xml:id="d1e705">
+                                 <p xml:id="d1e707">D: 50,10,0,0;</p>
+                              </content>
+                           </indent>
+                           <indent xml:id="d1e712">
+                              <num xml:id="d1e714">—</num>
+                              <content xml:id="d1e716">
+                                 <p xml:id="d1e718">E: 30,0,0,0;</p>
+                              </content>
+                           </indent>
+                        </list>
+                     </indent>
+                     <indent xml:id="d1e725">
+                        <num xml:id="d1e727">—</num>
+                        <content xml:id="d1e729">
+                           <p xml:id="d1e731">internal dividers: weight of 0,5 pts, colour shall be 100 % black;</p>
+                        </content>
+                     </indent>
+                     <indent xml:id="d1e735">
+                        <num xml:id="d1e737">—</num>
+                        <content xml:id="d1e739">
+                           <p xml:id="d1e741">letter of the fuel efficiency class: 100 % white and in Calibri Bold
+                              33 pt. Fuel efficiency and wet grip class arrows and the corresponding
+                              arrows in the A to E scale shall be positioned in such a way that
+                              their tips are aligned. The letter in the fuel efficiency class and in
+                              the wet grip class arrow shall be positioned in the centre of the
+                              rectangular part of the arrow which shall be 100 % black;</p>
+                        </content>
+                     </indent>
+                     <indent xml:id="d1e745">
+                        <num xml:id="d1e747">—</num>
+                        <content xml:id="d1e749">
+                           <p xml:id="d1e751">fuel efficiency pictogram: width 16 mm, height 14 mm, weight 1 pts,
+                              colour: 100 % black;</p>
+                        </content>
+                     </indent>
+                     <indent xml:id="d1e755">
+                        <num xml:id="d1e757">—</num>
+                        <content xml:id="d1e759">
+                           <p xml:id="d1e761">wet grip pictogram: width 20 mm, height 14 mm, weight 1 pts, colour:
+                              100 % black;</p>
+                        </content>
+                     </indent>
+                     <indent xml:id="d1e765">
+                        <num xml:id="d1e767">—</num>
+                        <content xml:id="d1e769">
+                           <p xml:id="d1e771">external rolling noise pictogram: width 24 mm, height 18 mm, weight 1
+                              pts, colour: 100 % black. Number of decibels in the loudspeaker in
+                              Verdana Bold 12 pt, the unit ‘dB’ in Regular 9 pt; the range of
+                              external rolling noise classes (A to C) centred under the pictogram,
+                              with the letter of the applicable external rolling noise class in
+                              Verdana Bold 16 pt and the other letters of the external rolling noise
+                              classes in Verdana Regular 10 pt;</p>
+                        </content>
+                     </indent>
+                     <indent xml:id="d1e775">
+                        <num xml:id="d1e777">—</num>
+                        <content xml:id="d1e779">
+                           <p xml:id="d1e781">snow grip pictogram: width 15 mm, height 13 mm, weight 1 pts,
+                              colour: 100 % black;</p>
+                        </content>
+                     </indent>
+                     <indent xml:id="d1e786">
+                        <num xml:id="d1e788">—</num>
+                        <content xml:id="d1e790">
+                           <p xml:id="d1e792">ice grip pictogram: width 15 mm, height 13 mm, weight 1 pts, weight of
+                              oblique bars 0,5 pts, colour: 100 % black;</p>
+                        </content>
+                     </indent>
+                     <indent xml:id="d1e796">
+                        <num xml:id="d1e798">—</num>
+                        <content xml:id="d1e800">
+                           <p xml:id="d1e802">the number of the regulation shall be 100 % black and in Verdana
+                              Regular 6 pt.</p>
+                        </content>
+                     </indent>
+                  </list>
+               </point>
+            </list>
+         </level>
+      </mainBody>
+   </doc>
+</akomaNtoso>

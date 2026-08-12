@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Part of CoV 4.1(2022-02-07)
+-->
+<Council_internal_document xmlns="http://ifc.europa.eu/common_vocabulary">
+	<logo>
+		<emblem>COUNCIL.png</emblem>
+		<acting_entity>COUNCIL OF THE EUROPEAN UNION</acting_entity>
+	</logo>
+	<place_and_date>Brussels, <date>6 October 2017</date></place_and_date>
+	(OR. <original_language>en</original_language>)
+	Interinstitutional File: <procedure_identifier>2017/0003 (COD)</procedure_identifier>
+	<reference>12955/17</reference>
+	<reference>TELECOM 223</reference>
+	<reference>COMPET 648</reference>
+	<reference>MI 681</reference>
+	<reference>DATAPROTECT 148</reference>
+	<reference>CONSOM 311</reference>
+	<reference>JAI 886</reference>
+	<reference>DIGIT 201</reference>
+	<reference>FREMP 111</reference>
+	<reference>CYBER 140</reference>
+	<reference>CODEC 1531</reference>
+	<document_category>NOTE</document_category>
+	<heading>From:</heading><issuer>Presidency</issuer>
+	<heading>To:</heading><addressee>Delegations</addressee>
+	<heading>No. prev. doc.:</heading><reference>11995/17</reference><reference>TELECOM 200</reference><reference>COMPET 591</reference><reference>MI 612</reference><reference>DATAPROTECT 136</reference><reference>CONSOM 297</reference><reference> JAI 770</reference><reference>DIGIT 185</reference><reference>FREMP 92</reference><reference>CYBER 122</reference><reference>CODEC 1354</reference>
+	<heading>No. Cion doc.:</heading><reference>6967/17</reference><reference>TELECOM 53</reference><reference>COMPET 159</reference><reference>MI 184</reference><reference>DATAPROTECT 23</reference><reference>CONSOM 67</reference><reference>JAI 192</reference><reference>DIGIT 37</reference><reference>FREMP 22</reference><reference>CYBER 29</reference><reference>IA 34</reference><reference>CODEC 319</reference>
+	<heading>Subject:</heading>
+	<title_of_the_document>Proposal for a Regulation of the European Parliament and of the Council concerning the respect for private life and the protection of personal data in electronic communications and repealing Directive 2002/58/EC (Regulation on Privacy and Electronic Communications)- Examination of the Presidency text (Art. 1-5 and related recitals)</title_of_the_document>
+	<section>
+		<heading><numbering>I.</numbering></heading>
+		<subject>INTRODUCTION</subject>
+		<point>
+			<numbering>1.</numbering>For the purposes of the WP TELE meeting of 18 October, delegations will find in Annex A a revised text of the ePrivacy proposal (ePR), focusing on Articles 1 to 5 and the related recitals. The revisions are based on the discussions held in the WP TELE and on the written comments provided by delegations, and are without prejudice to any comments delegations might wish to make in the future, also bearing in mind that most delegations are still analysing the proposal.</point>
+		<point>
+			<numbering>2.</numbering>For ease of reference, the latest changes to the text are underlined while the amendments to the Commission proposal are marked in bold and deletions in strikethrough. Some textual parts in the recitals have been replaced by square brackets ([…]) as they concern parts of those recitals, which are not relevant for the discussion on 18 October. The Presidency would also like to inform delegations that art. 4a(2) will not be discussed during the meeting as it is linked to the discussion on Article 8.</point>
+		<point>
+			<numbering>3.</numbering>To facilitate the examination of the proposal, delegations will find in Annex B definitions that are only referred to in art. 4 of ePR, such as the latest version<note>Doc. 12797/17 of 6 October 2017.</note> of the relevant definitions from the European Electronic Communications Code (the Code) (Art. 4(1)(b)), the definition of 'terminal equipment' as provided in Commission Directive 2008/63/EC (art. 4(1)(c)) and the definition of 'information society service' as provided in Directive 2015/1535 (art. 4(1)(d)).</point>
+		<point>
+			<numbering>4.</numbering>Delegations will find below an overview of all the amendments introduced in the document.</point>
+	</section>
+	<section>
+		<heading><numbering>II.</numbering></heading>
+		<subject>MAIN CHANGES</subject>
+		<subject>Link to the General Data Protection Regulation (GDPR)</subject>
+		<point>
+			<numbering>5.</numbering>The Presidency has tried to further clarify the interplay between the ePR and GDPR in a new recital 2a (merged with text coming from former recital 5, now deleted) and art. 1(3). The aim of the changes was to make clear that the ePR is a lex specialis vis-à-vis the GDPR as far as personal data (i.e. of natural persons) are concerned. If no specific rules are established in the ePR, the provisions of the GDPR apply to any processing of electronic communications data that qualify as personal data. Moreover, since the GDPR as such does not apply to legal persons, recital 2a makes clear that relevant provisions of the GDPR shall apply to them only if the ePR makes a specific reference (as for example in art. 4a).</point>
+		<subject>Legal persons</subject>
+		<point>
+			<numbering>6.</numbering>In connection with the previous point, the changes in recitals 1 and 3 and art. 1(1a) and 4a(1) introduce further clarifications on the application of the ePR to legal persons.</point>
+		<point>
+			<numbering>7.</numbering>In addition, new recital 3a and art. 4a(1a) aim at clarifying that the purpose of the above provisions is not meant to affect national legislation on who can represent legal persons in dealings with any third parties or in legal proceedings.</point>
+		<subject>Ancillary services</subject>
+		<point>
+			<numbering>8.</numbering>The changes in art. 4(2) make clear that the inclusion of ancillary services in the definition of 'interpersonal communication service' applies only for the purposes of the ePR, to avoid any interference with other legislative files.</point>
+		<point>
+			<numbering>9.</numbering>New recital 11a provides more detail on how the ePR should apply to ancillary functionalities and on what could be considered as an ancillary feature. Delegations are invited to express their views on the proposed clarifications and, if necessary, suggest further amendments to adequately address the issue of ancillary services.</point>
+		<subject>Machine-to-machine communications</subject>
+		<point>
+			<numbering>10.</numbering>The Presidency has amended recital 12 and art. 5(2). Taking similar approach as in the Telecoms Code (in particular recital 224 and the definition of electronic communication service in art. 2(4)), the provisions now make a distinction between the application and transmission layers of machine-to-machine services. It has been clarified that the application layer of such services, which does not normally constitute an electronic communication service, should not be covered by the ePR. On the other hand, the transmission services used for the provision of machine-to-machine services do constitute an electronic communications service and as such should be subject to the principle of confidentiality of communications. Given the clarifications provided in recital 12, delegations are invited to consider whether there is a need for the text on machine-to-machine services in articles at all. The Presidency notes that after the substance of the provisions on machine-to-machine communications has been agreed upon, the Presidency will consider what would be the most appropriate place for those provisions in the structure of the Regulation.</point>
+	</section>
+	<section>
+		<heading><numbering>III.</numbering></heading>
+		<subject>OTHER CHANGES</subject>
+		<point>
+			<numbering>11.</numbering>In art. 2(1)(b) and 3(1)(c), the Presidency has deleted the words 'related to'.</point>
+		<point>
+			<numbering>12.</numbering>The notion of 'publicly available services' used in art. 2(2)(c) has been further clarified in recital 13.</point>
+		<point>
+			<numbering>13.</numbering>In art. 3(1)(aa), (c), (cb) and (cc) the word 'located' has been replaced by 'who are' to align with a similar text in the GDPR (art. 3(2)). 'Who are' has been added also in art. 3(1)(a).</point>
+		<point>
+			<numbering>14.</numbering>Recital 8 has been amended to clarify, in relation to the territorial scope of application set out in art. 3, that the ePR should apply whether or not the processing of data takes place in the Union and whether the service providers or persons processing the data are established or located in the Union or not. Recital 9 has been deleted to avoid repetition.</point>
+		<point>
+			<numbering>15.</numbering>Following the discussion in the WP TELE, art. 3(2) lists all actors that have the obligation to designate a representative. New art. 3(2a), inspired by a similar provision in the GDPR (art. 27(2)), clarifies that this obligation should not apply to occasional and low-risk activities.</point>
+		<point>
+			<numbering>16.</numbering>The wording of the definition of 'electronic communications metadata' in art. 4(3)(c) has been aligned with similar wording in the definition of 'electronic communications content'.</point>
+		<point>
+			<numbering>17.</numbering>Definition of 'electronic message' in art. 4(3)(e) has been amended to avoid circularity. Moreover, new recital 30a clarifying what should be included in this definition has been introduced in the proposal.</point>
+		<point>
+			<numbering>18.</numbering>Definition of 'direct marketing communications' in art. 4(3)(f) has been further improved and further details have been included in recital 32 to clarify what forms of advertising should or should not be covered by the ePR.</point>
+		<point>
+			<numbering>19.</numbering>In art. 4a(1) it has been clarified that 'provisions' (as opposed to 'conditions') for consent under the GDPR apply in the ePR context. In this way, for example art. 8 of GDPR on child's consent also applies.</point>
+		<point>
+			<numbering>20.</numbering>The Presidency has included in art. 4a(3) a possibility for the end-users to request not to receive the periodic reminder of a possibility to withdraw their consent.</point>
+		<point>
+			<numbering>21.</numbering>A number of minor corrections have been introduced for consistency or linguistic purposes: recitals 15, 18, 19 and 20.</point>
+	</section>
+	<section>
+		<heading><numbering>IV.</numbering></heading>
+		<subject>CONCLUSION</subject>
+		<point>
+			<numbering>22.</numbering>At the meetings of 18 October, the Presidency intends to discuss the text of the proposal article-by-article. During the discussion, the Presidency will invite delegations to express their views on proposed changes.</point>
+		<point>
+			<numbering>23.</numbering>The Presidency kindly asks delegations to provide written comments by 6 November 2017.</point>
+	</section>
+	<annex>
+		<heading>ANNEX <numbering>A</numbering></heading>
+		<recital>
+			<numbering>(1)</numbering>Article 7 of the Charter of Fundamental Rights of the European Union ("the Charter") protects the fundamental right of everyone to the respect for his or her private and family life, home and communications. Respect for the privacy of one’s communications is an essential dimension of this right<insertion>, applying both to natural and legal persons.</insertion>. Confidentiality of electronic communications ensures that information exchanged between parties and the external elements of such communication, including when the information has been sent, from where, to whom, is not to be revealed to anyone other than to the parties involved in a communication. The principle of confidentiality should apply to current and future means of communication, including calls, internet access, instant messaging applications, e-mail, internet phone calls and personal messaging provided through social media.</recital>
+		<recital>
+			<numbering>(2)</numbering>The content of electronic communications may reveal highly sensitive information about the natural persons involved in the communication, from personal experiences and emotions to medical conditions, sexual preferences and political views, the disclosure of which could result in personal and social harm, economic loss or embarrassment. Similarly, metadata derived from electronic communications may also reveal very sensitive and personal information. These metadata include<deletion>s</deletion> the numbers called, the websites visited, geographical location, the time, date and duration when an individual made a call etc., allowing precise conclusions to be drawn regarding the private lives of the persons involved in the electronic communication, such as their social relationships, their habits and activities of everyday life, their interests, tastes etc.</recital>
+		<recital>
+			<numbering><insertion>(2a)</insertion></numbering><insertion>The provisions of this Regulation particularise and complement the general rules on the protection of personal data laid down in Regulation (EU) 2016/679 as regards electronic communications data that qualify as personal data. This Regulation therefore does not lower the level of protection enjoyed by natural persons under Regulation (EU) 2016/679. Processing of electronic communications data by providers of electronic communications services should only be permitted in accordance with this Regulation. If no specific rules are established in this Regulation, Regulation (EU) 2016/679 should apply to any processing of electronic communications data that qualify as personal data. Insofar as end-users who are legal persons are concerned, provisions of Regulation (EU) 2016/679 should apply only to the extent specifically required by this Regulation.</insertion></recital>
+		<recital>
+			<numbering>(3)</numbering>Electronic communications data may also reveal information concerning legal entities, such as business secrets or other sensitive information that has economic value<insertion>and the protection of which allows legal persons to conduct their business, supporting among other innovation</insertion>. Therefore, the provisions of this Regulation should <insertion>in principle</insertion> apply to both natural and legal persons. Furthermore, this Regulation should ensure that that<insertion>, where necessary,</insertion>provisions of the Regulation (EU) 2016/679 of the European Parliament and of the Council<note>Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation) (OJ L 119, 4.5.2016, p. 1–88).</note>, also apply <insertion>mutatis mutandis</insertion> to end-users who are legal persons. This includes the <deletion>definition of</deletion><insertion>provisions on</insertion> consent under Regulation (EU) 2016/679. <deletion>When reference is made to consent by an end-user, including legal persons, this definition should apply.</deletion><deletion>[...]</deletion></recital>
+		<recital>
+			<numbering><insertion>(3a)</insertion></numbering><insertion>This Regulation should not affect national law regulating for instance the conclusion or the validity of a contract. Similarly, this Regulation should not affect national law in relation to determining who has the legal power to represent legal persons in any dealings with third parties or in legal proceedings.</insertion></recital>
+		<recital>
+			<numbering>(4)</numbering>Pursuant to Article 8(1) of the Charter and Article 16(1) of the Treaty on the Functioning of the European Union, everyone has the right to the protection of personal data concerning him or her. Regulation (EU) 2016/679 lays down rules relating to the protection of natural persons with regard to the processing of personal data and rules relating to the free movement of personal data. Electronic communications data may include personal data as defined in Regulation (EU) 2016/679.</recital>
+		<recital>
+			<numbering><deletion>(5)</deletion></numbering><deletion>The provisions of this Regulation particularise and complement the general rules on the protection of personal data laid down in Regulation (EU) 2016/679 as regards electronic communications data that qualify as personal data. This Regulation therefore does not lower the level of protection enjoyed by natural persons under Regulation (EU) 2016/679. Processing of electronic communications data by providers of electronic communications services should only be permitted in accordance with this Regulation.</deletion></recital>
+		<recital>
+			<numbering>(6)</numbering>While the principles and main provisions of Directive 2002/58/EC of the European Parliament and of the Council<note>Directive 2002/58/EC of the European Parliament and of the Council of 12 July 2002 concerning the processing of personal data and the protection of privacy in the electronic communications sector (Directive on privacy and electronic communications) (OJ L 201, 31.7.2002, p.37).</note> remain generally sound, that Directive has not fully kept pace with the evolution of technological and market reality, resulting in an inconsistent or insufficient effective protection of privacy and confidentiality in relation to electronic communications. Those developments include the entrance on the market of electronic communications services that from a consumer perspective are substitutable to traditional services, but do not have to comply with the same set of rules. Another development concerns new techniques that allow for tracking of online behaviour of end-users, which are not covered by Directive 2002/58/EC. Directive 2002/58/EC should therefore be repealed and replaced by this Regulation.</recital>
+		<recital>
+			<numbering>(7)</numbering>The Member States should be allowed, within the limits of this Regulation, to maintain or introduce national provisions to further specify and clarify the application of the rules of this Regulation in order to ensure an effective application and interpretation of those rules. Therefore, the margin of discretion, which Member States have in this regard, should maintain a balance between the protection of private life and personal data and the free movement of electronic communications data.</recital>
+		<recital>
+			<numbering>(8)</numbering>This Regulation should apply to providers of electronic communications services, to providers of publicly available directories, and to <deletion>software</deletion>providers <insertion>of software</insertion> permitting electronic communications, including the retrieval and presentation of information on the internet. This Regulation should also apply to natural and legal persons who use electronic communications services to send <insertion>or present</insertion> direct marketing commercial communications or <insertion>make use of processing and storage capabilities of terminal equipment or</insertion> collect information <deletion>related to</deletion><insertion>processed by or emitted by</insertion> or stored in end-users’ terminal equipment. <insertion>Furthermore, this Regulation should apply regardless of whether the processing of electronic communications data or personal data of end-users who are in the Union takes place in the Union or not, or of whether the service provider or person processing such data is established or located in the Union or not.</insertion></recital>
+		<recital>
+			<numbering><deletion>(9)</deletion></numbering><deletion>This Regulation should apply to electronic communications data processed in connection with the provision and use of electronic communications services in the Union, regardless of whether or not the processing takes place in the Union. Moreover, in order not to deprive end-users in the Union of effective protection, this Regulation should also apply to electronic communications data processed in connection with the provision of electronic communications services from outside the Union to end-users in the Union.</deletion></recital>
+		<recital>
+			<numbering>(10)</numbering>Radio equipment and its software which is placed on the internal market in the Union, must comply with Directive 2014/53/EU of the European Parliament and of the Council <note>Directive 2014/53/EU of the European Parliament and of the Council of 16 April 2014 on the harmonisation of the laws of the Member States relating to the making available on the market of radio equipment and repealing Directive 1999/5/EC (OJ L 153, 22.5.2014, p. 62).</note>. This Regulation should not affect the applicability of any of the requirements of Directive 2014/53/EU nor the power of the Commission to adopt delegated acts pursuant to Directive 2014/53/EU requiring that specific categories or classes of radio equipment incorporate safeguards to ensure that personal data and privacy of end-users are protected.</recital>
+		<recital>
+			<numbering>(11)</numbering>The services used for communications purposes, and the technical means of their delivery, have evolved considerably. End-users increasingly replace traditional voice telephony, text messages (SMS) and electronic mail conveyance services in favour of functionally equivalent online services such as Voice over IP, messaging services and web-based e-mail services. In order to ensure an effective and equal protection of end-users when using functionally equivalent services, this Regulation uses the definition of electronic communications services set forth in the [Directive of the European Parliament and of the Council establishing the European Electronic Communications Code<note>Commission proposal for a Directive of the European Parliament and of the Council establishing the European Electronic Communications Code (Recast) (COM/2016/0590 final - 2016/0288 (COD)).</note>]. That definition encompasses not only internet access services and services consisting wholly or partly in the conveyance of signals but also interpersonal communications services, which may or may not be number-based, such as for example, Voice over IP, messaging services and web-based e-mail services. The protection of confidentiality of communications is crucial also as regards interpersonal communications services that are ancillary to another service; therefore, such type of services also having a communication functionality should be covered by this Regulation.</recital>
+		<recital>
+			<numbering><insertion>(11a)</insertion></numbering>The protection of confidentiality of communications is crucial also as regards interpersonal communications services that are ancillary to another service; therefore, such type of services also having a communication functionality should be covered by this Regulation. <insertion>In such cases, this Regulation applies only to the ancillary feature itself and the electronic communications functionality it provides. To determine whether an electronic communications functionality constitutes an ancillary feature, the end-users expectations have to be taken into account. For example such communications functionality is considered to be ancillary feature in all the circumstances where electronic communication is taking place between a finite, that is to say not potentially unlimited, number of end-users which is determined by the sender of the communications, e.g. any messaging application allowing two or more people to connect and communicate. However, where access to an electronic communications functionality is available for anyone, e.g. an electronic communications channel in online games which is open to all persons playing the game, such channel does not constitute an ancillary feature.</insertion></recital>
+		<recital>
+			<numbering>(12)</numbering><deletion>Connected devices and machines increasingly communicate with each other by using electronic communications networks (Internet of Things).</deletion><insertion>The use of machine-to-machine services, that is to say services involving an automated transfer of data and information between devices or software-based applications with limited or no human interaction, is emerging. While the services provided at the application-layer of such services do normally not qualify as an electronic communications service as defined in the [Directive establishing the European Electronic Communications Code],</insertion><deletion>T</deletion><insertion>t</insertion>he transmission <insertion>services used for the provision</insertion> of machine-to-machine <deletion>communications</deletion><insertion>services regularly</insertion> involves the conveyance of signals <deletion>over</deletion><insertion>via</insertion> a<insertion>n electronic communications</insertion> network and, hence, <deletion>usually</deletion><insertion>normally</insertion> constitutes an electronic communications service. In order to ensure full protection of the rights to privacy and confidentiality of communications, and to promote a trusted and secure Internet of Things in the digital single market, it is necessary to clarify that this Regulation<insertion>, in particular the requirements relating to the confidentiality of communications,</insertion> should apply to the transmission of machine-to-machine <insertion>electronic</insertion> communications <insertion>where carried out via an electronic communications service</insertion>. <deletion>Therefore, the principle of confidentiality enshrined in this Regulation should also apply to the transmission of machine-to-machine communications.</deletion>Specific safeguards could also be adopted under sectorial legislation, as for instance Directive 2014/53/EU.</recital>
+		<recital>
+			<numbering>(13)</numbering>The development of fast and efficient wireless technologies has fostered the increasing availability for the public of internet access via wireless networks accessible by anyone in public and semi-private spaces such as 'hotspots' situated at different places within a city, department stores, shopping malls and hospitals. To the extent that those communications networks are provided to an undefined group of end-users, <insertion>regardless if these networks are secured with passwords or not,</insertion> the confidentiality of the communications transmitted through such networks should be protected. The fact that wireless electronic communications services may be ancillary to other services should not stand in the way of ensuring the protection of confidentiality of communications data and application of this Regulation. Therefore, this Regulation should apply to electronic communications data using electronic communications services and public communications networks. In contrast, this Regulation should not apply to closed groups of end-users such as corporate networks, access to which is limited <insertion>pre-defined group of end-users, e.g.</insertion> to members of the corporation.<insertion>Therefore, only networks proving access to a group of end-users which is not pre-defined and where end-users get access to the network under the same conditions, e.g. wifi network of a department store open to all customers, are regulated by this Regulation.</insertion></recital>
+		<recital>
+			<numbering>(14)</numbering>Electronic communications data should be defined in a sufficiently broad and technology neutral way so as to encompass any information concerning the content transmitted or exchanged (electronic communications content) and the information concerning an end-user of electronic communications services processed for the purposes of transmitting, distributing or enabling the exchange of electronic communications content; including data to trace and identify the source and destination of a communication, geographical location and the date, time, duration and the type of communication. Whether such signals and the related data are conveyed by wire, radio, optical or electromagnetic means, including satellite networks, cable networks, fixed (circuit- and packet-switched, including internet) and mobile terrestrial networks, electricity cable systems, the data related to such signals should be considered as electronic communications metadata and therefore be subject to the provisions of this Regulation. Electronic communications metadata may include information that is part of the subscription to the service when such information is processed for the purposes of transmitting, distributing or exchanging electronic communications content.</recital>
+		<recital>
+			<numbering>(15)</numbering>Electronic communications data should be treated as confidential. This means that any <deletion>interference with the transmission</deletion><insertion>processing</insertion> of electronic communications data, whether directly by human intervention or through the intermediation of automated processing by machines, without the consent of all the communicating parties should be prohibited. The prohibition of interception of communications data should apply during their conveyance, i.e. until receipt of the content of the electronic communication by the intended addressee. Interception of electronic communications data may occur, for example, when someone other than the communicating parties, listens to calls, reads, scans or stores the content of electronic communications, or the associated metadata for purposes other than the exchange of communications. Interception also occurs when third parties monitor websites visited, timing of the visits, interaction with others, etc., without the consent of the end-user concerned. As technology evolves, the technical ways to engage in interception have also increased. Such ways may range from the installation of equipment that gathers data from terminal equipment over targeted areas, such as the so-called IMSI (International Mobile Subscriber Identity) catchers, to programs and techniques that, for example, surreptitiously monitor browsing habits for the purpose of creating end-user profiles. Other examples of interception include capturing payload data or content data from unencrypted wireless networks and routers, including browsing habits without the end-users' consent.</recital>
+		<recital>
+			<numbering>(18)</numbering>End-users may consent to the processing of their metadata to receive specific services such as protection services against fraudulent activities (by analysing usage data, location and customer account in real time). In the digital economy, services are often supplied against counter-performance other than money, for instance by end-users being exposed to advertisements. <deletion>For the purposes of this Regulation, consent of an end-user, regardless of whether the latter is a natural or a legal person, should have the same meaning and be subject to the same conditions as the data subject's consent under Regulation (EU) 2016/679.</deletion>	Basic broadband internet access and voice communications services are to be considered as essential services for individuals to be able to communicate and participate to the benefits of the digital economy. Consent for processing <insertion>electronic communications</insertion> data from internet or voice communication usage will not be valid if the <deletion>data subject</deletion><insertion>end-user</insertion> has no genuine and free choice, or is unable to refuse or withdraw consent without detriment.</recital>
+		<recital>
+			<numbering>(19)</numbering>The <insertion>protection of the</insertion> content of electronic communications pertains to the essence of the fundamental right to respect for private and family life, home and communications protected under Article 7 of the Charter. Any interference with the content of electronic communications should be allowed only under very clear defined conditions, for specific purposes and be subject to adequate safeguards against abuse. This Regulation provides for the possibility of providers of electronic communications services to process electronic communications data in transit, with the informed consent of all the end-users concerned. For example, providers may offer services that entail the scanning of emails to remove certain pre-defined material. Given the sensitivity of the content of communications, this Regulation sets forth a presumption that the processing of such content data will result in high risks to the rights and freedoms of natural persons. <deletion>[...]</deletion></recital>
+		<recital>
+			<numbering>(20)</numbering>Terminal equipment of end-users of electronic communications networks and any information relating to the usage of such terminal equipment, whether in particular is <deletion>stored in</deletion><insertion>processed by</insertion>	or emitted by <insertion>or stored in</insertion>	such equipment, requested from or processed in order to enable it to connect to another device and or network equipment, are part of the private sphere <insertion>, including the privacy of one’s communications,</insertion>	of the end-users requiring protection under the Charter of Fundamental Rights of the European Union	<deletion>and the European Convention for the Protection of Human Rights and Fundamental Freedoms</deletion>. <deletion>[...]</deletion></recital>
+		<recital>
+			<numbering>(30)</numbering>Publicly available directories of end-users of electronic communications services are widely distributed. Publicly available directories means any directory or service containing end-users information such as phone numbers (including mobile phone numbers), email address contact details and includes inquiry services. <deletion>[...]</deletion></recital>
+		<recital>
+			<numbering><insertion>(30a)</insertion></numbering><insertion>For the purposes of the provisions relating to direct marketing communications, electronic message should include e-mail, SMS, MMS and functionally equivalent applications and techniques.</insertion></recital>
+		<recital>
+			<numbering>(32)</numbering>In this Regulation, direct marketing <insertion>communications</insertion>refers to any form of advertising by which a natural or legal person sends <insertion>or presents</insertion> direct marketing communications directly to one or more identified or identifiable end-users using electronic communications services.<insertion>The provisions on direct marketing communications do not apply to any other form of marketing, e.g. displaying advertising to the general public on a website which is not directed to any specific identified or identifiable end-user.</insertion> In addition to the offering of products and services for commercial purposes, <deletion>this should</deletion><insertion>direct marketing communications</insertion>also include messages sent by political parties that contact natural persons via electronic communications services in order to promote their parties. The same <deletion>should</deletion>appl<deletion>y</deletion><insertion>ies</insertion>to messages sent by other non-profit organisations to support the purposes of the organisation.</recital>
+		<chapter>
+			<heading>CHAPTER <numbering>I</numbering></heading>
+			<subject>GENERAL PROVISIONS</subject>
+			<article>
+				<heading>Article <numbering>1</numbering></heading>
+				<subject>Subject matter</subject>
+				<numbered_paragraph>
+					<numbering>1.</numbering>This Regulation lays down rules regarding the protection of fundamental rights and freedoms of natural	<deletion>and legal</deletion>persons in the provision and use of electronic communications services, and in particular, the rights to respect for private life and communications and the protection of natural persons with regard to the processing of personal data.</numbered_paragraph>
+				<numbered_paragraph>
+					<numbering><insertion>1a.</insertion></numbering><insertion>This Regulation lays down rules regarding the protection of </insertion><deletion>the communications</deletion><insertion>the fundamental rights and freedoms</insertion><insertion> of legal persons in the provision and use of the electronic communications services</insertion><insertion>, and in particular their rights to respect of communications</insertion><insertion>.</insertion></numbered_paragraph>
+				<numbered_paragraph>
+					<numbering>2.</numbering><deletion>This Regulation ensures</deletion><insertion>The</insertion> free movement of electronic communications data and electronic communications services within the Union<deletion>, which</deletion> shall be neither restricted nor prohibited for reasons related to the respect for the private life and communications of natural <deletion>and legal</deletion> persons and the protection of natural persons with regard to the processing of personal data<insertion>, and for protection of communications of legal persons</insertion>.</numbered_paragraph>
+				<numbered_paragraph>
+					<numbering>3.</numbering>The provisions of this Regulation particularise and complement Regulation (EU) 2016/679 <insertion>with regard to the processing of electronic communications data that qualify as personal data</insertion> by laying down specific rules for the purposes mentioned in paragraphs 1 <deletion>and</deletion><insertion>to</insertion> 2.</numbered_paragraph>
+			</article>
+			<article>
+				<heading>Article <numbering>2</numbering></heading>
+				<subject>Material Scope</subject>
+				<numbered_paragraph>
+					<numbering>1.</numbering>
+					<introductory_part>This Regulation applies to<insertion>:</insertion></introductory_part>
+					<point>
+						<numbering><insertion>(a)</insertion></numbering>the processing of electronic communications <insertion>content</insertion><deletion>data</deletion><insertion>in transmission and of electronic communications metadata</insertion> carried out in connection with the provision and the use of electronic communications services<insertion>;</insertion><deletion>and to</deletion></point>
+					<point>
+						<numbering><insertion>(b)</insertion></numbering>information <deletion>[related to</deletion> <deletion>or</deletion> <insertion>processed by or emitted by or stored in</insertion><deletion>]</deletion> the terminal equipment of end-users.</point>
+					<point>
+						<numbering><insertion>(c)</insertion></numbering><insertion>the placing on the market of software permitting electronic communications, including the retrieval and presentation of information on the internet;</insertion></point>
+					<point>
+						<numbering><insertion>(d)</insertion></numbering><insertion>the offering of a publicly available directory of end-users of electonic communications services;</insertion></point>
+					<point>
+						<numbering><insertion>(e)</insertion></numbering><insertion>the sending or presenting direct marketing communications to end-users.</insertion></point>
+				</numbered_paragraph>
+				<numbered_paragraph>
+					<numbering>2.</numbering>
+					<introductory_part>This Regulation does not apply to:</introductory_part>
+					<point>
+						<numbering>(a)</numbering>activities which fall outside the scope of Union law;</point>
+					<point>
+						<numbering>(b)</numbering>activities of the Member States which fall within the scope of Chapter 2 of Title V of the Treaty on European Union;</point>
+					<point>
+						<numbering>(c)</numbering>electronic communications services which are not publicly available;</point>
+					<point>
+						<numbering>(d)</numbering>activities of competent authorities for the purposes of the prevention, investigation, detection or prosecution of criminal offences or the execution of criminal penalties, including the safeguarding against and the prevention of threats to public security;</point>
+				</numbered_paragraph>
+				<numbered_paragraph>
+					<numbering>3.</numbering>The processing of electronic communications data by the Union institutions, bodies, offices and agencies is governed by Regulation (EU) 00/0000 [new Regulation replacing Regulation 45/2001].
+				</numbered_paragraph>
+				<numbered_paragraph>
+					<numbering>4.</numbering>This Regulation shall be without prejudice to the application of Directive 2000/31/EC<note>Directive 2000/31/EC of the European Parliament and of the Council of 8 June 2000 on certain legal aspects of information society services, in particular electronic commerce, in the Internal Market ('Directive on electronic commerce') (OJ L 178, 17.7.2000, p. 1–16).</note>, in particular of the liability rules of intermediary service providers in Articles 12 to 15 of that Directive.</numbered_paragraph>
+				<numbered_paragraph>
+					<numbering>5.</numbering>This Regulation shall be without prejudice to the provisions of Directive 2014/53/EU.</numbered_paragraph>
+			</article>
+			<article>
+				<heading>Article 3</heading>
+				<subject>Territorial scope and representative</subject>
+				<numbered_paragraph>
+					<numbering>1.</numbering>
+						<introductory_part>This Regulation applies to:</introductory_part>
+						<point>
+							<numbering>(a)</numbering>the provision of electronic communications services to end-users <insertion>who are</insertion> in the Union<deletion>, irrespective of whether a payment of the end-user is required</deletion>;</point>
+						<point>
+							<numbering><insertion>(aa)</insertion></numbering><insertion>the processing of electronic communications content in transmission</insertion> <insertion>and</insertion> <insertion>of electronic communications metadata of end-users</insertion> <deletion>located</deletion><insertion>who are</insertion> <insertion>in the Union;</insertion></point>
+						<point>
+							<numbering><deletion>(b)</deletion></numbering><deletion>the use of such services;</deletion></point>
+						<point>
+							<numbering>(c)</numbering>the protection of information <deletion>[related to</deletion> <deletion>or</deletion> <insertion>processed by or emitted by or stored in</insertion><deletion>]</deletion> the terminal equipment of end-users <deletion>located</deletion><insertion>who are</insertion> in the Union.</point>
+						<point>
+							<numbering><deletion>(cb)</deletion><insertion>(ca)</insertion></numbering><insertion>the placing on the Union market of software permitting electronic communications, including the retrieval and presentation of information on the internet;</insertion></point>
+						<point>
+							<numbering><deletion>(ca)</deletion><insertion>(cb)</insertion></numbering><insertion>the offering of publicly available directories of end-users of electronic communications services</insertion> <deletion>located</deletion><insertion>who are</insertion> <insertion>in the Union;</insertion></point>
+						<point>
+							<numbering><insertion>(cc)</insertion></numbering><insertion>the</insertion> <deletion>[</deletion><insertion>sending or presenting</insertion><deletion>]</deletion> <insertion>of direct marketing communications to end-users</insertion> <deletion>located</deletion><insertion>who are</insertion> <insertion>in the Union.</insertion></point>
+				</numbered_paragraph>
+				<numbered_paragraph>
+					<numbering>2.</numbering>Where the <deletion>[</deletion>provider of an electronic communications service<insertion>, the provider of a publicly available directory or the provider of software enabling electronic communications or a person using electronic communications services to send or present direct marketing communications or makes use of processing and storage capabilities or collects information processed by or emitted by or sored in the end-users’ terminal equipment</insertion><deletion>]</deletion> is not established in the Union it shall designate in writing a representative in the Union.</numbered_paragraph>
+				<numbered_paragraph>
+					<numbering><insertion>2a.</insertion></numbering><insertion>The requirements laid down in paragraph 2 shall not apply if activities listed in paragraph 1 are occasional and are unlikely to result in a risk to the fundamental rights of end-users taking into account the nature, context, scope and purpose of those activities.</insertion></numbered_paragraph>
+				<numbered_paragraph>
+					<numbering>3.</numbering>The representative shall be established in one of the Member States where the end-users of such electronic communications services are located.</numbered_paragraph>
+				<numbered_paragraph>
+					<numbering>4.</numbering>The representative shall <deletion>have the power to answer questions and provide information</deletion><insertion>be mandated by the provider</insertion> <insertion>or person</insertion> <insertion>it represents to be addressed</insertion> in addition to or instead of the provider it represents, in particular, to supervisory authorities, and end-users, on all issues related to processing electronic communications data for the purposes of ensuring compliance with this Regulation.</numbered_paragraph>
+				<numbered_paragraph>
+					<numbering>5.</numbering>The designation of a representative pursuant to paragraph 2 shall be without prejudice to legal actions, which could be initiated against <deletion>a natural or legal person who processes electronic communications data in connection with the provision of electronic communications services from outside the Union to end-users in the Union</deletion><insertion>the provider</insertion> <insertion>or person</insertion> <insertion>it represents</insertion>.</numbered_paragraph>
+			</article>
+			<article>
+				<heading>Article <numbering>4</numbering></heading>
+				<subject>Definitions</subject>
+				<numbered_paragraph>
+					<numbering>1.</numbering>
+						<introductory_part>	For the purposes of this Regulation, following definitions shall apply:</introductory_part>
+						<point>
+							<numbering>(a)</numbering>the definitions in Regulation (EU) 2016/679;</point>
+						<point>
+							<numbering>(b)</numbering>the definitions of ‘electronic communications network’, ‘electronic communications service’, ‘interpersonal communications service’, ‘number-based interpersonal communications service’, ‘number-independent interpersonal communications service’, ‘end-user’ and ‘call’ in <deletion>points</deletion><insertion>paragraphs</insertion> (1), (4), (5), (6), (7), (14) and (21) respectively of Article 2 of [Directive establishing the European Electronic Communications Code];</point>
+						<point>
+							<numbering>(c)</numbering>the definition of 'terminal equipment' in <deletion>point (1) of</deletion> Article 1 <insertion>(1)</insertion> of Commission Directive 2008/63/EC<note>Commission Directive 2008/63/EC of 20 June 2008 on competition in the markets in telecommunications terminal equipment (OJ L 162, 21.6.2008, p. 20–26).</note><deletion>.</deletion><insertion>;</insertion></point>
+						<point>
+							<numbering><insertion>(d)</insertion></numbering><insertion>the defintion of ‘information society service’ in point (b) of Article 1 (1) of Directive (EU) 2015/1535<note>Directive (EU) 2015/1535 of the European Parliament and of the Council of 9 September 2015 laying down a procedure for the provision of information in the field of technical regulations and of rules on Information Society services (OJ L 241, 17.9.2015, p. 1-15).</note>.</insertion></point>
+				</numbered_paragraph>
+				<numbered_paragraph>
+					<numbering>2.</numbering>For the purposes of <deletion>point (b) of paragraph 1</deletion><insertion>this Regulation</insertion>, the definition of ‘interpersonal communications service’ <insertion>referred to in point (b) of paragraph 1</insertion> shall include services which enable interpersonal and interactive communication merely as a <deletion>minor</deletion> ancillary feature that is intrinsically linked to another service.</numbered_paragraph>
+				<numbered_paragraph>
+					<numbering>3.</numbering>
+						<introductory_part>In addition, for the purposes of this Regulation the following definitions shall apply:</introductory_part>
+						<point>
+							<numbering>(e)</numbering>‘electronic communications data’ means electronic communications content and electronic communications metadata;</point>
+						<point>
+							<numbering>(f)</numbering>‘electronic communications content’ means the content exchanged by means of electronic communications services, such as text, voice, videos, images, and sound;</point>
+						<point>
+							<numbering>(g)</numbering>‘electronic communications metadata’ means data processed<deletion>in an</deletion><insertion>by means of</insertion> electronic communications <deletion>network</deletion><insertion>services</insertion> for the purposes of transmitting, distributing or exchanging electronic communications content; including data used to trace and identify the source and destination of a communication, data on the location of the device generated in the context of providing electronic communications services, and the date, time, duration and the type of communication;</point>
+						<point>
+							<numbering>(h)</numbering>‘publicly available directory’ means a directory of end-users of electronic communications services, whether in printed or electronic form, which is published or made available to the public or to a section of the public, including by means of a directory enquiry service;</point>
+						<point>
+							<numbering>(i)</numbering>‘electronic <deletion>mail</deletion><insertion>message</insertion>’ means any <deletion>electronic</deletion> message containing information such as text, voice, video, sound or image sent over an electronic communications network which can be stored in the network or in related computing facilities, or in the terminal equipment of its recipient;</point>
+						<point>
+							<numbering>(j)</numbering>‘direct marketing communications’ means any form of advertising, whether written or oral, sent <insertion>or presented</insertion> to one or more identified or identifiable end-users of electronic communications services, including the use of automated calling and communication systems with or without human interaction, electronic <deletion>mail</deletion><insertion>message</insertion>, SMS, etc.;</point>
+						<point>
+							<numbering>(k)</numbering>‘direct marketing voice-to-voice calls’ means live calls, which do not entail the use of automated calling systems and communication systems;</point>
+						<point>
+							<numbering>(l)</numbering>‘automated calling and communication systems’ means systems capable of automatically initiating calls to one or more recipients in accordance with instructions set for that system, and transmitting sounds which are not live speech, including calls made using automated calling and communication systems which connect the called person to an individual.</point>
+				</numbered_paragraph>
+			</article>
+			<article>
+				<heading>Article <numbering><deletion>9</deletion><insertion>4a</insertion></numbering></heading>
+				<subject>Consent</subject>
+				<numbered_paragraph>
+					<numbering>1.</numbering>The <deletion>definition of and</deletion><deletion>conditions</deletion><insertion>provisions</insertion> for consent provided for under <deletion>Articles 4(11) and 7 of</deletion> Regulation (EU) 2016/679/EU shall apply<insertion>to natural persons and, mutatis mutandis, to legal persons</insertion>.</numbered_paragraph>
+				<numbered_paragraph>
+					<numbering><insertion>1a.</insertion></numbering><insertion>Paragraph 1 is without prejudice to national legislation on determining the persons who are authorised to represent a legal person in any dealings with third parties or in legal proceedings.</insertion></numbered_paragraph>
+				[
+				<numbered_paragraph>					
+					<numbering>2.</numbering>Without prejudice to paragraph 1, where technically possible and feasible, for the purposes of point (b) of Article 8(1), consent may be expressed by using the appropriate technical settings of a <deletion>software application enabling access to the internet</deletion><insertion>placed on the market permitting electronic communications, including the retrieval and presentation of information on the internet</insertion>.</numbered_paragraph>
+				]
+				<numbered_paragraph>
+					<numbering>3.</numbering>End-users who have consented to the processing of electronic communications data as set out in point (c) of Article 6(2) and points (a) and (b) of Article 6(3) shall <deletion>be given the possibility to withdraw their consent at any time as set forth under Article 7(3) of Regulation (EU) 2016/679 and</deletion> be reminded of <deletion>this</deletion><insertion>the</insertion> possibility <insertion>to withdraw their consent</insertion> at periodic intervals of <insertion>[no longer than</insertion><deletion>6</deletion><insertion>12</insertion> months<insertion>]</insertion>, as long as the processing continues <insertion>, unless the end-user requests not to receive such reminders</insertion>.</numbered_paragraph>
+			</article>
+		</chapter>
+		<chapter>
+			<heading>CHAPTER <numbering>II</numbering></heading>
+			<subject>PROTECTION OF ELECTRONIC COMMUNICATIONS OF <deletion>NATURAL AND LEGAL PERSONS</deletion><insertion>END-USERS</insertion> AND OF <deletion>INFORMATION STORED IN</deletion><insertion>THE INTEGRITY OF</insertion> THEIR TERMINAL EQUIPMENT</subject>
+			<article>
+				<heading>Article <numbering>5</numbering></heading>
+				<subject>Confidentiality of electronic communications data</subject>
+				<numbered_paragraph>
+					<numbering><insertion>1.</insertion></numbering>Electronic communications data shall be confidential. Any <deletion>interference with</deletion><insertion>processing of</insertion> electronic communications data, <deletion>such as by</deletion><insertion>including</insertion> listening, tapping, storing, monitoring, scanning or other kinds of interception<deletion>,</deletion> <insertion>or</insertion> surveillance <deletion>or processing</deletion> of electronic communications data, by persons other than the end-users, shall be prohibited, except when permitted by this Regulation.</numbered_paragraph>
+				<numbered_paragraph>
+					<numbering><insertion>2.</insertion></numbering><insertion>[Confidentiality of electronic communications data</insertion> <insertion>shall apply to the transmission of</insertion><deletion>in</deletion> <insertion>machine-to-machine</insertion> <insertion>electronic</insertion> <insertion>communications</insertion> <deletion>shall only apply when such communication is related to the end-user</deletion><insertion>where carried out via an electronic communications service</insertion><insertion>.]</insertion></numbered_paragraph>
+			</article>
+		</chapter>
+	</annex>
+	<!-- Abridged. Annex B -->
+	<annex/>
+</Council_internal_document>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:elit="urn:eli:annotation-tool:template:">
+  <elit:create-attribute name="lang"><elit:insert-lang/></elit:create-attribute>
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title><elit:insert-title/></title>
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link href="/static/eli-tool.css" rel="stylesheet"/>
+    <elit:insert-content type="rdfa"/>
+    <elit:insert-content type="schema-org"/>
+  </head>
+  <body>
+    <div class="container">
+      <elit:insert-content type="html"/>
+    </div>
+    <script src="/static/jquery/jquery.min.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>

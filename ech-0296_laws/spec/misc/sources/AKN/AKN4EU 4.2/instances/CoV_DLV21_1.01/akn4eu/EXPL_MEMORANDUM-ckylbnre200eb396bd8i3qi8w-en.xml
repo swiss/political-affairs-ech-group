@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?><akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+   <doc name="EXPL_MEMORANDUM">
+   	<meta>
+   		<identification source="~PUBL">
+   			<FRBRWork>
+   				<FRBRthis value=""/>
+   				<FRBRuri value=""/>
+   				<FRBRdate date="2999-01-01" name=""/>
+   				<FRBRauthor href=""/>
+   				<preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">						
+   					<akn4eu:fileCUID value="ckylbnre200eb396bd8i3qi8w"/>
+   				</preservation>
+   				<FRBRcountry value="EU"/>
+   				<FRBRnumber value="COM(2020) 360"/>
+   				<FRBRprescriptive value="false"/>
+   			</FRBRWork>
+   			<FRBRExpression>
+   				<FRBRthis value=""/>
+   				<FRBRuri value=""/>
+   				<FRBRdate date="2999-01-01" name=""/>
+   				<FRBRauthor href=""/>
+   				<FRBRversionNumber value="final"/>
+   				<FRBRlanguage language="en"/>
+   			</FRBRExpression>
+   			<FRBRManifestation>
+   				<FRBRthis value=""/>
+   				<FRBRuri value=""/>
+   				<FRBRdate date="2999-01-01" name=""/>
+   				<FRBRauthor href=""/>
+   				<preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+   					<akn4eu:akn4euVersion value="4.1.1.0"/>
+   					<akn4eu:akn4euDocumentation href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/akn4eu"/>
+   				</preservation>
+   			</FRBRManifestation>
+   		</identification>
+   		<references source="~PUBL">
+   			<TLCReference name="language" href="http://publications.europa.eu/resource/authority/language/ENG" showAs="en"/>
+   			<TLCOrganization xml:id="PUBL" href="http://publications.europa.eu/resource/authority/corporate-body/PUBL" showAs="Publications Office"/>
+   			<TLCReference xml:id="EXPL_MEMORANDUM" name="docType" href="http://publications.europa.eu/resource/authority/resource-type/EXPL_MEMORANDUM" showAs="Explanatory memorandum"/>			
+   		</references>
+   	</meta>
+      <preface xml:id="d1e77">
+         <longTitle xml:id="d1e79">
+            <p xml:id="d1e81">
+            	<docType xml:id="d1e83" refersTo="~EXPL_MEMORANDUM">EXPLANATORY MEMORANDUM</docType>
+            </p>
+         </longTitle>
+      </preface>
+      <mainBody xml:id="d1e89">
+         <tblock xml:id="d1e91">
+            <num xml:id="d1e93">1.</num>
+            <heading xml:id="d1e95">SUBJECT MATTER OF THE PROPOSAL</heading>
+            <blockContainer xml:id="d1e97">
+               <p xml:id="d1e99">This proposal concerns the decision establishing the position to be adopted on the Union's behalf in the EEA Joint Committee in connection with the envisaged adoption of the Joint Committee Decision concerning an amendment of Protocol 31 to the EEA Agreement, on cooperation in specific fields outside of the four freedoms</p>
+            </blockContainer>
+         </tblock>
+         <tblock xml:id="d1e103">
+            <num xml:id="d1e105">2.</num>
+            <heading xml:id="d1e107">CONTEXT OF THE PROPOSAL</heading>
+            <tblock xml:id="d1e109">
+               <num xml:id="d1e111">2.1.</num>
+               <heading xml:id="d1e113">The EEA Agreement</heading>
+               <blockContainer xml:id="d1e115">
+                  <p xml:id="d1e117">The Agreement on the European Economic Area (‘the EEA Agreement’) guarantees equal rights and obligations within the Internal Market for citizens and economic operators in the EEA. It provides for the inclusion of EU legislation covering the four freedoms throughout the 30 EEA States comprising of EU Member States, Norway, Iceland and Liechtenstein. In addition, the EEA Agreement covers cooperation in other important areas such as research and development, education, social policy, the environment, consumer protection, tourism and culture, collectively known as “flanking and horizontal” policies. The Agreement entered into force on 1 January 1994. The European Union together with its Member States is a party to the Agreement.</p>
+               </blockContainer>
+            </tblock>
+            <tblock xml:id="d1e121">
+               <num xml:id="d1e123">2.2.</num>
+               <heading xml:id="d1e125">The EEA Joint Committee</heading>
+               <blockContainer xml:id="d1e127">
+                  <p xml:id="d1e129">The EEA Joint Committee is responsible for the management of the EEA Agreement. It is a forum for exchanging views linked to functioning of the EEA Agreement. Its decisions are taken by consensus. In accordance with the Treaty of Lisbon, responsibility for coordinating EEA matters on the EU side is with the European External Action Service.</p>
+               </blockContainer>
+            </tblock>
+            <tblock xml:id="d1e133">
+               <num xml:id="d1e135">2.3</num>
+               <heading xml:id="d1e137">The envisaged act of the EEA Joint Committee</heading>
+               <blockContainer xml:id="d1e139">
+                  <p xml:id="d1e141">The EEA Joint Committee is expected to adopt the EEA Joint Committee Decision (‘the envisaged act’) regarding the amendment of Protocol 31 to the EEA Agreement, on cooperation in specific fields outside of the four freedoms.</p>
+                  <p xml:id="d1e143">The purpose of the envisaged act is to ensure continuation of the cooperation of the Contracting Parties to the EEA Agreement in Union actions funded from the general budget of the Union regarding the free movement of workers, coordination of social security schemes and measures for migrants, including migrants from third countries (Budget line 07 20 03 01), entered into the general budget of the European Union for the financial year 2021.</p>
+                  <p xml:id="d1e145">The envisaged act will become binding on the parties in accordance with Articles 103 and 104 of the EEA Agreement.</p>
+               </blockContainer>
+            </tblock>
+         </tblock>
+         <tblock xml:id="d1e150">
+            <num xml:id="d1e152">3.</num>
+            <heading xml:id="d1e154">POSITION TO BE TAKEN ON THE UNION'S BEHALF</heading>
+            <blockContainer xml:id="d1e156">
+               <p xml:id="d1e158">The Commission services submit the draft Decision of the EEA Joint Committee for adoption by the Council as the Union’s position. The Commission would hope to be able to present it in the EEA Joint Committee at the earliest possible opportunity.</p>
+               <p xml:id="d1e160">The content and nature of the draft of the annexed Decision of the EEA Joint Committee go beyond what can be considered mere technical adaptations in the sense of the Council Regulation No 2894/94. The Union position shall therefore be established by the Council.</p>
+               <p xml:id="d1e162">In line with the EU budgetary policy, any participation in an Union action can take place only once the corresponding financial contribution is paid. The payment can however take place once this draft Council Decision is adopted and the subsequent EU call for funds established by the European Commission is submitted to the EEA EFTA States.</p>
+               <p xml:id="d1e164">Therefore, in order to bridge the period between 1st January 2021 and the reception of the respective payment, the draft Joint Committee Decision shall also be retroactively applicable from 1st January 2021. The retroactivity does not affect the rights and obligations of persons concerned and respects the principle of the legitimate expectations.</p>
+            </blockContainer>
+         </tblock>
+         <tblock xml:id="d1e168">
+            <num xml:id="d1e170">4.</num>
+            <heading xml:id="d1e172">LEGAL BASIS</heading>
+            <tblock xml:id="d1e174">
+               <num xml:id="d1e176">4.1.</num>
+               <heading xml:id="d1e178">Procedural legal basis</heading>
+               <tblock xml:id="d1e180">
+                  <num xml:id="d1e182">4.1.1.</num>
+                  <heading xml:id="d1e184">Principles</heading>
+                  <blockContainer xml:id="d1e186">
+                     <p xml:id="d1e188">Article 218(9) of the Treaty on the Functioning of the European Union (TFEU) provides for decisions establishing ‘the positions to be adopted on the Union’s behalf in a body set up by an agreement, when that body is called upon to adopt acts having legal effects, with the exception of acts supplementing or amending the institutional framework of the agreement.’</p>
+                     <p xml:id="d1e190">The concept of ‘acts having legal effects’ includes acts that have legal effects by virtue of the rules of international law governing the body in question. It also includes instruments that do not have a binding effect under international law, but that are ‘capable of decisively influencing the content of the legislation adopted by the EU legislature’<authorialNote xml:id="d1e192" marker="1" placement="bottom">
+                           <p xml:id="d1e194">Judgment of the Court of Justice of 7 October 2014, Germany v Council, C-399/12, ECLI:EU:C:2014:2258, paragraphs 61 to 64.</p>
+                        </authorialNote>.</p>
+                  </blockContainer>
+               </tblock>
+               <tblock xml:id="d1e200">
+                  <num xml:id="d1e202">4.1.2.</num>
+                  <heading xml:id="d1e204">Application to the present case</heading>
+                  <blockContainer xml:id="d1e206">
+                     <p xml:id="d1e208">The EEA Joint Committee is a body set up by an agreement, namely the EEA Agreement. The act, which the EEA Joint Committee is called upon to adopt, constitutes an act having legal effects. The envisaged act will be binding under international law in accordance with Articles 103 and 104 of the EEA Agreement.</p>
+                     <p xml:id="d1e210">The envisaged act does not supplement or amend the institutional framework of the Agreement. Therefore, the procedural legal basis for the proposed decision is Article 218(9) TFEU in conjunction with Article 1(3) of Council Regulation No 2894/94 concerning arrangements for implementing the Agreement on the European Economic Area.</p>
+                  </blockContainer>
+               </tblock>
+            </tblock>
+            <tblock xml:id="d1e215">
+               <num xml:id="d1e217">4.2.</num>
+               <heading xml:id="d1e219">Substantive legal basis</heading>
+               <tblock xml:id="d1e221">
+                  <num xml:id="d1e223">4.2.1.</num>
+                  <heading xml:id="d1e225">Principles</heading>
+                  <blockContainer xml:id="d1e227">
+                     <p xml:id="d1e229">The substantive legal basis for a decision under Article 218(9) TFEU depends primarily on the objective and content of the envisaged act in respect of which a position is taken on the Union's behalf. If the envisaged act pursues two aims or has two components and if one of those aims or components is identifiable as the main one, whereas the other is merely incidental, the decision under Article 218(9) TFEU must be founded on a single substantive legal basis, namely that required by the main or predominant aim or component.</p>
+                     <p xml:id="d1e231">With regard to an envisaged act that simultaneously pursues a number of objectives, or that has several components, which are inseparably linked without one being incidental to the other, the substantive legal basis of a decision under Article 218(9) TFEU will have to include, exceptionally, the various corresponding legal bases.</p>
+                  </blockContainer>
+               </tblock>
+               <tblock xml:id="d1e235">
+                  <num xml:id="d1e237">4.2.2.</num>
+                  <heading xml:id="d1e239">Application to the present case</heading>
+                  <blockContainer xml:id="d1e241">
+                     <p xml:id="d1e243">The envisaged act pursues objectives and has components in the area of free movement of workers and coordination of social security schemes. The substantive legal basis shall therefore be Articles 46 and 48 TFEU.</p>
+                  </blockContainer>
+               </tblock>
+            </tblock>
+            <tblock xml:id="d1e248">
+               <num xml:id="d1e250">4.3.</num>
+               <heading xml:id="d1e252">Conclusion</heading>
+               <blockContainer xml:id="d1e254">
+                  <p xml:id="d1e256">The legal basis of the proposed decision should be Articles 46 and 48 TFEU, in conjunction with Article 218(9) TFEU and Article 1(3) of Council Regulation No 2894/94 concerning arrangements for implementing the Agreement on the European Economic Area.</p>
+               </blockContainer>
+            </tblock>
+         </tblock>
+         <tblock xml:id="d1e261">
+            <num xml:id="d1e263">5.</num>
+            <heading xml:id="d1e265">BUDGETARY IMPLICATIONS</heading>
+            <blockContainer xml:id="d1e267">
+               <p xml:id="d1e269">The EEA EFTA States shall financially contribute to Budget line 07 20 03 01: “Free movement of workers, coordination of social security schemes and measures for migrants including migrants from third countries”. The exact amount shall be determined once this Council decision is adopted, based on the modalities foreseen in Protocol 32 to the EEA Agreement.</p>
+            </blockContainer>
+         </tblock>
+         <tblock xml:id="d1e274">
+            <num xml:id="d1e276">6.</num>
+            <heading xml:id="d1e278">PUBLICATION OF THE ENVISAGED ACT</heading>
+            <blockContainer xml:id="d1e280">
+               <p xml:id="d1e282">As the act of the EEA Joint Committee will amend Protocol 31 to the EEA Agreement, on cooperation in specific fields outside of the four freedoms, it is appropriate to publish it in the Official Journal of the European Union after its adoption.</p>
+            </blockContainer>
+         </tblock>
+      </mainBody>
+   </doc>
+</akomaNtoso>

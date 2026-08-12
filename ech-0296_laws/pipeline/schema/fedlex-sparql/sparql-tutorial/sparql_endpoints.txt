@@ -1,0 +1,3 @@
+F=https://fedlex.data.admin.ch/sparqlendpoint
+G=https://geo.ld.admin.ch/query
+L=https://ld.admin.ch/query

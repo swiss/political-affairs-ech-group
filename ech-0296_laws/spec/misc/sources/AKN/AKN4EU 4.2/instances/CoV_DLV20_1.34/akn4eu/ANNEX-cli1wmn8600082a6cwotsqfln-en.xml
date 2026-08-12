@@ -1,0 +1,1864 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+    <doc name="ANNEX">
+        <meta>
+            <identification source="~PUBL">
+                <FRBRWork>
+                    <FRBRthis value=""/>
+                    <FRBRuri value=""/>
+                    <FRBRdate date="2999-01-01" name=""/>
+                    <FRBRauthor href=""/>
+                    <preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+                        <akn4eu:fileCUID value="cli1wmn8600082a6cwotsqfln"/>
+                    </preservation>
+                    <FRBRcountry value="EU"/>
+                    <FRBRprescriptive value="true"/>
+                </FRBRWork>
+                <FRBRExpression>
+                    <FRBRthis value=""/>
+                    <FRBRuri value=""/>
+                    <FRBRdate date="2999-01-01" name=""/>
+                    <FRBRauthor href=""/>
+                    <FRBRlanguage language="en"/>
+                </FRBRExpression>
+                <FRBRManifestation>
+                    <FRBRthis value=""/>
+                    <FRBRuri value=""/>
+                    <FRBRdate date="2999-01-01" name=""/>
+                    <FRBRauthor href=""/>
+                    <preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+                        <akn4eu:akn4euVersion value="4.2.0.0"/>
+                        <akn4eu:akn4euDocumentation href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/akn4eu"/>
+                    </preservation>
+                </FRBRManifestation>
+            </identification>
+            <references source="~PUBL">
+                <TLCReference name="language" href="http://publications.europa.eu/resource/authority/language/ENG" showAs="en"/>
+                <TLCReference xml:id="ANNEX" name="docType" href="http://publications.europa.eu/resource/authority/resource-type/ANNEX" showAs="Annex"/>
+                <TLCOrganization xml:id="PUBL" href="http://publications.europa.eu/resource/authority/corporate-body/PUBL" showAs="Publications Office"/>
+            </references>
+        </meta>
+        <preface xml:id="d1e72">
+            <container xml:id="d1e74" name="headerOfAnnex">
+                <block xml:id="d1e76" name="num">ANNEX IC</block>
+                <block xml:id="d1e79" name="heading">NORTH WEST ATLANTIC – NAFO CONVENTION AREA</block>
+            </container>
+        </preface>
+        <mainBody xml:id="d1e84">
+            <paragraph xml:id="d1e86">
+                <hcontainer xml:id="d1e88" name="BLOCK_TAB">
+                    <hcontainer xml:id="d1e90" name="TAB">
+                        <content xml:id="d1e92">
+                        <table xml:id="d1e94">
+                        <tr xml:id="d1e96">
+                            <th xml:id="d1e98">
+                                <p xml:id="d1e100"><b xml:id="d1e101">Species:</b></p>
+                            </th>
+                            <th xml:id="d1e104" colspan="2">
+                                <p xml:id="d1e106">Cod</p>
+                                <p xml:id="d1e108"><i xml:id="d1e109">Gadus morhua</i></p>
+                            </th>
+                            <th xml:id="d1e112">
+                                <p xml:id="d1e114"><b xml:id="d1e115">Zone:</b></p>
+                            </th>
+                            <th xml:id="d1e118">
+                                <p xml:id="d1e120">NAFO 2J3KL</p>
+                                <p xml:id="d1e122">(COD/N2J3KL)</p>
+                            </th>
+                        </tr>
+                        <tr xml:id="d1e126">
+                            <td xml:id="d1e128">
+                                <p xml:id="d1e130">Union</p>
+                            </td>
+                            <td xml:id="d1e133">
+                                <p xml:id="d1e135">0</p>
+                            </td>
+                            <td xml:id="d1e138">
+                                <p xml:id="d1e140"><authorialNote xml:id="d1e141" marker="1" placement="bottom" placementBase="~table_d22e36"><p xml:id="d1e142">No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the following limits: a maximum
+                                            of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                            <td xml:id="d1e145" colspan="2" rowspan="2">
+                                <p xml:id="d1e147">Analytical TAC</p>
+                                <p xml:id="d1e149">Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+                                <p xml:id="d1e151">Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+                            </td>
+                        </tr>
+                        <tr xml:id="d1e155">
+                            <td xml:id="d1e157">
+                                <p xml:id="d1e159">TAC</p>
+                            </td>
+                            <td xml:id="d1e162">
+                                <p xml:id="d1e164">0</p>
+                            </td>
+                            <td xml:id="d1e167">
+                                <p xml:id="d1e169"><authorialNote xml:id="d1e170" marker="1" placement="bottom" placementBase="~table_d22e36"><p xml:id="d1e171">No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the following limits: a maximum
+                                            of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                        </tr>
+                    </table>
+                        </content>
+                    </hcontainer>
+                </hcontainer>
+            </paragraph>
+            <paragraph xml:id="d1e180">
+                <hcontainer xml:id="d1e182" name="BLOCK_TAB">
+                    <hcontainer xml:id="d1e184" name="TAB">
+                        <content xml:id="d1e186">
+                        <table xml:id="d1e188">
+                        <tr xml:id="d1e190">
+                            <th xml:id="d1e192">
+                                <p xml:id="d1e194"><b xml:id="d1e195">Species:</b></p>
+                            </th>
+                            <th xml:id="d1e198" colspan="2">
+                                <p xml:id="d1e200">Cod</p>
+                                <p xml:id="d1e202"><i xml:id="d1e203">Gadus morhua</i></p>
+                            </th>
+                            <th xml:id="d1e206">
+                                <p xml:id="d1e208"><b xml:id="d1e209">Zone:</b></p>
+                            </th>
+                            <th xml:id="d1e212">
+                                <p xml:id="d1e214">NAFO 3NO</p>
+                                <p xml:id="d1e216">(COD/N3NO.)</p>
+                            </th>
+                        </tr>
+                        <tr xml:id="d1e220">
+                            <td xml:id="d1e222">
+                                <p xml:id="d1e224">Union</p>
+                            </td>
+                            <td xml:id="d1e227">
+                                <p xml:id="d1e229">0</p>
+                            </td>
+                            <td xml:id="d1e232">
+                                <p xml:id="d1e234"><authorialNote xml:id="d1e235" marker="2" placement="bottom" placementBase="~table_d22e84"><p xml:id="d1e236">No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the limits of a maximum of 1
+                                            000 kg or 4 %, whichever is
+                                    greater.</p></authorialNote></p>
+                            </td>
+                            <td xml:id="d1e239" colspan="2" rowspan="2">
+                                <p xml:id="d1e241">Analytical TAC</p>
+                                <p xml:id="d1e243">Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+                                <p xml:id="d1e245">Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+                            </td>
+                        </tr>
+                        <tr xml:id="d1e249">
+                            <td xml:id="d1e251">
+                                <p xml:id="d1e253">TAC</p>
+                            </td>
+                            <td xml:id="d1e256">
+                                <p xml:id="d1e258">0</p>
+                            </td>
+                            <td xml:id="d1e261">
+                                <p xml:id="d1e263"><authorialNote xml:id="d1e264" marker="2" placement="bottom" placementBase="~table_d22e84"><p xml:id="d1e265">No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the limits of a maximum of 1
+                                            000 kg or 4 %, whichever is
+                                    greater.</p></authorialNote></p>
+                            </td>
+                        </tr>
+                    </table>
+                       </content>
+                    </hcontainer>
+                </hcontainer>
+            </paragraph>
+            <paragraph xml:id="d1e274">
+                <hcontainer xml:id="d1e276" name="BLOCK_TAB">
+                    <hcontainer xml:id="d1e278" name="TAB">
+                        <content xml:id="d1e280">
+                        <table xml:id="d1e282">
+                        <tr xml:id="d1e284">
+                            <th xml:id="d1e286">
+                                <p xml:id="d1e288"><b xml:id="d1e289">Species:</b></p>
+                            </th>
+                            <th xml:id="d1e292" colspan="2">
+                                <p xml:id="d1e294">Cod</p>
+                                <p xml:id="d1e296"><i xml:id="d1e297">Gadus morhua</i></p>
+                            </th>
+                            <th xml:id="d1e300">
+                                <p xml:id="d1e302"><b xml:id="d1e303">Zone:</b></p>
+                            </th>
+                            <th xml:id="d1e306">
+                                <p xml:id="d1e308">NAFO 3M</p>
+                                <p xml:id="d1e310">(COD/N3M.)</p>
+                            </th>
+                        </tr>
+                        <tr xml:id="d1e314">
+                            <td xml:id="d1e316">
+                                <p xml:id="d1e318">Estonia</p>
+                            </td>
+                            <td xml:id="d1e321">
+                                <p xml:id="d1e323">95</p>
+                            </td>
+                            <td xml:id="d1e326"/>
+                            <td xml:id="d1e328" colspan="2" rowspan="11">
+                                <p xml:id="d1e330">Analytical TAC</p>
+                                <p xml:id="d1e332">Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+                                <p xml:id="d1e334">Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+                            </td>
+                        </tr>
+                        <tr xml:id="d1e338">
+                            <td xml:id="d1e340">
+                                <p xml:id="d1e342">Germany</p>
+                            </td>
+                            <td xml:id="d1e345">
+                                <p xml:id="d1e347">397</p>
+                            </td>
+                            <td xml:id="d1e350"/>
+                        </tr>
+                        <tr xml:id="d1e353">
+                            <td xml:id="d1e355">
+                                <p xml:id="d1e357">Latvia</p>
+                            </td>
+                            <td xml:id="d1e360">
+                                <p xml:id="d1e362">95</p>
+                            </td>
+                            <td xml:id="d1e365"/>
+                        </tr>
+                        <tr xml:id="d1e368">
+                            <td xml:id="d1e370">
+                                <p xml:id="d1e372">Lithuania</p>
+                            </td>
+                            <td xml:id="d1e375">
+                                <p xml:id="d1e377">95</p>
+                            </td>
+                            <td xml:id="d1e380"/>
+                        </tr>
+                        <tr xml:id="d1e384">
+                            <td xml:id="d1e386">
+                                <p xml:id="d1e388">Poland</p>
+                            </td>
+                            <td xml:id="d1e391">
+                                <p xml:id="d1e393">324</p>
+                            </td>
+                            <td xml:id="d1e396"/>
+                        </tr>
+                        <tr xml:id="d1e399">
+                            <td xml:id="d1e401">
+                                <p xml:id="d1e403">Spain</p>
+                            </td>
+                            <td xml:id="d1e406">
+                                <p xml:id="d1e408">1 221</p>
+                            </td>
+                            <td xml:id="d1e411"/>
+                        </tr>
+                        <tr xml:id="d1e414">
+                            <td xml:id="d1e416">
+                                <p xml:id="d1e418">France</p>
+                            </td>
+                            <td xml:id="d1e421">
+                                <p xml:id="d1e423">170</p>
+                            </td>
+                            <td xml:id="d1e426"/>
+                        </tr>
+                        <tr xml:id="d1e429">
+                            <td xml:id="d1e431">
+                                <p xml:id="d1e433">Portugal</p>
+                            </td>
+                            <td xml:id="d1e436">
+                                <p xml:id="d1e438">1 673</p>
+                            </td>
+                            <td xml:id="d1e441"/>
+                        </tr>
+                        <tr xml:id="d1e444">
+                            <td xml:id="d1e446">
+                                <p xml:id="d1e448">United Kingdom</p>
+                            </td>
+                            <td xml:id="d1e451">
+                                <p xml:id="d1e453">795</p>
+                            </td>
+                            <td xml:id="d1e456"/>
+                        </tr>
+                        <tr xml:id="d1e459">
+                            <td xml:id="d1e461">
+                                <p xml:id="d1e463">Union</p>
+                            </td>
+                            <td xml:id="d1e466">
+                                <p xml:id="d1e468">4 865</p>
+                            </td>
+                            <td xml:id="d1e471"/>
+                        </tr>
+                        <tr xml:id="d1e475">
+                            <td xml:id="d1e477">
+                                <p xml:id="d1e479">TAC</p>
+                            </td>
+                            <td xml:id="d1e482">
+                                <p xml:id="d1e484">8 531</p>
+                            </td>
+                            <td xml:id="d1e487"/>
+                        </tr>
+                    </table>
+                         </content>
+                    </hcontainer>
+                </hcontainer>
+            </paragraph>
+            <paragraph xml:id="d1e495">
+                <hcontainer xml:id="d1e497" name="BLOCK_TAB">
+                    <hcontainer xml:id="d1e499" name="TAB">
+                        <content xml:id="d1e501">
+                        <table xml:id="d1e503">
+                        <tr xml:id="d1e505">
+                            <th xml:id="d1e507">
+                                <p xml:id="d1e509"><b xml:id="d1e510">Species:</b></p>
+                            </th>
+                            <th xml:id="d1e513" colspan="2">
+                                <p xml:id="d1e515">Witch flounder</p>
+                                <p xml:id="d1e517"><i xml:id="d1e518">Glyptocephalus cynoglossus</i></p>
+                            </th>
+                            <th xml:id="d1e521">
+                                <p xml:id="d1e523"><b xml:id="d1e524">Zone:</b></p>
+                            </th>
+                            <th xml:id="d1e527">
+                                <p xml:id="d1e529">NAFO 3L</p>
+                                <p xml:id="d1e531">(WIT/N3L.)</p>
+                            </th>
+                        </tr>
+                        <tr xml:id="d1e535">
+                            <td xml:id="d1e537">
+                                <p xml:id="d1e539">Union</p>
+                            </td>
+                            <td xml:id="d1e542">
+                                <p xml:id="d1e544">0</p>
+                            </td>
+                            <td xml:id="d1e547">
+                                <p xml:id="d1e549"><authorialNote xml:id="d1e550" marker="3" placement="bottom" placementBase="~table_d22e241"><p xml:id="d1e551">No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the following limits: a maximum
+                                            of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                            <td xml:id="d1e554" colspan="2" rowspan="2">
+                                <p xml:id="d1e556">Analytical TAC</p>
+                                <p xml:id="d1e558">Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+                                <p xml:id="d1e560">Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+                            </td>
+                        </tr>
+                        <tr xml:id="d1e564">
+                            <td xml:id="d1e566">
+                                <p xml:id="d1e568">TAC</p>
+                            </td>
+                            <td xml:id="d1e571">
+                                <p xml:id="d1e573">0</p>
+                            </td>
+                            <td xml:id="d1e576">
+                                <p xml:id="d1e578"><authorialNote xml:id="d1e579" marker="3" placement="bottom" placementBase="~table_d22e241"><p xml:id="d1e580">No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the following limits: a maximum
+                                            of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                        </tr>
+                    </table>
+                        </content>
+                    </hcontainer>
+                </hcontainer>
+            </paragraph>
+            <paragraph xml:id="d1e589">
+                <hcontainer xml:id="d1e591" name="BLOCK_TAB">
+                    <hcontainer xml:id="d1e593" name="TAB">
+                        <content xml:id="d1e595">
+                        <table xml:id="d1e597">
+                        <tr xml:id="d1e599">
+                            <th xml:id="d1e601">
+                                <p xml:id="d1e603"><b xml:id="d1e604">Species:</b></p>
+                            </th>
+                            <th xml:id="d1e607" colspan="2">
+                                <p xml:id="d1e609">Witch flounder</p>
+                                <p xml:id="d1e611"><i xml:id="d1e612">Glyptocephalus cynoglossus</i></p>
+                            </th>
+                            <th xml:id="d1e615">
+                                <p xml:id="d1e617"><b xml:id="d1e618">Zone:</b></p>
+                            </th>
+                            <th xml:id="d1e621">
+                                <p xml:id="d1e623">NAFO 3NO</p>
+                                <p xml:id="d1e625">(WIT/N3NO.)</p>
+                            </th>
+                        </tr>
+                        <tr xml:id="d1e629">
+                            <td xml:id="d1e631">
+                                <p xml:id="d1e633">Estonia</p>
+                            </td>
+                            <td xml:id="d1e636">
+                                <p xml:id="d1e638">52</p>
+                            </td>
+                            <td xml:id="d1e641"/>
+                            <td xml:id="d1e643" colspan="2" rowspan="5">
+                                <p xml:id="d1e645">Analytical TAC</p>
+                                <p xml:id="d1e647">Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+                                <p xml:id="d1e649">Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+                            </td>
+                        </tr>
+                        <tr xml:id="d1e653">
+                            <td xml:id="d1e655">
+                                <p xml:id="d1e657">Latvia</p>
+                            </td>
+                            <td xml:id="d1e660">
+                                <p xml:id="d1e662">52</p>
+                            </td>
+                            <td xml:id="d1e665"/>
+                        </tr>
+                        <tr xml:id="d1e668">
+                            <td xml:id="d1e670">
+                                <p xml:id="d1e672">Lithuania</p>
+                            </td>
+                            <td xml:id="d1e675">
+                                <p xml:id="d1e677">52</p>
+                            </td>
+                            <td xml:id="d1e680"/>
+                        </tr>
+                        <tr xml:id="d1e683">
+                            <td xml:id="d1e685">
+                                <p xml:id="d1e687">Union</p>
+                            </td>
+                            <td xml:id="d1e690">
+                                <p xml:id="d1e692">156</p>
+                            </td>
+                            <td xml:id="d1e695"/>
+                        </tr>
+                        <tr xml:id="d1e699">
+                            <td xml:id="d1e701">
+                                <p xml:id="d1e703">TAC</p>
+                            </td>
+                            <td xml:id="d1e706">
+                                <p xml:id="d1e708">1 175</p>
+                            </td>
+                            <td xml:id="d1e711"/>
+                        </tr>
+                    </table>
+                        </content>
+                    </hcontainer>
+                </hcontainer>
+            </paragraph>
+            <paragraph xml:id="d1e720">
+                <hcontainer xml:id="d1e722" name="BLOCK_TAB">
+                    <hcontainer xml:id="d1e724" name="TAB">
+                        <content xml:id="d1e726">
+                        <table xml:id="d1e728">
+                        <tr xml:id="d1e730">
+                            <th xml:id="d1e732">
+                                <p xml:id="d1e734"><b xml:id="d1e735">Species:</b></p>
+                            </th>
+                            <th xml:id="d1e738" colspan="2">
+                                <p xml:id="d1e740">American plaice</p>
+                                <p xml:id="d1e742"><i xml:id="d1e743">Hippoglossoides platessoides</i></p>
+                            </th>
+                            <th xml:id="d1e746">
+                                <p xml:id="d1e748"><b xml:id="d1e749">Zone:</b></p>
+                            </th>
+                            <th xml:id="d1e752">
+                                <p xml:id="d1e754">NAFO 3M</p>
+                                <p xml:id="d1e756">(PLA/N3M.)</p>
+                            </th>
+                        </tr>
+                        <tr xml:id="d1e760">
+                            <td xml:id="d1e762">
+                                <p xml:id="d1e764">Union</p>
+                            </td>
+                            <td xml:id="d1e767">
+                                <p xml:id="d1e769">0</p>
+                            </td>
+                            <td xml:id="d1e772">
+                                <p xml:id="d1e774"><authorialNote xml:id="d1e775" marker="4" placement="bottom" placementBase="~table_d22e352"><p xml:id="d1e776">No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the following limits: a maximum
+                                            of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                            <td xml:id="d1e779" colspan="2" rowspan="2">
+                                <p xml:id="d1e781">Analytical TAC</p>
+                                <p xml:id="d1e783">Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+                                <p xml:id="d1e785">Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+                            </td>
+                        </tr>
+                        <tr xml:id="d1e789">
+                            <td xml:id="d1e791">
+                                <p xml:id="d1e793">TAC</p>
+                            </td>
+                            <td xml:id="d1e796">
+                                <p xml:id="d1e798">0</p>
+                            </td>
+                            <td xml:id="d1e801">
+                                <p xml:id="d1e803"><authorialNote xml:id="d1e804" marker="4" placement="bottom" placementBase="~table_d22e352"><p xml:id="d1e805">No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the following limits: a maximum
+                                            of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                        </tr>
+                    </table>
+                        </content>
+                    </hcontainer>
+                </hcontainer>
+            </paragraph>
+            <paragraph xml:id="d1e814">
+                <hcontainer xml:id="d1e816" name="BLOCK_TAB">
+                    <hcontainer xml:id="d1e818" name="TAB">
+                        <content xml:id="d1e820">
+                        <table xml:id="d1e822">
+                        <tr xml:id="d1e824">
+                            <th xml:id="d1e826">
+                                <p xml:id="d1e828"><b xml:id="d1e829">Species:</b></p>
+                            </th>
+                            <th xml:id="d1e832" colspan="2">
+                                <p xml:id="d1e834">American plaice</p>
+                                <p xml:id="d1e836"><i xml:id="d1e837">Hippoglossoides platessoides</i></p>
+                            </th>
+                            <th xml:id="d1e840">
+                                <p xml:id="d1e842"><b xml:id="d1e843">Zone:</b></p>
+                            </th>
+                            <th xml:id="d1e846">
+                                <p xml:id="d1e848">NAFO 3LNO</p>
+                                <p xml:id="d1e850">(PLA/N3LNO.)</p>
+                            </th>
+                        </tr>
+                        <tr xml:id="d1e854">
+                            <td xml:id="d1e856">
+                                <p xml:id="d1e858">Union</p>
+                            </td>
+                            <td xml:id="d1e861">
+                                <p xml:id="d1e863">0</p>
+                            </td>
+                            <td xml:id="d1e866">
+                                <p xml:id="d1e868"><authorialNote xml:id="d1e869" marker="5" placement="bottom" placementBase="~table_d22e400"><p xml:id="d1e870">No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the following limits: a maximum
+                                            of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                            <td xml:id="d1e873" colspan="2" rowspan="2">
+                                <p xml:id="d1e875">Analytical TAC</p>
+                                <p xml:id="d1e877">Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+                                <p xml:id="d1e879">Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+                            </td>
+                        </tr>
+                        <tr xml:id="d1e883">
+                            <td xml:id="d1e885">
+                                <p xml:id="d1e887">TAC</p>
+                            </td>
+                            <td xml:id="d1e890">
+                                <p xml:id="d1e892">0</p>
+                            </td>
+                            <td xml:id="d1e895">
+                                <p xml:id="d1e897"><authorialNote xml:id="d1e898" marker="5" placement="bottom" placementBase="~table_d22e400"><p xml:id="d1e899">No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the following limits: a maximum
+                                            of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                        </tr>
+                    </table>
+                        </content>
+                    </hcontainer>
+                </hcontainer>
+            </paragraph>
+            <paragraph xml:id="d1e908">
+                <hcontainer xml:id="d1e910" name="BLOCK_TAB">
+                    <hcontainer xml:id="d1e912" name="TAB">
+                        <content xml:id="d1e914">
+                        <table xml:id="d1e916">
+                        <tr xml:id="d1e918">
+                            <th xml:id="d1e920">
+                                <p xml:id="d1e922"><b xml:id="d1e923">Species:</b></p>
+                            </th>
+                            <th xml:id="d1e926" colspan="2">
+                                <p xml:id="d1e928">Shortfin squid</p>
+                                <p xml:id="d1e930"><i xml:id="d1e931">Illex illecebrosus</i></p>
+                            </th>
+                            <th xml:id="d1e934">
+                                <p xml:id="d1e936"><b xml:id="d1e937">Zone:</b></p>
+                            </th>
+                            <th xml:id="d1e940">
+                                <p xml:id="d1e942">NAFO Subareas 3 and 4</p>
+                                <p xml:id="d1e944">(SQI/N34.)</p>
+                            </th>
+                        </tr>
+                        <tr xml:id="d1e948">
+                            <td xml:id="d1e950">
+                                <p xml:id="d1e952">Estonia</p>
+                            </td>
+                            <td xml:id="d1e955">
+                                <p xml:id="d1e957">128</p>
+                            </td>
+                            <td xml:id="d1e960">
+                                <p xml:id="d1e962"><authorialNote xml:id="d1e963" marker="6" placement="bottom" placementBase="~table_d22e448"><p xml:id="d1e964">To be fished between 1
+                                            July and 31 December 2020</p></authorialNote></p>
+                            </td>
+                            <td xml:id="d1e967" colspan="2" rowspan="6">
+                                <p xml:id="d1e969">Analytical TAC</p>
+                                <p xml:id="d1e971">Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+                                <p xml:id="d1e973">Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+                            </td>
+                        </tr>
+                        <tr xml:id="d1e977">
+                            <td xml:id="d1e979">
+                                <p xml:id="d1e981">Latvia</p>
+                            </td>
+                            <td xml:id="d1e984">
+                                <p xml:id="d1e986">128</p>
+                            </td>
+                            <td xml:id="d1e989">
+                                <p xml:id="d1e991"><authorialNote xml:id="d1e992" marker="6" placement="bottom" placementBase="~table_d22e448"><p xml:id="d1e993">To be fished between 1
+                                            July and 31 December 2020</p></authorialNote></p>
+                            </td>
+                        </tr>
+                        <tr xml:id="d1e997">
+                            <td xml:id="d1e999">
+                                <p xml:id="d1e1001">Lithuania</p>
+                            </td>
+                            <td xml:id="d1e1004">
+                                <p xml:id="d1e1006">128</p>
+                            </td>
+                            <td xml:id="d1e1009">
+                                <p xml:id="d1e1011"><authorialNote xml:id="d1e1012" marker="6" placement="bottom" placementBase="~table_d22e448"><p xml:id="d1e1013">To be fished between 1
+                                            July and 31 December 2020</p></authorialNote></p>
+                            </td>
+                        </tr>
+                        <tr xml:id="d1e1017">
+                            <td xml:id="d1e1019">
+                                <p xml:id="d1e1021">Poland</p>
+                            </td>
+                            <td xml:id="d1e1024">
+                                <p xml:id="d1e1026">227</p>
+                            </td>
+                            <td xml:id="d1e1029">
+                                <p xml:id="d1e1031"><authorialNote xml:id="d1e1032" marker="6" placement="bottom" placementBase="~table_d22e448"><p xml:id="d1e1033">To be fished between 1
+                                            July and 31 December 2020</p></authorialNote></p>
+                            </td>
+                        </tr>
+                        <tr xml:id="d1e1038">
+                            <td xml:id="d1e1040">
+                                <p xml:id="d1e1042">Union</p>
+                            </td>
+                            <td xml:id="d1e1045">
+                                <p xml:id="d1e1047">Not relevant</p>
+                            </td>
+                            <td xml:id="d1e1050">
+                                <p xml:id="d1e1052"><authorialNote xml:id="d1e1053" marker="6" placement="bottom" placementBase="~table_d22e448"><p xml:id="d1e1054">To be fished between 1
+                                            July and 31 December
+                                        2020</p></authorialNote><authorialNote xml:id="d1e1055" marker="7" placement="bottom" placementBase="~table_d22e448"><p xml:id="d1e1056">No
+                                            specified Union’s share. The amount specified below, in
+                                            tonnes, is available to Canada and the Member States of
+                                            the Union except Estonia, Latvia, Lithuania and
+                                            Poland:29 467</p></authorialNote></p>
+                            </td>
+                        </tr>
+                        <tr xml:id="d1e1060">
+                            <td xml:id="d1e1062">
+                                <p xml:id="d1e1064">TAC</p>
+                            </td>
+                            <td xml:id="d1e1067">
+                                <p xml:id="d1e1069">34 000</p>
+                            </td>
+                            <td xml:id="d1e1072"/>
+                        </tr>
+                    </table>
+                        </content>
+                    </hcontainer>   
+                </hcontainer>
+            </paragraph>
+            <paragraph xml:id="d1e1080">
+                <hcontainer xml:id="d1e1082" name="BLOCK_TAB">
+                    <hcontainer xml:id="d1e1084" name="TAB">
+                        <content xml:id="d1e1086">
+                       <table xml:id="d1e1088">
+                        <tr xml:id="d1e1090">
+                            <th xml:id="d1e1092">
+                                <p xml:id="d1e1094"><b xml:id="d1e1095">Species:</b></p>
+                            </th>
+                            <th xml:id="d1e1098" colspan="2">
+                                <p xml:id="d1e1100">Yellowtail flounder</p>
+                                <p xml:id="d1e1102"><i xml:id="d1e1103">Limanda ferruginea</i></p>
+                            </th>
+                            <th xml:id="d1e1106">
+                                <p xml:id="d1e1108"><b xml:id="d1e1109">Zone:</b></p>
+                            </th>
+                            <th xml:id="d1e1112">
+                                <p xml:id="d1e1114">NAFO 3LNO</p>
+                                <p xml:id="d1e1116">(YEL/N3LNO.)</p>
+                            </th>
+                        </tr>
+                        <tr xml:id="d1e1120">
+                            <td xml:id="d1e1122">
+                                <p xml:id="d1e1124">Union</p>
+                            </td>
+                            <td xml:id="d1e1127">
+                                <p xml:id="d1e1129">0</p>
+                            </td>
+                            <td xml:id="d1e1132">
+                                <p xml:id="d1e1134"><authorialNote xml:id="d1e1135" marker="8" placement="bottom" placementBase="~table_d22e535"><p xml:id="d1e1136">No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the following limits: a maximum
+                                            of 2 500 kg or 10 %, whichever is greater. However, when
+                                            the yellowtail flounder quota assigned by NAFO to
+                                            Contracting Parties without a specific share of the
+                                            stock is exhausted, by-catch limits shall be: a maximum
+                                            of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                            <td xml:id="d1e1139" colspan="2" rowspan="2">
+                                <p xml:id="d1e1141">Analytical TAC</p>
+                                <p xml:id="d1e1143">Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+                                <p xml:id="d1e1145">Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+                            </td>
+                        </tr>
+                        <tr xml:id="d1e1149">
+                            <td xml:id="d1e1151">
+                                <p xml:id="d1e1153">TAC</p>
+                            </td>
+                            <td xml:id="d1e1156">
+                                <p xml:id="d1e1158">17 000</p>
+                            </td>
+                            <td xml:id="d1e1161"/>
+                        </tr>
+                    </table>
+                        </content>
+                    </hcontainer>
+                </hcontainer>
+            </paragraph>
+            <paragraph xml:id="d1e1169">
+                <hcontainer xml:id="d1e1171" name="BLOCK_TAB">
+                    <hcontainer xml:id="d1e1173" name="TAB">
+                        <content xml:id="d1e1175">
+                        <table xml:id="d1e1177">
+                        <tr xml:id="d1e1179">
+                            <th xml:id="d1e1181">
+                                <p xml:id="d1e1183"><b xml:id="d1e1184">Species:</b></p>
+                            </th>
+                            <th xml:id="d1e1187" colspan="2">
+                                <p xml:id="d1e1189">Capelin</p>
+                                <p xml:id="d1e1191"><i xml:id="d1e1192">Mallotus villosus</i></p>
+                            </th>
+                            <th xml:id="d1e1195">
+                                <p xml:id="d1e1197"><b xml:id="d1e1198">Zone:</b></p>
+                            </th>
+                            <th xml:id="d1e1201">
+                                <p xml:id="d1e1203">NAFO 3NO</p>
+                                <p xml:id="d1e1205">(CAP/N3NO.)</p>
+                            </th>
+                        </tr>
+                        <tr xml:id="d1e1209">
+                            <td xml:id="d1e1211">
+                                <p xml:id="d1e1213">Union</p>
+                            </td>
+                            <td xml:id="d1e1216">
+                                <p xml:id="d1e1218">0</p>
+                            </td>
+                            <td xml:id="d1e1221">
+                                <p xml:id="d1e1223"><authorialNote xml:id="d1e1224" marker="9" placement="bottom" placementBase="~table_d22e587"><p xml:id="d1e1225">No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the following limits: a maximum
+                                            of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                            <td xml:id="d1e1228" colspan="2" rowspan="2">
+                                <p xml:id="d1e1230">Analytical TAC</p>
+                                <p xml:id="d1e1232">Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+                                <p xml:id="d1e1234">Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+                            </td>
+                        </tr>
+                        <tr xml:id="d1e1238">
+                            <td xml:id="d1e1240">
+                                <p xml:id="d1e1242">TAC</p>
+                            </td>
+                            <td xml:id="d1e1245">
+                                <p xml:id="d1e1247">0</p>
+                            </td>
+                            <td xml:id="d1e1250">
+                                <p xml:id="d1e1252"><authorialNote xml:id="d1e1253" marker="9" placement="bottom" placementBase="~table_d22e587"><p xml:id="d1e1254">No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the following limits: a maximum
+                                            of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                        </tr>
+                    </table>
+                        </content>
+                    </hcontainer>
+                </hcontainer>
+            </paragraph>
+            <paragraph xml:id="d1e1263">
+                <hcontainer xml:id="d1e1265" name="BLOCK_TAB">
+                    <hcontainer xml:id="d1e1267" name="TAB">
+                        <content xml:id="d1e1269">
+                        <table xml:id="d1e1271">
+                        <tr xml:id="d1e1273">
+                            <th xml:id="d1e1275">
+                                <p xml:id="d1e1277"><b xml:id="d1e1278">Species:</b></p>
+                            </th>
+                            <th xml:id="d1e1281" colspan="2">
+                                <p xml:id="d1e1283">Northern prawn</p>
+                                <p xml:id="d1e1285"><i xml:id="d1e1286">Pandalus borealis</i></p>
+                            </th>
+                            <th xml:id="d1e1289">
+                                <p xml:id="d1e1291"><b xml:id="d1e1292">Zone:</b></p>
+                            </th>
+                            <th xml:id="d1e1295">
+                                <p xml:id="d1e1297">NAFO 3LNO<authorialNote xml:id="d1e1299" marker="1" placement="bottom" placementBase="~table_d22e635">
+                                    <block xml:id="d1e1301" name="complexContent"><subFlow xml:id="d1e1302" name="structuredContent">
+                                        <hcontainer xml:id="d1e1304" name="BLOCK_TAB">
+                                            <subparagraph xml:id="d1e1306">
+                                                <content xml:id="d1e1308">
+                                                    <p xml:id="d1e1310">Not including the box bounded by the following oordinates:</p>
+                                                </content>
+                                            </subparagraph>
+                                            <hcontainer xml:id="d1e1314" name="TAB">
+                                                <content xml:id="d1e1316">
+                                                    <table xml:id="d1e1318">
+                                                        <tr xml:id="d1e1320">
+                                                            <th xml:id="d1e1322">
+                                                                <p xml:id="d1e1324">Point No</p>
+                                                            </th>
+                                                            <th xml:id="d1e1327">
+                                                                <p xml:id="d1e1329">Latitude N</p>
+                                                            </th>
+                                                            <th xml:id="d1e1332">
+                                                                <p xml:id="d1e1334">Longitude W</p>
+                                                            </th>
+                                                        </tr>
+                                                        <tr xml:id="d1e1338">
+                                                            <td xml:id="d1e1340"><p xml:id="d1e1341">1</p></td>
+                                                            <td xml:id="d1e1343"><p xml:id="d1e1344">47° 20' 0</p></td>
+                                                            <td xml:id="d1e1346"><p xml:id="d1e1347">46° 40' 0</p></td>
+                                                        </tr>
+                                                        <tr xml:id="d1e1350">
+                                                            <td xml:id="d1e1352"><p xml:id="d1e1353">2</p></td>
+                                                            <td xml:id="d1e1355"><p xml:id="d1e1356">47° 20' 0</p></td>
+                                                            <td xml:id="d1e1358"><p xml:id="d1e1359">46° 30' 0</p></td>
+                                                        </tr>
+                                                        <tr xml:id="d1e1362">
+                                                            <td xml:id="d1e1364"><p xml:id="d1e1365">3</p></td>
+                                                            <td xml:id="d1e1367"><p xml:id="d1e1368">46° 00' 0</p></td>
+                                                            <td xml:id="d1e1370"><p xml:id="d1e1371">46° 30' 0</p></td>
+                                                        </tr>
+                                                        <tr xml:id="d1e1374">
+                                                            <td xml:id="d1e1376"><p xml:id="d1e1377">4</p></td>
+                                                            <td xml:id="d1e1379"><p xml:id="d1e1380">46° 00' 0</p></td>
+                                                            <td xml:id="d1e1382"><p xml:id="d1e1383">46° 40' 0</p></td>
+                                                        </tr>
+                                                    </table>
+                                                </content>
+                                            </hcontainer>                                            
+                                        </hcontainer>
+                                    </subFlow>
+                                    </block></authorialNote>
+                                    <authorialNote xml:id="d1e1392" marker="2" placement="bottom" placementBase="~table_d22e635"><block xml:id="d1e1393" name="complexContent"><subFlow xml:id="d1e1394" name="structuredContent">
+                                            <hcontainer xml:id="d1e1396" name="BLOCK_TAB">
+                                                <subparagraph xml:id="d1e1398">
+                                                    <content xml:id="d1e1400">
+                                                        <p xml:id="d1e1402">Fishing is prohibited at a depth less than 200 metres in the area West of a line bound by the following coordinates:</p>
+                                                    </content>
+                                                </subparagraph>
+                                                <hcontainer xml:id="d1e1406" name="TAB">
+                                                    <content xml:id="d1e1408">
+                                                        <table xml:id="d1e1410">
+                                                            <tr xml:id="d1e1412">
+                                                                <th xml:id="d1e1414">
+                                                                    <p xml:id="d1e1416">Point No</p>
+                                                                </th>
+                                                                <th xml:id="d1e1419">
+                                                                    <p xml:id="d1e1421">Latitude N</p>
+                                                                </th>
+                                                                <th xml:id="d1e1424">
+                                                                    <p xml:id="d1e1426">Longitude W</p>
+                                                                </th>
+                                                            </tr>
+                                                            <tr xml:id="d1e1430">
+                                                                <td xml:id="d1e1432"><p xml:id="d1e1433">1</p></td>
+                                                                <td xml:id="d1e1435"><p xml:id="d1e1436">46° 00' 0</p></td>
+                                                                <td xml:id="d1e1438"><p xml:id="d1e1439">47° 49' 0</p></td>
+                                                            </tr>
+                                                            <tr xml:id="d1e1442">
+                                                                <td xml:id="d1e1444"><p xml:id="d1e1445">2</p></td>
+                                                                <td xml:id="d1e1447"><p xml:id="d1e1448">46° 25' 0</p></td>
+                                                                <td xml:id="d1e1450"><p xml:id="d1e1451">47° 27' 0</p></td>
+                                                            </tr>
+                                                            <tr xml:id="d1e1454">
+                                                                <td xml:id="d1e1456"><p xml:id="d1e1457">3</p></td>
+                                                                <td xml:id="d1e1459"><p xml:id="d1e1460">46 °42' 0</p></td>
+                                                                <td xml:id="d1e1462"><p xml:id="d1e1463">47° 25' 0</p></td>
+                                                            </tr>
+                                                            <tr xml:id="d1e1466">
+                                                                <td xml:id="d1e1468"><p xml:id="d1e1469">4</p></td>
+                                                                <td xml:id="d1e1471"><p xml:id="d1e1472">46° 48' 0</p></td>
+                                                                <td xml:id="d1e1474"><p xml:id="d1e1475">47° 25' 50</p></td>
+                                                            </tr>
+                                                            <tr xml:id="d1e1479">
+                                                                <td xml:id="d1e1481"><p xml:id="d1e1482">5</p></td>
+                                                                <td xml:id="d1e1484"><p xml:id="d1e1485">47° 16' 50</p></td>
+                                                                <td xml:id="d1e1487"><p xml:id="d1e1488">47° 43' 50</p></td>
+                                                            </tr>
+                                                        </table>
+                                                    </content>
+                                                </hcontainer>                                            
+                                            </hcontainer>                                                                                
+                                        </subFlow></block></authorialNote></p>
+                                <p xml:id="d1e1496">(PRA/N3LNO.)</p>
+                            </th>
+                        </tr>
+                        <tr xml:id="d1e1500">
+                            <td xml:id="d1e1502">
+                                <p xml:id="d1e1504">Estonia</p>
+                            </td>
+                            <td xml:id="d1e1507">
+                                <p xml:id="d1e1509">0</p>
+                            </td>
+                            <td xml:id="d1e1512">
+                                <p xml:id="d1e1514"><authorialNote xml:id="d1e1515" marker="3" placement="bottom" placementBase="~table_d22e635"><p xml:id="d1e1516">No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the following limits: a maximum
+                                            of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                            <td xml:id="d1e1519" colspan="2" rowspan="8">
+                                <p xml:id="d1e1521">Analytical TAC</p>
+                                <p xml:id="d1e1523">Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+                                <p xml:id="d1e1525">Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+                            </td>
+                        </tr>
+                        <tr xml:id="d1e1529">
+                            <td xml:id="d1e1531">
+                                <p xml:id="d1e1533">Latvia</p>
+                            </td>
+                            <td xml:id="d1e1536">
+                                <p xml:id="d1e1538">0</p>
+                            </td>
+                            <td xml:id="d1e1541">
+                                <p xml:id="d1e1543"><authorialNote xml:id="d1e1544" marker="3" placement="bottom" placementBase="~table_d22e635"><p xml:id="d1e1545">No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the following limits: a maximum
+                                            of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                        </tr>
+                        <tr xml:id="d1e1549">
+                            <td xml:id="d1e1551">
+                                <p xml:id="d1e1553">Lithuania</p>
+                            </td>
+                            <td xml:id="d1e1556">
+                                <p xml:id="d1e1558">0</p>
+                            </td>
+                            <td xml:id="d1e1561">
+                                <p xml:id="d1e1563"><authorialNote xml:id="d1e1564" marker="3" placement="bottom" placementBase="~table_d22e635"><p xml:id="d1e1565">No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the following limits: a maximum
+                                            of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                        </tr>
+                        <tr xml:id="d1e1569">
+                            <td xml:id="d1e1571">
+                                <p xml:id="d1e1573">Poland</p>
+                            </td>
+                            <td xml:id="d1e1576">
+                                <p xml:id="d1e1578">0</p>
+                            </td>
+                            <td xml:id="d1e1581">
+                                <p xml:id="d1e1583"><authorialNote xml:id="d1e1584" marker="3" placement="bottom" placementBase="~table_d22e635"><p xml:id="d1e1585">No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the following limits: a maximum
+                                            of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                        </tr>
+                        <tr xml:id="d1e1590">
+                            <td xml:id="d1e1592">
+                                <p xml:id="d1e1594">Spain</p>
+                            </td>
+                            <td xml:id="d1e1597">
+                                <p xml:id="d1e1599">0</p>
+                            </td>
+                            <td xml:id="d1e1602">
+                                <p xml:id="d1e1604"><authorialNote xml:id="d1e1605" marker="3" placement="bottom" placementBase="~table_d22e635"><p xml:id="d1e1606">No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the following limits: a maximum
+                                            of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                        </tr>
+                        <tr xml:id="d1e1610">
+                            <td xml:id="d1e1612">
+                                <p xml:id="d1e1614">Portugal</p>
+                            </td>
+                            <td xml:id="d1e1617">
+                                <p xml:id="d1e1619">0</p>
+                            </td>
+                            <td xml:id="d1e1622">
+                                <p xml:id="d1e1624"><authorialNote xml:id="d1e1625" marker="3" placement="bottom" placementBase="~table_d22e635"><p xml:id="d1e1626">No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the following limits: a maximum
+                                            of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                        </tr>
+                        <tr xml:id="d1e1630">
+                            <td xml:id="d1e1632">
+                                <p xml:id="d1e1634">Union</p>
+                            </td>
+                            <td xml:id="d1e1637">
+                                <p xml:id="d1e1639">0</p>
+                            </td>
+                            <td xml:id="d1e1642">
+                                <p xml:id="d1e1644"><authorialNote xml:id="d1e1645" marker="3" placement="bottom" placementBase="~table_d22e635"><p xml:id="d1e1646">No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the following limits: a maximum
+                                            of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                        </tr>
+                        <tr xml:id="d1e1650">
+                            <td xml:id="d1e1652">
+                                <p xml:id="d1e1654">TAC</p>
+                            </td>
+                            <td xml:id="d1e1657">
+                                <p xml:id="d1e1659">0</p>
+                            </td>
+                            <td xml:id="d1e1662">
+                                <p xml:id="d1e1664"><authorialNote xml:id="d1e1665" marker="3" placement="bottom" placementBase="~table_d22e635"><p xml:id="d1e1666">No directed fisheries are
+                                            permitted under this quota. This species shall only be
+                                            taken as by-catch within the following limits: a maximum
+                                            of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                        </tr>
+                    </table>
+                        </content>
+                    </hcontainer>   
+                </hcontainer>
+            </paragraph>
+            <paragraph xml:id="d1e1676">
+                <hcontainer xml:id="d1e1678" name="BLOCK_TAB">
+                    <hcontainer xml:id="d1e1680" name="TAB">
+                        <content xml:id="d1e1682">
+                        <table xml:id="d1e1684">
+                        <tr xml:id="d1e1686">
+                            <th xml:id="d1e1688">
+                                <p xml:id="d1e1690"><b xml:id="d1e1691">Species:</b></p>
+                            </th>
+                            <th xml:id="d1e1694" colspan="2">
+                                <p xml:id="d1e1696">Northern prawn</p>
+                                <p xml:id="d1e1698"><i xml:id="d1e1699">Pandalus borealis</i></p>
+                            </th>
+                            <th xml:id="d1e1702">
+                                <p xml:id="d1e1704"><b xml:id="d1e1705">Zone:</b></p>
+                            </th>
+                            <th xml:id="d1e1708">
+                                <p xml:id="d1e1710">NAFO 3M<authorialNote xml:id="d1e1712" marker="1" placement="bottom" placementBase="~table_d22e815"><block xml:id="d1e1713" name="complexContent"><subFlow xml:id="d1e1714" name="structuredContent">
+                                        <hcontainer xml:id="d1e1716" name="BLOCK_TAB">
+                                            <subparagraph xml:id="d1e1718"><content xml:id="d1e1719"><p xml:id="d1e1720">Vessels may also fish
+                                            this stock in Division 3L in the box bounded by the
+                                            following coordinates:</p></content>
+                                    </subparagraph>
+                                            <hcontainer xml:id="d1e1723" name="TAB">
+                                                <content xml:id="d1e1725">
+                                                    <table xml:id="d1e1727">
+                                                        <tr xml:id="d1e1729">
+                                                            <th xml:id="d1e1731">
+                                                                <p xml:id="d1e1733">Point No</p>
+                                                            </th>
+                                                            <th xml:id="d1e1736">
+                                                                <p xml:id="d1e1738">Latitude N</p>
+                                                            </th>
+                                                            <th xml:id="d1e1741">
+                                                                <p xml:id="d1e1743">Longitude W</p>
+                                                            </th>
+                                                        </tr>
+                                                        <tr xml:id="d1e1747">
+                                                            <td xml:id="d1e1749"><p xml:id="d1e1750">1</p></td>
+                                                            <td xml:id="d1e1752"><p xml:id="d1e1753">46° 00' 0</p></td>
+                                                            <td xml:id="d1e1755"><p xml:id="d1e1756">47° 49' 0</p></td>
+                                                        </tr>
+                                                        <tr xml:id="d1e1759">
+                                                            <td xml:id="d1e1761"><p xml:id="d1e1762">2</p></td>
+                                                            <td xml:id="d1e1764"><p xml:id="d1e1765">46° 25' 0</p></td>
+                                                            <td xml:id="d1e1767"><p xml:id="d1e1768">47° 27' 0</p></td>
+                                                        </tr>
+                                                        <tr xml:id="d1e1771">
+                                                            <td xml:id="d1e1773"><p xml:id="d1e1774">3</p></td>
+                                                            <td xml:id="d1e1776"><p xml:id="d1e1777">46 °42' 0</p></td>
+                                                            <td xml:id="d1e1779"><p xml:id="d1e1780">47° 25' 0</p></td>
+                                                        </tr>
+                                                        <tr xml:id="d1e1783">
+                                                            <td xml:id="d1e1785"><p xml:id="d1e1786">4</p></td>
+                                                            <td xml:id="d1e1788"><p xml:id="d1e1789">46° 48' 0</p></td>
+                                                            <td xml:id="d1e1791"><p xml:id="d1e1792">47° 25' 50</p></td>
+                                                        </tr>
+                                                        <tr xml:id="d1e1796">
+                                                            <td xml:id="d1e1798"><p xml:id="d1e1799">5</p></td>
+                                                            <td xml:id="d1e1801"><p xml:id="d1e1802">47° 16' 50</p></td>
+                                                            <td xml:id="d1e1804"><p xml:id="d1e1805">47° 43' 50</p></td>
+                                                        </tr>
+                                                    </table>
+                                                </content>
+                                            </hcontainer>                                                                              </hcontainer>
+                                        <hcontainer xml:id="d1e1812" name="BLOCK_TAB">
+                                            <subparagraph xml:id="d1e1814">
+                                                <content xml:id="d1e1816">
+                                                    <p xml:id="d1e1818">Moreover, fishing for shrimp is
+                                                        prohibited from 1 June to 31 December in the area bounded by the following coordinates:</p>
+                                                </content>
+                                            </subparagraph>
+                                        </hcontainer>
+                                        <hcontainer xml:id="d1e1823" name="TAB">
+                                            <content xml:id="d1e1825">
+                                                <table xml:id="d1e1827">
+                                                    <tr xml:id="d1e1829">
+                                                        <th xml:id="d1e1831">
+                                                            <p xml:id="d1e1833">Point No</p>
+                                                        </th>
+                                                        <th xml:id="d1e1836">
+                                                            <p xml:id="d1e1838">Latitude N</p>
+                                                        </th>
+                                                        <th xml:id="d1e1841">
+                                                            <p xml:id="d1e1843">Longitude W</p>
+                                                        </th>
+                                                    </tr>
+                                                    <tr xml:id="d1e1847">
+                                                        <td xml:id="d1e1849"><p xml:id="d1e1850">1</p></td>
+                                                        <td xml:id="d1e1852"><p xml:id="d1e1853">47° 55' 0</p></td>
+                                                        <td xml:id="d1e1855"><p xml:id="d1e1856">45° 00' 0</p></td>
+                                                    </tr>
+                                                    <tr xml:id="d1e1859">
+                                                        <td xml:id="d1e1861"><p xml:id="d1e1862">2</p></td>
+                                                        <td xml:id="d1e1864"><p xml:id="d1e1865">47° 30' 0</p></td>
+                                                        <td xml:id="d1e1867"><p xml:id="d1e1868">44° 15' 0</p></td>
+                                                    </tr>
+                                                    <tr xml:id="d1e1871">
+                                                        <td xml:id="d1e1873"><p xml:id="d1e1874">3</p></td>
+                                                        <td xml:id="d1e1876"><p xml:id="d1e1877">46° 55' 0</p></td>
+                                                        <td xml:id="d1e1879"><p xml:id="d1e1880">44° 15' 0</p></td>
+                                                    </tr>
+                                                    <tr xml:id="d1e1883">
+                                                        <td xml:id="d1e1885"><p xml:id="d1e1886">4</p></td>
+                                                        <td xml:id="d1e1888"><p xml:id="d1e1889">46° 35' 0</p></td>
+                                                        <td xml:id="d1e1891"><p xml:id="d1e1892">44° 30' 0</p></td>
+                                                    </tr>
+                                                    <tr xml:id="d1e1896">
+                                                        <td xml:id="d1e1898"><p xml:id="d1e1899">5</p></td>
+                                                        <td xml:id="d1e1901"><p xml:id="d1e1902">46° 35' 0</p></td>
+                                                        <td xml:id="d1e1904"><p xml:id="d1e1905">45° 40' 0</p></td>
+                                                    </tr>
+                                                </table>
+                                            </content>
+                                        </hcontainer>                                            
+                                    </subFlow>
+                                    </block>
+                                </authorialNote></p>
+                                <p xml:id="d1e1914">(PRA/*N3M.)</p>
+                            </th>
+                        </tr>
+                        <tr xml:id="d1e1918">
+                            <td xml:id="d1e1920">
+                                <p xml:id="d1e1922">TAC</p>
+                            </td>
+                            <td xml:id="d1e1925">
+                                <p xml:id="d1e1927">Not relevant</p>
+                            </td>
+                            <td xml:id="d1e1930">
+                                <p xml:id="d1e1932"><authorialNote xml:id="d1e1933" marker="2" placement="bottom" placementBase="~table_d22e815">                                            <hcontainer xml:id="d1e1935" name="BLOCK_TAB">
+                                        <subparagraph xml:id="d1e1937">
+                                            <content xml:id="d1e1939">
+                                                <p xml:id="d1e1941">Not relevant. Fishery managed by limitations in fishing effort (EFF/*N3M.). The Member States concerned shall issue fishing authorisations for their fishing vessels engaging in this fishery and shall notify those authorisations to the Commission prior to the commencement of the vessel’s activity, in accordance with Regulation (EC) No 1224/2009.</p>
+                                            </content>
+                                        </subparagraph>
+                                        <hcontainer xml:id="d1e1945" name="TAB">
+                                            <content xml:id="d1e1947">
+                                                <table xml:id="d1e1949">
+                                                    <tr xml:id="d1e1951">
+                                                        <th xml:id="d1e1953">
+                                                            <p xml:id="d1e1955">Member State</p>
+                                                        </th>
+                                                        <th xml:id="d1e1958">
+                                                            <p xml:id="d1e1960">Maximum number of fishing days</p>
+                                                        </th>
+                                                    </tr>
+                                                    <tr xml:id="d1e1964">
+                                                        <td xml:id="d1e1966"><p xml:id="d1e1967">Denmark</p></td>
+                                                        <td xml:id="d1e1969"><p xml:id="d1e1970">33</p></td>
+                                                    </tr>
+                                                    <tr xml:id="d1e1973">
+                                                        <td xml:id="d1e1975"><p xml:id="d1e1976">Estonia</p></td>
+                                                        <td xml:id="d1e1978"><p xml:id="d1e1979">391 <authorialNote xml:id="d1e1981" marker="*" placement="bottom" placementBase="~table_j902e635"><p xml:id="d1e1982">The NAFO Commission agreed at its 2019 Annual Meeting that the European Union (Estonia) will transfer 25 fishing days of its fishing days allocation for 2020 to France, in respect of St Pierre et Miquelon. Those 25 fishing days have been deducted from Estonia’s number of fishing days, which would otherwise have been 416 days, under this interim regime for 2020 that will not create any catch history.</p></authorialNote></p></td>
+                                                    </tr>
+                                                    <tr xml:id="d1e1985">
+                                                        <td xml:id="d1e1987"><p xml:id="d1e1988">Spain</p></td>
+                                                        <td xml:id="d1e1990"><p xml:id="d1e1991">64</p></td>
+                                                    </tr>
+                                                    <tr xml:id="d1e1994">
+                                                        <td xml:id="d1e1996"><p xml:id="d1e1997">1</p></td>
+                                                        <td xml:id="d1e1999"><p xml:id="d1e2000">46° 00' 0</p></td>
+                                                    </tr>
+                                                    <tr xml:id="d1e2004">
+                                                        <td xml:id="d1e2006"><p xml:id="d1e2007">Latvia</p></td>
+                                                        <td xml:id="d1e2009"><p xml:id="d1e2010">123</p></td>
+                                                    </tr>
+                                                    <tr xml:id="d1e2013">
+                                                        <td xml:id="d1e2015"><p xml:id="d1e2016">Lithuania</p></td>
+                                                        <td xml:id="d1e2018"><p xml:id="d1e2019">145</p></td>
+                                                    </tr>
+                                                    <tr xml:id="d1e2022">
+                                                        <td xml:id="d1e2024"><p xml:id="d1e2025">Poland</p></td>
+                                                        <td xml:id="d1e2027"><p xml:id="d1e2028">25</p></td>
+                                                    </tr>
+                                                    <tr xml:id="d1e2031">
+                                                        <td xml:id="d1e2033"><p xml:id="d1e2034">Portuga</p></td>
+                                                        <td xml:id="d1e2036"><p xml:id="d1e2037">17</p></td>
+                                                    </tr>
+                                                </table>
+                                            </content>
+                                        </hcontainer>                                            
+                                    </hcontainer>                                    
+                                </authorialNote></p>
+                            </td>
+                            <td xml:id="d1e2046" colspan="2">
+                                <p xml:id="d1e2048">Analytical TAC</p>
+                            </td>
+                        </tr>
+                    </table>
+                        </content>
+                    </hcontainer>
+                </hcontainer>
+            </paragraph>
+            <paragraph xml:id="d1e2057">
+                <content xml:id="d1e2059">
+                    <table xml:id="d1e2061">
+                        <tr xml:id="d1e2063">
+                            <th xml:id="d1e2065">
+                                <p xml:id="d1e2067"><b xml:id="d1e2068">Species:</b></p>
+                            </th>
+                            <th xml:id="d1e2071" colspan="2">
+                                <p xml:id="d1e2073">Greenland halibut</p>
+                                <p xml:id="d1e2075"><i xml:id="d1e2076">Reinhardtius hippoglossoides</i></p>
+                            </th>
+                            <th xml:id="d1e2079">
+                                <p xml:id="d1e2081"><b xml:id="d1e2082">Zone:</b></p>
+                            </th>
+                            <th xml:id="d1e2085">
+                                <p xml:id="d1e2087">NAFO 3LMNO</p>
+                                <p xml:id="d1e2089">(GHL/N3LMNO)</p>
+                            </th>
+                        </tr>
+                        <tr xml:id="d1e2093">
+                            <td xml:id="d1e2095">
+                                <p xml:id="d1e2097">Estonia</p>
+                            </td>
+                            <td xml:id="d1e2100">
+                                <p xml:id="d1e2102">340</p>
+                            </td>
+                            <td xml:id="d1e2105"/>
+                            <td xml:id="d1e2107" colspan="2" rowspan="8">
+                                <p xml:id="d1e2109">Analytical TAC</p>
+                                <p xml:id="d1e2111">Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+                                <p xml:id="d1e2113">Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+                            </td>
+                        </tr>
+                        <tr xml:id="d1e2117">
+                            <td xml:id="d1e2119">
+                                <p xml:id="d1e2121">Germany</p>
+                            </td>
+                            <td xml:id="d1e2124">
+                                <p xml:id="d1e2126">347</p>
+                            </td>
+                            <td xml:id="d1e2129"/>
+                        </tr>
+                        <tr xml:id="d1e2132">
+                            <td xml:id="d1e2134">
+                                <p xml:id="d1e2136">Latvia</p>
+                            </td>
+                            <td xml:id="d1e2139">
+                                <p xml:id="d1e2141">48</p>
+                            </td>
+                            <td xml:id="d1e2144"/>
+                        </tr>
+                        <tr xml:id="d1e2147">
+                            <td xml:id="d1e2149">
+                                <p xml:id="d1e2151">Lithuania</p>
+                            </td>
+                            <td xml:id="d1e2154">
+                                <p xml:id="d1e2156">24</p>
+                            </td>
+                            <td xml:id="d1e2159"/>
+                        </tr>
+                        <tr xml:id="d1e2163">
+                            <td xml:id="d1e2165">
+                                <p xml:id="d1e2167">Spain</p>
+                            </td>
+                            <td xml:id="d1e2170">
+                                <p xml:id="d1e2172">4 650</p>
+                            </td>
+                            <td xml:id="d1e2175"/>
+                        </tr>
+                        <tr xml:id="d1e2178">
+                            <td xml:id="d1e2180">
+                                <p xml:id="d1e2182">Portugal</p>
+                            </td>
+                            <td xml:id="d1e2185">
+                                <p xml:id="d1e2187">1 944</p>
+                            </td>
+                            <td xml:id="d1e2190"/>
+                        </tr>
+                        <tr xml:id="d1e2193">
+                            <td xml:id="d1e2195">
+                                <p xml:id="d1e2197">Union</p>
+                            </td>
+                            <td xml:id="d1e2200">
+                                <p xml:id="d1e2202">7 353</p>
+                            </td>
+                            <td xml:id="d1e2205"/>
+                        </tr>
+                        <tr xml:id="d1e2208">
+                            <td xml:id="d1e2210">
+                                <p xml:id="d1e2212">TAC</p>
+                            </td>
+                            <td xml:id="d1e2215">
+                                <p xml:id="d1e2217">12 542</p>
+                            </td>
+                            <td xml:id="d1e2220"/>
+                        </tr>
+                    </table>
+                </content>
+            </paragraph>
+            <paragraph xml:id="d1e2226">
+                <content xml:id="d1e2228">
+                    <table xml:id="d1e2230">
+                        <tr xml:id="d1e2232">
+                            <th xml:id="d1e2234">
+                                <p xml:id="d1e2236"><b xml:id="d1e2237">Species:</b></p>
+                            </th>
+                            <th xml:id="d1e2240" colspan="2">
+                                <p xml:id="d1e2242">Skate</p>
+                                <p xml:id="d1e2244"><i xml:id="d1e2245">Rajidae</i></p>
+                            </th>
+                            <th xml:id="d1e2248">
+                                <p xml:id="d1e2250"><b xml:id="d1e2251">Zone:</b></p>
+                            </th>
+                            <th xml:id="d1e2254">
+                                <p xml:id="d1e2256">NAFO 3LNO</p>
+                                <p xml:id="d1e2258">(SKA/N3LNO.)</p>
+                            </th>
+                        </tr>
+                        <tr xml:id="d1e2262">
+                            <td xml:id="d1e2264">
+                                <p xml:id="d1e2266">Estonia</p>
+                            </td>
+                            <td xml:id="d1e2269">
+                                <p xml:id="d1e2271">283</p>
+                            </td>
+                            <td xml:id="d1e2274"/>
+                            <td xml:id="d1e2276" colspan="2" rowspan="6">
+                                <p xml:id="d1e2278">Analytical TAC</p>
+                                <p xml:id="d1e2280">Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+                                <p xml:id="d1e2282">Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+                            </td>
+                        </tr>
+                        <tr xml:id="d1e2286">
+                            <td xml:id="d1e2288">
+                                <p xml:id="d1e2290">Lithuania</p>
+                            </td>
+                            <td xml:id="d1e2293">
+                                <p xml:id="d1e2295">62</p>
+                            </td>
+                            <td xml:id="d1e2298"/>
+                        </tr>
+                        <tr xml:id="d1e2301">
+                            <td xml:id="d1e2303">
+                                <p xml:id="d1e2305">Spain</p>
+                            </td>
+                            <td xml:id="d1e2308">
+                                <p xml:id="d1e2310">3 403</p>
+                            </td>
+                            <td xml:id="d1e2313"/>
+                        </tr>
+                        <tr xml:id="d1e2316">
+                            <td xml:id="d1e2318">
+                                <p xml:id="d1e2320">Portugal</p>
+                            </td>
+                            <td xml:id="d1e2323">
+                                <p xml:id="d1e2325">660</p>
+                            </td>
+                            <td xml:id="d1e2328"/>
+                        </tr>
+                        <tr xml:id="d1e2332">
+                            <td xml:id="d1e2334">
+                                <p xml:id="d1e2336">Union</p>
+                            </td>
+                            <td xml:id="d1e2339">
+                                <p xml:id="d1e2341">4 408</p>
+                            </td>
+                            <td xml:id="d1e2344"/>
+                        </tr>
+                        <tr xml:id="d1e2347">
+                            <td xml:id="d1e2349">
+                                <p xml:id="d1e2351">TAC</p>
+                            </td>
+                            <td xml:id="d1e2354">
+                                <p xml:id="d1e2356">7 000</p>
+                            </td>
+                            <td xml:id="d1e2359"/>
+                        </tr>
+                    </table>
+                </content>
+            </paragraph>
+            <paragraph xml:id="d1e2365">
+                <content xml:id="d1e2367">
+                    <table xml:id="d1e2369">
+                        <tr xml:id="d1e2371">
+                            <th xml:id="d1e2373">
+                                <p xml:id="d1e2375"><b xml:id="d1e2376">Species:</b></p>
+                            </th>
+                            <th xml:id="d1e2379" colspan="2">
+                                <p xml:id="d1e2381">Redfish</p>
+                                <p xml:id="d1e2383"><i xml:id="d1e2384">Sebastes</i> spp.</p>
+                            </th>
+                            <th xml:id="d1e2388">
+                                <p xml:id="d1e2390"><b xml:id="d1e2391">Zone:</b></p>
+                            </th>
+                            <th xml:id="d1e2394">
+                                <p xml:id="d1e2396">NAFO 3LN</p>
+                                <p xml:id="d1e2398">(RED/N3LN.)</p>
+                            </th>
+                        </tr>
+                        <tr xml:id="d1e2402">
+                            <td xml:id="d1e2404">
+                                <p xml:id="d1e2406">Estonia</p>
+                            </td>
+                            <td xml:id="d1e2409">
+                                <p xml:id="d1e2411">895</p>
+                            </td>
+                            <td xml:id="d1e2414"/>
+                            <td xml:id="d1e2416" colspan="2" rowspan="6">
+                                <p xml:id="d1e2418">Analytical TAC</p>
+                                <p xml:id="d1e2420">Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+                                <p xml:id="d1e2422">Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+                            </td>
+                        </tr>
+                        <tr xml:id="d1e2426">
+                            <td xml:id="d1e2428">
+                                <p xml:id="d1e2430">Germany</p>
+                            </td>
+                            <td xml:id="d1e2433">
+                                <p xml:id="d1e2435">615</p>
+                            </td>
+                            <td xml:id="d1e2438"/>
+                        </tr>
+                        <tr xml:id="d1e2441">
+                            <td xml:id="d1e2443">
+                                <p xml:id="d1e2445">Latvia</p>
+                            </td>
+                            <td xml:id="d1e2448">
+                                <p xml:id="d1e2450">895</p>
+                            </td>
+                            <td xml:id="d1e2453"/>
+                        </tr>
+                        <tr xml:id="d1e2456">
+                            <td xml:id="d1e2458">
+                                <p xml:id="d1e2460">Lithuania</p>
+                            </td>
+                            <td xml:id="d1e2463">
+                                <p xml:id="d1e2465">895</p>
+                            </td>
+                            <td xml:id="d1e2468"/>
+                        </tr>
+                        <tr xml:id="d1e2472">
+                            <td xml:id="d1e2474">
+                                <p xml:id="d1e2476">Union</p>
+                            </td>
+                            <td xml:id="d1e2479">
+                                <p xml:id="d1e2481">3 300</p>
+                            </td>
+                            <td xml:id="d1e2484"/>
+                        </tr>
+                        <tr xml:id="d1e2487">
+                            <td xml:id="d1e2489">
+                                <p xml:id="d1e2491">TAC</p>
+                            </td>
+                            <td xml:id="d1e2494">
+                                <p xml:id="d1e2496">18 100</p>
+                            </td>
+                            <td xml:id="d1e2499"/>
+                        </tr>
+                    </table>
+                </content>
+            </paragraph>
+            <paragraph xml:id="d1e2505">
+                <content xml:id="d1e2507">
+                    <table xml:id="d1e2509">
+                        <tr xml:id="d1e2511">
+                            <th xml:id="d1e2513">
+                                <p xml:id="d1e2515"><b xml:id="d1e2516">Species:</b></p>
+                            </th>
+                            <th xml:id="d1e2519" colspan="2">
+                                <p xml:id="d1e2521">Redfish</p>
+                                <p xml:id="d1e2523"><i xml:id="d1e2524">Sebastes</i> spp.</p>
+                            </th>
+                            <th xml:id="d1e2528">
+                                <p xml:id="d1e2530"><b xml:id="d1e2531">Zone:</b></p>
+                            </th>
+                            <th xml:id="d1e2534">
+                                <p xml:id="d1e2536">NAFO 3M</p>
+                                <p xml:id="d1e2538">(RED/N3M.)</p>
+                            </th>
+                        </tr>
+                        <tr xml:id="d1e2542">
+                            <td xml:id="d1e2544">
+                                <p xml:id="d1e2546">Estonia</p>
+                            </td>
+                            <td xml:id="d1e2549">
+                                <p xml:id="d1e2551">1 571</p>
+                            </td>
+                            <td xml:id="d1e2554">
+                                <p xml:id="d1e2556"><authorialNote xml:id="d1e2557" marker="16" placement="bottom" placementBase="~table_d22e1242"><p xml:id="d1e2558">This quota is subject to
+                                            compliance with the TAC as shown, which is established
+                                            for this stock for all NAFO Contracting Parties. Within
+                                            that TAC, no more than the following mid-term limit may
+                                            be fished before 1 July 2020: 4
+                                    295</p></authorialNote></p>
+                            </td>
+                            <td xml:id="d1e2561" colspan="2" rowspan="8">
+                                <p xml:id="d1e2563">Analytical TAC</p>
+                                <p xml:id="d1e2565">Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+                                <p xml:id="d1e2567">Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+                            </td>
+                        </tr>
+                        <tr xml:id="d1e2571">
+                            <td xml:id="d1e2573">
+                                <p xml:id="d1e2575">Germany</p>
+                            </td>
+                            <td xml:id="d1e2578">
+                                <p xml:id="d1e2580">513</p>
+                            </td>
+                            <td xml:id="d1e2583">
+                                <p xml:id="d1e2585"><authorialNote xml:id="d1e2586" marker="16" placement="bottom" placementBase="~table_d22e1242"><p xml:id="d1e2587">This quota is subject to
+                                            compliance with the TAC as shown, which is established
+                                            for this stock for all NAFO Contracting Parties. Within
+                                            that TAC, no more than the following mid-term limit may
+                                            be fished before 1 July 2020: 4
+                                    295</p></authorialNote></p>
+                            </td>
+                        </tr>
+                        <tr xml:id="d1e2591">
+                            <td xml:id="d1e2593">
+                                <p xml:id="d1e2595">Latvia</p>
+                            </td>
+                            <td xml:id="d1e2598">
+                                <p xml:id="d1e2600">1 571</p>
+                            </td>
+                            <td xml:id="d1e2603">
+                                <p xml:id="d1e2605"><authorialNote xml:id="d1e2606" marker="16" placement="bottom" placementBase="~table_d22e1242"><p xml:id="d1e2607">This quota is subject to
+                                            compliance with the TAC as shown, which is established
+                                            for this stock for all NAFO Contracting Parties. Within
+                                            that TAC, no more than the following mid-term limit may
+                                            be fished before 1 July 2020: 4
+                                    295</p></authorialNote></p>
+                            </td>
+                        </tr>
+                        <tr xml:id="d1e2611">
+                            <td xml:id="d1e2613">
+                                <p xml:id="d1e2615">Lithuania</p>
+                            </td>
+                            <td xml:id="d1e2618">
+                                <p xml:id="d1e2620">1 571</p>
+                            </td>
+                            <td xml:id="d1e2623">
+                                <p xml:id="d1e2625"><authorialNote xml:id="d1e2626" marker="16" placement="bottom" placementBase="~table_d22e1242"><p xml:id="d1e2627">This quota is subject to
+                                            compliance with the TAC as shown, which is established
+                                            for this stock for all NAFO Contracting Parties. Within
+                                            that TAC, no more than the following mid-term limit may
+                                            be fished before 1 July 2020: 4
+                                    295</p></authorialNote></p>
+                            </td>
+                        </tr>
+                        <tr xml:id="d1e2632">
+                            <td xml:id="d1e2634">
+                                <p xml:id="d1e2636">Spain</p>
+                            </td>
+                            <td xml:id="d1e2639">
+                                <p xml:id="d1e2641">233</p>
+                            </td>
+                            <td xml:id="d1e2644">
+                                <p xml:id="d1e2646"><authorialNote xml:id="d1e2647" marker="16" placement="bottom" placementBase="~table_d22e1242"><p xml:id="d1e2648">This quota is subject to
+                                            compliance with the TAC as shown, which is established
+                                            for this stock for all NAFO Contracting Parties. Within
+                                            that TAC, no more than the following mid-term limit may
+                                            be fished before 1 July 2020: 4
+                                    295</p></authorialNote></p>
+                            </td>
+                        </tr>
+                        <tr xml:id="d1e2652">
+                            <td xml:id="d1e2654">
+                                <p xml:id="d1e2656">Portugal</p>
+                            </td>
+                            <td xml:id="d1e2659">
+                                <p xml:id="d1e2661">2 354</p>
+                            </td>
+                            <td xml:id="d1e2664">
+                                <p xml:id="d1e2666"><authorialNote xml:id="d1e2667" marker="16" placement="bottom" placementBase="~table_d22e1242"><p xml:id="d1e2668">This quota is subject to
+                                            compliance with the TAC as shown, which is established
+                                            for this stock for all NAFO Contracting Parties. Within
+                                            that TAC, no more than the following mid-term limit may
+                                            be fished before 1 July 2020: 4
+                                    295</p></authorialNote></p>
+                            </td>
+                        </tr>
+                        <tr xml:id="d1e2672">
+                            <td xml:id="d1e2674">
+                                <p xml:id="d1e2676">Union</p>
+                            </td>
+                            <td xml:id="d1e2679">
+                                <p xml:id="d1e2681">7 813</p>
+                            </td>
+                            <td xml:id="d1e2684">
+                                <p xml:id="d1e2686"><authorialNote xml:id="d1e2687" marker="16" placement="bottom" placementBase="~table_d22e1242"><p xml:id="d1e2688">This quota is subject to
+                                            compliance with the TAC as shown, which is established
+                                            for this stock for all NAFO Contracting Parties. Within
+                                            that TAC, no more than the following mid-term limit may
+                                            be fished before 1 July 2020: 4
+                                    295</p></authorialNote></p>
+                            </td>
+                        </tr>
+                        <tr xml:id="d1e2692">
+                            <td xml:id="d1e2694">
+                                <p xml:id="d1e2696">TAC</p>
+                            </td>
+                            <td xml:id="d1e2699">
+                                <p xml:id="d1e2701">8 590</p>
+                            </td>
+                            <td xml:id="d1e2704">
+                                <p xml:id="d1e2706"><authorialNote xml:id="d1e2707" marker="16" placement="bottom" placementBase="~table_d22e1242"><p xml:id="d1e2708">This quota is subject to
+                                            compliance with the TAC as shown, which is established
+                                            for this stock for all NAFO Contracting Parties. Within
+                                            that TAC, no more than the following mid-term limit may
+                                            be fished before 1 July 2020: 4
+                                    295</p></authorialNote></p>
+                            </td>
+                        </tr>
+                    </table>
+                </content>
+            </paragraph>
+            <paragraph xml:id="d1e2715">
+                <content xml:id="d1e2717">
+                    <table xml:id="d1e2719">
+                        <tr xml:id="d1e2721">
+                            <th xml:id="d1e2723">
+                                <p xml:id="d1e2725"><b xml:id="d1e2726">Species:</b></p>
+                            </th>
+                            <th xml:id="d1e2729" colspan="2">
+                                <p xml:id="d1e2731">Redfish</p>
+                                <p xml:id="d1e2733"><i xml:id="d1e2734">Sebastes</i> spp.</p>
+                            </th>
+                            <th xml:id="d1e2738">
+                                <p xml:id="d1e2740"><b xml:id="d1e2741">Zone:</b></p>
+                            </th>
+                            <th xml:id="d1e2744">
+                                <p xml:id="d1e2746">NAFO 3O</p>
+                                <p xml:id="d1e2748">(RED/N3O.)</p>
+                            </th>
+                        </tr>
+                        <tr xml:id="d1e2752">
+                            <td xml:id="d1e2754">
+                                <p xml:id="d1e2756">Spain</p>
+                            </td>
+                            <td xml:id="d1e2759">
+                                <p xml:id="d1e2761">1 771</p>
+                            </td>
+                            <td xml:id="d1e2764"/>
+                            <td xml:id="d1e2766" colspan="2" rowspan="4">
+                                <p xml:id="d1e2768">Analytical TAC</p>
+                                <p xml:id="d1e2770">Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+                                <p xml:id="d1e2772">Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+                            </td>
+                        </tr>
+                        <tr xml:id="d1e2776">
+                            <td xml:id="d1e2778">
+                                <p xml:id="d1e2780">Portugal</p>
+                            </td>
+                            <td xml:id="d1e2783">
+                                <p xml:id="d1e2785">5 229</p>
+                            </td>
+                            <td xml:id="d1e2788"/>
+                        </tr>
+                        <tr xml:id="d1e2791">
+                            <td xml:id="d1e2793">
+                                <p xml:id="d1e2795">Union</p>
+                            </td>
+                            <td xml:id="d1e2798">
+                                <p xml:id="d1e2800">7 000</p>
+                            </td>
+                            <td xml:id="d1e2803"/>
+                        </tr>
+                        <tr xml:id="d1e2806">
+                            <td xml:id="d1e2808">
+                                <p xml:id="d1e2810">TAC</p>
+                            </td>
+                            <td xml:id="d1e2813">
+                                <p xml:id="d1e2815">20 000</p>
+                            </td>
+                            <td xml:id="d1e2818"/>
+                        </tr>
+                    </table>
+                </content>
+            </paragraph>
+            <paragraph xml:id="d1e2825">
+                <content xml:id="d1e2827">
+                    <table xml:id="d1e2829">
+                        <tr xml:id="d1e2831">
+                            <th xml:id="d1e2833">
+                                <p xml:id="d1e2835"><b xml:id="d1e2836">Species:</b></p>
+                            </th>
+                            <th xml:id="d1e2839" colspan="2">
+                                <p xml:id="d1e2841">Redfish</p>
+                                <p xml:id="d1e2843"><i xml:id="d1e2844">Sebastes</i> spp.</p>
+                            </th>
+                            <th xml:id="d1e2848">
+                                <p xml:id="d1e2850"><b xml:id="d1e2851">Zone:</b></p>
+                            </th>
+                            <th xml:id="d1e2854">
+                                <p xml:id="d1e2856">NAFO Subarea 2, Divisions 1F and 3K</p>
+                                <p xml:id="d1e2858">(RED/N1F3K.)</p>
+                            </th>
+                        </tr>
+                        <tr xml:id="d1e2862">
+                            <td xml:id="d1e2864">
+                                <p xml:id="d1e2866">Latvia</p>
+                            </td>
+                            <td xml:id="d1e2869">
+                                <p xml:id="d1e2871">0</p>
+                            </td>
+                            <td xml:id="d1e2874">
+                                <p xml:id="d1e2876"><authorialNote xml:id="d1e2877" marker="17" placement="bottom" placementBase="~table_d22e1401"><p xml:id="d1e2878">No directed fisheries
+                                            are permitted under this quota. This species shall only
+                                            be taken as by-catch within the following limits: a
+                                            maximum of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                            <td xml:id="d1e2881" colspan="2" rowspan="4">
+                                <p xml:id="d1e2883">Analytical TAC</p>
+                                <p xml:id="d1e2885">Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+                                <p xml:id="d1e2887">Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+                            </td>
+                        </tr>
+                        <tr xml:id="d1e2891">
+                            <td xml:id="d1e2893">
+                                <p xml:id="d1e2895">Lithuania</p>
+                            </td>
+                            <td xml:id="d1e2898">
+                                <p xml:id="d1e2900">0</p>
+                            </td>
+                            <td xml:id="d1e2903">
+                                <p xml:id="d1e2905"><authorialNote xml:id="d1e2906" marker="17" placement="bottom" placementBase="~table_d22e1401"><p xml:id="d1e2907">No directed fisheries
+                                            are permitted under this quota. This species shall only
+                                            be taken as by-catch within the following limits: a
+                                            maximum of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                        </tr>
+                        <tr xml:id="d1e2911">
+                            <td xml:id="d1e2913">
+                                <p xml:id="d1e2915">Union</p>
+                            </td>
+                            <td xml:id="d1e2918">
+                                <p xml:id="d1e2920">0</p>
+                            </td>
+                            <td xml:id="d1e2923">
+                                <p xml:id="d1e2925"><authorialNote xml:id="d1e2926" marker="17" placement="bottom" placementBase="~table_d22e1401"><p xml:id="d1e2927">No directed fisheries
+                                            are permitted under this quota. This species shall only
+                                            be taken as by-catch within the following limits: a
+                                            maximum of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                        </tr>
+                        <tr xml:id="d1e2931">
+                            <td xml:id="d1e2933">
+                                <p xml:id="d1e2935">TAC</p>
+                            </td>
+                            <td xml:id="d1e2938">
+                                <p xml:id="d1e2940">0</p>
+                            </td>
+                            <td xml:id="d1e2943">
+                                <p xml:id="d1e2945"><authorialNote xml:id="d1e2946" marker="17" placement="bottom" placementBase="~table_d22e1401"><p xml:id="d1e2947">No directed fisheries
+                                            are permitted under this quota. This species shall only
+                                            be taken as by-catch within the following limits: a
+                                            maximum of 1 250 kg or 5 %, whichever is
+                                        greater.</p></authorialNote></p>
+                            </td>
+                        </tr>
+                    </table>
+                </content>
+            </paragraph>
+            <paragraph xml:id="d1e2954">
+                <content xml:id="d1e2956">
+                    <table xml:id="d1e2958">
+                        <tr xml:id="d1e2960">
+                            <th xml:id="d1e2962">
+                                <p xml:id="d1e2964"><b xml:id="d1e2965">Species:</b></p>
+                            </th>
+                            <th xml:id="d1e2968" colspan="2">
+                                <p xml:id="d1e2970">White hake</p>
+                                <p xml:id="d1e2972"><i xml:id="d1e2973">Urophycis tenuis</i></p>
+                            </th>
+                            <th xml:id="d1e2976">
+                                <p xml:id="d1e2978"><b xml:id="d1e2979">Zone:</b></p>
+                            </th>
+                            <th xml:id="d1e2982">
+                                <p xml:id="d1e2984">NAFO 3NO</p>
+                                <p xml:id="d1e2986">(HKW/N3NO.)</p>
+                            </th>
+                        </tr>
+                        <tr xml:id="d1e2990">
+                            <td xml:id="d1e2992">
+                                <p xml:id="d1e2994">Spain</p>
+                            </td>
+                            <td xml:id="d1e2997">
+                                <p xml:id="d1e2999">255</p>
+                            </td>
+                            <td xml:id="d1e3002"/>
+                            <td xml:id="d1e3004" colspan="2" rowspan="4">
+                                <p xml:id="d1e3006">Analytical TAC</p>
+                                <p xml:id="d1e3008">Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+                                <p xml:id="d1e3010">Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+                            </td>
+                        </tr>
+                        <tr xml:id="d1e3014">
+                            <td xml:id="d1e3016">
+                                <p xml:id="d1e3018">Portugal</p>
+                            </td>
+                            <td xml:id="d1e3021">
+                                <p xml:id="d1e3023">333</p>
+                            </td>
+                            <td xml:id="d1e3026"/>
+                        </tr>
+                        <tr xml:id="d1e3029">
+                            <td xml:id="d1e3031">
+                                <p xml:id="d1e3033">Union</p>
+                            </td>
+                            <td xml:id="d1e3036">
+                                <p xml:id="d1e3038">588</p>
+                            </td>
+                            <td xml:id="d1e3041">
+                                <p xml:id="d1e3043"><authorialNote xml:id="d1e3044" marker="18" placement="bottom" placementBase="~table_d22e1464"><p xml:id="d1e3045">Where, in accordance
+                                            with Annex IA of the NAFO Conservation and Enforcement
+                                            Measures, a positive vote by the Contracting Parties
+                                            confirms the TAC to be 2 000 tonnes, the corresponding
+                                            Union and Member State quotas shall be deemed to be as
+                                            below:</p></authorialNote></p>
+                            </td>
+                        </tr>
+                        <tr xml:id="d1e3049">
+                            <td xml:id="d1e3051">
+                                <p xml:id="d1e3053">TAC</p>
+                            </td>
+                            <td xml:id="d1e3056">
+                                <p xml:id="d1e3058">1 000</p>
+                            </td>
+                            <td xml:id="d1e3061"/>
+                        </tr>
+                    </table>
+                </content>
+            </paragraph>
+        </mainBody>
+    </doc>
+</akomaNtoso>

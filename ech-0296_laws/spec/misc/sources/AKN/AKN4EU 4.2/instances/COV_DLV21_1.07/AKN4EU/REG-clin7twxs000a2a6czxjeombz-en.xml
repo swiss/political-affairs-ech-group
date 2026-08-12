@@ -1,0 +1,2866 @@
+<?xml version="1.0" encoding="UTF-8"?><akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+	<bill name="REG">
+		<meta>
+			<identification source="~PUBL">
+				<FRBRWork>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+						<akn4eu:fileCUID value="clin7twxs000a2a6czxjeombz"/>
+					</preservation>
+					<FRBRcountry value="EU"/>
+					<FRBRprescriptive value="true"/>
+				</FRBRWork>
+				<FRBRExpression>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<FRBRlanguage language="en"/>
+				</FRBRExpression>
+				<FRBRManifestation>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+						<akn4eu:akn4euVersion value="4.2.0.0"/>
+						<akn4eu:akn4euDocumentation href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/akn4eu"/>
+					</preservation>
+				</FRBRManifestation>
+			</identification>
+			<analysis source="~PUBL">
+				<activeModifications>
+					<textualMod type="repeal">
+						<source/>
+						<destination href="http://data.europa.eu/eli/dir/2002/58"/>
+					</textualMod>
+				</activeModifications>
+			</analysis>
+			<references source="~PUBL">
+				<TLCReference name="language" href="http://publications.europa.eu/resource/authority/language/ENG" showAs="en"/>
+				<TLCReference xml:id="legalBasis" name="contentSubject" href="http://eurovoc.europa.eu/5456" showAs="Legal basis"/>
+				<TLCOrganization xml:id="PUBL" href="http://publications.europa.eu/resource/authority/corporate-body/PUBL" showAs="Publications Office"/>
+				<TLCOrganization xml:id="CONSIL" href="http://publications.europa.eu/resource/authority/corporate-body/CONSIL" showAs="Council of the European Union"/>
+				<TLCOrganization xml:id="EP" href="http://publications.europa.eu/resource/authority/corporate-body/EP" showAs="European      Parliament"/>
+				<TLCRole xml:id="PRESID" href="http://publications.europa.eu/resource/authority/role/PRESID" showAs="President"/>
+				<TLCLocation xml:id="BEL_BRU" href="http://publications.europa.eu/resource/authority/place/BEL_BRU" showAs="Brussels"/>
+				<TLCReference xml:id="REG" name="docType" href="http://publications.europa.eu/resource/authority/resource-type/REG" showAs="Regulation"/>
+				<TLCConcept xml:id="INP" href="http://publications.europa.eu/resource/authority/subdivision/INP" showAs="introductory part"/>
+				<TLCReference xml:id="procedure_2017_3" name="procedureReference" href="http://eur-lex.europa.eu/procedure/EN/2017_3" showAs="2017/0003 (COD)" shortForm="2017/3/COD"/>
+			</references>
+		</meta>
+		<preface xml:id="d1e100" status="ignored">
+			<container xml:id="d1e102" name="procedureIdentifier">
+				<p xml:id="d1e104"><docketNumber xml:id="d1e105" refersTo="~procedure_2017_3">2017/0003 (COD)</docketNumber></p>
+			</container>
+			<longTitle xml:id="d1e109">
+				<p xml:id="d1e111"><docStage xml:id="d1e112">Proposal for a</docStage>
+					<docType xml:id="d1e114" refersTo="~REG">REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE
+						COUNCIL</docType>
+					<docPurpose xml:id="d1e117">concerning the respect for private life and the protection of
+						personal data in electronic communications and repealing <ref xml:id="d1e119" href="http://data.europa.eu/eli/dir/2002/58">Directive 2002/58/EC
+							(Regulation on Privacy and Electronic Communications)Regulation (EC) No
+							1008/2008 on common rules for the operation of air services in the
+							Community</ref></docPurpose></p>
+			</longTitle>
+		</preface>
+		<preamble xml:id="d1e124">
+			<formula xml:id="d1e126" name="actingEntity" status="ignored">
+				<p xml:id="d1e128">THE EUROPEAN PARLIAMENT AND THE COUNCIL OF THE EUROPEAN UNION,</p>
+			</formula>
+			<citations xml:id="d1e131" status="ignored">
+				<citation xml:id="d1e133" refersTo="~legalBasis">
+					<p xml:id="d1e135">Having regard to the Treaty on the Functioning of the European Union, and in
+						particular Articles 16 and 114 thereof,</p>
+				</citation>
+				<citation xml:id="d1e138">
+					<p xml:id="d1e140">Having regard to the proposal from the European Commission,</p>
+				</citation>
+				<citation xml:id="d1e143">
+					<p xml:id="d1e145">After transmission of the draft legislative act to the national
+						parliaments,</p>
+				</citation>
+				<citation xml:id="d1e148">
+					<p xml:id="d1e150">Having regard to the opinion of the European Economic and Social
+							Committee<authorialNote xml:id="d1e152" marker="1" placement="bottom">
+							<p xml:id="d1e154">OJ C , , p. .</p>
+						</authorialNote>,</p>
+				</citation>
+				<citation xml:id="d1e159">
+					<p xml:id="d1e161">Having regard to the opinion of the Committee of the Regions<authorialNote xml:id="d1e163" marker="2" placement="bottom">
+							<p xml:id="d1e165">OJ C , , p. .</p>
+						</authorialNote>,</p>
+				</citation>
+				<citation xml:id="d1e171">
+					<p xml:id="d1e173">Having regard to the opinion of the European Data Protection
+							Supervisor<authorialNote xml:id="d1e175" marker="3" placement="bottom">
+							<p xml:id="d1e177">OJ C , , p. .</p>
+						</authorialNote>,</p>
+				</citation>
+				<citation xml:id="d1e182">
+					<p xml:id="d1e184">Acting in accordance with the ordinary legislative procedure,</p>
+				</citation>
+			</citations>
+			<recitals xml:id="d1e188">
+				<intro xml:id="d1e190" status="ignored">
+					<p xml:id="d1e192">Whereas: </p>
+				</intro>
+				<recital xml:id="d1e195">
+					<num xml:id="d1e197">(1)</num>
+					<p xml:id="d1e199">Article 7 of the Charter of Fundamental Rights of the European Union ("the
+						Charter") protects the fundamental right of everyone to the respect for his
+						or her private and family life, home and communications. Respect for the
+						privacy of one’s communications is an essential dimension of this
+							right<ins xml:id="d1e201">, applying both to natural and legal persons.</ins>.
+						Confidentiality of electronic communications ensures that information
+						exchanged between parties and the external elements of such communication,
+						including when the information has been sent, from where, to whom, is not to
+						be revealed to anyone other than to the parties involved in a communication.
+						The principle of confidentiality should apply to current and future means of
+						communication, including calls, internet access, instant messaging
+						applications, e-mail, internet phone calls and personal messaging provided
+						through social media.</p>
+				</recital>
+				<recital xml:id="d1e205">
+					<num xml:id="d1e207">(2)</num>
+					<p xml:id="d1e209">The content of electronic communications may reveal highly sensitive
+						information about the natural persons involved in the communication, from
+						personal experiences and emotions to medical conditions, sexual preferences
+						and political views, the disclosure of which could result in personal and
+						social harm, economic loss or embarrassment. Similarly, metadata derived
+						from electronic communications may also reveal very sensitive and personal
+						information. These metadata <del xml:id="d1e211">include</del>
+						<ins xml:id="d1e213">includes</ins> the numbers called, the websites visited, geographical
+						location, the time, date and duration when an individual made a call etc.,
+						allowing precise conclusions to be drawn regarding the private lives of the
+						persons involved in the electronic communication, such as their social
+						relationships, their habits and activities of everyday life, their
+						interests, tastes etc.</p>
+				</recital>
+				<recital xml:id="d1e217">
+					<num xml:id="d1e219"><ins xml:id="d1e220">(2a)</ins></num>
+					<p xml:id="d1e222"><ins xml:id="d1e223">The provisions of this Regulation particularise and complement the
+							general rules on the protection of personal data laid down in Regulation
+							(EU) 2016/679 as regards electronic communications data that qualify as
+							personal data. This Regulation therefore does not lower the level of
+							protection enjoyed by natural persons under Regulation (EU) 2016/679.
+							Processing of electronic communications data by providers of electronic
+							communications services should only be permitted in accordance with this
+							Regulation. If no specific rules are established in this Regulation,
+							Regulation (EU) 2016/679 should apply to any processing of electronic
+							communications data that qualify as personal data. Insofar as end-users
+							who are legal persons are concerned, provisions of Regulation (EU)
+							2016/679 should apply only to the extent specifically required by this
+							Regulation.</ins></p>
+				</recital>
+				<recital xml:id="d1e226">
+					<num xml:id="d1e228">(3)</num>
+					<p xml:id="d1e230">Electronic communications data may also reveal information concerning legal
+						entities, such as business secrets or other sensitive information that has
+						economic value <ins xml:id="d1e232">and the protection of which allows legal persons to
+							conduct their business, supporting among other innovation</ins>.
+						Therefore, the provisions of this Regulation should <ins xml:id="d1e234">in principle
+						</ins>apply to both natural and legal persons. Furthermore, this Regulation
+						should ensure that<ins xml:id="d1e236">that, where necessary, </ins> provisions of the
+						Regulation (EU) 2016/679 of the European Parliament and of the
+							Council<authorialNote xml:id="d1e238" marker="4" placement="bottom">
+							<p xml:id="d1e240">Regulation (EU) 2016/679 of the European Parliament and of the
+								Council of 27 April 2016 on the protection of natural persons with
+								regard to the processing of personal data and on the free movement
+								of such data, and repealing Directive 95/46/EC (General Data
+								Protection Regulation) (OJ L 119, 4.5.2016, p. 1–88).</p>
+						</authorialNote>, also apply <ins xml:id="d1e243"><i xml:id="d1e244">mutatis mutandis</i>
+						</ins>to end-users who are legal persons. This includes the <del xml:id="d1e248">definition
+							of</del><ins xml:id="d1e249">provisions on </ins> consent under Regulation (EU)
+						2016/679. <del xml:id="d1e251">When reference is made to consent by an end-user, including
+							legal persons, this definition should apply.</del>
+						<omissis xml:id="d1e253">In addition, legal persons should have the same rights as end-users
+							that are natural persons regarding the supervisory authorities;
+							furthermore, supervisory authorities under this Regulation should also
+							be responsible for monitoring the application of this Regulation
+							regarding legal persons.</omissis></p>
+				</recital>
+				<recital xml:id="d1e257">
+					<num xml:id="d1e259"><ins xml:id="d1e260">(3a)</ins></num>
+					<p xml:id="d1e262"><ins xml:id="d1e263">This Regulation should not affect national law regulating for instance
+							the conclusion or the validity of a contract. Similarly, this Regulation
+							should not affect national law in relation to determining who has the
+							legal power to represent legal persons in any dealings with third
+							parties or in legal proceedings.</ins></p>
+				</recital>
+				<recital xml:id="d1e266">
+					<num xml:id="d1e268">(4)</num>
+					<p xml:id="d1e270">Pursuant to Article 8(1) of the Charter and Article 16(1) of the Treaty on
+						the Functioning of the European Union, everyone has the right to the
+						protection of personal data concerning him or her. Regulation (EU) 2016/679
+						lays down rules relating to the protection of natural persons with regard to
+						the processing of personal data and rules relating to the free movement of
+						personal data. Electronic communications data may include personal data as
+						defined in Regulation (EU) 2016/679.</p>
+				</recital>
+				<recital xml:id="d1e273">
+					<num xml:id="d1e275"><del xml:id="d1e276">(5)</del></num>
+					<p xml:id="d1e278"><del xml:id="d1e279">The provisions of this Regulation particularise and complement the
+							general rules on the protection of personal data laid down in Regulation
+							(EU) 2016/679 as regards electronic communications data that qualify as
+							personal data. This Regulation therefore does not lower the level of
+							protection enjoyed by natural persons under Regulation (EU) 2016/679.
+							Processing of electronic communications data by providers of electronic
+							communications services should only be permitted in accordance with this
+							Regulation.</del></p>
+				</recital>
+				<recital xml:id="d1e282">
+					<num xml:id="d1e284">(6)</num>
+					<p xml:id="d1e286">While the principles and main provisions of Directive 2002/58/EC of the
+						European Parliament and of the Council<authorialNote xml:id="d1e288" marker="5" placement="bottom">
+							<p xml:id="d1e290">Directive 2002/58/EC of the European Parliament and of the Council of
+								12 July 2002 concerning the processing of personal data and the
+								protection of privacy in the electronic communications sector
+								(Directive on privacy and electronic communications) (OJ L 201,
+								31.7.2002, p.37).</p>
+						</authorialNote> remain generally sound, that Directive has not fully kept
+						pace with the evolution of technological and market reality, resulting in an
+						inconsistent or insufficient effective protection of privacy and
+						confidentiality in relation to electronic communications. Those developments
+						include the entrance on the market of electronic communications services
+						that from a consumer perspective are substitutable to traditional services,
+						but do not have to comply with the same set of rules. Another development
+						concerns new techniques that allow for tracking of online behaviour of
+						end-users, which are not covered by Directive 2002/58/EC. Directive
+						2002/58/EC should therefore be repealed and replaced by this Regulation.</p>
+				</recital>
+				<recital xml:id="d1e295">
+					<num xml:id="d1e297">(7)</num>
+					<p xml:id="d1e299">The Member States should be allowed, within the limits of this Regulation, to
+						maintain or introduce national provisions to further specify and clarify the
+						application of the rules of this Regulation in order to ensure an effective
+						application and interpretation of those rules. Therefore, the margin of
+						discretion, which Member States have in this regard, should maintain a
+						balance between the protection of private life and personal data and the
+						free movement of electronic communications data.</p>
+				</recital>
+				<recital xml:id="d1e302">
+					<num xml:id="d1e304">(8)</num>
+					<p xml:id="d1e306">This Regulation should apply to providers of electronic communications
+						services, to providers of publicly available directories, and to
+							<del xml:id="d1e308">software </del>providers <ins xml:id="d1e310">of software </ins>permitting
+						electronic communications, including the retrieval and presentation of
+						information on the internet. This Regulation should also apply to natural
+						and legal persons who use electronic communications services to send <ins xml:id="d1e312">or
+							present </ins>direct marketing commercial communications or <ins xml:id="d1e314">make
+							use of processing and storage capabilities of terminal equipment or
+						</ins>collect information <del xml:id="d1e316">related to </del><ins xml:id="d1e317">processed by or emitted
+							by </ins>or stored in end-users’ terminal equipment.<ins xml:id="d1e320">Furthermore,
+							this Regulation should apply regardless of whether the processing of
+							electronic communications data or personal data of end-users who are in
+							the Union takes place in the Union or not, or of whether the service
+							provider or person processing such data is established or located in the
+							Union or not.</ins></p>
+				</recital>
+				<recital xml:id="d1e324">
+					<num xml:id="d1e326"><del xml:id="d1e327">(9)</del></num>
+					<p xml:id="d1e329"><del xml:id="d1e330">This Regulation should apply to electronic communications data processed
+							in connection with the provision and use of electronic communications
+							services in the Union, regardless of whether or not the processing takes
+							place in the Union. Moreover, in order not to deprive end-users in the
+							Union of effective protection, this Regulation should also apply to
+							electronic communications data processed in connection with the
+							provision of electronic communications services from outside the Union
+							to end-users in the Union.</del></p>
+				</recital>
+				<recital xml:id="d1e333">
+					<num xml:id="d1e335">(10)</num>
+					<p xml:id="d1e337">Radio equipment and its software which is placed on the internal market in
+						the Union, must comply with Directive 2014/53/EU of the European Parliament
+						and of the Council<authorialNote xml:id="d1e339" marker="6" placement="bottom">
+							<p xml:id="d1e341">Directive 2014/53/EU of the European Parliament and of the Council of
+								16 April 2014 on the harmonisation of the laws of the Member States
+								relating to the making available on the market of radio equipment
+								and repealing Directive 1999/5/EC (OJ L 153, 22.5.2014, p. 62).</p>
+						</authorialNote>. This Regulation should not affect the applicability of any
+						of the requirements of Directive 2014/53/EU nor the power of the Commission
+						to adopt delegated acts pursuant to Directive 2014/53/EU requiring that
+						specific categories or classes of radio equipment incorporate safeguards to
+						ensure that personal data and privacy of end-users are protected.</p>
+				</recital>
+				<recital xml:id="d1e346">
+					<num xml:id="d1e348">(11)</num>
+					<p xml:id="d1e350">The services used for communications purposes, and the technical means of
+						their delivery, have evolved considerably. End-users increasingly replace
+						traditional voice telephony, text messages (SMS) and electronic mail
+						conveyance services in favour of functionally equivalent online services
+						such as Voice over IP, messaging services and web-based e-mail services. In
+						order to ensure an effective and equal protection of end-users when using
+						functionally equivalent services, this Regulation uses the definition of
+						electronic communications services set forth in the [Directive of the
+						European Parliament and of the Council establishing the European Electronic
+						Communications Code<authorialNote xml:id="d1e352" marker="7" placement="bottom">
+							<p xml:id="d1e354">Commission proposal for a Directive of the European Parliament and of
+								the Council establishing the European Electronic Communications Code
+								(Recast) (COM/2016/0590 final - 2016/0288 (COD)).</p>
+						</authorialNote>]. That definition encompasses not only internet access
+						services and services consisting wholly or partly in the conveyance of
+						signals but also interpersonal communications services, which may or may not
+						be number-based, such as for example, Voice over IP, messaging services and
+						web-based e-mail services. The protection of confidentiality of
+						communications is crucial also as regards interpersonal communications
+						services that are ancillary to another service; therefore, such type of
+						services also having a communication functionality should be covered by this
+						Regulation.</p>
+				</recital>
+				<recital xml:id="d1e359">
+					<num xml:id="d1e361"><ins xml:id="d1e362">(11a)</ins></num>
+					<p xml:id="d1e364">The protection of confidentiality of communications is crucial also as
+						regards interpersonal communications services that are ancillary to another
+						service; therefore, such type of services also having a communication
+						functionality should be covered by this Regulation. <ins xml:id="d1e366">In such cases, this
+							Regulation applies only to the ancillary feature itself and the
+							electronic communications functionality it provides. To determine
+							whether an electronic communications functionality constitutes an
+							ancillary feature, the end-users expectations have to be taken into
+							account. For example such communications functionality is considered to
+							be ancillary feature in all the circumstances where electronic
+							communication is taking place between a finite, that is to say not
+							potentially unlimited, number of end-users which is determined by the
+							sender of the communications, e.g. any messaging application allowing
+							two or more people to connect and communicate. However, where access to
+							an electronic communications functionality is available for anyone, e.g.
+							an electronic communications channel in online games which is open to
+							all persons playing the game, such channel does not constitute an
+							ancillary feature.</ins></p>
+				</recital>
+				<recital xml:id="d1e369">
+					<num xml:id="d1e371">(12)</num>
+					<p xml:id="d1e373"><del xml:id="d1e374">Connected devices and machines increasingly communicate with each other
+							by using electronic communications networks (Internet of Things).
+							</del><ins xml:id="d1e375">The use of machine-to-machine services, that is to say
+							services involving an automated transfer of data and information between
+							devices or software-based applications with limited or no human
+							interaction, is emerging. While the services provided at the
+							application-layer of such services do normally not qualify as an
+							electronic communications service as defined in the [Directive
+							establishing the European Electronic Communications Code],
+							</ins><del xml:id="d1e376">The</del><ins xml:id="d1e377">the</ins> transmission <ins xml:id="d1e379">services used for
+							the provision </ins>of machine-to-machine <del xml:id="d1e381">communications
+							</del><ins xml:id="d1e382">services regularly </ins>involves the conveyance of signals
+							<del xml:id="d1e384">over </del><ins xml:id="d1e386">via</ins><del xml:id="d1e387">a </del><ins xml:id="d1e388">an electronic
+							communications </ins>network and, hence, <del xml:id="d1e390">usually
+							</del><ins xml:id="d1e391">normally </ins>constitutes an electronic communications
+						service. In order to ensure full protection of the rights to privacy and
+						confidentiality of communications, and to promote a trusted and secure
+						Internet of Things in the digital single market, it is necessary to clarify
+						that this Regulation<ins xml:id="d1e393">, in particular the requirements relating to the
+							confidentiality of communications, </ins>should apply to the
+						transmission of machine-to-machine <ins xml:id="d1e395">electronic
+							</ins>communications<ins xml:id="d1e398">where carried out via an electronic
+							communications service</ins>.<del xml:id="d1e400"> Therefore, the principle of
+							confidentiality enshrined in this Regulation should also apply to the
+							transmission of machine-to-machine communications. </del>Specific
+						safeguards could also be adopted under sectorial legislation, as for
+						instance Directive 2014/53/EU.</p>
+				</recital>
+				<recital xml:id="d1e404">
+					<num xml:id="d1e406">(13)</num>
+					<p xml:id="d1e408">The development of fast and efficient wireless technologies has fostered the
+						increasing availability for the public of internet access via wireless
+						networks accessible by anyone in public and semi-private spaces such as
+						'hotspots' situated at different places within a city, department stores,
+						shopping malls and hospitals. To the extent that those communications
+						networks are provided to an undefined group of end-users, <ins xml:id="d1e410">regardless if
+							these networks are secured with passwords or not, </ins>the
+						confidentiality of the communications transmitted through such networks
+						should be protected. The fact that wireless electronic communications
+						services may be ancillary to other services should not stand in the way of
+						ensuring the protection of confidentiality of communications data and
+						application of this Regulation. Therefore, this Regulation should apply to
+						electronic communications data using electronic communications services and
+						public communications networks. In contrast, this Regulation should not
+						apply to closed groups of end-users such as corporate networks, access to
+						which is limited <ins xml:id="d1e412">pre-defined group of end-users, e.g. </ins>to members
+						of the corporation.<ins xml:id="d1e414"> Therefore, only networks proving access to a group
+							of end-users which is not pre-defined and where end-users get access to
+							the network under the same conditions, e.g. wifi network of a department
+							store open to all customers, are regulated by this Regulation.</ins></p>
+				</recital>
+				<recital xml:id="d1e418">
+					<num xml:id="d1e420">(14)</num>
+					<p xml:id="d1e422">Electronic communications data should be defined in a sufficiently broad and
+						technology neutral way so as to encompass any information concerning the
+						content transmitted or exchanged (electronic communications content) and the
+						information concerning an end-user of electronic communications services
+						processed for the purposes of transmitting, distributing or enabling the
+						exchange of electronic communications content; including data to trace and
+						identify the source and destination of a communication, geographical
+						location and the date, time, duration and the type of communication. Whether
+						such signals and the related data are conveyed by wire, radio, optical or
+						electromagnetic means, including satellite networks, cable networks, fixed
+						(circuit- and packet-switched, including internet) and mobile terrestrial
+						networks, electricity cable systems, the data related to such signals should
+						be considered as electronic communications metadata and therefore be subject
+						to the provisions of this Regulation. Electronic communications metadata may
+						include information that is part of the subscription to the service when
+						such information is processed for the purposes of transmitting, distributing
+						or exchanging electronic communications content.</p>
+				</recital>
+				<recital xml:id="d1e425">
+					<num xml:id="d1e427">(15)</num>
+					<p xml:id="d1e429">Electronic communications data should be treated as confidential. This means
+						that any <del xml:id="d1e431">interference with the transmission </del><ins xml:id="d1e432">processing
+						</ins>of electronic communications data, whether directly by human
+						intervention or through the intermediation of automated processing by
+						machines, without the consent of all the communicating parties should be
+						prohibited. The prohibition of interception of communications data should
+						apply during their conveyance, i.e. until receipt of the content of the
+						electronic communication by the intended addressee. Interception of
+						electronic communications data may occur, for example, when someone other
+						than the communicating parties, listens to calls, reads, scans or stores the
+						content of electronic communications, or the associated metadata for
+						purposes other than the exchange of communications. Interception also occurs
+						when third parties monitor websites visited, timing of the visits,
+						interaction with others, etc., without the consent of the end-user
+						concerned. As technology evolves, the technical ways to engage in
+						interception have also increased. Such ways may range from the installation
+						of equipment that gathers data from terminal equipment over targeted areas,
+						such as the so-called IMSI (International Mobile Subscriber Identity)
+						catchers, to programs and techniques that, for example, surreptitiously
+						monitor browsing habits for the purpose of creating end-user profiles. Other
+						examples of interception include capturing payload data or content data from
+						unencrypted wireless networks and routers, including browsing habits without
+						the end-users' consent.</p>
+				</recital>
+				<recital xml:id="d1e436" status="ignored">
+					<num xml:id="d1e438">(16)</num>
+					<p xml:id="d1e440">The prohibition of storage of communications is not intended to prohibit any
+						automatic, intermediate and transient storage of this information insofar as
+						this takes place for the sole purpose of carrying out the transmission in
+						the electronic communications network. It should not prohibit either the
+						processing of electronic communications data to ensure the security and
+						continuity of the electronic communications services, including checking
+						security threats such as the presence of malware or the processing of
+						metadata to ensure the necessary quality of service requirements, such as
+						latency, jitter etc.</p>
+				</recital>
+				<recital xml:id="d1e443" status="ignored">
+					<num xml:id="d1e445">(17)</num>
+					<p xml:id="d1e447">The processing of electronic communications data can be useful for
+						businesses, consumers and society as a whole. Vis-à-vis Directive
+						2002/58/EC, this Regulation broadens the possibilities for providers of
+						electronic communications services to process electronic communications
+						metadata, based on end-users consent. However, end-users attach great
+						importance to the confidentiality of their communications, including their
+						online activities, and that they want to control the use of electronic
+						communications data for purposes other than conveying the communication.
+						Therefore, this Regulation should require providers of electronic
+						communications services to obtain end-users' consent to process electronic
+						communications metadata, which should include data on the location of the
+						device generated for the purposes of granting and maintaining access and
+						connection to the service. Location data that is generated other than in the
+						context of providing electronic communications services should not be
+						considered as metadata. Examples of commercial usages of electronic
+						communications metadata by providers of electronic communications services
+						may include the provision of heatmaps; a graphical representation of data
+						using colors to indicate the presence of individuals. To display the traffic
+						movements in certain directions during a certain period of time, an
+						identifier is necessary to link the positions of individuals at certain time
+						intervals. This identifier would be missing if anonymous data were to be
+						used and such movement could not be displayed. Such usage of electronic
+						communications metadata could, for example, benefit public authorities and
+						public transport operators to define where to develop new infrastructure,
+						based on the usage of and pressure on the existing structure. Where a type
+						of processing of electronic communications metadata, in particular using new
+						technologies, and taking into account the nature, scope, context and
+						purposes of the processing, is likely to result in a high risk to the rights
+						and freedoms of natural persons, a data protection impact assessment and, as
+						the case may be, a consultation of the supervisory authority should take
+						place prior to the processing, in accordance with Articles 35 and 36 of
+						Regulation (EU) 2016/679.</p>
+				</recital>
+				<recital xml:id="d1e450">
+					<num xml:id="d1e452">(18)</num>
+					<p xml:id="d1e454">End-users may consent to the processing of their metadata to receive specific
+						services such as protection services against fraudulent activities (by
+						analysing usage data, location and customer account in real time). In the
+						digital economy, services are often supplied against counter-performance
+						other than money, for instance by end-users being exposed to advertisements.
+							<del xml:id="d1e456">For the purposes of this Regulation, consent of an end-user,
+							regardless of whether the latter is a natural or a legal person, should
+							have the same meaning and be subject to the same conditions as the data
+							subject's consent under Regulation (EU) 2016/679. </del>Basic broadband
+						internet access and voice communications services are to be considered as
+						essential services for individuals to be able to communicate and participate
+						to the benefits of the digital economy. Consent for processing
+							<ins xml:id="d1e458">electronic communications </ins>data from internet or voice
+						communication usage will not be valid if the <del xml:id="d1e460">data subject
+							</del><ins xml:id="d1e461">end-user </ins>has no genuine and free choice, or is unable
+						to refuse or withdraw consent without detriment.</p>
+				</recital>
+				<recital xml:id="d1e465">
+					<num xml:id="d1e467">(19)</num>
+					<p xml:id="d1e469">The <ins xml:id="d1e471">protection of the </ins>content of electronic communications
+						pertains to the essence of the fundamental right to respect for private and
+						family life, home and communications protected under Article 7 of the
+						Charter. Any interference with the content of electronic communications
+						should be allowed only under very clear defined conditions, for specific
+						purposes and be subject to adequate safeguards against abuse. This
+						Regulation provides for the possibility of providers of electronic
+						communications services to process electronic communications data in
+						transit, with the informed consent of all the end-users concerned. For
+						example, providers may offer services that entail the scanning of emails to
+						remove certain pre-defined material. Given the sensitivity of the content of
+						communications, this Regulation sets forth a presumption that the processing
+						of such content data will result in high risks to the rights and freedoms of
+						natural persons. <omissis xml:id="d1e473">When processing such type of data, the provider of
+							the electronic communications service should always consult the
+							supervisory authority prior to the processing. Such consultation should
+							be in accordance with Article 36 (2) and (3) of Regulation (EU)
+							2016/679. The presumption does not encompass the processing of content
+							data to provide a service requested by the end-user where the end-user
+							has consented to such processing and it is carried out for the purposes
+							and duration strictly necessary and proportionate for such service.
+							After electronic communications content has been sent by the end-user
+							and received by the intended end-user or end-users, it may be recorded
+							or stored by the end-user, end-users or by a third party entrusted by
+							them to record or store such data. Any processing of such data must
+							comply with Regulation (EU) 2016/679.</omissis></p>
+				</recital>
+				<recital xml:id="d1e477">
+					<num xml:id="d1e479">(20)</num>
+					<p xml:id="d1e481">Terminal equipment of end-users of electronic communications networks and any
+						information relating to the usage of such terminal equipment, whether in
+						particular is <del xml:id="d1e483">stored in </del><ins xml:id="d1e484">processed by </ins>or emitted by
+							<ins xml:id="d1e486">or stored in </ins>such equipment, requested from or processed in
+						order to enable it to connect to another device and or network equipment,
+						are part of the private sphere <ins xml:id="d1e488">, including the privacy of one’s
+							communications, </ins>of the end-users requiring protection under the
+						Charter of Fundamental Rights of the European Union<del xml:id="d1e490"> and the European
+							Convention for the Protection of Human Rights and Fundamental
+							Freedoms</del>. <omissis xml:id="d1e492">Given that such equipment contains or processes
+							information that may reveal details of an individual's emotional,
+							political, social complexities, including the content of communications,
+							pictures, the location of individuals by accessing the device’s GPS
+							capabilities, contact lists, and other information already stored in the
+							device, the information related to such equipment requires enhanced
+							privacy protection. Furthermore, the so-called spyware, web bugs, hidden
+							identifiers, tracking cookies and other similar unwanted tracking tools
+							can enter end-user's terminal equipment without their knowledge in order
+							to gain access to information, to store hidden information and to trace
+							the activities. Information related to the end-user’s device may also be
+							collected remotely for the purpose of identification and tracking, using
+							techniques such as the so-called ‘device fingerprinting’, often without
+							the knowledge of the end-user, and may seriously intrude upon the
+							privacy of these end-users. Techniques that surreptitiously monitor the
+							actions of end-users, for example by tracking their activities online or
+							the location of their terminal equipment, or subvert the operation of
+							the end-users’ terminal equipment pose a serious threat to the privacy
+							of end-users. Therefore, any such interference with the end-user's
+							terminal equipment should be allowed only with the end-user's consent
+							and for specific and transparent purposes.</omissis></p>
+				</recital>
+				<recital xml:id="d1e495" status="ignored">
+					<num xml:id="d1e497">(21)</num>
+					<p xml:id="d1e499">Exceptions to the obligation to obtain consent to make use of the processing
+						and storage capabilities of terminal equipment or to access information
+						stored in terminal equipment should be limited to situations that involve
+						no, or only very limited, intrusion of privacy. For instance, consent should
+						not be requested for authorizing the technical storage or access which is
+						strictly necessary and proportionate for the legitimate purpose of enabling
+						the use of a specific service explicitly requested by the end-user. This may
+						include the storing of cookies for the duration of a single established
+						session on a website to keep track of the end-user’s input when filling in
+						online forms over several pages. Cookies can also be a legitimate and useful
+						tool, for example, in measuring web traffic to a website. Information
+						society providers that engage in configuration checking to provide the
+						service in compliance with the end-user's settings and the mere logging of
+						the fact that the end-user’s device is unable to receive content requested
+						by the end-user should not constitute access to such a device or use of the
+						device processing capabilities.</p>
+				</recital>
+				<recital xml:id="d1e502" status="ignored">
+					<num xml:id="d1e504">(22)</num>
+					<p xml:id="d1e506">The methods used for providing information and obtaining end-user's consent
+						should be as user-friendly as possible. Given the ubiquitous use of tracking
+						cookies and other tracking techniques, end-users are increasingly requested
+						to provide consent to store such tracking cookies in their terminal
+						equipment. As a result, end-users are overloaded with requests to provide
+						consent. The use of technical means to provide consent, for example, through
+						transparent and user-friendly settings, may address this problem. Therefore,
+						this Regulation should provide for the possibility to express consent by
+						using the appropriate settings of a browser or other application. The
+						choices made by end-users when establishing its general privacy settings of
+						a browser or other application should be binding on, and enforceable
+						against, any third parties. Web browsers are a type of software application
+						that permits the retrieval and presentation of information on the internet.
+						Other types of applications, such as the ones that permit calling and
+						messaging or provide route guidance, have also the same capabilities. Web
+						browsers mediate much of what occurs between the end-user and the website.
+						From this perspective, they are in a privileged position to play an active
+						role to help the end-user to control the flow of information to and from the
+						terminal equipment. More particularly web browsers may be used as
+						gatekeepers, thus helping end-users to prevent information from their
+						terminal equipment (for example smart phone, tablet or computer) from being
+						accessed or stored.</p>
+				</recital>
+				<recital xml:id="d1e509" status="ignored">
+					<num xml:id="d1e511">(23)</num>
+					<p xml:id="d1e513">The principles of data protection by design and by default were codified
+						under Article 25 of Regulation (EU) 2016/679. Currently, the default
+						settings for cookies are set in most current browsers to ‘accept all
+						cookies’. Therefore providers of software enabling the retrieval and
+						presentation of information on the internet should have an obligation to
+						configure the software so that it offers the option to prevent third parties
+						from storing information on the terminal equipment; this is often presented
+						as ‘reject third party cookies’. End-users should be offered a set of
+						privacy setting options, ranging from higher (for example, ‘never accept
+						cookies’) to lower (for example, ‘always accept cookies’) and intermediate
+						(for example, ‘reject third party cookies’ or ‘only accept first party
+						cookies’). Such privacy settings should be presented in a an easily visible
+						and intelligible manner.</p>
+				</recital>
+				<recital xml:id="d1e516" status="ignored">
+					<num xml:id="d1e518">(24)</num>
+					<p xml:id="d1e520">For web browsers to be able to obtain end-users’ consent as defined under
+						Regulation (EU) 2016/679, for example, to the storage of third party
+						tracking cookies, they should, among others, require a clear affirmative
+						action from the end-user of terminal equipment to signify his or her freely
+						given, specific informed, and unambiguous agreement to the storage and
+						access of such cookies in and from the terminal equipment. Such action may
+						be considered to be affirmative, for example, if end-users are required to
+						actively select ‘accept third party cookies’ to confirm their agreement and
+						are given the necessary information to make the choice. To this end, it is
+						necessary to require providers of software enabling access to internet that,
+						at the moment of installation, end-users are informed about the possibility
+						to choose the privacy settings among the various options and ask them to
+						make a choice. Information provided should not dissuade end-users from
+						selecting higher privacy settings and should include relevant information
+						about the risks associated to allowing third party cookies to be stored in
+						the computer, including the compilation of long-term records of individuals'
+						browsing histories and the use of such records to send targeted advertising.
+						Web browsers are encouraged to provide easy ways for end-users to change the
+						privacy settings at any time during use and to allow the user to make
+						exceptions for or to whitelist certain websites or to specify for which
+						websites (third) party cookies are always or never allowed.</p>
+				</recital>
+				<recital xml:id="d1e523" status="ignored">
+					<num xml:id="d1e525">(25)</num>
+					<p xml:id="d1e527">Accessing electronic communications networks requires the regular emission of
+						certain data packets in order to discover or maintain a connection with the
+						network or other devices on the network. Furthermore, devices must have a
+						unique address assigned in order to be identifiable on that network.
+						Wireless and cellular telephone standards similarly involve the emission of
+						active signals containing unique identifiers such as a MAC address, the IMEI
+						(International Mobile Station Equipment Identity), the IMSI etc. A single
+						wireless base station (i.e. a transmitter and receiver), such as a wireless
+						access point, has a specific range within which such information may be
+						captured. Service providers have emerged who offer tracking services based
+						on the scanning of equipment related information with diverse
+						functionalities, including people counting, providing data on the number of
+						people waiting in line, ascertaining the number of people in a specific
+						area, etc. This information may be used for more intrusive purposes, such as
+						to send commercial messages to end-users, for example when they enter
+						stores, with personalized offers. While some of these functionalities do not
+						entail high privacy risks, others do, for example, those involving the
+						tracking of individuals over time, including repeated visits to specified
+						locations. Providers engaged in such practices should display prominent
+						notices located on the edge of the area of coverage informing end-users
+						prior to entering the defined area that the technology is in operation
+						within a given perimeter, the purpose of the tracking, the person
+						responsible for it and the existence of any measure the end-user of the
+						terminal equipment can take to minimize or stop the collection. Additional
+						information should be provided where personal data are collected pursuant to
+						Article 13 of Regulation (EU) 2016/679.</p>
+				</recital>
+				<recital xml:id="d1e531" status="ignored">
+					<num xml:id="d1e533">(26)</num>
+					<p xml:id="d1e535">When the processing of electronic communications data by providers of
+						electronic communications services falls within its scope, this Regulation
+						should provide for the possibility for the Union or Member States under
+						specific conditions to restrict by law certain obligations and rights when
+						such a restriction constitutes a necessary and proportionate measure in a
+						democratic society to safeguard specific public interests, including
+						national security, defence, public security and the prevention,
+						investigation, detection or prosecution of criminal offences or the
+						execution of criminal penalties, including the safeguarding against and the
+						prevention of threats to public security and other important objectives of
+						general public interest of the Union or of a Member State, in particular an
+						important economic or financial interest of the Union or of a Member State,
+						or a monitoring, inspection or regulatory function connected to the exercise
+						of official authority for such interests. Therefore, this Regulation should
+						not affect the ability of Member States to carry out lawful interception of
+						electronic communications or take other measures, if necessary and
+						proportionate to safeguard the public interests mentioned above, in
+						accordance with the Charter of Fundamental Rights of the European Union and
+						the European Convention for the Protection of Human Rights and Fundamental
+						Freedoms, as interpreted by the Court of Justice of the European Union and
+						of the European Court of Human Rights. Providers of electronic
+						communications services should provide for appropriate procedures to
+						facilitate legitimate requests of competent authorities, where relevant also
+						taking into account the role of the representative designated pursuant to
+						Article 3(3).</p>
+				</recital>
+				<recital xml:id="d1e538" status="ignored">
+					<num xml:id="d1e540">(27)</num>
+					<p xml:id="d1e542">As regards calling line identification, it is necessary to protect the right
+						of the calling party to withhold the presentation of the identification of
+						the line from which the call is being made and the right of the called party
+						to reject calls from unidentified lines. Certain end-users, in particular
+						help lines, and similar organisations, have an interest in guaranteeing the
+						anonymity of their callers. As regards connected line identification, it is
+						necessary to protect the right and the legitimate interest of the called
+						party to withhold the presentation of the identification of the line to
+						which the calling party is actually connected.</p>
+				</recital>
+				<recital xml:id="d1e545" status="ignored">
+					<num xml:id="d1e547">(28)</num>
+					<p xml:id="d1e549">There is justification for overriding the elimination of calling line
+						identification presentation in specific cases. End-users' rights to privacy
+						with regard to calling line identification should be restricted where this
+						is necessary to trace nuisance calls and with regard to calling line
+						identification and location data where this is necessary to allow emergency
+						services, such as eCall, to carry out their tasks as effectively as
+						possible.</p>
+				</recital>
+				<recital xml:id="d1e552" status="ignored">
+					<num xml:id="d1e554">(29)</num>
+					<p xml:id="d1e556">Technology exists that enables providers of electronic communications
+						services to limit the reception of unwanted calls by end-users in different
+						ways, including blocking silent calls and other fraudulent and nuisance
+						calls. Providers of publicly available number-based interpersonal
+						communications services should deploy this technology and protect end-users
+						against nuisance calls and free of charge. Providers should ensure that
+						end-users are aware of the existence of such functionalities, for instance,
+						by publicising the fact on their webpage.</p>
+				</recital>
+				<recital xml:id="d1e559">
+					<num xml:id="d1e561">(30)</num>
+					<p xml:id="d1e563">Publicly available directories of end-users of electronic communications
+						services are widely distributed. Publicly available directories means any
+						directory or service containing end-users information such as phone numbers
+						(including mobile phone numbers), email address contact details and includes
+						inquiry services.<omissis xml:id="d1e565"> The right to privacy and to protection of the
+							personal data of a natural person requires that end-users that are
+							natural persons are asked for consent before their personal data are
+							included in a directory. The legitimate interest of legal entities
+							requires that end-users that are legal entities have the right to object
+							to the data related to them being included in a directory.</omissis></p>
+				</recital>
+				<recital xml:id="d1e568">
+					<num xml:id="d1e570"><ins xml:id="d1e571">(30a)</ins></num>
+					<p xml:id="d1e573"><ins xml:id="d1e574">For the purposes of the provisions relating to direct marketing
+							communications, electronic message should include e-mail, SMS, MMS and
+							functionally equivalent applications and techniques.</ins></p>
+				</recital>
+				<recital xml:id="d1e578" status="ignored">
+					<num xml:id="d1e580">(31)</num>
+					<p xml:id="d1e582">If end-users that are natural persons give their consent to their data being
+						included in such directories, they should be able to determine on a consent
+						basis which categories of personal data are included in the directory (for
+						example name, email address, home address, user name, phone number). In
+						addition, providers of publicly available directories should inform the
+						end-users of the purposes of the directory and of the search functions of
+						the directory before including them in that directory. End-users should be
+						able to determine by consent on the basis of which categories of personal
+						data their contact details can be searched. The categories of personal data
+						included in the directory and the categories of personal data on the basis
+						of which the end-user's contact details can be searched should not
+						necessarily be the same.</p>
+				</recital>
+				<recital xml:id="d1e585">
+					<num xml:id="d1e587">(32)</num>
+					<p xml:id="d1e589">In this Regulation, direct marketing <ins xml:id="d1e591">communications</ins>refers to any
+						form of advertising by which a natural or legal person sends <ins xml:id="d1e593">or
+							presents </ins>direct marketing communications directly to one or more
+						identified or identifiable end-users using electronic communications
+						services. <ins xml:id="d1e595">The provisions on direct marketing communications do not
+							apply to any other form of marketing, e.g. displaying advertising to the
+							general public on a website which is not directed to any specific
+							identified or identifiable end-user. </ins>In addition to the offering
+						of products and services for commercial purposes, <del xml:id="d1e597">this should
+							</del><ins xml:id="d1e598">direct marketing communications</ins>also include messages
+						sent by political parties that contact natural persons via electronic
+						communications services in order to promote their parties. The same
+							<del xml:id="d1e600">should apply </del><ins xml:id="d1e602">applies </ins>to messages sent by other
+						non-profit organisations to support the purposes of the organisation.</p>
+				</recital>
+				<recital xml:id="d1e606" status="ignored">
+					<num xml:id="d1e608">(33)</num>
+					<p xml:id="d1e610">Safeguards should be provided to protect end-users against unsolicited
+						communications for direct marketing purposes, which intrude into the private
+						life of end-users. The degree of privacy intrusion and nuisance is
+						considered relatively similar independently of the wide range of
+						technologies and channels used to conduct these electronic communications,
+						whether using automated calling and communication systems, instant messaging
+						applications, emails, SMS, MMS, Bluetooth, etc. It is therefore justified to
+						require that consent of the end-user is obtained before commercial
+						electronic communications for direct marketing purposes are sent to
+						end-users in order to effectively protect individuals against the intrusion
+						into their private life as well as the legitimate interest of legal persons.
+						Legal certainty and the need to ensure that the rules protecting against
+						unsolicited electronic communications remain future-proof justify the need
+						to define a single set of rules that do not vary according to the technology
+						used to convey these unsolicited communications, while at the same time
+						guaranteeing an equivalent level of protection for all citizens throughout
+						the Union. However, it is reasonable to allow the use of e-mail contact
+						details within the context of an existing customer relationship for the
+						offering of similar products or services. Such possibility should only apply
+						to the same company that has obtained the electronic contact details in
+						accordance with Regulation (EU) 2016/679.</p>
+				</recital>
+				<recital xml:id="d1e613" status="ignored">
+					<num xml:id="d1e615">(34)</num>
+					<p xml:id="d1e617">When end-users have provided their consent to receiving unsolicited
+						communications for direct marketing purposes, they should still be able to
+						withdraw their consent at any time in an easy manner. To facilitate
+						effective enforcement of Union rules on unsolicited messages for direct
+						marketing, it is necessary to prohibit the masking of the identity and the
+						use of false identities, false return addresses or numbers while sending
+						unsolicited commercial communications for direct marketing purposes.
+						Unsolicited marketing communications should therefore be clearly
+						recognizable as such and should indicate the identity of the legal or the
+						natural person transmitting the communication or on behalf of whom the
+						communication is transmitted and provide the necessary information for
+						recipients to exercise their right to oppose to receiving further written
+						and/or oral marketing messages.</p>
+				</recital>
+				<recital xml:id="d1e620" status="ignored">
+					<num xml:id="d1e622">(35)</num>
+					<p xml:id="d1e624">In order to allow easy withdrawal of consent, legal or natural persons
+						conducting direct marketing communications by email should present a link,
+						or a valid electronic mail address, which can be easily used by end-users to
+						withdraw their consent. Legal or natural persons conducting direct marketing
+						communications through voice-to-voice calls and through calls by automating
+						calling and communication systems should display their identity line on
+						which the company can be called or present a specific code identifying the
+						fact that the call is a marketing call.</p>
+				</recital>
+				<recital xml:id="d1e627" status="ignored">
+					<num xml:id="d1e629">(36)</num>
+					<p xml:id="d1e631">Voice-to-voice direct marketing calls that do not involve the use of
+						automated calling and communication systems, given that they are more costly
+						for the sender and impose no financial costs on end-users. Member States
+						should therefore be able to establish and or maintain national systems only
+						allowing such calls to end-users who have not objected.</p>
+				</recital>
+				<recital xml:id="d1e635" status="ignored">
+					<num xml:id="d1e637">(37)</num>
+					<p xml:id="d1e639">Service providers who offer electronic communications services should inform
+						end- users of measures they can take to protect the security of their
+						communications for instance by using specific types of software or
+						encryption technologies. The requirement to inform end-users of particular
+						security risks does not discharge a service provider from the obligation to
+						take, at its own costs, appropriate and immediate measures to remedy any
+						new, unforeseen security risks and restore the normal security level of the
+						service. The provision of information about security risks to the subscriber
+						should be free of charge. Security is appraised in the light of Article 32
+						of Regulation (EU) 2016/679.</p>
+				</recital>
+				<recital xml:id="d1e642" status="ignored">
+					<num xml:id="d1e644">(38)</num>
+					<p xml:id="d1e646">To ensure full consistency with Regulation (EU) 2016/679, the enforcement of
+						the provisions of this Regulation should be entrusted to the same
+						authorities responsible for the enforcement of the provisions Regulation
+						(EU) 2016/679 and this Regulation relies on the consistency mechanism of
+						Regulation (EU) 2016/679. Member States should be able to have more than one
+						supervisory authority, to reflect their constitutional, organisational and
+						administrative structure. The supervisory authorities should also be
+						responsible for monitoring the application of this Regulation regarding
+						electronic communications data for legal entities. Such additional tasks
+						should not jeopardise the ability of the supervisory authority to perform
+						its tasks regarding the protection of personal data under Regulation (EU)
+						2016/679 and this Regulation. Each supervisory authority should be provided
+						with the additional financial and human resources, premises and
+						infrastructure necessary for the effective performance of the tasks under
+						this Regulation.</p>
+				</recital>
+				<recital xml:id="d1e649" status="ignored">
+					<num xml:id="d1e651">(39)</num>
+					<p xml:id="d1e653">Each supervisory authority should be competent on the territory of its own
+						Member State to exercise the powers and to perform the tasks set forth in
+						this Regulation. In order to ensure consistent monitoring and enforcement of
+						this Regulation throughout the Union, the supervisory authorities should
+						have the same tasks and effective powers in each Member State, without
+						prejudice to the powers of prosecutorial authorities under Member State law,
+						to bring infringements of this Regulation to the attention of the judicial
+						authorities and engage in legal proceedings. Member States and their
+						supervisory authorities are encouraged to take account of the specific needs
+						of micro, small and medium-sized enterprises in the application of this
+						Regulation.</p>
+				</recital>
+				<recital xml:id="d1e656" status="ignored">
+					<num xml:id="d1e658">(40)</num>
+					<p xml:id="d1e660">In order to strengthen the enforcement of the rules of this Regulation, each
+						supervisory authority should have the power to impose penalties including
+						administrative fines for any infringement of this Regulation, in addition
+						to, or instead of any other appropriate measures pursuant to this
+						Regulation. This Regulation should indicate infringements and the upper
+						limit and criteria for setting the related administrative fines, which
+						should be determined by the competent supervisory authority in each
+						individual case, taking into account all relevant circumstances of the
+						specific situation, with due regard in particular to the nature, gravity and
+						duration of the infringement and of its consequences and the measures taken
+						to ensure compliance with the obligations under this Regulation and to
+						prevent or mitigate the consequences of the infringement. For the purpose of
+						setting a fine under this Regulation, an undertaking should be understood to
+						be an undertaking in accordance with Articles 101 and 102 of the Treaty.</p>
+				</recital>
+				<recital xml:id="d1e663" status="ignored">
+					<num xml:id="d1e665">(41)</num>
+					<p xml:id="d1e667">In order to fulfil the objectives of this Regulation, namely to protect the
+						fundamental rights and freedoms of natural persons and in particular their
+						right to the protection of personal data and to ensure the free movement of
+						personal data within the Union, the power to adopt acts in accordance with
+						Article 290 of the Treaty should be delegated to the Commission to
+						supplement this Regulation. In particular, delegated acts should be adopted
+						in respect of the information to be presented, including by means of
+						standardised icons in order to give an easily visible and intelligible
+						overview of the collection of information emitted by terminal equipment, its
+						purpose, the person responsible for it and of any measure the end-user of
+						the terminal equipment can take to minimise the collection. Delegated acts
+						are also necessary to specify a code to identify direct marketing calls
+						including those made through automated calling and communication systems. It
+						is of particular importance that the Commission carries out appropriate
+						consultations and that those consultations be conducted in accordance with
+						the principles laid down in the Interinstitutional Agreement on Better
+						Law-Making of 13 April 2016<authorialNote xml:id="d1e669" marker="8" placement="bottom">
+							<p xml:id="d1e671">Interinstitutional Agreement between the European Parliament, the
+								Council of the European Union and the European Commission on Better
+								Law-Making of 13 April 2016 (OJ L 123, 12.5.2016, p. 1–14).</p>
+						</authorialNote>. In particular, to ensure equal participation in the
+						preparation of delegated acts, the European Parliament and the Council
+						receive all documents at the same time as Member States' experts, and their
+						experts systematically have access to meetings of Commission expert groups
+						dealing with the preparation of delegated acts. Furthermore, in order to
+						ensure uniform conditions for the implementation of this Regulation,
+						implementing powers should be conferred on the Commission when provided for
+						by this Regulation. Those powers should be exercised in accordance with
+						Regulation (EU) No 182/2011.</p>
+				</recital>
+				<recital xml:id="d1e676" status="ignored">
+					<num xml:id="d1e678">(42)</num>
+					<p xml:id="d1e680">Since the objective of this Regulation, namely to ensure an equivalent level
+						of protection of natural and legal persons and the free flow of electronic
+						communications data throughout the Union, cannot be sufficiently achieved by
+						the Member States and can rather, by reason of the scale or effects of the
+						action, be better achieved at Union level, the Union may adopt measures, in
+						accordance with the principle of subsidiarity as set out in Article 5 of the
+						Treaty on European Union. In accordance with the principle of
+						proportionality as set out in that Article, this Regulation does not go
+						beyond what is necessary in order to achieve that objective.</p>
+				</recital>
+				<recital xml:id="d1e684" status="ignored">
+					<num xml:id="d1e686">(43)</num>
+					<p xml:id="d1e688">Directive 2002/58/EC should be repealed.</p>
+				</recital>
+			</recitals>
+			<formula xml:id="d1e692" name="enactingFormula" status="ignored">
+				<p xml:id="d1e694">HAVE ADOPTED THIS REGULATION: </p>
+			</formula>
+		</preamble>
+		<body xml:id="d1e698">
+			<chapter xml:id="d1e700">
+				<num xml:id="d1e702">CHAPTER I</num>
+				<heading xml:id="d1e704">GENERAL PROVISIONS</heading>
+				<article xml:id="d1e706">
+					<num xml:id="d1e708">Article 1</num>
+					<heading xml:id="d1e710">Subject matter</heading>
+					<paragraph xml:id="d1e712">
+						<num xml:id="d1e714">1.</num>
+						<content xml:id="d1e716">
+							<p xml:id="d1e718">This Regulation lays down rules regarding the protection of
+								fundamental rights and freedoms of natural<del xml:id="d1e720"> and legal</del>
+								persons in the provision and use of electronic communications
+								services, and in particular, the rights to respect for private life
+								and communications and the protection of natural persons with regard
+								to the processing of personal data. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e725">
+						<num xml:id="d1e727">
+							<ins xml:id="d1e729">1a.</ins>
+						</num>
+						<content xml:id="d1e732">
+							<p xml:id="d1e734">
+								<ins xml:id="d1e736">This Regulation lays down rules regarding the protection of
+									</ins><del xml:id="d1e737">the communications</del>
+								<ins xml:id="d1e739">the fundamental rights and freedoms </ins><ins xml:id="d1e740">of legal persons
+									in the provision and use of the electronic communications
+									services</ins><ins xml:id="d1e741">, and in particular their rights to respect
+									of communications</ins><ins xml:id="d1e742">.</ins>
+							</p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e747">
+						<num xml:id="d1e749">2.</num>
+						<content xml:id="d1e751">
+							<p xml:id="d1e753"><del xml:id="d1e754">This Regulation ensures</del>
+								<ins xml:id="d1e756">The </ins>free movement of electronic communications data and
+								electronic communications services within the Union<del xml:id="d1e758">,
+									which</del> shall be neither restricted nor prohibited for
+								reasons related to the respect for the private life and
+								communications of natural <del xml:id="d1e760">and legal </del>persons and the
+								protection of natural persons with regard to the processing of
+								personal data<ins xml:id="d1e762">, and for protection of communications of legal
+									persons</ins>. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e768">
+						<num xml:id="d1e770">3.</num>
+						<content xml:id="d1e772">
+							<p xml:id="d1e774">The provisions of this Regulation particularise and complement
+								Regulation (EU) 2016/679 <ins xml:id="d1e776">with regard to the processing of
+									electronic communications data that qualify as personal
+									data</ins>by laying down specific rules for the purposes
+								mentioned in paragraphs 1 <del xml:id="d1e778">and </del><ins xml:id="d1e779">to </ins>2.</p>
+						</content>
+					</paragraph>
+				</article>
+				<article xml:id="d1e785">
+					<num xml:id="d1e787">Article 2</num>
+					<heading xml:id="d1e789">Material Scope</heading>
+					<paragraph xml:id="d1e791">
+						<num xml:id="d1e793">1.</num>
+						<list xml:id="d1e795">
+							<subparagraph xml:id="d1e797" refersTo="~INP">
+								<content xml:id="d1e799">
+									<p xml:id="d1e801">This Regulation applies to<ins xml:id="d1e803">:</ins></p>
+								</content>
+							</subparagraph>
+							<point xml:id="d1e807">
+								<num xml:id="d1e809">
+									<ins xml:id="d1e811">(a)</ins>
+								</num>
+								<content xml:id="d1e814">
+									<p xml:id="d1e816">the processing of electronic communications <ins xml:id="d1e818">content
+											</ins><del xml:id="d1e819">data </del><ins xml:id="d1e820">in transmission and of
+											electronic communications metadata </ins>carried out in
+										connection with the provision and the use of electronic
+										communications services<ins xml:id="d1e822">;</ins><del xml:id="d1e823"> and to</del></p>
+								</content>
+							</point>
+							<point xml:id="d1e827">
+								<num xml:id="d1e829">
+									<ins xml:id="d1e831">(b)</ins>
+								</num>
+								<content xml:id="d1e834">
+									<p xml:id="d1e836">information <del xml:id="d1e838">[related to</del><del xml:id="d1e839"> or</del><ins xml:id="d1e840"> processed
+												by or emitted by or stored in</ins><del xml:id="d1e841">]</del> the
+										terminal equipment of end-users.</p>
+								</content>
+							</point>
+							<point xml:id="d1e846">
+								<num xml:id="d1e848">
+									<ins xml:id="d1e850">(c)</ins>
+								</num>
+								<content xml:id="d1e853">
+									<p xml:id="d1e855"><ins xml:id="d1e856">the placing on the market of software permitting
+											electronic communications, including the retrieval and
+											presentation of information on the internet;</ins>
+									</p>
+								</content>
+							</point>
+							<point xml:id="d1e861">
+								<num xml:id="d1e863">
+									<ins xml:id="d1e865">(d)</ins>
+								</num>
+								<content xml:id="d1e868">
+									<p xml:id="d1e870"><ins xml:id="d1e871">the offering of a publicly available directory of
+											end-users of electonic communications services;</ins>
+									</p>
+								</content>
+							</point>
+							<point xml:id="d1e877">
+								<num xml:id="d1e879">
+									<ins xml:id="d1e881">(e)</ins>
+								</num>
+								<content xml:id="d1e884">
+									<p xml:id="d1e886"><ins xml:id="d1e887">the sending or presenting direct marketing
+											communications to end-users.</ins></p>
+								</content>
+							</point>
+						</list>
+					</paragraph>
+					<paragraph xml:id="d1e893">
+						<num xml:id="d1e895">2.</num>
+						<list xml:id="d1e897">
+							<subparagraph xml:id="d1e899" refersTo="~INP">
+								<content xml:id="d1e901">
+									<p xml:id="d1e903">This Regulation does not apply to: </p>
+								</content>
+							</subparagraph>
+							<point xml:id="d1e907">
+								<num xml:id="d1e909">(a)</num>
+								<content xml:id="d1e911">
+									<p xml:id="d1e913">activities which fall outside the scope of Union law; </p>
+								</content>
+							</point>
+							<point xml:id="d1e917">
+								<num xml:id="d1e919">(b)</num>
+								<content xml:id="d1e921">
+									<p xml:id="d1e923">activities of the Member States which fall within the scope
+										of Chapter 2 of Title V of the Treaty on European Union;
+									</p>
+								</content>
+							</point>
+							<point xml:id="d1e927">
+								<num xml:id="d1e929">(c)</num>
+								<content xml:id="d1e931">
+									<p xml:id="d1e933">electronic communications services which are not publicly
+										available; </p>
+								</content>
+							</point>
+							<point xml:id="d1e937">
+								<num xml:id="d1e939">(d)</num>
+								<content xml:id="d1e941">
+									<p xml:id="d1e943">activities of competent authorities for the purposes of the
+										prevention, investigation, detection or prosecution of
+										criminal offences or the execution of criminal penalties,
+										including the safeguarding against and the prevention of
+										threats to public security; </p>
+								</content>
+							</point>
+						</list>
+					</paragraph>
+					<paragraph xml:id="d1e949">
+						<num xml:id="d1e951">3.</num>
+						<content xml:id="d1e953">
+							<p xml:id="d1e955">The processing of electronic communications data by the Union
+								institutions, bodies, offices and agencies is governed by Regulation
+								(EU) 00/0000 [new Regulation replacing Regulation 45/2001]. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e960">
+						<num xml:id="d1e962">4.</num>
+						<content xml:id="d1e964">
+							<p xml:id="d1e966">This Regulation shall be without prejudice to the application of
+								Directive 2000/31/EC<authorialNote xml:id="d1e968" placement="bottom" marker="9">
+									<p xml:id="d1e970">Directive 2000/31/EC of the European Parliament and of the
+										Council of 8 June 2000 on certain legal aspects of
+										information society services, in particular electronic
+										commerce, in the Internal Market ('Directive on electronic
+										commerce') (OJ L 178, 17.7.2000, p. 1–16).</p>
+								</authorialNote>, in particular of the liability rules of
+								intermediary service providers in Articles 12 to 15 of that
+								Directive. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e976">
+						<num xml:id="d1e978">5.</num>
+						<content xml:id="d1e980">
+							<p xml:id="d1e982">This Regulation shall be without prejudice to the provisions of
+								Directive 2014/53/EU.</p>
+						</content>
+					</paragraph>
+				</article>
+				<article xml:id="d1e987">
+					<num xml:id="d1e989">Article 3</num>
+					<heading xml:id="d1e991">Territorial scope and representative</heading>
+					<paragraph xml:id="d1e993">
+						<num xml:id="d1e995">1.</num>
+						<list xml:id="d1e997">
+							<subparagraph xml:id="d1e999" refersTo="~INP">
+								<content xml:id="d1e1001">
+									<p xml:id="d1e1003">This Regulation applies to: </p>
+								</content>
+							</subparagraph>
+							<point xml:id="d1e1007">
+								<num xml:id="d1e1009">(a)</num>
+								<content xml:id="d1e1011">
+									<p xml:id="d1e1013">the provision of electronic communications services to
+										end-users <ins xml:id="d1e1015">who are </ins>in the Union<del xml:id="d1e1017">, irrespective
+											of whether a payment of the end-user is required</del>;
+									</p>
+								</content>
+							</point>
+							<point xml:id="d1e1022">
+								<num xml:id="d1e1024">
+									<ins xml:id="d1e1026">(aa)</ins>
+								</num>
+								<content xml:id="d1e1029">
+									<p xml:id="d1e1031">
+										<ins xml:id="d1e1033">the processing of electronic communications content in
+											transmission of electronic communications metadata of
+											end-users </ins><del xml:id="d1e1034">located</del>
+										<ins xml:id="d1e1036">who are </ins><ins xml:id="d1e1037">in the Union;</ins>
+									</p>
+								</content>
+							</point>
+							<point xml:id="d1e1042">
+								<num xml:id="d1e1044">
+									<del xml:id="d1e1046">(b)</del>
+								</num>
+								<content xml:id="d1e1049">
+									<p xml:id="d1e1051">
+										<del xml:id="d1e1053">the use of such services;</del>
+									</p>
+								</content>
+							</point>
+							<point xml:id="d1e1058">
+								<num xml:id="d1e1060">(c)</num>
+								<content xml:id="d1e1062">
+									<p xml:id="d1e1064">the protection of information <del xml:id="d1e1066">[related to</del><del xml:id="d1e1067"> or</del><ins xml:id="d1e1068">
+												processed by or emitted by or stored
+											in</ins><del xml:id="d1e1069">]</del> the terminal equipment of end-users
+											<del xml:id="d1e1071">located </del>
+										<ins xml:id="d1e1073">who are </ins>in the Union. </p>
+								</content>
+							</point>
+							<point xml:id="d1e1079">
+								<num xml:id="d1e1081">
+									<del xml:id="d1e1083">(cb)</del><ins xml:id="d1e1084">(ca)</ins>
+								</num>
+								<content xml:id="d1e1087">
+									<p xml:id="d1e1089"><ins xml:id="d1e1090">the placing on the Union market of software permitting
+											electronic communications, including the retrieval and
+											presentation of information on the internet; </ins>
+									</p>
+								</content>
+							</point>
+							<point xml:id="d1e1095">
+								<num xml:id="d1e1097">
+									<ins xml:id="d1e1099"><del xml:id="d1e1100">(ca)</del><ins xml:id="d1e1101">(cb)</ins></ins>
+								</num>
+								<content xml:id="d1e1104">
+									<p xml:id="d1e1106"><ins xml:id="d1e1107">the offering of publicly available directories of
+											end-users of electronic communications services
+											</ins><del xml:id="d1e1108">located </del><ins xml:id="d1e1109">who are</ins><ins xml:id="d1e1110"> in the
+											Union; </ins>
+									</p>
+								</content>
+							</point>
+							<point xml:id="d1e1115">
+								<num xml:id="d1e1117">
+									<ins xml:id="d1e1119">(cc)</ins>
+								</num>
+								<content xml:id="d1e1122">
+									<p xml:id="d1e1124">
+										<ins xml:id="d1e1126">the <del xml:id="d1e1128">[</del>sending or
+												presenting<del xml:id="d1e1130">]</del> of direct marketing
+											communications to end-users </ins><del xml:id="d1e1132">located
+											</del><ins xml:id="d1e1133">who are</ins><ins xml:id="d1e1134"> in the Union.</ins>
+									</p>
+								</content>
+							</point>
+						</list>
+					</paragraph>
+					<paragraph xml:id="d1e1141">
+						<num xml:id="d1e1143">2.</num>
+						<content xml:id="d1e1145">
+							<p xml:id="d1e1147">Where the <del xml:id="d1e1149">[</del>provider of an
+									electronic communications service<ins xml:id="d1e1151">service, the
+									provider of a publicly available directory or the provider of
+									software enabling electronic communications or a person using
+									electronic communications services to send or present direct
+									marketing communications or makes use of processing and storage
+									capabilities or collects information processed by or emitted by
+									or sored in the end-users’ terminal equipment</ins><del xml:id="d1e1152">]</del> is not
+								established in the Union it shall designate in writing a
+								representative in the Union. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e1157">
+						<num xml:id="d1e1159"><ins xml:id="d1e1160">2a.</ins></num>
+						<content xml:id="d1e1162">
+							<p xml:id="d1e1164"><ins xml:id="d1e1165">The requirements laid down in paragraph 2 shall not apply if
+									activities listed in paragraph 1 are occasional and are unlikely
+									to result in a risk to the fundamental rights of end-users
+									taking into account the nature, context, scope and purpose of
+									those activities.</ins></p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e1170">
+						<num xml:id="d1e1172">3.</num>
+						<content xml:id="d1e1174">
+							<p xml:id="d1e1176">The representative shall be established in one of the Member States
+								where the end-users of such electronic communications services are
+								located. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e1180">
+						<num xml:id="d1e1182">4.</num>
+						<content xml:id="d1e1184">
+							<p xml:id="d1e1186">The representative shall<del xml:id="d1e1188"> have the power to answer questions and
+									provide information</del>
+								<ins xml:id="d1e1190">be mandated by the provider</ins><ins xml:id="d1e1191"> or person</ins><ins xml:id="d1e1192"> it
+									represents to be addressed </ins>in addition to or instead of
+								the provider it represents, in particular, to supervisory
+								authorities, and end-users, on all issues related to processing
+								electronic communications data for the purposes of ensuring
+								compliance with this Regulation. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e1197">
+						<num xml:id="d1e1199">5.</num>
+						<content xml:id="d1e1201">
+							<p xml:id="d1e1203">The designation of a representative pursuant to paragraph 2 shall be
+								without prejudice to legal actions, which could be initiated
+									against<del xml:id="d1e1205"> a natural or legal person who processes electronic
+									communications data in connection with the provision of
+									electronic communications services from outside the Union to
+									end-users in the Union</del><ins xml:id="d1e1206"> the provider</ins><ins xml:id="d1e1207"> or
+									person</ins><ins xml:id="d1e1208"> it represents</ins>.</p>
+						</content>
+					</paragraph>
+				</article>
+				<article xml:id="d1e1215">
+					<num xml:id="d1e1217">Article 4</num>
+					<heading xml:id="d1e1219">Definitions</heading>
+					<paragraph xml:id="d1e1221">
+						<num xml:id="d1e1223">1.</num>
+						<list xml:id="d1e1225">
+							<subparagraph xml:id="d1e1227" refersTo="~INP">
+								<content xml:id="d1e1229">
+									<p xml:id="d1e1231">For the purposes of this Regulation, following definitions
+										shall apply: </p>
+								</content>
+							</subparagraph>
+							<point xml:id="d1e1235">
+								<num xml:id="d1e1237">(a)</num>
+								<content xml:id="d1e1239">
+									<p xml:id="d1e1241">the definitions in Regulation (EU) 2016/679; </p>
+								</content>
+							</point>
+							<point xml:id="d1e1245">
+								<num xml:id="d1e1247">(b)</num>
+								<content xml:id="d1e1249">
+									<p xml:id="d1e1251">the definitions of ‘electronic communications network’,
+										‘electronic communications service’, ‘interpersonal
+										communications service’, ‘number-based interpersonal
+										communications service’, ‘number-independent interpersonal
+										communications service’, ‘end-user’ and ‘call’ in
+											<del xml:id="d1e1253">points</del><ins xml:id="d1e1254">paragraphs</ins> (1), (4), (5),
+										(6), (7), (14) and (21) respectively of Article 2 of
+										[Directive establishing the European Electronic
+										Communications Code]; </p>
+								</content>
+							</point>
+							<point xml:id="d1e1259">
+								<num xml:id="d1e1261">(c)</num>
+								<content xml:id="d1e1263">
+									<p xml:id="d1e1265">the definition of 'terminal equipment' in <del xml:id="d1e1267">point (1) of
+										</del>Article 1<ins xml:id="d1e1269">(1)</ins> of Commission Directive
+											2008/63/EC<authorialNote xml:id="d1e1271" placement="bottom" marker="10">
+											<p xml:id="d1e1273">Commission Directive 2008/63/EC of 20 June 2008 on
+												competition in the markets in telecommunications
+												terminal equipment (OJ L 162, 21.6.2008, p.
+												20–26).</p>
+										</authorialNote><del xml:id="d1e1275">.</del><ins xml:id="d1e1276">;</ins>
+									</p>
+								</content>
+							</point>
+							<point xml:id="d1e1281">
+								<num xml:id="d1e1283">
+									<ins xml:id="d1e1285">(d)</ins>
+								</num>
+								<content xml:id="d1e1288">
+									<p xml:id="d1e1290">
+										<ins xml:id="d1e1292">the defintion of ‘information society service’ in point
+											(b) of Article 1 (1) of Directive (EU)
+												2015/1535<authorialNote xml:id="d1e1294" placement="bottom" marker="11">
+												<p xml:id="d1e1296">Directive (EU) 2015/1535 of the European
+												Parliament and of the Council of 9 September 2015
+												laying down a procedure for the provision of
+												information in the field of technical regulations
+												and of rules on Information Society services (OJ L
+												241, 17.9.2015, p. 1-15).</p>
+											</authorialNote>.</ins>
+									</p>
+								</content>
+							</point>
+						</list>
+					</paragraph>
+					<paragraph xml:id="d1e1305">
+						<num xml:id="d1e1307">2.</num>
+						<content xml:id="d1e1309">
+							<p xml:id="d1e1311">For the purposes of <del xml:id="d1e1313">point (b) of paragraph 1</del><ins xml:id="d1e1314">this
+									Regulation</ins>, the definition of ‘interpersonal
+								communications service’ <ins xml:id="d1e1316">referred to in point (b) of paragraph 1
+								</ins>shall include services which enable interpersonal and
+								interactive communication merely as a <del xml:id="d1e1318">minor </del>ancillary
+								feature that is intrinsically linked to another service. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e1323">
+						<num xml:id="d1e1325">3.</num>
+						<list xml:id="d1e1327">
+							
+							<subparagraph xml:id="d1e1331" refersTo="~INP">
+								<content xml:id="d1e1333">
+									<p xml:id="d1e1335">In addition, for the purposes of this Regulation the
+										following definitions shall apply: </p>
+								</content>
+							</subparagraph>
+							<point xml:id="d1e1339">
+								<num xml:id="d1e1341">(a)</num>
+								<content xml:id="d1e1343">
+									<p xml:id="d1e1345">‘electronic communications data’ means electronic
+										communications content and electronic communications
+										metadata; </p>
+								</content>
+							</point>
+							<point xml:id="d1e1349">
+								<num xml:id="d1e1351">(b)</num>
+								<content xml:id="d1e1353">
+									<p xml:id="d1e1355">‘electronic communications content’ means the content
+										exchanged by means of electronic communications services,
+										such as text, voice, videos, images, and sound; </p>
+								</content>
+							</point>
+							<point xml:id="d1e1359">
+								<num xml:id="d1e1361">(c)</num>
+								<content xml:id="d1e1363">
+									<p xml:id="d1e1365">‘electronic communications metadata’ means data processed
+											<del xml:id="d1e1367">in an </del><ins xml:id="d1e1368">by means of</ins>electronic
+										communications <del xml:id="d1e1370">network </del><ins xml:id="d1e1371">services </ins>for
+										the purposes of transmitting, distributing or exchanging
+										electronic communications content; including data used to
+										trace and identify the source and destination of a
+										communication, data on the location of the device generated
+										in the context of providing electronic communications
+										services, and the date, time, duration and the type of
+										communication; </p>
+								</content>
+							</point>
+							<point xml:id="d1e1377">
+								<num xml:id="d1e1379">(d)</num>
+								<content xml:id="d1e1381">
+									<p xml:id="d1e1383">‘publicly available directory’ means a directory of end-users
+										of electronic communications services, whether in printed or
+										electronic form, which is published or made available to the
+										public or to a section of the public, including by means of
+										a directory enquiry service; </p>
+								</content>
+							</point>
+							<point xml:id="d1e1387">
+								<num xml:id="d1e1389">(e)</num>
+								<content xml:id="d1e1391">
+									<p xml:id="d1e1393">‘electronic<del xml:id="d1e1395"> mail</del><ins xml:id="d1e1396"> message</ins>’ means any
+											<del xml:id="d1e1398">electronic </del>message containing information
+										such as text, voice, video, sound or image sent over an
+										electronic communications network which can be stored in the
+										network or in related computing facilities, or in the
+										terminal equipment of its recipient; </p>
+								</content>
+							</point>
+							<point xml:id="d1e1403">
+								<num xml:id="d1e1405">(f)</num>
+								<content xml:id="d1e1407">
+									<p xml:id="d1e1409">‘direct marketing communications’ means any form of
+										advertising, whether written or oral, sent <ins xml:id="d1e1411">or presented
+										</ins>to one or more identified or identifiable end-users of
+										electronic communications services, including the use of
+										automated calling and communication systems with or without
+										human interaction, electronic
+											<del xml:id="d1e1413">mail</del><ins xml:id="d1e1414">message</ins>, SMS, etc.; </p>
+								</content>
+							</point>
+							<point xml:id="d1e1419">
+								<num xml:id="d1e1421">(g)</num>
+								<content xml:id="d1e1423">
+									<p xml:id="d1e1425">‘direct marketing voice-to-voice calls’ means live calls,
+										which do not entail the use of automated calling systems and
+										communication systems; </p>
+								</content>
+							</point>
+							<point xml:id="d1e1429">
+								<num xml:id="d1e1431">(h)</num>
+								<content xml:id="d1e1433">
+									<p xml:id="d1e1435">‘automated calling and communication systems’ means systems
+										capable of automatically initiating calls to one or more
+										recipients in accordance with instructions set for that
+										system, and transmitting sounds which are not live speech,
+										including calls made using automated calling and
+										communication systems which connect the called person to an
+										individual.</p>
+								</content>
+							</point>
+						</list>
+					</paragraph>
+				</article>
+				<article xml:id="d1e1442">
+					<num xml:id="d1e1444">Article <del xml:id="d1e1446">9</del><ins xml:id="d1e1447">4a</ins></num>
+					<heading xml:id="d1e1449">Consent</heading>
+					<paragraph xml:id="d1e1451">
+						<num xml:id="d1e1453">1.</num>
+						<content xml:id="d1e1455">
+							<p xml:id="d1e1457">The <del xml:id="d1e1459">definition of and </del><del xml:id="d1e1460">conditions
+									</del><ins xml:id="d1e1461">provisions</ins>for consent provided for under
+									<del xml:id="d1e1463">Articles 4(11) and 7 of </del>Regulation (EU) 2016/679/EU
+								shall apply<ins xml:id="d1e1465">to natural persons and, <i xml:id="d1e1467">mutatis mutandis</i>, to
+									legal persons </ins>. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e1473">
+						<num xml:id="d1e1475"><ins xml:id="d1e1476">1a.</ins></num>
+						<content xml:id="d1e1478">
+							<p xml:id="d1e1480"><ins xml:id="d1e1481">Paragraph 1 is without prejudice to national legislation on
+									determining the persons who are authorised to represent a legal
+									person in any dealings with third parties or in legal
+									proceedings.</ins></p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e1485" class="NOT_RELEVANT">
+						
+						<num xml:id="d1e1489">2.</num>
+						<content xml:id="d1e1491">
+							<p xml:id="d1e1493">Without prejudice to paragraph 1, where technically possible and
+								feasible, for the purposes of point (b) of Article 8(1), consent may
+								be expressed by using the appropriate technical settings of a
+									<del xml:id="d1e1495">software application enabling access to the
+									internet</del><ins xml:id="d1e1496">placed on the market permitting electronic
+									communications, including the retrieval and presentation of
+									information on the internet</ins>. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e1502">
+						<num xml:id="d1e1504">3.</num>
+						<content xml:id="d1e1506">
+							<p xml:id="d1e1508">End-users who have consented to the processing of electronic
+								communications data as set out in point (c) of Article 6(2) and
+								points (a) and (b) of Article 6(3) shall <del xml:id="d1e1510">be given the
+									possibility to withdraw their consent at any time as set forth
+									under Article 7(3) of Regulation (EU) 2016/679 and</del> be
+								reminded of <del xml:id="d1e1512">this </del><ins xml:id="d1e1513">the </ins>possibility <ins xml:id="d1e1515">to
+									withdraw their consent</ins>at periodic intervals of [<ins xml:id="d1e1517">no longer than </ins><del xml:id="d1e1518">6
+										</del><ins xml:id="d1e1519">12 </ins>months], as long as the
+								processing continues<ins xml:id="d1e1522">, unless the end-user requests not to
+									receive such reminders</ins>.</p>
+						</content>
+					</paragraph>
+				</article>
+			</chapter>
+			<chapter xml:id="d1e1529">
+				<num xml:id="d1e1531">CHAPTER II</num>
+				<heading xml:id="d1e1533">PROTECTION OF ELECTRONIC COMMUNICATIONS OF <del xml:id="d1e1535">NATURAL AND LEGAL PERSONS
+						</del><ins xml:id="d1e1536">END-USERS </ins>AND OF <del xml:id="d1e1538">INFORMATION STORED IN </del><ins xml:id="d1e1539">THE
+						INTEGRITY OF </ins>THEIR TERMINAL EQUIPMENT</heading>
+				<article xml:id="d1e1542">
+					<num xml:id="d1e1544">Article 5</num>
+					<heading xml:id="d1e1546">Confidentiality of electronic communications data</heading>
+					<paragraph xml:id="d1e1548">
+						<num xml:id="d1e1550">
+							<ins xml:id="d1e1552">1.</ins>
+						</num>
+						<content xml:id="d1e1555">
+							<p xml:id="d1e1557">Electronic communications data shall be confidential. Any
+									<del xml:id="d1e1559">interference with </del>
+								<ins xml:id="d1e1561">processing of </ins>electronic communications data, <del xml:id="d1e1563">such
+									as by </del><ins xml:id="d1e1564">including </ins>listening, tapping, storing,
+								monitoring, scanning or other kinds of interception<del xml:id="d1e1566">,
+									</del><ins xml:id="d1e1567">or </ins>surveillance <del xml:id="d1e1570">or processing </del>of
+								electronic communications data, by persons other than the end-users,
+								shall be prohibited, except when permitted by this Regulation.</p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e1575">
+						<num xml:id="d1e1577">
+							<ins xml:id="d1e1579">2.</ins>
+						</num>
+						<content xml:id="d1e1582">
+							<p xml:id="d1e1584"><ins xml:id="d1e1585">[Confidentiality of electronic communications data
+										</ins><ins xml:id="d1e1586">shall apply to the transmission of </ins>
+									<del xml:id="d1e1588">in </del><ins xml:id="d1e1589">machine-to-machine </ins><ins xml:id="d1e1590">electronic
+										</ins><ins xml:id="d1e1591">communications </ins><del xml:id="d1e1592">shall only apply when
+										such communication is related to the
+										end-user</del><ins xml:id="d1e1593">where carried out via an electronic
+										communications service</ins><ins xml:id="d1e1594">.]</ins></p>
+						</content>
+					</paragraph>
+				</article>
+				<article xml:id="d1e1599" status="ignored">
+					<num xml:id="d1e1601">Article 6</num>
+					<heading xml:id="d1e1603">Permitted processing of electronic communications data</heading>
+					<paragraph xml:id="d1e1605">
+						<num xml:id="d1e1607">1.</num>
+						<list xml:id="d1e1609">
+							<subparagraph xml:id="d1e1611" refersTo="~INP">
+								<content xml:id="d1e1613">
+									<p xml:id="d1e1615">Providers of electronic communications networks and services
+											<del xml:id="d1e1617">may </del><ins xml:id="d1e1618">shall be permitted to </ins>process
+										electronic communications data <ins xml:id="d1e1620">only </ins>if: </p>
+								</content>
+							</subparagraph>
+							<point xml:id="d1e1625">
+								<num xml:id="d1e1627">(a)</num>
+								<content xml:id="d1e1629">
+									<p xml:id="d1e1631">it is necessary to achieve the transmission of the
+										communication, for the duration necessary for that purpose;
+										or </p>
+								</content>
+							</point>
+							<point xml:id="d1e1635">
+								<num xml:id="d1e1637">(b)</num>
+								<content xml:id="d1e1639">
+									<p xml:id="d1e1641">it is necessary to maintain or restore the security of
+										electronic communications networks and services, or detect
+										technical faults and/or errors <ins xml:id="d1e1643">and/or attacks </ins>in
+										the transmission of electronic communications, for the
+										duration necessary for that purpose. </p>
+								</content>
+							</point>
+						</list>
+					</paragraph>
+					<paragraph xml:id="d1e1650">
+						<num xml:id="d1e1652">2.</num>
+						<list xml:id="d1e1654">
+							<subparagraph xml:id="d1e1656" refersTo="~INP">
+								<content xml:id="d1e1658">
+									<p xml:id="d1e1660"><ins xml:id="d1e1661">Without prejudice to paragraph 1,
+											providers</ins><del xml:id="d1e1662">Providers </del>of electronic
+										communications <ins xml:id="d1e1664">networks and </ins>services <del xml:id="d1e1666">may
+											</del><ins xml:id="d1e1667">shall be permitted to </ins>process
+										electronic communications metadata <ins xml:id="d1e1669">only </ins>if: </p>
+								</content>
+							</subparagraph>
+							<point xml:id="d1e1674">
+								<num xml:id="d1e1676">(a)</num>
+								<content xml:id="d1e1678">
+									<p xml:id="d1e1680">it is necessary to meet mandatory quality of service
+										requirements pursuant to [Directive establishing the
+										European Electronic Communications Code] or Regulation (EU)
+											2015/2120<authorialNote xml:id="d1e1682" marker="12" placement="bottom">
+											<p xml:id="d1e1684">Regulation (EU) 2015/2120 of the European Parliament
+												and of the Council of 25 November 2015 laying down
+												measures concerning open internet access and
+												amending Directive 2002/22/EC on universal service
+												and users’ rights relating to electronic
+												communications networks and services and Regulation
+												(EU) No 531/2012 on roaming on public mobile
+												communications networks within the Union (OJ L 310,
+												26.11.2015, p. 1–18).</p>
+										</authorialNote> for the duration necessary for that
+										purpose; or </p>
+								</content>
+							</point>
+							<point xml:id="d1e1690">
+								<num xml:id="d1e1692">(b)</num>
+								<content xml:id="d1e1694">
+									<p xml:id="d1e1696">it is necessary for billing, calculating interconnection
+										payments, detecting or stopping fraudulent, or abusive use
+										of, or subscription to, electronic communications services;
+										or </p>
+								</content>
+							</point>
+							<point xml:id="d1e1700">
+								<num xml:id="d1e1702">(c)</num>
+								<content xml:id="d1e1704">
+									<p xml:id="d1e1706">the end-user concerned has given his or her consent to the
+										processing of his or her communications metadata for one or
+										more specified purposes, including for the provision of
+											<del xml:id="d1e1708">specific </del>services to such end-users, provided
+										that the purpose or purposes concerned could not be
+										fulfilled by processing information that is made anonymous.
+									</p>
+								</content>
+							</point>
+						</list>
+					</paragraph>
+					<paragraph xml:id="d1e1715">
+						<num xml:id="d1e1717">3.</num>
+						<list xml:id="d1e1719">
+							<subparagraph xml:id="d1e1721" refersTo="~INP">
+								<content xml:id="d1e1723">
+									<p xml:id="d1e1725"><ins xml:id="d1e1726">Without prejudice to paragraph 1, providers
+											</ins><del xml:id="d1e1727">Providers </del>of the electronic
+										communications <ins xml:id="d1e1729">networks and </ins>services <del xml:id="d1e1731">may
+											</del><ins xml:id="d1e1732">shall be permitted to </ins>process
+										electronic communications content only: </p>
+								</content>
+							</subparagraph>
+							<point xml:id="d1e1737">
+								<num xml:id="d1e1739">(a)</num>
+								<content xml:id="d1e1741">
+									<p xml:id="d1e1743">for the sole purpose of the provision of a <del xml:id="d1e1745">specific
+										</del>service to an end-user, if the end-user or end-users
+										concerned have given their consent to the processing of his
+										or her electronic communications content and the provision
+										of that service cannot be fulfilled without the processing
+										of such content; or </p>
+								</content>
+							</point>
+							<point xml:id="d1e1750">
+								<num xml:id="d1e1752">(b)</num>
+								<content xml:id="d1e1754">
+									<p xml:id="d1e1756">if all end-users concerned have given their consent to the
+										processing of their electronic communications content for
+										one or more specified purposes that cannot be fulfilled by
+										processing information that is made anonymous, and the
+										provider has consulted the supervisory authority.
+											<del xml:id="d1e1758">Points (2) and (3) of </del>Article 36<ins xml:id="d1e1760">(2) and
+											(3)</ins> of Regulation (EU) 2016/679 shall apply to the
+										consultation of the supervisory authority.</p>
+								</content>
+							</point>
+						</list>
+					</paragraph>
+				</article>
+				<article xml:id="d1e1768" status="ignored">
+					<num xml:id="d1e1770">Article 7</num>
+					<heading xml:id="d1e1772">Storage and erasure of electronic communications data</heading>
+					<paragraph xml:id="d1e1774">
+						<num xml:id="d1e1776">1.</num>
+						<content xml:id="d1e1778">
+							<p xml:id="d1e1780">Without prejudice to point (b) of Article 6(1) and points (a) and (b)
+								of Article 6(3), the provider of the electronic communications
+								service shall erase electronic communications content or make that
+								data anonymous after receipt of electronic communication content by
+								the intended recipient or recipients. Such data may be recorded or
+								stored by the end-users or by a third party entrusted by them to
+								record, store or otherwise process such data, in accordance with
+								Regulation (EU) 2016/679. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e1784">
+						<num xml:id="d1e1786">2.</num>
+						<content xml:id="d1e1788">
+							<p xml:id="d1e1790">Without prejudice to point (b) of Article 6(1) and points (a) and (c)
+								of Article 6(2), the provider of the electronic communications
+								service shall erase electronic communications metadata or make that
+								data anonymous when it is no longer needed for the purpose of the
+								transmission of a communication. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e1794">
+						<num xml:id="d1e1796">3.</num>
+						<content xml:id="d1e1798">
+							<p xml:id="d1e1800">Where the processing of electronic communications metadata takes
+								place for the purpose of billing in accordance with point (b) of
+								Article 6(2), the relevant metadata may be kept until the end of the
+								period during which a bill may lawfully be challenged or a payment
+								may be pursued in accordance with national law.</p>
+						</content>
+					</paragraph>
+				</article>
+				<article xml:id="d1e1806" status="ignored">
+					<num xml:id="d1e1808">Article 8</num>
+					<heading xml:id="d1e1810">Protection of information stored in <ins xml:id="d1e1812">terminal equipment of
+							end-users </ins>and related to <ins xml:id="d1e1814">or
+								processed by or emitted by</ins><del xml:id="d1e1815">end-users’
+							terminal</del>
+						<ins xml:id="d1e1817">such </ins>equipment</heading>
+					<paragraph xml:id="d1e1820">
+						<num xml:id="d1e1822">1.</num>
+						<list xml:id="d1e1824">
+							<subparagraph xml:id="d1e1826" refersTo="~INP">
+								<content xml:id="d1e1828">
+									<p xml:id="d1e1830">The use of processing and storage capabilities of terminal
+										equipment and the collection of information from end-users’
+										terminal equipment, including about its software and
+										hardware, other than by the end-user concerned shall be
+										prohibited, except on the following grounds: </p>
+								</content>
+							</subparagraph>
+							<point xml:id="d1e1834">
+								<num xml:id="d1e1836">(a)</num>
+								<content xml:id="d1e1838">
+									<p xml:id="d1e1840">it is necessary for the sole purpose of carrying out the
+										transmission of an electronic communication over an
+										electronic communications network; or </p>
+								</content>
+							</point>
+							<point xml:id="d1e1844">
+								<num xml:id="d1e1846">(b)</num>
+								<content xml:id="d1e1848">
+									<p xml:id="d1e1850">the end-user has given his or her consent; or </p>
+								</content>
+							</point>
+							<point xml:id="d1e1854">
+								<num xml:id="d1e1856">(c)</num>
+								<content xml:id="d1e1858">
+									<p xml:id="d1e1860">it is necessary for providing an information society service
+										requested by the end-user; or </p>
+								</content>
+							</point>
+							<point xml:id="d1e1864">
+								<num xml:id="d1e1866">(d)</num>
+								<content xml:id="d1e1868">
+									<p xml:id="d1e1870"><del xml:id="d1e1871">if </del>it is necessary for <del xml:id="d1e1873">web </del>audience
+										measuring, provided that such measurement is carried out by
+										the provider of the information society service requested by
+										the end-user<ins xml:id="d1e1875">or by a third party on behalf of the
+											provider of the information society service provided
+											that conditions laid down in Article 28 of Regulation
+											(EU) 2016/679 are met</ins><del xml:id="d1e1876">.</del><ins xml:id="d1e1877">;</ins>
+									</p>
+								</content>
+							</point>
+							<point xml:id="d1e1883">
+								<num xml:id="d1e1885">
+									<ins xml:id="d1e1887">(e)</ins>
+								</num>
+								<content xml:id="d1e1890">
+									<p xml:id="d1e1892">
+										<ins xml:id="d1e1894">it is necessary for a security update provided that the
+											privacy settings chosen by the end-user are not changed
+											in any way, the end-user is informed in advance and is
+											given the possibility to postpone or turn off the
+											automatic installation of these updates.</ins>
+									</p>
+								</content>
+							</point>
+						</list>
+					</paragraph>
+					<paragraph xml:id="d1e1901">
+						<num xml:id="d1e1903">2.</num>
+						<list xml:id="d1e1905">
+							<subparagraph xml:id="d1e1907" refersTo="~INP">
+								<content xml:id="d1e1909">
+									<p xml:id="d1e1911">The collection of information emitted by terminal equipment
+											<ins xml:id="d1e1913">of the end-user </ins>to enable it to connect to
+										another device and, or to network equipment shall be
+										prohibited, except <del xml:id="d1e1915">if</del><ins xml:id="d1e1916">on the following
+											grounds</ins>: </p>
+								</content>
+							</subparagraph>
+							<point xml:id="d1e1921">
+								<num xml:id="d1e1923">(a)</num>
+								<content xml:id="d1e1925">
+									<p xml:id="d1e1927">it is done exclusively in order to, for the time necessary
+										for, and for the purpose of establishing a connection; or
+									</p>
+								</content>
+							</point>
+							<point xml:id="d1e1931">
+								<num xml:id="d1e1933">
+									<ins xml:id="d1e1935">(b)</ins>
+								</num>
+								<content xml:id="d1e1938">
+									<p xml:id="d1e1940">
+										<ins xml:id="d1e1942">the end-user has given his or her consent; or </ins>
+									</p>
+								</content>
+							</point>
+							<point xml:id="d1e1947">
+								<num xml:id="d1e1949">
+									<ins xml:id="d1e1951">(c)</ins>
+								</num>
+								<content xml:id="d1e1954">
+									<p xml:id="d1e1956">
+										<ins xml:id="d1e1958">it is necessary for the purpose of statistical counting
+											that is limited in time and space to the extent
+											necessary for this purpose and the data is made
+											anonymous or erased as soon as it is no longer needed
+											for this purpose.</ins>
+									</p>
+								</content>
+							</point>
+
+						</list>
+					</paragraph>
+					<paragraph xml:id="d1e1965">
+						<num xml:id="d1e1967"><del xml:id="d1e1968">(b)</del>
+							<ins xml:id="d1e1970">2a.</ins>
+						</num>
+						<content xml:id="d1e1973">
+							<p xml:id="d1e1975"><ins xml:id="d1e1976">For the purpose of paragraph 2 points (b) and (c), </ins>a clear
+								and prominent notice <del xml:id="d1e1978">is </del><ins xml:id="d1e1979">shall be </ins>displayed
+								informing of, at least, the modalities of the collection, its
+								purpose, the person responsible for it and the other information
+								required under Article 13 of Regulation (EU) 2016/679 where personal
+								data are collected, as well as any measure the end-user of the
+								terminal equipment can take to stop or minimise the collection. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e1985">
+						<num xml:id="d1e1987">
+							<ins xml:id="d1e1989">2b.</ins>
+						</num>
+						<content xml:id="d1e1992">
+							<p xml:id="d1e1994"><ins xml:id="d1e1995">For the purpose of paragraph 2 points (b) and (c), the
+									</ins><del xml:id="d1e1996">The</del> collection of such information shall be
+								conditional on the application of appropriate technical and
+								organisational measures to ensure a level of security appropriate to
+								the risks, as set out in Article 32 of Regulation (EU) 2016/679,
+								have been applied. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e2001">
+						<num xml:id="d1e2003">3.</num>
+						<content xml:id="d1e2005">
+							<p xml:id="d1e2007">The information to be provided pursuant to <del xml:id="d1e2009">point (b) of
+								</del>paragraph <del xml:id="d1e2011">2</del><ins xml:id="d1e2012">2a</ins> may be provided in
+								combination with standardized icons in order to give a meaningful
+								overview of the collection in an easily visible, intelligible and
+								clearly legible manner. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e2017">
+						<num xml:id="d1e2019">4.</num>
+						<content xml:id="d1e2021">
+							<p xml:id="d1e2023">
+								The Commission shall be empowered to
+									adopt delegated acts in accordance with Article
+										<del xml:id="d1e2025">27</del><ins xml:id="d1e2026">25</ins> determining the information to be
+									presented by the standardized icon and the procedures for
+									providing standardized icons.
+							</p>
+						</content>
+					</paragraph>
+				</article>
+				<article xml:id="d1e2032" status="ignored">
+					<num xml:id="d1e2034">
+						<del xml:id="d1e2036">Article 9</del>
+					</num>
+					<heading xml:id="d1e2039">
+						<del xml:id="d1e2041">Consent</del>
+					</heading>
+					<paragraph xml:id="d1e2044">
+						<num xml:id="d1e2046">
+							<del xml:id="d1e2048">1.</del>
+						</num>
+						<content xml:id="d1e2051">
+							<p xml:id="d1e2053">
+								<del xml:id="d1e2055">The definition of and conditions for consent provided for under
+									Articles 4(11) and 7 of Regulation (EU) 2016/679/EU shall apply.
+								</del>
+							</p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e2060">
+						<num xml:id="d1e2062">
+							<del xml:id="d1e2064">2.</del>
+						</num>
+						<content xml:id="d1e2067">
+							<p xml:id="d1e2069">
+								<del xml:id="d1e2071">Without prejudice to paragraph 1, where technically possible
+									and feasible, for the purposes of point (b) of Article 8(1),
+									consent may be expressed by using the appropriate technical
+									settings of a software application enabling access to the
+									internet. </del>
+							</p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e2076">
+						<num xml:id="d1e2078">
+							<del xml:id="d1e2080">3.</del>
+						</num>
+						<content xml:id="d1e2083">
+							<p xml:id="d1e2085">
+								<del xml:id="d1e2087">End-users who have consented to the processing of electronic
+									communications data as set out in point (c) of Article 6(2) and
+									points (a) and (b) of Article 6(3) shall be given the
+									possibility to withdraw their consent at any time as set forth
+									under Article 7(3) of Regulation (EU) 2016/679 and be reminded
+									of this possibility at periodic intervals of 6 months, as long
+									as the processing continues.</del>
+							</p>
+						</content>
+					</paragraph>
+				</article>
+				<article xml:id="d1e2093" status="ignored">
+					<num xml:id="d1e2095">Article 10</num>
+					<heading xml:id="d1e2097">Information and options for privacy settings to be provided</heading>
+					<paragraph xml:id="d1e2099">
+						<num xml:id="d1e2101">1.</num>
+						<content xml:id="d1e2103">
+							<p xml:id="d1e2105">Software placed on the market permitting electronic communications,
+								including the retrieval and presentation of information on the
+								internet, shall offer the option to prevent <del xml:id="d1e2107">third
+									</del><ins xml:id="d1e2108">any other </ins>parties <ins xml:id="d1e2110">than the end-user
+								</ins>from storing information on the terminal equipment of an
+								end-user or processing information already stored on that equipment.
+							</p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e2115">
+						<num xml:id="d1e2117">2.</num>
+						<content xml:id="d1e2119">
+							<p xml:id="d1e2121">Upon installation<ins xml:id="d1e2123"> or first usage</ins>, the software
+									<ins xml:id="d1e2125">referred to in paragraph 1 </ins>shall inform the end-user
+								about the privacy settings options and, to continue with the
+									installation<ins xml:id="d1e2127"> or usage</ins>, require the end-user to
+								consent to a setting. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e2132">
+						<num xml:id="d1e2134">
+							<ins xml:id="d1e2136">2a</ins>
+						</num>
+						<content xml:id="d1e2139">
+							<p xml:id="d1e2141">
+								<ins xml:id="d1e2143">The software referred to in paragraph 1 shall provide in a
+									clear manner easy ways for end-users to change the privacy
+									setting consented to under paragraph 2 at any time during the
+									use.</ins>
+							</p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e2149">
+						<num xml:id="d1e2151">3.</num>
+						<content xml:id="d1e2153">
+							<p xml:id="d1e2155">In the case of software which has already been installed on 25 May
+								2018, the requirements under paragraphs 1 and 2 shall be complied
+								with at the time of the first update of the software, but no later
+								than 25 August 2018.</p>
+						</content>
+					</paragraph>
+				</article>
+				<article xml:id="d1e2160" status="ignored">
+					<num xml:id="d1e2162">Article 11</num>
+					<heading xml:id="d1e2164">Restrictions</heading>
+					<paragraph xml:id="d1e2166">
+						<num xml:id="d1e2168">1.</num>
+						<content xml:id="d1e2170">
+							<p xml:id="d1e2172">Union or Member State law may restrict by way of a legislative
+								measure the scope of the obligations and rights provided for in
+								Articles 5 to 8 where such a restriction respects the essence of the
+								fundamental rights and freedoms and is a necessary, appropriate and
+								proportionate measure in a democratic society to safeguard one or
+								more of the general public interests referred to in Article 23(1)(a)
+								to (e) of Regulation (EU) 2016/679 or a monitoring, inspection or
+								regulatory function connected to the exercise of official authority
+								for such interests. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e2176">
+						<num xml:id="d1e2178">2.</num>
+						<content xml:id="d1e2180">
+							<p xml:id="d1e2182">Providers of electronic communications services shall establish
+								internal procedures for responding to requests for access to
+								end-users’ electronic communications data based on a legislative
+								measure adopted pursuant to paragraph 1. They shall provide the
+								competent supervisory authority, on demand, with information about
+								those procedures, the number of requests received, the legal
+								justification invoked and their response.</p>
+						</content>
+					</paragraph>
+				</article>
+			</chapter>
+			<chapter xml:id="d1e2188" status="ignored">
+				<num xml:id="d1e2190">CHAPTER III</num>
+				<heading xml:id="d1e2192">NATURAL AND LEGAL PERSONS' RIGHTS TO CONTROL ELECTRONIC
+					COMMUNICATIONS</heading>
+				<article xml:id="d1e2194">
+					<num xml:id="d1e2196">Article 12</num>
+					<heading xml:id="d1e2198">Presentation and restriction of calling and connected line
+						identification</heading>
+					<paragraph xml:id="d1e2200">
+						<num xml:id="d1e2202">1.</num>
+						<list xml:id="d1e2204">
+							<subparagraph xml:id="d1e2206" refersTo="~INP">
+								<content xml:id="d1e2208">
+									<p xml:id="d1e2210">Where presentation of the calling and connected line
+										identification is offered in accordance with Article [107]
+										of the [Directive establishing the European Electronic
+										Communication Code], the providers of publicly available
+										number-based interpersonal communications services shall
+										provide the following: </p>
+								</content>
+							</subparagraph>
+							<point xml:id="d1e2214">
+								<num xml:id="d1e2216">(a)</num>
+								<content xml:id="d1e2218">
+									<p xml:id="d1e2220">the calling end-user with the possibility of preventing the
+										presentation of the calling line identification on a per
+										call, per connection or permanent basis; </p>
+								</content>
+							</point>
+							<point xml:id="d1e2224">
+								<num xml:id="d1e2226">(b)</num>
+								<content xml:id="d1e2228">
+									<p xml:id="d1e2230">the called end-user with the possibility of preventing the
+										presentation of the calling line identification of incoming
+										calls; </p>
+								</content>
+							</point>
+							<point xml:id="d1e2234">
+								<num xml:id="d1e2236">(c)</num>
+								<content xml:id="d1e2238">
+									<p xml:id="d1e2240">the called end-user with the possibility of rejecting
+										incoming calls where the presentation of the calling line
+										identification has been prevented by the calling end-user;
+									</p>
+								</content>
+							</point>
+							<point xml:id="d1e2244">
+								<num xml:id="d1e2246">(d)</num>
+								<content xml:id="d1e2248">
+									<p xml:id="d1e2250">the called end-user with the possibility of preventing the
+										presentation of the connected line identification to
+											<ins xml:id="d1e2252">which </ins>the calling end-user<ins xml:id="d1e2254">is
+											connected</ins>. </p>
+								</content>
+							</point>
+						</list>
+					</paragraph>
+					<paragraph xml:id="d1e2261">
+						<num xml:id="d1e2263">2.</num>
+						<content xml:id="d1e2265">
+							<p xml:id="d1e2267">The possibilities referred to in <del xml:id="d1e2269">points (a), (b), (c) and (d) of
+								</del>paragraph 1 shall be provided to end-users by simple means and
+								free of charge. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e2274">
+						<num xml:id="d1e2276">3.</num>
+						<content xml:id="d1e2278">
+							<p xml:id="d1e2280">Point (a) of paragraph 1 shall also apply with regard to calls to
+								third countries originating in the Union. Points (b), (c) and (d) of
+								paragraph 1 shall also apply to incoming calls originating in third
+								countries. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e2285">
+						<num xml:id="d1e2287">4.</num>
+						<content xml:id="d1e2289">
+							<p xml:id="d1e2291">Where presentation of calling or connected line identification is
+								offered, providers of publicly available number-based interpersonal
+								communications services shall provide information to the public
+								regarding the options set out in points (a), (b), (c) and (d) of
+								paragraph 1.</p>
+						</content>
+					</paragraph>
+				</article>
+				<article xml:id="d1e2296">
+					<num xml:id="d1e2298">Article 13</num>
+					<heading xml:id="d1e2300">Exceptions to presentation and restriction of calling and connected
+						line identification</heading>
+					<paragraph xml:id="d1e2302">
+						<num xml:id="d1e2304">1.</num>
+						<content xml:id="d1e2306">
+							<p xml:id="d1e2308">Regardless of whether the calling end-user has prevented the
+								presentation of the calling line identification, where a call is
+								made to emergency services, providers of publicly available
+								number-based interpersonal communications services shall override
+								the elimination of the presentation of the calling line
+								identification and the denial or absence of consent of an end-user
+								for the processing of metadata, on a per-line basis for
+								organisations dealing with emergency communications, including
+								public safety answering points, for the purpose of responding to
+								such communications. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e2312">
+						<num xml:id="d1e2314">2.</num>
+						<content xml:id="d1e2316">
+							<p xml:id="d1e2318">Member States shall establish more specific provisions with regard to
+								the establishment of <ins xml:id="d1e2320">transparent </ins>procedures and the
+								circumstances where providers of publicly available number-based
+								interpersonal communication services shall override the elimination
+								of the presentation of the calling line identification on a
+								temporary basis, where end-users request the tracing of malicious or
+								nuisance calls.</p>
+						</content>
+					</paragraph>
+				</article>
+				<article xml:id="d1e2326">
+					<num xml:id="d1e2328">Article 14</num>
+					<heading xml:id="d1e2330">Incoming call blocking</heading>
+					<paragraph xml:id="d1e2332">
+						<list xml:id="d1e2334">
+							<subparagraph xml:id="d1e2336" refersTo="~INP">
+								<content xml:id="d1e2338">
+									<p xml:id="d1e2340">Providers of <del xml:id="d1e2342">publicly available </del>number-based
+										interpersonal communications services shall deploy state of
+										the art measures to limit the reception of
+											<del xml:id="d1e2344">unwanted</del>
+										<ins xml:id="d1e2346">malicious or nuisance </ins>calls by end-users and
+										shall also provide the called end-user with the following
+										possibilities, free of charge: </p>
+								</content>
+							</subparagraph>
+							<point xml:id="d1e2351">
+								<num xml:id="d1e2353">(a)</num>
+								<content xml:id="d1e2355">
+									<p xml:id="d1e2357">to block incoming calls from specific numbers or from
+										anonymous sources; </p>
+								</content>
+							</point>
+							<point xml:id="d1e2361">
+								<num xml:id="d1e2363">(b)</num>
+								<content xml:id="d1e2365">
+									<p xml:id="d1e2367">to stop automatic call forwarding by a third party to the
+										end-user's terminal equipment.</p>
+								</content>
+							</point>
+						</list>
+					</paragraph>
+				</article>
+				<article xml:id="d1e2375">
+					<num xml:id="d1e2377">Article 15</num>
+					<heading xml:id="d1e2379">Publicly available directories</heading>
+					<paragraph xml:id="d1e2381">
+						<num xml:id="d1e2383">1.</num>
+						<content xml:id="d1e2385">
+							<p xml:id="d1e2387">The providers of publicly available
+									directories shall <del xml:id="d1e2389">obtain the consent of</del>
+								<ins xml:id="d1e2391">give </ins>end-users who are natural persons <del xml:id="d1e2393">to include
+									their personal data in the directory and, consequently, shall
+									obtain consent from these end-users for inclusion of data per
+									category of personal data</del><ins xml:id="d1e2394">the opportunity to determine
+									per category of personal data whether their personal data are
+									included in the publicly available directory</ins>, to the
+								extent that such data are relevant for the purpose of the directory
+								as determined by the provider of the directory. Providers shall give
+								end-users who are natural persons the means to verify, correct and
+								delete such data. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e2399">
+						<num xml:id="d1e2401">
+							<ins xml:id="d1e2403">1a.</ins>
+						</num>
+						<content xml:id="d1e2406">
+							<p xml:id="d1e2408"><ins xml:id="d1e2409">The </ins><del xml:id="d1e2410">Providers</del><ins xml:id="d1e2411">providers of publicly available directories</ins>
+								shall give end-users who are natural persons the means to verify,
+								correct and delete <del xml:id="d1e2413">such </del>data <ins xml:id="d1e2415">included in a publicly
+									available directory.</ins></p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e2419">
+						<num xml:id="d1e2421">2.</num>
+						<content xml:id="d1e2423">
+							<p xml:id="d1e2425">The providers of a publicly available
+									directory shall inform end-users who are natural
+								persons whose personal data are in the directory of the available
+								search functions of the directory and obtain <ins xml:id="d1e2427">the additional
+									consent of </ins>end-users’ <del xml:id="d1e2429">consent </del>before enabling
+								such search functions related to their own data. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e2435">
+						<num xml:id="d1e2437">3.</num>
+						<content xml:id="d1e2439">
+							<p xml:id="d1e2441">The providers of a publicly available
+									directory shall provide end-users that are legal
+								persons with the possibility to object to data related to them being
+								included in the directory. Providers shall give such end-users that
+								are legal persons the means to verify, correct and delete such data.
+							</p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e2445">
+						<num xml:id="d1e2447">
+							<ins xml:id="d1e2449">3a.</ins>
+						</num>
+						<content xml:id="d1e2452">
+							<p xml:id="d1e2454"><ins xml:id="d1e2455">The </ins><del xml:id="d1e2456">Providers</del><ins xml:id="d1e2457">providers of publicly available directories</ins>
+								shall give <del xml:id="d1e2459">such </del>end-users that are legal persons the
+								means to verify, correct and delete <del xml:id="d1e2461">such </del>data
+									<ins xml:id="d1e2463">included in a publicly available directory.</ins></p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e2467">
+						<num xml:id="d1e2469">4.</num>
+						<content xml:id="d1e2471">
+							<p xml:id="d1e2473">The possibility for end-users not to be included in a publicly
+								available directory, or to verify, correct and delete any data
+								related to them shall be provided free of charge.</p>
+						</content>
+					</paragraph>
+				</article>
+				<article xml:id="d1e2478">
+					<num xml:id="d1e2480">Article 16</num>
+					<heading xml:id="d1e2482"><del xml:id="d1e2483">Unsolicited </del><ins xml:id="d1e2484">Direct marketing
+						</ins>communications</heading>
+					<paragraph xml:id="d1e2487">
+						<num xml:id="d1e2489">1.</num>
+						<content xml:id="d1e2491">
+							<p xml:id="d1e2493">Natural or legal persons may use electronic communications services
+								for the purposes of sending <ins xml:id="d1e2495">or
+										presenting </ins>direct marketing communications to
+								end-users who are natural persons that have given their consent.
+							</p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e2500">
+						<num xml:id="d1e2502">2.</num>
+						<content xml:id="d1e2504">
+							<p xml:id="d1e2506">Where a natural or legal person obtains electronic contact details
+								for electronic <del xml:id="d1e2508">mail </del><ins xml:id="d1e2509">message </ins>from its customer,
+								in the context of the sale of a product or a service, in accordance
+								with Regulation (EU) 2016/679, that natural or legal person may use
+								these electronic contact details for direct marketing of its own
+								similar products or services only if customers are clearly and
+								distinctly given the opportunity to object, free of charge and in an
+								easy manner, to such use. The right to object shall be given at the
+								time of collection and each time a <del xml:id="d1e2511">message </del><ins xml:id="d1e2512">direct
+									marketing communication </ins>is sent<ins xml:id="d1e2514"> or presented&gt;</ins>. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e2519">
+						<num xml:id="d1e2521">3.</num>
+						<list xml:id="d1e2523">
+							<subparagraph xml:id="d1e2525" refersTo="~INP">
+								<content xml:id="d1e2527">
+									<p xml:id="d1e2529">Without prejudice to paragraphs 1 and 2, natural or legal
+										persons using electronic communications services for the
+										purposes of placing direct marketing calls shall: </p>
+								</content>
+							</subparagraph>
+							<point xml:id="d1e2533">
+								<num xml:id="d1e2535">(a)</num>
+								<content xml:id="d1e2537">
+									<p xml:id="d1e2539">present the <del xml:id="d1e2541">identity of a </del><ins xml:id="d1e2542">calling </ins>line
+											<ins xml:id="d1e2544">identification </ins>on which they can be
+										contacted; or </p>
+								</content>
+							</point>
+							<point xml:id="d1e2549">
+								<num xml:id="d1e2551">(b)</num>
+								<content xml:id="d1e2553">
+									<p xml:id="d1e2555">present a specific code/or prefix identifying the fact that
+										the call is a marketing call. </p>
+								</content>
+							</point>
+						</list>
+					</paragraph>
+					<paragraph xml:id="d1e2562">
+						<num xml:id="d1e2564">4.</num>
+						<content xml:id="d1e2566">
+							<p xml:id="d1e2568">Notwithstanding paragraph 1, Member States may provide by law that
+								the placing of direct marketing voice-to-voice calls to end-users
+								who are natural persons shall only be allowed in respect of
+								end-users who are natural persons who have not expressed their
+								objection to receiving those communications. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e2572">
+						<num xml:id="d1e2574">5.</num>
+						<content xml:id="d1e2576">
+							<p xml:id="d1e2578">Member States shall ensure, in the framework of Union law and
+								applicable national law, that the legitimate interest of end-users
+								that are legal persons with regard to <del xml:id="d1e2580">unsolicited
+									</del><ins xml:id="d1e2581">direct marketing </ins>communications sent <ins xml:id="d1e2583">or presented</ins>by
+								means set forth under paragraph 1 are sufficiently protected. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e2588">
+						<num xml:id="d1e2590">6.</num>
+						<content xml:id="d1e2592">
+							<p xml:id="d1e2594">Any natural or legal person using electronic communications services
+								to <del xml:id="d1e2596">transmit</del>
+								<ins xml:id="d1e2598">send or present
+								</ins>direct marketing communications shall inform
+								end-users of the marketing nature of the communication and the
+								identity of the legal or natural person on behalf of whom the
+									<ins xml:id="d1e2600">direct marketing </ins>communication is <del xml:id="d1e2602">transmitted
+									</del><ins xml:id="d1e2603">sent or presented
+									</ins>and shall provide the necessary information for
+								recipients to exercise their right to withdraw their consent, in an
+								easy manner, to receiving further <ins xml:id="d1e2605">direct </ins>marketing
+								communications. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e2610">
+						<num xml:id="d1e2612">7.</num>
+						<content xml:id="d1e2614">
+							<p xml:id="d1e2616">The Commission shall be empowered to
+									adopt implementing measures in accordance with Article 26(2)
+									specifying the code/or prefix to identify marketing calls,
+									pursuant to point (b) of paragraph 3.
+							</p>
+						</content>
+					</paragraph>
+				</article>
+				<article xml:id="d1e2621">
+					<num xml:id="d1e2623">
+						<del xml:id="d1e2625">Article 17</del>
+					</num>
+					<heading xml:id="d1e2628">
+						<del xml:id="d1e2630">Information about detected security risks</del>
+					</heading>
+					<paragraph xml:id="d1e2633">
+						<content xml:id="d1e2635">
+							<p xml:id="d1e2637">
+								<del xml:id="d1e2639">In the case of a particular risk that may compromise the
+									security of networks and electronic communications services, the
+									provider of an electronic communications service shall inform
+									end-users concerning such risk and, where the risk lies outside
+									the scope of the measures to be taken by the service provider,
+									inform end-users of any possible remedies, including an
+									indication of the likely costs involved.</del>
+							</p>
+						</content>
+					</paragraph>
+				</article>
+			</chapter>
+			<chapter xml:id="d1e2646" status="ignored">
+				<num xml:id="d1e2648">CHAPTER IV</num>
+				<heading xml:id="d1e2650">INDEPENDENT SUPERVISORY AUTHORITIES AND ENFORCEMENT</heading>
+				<article xml:id="d1e2652">
+					<num xml:id="d1e2654">Article 18</num>
+					<heading xml:id="d1e2656">Independent supervisory authorities</heading>
+					<paragraph xml:id="d1e2658">
+						<num xml:id="d1e2660">
+							<ins xml:id="d1e2662">0.</ins>
+						</num>
+						<content xml:id="d1e2665">
+							<p xml:id="d1e2667">Each Member State shall provide for one or more independent public
+								authorities to be responsible for monitoring the application of this
+								Regulation (‘supervisory authorities’), in accordance with
+								paragraphs 1 and 1a of this Article.</p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e2671">
+						<num xml:id="d1e2673">1.</num>
+						<content xml:id="d1e2675">
+							<p xml:id="d1e2677">The independent supervisory authority or authorities responsible for
+								monitoring the application of Regulation (EU) 2016/679 shall also be
+								responsible for monitoring the application of <ins xml:id="d1e2679">Chapter II of
+								</ins>this Regulation. Chapter VI and VII of Regulation (EU)
+								2016/679 shall apply mutatis mutandis. The tasks and powers of the
+								supervisory authorities shall be exercised with regard to end-users.
+							</p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e2684">
+						<num xml:id="d1e2686">
+							<ins xml:id="d1e2688">1a.</ins>
+						</num>
+						<content xml:id="d1e2691">
+							<p xml:id="d1e2693">Member Sates shall entrust the monitoring of the application of
+								Chapter III of this Regulation to the supervisory authorities
+								referred to in paragraph 1 of this Article or to other supervisory
+								authorities having an equivalent level of independence. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e2698">
+						<num xml:id="d1e2700">
+							<ins xml:id="d1e2702">1b.</ins>
+						</num>
+						<content xml:id="d1e2705">
+							<p xml:id="d1e2707">Where more than one supervisory authority is responsible for
+								monitoring the application of this Regulation in a Member State,
+								such authorities shall cooperate with each other.</p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e2711">
+						<num xml:id="d1e2713">2.</num>
+						<content xml:id="d1e2715">
+							<p xml:id="d1e2717">The supervisory <del xml:id="d1e2719">authority or </del>authorities referred to in
+									<del xml:id="d1e2721">paragraph </del><ins xml:id="d1e2722">paragraphs </ins>1 <ins xml:id="d1e2724">and 1a
+								</ins>shall cooperate whenever appropriate with national regulatory
+								authorities established pursuant to the [Directive Establishing the
+								European Electronic Communications Code].</p>
+						</content>
+					</paragraph>
+				</article>
+				<article xml:id="d1e2730">
+					<num xml:id="d1e2732">Article 19</num>
+					<heading xml:id="d1e2734">European Data Protection Board</heading>
+					<paragraph xml:id="d1e2736">
+						<list xml:id="d1e2738">
+							<subparagraph xml:id="d1e2740" refersTo="~INP">
+								<content xml:id="d1e2742">
+									<p xml:id="d1e2744">The European Data Protection Board, established under Article
+										68 of Regulation (EU) 2016/679, shall have competence to
+										ensure the consistent application of <ins xml:id="d1e2746">Chapter II of
+										</ins>this Regulation. To that end, the European Data
+										Protection Board shall exercise the tasks laid down in
+										Article 70 of Regulation (EU) 2016/679. The Board shall also
+										have the following tasks: </p>
+								</content>
+							</subparagraph>
+							<point xml:id="d1e2751">
+								<num xml:id="d1e2753">(a)</num>
+								<content xml:id="d1e2755">
+									<p xml:id="d1e2757">advise the Commission on any proposed amendment of this
+										Regulation; </p>
+								</content>
+							</point>
+							<point xml:id="d1e2761">
+								<num xml:id="d1e2763">(b)</num>
+								<content xml:id="d1e2765">
+									<p xml:id="d1e2767">examine, on its own initiative, on request of one of its
+										members or on request of the Commission, any question
+										covering the application of this Regulation and issue
+										guidelines, recommendations and best practices in order to
+										encourage consistent application of this Regulation.</p>
+								</content>
+							</point>
+						</list>
+					</paragraph>
+				</article>
+				<article xml:id="d1e2774">
+					<num xml:id="d1e2776">Article 20</num>
+					<heading xml:id="d1e2778">Cooperation and consistency procedures</heading>
+					<paragraph xml:id="d1e2780">
+						<content xml:id="d1e2782">
+							<p xml:id="d1e2784">Each supervisory authority shall contribute to the consistent
+								application of this Regulation throughout the Union. For this
+								purpose, the supervisory authorities <ins xml:id="d1e2786">designated in accordance
+									with Article 18(1) </ins>shall cooperate with each other and the
+								Commission in accordance with Chapter VII of Regulation (EU)
+								2016/679 regarding the matters covered by <ins xml:id="d1e2788">Chapter II of
+								</ins>this Regulation.</p>
+						</content>
+					</paragraph>
+				</article>
+			</chapter>
+			<chapter xml:id="d1e2795" status="ignored">
+				<num xml:id="d1e2797">CHAPTER V</num>
+				<heading xml:id="d1e2799">REMEDIES, LIABILITY AND PENALTIES</heading>
+				<article xml:id="d1e2801">
+					<num xml:id="d1e2803">Article 21</num>
+					<heading xml:id="d1e2805">Remedies</heading>
+					<paragraph xml:id="d1e2807">
+						<num xml:id="d1e2809">1.</num>
+						<content xml:id="d1e2811">
+							<p xml:id="d1e2813">Without prejudice to any other administrative or judicial remedy,
+								every end-user of electronic communications services shall have the
+								same remedies provided for in Articles 77, 78, and 79 of Regulation
+								(EU) 2016/679. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e2817">
+						<num xml:id="d1e2819">
+							<ins xml:id="d1e2821">1a.</ins>
+						</num>
+						<content xml:id="d1e2824">
+							<p xml:id="d1e2826">
+								<ins xml:id="d1e2828">End-users who are natural persons shall also have the right to
+									representation provided for in Article 80 of Regulation (EU)
+									2016/679.</ins>
+							</p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e2833">
+						<num xml:id="d1e2835">2.</num>
+						<content xml:id="d1e2837">
+							<p xml:id="d1e2839">Any natural or legal person other than end-users adversely affected
+								by infringements of this Regulation<del xml:id="d1e2841"> and having a legitimate
+									interest in the cessation or prohibition of alleged
+									infringements</del>, including a provider of electronic
+								communications services protecting its legitimate business
+								interests, shall have a right to bring legal proceedings in respect
+								of such infringements.</p>
+						</content>
+					</paragraph>
+				</article>
+				<article xml:id="d1e2847">
+					<num xml:id="d1e2849">Article 22</num>
+					<heading xml:id="d1e2851">Right to compensation and liability</heading>
+					<paragraph xml:id="d1e2853">
+						<content xml:id="d1e2855">
+							<p xml:id="d1e2857">Any end-user of electronic communications services who has suffered
+								material or non-material damage as a result of an infringement of
+								this Regulation shall have the right to receive compensation from
+								the infringer for the damage suffered<del xml:id="d1e2859">, unless the infringer
+									proves that it is not in any way responsible for the event
+									giving rise to the damage</del> in accordance with Article 82 of
+								Regulation (EU) 2016/679.</p>
+						</content>
+					</paragraph>
+				</article>
+				<article xml:id="d1e2865">
+					<num xml:id="d1e2867">Article 23</num>
+					<heading xml:id="d1e2869">General conditions for imposing administrative fines</heading>
+					<paragraph xml:id="d1e2871">
+						<num xml:id="d1e2873">1.</num>
+						<content xml:id="d1e2875">
+							<p xml:id="d1e2877">For the purpose of this Article, Chapter
+									<del xml:id="d1e2879">VII</del><ins xml:id="d1e2880">VIII</ins> of Regulation (EU) 2016/679 shall
+								apply to infringements of this Regulation. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e2885">
+						<num xml:id="d1e2887">2.</num>
+						<list xml:id="d1e2889">
+							<subparagraph xml:id="d1e2891" refersTo="~INP">
+								<content xml:id="d1e2893">
+									<p xml:id="d1e2895">Infringements of the following provisions of this Regulation
+										shall, in accordance with paragraph 1, be subject to
+										administrative fines up to EUR 10 000 000, or in the case of
+										an undertaking, up to 2 % of the total worldwide annual
+										turnover of the preceding financial year, whichever is
+										higher : </p>
+								</content>
+							</subparagraph>
+							<point xml:id="d1e2899">
+								<num xml:id="d1e2901">(a)</num>
+								<content xml:id="d1e2903">
+									<p xml:id="d1e2905">the obligations of any legal or natural person who process
+										electronic communications data pursuant to Article 8; </p>
+								</content>
+							</point>
+							<point xml:id="d1e2909">
+								<num xml:id="d1e2911">(b)</num>
+								<content xml:id="d1e2913">
+									<p xml:id="d1e2915">the obligations of the provider of software enabling
+										electronic communications, pursuant to Article 10; </p>
+								</content>
+							</point>
+							<point xml:id="d1e2919">
+								<num xml:id="d1e2921">(c)</num>
+								<content xml:id="d1e2923">
+									<p xml:id="d1e2925">the obligations of the providers of publicly available
+										directories pursuant to Article 15; </p>
+								</content>
+							</point>
+							<point xml:id="d1e2929">
+								<num xml:id="d1e2931">(d)</num>
+								<content xml:id="d1e2933">
+									<p xml:id="d1e2935">the obligations of any legal or natural person who uses
+										electronic communications services pursuant to Article 16.
+									</p>
+								</content>
+							</point>
+						</list>
+					</paragraph>
+					<paragraph xml:id="d1e2941">
+						<num xml:id="d1e2943">3.</num>
+						<content xml:id="d1e2945">
+							<p xml:id="d1e2947">Infringements of the principle of confidentiality of communications,
+								permitted processing of electronic communications data, time limits
+								for erasure pursuant to Articles 5, 6, and 7 shall, in accordance
+								with paragraph 1 of this Article, be subject to administrative fines
+								up to 20 000 000 EUR, or in the case of an undertaking, up to 4 % of
+								the total worldwide annual turnover of the preceding financial year,
+								whichever is higher. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e2952">
+						<num xml:id="d1e2954">4.</num>
+						<content xml:id="d1e2956">
+							<p xml:id="d1e2958">Member States shall lay down the rules on penalties for infringements
+								of Articles 12, 13, 14<del xml:id="d1e2960">, and 17</del>. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e2965">
+						<num xml:id="d1e2967">5.</num>
+						<content xml:id="d1e2969">
+							<p xml:id="d1e2971">Non-compliance with an order by a supervisory authority as referred
+								to in Article 18, shall be subject to administrative fines up to 20
+								000 000 EUR, or in the case of an undertaking, up to 4 % of the
+								total worldwide annual turnover of the preceding financial year,
+								whichever is higher. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e2975">
+						<num xml:id="d1e2977">6.</num>
+						<content xml:id="d1e2979">
+							<p xml:id="d1e2981">Without prejudice to the corrective powers of supervisory authorities
+								pursuant to Article 18, each Member State may lay down rules on
+								whether and to what extent administrative fines may be imposed on
+								public authorities and bodies established in that Member State. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e2985">
+						<num xml:id="d1e2987">7.</num>
+						<content xml:id="d1e2989">
+							<p xml:id="d1e2991">The exercise by the supervisory authority of its powers under this
+								Article shall be subject to appropriate procedural safeguards in
+								accordance with Union and Member State law, including effective
+								judicial remedy and due process. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e2995">
+						<num xml:id="d1e2997">8.</num>
+						<content xml:id="d1e2999">
+							<p xml:id="d1e3001">Where the legal system of the Member State does not provide for
+								administrative fines, this Article may be applied in such a manner
+								that the fine is initiated by the competent supervisory authority
+								and imposed by competent national courts, while ensuring that those
+								legal remedies are effective and have an equivalent effect to the
+								administrative fines imposed by supervisory authorities. In any
+								event, the fines imposed shall be effective, proportionate and
+								dissuasive. Those Member States shall notify to the Commission the
+								provisions of their laws which they adopt pursuant to this paragraph
+								by [xxx] and, without delay, any subsequent amendment law or
+								amendment affecting them.</p>
+						</content>
+					</paragraph>
+				</article>
+				<article xml:id="d1e3007">
+					<num xml:id="d1e3009">Article 24</num>
+					<heading xml:id="d1e3011">Penalties</heading>
+					<paragraph xml:id="d1e3013">
+						<num xml:id="d1e3015">1.</num>
+						<content xml:id="d1e3017">
+							<p xml:id="d1e3019">Member States shall lay down the rules on other penalties applicable
+								to infringements of this Regulation in particular for infringements
+								which are not subject to administrative fines pursuant to Article
+								23, and shall take all measures necessary to ensure that they are
+								implemented. Such penalties shall be effective, proportionate and
+								dissuasive. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e3023">
+						<num xml:id="d1e3025">2.</num>
+						<content xml:id="d1e3027">
+							<p xml:id="d1e3029">Each Member State shall notify to the Commission the provisions of
+								its law which it adopts pursuant to paragraph 1, no later than 18
+								months after the date set forth under Article 29(2) and, without
+								delay, any subsequent amendment affecting them.</p>
+						</content>
+					</paragraph>
+				</article>
+			</chapter>
+			<chapter xml:id="d1e3036" status="ignored">
+				<num xml:id="d1e3038">CHAPTER VI</num>
+				<heading xml:id="d1e3040">DELEGATED ACTS AND IMPLEMENTING ACTS</heading>
+				<article xml:id="d1e3042">
+					<num xml:id="d1e3044">Article 25</num>
+					<heading xml:id="d1e3046">Exercise of the delegation</heading>
+					<paragraph xml:id="d1e3048">
+						<num xml:id="d1e3050">1.</num>
+						<content xml:id="d1e3052">
+							<p xml:id="d1e3054">The power to adopt delegated acts is conferred on the Commission
+								subject to the conditions laid down in this Article. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e3058">
+						<num xml:id="d1e3060">2.</num>
+						<content xml:id="d1e3062">
+							<p xml:id="d1e3064">The power to adopt delegated acts referred to in Article 8(4) shall
+								be conferred on the Commission for an indeterminate period of time
+								from [the data of entering into force of this Regulation]. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e3068">
+						<num xml:id="d1e3070">3.</num>
+						<content xml:id="d1e3072">
+							<p xml:id="d1e3074">The delegation of power referred to in Article 8(4) may be revoked at
+								any time by the European Parliament or by the Council. A decision to
+								revoke shall put an end to the delegation of the power specified in
+								that decision. It shall take effect the day following the
+								publication of the decision in the Official Journal of the European
+								Union or at a later date specified therein. It shall not affect the
+								validity of any delegated acts already in force. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e3079">
+						<num xml:id="d1e3081">4.</num>
+						<content xml:id="d1e3083">
+							<p xml:id="d1e3085">Before adopting a delegated act, the Commission shall consult experts
+								designated by each Member State in accordance with the principles
+								laid down in the Inter-institutional Agreement on Better Law-Making
+								of 13 April 2016. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e3089">
+						<num xml:id="d1e3091">5.</num>
+						<content xml:id="d1e3093">
+							<p xml:id="d1e3095">As soon as it adopts a delegated act, the Commission shall notify it
+								simultaneously to the European Parliament and to the Council. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e3099">
+						<num xml:id="d1e3101">6.</num>
+						<content xml:id="d1e3103">
+							<p xml:id="d1e3105">A delegated act adopted pursuant to Article 8(4) shall enter into
+								force only if no objection has been expressed either by the European
+								Parliament or the Council within a period of two months of
+								notification of that act to the European Parliament and the Council
+								or if, before the expiry of that period, the European Parliament and
+								the Council have both informed the Commission that they will not
+								object. That period shall be extended by two months at the
+								initiative of the European Parliament or of the Council.</p>
+						</content>
+					</paragraph>
+				</article>
+				<article xml:id="d1e3110">
+					<num xml:id="d1e3112">Article 26</num>
+					<heading xml:id="d1e3114">Committee</heading>
+					<paragraph xml:id="d1e3116">
+						<num xml:id="d1e3118">1.</num>
+						<content xml:id="d1e3120">
+							<p xml:id="d1e3122">The Commission shall be assisted by the Communications Committee
+								established under Article 110 of the [Directive establishing the
+								European Electronic Communications Code]. That committee shall be a
+								committee within the meaning of Regulation (EU) No
+									182/2011<authorialNote xml:id="d1e3124" marker="13" placement="bottom">
+									<p xml:id="d1e3126">Regulation (EU) No 182/2011 of the European Parliament and of
+										the Council of 16 February 2011 laying down the rules and
+										general principles concerning mechanisms for control by
+										Member States of the Commission’s exercise of implementing
+										powers (OJ L 55, 28.2.2011, p. 13–18).</p>
+								</authorialNote>. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e3132">
+						<num xml:id="d1e3134">2.</num>
+						<content xml:id="d1e3136">
+							<p xml:id="d1e3138">Where reference is made to this paragraph, Article 5 of Regulation
+								(EU) No 182/2011 shall apply.</p>
+						</content>
+					</paragraph>
+				</article>
+			</chapter>
+			<chapter xml:id="d1e3144" status="ignored">
+				<num xml:id="d1e3146">CHAPTER VII</num>
+				<heading xml:id="d1e3148">FINAL PROVISIONS</heading>
+				<article xml:id="d1e3150">
+					<num xml:id="d1e3152">Article 27</num>
+					<heading xml:id="d1e3154">Repeal</heading>
+					<paragraph xml:id="d1e3156">
+						<num xml:id="d1e3158">1.</num>
+						<content xml:id="d1e3160">
+							<p xml:id="d1e3162">Directive 2002/58/EC is repealed with effect from 25 May 2018. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e3166">
+						<num xml:id="d1e3168">2.</num>
+						<content xml:id="d1e3170">
+							<p xml:id="d1e3172">References to the repealed Directive shall be construed as references
+								to this Regulation.</p>
+						</content>
+					</paragraph>
+				</article>
+				<article xml:id="d1e3177">
+					<num xml:id="d1e3179">Article 28</num>
+					<heading xml:id="d1e3181">Monitoring and evaluation clause</heading>
+					<paragraph xml:id="d1e3183">
+						<content xml:id="d1e3185">
+							<p xml:id="d1e3187">By 1 January 2018 at the latest, the Commission shall establish a
+								detailed programme for monitoring the effectiveness of this
+								Regulation. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e3191">
+						<content xml:id="d1e3193">
+							<p xml:id="d1e3195">No later than three years after the date of application of this
+								Regulation, and every three years thereafter, the Commission shall
+								carry out an evaluation of this Regulation and present the main
+								findings to the European Parliament, the Council and the European
+								Economic and Social Committee. The evaluation shall, where
+								appropriate, inform a proposal for the amendment or repeal of this
+								Regulation in light of legal, technical or economic
+								developments.</p>
+						</content>
+					</paragraph>
+				</article>
+				<article xml:id="d1e3200">
+					<num xml:id="d1e3202">Article 29</num>
+					<heading xml:id="d1e3204">Entry into force and application</heading>
+					<paragraph xml:id="d1e3206">
+						<num xml:id="d1e3208">1.</num>
+						<content xml:id="d1e3210">
+							<p xml:id="d1e3212">This Regulation shall enter into force on the twentieth day following
+								that of its publication in the Official Journal of the European
+								Union. </p>
+						</content>
+					</paragraph>
+					<paragraph xml:id="d1e3216">
+						<num xml:id="d1e3218">2.</num>
+						<content xml:id="d1e3220">
+							<p xml:id="d1e3222">It shall apply from 25 May 2018.</p>
+						</content>
+					</paragraph>
+				</article>
+			</chapter>
+			<clause xml:id="d1e3228" status="ignored">
+				<content xml:id="d1e3230">
+					<p xml:id="d1e3232">This Regulation shall be binding in its entirety and directly applicable in
+						all Member States. </p>
+				</content>
+			</clause>
+		</body>
+		<conclusions xml:id="d1e3237" status="ignored">
+			<p xml:id="d1e3239">Done at <location xml:id="d1e3241" refersTo="~BEL_BRU">Brussels</location>,</p>
+			<block xml:id="d1e3245" name="signatory">
+				<signature xml:id="d1e3247">
+					<organization xml:id="d1e3249" refersTo="~EP">For the European Parliament</organization>
+					<role xml:id="d1e3252" refersTo="~PRESID">The President</role>
+				</signature>
+				<signature xml:id="d1e3256">
+					<organization xml:id="d1e3258" refersTo="~CONSIL">For the Council</organization>
+					<role xml:id="d1e3261" refersTo="~PRESID">The President</role>
+				</signature>
+			</block>
+		</conclusions>
+	</bill>
+
+</akomaNtoso>

@@ -1,0 +1,185 @@
+# uri_components.yaml — authoritative source of truth for URI component definitions.
+#
+# Hand-edited by design (per user preference — manual modification, not auto-generated). uri.ipynb
+# reads this file, renders it as a coverage table, and exports spec/input/appendix/uri-components.md.
+# Do not hand-edit that .md file directly; edit here and re-run the notebook.
+#
+# Sources:
+#   - eli_core:     "spec/eli technical imlementation guide, third edition.pdf" §2.2.1
+#                   ("Which components can I use to forge ELI identifiers?")
+#   - subdivisions: same document, §3.7.6 ("What is the recommended way to describe a subdivision
+#                   of a legal act in ELI, like a section or article?")
+#   - eli_dl:       "spec/ELI Mapping - WIP.xlsx", sheet "ELI-DL URI components" (not implemented in
+#                   the ELI Annotation Tool — acts/journals/consolidations only, no draft-legislation
+#                   support there)
+#   - akn_only:     NOT YET FILLED IN — needs a pass over AKN-NC's <mod>/<textualMod> amendment eId
+#                   conventions to identify AKN concepts (specifically legal-text modification
+#                   references) with no ELI equivalent. Flagged, not fabricated.
+#   - jurisdictions: mirrors lib/uris/frbr_uri/profiles/*.json's existing jurisdiction set (the AKN
+#                   side already has per-jurisdiction URI templates there — this is the ELI-side
+#                   equivalent, still to be designed per canton).
+
+eli_core:
+  description: >
+    All optional, usable in any order (per the guide: "They are all optional, and can be used in
+    any order, depending on how the law is cited"). Status here tracks whether legaldocml.ch has
+    mapped/instantiated each one yet, not whether ELI itself requires it (it doesn't).
+  components:
+    - name: jurisdiction
+      recommended_format: "2-letter country code"
+      remarks: "Extended here to Swiss cantons/communes, not just countries — see jurisdictions section."
+      status: mapped
+      notes: "lib/uris/frbr_uri profiles use ch / ch-zh / ch-zg / ch-be-351 / ch-vd-5586 / ch-zh-261."
+    - name: agent
+      recommended_format: "none — member states define their own"
+      remarks: "Codes for administrative hierarchical structures/substructures."
+      status: gap
+      notes: "Not yet distinguished from `jurisdiction` in our profiles; may fold into jurisdiction for cantons."
+    - name: subagent
+      recommended_format: "none — member states define their own"
+      remarks: "Finer administrative substructure than `agent`."
+      status: gap
+    - name: year
+      recommended_format: "4 digits"
+      status: mapped
+      notes: "frbr_uri resolver templates use {date} as YYYY-MM-DD; {year} alone not separately exposed."
+    - name: month
+      recommended_format: "2 digits"
+      status: gap
+      notes: "Can be used without year/day per the guide; not separately exposed by frbr_uri today."
+    - name: day
+      recommended_format: "2 digits"
+      status: gap
+    - name: type
+      recommended_format: "none — member states define their own"
+      remarks: "Nature of the act (law, decree, draft bill, etc.)."
+      status: mapped
+      notes: "frbr_uri profiles' document_types (act, ordinance, constitution, decision)."
+    - name: subtype
+      recommended_format: "none — member states define their own"
+      status: mapped
+      notes: "frbr_uri profiles' per-doc-type `subtype` (e.g. lei, verordnung, verfassung, entscheid)."
+    - name: natural_identifier
+      recommended_format: "none — member states define their own"
+      status: mapped
+      notes: "The {number} field in frbr_uri (SR number, LS number, AS/OS publication sequence, etc.)."
+    - name: domain
+      recommended_format: "none — member states define their own"
+      remarks: "Thematic classification."
+      status: gap
+    - name: level_1..level_N
+      recommended_format: "none — see subdivisions section"
+      remarks: "Reference to a subdivision, or smaller subdivision, of a legislation (articles, paragraphs)."
+      status: mapped
+      notes: "This is lib/uris/frbr_uri/fragment.py's subdivision-code system (art_/para_/lit_/etc.)."
+    - name: point_in_time
+      recommended_format: "YYYYMMDD or YYYY-MM-DD"
+      remarks: "To retrieve the version valid at a given date."
+      status: mapped
+      notes: "frbr_uri's {version} / {version_date} fields, ISO 8601 (YYYY-MM-DD)."
+    - name: version
+      recommended_format: "none — member states define their own"
+      remarks: "Distinguishes a base act from a consolidated version."
+      status: mapped
+    - name: language
+      recommended_format: "3-letter language codes (ISO 639-1... sic, actually 639-2/T in practice)"
+      status: mapped
+      notes: "frbr_uri profiles' language_codes map 2-letter (de/fr/it/rm) to 3-letter (deu/fra/ita/roh)."
+    - name: format
+      recommended_format: "file format, e.g. pdf or html"
+      remarks: "Not in the original Council conclusions, but always used for the eli:Format level in practice."
+      status: mapped
+      notes: "frbr_uri resolver's {format} argument (xml/html/pdf)."
+
+subdivisions:
+  description: >
+    ELI's recommended pattern for describing subdivisions (§3.7.6) — cross-referenced against our own
+    concrete AKN-side implementation, which already exists and works.
+  eli_pattern:
+    class: "eli:LegalResourceSubdivision"
+    type_property: "eli:type_subdivision"
+    type_property_note: "Needs its own controlled vocabulary of subdivision types — not yet defined for CH."
+    number_property: "eli:number (optional)"
+    parent_link: "eli:is_part_of (links to the whole act and/or parent subdivision)"
+    extensibility_note: >
+      eli:LegalResourceSubdivision is a subclass of eli:LegalResource, so any other ELI metadata can
+      further refine a subdivision (e.g. its own date of entry into force).
+  our_akn_implementation:
+    location: "lib/uris/frbr_uri/fragment.py"
+    status: mapped
+    notes: >
+      SUBDIVISION_CODES already implements exactly this pattern for AKN eIds: chp/sec/subsec/art/para/
+      unp/num/lit/sublit/sen/ind/pnt/anx/sch, hierarchical dot-separated (art_47.para_2.lit_a), sourced
+      from AKN NC §5.4 + ELI Subdivisions v2 Table 13.2 + LegalDocML.de. The ELI-side equivalent (giving
+      each subdivision its own eli:LegalResourceSubdivision URI with a controlled type_subdivision
+      vocabulary) does not exist yet — this is a real, separate gap from the AKN eId system.
+
+eli_dl:
+  description: >
+    ELI-DL (draft legislation) is a separate ontology extension, per the guide's own §3.7.8 ("How to
+    describe draft legislation... you should use ELI-DL, an extension of the ELI ontology"). NOT
+    implemented in the ELI Annotation Tool (which only handles act/journal/consolidation notices).
+  status: gap
+  source: "spec/ELI Mapping - WIP.xlsx, sheet 'ELI-DL URI components'"
+  components:
+    - name: "/eli/dl root"
+      remarks: "MUST prefix all ELI-DL URIs, per BCP-14, to separate the draft corpus from published acts."
+    - name: process_type
+      remarks: "Nature of the legislative drafting process; a fixed value/code if the exact nature is unknown."
+    - name: process_identifier
+      remarks: "Identifier/number/reference of the legislative process."
+    - name: activity
+      remarks: "Reference to an activity in the course of a legislative process (type + sequence/date)."
+    - name: subactivity
+      remarks: "Decomposition of a larger activity into smaller activities."
+    - name: document_type
+      remarks: "Nature of a document produced during the legislative process."
+  worked_example: "/eli/dl/proj/{year}/{process_identifier}"
+
+akn_only:
+  description: >
+    AKN concepts — specifically around modifications to legal texts (amendments, repeals, consolidation
+    deltas) — that have no ELI equivalent. NOT YET FILLED IN: needs a real pass over AKN-NC's
+    <mod>/<textualMod>/<repeal>/<insertion> amendment machinery and their eId conventions before this
+    section can be trusted. Do not treat the empty list below as "there are none" — it means "not
+    researched yet".
+  status: not_started
+  components: []
+
+jurisdictions:
+  description: >
+    Per-canton ELI URI schemes. Mirrors lib/uris/frbr_uri/profiles/*.json's existing jurisdiction set —
+    the AKN side already has one URI-template profile per jurisdiction; this is that same per-jurisdiction
+    design, for ELI URIs, which doesn't exist yet anywhere. Each canton can define its own components,
+    per ELI's own philosophy that these are member-state-defined. Federal is real (Fedlex already
+    implements ELI); every cantonal/communal entry below is an empty scaffold for that jurisdiction's
+    own scheme to be designed into.
+  ch:
+    level: federal
+    status: real
+    scheme: "https://fedlex.data.admin.ch/eli/{type}/{year}/{natural_identifier}/{point_in_time}/{language}"
+    notes: "Already implemented by Fedlex itself — nothing to design, just document the real pattern."
+  ch-zh:
+    level: canton
+    status: not_designed
+    scheme: null
+    notes: "Zurich. No ELI URI scheme exists yet — this is real design work, not a gap-fill."
+  ch-zg:
+    level: canton
+    status: not_designed
+    scheme: null
+  ch-be-351:
+    level: commune
+    status: not_designed
+    scheme: null
+    notes: "Stadt Bern (BFS 351)."
+  ch-vd-5586:
+    level: commune
+    status: not_designed
+    scheme: null
+    notes: "Ville de Lausanne (BFS 5586)."
+  ch-zh-261:
+    level: commune
+    status: not_designed
+    scheme: null
+    notes: "Stadt Zürich (BFS 261)."

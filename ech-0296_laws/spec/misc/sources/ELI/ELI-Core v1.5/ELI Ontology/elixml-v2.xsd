@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema 
+	targetNamespace="http://data.europa.eu/eli/ontology#"
+	elementFormDefault="qualified"
+	xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:eli="http://data.europa.eu/eli/ontology#"
+	attributeFormDefault="qualified"
+>
+	
+	<annotation>
+		<documentation>
+			This is an XML schema for the encoding of ELI metadata.
+			This XML schema helps integrating ELI metadata in XML-based production systems.
+			
+			Users should refer to the official properties documentation at http://publications.europa.eu/mdr/eli/documentation/ELI_Ontology-v1.1.htm.
+			The documentation is not copied inside the schema, on purpose.
+			
+			The official format for ELI metadata publishing on the web is the ELI ontology published at http://publications.europa.eu/mdr/eli/.
+			This XML schema is not intended to publish ELI metadata on the web.
+			For more information about ELI, see http://eur-lex.europa.eu/eli-register/about.html.
+			
+			The declaration of attributeFormDefault="qualified" in the schema forces the attributes to be declared in the target namespace.
+		</documentation>
+	</annotation>
+	
+	<import namespace="http://www.w3.org/XML/1998/namespace"
+  	        schemaLocation="http://www.w3.org/2001/03/xml.xsd">
+  	        <annotation><documentation>This schema imports the XML XSD to refer to xml:lang.</documentation></annotation>
+    </import>
+
+	<!-- ********** Types of the ELI XML Schema ********** -->
+
+	<complexType name="IdentifiableType" abstract="true">
+    	<annotation><documentation>A type declaring an element with a URI attribute and an option uri_schema attribute.</documentation></annotation>
+		
+		<attribute name="URI" type="anyURI" use="required" />
+		<attribute name="uri_schema" type="string" use="optional">
+			<annotation><documentation>uri_schema is defined as an attribute because it is a technical metadata on the URI. Note also that uri_schema is defined as a string while in ELI 1.1 it is defined as an object property to a URI.</documentation></annotation>
+		</attribute>
+    </complexType>
+
+    <complexType name="LegalResourceOrLegalResourceSubdivision" abstract="true">
+    	<annotation><documentation>A type holding definitions common to LegalResource and LegalResourceSubdivision.</documentation></annotation>
+    	
+    	<complexContent>
+	    	<extension base="eli:IdentifiableType">
+	    		<sequence>
+	    			<element minOccurs="0" maxOccurs="unbounded"
+	    				ref="eli:amended_by">
+	    			</element>
+	    			<element minOccurs="0" maxOccurs="unbounded"
+	    				ref="eli:amends">
+	    			</element>
+	    			<element minOccurs="0" maxOccurs="unbounded"
+	    				ref="eli:applied_by">
+	    			</element>
+	    			<element minOccurs="0" maxOccurs="unbounded"
+	    				ref="eli:applies">
+	    			</element>
+	    			<element minOccurs="0" maxOccurs="unbounded"
+	    				ref="eli:based_on">
+	    			</element>
+	    			<element minOccurs="0" maxOccurs="unbounded"
+	    				ref="eli:basis_for">
+	    			</element>
+	    			<element minOccurs="0" maxOccurs="unbounded"
+	    				ref="eli:changed_by">
+	    			</element>
+	    			<element minOccurs="0" maxOccurs="unbounded"
+	    				ref="eli:changes">
+	    			</element>
+	    			<element minOccurs="0" maxOccurs="unbounded"
+	    				ref="eli:cited_by">
+	    			</element>
+	    			<element minOccurs="0" maxOccurs="unbounded"
+	    				ref="eli:cites">
+	    			</element>
+	    			<element minOccurs="0" maxOccurs="unbounded"
+	    				ref="eli:commenced_by">
+	    			</element>
+	    			<element minOccurs="0" maxOccurs="unbounded"
+	    				ref="eli:commences">
+	    			</element>
+	    			<element minOccurs="0" maxOccurs="unbounded"
+	    				ref="eli:consolidated_by">
+	    			</element>
+	    			<element minOccurs="0" maxOccurs="unbounded"
+	    				ref="eli:consolidates">
+	    			</element>
+	    			<element minOccurs="0" maxOccurs="unbounded"
+	    				ref="eli:corrected_by">
+	    			</element>
+	    			<element minOccurs="0" maxOccurs="unbounded"
+	    				ref="eli:corrects">
+	    			</element>
+	    			<element minOccurs="0" maxOccurs="1"
+	    				ref="eli:date_document">
+	    				<annotation>
+	    					<documentation>
+	    						date_document can occur maximum once.
+	    					</documentation>
+	    				</annotation>
+	    			</element>
+	    			<element minOccurs="0" maxOccurs="1"
+	    				ref="eli:date_publication">
+	    				<annotation>
+	    					<documentation>
+	    						date_publication can occur maximum once.
+	    					</documentation>
+	    				</annotation>
+	    			</element>
+	    			<element minOccurs="0" maxOccurs="1"
+	    				ref="eli:date_no_longer_in_force">
+	    				<annotation>
+	    					<documentation>
+	    						date_no_longer_in_force can occur
+	    						maximum once.
+	    					</documentation>
+	    				</annotation>
+	    			</element>
+	    			<element minOccurs="0" maxOccurs="unbounded"
+	    				ref="eli:date_applicability">
+	    			</element>
+	    			<element minOccurs="0" maxOccurs="unbounded"
+	    				ref="eli:description">
+	    			</element>
+	    			<element minOccurs="0" maxOccurs="1"
+	    				ref="eli:first_date_entry_in_force">
+	    				<annotation>
+	    					<documentation>
+	    						first_date_entry_in_force can occur
+	    						maximum once.
+	    					</documentation>
+	    				</annotation>
+	    			</element>
+	    			<element minOccurs="0" maxOccurs="unbounded"
+	    				ref="eli:has_another_publication">
+	    			</element>
+	    			<element minOccurs="0" maxOccurs="unbounded"
+	    				ref="eli:id_local" />
+	    			<element minOccurs="0" maxOccurs="unbounded"
+	    				ref="eli:is_about">
+	    			</element>
+	    			<element minOccurs="0" maxOccurs="unbounded"
+	    				ref="eli:is_another_publication_of">
+	    			</element>
+	    			<element minOccurs="0" maxOccurs="unbounded"
+	    				ref="eli:jurisdiction">
+	    			</element>
+	    			<element minOccurs="0" maxOccurs="unbounded"
+	    				ref="eli:number" />
+	    			<element minOccurs="0" maxOccurs="unbounded"
+	    				ref="eli:passed_by">
+	    			</element>
+	    			<element minOccurs="0" maxOccurs="unbounded"
+	    				ref="eli:related_to">
+	    			</element>
+	    			<element minOccurs="0" maxOccurs="unbounded"
+	    				ref="eli:relevant_for">
+	    			</element>
+	    			<element minOccurs="0" maxOccurs="unbounded"
+	    				ref="eli:repealed_by">
+	    			</element>
+	    			<element minOccurs="0" maxOccurs="unbounded"
+	    				ref="eli:repeals">
+	    			</element>
+	    			<element minOccurs="0" maxOccurs="unbounded"
+	    				ref="eli:responsibility_of">
+	    			</element>
+	    			<element minOccurs="0" maxOccurs="unbounded"
+	    				ref="eli:responsibility_of_agent">
+	    			</element>
+	    			<element minOccurs="0" maxOccurs="unbounded"
+	    				ref="eli:transposed_by">
+	    			</element>
+	    			<element minOccurs="0" maxOccurs="unbounded"
+	    				ref="eli:transposes">
+	    			</element>
+	    			<element minOccurs="1" maxOccurs="unbounded"
+	    				ref="eli:type_document">
+	    				<annotation>
+	    					<documentation>
+	    						type_document is mandatory.
+	    					</documentation>
+	    				</annotation>
+	    			</element>
+	    			<element minOccurs="0" maxOccurs="unbounded"
+	    				ref="eli:version">
+	    			</element>
+	    			<element minOccurs="0" maxOccurs="unbounded"
+	    				ref="eli:version_date">
+	    			</element>
+
+	    			<element minOccurs="0" maxOccurs="unbounded"
+	    				ref="eli:LegalExpression">
+	    			</element>
+	    		</sequence>
+
+	    		<attribute name="in_force" 					type="eli:InForceType" use="optional" />
+	    	</extension>
+    	</complexContent>
+    </complexType>
+    
+    <complexType name="LegalResourceType">
+    	<annotation><documentation>An ELI LegalResource. A LegalResource can embed other LegalResource or LegalResourceSubdivision.</documentation></annotation>
+    	<complexContent>
+	    	<extension base="eli:LegalResourceOrLegalResourceSubdivision">
+	    		<sequence>
+		    		<element name="LegalResourceSubdivision" type="eli:LegalResourceSubdivisionType" minOccurs="0" maxOccurs="unbounded">
+		    			<annotation><documentation>The inclusion of the XML LegalResourceSubdivision element corresponds to the ELI is_part_of/has_part property pair.</documentation></annotation>
+		    		</element>
+		    		
+		    		<element name="LegalResource" type="eli:LegalResourceType" minOccurs="0" maxOccurs="unbounded">
+		    			<annotation><documentation>The inclusion of the XML LegalResource element corresponds to the ELI is_member_of/has_member property pair.</documentation></annotation>
+		    		</element>
+	    		</sequence>
+	    	</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="LegalResourceSubdivisionType">
+    	<annotation><documentation>An ELI LegalResourceSubdivision. A LegalResource can embed only other LegalResourceSubdivisions.</documentation></annotation>
+    	<complexContent>
+	    	<extension base="eli:LegalResourceOrLegalResourceSubdivision">
+	    		<sequence>
+		    		<element name="LegalResourceSubdivision" type="eli:LegalResourceSubdivisionType" minOccurs="0" maxOccurs="unbounded">
+		    			<annotation><documentation>The inclusion of the XML LegalResourceSubdivision element corresponds to the ELI is_part_of/has_part property pair.</documentation></annotation>
+		    		</element>
+	    		</sequence>
+	    	</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="LegalExpressionType">
+    	<annotation><documentation>An ELI LegalExpression</documentation></annotation>
+    	<complexContent>
+	    	<extension base="eli:IdentifiableType">
+	    		<sequence>
+	    			<element minOccurs="0" maxOccurs="unbounded"
+	    				ref="eli:amended_by">
+	    			</element>
+	    			<element ref="eli:amends"
+	    				minOccurs="0" maxOccurs="unbounded">
+	    			</element>
+	    			<element ref="eli:applies" 
+	    				minOccurs="0" maxOccurs="unbounded">
+	    			</element>
+	    			<element ref="eli:basis_for" 
+	    				minOccurs="0" maxOccurs="unbounded">
+	    			</element>
+	    			<element ref="eli:changed_by" 
+	    				minOccurs="0" maxOccurs="unbounded">
+	    			</element>
+	    			<element ref="eli:changes" 
+	    				minOccurs="0" maxOccurs="unbounded">
+	    			</element>
+	    			<element ref="eli:cited_by" 
+	    				minOccurs="0" maxOccurs="unbounded">
+	    			</element>
+	    			<element ref="eli:cites" 
+	    				minOccurs="0" maxOccurs="unbounded">
+	    			</element>
+	    			<element ref="eli:commenced_by" 
+	    				minOccurs="0" maxOccurs="unbounded">
+	    			</element>
+	    			<element ref="eli:commences" 
+	    				minOccurs="0" maxOccurs="unbounded">
+	    			</element>
+	    			<element ref="eli:consolidated_by" 
+	    				minOccurs="0" maxOccurs="unbounded">
+	    			</element>
+	    			<element ref="eli:consolidates" 
+	    				minOccurs="0" maxOccurs="unbounded">
+	    			</element>
+	    			<element ref="eli:corrected_by" 
+	    				minOccurs="0" maxOccurs="unbounded">
+	    			</element>
+	    			<element ref="eli:corrects" 
+	    				minOccurs="0" maxOccurs="unbounded">
+	    			</element>
+	    			<element ref="eli:date_publication"
+	    				minOccurs="0" maxOccurs="1">
+	    				<annotation>
+	    					<documentation>
+	    						date_publication can occur maximum once.
+	    					</documentation>
+	    				</annotation>
+	    			</element>
+	    			<element ref="eli:date_no_longer_in_force"
+	    				minOccurs="0" maxOccurs="1">
+	    				<annotation>
+	    					<documentation>
+	    						date_no_longer_in_force can occur
+	    						maximum once.
+	    					</documentation>
+	    				</annotation>
+	    			</element>
+	    			<element ref="eli:date_applicability"
+	    				minOccurs="0" maxOccurs="unbounded">
+	    			</element>
+	    			<element ref="eli:description" 
+	    				minOccurs="0" maxOccurs="unbounded">
+	    			</element>
+	    			<element ref="eli:first_date_entry_in_force"
+	    				minOccurs="0" maxOccurs="1">
+	    				<annotation>
+	    					<documentation>
+	    						first_date_entry_in_force can occur
+	    						maximum once.
+	    					</documentation>
+	    				</annotation>
+	    			</element>
+
+	    			<element ref="eli:id_local"  minOccurs="0"
+	    				maxOccurs="unbounded" />
+	    			<element ref="eli:jurisdiction"
+	    				minOccurs="0" maxOccurs="unbounded" />
+	    			<element ref="eli:number"  minOccurs="0"
+	    				maxOccurs="unbounded" />
+	    			<element ref="eli:publisher" 
+	    				minOccurs="0" maxOccurs="unbounded">
+	    			</element>
+	    			<element ref="eli:publisher_agent" 
+	    				minOccurs="0" maxOccurs="unbounded">
+	    			</element>
+	    			<element ref="eli:related_to" 
+	    				minOccurs="0" maxOccurs="unbounded">
+	    			</element>
+	    			<element ref="eli:relevant_for"
+	    				minOccurs="0" maxOccurs="unbounded" />
+	    			<element ref="eli:repealed_by" 
+	    				minOccurs="0" maxOccurs="unbounded">
+	    			</element>
+	    			<element ref="eli:repeals" 
+	    				minOccurs="0" maxOccurs="unbounded">
+	    			</element>
+
+	    			<element ref="eli:title" minOccurs="1"
+	    				maxOccurs="unbounded">
+	    				<annotation>
+	    					<documentation>
+	    						title must occur at least once.
+	    					</documentation>
+	    				</annotation>
+	    			</element>
+	    			<element ref="eli:title_alternative" 
+	    				minOccurs="0" maxOccurs="unbounded">
+	    			</element>
+	    			<element ref="eli:title_short" 
+	    				minOccurs="0" maxOccurs="unbounded">
+	    			</element>
+	    			<element ref="eli:transposes" 
+	    				minOccurs="0" maxOccurs="unbounded">
+	    			</element>
+	    			<element ref="eli:version" 
+	    				minOccurs="0" maxOccurs="unbounded">
+	    			</element>
+	    			<element ref="eli:version_date"
+	    				minOccurs="0" maxOccurs="unbounded">
+	    			</element>
+
+	    			<element ref="eli:Format"
+	    				minOccurs="0" maxOccurs="unbounded">
+	    			</element>
+	    		</sequence>
+
+	    		<attribute name="in_force" 					type="eli:InForceType" use="optional" />
+    			<attribute name="language" 					type="eli:string-language" use="required">
+    				<annotation><documentation>Should contain the 3-letter code of the language, from the OP language table at http://publications.europa.eu/mdr/authority/language/index.html. Multiple language values can be separated by a whitespace character.</documentation></annotation>
+    			</attribute>
+	    	</extension>
+    	</complexContent>
+    </complexType>
+
+    
+    <complexType name="FormatType">
+    	<annotation><documentation>An ELI Format</documentation></annotation>
+    	
+    	<complexContent>
+	    	<extension base="eli:IdentifiableType">
+	    		<sequence>
+	    			<element ref="eli:cited_by" 				 minOccurs="0" maxOccurs="unbounded">
+	    				<annotation><documentation>An ELI Format can be cited.</documentation></annotation>
+	    			</element>
+	    			<element ref="eli:corrected_by" 			 minOccurs="0" maxOccurs="unbounded">
+	    				<annotation><documentation>An ELI Format can be corrected.</documentation></annotation>
+	    			</element>
+	    			<element ref="eli:id_local" 				 minOccurs="0" maxOccurs="unbounded" />
+	    			<element ref="eli:is_exemplified_by" 		 minOccurs="0" maxOccurs="unbounded"></element>
+	    			<element ref="eli:license"					 minOccurs="0" maxOccurs="unbounded"></element>
+	    			<element ref="eli:published_in" 			 minOccurs="0" maxOccurs="unbounded"></element>
+	    			<element ref="eli:published_in_format" 	 minOccurs="0" maxOccurs="unbounded"></element>
+	    			<element ref="eli:publisher" 				 minOccurs="0" maxOccurs="unbounded"></element>
+    				<element ref="eli:publisher_agent"			 minOccurs="0" maxOccurs="unbounded"></element>
+	    			<element ref="eli:publishes" 				 minOccurs="0" maxOccurs="unbounded"></element>	    			
+    				<element ref="eli:rights" 					 minOccurs="0" maxOccurs="1">
+    					<annotation><documentation>rights can occur at most once.</documentation></annotation>
+    				</element>
+    				<element ref="eli:rightsholder"			 minOccurs="0" maxOccurs="unbounded"></element>
+    				<element ref="eli:rightsholder_agent"		 minOccurs="0" maxOccurs="unbounded"></element>					
+	    		</sequence>
+	    		
+	    		<attribute name="format" type="eli:string-iana" use="required">
+	    			<annotation><documentation>The format is required and should be a IANA-registered media-type.</documentation></annotation>
+	    		</attribute>
+    			<attribute name="legal_value" type="eli:LegalValueType" use="optional" />
+	    	</extension>
+    	</complexContent>
+    </complexType> 
+    
+    <!-- ********** XML Elements declaration ********** -->
+
+    <element name="amended_by" type="eli:resource"></element>
+    <element name="amends" type="eli:resource"></element>
+    <element name="applied_by" type="eli:resource"></element>
+    <element name="applies" type="eli:resource"></element>
+    <element name="based_on" type="eli:resource"></element>
+    <element name="basis_for" type="eli:resource"></element>
+    <element name="changed_by" type="eli:resource"></element>
+    <element name="changes" type="eli:resource"></element>
+    <element name="cited_by" type="eli:resource"></element>
+    <element name="cites" type="eli:resource"></element>
+    <element name="commenced_by" type="eli:resource"></element>
+    <element name="commences" type="eli:resource"></element>
+    <element name="consolidated_by" type="eli:resource"></element>
+    <element name="consolidates" type="eli:resource"></element>
+    <element name="corrected_by" type="eli:resource"></element>
+    <element name="corrects" type="eli:resource"></element>
+    <element name="date_document" type="date"></element>
+    <element name="date_publication" type="date"></element>
+    <element name="date_no_longer_in_force" type="date"></element>
+    <element name="date_applicability" type="date"></element>
+    <element name="description" type="string"></element>
+    <element name="first_date_entry_in_force" type="date"></element>
+    <element name="has_another_publication" type="eli:resource"></element>
+    <element name="id_local" type="string"></element>
+    <element name="is_about" type="eli:resource"></element>
+    <element name="is_another_publication_of" type="eli:resource"></element>
+    <element name="is_exemplified_by" 		type="eli:resource"></element>
+    <element name="jurisdiction" type="eli:resource-atu">
+    	<annotation><documentation>Values are restricted to the ATU table</documentation></annotation>
+    </element>
+    <element name="license"					type="eli:resource"></element>
+    <element name="number" type="string"></element>
+    <element name="passed_by" type="eli:resource"></element>
+    <element name="published_in" type="string"></element>
+    <element name="published_in_format" type="eli:resource"></element>
+    <element name="publisher" type="string"></element>
+    <element name="publisher_agent" type="eli:resource"></element>
+    <element name="publishes" type="eli:resource"></element>
+    <element name="related_to" type="eli:resource"></element>
+    <element name="relevant_for" type="eli:resource-atu">
+    	<annotation><documentation>Values are restricted to the ATU table</documentation></annotation>
+    </element>
+    <element name="repealed_by" type="eli:resource"></element>
+    <element name="repeals" type="eli:resource"></element>
+    <element name="responsibility_of" type="string"></element>
+    <element name="responsibility_of_agent" type="eli:resource"></element>
+    <element name="rights" 					type="string"></element>
+	<element name="rightsholder"			type="string"></element>
+	<element name="rightsholder_agent"		type="eli:resource"></element>	
+    <element name="title" type="string"></element>
+    <element name="title_short" type="string"></element>
+    <element name="title_alternative" type="string"></element>
+    <element name="transposed_by" type="eli:resource"></element>
+    <element name="transposes" type="eli:resource"></element>
+    <element name="type_document" type="eli:resource">
+    	<annotation></annotation>
+    </element>
+    <element name="version" type="eli:resource"></element>
+    <element name="version_date" type="date"></element>
+
+
+    <element name="LegalResource" type="eli:LegalResourceType">
+    	<annotation><documentation>An ELI LegalResource, usually the root of an ELI/XML document.</documentation></annotation>
+    </element>
+    
+    <element name="LegalExpression" type="eli:LegalExpressionType">
+   		<annotation>
+			<documentation>
+				The inclusion of the XML LegalExpression
+				element corresponds to the ELI
+				is_realized_by/realizes property pair.
+			</documentation>
+		</annotation>
+    </element>
+    <element name="Format" type="eli:FormatType">
+		<annotation>
+			<documentation>
+				The inclusion of the XML Format element
+				corresponds to the ELI
+				is_embidied_by/embodies property pair.
+			</documentation>
+		</annotation>
+    </element>    
+    
+    <!-- ********** Utility types ********** -->
+
+    <complexType name="langString">
+    	<annotation><documentation>A String value with an xml:lang attribute.</documentation></annotation>
+    	<simpleContent>
+	      <extension base="string">
+	        <attribute ref="xml:lang" use="optional" />
+	      </extension>
+	    </simpleContent>    	
+  	</complexType> 
+    
+    <complexType name="resource">
+    	<annotation><documentation>A reference to a URI with optional label display information.</documentation></annotation>
+    	<complexContent>
+    		<restriction base="anyType">
+	  				<sequence>
+	   					<element name="display" type="eli:langString" minOccurs="0" maxOccurs="unbounded"></element>
+	   				</sequence>
+    				<attribute name="URI" type="anyURI" use="required" />
+    		</restriction>
+    	</complexContent>
+    </complexType>
+    
+    <complexType name="resource-atu">
+    	<annotation><documentation>A reference to a URI from from the Administrative Territorial Unit Authority Table at http://publications.europa.eu/resource/authority/atu.</documentation></annotation>
+    	<complexContent>
+    		<restriction base="anyType">
+	  				<sequence>
+	   					<element name="display" type="eli:langString" minOccurs="0" maxOccurs="unbounded"></element>
+	   				</sequence>
+    				<attribute name="URI" type="eli:anyURI-atu" use="required" />
+    		</restriction>
+    	</complexContent>
+    </complexType>
+    
+    <!-- ********** Declaration of attributes with specific regexes ********** -->
+    
+    <simpleType name="anyURI-atu">
+    	<annotation><documentation>A URI value from the Administrative Territorial Unit Authority Table at http://publications.europa.eu/resource/authority/atu.</documentation></annotation>
+    	<restriction base="anyURI">
+		    <pattern value="http://publications\.europa\.eu/resource/authority/atu/.+"></pattern>
+    	</restriction>
+    </simpleType>
+    
+    <simpleType name="string-iana">
+    	<annotation><documentation>A IANA-registered media type</documentation></annotation>
+    	<restriction base="string">
+		    <pattern value="(application|audio|font|image|message|model|multipart|text|video)/.+"></pattern>
+    	</restriction>
+    </simpleType>
+    
+    <simpleType name="string-language">
+    	<annotation><documentation>A language code in 3 letters from http://publications.europa.eu/resource/authority/language</documentation></annotation>
+    	<restriction base="string">
+		    <pattern value="[A-Z][A-Z][A-Z]"></pattern>
+    	</restriction>
+    </simpleType>
+    
+    <!-- ********** Declaration of tables with fixed list of values ********** -->
+    
+    <simpleType name="InForceType">
+    	<annotation><documentation>List of values allowed to describe the "in force status" of a legal resource</documentation></annotation>
+    	<restriction base="string">
+		    <enumeration value="InForce-InForce" />
+		    <enumeration value="InForce-PartiallyInForce" />
+		    <enumeration value="InForce-NotInForce" />
+    	</restriction>
+    </simpleType>
+    
+    <simpleType name="LegalValueType">
+    	<annotation><documentation>List of values allowed to describe the legal value of a Format</documentation></annotation>
+    	<restriction base="string">
+		    <enumeration value="LegalValue-official" />
+		    <enumeration value="LegalValue-unofficial" />
+		    <enumeration value="LegalValue-authoritative" />
+		    <enumeration value="LegalValue-definitive" />
+    	</restriction>
+    </simpleType>
+    
+</schema>

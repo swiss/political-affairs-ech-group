@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mi>sf</mi>
+    <mo>=</mo>
+    <mn>1</mn>
+    <mo>-</mo>
+    <mo>(</mo>
+    <msub>
+        <mi>AB</mi>
+        <mi>SA</mi>
+    </msub>
+    <mo>/</mo>
+    <msub>
+        <mi>RA</mi>
+        <mi>SA</mi>
+    </msub>
+    <mo>)</mo>
+</math>

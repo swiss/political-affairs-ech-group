@@ -1,0 +1,745 @@
+  <eli:LegalResource eli:URI="http://data.europa.eu/eli/dir/1980/181/oj"
+                     eli:in_force="InForce-inForce"
+                     xsi:schemaLocation="http://data.europa.eu/eli/ontology# elixml-v1.xsd"
+                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                     xmlns:eli="http://data.europa.eu/eli/ontology#">
+     <eli:based_on eli:URI="http://publications.europa.eu/resource/authority/treaty/TEEC_1957"/>
+     <eli:changed_by eli:URI="http://data.europa.eu/eli/dir/1985/1/oj"/>
+     <eli:changed_by eli:URI="http://publications.europa.eu/resource/celex/32009L0003"/>
+     <eli:changed_by eli:URI="http://data.europa.eu/eli/dir/1989/617/oj"/>
+     <eli:changed_by eli:URI="http://data.europa.eu/eli/dir/1999/103/oj"/>
+     <eli:changes eli:URI="http://data.europa.eu/eli/dir/1971/354/oj"/>
+     <eli:cites eli:URI="http://data.europa.eu/eli/dir/1976/770/oj"/>
+     <eli:consolidated_by eli:URI="http://data.europa.eu/eli/dir/1980/181/2009-05-27"/>
+     <eli:consolidated_by eli:URI="http://publications.europa.eu/resource/celex/01980L0181-19791221"/>
+     <eli:consolidated_by eli:URI="http://data.europa.eu/eli/dir/1980/181/2000-02-09"/>
+     <eli:consolidated_by eli:URI="http://data.europa.eu/eli/dir/1980/181/1984-12-20"/>
+     <eli:consolidated_by eli:URI="http://data.europa.eu/eli/dir/1980/181/1989-11-30"/>
+     <eli:date_document>1979-12-20</eli:date_document>
+     <eli:date_publication>1980-02-15</eli:date_publication>
+     <eli:first_date_entry_in_force>1979-12-21</eli:first_date_entry_in_force>
+     <eli:id_local>31980L0181</eli:id_local>
+     <eli:is_about eli:URI="http://eurovoc.europa.eu/1896"/>
+     <eli:is_about eli:URI="http://eurovoc.europa.eu/2159"/>
+     <eli:is_about eli:URI="http://eurovoc.europa.eu/2897"/>
+     <eli:passed_by eli:URI="http://publications.europa.eu/resource/authority/corporate-body/CONSIL"/>
+     <eli:responsibility_of>http://www.w3.org/1999/02/DG03/D/04</eli:responsibility_of>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71971L0317POL_30692"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181GBR_56668"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181PRT_56635"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181PRT_56637"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71985L0001CYP_28163"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181GBR_56670"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71983L0575LVA_31142"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181ITA_56643"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181FIN_56682"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181PRT_56638"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71989L0617SVN_23138"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71971L0316HUN_24480"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181AUT_56680"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181GBR_56652"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181GBR_56663"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181NLD_56631"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181GBR_56654"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181PRT_56633"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181GBR_56666"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181GBR_56665"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71987L0355POL_30691"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181DEU_56674"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181SWE_56677"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181SWE_56679"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181GBR_56655"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181ITA_56642"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181HRV_199760"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181BGR_136832"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181BGR_136833"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71985L0001CYP_28167"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71971L0319SVN_23305"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181GBR_56657"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181FIN_56683"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181DNK_56647"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71989L0617CYP_28263"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71973L0362CZE_26323"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181GBR_56671"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181GBR_56673"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181AUT_56681"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/72009L0003HUN_24478"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181SWE_56678"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71989L0617ROU_135029"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181GBR_56656"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181GBR_56667"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71971L0347LVA_20115"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71971L0318POL_122900"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181DEU_56676"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181BEL_56645"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181DEU_56675"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181ESP_56639"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71985L0001HUN_29146"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181PRT_56634"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181PRT_56636"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71989L0617CZE_26409"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181EST_27723"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181GBR_56658"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181GBR_56669"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71975L0107CZE_26354"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181GBR_56662"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181GBR_56660"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181NLD_56630"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181ESP_56640"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181GBR_56661"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181GBR_56664"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181DNK_56648"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181LVA_168129"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181GBR_56672"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181GBR_56659"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181GRC_56641"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71976L0211SVK_22308"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181FRA_56644"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181GBR_56651"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71999L0103POL_140242"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181GBR_56653"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71980L0181PRT_56632"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71974L0331POL_23377"/>
+     <eli:transposed_by eli:URI="http://publications.europa.eu/resource/celex/71971L0348POL_30693"/>
+     <eli:type_document eli:URI="http://publications.europa.eu/resource/authority/resource-type/DIR"/>
+     <eli:LegalExpression eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/ell"
+                          eli:in_force="InForce-inForce"
+                          eli:language="ELL">
+        <eli:title>Οδηγία 80/181/ΕΟΚ του Συμβουλίου της 20ής Δεκεμβρίου 1979 περί προσεγγίσεως των νομοθεσιών των κρατών μελών των αναφερομένων στις μονάδες μετρήσεως και καταργήσεως της οδηγίας 71/354/ΕΟΚ</eli:title>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/ell/html"
+                    eli:format="text/html">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.ELL.html.31980L0181el.html"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/ell/pdfa1b"
+                    eli:format="">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.ELL.pdfa1b.31980L0181_EL.pdf"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/ell/print"
+                    eli:format="">
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+     </eli:LegalExpression>
+     <eli:LegalExpression eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/eng"
+                          eli:in_force="InForce-inForce"
+                          eli:language="ENG">
+        <eli:title>Council Directive 80/181/EEC of 20 December 1979 on the approximation of the laws of the Member States relating to units of measurement and on the repeal of Directive 71/354/EEC</eli:title>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/eng/html"
+                    eli:format="text/html">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.ENG.html.31980L0181en.html"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/eng/pdfa1b"
+                    eli:format="">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.ENG.pdfa1b.l_03919800215en00400050.pdf"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/eng/print"
+                    eli:format="">
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+     </eli:LegalExpression>
+     <eli:LegalExpression eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/slv"
+                          eli:in_force="InForce-inForce"
+                          eli:language="SLV">
+        <eli:title>Direktiva Sveta z dne 20. decembra 1979 o približevanju zakonodaje držav članic, ki se nanašajo na merske enote, in o razveljavitvi direktive 71/354/EGS</eli:title>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/slv/html"
+                    eli:format="text/html">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.SLV.html.31980L0181sl.html"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/slv/pdf"
+                    eli:format="application/pdf">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.SLV.pdf.31980L0181_SL.pdf"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/slv/print"
+                    eli:format="">
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+     </eli:LegalExpression>
+     <eli:LegalExpression eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/mlt"
+                          eli:in_force="InForce-inForce"
+                          eli:language="MLT">
+        <eli:title>Id-Direttiva tal-Kunsill ta' l-20 ta' Diċembru 1979 dwar l-approssimazzjoni tal-liġijiet ta' l-Istati Membri dwar l-unitajiet ta' kejl u dwar l-irrevokar tad-Direttiva 71/354/KEE</eli:title>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/mlt/html"
+                    eli:format="text/html">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.MLT.html.31980L0181mt.html"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/mlt/pdf"
+                    eli:format="application/pdf">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.MLT.pdf.31980L0181_MT.pdf"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/mlt/print"
+                    eli:format="">
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+     </eli:LegalExpression>
+     <eli:LegalExpression eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/por"
+                          eli:in_force="InForce-inForce"
+                          eli:language="POR">
+        <eli:title>Directiva 80/181/CEE do Conselho, de 20 de Dezembro de 1979, relativa à aproximação das legislações dos Estados-Membros respeitantes às unidades de medida e que revoga a Directiva 71/354/CEE</eli:title>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/por/html"
+                    eli:format="text/html">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.POR.html.31980L0181pt.html"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/por/pdfa1b"
+                    eli:format="">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.POR.pdfa1b.31980L0181_PT.pdf"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/por/print"
+                    eli:format="">
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+     </eli:LegalExpression>
+     <eli:LegalExpression eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/fin"
+                          eli:in_force="InForce-inForce"
+                          eli:language="FIN">
+        <eli:title>Neuvoston direktiivi 80/181/ETY, annettu 20 päivänä joulukuuta 1979, mittayksikköjä koskevan jäsenvaltioiden lainsäädännön lähentämisestä ja direktiivin 71/354/ETY kumoamisesta</eli:title>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/fin/html"
+                    eli:format="text/html">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.FIN.html.31980L0181fi.html"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/fin/pdfa1b"
+                    eli:format="">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.FIN.pdfa1b.31980L0181_FI.pdf"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/fin/print"
+                    eli:format="">
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+     </eli:LegalExpression>
+     <eli:LegalExpression eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/swe"
+                          eli:in_force="InForce-inForce"
+                          eli:language="SWE">
+        <eli:title>Rådets direktiv 80/181/EEG av den 20 december 1979 om tillnärmning av medlemsstaternas lagstiftning för måttenheter och om upphävande av direktiv 71/354/EEG.</eli:title>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/swe/html"
+                    eli:format="text/html">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.SWE.html.31980L0181sv.html"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/swe/pdfa1b"
+                    eli:format="">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.SWE.pdfa1b.31980L0181_SV.pdf"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/swe/print"
+                    eli:format="">
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+     </eli:LegalExpression>
+     <eli:LegalExpression eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/ron"
+                          eli:in_force="InForce-inForce"
+                          eli:language="RON">
+        <eli:title>Directiva Consiliului din 20 decembrie 1979 privind apropierea legislațiilor statelor membre referitoare la unitățile de măsură și de abrogare a Directivei 71/354/CEE</eli:title>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/ron/fmx4"
+                    eli:format="application/xml">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.fmx4.L_1980039RO.01004001.xml"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.fmx4.L_1980039RO.01004001.doc.xml"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.fmx4.L_1980039RO.01004301.xml"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/ron/pdf"
+                    eli:format="application/pdf">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.pdf.31980L0181_RO.pdf"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/ron/print"
+                    eli:format="">
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/ron/xhtml"
+                    eli:format="application/xhtml+xml">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1981257RO.01000501.notes.0010.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1980375RO.01003801.notes.0007.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1980039RO.01004301.notes.0001.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1979239RO.01000301.notes.0004.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1981167RO.01000701.notes.0005.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1980039RO.01004301.notes.0003.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1979239RO.01001701.notes.0007.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1979239RO.01000301.notes.0005.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1979239RO.01002701.notes.0004.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1980383RO.01002801.notes.0004.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1980213RO.01004301.notes.0003.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1981167RO.01000701.notes.0001.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1979239RO.01000301.notes.0002.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1980254RO.01003701.notes.0005.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1981257RO.01000501.notes.0003.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1979239RO.01001501.notes.0001.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1980383RO.01002801.notes.0005.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1981257RO.01000501.notes.0001.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1981257RO.01000501.notes.0009.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1980254RO.01003701.notes.0001.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1979239RO.01002701.notes.0003.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1980383RO.01002801.notes.0002.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1979239RO.01001701.notes.0004.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1979239RO.01001701.notes.0001.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1981257RO.01000501.notes.0011.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1979239RO.01001701.notes.0002.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1981167RO.01000701.notes.0003.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1980213RO.01004301.notes.0004.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1979239RO.01002701.notes.0001.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1979239RO.01001701.notes.0008.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1981257RO.01000501.notes.0002.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1981257RO.01000501.notes.0005.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1980254RO.01003701.notes.0003.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1980375RO.01003801.notes.0003.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1980213RO.01004301.notes.0005.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1979239RO.01001701.notes.0003.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1980375RO.01004801.notes.0003.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1980383RO.01002801.notes.0001.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1981167RO.01000701.notes.0002.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1981257RO.01000501.notes.0006.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1980213RO.01004301.notes.0008.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1980039RO.01004301.notes.0002.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1980375RO.01004801.notes.0002.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1980375RO.01003801.notes.0001.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1981167RO.01000701.notes.0006.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1980213RO.01004301.notes.0007.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1980375RO.01004801.notes.0001.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1981257RO.01000501.notes.0007.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1981167RO.01000701.notes.0007.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1979239RO.01002701.notes.0005.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1980254RO.01003701.notes.0006.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1980383RO.01002801.notes.0006.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1979239RO.01001701.notes.0005.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1980375RO.01003801.notes.0006.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1979239RO.01002701.notes.0002.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1980254RO.01003701.notes.0002.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1980039RO.01004301.notes.0004.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1980213RO.01004301.notes.0006.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1980213RO.01004301.notes.0002.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1980375RO.01003801.notes.0004.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1979239RO.01002701.notes.0009.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1979239RO.01000301.notes.0003.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1980213RO.01004301.notes.0001.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1980039RO.01004301.notes.0005.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1980383RO.01002801.notes.0010.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1981257RO.01000501.notes.0008.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1980254RO.01003701.notes.0004.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1980383RO.01002801.notes.0007.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1979239RO.01001701.notes.0006.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1980254RO.01003701.notes.0007.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1981167RO.01000701.notes.0004.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1981257RO.01000501.notes.0012.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1980375RO.01003801.notes.0002.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1980383RO.01002801.notes.0009.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.L_1980039RO.01004001.doc.html"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1980383RO.01002801.notes.0003.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1979239RO.01002701.notes.0007.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1979239RO.01002701.notes.0008.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1980375RO.01003801.notes.0005.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1980383RO.01002801.notes.0008.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1979239RO.01002701.notes.0006.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1981167RO.01000701.notes.0008.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1981257RO.01000501.notes.0004.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.RON.xhtml.FOR-L_1979239RO.01000301.notes.0001.xml.jpg"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+     </eli:LegalExpression>
+     <eli:LegalExpression eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/lit"
+                          eli:in_force="InForce-inForce"
+                          eli:language="LIT">
+        <eli:title>1979 m. gruodžio 20 d. Tarybos direktyva dėl valstybių narių įstatymų, susijusių su matavimo vienetais, suderinimo ir Direktyvos 71/354/EEB panaikinimo</eli:title>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/lit/html"
+                    eli:format="text/html">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.LIT.html.31980L0181lt.html"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/lit/pdf"
+                    eli:format="application/pdf">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.LIT.pdf.31980L0181_LT.pdf"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/lit/print"
+                    eli:format="">
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+     </eli:LegalExpression>
+     <eli:LegalExpression eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/hun"
+                          eli:in_force="InForce-inForce"
+                          eli:language="HUN">
+        <eli:title>A Tanács irányelve (1979. december 20.) a mértékegységekre vonatkozó tagállami jogszabályok közelítéséről és a 71/354/EGK irányelv hatályon kívül helyezéséről</eli:title>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/hun/html"
+                    eli:format="text/html">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.HUN.html.31980L0181hu.html"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/hun/pdf"
+                    eli:format="application/pdf">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.HUN.pdf.31980L0181_HU.pdf"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/hun/print"
+                    eli:format="">
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+     </eli:LegalExpression>
+     <eli:LegalExpression eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/bul"
+                          eli:in_force="InForce-inForce"
+                          eli:language="BUL">
+        <eli:title>Директива на Съвета от 20 декември 1979 година за сближаване на законодателствата на държавите-членки относно мерните единици и за отмяна на Директива 71/354/ЕИО</eli:title>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/bul/fmx4"
+                    eli:format="application/xml">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.fmx4.L_1980039BG.01004001.doc.xml"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.fmx4.L_1980039BG.01004001.xml"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.fmx4.L_1980039BG.01004301.xml"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/bul/html"
+                    eli:format="text/html">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.html.31980L0181bg.html"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/bul/pdf"
+                    eli:format="application/pdf">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.pdf.31980L0181_BG.pdf"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/bul/print"
+                    eli:format="">
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/bul/xhtml"
+                    eli:format="application/xhtml+xml">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1981257BG.01000501.notes.0002.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1980254BG.01003701.notes.0002.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1980213BG.01004301.notes.0002.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1981257BG.01000501.notes.0005.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1980254BG.01003701.notes.0003.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1981257BG.01000501.notes.0003.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1980383BG.01002801.notes.0003.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1981167BG.01000701.notes.0006.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.L_1980039BG.01004001.doc.html"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1979239BG.01001701.notes.0008.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1980039BG.01004301.notes.0005.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1981257BG.01000501.notes.0010.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1980375BG.01003801.notes.0005.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1980383BG.01002801.notes.0006.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1980375BG.01003801.notes.0001.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1981257BG.01000501.notes.0009.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1979239BG.01002701.notes.0002.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1980383BG.01002801.notes.0007.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1980375BG.01003801.notes.0004.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1980039BG.01004301.notes.0003.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1980375BG.01003801.notes.0002.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1981167BG.01000701.notes.0001.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1979239BG.01002701.notes.0003.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1981167BG.01000701.notes.0005.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1980213BG.01004301.notes.0008.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1980383BG.01002801.notes.0002.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1979239BG.01001501.notes.0001.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1980383BG.01002801.notes.0010.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1979239BG.01002701.notes.0006.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1980254BG.01003701.notes.0004.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1979239BG.01001701.notes.0007.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1980254BG.01003701.notes.0005.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1979239BG.01001701.notes.0003.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1980213BG.01004301.notes.0004.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1980254BG.01003701.notes.0001.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1980213BG.01004301.notes.0006.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1980039BG.01004301.notes.0002.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1981257BG.01000501.notes.0012.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1980375BG.01003801.notes.0003.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1979239BG.01000301.notes.0005.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1980383BG.01002801.notes.0004.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1979239BG.01000301.notes.0003.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1980213BG.01004301.notes.0001.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1980213BG.01004301.notes.0007.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1979239BG.01001701.notes.0004.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1981257BG.01000501.notes.0011.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1980383BG.01002801.notes.0009.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1981257BG.01000501.notes.0007.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1980375BG.01004801.notes.0003.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1981257BG.01000501.notes.0004.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1980213BG.01004301.notes.0003.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1980383BG.01002801.notes.0005.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1979239BG.01000301.notes.0004.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1980375BG.01004801.notes.0001.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1981167BG.01000701.notes.0008.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1979239BG.01002701.notes.0009.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1981167BG.01000701.notes.0004.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1981167BG.01000701.notes.0003.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1980383BG.01002801.notes.0008.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1980375BG.01004801.notes.0002.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1980375BG.01003801.notes.0007.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1979239BG.01002701.notes.0004.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1981167BG.01000701.notes.0002.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1979239BG.01001701.notes.0005.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1979239BG.01000301.notes.0001.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1980375BG.01003801.notes.0006.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1979239BG.01002701.notes.0007.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1979239BG.01001701.notes.0001.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1981257BG.01000501.notes.0008.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1981257BG.01000501.notes.0001.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1980383BG.01002801.notes.0001.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1980039BG.01004301.notes.0004.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1981257BG.01000501.notes.0006.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1979239BG.01000301.notes.0002.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1979239BG.01002701.notes.0005.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1981167BG.01000701.notes.0007.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1979239BG.01001701.notes.0006.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1980254BG.01003701.notes.0006.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1980039BG.01004301.notes.0001.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1980213BG.01004301.notes.0005.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1980254BG.01003701.notes.0007.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1979239BG.01002701.notes.0001.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1979239BG.01001701.notes.0002.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.BUL.xhtml.FOR-L_1979239BG.01002701.notes.0008.xml.jpg"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+     </eli:LegalExpression>
+     <eli:LegalExpression eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/pol"
+                          eli:in_force="InForce-inForce"
+                          eli:language="POL">
+        <eli:title>Dyrektywa Rady z dnia 20 grudnia 1979 r. w sprawie zbliżenia ustawodawstw Państw Członkowskich odnoszących się do jednostek miar i uchylająca dyrektywę 71/354/EWG</eli:title>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/pol/html"
+                    eli:format="text/html">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.POL.html.31980L0181pl.html"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/pol/pdf"
+                    eli:format="application/pdf">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.POL.pdf.31980L0181_PL.pdf"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/pol/print"
+                    eli:format="">
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+     </eli:LegalExpression>
+     <eli:LegalExpression eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/fra"
+                          eli:in_force="InForce-inForce"
+                          eli:language="FRA">
+        <eli:title>Directive 80/181/CEE du Conseil, du 20 décembre 1979, concernant le rapprochement des législations des États membres relatives aux unités de mesure et abrogeant la directive 71/354/CEE</eli:title>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/fra/html"
+                    eli:format="text/html">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.FRA.html.31980L0181fr.html"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/fra/pdfa1b"
+                    eli:format="">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.FRA.pdfa1b.l_03919800215fr00400050.pdf"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/fra/print"
+                    eli:format="">
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+     </eli:LegalExpression>
+     <eli:LegalExpression eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/deu"
+                          eli:in_force="InForce-inForce"
+                          eli:language="DEU">
+        <eli:title>Richtlinie 80/181/EWG des Rates vom 20. Dezember 1979 zur Angleichung der Rechtsvorschriften der Mitgliedstaaten über die Einheiten im Meßwesen und zur Aufhebung der Richtlinie 71/354/EWG</eli:title>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/deu/html"
+                    eli:format="text/html">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.DEU.html.31980L0181de.html"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/deu/pdfa1b"
+                    eli:format="">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.DEU.pdfa1b.l_03919800215de00400050.pdf"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/deu/print"
+                    eli:format="">
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+     </eli:LegalExpression>
+     <eli:LegalExpression eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/ces"
+                          eli:in_force="InForce-inForce"
+                          eli:language="CES">
+        <eli:title>Směrnice Rady ze dne 20. prosince 1979 o sbližování právních předpisů členských států týkajících se jednotek měření a o zrušení směrnice 71/354/EHS</eli:title>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/ces/html"
+                    eli:format="text/html">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.CES.html.31980L0181cs.html"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/ces/pdf"
+                    eli:format="application/pdf">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.CES.pdf.31980L0181_CS.pdf"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/ces/print"
+                    eli:format="">
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+     </eli:LegalExpression>
+     <eli:LegalExpression eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/ita"
+                          eli:in_force="InForce-inForce"
+                          eli:language="ITA">
+        <eli:title>Direttiva 80/181/CEE del Consiglio, del 20 dicembre 1979, per il ravvicinamento delle legislazioni degli Stati Membri relative alle unità di misura che abroga la direttiva 71/354/CEE</eli:title>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/ita/html"
+                    eli:format="text/html">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.ITA.html.31980L0181it.html"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/ita/pdfa1b"
+                    eli:format="">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.ITA.pdfa1b.l_03919800215it00400050.pdf"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/ita/print"
+                    eli:format="">
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+     </eli:LegalExpression>
+     <eli:LegalExpression eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/nld"
+                          eli:in_force="InForce-inForce"
+                          eli:language="NLD">
+        <eli:title>Richtlijn 80/181/EEG van de Raad van 20 december 1979 inzake de onderlinge aanpassing van de wetgevingen der Lid-Staten op het gebied van de meeteenheden, en tot intrekking van Richtlijn 71/354/EEG</eli:title>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/nld/html"
+                    eli:format="text/html">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.NLD.html.31980L0181nl.html"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/nld/pdfa1b"
+                    eli:format="">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.NLD.pdfa1b.l_03919800215nl00400050.pdf"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/nld/print"
+                    eli:format="">
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+     </eli:LegalExpression>
+     <eli:LegalExpression eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/dan"
+                          eli:in_force="InForce-inForce"
+                          eli:language="DAN">
+        <eli:title>Rådets direktiv 80/181/EØF af 20. december 1979 om indbyrdes tilnærmelse af medlemsstaternes lovgivning om måleenheder og om ophævelse af direktiv 71/354/EØF</eli:title>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/dan/html"
+                    eli:format="text/html">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.DAN.html.31980L0181da.html"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/dan/pdfa1b"
+                    eli:format="">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.DAN.pdfa1b.l_03919800215da00400050.pdf"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/dan/print"
+                    eli:format="">
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+     </eli:LegalExpression>
+     <eli:LegalExpression eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/slk"
+                          eli:in_force="InForce-inForce"
+                          eli:language="SLK">
+        <eli:title>Smernica Rady z 20. decembra 1979 o aproximácii právnych predpisov členských štátov, týkajúcich sa meracích jednotiek a rušiaca smernicu 71/354/EHS</eli:title>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/slk/html"
+                    eli:format="text/html">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.SLK.html.31980L0181sk.html"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/slk/pdf"
+                    eli:format="application/pdf">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.SLK.pdf.31980L0181_SK.pdf"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/slk/print"
+                    eli:format="">
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+     </eli:LegalExpression>
+     <eli:LegalExpression eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/est"
+                          eli:in_force="InForce-inForce"
+                          eli:language="EST">
+        <eli:title>Nõukogu direktiiv, 20. detsember 1979, mõõtühikuid käsitlevate liikmesriikide õigusaktide ühtlustamise ja direktiivi 71/354/EMÜ kehtetuks tunnistamise kohta</eli:title>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/est/html"
+                    eli:format="text/html">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.EST.html.31980L0181et.html"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/est/pdf"
+                    eli:format="application/pdf">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.EST.pdf.31980L0181_ET.pdf"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/est/print"
+                    eli:format="">
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+     </eli:LegalExpression>
+     <eli:LegalExpression eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/spa"
+                          eli:in_force="InForce-inForce"
+                          eli:language="SPA">
+        <eli:title>Directiva 80/181/CEE del Consejo, de 20 de diciembre de 1979, relativa a la aproximación de las legislaciones de los Estados Miembros sobre las unidades de medida, y que deroga la Directiva 71/354/CEE</eli:title>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/spa/html"
+                    eli:format="text/html">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.SPA.html.31980L0181es.html"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/spa/pdfa1b"
+                    eli:format="">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.SPA.pdfa1b.31980L0181_ES.pdf"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/spa/print"
+                    eli:format="">
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+     </eli:LegalExpression>
+     <eli:LegalExpression eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/hrv"
+                          eli:in_force="InForce-inForce"
+                          eli:language="HRV">
+        <eli:title>80/181/EEZ: Direktiva Vijeća od 20. prosinca 1979. o usklađivanju zakonodavstava država članica u odnosu na mjerne jedinice i o stavljanju izvan snage Direktive 71/354/EEZ</eli:title>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/hrv/fmx4"
+                    eli:format="application/xml">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.HRV.fmx4.L_1980039HR.01004001.xml"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.HRV.fmx4.L_1980039HR.01004001.doc.xml"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.HRV.fmx4.L_1980039HR.01004301.xml"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/hrv/pdfa1a"
+                    eli:format="application/pdf;type=pdfa1a">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.HRV.pdfa1a.31980L0181_HR.pdf"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/hrv/print"
+                    eli:format="">
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/hrv/xhtml"
+                    eli:format="application/xhtml+xml">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.HRV.xhtml.FOR-L_1980039HR.01004301.notes.0005.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.HRV.xhtml.FOR-L_2013060HR.01009401.notes.0003.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.HRV.xhtml.FOR-L_2008024HR.01003201.notes.0001.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.HRV.xhtml.FOR-L_1980039HR.01004301.notes.0002.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.HRV.xhtml.FOR-L_1980039HR.01004301.notes.0004.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.HRV.xhtml.FOR-L_2013060HR.01009401.notes.0004.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.HRV.xhtml.FOR-L_1980039HR.01004301.notes.0001.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.HRV.xhtml.FOR-L_2013060HR.01009401.notes.0002.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.HRV.xhtml.FOR-L_1980039HR.01004301.notes.0003.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.HRV.xhtml.FOR-L_2013056HR.01000901.notes.0001.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.HRV.xhtml.FOR-L_2013060HR.01009401.notes.0001.xml.jpg"/>
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.HRV.xhtml.L_1980039HR.01004001.doc.html"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+     </eli:LegalExpression>
+     <eli:LegalExpression eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/lav"
+                          eli:in_force="InForce-inForce"
+                          eli:language="LAV">
+        <eli:title>Padomes Direktīva (1979. gada 20. decembris) par dalībvalstu tiesību aktu tuvināšanu attiecībā uz mērvienībām un par Direktīvas 71/354/EEK atcelšanu</eli:title>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/lav/html"
+                    eli:format="text/html">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.LAV.html.31980L0181lv.html"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/lav/pdf"
+                    eli:format="application/pdf">
+           <eli:is_exemplified_by eli:URI="http://publications.europa.eu/resource/celex/31980L0181.LAV.pdf.31980L0181_LV.pdf"/>
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+        <eli:Format eli:URI="http://data.europa.eu/eli/dir/1980/181/oj/lav/print"
+                    eli:format="">
+           <eli:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</eli:publisher>
+        </eli:Format>
+     </eli:LegalExpression>
+  </eli:LegalResource>

@@ -1,0 +1,5 @@
+var/lib/eli-annotation/
+var/lib/eli-annotation/forms
+var/lib/eli-annotation/notices
+var/lib/eli-annotation/vocabs
+var/lib/eli-annotation/localizations

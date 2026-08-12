@@ -1,0 +1,294 @@
+@prefix schema: <http://schema.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix text: <http://www.iana.org/assignments/media-types/text/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix eli: <http://data.europa.eu/eli/ontology#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix xls2rdf: <https://xls2rdf.sparna.fr/vocabulary#> .
+@prefix application: <http://www.iana.org/assignments/media-types/application/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix elish: <http://data.europa.eu/eli/shapes#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+<http://data.europa.eu/eli/shapes> a owl:Ontology, adms:Asset;
+  rdfs:label "ELI range validation shapes"@en;
+  dct:title "ELI range validation shapes"@en;
+  dct:description "This specification adds additionnal constraints on top of the \"core\" ELI validation constraint to check for the proper range of some of the ELI properties. Those constraints cannot be enforced when publishing ELI metadata in a single webpage, but can be enforced when applying the rules on a complete graph. This file is not autonomous and must be used in complement to the \"core\" ELI validation rules."@en;
+  owl:versionInfo "45717";
+  dct:conformsTo <https://www.w3.org/TR/shacl>;
+  dct:created "2025-09-26"^^xsd:date;
+  dct:modified "2025-09-26T00:00:00.000Z"^^xsd:dateTime;
+  dct:creator "ELI Taskforce"@en .
+
+elish:Work_is_part_of sh:class eli:Work .
+
+elish:Work_has_part sh:class eli:Work .
+
+elish:Work_is_member_of sh:class eli:Work .
+
+elish:Work_has_member sh:class eli:Work .
+
+elish:Work_is_realized_by sh:class eli:Expression .
+
+_:eb559f955f9d4974b990ebae92fed3761377 sh:class eli:Work .
+
+_:eb559f955f9d4974b990ebae92fed3761378 sh:class eli:Expression .
+
+_:eb559f955f9d4974b990ebae92fed3761379 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761377;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761380 .
+
+_:eb559f955f9d4974b990ebae92fed3761380 rdf:first _:eb559f955f9d4974b990ebae92fed3761378;
+  rdf:rest rdf:nil .
+
+elish:LegalResource_based_on sh:or _:eb559f955f9d4974b990ebae92fed3761379 .
+
+elish:Expression_realizes sh:class eli:Work .
+
+elish:Expression_is_embodied_by sh:class eli:Format .
+
+_:eb559f955f9d4974b990ebae92fed3761381 sh:class eli:Work .
+
+_:eb559f955f9d4974b990ebae92fed3761382 sh:class eli:Expression .
+
+_:eb559f955f9d4974b990ebae92fed3761383 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761381;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761384 .
+
+_:eb559f955f9d4974b990ebae92fed3761384 rdf:first _:eb559f955f9d4974b990ebae92fed3761382;
+  rdf:rest rdf:nil .
+
+elish:WorkExpression_is_derivative_of sh:or _:eb559f955f9d4974b990ebae92fed3761383 .
+
+_:eb559f955f9d4974b990ebae92fed3761385 sh:class eli:Work .
+
+_:eb559f955f9d4974b990ebae92fed3761386 sh:class eli:Expression .
+
+_:eb559f955f9d4974b990ebae92fed3761387 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761385;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761388 .
+
+_:eb559f955f9d4974b990ebae92fed3761388 rdf:first _:eb559f955f9d4974b990ebae92fed3761386;
+  rdf:rest rdf:nil .
+
+elish:WorkExpression_has_derivative sh:or _:eb559f955f9d4974b990ebae92fed3761387 .
+
+_:eb559f955f9d4974b990ebae92fed3761389 sh:class eli:Work .
+
+_:eb559f955f9d4974b990ebae92fed3761390 sh:class eli:Expression .
+
+_:eb559f955f9d4974b990ebae92fed3761391 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761389;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761392 .
+
+_:eb559f955f9d4974b990ebae92fed3761392 rdf:first _:eb559f955f9d4974b990ebae92fed3761390;
+  rdf:rest rdf:nil .
+
+elish:WorkExpression_has_annex sh:or _:eb559f955f9d4974b990ebae92fed3761391 .
+
+_:eb559f955f9d4974b990ebae92fed3761393 sh:class eli:Work .
+
+_:eb559f955f9d4974b990ebae92fed3761394 sh:class eli:Expression .
+
+_:eb559f955f9d4974b990ebae92fed3761395 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761393;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761396 .
+
+_:eb559f955f9d4974b990ebae92fed3761396 rdf:first _:eb559f955f9d4974b990ebae92fed3761394;
+  rdf:rest rdf:nil .
+
+elish:WorkExpression_is_annex_of sh:or _:eb559f955f9d4974b990ebae92fed3761395 .
+
+_:eb559f955f9d4974b990ebae92fed3761397 sh:class eli:Work .
+
+_:eb559f955f9d4974b990ebae92fed3761398 sh:class eli:Expression .
+
+_:eb559f955f9d4974b990ebae92fed3761399 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761397;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761400 .
+
+_:eb559f955f9d4974b990ebae92fed3761400 rdf:first _:eb559f955f9d4974b990ebae92fed3761398;
+  rdf:rest rdf:nil .
+
+elish:WorkExpression_changes sh:or _:eb559f955f9d4974b990ebae92fed3761399 .
+
+_:eb559f955f9d4974b990ebae92fed3761401 sh:class eli:Work .
+
+_:eb559f955f9d4974b990ebae92fed3761402 sh:class eli:Expression .
+
+_:eb559f955f9d4974b990ebae92fed3761403 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761401;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761404 .
+
+_:eb559f955f9d4974b990ebae92fed3761404 rdf:first _:eb559f955f9d4974b990ebae92fed3761402;
+  rdf:rest rdf:nil .
+
+elish:WorkExpression_changed_by sh:or _:eb559f955f9d4974b990ebae92fed3761403 .
+
+elish:WorkExpression_basis_for sh:class eli:Work .
+
+_:eb559f955f9d4974b990ebae92fed3761405 sh:class eli:Work .
+
+_:eb559f955f9d4974b990ebae92fed3761406 sh:class eli:Expression .
+
+_:eb559f955f9d4974b990ebae92fed3761407 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761405;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761408 .
+
+_:eb559f955f9d4974b990ebae92fed3761408 rdf:first _:eb559f955f9d4974b990ebae92fed3761406;
+  rdf:rest rdf:nil .
+
+elish:WorkExpression_corrects sh:or _:eb559f955f9d4974b990ebae92fed3761407 .
+
+_:eb559f955f9d4974b990ebae92fed3761409 sh:class eli:Work .
+
+_:eb559f955f9d4974b990ebae92fed3761410 sh:class eli:Expression .
+
+_:eb559f955f9d4974b990ebae92fed3761411 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761409;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761412 .
+
+_:eb559f955f9d4974b990ebae92fed3761412 rdf:first _:eb559f955f9d4974b990ebae92fed3761410;
+  rdf:rest rdf:nil .
+
+elish:WorkExpression_corrected_by sh:or _:eb559f955f9d4974b990ebae92fed3761411 .
+
+_:eb559f955f9d4974b990ebae92fed3761413 sh:class eli:Work .
+
+_:eb559f955f9d4974b990ebae92fed3761414 sh:class eli:Expression .
+
+_:eb559f955f9d4974b990ebae92fed3761415 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761413;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761416 .
+
+_:eb559f955f9d4974b990ebae92fed3761416 rdf:first _:eb559f955f9d4974b990ebae92fed3761414;
+  rdf:rest rdf:nil .
+
+elish:WorkExpression_amends sh:or _:eb559f955f9d4974b990ebae92fed3761415 .
+
+_:eb559f955f9d4974b990ebae92fed3761417 sh:class eli:Work .
+
+_:eb559f955f9d4974b990ebae92fed3761418 sh:class eli:Expression .
+
+_:eb559f955f9d4974b990ebae92fed3761419 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761417;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761420 .
+
+_:eb559f955f9d4974b990ebae92fed3761420 rdf:first _:eb559f955f9d4974b990ebae92fed3761418;
+  rdf:rest rdf:nil .
+
+elish:WorkExpression_amended_by sh:or _:eb559f955f9d4974b990ebae92fed3761419 .
+
+elish:Manifestation_embodies sh:class eli:Expression .
+
+_:eb559f955f9d4974b990ebae92fed3761421 sh:class eli:LegalResource .
+
+_:eb559f955f9d4974b990ebae92fed3761422 sh:class eli:LegalExpression .
+
+_:eb559f955f9d4974b990ebae92fed3761423 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761421;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761424 .
+
+_:eb559f955f9d4974b990ebae92fed3761424 rdf:first _:eb559f955f9d4974b990ebae92fed3761422;
+  rdf:rest rdf:nil .
+
+elish:LegalResourceLegalExpression_consolidates sh:or _:eb559f955f9d4974b990ebae92fed3761423 .
+
+_:eb559f955f9d4974b990ebae92fed3761425 sh:class eli:LegalResource .
+
+_:eb559f955f9d4974b990ebae92fed3761426 sh:class eli:LegalExpression .
+
+_:eb559f955f9d4974b990ebae92fed3761427 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761425;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761428 .
+
+_:eb559f955f9d4974b990ebae92fed3761428 rdf:first _:eb559f955f9d4974b990ebae92fed3761426;
+  rdf:rest rdf:nil .
+
+elish:LegalResourceLegalExpression_consolidated_by sh:or _:eb559f955f9d4974b990ebae92fed3761427 .
+
+_:eb559f955f9d4974b990ebae92fed3761429 sh:class eli:LegalResource .
+
+_:eb559f955f9d4974b990ebae92fed3761430 sh:class eli:LegalExpression .
+
+_:eb559f955f9d4974b990ebae92fed3761431 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761429;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761432 .
+
+_:eb559f955f9d4974b990ebae92fed3761432 rdf:first _:eb559f955f9d4974b990ebae92fed3761430;
+  rdf:rest rdf:nil .
+
+elish:LegalResourceLegalExpression_commences sh:or _:eb559f955f9d4974b990ebae92fed3761431 .
+
+_:eb559f955f9d4974b990ebae92fed3761433 sh:class eli:LegalResource .
+
+_:eb559f955f9d4974b990ebae92fed3761434 sh:class eli:LegalExpression .
+
+_:eb559f955f9d4974b990ebae92fed3761435 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761433;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761436 .
+
+_:eb559f955f9d4974b990ebae92fed3761436 rdf:first _:eb559f955f9d4974b990ebae92fed3761434;
+  rdf:rest rdf:nil .
+
+elish:LegalResourceLegalExpression_commenced_by sh:or _:eb559f955f9d4974b990ebae92fed3761435 .
+
+_:eb559f955f9d4974b990ebae92fed3761437 sh:class eli:LegalResource .
+
+_:eb559f955f9d4974b990ebae92fed3761438 sh:class eli:LegalExpression .
+
+_:eb559f955f9d4974b990ebae92fed3761439 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761437;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761440 .
+
+_:eb559f955f9d4974b990ebae92fed3761440 rdf:first _:eb559f955f9d4974b990ebae92fed3761438;
+  rdf:rest rdf:nil .
+
+elish:LegalResourceLegalExpression_repeals sh:or _:eb559f955f9d4974b990ebae92fed3761439 .
+
+_:eb559f955f9d4974b990ebae92fed3761441 sh:class eli:LegalResource .
+
+_:eb559f955f9d4974b990ebae92fed3761442 sh:class eli:LegalExpression .
+
+_:eb559f955f9d4974b990ebae92fed3761443 a rdf:List;
+  rdf:first _:eb559f955f9d4974b990ebae92fed3761441;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761444 .
+
+_:eb559f955f9d4974b990ebae92fed3761444 rdf:first _:eb559f955f9d4974b990ebae92fed3761442;
+  rdf:rest rdf:nil .
+
+elish:LegalResourceLegalExpression_repealed_by sh:or _:eb559f955f9d4974b990ebae92fed3761443 .
+
+elish:LegalResource_is_part_of sh:class eli:Work .
+
+elish:LegalResource_has_part sh:class eli:Work .
+
+elish:LegalResource_is_member_of sh:class eli:Work .
+
+elish:LegalResource_has_member sh:class eli:Work .
+
+elish:LegalResource_is_realized_by sh:class eli:LegalExpression .
+
+elish:LegalExpression_realizes sh:class eli:LegalResource .
+
+elish:LegalExpression_is_embodied_by sh:class eli:Format .
+
+elish:LegalExpression_has_translation sh:class eli:LegalExpression .
+
+elish:LegalExpression_is_translation_of sh:class eli:LegalExpression .
+
+elish:Format_embodies sh:class eli:LegalExpression .

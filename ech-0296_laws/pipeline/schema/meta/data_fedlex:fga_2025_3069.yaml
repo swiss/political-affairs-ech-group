@@ -1,0 +1,28 @@
+# Example data file for FRBR entities -> https://www.fedlex.admin.ch/eli/fga/2025/3069/de
+# Beschlussdatum ? -> Teil des Geschäfts?
+id: fedlex:container
+works:
+  - id: fedlex:fga/2025/3069
+    work_type: botschaft(TBD)
+    dates:
+       - xdate: 2025-10-21
+         date_type: publication (mandatory) Note: First publication in any language
+       - xdate: 2025-10-08
+         data_type: decision (optional -> better in datastructure)
+    expressions:
+      - id: fedlex:fga/2025/3069/de
+        dates:
+          - xdate: 2025-10-21
+            date_type: publication (optional -> if different to first publication)
+          - xdate: 2025-11-22 (not as in example)
+            date_type: revision (optional)
+        language: de
+        title: Botschaft zur Volksinitiative «Ja zur tierversuchsfreien Zukunft»
+        manifestations:
+          - id: fedlex:fga/2025/3069/de/pdf
+            format: pdf
+            url: https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/fga/2025/3069/de/pdf-a/fedlex-data-admin-ch-eli-fga-2025-3069-de-pdf-a.pdf
+        manifestations:
+          - id: fedlex:fga/2025/3069/de/doc
+            format: docx
+            url: https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/fga/2025/3069/de/docx/fedlex-data-admin-ch-eli-fga-2025-3069-de-docx.docx

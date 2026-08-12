@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<math xmlns="http://www.w3.org/1998/Math/MathML" >
+    <!-- AB<sub>IRB</sub> = (A<sub>2,IRB</sub> + A<sub>4,IRB</sub> - t) · f -->
+    <mi>A</mi>
+    <msub>
+        <mi>B</mi>
+        <mrow>
+            <mi>IRB</mi>
+        </mrow>
+    </msub>
+    <mo>=</mo>
+    <mo>(</mo>
+    <msub>
+        <mi>A</mi>
+        <mrow>
+            <mn>2</mn>
+            <mo>,</mo>
+            <mi>IRB</mi>
+        </mrow>
+    </msub>
+    <mo>+</mo>
+    <msub>
+        <mi>A</mi>
+        <mrow>
+            <mn>4</mn>
+            <mo>,</mo>
+            <mi>IRB</mi>
+        </mrow>
+    </msub>
+    <mo>−</mo>
+    <mi>t</mi>
+    <mo>)</mo>
+    <mo>*</mo>
+    <mi>f</mi>
+</math>

@@ -1,0 +1,48 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
+
+<https://www.iana.org/assignments/media-types> a skos:ConceptScheme ;
+    dct:description "media types list from IANA"@en ;
+    dct:description "liste de types de média publiée par IANA"@en ;
+    dct:publisher "IANA" ;
+    dct:title "Media types"@en ;
+    dct:title "Types de média"@fr .
+
+<https://www.iana.org/assignments/media-types/application/pdf> a skos:Concept ;
+    euvoc:status <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+    skos:definition "PDF format"@en ;
+    skos:definition "format PDF"@fr ;
+    skos:inScheme <https://www.iana.org/assignments/media-types> ;
+    skos:prefLabel "pdf" ;
+    skos:topConceptOf <https://www.iana.org/assignments/media-types> ;
+    skos:notation "pdf".
+
+<http://publications.europa.eu/resource/authority/product-form/PRINT> a skos:Concept ;
+    euvoc:status <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+    skos:definition "printed format"@en ;
+    skos:definition "format imprimé"@fr ;
+    skos:inScheme <https://www.iana.org/assignments/media-types> ;
+    skos:prefLabel "print" ;
+    skos:topConceptOf <https://www.iana.org/assignments/media-types> ;
+    skos:notation "print".
+
+<https://www.iana.org/assignments/media-types/application/xml> a skos:Concept ;
+    euvoc:status <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+    skos:definition "xml format"@en ;
+    skos:definition "format xml"@fr ;
+    skos:inScheme <https://www.iana.org/assignments/media-types> ;
+    skos:prefLabel "xml" ;
+    skos:topConceptOf <https://www.iana.org/assignments/media-types> ;
+    skos:notation "xml".
+
+<https://www.iana.org/assignments/media-types/text/html> a skos:Concept ;
+    euvoc:status <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+    skos:definition "html format"@en ;
+    skos:definition "format html"@fr ;
+    skos:inScheme <https://www.iana.org/assignments/media-types> ;
+    skos:prefLabel "html" ;
+    skos:topConceptOf <https://www.iana.org/assignments/media-types> ;
+    skos:notation "html".

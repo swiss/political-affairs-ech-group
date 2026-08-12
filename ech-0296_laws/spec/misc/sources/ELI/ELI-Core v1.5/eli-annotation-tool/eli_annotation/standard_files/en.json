@@ -1,0 +1,811 @@
+{ "langCode": "en",
+  "prefixes": {
+      "eli": "http://data.europa.eu/eli/ontology#",
+      "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+      "dct": "http://purl.org/dc/terms/",
+      "skos": "http://www.w3.org/2004/02/skos/core#",
+      "euvoc": "http://publications.europa.eu/ontology/euvoc#",
+      "elix": "urn:eli-annotation-tool:eli:ontology-extension:",
+      "elis": "urn:eli-annotation-tool:skos:ontology-extension:"
+  },
+  "uiMessages": {
+      "eliAnnotationTool": "ELI Annotation Tool",
+      "about": "About",
+      "welcomeLogIn": "Welcome to the ELI Annotation Tool. Please log in:",
+      "welcomeLoading": "Welcome to the ELI Annotation Tool. Please wait while loading...",
+      "unauthorized": "You are not authorized to view this page, please log in first:",
+      "loading": "Loading...",
+
+      "aboutEliAnnotationTool": "About ELI Annotation Tool",
+      "version": "Version: ",
+
+      "logIn": "Log in",
+      "logOut": "Log out",
+      "userName": "User name",
+      "password": "Password",
+      "submit": "Submit",
+      "loginError": "Login failed. Check your credentials or ask the administrator.",
+      "loggingOut": "Logging out...",
+      "loggedOut": "You have been logged out. Do you want to log in?",
+
+      "notices": "Notices",
+      "previewHtml": "Preview HTML",
+      "downloadRdf": "Download as RDF",
+      "downloadZip": "Download as ZIP",
+      "edit": "Edit",
+      "deleteNotice": "Delete notice",
+      "createNoticeFor": "Create notice for",
+      "act": "Act",
+      "journal": "Official journal",
+      "consolidation": "Consolidation",
+      "importNoticeFrom": "Import notice from",
+      "rdfa": "RDFa",
+      "workInProgress": "Work in progress",
+      "noNotice": "No notice",
+      "importFromFile": "Import from file",
+      "importFromFileHelp": "Choose the RDF/XML or HTML+RDFa file to upload",
+      "importFromUrl": "Import from URL",
+      "importFromUrlHelp": "Enter the URL of a HTML document containing RDFa",
+      "resourceType": "Type of legal resource",
+      "importNotice": "Import notice",
+
+      "vocabularies": "Vocabularies",
+      "availableVocabularies": "Available vocabularies",
+      "downloadCsv": "Download as CSV",
+      "deleteVocabulary": "Delete vocabulary",
+      "addVocabulary": "Adding a vocabulary",
+      "addVocabularyHelp": "You can upload Excel, RDF/XML and RDF/Turtle files. Before adding a vocabulary, make sure you are aware of the specification:",
+      "importVocabulary": "Import vocabulary",
+      "noVocabulary": "No vocabulary",
+
+      "forms": "Configuration",
+      "configureFormFor": "Configure form for",
+      "saveForm": "Save this form",
+      "saveNotice": "Save this notice",
+      "close": "Close",
+      "missingFieldVocabulary": "Missing vocabulary.",
+      "missingNotationsInVocabulary": "Missing notation for some of the vocabulary concepts whereas this property is used in the URI scheme.",
+      "invalidConfigFields": "The configuration of the following properties is not valid. Please, correct these errors before submitting your data.",
+      "invalidValueFields": "The value of the following properties is not valid. Please, correct these errors before submitting your data.",
+      "invalidURLFields": "The URL entered in the following properties could not be validated. Please, check these are not errors before submitting your data.",
+      "mandatoryURISchemes": "All URI Schemes are mandatory.",
+      "invalidURIVariables": "Found invalid variables in URI Scheme: ",
+      "distinctURISchemes": "All URI Schemes must be different.",
+      "invalidDateFormat": "Date value is expected to be in format YYYY-MM-DD.",
+      "mandatoryValue": "Value is mandatory.",
+      "unknownValidator": "Unknown validation function: ",
+      "mandatoryLabel": "Property is mandatory.",
+      "optionalLabel": "Property is optional.",
+      "clickForMandatory": "click to make this property mandatory",
+      "clickForOptional": "click to make this property optional",
+      "alwaysMandatory": "always mandatory because used in the URI schemes",
+      "clickForActivated": "click to activate this property",
+      "clickForDeactivated": "click to deactivate this property",
+      "alwaysActivated": "always activated because used in the URI schemes",
+      "configuredVocab": "Configured vocabulary",
+      "defaultValues": "Default values",
+      "showHelp": "click to show information message for this property",
+      "eligibleUriFields": "Properties that can be used as variables in the URI:",
+      "eliField": "ELI field:",
+      "selectVocabulary": "Select vocabulary...",
+      "collapseSection": "click to collapse or expand this section",
+      "checkingURL": "Checking this URL...",
+      "correctURL": "This URL has been reached.",
+      "wrongURL": "This URL could not be reached.",
+      "urlCheckerError": "The URL checking service has encountered an error.",
+      "noDefaultValue": "(no default value)",
+      "noDefinedVocabulary": "(no configured vocabulary)",
+      "noNotationFor": "NO NOTATION FOR: ",
+      "legalResourceURI": "URI of Legal resource",
+
+      "processing": "Processing...",
+      "success": "Success",
+      "clientError": "Unexpected error in the application on the client side (in the browser)",
+      "serverError": "Unexpected error in the application on the server side",
+      "incorrectVocabulary": "Can't read the vocabulary (might not be in the expected format or might be malformed)",
+      "incorrectEliGraph": "Can't read the ELI RDF graph (might not be in the expected format or might be malformed)",
+      "missingVocabulary": "Can't find the vocabulary",
+      "missingNotationForConceptInVocabulary": "Some Concepts don't have a notation (necessary for building the URIs) in the vocabulary",
+      "incorrectFormValues": "Can't read the form values",
+      "missingFormConfig": "Can't find the form configuration",
+      "incorrectFormConfig": "Can't read the form configuration",
+      "missingFormDefaultValues": "Can't find the form default values",
+      "incorrectFormDefaultValues": "Can't read the form default values",
+      "missingMandatoryFormValues": "Can't find the values for mandatory properties",
+      "notEnabledMandatoryPropertyInConfig": "Inconsistent configuration (mandatory but not activated) for property",
+      "missingVocabularyInPropertyConfig": "No vocabulary configured for property",
+      "unknownVocabularyInPropertyConfig": "Unknown vocabulary configured in property",
+      "incorrectValueForDateProperty": "Incorrect date value for property",
+      "wrongValueForVocabularyProperty": "Incorrect value (Concept absent from configured SKOS vocabulary) for property",
+      "missingValueForUriBuilding": "Can't find the value (necessary for building an URI) for property",
+      "malformedExcelWorksheet": "Malformed Excel worksheet",
+      "ignoredWorksheet": "Excel worksheet has been ignored",
+      "errorsInWorksheet": "Errors found (and ignored) in Excel worksheet",
+      "unauthorizedOperation": "You are not authorized to perform this operation",
+
+      "uriSection": "URI",
+      "uriScheme": "URI Scheme",
+      "langFormatChoice": "Languages and formats choice",
+      "generalInformation": "General information",
+      "domainContext": "Domain and context",
+      "relationships": "Relationships with other resources",
+      "descriptionDocuments": "Description and documents"
+  },
+  "htmlNoticesOutput": {
+      "officialJournal" : {
+          "label": "official journal"
+      },
+      "identifierUri" : {
+          "label": "identifier (URI)"
+      },
+      "linguisticVersion" : {
+          "label": "linguistic version"
+      },
+      "format" : {
+          "label": "format"
+      },
+      "created" : {
+          "label": "created"
+      },
+      "onDatetime" : {
+          "label": "on"
+      },
+      "byUser" : {
+          "label": "by"
+      }
+  },
+  "eliOntology": {
+      "eli:LegalResource" : {
+          "label": "Legal resource"
+      },
+      "eli:LegalExpression" : {
+          "label": "Legal expression"
+      },
+      "eli:Format" : {
+          "label": "Format embodying a legal expression"
+      },
+      "eli:is_member_of": {
+          "label": "is member of",
+          "help": "Indicates that this resource is conceptually included in another one. Typically the successive temporal versions of a given legislation are conceptually members of a single « abstract » resource.  For the notion of physical inclusion, eli:is_part_of is preferred"
+      },
+      "eli:realizes": {
+          "label": "realizes",
+          "help": "Relates a legal expression to the legal resource realised through that expression."
+      },
+      "eli:embodies": {
+          "label": "embodies",
+          "help": "Relates a physical format to the legal expression embodied in that format."
+      },
+      "eli:type_document": {
+          "label": "document type",
+          "help": "The type of a legal resource (e.g. \"Directive\", \"Règlement grand ducal\", \"law\", \"règlement ministeriel\", \"draft proposition\", \"Parliamentary act\", etc.). "
+      },
+      "eli:number": {
+          "label": "number",
+          "help": "An identifier or other disambiguating feature for a legal resource or legal expression. This can be the number of a legislation, the number of an article, or the issue number of an official journal."
+      },
+      "eli:version": {
+          "label": "version",
+          "help": "A version status for the resource. Example of such values can be \"Official Journal\", \"made\", \"consolidated\", \"proposed\", \"prospective\", etc."
+      },
+      "eli:date_document": {
+          "label": "date of document",
+          "help": "Date of adoption or signature."
+      },
+      "eli:version_date": {
+          "label": "date of version",
+          "help": "The point-in-time at which the provided description of the legislation is valid."
+      },
+      "eli:date_publication": {
+          "label": "date of publication",
+          "help": "Date of publication of the official version of the legislation, in hard copy or online, depending on what the official publication is, and when it was published."
+      },
+      "eli:date_applicability": {
+          "label": "date of applicability",
+          "help": "The date at which the legislation becomes applicable. This is distinct from the date of entry into force : a text may come in force today, and state it will become applicable in 3 months."
+      },
+      "eli:in_force": {
+          "label": "in force",
+          "help": "A value indicating the legal force of a legal resource or a legal expression. A set of values is defined by ELI. These values are: in force; partially in force; not in force"
+      },
+      "eli:first_date_entry_in_force": {
+          "label": "first date of entry into force",
+          "help": "The first date any part of the legal resource or legal expression came into force (can be seen as the start date of a dc:valid range for this resource)."
+      },
+      "eli:date_no_longer_in_force": {
+          "label": "date of no longer in force",
+          "help": "The last date any part of the legislation cease to be in force, if the date is known (can be seen as the end date of a dc:valid range for this resource)."
+      },
+      "eli:id_local": {
+          "label": "local identifier",
+          "help": "The unique identifier used in a local reference system to maintain backwards compatibility. For examples the CELEX at EU level, or the NOR in France."
+      },
+      "eli:is_about": {
+          "label": "is about",
+          "help": "A subject for this legal resource."
+      },
+      "eli:relevant_for": {
+          "label": "relevant for",
+          "help": "Refers to a place or an area associated with the resource. This covers the notions of jurisdiction, sovereignty, applicability or administrative area."
+      },
+      "eli:juridiction": {
+          "label": "juridiction",
+          "help": "The jurisdiction from which the legal resource originates."
+      },
+      "eli:passed_by": {
+          "label": "passed by",
+          "help": "The person or organization that originally passed or made the law : typically parliament (for primary legislation) or government (for secondary legislation). This indicates the \"legal author\" of the law, as opposed to its physical author. This property can be used multiple times to indicate both the agent that authored the text, and/or the agent that signed the text, thus turning it into an actual legislation. The relationship between current and any former law making body should be represented in the description of the agent itself."
+      },
+      "eli:responsibility_of_agent": {
+          "label": "responsibility of (agent)",
+          "help": "An individual, organisation or organisational unit that has some kind of responsibility for the legislation. Typically the ministry who is/was in charge of elaborating the legislation, or the adressee for potential questions about the legislation once it is published. This property should be used when the value is selected from a vocabulary."
+      },
+      "eli:responsibility_of": {
+          "label": "responsibility of",
+          "help": "An individual, organisation or organisational unit that has some kind of responsibility for the legislation. Typically the ministry who is/was in charge of elaborating the legislation, or the adressee for potential questions about the legislation once it is published. This property should be used when the value is a free text."
+      },
+      "eli:is_part_of": {
+          "label": "is part of",
+          "help": "A related resource in which the described resource is physically included. Covers the case of text included in an Official Journal, or an article included in a text. For the notion of conceptual/temporal inclusion, eli:is_member_of is preferred."
+      },
+      "eli:has_part": {
+          "label": "has part",
+          "help": "A related resource that physically includes the described resource. Inverse of eli:is_part_of."
+      },
+      "eli:has_member": {
+          "label": "has member",
+          "help": "Indicates that this resource conceptually includes another one. Inverse of eli:is_member_of."
+      },
+      "eli:transposes": {
+          "label": "transposes",
+          "help": "Indicates that this legislation (or part of legislation) fulfills the objectives set by another legislation, by passing appropriate implementation measures. Typically, some legislations of European Union&apos;s member states or regions transpose European Directives. This indicates a legally binding link between the 2 legislations, at act or article level, from the original version of a national implementing measure to the legal resource Directive as published in the EU Official Journal. Can be used for transposition tables, once EU Publication Office has introduced ELI support down to the article level. Note that this should point to the legal resource of the Directive itself, not to one of its language-specific legal expression."
+      },
+      "eli:applies": {
+          "label": "applies",
+          "help": "Indicates that this legislation (or part of a legislation) somehow conforms with another legislation. This is an informative link, and it has no legal value. For legally-binding links of transposition, use the property transposes. This can be used for example: when a pre-existing law already conforms to a recent european directive (in that case it does not \"transposes\" it strictly speaking); when non-EU member states make sure their legislation is conformant with EU law without strictly speaking transposing it; when a legislation from a local authority conforms with a national legislation. Note that this should point to a LegalResource, not to a language-specific expression."
+      },
+      "eli:consolidates": {
+          "label": "consolidates",
+          "help": "Indicates that this consolidated legal resource or expression (which is usually the product of an editorial process that revises the legislation) takes into account another one. This property should be used multiple times to refer to both the original version or the previous consolidated version, and to the legislations making the change."
+      },
+      "eli:based_on": {
+          "label": "based on",
+          "help": "Indicates that this legal resource is empowered by another one, typically a constitution, a treaty or an enabling act."
+      },
+      "eli:changes": {
+          "label": "changes",
+          "help": "Indicates that this legal resource or expression legally changes another. This encompasses the notions of amendment, replacement, repeal, or other types of change. This may be a direct change (textual or non-textual amendment) or a consequential or indirect change. Note, the property is to be used to express the existence of a change relationship between two acts rather than the existence of a consolidated version of the text that shows the result of the change. For consolidation relationships, use the \"consolidates\" property. The \"commences\", \"repeals\", \"corrects\" and \"amends\" properties specializes this property adding normalized semantics to the relationship."
+      },
+      "eli:commences": {
+          "label": "commences",
+          "help": "Indicates that this legal resource sets another legal resource into force. Note the date of entry into force of the other resource should be modified accordingly. Note also that it is not possible to indicate when the entry into force should happen."
+      },
+      "eli:repeals": {
+          "label": "repeals",
+          "help": "Indicates that this legal resource or legal expression completely cancels, abrogates or replaces another. If a resource partially repeals another, this link can be used at the corresponding subdivision level being completely repealed."
+      },
+      "eli:corrects": {
+          "label": "corrects",
+          "help": "Indicates that this resource introduces textual modifications (like correction of spelling mistakes) with no legal change in another resource, expression or format; typically corrigenda in EU legislation. For modifications that have a legal impact, use the \"amends\" property."
+      },
+      "eli:amends": {
+          "label": "amends",
+          "help": "Indicates that this resource introduces legal changes in another resource. For modifications that don’t have a legal impact, use the \"corrects\" property"
+      },
+      "eli:is_another_publication_of": {
+          "label": "is another publication of",
+          "help": "Indicates that this resource is a new publication, in a different official journal, of another resource already published elsewhere, and cannot be considered to be the same resource (owl:sameAs cannot be used to avoid potential duplication of certain metadata, like the date of publication, or the publisher). Note that this is different from the exceptionnal cases of \"republication\", where the same resource is actually republished in the same official journal a few days after its initial publication, in case of errors."
+      },
+      "eli:cites": {
+          "label": "cites",
+          "help": "Citation in the text of the legislation. This includes verbatim citation and citations in referrals."
+      },
+      "eli:related_to": {
+          "label": "related to",
+          "help": "Indicates a somehow related other document, not necessarily a legal resource. Note that citation links should use the cites property."
+      },
+      "eli:language": {
+          "label": "language",
+          "help": "The language of an expression."
+      },
+      "eli:title": {
+          "label": "title",
+          "help": "The title, or name, of an expression."
+      },
+      "eli:title_short": {
+          "label": "short title",
+          "help": "Established short title of the expression (if any)."
+      },
+      "eli:title_alternative": {
+          "label": "alternative title",
+          "help": "An alternative title of the expression (if any)."
+      },
+      "eli:description": {
+          "label": "description",
+          "help": "An account of the resource (definition from Dubin Core), e.g a summary."
+      },
+      "eli:format": {
+          "label": "format",
+          "help": "The file format, physical medium, or dimensions of the resource (definition from Dublin Core)."
+      },
+      "eli:is_exemplified_by": {
+          "label": "exemplified by (document)",
+          "help": "Link to a concrete file URL."
+      },
+      "eli:legal_value": {
+          "label": "legal value",
+          "help": "The legal value associated with a specific format of a resource. A set of values is defined by ELI; these values are: \"unofficial\": no particular or special standing; \"official\": published by an organisation with the public task of making the information available (e.g. a consolidated version of a EU directive); \"authoritative\": the publisher gives some special status to the publication (e.g. \"the Queens Printer\" version of an Act of Parliament, or the OJ version of a EU Directive); \"definitive\": the text is conclusively what the law says, (e.g. the digitally signed version of an OJ)."
+      },
+      "eli:published_in_format": {
+          "label": "published in (URI)",
+          "help": "Reference to the Official Journal or other publication manifestation in which this format is published. This property should be used when the value is a suitable URI."
+      },
+      "eli:published_in": {
+          "label": "published in",
+          "help": "Reference to the Official Journal or other publication manifestation in which this format is published. This property should be used when the value is a regular text."
+      },
+      "eli:publisher_agent": {
+          "label": "publisher (agent)",
+          "help": "An entity responsible for making the resource available (definition from Dublin Core). This property should be used when the value is selected from a vocabulary."
+      },
+      "eli:publisher": {
+          "label": "publisher",
+          "help": "An entity responsible for making the resource available (definition from Dublin Core). This property should be used when the value is a free text."
+      },
+      "eli:licence": {
+          "label": "license",
+          "help": "A legal document giving official permission to do something with the resource (Definition from Dublin Core)."
+      },
+      "eli:rights": {
+          "label": "rights",
+          "help": "Information about rights held in and over the resource (definition from Dublin Core). For example, that property can be used to provide a link to a page that describes the licensing terms."
+      },
+      "eli:rightsholder_agent": {
+          "label": "rights holder (agent)",
+          "help": "A person or organisation owning or managing rights over the resource (definition from Dublin Core). This property should be used when the value is selected from a vocabulary."
+      },
+      "eli:rightsholder": {
+          "label": "rights holder",
+          "help": "A person or organisation owning or managing rights over the resource (definition from Dublin Core). This property should be used when the value is a free text."
+      }
+  },
+  "eliOntologyExtension": {
+      "elix:Act": {
+          "label": "Legal act"
+      },
+      "elix:OfficialJournal": {
+          "label": "Official journal publishing legal acts"
+      },
+      "elix:Consolidation": {
+          "label": "Consolidation of several legal acts"
+      },
+      "elix:AbstractLegalResource" : {
+          "label": "Abstract legal resource"
+      },
+      "elix:resource_type" : {
+          "label": "type of legal resource"
+      },
+      "elix:languages_list": {
+          "label": "languages list",
+          "help": "List of all the languages used in the Legal expressions."
+      },
+      "elix:formats_list": {
+          "label": "formats list",
+          "help": "List of all the formats used in the Formats embodying a Legal expression."
+      },
+      "elix:abstractLegalResourceUriScheme": {
+          "label": "URI scheme of Abstract legal resources",
+          "help": "Define the pattern of the URI scheme. You can use variables such as {eli:type_document}, {eli:number}, etc."
+      },
+      "elix:legalResourceUriScheme": {
+          "label": "URI scheme of the Legal resources",
+          "help": "Define the pattern of the URI scheme. This URI scheme is the continuation of the URI scheme of the Abstract legal resources. You can use variables such as {eli:type_document}, {eli:number}, etc."
+      },
+      "elix:legalExpressionUriScheme": {
+          "label": "URI scheme of the Legal expressions",
+          "help": "Define the pattern of the URI scheme. This URI scheme is the continuation of the URI scheme of the Legal resources. You can use variables such as {eli:type_document}, {eli:number}, {eli:language}, etc."
+      },
+      "elix:formatUriScheme": {
+          "label": "URI scheme of the Formats",
+          "help": "Define the pattern of the URI scheme. This URI scheme is the continuation of the URI scheme of the Legal expressions. You can use variables such as {eli:type_document}, {eli:number}, {eli:language}, {eli:format}, etc."
+      }
+  },
+  "rdfOntology": {
+      "rdf:type": {
+          "label": "type"
+      }
+  },
+  "dctermsOntology": {
+      "dct:abstract": {
+          "label": "abstract"
+      },
+      "dct:accessRights": {
+          "label": "access rights"
+      },
+      "dct:accrualMethod": {
+          "label": "accrual method"
+      },
+      "dct:accrualPeriodicity": {
+          "label": "accrual periodicity"
+      },
+      "dct:accrualPolicy": {
+          "label": "accrual policy"
+      },
+      "dct:alternative": {
+          "label": "alternative title"
+      },
+      "dct:audience": {
+          "label": "audience"
+      },
+      "dct:available": {
+          "label": "date available"
+      },
+      "dct:bibliographicCitation": {
+          "label": "bibliographic citation"
+      },
+      "dct:conformsTo": {
+          "label": "conforms to"
+      },
+      "dct:contributor": {
+          "label": "contributor"
+      },
+      "dct:coverage": {
+          "label": "coverage"
+      },
+      "dct:created": {
+          "label": "date created"
+      },
+      "dct:creator": {
+          "label": "creator"
+      },
+      "dct:date": {
+          "label": "date"
+      },
+      "dct:dateAccepted": {
+          "label": "date accepted"
+      },
+      "dct:dateCopyrighted": {
+          "label": "date copyrighted"
+      },
+      "dct:dateSubmitted": {
+          "label": "date submitted"
+      },
+      "dct:description": {
+          "label": "description"
+      },
+      "dct:educationLevel": {
+          "label": "audience education level"
+      },
+      "dct:extent": {
+          "label": "extent"
+      },
+      "dct:format": {
+          "label": "format"
+      },
+      "dct:hasFormat": {
+          "label": "has format"
+      },
+      "dct:hasPart": {
+          "label": "has part"
+      },
+      "dct:hasVersion": {
+          "label": "has version"
+      },
+      "dct:identifier": {
+          "label": "identifier"
+      },
+      "dct:instructionalMethod": {
+          "label": "instructional method"
+      },
+      "dct:isFormatOf": {
+          "label": "is format of"
+      },
+      "dct:isPartOf": {
+          "label": "is part of"
+      },
+      "dct:isReferencedBy": {
+          "label": "is referenced by"
+      },
+      "dct:isReplacedBy": {
+          "label": "is replaced by"
+      },
+      "dct:isRequiredBy": {
+          "label": "is required by"
+      },
+      "dct:isVersionOf": {
+          "label": "is version of"
+      },
+      "dct:issued": {
+          "label": "date issued"
+      },
+      "dct:language": {
+          "label": "language"
+      },
+      "dct:license": {
+          "label": "license"
+      },
+      "dct:mediator": {
+          "label": "mediator"
+      },
+      "dct:medium": {
+          "label": "medium"
+      },
+      "dct:modified": {
+          "label": "date modified"
+      },
+      "dct:provenance": {
+          "label": "provenance"
+      },
+      "dct:publisher": {
+          "label": "publisher"
+      },
+      "dct:references": {
+          "label": "references"
+      },
+      "dct:relation": {
+          "label": "relation"
+      },
+      "dct:replaces": {
+          "label": "replaces"
+      },
+      "dct:requires": {
+          "label": "requires"
+      },
+      "dct:rights": {
+          "label": "rights"
+      },
+      "dct:rightsHolder": {
+          "label": "rights holder"
+      },
+      "dct:source": {
+          "label": "source"
+      },
+      "dct:spatial": {
+          "label": "spatial coverage"
+      },
+      "dct:subject": {
+          "label": "subject"
+      },
+      "dct:tableOfContents": {
+          "label": "table of contents"
+      },
+      "dct:temporal": {
+          "label": "temporal coverage"
+      },
+      "dct:title": {
+          "label": "title"
+      },
+      "dct:type": {
+          "label": "type"
+      },
+      "dct:valid": {
+          "label": "date valid"
+      }
+  },
+  "skosOntology": {
+      "skos:Collection": {
+          "label": "Collection"
+      },
+      "skos:Concept": {
+          "label": "Concept"
+      },
+      "skos:ConceptScheme": {
+          "label": "Concept Scheme"
+      },
+      "skos:OrderedCollection": {
+          "label": "Ordered Collection"
+      },
+      "skos:altLabel": {
+          "label": "alternative label"
+      },
+      "skos:broadMatch": {
+          "label": "has broader match"
+      },
+      "skos:broader": {
+          "label": "has broader"
+      },
+      "skos:broaderTransitive": {
+          "label": "has broader transitive"
+      },
+      "skos:changeNote": {
+          "label": "change note"
+      },
+      "skos:closeMatch": {
+          "label": "has close match"
+      },
+      "skos:definition": {
+          "label": "definition"
+      },
+      "skos:editorialNote": {
+          "label": "editorial note"
+      },
+      "skos:exactMatch": {
+          "label": "has exact match"
+      },
+      "skos:example": {
+          "label": "example"
+      },
+      "skos:hasTopConcept": {
+          "label": "has top concept"
+      },
+      "skos:hiddenLabel": {
+          "label": "hidden label"
+      },
+      "skos:historyNote": {
+          "label": "history note"
+      },
+      "skos:inScheme": {
+          "label": "is in scheme"
+      },
+      "skos:mappingRelation": {
+          "label": "is in mapping relation with"
+      },
+      "skos:member": {
+          "label": "has member"
+      },
+      "skos:memberList": {
+          "label": "has member list"
+      },
+      "skos:narrowMatch": {
+          "label": "has narrower match"
+      },
+      "skos:narrower": {
+          "label": "has narrower"
+      },
+      "skos:narrowerTransitive": {
+          "label": "has narrower transitive"
+      },
+      "skos:notation": {
+          "label": "notation"
+      },
+      "skos:note": {
+          "label": "note"
+      },
+      "skos:prefLabel": {
+          "label": "preferred label"
+      },
+      "skos:related": {
+          "label": "has related"
+      },
+      "skos:relatedMatch": {
+          "label": "has related match"
+      },
+      "skos:scopeNote": {
+          "label": "scope note"
+      },
+      "skos:semanticRelation": {
+          "label": "is in semantic relation with"
+      },
+      "skos:topConceptOf": {
+          "label": "is top concept in scheme"
+      }
+  },
+  "skosOntologyExtension": {
+      "elis:hasConcept": {
+          "label": "contains concept"
+      }
+  },
+  "eurovocOntology": {
+      "euvoc:adjectivalForm": {
+          "label": "adjectival form of"
+      },
+      "euvoc:contributor": {
+          "label": "contributor"
+      },
+      "euvoc:countryCode": {
+          "label": "country code"
+      },
+      "euvoc:domain": {
+          "label": "domain"
+      },
+      "euvoc:downloadURL": {
+          "label": "download URL"
+      },
+      "euvoc:endDate": {
+          "label": "end date"
+      },
+      "euvoc:getsReportingFrom": {
+          "label": "gets reporting from"
+      },
+      "euvoc:inhabitantNameForm": {
+          "label": "inhabitant name form of"
+      },
+      "euvoc:license": {
+          "label": "license"
+      },
+      "euvoc:localityCode": {
+          "label": "locality code"
+      },
+      "euvoc:officeAddress": {
+          "label": "office address"
+      },
+      "euvoc:officialBirthName": {
+          "label": "official birth name"
+      },
+      "euvoc:officialFamilyName": {
+          "label": "official family name"
+      },
+      "euvoc:officialGivenName": {
+          "label": "official given name"
+      },
+      "euvoc:order": {
+          "label": "order index"
+      },
+      "euvoc:orderMethod": {
+          "label": "order method"
+      },
+      "euvoc:positionComplement": {
+          "label": "position complement"
+      },
+      "euvoc:positionStatus": {
+          "label": "position status"
+      },
+      "euvoc:protocolLevel": {
+          "label": "protocol level"
+      },
+      "euvoc:reportsTo": {
+          "label": "reports to"
+      },
+      "euvoc:represents": {
+          "label": "represents"
+      },
+      "euvoc:roleQualification": {
+          "label": "role qualification"
+      },
+      "euvoc:startDate": {
+          "label": "start date"
+      },
+      "euvoc:status": {
+          "label": "status"
+      },
+      "euvoc:xlClassification": {
+          "label": "classification (current / past)"
+      },
+      "euvoc:xlCodification": {
+          "label": "notation (current / past)"
+      },
+      "euvoc:xlDefinition": {
+          "label": "definition (current / past)"
+      },
+      "euvoc:xlGetsReportingFrom": {
+          "label": "gets / got reporting from"
+      },
+      "euvoc:xlHasSubOrganization": {
+          "label": "has / had sub-organization"
+      },
+      "euvoc:xlNotation": {
+          "label": "notation (current / past)"
+      },
+      "euvoc:xlNote": {
+          "label": "note (current / past)"
+      },
+      "euvoc:xlNumericalValue": {
+          "label": "numerical value (current / past)"
+      },
+      "euvoc:xlObject": {
+          "label": "object"
+      },
+      "euvoc:xlOrder": {
+          "label": "order index (current / past)"
+      },
+      "euvoc:xlPositionComplement": {
+          "label": "position complement (current / past)"
+      },
+      "euvoc:xlProtocolLevel": {
+          "label": "protocol level (current / past)"
+      },
+      "euvoc:xlReportsTo": {
+          "label": "reports / reported to"
+      },
+      "euvoc:xlSubOrganizationOf": {
+          "label": "sub-organization of (current / past)"
+      },
+      "euvoc:xlTarget": {
+          "label": "target"
+      },
+      "euvoc:xlTypeValue": {
+          "label": "type value (past)"
+      }
+  }
+}
+

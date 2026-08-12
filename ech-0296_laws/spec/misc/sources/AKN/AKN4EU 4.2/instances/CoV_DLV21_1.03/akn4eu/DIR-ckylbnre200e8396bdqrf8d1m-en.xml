@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?><akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+   <bill name="DIR">
+      <meta>
+         <identification source="~PUBL">
+            <FRBRWork>
+               <FRBRthis value=""/>
+               <FRBRuri value=""/>
+               <FRBRdate date="2999-01-01" name=""/>
+               <FRBRauthor href=""/>
+               <preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+                  <akn4eu:fileCUID value="ckylbnre200e8396bdqrf8d1m"/>
+               </preservation>
+               <FRBRcountry value="EU"/>
+               <FRBRnumber value="COM(2020) 360"/>
+               <FRBRprescriptive value="true"/>
+            </FRBRWork>
+            <FRBRExpression>
+               <FRBRthis value=""/>
+               <FRBRuri value=""/>
+               <FRBRdate date="2999-01-01" name=""/>
+               <FRBRauthor href=""/>
+               <FRBRversionNumber value="final"/>
+               <FRBRlanguage language="en"/>
+            </FRBRExpression>
+            <FRBRManifestation>
+               <FRBRthis value=""/>
+               <FRBRuri value=""/>
+               <FRBRdate date="2999-01-01" name=""/>
+               <FRBRauthor href=""/>
+               <preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+                  <akn4eu:akn4euVersion value="4.2.0.0"/>
+                  <akn4eu:akn4euDocumentation href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/akn4eu"/>
+               </preservation>
+            </FRBRManifestation>
+         </identification>
+         <analysis source="~PUBL">
+            <activeModifications>
+               <textualMod type="insertion">
+                  <source href="~azec76"/>
+                  <destination href="http://data.europa.eu/eli/dir/2006/112/art_215/unp_2" pos="after"/>
+               </textualMod>
+            </activeModifications>
+         </analysis>
+         <references source="~PUBL">
+            <TLCReference name="language" href="http://publications.europa.eu/resource/authority/language/ENG" showAs="en"/>
+            <TLCReference xml:id="legalBasis" name="contentSubject" href="http://eurovoc.europa.eu/5456" showAs="Legal basis"/>
+            <TLCOrganization xml:id="PUBL" href="http://publications.europa.eu/resource/authority/corporate-body/PUBL" showAs="Publications Office of the European Union"/>
+            <TLCOrganization xml:id="CONSIL" href="http://publications.europa.eu/resource/authority/corporate-body/CONSIL" showAs="Council of the European Union"/>
+            <TLCRole xml:id="PRESID" href="http://publications.europa.eu/resource/authority/role/PRESID" showAs="President"/>
+            <TLCLocation xml:id="BEL_BRU" href="http://publications.europa.eu/resource/authority/place/BEL_BRU" showAs="Brussels"/>
+            <TLCReference xml:id="DIR" name="docType" href="http://publications.europa.eu/resource/authority/resource-type/DIR" showAs="Directive"/>
+            <TLCReference xml:id="procedure_2020_165" name="procedureReference" href="http://eur-lex.europa.eu/procedure/EN/2020_165" showAs="2020/0165 (CNS)" shortForm="2020/165/CNS"/>
+         </references>
+      </meta>
+      <preface xml:id="d1e101">
+         <container xml:id="d1e103" name="procedureIdentifier">
+            <p xml:id="d1e105"><docketNumber xml:id="d1e106" refersTo="~procedure_2020_165">2020/0165 (CNS)</docketNumber></p>
+         </container>
+         <longTitle xml:id="d1e110">
+            <p xml:id="d1e112"><docStage xml:id="d1e113">Proposal for a</docStage>
+               <docType xml:id="d1e115" refersTo="~DIR">COUNCIL DIRECTIVE</docType>
+               <docPurpose xml:id="d1e118">amending <ref xml:id="d1e120" href="http://data.europa.eu/eli/dir/2006/112">Directive
+                     2006/112/EC on the common system of value added tax as regards the
+                     identification of taxable persons in Northern Ireland</ref></docPurpose></p>
+         </longTitle>
+      </preface>
+      <preamble xml:id="d1e125">
+         <formula xml:id="d1e127" name="actingEntity">
+            <p xml:id="d1e129">THE COUNCIL OF THE EUROPEAN UNION,</p>
+         </formula>
+         <citations xml:id="d1e132">
+            <citation xml:id="d1e134" refersTo="~legalBasis">
+               <p xml:id="d1e136">Having regard to the Treaty on the Functioning of the European Union, and in
+                  particular Article 113 thereof, in conjunction with Article 131 of the Agreement
+                  on the withdrawal of the United Kingdom of Great Britain and Northern Ireland from
+                  the European Union and the European Atomic Energy Community<authorialNote xml:id="d1e138" marker="1" placement="bottom">
+                     <p xml:id="d1e140">OJ L 29, 31.1.2020, p. 7.</p>
+                  </authorialNote>,</p>
+            </citation>
+            <citation xml:id="d1e145">
+               <p xml:id="d1e147">Having regard to the proposal from the European Commission,</p>
+            </citation>
+            <citation xml:id="d1e150">
+               <p xml:id="d1e152">After transmission of the draft legislative act to the national parliaments,</p>
+            </citation>
+            <citation xml:id="d1e155">
+               <p xml:id="d1e157">Having regard to the opinion of the European Parliament<authorialNote xml:id="d1e159" marker="2" placement="bottom">
+                     <p xml:id="d1e161">OJ C , , p. .</p>
+                  </authorialNote>,</p>
+            </citation>
+            <citation xml:id="d1e166">
+               <p xml:id="d1e168">Having regard to the opinion of the European Economic and Social
+                     Committee<authorialNote xml:id="d1e170" marker="3" placement="bottom">
+                     <p xml:id="d1e172">OJ C , , p. .</p>
+                  </authorialNote>,</p>
+            </citation>
+            <citation xml:id="d1e178">
+               <p xml:id="d1e180">Acting in accordance with a special legislative procedure,</p>
+            </citation>
+         </citations>
+         <recitals xml:id="d1e184">
+            <intro xml:id="d1e186">
+               <p xml:id="d1e188">Whereas:</p>
+            </intro>
+            <recital xml:id="d1e191">
+               <num xml:id="d1e193">(1)</num>
+               <p xml:id="d1e195">The United Kingdom withdrew from the European Union on 31 January 2020 on the
+                  basis of the Agreement on the withdrawal of the United Kingdom of Great Britain
+                  and Northern Ireland from the European Union and the European Atomic Energy
+                  Community (‘the Withdrawal Agreement’). The Withdrawal Agreement provides for a
+                  transition period ending on 31 December 2020. Until that date, Union legislation
+                  on value added tax (‘Union legislation on VAT’) continues to apply to and in the
+                  United Kingdom. After the transition period, the Union legislation on VAT will no
+                  longer apply to or in the United Kingdom.</p>
+            </recital>
+            <recital xml:id="d1e198">
+               <num xml:id="d1e200">(2)</num>
+               <p xml:id="d1e202">However, in accordance with Article 8 of the Protocol on Ireland/Northern Ireland
+                  (‘the Protocol’), which is part of the Withdrawal Agreement, Union legislation on
+                  VAT will continue to apply in Northern Ireland<authorialNote xml:id="d1e204" marker="4" placement="bottom">
+                     <p xml:id="d1e206">Subject to the democratic consent, referred to in Article 18 of the Protocol
+                        on Ireland/Northern Ireland, to the continued application of Article 8
+                        thereof.</p>
+                  </authorialNote> after the transition period as regards goods so as to avoid a
+                  hard border between Ireland and Northern Ireland.</p>
+            </recital>
+            <recital xml:id="d1e211">
+               <num xml:id="d1e213">(3)</num>
+               <p xml:id="d1e215">Therefore, taxable persons and certain non-taxable legal persons will be subject
+                  to the Union legislation on VAT for transactions in goods in Northern Ireland,
+                  whereas they will be subject to the United Kingdom legislation on VAT for all
+                  other transactions in the United Kingdom, including in respect of Northern
+                  Ireland.</p>
+            </recital>
+            <recital xml:id="d1e218">
+               <num xml:id="d1e220">(4)</num>
+               <p xml:id="d1e222">For the proper functioning of the Union VAT system, it is essential that a
+                  distinct VAT number is granted to every taxable person who carries out supplies of
+                  goods in Northern Ireland or makes intra-Community acquisitions of goods
+                  (including by non-taxable legal persons) as listed in points (a), (b) and (c) of
+                  Article 214(1) of Council Directive 2006/112/EC<authorialNote xml:id="d1e224" marker="5" placement="bottom">
+                     <p xml:id="d1e226">Council Directive 2006/112/EC of 28 November 2006 on the common system of
+                        value added tax (OJ L 347, 11.12.2006, p.1).</p>
+                  </authorialNote>, or to a taxable person in view of the use of the optional
+                  special schemes for taxable persons supplying services to non-taxable persons or
+                  making distance sales of goods.</p>
+            </recital>
+            <recital xml:id="d1e232">
+               <num xml:id="d1e234">(5)</num>
+               <p xml:id="d1e236">Therefore, distinct VAT identification numbers with a specific prefix should be
+                  introduced in Northern Ireland to distinguish between taxable persons and
+                  non-taxable legal persons whose transactions in goods located in Northern Ireland
+                  are subject to Union legislation on VAT, on the one hand, and persons carrying out
+                  other transactions for which they are identified for VAT purposes in the United
+                  Kingdom.</p>
+            </recital>
+            <recital xml:id="d1e239">
+               <num xml:id="d1e241">(6)</num>
+               <p xml:id="d1e243">As a rule, prefixes of VAT identification numbers in the Union are based on ISO
+                  code 3166 – alpha 2 for countries. Northern Ireland has no specific code under
+                  that system, but the ISO foresees in the possibility to use X-codes for
+                  territories that do not have a specific code. Therefore, it is appropriate to
+                  propose the code “XI” for Northern Ireland.</p>
+            </recital>
+            <recital xml:id="d1e246">
+               <num xml:id="d1e248">(7)</num>
+               <p xml:id="d1e250">Directive 2006/112/EC should therefore be amended accordingly,</p>
+            </recital>
+         </recitals>
+         <formula xml:id="d1e254" name="enactingFormula">
+            <p xml:id="d1e256">HAS ADOPTED THIS DIRECTIVE:</p>
+         </formula>
+      </preamble>
+      <body xml:id="d1e260">
+         <article xml:id="d1e262">
+            <num xml:id="d1e264">Article 1</num>
+            <paragraph xml:id="d1e266">
+               <content xml:id="d1e268">
+                  <p xml:id="d1e270"><mod xml:id="azec76">In Article 215 of Directive 2006/112/EC, the following
+                        third paragraph is added: ‘ <quotedStructure xml:id="d1e273" startQuote="‘" endQuote="’">
+                           <paragraph xml:id="d1e275">
+                              <content xml:id="d1e277">
+                                 <p xml:id="d1e279">The prefix “XI” shall be used for Northern Ireland</p>
+                              </content>
+                           </paragraph>
+                        </quotedStructure><inline xml:id="d1e283" name="punctuationMod">.</inline></mod></p>
+               </content>
+            </paragraph>
+         </article>
+         <article xml:id="d1e289">
+            <num xml:id="d1e291">Article 2</num>
+            <paragraph xml:id="d1e293">
+               <num xml:id="d1e295">1.</num>
+               <subparagraph xml:id="d1e297">
+                  <content xml:id="d1e299">
+                     <p xml:id="d1e301">Member States shall bring into force the laws, regulations and
+                        administrative provisions necessary to comply with this Directive by 31
+                        December 2020.</p>
+                  </content>
+               </subparagraph>
+               <subparagraph xml:id="d1e305">
+                  <content xml:id="d1e307">
+                     <p xml:id="d1e309">They shall immediately communicate the text of those measures to the
+                        Commission. When Member States adopt those measures, they shall contain a
+                        reference to this Directive or be accompanied by such a reference on the
+                        occasion of their official publication.</p>
+                  </content>
+               </subparagraph>
+               <subparagraph xml:id="d1e313">
+                  <content xml:id="d1e315">
+                     <p xml:id="d1e317">Member States shall determine how such reference is to be made and how that
+                        statement is to be formulated.</p>
+                  </content>
+               </subparagraph>
+            </paragraph>
+            <paragraph xml:id="d1e322">
+               <num xml:id="d1e324">2.</num>
+               <content xml:id="d1e326">
+                  <p xml:id="d1e328">Member States shall communicate to the Commission the text of the main
+                     provisions of national law which they adopt in the field covered by this
+                     Directive.</p>
+               </content>
+            </paragraph>
+         </article>
+         <article xml:id="d1e333">
+            <num xml:id="d1e335">Article 3</num>
+            <paragraph xml:id="d1e337">
+               <content xml:id="d1e339">
+                  <p xml:id="d1e341">This Directive shall enter into force on the day following that of its
+                     publication in the <i xml:id="d1e343">Official Journal of the European Union</i>.</p>
+               </content>
+            </paragraph>
+         </article>
+         <article xml:id="d1e349">
+            <num xml:id="d1e351">Article 4</num>
+            <paragraph xml:id="d1e353">
+               <content xml:id="d1e355">
+                  <p xml:id="d1e357">This Directive is addressed to the Member States.</p>
+               </content>
+            </paragraph>
+         </article>
+      </body>
+      <conclusions xml:id="d1e363">
+         <p xml:id="d1e365">Done at <location xml:id="d1e367" refersTo="~BEL_BRU">Brussels</location>,</p>
+         <block xml:id="d1e371" name="signatory">
+            <signature xml:id="d1e373">
+               <organization xml:id="d1e375" refersTo="~CONSIL">For the Council</organization>
+               <role xml:id="d1e378" refersTo="~PRESID">The President</role>
+               <person xml:id="d1e381" refersTo=""/>
+            </signature>
+         </block>
+      </conclusions>
+   </bill>
+</akomaNtoso>

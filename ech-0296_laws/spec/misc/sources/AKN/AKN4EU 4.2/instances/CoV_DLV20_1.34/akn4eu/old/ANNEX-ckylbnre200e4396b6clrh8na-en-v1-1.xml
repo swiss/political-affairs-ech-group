@@ -1,0 +1,911 @@
+<?xml version="1.0" encoding="UTF-8"?><akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+	<doc name="ANNEX">
+		<meta>
+			<identification source="~PUBL">
+				<FRBRWork>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+						<akn4eu:fileCUID value="ckylbnre200e4396b6clrh8na"/>
+					</preservation>
+					<FRBRcountry value="EU"/>
+					<FRBRprescriptive value="true"/>
+				</FRBRWork>
+				<FRBRExpression>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<FRBRlanguage language="en"/>
+				</FRBRExpression>
+				<FRBRManifestation>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+						<akn4eu:akn4euVersion value="4.1.1.0"/>
+						<akn4eu:akn4euDocumentation href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/akn4eu"/>
+					</preservation>
+				</FRBRManifestation>
+			</identification>
+			<references source="~PUBL">
+				<TLCReference name="language" href="http://publications.europa.eu/resource/authority/language/ENG" showAs="en"/>
+				<TLCReference xml:id="ANNEX" name="docType" href="http://publications.europa.eu/resource/authority/resource-type/ANNEX" showAs="Annex"/>
+				<TLCOrganization xml:id="PUBL" href="http://publications.europa.eu/resource/authority/corporate-body/PUBL" showAs="Publications Office"/>
+			</references>
+		</meta>
+		<preface xml:id="d1e72">
+			<container xml:id="d1e74" name="headerOfAnnex">
+				<block xml:id="d1e76" name="num">ANNEX V</block>
+				<block xml:id="d1e79" name="heading">FISHING AUTHORISATIONS</block>
+			</container>
+		</preface>
+		<mainBody xml:id="d1e84">
+			<part xml:id="d1e86">
+				<num xml:id="d1e88">PART A</num>
+				<heading xml:id="d1e90">MAXIMUM NUMBER OF FISHING AUTHORISATIONS FOR UNION FISHING VESSELS FISHING
+					IN THIRD-COUNTRY WATERS</heading>
+				<paragraph xml:id="d1e92">
+					<hcontainer xml:id="d1e94" name="BLOCK_TAB">
+						<hcontainer xml:id="d1e96" name="TAB">
+							<content xml:id="d1e98">
+								<table xml:id="d1e100">
+									<tr xml:id="d1e102">
+										<th xml:id="d1e104">
+											<p xml:id="d1e106">Area of fishing</p>
+										</th>
+										<th xml:id="d1e109">
+											<p xml:id="d1e111">Fishery</p>
+										</th>
+										<th xml:id="d1e114">
+											<p xml:id="d1e116">Number of fishing authorisations</p>
+										</th>
+										<th xml:id="d1e119" colspan="2">
+											<p xml:id="d1e121">Allocation of fishing authorisations amongst Member
+												States</p>
+										</th>
+										<th xml:id="d1e124">
+											<p xml:id="d1e126">Maximum number of vessels present at any time</p>
+										</th>
+									</tr>
+									<tr xml:id="d1e130">
+										<td xml:id="d1e132" rowspan="8">
+											<p xml:id="d1e134">Norwegian waters and fishery zone around Jan
+												Mayen</p>
+										</td>
+										<td xml:id="d1e137" rowspan="8">
+											<p xml:id="d1e139">Herring, north of 62° 00' N</p>
+										</td>
+										<td xml:id="d1e142" rowspan="8">
+											<p xml:id="d1e144">77</p>
+										</td>
+										<td xml:id="d1e147">
+											<p xml:id="d1e149">DK</p>
+										</td>
+										<td xml:id="d1e152">
+											<p xml:id="d1e154">25</p>
+										</td>
+										<td xml:id="d1e158" rowspan="8">
+											<p xml:id="d1e160">57</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e164">
+										<td xml:id="d1e166">
+											<p xml:id="d1e168">DE</p>
+										</td>
+										<td xml:id="d1e171">
+											<p xml:id="d1e173">5</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e177">
+										<td xml:id="d1e179">
+											<p xml:id="d1e181">FR</p>
+										</td>
+										<td xml:id="d1e184">
+											<p xml:id="d1e186">1</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e190">
+										<td xml:id="d1e192">
+											<p xml:id="d1e194">IE</p>
+										</td>
+										<td xml:id="d1e197">
+											<p xml:id="d1e199">8</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e204">
+										<td xml:id="d1e206">
+											<p xml:id="d1e208">NL</p>
+										</td>
+										<td xml:id="d1e211">
+											<p xml:id="d1e213">9</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e217">
+										<td xml:id="d1e219">
+											<p xml:id="d1e221">PL</p>
+										</td>
+										<td xml:id="d1e224">
+											<p xml:id="d1e226">1</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e230">
+										<td xml:id="d1e232">
+											<p xml:id="d1e234">SV</p>
+										</td>
+										<td xml:id="d1e237">
+											<p xml:id="d1e239">10</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e243">
+										<td xml:id="d1e245">
+											<p xml:id="d1e247">UK</p>
+										</td>
+										<td xml:id="d1e250">
+											<p xml:id="d1e252">18</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e256">
+										<td xml:id="d1e258" rowspan="10">
+											<p xml:id="d1e260"/>
+										</td>
+										<td xml:id="d1e263" rowspan="7">
+											<p xml:id="d1e265">Demersal species, north of 62° 00' N</p>
+										</td>
+										<td xml:id="d1e268" rowspan="7">
+											<p xml:id="d1e270">80</p>
+										</td>
+										<td xml:id="d1e273">
+											<p xml:id="d1e275">DE</p>
+										</td>
+										<td xml:id="d1e278">
+											<p xml:id="d1e280">16</p>
+										</td>
+										<td xml:id="d1e284" rowspan="7">
+											<p xml:id="d1e286">50</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e290">
+										<td xml:id="d1e292">
+											<p xml:id="d1e294">IE</p>
+										</td>
+										<td xml:id="d1e297">
+											<p xml:id="d1e299">1</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e304">
+										<td xml:id="d1e306">
+											<p xml:id="d1e308">ES</p>
+										</td>
+										<td xml:id="d1e311">
+											<p xml:id="d1e313">20</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e317">
+										<td xml:id="d1e319">
+											<p xml:id="d1e321">FR</p>
+										</td>
+										<td xml:id="d1e324">
+											<p xml:id="d1e326">18</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e330">
+										<td xml:id="d1e332">
+											<p xml:id="d1e334">PT</p>
+										</td>
+										<td xml:id="d1e337">
+											<p xml:id="d1e339">9</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e343">
+										<td xml:id="d1e345">
+											<p xml:id="d1e347">UK</p>
+										</td>
+										<td xml:id="d1e350">
+											<p xml:id="d1e352">14</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e356">
+										<td xml:id="d1e358">
+											<p xml:id="d1e360">Unallocated</p>
+										</td>
+										<td xml:id="d1e363">
+											<p xml:id="d1e365">2</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e369">
+										<td xml:id="d1e371">
+											<p xml:id="d1e373">Mackerel<authorialNote xml:id="d1e375" marker="1" placement="bottom" placementBase="~table_d22e42">
+												<p xml:id="d1e377">Without prejudice to additional licences
+												granted to Sweden by Norway in accordance with
+												established practice.</p>
+												</authorialNote></p>
+										</td>
+										<td xml:id="d1e381">
+											<p xml:id="d1e383">Not relevant</p>
+										</td>
+										<td xml:id="d1e386" colspan="2">
+											<p xml:id="d1e388">Not relevant</p>
+										</td>
+										<td xml:id="d1e391">
+											<p xml:id="d1e393">70</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e398">
+										<td xml:id="d1e400" rowspan="2">
+											<p xml:id="d1e402">Industrial species, south of 62° 00' N</p>
+										</td>
+										<td xml:id="d1e405" rowspan="2">
+											<p xml:id="d1e407">480</p>
+										</td>
+										<td xml:id="d1e410">
+											<p xml:id="d1e412">DK</p>
+										</td>
+										<td xml:id="d1e415">
+											<p xml:id="d1e417">450</p>
+										</td>
+										<td xml:id="d1e420" rowspan="2">
+											<p xml:id="d1e422">150</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e426">
+										<td xml:id="d1e428">
+											<p xml:id="d1e430">UK</p>
+										</td>
+										<td xml:id="d1e433">
+											<p xml:id="d1e435">30</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e439">
+										<td xml:id="d1e441" rowspan="38">
+											<p xml:id="d1e443">Faroese waters</p>
+										</td>
+										<td xml:id="d1e446" rowspan="4">
+											<p xml:id="d1e448">All trawl fisheries with vessels of not more than 180
+												feet in the zone between 12 and 21 miles from the
+												Faroese baselines</p>
+										</td>
+										<td xml:id="d1e451" rowspan="4">
+											<p xml:id="d1e453">26</p>
+										</td>
+										<td xml:id="d1e456">
+											<p xml:id="d1e458">BE</p>
+										</td>
+										<td xml:id="d1e461">
+											<p xml:id="d1e463">0</p>
+										</td>
+										<td xml:id="d1e467" rowspan="4">
+											<p xml:id="d1e469">13</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e473">
+										<td xml:id="d1e475">
+											<p xml:id="d1e477">DE</p>
+										</td>
+										<td xml:id="d1e480">
+											<p xml:id="d1e482">4</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e486">
+										<td xml:id="d1e488">
+											<p xml:id="d1e490">FR</p>
+										</td>
+										<td xml:id="d1e493">
+											<p xml:id="d1e495">4</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e499">
+										<td xml:id="d1e501">
+											<p xml:id="d1e503">UK</p>
+										</td>
+										<td xml:id="d1e506">
+											<p xml:id="d1e508">18</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e513">
+										<td xml:id="d1e515">
+											<p xml:id="d1e517">Directed fisheries for cod and haddock with a minimum
+												mesh of 135 mm, restricted to the area south of 62°
+												28′ N and east of 6° 30′ W</p>
+										</td>
+										<td xml:id="d1e520">
+											<p xml:id="d1e522">8<authorialNote xml:id="d1e524" marker="2" placement="bottom" placementBase="~table_d22e42">
+												<p xml:id="d1e526">Those figures are included in the figures for
+												all trawl fisheries with vessels of not more than
+												180 feet in the zone between 12 and 21 miles from
+												the Faroese baselines.</p>
+												</authorialNote></p>
+										</td>
+										<td xml:id="d1e530" colspan="2">
+											<p xml:id="d1e532">Not relevant</p>
+										</td>
+										<td xml:id="d1e535">
+											<p xml:id="d1e537">4</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e541">
+										<td xml:id="d1e543" rowspan="4">
+											<p xml:id="d1e545">Trawl fisheries outside 21 miles from the Faroese
+												baseline. In the periods from 1 March to 31 May and
+												from 1 October to 31 December, those vessels may
+												operate in the area between 61° 20′ N and 62° 00′ N
+												and between 12 and 21 miles from the baselines</p>
+										</td>
+										<td xml:id="d1e548" rowspan="4">
+											<p xml:id="d1e550">70</p>
+										</td>
+										<td xml:id="d1e553">
+											<p xml:id="d1e555">BE</p>
+										</td>
+										<td xml:id="d1e558">
+											<p xml:id="d1e560">0</p>
+										</td>
+										<td xml:id="d1e563" rowspan="4">
+											<p xml:id="d1e565">26</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e569">
+										<td xml:id="d1e571">
+											<p xml:id="d1e573">DE</p>
+										</td>
+										<td xml:id="d1e576">
+											<p xml:id="d1e578">10</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e582">
+										<td xml:id="d1e584">
+											<p xml:id="d1e586">FR</p>
+										</td>
+										<td xml:id="d1e589">
+											<p xml:id="d1e591">40</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e595">
+										<td xml:id="d1e597">
+											<p xml:id="d1e599">UK</p>
+										</td>
+										<td xml:id="d1e602">
+											<p xml:id="d1e604">20</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e608">
+										<td xml:id="d1e610" rowspan="2">
+											<p xml:id="d1e612">Trawl fisheries for blue ling with a minimum mesh of
+												100 mm in the area south of 61° 30′ N and west of 9°
+												00′ W and in the area between 7° 00′ W and 9° 00′ W
+												south of 60° 30′ N and in the area south-west of a
+												line between 60° 30′ N, 7° 00′ W and 60°00′ N, 6°00′
+												W</p>
+										</td>
+										<td xml:id="d1e615" rowspan="2">
+											<p xml:id="d1e617">70</p>
+										</td>
+										<td xml:id="d1e620">
+											<p xml:id="d1e622">DE<authorialNote xml:id="d1e624" marker="3" placement="bottom" placementBase="~table_d22e42">
+												<p xml:id="d1e626">Those figures refer to the maximum number of
+												vessels present at any time.</p>
+												</authorialNote></p>
+										</td>
+										<td xml:id="d1e630">
+											<p xml:id="d1e632">8</p>
+										</td>
+										<td xml:id="d1e635" rowspan="2">
+											<p xml:id="d1e637">20<authorialNote xml:id="d1e639" marker="4" placement="bottom" placementBase="~table_d22e42">
+												<p xml:id="d1e641">Those figures are included in the figures for
+												‘Trawl fisheries outside 21 miles from the Faroese
+												baselines’</p>
+												</authorialNote></p>
+										</td>
+									</tr>
+									<tr xml:id="d1e647">
+										<td xml:id="d1e649">
+											<p xml:id="d1e651">FR<authorialNote xml:id="d1e653" marker="3" placement="bottom" placementBase="~table_d22e42">
+												<p xml:id="d1e655">Those figures refer to the maximum number of
+												vessels present at any time.</p>
+												</authorialNote></p>
+										</td>
+										<td xml:id="d1e659">
+											<p xml:id="d1e661">12</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e665">
+										<td xml:id="d1e667">
+											<p xml:id="d1e669">Directed trawl fisheries for saithe with a minimum
+												mesh size of 120 mm and with the possibility to use
+												round-straps around the cod-end</p>
+										</td>
+										<td xml:id="d1e672">
+											<p xml:id="d1e674">70</p>
+										</td>
+										<td xml:id="d1e677" colspan="2">
+											<p xml:id="d1e679">Not relevant</p>
+										</td>
+										<td xml:id="d1e682">
+											<p xml:id="d1e684">22<authorialNote xml:id="d1e686" marker="4" placement="bottom" placementBase="~table_d22e42">
+												<p xml:id="d1e688">Those figures are included in the figures for
+												‘Trawl fisheries outside 21 miles from the Faroese
+												baselines’</p>
+												</authorialNote></p>
+										</td>
+									</tr>
+									<tr xml:id="d1e693">
+										<td xml:id="d1e695" rowspan="9">
+											<p xml:id="d1e697">Fisheries for blue whiting. The total number of
+												fishing authorisations may be increased by four
+												vessels to form pairs, should the Faroese
+												authorities introduce special rules of access to an
+												area called ‘main fishing area of blue whiting’</p>
+										</td>
+										<td xml:id="d1e700" rowspan="9">
+											<p xml:id="d1e702">34</p>
+										</td>
+										<td xml:id="d1e705">
+											<p xml:id="d1e707">DE</p>
+										</td>
+										<td xml:id="d1e710">
+											<p xml:id="d1e712">2</p>
+										</td>
+										<td xml:id="d1e715" rowspan="9">
+											<p xml:id="d1e717">20</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e721">
+										<td xml:id="d1e723">
+											<p xml:id="d1e725">DK</p>
+										</td>
+										<td xml:id="d1e728">
+											<p xml:id="d1e730">5</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e734">
+										<td xml:id="d1e736">
+											<p xml:id="d1e738">FR</p>
+										</td>
+										<td xml:id="d1e741">
+											<p xml:id="d1e743">4</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e747">
+										<td xml:id="d1e749">
+											<p xml:id="d1e751">NL</p>
+										</td>
+										<td xml:id="d1e754">
+											<p xml:id="d1e756">6</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e761">
+										<td xml:id="d1e763">
+											<p xml:id="d1e765">UK</p>
+										</td>
+										<td xml:id="d1e768">
+											<p xml:id="d1e770">7</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e774">
+										<td xml:id="d1e776">
+											<p xml:id="d1e778">SE</p>
+										</td>
+										<td xml:id="d1e781">
+											<p xml:id="d1e783">1</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e787">
+										<td xml:id="d1e789">
+											<p xml:id="d1e791">ES</p>
+										</td>
+										<td xml:id="d1e794">
+											<p xml:id="d1e796">4</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e800">
+										<td xml:id="d1e802">
+											<p xml:id="d1e804">IE</p>
+										</td>
+										<td xml:id="d1e807">
+											<p xml:id="d1e809">4</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e813">
+										<td xml:id="d1e815">
+											<p xml:id="d1e817">PT</p>
+										</td>
+										<td xml:id="d1e820">
+											<p xml:id="d1e822">1</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e826">
+										<td xml:id="d1e828">
+											<p xml:id="d1e830">Line fisheries</p>
+										</td>
+										<td xml:id="d1e833">
+											<p xml:id="d1e835">10</p>
+										</td>
+										<td xml:id="d1e838">
+											<p xml:id="d1e840">UK</p>
+										</td>
+										<td xml:id="d1e843">
+											<p xml:id="d1e845">10</p>
+										</td>
+										<td xml:id="d1e848">
+											<p xml:id="d1e850">6</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e855">
+										<td xml:id="d1e857" rowspan="8">
+											<p xml:id="d1e859">Mackerel</p>
+										</td>
+										<td xml:id="d1e862" rowspan="8">
+											<p xml:id="d1e864">20</p>
+										</td>
+										<td xml:id="d1e867">
+											<p xml:id="d1e869">DK</p>
+										</td>
+										<td xml:id="d1e872">
+											<p xml:id="d1e874">2</p>
+										</td>
+										<td xml:id="d1e877" rowspan="8">
+											<p xml:id="d1e879">12</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e883">
+										<td xml:id="d1e885">
+											<p xml:id="d1e887">BE</p>
+										</td>
+										<td xml:id="d1e890">
+											<p xml:id="d1e892">1</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e896">
+										<td xml:id="d1e898">
+											<p xml:id="d1e900">DE</p>
+										</td>
+										<td xml:id="d1e903">
+											<p xml:id="d1e905">2</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e909">
+										<td xml:id="d1e911">
+											<p xml:id="d1e913">FR</p>
+										</td>
+										<td xml:id="d1e916">
+											<p xml:id="d1e918">2</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e922">
+										<td xml:id="d1e924">
+											<p xml:id="d1e926">IE</p>
+										</td>
+										<td xml:id="d1e929">
+											<p xml:id="d1e931">3</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e935">
+										<td xml:id="d1e937">
+											<p xml:id="d1e939">NL</p>
+										</td>
+										<td xml:id="d1e942">
+											<p xml:id="d1e944">2</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e949">
+										<td xml:id="d1e951">
+											<p xml:id="d1e953">SE</p>
+										</td>
+										<td xml:id="d1e956">
+											<p xml:id="d1e958">2</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e962">
+										<td xml:id="d1e964">
+											<p xml:id="d1e966">UK</p>
+										</td>
+										<td xml:id="d1e969">
+											<p xml:id="d1e971">6</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e975">
+										<td xml:id="d1e977" rowspan="8">
+											<p xml:id="d1e979">Herring, north of 62° 00' N</p>
+										</td>
+										<td xml:id="d1e982" rowspan="8">
+											<p xml:id="d1e984">20</p>
+										</td>
+										<td xml:id="d1e987">
+											<p xml:id="d1e989">DK</p>
+										</td>
+										<td xml:id="d1e992">
+											<p xml:id="d1e994">5</p>
+										</td>
+										<td xml:id="d1e997" rowspan="8">
+											<p xml:id="d1e999">20</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e1003">
+										<td xml:id="d1e1005">
+											<p xml:id="d1e1007">DE</p>
+										</td>
+										<td xml:id="d1e1010">
+											<p xml:id="d1e1012">2</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e1016">
+										<td xml:id="d1e1018">
+											<p xml:id="d1e1020">IE</p>
+										</td>
+										<td xml:id="d1e1023">
+											<p xml:id="d1e1025">2</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e1029">
+										<td xml:id="d1e1031">
+											<p xml:id="d1e1033">FR</p>
+										</td>
+										<td xml:id="d1e1036">
+											<p xml:id="d1e1038">1</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e1043">
+										<td xml:id="d1e1045">
+											<p xml:id="d1e1047">NL</p>
+										</td>
+										<td xml:id="d1e1050">
+											<p xml:id="d1e1052">2</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e1056">
+										<td xml:id="d1e1058">
+											<p xml:id="d1e1060">PL</p>
+										</td>
+										<td xml:id="d1e1063">
+											<p xml:id="d1e1065">1</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e1069">
+										<td xml:id="d1e1071">
+											<p xml:id="d1e1073">SE</p>
+										</td>
+										<td xml:id="d1e1076">
+											<p xml:id="d1e1078">3</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e1082">
+										<td xml:id="d1e1084">
+											<p xml:id="d1e1086">UK</p>
+										</td>
+										<td xml:id="d1e1089">
+											<p xml:id="d1e1091">4</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e1095">
+										<td xml:id="d1e1097" rowspan="5">
+											<p xml:id="d1e1099">1, 2b<authorialNote xml:id="d1e1101" marker="5" placement="bottom" placementBase="~table_d22e42">
+												<p xml:id="d1e1103">The allocation of fishing opportunities
+												available to the Union in the zone of Svalbard is
+												without prejudice to the rights and obligations
+												deriving from the Treaty of Paris of 1920.</p>
+												</authorialNote></p>
+										</td>
+										<td xml:id="d1e1107" rowspan="5">
+											<p xml:id="d1e1109">Fishery for snow crab with pots</p>
+										</td>
+										<td xml:id="d1e1112" rowspan="5">
+											<p xml:id="d1e1114">20</p>
+										</td>
+										<td xml:id="d1e1117">
+											<p xml:id="d1e1119">EE</p>
+										</td>
+										<td xml:id="d1e1122">
+											<p xml:id="d1e1124">1</p>
+										</td>
+										<td xml:id="d1e1128" rowspan="5">
+											<p xml:id="d1e1130">Not applicable</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e1134">
+										<td xml:id="d1e1136">
+											<p xml:id="d1e1138">ES</p>
+										</td>
+										<td xml:id="d1e1141">
+											<p xml:id="d1e1143">1</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e1148">
+										<td xml:id="d1e1150">
+											<p xml:id="d1e1152">LV</p>
+										</td>
+										<td xml:id="d1e1155">
+											<p xml:id="d1e1157">11</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e1161">
+										<td xml:id="d1e1163">
+											<p xml:id="d1e1165">LT</p>
+										</td>
+										<td xml:id="d1e1168">
+											<p xml:id="d1e1170">4</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e1174">
+										<td xml:id="d1e1176">
+											<p xml:id="d1e1178">PL</p>
+										</td>
+										<td xml:id="d1e1181">
+											<p xml:id="d1e1183">3</p>
+										</td>
+									</tr>
+								</table>
+							</content>
+						</hcontainer>
+					</hcontainer>
+				</paragraph>
+			</part>
+			<part xml:id="d1e1193">
+				<num xml:id="d1e1195">PART B</num>
+				<heading xml:id="d1e1197">MAXIMUM NUMBER OF FISHING AUTHORISATIONS FOR THIRD-COUNTRY VESSELS FISHING IN
+						UNION WATERS</heading>
+				<paragraph xml:id="d1e1199">
+					<hcontainer xml:id="d1e1201" name="BLOCK_TAB">
+						<hcontainer xml:id="d1e1203" name="TAB">
+							<content xml:id="d1e1205">
+								<table xml:id="d1e1207">
+									<tr xml:id="d1e1209">
+										<th xml:id="d1e1211">
+											<p xml:id="d1e1213">Flag State</p>
+										</th>
+										<th xml:id="d1e1216">
+											<p xml:id="d1e1218">Fishery</p>
+										</th>
+										<th xml:id="d1e1221">
+											<p xml:id="d1e1223">Number of fishing authorisations</p>
+										</th>
+										<th xml:id="d1e1226">
+											<p xml:id="d1e1228">Maximum number of vessels present at any time</p>
+										</th>
+									</tr>
+									<tr xml:id="d1e1232">
+										<td xml:id="d1e1234">
+											<p xml:id="d1e1236">Norway</p>
+										</td>
+										<td xml:id="d1e1239">
+											<p xml:id="d1e1241">Herring, north of 62° 00' N</p>
+										</td>
+										<td xml:id="d1e1244">
+											<p xml:id="d1e1246">To be established</p>
+										</td>
+										<td xml:id="d1e1249">
+											<p xml:id="d1e1251">To be established</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e1255">
+										<td xml:id="d1e1257" rowspan="7">
+											<p xml:id="d1e1259">Faroe Islands</p>
+										</td>
+										<td xml:id="d1e1262">
+											<p xml:id="d1e1264">Mackerel, 6a (north of 56° 30' N), 2a, 4a (north of
+												59° N)</p>
+											<p xml:id="d1e1266">Horse mackerel, 4, 6a (north of 56° 30' N), 7e, 7f,
+												7h</p>
+										</td>
+										<td xml:id="d1e1269">
+											<p xml:id="d1e1271">20</p>
+										</td>
+										<td xml:id="d1e1274">
+											<p xml:id="d1e1276">14</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e1280">
+										<td xml:id="d1e1282">
+											<p xml:id="d1e1284">Herring, north of 62° 00' N</p>
+										</td>
+										<td xml:id="d1e1287">
+											<p xml:id="d1e1289">20</p>
+										</td>
+										<td xml:id="d1e1292">
+											<p xml:id="d1e1294">To be established</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e1298">
+										<td xml:id="d1e1300">
+											<p xml:id="d1e1302">Herring, 3a</p>
+										</td>
+										<td xml:id="d1e1305">
+											<p xml:id="d1e1307">4</p>
+										</td>
+										<td xml:id="d1e1310">
+											<p xml:id="d1e1312">4</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e1317">
+										<td xml:id="d1e1319">
+											<p xml:id="d1e1321">Industrial fishing for Norway pout, 4, 6a (north of
+												56° 30' N) (including unavoidable by-catches of blue
+												whiting)</p>
+										</td>
+										<td xml:id="d1e1324">
+											<p xml:id="d1e1326">14</p>
+										</td>
+										<td xml:id="d1e1329">
+											<p xml:id="d1e1331">14</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e1335">
+										<td xml:id="d1e1337">
+											<p xml:id="d1e1339">Ling and tusk</p>
+										</td>
+										<td xml:id="d1e1342">
+											<p xml:id="d1e1344">20</p>
+										</td>
+										<td xml:id="d1e1347">
+											<p xml:id="d1e1349">10</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e1353">
+										<td xml:id="d1e1355">
+											<p xml:id="d1e1357">Blue whiting, 2, 4a, 5, 6a (north of 56° 30' N), 6b,
+												7 (west of 12° 00' W)</p>
+										</td>
+										<td xml:id="d1e1360">
+											<p xml:id="d1e1362">20</p>
+										</td>
+										<td xml:id="d1e1365">
+											<p xml:id="d1e1367">20</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e1371">
+										<td xml:id="d1e1373">
+											<p xml:id="d1e1375">Blue ling</p>
+										</td>
+										<td xml:id="d1e1378">
+											<p xml:id="d1e1380">16</p>
+										</td>
+										<td xml:id="d1e1383">
+											<p xml:id="d1e1385">16</p>
+										</td>
+									</tr>
+									<tr xml:id="d1e1389">
+										<td xml:id="d1e1391">
+											<p xml:id="d1e1393">Venezuela<authorialNote xml:id="d1e1395" marker="6" placement="bottom" placementBase="~table_d22e503">
+												<p xml:id="d1e1397">To issue those fishing authorisations, proof
+												must be produced that a valid contract exists
+												between the vessel owner applying for the fishing
+												authorisation and a processing undertaking
+												situated in the Department of French Guiana, and
+												that it includes an obligation to land at least 75
+												% of all snapper catches from the vessel concerned
+												in that department so that they may be processed
+												in that undertaking’s plant. Such a contract must
+												be endorsed by the French authorities, which shall
+												ensure that it is consistent both with the actual
+												capacity of the contracting processing undertaking
+												and with the objectives for the development of the
+												Guianese economy. A copy of the duly endorsed
+												contract shall be appended to the fishing
+												authorisation application. Where such an
+												endorsement is refused, the French authorities
+												shall give notification of this refusal and state
+												their reasons for it to the party concerned and to
+												the Commission.</p>
+												</authorialNote></p>
+										</td>
+										<td xml:id="d1e1401">
+											<p xml:id="d1e1403">Snappers (French Guiana waters)</p>
+										</td>
+										<td xml:id="d1e1406">
+											<p xml:id="d1e1408">45</p>
+										</td>
+										<td xml:id="d1e1411">
+											<p xml:id="d1e1413">45</p>
+										</td>
+									</tr>
+								</table>
+							</content>
+						</hcontainer>
+					</hcontainer>
+				</paragraph>
+			</part>
+		</mainBody>
+	</doc>
+</akomaNtoso>

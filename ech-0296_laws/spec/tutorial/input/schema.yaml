@@ -1,0 +1,129 @@
+id: https://ch.paf.link/schema/tutorial
+name: tutorial
+description: |
+  [en] This is a dummy schema for a parliamentary affairs system, including sessions, agenda items, and votes. It is used to demonstrate the use of LinkML for defining data models. In this model, a session contains multiple agenda items and each agenda item can have multiple votes.
+  [de] Dies ist ein Dummy-Schema für ein System von parlamentarischen Angelegenheiten, das Sitzungen, Tagesordnungspunkte und Abstimmungen umfasst. Es wird verwendet, um die Verwendung von LinkML zur Definition von Datenmodellen zu demonstrieren. In diesem Modell enthält eine Sitzung mehrere Tagesordnungspunkte und jeder Tagesordnungspunkt kann mehrere Abstimmungen haben.
+prefixes:
+  xsd: http://www.w3.org/2001/XMLSchema#
+  prov: http://www.w3.org/ns/prov#
+  dcterm: http://purl.org/dc/terms/
+  linkml: https://w3id.org/linkml/
+  tutorial: https://ch.paf.link/schema/tutorial/
+imports:
+  - linkml:types
+default_prefix: tutorial
+default_range: string
+  
+classes:
+  
+  Session:
+    slots:
+      - id
+      - start_date
+      - end_date
+      - name
+      - agenda_items
+    
+  AgendaItem:
+    slots:
+      - id
+      - name
+      - votes
+
+  Vote:
+    slots:
+      - id
+      - question
+      - vote_time
+      - result
+
+  Container:
+    tree_root: true
+    slots:
+      - id
+      - sessions
+      - agenda_items
+      - votes
+
+  MultilingualString:
+    slots:
+      - text
+      - language
+
+slots:
+  
+  id:
+    identifier: true
+    required: true
+
+  name:
+    slot_uri: schema:name
+    range: MultilingualString
+    multivalued: true
+    inlined_as_list: true
+
+  sessions:
+    slot_uri: tutorial:session
+    range: Session
+    multivalued: true
+    inlined_as_list: true
+  
+  agenda_items:
+    slot_uri: tutorial:agendaItem
+    range: AgendaItem
+    multivalued: true
+    inlined_as_list: true
+  
+  votes:
+    slot_uri: tutorial:vote
+    range: Vote
+    multivalued: true
+    inlined_as_list: true
+
+  question:
+    range: string
+    required: true
+  
+  result:
+    range: result_enum
+
+  text:
+    required: true
+  
+  language:
+    required: true
+    description: |
+      [en] Language code in ISO 639-1 format.
+      [de] Sprachcode im ISO 639-1-Format.
+    pattern: ^[a-z]{2}$
+    slot_uri: dcterm:language
+
+  start_date:
+    range: date
+    description: |
+      [en] The start date of the session.
+      [de] Das Startdatum der Sitzung.
+    slot_uri: tutorial:startDate
+
+  end_date:
+    range: date
+    description: |
+      [en] The end date of the session.
+      [de] Das Enddatum der Sitzung.
+    slot_uri: tutorial:endDate
+
+  vote_time:
+    range: datetime
+    description: |
+      [en] The date and time when the vote was cast.
+      [de] Das Datum und die Uhrzeit, zu der die Abstimmung abgegeben wurde.
+    slot_uri: tutorial:voteTime
+
+enums:
+
+  result_enum:
+    permissible_values:
+      "yes":
+        meaning: tutorial:results/yes
+      "no":
+        meaning: tutorial:results/no

@@ -1,0 +1,17 @@
+COV_DLV19_1.04    figure with legend
+COV_DLV19_1.19    mathematical formula
+CoV_DLV20_1.34    Council Regulation (with tables and Table of Annexes)
+COV_DLV20_1.34_1  complex table (heading subject and subparagraph)
+CoV_DLV20_1.35    Council directive
+CoV_DLV20_1.36    Council decision
+CoV_DLV20_1.38    Council internal document with draft decision
+CoV_DLV21_1.01    Proposal for a Council decision (with attachment)
+CoV_DLV21_1.01    Proposal for a Council decision (with annex)
+CoV_DLV21_1.02    Proposal for a Council decision (with annex)
+CoV_DLV21_1.03    Proposal for a Council Directive
+COV_DLV21_1.06    Council decision (with annex)
+COV_DLV21_1.07    Council internal document with fragment of consolidated bill
+CoV_DLV23_1.01    Proposal for a Council implementing decision
+COV_DLV23 1.04    Joint Proposal for a Council Regulation
+COV_DLV23 1.09    Council implementing decision
+

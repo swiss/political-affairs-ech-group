@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?><akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+	<act name="DEC">
+		<meta>
+			<identification source="~PUBL">
+				<FRBRWork>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<FRBRcountry value="EU"/>
+					<FRBRnumber value="eli/dec/2020/13 "/>
+					<FRBRprescriptive value="true"/>
+				</FRBRWork>
+				<FRBRExpression>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<FRBRlanguage language="en"/>
+				</FRBRExpression>
+				<FRBRManifestation>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+						<akn4eu:akn4euVersion value="4.1.1.0"/>
+						<akn4eu:akn4euDocumentation href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/akn4eu"/>
+					</preservation>
+				</FRBRManifestation>
+			</identification>
+			<references source="~PUBL">
+				<TLCReference name="language" href="http://publications.europa.eu/resource/authority/language/ENG" showAs="en"/>
+				<TLCReference xml:id="legalBasis" name="contentSubject" href="http://eurovoc.europa.eu/5456" showAs="Legal basis"/>
+				<TLCOrganization xml:id="PUBL" href="http://publications.europa.eu/resource/authority/corporate-body/PUBL" showAs="Publications Office"/>
+				<TLCOrganization xml:id="CONSIL" href="http://publications.europa.eu/resource/authority/corporate-body/CONSIL" showAs="Council of the European Union"/>
+				<TLCRole xml:id="PRESID" href="http://publications.europa.eu/resource/authority/role/PRESID" showAs="President"/>
+				<TLCLocation xml:id="BEL_BRU" href="http://publications.europa.eu/resource/authority/place/BEL_BRU" showAs="Brussels"/>
+				<TLCReference xml:id="DEC" name="docType" href="http://publications.europa.eu/resource/authority/resource-type/DEC" showAs="Decision"/>
+			</references>
+		</meta>
+		<preface xml:id="d1e78">
+			<longTitle xml:id="d1e80">
+				<p xml:id="d1e82"><docType xml:id="d1e83" refersTo="~DEC">Council Decision <docNumber xml:id="d1e85">(EU) 2020/13</docNumber></docType>
+					of <date xml:id="d1e87" date="2019-12-19">19 December 2019</date>
+					<docPurpose xml:id="d1e90">amending the negotiating directives for the negotiation of Economic
+						Partnership Agreements with the African, Caribbean and Pacific countries and regions, to
+						the extent that they fall within the competence of the Union</docPurpose></p>
+			</longTitle>
+		</preface>
+		<preamble xml:id="d1e94">
+			<formula xml:id="d1e96" name="actingEntity">
+				<p xml:id="d1e98">THE COUNCIL OF THE EUROPEAN UNION,</p>
+			</formula>
+			<citations xml:id="d1e101">
+				<citation xml:id="d1e103" refersTo="~legalBasis">
+					<p xml:id="d1e105">Having regard to the Treaty on the Functioning of the European Union, and in particular
+						Article 90, Article 100(2), the first subparagraph of Article 207(4) and Article 209, in
+						conjunction with Article 218(3) and (4) thereof,</p>
+				</citation>
+				<citation xml:id="d1e108">
+					<p xml:id="d1e110">Having regard to the recommendation from the European Commission,</p>
+				</citation>
+			</citations>
+			<recitals xml:id="d1e114">
+				<intro xml:id="d1e116">
+					<p xml:id="d1e118">Whereas:</p>
+				</intro>
+				<recital xml:id="d1e121">
+					<num xml:id="d1e123">(1)</num>
+					<p xml:id="d1e125"> On 17 June 2002, the Council authorised the Commission to negotiate Economic
+						Partnership Agreements (EPAs) with the African, Caribbean and Pacific (ACP) countries
+						and regions and adopted directives for those negotiations.</p>
+				</recital>
+				<recital xml:id="d1e128">
+					<num xml:id="d1e130">(2)</num>
+					<p xml:id="d1e132"> Concluded EPAs with the ACP countries and regions include rendez‐vous clauses for the
+						future review of those agreements.</p>
+				</recital>
+				<recital xml:id="d1e135">
+					<num xml:id="d1e137">(3)</num>
+					<p xml:id="d1e139"> The amendment of the negotiating directives is necessary to frame new negotiations
+						more accurately in light of recent Union policy initiatives and priorities as trade
+						evolves worldwide.</p>
+				</recital>
+				<recital xml:id="d1e142">
+					<num xml:id="d1e144">(4)</num>
+					<p xml:id="d1e146"> EPAs form part of the overall relationship between the Union and its Member States, on
+						the one side, and the ACP countries, on the other, as set out in the Partnership
+						Agreement between the members of the African, Caribbean and Pacific Group of States of
+						the one part, and the European Community and its Member States, of the other
+							part<authorialNote xml:id="d1e148" marker="1" placement="bottom">
+							<p xml:id="d1e150">OJ L 317, 15.12.2000, p. 3.</p>
+						</authorialNote>, as last amended (Cotonou Partnership Agreement) and, once applicable,
+						its successor agreement. Under Article 34(1) of the Cotonou Partnership Agreement, the
+						economic and trade cooperation between the parties aims at fostering the smooth and
+						gradual integration of the ACP States into the world economy, with due regard for their
+						political choices and development priorities, thereby promoting their sustainable
+						development and contributing to poverty eradication in the ACP countries. In this
+						context, EPAs can be considered to constitute development instruments as referred to in
+						Article 36(2) of the Cotonou Partnership Agreement. Negotiations should therefore
+						specially take account of the different levels of development of the parties, as well as
+						of the particular economic, social and environmental constraints of the ACP countries
+						and of the capacity of those countries to adapt and to adjust their economies to the
+						liberalisation process,</p>
+				</recital>
+			</recitals>
+			<formula xml:id="d1e156" name="enactingFormula">
+				<p xml:id="d1e158">HAS ADOPTED THIS DECISION:</p>
+			</formula>
+		</preamble>
+		<body xml:id="d1e162">
+			<article xml:id="d1e164">
+				<num xml:id="d1e166">Article 1 </num>
+				<paragraph xml:id="d1e168">
+					<content xml:id="d1e170">
+						<p xml:id="d1e172">The negotiating directives addressed to the Commission for the negotiation of
+							Economic Partnership Agreements with the African, Caribbean and Pacific countries and
+							regions, to the extent that they fall within the competence of the Union, are amended
+							as set out in the addendum.</p>
+					</content>
+				</paragraph>
+			</article>
+			<article xml:id="d1e177">
+				<num xml:id="d1e179">Article 2 </num>
+				<paragraph xml:id="d1e181">
+					<content xml:id="d1e183">
+						<p xml:id="d1e185">The negotiations shall be conducted in consultation with the ACP Working Party. The
+							Trade Policy Committee shall be associated on specific trade-related matters.</p>
+					</content>
+				</paragraph>
+			</article>
+			<article xml:id="d1e190">
+				<num xml:id="d1e192">Article 3 </num>
+				<paragraph xml:id="d1e194">
+					<content xml:id="d1e196">
+						<p xml:id="d1e198">This Decision is addressed to the Commission.</p>
+					</content>
+				</paragraph>
+			</article>
+		</body>
+		<conclusions xml:id="d1e204">
+			<p xml:id="d1e206">Done at <location xml:id="d1e208" refersTo="~BEL_BRU">Brussels</location>, <date xml:id="d1e211" date="2019-12-19">19 December 2019</date>.</p>
+			<block xml:id="d1e215" name="signatory">
+				<signature xml:id="d1e217">
+					<organization xml:id="d1e219" refersTo="~CONSIL">For the Council</organization>
+					<role xml:id="d1e222" refersTo="~PRESID">The President</role>
+					<person xml:id="d1e225" refersTo="">K. MIKKONEN</person>
+				</signature>
+			</block>
+		</conclusions>
+	</act>
+</akomaNtoso>

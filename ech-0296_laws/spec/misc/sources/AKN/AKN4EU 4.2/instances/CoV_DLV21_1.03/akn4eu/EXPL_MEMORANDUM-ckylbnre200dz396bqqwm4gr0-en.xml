@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?><akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+	<doc name="EXPL_MEMORANDUM">
+		<meta>
+			<identification source="~PUBL">
+				<FRBRWork>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">						
+						<akn4eu:fileCUID value="ckylbnre200dz396bqqwm4gr0"/>
+					</preservation>
+					<FRBRcountry value="EU"/>
+					<FRBRnumber value="COM(2020) 360"/>
+					<FRBRprescriptive value="false"/>
+				</FRBRWork>
+				<FRBRExpression>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<FRBRversionNumber value="final"/>
+					<FRBRlanguage language="en"/>
+				</FRBRExpression>
+				<FRBRManifestation>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+						<akn4eu:akn4euVersion value="4.2.0.0"/>
+						<akn4eu:akn4euDocumentation href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/akn4eu"/>
+					</preservation>
+				</FRBRManifestation>
+			</identification>
+			<references source="~PUBL">
+				<TLCReference name="language" href="http://publications.europa.eu/resource/authority/language/ENG" showAs="en"/>
+				<TLCOrganization xml:id="PUBL" href="http://publications.europa.eu/resource/authority/corporate-body/PUBL" showAs="Publications Office of the European Union"/>
+				<TLCReference xml:id="EXPL_MEMORANDUM" name="docType" href="http://publications.europa.eu/resource/authority/resource-type/EXPL_MEMORANDUM" showAs="Explanatory memorandum"/>			
+			</references>
+		</meta>
+		<preface xml:id="d1e77">
+			<longTitle xml:id="d1e79">
+				<p xml:id="d1e81"><docType xml:id="d1e82" refersTo="~EXPL_MEMORANDUM">EXPLANATORY MEMORANDUM</docType></p>
+			</longTitle>
+		</preface>
+		<mainBody xml:id="d1e87">
+			<tblock xml:id="d1e89">
+				<num xml:id="d1e91">1.</num><heading xml:id="d1e92">CONTEXT OF THE PROPOSAL</heading>
+				<tblock xml:id="d1e94">
+					<num xml:id="d1e96">•</num>
+					<heading xml:id="d1e98">Reasons for and objectives of the proposal</heading>
+					<blockContainer xml:id="d1e100">
+						<p xml:id="d1e102">The United Kingdom (UK) has left the European Union (EU) on 31 January 2020. In
+							accordance with the Withdrawal Agreement<authorialNote xml:id="d1e104" marker="1" placement="bottom">
+								<p xml:id="d1e106">Council agreement on the withdrawal of the United Kingdom of Great Britain and
+									Northern Ireland from the European Union and the European Atomic Energy Community
+									(OJ C384 I of 12.11.2019, p. 1).</p>
+							</authorialNote>, it is now a third country to the EU.</p>
+						<p xml:id="d1e110">However, the EU and the UK jointly agreed on a transition period until the end of
+							2020 during which, inter alia, the EU VAT legislation will continue to apply in the
+								UK<authorialNote xml:id="d1e112" marker="2" placement="bottom">
+								<p xml:id="d1e114">See Articles 126 and 127 of the Withdrawal Agreement.</p>
+							</authorialNote>.</p>
+						<p xml:id="d1e118">As from 1 January 2021, the EU VAT legislation will no longer apply to the UK.
+							However, on the basis of the Protocol on Ireland/Northern Ireland<authorialNote xml:id="d1e120" marker="3" placement="bottom">
+								<p xml:id="d1e122">OJ C384 I of 12.11.2019, p. 92.</p>
+							</authorialNote> (hereafter the ‘Protocol’), which is part of the Withdrawal
+							Agreement, Northern Ireland will remain under the EU VAT legislation regarding goods
+							with a view to avoiding a hard border between Ireland and Northern Ireland. For
+							services, on the other hand, Northern Ireland is, together with the rest of the UK,
+							considered as outside the EU.</p>
+						<p xml:id="d1e126">This inevitably leads to a dual or mixed VAT system in Northern Ireland whereby
+							supplies, intra-Community acquisitions and importations of goods that are located in
+							Northern Ireland, according to the rules on the place of taxable transactions laid
+							down in Title V of the VAT Directive<authorialNote xml:id="d1e128" marker="4" placement="bottom">
+								<p xml:id="d1e130">Council Directive 2006/112/EC of 28 November 2006 on the common system of value
+									added tax (OJ L 347 of 11.12.2006, p. 1).</p>
+							</authorialNote>, are subject to the harmonised EU rules, while supplies of services
+							made in that same territory are not subject to the EU VAT system.</p>
+						<p xml:id="d1e134">In order for the EU VAT system to function properly, it is essential that taxable
+							persons carrying out in Northern Ireland supplies of goods (including so-called
+							‘intra-Community supplies’) or intra-Community acquisitions of goods (including by
+							non-taxable legal persons) as listed in Article 214, are identified for VAT purposes
+							according to the EU rules. This is also necessary to ensure the proper functioning of
+							the optional special schemes for taxable persons supplying services to non-taxable
+							persons or making distance sales of goods.</p>
+						<p xml:id="d1e137">From that perspective, it is important that those taxable persons (and, where
+							appropriate, non-taxable legal persons) are identified in Northern Ireland via a
+							separate EU VAT identification number, granted according to the EU rules and that is
+							different from any UK VAT identification numbers (starting with “GB”) which will be
+							granted according to the UK legislation. It is possible that this EU VAT
+							identification number will have to be attributed in addition to the VAT identification
+							number applied in the UK in case, for example, a business supplies both goods and
+							services in Northern Ireland.</p>
+						<p xml:id="d1e139">For businesses, in particular those involved in the trade in goods to and from
+							Northern Ireland, it should be clear and easy to understand which rules apply, that is
+							either those in force in the EU or those applicable in the UK. The EU VAT
+							identification number plays an important role in the functioning of the EU VAT system,
+							e.g. to justify the exemption for so-called ‘intra-Community supplies’ of goods (via
+							the VIES system), to determine the applicable VAT refund procedures (EU VAT refund
+								system<authorialNote xml:id="d1e141" marker="5" placement="bottom">
+								<p xml:id="d1e143">Council Directive 2008/9/EC of 12 February 2008 laying down detailed rules for
+									the refund of value added tax, provided for in Directive 2006/112/EC, to taxable
+									persons not established in the Member State of refund but established in another
+									Member State (OJ L 44, 20.2.2008, p. 23).</p>
+							</authorialNote> or the 13th Directive<authorialNote xml:id="d1e146" marker="6" placement="bottom">
+								<p xml:id="d1e148">Thirteenth Council Directive 86/560/EEC of 17 November 1986 on the harmonization
+									of the laws of the Member States relating to turnover taxes - Arrangements for the
+									refund of value added tax to taxable persons not established in Community
+									territory (OJ L 326, 21.11.1986, p. 40).</p>
+							</authorialNote>), VAT grouping, triangular transactions and chain transactions
+							(‘intermediary operator’), call-off stock arrangements, ‘customs procedure 42’, the
+							‘safety net’ (place of intra-Community acquisition in the Member State that has issued
+							the VAT).</p>
+						<p xml:id="d1e152">Therefore, it is proposed that VAT identification numbers in Northern Ireland have
+							the specific prefix “XI”. A new specific prefix is necessary since Northern Ireland
+							has no specific ISO code 3166 – alpha 2, which is used to determine the prefixes of
+							VAT identification numbers in the EU as stipulated in Article 215 of the VAT
+							Directive. However, the ISO foresees in the possibility to use X-codes for territories
+							that do not have a specific code; the code “XI” is therefore a logical choice.</p>
+						<p xml:id="d1e154">To note that, while there is an overall obligation under Article 214 of the VAT
+							Directive to identify VAT taxable persons (and, where applicable, non-taxable legal
+							persons), the possibility also exists, subject to the conditions of Article 272 of the
+							VAT Directive, to exclude certain taxable persons from this and other obligations. As
+							a result, the UK could opt to limit the identification using the specific prefix to
+							those traders in Northern Ireland that are effectively engaged in intra-EU trade of
+							goods and exclude e.g. those businesses that only supply domestically.</p>
+						<p xml:id="d1e156">As already mentioned, the VAT identification number (with the correct country prefix)
+							plays an important role in intra-EU trade. A valid VAT identification number, with the
+							correct prefix, is now a substantive condition in order to apply the exemption in
+							Article 138 of the VAT Directive to so-called ‘intra-Community supplies’ of goods. It
+							is also necessary for applicants to be able to access the EU VAT refund system.</p>
+					</blockContainer>
+				</tblock>
+				<tblock xml:id="d1e160">
+					<num xml:id="d1e162">•</num>
+					<heading xml:id="d1e164">Consistency with existing policy provisions in the policy area</heading>
+					<blockContainer xml:id="d1e166">
+						<p xml:id="d1e168">The proposed use of the “XI” code is consistent with its intended use for Customs and
+							Excise purposes in relation to Northern Ireland.</p>
+					</blockContainer>
+				</tblock>
+				<tblock xml:id="d1e172">
+					<num xml:id="d1e174">•</num>
+					<heading xml:id="d1e176">Consistency with other Union policies</heading>
+					<blockContainer xml:id="d1e178">
+						<p xml:id="d1e180">The proposal is consistent with the overall implementation of the Protocol as to
+							ensure a timely and orderly preparation of the particular position of Northern Ireland
+							after the withdrawal of the UK from the EU.</p>
+					</blockContainer>
+				</tblock>
+			</tblock>
+			<tblock xml:id="d1e185">
+				<num xml:id="d1e187">2.</num><heading xml:id="d1e188">LEGAL BASIS, SUBSIDIARITY AND PROPORTIONALITY</heading>
+				<tblock xml:id="d1e190">
+					<num xml:id="d1e192">•</num>
+					<heading xml:id="d1e194">Legal basis</heading>
+					<blockContainer xml:id="d1e196">
+						<p xml:id="d1e198">The Directive amends the VAT Directive on the basis of Article 113 of the Treaty on
+							the Functioning of the European Union. This provision provides for the Council, acting
+							unanimously in accordance with a special legislative procedure and after consulting
+							the European Parliament and the Economic and Social Committee, to adopt provisions for
+							the harmonisation of Member States' rules in the area of indirect taxation.</p>
+					</blockContainer>
+				</tblock>
+				<tblock xml:id="d1e202">
+					<num xml:id="d1e204">•</num>
+					<heading xml:id="d1e206">Subsidiarity (for non-exclusive competence)</heading>
+					<blockContainer xml:id="d1e208">
+						<p xml:id="d1e210">According to the principle of subsidiarity, as set out in Article 5(3) of the Treaty
+							on European Union, action at Union level may only be taken if the envisaged aims
+							cannot be achieved sufficiently by the Member States alone and can therefore, by
+							reason of the scale or effects of the proposed actions, be better achieved by the
+							EU.</p>
+						<p xml:id="d1e212">VAT arrangements in relation to Northern Ireland can, by their very nature, not be
+							decided by individual Member States. Moreover, VAT is harmonised at EU level and,
+							therefore, any initiative to introduce a specific code to be used for the EU VAT
+							system in relation to Northern Ireland requires a proposal by the Commission to amend
+							the VAT Directive.</p>
+					</blockContainer>
+				</tblock>
+				<tblock xml:id="d1e216">
+					<num xml:id="d1e218">•</num>
+					<heading xml:id="d1e220">Proportionality</heading>
+					<blockContainer xml:id="d1e222">
+						<p xml:id="d1e224">The proposal, as far as the introduction of the special code for Northern Ireland is
+							concerned, is consistent with the principle of proportionality i.e. it does not go
+							beyond what is necessary to meet the objectives of the Treaties, in particular the
+							smooth functioning of the single market after the withdrawal of the UK from the EU.
+							Similar to the subsidiarity test, it is not possible for Member States to deal with
+							the practical aspects of the special situation of Northern Ireland in the EU VAT
+							system without a proposal to amend the VAT Directive.</p>
+					</blockContainer>
+				</tblock>
+				<tblock xml:id="d1e228">
+					<num xml:id="d1e230">•</num>
+					<heading xml:id="d1e232">Choice of the instrument</heading>
+					<blockContainer xml:id="d1e234">
+						<p xml:id="d1e236">A Directive is proposed in view of amending the VAT Directive.</p>
+					</blockContainer>
+				</tblock>
+			</tblock>
+			<tblock xml:id="d1e241">
+				<num xml:id="d1e243">4.</num><heading xml:id="d1e244">BUDGETARY IMPLICATIONS</heading>
+				<blockContainer xml:id="d1e246">
+					<p xml:id="d1e248">The proposal will have no negative implications for the Union budget.</p>
+					<p xml:id="d1e250">In this context, it is reminded that, in accordance with the second paragraph of
+						Article 8 of the Protocol, revenues resulting from transactions that are taxable in
+						Northern Ireland shall not be remitted to the EU.</p>
+				</blockContainer>
+			</tblock>
+		</mainBody>
+	</doc>
+</akomaNtoso>

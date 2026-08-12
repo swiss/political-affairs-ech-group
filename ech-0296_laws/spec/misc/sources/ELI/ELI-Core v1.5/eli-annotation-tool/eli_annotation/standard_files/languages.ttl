@@ -1,0 +1,3839 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
+
+<http://publications.europa.eu/resource/authority/language> a skos:ConceptScheme ;
+    dct:title "Languages"@en ;
+    dct:title "Langues"@fr .
+
+<http://publications.europa.eu/resource/authority/language/AAR> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "aa" ;
+    skos:prefLabel "afar"@aa .
+
+<http://publications.europa.eu/resource/authority/language/ABK> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ab" ;
+    skos:prefLabel "abkhazian"@ab .
+
+<http://publications.europa.eu/resource/authority/language/AFR> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "af" ;
+    skos:prefLabel "Afrikaans"@en .
+
+<http://publications.europa.eu/resource/authority/language/AKA> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ak" ;
+    skos:prefLabel "akan"@ak .
+
+<http://publications.europa.eu/resource/authority/language/AMH> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "am" ;
+    skos:prefLabel "Amharic"@en .
+
+<http://publications.europa.eu/resource/authority/language/ARA> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ar" ;
+    skos:prefLabel "арабски"@bg,
+        "arabština"@cs,
+        "arabisk"@da,
+        "Arabisch"@de,
+        "αραβικά"@el,
+        "Arabic"@en,
+        "árabe"@es,
+        "araabia keel"@et,
+        "arabia"@fi,
+        "arabe"@fr,
+        "Araibis"@ga,
+        "arapski"@hr,
+        "arabšćina"@hsb,
+        "arab"@hu,
+        "arabíska"@is,
+        "arabo"@it,
+        "arabų kalba"@lt,
+        "arābu valoda"@lv,
+        "арапски"@mk,
+        "Għarbi"@mt,
+        "Arabisch"@nl,
+        "arabisk"@no,
+        "arabski"@pl,
+        "árabe"@pt,
+        "arabă"@ro,
+        "арабский"@ru,
+        "arapski"@sh,
+        "arabčina"@sk,
+        "arabščina"@sl,
+        "арапски"@sr,
+        "arabiska"@sv,
+        "arapça"@tr,
+        "арабська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/ARG> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "an" ;
+    skos:prefLabel "aragonese"@an .
+
+<http://publications.europa.eu/resource/authority/language/ASM> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "as" ;
+    skos:prefLabel "assamese"@as .
+
+<http://publications.europa.eu/resource/authority/language/AVA> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "av" ;
+    skos:prefLabel "avaric"@av .
+
+<http://publications.europa.eu/resource/authority/language/AVE> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ae" ;
+    skos:prefLabel "avestan"@ae .
+
+<http://publications.europa.eu/resource/authority/language/AYM> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ay" ;
+    skos:prefLabel "Aymara"@en,
+        "aimara"@es .
+
+<http://publications.europa.eu/resource/authority/language/AZE> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "az" ;
+    skos:prefLabel "азербайджански"@bg,
+        "ázerbájdžánština"@cs,
+        "aserbajdsjansk"@da,
+        "Aserbaidschanisch"@de,
+        "αζεριανά"@el,
+        "Azerbaijani"@en,
+        "azerbaiyano"@es,
+        "aserbaidžaani keel"@et,
+        "azeri"@fi,
+        "azéri"@fr,
+        "Asarbaiseáinis"@ga,
+        "azerski"@hr,
+        "azeri"@hu,
+        "aserbaídsjanska"@is,
+        "azerbaigiano"@it,
+        "azerbaidžaniečių kalba"@lt,
+        "azerbaidžāņu valoda"@lv,
+        "азербејџански"@mk,
+        "Ażeri"@mt,
+        "Azerbeidzjaans"@nl,
+        "aserbajdsjansk"@no,
+        "azerski"@pl,
+        "azeri"@pt,
+        "azeră"@ro,
+        "азербайджанский"@ru,
+        "azerski"@sh,
+        "azerbajdžančina"@sk,
+        "azerbajdžanščina"@sl,
+        "azerbajdzjanska"@sv,
+        "azerice"@tr,
+        "азербайджанська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/BAK> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ba" ;
+    skos:prefLabel "bashkir"@ba .
+
+<http://publications.europa.eu/resource/authority/language/BAM> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "bm" ;
+    skos:prefLabel "bambara"@bm .
+
+<http://publications.europa.eu/resource/authority/language/BEL> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "be" ;
+    skos:prefLabel "беларуская мо́ва"@be,
+        "белоруски"@bg,
+        "běloruština"@cs,
+        "hviderussisk"@da,
+        "Weißrussisch"@de,
+        "λευκορωσικά"@el,
+        "Belarusian"@en,
+        "bielorruso"@es,
+        "valgevene keel"@et,
+        "valkovenäjä"@fi,
+        "biélorusse"@fr,
+        "Bealarúisis"@ga,
+        "bjeloruski"@hr,
+        "běłorušćina"@hsb,
+        "belarusz"@hu,
+        "hvítrússneska"@is,
+        "bielorusso"@it,
+        "baltarusių kalba"@lt,
+        "baltkrievu valoda"@lv,
+        "белоруски"@mk,
+        "Bjelorussu"@mt,
+        "Wit-Russisch"@nl,
+        "hviterussisk"@no,
+        "białoruski"@pl,
+        "bielorrusso"@pt,
+        "bielorusă"@ro,
+        "белорусский"@ru,
+        "bjeloruski"@sh,
+        "bieloruština"@sk,
+        "beloruščina"@sl,
+        "vitryska"@sv,
+        "beyaz Rusça"@tr,
+        "білоруська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/BEN> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "bn" ;
+    skos:prefLabel "бенгали"@bg,
+        "bengálština"@cs,
+        "bengali"@da,
+        "Bengalisch"@de,
+        "βενγκαλικά"@el,
+        "Bengali"@en,
+        "bengalí"@es,
+        "bengali keel"@et,
+        "bengali"@fi,
+        "bengalî"@fr,
+        "Bengali"@ga,
+        "bengalski"@hr,
+        "bengalšćina"@hsb,
+        "bengáli"@hu,
+        "bengalska"@is,
+        "bengalese"@it,
+        "bengalų kalba"@lt,
+        "bengāļu valoda"@lv,
+        "бенгалски"@mk,
+        "Bengaliża"@mt,
+        "Bengaals"@nl,
+        "bengali"@no,
+        "bengalski"@pl,
+        "bengali"@pt,
+        "bengaleză"@ro,
+        "бенгальский"@ru,
+        "bengalski"@sh,
+        "bengálčina"@sk,
+        "bengalščina"@sl,
+        "бенгалски"@sr,
+        "bengali"@sv,
+        "bengali"@tr,
+        "бенгальська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/BIS> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "bi" ;
+    skos:prefLabel "Bislama"@en,
+        "bichelamar"@es .
+
+<http://publications.europa.eu/resource/authority/language/BOD> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "bo" ;
+    skos:prefLabel "тибетски"@bg,
+        "tibetština"@cs,
+        "tibetansk"@da,
+        "Tibetisch"@de,
+        "θιβετιανά"@el,
+        "Tibetan"@en,
+        "tibetano"@es,
+        "tiibeti keel"@et,
+        "tiibet"@fi,
+        "tibétain"@fr,
+        "Tibetanis"@ga,
+        "tibetski"@hr,
+        "tibeti"@hu,
+        "tibetanska"@is,
+        "tibetano"@it,
+        "tibetiečių kalba"@lt,
+        "tibetiešu valoda"@lv,
+        "тибетски"@mk,
+        "Tibetan"@mt,
+        "Tibetaans"@nl,
+        "tibetanske"@no,
+        "tybetański"@pl,
+        "tibetano"@pt,
+        "tibetană"@ro,
+        "тибетский"@ru,
+        "tibetski"@sh,
+        "tibetčina"@sk,
+        "tibetanščina"@sl,
+        "tibetanska"@sv,
+        "tibetçe"@tr,
+        "тибетська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/BOS> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "bs" ;
+    skos:prefLabel "босненски"@bg,
+        "bosenština"@cs,
+        "bosnisk"@da,
+        "Bosnisch"@de,
+        "βοσνιακά"@el,
+        "Bosnian"@en,
+        "bosnio"@es,
+        "bosnia keel"@et,
+        "bosnia"@fi,
+        "bosnien"@fr,
+        "Bosnis"@ga,
+        "bošnjački"@hr,
+        "bosnišćina"@hsb,
+        "bosnyák"@hu,
+        "bosníska"@is,
+        "bosniaco"@it,
+        "bosnių kalba"@lt,
+        "bosniešu valoda"@lv,
+        "бошњачки"@mk,
+        "Bosnjan"@mt,
+        "Bosnisch"@nl,
+        "bosnik"@no,
+        "bośniacki"@pl,
+        "bósnio"@pt,
+        "bosniacă"@ro,
+        "боснийский"@ru,
+        "bošnjački"@sh,
+        "bosniačtina"@sk,
+        "bosanščina"@sl,
+        "бошњачки"@sr,
+        "bosniska"@sv,
+        "boşnakça"@tr,
+        "боснійська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/BRE> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "br" ;
+    skos:prefLabel "бретонски"@bg,
+        "bretonština"@cs,
+        "bretonsk"@da,
+        "Bretonisch"@de,
+        "βρετονικά"@el,
+        "Breton"@en,
+        "bretón"@es,
+        "bretooni keel"@et,
+        "bretoni"@fi,
+        "breton"@fr,
+        "Briotáinis"@ga,
+        "bretonski"@hr,
+        "bretonšćina"@hsb,
+        "breton"@hu,
+        "bretonska"@is,
+        "bretone"@it,
+        "bretonų kalba"@lt,
+        "bretoņu valoda"@lv,
+        "бретонски"@mk,
+        "Breton"@mt,
+        "Bretons"@nl,
+        "bretonsk"@no,
+        "bretoński"@pl,
+        "bretão"@pt,
+        "bretonă"@ro,
+        "бретонский"@ru,
+        "bretonski"@sh,
+        "bretónčina"@sk,
+        "bretonščina"@sl,
+        "бретонски"@sr,
+        "bretonska"@sv,
+        "bretonca"@tr,
+        "бретонська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/BUL> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "bg" ;
+    skos:prefLabel "български"@bg,
+        "bulharština"@cs,
+        "bulgarsk"@da,
+        "Bulgarisch"@de,
+        "βουλγαρικά"@el,
+        "Bulgarian"@en,
+        "búlgaro"@es,
+        "bulgaaria keel"@et,
+        "bulgaria"@fi,
+        "bulgare"@fr,
+        "Bulgáiris"@ga,
+        "bugarski"@hr,
+        "bołharšćina"@hsb,
+        "bolgár"@hu,
+        "búlgarska"@is,
+        "bulgaro"@it,
+        "bulgarų kalba"@lt,
+        "bulgāru valoda"@lv,
+        "бугарски"@mk,
+        "Bulgaru"@mt,
+        "Bulgaars"@nl,
+        "bulgarsk"@no,
+        "bułgarski"@pl,
+        "búlgaro"@pt,
+        "bulgară"@ro,
+        "болгарский"@ru,
+        "bugarski"@sh,
+        "bulharčina"@sk,
+        "bolgarščina"@sl,
+        "бугарски"@sr,
+        "bulgariska"@sv,
+        "bulgarca"@tr,
+        "болгарська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/CAT> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ca" ;
+    skos:prefLabel "каталонски"@bg,
+        "katalánština"@cs,
+        "catalansk"@da,
+        "Katalanisch"@de,
+        "καταλανικά"@el,
+        "Catalan"@en,
+        "catalán"@es,
+        "katalaani keel"@et,
+        "katalaani"@fi,
+        "catalan"@fr,
+        "Catalóinis"@ga,
+        "katalonski"@hr,
+        "katalán"@hu,
+        "katalónska"@is,
+        "catalano"@it,
+        "katalonų kalba"@lt,
+        "katalāņu valoda"@lv,
+        "каталонски"@mk,
+        "Katalan"@mt,
+        "Catalaans"@nl,
+        "katalansk"@no,
+        "kataloński"@pl,
+        "catalão"@pt,
+        "catalană"@ro,
+        "каталанский"@ru,
+        "katalonski"@sh,
+        "katalánčina"@sk,
+        "katalonščina"@sl,
+        "каталонски"@sr,
+        "katalanska"@sv,
+        "katalanca"@tr .
+
+<http://publications.europa.eu/resource/authority/language/CES> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "cs" ;
+    skos:prefLabel "чешки"@bg,
+        "čeština"@cs,
+        "tjekkisk"@da,
+        "Tschechisch"@de,
+        "τσεχικά"@el,
+        "Czech"@en,
+        "checo"@es,
+        "tšehhi keel"@et,
+        "tšekki"@fi,
+        "tchèque"@fr,
+        "Seicis"@ga,
+        "češki"@hr,
+        "čěšćina"@hsb,
+        "cseh"@hu,
+        "tékkneska"@is,
+        "ceco"@it,
+        "čekų kalba"@lt,
+        "čehu valoda"@lv,
+        "чешки"@mk,
+        "Ċek"@mt,
+        "Tsjechisch"@nl,
+        "tsjekkisk"@no,
+        "czeski"@pl,
+        "checo"@pt,
+        "cehă"@ro,
+        "чешский"@ru,
+        "češki"@sh,
+        "čeština"@sk,
+        "češčina"@sl,
+        "чешки"@sr,
+        "tjeckiska"@sv,
+        "çekçe"@tr,
+        "чеська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/CHA> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ch" ;
+    skos:prefLabel "Chamorro"@en .
+
+<http://publications.europa.eu/resource/authority/language/CHE> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ce" ;
+    skos:prefLabel "chechen"@ce .
+
+<http://publications.europa.eu/resource/authority/language/CHU> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "cu" ;
+    skos:prefLabel "church Slavic"@cu .
+
+<http://publications.europa.eu/resource/authority/language/CHV> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "cv" ;
+    skos:prefLabel "chuvash"@cv .
+
+<http://publications.europa.eu/resource/authority/language/COR> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "kw" ;
+    skos:prefLabel "корнуолски"@bg,
+        "kornština"@cs,
+        "kornisk"@da,
+        "Kornisch"@de,
+        "κορνουαλικά"@el,
+        "Cornish"@en,
+        "córnico"@es,
+        "korni keel"@et,
+        "korni"@fi,
+        "cornique"@fr,
+        "Choirnis"@ga,
+        "kornijski"@hr,
+        "korni"@hu,
+        "kornbreska"@is,
+        "cornico"@it,
+        "kornų kalba"@lt,
+        "korniešu valoda"@lv,
+        "корнски"@mk,
+        "Korniku"@mt,
+        "Cornisch"@nl,
+        "kornisk"@no,
+        "kornijski"@pl,
+        "córnico"@pt,
+        "cornică"@ro,
+        "корнский"@ru,
+        "kornijski"@sh,
+        "kornčina"@sk,
+        "kornijščina"@sl,
+        "корнишки"@sr,
+        "korniska"@sv,
+        "kernevekçe"@tr,
+        "корнська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/COS> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "co" ;
+    skos:prefLabel "корсикански"@bg,
+        "korsičtina"@cs,
+        "korsikansk"@da,
+        "Korsisch"@de,
+        "κορσικανικά"@el,
+        "Corsican"@en,
+        "corso"@es,
+        "korsika keel"@et,
+        "korsika"@fi,
+        "corse"@fr,
+        "Corsisis"@ga,
+        "korzički"@hr,
+        "korzikai"@hu,
+        "korsika"@is,
+        "corso"@it,
+        "korsikiečių kalba"@lt,
+        "korsikāņu valoda"@lv,
+        "корсикански"@mk,
+        "Korsiku"@mt,
+        "Corsicaans"@nl,
+        "korsikansk"@no,
+        "korsykański"@pl,
+        "corso"@pt,
+        "corsică"@ro,
+        "корсиканский"@ru,
+        "korzički"@sh,
+        "korzičtina"@sk,
+        "korziščina"@sl,
+        "korsiska"@sv,
+        "korsikaca"@tr .
+
+<http://publications.europa.eu/resource/authority/language/CRE> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "cr" ;
+    skos:prefLabel "cree"@cr .
+
+<http://publications.europa.eu/resource/authority/language/CYM> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "cy" ;
+    skos:prefLabel "уелски"@bg,
+        "velština"@cs,
+        "walisisk"@da,
+        "Walisisch"@de,
+        "ουαλικά"@el,
+        "Welsh"@en,
+        "galés"@es,
+        "kõmri keel"@et,
+        "kymri"@fi,
+        "gallois"@fr,
+        "Breatnais"@ga,
+        "velški"@hr,
+        "walizišćina"@hsb,
+        "walesi"@hu,
+        "velska"@is,
+        "gallese"@it,
+        "valų kalba"@lt,
+        "velsiešu valoda"@lv,
+        "велшки"@mk,
+        "Galliż"@mt,
+        "Welsh"@nl,
+        "walisisk"@no,
+        "walijski"@pl,
+        "galês"@pt,
+        "galeză"@ro,
+        "валлийский"@ru,
+        "velški"@sh,
+        "waleština"@sk,
+        "valižanščina"@sl,
+        "велшки"@sr,
+        "kymriska"@sv,
+        "galler"@tr,
+        "валлійська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/DAN> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "da" ;
+    skos:prefLabel "датски"@bg,
+        "dánština"@cs,
+        "dansk"@da,
+        "Dänisch"@de,
+        "δανικά"@el,
+        "Danish"@en,
+        "danés"@es,
+        "taani keel"@et,
+        "tanska"@fi,
+        "danois"@fr,
+        "Danmhairgis"@ga,
+        "danski"@hr,
+        "danšćina"@hsb,
+        "dán"@hu,
+        "danska"@is,
+        "danese"@it,
+        "danų kalba"@lt,
+        "dāņu valoda"@lv,
+        "дански"@mk,
+        "Daniż"@mt,
+        "Deens"@nl,
+        "dansk"@no,
+        "duński"@pl,
+        "dinamarquês"@pt,
+        "daneză"@ro,
+        "датский"@ru,
+        "danski"@sh,
+        "dánčina"@sk,
+        "danščina"@sl,
+        "дански"@sr,
+        "danska"@sv,
+        "danca"@tr,
+        "данська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/DEU> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "de" ;
+    skos:prefLabel "немски"@bg,
+        "němčina"@cs,
+        "tysk"@da,
+        "Deutsch"@de,
+        "γερμανικά"@el,
+        "German"@en,
+        "alemán"@es,
+        "saksa keel"@et,
+        "saksa"@fi,
+        "allemand"@fr,
+        "Gearmáinis"@ga,
+        "njemački"@hr,
+        "němska"@hsb,
+        "német"@hu,
+        "þýska"@is,
+        "tedesco"@it,
+        "vokiečių kalba"@lt,
+        "vācu valoda"@lv,
+        "германски"@mk,
+        "Ġermaniż"@mt,
+        "Duits"@nl,
+        "tysk"@no,
+        "niemiecki"@pl,
+        "alemão"@pt,
+        "germană"@ro,
+        "немецкий"@ru,
+        "nemački"@sh,
+        "nemčina"@sk,
+        "nemščina"@sl,
+        "немачки"@sr,
+        "tyska"@sv,
+        "almanca"@tr,
+        "німецька мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/DIV> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "dv" ;
+    skos:prefLabel "дхивехи"@bg,
+        "divehi"@cs,
+        "dhivedi"@da,
+        "Dhivehi"@de,
+        "ντιβέχι"@el,
+        "Dhivehi"@en,
+        "divehi"@es,
+        "maldiivi keel"@et,
+        "divehi"@fi,
+        "divehi"@fr,
+        "Divéihis"@ga,
+        "divehi"@hr,
+        "maldív"@hu,
+        "dívehí"@is,
+        "maldiviano"@it,
+        "maldyvų kalba"@lt,
+        "maldīviešu valoda"@lv,
+        "дивехи"@mk,
+        "Diveli"@mt,
+        "Divehi"@nl,
+        "dhivehi"@no,
+        "malediwski"@pl,
+        "divehi"@pt,
+        "divehi"@ro,
+        "дивехи"@ru,
+        "divehi"@sh,
+        "maldivčina"@sk,
+        "divehi"@sl,
+        "дивехи"@sr,
+        "divehi"@sv,
+        "dhivehi"@tr .
+
+<http://publications.europa.eu/resource/authority/language/DZO> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "dz" ;
+    skos:prefLabel "Dzongkha"@en .
+
+<http://publications.europa.eu/resource/authority/language/ELL> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "el" ;
+    skos:prefLabel "гръцки"@bg,
+        "řečtina"@cs,
+        "græsk"@da,
+        "Griechisch"@de,
+        "ελληνικά"@el,
+        "Greek"@en,
+        "griego"@es,
+        "kreeka keel"@et,
+        "kreikka"@fi,
+        "grec"@fr,
+        "Gréigis"@ga,
+        "grčki"@hr,
+        "grjekšćina"@hsb,
+        "görög"@hu,
+        "gríska"@is,
+        "greco"@it,
+        "graikų kalba"@lt,
+        "grieķu valoda"@lv,
+        "грчки"@mk,
+        "Grieg"@mt,
+        "Grieks"@nl,
+        "gresk"@no,
+        "grecki"@pl,
+        "grego"@pt,
+        "greacă"@ro,
+        "греческий"@ru,
+        "grčki"@sh,
+        "gréčtina"@sk,
+        "grščina"@sl,
+        "грчки"@sr,
+        "grekiska"@sv,
+        "yunanca"@tr,
+        "грецька мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/ENG> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "en" ;
+    skos:prefLabel "английски"@bg,
+        "angličtina"@cs,
+        "engelsk"@da,
+        "Englisch"@de,
+        "αγγλικά"@el,
+        "English"@en,
+        "inglés"@es,
+        "inglise keel"@et,
+        "englanti"@fi,
+        "anglais"@fr,
+        "Béarla"@ga,
+        "engleski"@hr,
+        "jendźelšćina"@hsb,
+        "angol"@hu,
+        "enska"@is,
+        "inglese"@it,
+        "anglų kalba"@lt,
+        "angļu valoda"@lv,
+        "англиски"@mk,
+        "Ingliż"@mt,
+        "Engels"@nl,
+        "engelsk"@no,
+        "angielski"@pl,
+        "inglês"@pt,
+        "engleză"@ro,
+        "английский"@ru,
+        "engleski"@sh,
+        "angličtina"@sk,
+        "angleščina"@sl,
+        "енглески"@sr,
+        "engelska"@sv,
+        "ıngilizce"@tr,
+        "англійська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/EPO> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "eo" ;
+    skos:prefLabel "есперанто"@bg,
+        "esperanto"@cs,
+        "esperanto"@da,
+        "Esperanto"@de,
+        "εσπεράντο"@el,
+        "Esperanto"@en,
+        "esperanto"@es,
+        "esperanto keel"@et,
+        "esperanto"@fi,
+        "espéranto"@fr,
+        "Esperanto"@ga,
+        "esperanto"@hr,
+        "esperanto"@hsb,
+        "eszperantó"@hu,
+        "esperanto"@is,
+        "esperanto"@it,
+        "esperanto kalba"@lt,
+        "esperanto"@lv,
+        "есперанто"@mk,
+        "Esperanto"@mt,
+        "Esperanto"@nl,
+        "esperanto"@no,
+        "esperanto"@pl,
+        "esperanto"@pt,
+        "esperanto"@ro,
+        "эсперанто"@ru,
+        "esperanto"@sh,
+        "esperanto"@sk,
+        "esperanto"@sl,
+        "есперанто"@sr,
+        "esperanto"@sv,
+        "esperanto"@tr,
+        "еспера́нто мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/EST> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "et" ;
+    skos:prefLabel "естонски"@bg,
+        "estonština"@cs,
+        "estisk"@da,
+        "Estnisch"@de,
+        "εσθονικά"@el,
+        "Estonian"@en,
+        "estonio"@es,
+        "eesti keel"@et,
+        "viro"@fi,
+        "estonien"@fr,
+        "Eastóinis"@ga,
+        "estonski"@hr,
+        "estišćina"@hsb,
+        "észt"@hu,
+        "eistneska"@is,
+        "estone"@it,
+        "estų kalba"@lt,
+        "igauņu valoda"@lv,
+        "естонски"@mk,
+        "Eston"@mt,
+        "Estisch"@nl,
+        "estisk"@no,
+        "estoński"@pl,
+        "estónio"@pt,
+        "estonă"@ro,
+        "эстонский"@ru,
+        "estonski"@sh,
+        "estónčina"@sk,
+        "estonščina"@sl,
+        "естонски"@sr,
+        "estniska"@sv,
+        "estonca"@tr,
+        "естонська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/EUS> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "eu" ;
+    skos:prefLabel "баскски"@bg,
+        "baskičtina"@cs,
+        "baskisk"@da,
+        "Baskisch"@de,
+        "βασκικά"@el,
+        "Basque"@en,
+        "vasco"@es,
+        "baski keel"@et,
+        "baski"@fi,
+        "basque"@fr,
+        "Bascais"@ga,
+        "baskijski"@hr,
+        "baskovščina"@hsb,
+        "baszk"@hu,
+        "baskneska"@is,
+        "basco"@it,
+        "baskų kalba"@lt,
+        "basku valoda"@lv,
+        "баскијски"@mk,
+        "Bask"@mt,
+        "Baskisch"@nl,
+        "baskisk"@no,
+        "baskijski"@pl,
+        "basco"@pt,
+        "bască"@ro,
+        "баскский"@ru,
+        "baskijski"@sh,
+        "baskičtina"@sk,
+        "baskovščina"@sl,
+        "баскијски"@sr,
+        "baskiska"@sv,
+        "baskça"@tr,
+        "ба́скська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/EWE> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ee" ;
+    skos:prefLabel "ewe"@ee .
+
+<http://publications.europa.eu/resource/authority/language/FAO> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "fo" ;
+    skos:prefLabel "фарьорски"@bg,
+        "faerština"@cs,
+        "færøsk"@da,
+        "Färöisch"@de,
+        "φεροενικά"@el,
+        "Faroese"@en,
+        "feroés"@es,
+        "fääri keel"@et,
+        "fääri"@fi,
+        "féringien"@fr,
+        "Faróis"@ga,
+        "ferojski"@hr,
+        "färöšćina"@hsb,
+        "feröeri"@hu,
+        "færeyska"@is,
+        "faroese"@it,
+        "farerų kalba"@lt,
+        "fēru valoda"@lv,
+        "фарски"@mk,
+        "Faroeż"@mt,
+        "Faeröers"@nl,
+        "færøysk"@no,
+        "farerski"@pl,
+        "feroês"@pt,
+        "feroeză"@ro,
+        "фарерский"@ru,
+        "farerski"@sh,
+        "faerčina"@sk,
+        "ferščina"@sl,
+        "фарски"@sr,
+        "färöiska"@sv,
+        "faroe"@tr,
+        "фарерська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/FAS> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "fa" ;
+    skos:prefLabel "персийски"@bg,
+        "perština"@cs,
+        "farsi"@da,
+        "Persisch"@de,
+        "περσικά"@el,
+        "Persian"@en,
+        "persa"@es,
+        "pärsia keel"@et,
+        "persia"@fi,
+        "persan"@fr,
+        "Peirsis"@ga,
+        "perzijski"@hr,
+        "persišćina"@hsb,
+        "perzsa"@hu,
+        "persneska"@is,
+        "persiano"@it,
+        "persų kalba"@lt,
+        "persiešu valoda"@lv,
+        "персиски"@mk,
+        "Persjan"@mt,
+        "Perzisch"@nl,
+        "persisk"@no,
+        "perski"@pl,
+        "perso"@pt,
+        "persană"@ro,
+        "персидский"@ru,
+        "perzijski"@sh,
+        "perzština"@sk,
+        "perzijščina"@sl,
+        "персијски"@sr,
+        "persiska"@sv,
+        "farsça"@tr,
+        "фарсі́ мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/FIJ> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "fj" ;
+    skos:prefLabel "Fijian"@en .
+
+<http://publications.europa.eu/resource/authority/language/FIN> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "fi" ;
+    skos:prefLabel "фински"@bg,
+        "finština"@cs,
+        "finsk"@da,
+        "Finnisch"@de,
+        "φινλανδικά"@el,
+        "Finnish"@en,
+        "finés"@es,
+        "soome keel"@et,
+        "suomi"@fi,
+        "finnois"@fr,
+        "Fionlainnis"@ga,
+        "finski"@hr,
+        "finšćina"@hsb,
+        "finn"@hu,
+        "finnska"@is,
+        "finlandese"@it,
+        "suomių kalba"@lt,
+        "somu valoda"@lv,
+        "фински"@mk,
+        "Finlandiż"@mt,
+        "Fins"@nl,
+        "finsk"@no,
+        "fiński"@pl,
+        "finlandês"@pt,
+        "finlandeză"@ro,
+        "финский"@ru,
+        "finski"@sh,
+        "fínčina"@sk,
+        "finščina"@sl,
+        "фински"@sr,
+        "finska"@sv,
+        "fince"@tr,
+        "фінська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/FRA> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "fr" ;
+    skos:prefLabel "френски"@bg,
+        "francouzština"@cs,
+        "fransk"@da,
+        "Französisch"@de,
+        "γαλλικά"@el,
+        "French"@en,
+        "francés"@es,
+        "prantsuse keel"@et,
+        "ranska"@fi,
+        "français"@fr,
+        "Fraincis"@ga,
+        "francuski"@hr,
+        "francošćina"@hsb,
+        "francia"@hu,
+        "franska"@is,
+        "francese"@it,
+        "prancūzų kalba"@lt,
+        "franču valoda"@lv,
+        "француски"@mk,
+        "Franċiż"@mt,
+        "Frans"@nl,
+        "fransk"@no,
+        "francuski"@pl,
+        "francês"@pt,
+        "franceză"@ro,
+        "французский"@ru,
+        "francuski"@sh,
+        "francúzština"@sk,
+        "francoščina"@sl,
+        "француски"@sr,
+        "franska"@sv,
+        "fransızca"@tr,
+        "францу́зька мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/FRY> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "fy" ;
+    skos:prefLabel "фризийски"@bg,
+        "fríština"@cs,
+        "frisisk"@da,
+        "Friesisch"@de,
+        "φριζικά"@el,
+        "Frisian"@en,
+        "frisón"@es,
+        "friisi keel"@et,
+        "friisi"@fi,
+        "frison"@fr,
+        "Frisisis"@ga,
+        "frizijski"@hr,
+        "frizijščina"@hsb,
+        "fríz"@hu,
+        "frísneska"@is,
+        "frisone"@it,
+        "fryzų kalba"@lt,
+        "frīzu valoda"@lv,
+        "фризски"@mk,
+        "Friġju"@mt,
+        "Fries"@nl,
+        "frisisk"@no,
+        "fryzyjski"@pl,
+        "frísio"@pt,
+        "frizonă"@ro,
+        "фризский"@ru,
+        "frízština"@sk,
+        "frizijščina"@sl,
+        "frisiska"@sv,
+        "frizce"@tr,
+        "фри́зька мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/FUL> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ff" ;
+    skos:prefLabel "fulah"@ff .
+
+<http://publications.europa.eu/resource/authority/language/GLA> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "gd" ;
+    skos:prefLabel "шотландски"@bg,
+        "skotská gaelština"@cs,
+        "skotsk-gælisk"@da,
+        "Schottisch-Gälisch"@de,
+        "σκοτικά γαελικά"@el,
+        "Scottish Gaelic"@en,
+        "gaélico escocés"@es,
+        "gaeli keel"@et,
+        "gaeli"@fi,
+        "gaélique écossais"@fr,
+        "Gàidhlig"@ga,
+        "škotski gaelski"@hr,
+        "škotska gelščina"@hsb,
+        "skót"@hu,
+        "gelíska"@is,
+        "gaelico scozzese"@it,
+        "škotų gėlų kalba"@lt,
+        "skotu gēlu valoda"@lv,
+        "шкотски гаелски"@mk,
+        "Gejlik Skoċċiż"@mt,
+        "Schots-Gaelisch"@nl,
+        "skotsk gælisk"@no,
+        "gaelicki szkocki"@pl,
+        "gaélico escocês"@pt,
+        "scoţiană"@ro,
+        "шотландский гэльский"@ru,
+        "škotska galski"@sh,
+        "škótska gaelčina"@sk,
+        "škotska gelščina"@sl,
+        "шкотски гелски"@sr,
+        "skotsk gaeliska"@sv,
+        "ıskoçça"@tr,
+        "шотландська (гельська) мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/GLE> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ga" ;
+    skos:prefLabel "ирландски"@bg,
+        "irština"@cs,
+        "irsk"@da,
+        "Irisch"@de,
+        "ιρλανδικά"@el,
+        "Irish"@en,
+        "irlandés"@es,
+        "iiri keel"@et,
+        "iiri"@fi,
+        "irlandais"@fr,
+        "Gaeilge"@ga,
+        "irski"@hr,
+        "iršćina"@hsb,
+        "ír"@hu,
+        "írska"@is,
+        "irlandese"@it,
+        "airių kalba"@lt,
+        "īru valoda"@lv,
+        "ирски"@mk,
+        "Irlandiż"@mt,
+        "Iers"@nl,
+        "irsk"@no,
+        "irlandzki"@pl,
+        "irlandês"@pt,
+        "irlandeză"@ro,
+        "ирландский"@ru,
+        "irski"@sh,
+        "írčina"@sk,
+        "irščina"@sl,
+        "ирски"@sr,
+        "iriska"@sv,
+        "ırlandaca"@tr,
+        "Ірландська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/GLG> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "gl" ;
+    skos:prefLabel "галисийски"@bg,
+        "galicijština"@cs,
+        "galicisk"@da,
+        "Galicisch"@de,
+        "γαλικιανά"@el,
+        "Galician"@en,
+        "gallego"@es,
+        "galeegi keel"@et,
+        "galego"@fi,
+        "galicien"@fr,
+        "Gailísis"@ga,
+        "galicijski"@hr,
+        "galščina"@hsb,
+        "galíciai"@hu,
+        "galiziano"@it,
+        "galisų kalba"@lt,
+        "galisiešu valoda"@lv,
+        "галициски"@mk,
+        "Galizjan"@mt,
+        "Galicisch"@nl,
+        "galisisk"@no,
+        "galicyjski"@pl,
+        "galego"@pt,
+        "galiciană"@ro,
+        "галисийский"@ru,
+        "galicijski"@sh,
+        "galícijčina"@sk,
+        "galščina"@sl,
+        "галицијски"@sr,
+        "galiciska"@sv,
+        "galiçyaca"@tr,
+        "галісійська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/GLV> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "gv" ;
+    skos:prefLabel "Manx"@en .
+
+<http://publications.europa.eu/resource/authority/language/GRN> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "gn" ;
+    skos:prefLabel "Guarani"@en,
+        "guaraní"@es .
+
+<http://publications.europa.eu/resource/authority/language/GUJ> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "gu" ;
+    skos:prefLabel "gujarati"@gu .
+
+<http://publications.europa.eu/resource/authority/language/HAT> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ht" ;
+    skos:prefLabel "Haitian"@en,
+        "créole haïtien"@fr .
+
+<http://publications.europa.eu/resource/authority/language/HAU> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ha" ;
+    skos:prefLabel "hausa"@ha .
+
+<http://publications.europa.eu/resource/authority/language/HBS> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "sh" ;
+    skos:prefLabel "сърбохърватски"@bg,
+        "srbochorvatština"@cs,
+        "serbokroatisk"@da,
+        "Serbokroatisch"@de,
+        "σερβοκροατικά"@el,
+        "Serbo-Croatian"@en,
+        "serbocroata"@es,
+        "serbia-horvaadi keel"@et,
+        "serbokroaatti"@fi,
+        "serbo-croate"@fr,
+        "Seirbea-Chróitis"@ga,
+        "srpskohrvatski"@hr,
+        "serbiskochorwatšćina"@hsb,
+        "szerbhorvát"@hu,
+        "serbo-croato"@it,
+        "serbų-kroatų kalba"@lt,
+        "serbu-horvātu valoda"@lv,
+        "Serbo-kroat"@mt,
+        "Servo-Kroatisch"@nl,
+        "serbokroatisk"@no,
+        "serbo-chorwacki"@pl,
+        "servo-croata"@pt,
+        "sârbocroată"@ro,
+        "сербскохорватский"@ru,
+        "srpskohrvatski"@sh,
+        "srbochorvátčina"@sk,
+        "srbohrvaščina"@sl,
+        "српскохрватски"@sr,
+        "serbokroatiska"@sv,
+        "sırp-Hırvatça"@tr .
+
+<http://publications.europa.eu/resource/authority/language/HEB> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "he" ;
+    skos:prefLabel "иврит"@bg,
+        "hebrejština"@cs,
+        "hebræisk"@da,
+        "Hebräisch"@de,
+        "εβραϊκά"@el,
+        "Hebrew"@en,
+        "hebreo"@es,
+        "heebrea keel"@et,
+        "heprea"@fi,
+        "hébreu"@fr,
+        "Eabhrais"@ga,
+        "hebrejski"@hr,
+        "hebrejšćina"@hsb,
+        "héber"@hu,
+        "hebreska"@is,
+        "ebraico"@it,
+        "hebrajų kalba"@lt,
+        "ebreju valoda"@lv,
+        "хебрејски"@mk,
+        "Ebrajk"@mt,
+        "Hebreeuws"@nl,
+        "hebraisk"@no,
+        "hebrajski"@pl,
+        "hebreu"@pt,
+        "ebraică"@ro,
+        "иврит"@ru,
+        "hebrejski"@sh,
+        "hebrejčina"@sk,
+        "hebrejščina"@sl,
+        "хебрејски"@sr,
+        "hebreiska"@sv,
+        "ıbranice"@tr,
+        "гебре́йська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/HER> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "hz" ;
+    skos:prefLabel "herero"@hz .
+
+<http://publications.europa.eu/resource/authority/language/HIN> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "hi" ;
+    skos:prefLabel "хинди"@bg,
+        "hindština"@cs,
+        "hindi"@da,
+        "Hindi"@de,
+        "χίντι"@el,
+        "Hindi"@en,
+        "hindi"@es,
+        "hindi keel"@et,
+        "hindi"@fi,
+        "hindi"@fr,
+        "Hiondúis"@ga,
+        "hindski"@hr,
+        "hindišćina"@hsb,
+        "hindi"@hu,
+        "hindí"@is,
+        "hindi"@it,
+        "hindi kalba"@lt,
+        "hindu valoda"@lv,
+        "хинди"@mk,
+        "Ħindi"@mt,
+        "Hindi"@nl,
+        "hindi"@no,
+        "hindi"@pl,
+        "hindi"@pt,
+        "hindi"@ro,
+        "хинди"@ru,
+        "hindi"@sh,
+        "hindčina"@sk,
+        "hindijščina"@sl,
+        "хинди"@sr,
+        "hindi"@sv,
+        "hintçe"@tr,
+        "гі́нді мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/HMO> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ho" ;
+    skos:prefLabel "Hiri Motu"@en .
+
+<http://publications.europa.eu/resource/authority/language/HRV> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "hr" ;
+    skos:prefLabel "хърватски"@bg,
+        "chorvatština"@cs,
+        "kroatisk"@da,
+        "Kroatisch"@de,
+        "κροατικά"@el,
+        "Croatian"@en,
+        "croata"@es,
+        "horvaadi keel"@et,
+        "kroaatti"@fi,
+        "croate"@fr,
+        "Cróitis"@ga,
+        "hrvatski"@hr,
+        "chorwatšćina"@hsb,
+        "horvát"@hu,
+        "króatíska"@is,
+        "croato"@it,
+        "kroatų kalba"@lt,
+        "horvātu valoda"@lv,
+        "хрватски"@mk,
+        "Kroat"@mt,
+        "Kroatisch"@nl,
+        "kroatisk"@no,
+        "chorwacki"@pl,
+        "croata"@pt,
+        "croată"@ro,
+        "хорватский"@ru,
+        "hrvatski"@sh,
+        "chorvátčina"@sk,
+        "hrvaščina"@sl,
+        "хрватски"@sr,
+        "kroatiska"@sv,
+        "hırvatça"@tr,
+        "хорватська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/HUN> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "hu" ;
+    skos:prefLabel "унгарски"@bg,
+        "maďarština"@cs,
+        "ungarsk"@da,
+        "Ungarisch"@de,
+        "ουγγρικά"@el,
+        "Hungarian"@en,
+        "húngaro"@es,
+        "ungari keel"@et,
+        "unkari"@fi,
+        "hongrois"@fr,
+        "Ungáiris"@ga,
+        "mađarski"@hr,
+        "madźaršćina"@hsb,
+        "magyar"@hu,
+        "ungverska"@is,
+        "ungherese"@it,
+        "vengrų kalba"@lt,
+        "ungāru valoda"@lv,
+        "унгарски"@mk,
+        "Ungeriż"@mt,
+        "Hongaars"@nl,
+        "ungarsk"@no,
+        "węgierski"@pl,
+        "húngaro"@pt,
+        "maghiară"@ro,
+        "венгерский"@ru,
+        "mađarski"@sh,
+        "maďarčina"@sk,
+        "madžarščina"@sl,
+        "мађарски"@sr,
+        "ungerska"@sv,
+        "macarca"@tr,
+        "угорська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/HYE> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "hy" ;
+    skos:prefLabel "арменски"@bg,
+        "arménština"@cs,
+        "armensk"@da,
+        "Armenisch"@de,
+        "αρμενικά"@el,
+        "Armenian"@en,
+        "armenio"@es,
+        "armeenia keel"@et,
+        "armenia"@fi,
+        "arménien"@fr,
+        "Airméinis"@ga,
+        "armenski"@hr,
+        "armenšćina"@hsb,
+        "örmény"@hu,
+        "armenska"@is,
+        "armeno"@it,
+        "armėnų kalba"@lt,
+        "armēņu valoda"@lv,
+        "ерменски"@mk,
+        "Armen"@mt,
+        "Armeens"@nl,
+        "armensk"@no,
+        "ormiański"@pl,
+        "arménio"@pt,
+        "armeană"@ro,
+        "армянский"@ru,
+        "armenski"@sh,
+        "arménčina"@sk,
+        "armenščina"@sl,
+        "Јерменски"@sr,
+        "armeniska"@sv,
+        "ermenice"@tr,
+        "вірменська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/IBO> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ig" ;
+    skos:prefLabel "igbo"@ig .
+
+<http://publications.europa.eu/resource/authority/language/IDO> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "io" ;
+    skos:prefLabel "ido"@io .
+
+<http://publications.europa.eu/resource/authority/language/III> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ii" ;
+    skos:prefLabel "sichuan Yi"@ii .
+
+<http://publications.europa.eu/resource/authority/language/IKU> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "iu" ;
+    skos:prefLabel "inuktitut"@iu .
+
+<http://publications.europa.eu/resource/authority/language/ILE> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ie" ;
+    skos:prefLabel "interlingue"@ie .
+
+<http://publications.europa.eu/resource/authority/language/INA> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ia" ;
+    skos:prefLabel "интерлингва"@bg,
+        "interlingua"@cs,
+        "interlingua"@da,
+        "Interlingua"@de,
+        "ιντερλίνγκουα"@el,
+        "Interlingua"@en,
+        "interlingua"@es,
+        "interlingua keel"@et,
+        "interlingua"@fi,
+        "interlingua"@fr,
+        "Interlingua"@ga,
+        "interlingua"@hr,
+        "interlingva"@hu,
+        "interlingua"@is,
+        "interlingua"@it,
+        "interlingua"@lt,
+        "interlingva"@lv,
+        "Interlingua"@mt,
+        "Interlingua"@nl,
+        "interlingua"@no,
+        "interlingua"@pl,
+        "interlíngua"@pt,
+        "interlingua"@ro,
+        "interlingua"@sk,
+        "interlingua"@sl,
+        "interlingua"@sv,
+        "interlingua"@tr .
+
+<http://publications.europa.eu/resource/authority/language/IND> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "id" ;
+    skos:prefLabel "индонезийски"@bg,
+        "indonéština"@cs,
+        "indonesisk"@da,
+        "Indonesisch"@de,
+        "ινδονησιακά"@el,
+        "Indonesian"@en,
+        "indonesio"@es,
+        "indoneesia keel"@et,
+        "indonesia"@fi,
+        "indonésien"@fr,
+        "Indonesis"@ga,
+        "indonezijski"@hr,
+        "indoneska"@hsb,
+        "indonéz"@hu,
+        "indónesíska"@is,
+        "indonesiano"@it,
+        "indoneziečių kalba"@lt,
+        "indonēziešu valoda"@lv,
+        "индонезийски"@mk,
+        "Indoneż"@mt,
+        "Indonesisch"@nl,
+        "indonesisk"@no,
+        "indonezyjski"@pl,
+        "indonésia"@pt,
+        "indoneziană"@ro,
+        "индонезийский"@ru,
+        "indonežanski"@sh,
+        "indonézština"@sk,
+        "indonezijščina"@sl,
+        "индонежански"@sr,
+        "indonesiska"@sv,
+        "endonezce"@tr,
+        "Індонезійська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/IPK> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ik" ;
+    skos:prefLabel "inupiaq"@ik .
+
+<http://publications.europa.eu/resource/authority/language/ISL> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "is" ;
+    skos:prefLabel "исландски"@bg,
+        "islandština"@cs,
+        "islandsk"@da,
+        "Isländisch"@de,
+        "ισλανδικά"@el,
+        "Icelandic"@en,
+        "islandés"@es,
+        "islandi keel"@et,
+        "islanti"@fi,
+        "islandais"@fr,
+        "Íoslainnis"@ga,
+        "islandski"@hr,
+        "islandščina"@hsb,
+        "izlandi"@hu,
+        "íslenska"@is,
+        "islandese"@it,
+        "islandų kalba"@lt,
+        "islandiešu valoda"@lv,
+        "исландски"@mk,
+        "Islandiż"@mt,
+        "IJslands"@nl,
+        "islandsk"@no,
+        "islandzki"@pl,
+        "islandês"@pt,
+        "islandeză"@ro,
+        "исландский"@ru,
+        "islandski"@sh,
+        "islandčina"@sk,
+        "islandščina"@sl,
+        "исландски"@sr,
+        "isländska"@sv,
+        "ızlandaca"@tr,
+        "Ісландська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/ITA> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "it" ;
+    skos:prefLabel "италиански"@bg,
+        "italština"@cs,
+        "italiensk"@da,
+        "Italienisch"@de,
+        "ιταλικά"@el,
+        "Italian"@en,
+        "italiano"@es,
+        "itaalia keel"@et,
+        "italia"@fi,
+        "italien"@fr,
+        "Iodáilis"@ga,
+        "talijanski"@hr,
+        "italšćina"@hsb,
+        "olasz"@hu,
+        "ítalska"@is,
+        "italiano"@it,
+        "italų kalba"@lt,
+        "itāļu valoda"@lv,
+        "италијански"@mk,
+        "Taljan"@mt,
+        "Italiaans"@nl,
+        "italiensk"@no,
+        "włoski"@pl,
+        "italiano"@pt,
+        "italiană"@ro,
+        "итальянский"@ru,
+        "italijanski"@sh,
+        "taliančina"@sk,
+        "italijanščina"@sl,
+        "италијански"@sr,
+        "italienska"@sv,
+        "ıtalyanca"@tr,
+        "Італійська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/JAV> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "jv" ;
+    skos:prefLabel "javanese"@jv .
+
+<http://publications.europa.eu/resource/authority/language/JPN> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ja" ;
+    skos:prefLabel "японски"@bg,
+        "japonština"@cs,
+        "japansk"@da,
+        "Japanisch"@de,
+        "ιαπωνικά"@el,
+        "Japanese"@en,
+        "japonés"@es,
+        "jaapani keel"@et,
+        "japani"@fi,
+        "japonais"@fr,
+        "Seapáinis"@ga,
+        "japanski"@hr,
+        "japanšćina"@hsb,
+        "japán"@hu,
+        "japanska"@is,
+        "giapponese"@it,
+        "japonų kalba"@lt,
+        "japāņu valoda"@lv,
+        "Јапонски"@mk,
+        "Ġappuniż"@mt,
+        "Japans"@nl,
+        "japansk"@no,
+        "japoński"@pl,
+        "japonês"@pt,
+        "japoneză"@ro,
+        "японский"@ru,
+        "japanski"@sh,
+        "japončina"@sk,
+        "japonščina"@sl,
+        "Јапански"@sr,
+        "japanska"@sv,
+        "japonca"@tr,
+        "япо́нська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/KAL> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "kl" ;
+    skos:prefLabel "гренландски"@bg,
+        "grónština"@cs,
+        "grønlandsk"@da,
+        "Grönländisch"@de,
+        "καλααλισούτ"@el,
+        "Greenlandic"@en,
+        "groenlandés"@es,
+        "grööni keel"@et,
+        "grönlanti"@fi,
+        "groenlandais"@fr,
+        "Graonlainnis"@ga,
+        "grenlandski"@hr,
+        "grönlandšćina"@hsb,
+        "grönlandi"@hu,
+        "grænlenska"@is,
+        "groenlandese"@it,
+        "grenlandų kalba"@lt,
+        "grenlandiešu valoda"@lv,
+        "гренланд"@mk,
+        "Groenlandiż"@mt,
+        "Groenlands"@nl,
+        "grønlandsk"@no,
+        "grenlandzki"@pl,
+        "groenlandês"@pt,
+        "groenlandeză"@ro,
+        "гренландия"@ru,
+        "grenlandski"@sh,
+        "grónčina"@sk,
+        "grenlandščina"@sl,
+        "гренландски"@sr,
+        "grönländska"@sv,
+        "kalaallisut"@tr .
+
+<http://publications.europa.eu/resource/authority/language/KAN> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "kn" ;
+    skos:prefLabel "kannada"@kn .
+
+<http://publications.europa.eu/resource/authority/language/KAS> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ks" ;
+    skos:prefLabel "kashmiri"@ks .
+
+<http://publications.europa.eu/resource/authority/language/KAT> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ka" ;
+    skos:prefLabel "грузински"@bg,
+        "gruzínština"@cs,
+        "georgisk"@da,
+        "Georgisch"@de,
+        "γεωργιανά"@el,
+        "Georgian"@en,
+        "georgiano"@es,
+        "gruusia keel"@et,
+        "georgia"@fi,
+        "géorgien"@fr,
+        "Seoirsis"@ga,
+        "gruzijski"@hr,
+        "georgšćina"@hsb,
+        "grúz"@hu,
+        "georgíska"@is,
+        "georgiano"@it,
+        "gruzinų kalba"@lt,
+        "gruzīnu valoda"@lv,
+        "грузиски"@mk,
+        "Ġeorġjan"@mt,
+        "Georgisch"@nl,
+        "georgisk"@no,
+        "gruziński"@pl,
+        "georgiano"@pt,
+        "georgiană"@ro,
+        "грузинский"@ru,
+        "gruzijski"@sh,
+        "gruzínčina"@sk,
+        "gruzijščina"@sl,
+        "грузијски"@sr,
+        "georgiska"@sv,
+        "gürcüce"@tr,
+        "грузинська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/KAU> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "kr" ;
+    skos:prefLabel "kanuri"@kr .
+
+<http://publications.europa.eu/resource/authority/language/KAZ> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "kk" ;
+    skos:prefLabel "казахски"@bg,
+        "kazaština"@cs,
+        "kasakhisk"@da,
+        "Kasachisch"@de,
+        "καζακικά"@el,
+        "Kazakh"@en,
+        "kazajo"@es,
+        "kasahhi keel"@et,
+        "kazakki"@fi,
+        "kazakh"@fr,
+        "Casaicis"@ga,
+        "kazaški"@hr,
+        "kazachšćina"@hsb,
+        "kazah"@hu,
+        "kasakska"@is,
+        "kazako"@it,
+        "kazachų kalba"@lt,
+        "kazahu valoda"@lv,
+        "казашки"@mk,
+        "Każak"@mt,
+        "Kazachs"@nl,
+        "kasakhisk"@no,
+        "kazachski"@pl,
+        "cazaque"@pt,
+        "kazahă"@ro,
+        "казахский"@ru,
+        "kazaški"@sh,
+        "kazaština"@sk,
+        "kazaščina"@sl,
+        "казахски"@sr,
+        "kazakiska"@sv,
+        "kazakça"@tr,
+        "казахська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/KHM> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "km" ;
+    skos:prefLabel "кхмерски"@bg,
+        "khmerština"@cs,
+        "khmer"@da,
+        "Khmer"@de,
+        "χμερ"@el,
+        "Khmer"@en,
+        "jemer"@es,
+        "khmeeri keel"@et,
+        "khmer"@fi,
+        "khmer"@fr,
+        "Khmer"@ga,
+        "khmerski"@hr,
+        "khmeršćina"@hsb,
+        "khmer"@hu,
+        "kambódíska"@is,
+        "khmer"@it,
+        "khmerų kalba"@lt,
+        "khmeru valoda"@lv,
+        "кмерски"@mk,
+        "Khmer"@mt,
+        "Khmer"@nl,
+        "khmer"@no,
+        "khmerski"@pl,
+        "khmer"@pt,
+        "khmeră"@ro,
+        "кхмерский"@ru,
+        "khmerski"@sh,
+        "kmerčina"@sk,
+        "kmerščina"@sl,
+        "кхмерски"@sr,
+        "khmer"@sv,
+        "khmerce"@tr .
+
+<http://publications.europa.eu/resource/authority/language/KIK> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ki" ;
+    skos:prefLabel "kikuyu"@ki .
+
+<http://publications.europa.eu/resource/authority/language/KIN> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "rw" ;
+    skos:prefLabel "Kinyarwanda"@en .
+
+<http://publications.europa.eu/resource/authority/language/KIR> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ky" ;
+    skos:prefLabel "киргизки"@bg,
+        "kyrgyzština"@cs,
+        "kirgisisk"@da,
+        "Kirgisisch"@de,
+        "κιργιζικά"@el,
+        "Kyrgyz"@en,
+        "kirguís"@es,
+        "kirgiisi keel"@et,
+        "kirgiisi"@fi,
+        "kirghiz"@fr,
+        "Cirgis"@ga,
+        "kirgiški"@hr,
+        "kirgiščina"@hsb,
+        "kirgiz"@hu,
+        "kirgisíska"@is,
+        "kirghiso"@it,
+        "kirgizų kalba"@lt,
+        "kirgīzu valoda"@lv,
+        "киргиски"@mk,
+        "Kirgiż"@mt,
+        "Kirgizisch"@nl,
+        "kirgisisk"@no,
+        "kirgiski"@pl,
+        "quirguiz"@pt,
+        "kârgâză"@ro,
+        "киргизский"@ru,
+        "kirgiški"@sh,
+        "kirgizština"@sk,
+        "kirgiščina"@sl,
+        "кыргыз"@sr,
+        "kirgiziska"@sv,
+        "kırgızca"@tr,
+        "киргизька мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/KOM> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "kv" ;
+    skos:prefLabel "komi"@kv .
+
+<http://publications.europa.eu/resource/authority/language/KON> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "kg" ;
+    skos:prefLabel "Kikongo"@en,
+        "kikongo"@fr,
+        "kikongo"@pt .
+
+<http://publications.europa.eu/resource/authority/language/KOR> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ko" ;
+    skos:prefLabel "корейски"@bg,
+        "korejština"@cs,
+        "koreansk"@da,
+        "Koreanisch"@de,
+        "κορεατικά"@el,
+        "Korean"@en,
+        "coreano"@es,
+        "korea keel"@et,
+        "korea"@fi,
+        "coréen"@fr,
+        "Cóiréis"@ga,
+        "korejski"@hr,
+        "korejšćina"@hsb,
+        "koreai"@hu,
+        "kóreska"@is,
+        "coreano"@it,
+        "korėjiečių kalba"@lt,
+        "korejiešu valoda"@lv,
+        "корејски"@mk,
+        "Korean"@mt,
+        "Koreaans"@nl,
+        "koreansk"@no,
+        "koreański"@pl,
+        "coreano"@pt,
+        "coreeană"@ro,
+        "корейский"@ru,
+        "korejski"@sh,
+        "kórejčina"@sk,
+        "korejščina"@sl,
+        "корейски"@sr,
+        "koreanska"@sv,
+        "korece"@tr,
+        "корейська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/KUA> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "kj" ;
+    skos:prefLabel "kuanyama"@kj .
+
+<http://publications.europa.eu/resource/authority/language/KUR> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ku" ;
+    skos:prefLabel "кюрдски"@bg,
+        "kurdština"@cs,
+        "kurdisk"@da,
+        "Kurdisch"@de,
+        "κουρδικά"@el,
+        "Kurdish"@en,
+        "kurdo"@es,
+        "kurdi keel"@et,
+        "kurdi"@fi,
+        "kurde"@fr,
+        "Kurdis"@ga,
+        "kurdski"@hr,
+        "kurdšćina"@hsb,
+        "kurd"@hu,
+        "kúrdíska"@is,
+        "curdo"@it,
+        "kurdų kalba"@lt,
+        "kurdu valoda"@lv,
+        "курдский"@mk,
+        "Kurd"@mt,
+        "Koerdisch"@nl,
+        "kurdisk"@no,
+        "kurdyjski"@pl,
+        "curdo"@pt,
+        "kurdă"@ro,
+        "курдский"@ru,
+        "kurdski"@sh,
+        "kurdčina"@sk,
+        "kurdščina"@sl,
+        "курдски"@sr,
+        "kurdiska"@sv,
+        "kürtçe"@tr,
+        "курдська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/LAO> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "lo" ;
+    skos:prefLabel "лаоски"@bg,
+        "laoština"@cs,
+        "lao"@da,
+        "Laotisch"@de,
+        "λαοτιανά"@el,
+        "Lao"@en,
+        "laosiano"@es,
+        "lao keel"@et,
+        "lao"@fi,
+        "lao"@fr,
+        "Lao"@ga,
+        "laoški"@hr,
+        "lao"@hu,
+        "laoska"@is,
+        "lao"@it,
+        "lao kalba"@lt,
+        "laosiešu valoda"@lv,
+        "лаосски"@mk,
+        "Lao"@mt,
+        "Laotiaans"@nl,
+        "lao"@no,
+        "laotański"@pl,
+        "laociano"@pt,
+        "laoţiană"@ro,
+        "лаосский"@ru,
+        "laoština"@sk,
+        "laoščina"@sl,
+        "лао"@sr,
+        "lao"@sv,
+        "lao"@tr .
+
+<http://publications.europa.eu/resource/authority/language/LAT> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "la" ;
+    skos:prefLabel "латински"@bg,
+        "latina"@cs,
+        "latin"@da,
+        "Latein"@de,
+        "λατινικά"@el,
+        "Latin"@en,
+        "latín"@es,
+        "ladina keel"@et,
+        "latina"@fi,
+        "latin"@fr,
+        "Laidin"@ga,
+        "latinski"@hr,
+        "latinščina"@hsb,
+        "latin"@hu,
+        "latína"@is,
+        "latino"@it,
+        "lotynų kalba"@lt,
+        "latīņu valoda"@lv,
+        "латински"@mk,
+        "Latin"@mt,
+        "Latijn"@nl,
+        "latin"@no,
+        "łacina"@pl,
+        "latim"@pt,
+        "latină"@ro,
+        "латинский"@ru,
+        "latinski"@sh,
+        "latinčina"@sk,
+        "latinščina"@sl,
+        "латински"@sr,
+        "latin"@sv,
+        "latince"@tr,
+        "лати́нська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/LAV> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "lv" ;
+    skos:prefLabel "латвийски"@bg,
+        "lotyština"@cs,
+        "lettisk"@da,
+        "Lettisch"@de,
+        "λετονικά"@el,
+        "Latvian"@en,
+        "letón"@es,
+        "läti keel"@et,
+        "latvia"@fi,
+        "letton"@fr,
+        "Laitvis"@ga,
+        "latvijski"@hr,
+        "letišćina"@hsb,
+        "lett"@hu,
+        "lettneska"@is,
+        "lettone"@it,
+        "latvių kalba"@lt,
+        "latviešu valoda"@lv,
+        "латвиски"@mk,
+        "Latvjan"@mt,
+        "Lets"@nl,
+        "latvisk"@no,
+        "łotewski"@pl,
+        "letão"@pt,
+        "letonă"@ro,
+        "латышский"@ru,
+        "letonski"@sh,
+        "lotyština"@sk,
+        "latvijščina"@sl,
+        "летонски"@sr,
+        "lettiska"@sv,
+        "letonca"@tr,
+        "латиська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/LIM> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "li" ;
+    skos:prefLabel "limburgan"@li .
+
+<http://publications.europa.eu/resource/authority/language/LIN> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ln" ;
+    skos:prefLabel "Lingala"@en .
+
+<http://publications.europa.eu/resource/authority/language/LIT> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "lt" ;
+    skos:prefLabel "литовски"@bg,
+        "litevština"@cs,
+        "litauisk"@da,
+        "Litauisch"@de,
+        "λιθουανικά"@el,
+        "Lithuanian"@en,
+        "lituano"@es,
+        "leedu keel"@et,
+        "liettua"@fi,
+        "lituanien"@fr,
+        "Liotuáinis"@ga,
+        "litavski"@hr,
+        "litawšćina"@hsb,
+        "litván"@hu,
+        "litháíska"@is,
+        "lituano"@it,
+        "lietuvių kalba"@lt,
+        "lietuviešu valoda"@lv,
+        "литвански"@mk,
+        "Litwan"@mt,
+        "Litouws"@nl,
+        "litauisk"@no,
+        "litewski"@pl,
+        "lituano"@pt,
+        "lituaniană"@ro,
+        "литовский"@ru,
+        "litvanski"@sh,
+        "litovčina"@sk,
+        "litovščina"@sl,
+        "литвански"@sr,
+        "litauiska"@sv,
+        "litvanca"@tr,
+        "литовська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/LTZ> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "lb" ;
+    skos:prefLabel "люксембургски"@bg,
+        "lucemburština"@cs,
+        "luxembourgsk"@da,
+        "Luxemburgisch"@de,
+        "λουξεμβουργιανά"@el,
+        "Luxembourgish"@en,
+        "luxemburgués"@es,
+        "letseburgi keel"@et,
+        "luxemburg"@fi,
+        "luxembourgeois"@fr,
+        "Lucsambuirgis"@ga,
+        "luksemburški"@hr,
+        "luksemburščina"@hsb,
+        "luxemburgi"@hu,
+        "lúxemborgíska"@is,
+        "lussemburghese"@it,
+        "liuksemburgiečių kalba"@lt,
+        "luksemburgiešu valoda"@lv,
+        "луксембуршки"@mk,
+        "Lussemburgiż"@mt,
+        "Luxemburgs"@nl,
+        "luxemburgsk"@no,
+        "luksemburski"@pl,
+        "luxemburguês"@pt,
+        "luxemburgheză"@ro,
+        "люксембургский"@ru,
+        "luksemburški"@sh,
+        "luxemburčina"@sk,
+        "luksemburščina"@sl,
+        "луксембуршки"@sr,
+        "luxemburgska"@sv,
+        "lüksemburgca"@tr .
+
+<http://publications.europa.eu/resource/authority/language/LUB> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "lu" ;
+    skos:prefLabel "luba-Katanga"@lu .
+
+<http://publications.europa.eu/resource/authority/language/LUG> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "lg" ;
+    skos:prefLabel "ganda"@lg .
+
+<http://publications.europa.eu/resource/authority/language/MAH> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "mh" ;
+    skos:prefLabel "Marshallese"@en .
+
+<http://publications.europa.eu/resource/authority/language/MAL> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ml" ;
+    skos:prefLabel "malayalam"@ml .
+
+<http://publications.europa.eu/resource/authority/language/MAR> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "mr" ;
+    skos:prefLabel "marathi"@mr .
+
+<http://publications.europa.eu/resource/authority/language/MKD> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "mk" ;
+    skos:prefLabel "македонски"@bg,
+        "makedonština"@cs,
+        "makedonsk"@da,
+        "Mazedonisch"@de,
+        "σλαβομακεδονικά"@el,
+        "Macedonian"@en,
+        "macedonio"@es,
+        "makedoonia keel"@et,
+        "makedonia"@fi,
+        "macédonien"@fr,
+        "Mhacadóinis"@ga,
+        "makedonski"@hr,
+        "makedonšćina"@hsb,
+        "macedón"@hu,
+        "makedónska"@is,
+        "macedone"@it,
+        "makedoniečių kalba"@lt,
+        "maķedoniešu valoda"@lv,
+        "македонски"@mk,
+        "Maċedon"@mt,
+        "Macedonisch"@nl,
+        "makedonsk"@no,
+        "macedoński"@pl,
+        "macedónio"@pt,
+        "macedoneană"@ro,
+        "македонский"@ru,
+        "makedonski"@sh,
+        "macedónčina"@sk,
+        "makedonščina"@sl,
+        "македонски"@sr,
+        "makedonska"@sv,
+        "makedonca"@tr,
+        "македо́нська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/MLG> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "mg" ;
+    skos:prefLabel "малгашки"@bg,
+        "malgaština"@cs,
+        "malagassisk"@da,
+        "Malagasy"@de,
+        "μαλαγασικά"@el,
+        "Malagasy"@en,
+        "malgache"@es,
+        "malagassi keel"@et,
+        "malagassi"@fi,
+        "malgache"@fr,
+        "Malagásais"@ga,
+        "malgaški"@hr,
+        "malgaščina"@hsb,
+        "malgas"@hu,
+        "malagasíska"@is,
+        "malgascio"@it,
+        "malagasių kalba"@lt,
+        "malgašu valoda"@lv,
+        "малгашки"@mk,
+        "Malgaxi"@mt,
+        "Malagasi"@nl,
+        "gassisk"@no,
+        "malgaski"@pl,
+        "malgaxe"@pt,
+        "malgaşă"@ro,
+        "малагасийский"@ru,
+        "malgaški"@sh,
+        "malgaština"@sk,
+        "malgaščina"@sl,
+        "малгашки"@sr,
+        "malagassiska"@sv,
+        "malagasi"@tr .
+
+<http://publications.europa.eu/resource/authority/language/MLT> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "mt" ;
+    skos:prefLabel "малтийски"@bg,
+        "maltština"@cs,
+        "maltesisk"@da,
+        "Maltesisch"@de,
+        "μαλτέζικα"@el,
+        "Maltese"@en,
+        "maltés"@es,
+        "malta keel"@et,
+        "malta"@fi,
+        "maltais"@fr,
+        "Máltais"@ga,
+        "malteški"@hr,
+        "maltašćina"@hsb,
+        "máltai"@hu,
+        "maltneska"@is,
+        "maltese"@it,
+        "maltiečių kalba"@lt,
+        "maltiešu valoda"@lv,
+        "малтешки"@mk,
+        "Malti"@mt,
+        "Maltees"@nl,
+        "maltesisk"@no,
+        "maltański"@pl,
+        "maltês"@pt,
+        "malteză"@ro,
+        "мальтийский"@ru,
+        "malteški"@sh,
+        "maltčina"@sk,
+        "malteščina"@sl,
+        "малтешки"@sr,
+        "maltesiska"@sv,
+        "maltaca"@tr,
+        "мальтійська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/MOL> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "mo" ;
+    skos:prefLabel "молдовски"@bg,
+        "moldavština"@cs,
+        "moldavisk"@da,
+        "Moldauisch"@de,
+        "μολδαβικά"@el,
+        "Moldavian"@en,
+        "moldavo"@es,
+        "moldova keel"@et,
+        "moldova"@fi,
+        "moldave"@fr,
+        "Moldóivis"@ga,
+        "moldavski"@hr,
+        "moldawšćina"@hsb,
+        "moldáv"@hu,
+        "moldóvska"@is,
+        "moldavo"@it,
+        "moldavų kalba"@lt,
+        "moldāvu valoda"@lv,
+        "молдавски"@mk,
+        "Moldov"@mt,
+        "Moldavisch"@nl,
+        "moldovsk"@no,
+        "mołdawski"@pl,
+        "moldavo"@pt,
+        "moldovenească"@ro,
+        "молдавский"@ru,
+        "moldavski"@sh,
+        "moldavčina"@sk,
+        "moldavščina"@sl,
+        "молдавски"@sr,
+        "moldaviska"@sv,
+        "moldovca"@tr .
+
+<http://publications.europa.eu/resource/authority/language/MON> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "mn" ;
+    skos:prefLabel "монголски"@bg,
+        "mongolština"@cs,
+        "mongolsk"@da,
+        "Mongolisch"@de,
+        "μογγολικά"@el,
+        "Mongolian"@en,
+        "mongol"@es,
+        "mongoolia keel"@et,
+        "mongoli"@fi,
+        "mongol"@fr,
+        "Mongóilis"@ga,
+        "mongolski"@hr,
+        "mongolšćina"@hsb,
+        "mongol"@hu,
+        "mongólska"@is,
+        "mongolo"@it,
+        "mongolų kalba"@lt,
+        "mongoļu valoda"@lv,
+        "монголски"@mk,
+        "Mongoljan"@mt,
+        "Mongools"@nl,
+        "mongolsk"@no,
+        "mongolski"@pl,
+        "mongol"@pt,
+        "mongolă"@ro,
+        "монгольский"@ru,
+        "mongolski"@sh,
+        "mongolčina"@sk,
+        "mongolščina"@sl,
+        "монголски"@sr,
+        "mongoliska"@sv,
+        "moğolca"@tr,
+        "монгольська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/MRI> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "mi" ;
+    skos:prefLabel "Māori"@en .
+
+<http://publications.europa.eu/resource/authority/language/MSA> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ms" ;
+    skos:prefLabel "малайски"@bg,
+        "malajština"@cs,
+        "malajisk"@da,
+        "Malaysisch"@de,
+        "μαλαισιανά"@el,
+        "Malaysian"@en,
+        "malayo"@es,
+        "malai keel"@et,
+        "malaiji"@fi,
+        "malaisien"@fr,
+        "Malaeis"@ga,
+        "malajski"@hr,
+        "malajzišćina"@hsb,
+        "maláj"@hu,
+        "malasíska"@is,
+        "malese"@it,
+        "malajų kalba"@lt,
+        "malajiešu valoda"@lv,
+        "малајски"@mk,
+        "Malażjan"@mt,
+        "Maleisisch"@nl,
+        "malayisk"@no,
+        "malajski"@pl,
+        "malaio"@pt,
+        "malaeziană"@ro,
+        "малайский"@ru,
+        "malajski"@sh,
+        "malajčina"@sk,
+        "malajščina"@sl,
+        "малајски"@sr,
+        "malajiska"@sv,
+        "malayca"@tr,
+        "малайська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/MYA> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "my" ;
+    skos:prefLabel "Burmese"@en .
+
+<http://publications.europa.eu/resource/authority/language/NAU> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "na" ;
+    skos:prefLabel "Nauruan"@en .
+
+<http://publications.europa.eu/resource/authority/language/NAV> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "nv" ;
+    skos:prefLabel "navajo"@nv .
+
+<http://publications.europa.eu/resource/authority/language/NBL> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "nr" ;
+    skos:prefLabel "Southhern Ndebele"@en .
+
+<http://publications.europa.eu/resource/authority/language/NDE> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "nd" ;
+    skos:prefLabel "north Ndebele"@nd .
+
+<http://publications.europa.eu/resource/authority/language/NDO> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ng" ;
+    skos:prefLabel "ndonga"@ng .
+
+<http://publications.europa.eu/resource/authority/language/NEP> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ne" ;
+    skos:prefLabel "непалски"@bg,
+        "nepálština"@cs,
+        "nepalesisk"@da,
+        "Nepali"@de,
+        "νεπαλεζικά"@el,
+        "Nepali"@en,
+        "nepalí"@es,
+        "nepali keel"@et,
+        "nepali"@fi,
+        "népalais"@fr,
+        "Neipeailis"@ga,
+        "nepalski"@hr,
+        "nepalšćina"@hsb,
+        "nepáli"@hu,
+        "nepalska"@is,
+        "nepalese"@it,
+        "nepalų kalba"@lt,
+        "nepāliešu valoda"@lv,
+        "непалски"@mk,
+        "Nepaliż"@mt,
+        "Nepalees"@nl,
+        "nepali"@no,
+        "nepalski"@pl,
+        "nepali"@pt,
+        "nepaleză"@ro,
+        "непа́льский"@ru,
+        "nepalski"@sh,
+        "nepálčina"@sk,
+        "nepalščina"@sl,
+        "непалски"@sr,
+        "nepali"@sv,
+        "nepali"@tr .
+
+<http://publications.europa.eu/resource/authority/language/NLD> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "nl" ;
+    skos:prefLabel "нидерландски"@bg,
+        "nizozemština"@cs,
+        "nederlandsk"@da,
+        "Niederländisch"@de,
+        "ολλανδικά"@el,
+        "Dutch"@en,
+        "neerlandés"@es,
+        "hollandi keel"@et,
+        "hollanti"@fi,
+        "néerlandais"@fr,
+        "Ollainnis"@ga,
+        "nizozemski"@hr,
+        "nižozemšćina"@hsb,
+        "holland"@hu,
+        "hollenska"@is,
+        "neerlandese"@it,
+        "nyderlandų kalba"@lt,
+        "holandiešu valoda"@lv,
+        "холандски"@mk,
+        "Olandiż"@mt,
+        "Nederlands"@nl,
+        "nederlandsk"@no,
+        "niderlandzki"@pl,
+        "neerlandês"@pt,
+        "neerlandeză"@ro,
+        "нидерландский"@ru,
+        "holandski"@sh,
+        "holandčina"@sk,
+        "nizozemščina"@sl,
+        "холандски"@sr,
+        "nederländska"@sv,
+        "hollandaca"@tr,
+        "нідерландська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/NNO> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "nn" ;
+    skos:prefLabel "Norwegian Nynorsk"@en .
+
+<http://publications.europa.eu/resource/authority/language/NOB> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "nb" ;
+    skos:prefLabel "Norwegian Bokmål"@en .
+
+<http://publications.europa.eu/resource/authority/language/NOR> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "no" ;
+    skos:prefLabel "норвежки"@bg,
+        "norština"@cs,
+        "norsk"@da,
+        "Norwegisch"@de,
+        "νορβηγικά"@el,
+        "Norwegian"@en,
+        "noruego"@es,
+        "norra keel"@et,
+        "norja"@fi,
+        "norvégien"@fr,
+        "Ioruais"@ga,
+        "norveški"@hr,
+        "norwegšćina"@hsb,
+        "norvég"@hu,
+        "norska"@is,
+        "norvegese"@it,
+        "norvegų kalba"@lt,
+        "norvēģu valoda"@lv,
+        "норвешки"@mk,
+        "Norveġiż"@mt,
+        "Noors"@nl,
+        "norsk"@no,
+        "norweski"@pl,
+        "norueguês"@pt,
+        "norvegiană"@ro,
+        "норвежский"@ru,
+        "norveški"@sh,
+        "nórčina"@sk,
+        "norveščina"@sl,
+        "норвешки"@sr,
+        "norska"@sv,
+        "norveççe"@tr,
+        "норвезька мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/NYA> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ny" ;
+    skos:prefLabel "Chewa"@en .
+
+<http://publications.europa.eu/resource/authority/language/OCI> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "oc" ;
+    skos:prefLabel "окситан"@bg,
+        "okcitánština"@cs,
+        "occitansk"@da,
+        "Okzitanisch"@de,
+        "οξιτανικά"@el,
+        "Occitan"@en,
+        "occitano"@es,
+        "oksitaani keel"@et,
+        "oksitaani"@fi,
+        "occitan"@fr,
+        "Ocsatáinis"@ga,
+        "oksitanski"@hr,
+        "okcitanščina"@hsb,
+        "okcitán"@hu,
+        "okkitanska"@is,
+        "occitano"@it,
+        "oksitanų kalba"@lt,
+        "oksitāņu valoda"@lv,
+        "oкситански"@mk,
+        "Oċċitan"@mt,
+        "Occitaans"@nl,
+        "oksitansk"@no,
+        "oksytański"@pl,
+        "occitano"@pt,
+        "occitană"@ro,
+        "окситанский язык"@ru,
+        "oksitanski"@sh,
+        "okcitánčina"@sk,
+        "okcitanščina"@sl,
+        "окситански"@sr,
+        "occitanska"@sv,
+        "oksitanca"@tr,
+        "оксита́нська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/OJI> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "oj" ;
+    skos:prefLabel "ojibwa"@oj .
+
+<http://publications.europa.eu/resource/authority/language/ORI> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "or" ;
+    skos:prefLabel "oriya"@or .
+
+<http://publications.europa.eu/resource/authority/language/ORM> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "om" ;
+    skos:prefLabel "oromo"@om .
+
+<http://publications.europa.eu/resource/authority/language/OSS> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "os" ;
+    skos:prefLabel "осетински"@bg,
+        "osetština"@cs,
+        "ossetisk"@da,
+        "Ossetisch"@de,
+        "οσετικά"@el,
+        "Ossetic"@en,
+        "osético"@es,
+        "osseetia keel"@et,
+        "osseetti"@fi,
+        "ossète"@fr,
+        "Oiséitis"@ga,
+        "osetski"@hr,
+        "osetišćina"@hsb,
+        "oszét"@hu,
+        "ossetíska"@is,
+        "osseto"@it,
+        "osetinų kalba"@lt,
+        "osetīnu valoda"@lv,
+        "осетински"@mk,
+        "Ossetian"@mt,
+        "Ossetisch"@nl,
+        "ossetisk"@no,
+        "osetyjski"@pl,
+        "osseto"@pt,
+        "osetă"@ro,
+        "осетинский"@ru,
+        "osetski"@sh,
+        "osetčina"@sk,
+        "osetinščina"@sl,
+        "осетински"@sr,
+        "ossetiska"@sv,
+        "osetçe"@tr,
+        "осетинська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/PAN> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "pa" ;
+    skos:prefLabel "panjabi"@pa .
+
+<http://publications.europa.eu/resource/authority/language/PLI> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "pi" ;
+    skos:prefLabel "pali"@pi .
+
+<http://publications.europa.eu/resource/authority/language/POL> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "pl" ;
+    skos:prefLabel "полски"@bg,
+        "polština"@cs,
+        "polsk"@da,
+        "Polnisch"@de,
+        "πολωνικά"@el,
+        "Polish"@en,
+        "polaco"@es,
+        "poola keel"@et,
+        "puola"@fi,
+        "polonais"@fr,
+        "Polainnis"@ga,
+        "poljski"@hr,
+        "pólšćina"@hsb,
+        "lengyel"@hu,
+        "pólska"@is,
+        "polacco"@it,
+        "lenkų kalba"@lt,
+        "poļu valoda"@lv,
+        "полски"@mk,
+        "Pollakk"@mt,
+        "Pools"@nl,
+        "polsk"@no,
+        "polski"@pl,
+        "polaco"@pt,
+        "polonă"@ro,
+        "польский"@ru,
+        "poljski"@sh,
+        "poľština"@sk,
+        "poljščina"@sl,
+        "пољски"@sr,
+        "polska"@sv,
+        "lehçe"@tr,
+        "польська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/POR> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "pt" ;
+    skos:prefLabel "португалски"@bg,
+        "portugalština"@cs,
+        "portugisisk"@da,
+        "Portugiesisch"@de,
+        "πορτογαλικά"@el,
+        "Portuguese"@en,
+        "portugués"@es,
+        "portugali keel"@et,
+        "portugali"@fi,
+        "portugais"@fr,
+        "Portaingéilis"@ga,
+        "portugalski"@hr,
+        "portugalšćina"@hsb,
+        "portugál"@hu,
+        "portúgalska"@is,
+        "portoghese"@it,
+        "portugalų kalba"@lt,
+        "portugāļu valoda"@lv,
+        "португалски"@mk,
+        "Portugiż"@mt,
+        "Portugees"@nl,
+        "portugisisk"@no,
+        "portugalski"@pl,
+        "português"@pt,
+        "portugheză"@ro,
+        "португальский"@ru,
+        "portugalski"@sh,
+        "portugalčina"@sk,
+        "portugalščina"@sl,
+        "португалски"@sr,
+        "portugisiska"@sv,
+        "portekizce"@tr,
+        "португа́льська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/PUS> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ps" ;
+    skos:prefLabel "пущу"@bg,
+        "paštština"@cs,
+        "pashto"@da,
+        "Paschtunisch"@de,
+        "παστού"@el,
+        "Pashto"@en,
+        "pasto"@es,
+        "puštu keel"@et,
+        "paštu"@fi,
+        "pachto"@fr,
+        "Phaistis"@ga,
+        "paštunski"@hr,
+        "pastu"@hu,
+        "pashtu"@it,
+        "puštūnų kalba"@lt,
+        "puštu valoda"@lv,
+        "Paxto"@mt,
+        "Pasjtoe"@nl,
+        "paszto"@pl,
+        "pachto"@pt,
+        "paştună"@ro,
+        "paštčina"@sk,
+        "paštunščina"@sl,
+        "pashto"@sv .
+
+<http://publications.europa.eu/resource/authority/language/QUE> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "qu" ;
+    skos:prefLabel "Quechua"@en,
+        "quechua"@es .
+
+<http://publications.europa.eu/resource/authority/language/ROH> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "rm" ;
+    skos:prefLabel "романшки"@bg,
+        "románština"@cs,
+        "romantsch"@da,
+        "Rumantsch"@de,
+        "ρομανσικά"@el,
+        "Romansh"@en,
+        "romanche"@es,
+        "romaani keel"@et,
+        "retoromaani"@fi,
+        "romanche"@fr,
+        "Rómainis"@ga,
+        "retoromanski"@hr,
+        "romans"@hu,
+        "romancio"@it,
+        "romanų kalba"@lt,
+        "romāņu valoda"@lv,
+        "романш"@mk,
+        "Rumanz"@mt,
+        "Romaans"@nl,
+        "retoromansk"@no,
+        "romański"@pl,
+        "romanche"@pt,
+        "retoromană"@ro,
+        "романшский"@ru,
+        "retoromanski"@sh,
+        "románčina"@sk,
+        "romanščina"@sl,
+        "романш"@sr,
+        "romanska"@sv,
+        "romanşça"@tr,
+        "ретороманська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/RON> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ro" ;
+    skos:prefLabel "румънски"@bg,
+        "rumunština"@cs,
+        "rumænsk"@da,
+        "Rumänisch"@de,
+        "ρουμανικά"@el,
+        "Romanian"@en,
+        "rumano"@es,
+        "rumeenia keel"@et,
+        "romania"@fi,
+        "roumain"@fr,
+        "Rómáinis"@ga,
+        "rumunjski"@hr,
+        "rumunšćina"@hsb,
+        "román"@hu,
+        "rúmenska"@is,
+        "rumeno"@it,
+        "rumunų kalba"@lt,
+        "rumāņu valoda"@lv,
+        "романски"@mk,
+        "Rumen"@mt,
+        "Roemeens"@nl,
+        "rumensk"@no,
+        "rumuński"@pl,
+        "romeno"@pt,
+        "română"@ro,
+        "румынский"@ru,
+        "rumunski"@sh,
+        "rumunčina"@sk,
+        "romunščina"@sl,
+        "румунски"@sr,
+        "rumänska"@sv,
+        "rumence"@tr,
+        "румунська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/RUN> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "rn" ;
+    skos:prefLabel "Kirundi"@en .
+
+<http://publications.europa.eu/resource/authority/language/RUS> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ru" ;
+    skos:prefLabel "руски"@bg,
+        "ruština"@cs,
+        "russisk"@da,
+        "Russisch"@de,
+        "ρωσικά"@el,
+        "Russian"@en,
+        "ruso"@es,
+        "vene keel"@et,
+        "venäjä"@fi,
+        "russe"@fr,
+        "Rúisis"@ga,
+        "ruski"@hr,
+        "rušćina"@hsb,
+        "orosz"@hu,
+        "rússneska"@is,
+        "russo"@it,
+        "rusų kalba"@lt,
+        "krievu valoda"@lv,
+        "руски"@mk,
+        "Russu"@mt,
+        "Russisch"@nl,
+        "russisk"@no,
+        "rosyjski"@pl,
+        "russo"@pt,
+        "rusă"@ro,
+        "pусский"@ru,
+        "ruski"@sh,
+        "ruština"@sk,
+        "ruščina"@sl,
+        "руски"@sr,
+        "ryska"@sv,
+        "rusça"@tr,
+        "російська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/SAG> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "sg" ;
+    skos:prefLabel "Sango"@en,
+        "sango"@fr .
+
+<http://publications.europa.eu/resource/authority/language/SAN> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "sa" ;
+    skos:prefLabel "sanskrit"@sa .
+
+<http://publications.europa.eu/resource/authority/language/SIN> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "si" ;
+    skos:prefLabel "сингхалски"@bg,
+        "sinhálština"@cs,
+        "singalesisk"@da,
+        "Singhalesisch"@de,
+        "σιναλεζικά"@el,
+        "Sinhala"@en,
+        "cingalés"@es,
+        "singali keel"@et,
+        "sinhala"@fi,
+        "cingalais"@fr,
+        "Siolóinis"@ga,
+        "singaleški"@hr,
+        "sinhalščina"@hsb,
+        "szingaléz"@hu,
+        "sinhala"@is,
+        "singalese"@it,
+        "sinhalų kalba"@lt,
+        "singāļu valoda"@lv,
+        "сингальски"@mk,
+        "Sinhala"@mt,
+        "Singalees"@nl,
+        "singalesisk"@no,
+        "syngaleski"@pl,
+        "cingalês"@pt,
+        "sinhală"@ro,
+        "сингальский"@ru,
+        "singaleški"@sh,
+        "sinhalčina"@sk,
+        "sinhalščina"@sl,
+        "синхалешки"@sr,
+        "singalesiska"@sv,
+        "singalaca"@tr .
+
+<http://publications.europa.eu/resource/authority/language/SLK> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "sk" ;
+    skos:prefLabel "словашки"@bg,
+        "slovenština"@cs,
+        "slovakisk"@da,
+        "Slowakisch"@de,
+        "σλοβακικά"@el,
+        "Slovak"@en,
+        "eslovaco"@es,
+        "slovaki keel"@et,
+        "slovakki"@fi,
+        "slovaque"@fr,
+        "Slóvaicis"@ga,
+        "slovački"@hr,
+        "słowakšćina"@hsb,
+        "szlovák"@hu,
+        "slóvakíska"@is,
+        "slovacco"@it,
+        "slovakų kalba"@lt,
+        "slovāku valoda"@lv,
+        "словачки"@mk,
+        "Slovakk"@mt,
+        "Slowaaks"@nl,
+        "slovakisk"@no,
+        "słowacki"@pl,
+        "eslovaco"@pt,
+        "slovacă"@ro,
+        "словацкий"@ru,
+        "slovački"@sh,
+        "slovenčina"@sk,
+        "slovaščina"@sl,
+        "словачки"@sr,
+        "slovakiska"@sv,
+        "slovakça"@tr,
+        "словацька мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/SLV> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "sl" ;
+    skos:prefLabel "словенски"@bg,
+        "slovinština"@cs,
+        "slovensk"@da,
+        "Slowenisch"@de,
+        "σλοβενικά"@el,
+        "Slovenian"@en,
+        "esloveno"@es,
+        "sloveenia keel"@et,
+        "sloveeni"@fi,
+        "slovène"@fr,
+        "Slóivéinis"@ga,
+        "slovenski"@hr,
+        "słowjenšćina"@hsb,
+        "szlovén"@hu,
+        "slóvenska"@is,
+        "sloveno"@it,
+        "slovėnų kalba"@lt,
+        "slovēņu valoda"@lv,
+        "словенечки"@mk,
+        "Sloven"@mt,
+        "Sloveens"@nl,
+        "slovensk"@no,
+        "słoweński"@pl,
+        "esloveno"@pt,
+        "slovenă"@ro,
+        "словенский"@ru,
+        "slovenski"@sh,
+        "slovinčina"@sk,
+        "slovenščina"@sl,
+        "словеначки"@sr,
+        "slovenska"@sv,
+        "slovence"@tr,
+        "словенська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/SME> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "se" ;
+    skos:prefLabel "северносамоански"@bg,
+        "severosámština"@cs,
+        "nordsamisk"@da,
+        "Nordsamisch"@de,
+        "βόρεια λαπωνικά"@el,
+        "Northern Sami"@en,
+        "sami del Norte"@es,
+        "põhjasaami keel"@et,
+        "pohjoissaame"@fi,
+        "same du Nord"@fr,
+        "Sáimis Thuaisceartach"@ga,
+        "sjevernolaponski"@hr,
+        "sewjerolappska"@hsb,
+        "északi számi"@hu,
+        "norðursamíska"@is,
+        "sami settentrionale"@it,
+        "šiaurės samių kalba"@lt,
+        "ziemeļsāmu valoda"@lv,
+        "cеверен самиски"@mk,
+        "Sami tat-Tramuntana"@mt,
+        "Noord-Samisch"@nl,
+        "nordsamisk"@no,
+        "sami północny"@pl,
+        "sami do Norte"@pt,
+        "nordul Sami"@ro,
+        "северносаамский язык"@ru,
+        "severná saamčina"@sk,
+        "severna samščina"@sl,
+        "nordsamiska"@sv,
+        "kuzeylapça"@tr .
+
+<http://publications.europa.eu/resource/authority/language/SMO> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "sm" ;
+    skos:prefLabel "Samoan"@en .
+
+<http://publications.europa.eu/resource/authority/language/SNA> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "sn" ;
+    skos:prefLabel "shona"@sn .
+
+<http://publications.europa.eu/resource/authority/language/SND> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "sd" ;
+    skos:prefLabel "sindhi"@sd .
+
+<http://publications.europa.eu/resource/authority/language/SOM> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "so" ;
+    skos:prefLabel "сомалийски"@bg,
+        "somálština"@cs,
+        "somali"@da,
+        "Somali"@de,
+        "σομαλικά"@el,
+        "Somali"@en,
+        "somalí"@es,
+        "somaali keel"@et,
+        "somali"@fi,
+        "somali"@fr,
+        "Somáilis"@ga,
+        "somalski"@hr,
+        "szomáli"@hu,
+        "somalo"@it,
+        "somalių kalba"@lt,
+        "somāļu valoda"@lv,
+        "Somali"@mt,
+        "Somalisch"@nl,
+        "somalijski"@pl,
+        "somali"@pt,
+        "somaleză"@ro,
+        "somálčina"@sk,
+        "somalijščina"@sl,
+        "somaliska"@sv .
+
+<http://publications.europa.eu/resource/authority/language/SOT> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "st" ;
+    skos:prefLabel "Southern Sotho"@en .
+
+<http://publications.europa.eu/resource/authority/language/SPA> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "es" ;
+    skos:prefLabel "испански"@bg,
+        "španělština"@cs,
+        "spansk"@da,
+        "Spanisch"@de,
+        "ισπανικά"@el,
+        "Spanish"@en,
+        "español"@es,
+        "hispaania keel"@et,
+        "espanja"@fi,
+        "espagnol"@fr,
+        "Spáinnis"@ga,
+        "španjolski"@hr,
+        "španišćina"@hsb,
+        "spanyol"@hu,
+        "spænska"@is,
+        "spagnolo"@it,
+        "ispanų kalba"@lt,
+        "spāņu valoda"@lv,
+        "шпански"@mk,
+        "Spanjol"@mt,
+        "Spaans"@nl,
+        "spansk"@no,
+        "hiszpański"@pl,
+        "espanhol"@pt,
+        "spaniolă"@ro,
+        "испанский"@ru,
+        "španski"@sh,
+        "španielčina"@sk,
+        "španščina"@sl,
+        "шпански"@sr,
+        "spanska"@sv,
+        "ıspanyolca"@tr,
+        "Іспанська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/SQI> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "sq" ;
+    skos:prefLabel "албански"@bg,
+        "albánština"@cs,
+        "albansk"@da,
+        "Albanisch"@de,
+        "αλβανικά"@el,
+        "Albanian"@en,
+        "albanés"@es,
+        "albaania keel"@et,
+        "albania"@fi,
+        "albanais"@fr,
+        "Albainis"@ga,
+        "albanski"@hr,
+        "albánščina"@hsb,
+        "albán"@hu,
+        "albanska"@is,
+        "albanese"@it,
+        "albanų kalba"@lt,
+        "albāņu valoda"@lv,
+        "албански"@mk,
+        "Albaniż"@mt,
+        "Albanees"@nl,
+        "albansk"@no,
+        "albański"@pl,
+        "albanês"@pt,
+        "albaneză"@ro,
+        "албанский"@ru,
+        "albanski"@sh,
+        "albánčina"@sk,
+        "albanščina"@sl,
+        "албански"@sr,
+        "albanska"@sv,
+        "arnavutça"@tr,
+        "албанська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/SRD> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "sc" ;
+    skos:prefLabel "sardinian"@sc .
+
+<http://publications.europa.eu/resource/authority/language/SRP> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "sr" ;
+    skos:prefLabel "сръбски"@bg,
+        "srbština"@cs,
+        "serbisk"@da,
+        "Serbisch"@de,
+        "σερβικά"@el,
+        "Serbian"@en,
+        "serbio"@es,
+        "serbia keel"@et,
+        "serbia"@fi,
+        "serbe"@fr,
+        "Seirbis"@ga,
+        "srpski"@hr,
+        "serbišćina"@hsb,
+        "szerb"@hu,
+        "serbneska"@is,
+        "serbo"@it,
+        "serbų kalba"@lt,
+        "serbu valoda"@lv,
+        "српски"@mk,
+        "Serb"@mt,
+        "Servisch"@nl,
+        "serbisk"@no,
+        "serbski"@pl,
+        "sérvio"@pt,
+        "sârbă"@ro,
+        "сербский"@ru,
+        "srpski"@sh,
+        "srbčina"@sk,
+        "srbščina"@sl,
+        "српски"@sr,
+        "serbiska"@sv,
+        "sırpça"@tr,
+        "сербська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/SSW> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ss" ;
+    skos:prefLabel "Swazi"@en .
+
+<http://publications.europa.eu/resource/authority/language/SUN> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "su" ;
+    skos:prefLabel "sundanese"@su .
+
+<http://publications.europa.eu/resource/authority/language/SWA> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "sw" ;
+    skos:prefLabel "суахили"@bg,
+        "svahilština"@cs,
+        "swahili"@da,
+        "Swahili"@de,
+        "σουαχίλι"@el,
+        "Swahili"@en,
+        "swahili"@es,
+        "suahiili keel"@et,
+        "swahili"@fi,
+        "kiswahili"@fr,
+        "Svahaílis"@ga,
+        "svahili"@hr,
+        "suahelšćina"@hsb,
+        "szuahéli"@hu,
+        "svahílí"@is,
+        "swahili"@it,
+        "suahilių kalba"@lt,
+        "svahili"@lv,
+        "свахили"@mk,
+        "Swaħili"@mt,
+        "Swahili"@nl,
+        "swahili"@no,
+        "suahili"@pl,
+        "suaíli"@pt,
+        "swahili"@ro,
+        "суахили"@ru,
+        "svahili"@sh,
+        "swahilčina"@sk,
+        "svahili"@sl,
+        "свахили"@sr,
+        "swahili"@sv,
+        "swahili"@tr,
+        "свахілі мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/SWE> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "sv" ;
+    skos:prefLabel "шведски"@bg,
+        "švédština"@cs,
+        "svensk"@da,
+        "Schwedisch"@de,
+        "σουηδικά"@el,
+        "Swedish"@en,
+        "sueco"@es,
+        "rootsi keel"@et,
+        "ruotsi"@fi,
+        "suédois"@fr,
+        "Sualainnis"@ga,
+        "švedski"@hr,
+        "šwedšćina"@hsb,
+        "svéd"@hu,
+        "sænska"@is,
+        "svedese"@it,
+        "švedų kalba"@lt,
+        "zviedru valoda"@lv,
+        "шведски"@mk,
+        "Svediż"@mt,
+        "Zweeds"@nl,
+        "svensk"@no,
+        "szwedzki"@pl,
+        "sueco"@pt,
+        "suedeză"@ro,
+        "шведский"@ru,
+        "švedski"@sh,
+        "švédčina"@sk,
+        "švedščina"@sl,
+        "шведски"@sr,
+        "svenska"@sv,
+        "ısveççe"@tr,
+        "шведська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/TAH> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ty" ;
+    skos:prefLabel "tahitian"@ty .
+
+<http://publications.europa.eu/resource/authority/language/TAM> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ta" ;
+    skos:prefLabel "тамилски"@bg,
+        "tamilština"@cs,
+        "tamil"@da,
+        "Tamilisch"@de,
+        "ταμίλ"@el,
+        "Tamil"@en,
+        "tamil"@es,
+        "tamili keel"@et,
+        "tamili"@fi,
+        "tamoul"@fr,
+        "Tamailis"@ga,
+        "tamilski"@hr,
+        "tamilšćina"@hsb,
+        "tamil"@hu,
+        "tamílska"@is,
+        "tamil"@it,
+        "tamilų kalba"@lt,
+        "tamilu valoda"@lv,
+        "тамильски"@mk,
+        "Tamil"@mt,
+        "Tamil"@nl,
+        "tamil"@no,
+        "tamilski"@pl,
+        "tâmil"@pt,
+        "tamilă"@ro,
+        "тамильский"@ru,
+        "tamilski"@sh,
+        "tamilčina"@sk,
+        "tamilščina"@sl,
+        "тамилски"@sr,
+        "tamil"@sv,
+        "tamilce"@tr,
+        "тамі́льська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/TAT> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "tt" ;
+    skos:prefLabel "tatar"@tt .
+
+<http://publications.europa.eu/resource/authority/language/TEL> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "te" ;
+    skos:prefLabel "telugu"@te .
+
+<http://publications.europa.eu/resource/authority/language/TGK> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "tg" ;
+    skos:prefLabel "таджикски"@bg,
+        "tádžičtina"@cs,
+        "tadsjikisk"@da,
+        "Tadschikisch"@de,
+        "τατζικικά"@el,
+        "Tajik"@en,
+        "tayiko"@es,
+        "tadžiki keel"@et,
+        "tadžikki"@fi,
+        "tadjik"@fr,
+        "Táidsícis"@ga,
+        "tadžički"@hr,
+        "tadźikšćina"@hsb,
+        "tádzsik"@hu,
+        "tadsjikíska"@is,
+        "tagiko"@it,
+        "tadžikų kalba"@lt,
+        "tadžiku valoda"@lv,
+        "таџикистански"@mk,
+        "Taġik"@mt,
+        "Tadzjieks"@nl,
+        "tadsjikisk"@no,
+        "tadżycki"@pl,
+        "tajique"@pt,
+        "tadjică"@ro,
+        "таджикский"@ru,
+        "tadžički"@sh,
+        "tadžičtina"@sk,
+        "tadžikistanščina"@sl,
+        "таџички"@sr,
+        "tadzjikiska"@sv,
+        "tacikçe"@tr,
+        "таджицька мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/TGL> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "tl" ;
+    skos:prefLabel "tagalog"@tl .
+
+<http://publications.europa.eu/resource/authority/language/THA> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "th" ;
+    skos:prefLabel "таи"@bg,
+        "thajština"@cs,
+        "thai"@da,
+        "Thailändisch"@de,
+        "ταϊλανδικά"@el,
+        "Thai"@en,
+        "tailandés"@es,
+        "tai keel"@et,
+        "thai"@fi,
+        "thaï"@fr,
+        "Téalainnis"@ga,
+        "tajski"@hr,
+        "thajšćina"@hsb,
+        "thai"@hu,
+        "taílenska"@is,
+        "thai"@it,
+        "tajų kalba"@lt,
+        "taizemiešu valoda"@lv,
+        "Tajlandiż"@mt,
+        "Thai"@nl,
+        "thai"@no,
+        "tajski"@pl,
+        "tailandês"@pt,
+        "thailandeză"@ro,
+        "тайский"@ru,
+        "tajlandski"@sh,
+        "thajčina"@sk,
+        "tajščina"@sl,
+        "тајландски"@sr,
+        "thai"@sv,
+        "tayca"@tr,
+        "та́йська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/TIR> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ti" ;
+    skos:prefLabel "тигриня"@bg,
+        "tigriňa"@cs,
+        "tigrinyansk"@da,
+        "Tigrinya"@de,
+        "τιγκρίνια"@el,
+        "Tigrinya"@en,
+        "tigriña"@es,
+        "tigrinja keel"@et,
+        "tigrinja"@fi,
+        "tigrigna"@fr,
+        "Tigrinis"@ga,
+        "tigrinja"@hr,
+        "tigrinya"@hu,
+        "tigrino"@it,
+        "tigrajų kalba"@lt,
+        "tigrinja"@lv,
+        "Tigrinja"@mt,
+        "Tigrinya"@nl,
+        "tigrinia"@pl,
+        "tigrínia"@pt,
+        "tigrinya"@ro,
+        "tigriňa"@sk,
+        "tigrajščina"@sl,
+        "tigrinska"@sv .
+
+<http://publications.europa.eu/resource/authority/language/TON> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "to" ;
+    skos:prefLabel "Tongan"@en .
+
+<http://publications.europa.eu/resource/authority/language/TSN> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "tn" ;
+    skos:prefLabel "Tswana"@en .
+
+<http://publications.europa.eu/resource/authority/language/TSO> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ts" ;
+    skos:prefLabel "Tsonga"@en .
+
+<http://publications.europa.eu/resource/authority/language/TUK> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "tk" ;
+    skos:prefLabel "туркменски"@bg,
+        "turkmenština"@cs,
+        "turkmensk"@da,
+        "Turkmenisch"@de,
+        "τουρκμενικά"@el,
+        "Turkmen"@en,
+        "turcomano"@es,
+        "türkmeeni keel"@et,
+        "turkmeeni"@fi,
+        "turkmène"@fr,
+        "Tuircméinis"@ga,
+        "turkmenski"@hr,
+        "turkmenšćina"@hsb,
+        "türkmén"@hu,
+        "túrkmenska"@is,
+        "turkmeno"@it,
+        "turkmėnų kalba"@lt,
+        "turkmēņu valoda"@lv,
+        "туркменски"@mk,
+        "Turkmen"@mt,
+        "Turkmeens"@nl,
+        "turkmensk"@no,
+        "turkmeński"@pl,
+        "turquemeno"@pt,
+        "turkmenă"@ro,
+        "туркменский"@ru,
+        "turkmenski"@sh,
+        "turkménčina"@sk,
+        "turkmenščina"@sl,
+        "туркменски"@sr,
+        "turkmeniska"@sv,
+        "türkmence"@tr,
+        "туркменська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/TUR> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "tr" ;
+    skos:prefLabel "турски"@bg,
+        "turečtina"@cs,
+        "tyrkisk"@da,
+        "Türkisch"@de,
+        "τουρκικά"@el,
+        "Turkish"@en,
+        "turco"@es,
+        "türgi keel"@et,
+        "turkki"@fi,
+        "turc"@fr,
+        "Tuircis"@ga,
+        "turski"@hr,
+        "turkowšćina"@hsb,
+        "török"@hu,
+        "tyrkneska"@is,
+        "turco"@it,
+        "turkų kalba"@lt,
+        "turku valoda"@lv,
+        "турски"@mk,
+        "Tork"@mt,
+        "Turks"@nl,
+        "tyrkisk"@no,
+        "turecki"@pl,
+        "turco"@pt,
+        "turcă"@ro,
+        "турецкий"@ru,
+        "turski"@sh,
+        "turečtina"@sk,
+        "turščina"@sl,
+        "турски"@sr,
+        "turkiska"@sv,
+        "türkçe"@tr,
+        "турецька мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/TWI> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "tw" ;
+    skos:prefLabel "twi"@tw .
+
+<http://publications.europa.eu/resource/authority/language/UIG> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ug" ;
+    skos:prefLabel "uighur"@ug .
+
+<http://publications.europa.eu/resource/authority/language/UKR> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "uk" ;
+    skos:prefLabel "украински"@bg,
+        "ukrajinština"@cs,
+        "ukrainsk"@da,
+        "Ukrainisch"@de,
+        "ουκρανικά"@el,
+        "Ukrainian"@en,
+        "ucraniano"@es,
+        "ukraina keel"@et,
+        "ukraina"@fi,
+        "ukrainien"@fr,
+        "Úcráinis"@ga,
+        "ukrajinski"@hr,
+        "ukrainšćina"@hsb,
+        "ukrán"@hu,
+        "úkraínska"@is,
+        "ucraino"@it,
+        "ukrainiečių kalba"@lt,
+        "ukraiņu valoda"@lv,
+        "украински"@mk,
+        "Ukran"@mt,
+        "Oekraïens"@nl,
+        "ukrainsk"@no,
+        "ukraiński"@pl,
+        "ucraniano"@pt,
+        "ucraineană"@ro,
+        "украинский"@ru,
+        "ukrajinski"@sh,
+        "ukrajinčina"@sk,
+        "ukrajinščina"@sl,
+        "украјински"@sr,
+        "ukrainska"@sv,
+        "ukrayna"@tr,
+        "украї́нська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/URD> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ur" ;
+    skos:prefLabel "урду"@bg,
+        "urdština"@cs,
+        "urdu"@da,
+        "Urdu"@de,
+        "ούρντου"@el,
+        "Urdu"@en,
+        "urdu"@es,
+        "urdu keel"@et,
+        "urdu"@fi,
+        "ourdou"@fr,
+        "Urdais"@ga,
+        "urdski"@hr,
+        "urdušćina"@hsb,
+        "urdu"@hu,
+        "úrdú"@is,
+        "urdu"@it,
+        "urdu kalba"@lt,
+        "urdu"@lv,
+        "урду"@mk,
+        "Urdu"@mt,
+        "Urdu"@nl,
+        "urdu"@no,
+        "urdu"@pl,
+        "urdu"@pt,
+        "urdu"@ro,
+        "урду"@ru,
+        "urdu"@sh,
+        "urdčina"@sk,
+        "urdu"@sl,
+        "урду"@sr,
+        "urdu"@sv,
+        "urduca"@tr,
+        "урду мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/UZB> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "uz" ;
+    skos:prefLabel "узбекски"@bg,
+        "uzbečtina"@cs,
+        "usbekisk"@da,
+        "Usbekisch"@de,
+        "ουζμπεκικά"@el,
+        "Uzbek"@en,
+        "uzbeco"@es,
+        "usbeki keel"@et,
+        "uzbekki"@fi,
+        "ouzbek"@fr,
+        "Úisbéiceastáinis"@ga,
+        "uzbečki"@hr,
+        "uzbekšćina"@hsb,
+        "üzbég"@hu,
+        "úsbekska"@is,
+        "uzbeko"@it,
+        "uzbekų kalba"@lt,
+        "uzbeku valoda"@lv,
+        "узбекистански"@mk,
+        "Użbek"@mt,
+        "Oezbeeks"@nl,
+        "usbekisk"@no,
+        "uzbecki"@pl,
+        "usbeque"@pt,
+        "uzbecă"@ro,
+        "узбекский"@ru,
+        "uzbečki"@sh,
+        "uzbečtina"@sk,
+        "uzbeščina"@sl,
+        "узбечки"@sr,
+        "uzbekiska"@sv,
+        "özbekçe"@tr,
+        "узбецька мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/VEN> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "ve" ;
+    skos:prefLabel "Venda"@en .
+
+<http://publications.europa.eu/resource/authority/language/VIE> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "vi" ;
+    skos:prefLabel "виетнамски"@bg,
+        "vietnamština"@cs,
+        "vietnamesisk"@da,
+        "Vietnamesisch"@de,
+        "βιετναμικά"@el,
+        "Vietnamese"@en,
+        "vietnamita"@es,
+        "vietnami keel"@et,
+        "vietnam"@fi,
+        "vietnamien"@fr,
+        "Vítneaimis"@ga,
+        "vijetnamski"@hr,
+        "vietnamšćina"@hsb,
+        "vietnami"@hu,
+        "víetnamska"@is,
+        "vietnamita"@it,
+        "vietnamiečių kalba"@lt,
+        "vjetnamiešu valoda"@lv,
+        "виетнамски"@mk,
+        "Vietnamese"@mt,
+        "Vietnamees"@nl,
+        "vietnamesisk"@no,
+        "wietnamski"@pl,
+        "vietnamita"@pt,
+        "vietnameză"@ro,
+        "вьетнамский"@ru,
+        "vijetnamski"@sh,
+        "vietnamčina"@sk,
+        "vietnamščina"@sl,
+        "вијетнамски"@sr,
+        "vietnamesiska"@sv,
+        "vietnamca"@tr,
+        "в'єтнамська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/VOL> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "vo" ;
+    skos:prefLabel "volapük"@vo .
+
+<http://publications.europa.eu/resource/authority/language/WLN> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "wa" ;
+    skos:prefLabel "валонски"@bg,
+        "valonština"@cs,
+        "vallonsk"@da,
+        "Wallonisch"@de,
+        "βαλονικά"@el,
+        "Walloon"@en,
+        "valón"@es,
+        "vallooni keel"@et,
+        "valloni"@fi,
+        "wallon"@fr,
+        "Vallúinis"@ga,
+        "valonski"@hr,
+        "vallon"@hu,
+        "vallone"@it,
+        "valonų kalba"@lt,
+        "valoņu valoda"@lv,
+        "Wallonja"@mt,
+        "Waals"@nl,
+        "vallonsk"@no,
+        "waloński"@pl,
+        "valão"@pt,
+        "valonă"@ro,
+        "валлонский язык"@ru,
+        "valónčina"@sk,
+        "valonščina"@sl,
+        "vallonska"@sv,
+        "valonca"@tr,
+        "валлонська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/WOL> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "wo" ;
+    skos:prefLabel "wolof"@wo .
+
+<http://publications.europa.eu/resource/authority/language/XHO> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "xh" ;
+    skos:prefLabel "Xhosa"@en .
+
+<http://publications.europa.eu/resource/authority/language/YID> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "yi" ;
+    skos:prefLabel "идиш"@bg,
+        "jidiš"@cs,
+        "jiddisch"@da,
+        "Jiddisch"@de,
+        "γίντις"@el,
+        "Yiddish"@en,
+        "yidis"@es,
+        "jidiši keel"@et,
+        "jiddish"@fi,
+        "yiddish"@fr,
+        "Giúdais"@ga,
+        "jidiš"@hr,
+        "jidiš"@hsb,
+        "jiddis"@hu,
+        "jiddíska"@is,
+        "yiddish"@it,
+        "jidiš kalba"@lt,
+        "jidišs"@lv,
+        "Јидиш"@mk,
+        "Jiddixx"@mt,
+        "Jiddisch"@nl,
+        "jiddisk"@no,
+        "jidysz"@pl,
+        "yiddish"@pt,
+        "idiş"@ro,
+        "и́диш"@ru,
+        "jidiš"@sk,
+        "jidiš"@sl,
+        "Јидиш"@sr,
+        "jiddisch"@sv,
+        "yidiş"@tr,
+        "Їдиш мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/YOR> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "yo" ;
+    skos:prefLabel "yoruba"@yo .
+
+<http://publications.europa.eu/resource/authority/language/ZHO> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "zh" ;
+    skos:prefLabel "китайски"@bg,
+        "čínština"@cs,
+        "kinesisk"@da,
+        "Chinesisch"@de,
+        "κινεζικά"@el,
+        "Chinese"@en,
+        "chino"@es,
+        "hiina keel"@et,
+        "kiina"@fi,
+        "chinois"@fr,
+        "Sínis"@ga,
+        "kineski"@hr,
+        "chinšćina"@hsb,
+        "kínai"@hu,
+        "kínverska"@is,
+        "cinese"@it,
+        "kinų kalba"@lt,
+        "ķīniešu valoda"@lv,
+        "кинески"@mk,
+        "Ċiniż"@mt,
+        "Chinees"@nl,
+        "kinesisk"@no,
+        "chiński"@pl,
+        "chinês"@pt,
+        "chineză"@ro,
+        "китайский"@ru,
+        "čínština"@sk,
+        "kitajščina"@sl,
+        "кинески"@sr,
+        "kinesiska"@sv,
+        "çin"@tr,
+        "китайська мо́ва"@uk .
+
+<http://publications.europa.eu/resource/authority/language/ZUL> a skos:Concept ;
+    skos:inScheme <http://publications.europa.eu/resource/authority/language> ;
+    skos:notation "zu" ;
+    skos:prefLabel "зулу"@bg,
+        "zulština"@cs,
+        "zulu"@da,
+        "Zulu"@de,
+        "ζουλού"@el,
+        "Zulu"@en,
+        "zulú"@es,
+        "suulu keel"@et,
+        "zulu"@fi,
+        "zoulou"@fr,
+        "Súlúis"@ga,
+        "zulu"@hr,
+        "zulu"@hsb,
+        "zulu"@hu,
+        "zulu"@is,
+        "zulu"@it,
+        "zulų kalba"@lt,
+        "zulu valoda"@lv,
+        "зулу"@mk,
+        "Zulu"@mt,
+        "Zoeloe"@nl,
+        "zulu"@no,
+        "zulu"@pl,
+        "zulu"@pt,
+        "zulu"@ro,
+        "зулу"@ru,
+        "zulu"@sh,
+        "zuluština"@sk,
+        "zulujščina"@sl,
+        "зулу"@sr,
+        "zulu"@sv,
+        "isiZulu"@tr,
+        "зулу мо́ва"@uk .

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<annex xmlns="http://ifc.europa.eu/common_vocabulary">
+	<heading>ANNEX <numbering>II</numbering></heading>
+	<subject>CONTENT AND FORMAT OF THE TYRE LABEL</subject>
+	<point><numbering>1.</numbering>Content of the tyre label</point>
+	<point><numbering>1.1.</numbering>Information to be included in the upper part of the tyre label:
+		<figure>
+			<image>L_2020177EN.01001601.tif:OTHER</image>
+			<legend>
+				<line_of_a_legend>I. QR code;</line_of_a_legend>
+				<line_of_a_legend>II. Trade name or trademark of the supplier;</line_of_a_legend>
+				<line_of_a_legend>III. Tyre type identifier;</line_of_a_legend>
+				<line_of_a_legend>IV. Tyre size designation, load-capacity index and speed category symbol, as indicated in Regulation No 30 of the Economic Commission for Europe of the United Nations (UN/ECE)
+				<note>Regulation No 30 of the Economic Commission for Europe of the United Nations (UN/ECE) – Uniform provisions concerning the approval of pneumatic tyres for motor vehicles and their trailers (OJ L 201, 30.7.2008, p. 70).</note>, in its most up-to-date version applicable to the Union, (UNECE Regulation No 30) and Regulation No 54 of the Economic Commission for Europe of the United Nations (UNECE)<note>Regulation No 54 of the Economic Commission for Europe of the United Nations (UNECE) – Uniform provisions concerning the approval of pneumatic tyres for commercial vehicles and their trailers (OJ L 183, 11.7.2008, p. 41).</note>, in its most up‐to‐date version applicable to the Union, (UNECE Regulation No 54) for C1 tyres, C2 tyres and C3 tyres, as applicable;</line_of_a_legend>
+				<line_of_a_legend>V. Tyre class: i.e. C1, C2 or C3;</line_of_a_legend>
+				<line_of_a_legend>VI. Fuel efficiency pictogram, scale and performance class;</line_of_a_legend>
+				<line_of_a_legend>VII. Wet grip pictogram, scale and performance class.</line_of_a_legend>
+			</legend>
+		</figure>
+	</point>
+	<point><numbering>1.2.</numbering>Information to be included in the bottom part of the tyre label for all tyres other than tyres which satisfy the minimum snow grip index values set out in UNECE Regulation No 117, or the relevant minimum ice grip index values, or both:
+		<figure>
+			<image>L_2020177EN.01001701.tif:OTHER</image>
+			<legend>
+				<line_of_a_legend>I. External rolling noise pictogram, value (expressed in dB(A) and rounded to the nearest integer) and performance class;</line_of_a_legend>
+				<line_of_a_legend>II. The serial number of this Regulation: ‘2020/740’.</line_of_a_legend>
+			</legend>
+		</figure>
+	</point>
+	<point><numbering>1.3.</numbering>Information to be included in the bottom part of the tyre label for tyres which satisfy the minimum snow grip index values set out in UNECE Regulation No 117:
+		<figure>
+			<image>L_2020177EN.01001702.tif:OTHER</image>
+			<legend>
+				<line_of_a_legend>I. External rolling noise pictogram, value (expressed in dB(A) and rounded to the nearest integer) and performance class;</line_of_a_legend>
+				<line_of_a_legend>II. Snow grip pictogram;</line_of_a_legend>
+				<line_of_a_legend>III. The serial number of this Regulation: ‘2020/740’.</line_of_a_legend>
+			</legend>
+		</figure>
+	</point>
+	<point><numbering>1.4.</numbering>Information to be included in the bottom part of the tyre label for tyres which satisfy the relevant minimum ice grip index values:
+		<figure>
+			<image>L_2020177EN.01001703.tif:OTHER</image>
+			<legend>
+				<line_of_a_legend>I. External rolling noise pictogram, value (expressed in dB(A) and rounded to the nearest integer) and performance class;</line_of_a_legend>
+				<line_of_a_legend>II. Ice grip pictogram;</line_of_a_legend>
+				<line_of_a_legend>III. The serial number of this Regulation: ‘2020/740’.</line_of_a_legend>
+			</legend>
+		</figure>
+	</point>
+	<point><numbering>1.5.</numbering>Information to be included in the bottom part of the tyre label for tyres which satisfy both the relevant minimum snow grip index values set out in UNECE Regulation No 117 and the minimum ice grip index values:
+		<figure>
+			<image>L_2020177EN.01001801.tif:OTHER</image>
+			<legend>
+				<line_of_a_legend>I. External rolling noise pictogram, value (expressed in dB(A) and rounded to the nearest integer) and performance class;</line_of_a_legend>
+				<line_of_a_legend>II. Snow grip pictogram;</line_of_a_legend>
+				<line_of_a_legend>III. Ice grip pictogram;</line_of_a_legend>
+				<line_of_a_legend>IV. The serial number of this Regulation: ‘2020/740’.</line_of_a_legend>
+			</legend>
+		</figure>
+	</point>
+	<point><numbering>2.</numbering>Format of the tyre label</point>
+	<point><numbering>2.1.</numbering>Format of the upper part of the tyre label:
+		<image>L_2020177EN.01001802.tif:OTHER</image>
+	</point>
+	<point><numbering>2.1.1.</numbering>Format of the bottom part of the tyre label for all tyres other than tyres which satisfy the minimum snow grip index values set out in UNECE Regulation No 117, or the relevant minimum ice grip index values, or both:
+		<image>L_2020177EN.01001901.tif:OTHER</image>
+	</point>
+	<point><numbering>2.1.2.</numbering>Format of the bottom part of the tyre label for tyres which satisfy the minimum snow grip index values set out in UNECE Regulation No 117:
+		<image>L_2020177EN.01001902.tif:OTHER</image>
+	</point>
+	<point><numbering>2.1.3.</numbering>Format of the bottom part of the tyre label for tyres which satisfy the minimum ice grip index values:
+		<image>L_2020177EN.01001903.tif:OTHER</image>
+	</point>
+	<point><numbering>2.1.4.</numbering>Format of the bottom part of the tyre label for tyres which satisfy both the relevant minimum snow grip index values set out in UNECE Regulation No 117 and the minimum ice grip index values:
+		<image>L_2020177EN.01002001.tif:OTHER</image>
+	</point>
+	<point><numbering>2.2.</numbering>
+		<introductory_part>For the purposes of point 2.1:</introductory_part>
+		<point><numbering>(a)</numbering>Tyre label minimal size: 75 mm wide and 110 mm high. Where the tyre label is printed in a larger format, its content shall nevertheless remain proportionate to the specifications above;</point>
+		<point><numbering>(b)</numbering>Background of the tyre label: 100 % white;</point>
+		<point><numbering>(c)</numbering>Typefaces: Verdana and Calibri;</point>
+		<point><numbering>(d)</numbering>Dimensions and specifications of the elements constituting the tyre label: as specified above;</point>
+		<point><numbering>(e)</numbering>
+			<introductory_part>Colour codes, using CMYK – cyan, magenta, yellow and black, shall fulfil all the following requirements:</introductory_part>
+			<indent>— <introductory_part>colours of the EU logo as follows:</introductory_part>
+				<indent>— background: 100,80,0,0;</indent>
+				<indent>— stars: 0,0,100,0;</indent>
+			</indent>
+			<indent>— colour of the energy logo: 100,80,0,0;</indent>
+			<indent>— QR code: 100 % black;</indent>
+			<indent>— trade name or trademark of the supplier: 100 % black and in Verdana Bold 7 pt;</indent>
+			<indent>— tyre type identifier: 100 % black and in Verdana Regular 7 pt;</indent>
+			<indent>— tyre size designation, load-capacity index and speed category symbol: 100 % black and in Verdana Regular 10 pt;</indent>
+			<indent>— tyre class: 100 % black and in Verdana Regular 7 pt, aligned to the right;</indent>
+			<indent>— letters of the fuel efficiency scale and of the wet grip scale: 100 % white and in Calibri Bold 19 pt; the letters shall be centred on an axis at 4,5 mm from the left side of the arrows;</indent>
+			<indent>— <introductory_part>CMYK colour codes of arrows for the A to E fuel efficiency scale as follows:</introductory_part>
+				<indent>— A-class: 100,0,100,0;</indent>
+				<indent>— B-class: 45,0,100,0;</indent>
+				<indent>— C-class: 0,0,100,0;</indent>
+				<indent>— D-class: 0,30,100,0;</indent>
+				<indent>— E-class: 0,100,100,0;</indent>
+			</indent>
+			<indent>— <introductory_part>CMYK colour codes of arrows for the A to E wet grip scale as follows:</introductory_part>
+				<indent>— A: 100,60,0,0;</indent>
+				<indent>— B: 90,40,0,0;</indent>
+				<indent>— C: 65,20,0,0;</indent>
+				<indent>— D: 50,10,0,0;</indent>
+				<indent>— E: 30,0,0,0;</indent>
+			</indent>
+			<indent>— internal dividers: weight of 0,5 pts, colour shall be 100 % black;</indent>
+			<indent>— letter of the fuel efficiency class: 100 % white and in Calibri Bold 33 pt. Fuel efficiency and wet grip class arrows and the corresponding arrows in the A to E scale shall be positioned in such a way that their tips are aligned. The letter in the fuel efficiency class and in the wet grip class arrow shall be positioned in the centre of the rectangular part of the arrow which shall be 100 % black;</indent>
+			<indent>— fuel efficiency pictogram: width 16 mm, height 14 mm, weight 1 pts, colour: 100 % black;</indent>
+			<indent>— wet grip pictogram: width 20 mm, height 14 mm, weight 1 pts, colour: 100 % black;</indent>
+			<indent>— external rolling noise pictogram: width 24 mm, height 18 mm, weight 1 pts, colour: 100 % black. Number of decibels in the loudspeaker in Verdana Bold 12 pt, the unit ‘dB’ in Regular 9 pt; the range of external rolling noise classes (A to C) centred under the pictogram, with the letter of the applicable external rolling noise class in Verdana Bold 16 pt and the other letters of the external rolling noise classes in Verdana Regular 10 pt;</indent>
+			<indent>— snow grip pictogram: width 15 mm, height 13 mm, weight 1 pts, colour: 100 % black;</indent>
+			<indent>— ice grip pictogram: width 15 mm, height 13 mm, weight 1 pts, weight of oblique bars 0,5 pts, colour: 100 % black;</indent>
+			<indent>— the number of the regulation shall be 100 % black and in Verdana Regular 6 pt.</indent>
+		</point>
+	</point>
+</annex>

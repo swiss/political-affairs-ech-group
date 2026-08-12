@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<math xmlns="http://www.w3.org/1998/Math/MathML" >
+    <!-- AB<sub>SA</sub> = (A<sub>2,SA</sub> + A<sub>4,SA</sub> - t) · f -->
+    <mi>A</mi>
+    <msub>
+        <mi>B</mi>
+        <mrow>
+            <mi>S</mi>
+            <mi>A</mi>
+        </mrow>
+    </msub>
+    <mo>=</mo>
+    <mo>(</mo>
+    <msub>
+        <mi>A</mi>
+        <mrow>
+            <mn>2</mn>
+            <mo>,</mo>
+            <mi>S</mi>
+            <mi>A</mi>
+        </mrow>
+    </msub>
+    <mo>+</mo>
+    <msub>
+        <mi>A</mi>
+        <mrow>
+            <mn>4</mn>
+            <mo>,</mo>
+            <mi>S</mi>
+            <mi>A</mi>
+        </mrow>
+    </msub>
+    <mo>−</mo>
+    <mi>t</mi>
+    <mo>)</mo>
+    <mo>*</mo>
+    <mi>f</mi>
+</math>

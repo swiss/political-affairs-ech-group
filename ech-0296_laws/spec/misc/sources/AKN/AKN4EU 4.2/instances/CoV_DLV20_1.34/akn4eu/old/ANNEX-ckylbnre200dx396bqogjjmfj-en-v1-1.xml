@@ -1,0 +1,2138 @@
+<?xml version="1.0" encoding="UTF-8"?><akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+	
+	<doc name="ANNEX">
+		<meta>
+			<identification source="~PUBL">
+				<FRBRWork>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+						<akn4eu:fileCUID value="ckylbnre200dx396bqogjjmfj"/>
+					</preservation>
+					<FRBRcountry value="EU"/>
+					<FRBRprescriptive value="true"/>
+				</FRBRWork>
+				<FRBRExpression>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<FRBRlanguage language="en"/>
+				</FRBRExpression>
+				<FRBRManifestation>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+						<akn4eu:akn4euVersion value="4.1.1.0"/>
+						<akn4eu:akn4euDocumentation href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/akn4eu"/>
+					</preservation>
+				</FRBRManifestation>
+			</identification>
+			<references source="~PUBL">
+				<TLCReference name="language" href="http://publications.europa.eu/resource/authority/language/ENG" showAs="en"/>
+				<TLCReference xml:id="ANNEX" name="docType" href="http://publications.europa.eu/resource/authority/resource-type/ANNEX" showAs="Annex"/>
+				<TLCOrganization xml:id="PUBL" href="http://publications.europa.eu/resource/authority/corporate-body/PUBL" showAs="Publications Office of the European Union"/>
+			</references>
+		</meta>
+		<preface xml:id="d1e74">
+			<container xml:id="d1e76" name="headerOfAnnex">
+				<block xml:id="d1e78" name="num">ANNEX I</block>
+				<block xml:id="d1e81" name="heading">TACs APPLICABLE TO UNION FISHING VESSELS IN AREAS WHERE TACs
+					EXIST BY SPECIES AND BY AREA</block>
+			</container>
+		</preface>
+		<mainBody xml:id="d1e86">
+			<paragraph xml:id="d1e88">
+				<content xml:id="d1e90">
+					<p xml:id="d1e92">The tables in this Annex set out the TACs and quotas (in tonnes live weight,
+						except where otherwise specified) by stock, and, where appropriate, the
+						conditions functionally linked thereto.</p>
+				</content>
+			</paragraph>
+			<paragraph xml:id="d1e96">
+				<content xml:id="d1e98">
+					<p xml:id="d1e100">All fishing opportunities set out in this Annex shall be subject to the rules
+						set out in Regulation (EC) No 1224/2009, and in particular Articles 33 and
+						34 of that Regulation.</p>
+				</content>
+			</paragraph>
+			<paragraph xml:id="d1e104">
+				<content xml:id="d1e106">
+					<p xml:id="d1e108">The references to fishing zones are references to ICES zones, unless
+						otherwise specified. Within each area, fish stocks are referred to according
+						to the alphabetical order of the Latin names of the species. Only Latin
+						names identify species for regulatory purposes; vernacular names are
+						provided for ease of reference.</p>
+				</content>
+			</paragraph>
+			<paragraph xml:id="d1e112">
+				<content xml:id="d1e114">
+					<p xml:id="d1e116">For the purposes of this Regulation, the following comparative table of Latin
+						names and common names is provided:</p>
+				</content>
+			</paragraph>
+			<paragraph xml:id="d1e120">
+				<hcontainer xml:id="d1e122" name="BLOCK_TAB">
+					<hcontainer xml:id="d1e124" name="TAB">
+						<content xml:id="d1e126">
+							<table xml:id="d1e128">
+								<tr xml:id="d1e130">
+									<th xml:id="d1e132">
+										<p xml:id="d1e134">Scientific name</p>
+									</th>
+									<th xml:id="d1e137">
+										<p xml:id="d1e139">Alpha-3 code</p>
+									</th>
+									<th xml:id="d1e142">
+										<p xml:id="d1e144">Common name</p>
+									</th>
+								</tr>
+								<tr xml:id="d1e148">
+									<td xml:id="d1e150">
+										<p xml:id="d1e152"><i xml:id="d1e153">Amblyraja radiata</i></p>
+									</td>
+									<td xml:id="d1e156">
+										<p xml:id="d1e158">RJR</p>
+									</td>
+									<td xml:id="d1e161">
+										<p xml:id="d1e163">Starry ray</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e167">
+									<td xml:id="d1e169">
+										<p xml:id="d1e171"><i xml:id="d1e172">Ammodytes</i> spp.</p>
+									</td>
+									<td xml:id="d1e176">
+										<p xml:id="d1e178">SAN</p>
+									</td>
+									<td xml:id="d1e181">
+										<p xml:id="d1e183">Sandeels</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e187">
+									<td xml:id="d1e189">
+										<p xml:id="d1e191"><i xml:id="d1e192">Argentina silus</i></p>
+									</td>
+									<td xml:id="d1e195">
+										<p xml:id="d1e197">ARU</p>
+									</td>
+									<td xml:id="d1e200">
+										<p xml:id="d1e202">Greater silver smelt</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e206">
+									<td xml:id="d1e208">
+										<p xml:id="d1e210"><i xml:id="d1e211">Beryx</i> spp.</p>
+									</td>
+									<td xml:id="d1e215">
+										<p xml:id="d1e217">ALF</p>
+									</td>
+									<td xml:id="d1e220">
+										<p xml:id="d1e222">Alfonsinos</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e227">
+									<td xml:id="d1e229">
+										<p xml:id="d1e231"><i xml:id="d1e232">Brosme brosme</i></p>
+									</td>
+									<td xml:id="d1e235">
+										<p xml:id="d1e237">USK</p>
+									</td>
+									<td xml:id="d1e240">
+										<p xml:id="d1e242">Tusk</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e246">
+									<td xml:id="d1e248">
+										<p xml:id="d1e250"><i xml:id="d1e251">Caproidae</i>
+										</p>
+									</td>
+									<td xml:id="d1e255">
+										<p xml:id="d1e257">BOR</p>
+									</td>
+									<td xml:id="d1e260">
+										<p xml:id="d1e262">Boarfish</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e266">
+									<td xml:id="d1e268">
+										<p xml:id="d1e270"><i xml:id="d1e271">Centrophorus squamosus</i></p>
+									</td>
+									<td xml:id="d1e274">
+										<p xml:id="d1e276">GUQ</p>
+									</td>
+									<td xml:id="d1e279">
+										<p xml:id="d1e281">Leafscale gulper shark</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e285">
+									<td xml:id="d1e287">
+										<p xml:id="d1e289"><i xml:id="d1e290">Centroscymnus coelolepis</i></p>
+									</td>
+									<td xml:id="d1e293">
+										<p xml:id="d1e295">CYO</p>
+									</td>
+									<td xml:id="d1e298">
+										<p xml:id="d1e300">Portuguese dogfish</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e304">
+									<td xml:id="d1e306">
+										<p xml:id="d1e308"><i xml:id="d1e309">Chaceon</i> spp.</p>
+									</td>
+									<td xml:id="d1e313">
+										<p xml:id="d1e315">GER</p>
+									</td>
+									<td xml:id="d1e318">
+										<p xml:id="d1e320">Deep sea red crab</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e324">
+									<td xml:id="d1e326">
+										<p xml:id="d1e328"><i xml:id="d1e329">Chaenocephalus aceratus</i></p>
+									</td>
+									<td xml:id="d1e332">
+										<p xml:id="d1e334">SSI</p>
+									</td>
+									<td xml:id="d1e337">
+										<p xml:id="d1e339">Blackfin icefish</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e344">
+									<td xml:id="d1e346">
+										<p xml:id="d1e348"><i xml:id="d1e349">Champsocephalus gunnari</i></p>
+									</td>
+									<td xml:id="d1e352">
+										<p xml:id="d1e354">ANI</p>
+									</td>
+									<td xml:id="d1e357">
+										<p xml:id="d1e359">Mackerel icefish</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e363">
+									<td xml:id="d1e365">
+										<p xml:id="d1e367"><i xml:id="d1e368">Channichthys rhinoceratus</i></p>
+									</td>
+									<td xml:id="d1e371">
+										<p xml:id="d1e373">LIC</p>
+									</td>
+									<td xml:id="d1e376">
+										<p xml:id="d1e378">Unicorn icefish</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e382">
+									<td xml:id="d1e384">
+										<p xml:id="d1e386"><i xml:id="d1e387">Chionoecetes</i> spp.</p>
+									</td>
+									<td xml:id="d1e391">
+										<p xml:id="d1e393">PCR</p>
+									</td>
+									<td xml:id="d1e396">
+										<p xml:id="d1e398">Snow crab</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e402">
+									<td xml:id="d1e404">
+										<p xml:id="d1e406"><i xml:id="d1e407">Clupea harengus</i>
+										</p>
+									</td>
+									<td xml:id="d1e411">
+										<p xml:id="d1e413">HER</p>
+									</td>
+									<td xml:id="d1e416">
+										<p xml:id="d1e418">Herring</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e422">
+									<td xml:id="d1e424">
+										<p xml:id="d1e426"><i xml:id="d1e427">Coryphaenoides rupestris</i></p>
+									</td>
+									<td xml:id="d1e430">
+										<p xml:id="d1e432">RNG</p>
+									</td>
+									<td xml:id="d1e435">
+										<p xml:id="d1e437">Roundnose grenadier</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e441">
+									<td xml:id="d1e443">
+										<p xml:id="d1e445"><i xml:id="d1e446">Dalatias licha</i></p>
+									</td>
+									<td xml:id="d1e449">
+										<p xml:id="d1e451">SCK</p>
+									</td>
+									<td xml:id="d1e454">
+										<p xml:id="d1e456">Kitefin shark</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e461">
+									<td xml:id="d1e463">
+										<p xml:id="d1e465"><i xml:id="d1e466">Deania calcea</i></p>
+									</td>
+									<td xml:id="d1e469">
+										<p xml:id="d1e471">DCA</p>
+									</td>
+									<td xml:id="d1e474">
+										<p xml:id="d1e476">Birdbeak dogfish</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e480">
+									<td xml:id="d1e482">
+										<p xml:id="d1e484"><i xml:id="d1e485">Dicentrarchus labrax</i></p>
+									</td>
+									<td xml:id="d1e488">
+										<p xml:id="d1e490">BSS</p>
+									</td>
+									<td xml:id="d1e493">
+										<p xml:id="d1e495">European seabass</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e499">
+									<td xml:id="d1e501">
+										<p xml:id="d1e503"><i xml:id="d1e504">Dipturus batis</i> (<i xml:id="d1e506">Dipturus</i> cf.
+												<i xml:id="d1e508">flossada</i><br xml:id="d1e509"/> and <i xml:id="d1e511">Dipturus</i> cf.
+												<i xml:id="d1e513">intermedia</i>)</p>
+									</td>
+									<td xml:id="d1e517">
+										<p xml:id="d1e519">RJB</p>
+									</td>
+									<td xml:id="d1e522">
+										<p xml:id="d1e524">Common skate complex</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e528">
+									<td xml:id="d1e530">
+										<p xml:id="d1e532"><i xml:id="d1e533">Dissostichus eleginoides</i></p>
+									</td>
+									<td xml:id="d1e536">
+										<p xml:id="d1e538">TOP</p>
+									</td>
+									<td xml:id="d1e541">
+										<p xml:id="d1e543">Patagonian toothfish</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e547">
+									<td xml:id="d1e549">
+										<p xml:id="d1e551"><i xml:id="d1e552">Dissostichus mawsoni</i></p>
+									</td>
+									<td xml:id="d1e555">
+										<p xml:id="d1e557">TOA</p>
+									</td>
+									<td xml:id="d1e560">
+										<p xml:id="d1e562">Antarctic toothfish</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e566">
+									<td xml:id="d1e568">
+										<p xml:id="d1e570"><i xml:id="d1e571">Dissostichus</i> spp.</p>
+									</td>
+									<td xml:id="d1e575">
+										<p xml:id="d1e577">TOT</p>
+									</td>
+									<td xml:id="d1e580">
+										<p xml:id="d1e582">Toothfish</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e587">
+									<td xml:id="d1e589">
+										<p xml:id="d1e591"><i xml:id="d1e592">Engraulis encrasicolus</i></p>
+									</td>
+									<td xml:id="d1e595">
+										<p xml:id="d1e597">ANE</p>
+									</td>
+									<td xml:id="d1e600">
+										<p xml:id="d1e602">Anchovy</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e606">
+									<td xml:id="d1e608">
+										<p xml:id="d1e610"><i xml:id="d1e611">Etmopterus princeps</i></p>
+									</td>
+									<td xml:id="d1e614">
+										<p xml:id="d1e616">ETR</p>
+									</td>
+									<td xml:id="d1e619">
+										<p xml:id="d1e621">Great lanternshark</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e625">
+									<td xml:id="d1e627">
+										<p xml:id="d1e629"><i xml:id="d1e630">Etmopterus pusillus</i></p>
+									</td>
+									<td xml:id="d1e633">
+										<p xml:id="d1e635">ETP</p>
+									</td>
+									<td xml:id="d1e638">
+										<p xml:id="d1e640">Smooth lanternshark</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e644">
+									<td xml:id="d1e646">
+										<p xml:id="d1e648"><i xml:id="d1e649">Euphausia superba</i></p>
+									</td>
+									<td xml:id="d1e652">
+										<p xml:id="d1e654">KRI</p>
+									</td>
+									<td xml:id="d1e657">
+										<p xml:id="d1e659">Krill</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e663">
+									<td xml:id="d1e665">
+										<p xml:id="d1e667"><i xml:id="d1e668">Gadus morhua</i></p>
+									</td>
+									<td xml:id="d1e671">
+										<p xml:id="d1e673">COD</p>
+									</td>
+									<td xml:id="d1e676">
+										<p xml:id="d1e678">Cod</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e682">
+									<td xml:id="d1e684">
+										<p xml:id="d1e686"><i xml:id="d1e687">Galeorhinus galeus</i></p>
+									</td>
+									<td xml:id="d1e690">
+										<p xml:id="d1e692">GAG</p>
+									</td>
+									<td xml:id="d1e695">
+										<p xml:id="d1e697">Tope shark</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e702">
+									<td xml:id="d1e704">
+										<p xml:id="d1e706"><i xml:id="d1e707">Glyptocephalus cynoglossus</i></p>
+									</td>
+									<td xml:id="d1e710">
+										<p xml:id="d1e712">WIT</p>
+									</td>
+									<td xml:id="d1e715">
+										<p xml:id="d1e717">Witch flounder</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e721">
+									<td xml:id="d1e723">
+										<p xml:id="d1e725"><i xml:id="d1e726">Hippoglossoides platessoides</i></p>
+									</td>
+									<td xml:id="d1e729">
+										<p xml:id="d1e731">PLA</p>
+									</td>
+									<td xml:id="d1e734">
+										<p xml:id="d1e736">American plaice</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e740">
+									<td xml:id="d1e742">
+										<p xml:id="d1e744"><i xml:id="d1e745">Hoplostethus atlanticus</i></p>
+									</td>
+									<td xml:id="d1e748">
+										<p xml:id="d1e750">ORY</p>
+									</td>
+									<td xml:id="d1e753">
+										<p xml:id="d1e755">Orange roughy</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e759">
+									<td xml:id="d1e761">
+										<p xml:id="d1e763"><i xml:id="d1e764">Illex illecebrosus</i></p>
+									</td>
+									<td xml:id="d1e767">
+										<p xml:id="d1e769">SQI</p>
+									</td>
+									<td xml:id="d1e772">
+										<p xml:id="d1e774">Shortfin squid</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e778">
+									<td xml:id="d1e780">
+										<p xml:id="d1e782"><i xml:id="d1e783">Lamna nasus</i></p>
+									</td>
+									<td xml:id="d1e786">
+										<p xml:id="d1e788">POR</p>
+									</td>
+									<td xml:id="d1e791">
+										<p xml:id="d1e793">Porbeagle</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e797">
+									<td xml:id="d1e799">
+										<p xml:id="d1e801"><i xml:id="d1e802">Lepidorhombus</i> spp.</p>
+									</td>
+									<td xml:id="d1e806">
+										<p xml:id="d1e808">LEZ</p>
+									</td>
+									<td xml:id="d1e811">
+										<p xml:id="d1e813">Megrims</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e818">
+									<td xml:id="d1e820">
+										<p xml:id="d1e822"><i xml:id="d1e823">Leucoraja naevus</i></p>
+									</td>
+									<td xml:id="d1e826">
+										<p xml:id="d1e828">RJN</p>
+									</td>
+									<td xml:id="d1e831">
+										<p xml:id="d1e833">Cuckoo ray</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e837">
+									<td xml:id="d1e839">
+										<p xml:id="d1e841"><i xml:id="d1e842">Limanda ferruginea</i></p>
+									</td>
+									<td xml:id="d1e845">
+										<p xml:id="d1e847">YEL</p>
+									</td>
+									<td xml:id="d1e850">
+										<p xml:id="d1e852">Yellowtail flounder</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e856">
+									<td xml:id="d1e858">
+										<p xml:id="d1e860"><i xml:id="d1e861">Lophiidae</i></p>
+									</td>
+									<td xml:id="d1e864">
+										<p xml:id="d1e866">ANF</p>
+									</td>
+									<td xml:id="d1e869">
+										<p xml:id="d1e871">Anglerfish</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e875">
+									<td xml:id="d1e877">
+										<p xml:id="d1e879"><i xml:id="d1e880">Macrourus</i> spp.</p>
+									</td>
+									<td xml:id="d1e884">
+										<p xml:id="d1e886">GRV</p>
+									</td>
+									<td xml:id="d1e889">
+										<p xml:id="d1e891">Grenadiers</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e895">
+									<td xml:id="d1e897">
+										<p xml:id="d1e899"><i xml:id="d1e900">Makaira nigricans</i></p>
+									</td>
+									<td xml:id="d1e903">
+										<p xml:id="d1e905">BUM</p>
+									</td>
+									<td xml:id="d1e908">
+										<p xml:id="d1e910">Blue marlin</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e914">
+									<td xml:id="d1e916">
+										<p xml:id="d1e918"><i xml:id="d1e919">Mallotus villosus</i></p>
+									</td>
+									<td xml:id="d1e922">
+										<p xml:id="d1e924">CAP</p>
+									</td>
+									<td xml:id="d1e927">
+										<p xml:id="d1e929">Capelin</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e934">
+									<td xml:id="d1e936">
+										<p xml:id="d1e938"><i xml:id="d1e939">Manta birostris</i></p>
+									</td>
+									<td xml:id="d1e942">
+										<p xml:id="d1e944">RMB</p>
+									</td>
+									<td xml:id="d1e947">
+										<p xml:id="d1e949">Giant manta ray</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e953">
+									<td xml:id="d1e955">
+										<p xml:id="d1e957"><i xml:id="d1e958">Martialia hyadesi</i></p>
+									</td>
+									<td xml:id="d1e961">
+										<p xml:id="d1e963">SQS</p>
+									</td>
+									<td xml:id="d1e966">
+										<p xml:id="d1e968">Squid</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e972">
+									<td xml:id="d1e974">
+										<p xml:id="d1e976"><i xml:id="d1e977">Melanogrammus aeglefinus</i></p>
+									</td>
+									<td xml:id="d1e980">
+										<p xml:id="d1e982">HAD</p>
+									</td>
+									<td xml:id="d1e985">
+										<p xml:id="d1e987">Haddock</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e991">
+									<td xml:id="d1e993">
+										<p xml:id="d1e995"><i xml:id="d1e996">Merlangius merlangus</i></p>
+									</td>
+									<td xml:id="d1e999">
+										<p xml:id="d1e1001">WHG</p>
+									</td>
+									<td xml:id="d1e1004">
+										<p xml:id="d1e1006">Whiting</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1010">
+									<td xml:id="d1e1012">
+										<p xml:id="d1e1014"><i xml:id="d1e1015">Merluccius merluccius</i></p>
+									</td>
+									<td xml:id="d1e1018">
+										<p xml:id="d1e1020">HKE</p>
+									</td>
+									<td xml:id="d1e1023">
+										<p xml:id="d1e1025">Hake</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1029">
+									<td xml:id="d1e1031">
+										<p xml:id="d1e1033"><i xml:id="d1e1034">Micromesistius poutassou</i></p>
+									</td>
+									<td xml:id="d1e1037">
+										<p xml:id="d1e1039">WHB</p>
+									</td>
+									<td xml:id="d1e1042">
+										<p xml:id="d1e1044">Blue whiting</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1049">
+									<td xml:id="d1e1051">
+										<p xml:id="d1e1053"><i xml:id="d1e1054">Microstomus kitt</i></p>
+									</td>
+									<td xml:id="d1e1057">
+										<p xml:id="d1e1059">LEM</p>
+									</td>
+									<td xml:id="d1e1062">
+										<p xml:id="d1e1064">Lemon sole</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1068">
+									<td xml:id="d1e1070">
+										<p xml:id="d1e1072"><i xml:id="d1e1073">Molva dypterygia</i></p>
+									</td>
+									<td xml:id="d1e1076">
+										<p xml:id="d1e1078">BLI</p>
+									</td>
+									<td xml:id="d1e1081">
+										<p xml:id="d1e1083">Blue ling</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1087">
+									<td xml:id="d1e1089">
+										<p xml:id="d1e1091"><i xml:id="d1e1092">Molva molva</i></p>
+									</td>
+									<td xml:id="d1e1095">
+										<p xml:id="d1e1097">LIN</p>
+									</td>
+									<td xml:id="d1e1100">
+										<p xml:id="d1e1102">Ling</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1106">
+									<td xml:id="d1e1108">
+										<p xml:id="d1e1110"><i xml:id="d1e1111">Nephrops norvegicus</i></p>
+									</td>
+									<td xml:id="d1e1114">
+										<p xml:id="d1e1116">NEP</p>
+									</td>
+									<td xml:id="d1e1119">
+										<p xml:id="d1e1121">Norway lobster</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1125">
+									<td xml:id="d1e1127">
+										<p xml:id="d1e1129"><i xml:id="d1e1130">Notothenia gibberifrons</i></p>
+									</td>
+									<td xml:id="d1e1133">
+										<p xml:id="d1e1135">NOG</p>
+									</td>
+									<td xml:id="d1e1138">
+										<p xml:id="d1e1140">Humped rockcod</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1144">
+									<td xml:id="d1e1146">
+										<p xml:id="d1e1148"><i xml:id="d1e1149">Notothenia rossii</i></p>
+									</td>
+									<td xml:id="d1e1152">
+										<p xml:id="d1e1154">NOR</p>
+									</td>
+									<td xml:id="d1e1157">
+										<p xml:id="d1e1159">Marbled rockcod</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1164">
+									<td xml:id="d1e1166">
+										<p xml:id="d1e1168"><i xml:id="d1e1169">Notothenia squamifrons</i></p>
+									</td>
+									<td xml:id="d1e1172">
+										<p xml:id="d1e1174">NOS</p>
+									</td>
+									<td xml:id="d1e1177">
+										<p xml:id="d1e1179">Grey rockcod</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1183">
+									<td xml:id="d1e1185">
+										<p xml:id="d1e1187"><i xml:id="d1e1188">Pandalus borealis</i></p>
+									</td>
+									<td xml:id="d1e1191">
+										<p xml:id="d1e1193">PRA</p>
+									</td>
+									<td xml:id="d1e1196">
+										<p xml:id="d1e1198">Northern prawn</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1202">
+									<td xml:id="d1e1204">
+										<p xml:id="d1e1206"><i xml:id="d1e1207">Paralomis</i> spp.</p>
+									</td>
+									<td xml:id="d1e1211">
+										<p xml:id="d1e1213">PAI</p>
+									</td>
+									<td xml:id="d1e1216">
+										<p xml:id="d1e1218">Crabs</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1222">
+									<td xml:id="d1e1224">
+										<p xml:id="d1e1226"><i xml:id="d1e1227">Penaeus</i> spp.</p>
+									</td>
+									<td xml:id="d1e1231">
+										<p xml:id="d1e1233">PEN</p>
+									</td>
+									<td xml:id="d1e1236">
+										<p xml:id="d1e1238">‘Penaeus’ shrimps</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1242">
+									<td xml:id="d1e1244">
+										<p xml:id="d1e1246"><i xml:id="d1e1247">Pleuronectes platessa</i></p>
+									</td>
+									<td xml:id="d1e1250">
+										<p xml:id="d1e1252">PLE</p>
+									</td>
+									<td xml:id="d1e1255">
+										<p xml:id="d1e1257">Plaice</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1261">
+									<td xml:id="d1e1263">
+										<p xml:id="d1e1265"><i xml:id="d1e1266">Pleuronectiformes</i></p>
+									</td>
+									<td xml:id="d1e1269">
+										<p xml:id="d1e1271">FLX</p>
+									</td>
+									<td xml:id="d1e1274">
+										<p xml:id="d1e1276">Flatfish</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1281">
+									<td xml:id="d1e1283">
+										<p xml:id="d1e1285"><i xml:id="d1e1286">Pollachius pollachius</i></p>
+									</td>
+									<td xml:id="d1e1289">
+										<p xml:id="d1e1291">POL</p>
+									</td>
+									<td xml:id="d1e1294">
+										<p xml:id="d1e1296">Pollack</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1300">
+									<td xml:id="d1e1302">
+										<p xml:id="d1e1304"><i xml:id="d1e1305">Pollachius virens</i></p>
+									</td>
+									<td xml:id="d1e1308">
+										<p xml:id="d1e1310">POK</p>
+									</td>
+									<td xml:id="d1e1313">
+										<p xml:id="d1e1315">Saithe</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1319">
+									<td xml:id="d1e1321">
+										<p xml:id="d1e1323"><i xml:id="d1e1324">Psetta maxima</i></p>
+									</td>
+									<td xml:id="d1e1327">
+										<p xml:id="d1e1329">TUR</p>
+									</td>
+									<td xml:id="d1e1332">
+										<p xml:id="d1e1334">Turbot</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1338">
+									<td xml:id="d1e1340">
+										<p xml:id="d1e1342"><i xml:id="d1e1343">Pseudochaenichthys georgianus</i></p>
+									</td>
+									<td xml:id="d1e1346">
+										<p xml:id="d1e1348">SGI</p>
+									</td>
+									<td xml:id="d1e1351">
+										<p xml:id="d1e1353">South Georgia icefish</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1357">
+									<td xml:id="d1e1359">
+										<p xml:id="d1e1361"><i xml:id="d1e1362">Pseudopentaceros</i> spp.</p>
+									</td>
+									<td xml:id="d1e1366">
+										<p xml:id="d1e1368">EDW</p>
+									</td>
+									<td xml:id="d1e1371">
+										<p xml:id="d1e1373">Pelagic armourhead</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1377">
+									<td xml:id="d1e1379">
+										<p xml:id="d1e1381"><i xml:id="d1e1382">Raja alba</i>
+										</p>
+									</td>
+									<td xml:id="d1e1386">
+										<p xml:id="d1e1388">RJA</p>
+									</td>
+									<td xml:id="d1e1391">
+										<p xml:id="d1e1393">White skate</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1398">
+									<td xml:id="d1e1400">
+										<p xml:id="d1e1402"><i xml:id="d1e1403">Raja brachyura</i></p>
+									</td>
+									<td xml:id="d1e1406">
+										<p xml:id="d1e1408">RJH</p>
+									</td>
+									<td xml:id="d1e1411">
+										<p xml:id="d1e1413">Blonde ray</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1417">
+									<td xml:id="d1e1419">
+										<p xml:id="d1e1421"><i xml:id="d1e1422">Raja circularis</i></p>
+									</td>
+									<td xml:id="d1e1425">
+										<p xml:id="d1e1427">RJI</p>
+									</td>
+									<td xml:id="d1e1430">
+										<p xml:id="d1e1432">Sandy ray</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1436">
+									<td xml:id="d1e1438">
+										<p xml:id="d1e1440"><i xml:id="d1e1441">Raja clavata</i></p>
+									</td>
+									<td xml:id="d1e1444">
+										<p xml:id="d1e1446">RJC</p>
+									</td>
+									<td xml:id="d1e1449">
+										<p xml:id="d1e1451">Thornback ray</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1455">
+									<td xml:id="d1e1457">
+										<p xml:id="d1e1459"><i xml:id="d1e1460">Raja fullonica</i></p>
+									</td>
+									<td xml:id="d1e1463">
+										<p xml:id="d1e1465">RJF</p>
+									</td>
+									<td xml:id="d1e1468">
+										<p xml:id="d1e1470">Shagreen ray</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1474">
+									<td xml:id="d1e1476">
+										<p xml:id="d1e1478"><i xml:id="d1e1479">Raja</i> (<i xml:id="d1e1481">Dipturus</i>) <i xml:id="d1e1483">nidarosiensis</i></p>
+									</td>
+									<td xml:id="d1e1486">
+										<p xml:id="d1e1488">JAD</p>
+									</td>
+									<td xml:id="d1e1491">
+										<p xml:id="d1e1493">Norwegian skate</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1497">
+									<td xml:id="d1e1499">
+										<p xml:id="d1e1501"><i xml:id="d1e1502">Raja microocellata</i></p>
+									</td>
+									<td xml:id="d1e1505">
+										<p xml:id="d1e1507">RJE</p>
+									</td>
+									<td xml:id="d1e1510">
+										<p xml:id="d1e1512">Small-eyed ray</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1517">
+									<td xml:id="d1e1519">
+										<p xml:id="d1e1521"><i xml:id="d1e1522">Raja montagui</i></p>
+									</td>
+									<td xml:id="d1e1525">
+										<p xml:id="d1e1527">RJM</p>
+									</td>
+									<td xml:id="d1e1530">
+										<p xml:id="d1e1532">Spotted ray</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1536">
+									<td xml:id="d1e1538">
+										<p xml:id="d1e1540"><i xml:id="d1e1541">Raja undulata</i></p>
+									</td>
+									<td xml:id="d1e1544">
+										<p xml:id="d1e1546">RJU</p>
+									</td>
+									<td xml:id="d1e1549">
+										<p xml:id="d1e1551">Undulate ray</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1555">
+									<td xml:id="d1e1557">
+										<p xml:id="d1e1559"><i xml:id="d1e1560">Rajiformes</i></p>
+									</td>
+									<td xml:id="d1e1563">
+										<p xml:id="d1e1565">SRX</p>
+									</td>
+									<td xml:id="d1e1568">
+										<p xml:id="d1e1570">Skates and rays</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1574">
+									<td xml:id="d1e1576">
+										<p xml:id="d1e1578"><i xml:id="d1e1579">Reinhardtius hippoglossoides</i></p>
+									</td>
+									<td xml:id="d1e1582">
+										<p xml:id="d1e1584">GHL</p>
+									</td>
+									<td xml:id="d1e1587">
+										<p xml:id="d1e1589">Greenland halibut</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1593">
+									<td xml:id="d1e1595">
+										<p xml:id="d1e1597"><i xml:id="d1e1598">Sardina pilchardus</i></p>
+									</td>
+									<td xml:id="d1e1601">
+										<p xml:id="d1e1603">PIL</p>
+									</td>
+									<td xml:id="d1e1606">
+										<p xml:id="d1e1608">Sardine</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1612">
+									<td xml:id="d1e1614">
+										<p xml:id="d1e1616"><i xml:id="d1e1617">Scomber scombrus</i></p>
+									</td>
+									<td xml:id="d1e1620">
+										<p xml:id="d1e1622">MAC</p>
+									</td>
+									<td xml:id="d1e1625">
+										<p xml:id="d1e1627">Mackerel</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1632">
+									<td xml:id="d1e1634">
+										<p xml:id="d1e1636"><i xml:id="d1e1637">Scophthalmus rhombus</i></p>
+									</td>
+									<td xml:id="d1e1640">
+										<p xml:id="d1e1642">BLL</p>
+									</td>
+									<td xml:id="d1e1645">
+										<p xml:id="d1e1647">Brill</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1651">
+									<td xml:id="d1e1653">
+										<p xml:id="d1e1655"><i xml:id="d1e1656">Sebastes</i> spp.</p>
+									</td>
+									<td xml:id="d1e1660">
+										<p xml:id="d1e1662">RED</p>
+									</td>
+									<td xml:id="d1e1665">
+										<p xml:id="d1e1667">Redfish</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1671">
+									<td xml:id="d1e1673">
+										<p xml:id="d1e1675"><i xml:id="d1e1676">Solea solea</i></p>
+									</td>
+									<td xml:id="d1e1679">
+										<p xml:id="d1e1681">SOL</p>
+									</td>
+									<td xml:id="d1e1684">
+										<p xml:id="d1e1686">Common sole</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1690">
+									<td xml:id="d1e1692">
+										<p xml:id="d1e1694"><i xml:id="d1e1695">Solea</i> spp.</p>
+									</td>
+									<td xml:id="d1e1699">
+										<p xml:id="d1e1701">SOO</p>
+									</td>
+									<td xml:id="d1e1704">
+										<p xml:id="d1e1706">Sole</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1710">
+									<td xml:id="d1e1712">
+										<p xml:id="d1e1714"><i xml:id="d1e1715">Sprattus sprattus</i></p>
+									</td>
+									<td xml:id="d1e1718">
+										<p xml:id="d1e1720">SPR</p>
+									</td>
+									<td xml:id="d1e1723">
+										<p xml:id="d1e1725">Sprat</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1729">
+									<td xml:id="d1e1731">
+										<p xml:id="d1e1733"><i xml:id="d1e1734">Squalus acanthias</i></p>
+									</td>
+									<td xml:id="d1e1737">
+										<p xml:id="d1e1739">DGS</p>
+									</td>
+									<td xml:id="d1e1742">
+										<p xml:id="d1e1744">Picked dogfish</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1749">
+									<td xml:id="d1e1751">
+										<p xml:id="d1e1753"><i xml:id="d1e1754">Tetrapturus albidus</i></p>
+									</td>
+									<td xml:id="d1e1757">
+										<p xml:id="d1e1759">WHM</p>
+									</td>
+									<td xml:id="d1e1762">
+										<p xml:id="d1e1764">White marlin</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1768">
+									<td xml:id="d1e1770">
+										<p xml:id="d1e1772"><i xml:id="d1e1773">Thunnus maccoyii</i></p>
+									</td>
+									<td xml:id="d1e1776">
+										<p xml:id="d1e1778">SBF</p>
+									</td>
+									<td xml:id="d1e1781">
+										<p xml:id="d1e1783">Southern bluefin tuna</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1787">
+									<td xml:id="d1e1789">
+										<p xml:id="d1e1791"><i xml:id="d1e1792">Thunnus obesus</i></p>
+									</td>
+									<td xml:id="d1e1795">
+										<p xml:id="d1e1797">BET</p>
+									</td>
+									<td xml:id="d1e1800">
+										<p xml:id="d1e1802">Bigeye tuna</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1806">
+									<td xml:id="d1e1808">
+										<p xml:id="d1e1810"><i xml:id="d1e1811">Thunnus thynnus</i></p>
+									</td>
+									<td xml:id="d1e1814">
+										<p xml:id="d1e1816">BFT</p>
+									</td>
+									<td xml:id="d1e1819">
+										<p xml:id="d1e1821">Bluefin tuna</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1825">
+									<td xml:id="d1e1827">
+										<p xml:id="d1e1829"><i xml:id="d1e1830">Trachurus murphyi</i></p>
+									</td>
+									<td xml:id="d1e1833">
+										<p xml:id="d1e1835">CJM</p>
+									</td>
+									<td xml:id="d1e1838">
+										<p xml:id="d1e1840">Jack mackerel</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1844">
+									<td xml:id="d1e1846">
+										<p xml:id="d1e1848"><i xml:id="d1e1849">Trachurus</i> spp.</p>
+									</td>
+									<td xml:id="d1e1853">
+										<p xml:id="d1e1855">JAX</p>
+									</td>
+									<td xml:id="d1e1858">
+										<p xml:id="d1e1860">Horse mackerel</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1865">
+									<td xml:id="d1e1867">
+										<p xml:id="d1e1869"><i xml:id="d1e1870">Trisopterus esmarkii</i></p>
+									</td>
+									<td xml:id="d1e1873">
+										<p xml:id="d1e1875">NOP</p>
+									</td>
+									<td xml:id="d1e1878">
+										<p xml:id="d1e1880">Norway pout</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1884">
+									<td xml:id="d1e1886">
+										<p xml:id="d1e1888"><i xml:id="d1e1889">Urophycis tenuis</i></p>
+									</td>
+									<td xml:id="d1e1892">
+										<p xml:id="d1e1894">HKW</p>
+									</td>
+									<td xml:id="d1e1897">
+										<p xml:id="d1e1899">White hake</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1903">
+									<td xml:id="d1e1905">
+										<p xml:id="d1e1907"><i xml:id="d1e1908">Xiphias gladius</i></p>
+									</td>
+									<td xml:id="d1e1911">
+										<p xml:id="d1e1913">SWO</p>
+									</td>
+									<td xml:id="d1e1916">
+										<p xml:id="d1e1918">Swordfish</p>
+									</td>
+								</tr>
+							</table>
+						</content>
+					</hcontainer>
+				</hcontainer>
+			</paragraph>
+			<paragraph xml:id="d1e1928">
+				<content xml:id="d1e1930">
+					<p xml:id="d1e1932">The following comparative table of common names and Latin names is provided
+						exclusively for explanatory purposes:</p>
+				</content>
+			</paragraph>
+			<paragraph xml:id="d1e1936">
+				<hcontainer xml:id="d1e1938" name="BLOCK_TAB">
+					<hcontainer xml:id="d1e1940" name="TAB">
+						<content xml:id="d1e1942">
+							<table xml:id="d1e1944">
+								<tr xml:id="d1e1946">
+									<th xml:id="d1e1948">
+										<p xml:id="d1e1950">Common name</p>
+									</th>
+									<th xml:id="d1e1953">
+										<p xml:id="d1e1955">Alpha-3 code</p>
+									</th>
+									<th xml:id="d1e1958">
+										<p xml:id="d1e1960">Scientific name</p>
+									</th>
+								</tr>
+								<tr xml:id="d1e1964">
+									<td xml:id="d1e1966">
+										<p xml:id="d1e1968">Alfonsinos</p>
+									</td>
+									<td xml:id="d1e1971">
+										<p xml:id="d1e1973">ALF</p>
+									</td>
+									<td xml:id="d1e1976">
+										<p xml:id="d1e1978"><i xml:id="d1e1979">Beryx</i> spp.</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e1984">
+									<td xml:id="d1e1986">
+										<p xml:id="d1e1988">American plaice</p>
+									</td>
+									<td xml:id="d1e1991">
+										<p xml:id="d1e1993">PLA</p>
+									</td>
+									<td xml:id="d1e1996">
+										<p xml:id="d1e1998"><i xml:id="d1e1999">Hippoglossoides platessoides</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2003">
+									<td xml:id="d1e2005">
+										<p xml:id="d1e2007">Anchovy</p>
+									</td>
+									<td xml:id="d1e2010">
+										<p xml:id="d1e2012">ANE</p>
+									</td>
+									<td xml:id="d1e2015">
+										<p xml:id="d1e2017"><i xml:id="d1e2018">Engraulis encrasicolus</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2022">
+									<td xml:id="d1e2024">
+										<p xml:id="d1e2026">Anglerfish</p>
+									</td>
+									<td xml:id="d1e2029">
+										<p xml:id="d1e2031">ANF</p>
+									</td>
+									<td xml:id="d1e2034">
+										<p xml:id="d1e2036"><i xml:id="d1e2037">Lophiidae</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2042">
+									<td xml:id="d1e2044">
+										<p xml:id="d1e2046">Antarctic toothfish</p>
+									</td>
+									<td xml:id="d1e2049">
+										<p xml:id="d1e2051">TOA</p>
+									</td>
+									<td xml:id="d1e2054">
+										<p xml:id="d1e2056"><i xml:id="d1e2057">Dissostichus mawsoni</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2061">
+									<td xml:id="d1e2063">
+										<p xml:id="d1e2065">Bigeye tuna</p>
+									</td>
+									<td xml:id="d1e2068">
+										<p xml:id="d1e2070">BET</p>
+									</td>
+									<td xml:id="d1e2073">
+										<p xml:id="d1e2075"><i xml:id="d1e2076">Thunnus obesus</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2080">
+									<td xml:id="d1e2082">
+										<p xml:id="d1e2084">Birdbeak dogfish</p>
+									</td>
+									<td xml:id="d1e2087">
+										<p xml:id="d1e2089">DCA</p>
+									</td>
+									<td xml:id="d1e2092">
+										<p xml:id="d1e2094"><i xml:id="d1e2095">Deania calcea</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2099">
+									<td xml:id="d1e2101">
+										<p xml:id="d1e2103">Blackfin icefish</p>
+									</td>
+									<td xml:id="d1e2106">
+										<p xml:id="d1e2108">SSI</p>
+									</td>
+									<td xml:id="d1e2111">
+										<p xml:id="d1e2113"><i xml:id="d1e2114">Chaenocephalus aceratus</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2118">
+									<td xml:id="d1e2120">
+										<p xml:id="d1e2122">Blonde ray</p>
+									</td>
+									<td xml:id="d1e2125">
+										<p xml:id="d1e2127">RJH</p>
+									</td>
+									<td xml:id="d1e2130">
+										<p xml:id="d1e2132"><i xml:id="d1e2133">Raja brachyura</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2137">
+									<td xml:id="d1e2139">
+										<p xml:id="d1e2141">Blue ling</p>
+									</td>
+									<td xml:id="d1e2144">
+										<p xml:id="d1e2146">BLI</p>
+									</td>
+									<td xml:id="d1e2149">
+										<p xml:id="d1e2151"><i xml:id="d1e2152">Molva dypterygia</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2157">
+									<td xml:id="d1e2159">
+										<p xml:id="d1e2161">Blue marlin</p>
+									</td>
+									<td xml:id="d1e2164">
+										<p xml:id="d1e2166">BUM</p>
+									</td>
+									<td xml:id="d1e2169">
+										<p xml:id="d1e2171"><i xml:id="d1e2172">Makaira nigricans</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2176">
+									<td xml:id="d1e2178">
+										<p xml:id="d1e2180">Blue whiting</p>
+									</td>
+									<td xml:id="d1e2183">
+										<p xml:id="d1e2185">WHB</p>
+									</td>
+									<td xml:id="d1e2188">
+										<p xml:id="d1e2190"><i xml:id="d1e2191">Micromesistius poutassou</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2195">
+									<td xml:id="d1e2197">
+										<p xml:id="d1e2199">Bluefin tuna</p>
+									</td>
+									<td xml:id="d1e2202">
+										<p xml:id="d1e2204">BFT</p>
+									</td>
+									<td xml:id="d1e2207">
+										<p xml:id="d1e2209"><i xml:id="d1e2210">Thunnus thynnus</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2214">
+									<td xml:id="d1e2216">
+										<p xml:id="d1e2218">Boarfish</p>
+									</td>
+									<td xml:id="d1e2221">
+										<p xml:id="d1e2223">BOR</p>
+									</td>
+									<td xml:id="d1e2226">
+										<p xml:id="d1e2228"><i xml:id="d1e2229">Caproidae</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2233">
+									<td xml:id="d1e2235">
+										<p xml:id="d1e2237">Brill</p>
+									</td>
+									<td xml:id="d1e2240">
+										<p xml:id="d1e2242">BLL</p>
+									</td>
+									<td xml:id="d1e2245">
+										<p xml:id="d1e2247"><i xml:id="d1e2248">Scophthalmus rhombus</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2252">
+									<td xml:id="d1e2254">
+										<p xml:id="d1e2256">Capelin</p>
+									</td>
+									<td xml:id="d1e2259">
+										<p xml:id="d1e2261">CAP</p>
+									</td>
+									<td xml:id="d1e2264">
+										<p xml:id="d1e2266"><i xml:id="d1e2267">Mallotus villosus</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2272">
+									<td xml:id="d1e2274">
+										<p xml:id="d1e2276">Cod</p>
+									</td>
+									<td xml:id="d1e2279">
+										<p xml:id="d1e2281">COD</p>
+									</td>
+									<td xml:id="d1e2284">
+										<p xml:id="d1e2286"><i xml:id="d1e2287">Gadus morhua</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2291">
+									<td xml:id="d1e2293">
+										<p xml:id="d1e2295">Common skate complex</p>
+									</td>
+									<td xml:id="d1e2298">
+										<p xml:id="d1e2300">RJB</p>
+									</td>
+									<td xml:id="d1e2303">
+										<p xml:id="d1e2305"><i xml:id="d1e2306">Dipturus batis</i> (<i xml:id="d1e2308">Dipturus</i> cf.
+												<i xml:id="d1e2310">flossada</i><br xml:id="d1e2311"/>and <i xml:id="d1e2313">Dipturus</i> cf.
+												<i xml:id="d1e2315">intermedia</i>)</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2320">
+									<td xml:id="d1e2322">
+										<p xml:id="d1e2324">Common sole</p>
+									</td>
+									<td xml:id="d1e2327">
+										<p xml:id="d1e2329">SOL</p>
+									</td>
+									<td xml:id="d1e2332">
+										<p xml:id="d1e2334"><i xml:id="d1e2335">Solea solea</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2339">
+									<td xml:id="d1e2341">
+										<p xml:id="d1e2343">Crabs</p>
+									</td>
+									<td xml:id="d1e2346">
+										<p xml:id="d1e2348">PAI</p>
+									</td>
+									<td xml:id="d1e2351">
+										<p xml:id="d1e2353"><i xml:id="d1e2354">Paralomis</i> spp.</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2359">
+									<td xml:id="d1e2361">
+										<p xml:id="d1e2363">Cuckoo ray</p>
+									</td>
+									<td xml:id="d1e2366">
+										<p xml:id="d1e2368">RJN</p>
+									</td>
+									<td xml:id="d1e2371">
+										<p xml:id="d1e2373"><i xml:id="d1e2374">Leucoraja naevus</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2378">
+									<td xml:id="d1e2380">
+										<p xml:id="d1e2382">Deep sea red crab</p>
+									</td>
+									<td xml:id="d1e2385">
+										<p xml:id="d1e2387">GER</p>
+									</td>
+									<td xml:id="d1e2390">
+										<p xml:id="d1e2392"><i xml:id="d1e2393">Chaceon</i> spp.</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2399">
+									<td xml:id="d1e2401">
+										<p xml:id="d1e2403">European seabass</p>
+									</td>
+									<td xml:id="d1e2406">
+										<p xml:id="d1e2408">BSS</p>
+									</td>
+									<td xml:id="d1e2411">
+										<p xml:id="d1e2413"><i xml:id="d1e2414">Dicentrarchus labrax</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2418">
+									<td xml:id="d1e2420">
+										<p xml:id="d1e2422">Flatfish</p>
+									</td>
+									<td xml:id="d1e2425">
+										<p xml:id="d1e2427">FLX</p>
+									</td>
+									<td xml:id="d1e2430">
+										<p xml:id="d1e2432"><i xml:id="d1e2433">Pleuronectiformes</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2437">
+									<td xml:id="d1e2439">
+										<p xml:id="d1e2441">Giant manta ray</p>
+									</td>
+									<td xml:id="d1e2444">
+										<p xml:id="d1e2446">RMB</p>
+									</td>
+									<td xml:id="d1e2449">
+										<p xml:id="d1e2451">
+											<i xml:id="d1e2453">Manta birostris</i>
+										</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2458">
+									<td xml:id="d1e2460">
+										<p xml:id="d1e2462">Great lanternshark</p>
+									</td>
+									<td xml:id="d1e2465">
+										<p xml:id="d1e2467">ETR</p>
+									</td>
+									<td xml:id="d1e2470">
+										<p xml:id="d1e2472"><i xml:id="d1e2473">Etmopterus princeps</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2477">
+									<td xml:id="d1e2479">
+										<p xml:id="d1e2481">Greater silver smelt</p>
+									</td>
+									<td xml:id="d1e2484">
+										<p xml:id="d1e2486">ARU</p>
+									</td>
+									<td xml:id="d1e2489">
+										<p xml:id="d1e2491"><i xml:id="d1e2492">Argentina silus</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2496">
+									<td xml:id="d1e2498">
+										<p xml:id="d1e2500">Greenland halibut</p>
+									</td>
+									<td xml:id="d1e2503">
+										<p xml:id="d1e2505">GHL</p>
+									</td>
+									<td xml:id="d1e2508">
+										<p xml:id="d1e2510"><i xml:id="d1e2511">Reinhardtius hippoglossoides</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2516">
+									<td xml:id="d1e2518">
+										<p xml:id="d1e2520">Grenadiers</p>
+									</td>
+									<td xml:id="d1e2523">
+										<p xml:id="d1e2525">GRV</p>
+									</td>
+									<td xml:id="d1e2528">
+										<p xml:id="d1e2530"><i xml:id="d1e2531">Macrourus</i> spp.</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2536">
+									<td xml:id="d1e2538">
+										<p xml:id="d1e2540">Grey rockcod</p>
+									</td>
+									<td xml:id="d1e2543">
+										<p xml:id="d1e2545">NOS</p>
+									</td>
+									<td xml:id="d1e2548">
+										<p xml:id="d1e2550"><i xml:id="d1e2551">Notothenia squamifrons</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2555">
+									<td xml:id="d1e2557">
+										<p xml:id="d1e2559">Haddock</p>
+									</td>
+									<td xml:id="d1e2562">
+										<p xml:id="d1e2564">HAD</p>
+									</td>
+									<td xml:id="d1e2567">
+										<p xml:id="d1e2569"><i xml:id="d1e2570">Melanogrammus aeglefinus</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2574">
+									<td xml:id="d1e2576">
+										<p xml:id="d1e2578">Hake</p>
+									</td>
+									<td xml:id="d1e2581">
+										<p xml:id="d1e2583">HKE</p>
+									</td>
+									<td xml:id="d1e2586">
+										<p xml:id="d1e2588"><i xml:id="d1e2589">Merluccius merluccius</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2593">
+									<td xml:id="d1e2595">
+										<p xml:id="d1e2597">Herring</p>
+									</td>
+									<td xml:id="d1e2600">
+										<p xml:id="d1e2602">HER</p>
+									</td>
+									<td xml:id="d1e2605">
+										<p xml:id="d1e2607"><i xml:id="d1e2608">Clupea harengus</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2612">
+									<td xml:id="d1e2614">
+										<p xml:id="d1e2616">Horse mackerel</p>
+									</td>
+									<td xml:id="d1e2619">
+										<p xml:id="d1e2621">JAX</p>
+									</td>
+									<td xml:id="d1e2624">
+										<p xml:id="d1e2626"><i xml:id="d1e2627">Trachurus</i> spp.</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2633">
+									<td xml:id="d1e2635">
+										<p xml:id="d1e2637">Humped rockcod</p>
+									</td>
+									<td xml:id="d1e2640">
+										<p xml:id="d1e2642">NOG</p>
+									</td>
+									<td xml:id="d1e2645">
+										<p xml:id="d1e2647"><i xml:id="d1e2648">Notothenia gibberifrons</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2652">
+									<td xml:id="d1e2654">
+										<p xml:id="d1e2656">Jack mackerel</p>
+									</td>
+									<td xml:id="d1e2659">
+										<p xml:id="d1e2661">CJM</p>
+									</td>
+									<td xml:id="d1e2664">
+										<p xml:id="d1e2666"><i xml:id="d1e2667">Trachurus murphyi</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2671">
+									<td xml:id="d1e2673">
+										<p xml:id="d1e2675">Kitefin shark</p>
+									</td>
+									<td xml:id="d1e2678">
+										<p xml:id="d1e2680">SCK</p>
+									</td>
+									<td xml:id="d1e2683">
+										<p xml:id="d1e2685"><i xml:id="d1e2686">Dalatias licha</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2690">
+									<td xml:id="d1e2692">
+										<p xml:id="d1e2694">Krill</p>
+									</td>
+									<td xml:id="d1e2697">
+										<p xml:id="d1e2699">KRI</p>
+									</td>
+									<td xml:id="d1e2702">
+										<p xml:id="d1e2704"><i xml:id="d1e2705">Euphausia superba</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2709">
+									<td xml:id="d1e2711">
+										<p xml:id="d1e2713">Leafscale gulper shark</p>
+									</td>
+									<td xml:id="d1e2716">
+										<p xml:id="d1e2718">GUQ</p>
+									</td>
+									<td xml:id="d1e2721">
+										<p xml:id="d1e2723"><i xml:id="d1e2724">Centrophorus squamosus</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2728">
+									<td xml:id="d1e2730">
+										<p xml:id="d1e2732">Lemon sole</p>
+									</td>
+									<td xml:id="d1e2735">
+										<p xml:id="d1e2737">LEM</p>
+									</td>
+									<td xml:id="d1e2740">
+										<p xml:id="d1e2742"><i xml:id="d1e2743">Microstomus kitt</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2748">
+									<td xml:id="d1e2750">
+										<p xml:id="d1e2752">Ling</p>
+									</td>
+									<td xml:id="d1e2755">
+										<p xml:id="d1e2757">LIN</p>
+									</td>
+									<td xml:id="d1e2760">
+										<p xml:id="d1e2762"><i xml:id="d1e2763">Molva molva</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2767">
+									<td xml:id="d1e2769">
+										<p xml:id="d1e2771">Mackerel</p>
+									</td>
+									<td xml:id="d1e2774">
+										<p xml:id="d1e2776">MAC</p>
+									</td>
+									<td xml:id="d1e2779">
+										<p xml:id="d1e2781"><i xml:id="d1e2782">Scomber scombrus</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2786">
+									<td xml:id="d1e2788">
+										<p xml:id="d1e2790">Mackerel icefish</p>
+									</td>
+									<td xml:id="d1e2793">
+										<p xml:id="d1e2795">ANI</p>
+									</td>
+									<td xml:id="d1e2798">
+										<p xml:id="d1e2800"><i xml:id="d1e2801">Champsocephalus gunnari</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2805">
+									<td xml:id="d1e2807">
+										<p xml:id="d1e2809">Marbled rockcod</p>
+									</td>
+									<td xml:id="d1e2812">
+										<p xml:id="d1e2814">NOR</p>
+									</td>
+									<td xml:id="d1e2817">
+										<p xml:id="d1e2819"><i xml:id="d1e2820">Notothenia rossii</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2824">
+									<td xml:id="d1e2826">
+										<p xml:id="d1e2828">Megrims</p>
+									</td>
+									<td xml:id="d1e2831">
+										<p xml:id="d1e2833">LEZ</p>
+									</td>
+									<td xml:id="d1e2836">
+										<p xml:id="d1e2838"><i xml:id="d1e2839">Lepidorhombus</i> spp.</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2844">
+									<td xml:id="d1e2846">
+										<p xml:id="d1e2848">Northern prawn</p>
+									</td>
+									<td xml:id="d1e2851">
+										<p xml:id="d1e2853">PRA</p>
+									</td>
+									<td xml:id="d1e2856">
+										<p xml:id="d1e2858"><i xml:id="d1e2859">Pandalus borealis</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2864">
+									<td xml:id="d1e2866">
+										<p xml:id="d1e2868">Norway lobster</p>
+									</td>
+									<td xml:id="d1e2871">
+										<p xml:id="d1e2873">NEP</p>
+									</td>
+									<td xml:id="d1e2876">
+										<p xml:id="d1e2878"><i xml:id="d1e2879">Nephrops norvegicus</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2883">
+									<td xml:id="d1e2885">
+										<p xml:id="d1e2887">Norway pout</p>
+									</td>
+									<td xml:id="d1e2890">
+										<p xml:id="d1e2892">NOP</p>
+									</td>
+									<td xml:id="d1e2895">
+										<p xml:id="d1e2897"><i xml:id="d1e2898">Trisopterus esmarkii</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2902">
+									<td xml:id="d1e2904">
+										<p xml:id="d1e2906">Norwegian skate</p>
+									</td>
+									<td xml:id="d1e2909">
+										<p xml:id="d1e2911">JAD</p>
+									</td>
+									<td xml:id="d1e2914">
+										<p xml:id="d1e2916"><i xml:id="d1e2917">Raja</i> (<i xml:id="d1e2919">Dipturus</i>) <i xml:id="d1e2921">nidarosiensis</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2925">
+									<td xml:id="d1e2927">
+										<p xml:id="d1e2929">Orange roughy</p>
+									</td>
+									<td xml:id="d1e2932">
+										<p xml:id="d1e2934">ORY</p>
+									</td>
+									<td xml:id="d1e2937">
+										<p xml:id="d1e2939"><i xml:id="d1e2940">Hoplostethus atlanticus</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2944">
+									<td xml:id="d1e2946">
+										<p xml:id="d1e2948">Patagonian toothfish</p>
+									</td>
+									<td xml:id="d1e2951">
+										<p xml:id="d1e2953">TOP</p>
+									</td>
+									<td xml:id="d1e2956">
+										<p xml:id="d1e2958"><i xml:id="d1e2959">Dissostichus eleginoides</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2963">
+									<td xml:id="d1e2965">
+										<p xml:id="d1e2967">Pelagic armourhead</p>
+									</td>
+									<td xml:id="d1e2970">
+										<p xml:id="d1e2972">EDW</p>
+									</td>
+									<td xml:id="d1e2975">
+										<p xml:id="d1e2977"><i xml:id="d1e2978">Pseudopentaceros</i> spp.</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e2984">
+									<td xml:id="d1e2986">
+										<p xml:id="d1e2988">‘Penaeus’ shrimps</p>
+									</td>
+									<td xml:id="d1e2991">
+										<p xml:id="d1e2993">PEN</p>
+									</td>
+									<td xml:id="d1e2996">
+										<p xml:id="d1e2998"><i xml:id="d1e2999">Penaeus</i> spp.</p></td>
+								</tr>
+								<tr xml:id="d1e3003">
+									<td xml:id="d1e3005">
+										<p xml:id="d1e3007">Picked dogfish</p>
+									</td>
+									<td xml:id="d1e3010">
+										<p xml:id="d1e3012">DGS</p>
+									</td>
+									<td xml:id="d1e3015">
+										<p xml:id="d1e3017"><i xml:id="d1e3018">Squalus acanthias</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e3022">
+									<td xml:id="d1e3024">
+										<p xml:id="d1e3026">Plaice</p>
+									</td>
+									<td xml:id="d1e3029">
+										<p xml:id="d1e3031">PLE</p>
+									</td>
+									<td xml:id="d1e3034">
+										<p xml:id="d1e3036"><i xml:id="d1e3037">Pleuronectes platessa</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e3041">
+									<td xml:id="d1e3043">
+										<p xml:id="d1e3045">Pollack</p>
+									</td>
+									<td xml:id="d1e3048">
+										<p xml:id="d1e3050">POL</p>
+									</td>
+									<td xml:id="d1e3053">
+										<p xml:id="d1e3055"><i xml:id="d1e3056">Pollachius pollachius</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e3060">
+									<td xml:id="d1e3062">
+										<p xml:id="d1e3064">Porbeagle</p>
+									</td>
+									<td xml:id="d1e3067">
+										<p xml:id="d1e3069">POR</p>
+									</td>
+									<td xml:id="d1e3072">
+										<p xml:id="d1e3074"><i xml:id="d1e3075">Lamna nasus</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e3079">
+									<td xml:id="d1e3081">
+										<p xml:id="d1e3083">Portuguese dogfish</p>
+									</td>
+									<td xml:id="d1e3086">
+										<p xml:id="d1e3088">CYO</p>
+									</td>
+									<td xml:id="d1e3091">
+										<p xml:id="d1e3093"><i xml:id="d1e3094">Centroscymnus coelolepis</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e3099">
+									<td xml:id="d1e3101">
+										<p xml:id="d1e3103">Redfish</p>
+									</td>
+									<td xml:id="d1e3106">
+										<p xml:id="d1e3108">RED</p>
+									</td>
+									<td xml:id="d1e3111">
+										<p xml:id="d1e3113"><i xml:id="d1e3114">Sebastes</i> spp.</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e3119">
+									<td xml:id="d1e3121">
+										<p xml:id="d1e3123">Roundnose grenadier</p>
+									</td>
+									<td xml:id="d1e3126">
+										<p xml:id="d1e3128">RNG</p>
+									</td>
+									<td xml:id="d1e3131">
+										<p xml:id="d1e3133"><i xml:id="d1e3134">Coryphaenoides rupestris</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e3138">
+									<td xml:id="d1e3140">
+										<p xml:id="d1e3142">Saithe</p>
+									</td>
+									<td xml:id="d1e3145">
+										<p xml:id="d1e3147">POK</p>
+									</td>
+									<td xml:id="d1e3150">
+										<p xml:id="d1e3152"><i xml:id="d1e3153">Pollachius virens</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e3157">
+									<td xml:id="d1e3159">
+										<p xml:id="d1e3161">Sandeels</p>
+									</td>
+									<td xml:id="d1e3164">
+										<p xml:id="d1e3166">SAN</p>
+									</td>
+									<td xml:id="d1e3169">
+										<p xml:id="d1e3171"><i xml:id="d1e3172">Ammodytes</i> spp.</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e3177">
+									<td xml:id="d1e3179">
+										<p xml:id="d1e3181">Sandy ray</p>
+									</td>
+									<td xml:id="d1e3184">
+										<p xml:id="d1e3186">RJI</p>
+									</td>
+									<td xml:id="d1e3189">
+										<p xml:id="d1e3191"><i xml:id="d1e3192">Raja circularis</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e3196">
+									<td xml:id="d1e3198">
+										<p xml:id="d1e3200">Sardine</p>
+									</td>
+									<td xml:id="d1e3203">
+										<p xml:id="d1e3205">PIL</p>
+									</td>
+									<td xml:id="d1e3208">
+										<p xml:id="d1e3210"><i xml:id="d1e3211">Sardina pilchardus</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e3216">
+									<td xml:id="d1e3218">
+										<p xml:id="d1e3220">Shagreen ray</p>
+									</td>
+									<td xml:id="d1e3223">
+										<p xml:id="d1e3225">RJF</p>
+									</td>
+									<td xml:id="d1e3228">
+										<p xml:id="d1e3230"><i xml:id="d1e3231">Raja fullonica</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e3235">
+									<td xml:id="d1e3237">
+										<p xml:id="d1e3239">Shortfin squid</p>
+									</td>
+									<td xml:id="d1e3242">
+										<p xml:id="d1e3244">SQI</p>
+									</td>
+									<td xml:id="d1e3247">
+										<p xml:id="d1e3249"><i xml:id="d1e3250">Illex illecebrosus</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e3254">
+									<td xml:id="d1e3256">
+										<p xml:id="d1e3258">Skates and rays</p>
+									</td>
+									<td xml:id="d1e3261">
+										<p xml:id="d1e3263">SRX</p>
+									</td>
+									<td xml:id="d1e3266">
+										<p xml:id="d1e3268"><i xml:id="d1e3269">Rajiformes</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e3273">
+									<td xml:id="d1e3275">
+										<p xml:id="d1e3277">Small-eyed ray</p>
+									</td>
+									<td xml:id="d1e3280">
+										<p xml:id="d1e3282">RJE</p>
+									</td>
+									<td xml:id="d1e3285">
+										<p xml:id="d1e3287"><i xml:id="d1e3288">Raja microocellata</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e3292">
+									<td xml:id="d1e3294">
+										<p xml:id="d1e3296">Smooth lanternshark</p>
+									</td>
+									<td xml:id="d1e3299">
+										<p xml:id="d1e3301">ETP</p>
+									</td>
+									<td xml:id="d1e3304">
+										<p xml:id="d1e3306"><i xml:id="d1e3307">Etmopterus pusillus</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e3311">
+									<td xml:id="d1e3313">
+										<p xml:id="d1e3315">Snow crab</p>
+									</td>
+									<td xml:id="d1e3318">
+										<p xml:id="d1e3320">PCR</p>
+									</td>
+									<td xml:id="d1e3323">
+										<p xml:id="d1e3325"><i xml:id="d1e3326">Chionoecetes</i> spp.</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e3332">
+									<td xml:id="d1e3334">
+										<p xml:id="d1e3336">Sole</p>
+									</td>
+									<td xml:id="d1e3339">
+										<p xml:id="d1e3341">SOO</p>
+									</td>
+									<td xml:id="d1e3344">
+										<p xml:id="d1e3346"><i xml:id="d1e3347">Solea</i> spp.</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e3352">
+									<td xml:id="d1e3354">
+										<p xml:id="d1e3356">South Georgia icefish</p>
+									</td>
+									<td xml:id="d1e3359">
+										<p xml:id="d1e3361">SGI</p>
+									</td>
+									<td xml:id="d1e3364">
+										<p xml:id="d1e3366"><i xml:id="d1e3367">Pseudochaenichthys georgianus</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e3371">
+									<td xml:id="d1e3373">
+										<p xml:id="d1e3375">Southern bluefin tuna</p>
+									</td>
+									<td xml:id="d1e3378">
+										<p xml:id="d1e3380">SBF</p>
+									</td>
+									<td xml:id="d1e3383">
+										<p xml:id="d1e3385"><i xml:id="d1e3386">Thunnus maccoyii</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e3390">
+									<td xml:id="d1e3392">
+										<p xml:id="d1e3394">Spotted ray</p>
+									</td>
+									<td xml:id="d1e3397">
+										<p xml:id="d1e3399">RJM</p>
+									</td>
+									<td xml:id="d1e3402">
+										<p xml:id="d1e3404"><i xml:id="d1e3405">Raja montagui</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e3409">
+									<td xml:id="d1e3411">
+										<p xml:id="d1e3413">Sprat</p>
+									</td>
+									<td xml:id="d1e3416">
+										<p xml:id="d1e3418">SPR</p>
+									</td>
+									<td xml:id="d1e3421">
+										<p xml:id="d1e3423"><i xml:id="d1e3424">Sprattus sprattus</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e3428">
+									<td xml:id="d1e3430">
+										<p xml:id="d1e3432">Squid</p>
+									</td>
+									<td xml:id="d1e3435">
+										<p xml:id="d1e3437">SQS</p>
+									</td>
+									<td xml:id="d1e3440">
+										<p xml:id="d1e3442"><i xml:id="d1e3443">Martialia hyadesi</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e3448">
+									<td xml:id="d1e3450">
+										<p xml:id="d1e3452">Starry ray</p>
+									</td>
+									<td xml:id="d1e3455">
+										<p xml:id="d1e3457">RJR</p>
+									</td>
+									<td xml:id="d1e3460">
+										<p xml:id="d1e3462"><i xml:id="d1e3463">Amblyraja radiata</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e3467">
+									<td xml:id="d1e3469">
+										<p xml:id="d1e3471">Swordfish</p>
+									</td>
+									<td xml:id="d1e3474">
+										<p xml:id="d1e3476">SWO</p>
+									</td>
+									<td xml:id="d1e3479">
+										<p xml:id="d1e3481"><i xml:id="d1e3482">Xiphias gladius</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e3486">
+									<td xml:id="d1e3488">
+										<p xml:id="d1e3490">Thornback ray</p>
+									</td>
+									<td xml:id="d1e3493">
+										<p xml:id="d1e3495">RJC</p>
+									</td>
+									<td xml:id="d1e3498">
+										<p xml:id="d1e3500"><i xml:id="d1e3501">Raja clavata</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e3505">
+									<td xml:id="d1e3507">
+										<p xml:id="d1e3509">Toothfish</p>
+									</td>
+									<td xml:id="d1e3512">
+										<p xml:id="d1e3514">TOT</p>
+									</td>
+									<td xml:id="d1e3517">
+										<p xml:id="d1e3519"><i xml:id="d1e3520">Dissostichus</i> spp.</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e3525">
+									<td xml:id="d1e3527">
+										<p xml:id="d1e3529">Tope shark</p>
+									</td>
+									<td xml:id="d1e3532">
+										<p xml:id="d1e3534">GAG</p>
+									</td>
+									<td xml:id="d1e3537">
+										<p xml:id="d1e3539"><i xml:id="d1e3540">Galeorhinus galeus</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e3544">
+									<td xml:id="d1e3546">
+										<p xml:id="d1e3548">Turbot</p>
+									</td>
+									<td xml:id="d1e3551">
+										<p xml:id="d1e3553">TUR</p>
+									</td>
+									<td xml:id="d1e3556">
+										<p xml:id="d1e3558"><i xml:id="d1e3559">Psetta maxima</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e3564">
+									<td xml:id="d1e3566">
+										<p xml:id="d1e3568">Tusk</p>
+									</td>
+									<td xml:id="d1e3571">
+										<p xml:id="d1e3573">USK</p>
+									</td>
+									<td xml:id="d1e3576">
+										<p xml:id="d1e3578"><i xml:id="d1e3579">Brosme brosme</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e3583">
+									<td xml:id="d1e3585">
+										<p xml:id="d1e3587">Undulate ray</p>
+									</td>
+									<td xml:id="d1e3590">
+										<p xml:id="d1e3592">RJU</p>
+									</td>
+									<td xml:id="d1e3595">
+										<p xml:id="d1e3597"><i xml:id="d1e3598">Raja undulata</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e3602">
+									<td xml:id="d1e3604">
+										<p xml:id="d1e3606">Unicorn icefish</p>
+									</td>
+									<td xml:id="d1e3609">
+										<p xml:id="d1e3611">LIC</p>
+									</td>
+									<td xml:id="d1e3614">
+										<p xml:id="d1e3616"><i xml:id="d1e3617">Channichthys rhinoceratus</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e3621">
+									<td xml:id="d1e3623">
+										<p xml:id="d1e3625">White hake</p>
+									</td>
+									<td xml:id="d1e3628">
+										<p xml:id="d1e3630">HKW</p>
+									</td>
+									<td xml:id="d1e3633">
+										<p xml:id="d1e3635"><i xml:id="d1e3636">Urophycis tenuis</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e3640">
+									<td xml:id="d1e3642">
+										<p xml:id="d1e3644">White marlin</p>
+									</td>
+									<td xml:id="d1e3647">
+										<p xml:id="d1e3649">WHM</p>
+									</td>
+									<td xml:id="d1e3652">
+										<p xml:id="d1e3654"><i xml:id="d1e3655">Tetrapturus albidus</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e3659">
+									<td xml:id="d1e3661">
+										<p xml:id="d1e3663">White skate</p>
+									</td>
+									<td xml:id="d1e3666">
+										<p xml:id="d1e3668">RJA</p>
+									</td>
+									<td xml:id="d1e3671">
+										<p xml:id="d1e3673"><i xml:id="d1e3674">Raja alba</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e3679">
+									<td xml:id="d1e3681">
+										<p xml:id="d1e3683">Whiting</p>
+									</td>
+									<td xml:id="d1e3686">
+										<p xml:id="d1e3688">WHG</p>
+									</td>
+									<td xml:id="d1e3691">
+										<p xml:id="d1e3693"><i xml:id="d1e3694">Merlangius merlangus</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e3698">
+									<td xml:id="d1e3700">
+										<p xml:id="d1e3702">Witch flounder</p>
+									</td>
+									<td xml:id="d1e3705">
+										<p xml:id="d1e3707">WIT</p>
+									</td>
+									<td xml:id="d1e3710">
+										<p xml:id="d1e3712"><i xml:id="d1e3713">Glyptocephalus cynoglossus</i></p>
+									</td>
+								</tr>
+								<tr xml:id="d1e3717">
+									<td xml:id="d1e3719">
+										<p xml:id="d1e3721">Yellowtail flounder</p>
+									</td>
+									<td xml:id="d1e3724">
+										<p xml:id="d1e3726">YEL</p>
+									</td>
+									<td xml:id="d1e3729">
+										<p xml:id="d1e3731"><i xml:id="d1e3732">Limanda ferruginea</i></p>
+									</td>
+								</tr>
+							</table>
+						</content>
+					</hcontainer>
+				</hcontainer>
+			</paragraph>
+		</mainBody>
+	</doc>
+</akomaNtoso>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+   <documentCollection name="PROP_ACT">
+      <meta>
+         <identification source="~PUBL">
+            <FRBRWork>
+               <FRBRthis value=""/>
+               <FRBRuri value=""/>
+               <FRBRdate date="2999-01-01" name=""/>
+               <FRBRauthor href=""/>
+               <FRBRcountry value="EU"/>
+               <FRBRnumber value="COM(2023) 203" refersTo="~prs3y"/>
+               <FRBRprescriptive value="false"/>
+            </FRBRWork>
+            <FRBRExpression>
+               <FRBRthis value=""/>
+               <FRBRuri value=""/>
+               <FRBRdate date="2999-01-01" name=""/>
+               <FRBRauthor href=""/>
+               <FRBRversionNumber value="final"/>
+               <FRBRlanguage xml:id="FRBRlanguage" language="en"/>
+            </FRBRExpression>
+            <FRBRManifestation>
+               <FRBRthis value=""/>
+               <FRBRuri value=""/>
+               <FRBRdate date="2999-01-01" name=""/>
+               <FRBRauthor href=""/>
+               <preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+                  <akn4eu:akn4euVersion value="4.2.0.0"/>
+                  <akn4eu:akn4euDocumentation href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/akn4eu"/>
+               </preservation>
+            </FRBRManifestation>
+         </identification>
+
+         <references source="~PUBL">
+            <TLCReference xml:id="PROP_ACT" name="docType" href="http://publications.europa.eu/resource/authority/resource-type/PROP_ACT" showAs="Proposal for an act"/>
+            <TLCReference xml:id="DEC_IMPL" name="docType" href="http://publications.europa.eu/resource/authority/resource-type/DEC_IMPL" showAs="Implementing Decision"/>
+            <TLCReference name="language" href="http://publications.europa.eu/resource/authority/language/ENG" showAs="en"/>
+            <TLCOrganization xml:id="PUBL" href="http://publications.europa.eu/resource/authority/corporate-body/PUBL" showAs="Publications Office of the European Union"/>
+            <TLCOrganization xml:id="COM" href="http://publications.europa.eu/resource/authority/corporate-body/COM" showAs="European Commission"/>
+            <TLCLocation xml:id="BEL_BRU" href="http://publications.europa.eu/resource/authority/place/BEL_BRU" showAs="Brussels"/>
+            <TLCReference xml:id="procedure_2023_107" name="procedureReference" href="http://eur-lex.europa.eu/procedure/EN/2023_107" showAs="2023/0107(NLE)" shortForm="2023/107/NLE"/>
+            <TLCReference xml:id="prs3y" name="identifier" href="http://publications.europa.eu/resource/authority/document-identifier-format/COM_NUMBER" showAs="COM(2023) 203" shortForm="COM/2023/203"/>
+         </references>
+      </meta>
+      <coverPage xml:id="d1e83">
+         <container xml:id="d1e85" name="logo">
+            <p xml:id="d1e87"><img xml:id="d1e88" src="EC.png" alt="EUROPEAN COMMISSION"/></p>
+         </container>
+         <container xml:id="d1e91" name="actingEntity">
+            <p xml:id="d1e93"><organization xml:id="d1e94" refersTo="~COM">EUROPEAN COMMISSION</organization></p>
+         </container>
+         <container xml:id="d1e98" name="mainDoc">
+            <block xml:id="d1e100" name="placeAndDate"><location xml:id="d1e101" refersTo="~BEL_BRU">Brussels</location>, <date xml:id="d1e104" date="2023-04-20">20.4.2023</date></block>
+            <block xml:id="d1e107" name="reference"><docNumber xml:id="d1e108" refersTo="~prs3y">COM(2023) 203 <inline xml:id="d1e110" name="version">final</inline></docNumber></block>
+         </container>
+         <container xml:id="d1e114" name="procedureIdentifier">
+            <p xml:id="d1e116"><docketNumber xml:id="d1e117" refersTo="~procedure_2023_107">2023/0107(NLE)</docketNumber></p>
+         </container>
+         <longTitle xml:id="d1e121">
+            <p xml:id="d1e123"><docStage xml:id="d1e124">Proposal for a</docStage>
+               <docType xml:id="d1e126" refersTo="~DEC_IMPL">COUNCIL IMPLEMENTING DECISION</docType>
+               <docPurpose xml:id="d1e129">authorising Hungary to apply a special measure derogating from Article
+                  287 of <ref xml:id="d1e131" href="http://data.europa.eu/eli/dir/2006/112">Directive 2006/112/EC on the common system of value added tax</ref>, and
+                  repealing <ref xml:id="d1e134" href="http://data.europa.eu/eli/IMPL_DEC/2018/1490">Council
+                     Implementing Decision (EU) 2018/1490</ref></docPurpose></p>
+         </longTitle>
+         <container xml:id="d1e139" name="mainDocLanguage">
+            <p xml:id="d1e141"><inline xml:id="d1e142" name="language" refersTo="~FRBRlanguage">EN</inline></p>
+         </container>
+      </coverPage>
+      <collectionBody xml:id="d1e147">
+         <component xml:id="d1e149">
+            <documentRef xml:id="d1e151" href="EXPL_MEMORANDUM-clo5skgaw00082a6dpozv7oue-en.xml" showAs="Explanatory Memorandum"/>
+         </component>
+         <component xml:id="d1e154">
+            <documentRef xml:id="d1e156" href="DEC_IMPL-clo5skgaw000r2a6dk2khwkvi-en.xml" showAs="COUNCIL IMPLEMENTING DECISION"/>
+         </component>
+      </collectionBody>
+   </documentCollection>
+</akomaNtoso>

@@ -1,0 +1,5007 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+	<doc name="ANNEX">
+		<meta>
+			<identification source="~PUBL">
+				<FRBRWork>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+						<akn4eu:fileCUID value="ckylbnre200e5396b43yd6jy7"/>
+					</preservation>
+					<FRBRcountry value="EU"/>
+					<FRBRprescriptive value="true"/>
+				</FRBRWork>
+				<FRBRExpression>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<FRBRlanguage language="en"/>
+				</FRBRExpression>
+				<FRBRManifestation>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+						<akn4eu:akn4euVersion value="4.2.0.0"/>
+						<akn4eu:akn4euDocumentation
+							href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/akn4eu"
+						/>
+					</preservation>
+				</FRBRManifestation>
+			</identification>
+			<references source="~PUBL">
+				<TLCReference name="language"
+					href="http://publications.europa.eu/resource/authority/language/ENG" showAs="en"/>
+				<TLCReference xml:id="ANNEX" name="docType"
+					href="http://publications.europa.eu/resource/authority/resource-type/ANNEX"
+					showAs="Annex"/>
+				<TLCOrganization xml:id="PUBL"
+					href="http://publications.europa.eu/resource/authority/corporate-body/PUBL"
+					showAs="Publications Office"/>
+				<TLCConcept xml:id="INP"
+					href="http://publications.europa.eu/resource/authority/subdivision/INP"
+					showAs="introductory part"/>
+			</references>
+		</meta>
+		<preface>
+			<container name="headerOfAnnex">
+				<block name="num">ANNEX IB</block>
+				<block name="heading">NORTH EAST ATLANTIC AND GREENLAND, ICES SUBAREAS 1, 2, 5, 12
+					AND 14 AND GREENLAND WATERS OF NAFO 1</block>
+			</container>
+		</preface>
+		<mainBody>
+			<paragraph>
+				<hcontainer name="BLOCK_TAB">
+					<hcontainer name="TAB">
+						<content>
+							<table xml:id="_table_d22e36">
+								<tr>
+									<th>
+										<p><b>Species:</b></p>
+									</th>
+									<th>
+										<p>Herring</p>
+										<p><i>Clupea harengus</i></p>
+									</th>
+									<th>
+										<p><b>Zone:</b></p>
+									</th>
+									<th>
+										<p>Union, Faroese, Norwegian and international waters of 1
+											and 2</p>
+										<p>(HER/1/2-)</p>
+									</th>
+								</tr>
+								<tr>
+									<td>
+										<p>Belgium</p>
+									</td>
+									<td>
+										<p>12</p>
+									</td>
+									<td>
+										<p><authorialNote marker="1" placement="bottom"
+												placementBase="~_table_d22e36"><p>When reporting
+												catches to the Commission, the quantities fished
+												in each of the following areas shall also be
+												reported: NEAFC Regulatory Area and Union
+												waters.</p></authorialNote></p>
+									</td>
+									<td colspan="2">
+										<p>Analytical TAC</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>Denmark</p>
+									</td>
+									<td>
+										<p>11 724</p>
+									</td>
+									<td>
+										<p><authorialNote marker="1" placement="bottom"
+												placementBase="~_table_d22e36"><p>When reporting
+												catches to the Commission, the quantities fished
+												in each of the following areas shall also be
+												reported: NEAFC Regulatory Area and Union
+												waters.</p></authorialNote></p>
+									</td>
+									<td/>
+									<td/>
+								</tr>
+								<tr>
+									<td>
+										<p>Germany</p>
+									</td>
+									<td>
+										<p>2 053</p>
+									</td>
+									<td>
+										<p><authorialNote marker="1" placement="bottom"
+												placementBase="~_table_d22e36"><p>When reporting
+												catches to the Commission, the quantities fished
+												in each of the following areas shall also be
+												reported: NEAFC Regulatory Area and Union
+												waters.</p></authorialNote></p>
+									</td>
+									<td/>
+									<td/>
+								</tr>
+								<tr>
+									<td>
+										<p>Spain</p>
+									</td>
+									<td>
+										<p>39</p>
+									</td>
+									<td>
+										<p><authorialNote marker="1" placement="bottom"
+												placementBase="~_table_d22e36"><p>When reporting
+												catches to the Commission, the quantities fished
+												in each of the following areas shall also be
+												reported: NEAFC Regulatory Area and Union
+												waters.</p></authorialNote></p>
+									</td>
+									<td/>
+									<td/>
+								</tr>
+								<tr>
+									<td>
+										<p>France</p>
+									</td>
+									<td>
+										<p>506</p>
+									</td>
+									<td>
+										<p><authorialNote marker="1" placement="bottom"
+												placementBase="~_table_d22e36"><p>When reporting
+												catches to the Commission, the quantities fished
+												in each of the following areas shall also be
+												reported: NEAFC Regulatory Area and Union
+												waters.</p></authorialNote></p>
+									</td>
+									<td/>
+									<td/>
+								</tr>
+								<tr>
+									<td>
+										<p>Ireland</p>
+									</td>
+									<td>
+										<p>3 035</p>
+									</td>
+									<td>
+										<p><authorialNote marker="1" placement="bottom"
+												placementBase="~_table_d22e36"><p>When reporting
+												catches to the Commission, the quantities fished
+												in each of the following areas shall also be
+												reported: NEAFC Regulatory Area and Union
+												waters.</p></authorialNote></p>
+									</td>
+									<td/>
+									<td/>
+								</tr>
+								<tr>
+									<td>
+										<p>The Netherlands</p>
+									</td>
+									<td>
+										<p>4 195</p>
+									</td>
+									<td>
+										<p><authorialNote marker="1" placement="bottom"
+												placementBase="~_table_d22e36"><p>When reporting
+												catches to the Commission, the quantities fished
+												in each of the following areas shall also be
+												reported: NEAFC Regulatory Area and Union
+												waters.</p></authorialNote></p>
+									</td>
+									<td/>
+									<td/>
+								</tr>
+								<tr>
+									<td>
+										<p>Poland</p>
+									</td>
+									<td>
+										<p>593</p>
+									</td>
+									<td>
+										<p><authorialNote marker="1" placement="bottom"
+												placementBase="~_table_d22e36"><p>When reporting
+												catches to the Commission, the quantities fished
+												in each of the following areas shall also be
+												reported: NEAFC Regulatory Area and Union
+												waters.</p></authorialNote></p>
+									</td>
+									<td/>
+									<td/>
+								</tr>
+								<tr>
+									<td>
+										<p>Portugal</p>
+									</td>
+									<td>
+										<p>39</p>
+									</td>
+									<td>
+										<p><authorialNote marker="1" placement="bottom"
+												placementBase="~_table_d22e36"><p>When reporting
+												catches to the Commission, the quantities fished
+												in each of the following areas shall also be
+												reported: NEAFC Regulatory Area and Union
+												waters.</p></authorialNote></p>
+									</td>
+									<td/>
+									<td/>
+								</tr>
+								<tr>
+									<td>
+										<p>Finland</p>
+									</td>
+									<td>
+										<p>181</p>
+									</td>
+									<td>
+										<p><authorialNote marker="1" placement="bottom"
+												placementBase="~_table_d22e36"><p>When reporting
+												catches to the Commission, the quantities fished
+												in each of the following areas shall also be
+												reported: NEAFC Regulatory Area and Union
+												waters.</p></authorialNote></p>
+									</td>
+									<td/>
+									<td/>
+								</tr>
+								<tr>
+									<td>
+										<p>Sweden</p>
+									</td>
+									<td>
+										<p>4 344</p>
+									</td>
+									<td>
+										<p><authorialNote marker="1" placement="bottom"
+												placementBase="~_table_d22e36"><p>When reporting
+												catches to the Commission, the quantities fished
+												in each of the following areas shall also be
+												reported: NEAFC Regulatory Area and Union
+												waters.</p></authorialNote></p>
+									</td>
+									<td/>
+									<td/>
+								</tr>
+								<tr>
+									<td>
+										<p>United Kingdom</p>
+									</td>
+									<td>
+										<p>7 495</p>
+									</td>
+									<td>
+										<p><authorialNote marker="1" placement="bottom"
+												placementBase="~_table_d22e36"><p>When reporting
+												catches to the Commission, the quantities fished
+												in each of the following areas shall also be
+												reported: NEAFC Regulatory Area and Union
+												waters.</p></authorialNote></p>
+									</td>
+									<td/>
+									<td/>
+								</tr>
+								<tr>
+									<td>
+										<p>Union</p>
+									</td>
+									<td>
+										<p>34 216</p>
+									</td>
+									<td>
+										<p><authorialNote marker="1" placement="bottom"
+												placementBase="~_table_d22e36"><p>When reporting
+												catches to the Commission, the quantities fished
+												in each of the following areas shall also be
+												reported: NEAFC Regulatory Area and Union
+												waters.</p></authorialNote></p>
+									</td>
+									<td/>
+									<td/>
+								</tr>
+								<tr>
+									<td>
+										<p>Faroe Islands</p>
+									</td>
+									<td>
+										<p>7 000</p>
+									</td>
+									<td>
+										<p><authorialNote marker="2" placement="bottom"
+												placementBase="~_table_d22e36"><p>May be fished in
+												Union waters north of 62°
+												N.</p></authorialNote><authorialNote marker="3"
+												placement="bottom" placementBase="~_table_d22e36"
+												><p>To be counted against the catch limits of the
+												Faroe Islands.</p></authorialNote></p>
+									</td>
+									<td/>
+									<td/>
+								</tr>
+								<tr>
+									<td>
+										<p>Norway</p>
+									</td>
+									<td>
+										<p>30 794</p>
+									</td>
+									<td>
+										<p><authorialNote marker="2" placement="bottom"
+											placementBase="~_table_d22e36"><p>May be fished in
+												Union waters north of 62°
+												N.</p></authorialNote><authorialNote marker="4"
+												placement="bottom" placementBase="~_table_d22e36"
+													><p>To be counted against the catch limits of
+												Norway.</p></authorialNote></p>
+									</td>
+									<td/>
+									<td/>
+								</tr>
+								<tr>
+									<td>
+										<p>TAC</p>
+									</td>
+									<td>
+										<p>525 594</p>
+									</td>
+									<td/>
+									<td/>
+									<td/>
+								</tr>
+							</table>
+						</content>
+					</hcontainer>
+				</hcontainer>
+			</paragraph>
+			<paragraph>
+				<hcontainer name="BLOCK_TAB">
+					<subparagraph>
+						<content>
+							<p>Special condition: within the limits of the abovementioned quotas, no more than the quantities given below may be taken in the 
+								following zones:</p>
+						</content>
+					</subparagraph>
+					<hcontainer name="TAB">
+						<content>
+							<table>
+								<tr>
+									<th></th>
+									<th><p>Norwegian waters north of 62° N and 
+										the fishery zone around Jan Mayen</p>
+										<p>(HER/*2AJMN)</p></th>
+								</tr>
+								<tr><td><p></p></td><td><p>2, 5b north of 62° N (Faroese waters)</p>
+									<p>(HER/*25B-F)</p></td></tr>
+								<tr><td><p>Belgium</p></td><td><p>2</p></td></tr>
+								<tr><td><p>Denmark</p></td><td><p>2 400</p></td></tr>
+								<tr><td><p>Germany</p></td><td><p>420</p></td></tr>
+								<tr><td><p>Spain</p></td><td><p>8</p></td></tr>
+								<tr><td><p>France</p></td><td><p>103</p></td></tr>
+								<tr><td><p>Ireland</p></td><td><p>621</p></td></tr>
+								<tr><td><p>The Netherlands</p></td><td><p>858</p></td></tr>
+								<tr><td><p>Poland</p></td><td><p>121</p></td></tr>
+								<tr><td><p>Portugal </p></td><td><p>8</p></td></tr>
+								<tr><td><p>Finland</p></td><td><p>37</p></td></tr>
+								<tr><td><p>Sweden</p></td><td><p>889</p></td></tr>
+								<tr><td><p>United Kingdom</p></td><td><p>1 533</p></td></tr>
+							</table>
+						</content>
+					</hcontainer>
+				</hcontainer>
+			</paragraph>
+			<paragraph>
+				<content>
+					<table>
+						<tr>
+							<th>
+								<p><b>Species:</b></p>
+							</th>
+							<th>
+								<p>Cod</p>
+								<p><i>Gadus morhua</i></p>
+							</th>
+							<th>
+								<p><b>Zone:</b></p>
+							</th>
+							<th>
+								<p>Norwegian waters of 1 and 2</p>
+								<p>(COD/1N2AB.)</p>
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<p>Germany</p>
+							</td>
+							<td>
+								<p>2 600</p>
+							</td>
+							<td colspan="2" rowspan="9">
+								<p>Analytical TAC</p>
+								<p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+								<p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>Greece</p>
+							</td>
+							<td>
+								<p>322</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>Spain</p>
+							</td>
+							<td>
+								<p>2 900</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>Ireland</p>
+							</td>
+							<td>
+								<p>322</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>France</p>
+							</td>
+							<td>
+								<p>2 387</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>Portugal</p>
+							</td>
+							<td>
+								<p>2 900</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>United Kingdom</p>
+							</td>
+							<td>
+								<p>10 087</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>Union</p>
+							</td>
+							<td>
+								<p>21 518</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>TAC</p>
+							</td>
+							<td>
+								<p>Not relevant</p>
+							</td>
+						</tr>
+					</table>
+				</content>
+			</paragraph>
+			<paragraph>
+				<content>
+					<table xml:id="_table_d22e438">
+						<tr>
+							<th>
+								<p><b>Species:</b></p>
+							</th>
+							<th colspan="2">
+								<p>Cod</p>
+								<p><i>Gadus morhua</i></p>
+							</th>
+							<th>
+								<p><b>Zone:</b></p>
+							</th>
+							<th>
+								<p>Greenland waters of NAFO 1F and Greenland waters of 5, 12 and
+									14</p>
+								<p>(COD/N1GL14)</p>
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<p>Germany</p>
+							</td>
+							<td>
+								<p>1 595</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+									placementBase="~_table_d22e438"><block name="complexContent"><subFlow name="structuredContent">
+										<list>
+											<subparagraph refersTo="~INP">
+												<content>
+													<p>Except for by-catches, the following conditions shall apply to these quotas:</p>
+												</content>
+											</subparagraph>
+											<point>
+												<num>1.</num>
+												<content>
+													<p>They may not be fished between 1 April and 31 May.</p>
+												</content>
+											</point>
+											<point>
+												<num>2.</num>
+												<hcontainer name="BLOCK_TAB">
+													<hcontainer name="TAB">
+														<content>
+															<table>
+																<tr>
+																	<td>
+																		<p>Reporting code</p>
+																	</td>
+																	<td>
+																		<p>Geographical limits</p>
+																	</td>
+																</tr>
+																<tr><td><p>COD/GRL1</p></td><td><p>The part of the Greenlandic fishing zone that lies within NAFO subarea 1F West of 
+																	44° 00' W and South of 60° 45' N, the portion of NAFO subarea 1 that lies south of the parallel of 60° 45' north latitude (Cape Desolation) and the part of the Greenlandic fishing zone 
+																	within ICES division 14b that lies East of 44° 00' W and South of 62° 30' N.</p></td></tr>
+															</table>
+														</content>
+													</hcontainer>
+												</hcontainer>
+											</point>
+										</list>
+									</subFlow></block></authorialNote></p>
+							</td>
+							<td colspan="2">
+								<p>Analytical TAC</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>United Kingdom</p>
+							</td>
+							<td>
+								<p>355</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+									placementBase="~_table_d22e438"><block name="complexContent"><subFlow name="structuredContent">
+										<list>
+											<subparagraph refersTo="~INP">
+												<content>
+													<p>Except for by-catches, the following conditions shall apply to these quotas:</p>
+												</content>
+											</subparagraph>
+											<point>
+												<num>1.</num>
+												<content>
+													<p>They may not be fished between 1 April and 31 May.</p>
+												</content>
+											</point>
+											<point>
+												<num>2.</num>
+												<hcontainer name="BLOCK_TAB">
+													<hcontainer name="TAB">
+														<content>
+															<table>
+																<tr>
+																	<td>
+																		<p>Reporting code</p>
+																	</td>
+																	<td>
+																		<p>Geographical limits</p>
+																	</td>
+																</tr>
+																<tr><td><p>COD/GRL1</p></td><td><p>The part of the Greenlandic fishing zone that lies within NAFO subarea 1F West of 
+																	44° 00' W and South of 60° 45' N, the portion of NAFO subarea 1 that lies south of the parallel of 60° 45' north latitude (Cape Desolation) and the part of the Greenlandic fishing zone 
+																	within ICES division 14b that lies East of 44° 00' W and South of 62° 30' N.</p></td></tr>
+															</table>
+														</content>
+													</hcontainer>
+												</hcontainer>
+											</point>
+										</list>
+									</subFlow></block></authorialNote></p>
+							</td>
+							<td colspan="2">
+								<p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>Union</p>
+							</td>
+							<td>
+								<p>1 950</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+									placementBase="~_table_d22e438"><block name="complexContent"><subFlow name="structuredContent">
+										<list>
+											<subparagraph refersTo="~INP">
+												<content>
+													<p>Except for by-catches, the following conditions shall apply to these quotas:</p>
+												</content>
+											</subparagraph>
+											<point>
+												<num>1.</num>
+												<content>
+													<p>They may not be fished between 1 April and 31 May.</p>
+												</content>
+											</point>
+											<point>
+												<num>2.</num>
+												<hcontainer name="BLOCK_TAB">
+													<hcontainer name="TAB">
+														<content>
+															<table>
+																<tr>
+																	<td>
+																		<p>Reporting code</p>
+																	</td>
+																	<td>
+																		<p>Geographical limits</p>
+																	</td>
+																</tr>
+																<tr><td><p>COD/GRL1</p></td><td><p>The part of the Greenlandic fishing zone that lies within NAFO subarea 1F West of 
+																	44° 00' W and South of 60° 45' N, the portion of NAFO subarea 1 that lies south of the parallel of 60° 45' north latitude (Cape Desolation) and the part of the Greenlandic fishing zone 
+																	within ICES division 14b that lies East of 44° 00' W and South of 62° 30' N.</p></td></tr>
+															</table>
+														</content>
+													</hcontainer>
+												</hcontainer>
+											</point>
+										</list>
+									</subFlow></block></authorialNote></p>
+							</td>
+							<td colspan="2">
+								<p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>TAC</p>
+							</td>
+							<td>
+								<p>Not relevant</p>
+							</td>
+							<td/>
+							<td/>
+							<td/>
+						</tr>
+					</table>
+				</content>
+			</paragraph>
+			<paragraph>
+				<content>
+					<table xml:id="_table_d22e533">
+						<tr>
+							<th>
+								<p><b>Species:</b></p>
+							</th>
+							<th colspan="2">
+								<p>Cod</p>
+								<p><i>Gadus morhua</i></p>
+							</th>
+							<th>
+								<p><b>Zone:</b></p>
+							</th>
+							<th>
+								<p>1 and 2b</p>
+								<p>(COD/1/2B.)</p>
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<p>Germany</p>
+							</td>
+							<td>
+								<p>5 038</p>
+							</td>
+							<td>
+								<p><authorialNote marker="3" placement="bottom"
+										placementBase="~_table_d22e533"><p>By-catches of haddock may
+											represent up to 14 % per haul. The by-catch quantities
+											of haddock are in addition to the quota for
+										cod.</p></authorialNote></p>
+							</td>
+							<td colspan="2">
+								<p>Analytical TAC</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>Spain</p>
+							</td>
+							<td>
+								<p>11 688</p>
+							</td>
+							<td>
+								<p><authorialNote marker="3" placement="bottom"
+										placementBase="~_table_d22e533"><p>By-catches of haddock may
+											represent up to 14 % per haul. The by-catch quantities
+											of haddock are in addition to the quota for
+										cod.</p></authorialNote></p>
+							</td>
+							<td colspan="2">
+								<p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>France</p>
+							</td>
+							<td>
+								<p>2 255</p>
+							</td>
+							<td>
+								<p><authorialNote marker="3" placement="bottom"
+										placementBase="~_table_d22e533"><p>By-catches of haddock may
+											represent up to 14 % per haul. The by-catch quantities
+											of haddock are in addition to the quota for
+										cod.</p></authorialNote></p>
+							</td>
+							<td colspan="2">
+								<p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>Poland</p>
+							</td>
+							<td>
+								<p>2 244</p>
+							</td>
+							<td>
+								<p><authorialNote marker="3" placement="bottom"
+										placementBase="~_table_d22e533"><p>By-catches of haddock may
+											represent up to 14 % per haul. The by-catch quantities
+											of haddock are in addition to the quota for
+										cod.</p></authorialNote></p>
+							</td>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>Portugal</p>
+							</td>
+							<td>
+								<p>2 418</p>
+							</td>
+							<td>
+								<p><authorialNote marker="3" placement="bottom"
+										placementBase="~_table_d22e533"><p>By-catches of haddock may
+											represent up to 14 % per haul. The by-catch quantities
+											of haddock are in addition to the quota for
+										cod.</p></authorialNote></p>
+							</td>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>United Kingdom</p>
+							</td>
+							<td>
+								<p>3 286</p>
+							</td>
+							<td>
+								<p><authorialNote marker="3" placement="bottom"
+										placementBase="~_table_d22e533"><p>By-catches of haddock may
+											represent up to 14 % per haul. The by-catch quantities
+											of haddock are in addition to the quota for
+										cod.</p></authorialNote></p>
+							</td>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>Other Member States</p>
+							</td>
+							<td>
+								<p>366</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+										placementBase="~_table_d22e533"><p>Except Germany, Spain,
+											France, Poland, Portugal and the United
+										Kingdom.</p></authorialNote><authorialNote marker="3"
+										placement="bottom" placementBase="~_table_d22e533"
+											><p>By-catches of haddock may represent up to 14 % per
+											haul. The by-catch quantities of haddock are in addition
+											to the quota for cod.</p></authorialNote></p>
+							</td>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>Union</p>
+							</td>
+							<td>
+								<p>27 295</p>
+							</td>
+							<td>
+								<p><authorialNote marker="2" placement="bottom"
+										placementBase="~_table_d22e533"><p>The allocation of the
+											share of the cod stock available to the Union in the
+											zone Spitzbergen and Bear Island and the associated
+											by-catches of haddock are without prejudice to the
+											rights and obligations deriving from the Treaty of Paris
+											of 1920.</p></authorialNote><authorialNote marker="3"
+										placement="bottom" placementBase="~_table_d22e533"
+											><p>By-catches of haddock may represent up to 14 % per
+											haul. The by-catch quantities of haddock are in addition
+											to the quota for cod.</p></authorialNote></p>
+							</td>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>TAC</p>
+							</td>
+							<td>
+								<p>Not relevant</p>
+							</td>
+							<td/>
+							<td/>
+							<td/>
+						</tr>
+					</table>
+				</content>
+			</paragraph>
+			<paragraph>
+				<content>
+					<table>
+						<tr>
+							<th>
+								<p><b>Species:</b></p>
+							</th>
+							<th colspan="2">
+								<p>Cod and haddock</p>
+								<p><i>Gadus morhua</i> and <i>Melanogrammus aeglefinus</i></p>
+							</th>
+							<th>
+								<p><b>Zone:</b></p>
+							</th>
+							<th>
+								<p>Faroese waters of 5b</p>
+								<p>(C/H/05B-F.)</p>
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<p>Germany</p>
+							</td>
+							<td>
+								<p>18</p>
+							</td>
+							<td/>
+							<td colspan="2" rowspan="5">
+								<p>Analytical TAC</p>
+								<p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+								<p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>France</p>
+							</td>
+							<td>
+								<p>106</p>
+							</td>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>United Kingdom</p>
+							</td>
+							<td>
+								<p>761</p>
+							</td>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>Union</p>
+							</td>
+							<td>
+								<p>885</p>
+							</td>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>TAC</p>
+							</td>
+							<td>
+								<p>Not relevant</p>
+							</td>
+							<td/>
+						</tr>
+					</table>
+				</content>
+			</paragraph>
+			<paragraph>
+				<content>
+					<table xml:id="_table_d22e730">
+						<tr>
+							<th>
+								<p><b>Species:</b></p>
+							</th>
+							<th colspan="2">
+								<p>Grenadiers</p>
+								<p><i>Macrourus</i> spp.</p>
+							</th>
+							<th>
+								<p><b>Zone:</b></p>
+							</th>
+							<th>
+								<p>Greenland waters of 5 and 14</p>
+								<p>(GRV/514GRN)</p>
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<p>Union</p>
+							</td>
+							<td>
+								<p>75</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+										placementBase="~_table_d22e730"><p>Special condition:
+											roundnose grenadier (<i>Coryphaenoides rupestris</i>)
+											(RNG/514GRN) and roughhead grenadier (<i>Macrourus
+												berglax</i>) (RHG/514GRN) shall not be targeted.
+											They shall only be taken as by-catch and shall be
+											reported separately.</p></authorialNote></p>
+							</td>
+							<td colspan="2">
+								<p>Analytical TAC</p>
+							</td>
+						</tr>
+						<tr>
+							<td/>
+							<td/>
+							<td/>
+							<td colspan="2">
+								<p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>TAC</p>
+							</td>
+							<td>
+								<p>Not relevant</p>
+							</td>
+							<td>
+								<p><authorialNote marker="2" placement="bottom"
+										placementBase="~_table_d22e730"><p>The amount below, in
+											tonnes, is allocated to Norway. Special condition for
+											this amount: roundnose grenadier (<i>Coryphaenoides
+												rupestris</i>) (RNG/514GRN) and roughhead grenadier
+												(<i>Macrourus berglax</i>) (RHG/514GRN) shall not be
+											targeted. They shall only be taken as by-catch and shall
+											be reported separately.25</p></authorialNote></p>
+							</td>
+							<td colspan="2">
+								<p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+					</table>
+				</content>
+			</paragraph>
+			<paragraph>
+				<content>
+					<table xml:id="_table_d22e799">
+						<tr>
+							<th>
+								<p><b>Species:</b></p>
+							</th>
+							<th colspan="2">
+								<p>Grenadiers</p>
+								<p><i>Macrourus</i> spp.</p>
+							</th>
+							<th>
+								<p><b>Zone:</b></p>
+							</th>
+							<th>
+								<p>Greenland waters of NAFO 1</p>
+								<p>(GRV/N1GRN.)</p>
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<p>Union</p>
+							</td>
+							<td>
+								<p>60</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+										placementBase="~_table_d22e799"><p>Special condition:
+											roundnose grenadier (<i>Coryphaenoides rupestris</i>)
+											(RNG/N1GRN.) and roughhead grenadier (<i>Macrourus
+												berglax</i>) (RHG/N1GRN.) shall not be targeted.
+											They shall only be taken as by-catch and shall be
+											reported separately.</p></authorialNote></p>
+							</td>
+							<td colspan="2">
+								<p>Analytical TAC</p>
+							</td>
+						</tr>
+						<tr>
+							<td/>
+							<td/>
+							<td/>
+							<td colspan="2">
+								<p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>TAC</p>
+							</td>
+							<td>
+								<p>Not relevant</p>
+							</td>
+							<td>
+								<p><authorialNote marker="2" placement="bottom"
+										placementBase="~_table_d22e799"><p>The amount below, in
+											tonnes, is allocated to Norway. Special condition for
+											this amount: roundnose grenadier (<i>Coryphaenoides
+												rupestris</i>) (RNG/N1GRN.) and roughhead grenadier
+												(<i>Macrourus berglax</i>) (RHG/N1GRN.) shall not be
+											targeted. They shall only be taken as by-catch and shall
+											be reported separately.40</p></authorialNote></p>
+							</td>
+							<td colspan="2">
+								<p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+					</table>
+				</content>
+			</paragraph>
+			<paragraph>
+				<content>
+					<table>
+						<tr>
+							<th>
+								<p><b>Species:</b></p>
+							</th>
+							<th colspan="2">
+								<p>Capelin</p>
+								<p><i>Mallotus villosus</i></p>
+							</th>
+							<th>
+								<p><b>Zone:</b></p>
+							</th>
+							<th>
+								<p>2b</p>
+								<p>(CAP/02B.)</p>
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<p>Union</p>
+							</td>
+							<td>
+								<p>0</p>
+							</td>
+							<td/>
+							<td colspan="2">
+								<p>Analytical TAC</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>TAC</p>
+							</td>
+							<td>
+								<p>0</p>
+							</td>
+							<td/>
+							<td/>
+							<td/>
+						</tr>
+					</table>
+				</content>
+			</paragraph>
+			<paragraph>
+				<content>
+					<table xml:id="_table_d22e908">
+						<tr>
+							<th>
+								<p><b>Species:</b></p>
+							</th>
+							<th colspan="2">
+								<p>Capelin</p>
+								<p><i>Mallotus villosus</i></p>
+							</th>
+							<th>
+								<p><b>Zone:</b></p>
+							</th>
+							<th>
+								<p>Greenland waters of 5 and 14</p>
+								<p>(CAP/514GRN)</p>
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<p>Denmark</p>
+							</td>
+							<td>
+								<p>0</p>
+							</td>
+							<td/>
+							<td colspan="2">
+								<p>Analytical TAC</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>Germany</p>
+							</td>
+							<td>
+								<p>0</p>
+							</td>
+							<td/>
+							<td colspan="2">
+								<p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>Sweden</p>
+							</td>
+							<td>
+								<p>0</p>
+							</td>
+							<td/>
+							<td colspan="2">
+								<p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>United Kingdom</p>
+							</td>
+							<td>
+								<p>0</p>
+							</td>
+							<td/>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>All Member States</p>
+							</td>
+							<td>
+								<p>0</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+										placementBase="~_table_d22e908"><p>Denmark, Germany, Sweden
+											and the United Kingdom may access the ‘All Member
+											States’ quota only once they have exhausted their own
+											quota. However, Member States with more than 10 % of the
+											Union quota shall not access the ‘All Member States’
+											quota at all.</p></authorialNote></p>
+							</td>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>Union</p>
+							</td>
+							<td>
+								<p>0</p>
+							</td>
+							<td>
+								<p><authorialNote marker="2" placement="bottom"
+										placementBase="~_table_d22e908"><p>For a fishing period from
+											20 June 2019 to 30 April 2020</p></authorialNote></p>
+							</td>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>Norway</p>
+							</td>
+							<td>
+								<p>0</p>
+							</td>
+							<td>
+								<p><authorialNote marker="2" placement="bottom"
+										placementBase="~_table_d22e908"><p>For a fishing period from
+											20 June 2019 to 30 April 2020</p></authorialNote></p>
+							</td>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>TAC</p>
+							</td>
+							<td>
+								<p>Not relevant</p>
+							</td>
+							<td/>
+							<td/>
+							<td/>
+						</tr>
+					</table>
+				</content>
+			</paragraph>
+			<paragraph>
+				<content>
+					<table>
+						<tr>
+							<th>
+								<p><b>Species:</b></p>
+							</th>
+							<th colspan="2">
+								<p>Haddock</p>
+								<p><i>Melanogrammus aeglefinus</i></p>
+							</th>
+							<th>
+								<p><b>Zone:</b></p>
+							</th>
+							<th>
+								<p>Norwegian waters of 1 and 2</p>
+								<p>(HAD/1N2AB.)</p>
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<p>Germany</p>
+							</td>
+							<td>
+								<p>236</p>
+							</td>
+							<td/>
+							<td colspan="2" rowspan="5">
+								<p>Analytical TAC</p>
+								<p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+								<p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>France</p>
+							</td>
+							<td>
+								<p>142</p>
+							</td>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>United Kingdom</p>
+							</td>
+							<td>
+								<p>722</p>
+							</td>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>Union</p>
+							</td>
+							<td>
+								<p>1 100</p>
+							</td>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>TAC</p>
+							</td>
+							<td>
+								<p>Not relevant</p>
+							</td>
+							<td/>
+						</tr>
+					</table>
+				</content>
+			</paragraph>
+			<paragraph>
+				<content>
+					<table xml:id="_table_d22e1094">
+						<tr>
+							<th>
+								<p><b>Species:</b></p>
+							</th>
+							<th colspan="2">
+								<p>Blue whiting</p>
+								<p><i>Micromesistius poutassou</i></p>
+							</th>
+							<th>
+								<p><b>Zone:</b></p>
+							</th>
+							<th>
+								<p>Faroese waters</p>
+								<p>(WHB/2A4AXF)</p>
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<p>Denmark</p>
+							</td>
+							<td>
+								<p>1 100</p>
+							</td>
+							<td/>
+							<td colspan="2" rowspan="7">
+								<p>Analytical TAC</p>
+								<p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+								<p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>Germany</p>
+							</td>
+							<td>
+								<p>75</p>
+							</td>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>France</p>
+							</td>
+							<td>
+								<p>120</p>
+							</td>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>The Netherlands</p>
+							</td>
+							<td>
+								<p>105</p>
+							</td>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>United Kingdom</p>
+							</td>
+							<td>
+								<p>1 100</p>
+							</td>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>Union</p>
+							</td>
+							<td>
+								<p>2 500</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+										placementBase="~_table_d22e1094"><p>Catches of blue whiting
+											may include unavoidable by-catches of greater silver
+											smelt.</p></authorialNote></p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>TAC</p>
+							</td>
+							<td>
+								<p>Not relevant</p>
+							</td>
+							<td/>
+						</tr>
+					</table>
+				</content>
+			</paragraph>
+			<paragraph>
+				<content>
+					<table xml:id="_table_d22e1178">
+						<tr>
+							<th>
+								<p><b>Species:</b></p>
+							</th>
+							<th colspan="2">
+								<p>Ling and blue ling</p>
+								<p><i>Molva molva</i> and <i>molva dypterygia</i></p>
+							</th>
+							<th>
+								<p><b>Zone:</b></p>
+							</th>
+							<th>
+								<p>Faroese waters of 5b</p>
+								<p>(B/L/05B-F.)</p>
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<p>Germany</p>
+							</td>
+							<td>
+								<p>552</p>
+							</td>
+							<td/>
+							<td colspan="2">
+								<p>Analytical TAC</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>France</p>
+							</td>
+							<td>
+								<p>1 225</p>
+							</td>
+							<td/>
+							<td colspan="2">
+								<p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>United Kingdom</p>
+							</td>
+							<td>
+								<p>108</p>
+							</td>
+							<td/>
+							<td colspan="2">
+								<p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>Union</p>
+							</td>
+							<td>
+								<p>1 885</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+										placementBase="~_table_d22e1178"><p>By-catches of roundnose
+											grenadier and black scabbardfish may be counted against
+											this quota, up to the following limit
+											(OTH/*05B-F):665</p></authorialNote></p>
+							</td>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>TAC</p>
+							</td>
+							<td>
+								<p>Not relevant</p>
+							</td>
+							<td/>
+							<td/>
+							<td/>
+						</tr>
+					</table>
+				</content>
+			</paragraph>
+			<paragraph>
+				<content>
+					<table>
+						<tr>
+							<th>
+								<p><b>Species:</b></p>
+							</th>
+							<th colspan="2">
+								<p>Northern prawn</p>
+								<p><i>Pandalus borealis</i></p>
+							</th>
+							<th>
+								<p><b>Zone:</b></p>
+							</th>
+							<th>
+								<p>Greenland waters of 5 and 14</p>
+								<p>(PRA/514GRN)</p>
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<p>Denmark</p>
+							</td>
+							<td>
+								<p>1 000</p>
+							</td>
+							<td/>
+							<td colspan="2" rowspan="6">
+								<p>Analytical TAC</p>
+								<p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+								<p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>France</p>
+							</td>
+							<td>
+								<p>1 000</p>
+							</td>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>Union</p>
+							</td>
+							<td>
+								<p>2 000</p>
+							</td>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>Norway</p>
+							</td>
+							<td>
+								<p>1 200</p>
+							</td>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>Faroe Islands</p>
+							</td>
+							<td>
+								<p>1 200</p>
+							</td>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>TAC</p>
+							</td>
+							<td>
+								<p>Not relevant</p>
+							</td>
+							<td/>
+						</tr>
+					</table>
+				</content>
+			</paragraph>
+			<paragraph>
+				<content>
+					<table>
+						<tr>
+							<th>
+								<p><b>Species:</b></p>
+							</th>
+							<th colspan="2">
+								<p>Northern prawn</p>
+								<p><i>Pandalus borealis</i></p>
+							</th>
+							<th>
+								<p><b>Zone:</b></p>
+							</th>
+							<th>
+								<p>Greenland waters of NAFO 1</p>
+								<p>(PRA/N1GRN.)</p>
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<p>Denmark</p>
+							</td>
+							<td>
+								<p>1 400</p>
+							</td>
+							<td/>
+							<td colspan="2" rowspan="4">
+								<p>Analytical TAC</p>
+								<p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+								<p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>France</p>
+							</td>
+							<td>
+								<p>1 400</p>
+							</td>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>Union</p>
+							</td>
+							<td>
+								<p>2 800</p>
+							</td>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>TAC</p>
+							</td>
+							<td>
+								<p>Not relevant</p>
+							</td>
+							<td/>
+						</tr>
+					</table>
+				</content>
+			</paragraph>
+			<paragraph>
+				<content>
+					<table>
+						<tr>
+							<th>
+								<p><b>Species:</b></p>
+							</th>
+							<th colspan="2">
+								<p>Saithe</p>
+								<p><i>Pollachius virens</i></p>
+							</th>
+							<th>
+								<p><b>Zone:</b></p>
+							</th>
+							<th>
+								<p>Norwegian waters of 1 and 2</p>
+								<p>(POK/1N2AB.)</p>
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<p>Germany</p>
+							</td>
+							<td>
+								<p>2 040</p>
+							</td>
+							<td/>
+							<td colspan="2" rowspan="5">
+								<p>Analytical TAC</p>
+								<p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+								<p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>France</p>
+							</td>
+							<td>
+								<p>328</p>
+							</td>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>United Kingdom</p>
+							</td>
+							<td>
+								<p>182</p>
+							</td>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>Union</p>
+							</td>
+							<td>
+								<p>2 550</p>
+							</td>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>TAC</p>
+							</td>
+							<td>
+								<p>Not relevant</p>
+							</td>
+							<td/>
+						</tr>
+					</table>
+				</content>
+			</paragraph>
+			<paragraph>
+				<content>
+					<table>
+						<tr>
+							<th>
+								<p><b>Species:</b></p>
+							</th>
+							<th colspan="2">
+								<p>Saithe</p>
+								<p><i>Pollachius virens</i></p>
+							</th>
+							<th>
+								<p><b>Zone:</b></p>
+							</th>
+							<th>
+								<p>International waters of 1 and 2</p>
+								<p>(POK/1/2INT)</p>
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<p>Union</p>
+							</td>
+							<td>
+								<p>0</p>
+							</td>
+							<td/>
+							<td colspan="2">
+								<p>Analytical TAC</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>TAC</p>
+							</td>
+							<td>
+								<p>Not relevant</p>
+							</td>
+							<td/>
+							<td/>
+							<td/>
+						</tr>
+					</table>
+				</content>
+			</paragraph>
+			<paragraph>
+				<content>
+					<table>
+						<tr>
+							<th>
+								<p><b>Species:</b></p>
+							</th>
+							<th colspan="2">
+								<p>Saithe</p>
+								<p><i>Pollachius virens</i></p>
+							</th>
+							<th>
+								<p><b>Zone:</b></p>
+							</th>
+							<th>
+								<p>Faroese waters of 5b</p>
+								<p>(POK/05B-F.)</p>
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<p>Belgium</p>
+							</td>
+							<td>
+								<p>52</p>
+							</td>
+							<td/>
+							<td colspan="2">
+								<p>Analytical TAC</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>Germany</p>
+							</td>
+							<td>
+								<p>322</p>
+							</td>
+							<td/>
+							<td colspan="2">
+								<p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>France</p>
+							</td>
+							<td>
+								<p>1 571</p>
+							</td>
+							<td/>
+							<td colspan="2">
+								<p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>The Netherlands</p>
+							</td>
+							<td>
+								<p>52</p>
+							</td>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>United Kingdom</p>
+							</td>
+							<td>
+								<p>603</p>
+							</td>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>Union</p>
+							</td>
+							<td>
+								<p>2 600</p>
+							</td>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>TAC</p>
+							</td>
+							<td>
+								<p>Not relevant</p>
+							</td>
+							<td/>
+							<td/>
+							<td/>
+						</tr>
+					</table>
+				</content>
+			</paragraph>
+			<paragraph>
+				<content>
+					<table xml:id="_table_d22e1587">
+						<tr>
+							<th>
+								<p><b>Species:</b></p>
+							</th>
+							<th colspan="2">
+								<p>Greenland halibut</p>
+								<p><i>Reinhardtius hippoglossoides</i></p>
+							</th>
+							<th>
+								<p><b>Zone:</b></p>
+							</th>
+							<th>
+								<p>Norwegian waters of 1 and 2</p>
+								<p>(GHL/1N2AB.)</p>
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<p>Germany</p>
+							</td>
+							<td>
+								<p>25</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+										placementBase="~_table_d22e1587"><p>Exclusively for
+											by-catches. No directed fisheries are permitted under
+											this quota.</p></authorialNote></p>
+							</td>
+							<td colspan="2">
+								<p>Analytical TAC</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>United Kingdom</p>
+							</td>
+							<td>
+								<p>25</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+										placementBase="~_table_d22e1587"><p>Exclusively for
+											by-catches. No directed fisheries are permitted under
+											this quota.</p></authorialNote></p>
+							</td>
+							<td colspan="2">
+								<p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>Union</p>
+							</td>
+							<td>
+								<p>50</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+										placementBase="~_table_d22e1587"><p>Exclusively for
+											by-catches. No directed fisheries are permitted under
+											this quota.</p></authorialNote></p>
+							</td>
+							<td colspan="2">
+								<p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>TAC</p>
+							</td>
+							<td>
+								<p>Not relevant</p>
+							</td>
+							<td/>
+							<td/>
+							<td/>
+						</tr>
+					</table>
+				</content>
+			</paragraph>
+			<paragraph>
+				<content>
+					<table xml:id="_table_d22e1649">
+						<tr>
+							<th>
+								<p><b>Species:</b></p>
+							</th>
+							<th colspan="2">
+								<p>Greenland halibut</p>
+								<p><i>Reinhardtius hippoglossoides</i></p>
+							</th>
+							<th>
+								<p><b>Zone:</b></p>
+							</th>
+							<th>
+								<p>International waters of 1 and 2</p>
+								<p>(GHL/1/2INT)</p>
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<p>Union</p>
+							</td>
+							<td>
+								<p>1 800</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+										placementBase="~_table_d22e1649"><p>Exclusively for
+											by-catches. No directed fisheries are permitted under
+											this quota.</p></authorialNote></p>
+							</td>
+							<td colspan="2">
+								<p>Precautionary TAC</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>TAC</p>
+							</td>
+							<td>
+								<p>Not relevant</p>
+							</td>
+							<td/>
+							<td/>
+							<td/>
+						</tr>
+					</table>
+				</content>
+			</paragraph>
+			<paragraph>
+				<content>
+					<table xml:id="_table_d22e1694">
+						<tr>
+							<th>
+								<p><b>Species:</b></p>
+							</th>
+							<th colspan="2">
+								<p>Greenland halibut</p>
+								<p><i>Reinhardtius hippoglossoides</i></p>
+							</th>
+							<th>
+								<p><b>Zone:</b></p>
+							</th>
+							<th>
+								<p>Greenland waters of NAFO 1</p>
+								<p>(GHL/N1GRN.)</p>
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<p>Germany</p>
+							</td>
+							<td>
+								<p>1 925</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+										placementBase="~_table_d22e1694"><p>To be fished south of
+											68° N.</p></authorialNote></p>
+							</td>
+							<td colspan="2">
+								<p>Analytical TAC</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>Union</p>
+							</td>
+							<td>
+								<p>1 925</p>
+							</td>
+							<td>
+								<p><authorialNote marker="19" placement="bottom"
+										placementBase="~_table_d22e1694"><p>To be fished south of
+											68° N.</p></authorialNote></p>
+							</td>
+							<td colspan="2">
+								<p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>Norway</p>
+							</td>
+							<td>
+								<p>575</p>
+							</td>
+							<td>
+								<p><authorialNote marker="19" placement="bottom"
+										placementBase="~_table_d22e1694"><p>To be fished south of
+											68° N.</p></authorialNote></p>
+							</td>
+							<td colspan="2">
+								<p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>TAC</p>
+							</td>
+							<td>
+								<p>Not relevant</p>
+							</td>
+							<td/>
+							<td/>
+							<td/>
+						</tr>
+					</table>
+				</content>
+			</paragraph>
+			<paragraph>
+				<content>
+					<table xml:id="_table_d22e1758">
+						<tr>
+							<th>
+								<p><b>Species:</b></p>
+							</th>
+							<th colspan="2">
+								<p>Greenland halibut</p>
+								<p><i>Reinhardtius hippoglossoides</i></p>
+							</th>
+							<th>
+								<p><b>Zone:</b></p>
+							</th>
+							<th>
+								<p>Greenland waters of 5, 12 and 14</p>
+								<p>(GHL/5-14GL)</p>
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<p>Germany</p>
+							</td>
+							<td>
+								<p>4 289</p>
+							</td>
+							<td/>
+							<td colspan="2">
+								<p>Analytical TAC</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>United Kingdom</p>
+							</td>
+							<td>
+								<p>226</p>
+							</td>
+							<td/>
+							<td colspan="2">
+								<p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>Union</p>
+							</td>
+							<td>
+								<p>4 515</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+										placementBase="~_table_d22e1758"><p>To be fished by no more
+											than 6 vessels at the same time.</p></authorialNote></p>
+							</td>
+							<td colspan="2">
+								<p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>Norway</p>
+							</td>
+							<td>
+								<p>575</p>
+							</td>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>Faroe Islands</p>
+							</td>
+							<td>
+								<p>110</p>
+							</td>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>TAC</p>
+							</td>
+							<td>
+								<p>Not relevant</p>
+							</td>
+							<td/>
+							<td/>
+							<td/>
+						</tr>
+					</table>
+				</content>
+			</paragraph>
+			<paragraph>
+				<content>
+					<table>
+						<tr>
+							<th>
+								<p><b>Species:</b></p>
+							</th>
+							<th colspan="2">
+								<p>Redfish (shallow pelagic)</p>
+								<p><i>Sebastes</i> spp.</p>
+							</th>
+							<th>
+								<p><b>Zone:</b></p>
+							</th>
+							<th>
+								<p>Union and international waters of 5; international waters of 12
+									and 14</p>
+								<p>(RED/51214S)</p>
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<p>Estonia</p>
+							</td>
+							<td>
+								<p>0</p>
+							</td>
+							<td/>
+							<td colspan="2">
+								<p>Analytical TAC</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>Germany</p>
+							</td>
+							<td>
+								<p>0</p>
+							</td>
+							<td/>
+							<td colspan="2">
+								<p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>Spain</p>
+							</td>
+							<td>
+								<p>0</p>
+							</td>
+							<td/>
+							<td colspan="2">
+								<p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>France</p>
+							</td>
+							<td>
+								<p>0</p>
+							</td>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>Ireland</p>
+							</td>
+							<td>
+								<p>0</p>
+							</td>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>Latvia</p>
+							</td>
+							<td>
+								<p>0</p>
+							</td>
+							<td/>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>The Netherlands</p>
+							</td>
+							<td>
+								<p>0</p>
+							</td>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>Poland</p>
+							</td>
+							<td>
+								<p>0</p>
+							</td>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>Portugal</p>
+							</td>
+							<td>
+								<p>0</p>
+							</td>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>United Kingdom</p>
+							</td>
+							<td>
+								<p>0</p>
+							</td>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>Union</p>
+							</td>
+							<td>
+								<p>0</p>
+							</td>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>TAC</p>
+							</td>
+							<td>
+								<p>0</p>
+							</td>
+							<td/>
+							<td/>
+						</tr>
+					</table>
+				</content>
+			</paragraph>
+			<paragraph>
+				<content>
+					<table xml:id="_table_d22e1993">
+						<tr>
+							<th>
+								<p><b>Species:</b></p>
+							</th>
+							<th colspan="2">
+								<p>Redfish (deep pelagic)</p>
+								<p><i>Sebastes</i> spp.</p>
+							</th>
+							<th>
+								<p><b>Zone:</b></p>
+							</th>
+							<th>
+								<p>Union and international waters of 5; international waters of 12
+									and 14</p>
+								<p>(RED/51214D)</p>
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<p>Estonia</p>
+							</td>
+							<td>
+								<p>26</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+									placementBase="~_table_d22e1993"><block name="complexContent"><subFlow name="structuredContent">
+												<hcontainer name="BLOCK_TAB">
+													<subparagraph>
+														<content>
+															<p>May only be taken within
+																the area bounded by the lines joining the following
+																coordinates:</p>
+														</content>
+													</subparagraph>
+													<hcontainer name="TAB">
+														<content>
+															<table>
+																<tr>
+																	<th>
+																		<p>Point</p>
+																	</th>
+																	<th>
+																		<p>Latitude</p>
+																	</th>
+																	<th><p>Longitude</p></th>
+																</tr>
+																<tr>
+																	<td><p>1</p></td>
+																	<td><p>64° 45' N </p></td>
+																	<td><p>28° 30' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>2</p></td>
+																	<td><p>62° 50' N </p></td>
+																	<td><p>25° 45' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>3</p></td>
+																	<td><p>61° 55' N</p></td>
+																	<td><p>26° 45' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>4</p></td>
+																	<td><p>61° 00' N </p></td>
+																	<td><p>26° 30' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>5</p></td>
+																	<td><p>59° 00' N </p></td>
+																	<td><p>30° 00' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>6</p></td>
+																	<td><p>59° 00' N</p></td>
+																	<td><p>34° 00' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>7</p></td>
+																	<td><p>61° 30' N</p></td>
+																	<td><p>34° 00' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>8</p></td>
+																	<td><p>62° 50' N</p></td>
+																	<td><p>36° 00' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>9</p></td>
+																	<td><p>64° 45' N</p></td>
+																	<td><p>28° 30' W</p></td>
+																</tr>
+															</table>
+														</content>
+													</hcontainer>
+												</hcontainer>
+									</subFlow></block></authorialNote><authorialNote
+										marker="2" placement="bottom"
+										placementBase="~_table_d22e1993"><p>May only be taken from
+											10 May to 31 December.</p></authorialNote></p>
+							</td>
+							<td colspan="2">
+								<p>Analytical TAC</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>Germany</p>
+							</td>
+							<td>
+								<p>519</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+									placementBase="~_table_d22e1993"><block name="complexContent"><subFlow name="structuredContent">
+											<hcontainer name="BLOCK_TAB">
+												<subparagraph>
+													<content>
+														<p>May only be taken within
+															the area bounded by the lines joining the following
+															coordinates:</p>
+													</content>
+												</subparagraph>
+												<hcontainer name="TAB">
+													<content>
+														<table>
+															<tr>
+																<th>
+																	<p>Point</p>
+																</th>
+																<th>
+																	<p>Latitude</p>
+																</th>
+																<th><p>Longitude</p></th>
+															</tr>
+															<tr>
+																<td><p>1</p></td>
+																<td><p>64° 45' N </p></td>
+																<td><p>28° 30' W</p></td>
+															</tr>
+															<tr>
+																<td><p>2</p></td>
+																<td><p>62° 50' N </p></td>
+																<td><p>25° 45' W</p></td>
+															</tr>
+															<tr>
+																<td><p>3</p></td>
+																<td><p>61° 55' N</p></td>
+																<td><p>26° 45' W</p></td>
+															</tr>
+															<tr>
+																<td><p>4</p></td>
+																<td><p>61° 00' N </p></td>
+																<td><p>26° 30' W</p></td>
+															</tr>
+															<tr>
+																<td><p>5</p></td>
+																<td><p>59° 00' N </p></td>
+																<td><p>30° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>6</p></td>
+																<td><p>59° 00' N</p></td>
+																<td><p>34° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>7</p></td>
+																<td><p>61° 30' N</p></td>
+																<td><p>34° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>8</p></td>
+																<td><p>62° 50' N</p></td>
+																<td><p>36° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>9</p></td>
+																<td><p>64° 45' N</p></td>
+																<td><p>28° 30' W</p></td>
+															</tr>
+														</table>
+													</content>
+												</hcontainer>
+											</hcontainer>
+									</subFlow></block></authorialNote><authorialNote
+										marker="2" placement="bottom"
+										placementBase="~_table_d22e1993"><p>May only be taken from
+											10 May to 31 December.</p></authorialNote></p>
+							</td>
+							<td colspan="2">
+								<p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>Spain</p>
+							</td>
+							<td>
+								<p>91</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+									placementBase="~_table_d22e1993"><block name="complexContent"><subFlow name="structuredContent">
+											<hcontainer name="BLOCK_TAB">
+												<subparagraph>
+													<content>
+														<p>May only be taken within
+															the area bounded by the lines joining the following
+															coordinates:</p>
+													</content>
+												</subparagraph>
+												<hcontainer name="TAB">
+													<content>
+														<table>
+															<tr>
+																<th>
+																	<p>Point</p>
+																</th>
+																<th>
+																	<p>Latitude</p>
+																</th>
+																<th><p>Longitude</p></th>
+															</tr>
+															<tr>
+																<td><p>1</p></td>
+																<td><p>64° 45' N </p></td>
+																<td><p>28° 30' W</p></td>
+															</tr>
+															<tr>
+																<td><p>2</p></td>
+																<td><p>62° 50' N </p></td>
+																<td><p>25° 45' W</p></td>
+															</tr>
+															<tr>
+																<td><p>3</p></td>
+																<td><p>61° 55' N</p></td>
+																<td><p>26° 45' W</p></td>
+															</tr>
+															<tr>
+																<td><p>4</p></td>
+																<td><p>61° 00' N </p></td>
+																<td><p>26° 30' W</p></td>
+															</tr>
+															<tr>
+																<td><p>5</p></td>
+																<td><p>59° 00' N </p></td>
+																<td><p>30° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>6</p></td>
+																<td><p>59° 00' N</p></td>
+																<td><p>34° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>7</p></td>
+																<td><p>61° 30' N</p></td>
+																<td><p>34° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>8</p></td>
+																<td><p>62° 50' N</p></td>
+																<td><p>36° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>9</p></td>
+																<td><p>64° 45' N</p></td>
+																<td><p>28° 30' W</p></td>
+															</tr>
+														</table>
+													</content>
+												</hcontainer>
+											</hcontainer>
+									</subFlow></block></authorialNote><authorialNote
+										marker="2" placement="bottom"
+										placementBase="~_table_d22e1993"><p>May only be taken from
+											10 May to 31 December.</p></authorialNote></p>
+							</td>
+							<td colspan="2">
+								<p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>France</p>
+							</td>
+							<td>
+								<p>48</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+									placementBase="~_table_d22e1993"><block name="complexContent"><subFlow name="structuredContent">
+											<hcontainer name="BLOCK_TAB">
+												<subparagraph>
+													<content>
+														<p>May only be taken within
+															the area bounded by the lines joining the following
+															coordinates:</p>
+													</content>
+												</subparagraph>
+												<hcontainer name="TAB">
+													<content>
+														<table>
+															<tr>
+																<th>
+																	<p>Point</p>
+																</th>
+																<th>
+																	<p>Latitude</p>
+																</th>
+																<th><p>Longitude</p></th>
+															</tr>
+															<tr>
+																<td><p>1</p></td>
+																<td><p>64° 45' N </p></td>
+																<td><p>28° 30' W</p></td>
+															</tr>
+															<tr>
+																<td><p>2</p></td>
+																<td><p>62° 50' N </p></td>
+																<td><p>25° 45' W</p></td>
+															</tr>
+															<tr>
+																<td><p>3</p></td>
+																<td><p>61° 55' N</p></td>
+																<td><p>26° 45' W</p></td>
+															</tr>
+															<tr>
+																<td><p>4</p></td>
+																<td><p>61° 00' N </p></td>
+																<td><p>26° 30' W</p></td>
+															</tr>
+															<tr>
+																<td><p>5</p></td>
+																<td><p>59° 00' N </p></td>
+																<td><p>30° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>6</p></td>
+																<td><p>59° 00' N</p></td>
+																<td><p>34° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>7</p></td>
+																<td><p>61° 30' N</p></td>
+																<td><p>34° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>8</p></td>
+																<td><p>62° 50' N</p></td>
+																<td><p>36° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>9</p></td>
+																<td><p>64° 45' N</p></td>
+																<td><p>28° 30' W</p></td>
+															</tr>
+														</table>
+													</content>
+												</hcontainer>
+											</hcontainer>
+									</subFlow></block></authorialNote><authorialNote
+										marker="2" placement="bottom"
+										placementBase="~_table_d22e1993"><p>May only be taken from
+											10 May to 31 December.</p></authorialNote></p>
+							</td>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>Ireland</p>
+							</td>
+							<td>
+								<p>0</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+									placementBase="~_table_d22e1993"><block name="complexContent"><subFlow name="structuredContent">
+											<hcontainer name="BLOCK_TAB">
+												<subparagraph>
+													<content>
+														<p>May only be taken within
+															the area bounded by the lines joining the following
+															coordinates:</p>
+													</content>
+												</subparagraph>
+												<hcontainer name="TAB">
+													<content>
+														<table>
+															<tr>
+																<th>
+																	<p>Point</p>
+																</th>
+																<th>
+																	<p>Latitude</p>
+																</th>
+																<th><p>Longitude</p></th>
+															</tr>
+															<tr>
+																<td><p>1</p></td>
+																<td><p>64° 45' N </p></td>
+																<td><p>28° 30' W</p></td>
+															</tr>
+															<tr>
+																<td><p>2</p></td>
+																<td><p>62° 50' N </p></td>
+																<td><p>25° 45' W</p></td>
+															</tr>
+															<tr>
+																<td><p>3</p></td>
+																<td><p>61° 55' N</p></td>
+																<td><p>26° 45' W</p></td>
+															</tr>
+															<tr>
+																<td><p>4</p></td>
+																<td><p>61° 00' N </p></td>
+																<td><p>26° 30' W</p></td>
+															</tr>
+															<tr>
+																<td><p>5</p></td>
+																<td><p>59° 00' N </p></td>
+																<td><p>30° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>6</p></td>
+																<td><p>59° 00' N</p></td>
+																<td><p>34° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>7</p></td>
+																<td><p>61° 30' N</p></td>
+																<td><p>34° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>8</p></td>
+																<td><p>62° 50' N</p></td>
+																<td><p>36° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>9</p></td>
+																<td><p>64° 45' N</p></td>
+																<td><p>28° 30' W</p></td>
+															</tr>
+														</table>
+													</content>
+												</hcontainer>
+											</hcontainer>
+									</subFlow></block></authorialNote><authorialNote
+										marker="2" placement="bottom"
+										placementBase="~_table_d22e1993"><p>May only be taken from
+											10 May to 31 December.</p></authorialNote></p>
+							</td>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>Latvia</p>
+							</td>
+							<td>
+								<p>9</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+									placementBase="~_table_d22e1993"><block name="complexContent"><subFlow name="structuredContent">
+											<hcontainer name="BLOCK_TAB">
+												<subparagraph>
+													<content>
+														<p>May only be taken within
+															the area bounded by the lines joining the following
+															coordinates:</p>
+													</content>
+												</subparagraph>
+												<hcontainer name="TAB">
+													<content>
+														<table>
+															<tr>
+																<th>
+																	<p>Point</p>
+																</th>
+																<th>
+																	<p>Latitude</p>
+																</th>
+																<th><p>Longitude</p></th>
+															</tr>
+															<tr>
+																<td><p>1</p></td>
+																<td><p>64° 45' N </p></td>
+																<td><p>28° 30' W</p></td>
+															</tr>
+															<tr>
+																<td><p>2</p></td>
+																<td><p>62° 50' N </p></td>
+																<td><p>25° 45' W</p></td>
+															</tr>
+															<tr>
+																<td><p>3</p></td>
+																<td><p>61° 55' N</p></td>
+																<td><p>26° 45' W</p></td>
+															</tr>
+															<tr>
+																<td><p>4</p></td>
+																<td><p>61° 00' N </p></td>
+																<td><p>26° 30' W</p></td>
+															</tr>
+															<tr>
+																<td><p>5</p></td>
+																<td><p>59° 00' N </p></td>
+																<td><p>30° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>6</p></td>
+																<td><p>59° 00' N</p></td>
+																<td><p>34° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>7</p></td>
+																<td><p>61° 30' N</p></td>
+																<td><p>34° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>8</p></td>
+																<td><p>62° 50' N</p></td>
+																<td><p>36° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>9</p></td>
+																<td><p>64° 45' N</p></td>
+																<td><p>28° 30' W</p></td>
+															</tr>
+														</table>
+													</content>
+												</hcontainer>
+											</hcontainer>
+									</subFlow></block></authorialNote><authorialNote
+										marker="2" placement="bottom"
+										placementBase="~_table_d22e1993"><p>May only be taken from
+											10 May to 31 December.</p></authorialNote></p>
+							</td>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>The Netherlands</p>
+							</td>
+							<td>
+								<p>0</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+									placementBase="~_table_d22e1993"><block name="complexContent"><subFlow name="structuredContent">
+											<hcontainer name="BLOCK_TAB">
+												<subparagraph>
+													<content>
+														<p>May only be taken within
+															the area bounded by the lines joining the following
+															coordinates:</p>
+													</content>
+												</subparagraph>
+												<hcontainer name="TAB">
+													<content>
+														<table>
+															<tr>
+																<th>
+																	<p>Point</p>
+																</th>
+																<th>
+																	<p>Latitude</p>
+																</th>
+																<th><p>Longitude</p></th>
+															</tr>
+															<tr>
+																<td><p>1</p></td>
+																<td><p>64° 45' N </p></td>
+																<td><p>28° 30' W</p></td>
+															</tr>
+															<tr>
+																<td><p>2</p></td>
+																<td><p>62° 50' N </p></td>
+																<td><p>25° 45' W</p></td>
+															</tr>
+															<tr>
+																<td><p>3</p></td>
+																<td><p>61° 55' N</p></td>
+																<td><p>26° 45' W</p></td>
+															</tr>
+															<tr>
+																<td><p>4</p></td>
+																<td><p>61° 00' N </p></td>
+																<td><p>26° 30' W</p></td>
+															</tr>
+															<tr>
+																<td><p>5</p></td>
+																<td><p>59° 00' N </p></td>
+																<td><p>30° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>6</p></td>
+																<td><p>59° 00' N</p></td>
+																<td><p>34° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>7</p></td>
+																<td><p>61° 30' N</p></td>
+																<td><p>34° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>8</p></td>
+																<td><p>62° 50' N</p></td>
+																<td><p>36° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>9</p></td>
+																<td><p>64° 45' N</p></td>
+																<td><p>28° 30' W</p></td>
+															</tr>
+														</table>
+													</content>
+												</hcontainer>
+											</hcontainer>
+									</subFlow></block></authorialNote><authorialNote
+										marker="2" placement="bottom"
+										placementBase="~_table_d22e1993"><p>May only be taken from
+											10 May to 31 December.</p></authorialNote></p>
+							</td>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>Poland</p>
+							</td>
+							<td>
+								<p>47</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+									placementBase="~_table_d22e1993"><block name="complexContent"><subFlow name="structuredContent">
+											<hcontainer name="BLOCK_TAB">
+												<subparagraph>
+													<content>
+														<p>May only be taken within
+															the area bounded by the lines joining the following
+															coordinates:</p>
+													</content>
+												</subparagraph>
+												<hcontainer name="TAB">
+													<content>
+														<table>
+															<tr>
+																<th>
+																	<p>Point</p>
+																</th>
+																<th>
+																	<p>Latitude</p>
+																</th>
+																<th><p>Longitude</p></th>
+															</tr>
+															<tr>
+																<td><p>1</p></td>
+																<td><p>64° 45' N </p></td>
+																<td><p>28° 30' W</p></td>
+															</tr>
+															<tr>
+																<td><p>2</p></td>
+																<td><p>62° 50' N </p></td>
+																<td><p>25° 45' W</p></td>
+															</tr>
+															<tr>
+																<td><p>3</p></td>
+																<td><p>61° 55' N</p></td>
+																<td><p>26° 45' W</p></td>
+															</tr>
+															<tr>
+																<td><p>4</p></td>
+																<td><p>61° 00' N </p></td>
+																<td><p>26° 30' W</p></td>
+															</tr>
+															<tr>
+																<td><p>5</p></td>
+																<td><p>59° 00' N </p></td>
+																<td><p>30° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>6</p></td>
+																<td><p>59° 00' N</p></td>
+																<td><p>34° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>7</p></td>
+																<td><p>61° 30' N</p></td>
+																<td><p>34° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>8</p></td>
+																<td><p>62° 50' N</p></td>
+																<td><p>36° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>9</p></td>
+																<td><p>64° 45' N</p></td>
+																<td><p>28° 30' W</p></td>
+															</tr>
+														</table>
+													</content>
+												</hcontainer>
+											</hcontainer>
+									</subFlow></block></authorialNote><authorialNote
+										marker="2" placement="bottom"
+										placementBase="~_table_d22e1993"><p>May only be taken from
+											10 May to 31 December.</p></authorialNote></p>
+							</td>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>Portugal</p>
+							</td>
+							<td>
+								<p>109</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+									placementBase="~_table_d22e1993"><block name="complexContent"><subFlow name="structuredContent">
+											<hcontainer name="BLOCK_TAB">
+												<subparagraph>
+													<content>
+														<p>May only be taken within
+															the area bounded by the lines joining the following
+															coordinates:</p>
+													</content>
+												</subparagraph>
+												<hcontainer name="TAB">
+													<content>
+														<table>
+															<tr>
+																<th>
+																	<p>Point</p>
+																</th>
+																<th>
+																	<p>Latitude</p>
+																</th>
+																<th><p>Longitude</p></th>
+															</tr>
+															<tr>
+																<td><p>1</p></td>
+																<td><p>64° 45' N </p></td>
+																<td><p>28° 30' W</p></td>
+															</tr>
+															<tr>
+																<td><p>2</p></td>
+																<td><p>62° 50' N </p></td>
+																<td><p>25° 45' W</p></td>
+															</tr>
+															<tr>
+																<td><p>3</p></td>
+																<td><p>61° 55' N</p></td>
+																<td><p>26° 45' W</p></td>
+															</tr>
+															<tr>
+																<td><p>4</p></td>
+																<td><p>61° 00' N </p></td>
+																<td><p>26° 30' W</p></td>
+															</tr>
+															<tr>
+																<td><p>5</p></td>
+																<td><p>59° 00' N </p></td>
+																<td><p>30° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>6</p></td>
+																<td><p>59° 00' N</p></td>
+																<td><p>34° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>7</p></td>
+																<td><p>61° 30' N</p></td>
+																<td><p>34° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>8</p></td>
+																<td><p>62° 50' N</p></td>
+																<td><p>36° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>9</p></td>
+																<td><p>64° 45' N</p></td>
+																<td><p>28° 30' W</p></td>
+															</tr>
+														</table>
+													</content>
+												</hcontainer>
+											</hcontainer>
+									</subFlow></block></authorialNote><authorialNote
+										marker="2" placement="bottom"
+										placementBase="~_table_d22e1993"><p>May only be taken from
+											10 May to 31 December.</p></authorialNote></p>
+							</td>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>United Kingdom</p>
+							</td>
+							<td>
+								<p>1</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+									placementBase="~_table_d22e1993"><block name="complexContent"><subFlow name="structuredContent">
+											<hcontainer name="BLOCK_TAB">
+												<subparagraph>
+													<content>
+														<p>May only be taken within
+															the area bounded by the lines joining the following
+															coordinates:</p>
+													</content>
+												</subparagraph>
+												<hcontainer name="TAB">
+													<content>
+														<table>
+															<tr>
+																<th>
+																	<p>Point</p>
+																</th>
+																<th>
+																	<p>Latitude</p>
+																</th>
+																<th><p>Longitude</p></th>
+															</tr>
+															<tr>
+																<td><p>1</p></td>
+																<td><p>64° 45' N </p></td>
+																<td><p>28° 30' W</p></td>
+															</tr>
+															<tr>
+																<td><p>2</p></td>
+																<td><p>62° 50' N </p></td>
+																<td><p>25° 45' W</p></td>
+															</tr>
+															<tr>
+																<td><p>3</p></td>
+																<td><p>61° 55' N</p></td>
+																<td><p>26° 45' W</p></td>
+															</tr>
+															<tr>
+																<td><p>4</p></td>
+																<td><p>61° 00' N </p></td>
+																<td><p>26° 30' W</p></td>
+															</tr>
+															<tr>
+																<td><p>5</p></td>
+																<td><p>59° 00' N </p></td>
+																<td><p>30° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>6</p></td>
+																<td><p>59° 00' N</p></td>
+																<td><p>34° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>7</p></td>
+																<td><p>61° 30' N</p></td>
+																<td><p>34° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>8</p></td>
+																<td><p>62° 50' N</p></td>
+																<td><p>36° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>9</p></td>
+																<td><p>64° 45' N</p></td>
+																<td><p>28° 30' W</p></td>
+															</tr>
+														</table>
+													</content>
+												</hcontainer>
+											</hcontainer>
+									</subFlow></block></authorialNote><authorialNote
+										marker="2" placement="bottom"
+										placementBase="~_table_d22e1993"><p>May only be taken from
+											10 May to 31 December.</p></authorialNote></p>
+							</td>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>Union</p>
+							</td>
+							<td>
+								<p>850</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+									placementBase="~_table_d22e1993"><block name="complexContent"><subFlow name="structuredContent">
+											<hcontainer name="BLOCK_TAB">
+												<subparagraph>
+													<content>
+														<p>May only be taken within
+															the area bounded by the lines joining the following
+															coordinates:</p>
+													</content>
+												</subparagraph>
+												<hcontainer name="TAB">
+													<content>
+														<table>
+															<tr>
+																<th>
+																	<p>Point</p>
+																</th>
+																<th>
+																	<p>Latitude</p>
+																</th>
+																<th><p>Longitude</p></th>
+															</tr>
+															<tr>
+																<td><p>1</p></td>
+																<td><p>64° 45' N </p></td>
+																<td><p>28° 30' W</p></td>
+															</tr>
+															<tr>
+																<td><p>2</p></td>
+																<td><p>62° 50' N </p></td>
+																<td><p>25° 45' W</p></td>
+															</tr>
+															<tr>
+																<td><p>3</p></td>
+																<td><p>61° 55' N</p></td>
+																<td><p>26° 45' W</p></td>
+															</tr>
+															<tr>
+																<td><p>4</p></td>
+																<td><p>61° 00' N </p></td>
+																<td><p>26° 30' W</p></td>
+															</tr>
+															<tr>
+																<td><p>5</p></td>
+																<td><p>59° 00' N </p></td>
+																<td><p>30° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>6</p></td>
+																<td><p>59° 00' N</p></td>
+																<td><p>34° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>7</p></td>
+																<td><p>61° 30' N</p></td>
+																<td><p>34° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>8</p></td>
+																<td><p>62° 50' N</p></td>
+																<td><p>36° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>9</p></td>
+																<td><p>64° 45' N</p></td>
+																<td><p>28° 30' W</p></td>
+															</tr>
+														</table>
+													</content>
+												</hcontainer>
+											</hcontainer>
+									</subFlow></block></authorialNote><authorialNote
+										marker="2" placement="bottom"
+										placementBase="~_table_d22e1993"><p>May only be taken from
+											10 May to 31 December.</p></authorialNote></p>
+							</td>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>TAC</p>
+							</td>
+							<td>
+								<p>5 500</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+									placementBase="~_table_d22e1993"><block name="complexContent"><subFlow name="structuredContent">
+											<hcontainer name="BLOCK_TAB">
+												<subparagraph>
+													<content>
+														<p>May only be taken within
+															the area bounded by the lines joining the following
+															coordinates:</p>
+													</content>
+												</subparagraph>
+												<hcontainer name="TAB">
+													<content>
+														<table>
+															<tr>
+																<th>
+																	<p>Point</p>
+																</th>
+																<th>
+																	<p>Latitude</p>
+																</th>
+																<th><p>Longitude</p></th>
+															</tr>
+															<tr>
+																<td><p>1</p></td>
+																<td><p>64° 45' N </p></td>
+																<td><p>28° 30' W</p></td>
+															</tr>
+															<tr>
+																<td><p>2</p></td>
+																<td><p>62° 50' N </p></td>
+																<td><p>25° 45' W</p></td>
+															</tr>
+															<tr>
+																<td><p>3</p></td>
+																<td><p>61° 55' N</p></td>
+																<td><p>26° 45' W</p></td>
+															</tr>
+															<tr>
+																<td><p>4</p></td>
+																<td><p>61° 00' N </p></td>
+																<td><p>26° 30' W</p></td>
+															</tr>
+															<tr>
+																<td><p>5</p></td>
+																<td><p>59° 00' N </p></td>
+																<td><p>30° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>6</p></td>
+																<td><p>59° 00' N</p></td>
+																<td><p>34° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>7</p></td>
+																<td><p>61° 30' N</p></td>
+																<td><p>34° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>8</p></td>
+																<td><p>62° 50' N</p></td>
+																<td><p>36° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>9</p></td>
+																<td><p>64° 45' N</p></td>
+																<td><p>28° 30' W</p></td>
+															</tr>
+														</table>
+													</content>
+												</hcontainer>
+											</hcontainer>
+									</subFlow></block></authorialNote><authorialNote
+										marker="2" placement="bottom"
+										placementBase="~_table_d22e1993"><p>May only be taken from
+											10 May to 31 December.</p></authorialNote></p>
+							</td>
+							<td/>
+							<td/>
+						</tr>
+					</table>
+				</content>
+			</paragraph>
+			<paragraph>
+				<content>
+					<table>
+						<tr>
+							<th>
+								<p><b>Species:</b></p>
+							</th>
+							<th colspan="2">
+								<p>Redfish</p>
+								<p><i>Sebastes mentella</i></p>
+							</th>
+							<th>
+								<p><b>Zone:</b></p>
+							</th>
+							<th>
+								<p>Norwegian waters of 1 and 2</p>
+								<p>(REB/1N2AB.)</p>
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<p>Germany</p>
+							</td>
+							<td>
+								<p>766</p>
+							</td>
+							<td/>
+							<td colspan="2">
+								<p>Analytical TAC</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>Spain</p>
+							</td>
+							<td>
+								<p>95</p>
+							</td>
+							<td/>
+							<td colspan="2">
+								<p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>France</p>
+							</td>
+							<td>
+								<p>84</p>
+							</td>
+							<td/>
+							<td colspan="2">
+								<p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>Portugal</p>
+							</td>
+							<td>
+								<p>405</p>
+							</td>
+							<td/>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>United Kingdom</p>
+							</td>
+							<td>
+								<p>150</p>
+							</td>
+							<td/>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>Union</p>
+							</td>
+							<td>
+								<p>1 500</p>
+							</td>
+							<td/>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>TAC</p>
+							</td>
+							<td>
+								<p>Not relevant</p>
+							</td>
+							<td/>
+							<td/>
+							<td/>
+						</tr>
+					</table>
+				</content>
+			</paragraph>
+			<paragraph>
+				<content>
+					<table xml:id="_table_d22e2325">
+						<tr>
+							<th>
+								<p><b>Species:</b></p>
+							</th>
+							<th colspan="2">
+								<p>Redfish</p>
+								<p><i>Sebastes</i> spp.</p>
+							</th>
+							<th>
+								<p><b>Zone:</b></p>
+							</th>
+							<th>
+								<p>International waters of 1 and 2</p>
+								<p>(RED/1/2INT)</p>
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<p>Union</p>
+							</td>
+							<td>
+								<p>to be established</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+										placementBase="~_table_d22e2325"><p>The fishery will be
+											closed when the TAC is fully used by NEAFC Contracting
+											Parties. From the closure date, Member States shall
+											prohibit directed fishery for redfish by vessels flying
+											their flag.</p></authorialNote><authorialNote
+										marker="2" placement="bottom"
+										placementBase="~_table_d22e2325"><p>Vessels shall limit
+											their by-catches of redfish in other fisheries to a
+											maximum of 1 % of the total catch retained on
+										board.</p></authorialNote></p>
+							</td>
+							<td colspan="2">
+								<p>Analytical TAC</p>
+							</td>
+						</tr>
+						<tr>
+							<td/>
+							<td/>
+							<td/>
+							<td colspan="2">
+								<p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>TAC</p>
+							</td>
+							<td>
+								<p>13 686</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+										placementBase="~_table_d22e2325"><p>Provisional catch limit
+											to cover catches of all NEAFC contracting
+										parties.</p></authorialNote></p>
+							</td>
+							<td colspan="2">
+								<p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+					</table>
+				</content>
+			</paragraph>
+			<paragraph>
+				<content>
+					<table xml:id="_table_d22e2385">
+						<tr>
+							<th>
+								<p><b>Species:</b></p>
+							</th>
+							<th colspan="2">
+								<p>Redfish (pelagic)</p>
+								<p><i>Sebastes</i> spp.</p>
+							</th>
+							<th>
+								<p><b>Zone:</b></p>
+							</th>
+							<th>
+								<p>Greenland waters of NAFO 1F and Greenland waters of 5, 12 and
+									14</p>
+								<p>(RED/N1G14P)</p>
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<p>Germany</p>
+							</td>
+							<td>
+								<p>655</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+										placementBase="~_table_d22e2385"><p>May only be fished from
+											10 May to 31 December.</p></authorialNote><authorialNote
+										marker="2" placement="bottom"
+										placementBase="~_table_d22e2385"><block name="complexContent"><subFlow name="structuredContent">
+												<hcontainer name="BLOCK_TAB">
+													<subparagraph>
+														<content>
+															<p>May only be fished in
+																Greenland waters within the Redfish Conservation Area
+																bounded by the lines joining the following
+																coordinates:</p>
+														</content>
+													</subparagraph>
+													<hcontainer name="TAB">
+														<content>
+															<table>
+																<tr>
+																	<th>
+																		<p>Point</p>
+																	</th>
+																	<th>
+																		<p>Latitude</p>
+																	</th>
+																	<th><p>Longitude</p></th>
+																</tr>
+																<tr>
+																	<td><p>1</p></td>
+																	<td><p>64° 45' N </p></td>
+																	<td><p>28° 30' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>2</p></td>
+																	<td><p>62° 50' N </p></td>
+																	<td><p>25° 45' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>3</p></td>
+																	<td><p>61° 55' N</p></td>
+																	<td><p>26° 45' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>4</p></td>
+																	<td><p>61° 00' N </p></td>
+																	<td><p>26° 30' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>5</p></td>
+																	<td><p>59° 00' N </p></td>
+																	<td><p>30° 00' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>6</p></td>
+																	<td><p>59° 00' N</p></td>
+																	<td><p>34° 00' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>7</p></td>
+																	<td><p>61° 30' N</p></td>
+																	<td><p>34° 00' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>8</p></td>
+																	<td><p>62° 50' N</p></td>
+																	<td><p>36° 00' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>9</p></td>
+																	<td><p>64° 45' N</p></td>
+																	<td><p>28° 30' W</p></td>
+																</tr>
+															</table>
+														</content>
+													</hcontainer>
+												</hcontainer>
+										</subFlow></block></authorialNote><authorialNote
+										marker="3" placement="bottom"
+										placementBase="~_table_d22e2385"><p>Special condition: this
+											quota may also be fished in international waters of the
+											Redfish Conservation Area mentioned above
+											(RED/*5-14P).</p></authorialNote></p>
+							</td>
+							<td colspan="2">
+								<p>Analytical TAC</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>France</p>
+							</td>
+							<td>
+								<p>3</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+										placementBase="~_table_d22e2385"><p>May only be fished from
+											10 May to 31 December.</p></authorialNote><authorialNote
+										marker="2" placement="bottom"
+										placementBase="~_table_d22e2385"><block name="complexContent"><subFlow name="structuredContent">
+												<hcontainer name="BLOCK_TAB">
+													<subparagraph>
+														<content>
+															<p>May only be fished in
+																Greenland waters within the Redfish Conservation Area
+																bounded by the lines joining the following
+																coordinates:</p>
+														</content>
+													</subparagraph>
+													<hcontainer name="TAB">
+														<content>
+															<table>
+																<tr>
+																	<th>
+																		<p>Point</p>
+																	</th>
+																	<th>
+																		<p>Latitude</p>
+																	</th>
+																	<th><p>Longitude</p></th>
+																</tr>
+																<tr>
+																	<td><p>1</p></td>
+																	<td><p>64° 45' N </p></td>
+																	<td><p>28° 30' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>2</p></td>
+																	<td><p>62° 50' N </p></td>
+																	<td><p>25° 45' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>3</p></td>
+																	<td><p>61° 55' N</p></td>
+																	<td><p>26° 45' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>4</p></td>
+																	<td><p>61° 00' N </p></td>
+																	<td><p>26° 30' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>5</p></td>
+																	<td><p>59° 00' N </p></td>
+																	<td><p>30° 00' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>6</p></td>
+																	<td><p>59° 00' N</p></td>
+																	<td><p>34° 00' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>7</p></td>
+																	<td><p>61° 30' N</p></td>
+																	<td><p>34° 00' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>8</p></td>
+																	<td><p>62° 50' N</p></td>
+																	<td><p>36° 00' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>9</p></td>
+																	<td><p>64° 45' N</p></td>
+																	<td><p>28° 30' W</p></td>
+																</tr>
+															</table>
+														</content>
+													</hcontainer>
+												</hcontainer>
+										</subFlow></block></authorialNote><authorialNote
+										marker="3" placement="bottom"
+										placementBase="~_table_d22e2385"><p>Special condition: this
+											quota may also be fished in international waters of the
+											Redfish Conservation Area mentioned above
+											(RED/*5-14P).</p></authorialNote></p>
+							</td>
+							<td colspan="2">
+								<p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>United Kingdom</p>
+							</td>
+							<td>
+								<p>5</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+										placementBase="~_table_d22e2385"><p>May only be fished from
+											10 May to 31 December.</p></authorialNote><authorialNote
+										marker="2" placement="bottom"
+										placementBase="~_table_d22e2385"><block name="complexContent"><subFlow name="structuredContent">
+												<hcontainer name="BLOCK_TAB">
+													<subparagraph>
+														<content>
+															<p>May only be fished in
+																Greenland waters within the Redfish Conservation Area
+																bounded by the lines joining the following
+																coordinates:</p>
+														</content>
+													</subparagraph>
+													<hcontainer name="TAB">
+														<content>
+															<table>
+																<tr>
+																	<th>
+																		<p>Point</p>
+																	</th>
+																	<th>
+																		<p>Latitude</p>
+																	</th>
+																	<th><p>Longitude</p></th>
+																</tr>
+																<tr>
+																	<td><p>1</p></td>
+																	<td><p>64° 45' N </p></td>
+																	<td><p>28° 30' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>2</p></td>
+																	<td><p>62° 50' N </p></td>
+																	<td><p>25° 45' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>3</p></td>
+																	<td><p>61° 55' N</p></td>
+																	<td><p>26° 45' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>4</p></td>
+																	<td><p>61° 00' N </p></td>
+																	<td><p>26° 30' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>5</p></td>
+																	<td><p>59° 00' N </p></td>
+																	<td><p>30° 00' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>6</p></td>
+																	<td><p>59° 00' N</p></td>
+																	<td><p>34° 00' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>7</p></td>
+																	<td><p>61° 30' N</p></td>
+																	<td><p>34° 00' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>8</p></td>
+																	<td><p>62° 50' N</p></td>
+																	<td><p>36° 00' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>9</p></td>
+																	<td><p>64° 45' N</p></td>
+																	<td><p>28° 30' W</p></td>
+																</tr>
+															</table>
+														</content>
+													</hcontainer>
+												</hcontainer>
+										</subFlow></block></authorialNote><authorialNote
+										marker="3" placement="bottom"
+										placementBase="~_table_d22e2385"><p>Special condition: this
+											quota may also be fished in international waters of the
+											Redfish Conservation Area mentioned above
+											(RED/*5-14P).</p></authorialNote></p>
+							</td>
+							<td colspan="2">
+								<p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>Union</p>
+							</td>
+							<td>
+								<p>663</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+										placementBase="~_table_d22e2385"><p>May only be fished from
+											10 May to 31 December.</p></authorialNote><authorialNote
+										marker="2" placement="bottom"
+										placementBase="~_table_d22e2385"><block name="complexContent"><subFlow name="structuredContent">
+												<hcontainer name="BLOCK_TAB">
+													<subparagraph>
+														<content>
+															<p>May only be fished in
+																Greenland waters within the Redfish Conservation Area
+																bounded by the lines joining the following
+																coordinates:</p>
+														</content>
+													</subparagraph>
+													<hcontainer name="TAB">
+														<content>
+															<table>
+																<tr>
+																	<th>
+																		<p>Point</p>
+																	</th>
+																	<th>
+																		<p>Latitude</p>
+																	</th>
+																	<th><p>Longitude</p></th>
+																</tr>
+																<tr>
+																	<td><p>1</p></td>
+																	<td><p>64° 45' N </p></td>
+																	<td><p>28° 30' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>2</p></td>
+																	<td><p>62° 50' N </p></td>
+																	<td><p>25° 45' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>3</p></td>
+																	<td><p>61° 55' N</p></td>
+																	<td><p>26° 45' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>4</p></td>
+																	<td><p>61° 00' N </p></td>
+																	<td><p>26° 30' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>5</p></td>
+																	<td><p>59° 00' N </p></td>
+																	<td><p>30° 00' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>6</p></td>
+																	<td><p>59° 00' N</p></td>
+																	<td><p>34° 00' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>7</p></td>
+																	<td><p>61° 30' N</p></td>
+																	<td><p>34° 00' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>8</p></td>
+																	<td><p>62° 50' N</p></td>
+																	<td><p>36° 00' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>9</p></td>
+																	<td><p>64° 45' N</p></td>
+																	<td><p>28° 30' W</p></td>
+																</tr>
+															</table>
+														</content>
+													</hcontainer>
+												</hcontainer>
+										</subFlow></block></authorialNote><authorialNote
+										marker="3" placement="bottom"
+										placementBase="~_table_d22e2385"><p>Special condition: this
+											quota may also be fished in international waters of the
+											Redfish Conservation Area mentioned above
+											(RED/*5-14P).</p></authorialNote></p>
+							</td>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>Norway</p>
+							</td>
+							<td>
+								<p>561</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+										placementBase="~_table_d22e2385"><p>May only be fished from
+											10 May to 31 December.</p></authorialNote><authorialNote
+										marker="2" placement="bottom"
+										placementBase="~_table_d22e2385"><block name="complexContent"><subFlow name="structuredContent">
+												<hcontainer name="BLOCK_TAB">
+													<subparagraph>
+														<content>
+															<p>May only be fished in
+																Greenland waters within the Redfish Conservation Area
+																bounded by the lines joining the following
+																coordinates:</p>
+														</content>
+													</subparagraph>
+													<hcontainer name="TAB">
+														<content>
+															<table>
+																<tr>
+																	<th>
+																		<p>Point</p>
+																	</th>
+																	<th>
+																		<p>Latitude</p>
+																	</th>
+																	<th><p>Longitude</p></th>
+																</tr>
+																<tr>
+																	<td><p>1</p></td>
+																	<td><p>64° 45' N </p></td>
+																	<td><p>28° 30' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>2</p></td>
+																	<td><p>62° 50' N </p></td>
+																	<td><p>25° 45' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>3</p></td>
+																	<td><p>61° 55' N</p></td>
+																	<td><p>26° 45' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>4</p></td>
+																	<td><p>61° 00' N </p></td>
+																	<td><p>26° 30' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>5</p></td>
+																	<td><p>59° 00' N </p></td>
+																	<td><p>30° 00' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>6</p></td>
+																	<td><p>59° 00' N</p></td>
+																	<td><p>34° 00' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>7</p></td>
+																	<td><p>61° 30' N</p></td>
+																	<td><p>34° 00' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>8</p></td>
+																	<td><p>62° 50' N</p></td>
+																	<td><p>36° 00' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>9</p></td>
+																	<td><p>64° 45' N</p></td>
+																	<td><p>28° 30' W</p></td>
+																</tr>
+															</table>
+														</content>
+													</hcontainer>
+												</hcontainer>
+										</subFlow></block></authorialNote></p>
+							</td>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>Faroe Islands</p>
+							</td>
+							<td>
+								<p>0</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+										placementBase="~_table_d22e2385"><p>May only be fished from
+											10 May to 31 December.</p></authorialNote><authorialNote
+										marker="2" placement="bottom"
+										placementBase="~_table_d22e2385"><block name="complexContent"><subFlow name="structuredContent">
+												<hcontainer name="BLOCK_TAB">
+													<subparagraph>
+														<content>
+															<p>May only be fished in
+																Greenland waters within the Redfish Conservation Area
+																bounded by the lines joining the following
+																coordinates:</p>
+														</content>
+													</subparagraph>
+													<hcontainer name="TAB">
+														<content>
+															<table>
+																<tr>
+																	<th>
+																		<p>Point</p>
+																	</th>
+																	<th>
+																		<p>Latitude</p>
+																	</th>
+																	<th><p>Longitude</p></th>
+																</tr>
+																<tr>
+																	<td><p>1</p></td>
+																	<td><p>64° 45' N </p></td>
+																	<td><p>28° 30' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>2</p></td>
+																	<td><p>62° 50' N </p></td>
+																	<td><p>25° 45' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>3</p></td>
+																	<td><p>61° 55' N</p></td>
+																	<td><p>26° 45' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>4</p></td>
+																	<td><p>61° 00' N </p></td>
+																	<td><p>26° 30' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>5</p></td>
+																	<td><p>59° 00' N </p></td>
+																	<td><p>30° 00' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>6</p></td>
+																	<td><p>59° 00' N</p></td>
+																	<td><p>34° 00' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>7</p></td>
+																	<td><p>61° 30' N</p></td>
+																	<td><p>34° 00' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>8</p></td>
+																	<td><p>62° 50' N</p></td>
+																	<td><p>36° 00' W</p></td>
+																</tr>
+																<tr>
+																	<td><p>9</p></td>
+																	<td><p>64° 45' N</p></td>
+																	<td><p>28° 30' W</p></td>
+																</tr>
+															</table>
+														</content>
+													</hcontainer>
+												</hcontainer>
+										</subFlow></block></authorialNote><authorialNote
+										marker="4" placement="bottom"
+										placementBase="~_table_d22e2385"><p>May only be fished in
+											Greenland Waters of 5 and 14
+										(RED/*514GN).</p></authorialNote></p>
+							</td>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>TAC</p>
+							</td>
+							<td>
+								<p>Not relevant</p>
+							</td>
+							<td/>
+							<td/>
+							<td/>
+						</tr>
+					</table>
+				</content>
+			</paragraph>
+			<paragraph>
+				<content>
+					<table xml:id="_table_d22e2573">
+						<tr>
+							<th>
+								<p><b>Species:</b></p>
+							</th>
+							<th colspan="2">
+								<p>Redfish (demersal)</p>
+								<p><i>Sebastes</i> spp.</p>
+							</th>
+							<th>
+								<p><b>Zone:</b></p>
+							</th>
+							<th>
+								<p>Greenland waters of NAFO 1F and Greenland waters of 5 and 14</p>
+								<p>(RED/N1G14D)</p>
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<p>Germany</p>
+							</td>
+							<td>
+								<p>1 976</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+									placementBase="~_table_d22e2573"><block name="complexContent"><subFlow name="structuredContent">
+											<hcontainer name="BLOCK_TAB">
+												<subparagraph>
+													<content>
+														<p>May only be fished by
+															trawl, and only North and West of the line defined by
+															the following coordinates:</p>
+													</content>
+												</subparagraph>
+												<hcontainer name="TAB">
+													<content>
+														<table>
+															<tr>
+																<th>
+																	<p>Point</p>
+																</th>
+																<th>
+																	<p>Latitude</p>
+																</th>
+																<th><p>Longitude</p></th>
+															</tr>
+															<tr>
+																<td><p>1</p></td>
+																<td><p>59° 15' N </p></td>
+																<td><p>54° 26' W</p></td>
+															</tr>
+															<tr>
+																<td><p>2</p></td>
+																<td><p>59° 15' N</p></td>
+																<td><p>44° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>3</p></td>
+																<td><p>59° 30' N</p></td>
+																<td><p>42° 45' W</p></td>
+															</tr>
+															<tr>
+																<td><p>4</p></td>
+																<td><p>60° 00' N</p></td>
+																<td><p>42° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>5</p></td>
+																<td><p>62° 00' N</p></td>
+																<td><p>40° 30' W</p></td>
+															</tr>
+															<tr>
+																<td><p>6</p></td>
+																<td><p>62° 00' N </p></td>
+																<td><p>40° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>7</p></td>
+																<td><p>62° 40' N</p></td>
+																<td><p>40° 15' W</p></td>
+															</tr>
+															<tr>
+																<td><p>8</p></td>
+																<td><p>63° 09' N</p></td>
+																<td><p>39° 40' W</p></td>
+															</tr>
+															<tr>
+																<td><p>9</p></td>
+																<td><p>63° 30' N</p></td>
+																<td><p>37° 15' W</p></td>
+															</tr>
+															<tr>
+																<td><p>10</p></td>
+																<td><p>64° 20' N</p></td>
+																<td><p>35° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>11</p></td>
+																<td><p>65° 15' N</p></td>
+																<td><p>32° 30' W</p></td>
+															</tr>
+															<tr>
+																<td><p>12</p></td>
+																<td><p>65° 15' N</p></td>
+																<td><p>29° 50' W</p></td>
+															</tr>
+														</table>
+													</content>
+												</hcontainer>
+											</hcontainer>
+									</subFlow></block></authorialNote></p>
+							</td>
+							<td colspan="2">
+								<p>Analytical TAC</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>France</p>
+							</td>
+							<td>
+								<p>10</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+									placementBase="~_table_d22e2573"><block name="complexContent"><subFlow name="structuredContent">
+											<hcontainer name="BLOCK_TAB">
+												<subparagraph>
+													<content>
+														<p>May only be fished by
+															trawl, and only North and West of the line defined by
+															the following coordinates:</p>
+													</content>
+												</subparagraph>
+												<hcontainer name="TAB">
+													<content>
+														<table>
+															<tr>
+																<th>
+																	<p>Point</p>
+																</th>
+																<th>
+																	<p>Latitude</p>
+																</th>
+																<th><p>Longitude</p></th>
+															</tr>
+															<tr>
+																<td><p>1</p></td>
+																<td><p>59° 15' N </p></td>
+																<td><p>54° 26' W</p></td>
+															</tr>
+															<tr>
+																<td><p>2</p></td>
+																<td><p>59° 15' N</p></td>
+																<td><p>44° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>3</p></td>
+																<td><p>59° 30' N</p></td>
+																<td><p>42° 45' W</p></td>
+															</tr>
+															<tr>
+																<td><p>4</p></td>
+																<td><p>60° 00' N</p></td>
+																<td><p>42° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>5</p></td>
+																<td><p>62° 00' N</p></td>
+																<td><p>40° 30' W</p></td>
+															</tr>
+															<tr>
+																<td><p>6</p></td>
+																<td><p>62° 00' N </p></td>
+																<td><p>40° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>7</p></td>
+																<td><p>62° 40' N</p></td>
+																<td><p>40° 15' W</p></td>
+															</tr>
+															<tr>
+																<td><p>8</p></td>
+																<td><p>63° 09' N</p></td>
+																<td><p>39° 40' W</p></td>
+															</tr>
+															<tr>
+																<td><p>9</p></td>
+																<td><p>63° 30' N</p></td>
+																<td><p>37° 15' W</p></td>
+															</tr>
+															<tr>
+																<td><p>10</p></td>
+																<td><p>64° 20' N</p></td>
+																<td><p>35° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>11</p></td>
+																<td><p>65° 15' N</p></td>
+																<td><p>32° 30' W</p></td>
+															</tr>
+															<tr>
+																<td><p>12</p></td>
+																<td><p>65° 15' N</p></td>
+																<td><p>29° 50' W</p></td>
+															</tr>
+														</table>
+													</content>
+												</hcontainer>
+											</hcontainer>
+									</subFlow></block></authorialNote></p>
+							</td>
+							<td colspan="2">
+								<p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>United Kingdom</p>
+							</td>
+							<td>
+								<p>14</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+									placementBase="~_table_d22e2573"><block name="complexContent"><subFlow name="structuredContent">
+											<hcontainer name="BLOCK_TAB">
+												<subparagraph>
+													<content>
+														<p>May only be fished by
+															trawl, and only North and West of the line defined by
+															the following coordinates:</p>
+													</content>
+												</subparagraph>
+												<hcontainer name="TAB">
+													<content>
+														<table>
+															<tr>
+																<th>
+																	<p>Point</p>
+																</th>
+																<th>
+																	<p>Latitude</p>
+																</th>
+																<th><p>Longitude</p></th>
+															</tr>
+															<tr>
+																<td><p>1</p></td>
+																<td><p>59° 15' N </p></td>
+																<td><p>54° 26' W</p></td>
+															</tr>
+															<tr>
+																<td><p>2</p></td>
+																<td><p>59° 15' N</p></td>
+																<td><p>44° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>3</p></td>
+																<td><p>59° 30' N</p></td>
+																<td><p>42° 45' W</p></td>
+															</tr>
+															<tr>
+																<td><p>4</p></td>
+																<td><p>60° 00' N</p></td>
+																<td><p>42° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>5</p></td>
+																<td><p>62° 00' N</p></td>
+																<td><p>40° 30' W</p></td>
+															</tr>
+															<tr>
+																<td><p>6</p></td>
+																<td><p>62° 00' N </p></td>
+																<td><p>40° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>7</p></td>
+																<td><p>62° 40' N</p></td>
+																<td><p>40° 15' W</p></td>
+															</tr>
+															<tr>
+																<td><p>8</p></td>
+																<td><p>63° 09' N</p></td>
+																<td><p>39° 40' W</p></td>
+															</tr>
+															<tr>
+																<td><p>9</p></td>
+																<td><p>63° 30' N</p></td>
+																<td><p>37° 15' W</p></td>
+															</tr>
+															<tr>
+																<td><p>10</p></td>
+																<td><p>64° 20' N</p></td>
+																<td><p>35° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>11</p></td>
+																<td><p>65° 15' N</p></td>
+																<td><p>32° 30' W</p></td>
+															</tr>
+															<tr>
+																<td><p>12</p></td>
+																<td><p>65° 15' N</p></td>
+																<td><p>29° 50' W</p></td>
+															</tr>
+														</table>
+													</content>
+												</hcontainer>
+											</hcontainer>
+									</subFlow></block></authorialNote></p>
+							</td>
+							<td colspan="2">
+								<p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>Union</p>
+							</td>
+							<td>
+								<p>2 000</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+									placementBase="~_table_d22e2573"><block name="complexContent"><subFlow name="structuredContent">
+											<hcontainer name="BLOCK_TAB">
+												<subparagraph>
+													<content>
+														<p>May only be fished by
+															trawl, and only North and West of the line defined by
+															the following coordinates:</p>
+													</content>
+												</subparagraph>
+												<hcontainer name="TAB">
+													<content>
+														<table>
+															<tr>
+																<th>
+																	<p>Point</p>
+																</th>
+																<th>
+																	<p>Latitude</p>
+																</th>
+																<th><p>Longitude</p></th>
+															</tr>
+															<tr>
+																<td><p>1</p></td>
+																<td><p>59° 15' N </p></td>
+																<td><p>54° 26' W</p></td>
+															</tr>
+															<tr>
+																<td><p>2</p></td>
+																<td><p>59° 15' N</p></td>
+																<td><p>44° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>3</p></td>
+																<td><p>59° 30' N</p></td>
+																<td><p>42° 45' W</p></td>
+															</tr>
+															<tr>
+																<td><p>4</p></td>
+																<td><p>60° 00' N</p></td>
+																<td><p>42° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>5</p></td>
+																<td><p>62° 00' N</p></td>
+																<td><p>40° 30' W</p></td>
+															</tr>
+															<tr>
+																<td><p>6</p></td>
+																<td><p>62° 00' N </p></td>
+																<td><p>40° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>7</p></td>
+																<td><p>62° 40' N</p></td>
+																<td><p>40° 15' W</p></td>
+															</tr>
+															<tr>
+																<td><p>8</p></td>
+																<td><p>63° 09' N</p></td>
+																<td><p>39° 40' W</p></td>
+															</tr>
+															<tr>
+																<td><p>9</p></td>
+																<td><p>63° 30' N</p></td>
+																<td><p>37° 15' W</p></td>
+															</tr>
+															<tr>
+																<td><p>10</p></td>
+																<td><p>64° 20' N</p></td>
+																<td><p>35° 00' W</p></td>
+															</tr>
+															<tr>
+																<td><p>11</p></td>
+																<td><p>65° 15' N</p></td>
+																<td><p>32° 30' W</p></td>
+															</tr>
+															<tr>
+																<td><p>12</p></td>
+																<td><p>65° 15' N</p></td>
+																<td><p>29° 50' W</p></td>
+															</tr>
+														</table>
+													</content>
+												</hcontainer>
+											</hcontainer>
+									</subFlow></block></authorialNote></p>
+							</td>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>TAC</p>
+							</td>
+							<td>
+								<p>Not relevant</p>
+							</td>
+							<td/>
+							<td/>
+							<td/>
+						</tr>
+					</table>
+				</content>
+			</paragraph>
+			<paragraph>
+				<content>
+					<table>
+						<tr>
+							<th>
+								<p><b>Species:</b></p>
+							</th>
+							<th colspan="2">
+								<p>Redfish</p>
+								<p><i>Sebastes</i> spp.</p>
+							</th>
+							<th>
+								<p><b>Zone:</b></p>
+							</th>
+							<th>
+								<p>Faroese waters of 5b</p>
+								<p>(RED/05B-F.)</p>
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<p>Belgium</p>
+							</td>
+							<td>
+								<p>1</p>
+							</td>
+							<td/>
+							<td colspan="2">
+								<p>Analytical TAC</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>Germany</p>
+							</td>
+							<td>
+								<p>92</p>
+							</td>
+							<td/>
+							<td colspan="2">
+								<p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>France</p>
+							</td>
+							<td>
+								<p>6</p>
+							</td>
+							<td/>
+							<td colspan="2">
+								<p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>United Kingdom</p>
+							</td>
+							<td>
+								<p>1</p>
+							</td>
+							<td/>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>Union</p>
+							</td>
+							<td>
+								<p>100</p>
+							</td>
+							<td/>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>TAC</p>
+							</td>
+							<td>
+								<p>Not relevant</p>
+							</td>
+							<td/>
+							<td/>
+							<td/>
+						</tr>
+					</table>
+				</content>
+			</paragraph>
+			<paragraph>
+				<content>
+					<table xml:id="_table_d22e2824">
+						<tr>
+							<th>
+								<p><b>Species:</b></p>
+							</th>
+							<th colspan="2">
+								<p>Other species</p>
+							</th>
+							<th>
+								<p><b>Zone:</b></p>
+							</th>
+							<th>
+								<p>Norwegian waters of 1 and 2</p>
+								<p>(OTH/1N2AB.)</p>
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<p>Germany</p>
+							</td>
+							<td>
+								<p>117</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+										placementBase="~_table_d22e2824"><p>Exclusively for
+											by-catches. No directed fisheries are permitted under
+											this quota.</p></authorialNote></p>
+							</td>
+							<td colspan="2">
+								<p>Analytical TAC</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>France</p>
+							</td>
+							<td>
+								<p>47</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+										placementBase="~_table_d22e2824"><p>Exclusively for
+											by-catches. No directed fisheries are permitted under
+											this quota.</p></authorialNote></p>
+							</td>
+							<td colspan="2">
+								<p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>United Kingdom</p>
+							</td>
+							<td>
+								<p>186</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+										placementBase="~_table_d22e2824"><p>Exclusively for
+											by-catches. No directed fisheries are permitted under
+											this quota.</p></authorialNote></p>
+							</td>
+							<td colspan="2">
+								<p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>Union</p>
+							</td>
+							<td>
+								<p>350</p>
+							</td>
+							<td>
+								<p><authorialNote marker="1" placement="bottom"
+										placementBase="~_table_d22e2824"><p>Exclusively for
+											by-catches. No directed fisheries are permitted under
+											this quota.</p></authorialNote></p>
+							</td>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>TAC</p>
+							</td>
+							<td>
+								<p>Not relevant</p>
+							</td>
+							<td/>
+							<td/>
+							<td/>
+						</tr>
+					</table>
+				</content>
+			</paragraph>
+			<paragraph>
+				<content>
+					<table xml:id="_table_d22e2893">
+						<tr>
+							<th>
+								<p><b>Species:</b></p>
+							</th>
+							<th colspan="2">
+								<p>Other species<authorialNote marker="1" placement="bottom"
+										placementBase="~_table_d22e2893"><p>Excluding fish species
+											of no commercial value.</p></authorialNote></p>
+							</th>
+							<th>
+								<p><b>Zone:</b></p>
+							</th>
+							<th>
+								<p>Faroese waters of 5b</p>
+								<p>(OTH/05B-F.)</p>
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<p>Germany</p>
+							</td>
+							<td>
+								<p>281</p>
+							</td>
+							<td/>
+							<td colspan="2">
+								<p>Analytical TAC</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>France</p>
+							</td>
+							<td>
+								<p>253</p>
+							</td>
+							<td/>
+							<td colspan="2">
+								<p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>United Kingdom</p>
+							</td>
+							<td>
+								<p>166</p>
+							</td>
+							<td/>
+							<td colspan="2">
+								<p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>Union</p>
+							</td>
+							<td>
+								<p>700</p>
+							</td>
+							<td/>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>TAC</p>
+							</td>
+							<td>
+								<p>Not relevant</p>
+							</td>
+							<td/>
+							<td/>
+							<td/>
+						</tr>
+					</table>
+				</content>
+			</paragraph>
+			<paragraph>
+				<content>
+					<table>
+						<tr>
+							<th>
+								<p><b>Species:</b></p>
+							</th>
+							<th colspan="2">
+								<p>Flatfish</p>
+							</th>
+							<th>
+								<p><b>Zone:</b></p>
+							</th>
+							<th>
+								<p>Faroese waters of 5b</p>
+								<p>(FLX/05B-F.)</p>
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<p>Germany</p>
+							</td>
+							<td>
+								<p>9</p>
+							</td>
+							<td/>
+							<td colspan="2">
+								<p>Analytical TAC</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>France</p>
+							</td>
+							<td>
+								<p>7</p>
+							</td>
+							<td/>
+							<td colspan="2">
+								<p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>United Kingdom</p>
+							</td>
+							<td>
+								<p>34</p>
+							</td>
+							<td/>
+							<td colspan="2">
+								<p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>Union</p>
+							</td>
+							<td>
+								<p>50</p>
+							</td>
+							<td/>
+							<td/>
+							<td/>
+						</tr>
+						<tr>
+							<td>
+								<p>TAC</p>
+							</td>
+							<td>
+								<p>Not relevant</p>
+							</td>
+							<td/>
+							<td/>
+							<td/>
+						</tr>
+					</table>
+				</content>
+			</paragraph>
+			<paragraph>
+				<content>
+					<table xml:id="_table_d22e3028">
+						<tr>
+							<th>
+								<p><b>Species:</b></p>
+							</th>
+							<th colspan="2">
+								<p>By-catches<authorialNote marker="1" placement="bottom"
+										placementBase="~_table_d22e3028"><p>By-catches of grenadiers
+												(<i>Macrourus</i> spp.) shall be reported in line
+											with the following fishing opportunities tables:
+											grenadiers in Greenland waters of 5 and 14 (GRV/514GRN)
+											and grenadiers in Greenland waters of NAFO 1
+											(GRV/N1GRN.)</p></authorialNote></p>
+							</th>
+							<th>
+								<p><b>Zone:</b></p>
+							</th>
+							<th>
+								<p>Greenland waters</p>
+								<p>(B-C/GRL)</p>
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<p>Union</p>
+							</td>
+							<td>
+								<p>800</p>
+							</td>
+							<td/>
+							<td colspan="2">
+								<p>Precautionary TAC</p>
+							</td>
+						</tr>
+						<tr>
+							<td/>
+							<td/>
+							<td/>
+							<td colspan="2">
+								<p>Article 3 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>TAC</p>
+							</td>
+							<td>
+								<p>Not relevant</p>
+							</td>
+							<td/>
+							<td colspan="2">
+								<p>Article 4 of Regulation (EC) No 847/96 shall not apply</p>
+							</td>
+						</tr>
+					</table>
+				</content>
+			</paragraph>
+		</mainBody>
+	</doc>
+</akomaNtoso>

@@ -1,0 +1,66 @@
+biblatex-swiss-legal 2014/01/21 v1.1.2 alpha
+Copyright (c) Adrien Vion. adrien[dot]vion3[at]gmail[dot]com.
+Contributor and Translator: Fabian Mörtl.
+--------------------------------------------------------
+ENGLISH (FRENCH BELOW)
+
+1. What is it ?
+
+This package provides bibliography and citation styles for legal documents written in accordance with swiss legal citation standards.
+The package requires biblatex and biber to work properly.
+
+It was developped for writing a thesis, but it can be used for many other purposes : legal books, articles, sentences.
+Currently it contains a general bibliography and citation style (biblatex-swiss-legal-general), a style for documents containing only bibliographies (biblatex-swiss-legal-bibliography), a style for long articles (biblatex-swiss-legal-longarticle) or short articles (biblatex-swiss-legal-shortarticle) and strings files.
+I plan to create other specific styles for the next versions of the package.
+
+Currently, the package is only for FRENCH or GERMAN documents.
+However, translations to italian are a project for next versions.
+This would be relatively easy to make, I can explain how to do it to kind volunteers.
+
+
+2. Installation and use
+
+All the informations about installation and use are in the biblatex-swiss-legal.pdf file, which is currently only in french.
+
+
+3. Licence
+
+This work may be distributed and/or modified under the conditions of the LaTeX Project Public License, either version 1.3 of this license or any later version.
+The latest version of this license is in http://www.latex-project.org/lppl.txt and version 1.3 or later is part of all distributions of LaTeX version 2005/12/01 or later.
+
+This work has the LPPL maintenance status `maintained'.
+
+The Current Maintainer of this work is Adrien Vion.
+
+This work consists of the files biblatex-swiss-legal-base.bbx, biblatex-swiss-legal-base.cbx, biblatex-swiss-legal-general.bbx, biblatex-swiss-legal-general.cbx, biblatex-swiss-legal-bibliography.bbx, biblatex-swiss-legal-bibliography.cbx, biblatex-swiss-legal-longarticle.bbx, biblatex-swiss-legal-longarticle.cbx, biblatex-swiss-legal-shortarticle.bbx, biblatex-swiss-legal-shortarticle.cbx, biblatex-swiss-legal-fr.lbx, biblatex-swiss-legal-de.lbx, biblatex-swiss-legal.pdf, biblatex-swiss-legal.tex, biblatex-swiss-legal.bib.
+
+
+--------------------------------------------------------
+FRANCAIS
+
+1. Utilité du package
+
+Ce package contient des styles de bibliographie et de citations conformes aux usages juridiques suisses. Il nécessite biblatex et biber pour fonctionner correctement.
+
+Ces styles ont été développés lors de la rédaction d'une thèse mais peuvent servir à tous types d'usages: rédaction d'une monographie, d'articles, de sentences arbitrales, etc.
+Pour l'instant, le paquet contient un style général pour toute monographie (biblatex-swiss-legal-general), un style pour les documents ne contenant qu'une bibliographie (biblatex-swiss-legal-bibliography) et un style pour les longs articles (biblatex-swiss-legal-longarticle) et les courts articles (biblatex-swiss-legal-shortarticle).
+Des styles supplémentaires sont en développement.
+
+Le package est pour l'instant uniquement destiné aux juristes rédigeant en français ou en allemand. Une traduction italienne est projetée; faire fonctionner les styles dans d'autres langues est assez facile à faire (il s'agit juste de traduire le fichier biblatex-swiss-legal-fr).
+Cependant, une aide serait la bienvenue, en particulier pour traduire le fichier d'instructions.
+
+
+2. Installation et utilisation
+
+Toutes les informations à propos de l'installation et de l'utilisation du package sont dans le fichier biblatex-swiss-legal.pdf.
+
+
+3. Licence
+
+Le package biblatex-swiss-legal et ses composants peuvent être distribués et/ou modifiés aux conditions de la licence LaTeX Project Public Licence, version 1.3 ou toute autre version plus récente. La dernière version est disponible à l'adresse http://www.latex-project.org/lppl.txt; la version 1.3 ou supérieure de la licence fait partie de toutes les distributions de LaTeX version 2005/12/01 ou supérieure.
+
+Le statut de maintenance LPPL du package biblatex-swiss-legal est "maintained".
+
+Le "Current Maintainer" de ce package est Adrien Vion.
+
+Le package biblatex-swiss-legal est composé des fichiers biblatex-swiss-legal-base.bbx, biblatex-swiss-legal-base.cbx, biblatex-swiss-legal-general.bbx, biblatex-swiss-legal-general.cbx, biblatex-swiss-legal-bibliography.bbx, biblatex-swiss-legal-bibliography.cbx, biblatex-swiss-legal-longarticle.bbx, biblatex-swiss-legal-longarticle.cbx, biblatex-swiss-legal-shortarticle.bbx, biblatex-swiss-legal-shortarticle.cbx, biblatex-swiss-legal-fr.lbx, biblatex-swiss-legal-de.lbx, biblatex-swiss-legal.pdf, biblatex-swiss-legal.tex, biblatex-swiss-legal.bib.

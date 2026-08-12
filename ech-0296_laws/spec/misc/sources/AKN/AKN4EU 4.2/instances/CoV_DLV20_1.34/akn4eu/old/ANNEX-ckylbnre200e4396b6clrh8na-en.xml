@@ -1,0 +1,927 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+	<doc name="ANNEX">
+		<meta>
+			<identification source="~PUBL">
+				<FRBRWork>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+						<akn4eu:fileCUID value="ckylbnre200e4396b6clrh8na"/>
+					</preservation>
+					<FRBRcountry value="EU"/>
+					<FRBRprescriptive value="true"/>
+				</FRBRWork>
+				<FRBRExpression>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<FRBRlanguage language="en"/>
+				</FRBRExpression>
+				<FRBRManifestation>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+						<akn4eu:akn4euVersion value="4.2.0.0"/>
+						<akn4eu:akn4euDocumentation
+							href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/akn4eu"
+						/>
+					</preservation>
+				</FRBRManifestation>
+			</identification>
+			<references source="~PUBL">
+				<TLCReference name="language"
+					href="http://publications.europa.eu/resource/authority/language/ENG" showAs="en"/>
+				<TLCReference xml:id="ANNEX" name="docType"
+					href="http://publications.europa.eu/resource/authority/resource-type/ANNEX"
+					showAs="Annex"/>
+				<TLCOrganization xml:id="PUBL"
+					href="http://publications.europa.eu/resource/authority/corporate-body/PUBL"
+					showAs="Publications Office"/>
+			</references>
+		</meta>
+		<preface>
+			<container name="headerOfAnnex">
+				<block name="num">ANNEX V</block>
+				<block name="heading">FISHING AUTHORISATIONS</block>
+			</container>
+		</preface>
+		<mainBody>
+			<part>
+				<num>PART A</num>
+				<heading>MAXIMUM NUMBER OF FISHING AUTHORISATIONS FOR UNION FISHING VESSELS FISHING
+					IN THIRD-COUNTRY WATERS</heading>
+				<paragraph>
+					<hcontainer name="BLOCK_TAB">
+						<hcontainer name="TAB">
+							<content>
+								<table xml:id="_table_d22e42">
+									<tr>
+										<th>
+											<p>Area of fishing</p>
+										</th>
+										<th>
+											<p>Fishery</p>
+										</th>
+										<th>
+											<p>Number of fishing authorisations</p>
+										</th>
+										<th colspan="2">
+											<p>Allocation of fishing authorisations amongst Member
+												States</p>
+										</th>
+										<th>
+											<p>Maximum number of vessels present at any time</p>
+										</th>
+									</tr>
+									<tr>
+										<td rowspan="8">
+											<p>Norwegian waters and fishery zone around Jan
+												Mayen</p>
+										</td>
+										<td rowspan="8">
+											<p>Herring, north of 62° 00' N</p>
+										</td>
+										<td rowspan="8">
+											<p>77</p>
+										</td>
+										<td>
+											<p>DK</p>
+										</td>
+										<td>
+											<p>25</p>
+										</td>
+										<td rowspan="8">
+											<p>57</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>DE</p>
+										</td>
+										<td>
+											<p>5</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>FR</p>
+										</td>
+										<td>
+											<p>1</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>IE</p>
+										</td>
+										<td>
+											<p>8</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>NL</p>
+										</td>
+										<td>
+											<p>9</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>PL</p>
+										</td>
+										<td>
+											<p>1</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>SV</p>
+										</td>
+										<td>
+											<p>10</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>UK</p>
+										</td>
+										<td>
+											<p>18</p>
+										</td>
+									</tr>
+									<tr>
+										<td rowspan="10">
+											<p/>
+										</td>
+										<td rowspan="7">
+											<p>Demersal species, north of 62° 00' N</p>
+										</td>
+										<td rowspan="7">
+											<p>80</p>
+										</td>
+										<td>
+											<p>DE</p>
+										</td>
+										<td>
+											<p>16</p>
+										</td>
+										<td rowspan="7">
+											<p>50</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>IE</p>
+										</td>
+										<td>
+											<p>1</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>ES</p>
+										</td>
+										<td>
+											<p>20</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>FR</p>
+										</td>
+										<td>
+											<p>18</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>PT</p>
+										</td>
+										<td>
+											<p>9</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>UK</p>
+										</td>
+										<td>
+											<p>14</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>Unallocated</p>
+										</td>
+										<td>
+											<p>2</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>Mackerel<authorialNote marker="1" placement="bottom"
+												placementBase="~_table_d22e42">
+												<p>Without prejudice to additional licences
+												granted to Sweden by Norway in accordance with
+												established practice.</p>
+												</authorialNote></p>
+										</td>
+										<td>
+											<p>Not relevant</p>
+										</td>
+										<td colspan="2">
+											<p>Not relevant</p>
+										</td>
+										<td>
+											<p>70</p>
+										</td>
+									</tr>
+									<tr>
+										<td rowspan="2">
+											<p>Industrial species, south of 62° 00' N</p>
+										</td>
+										<td rowspan="2">
+											<p>480</p>
+										</td>
+										<td>
+											<p>DK</p>
+										</td>
+										<td>
+											<p>450</p>
+										</td>
+										<td rowspan="2">
+											<p>150</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>UK</p>
+										</td>
+										<td>
+											<p>30</p>
+										</td>
+									</tr>
+									<tr>
+										<td rowspan="38">
+											<p>Faroese waters</p>
+										</td>
+										<td rowspan="4">
+											<p>All trawl fisheries with vessels of not more than 180
+												feet in the zone between 12 and 21 miles from the
+												Faroese baselines</p>
+										</td>
+										<td rowspan="4">
+											<p>26</p>
+										</td>
+										<td>
+											<p>BE</p>
+										</td>
+										<td>
+											<p>0</p>
+										</td>
+										<td rowspan="4">
+											<p>13</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>DE</p>
+										</td>
+										<td>
+											<p>4</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>FR</p>
+										</td>
+										<td>
+											<p>4</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>UK</p>
+										</td>
+										<td>
+											<p>18</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>Directed fisheries for cod and haddock with a minimum
+												mesh of 135 mm, restricted to the area south of 62°
+												28′ N and east of 6° 30′ W</p>
+										</td>
+										<td>
+											<p>8<authorialNote marker="2" placement="bottom"
+												placementBase="~_table_d22e42">
+												<p>Those figures are included in the figures for
+												all trawl fisheries with vessels of not more than
+												180 feet in the zone between 12 and 21 miles from
+												the Faroese baselines.</p>
+												</authorialNote></p>
+										</td>
+										<td colspan="2">
+											<p>Not relevant</p>
+										</td>
+										<td>
+											<p>4</p>
+										</td>
+									</tr>
+									<tr>
+										<td rowspan="4">
+											<p>Trawl fisheries outside 21 miles from the Faroese
+												baseline. In the periods from 1 March to 31 May and
+												from 1 October to 31 December, those vessels may
+												operate in the area between 61° 20′ N and 62° 00′ N
+												and between 12 and 21 miles from the baselines</p>
+										</td>
+										<td rowspan="4">
+											<p>70</p>
+										</td>
+										<td>
+											<p>BE</p>
+										</td>
+										<td>
+											<p>0</p>
+										</td>
+										<td rowspan="4">
+											<p>26</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>DE</p>
+										</td>
+										<td>
+											<p>10</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>FR</p>
+										</td>
+										<td>
+											<p>40</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>UK</p>
+										</td>
+										<td>
+											<p>20</p>
+										</td>
+									</tr>
+									<tr>
+										<td rowspan="2">
+											<p>Trawl fisheries for blue ling with a minimum mesh of
+												100 mm in the area south of 61° 30′ N and west of 9°
+												00′ W and in the area between 7° 00′ W and 9° 00′ W
+												south of 60° 30′ N and in the area south-west of a
+												line between 60° 30′ N, 7° 00′ W and 60°00′ N, 6°00′
+												W</p>
+										</td>
+										<td rowspan="2">
+											<p>70</p>
+										</td>
+										<td>
+											<p>DE<authorialNote marker="3" placement="bottom"
+												placementBase="~_table_d22e42">
+												<p>Those figures refer to the maximum number of
+												vessels present at any time.</p>
+												</authorialNote></p>
+										</td>
+										<td>
+											<p>8</p>
+										</td>
+										<td rowspan="2">
+											<p>20<authorialNote marker="4" placement="bottom"
+												placementBase="~_table_d22e42">
+												<p>Those figures are included in the figures for
+												‘Trawl fisheries outside 21 miles from the Faroese
+												baselines’</p>
+												</authorialNote></p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>FR<authorialNote marker="3" placement="bottom"
+												placementBase="~_table_d22e42">
+												<p>Those figures refer to the maximum number of
+												vessels present at any time.</p>
+												</authorialNote></p>
+										</td>
+										<td>
+											<p>12</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>Directed trawl fisheries for saithe with a minimum
+												mesh size of 120 mm and with the possibility to use
+												round-straps around the cod-end</p>
+										</td>
+										<td>
+											<p>70</p>
+										</td>
+										<td colspan="2">
+											<p>Not relevant</p>
+										</td>
+										<td>
+											<p>22<authorialNote marker="4" placement="bottom"
+												placementBase="~_table_d22e42">
+												<p>Those figures are included in the figures for
+												‘Trawl fisheries outside 21 miles from the Faroese
+												baselines’</p>
+												</authorialNote></p>
+										</td>
+									</tr>
+									<tr>
+										<td rowspan="9">
+											<p>Fisheries for blue whiting. The total number of
+												fishing authorisations may be increased by four
+												vessels to form pairs, should the Faroese
+												authorities introduce special rules of access to an
+												area called ‘main fishing area of blue whiting’</p>
+										</td>
+										<td rowspan="9">
+											<p>34</p>
+										</td>
+										<td>
+											<p>DE</p>
+										</td>
+										<td>
+											<p>2</p>
+										</td>
+										<td rowspan="9">
+											<p>20</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>DK</p>
+										</td>
+										<td>
+											<p>5</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>FR</p>
+										</td>
+										<td>
+											<p>4</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>NL</p>
+										</td>
+										<td>
+											<p>6</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>UK</p>
+										</td>
+										<td>
+											<p>7</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>SE</p>
+										</td>
+										<td>
+											<p>1</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>ES</p>
+										</td>
+										<td>
+											<p>4</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>IE</p>
+										</td>
+										<td>
+											<p>4</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>PT</p>
+										</td>
+										<td>
+											<p>1</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>Line fisheries</p>
+										</td>
+										<td>
+											<p>10</p>
+										</td>
+										<td>
+											<p>UK</p>
+										</td>
+										<td>
+											<p>10</p>
+										</td>
+										<td>
+											<p>6</p>
+										</td>
+									</tr>
+									<tr>
+										<td rowspan="8">
+											<p>Mackerel</p>
+										</td>
+										<td rowspan="8">
+											<p>20</p>
+										</td>
+										<td>
+											<p>DK</p>
+										</td>
+										<td>
+											<p>2</p>
+										</td>
+										<td rowspan="8">
+											<p>12</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>BE</p>
+										</td>
+										<td>
+											<p>1</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>DE</p>
+										</td>
+										<td>
+											<p>2</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>FR</p>
+										</td>
+										<td>
+											<p>2</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>IE</p>
+										</td>
+										<td>
+											<p>3</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>NL</p>
+										</td>
+										<td>
+											<p>2</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>SE</p>
+										</td>
+										<td>
+											<p>2</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>UK</p>
+										</td>
+										<td>
+											<p>6</p>
+										</td>
+									</tr>
+									<tr>
+										<td rowspan="8">
+											<p>Herring, north of 62° 00' N</p>
+										</td>
+										<td rowspan="8">
+											<p>20</p>
+										</td>
+										<td>
+											<p>DK</p>
+										</td>
+										<td>
+											<p>5</p>
+										</td>
+										<td rowspan="8">
+											<p>20</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>DE</p>
+										</td>
+										<td>
+											<p>2</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>IE</p>
+										</td>
+										<td>
+											<p>2</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>FR</p>
+										</td>
+										<td>
+											<p>1</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>NL</p>
+										</td>
+										<td>
+											<p>2</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>PL</p>
+										</td>
+										<td>
+											<p>1</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>SE</p>
+										</td>
+										<td>
+											<p>3</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>UK</p>
+										</td>
+										<td>
+											<p>4</p>
+										</td>
+									</tr>
+									<tr>
+										<td rowspan="5">
+											<p>1, 2b<authorialNote marker="5" placement="bottom"
+												placementBase="~_table_d22e42">
+												<p>The allocation of fishing opportunities
+												available to the Union in the zone of Svalbard is
+												without prejudice to the rights and obligations
+												deriving from the Treaty of Paris of 1920.</p>
+												</authorialNote></p>
+										</td>
+										<td rowspan="5">
+											<p>Fishery for snow crab with pots</p>
+										</td>
+										<td rowspan="5">
+											<p>20</p>
+										</td>
+										<td>
+											<p>EE</p>
+										</td>
+										<td>
+											<p>1</p>
+										</td>
+										<td rowspan="5">
+											<p>Not applicable</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>ES</p>
+										</td>
+										<td>
+											<p>1</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>LV</p>
+										</td>
+										<td>
+											<p>11</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>LT</p>
+										</td>
+										<td>
+											<p>4</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>PL</p>
+										</td>
+										<td>
+											<p>3</p>
+										</td>
+									</tr>
+								</table>
+							</content>
+						</hcontainer>
+					</hcontainer>
+				</paragraph>
+			</part>
+			<part>
+				<num>PART B</num>
+				<heading>MAXIMUM NUMBER OF FISHING AUTHORISATIONS FOR THIRD-COUNTRY VESSELS FISHING IN
+						UNION WATERS</heading>
+				<paragraph>
+					<hcontainer name="BLOCK_TAB">
+						<hcontainer name="TAB">
+							<content>
+								<table xml:id="_table_d22e503">
+									<tr>
+										<th>
+											<p>Flag State</p>
+										</th>
+										<th>
+											<p>Fishery</p>
+										</th>
+										<th>
+											<p>Number of fishing authorisations</p>
+										</th>
+										<th>
+											<p>Maximum number of vessels present at any time</p>
+										</th>
+									</tr>
+									<tr>
+										<td>
+											<p>Norway</p>
+										</td>
+										<td>
+											<p>Herring, north of 62° 00' N</p>
+										</td>
+										<td>
+											<p>To be established</p>
+										</td>
+										<td>
+											<p>To be established</p>
+										</td>
+									</tr>
+									<tr>
+										<td rowspan="7">
+											<p>Faroe Islands</p>
+										</td>
+										<td>
+											<p>Mackerel, 6a (north of 56° 30' N), 2a, 4a (north of
+												59° N)</p>
+											<p>Horse mackerel, 4, 6a (north of 56° 30' N), 7e, 7f,
+												7h</p>
+										</td>
+										<td>
+											<p>20</p>
+										</td>
+										<td>
+											<p>14</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>Herring, north of 62° 00' N</p>
+										</td>
+										<td>
+											<p>20</p>
+										</td>
+										<td>
+											<p>To be established</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>Herring, 3a</p>
+										</td>
+										<td>
+											<p>4</p>
+										</td>
+										<td>
+											<p>4</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>Industrial fishing for Norway pout, 4, 6a (north of
+												56° 30' N) (including unavoidable by-catches of blue
+												whiting)</p>
+										</td>
+										<td>
+											<p>14</p>
+										</td>
+										<td>
+											<p>14</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>Ling and tusk</p>
+										</td>
+										<td>
+											<p>20</p>
+										</td>
+										<td>
+											<p>10</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>Blue whiting, 2, 4a, 5, 6a (north of 56° 30' N), 6b,
+												7 (west of 12° 00' W)</p>
+										</td>
+										<td>
+											<p>20</p>
+										</td>
+										<td>
+											<p>20</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>Blue ling</p>
+										</td>
+										<td>
+											<p>16</p>
+										</td>
+										<td>
+											<p>16</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>Venezuela<authorialNote marker="6" placement="bottom"
+												placementBase="~_table_d22e503">
+												<p>To issue those fishing authorisations, proof
+												must be produced that a valid contract exists
+												between the vessel owner applying for the fishing
+												authorisation and a processing undertaking
+												situated in the Department of French Guiana, and
+												that it includes an obligation to land at least 75
+												% of all snapper catches from the vessel concerned
+												in that department so that they may be processed
+												in that undertaking’s plant. Such a contract must
+												be endorsed by the French authorities, which shall
+												ensure that it is consistent both with the actual
+												capacity of the contracting processing undertaking
+												and with the objectives for the development of the
+												Guianese economy. A copy of the duly endorsed
+												contract shall be appended to the fishing
+												authorisation application. Where such an
+												endorsement is refused, the French authorities
+												shall give notification of this refusal and state
+												their reasons for it to the party concerned and to
+												the Commission.</p>
+												</authorialNote></p>
+										</td>
+										<td>
+											<p>Snappers (French Guiana waters)</p>
+										</td>
+										<td>
+											<p>45</p>
+										</td>
+										<td>
+											<p>45</p>
+										</td>
+									</tr>
+								</table>
+							</content>
+						</hcontainer>
+					</hcontainer>
+				</paragraph>
+			</part>
+		</mainBody>
+	</doc>
+</akomaNtoso>

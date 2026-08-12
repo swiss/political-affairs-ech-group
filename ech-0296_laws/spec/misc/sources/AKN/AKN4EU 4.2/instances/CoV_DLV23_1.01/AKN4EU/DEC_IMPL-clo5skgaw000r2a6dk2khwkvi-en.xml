@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+   <bill name="DEC_IMPL">
+      <meta>
+         <identification source="~PUBL">
+            <FRBRWork>
+               <FRBRthis value=""/>
+               <FRBRuri value=""/>
+               <FRBRdate date="2999-01-01" name=""/>
+               <FRBRauthor href=""/>
+               <preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+                  <akn4eu:fileCUID value="clo5skgaw000r2a6dk2khwkvi"/>
+               </preservation>
+               <FRBRcountry value="EU"/>
+               <FRBRprescriptive value="true"/>
+            </FRBRWork>
+            <FRBRExpression>
+               <FRBRthis value=""/>
+               <FRBRuri value=""/>
+               <FRBRdate date="2999-01-01" name=""/>
+               <FRBRauthor href=""/>
+               <FRBRlanguage language="en"/>
+            </FRBRExpression>
+            <FRBRManifestation>
+               <FRBRthis value=""/>
+               <FRBRuri value=""/>
+               <FRBRdate date="2999-01-01" name=""/>
+               <FRBRauthor href=""/>
+               <preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+                  <akn4eu:akn4euVersion value="4.2.0.0"/>
+                  <akn4eu:akn4euDocumentation href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/akn4eu"/>
+               </preservation>
+            </FRBRManifestation>
+         </identification>
+         <analysis source="~PUBL">
+            <activeModifications>
+               <textualMod type="repeal">
+                  <source/>
+                  <destination href="http://data.europa.eu/eli/impl_dec/2018/1490"/>
+               </textualMod>
+            </activeModifications>
+         </analysis>
+         <references source="~PUBL">
+            <TLCReference name="language" href="http://publications.europa.eu/resource/authority/language/ENG" showAs="en"/>
+            <TLCReference xml:id="legalBasis" name="contentSubject" href="http://eurovoc.europa.eu/5456" showAs="Legal basis"/>
+            <TLCOrganization xml:id="PUBL" href="http://publications.europa.eu/resource/authority/corporate-body/PUBL" showAs="Publications Office of the European Union"/>
+            <TLCOrganization xml:id="CONSIL" href="http://publications.europa.eu/resource/authority/corporate-body/CONSIL" showAs="Council of the European Union"/>
+            <TLCRole xml:id="PRESID" href="http://publications.europa.eu/resource/authority/role/PRESID" showAs="President"/>
+            <TLCLocation xml:id="BEL_BRU" href="http://publications.europa.eu/resource/authority/place/BEL_BRU" showAs="Brussels"/>
+            <TLCReference xml:id="DEC_IMPL" name="docType" href="http://publications.europa.eu/resource/authority/resource-type/DEC_IMPL" showAs="Implementing Decision"/>
+            <TLCReference xml:id="procedure_2023_107" name="procedureReference" href="http://eur-lex.europa.eu/procedure/EN/2023_107" showAs="2023/0107(NLE)" shortForm="2023/107/NLE"/>
+         </references>
+      </meta>
+      <preface xml:id="d1e96">
+         <container xml:id="d1e98" name="procedureIdentifier">
+            <p xml:id="d1e100"><docketNumber xml:id="d1e101" refersTo="~procedure_2023_107">2023/0107(NLE)</docketNumber></p>
+         </container>
+         <longTitle xml:id="d1e105">
+            <p xml:id="d1e107"><docStage xml:id="d1e108">Proposal for a</docStage>
+               <docType xml:id="d1e110" refersTo="~DEC_IMPL">COUNCIL IMPLEMENTING DECISION</docType>
+               <docPurpose xml:id="d1e113">authorising Hungary to apply a special measure derogating from Article
+                  287 of <ref xml:id="d1e115" href="http://data.europa.eu/eli/dir/2006/112">Directive 2006/112/EC on the common system of value added tax</ref>, and
+                  repealing <ref xml:id="d1e118" href="http://data.europa.eu/eli/impl_dec/2018/1490">Council
+                     Implementing Decision (EU) 2018/1490</ref></docPurpose>
+            </p>
+         </longTitle>
+      </preface>
+      <preamble xml:id="d1e124">
+         <formula xml:id="d1e126" name="actingEntity">
+            <p xml:id="d1e128">THE COUNCIL OF THE EUROPEAN UNION,</p>
+         </formula>
+         <citations xml:id="d1e131">
+            <citation xml:id="d1e133" refersTo="~legalBasis">
+               <p xml:id="d1e135">Having regard to the Treaty on the Functioning of the European Union,</p>
+            </citation>
+            <citation xml:id="d1e138">
+               <p xml:id="d1e140">Having regard to Council Directive 2006/112/EC of 28 November 2006 on the common
+                  system of value added tax <authorialNote xml:id="d1e142" marker="1" placement="bottom">
+                     <p xml:id="d1e144">OJ L 347, 11.12.2006, p. 1.</p>
+                  </authorialNote> , and in particular Article 395(1), first subparagraph,
+                  thereof,</p>
+            </citation>
+            <citation xml:id="d1e149">
+               <p xml:id="d1e151">Having regard to the proposal from the European Commission,</p>
+            </citation>
+         </citations>
+         <recitals xml:id="d1e155">
+            <intro xml:id="d1e157">
+               <p xml:id="d1e159">Whereas:</p>
+            </intro>
+            <recital xml:id="d1e162">
+               <num xml:id="d1e164">(1)</num>
+               <p xml:id="d1e166">Pursuant to Article 287, point (12), of Directive 2006/112/EC, Hungary may exempt
+                  from value added tax (VAT) taxable persons whose annual turnover is no higher than
+                  the equivalent in national currency of EUR 35 000 at the conversion rate on the
+                  day of its accession.</p>
+            </recital>
+            <recital xml:id="d1e169">
+               <num xml:id="d1e171">(2)</num>
+               <p xml:id="d1e173">By Council Implementing Decision 2022/73 <authorialNote xml:id="d1e175" marker="2" placement="bottom">
+                     <p xml:id="d1e177">Council Implementing Decision (EU) 2022/73 of 18 January 2022 amending
+                        Implementing Decision (EU) 2018/1490 as regards authorisation to Hungary to
+                        apply for a further period the special measure derogating from Article 287
+                        of Directive 2006/112/EC on the common system of value added tax (OJ L 12,
+                        19.1.2022, p. 148).</p>
+                  </authorialNote> , Hungary was authorised to continue to apply a special measure
+                  derogating from Article 287 of Directive 2006/112/EC to exempt from VAT taxable
+                  persons whose annual turnover is no higher than the equivalent in national
+                  currency of EUR 48 000 at the conversion rate on the day of its accession to the
+                  Union until 31 December 2024.</p>
+            </recital>
+            <recital xml:id="d1e182">
+               <num xml:id="d1e184">(3)</num>
+               <p xml:id="d1e186">By letter registered with the Commission on 15 December 2022, Hungary requested an
+                  authorisation to increase the threshold of the above mentioned existing special
+                  measure to EUR 71 500 until 31 December 2024 (‘the special measure’).</p>
+            </recital>
+            <recital xml:id="d1e189">
+               <num xml:id="d1e191">(4)</num>
+               <p xml:id="d1e193">By letter dated 11 January 2023, the Commission transmitted the request made by
+                  Hungary to the other Member States in accordance with Article 395(2), second
+                  subparagraph, of Directive 2006/112/EC. By letter dated 12 January 2023, the
+                  Commission notified Hungary that it had all the information it considered
+                  necessary for the appraisal of the request.</p>
+            </recital>
+            <recital xml:id="d1e197">
+               <num xml:id="d1e199">(5)</num>
+               <p xml:id="d1e201">The special measure requested by Hungary is in line with the amendments to
+                  Directive 2006/112/EC made by Council Directive (EU) 2020/285 <authorialNote xml:id="d1e203" marker="3" placement="bottom">
+                     <p xml:id="d1e205">Council Directive (EU) 2020/285 of 18 February 2020 amending Directive
+                        2006/112/EC on the common system of value added tax as regards the special
+                        scheme for small enterprises and Regulation (EU) No 904/2010 as regards the
+                        administrative cooperation and exchange of information for the purpose of
+                        monitoring the correct application of the special scheme for small
+                        enterprises (OJ L 62, 2.3.2020, p. 13).</p>
+                  </authorialNote> , which seeks to reduce the VAT compliance costs for small
+                  enterprises and mitigate distortions of competition in the internal market.</p>
+            </recital>
+            <recital xml:id="d1e210">
+               <num xml:id="d1e212">(6)</num>
+               <p xml:id="d1e214">The special measure will remain optional for taxable persons as they may still opt
+                  for the regular VAT arrangements in accordance with Article 290 of Directive
+                  2006/112/EC.</p>
+            </recital>
+            <recital xml:id="d1e217">
+               <num xml:id="d1e219">(7)</num>
+               <p xml:id="d1e221">According to the information provided by Hungary, the special measure will have a
+                  negligible effect on the overall amount of tax revenue of Hungary collected at the
+                  stage of final consumption.</p>
+            </recital>
+            <recital xml:id="d1e224">
+               <num xml:id="d1e226">(8)</num>
+               <p xml:id="d1e228">Following the entry into force of Council Regulation (EU, Euratom) 2021/769
+                     <authorialNote xml:id="d1e230" marker="4" placement="bottom">
+                     <p xml:id="d1e232">Council Regulation (EU, Euratom) 2021/769 of 30 April 2021 amending
+                        Regulation (EEC, Euratom) No 1553/89 on the definitive uniform arrangements
+                        for the collection of own resources accruing from value added tax (OJ L 165,
+                        11.5.2021, p. 9).</p>
+                  </authorialNote> , there is to be no compensation calculation carried out by
+                  Hungary with regard to the VAT-based own resource statement for the financial year
+                  2021 onwards.</p>
+            </recital>
+            <recital xml:id="d1e237">
+               <num xml:id="d1e239">(9)</num>
+               <p xml:id="d1e241">Given the positive impact of the special measure in reducing the VAT compliance
+                  burden of both small enterprises and the tax authorities and given the negligible
+                  impact on the total VAT revenue generated, Hungary should be authorised to apply
+                  the special measure.</p>
+            </recital>
+            <recital xml:id="d1e244">
+               <num xml:id="d1e246">(10)</num>
+               <p xml:id="d1e248">The authorisation to apply the special measure should be limited in time. The time
+                  limit should be sufficient to allow the Commission to evaluate the effectiveness
+                  and appropriateness of the threshold. Moreover, pursuant to Article 3(1) of
+                  Directive (EU) 2020/285, Member States are to adopt and publish, by 31 December
+                  2024, the laws, regulations and administrative provisions necessary to comply with
+                  Article 1(12) of that Directive and are to apply those provisions from 1 January
+                  2025. It is therefore appropriate to authorise Hungary to apply the special
+                  measure until 31 December 2024. </p>
+            </recital>
+            <recital xml:id="d1e252">
+               <num xml:id="d1e254">(11)</num>
+               <p xml:id="d1e256">Implementing Decision (EU) 2018/1490 should therefore be repealed.</p>
+            </recital>
+         </recitals>
+         <formula xml:id="d1e260" name="enactingFormula">
+            <p xml:id="d1e262">HAS ADOPTED THIS DECISION:</p>
+         </formula>
+      </preamble>
+      <body xml:id="d1e266">
+         <article xml:id="d1e268">
+            <num xml:id="d1e270">Article 1</num>
+            <paragraph xml:id="d1e272">
+               <content xml:id="d1e274">
+                  <p xml:id="d1e276">By way of derogation from Article 287, point (12), of Directive 2006/112/EC,
+                     Hungary is authorised to exempt from VAT taxable persons whose annual turnover
+                     is no higher than EUR 71 500 at the conversion rate on the day of its
+                     accession.</p>
+               </content>
+            </paragraph>
+         </article>
+         <article xml:id="d1e281">
+            <num xml:id="d1e283">Article 2</num>
+            <paragraph xml:id="d1e285">
+               <content xml:id="d1e287">
+                  <p xml:id="d1e289">Implementing Decision (EU) 2018/1490 is repealed.</p>
+               </content>
+            </paragraph>
+         </article>
+         <article xml:id="d1e294">
+            <num xml:id="d1e296"> Article 3</num>
+            <paragraph xml:id="d1e298">
+               <content xml:id="d1e300">
+                  <p xml:id="d1e302">This Decision shall take effect on the date of its notification.</p>
+               </content>
+            </paragraph>
+            <paragraph xml:id="d1e306">
+               <content xml:id="d1e308">
+                  <p xml:id="d1e310">It shall apply until 31 December 2024.</p>
+               </content>
+            </paragraph>
+         </article>
+         <article xml:id="d1e315">
+            <num xml:id="d1e317"> Article 4</num>
+            <paragraph xml:id="d1e319">
+               <content xml:id="d1e321">
+                  <p xml:id="d1e323">This Decision is addressed to Hungary.</p>
+               </content>
+            </paragraph>
+         </article>
+      </body>
+      <conclusions xml:id="d1e329">
+         <p xml:id="d1e331">Done at <location xml:id="d1e333" refersTo="~BEL_BRU">Brussels</location>,</p>
+         <block xml:id="d1e337" name="signatory">
+            <signature xml:id="d1e339">
+               <organization xml:id="d1e341" refersTo="~CONSIL">For the Council</organization>
+               <role xml:id="d1e344" refersTo="~PRESID">The President</role>
+               <person xml:id="d1e347" refersTo=""/>
+            </signature>
+         </block>
+      </conclusions>
+   </bill>
+</akomaNtoso>

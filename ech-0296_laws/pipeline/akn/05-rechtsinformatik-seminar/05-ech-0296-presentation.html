@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eCH-0296 — Erlasse und Gesetzestexte</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --r-heading-font: 'Inter', sans-serif;
+      --r-main-font: 'Inter', sans-serif;
+      --r-code-font: 'JetBrains Mono', monospace;
+      --r-heading-color: #1a1a2e;
+      --r-main-color: #2d2d3a;
+      --accent: #c0392b;
+      --accent-light: #e8d5d2;
+      --subtle: #7f8c8d;
+    }
+    .reveal { font-size: 30px; }
+    .reveal h1 { font-size: 2.2em; font-weight: 700; letter-spacing: -0.02em; }
+    .reveal h2 { font-size: 1.5em; font-weight: 600; color: var(--accent); letter-spacing: -0.01em; }
+    .reveal h3 { font-size: 1.0em; font-weight: 600; color: var(--subtle); text-transform: uppercase; letter-spacing: 0.08em; }
+    .reveal p, .reveal li { line-height: 1.6; }
+    .reveal ul { list-style: none; padding-left: 0; }
+    .reveal ul li::before { content: "—"; color: var(--accent); font-weight: 700; margin-right: 0.5em; }
+    .reveal ul li { margin-bottom: 0.4em; text-align: left; }
+    .reveal .subtitle { color: var(--subtle); font-weight: 300; font-size: 0.7em; margin-top: 0.5em; }
+    .reveal .highlight { color: var(--accent); font-weight: 600; }
+    .reveal .fragment.fade-in-then-semi-out.visible:not(.current-fragment) { opacity: 0.4; }
+    .reveal blockquote { border-left: 4px solid var(--accent); padding: 0.5em 1em; font-style: italic; background: #fafafa; font-size: 0.9em; text-align: left; }
+    .reveal .timeline { text-align: left; }
+    .reveal .timeline .item { display: flex; gap: 1em; margin-bottom: 0.8em; align-items: flex-start; }
+    .reveal .timeline .date { font-family: 'JetBrains Mono', monospace; font-size: 0.75em; color: var(--accent); min-width: 5em; font-weight: 600; padding-top: 0.15em; }
+    .reveal .timeline .desc { font-size: 0.85em; }
+    .reveal code { font-family: 'JetBrains Mono', monospace; background: #f4f4f8; padding: 0.1em 0.4em; border-radius: 4px; font-size: 0.8em; }
+    .reveal .cta-box { background: #fef9f8; border: 2px solid var(--accent); border-radius: 8px; padding: 1em 1.5em; text-align: left; }
+    .reveal .small { font-size: 0.7em; color: var(--subtle); }
+    .reveal section { text-align: left; }
+    .reveal section h1, .reveal section h2 { text-align: left; }
+    .slide-number { font-family: 'JetBrains Mono', monospace !important; }
+  </style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ============================================================ -->
+<!-- TITLE -->
+<!-- ============================================================ -->
+<section>
+  <section>
+    <h1>eCH-0296</h1>
+    <h2 style="color: var(--r-heading-color);">Erlasse und Gesetzestexte</h2>
+    <p class="subtitle">Ein neuer Standard für strukturierte Rechtsdaten in der Schweiz</p>
+    <p class="small" style="margin-top: 2em;">Magglinger Rechtsinformatikseminar 2026<br>Martin Gajdos</p>
+  </section>
+</section>
+
+<!-- ============================================================ -->
+<!-- 1. AUSGANGSLAGE -->
+<!-- ============================================================ -->
+<section>
+  <section>
+    <h3>Ausgangslage</h3>
+    <h2>Warum ein neuer Standard?</h2>
+  </section>
+
+  <section>
+    <h3>Das Problem</h3>
+    <h2>Fragmentiertes Datenökosystem</h2>
+    <ul>
+      <li class="fragment">~22'000 Erlasse auf Bundes- und Kantonsebene — jeder publiziert anders</li>
+      <li class="fragment">Abkürzungen wie <code>OR</code>, <code>BeurkG</code> sind gewachsene Praxis, aber nicht standardisiert</li>
+      <li class="fragment">LexFind.ch systematisiert — aber als private Organisation, nicht als offener Standard</li>
+      <li class="fragment">Links zu parlamentarischen Dokumenten brechen, Texte gehen verloren</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Das Problem</h3>
+    <h2>AI braucht strukturierte Daten</h2>
+    <ul>
+      <li>LLMs halluzinieren Rechtsnormen — Daniel Brugger (HSG, Onlinekommentar.ch) dokumentiert das Problem</li>
+      <li class="fragment">Garbage in, garbage out: Ohne strukturierte Quelldaten keine verlässliche Legal AI</li>
+      <li class="fragment">RAG-Pipelines brauchen maschinenlesbare, identifizierbare Rechtstexte</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Die Vorgeschichte</h3>
+    <h2>Was bisher geschah</h2>
+    <ul>
+      <li>eJustice.ch hatte einen eigenen Standard für Erlassdaten</li>
+      <li class="fragment">Seit 2018 eingestellt — er folgte weder Akoma Ntoso noch ELI</li>
+      <li class="fragment">Seitdem: eine Lücke. Kein interoperabler Standard für Schweizer Rechtsdaten</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Das Momentum</h3>
+    <h2>Rechtliche Rahmenbedingungen</h2>
+    <ul>
+      <li><span class="highlight">EMBAG</span> (in Kraft seit 1.1.2024): gesetzliche Grundlage für Interoperabilität, Open Government Data und die Verbindlicherklärung von Standards</li>
+      <li class="fragment">Die Bundeskanzlei kann eCH-Standards <span class="highlight">verbindlich erklären</span> — auch für IT-Lieferanten</li>
+      <li class="fragment">Digital First: Schnittstellen, Interoperabilität und Open Source als Pflicht</li>
+    </ul>
+  </section>
+</section>
+
+<!-- ============================================================ -->
+<!-- 2. WAS IST eCH-0296? -->
+<!-- ============================================================ -->
+<section>
+  <section>
+    <h3>Der Standard</h3>
+    <h2>Was ist eCH-0296?</h2>
+  </section>
+
+  <section>
+    <h3>Internationale Grundlagen</h3>
+    <h2>Aufbau auf bewährten Standards</h2>
+    <ul>
+      <li><span class="highlight">Akoma Ntoso</span> — OASIS/UN-Standard für parlamentarische und legislative Dokumente</li>
+      <li class="fragment"><span class="highlight">ELI</span> (European Legislation Identifier) — EU-Standard für Rechtsidentifikation</li>
+      <li class="fragment"><span class="highlight">FRBR</span>-basierte URIs für persistente, maschinenlesbare Identifikation</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Schweizer Profil</h3>
+    <h2>AKN4CH</h2>
+    <ul>
+      <li>Ein <em>Application Profile</em> von Akoma Ntoso, angepasst an die Schweiz</li>
+      <li class="fragment">Föderalismus: Bund, Kantone, Gemeinden mit eigenen Rechtssammlungen</li>
+      <li class="fragment">Mehrsprachigkeit: DE, FR, IT, RM — gleicher Erlass, verschiedene Sprachfassungen</li>
+      <li class="fragment">Kantonale Autonomie: Respekt vor gewachsenen Strukturen</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Aktuelle Phase</h3>
+    <h2>Gemeinsames Verständnis schaffen</h2>
+    <ul>
+      <li>Welche <span class="highlight">Identifikatoren</span> verwenden wir? (Modul 1 von 4)</li>
+      <li class="fragment">Wie erhalten wir Rechtstexte über die Zeit?</li>
+      <li class="fragment">Verschiedene Stakeholder bedienen: Anwälte suchen <code>OR</code>, Maschinen brauchen URIs</li>
+      <li class="fragment">Die Systematik kommt von LexFind, interkantonale Vereinbarungen nutzen deren Register</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Vision</h3>
+    <h2>Vom Erlass zum Urteil</h2>
+    <ul>
+      <li>Heute: Erlasse und Gesetzestexte — das Fundament</li>
+      <li class="fragment">Morgen: Urteile einbeziehen — sie referenzieren Gesetze und Verordnungen massiv</li>
+      <li class="fragment">Heute sind diese Daten kaum strukturiert — aber sie könnten es sein</li>
+      <li class="fragment">Dieser Standard ist ein <span class="highlight">Vorläufer für eine Spezifikation</span>, auf der Applikationen gebaut werden</li>
+    </ul>
+  </section>
+</section>
+
+<!-- ============================================================ -->
+<!-- 3. BUNDESKANZLEI ALS PARTNER -->
+<!-- ============================================================ -->
+<section>
+  <section>
+    <h3>Zusammenarbeit</h3>
+    <h2>Bundeskanzlei als Partner</h2>
+  </section>
+
+  <section>
+    <h3>Use Case</h3>
+    <h2>Vernehmlassungen digitalisieren</h2>
+    <ul>
+      <li>Die Auswertung von Vernehmlassungsantworten ist heute <span class="highlight">extrem aufwändig</span></li>
+      <li class="fragment">Manueller Abgleich: Welche Akteure haben welche Position zu welchem Artikel?</li>
+      <li class="fragment">Die BK hat ein eigenes Tool entwickelt — und will es anderen zur Verfügung stellen</li>
+      <li class="fragment">Kein Zwang: kantonale Autonomie wird respektiert</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Erweiterung</h3>
+    <h2>Vernehmlassungen als AKN-Extension</h2>
+    <ul>
+      <li>Akoma Ntoso deckt Vernehmlassungen nicht im Detail ab</li>
+      <li class="fragment">Ein separater Berater arbeitet an einer <span class="highlight">Erweiterung</span> des AKN-Standards für diesen Bereich</li>
+      <li class="fragment">Das zeigt: AKN4CH ist ein Fundament, das erweitert werden kann — nicht eine starre Vorgabe</li>
+    </ul>
+  </section>
+</section>
+
+<!-- ============================================================ -->
+<!-- 4. TIMELINE / ROADMAP -->
+<!-- ============================================================ -->
+<section>
+  <section>
+    <h3>Roadmap</h3>
+    <h2>Wo stehen wir — wohin geht es?</h2>
+  </section>
+
+  <section>
+    <h3>Zeitplan</h3>
+    <h2>Nächste Schritte</h2>
+    <div class="timeline">
+      <div class="item fragment">
+        <div class="date">Heute</div>
+        <div class="desc">eCH-Standardisierung: 4 Module, Start mit <span class="highlight">Identifikatoren</span></div>
+      </div>
+      <div class="item fragment">
+        <div class="date">Juni 26</div>
+        <div class="desc">Erste Version <span class="highlight">AKN4CH-Implementation</span> bereit</div>
+      </div>
+      <div class="item fragment">
+        <div class="date">SSK</div>
+        <div class="desc">Präsentation vor der Schweizerischen Staatsschreiberkonferenz</div>
+      </div>
+      <div class="item fragment">
+        <div class="date">Parallel</div>
+        <div class="desc">Erweiterung für Vernehmlassungen in Arbeit</div>
+      </div>
+      <div class="item fragment">
+        <div class="date">Perspektive</div>
+        <div class="desc">EU-Kompatibilität via ELI — AI-Readiness — Urteile als nächster Horizont</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ============================================================ -->
+<!-- 5. CALL TO ACTION -->
+<!-- ============================================================ -->
+<section>
+  <section>
+    <h3>Einladung</h3>
+    <h2>Mitmachen und mitgestalten</h2>
+  </section>
+
+  <section>
+    <h3>Advisory Board</h3>
+    <h2>Diversität, nicht Uniformität</h2>
+    <ul>
+      <li>Wir suchen ein <span class="highlight">Advisory Board</span>, das die Schweizer Rechtstradition repräsentiert</li>
+      <li class="fragment">Wir wissen: Nicht jeder Herausgeber von Rechtsdaten folgt denselben Regeln</li>
+      <li class="fragment">Diese Abweichungen sollen ihren Platz haben — ggf. als eigenes Application Profile neben AKN4CH</li>
+      <li class="fragment">Das Ziel ist Vielfalt mit gemeinsamer Grundlage — nicht ein Korsett</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Staatskanzleien</h3>
+    <h2>Wir brauchen Sie in der eCH-Gruppe</h2>
+    <ul>
+      <li>Ein bis zwei Staatskanzleien, die in der eCH-Fachgruppe mitarbeiten</li>
+      <li class="fragment">Idealerweise: Personen mit Kenntnis der bestehenden Standards — oder der Bereitschaft, sich einzuarbeiten und das Wissen weiterzutragen</li>
+      <li class="fragment">Damit technische Entscheidungen von Anfang an praxisnah getroffen werden</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>An eJustice-Mitglieder</h3>
+    <h2>Das ist der Nachfolger eures Standards</h2>
+    <ul>
+      <li>Die DNA des alten eJustice-Standards lebt in eCH-0296 weiter</li>
+      <li class="fragment">Diesmal auf internationalem Fundament: AKN + ELI</li>
+      <li class="fragment">Bringt eure Erfahrung ein — sie wird gebraucht</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="cta-box">
+      <h2 style="margin-top:0;">eCH ist das Forum</h2>
+      <p>Wer die Daten standardisiert, gestaltet das Ökosystem.</p>
+      <p>Wer die Spezifikation mitschreibt, bestimmt, wie Legal AI in der Schweiz funktioniert.</p>
+      <p style="margin-bottom:0;" class="small">eCH-0296 · AKN4CH · Kontakt: Martin Gajdos</p>
+    </div>
+  </section>
+</section>
+
+<!-- ============================================================ -->
+<!-- CLOSING -->
+<!-- ============================================================ -->
+<section>
+  <section>
+    <h1>Fragen?</h1>
+    <p class="subtitle" style="margin-top: 1em;">Diskussion &amp; Austausch</p>
+  </section>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    slideNumber: 'c/t',
+    transition: 'fade',
+    transitionSpeed: 'fast',
+    center: false,
+    width: 1200,
+    height: 700,
+    margin: 0.08,
+  });
+</script>
+</body>
+</html>

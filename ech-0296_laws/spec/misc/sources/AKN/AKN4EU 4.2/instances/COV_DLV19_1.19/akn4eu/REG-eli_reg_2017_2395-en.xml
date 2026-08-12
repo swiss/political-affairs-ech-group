@@ -1,0 +1,1062 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+   <act name="REG">
+      <meta xmlns:leos="urn:eu:europa:ec:leos" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+         <identification source="~PUBL">
+            <FRBRWork>
+               <FRBRthis value=""/>
+               <FRBRuri value=""/>
+               <FRBRdate date="2999-01-01" name=""/>
+               <FRBRauthor href=""/>
+               <FRBRcountry value="EU"/>
+               <FRBRnumber value="eli/reg/2017/2395"/>
+               <FRBRprescriptive value="true"/>
+            </FRBRWork>
+            <FRBRExpression>
+               <FRBRthis value=""/>
+               <FRBRuri value=""/>
+               <FRBRdate date="2999-01-01" name=""/>
+               <FRBRauthor href=""/>
+               <FRBRlanguage language="en"/>
+            </FRBRExpression>
+            <FRBRManifestation>
+               <FRBRthis value=""/>
+               <FRBRuri value=""/>
+               <FRBRdate date="2999-01-01" name=""/>
+               <FRBRauthor href=""/>
+               <preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+                  <akn4eu:akn4euVersion value="4.2.0.0"/>
+                  <akn4eu:akn4euDocumentation href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/akn4eu"/>
+               </preservation>
+            </FRBRManifestation>
+         </identification>
+         <analysis source="~PUBL">
+            <activeModifications>
+               <textualMod type="insertion">
+                  <source href="~d1065e542"/>
+                  <destination href="http://data.europa.eu/eli/reg/2013/575/art_473" pos="after"/>
+               </textualMod>
+               <textualMod type="insertion">
+                  <source href="~modxyor8725"/>
+                  <destination href="http://data.europa.eu/eli/reg/2013/575/art_493" pos="end"/>
+               </textualMod>
+
+            </activeModifications>
+         </analysis>
+         <references source="~PUBL">
+            <TLCReference name="language" href="http://publications.europa.eu/resource/authority/language/ENG" showAs="en"/>
+            <TLCReference xml:id="legalBasis" name="contentSubject" href="http://eurovoc.europa.eu/5456" showAs="Legal basis"/>
+            <TLCOrganization xml:id="PUBL" href="http://publications.europa.eu/resource/authority/corporate-body/PUBL" showAs="Publications Office"/>
+            <TLCOrganization xml:id="CONSIL" href="http://publications.europa.eu/resource/authority/corporate-body/CONSIL" showAs="Council of the European Union"/>
+            <TLCOrganization xml:id="EP" href="http://publications.europa.eu/resource/authority/corporate-body/EP" showAs="European Parliament"/>
+            <TLCRole xml:id="PRESID" href="http://publications.europa.eu/resource/authority/role/PRESID" showAs="President"/>
+            <TLCLocation xml:id="BEL_BRU" href="http://publications.europa.eu/resource/authority/place/BEL_BRU" showAs="Brussels"/>
+            <TLCReference xml:id="REG" name="docType" href="http://publications.europa.eu/resource/authority/resource-type/REG" showAs="Regulation"/>
+            <TLCConcept xml:id="INP" href="http://publications.europa.eu/resource/authority/subdivision/INP" showAs="introductory part"/>
+         </references>
+      </meta>
+      <preface xml:id="d1e102">
+         <longTitle xml:id="d1e104">
+            <p xml:id="d1e106">
+               <docType xml:id="d1e108" refersTo="~REG">REGULATION <docNumber xml:id="d1e110">(EU) 2017/2395</docNumber> OF THE
+                  EUROPEAN PARLIAMENT AND OF THE COUNCIL</docType> of <date xml:id="d1e113" date="2017-12-12">12
+                  December 2017</date>
+               <docPurpose xml:id="d1e116">amending <ref xml:id="d1e118" href="http://data.europa.eu/eli/reg/2013/575">Regulation
+                     (EU) No 575/2013 as regards transitional arrangements for mitigating the impact
+                     of the introduction of IFRS 9 on own funds and for the large exposures
+                     treatment of certain public sector exposures denominated in the domestic
+                     currency of any Member State</ref></docPurpose></p>
+         </longTitle>
+         <container xml:id="d1e122" name="eeaRelevance">
+            <p xml:id="d1e124">(Text with EEA relevance)</p>
+         </container>
+      </preface>
+      <preamble xml:id="d1e128">
+         <formula xml:id="d1e130" name="actingEntity">
+            <p xml:id="d1e132">THE EUROPEAN PARLIAMENT AND THE COUNCIL OF THE EUROPEAN UNION,</p>
+         </formula>
+         <citations xml:id="d1e135">
+            <citation xml:id="d1e137" refersTo="~legalBasis">
+               <p xml:id="d1e139">Having regard to the Treaty on the Functioning of the European Union, and in
+                  particular Article 114 thereof,</p>
+            </citation>
+            <citation xml:id="d1e142">
+               <p xml:id="d1e144">Having regard to the proposal from the European Commission,</p>
+            </citation>
+            <citation xml:id="d1e147">
+               <p xml:id="d1e149">After transmission of the draft legislative act to the national parliaments,</p>
+            </citation>
+            <citation xml:id="d1e152">
+               <p xml:id="d1e154">Having regard to the opinion of the European Central Bank<authorialNote xml:id="d1e156" marker="1" placement="bottom">
+                     <p xml:id="d1e158">Opinion of 8 November 2017 (not yet published in the Official Journal).</p>
+                  </authorialNote>,</p>
+            </citation>
+            <citation xml:id="d1e163">
+               <p xml:id="d1e165">Having regard to the opinion of the European Economic and Social
+                     Committee<authorialNote xml:id="d1e167" marker="2" placement="bottom">
+                     <p xml:id="d1e169">OJ C 209, 30.6.2017, p. 36.</p>
+                  </authorialNote>,</p>
+            </citation>
+            <citation xml:id="d1e175">
+               <p xml:id="d1e177">Acting in accordance with the ordinary legislative procedure<authorialNote xml:id="d1e179" marker="3" placement="bottom">
+                     <p xml:id="d1e181">Position of the European Parliament of 30 November 2017 (not yet published
+                        in the Official Journal) and decision of the Council of 7 December 2017.</p>
+                  </authorialNote>,</p>
+            </citation>
+         </citations>
+         <recitals xml:id="d1e187">
+            <intro xml:id="d1e189">
+               <p xml:id="d1e191">Whereas:</p>
+            </intro>
+            <recital xml:id="d1e194">
+               <num xml:id="d1e196">(1)</num>
+               <p xml:id="d1e198"> On 24 July 2014, the International Accounting Standards Board published
+                  International Financial Reporting Standard (IFRS) 9 Financial Instruments (IFRS
+                  9). IFRS 9 aims to improve the financial reporting of financial instruments by
+                  addressing concerns that arose in that area during the financial crisis. In
+                  particular, IFRS 9 responds to the G20’s call to move to a more forward-looking
+                  model for the recognition of expected credit losses on financial assets. In
+                  relation to the recognition of expected credit losses on financial assets it
+                  replaces International Accounting Standard (IAS) 39.</p>
+            </recital>
+            <recital xml:id="d1e201">
+               <num xml:id="d1e203">(2)</num>
+               <p xml:id="d1e205"> The Commission adopted IFRS 9 through Commission Regulation (EU)
+                     2016/2067<authorialNote xml:id="d1e207" marker="4" placement="bottom">
+                     <p xml:id="d1e209">Commission Regulation (EU) 2016/2067 of 22 November 2016 amending Regulation
+                        (EC) No 1126/2008 adopting certain international accounting standards in
+                        accordance with Regulation (EC) No 1606/2002 of the European Parliament and
+                        of the Council as regards International Financial Reporting Standard 9 (OJ
+                        L 323, 29.11.2016, p. 1).</p>
+                  </authorialNote>. In accordance with that Regulation, credit institutions and
+                  investment firms (‘institutions’) that use IFRS to prepare their financial
+                  statements are required to apply IFRS 9 as of the starting date of their first
+                  financial year starting on or after 1 January 2018.</p>
+            </recital>
+            <recital xml:id="d1e214">
+               <num xml:id="d1e216">(3)</num>
+               <p xml:id="d1e218"> The application of IFRS 9 may lead to a sudden significant increase in expected
+                  credit loss provisions and consequently to a sudden decrease in institutions’
+                  Common Equity Tier 1 capital. While the Basel Committee on Banking Supervision is
+                  currently considering the longer-term regulatory treatment of expected credit loss
+                  provisions, transitional arrangements should be introduced in Regulation (EU) No
+                  575/2013 of the European Parliament and of the Council<authorialNote xml:id="d1e220" marker="5" placement="bottom">
+                     <p xml:id="d1e222">Regulation (EU) No 575/2013 of the European Parliament and of the Council of
+                        26 June 2013 on prudential requirements for credit institutions and
+                        investment firms and amending Regulation (EU) No 648/2012 (OJ L 176,
+                        27.6.2013, p. 1).</p>
+                  </authorialNote> to mitigate that potentially significant negative impact on
+                  Common Equity Tier 1 capital arising from expected credit loss accounting.</p>
+            </recital>
+            <recital xml:id="d1e227">
+               <num xml:id="d1e229">(4)</num>
+               <p xml:id="d1e231"> In its resolution of 6 October 2016 on International Financial Reporting
+                  Standards: IFRS 9<authorialNote xml:id="d1e233" marker="6" placement="bottom">
+                     <p xml:id="d1e235">Not yet published in the Official Journal.</p>
+                  </authorialNote>, the European Parliament called for a progressive phase-in regime
+                  that would mitigate the impact of the new impairment model of IFRS 9.</p>
+            </recital>
+            <recital xml:id="d1e241">
+               <num xml:id="d1e243">(5)</num>
+               <p xml:id="d1e245"> Where an institution’s opening balance sheet on the day that it first applies
+                  IFRS 9 reflects a decrease in Common Equity Tier 1 capital as a result of
+                  increased expected credit loss provisions, including the loss allowance for
+                  lifetime expected credit losses for financial assets that are credit-impaired, as
+                  defined in Appendix A to IFRS 9 as set out in the Annex to Commission Regulation
+                  (EC) No 1126/2008<authorialNote xml:id="d1e247" marker="7" placement="bottom">
+                     <p xml:id="d1e249">Commission Regulation (EC) No 1126/2008 of 3 November 2008 adopting certain
+                        international accounting standards in accordance with Regulation (EC) No
+                        1606/2002 of the European Parliament and of the Council (OJ L 320,
+                        29.11.2008, p. 1).</p>
+                  </authorialNote> (‘Annex relating to IFRS 9’), compared to the closing balance
+                  sheet on the previous day, the institution should be allowed to include in its
+                  Common Equity Tier 1 capital a portion of the increased expected credit loss
+                  provisions for a transitional period. That transitional period should have a
+                  maximum duration of 5 years and should start in 2018. The portion of expected
+                  credit loss provisions that can be included in Common Equity Tier 1 capital should
+                  decrease over time down to zero to ensure the full implementation of IFRS 9 on the
+                  day immediately after the end of the transitional period. The impact of the
+                  expected credit loss provisions on Common Equity Tier 1 capital should not be
+                  fully neutralised during the transitional period.</p>
+            </recital>
+            <recital xml:id="d1e254">
+               <num xml:id="d1e256">(6)</num>
+               <p xml:id="d1e258"> Institutions should decide whether to apply those transitional arrangements and
+                  inform the competent authority accordingly. During the transitional period, an
+                  institution should have the possibility to reverse once its initial decision,
+                  subject to the prior permission of the competent authority which should ensure
+                  that such decision is not motivated by considerations of regulatory arbitrage.</p>
+            </recital>
+            <recital xml:id="d1e261">
+               <num xml:id="d1e263">(7)</num>
+               <p xml:id="d1e265"> As expected credit loss provisions incurred after the day that an institution
+                  first applies IFRS 9 could rise unexpectedly due to a worsening macroeconomic
+                  outlook, institutions should be granted additional relief in such cases.</p>
+            </recital>
+            <recital xml:id="d1e268">
+               <num xml:id="d1e270">(8)</num>
+               <p xml:id="d1e272"> Institutions that decide to apply transitional arrangements should be required to
+                  adjust the calculation of regulatory items which are directly affected by expected
+                  credit loss provisions to ensure that they do not receive inappropriate capital
+                  relief. For example, the specific credit risk adjustments by which the exposure
+                  value is reduced under the Standardised Approach for credit risk should be reduced
+                  by a factor which has the effect of increasing the exposure value. This would
+                  ensure that an institution would not benefit from both an increase in its Common
+                  Equity Tier 1 capital due to transitional arrangements as well as a reduced
+                  exposure value.</p>
+            </recital>
+            <recital xml:id="d1e275">
+               <num xml:id="d1e277">(9)</num>
+               <p xml:id="d1e279"> Institutions that decide to apply the IFRS 9 transitional arrangements specified
+                  in this Regulation should publicly disclose their own funds, capital ratios and
+                  leverage ratios both with and without the application of those arrangements in
+                  order to enable the public to determine the impact of those arrangements.</p>
+            </recital>
+            <recital xml:id="d1e282">
+               <num xml:id="d1e284">(10)</num>
+               <p xml:id="d1e286"> It is also appropriate to provide for transitional arrangements for the exemption
+                  from the large exposure limit available for exposures to certain public sector
+                  debt of Member States denominated in the domestic currency of any Member State.
+                  The transitional period should have a duration of 3 years starting from 1 January
+                  2018 for exposures of this type incurred on or after 12 December 2017, whilst
+                  exposures of this type incurred before that date should be grandfathered and
+                  should continue to benefit from the large exposures exemption.</p>
+            </recital>
+            <recital xml:id="d1e290">
+               <num xml:id="d1e292">(11)</num>
+               <p xml:id="d1e294"> In order to enable the transitional arrangements provided for in this Regulation
+                  to be applied from 1 January 2018, this Regulation should enter into force on the
+                  day following that of its publication in the Official Journal of the European
+                  Union.</p>
+            </recital>
+            <recital xml:id="d1e297">
+               <num xml:id="d1e299">(12)</num>
+               <p xml:id="d1e301"> Regulation (EU) No 575/2013 should therefore be amended accordingly,</p>
+            </recital>
+         </recitals>
+         <formula xml:id="d1e305" name="enactingFormula">
+            <p xml:id="d1e307">HAVE ADOPTED THIS REGULATION:</p>
+         </formula>
+      </preamble>
+      <body xml:id="d1e311">
+         <article xml:id="d1e313">
+            <num xml:id="d1e315">Article 1 </num>
+            <paragraph xml:id="d1e317">
+               <list xml:id="d1e319">
+                  <subparagraph xml:id="d1e321" refersTo="~INP">
+                     <content xml:id="d1e323">
+                        <p xml:id="d1e325"><affectedDocument xml:id="d1e326" href="http://data.europa.eu/eli/reg/2013/575">Regulation (EU) No 575/2013</affectedDocument> is amended as
+                           follows:</p>
+                     </content>
+                  </subparagraph>
+                  <point xml:id="d1e332">
+                     <num xml:id="d1e334">(1)</num>
+                     <content xml:id="d1e336">
+                        <p xml:id="d1e338"><mod xml:id="d1065e542">the following Article is inserted:
+                                 <quotedStructure xml:id="d1e341" startQuote="‘" endQuote="’">
+                                 <article xml:id="d1e343">
+                                    <num xml:id="d1e345">Article 473a</num>
+                                    <heading xml:id="d1e347">Introduction of IFRS 9</heading>
+                                    <paragraph xml:id="d1e349">
+                                       <num xml:id="d1e351">1.</num>
+                                       <list xml:id="d1e353">
+                                          <subparagraph xml:id="d1e355" refersTo="~INP">
+                                             <content xml:id="d1e357">
+                                                <p xml:id="d1e359">By way of derogation from Article 50 and until
+                                                  the end of the transitional period set out in
+                                                  paragraph 6 of this Article, the following may
+                                                  include in their Common Equity Tier 1 capital the
+                                                  amount calculated in accordance with this
+                                                  paragraph:</p>
+                                             </content>
+                                          </subparagraph>
+                                          <point xml:id="d1e363">
+                                             <num xml:id="d1e365">(a)</num>
+                                             <content xml:id="d1e367">
+                                                <p xml:id="d1e369">institutions that prepare their accounts in
+                                                  conformity with the international accounting
+                                                  standards adopted in accordance with the procedure
+                                                  laid down in Article 6(2) of Regulation (EC) No
+                                                  1606/2002;</p>
+                                             </content>
+                                          </point>
+                                          <point xml:id="d1e373">
+                                             <num xml:id="d1e375">(b)</num>
+                                             <content xml:id="d1e377">
+                                                <p xml:id="d1e379">institutions that, pursuant to Article 24(2) of
+                                                  this Regulation, effect the valuation of assets
+                                                  and off-balance sheet items and the determination
+                                                  of own funds in conformity with the international
+                                                  accounting standards adopted in accordance with
+                                                  the procedure laid down in Article 6(2) of
+                                                  Regulation (EC) No 1606/2002;</p>
+                                             </content>
+                                          </point>
+                                          <point xml:id="d1e383">
+                                             <num xml:id="d1e385">(c)</num>
+                                             <content xml:id="d1e387">
+                                                <p xml:id="d1e389">institutions that effect the valuation of assets
+                                                  and off-balance sheet items in conformity with
+                                                  accounting standards under Directive 86/635/EEC
+                                                  and that use an expected credit loss model that is
+                                                  the same as the one used in international
+                                                  accounting standards adopted in accordance with
+                                                  the procedure laid down in Article 6(2) of
+                                                  Regulation (EC) No 1606/2002.</p>
+                                             </content>
+                                          </point>
+                                       </list>
+                                       <list xml:id="d1e394">
+                                          <subparagraph xml:id="d1e396" refersTo="~INP">
+                                             <content xml:id="d1e398">
+                                                <p xml:id="d1e400">The amount referred to in the first subparagraph
+                                                  shall be calculated as the sum of the
+                                                  following:</p>
+                                             </content>
+                                          </subparagraph>
+                                          <point xml:id="d1e404">
+                                             <num xml:id="d1e406">(a)</num>
+                                             <hcontainer xml:id="d1e408" name="BLOCK_SFR">
+                                                <subparagraph xml:id="d1e410" refersTo="~INP">
+                                                  <content xml:id="d1e412">
+                                                  <p xml:id="d1e414">for exposures which are subject to risk
+                                                  weighting in accordance with Chapter 2 of Title II
+                                                  of Part Three, the amount (AB<sub xml:id="d1e416">SA</sub>)
+                                                  calculated in accordance with the following
+                                                  formula:</p>
+                                                  </content>
+                                                </subparagraph>
+                                                <hcontainer xml:id="d1e421" name="SFR">
+                                                  <content xml:id="d1e423">
+                                                  <p xml:id="d1e425"><img xml:id="d1e426" src="RSC_MATHML-clfcn8jjl00042a6chtwprxwb-en.mathml"/></p>
+                                                  </content>
+                                                </hcontainer>
+                                                <hcontainer xml:id="d1e430" name="LGD">
+                                                   <subparagraph xml:id="d1e432" refersTo="~INP">
+                                                      <content xml:id="d1e434">
+                                                         <p xml:id="d1e436">where:</p>
+                                                      </content>
+                                                   </subparagraph>
+                                                   <hcontainer xml:id="d1e440" name="LLG">
+                                                      <content xml:id="d1e442">
+                                                         <p xml:id="d1e444">A<sub xml:id="d1e446">2,SA</sub> = the amount calculated in
+                                                            accordance with paragraph 2;</p>
+                                                      </content>
+                                                   </hcontainer>
+                                                   <hcontainer xml:id="d1e451" name="LLG">
+                                                      <content xml:id="d1e453">
+                                                         <p xml:id="d1e455">A<sub xml:id="d1e457">4,SA</sub> = the amount calculated in
+                                                            accordance with paragraph 4 based on the amounts
+                                                            calculated in accordance with paragraph 3;</p>
+                                                      </content>
+                                                   </hcontainer>
+                                                   <hcontainer xml:id="d1e462" name="LLG">
+                                                      <content xml:id="d1e464">
+                                                         <p xml:id="d1e466">f = the applicable factor laid down in
+                                                            paragraph 6;</p>
+                                                      </content>
+                                                   </hcontainer>
+                                                   <hcontainer xml:id="d1e470" name="LLG">
+                                                      <content xml:id="d1e472">
+                                                         <p xml:id="d1e474">t = increase of Common Equity Tier 1 capital
+                                                            that is due to tax deductibility of the amounts
+                                                            A<sub xml:id="d1e476">2,SA</sub> and A<sub xml:id="d1e478">4,SA</sub>;</p>
+                                                      </content>
+                                                   </hcontainer>
+                                                </hcontainer>
+                                             </hcontainer>
+                                          </point>
+                                          <point xml:id="d1e486">
+                                             <num xml:id="d1e488">(b)</num>
+                                             <hcontainer xml:id="d1e490" name="BLOCK_SFR">
+                                                <subparagraph xml:id="d1e492" refersTo="~INP">
+                                                  <content xml:id="d1e494">
+                                                  <p xml:id="d1e496">for exposures which are subject to risk
+                                                  weighting in accordance with Chapter 3 of Title II
+                                                  of Part Three, the amount (AB<sub xml:id="d1e498">IRB</sub>)
+                                                  calculated in accordance with the following
+                                                  formula:</p>
+                                                  </content>
+                                                </subparagraph>
+                                                <hcontainer xml:id="d1e503" name="SFR">
+                                                  <content xml:id="d1e505">
+                                                  <p xml:id="d1e507"><img xml:id="d1e508" src="RSC_MATHML-clfcn8jjl00072a6c6jxckjff-en.mathml"/></p>
+                                                  </content>
+                                                </hcontainer>
+                                                <hcontainer xml:id="d1e512" name="LGD">
+                                                   <subparagraph xml:id="d1e514" refersTo="~INP">
+                                                      <content xml:id="d1e516">
+                                                         <p xml:id="d1e518">where: </p>
+                                                      </content>
+                                                   </subparagraph>
+                                                   <hcontainer xml:id="d1e522" name="LLG">
+                                                      <content xml:id="d1e524">
+                                                         <p xml:id="d1e526">A<sub xml:id="d1e528">2,IRB</sub> = the amount calculated in
+                                                            accordance with paragraph 2 adjusted in accordance
+                                                            with point (a) of paragraph 5;</p>
+                                                      </content>
+                                                   </hcontainer>
+                                                   <hcontainer xml:id="d1e533" name="LLG">
+                                                      <content xml:id="d1e535">
+                                                         <p xml:id="d1e537">A<sub xml:id="d1e539">4,IRB</sub> = the amount calculated in
+                                                            accordance with paragraph 4 based on the amounts
+                                                            calculated in accordance with paragraph 3 which
+                                                            are adjusted in accordance with points (b) and (c)
+                                                            of paragraph 5;</p>
+                                                      </content>
+                                                   </hcontainer>
+                                                   <hcontainer xml:id="d1e544" name="LLG">
+                                                      <content xml:id="d1e546">
+                                                         <p xml:id="d1e548">f = the applicable factor laid down in
+                                                            paragraph 6;</p>
+                                                      </content>
+                                                   </hcontainer>
+                                                   <hcontainer xml:id="d1e552" name="LLG">
+                                                      <content xml:id="d1e554">
+                                                         <p xml:id="d1e556">t = increase of Common Equity Tier 1 capital
+                                                            that is due to tax deductibility of the amounts
+                                                            A<sub xml:id="d1e558">2,IRB</sub> and A<sub xml:id="d1e560">4,IRB</sub>.</p>
+                                                      </content>
+                                                   </hcontainer>
+                                                </hcontainer>
+                                             </hcontainer>
+                                          </point>
+                                       </list>
+                                    </paragraph>
+                                    <paragraph xml:id="d1e570">
+                                       <num xml:id="d1e572">2.</num>
+                                       <list xml:id="d1e574">
+                                          <subparagraph xml:id="d1e576" refersTo="~INP">
+                                             <content xml:id="d1e578">
+                                                <p xml:id="d1e580">Institutions shall calculate the amounts
+                                                  A<sub xml:id="d1e582">2,SA</sub> and A<sub xml:id="d1e584">2,IRB</sub> referred
+                                                  to, respectively, in points (a) and (b) of the
+                                                  second subparagraph of paragraph 1 as the greater
+                                                  of the amounts referred to in points (a) and (b)
+                                                  of this paragraph separately for their exposures
+                                                  which are subject to risk weighting in accordance
+                                                  with Chapter 2 of Title II of Part Three and for
+                                                  their exposures which are subject to risk
+                                                  weighting in accordance with Chapter 3 of Title II
+                                                  of Part Three:</p>
+                                             </content>
+                                          </subparagraph>
+                                          <point xml:id="d1e589">
+                                             <num xml:id="d1e591">(a)</num>
+                                             <content xml:id="d1e593">
+                                                <p xml:id="d1e595">zero;</p>
+                                             </content>
+                                          </point>
+                                          <point xml:id="d1e599">
+                                             <num xml:id="d1e601">(b)</num>
+                                             <list xml:id="d1e603">
+                                                <subparagraph xml:id="d1e605" refersTo="~INP">
+                                                  <content xml:id="d1e607">
+                                                  <p xml:id="d1e609">the amount calculated in accordance with point
+                                                  (i) reduced by the amount calculated in accordance
+                                                  with point (ii):</p>
+                                                  </content>
+                                                </subparagraph>
+                                                <point xml:id="d1e613">
+                                                  <num xml:id="d1e615">(i)</num>
+                                                  <content xml:id="d1e617">
+                                                  <p xml:id="d1e619">the sum of the 12-month expected credit losses
+                                                  determined in accordance with paragraph 5.5.5 of
+                                                  IFRS 9 as set out in the Annex to Commission
+                                                  Regulation (EC) No 1126/2008 (“Annex relating to
+                                                  IFRS 9”) and the amount of the loss allowance for
+                                                  lifetime expected credit losses determined in
+                                                  accordance with paragraph 5.5.3 of the Annex
+                                                  relating to IFRS 9 as of 1 January 2018 or on the
+                                                  date of initial application of IFRS 9;</p>
+                                                  </content>
+                                                </point>
+                                                <point xml:id="d1e623">
+                                                  <num xml:id="d1e625">(ii)</num>
+                                                  <content xml:id="d1e627">
+                                                  <p xml:id="d1e629">the total amount of impairment losses on
+                                                  financial assets classified as loans and
+                                                  receivables, held-to-maturity investments and
+                                                  available-for-sale financial assets, as defined in
+                                                  paragraph 9 of IAS 39, other than equity
+                                                  instruments and units or shares in collective
+                                                  investment undertakings, determined in accordance
+                                                  with paragraphs 63, 64, 65, 67, 68 and 70 of IAS
+                                                  39 as set out in the Annex to Regulation (EC) No
+                                                  1126/2008 as of 31 December 2017 or the day before
+                                                  the date of initial application of IFRS 9.</p>
+                                                  </content>
+                                                </point>
+                                             </list>
+                                          </point>
+                                       </list>
+                                    </paragraph>
+                                    <paragraph xml:id="d1e637">
+                                       <num xml:id="d1e639">3.</num>
+                                       <list xml:id="d1e641">
+                                          <subparagraph xml:id="d1e643" refersTo="~INP">
+                                             <content xml:id="d1e645">
+                                                <p xml:id="d1e647">Institutions shall calculate the amount by which
+                                                  the amount referred to in point (a) exceeds the
+                                                  amount referred to in point (b) separately for
+                                                  their exposures which are subject to risk
+                                                  weighting in accordance with Chapter 2 of Title II
+                                                  of Part Three and for their exposures which are
+                                                  subject to risk weighting in accordance with
+                                                  Chapter 3 of Title II of Part Three:</p>
+                                             </content>
+                                          </subparagraph>
+                                          <point xml:id="d1e651">
+                                             <num xml:id="d1e653">(a)</num>
+                                             <content xml:id="d1e655">
+                                                <p xml:id="d1e657">the sum of the 12-month expected credit losses
+                                                  determined in accordance with paragraph 5.5.5 of
+                                                  the Annex relating to IFRS 9 and the amount of the
+                                                  loss allowance for lifetime expected credit losses
+                                                  determined in accordance with paragraph 5.5.3 of
+                                                  the Annex relating to IFRS 9 excluding the loss
+                                                  allowance for lifetime expected credit losses for
+                                                  financial assets that are credit-impaired as
+                                                  defined in Appendix A to the Annex relating to
+                                                  IFRS 9 as of the reporting date;</p>
+                                             </content>
+                                          </point>
+                                          <point xml:id="d1e661">
+                                             <num xml:id="d1e663">(b)</num>
+                                             <content xml:id="d1e665">
+                                                <p xml:id="d1e667">the sum of the 12-month expected credit losses
+                                                  determined in accordance with paragraph 5.5.5 of
+                                                  the Annex relating to IFRS 9 and the amount of the
+                                                  loss allowance for lifetime expected credit losses
+                                                  determined in accordance with paragraph 5.5.3 of
+                                                  the Annex relating to IFRS 9 excluding the loss
+                                                  allowance for lifetime expected credit losses for
+                                                  financial assets that are credit-impaired as
+                                                  defined in Appendix A to the Annex relating to
+                                                  IFRS 9 as of 1 January 2018 or on the date of
+                                                  initial application of IFRS 9.</p>
+                                             </content>
+                                          </point>
+                                       </list>
+                                    </paragraph>
+                                    <paragraph xml:id="d1e674">
+                                       <num xml:id="d1e676">4.</num>
+                                       <subparagraph xml:id="d1e678">
+                                          <content xml:id="d1e680">
+                                             <p xml:id="d1e682">For exposures which are subject to risk weighting in
+                                                accordance with Chapter 2 of Title II of Part Three,
+                                                where the amount specified in accordance with point
+                                                (a) of paragraph 3 exceeds the amount specified in
+                                                point (b) of paragraph 3, institutions shall set
+                                                  A<sub xml:id="d1e684">4,SA</sub> as equal to the difference
+                                                between those amounts, otherwise they shall set
+                                                  A<sub xml:id="d1e686">4,SA</sub> as equal to zero.</p>
+                                          </content>
+                                       </subparagraph>
+                                       <subparagraph xml:id="d1e691">
+                                          <content xml:id="d1e693">
+                                             <p xml:id="d1e695">For exposures which are subject to risk weighting in
+                                                accordance with Chapter 3 of Title II of Part Three,
+                                                where the amount specified in accordance with point
+                                                (a) of paragraph 3, after applying point (b) of
+                                                paragraph 5, exceeds the amount for these exposures
+                                                as specified in point (b) of paragraph 3, after
+                                                applying point (c) of paragraph 5, institutions
+                                                shall set A<sub xml:id="d1e697">4,IRB </sub>as equal to the
+                                                difference between those amounts, otherwise they
+                                                shall set A<sub xml:id="d1e699">4,IRB</sub> as equal to zero.</p>
+                                          </content>
+                                       </subparagraph>
+                                    </paragraph>
+                                    <paragraph xml:id="d1e705">
+                                       <num xml:id="d1e707">5.</num>
+                                       <list xml:id="d1e709">
+                                          <subparagraph xml:id="d1e711" refersTo="~INP">
+                                             <content xml:id="d1e713">
+                                                <p xml:id="d1e715">For exposures which are subject to risk weighting
+                                                  in accordance with Chapter 3 of Title II of Part
+                                                  Three, institutions shall apply paragraphs 2 to 4
+                                                  as follows:</p>
+                                             </content>
+                                          </subparagraph>
+                                          <point xml:id="d1e719">
+                                             <num xml:id="d1e721">(a)</num>
+                                             <content xml:id="d1e723">
+                                                <p xml:id="d1e725">for the calculation of A<sub xml:id="d1e727">2,IRB</sub>
+                                                  institutions shall reduce each of the amounts
+                                                  calculated in accordance with points (b)(i) and
+                                                  (ii) of paragraph 2 of this Article by the sum of
+                                                  expected loss amounts calculated in accordance
+                                                  with Article 158(5), (6) and (10) as of 31
+                                                  December 2017 or the day before the date of
+                                                  initial application of IFRS 9. Where for the
+                                                  amount referred to in point (b)(i) of paragraph 2
+                                                  of this Article the calculation results in a
+                                                  negative number, the institution shall set the
+                                                  value of that amount as equal to zero. Where for
+                                                  the amount referred to in point (b)(ii) of
+                                                  paragraph 2 of this Article the calculation
+                                                  results in a negative number, the institution
+                                                  shall set the value of that amount as equal to
+                                                  zero;</p>
+                                             </content>
+                                          </point>
+                                          <point xml:id="d1e732">
+                                             <num xml:id="d1e734">(b)</num>
+                                             <content xml:id="d1e736">
+                                                <p xml:id="d1e738">institutions shall replace the amount calculated
+                                                  in accordance with point (a) of paragraph 3 of
+                                                  this Article by the sum of the 12-month expected
+                                                  credit losses determined in accordance with
+                                                  paragraph 5.5.5 of the Annex relating to IFRS 9
+                                                  and the amount of the loss allowance for lifetime
+                                                  expected credit losses determined in accordance
+                                                  with paragraph 5.5.3 of the Annex relating to IFRS
+                                                  9 excluding the loss allowance for lifetime
+                                                  expected credit losses for financial assets that
+                                                  are credit-impaired, as defined in Appendix A to
+                                                  the Annex relating to IFRS 9, reduced by the sum
+                                                  of related expected loss amounts for the same
+                                                  exposures calculated in accordance with Article
+                                                  158(5), (6) and (10) as of the reporting date.
+                                                  Where the calculation results in a negative
+                                                  number, the institution shall set the value of the
+                                                  amount referred to in point (a) of paragraph 3 of
+                                                  this Article as equal to zero;</p>
+                                             </content>
+                                          </point>
+                                          <point xml:id="d1e742">
+                                             <num xml:id="d1e744">(c)</num>
+                                             <content xml:id="d1e746">
+                                                <p xml:id="d1e748">institutions shall replace the amount calculated
+                                                  in accordance with point (b) of paragraph 3 of
+                                                  this Article by the sum of the 12-month expected
+                                                  credit losses determined in accordance with
+                                                  paragraph 5.5.5 of the Annex relating to IFRS 9
+                                                  and the amount of the loss allowance for lifetime
+                                                  expected credit losses determined in accordance
+                                                  with paragraph 5.5.3 of the Annex relating to IFRS
+                                                  9 excluding the loss allowance for lifetime
+                                                  expected credit losses for financial assets that
+                                                  are credit-impaired, as defined in Appendix A to
+                                                  the Annex relating to IFRS 9, as of 1 January 2018
+                                                  or on the date of initial application of IFRS 9,
+                                                  reduced by the sum of related expected loss
+                                                  amounts for the same exposures calculated in
+                                                  accordance with Article 158(5), (6) and (10).
+                                                  Where the calculation results in a negative
+                                                  number, the institution shall set the value of the
+                                                  amount referred to in point (b) of paragraph 3 of
+                                                  this Article as equal to zero.</p>
+                                             </content>
+                                          </point>
+                                       </list>
+                                    </paragraph>
+                                    <paragraph xml:id="d1e754">
+                                       <num xml:id="d1e756">6.</num>
+                                       <list xml:id="d1e758">
+                                          <subparagraph xml:id="d1e760" refersTo="~INP">
+                                             <content xml:id="d1e762">
+                                                <p xml:id="d1e764">Institutions shall apply the following factors to
+                                                  calculate the amounts AB<sub xml:id="d1e766">SA</sub> and
+                                                  AB<sub xml:id="d1e768">IRB</sub> referred to in points (a) and (b)
+                                                  of the second subparagraph of paragraph 1
+                                                  respectively:</p>
+                                             </content>
+                                          </subparagraph>
+                                          <point xml:id="d1e773">
+                                             <num xml:id="d1e775">(a)</num>
+                                             <content xml:id="d1e777">
+                                                <p xml:id="d1e779">0,95 during the period from 1 January 2018 to 31
+                                                  December 2018;</p>
+                                             </content>
+                                          </point>
+                                          <point xml:id="d1e783">
+                                             <num xml:id="d1e785">(b)</num>
+                                             <content xml:id="d1e787">
+                                                <p xml:id="d1e789">0,85 during the period from 1 January 2019 to 31
+                                                  December 2019;</p>
+                                             </content>
+                                          </point>
+                                          <point xml:id="d1e793">
+                                             <num xml:id="d1e795">(c)</num>
+                                             <content xml:id="d1e797">
+                                                <p xml:id="d1e799">0,7 during the period from 1 January 2020 to 31
+                                                  December 2020;</p>
+                                             </content>
+                                          </point>
+                                          <point xml:id="d1e803">
+                                             <num xml:id="d1e805">(d)</num>
+                                             <content xml:id="d1e807">
+                                                <p xml:id="d1e809">0,5 during the period from 1 January 2021 to 31
+                                                  December 2021;</p>
+                                             </content>
+                                          </point>
+                                          <point xml:id="d1e814">
+                                             <num xml:id="d1e816">(e)</num>
+                                             <content xml:id="d1e818">
+                                                <p xml:id="d1e820">0,25 during the period from 1 January 2022 to 31
+                                                  December 2022.</p>
+                                             </content>
+                                          </point>
+                                       </list>
+                                       <subparagraph xml:id="d1e825">
+                                          <content xml:id="d1e827">
+                                             <p xml:id="d1e829">Institutions whose financial year commences after 1
+                                                January 2018 but before 1 January 2019 shall adjust
+                                                the dates in points (a) to (e) of the first
+                                                subparagraph so that they correspond to their
+                                                financial year, shall report the adjusted dates to
+                                                their competent authority and shall publicly
+                                                disclose them.</p>
+                                          </content>
+                                       </subparagraph>
+                                       <subparagraph xml:id="d1e833">
+                                          <content xml:id="d1e835">
+                                             <p xml:id="d1e837">Institutions which start to apply accounting
+                                                standards as referred to in paragraph 1 on or after
+                                                1 January 2019 shall apply the relevant factors in
+                                                accordance with points (b) to (e) of the first
+                                                subparagraph starting with the factor corresponding
+                                                to the year of the first application of those
+                                                accounting standards.</p>
+                                          </content>
+                                       </subparagraph>
+                                    </paragraph>
+                                    <paragraph xml:id="d1e842">
+                                       <num xml:id="d1e844">7.</num>
+                                       <list xml:id="d1e846">
+                                          <subparagraph xml:id="d1e848" refersTo="~INP">
+                                             <content xml:id="d1e850">
+                                                <p xml:id="d1e852">Where an institution includes in its Common
+                                                  Equity Tier 1 capital an amount in accordance with
+                                                  paragraph 1 of this Article, it shall recalculate
+                                                  all requirements laid down in this Regulation and
+                                                  in Directive 2013/36/EU that use any of the
+                                                  following items by not taking into account the
+                                                  effects that the expected credit loss provisions
+                                                  that it included in its Common Equity Tier 1
+                                                  capital have on those items:</p>
+                                             </content>
+                                          </subparagraph>
+                                          <point xml:id="d1e856">
+                                             <num xml:id="d1e858">(a)</num>
+                                             <content xml:id="d1e860">
+                                                <p xml:id="d1e862">the amount of deferred tax assets that is
+                                                  deducted from Common Equity Tier 1 capital in
+                                                  accordance with point (c) of Article 36(1) or risk
+                                                  weighted in accordance with Article 48(4);</p>
+                                             </content>
+                                          </point>
+                                          <point xml:id="d1e866">
+                                             <num xml:id="d1e868">(b)</num>
+                                             <hcontainer xml:id="d1e870" name="BLOCK_SFR">
+                                                <subparagraph xml:id="d1e872" refersTo="~INP">
+                                                  <content xml:id="d1e874">
+                                                  <p xml:id="d1e876">the exposure value as determined in accordance
+                                                  with Article 111(1) whereby the specific credit
+                                                  risk adjustments by which the exposure value shall
+                                                  be reduced shall be multiplied by the following
+                                                  scaling factor (sf):</p>
+                                                  </content>
+                                                </subparagraph>
+                                                <hcontainer xml:id="d1e880" name="SFR">
+                                                  <content xml:id="d1e882">
+                                                     <p xml:id="d1e884"><img xml:id="d1e885" src="RSC_MATHML-clfcn8jjl000a2a6cpn7cens5-en.mathml"/></p>
+                                                  </content>
+                                                </hcontainer>
+                                                <hcontainer xml:id="d1e889" name="LGD">
+                                                   <subparagraph xml:id="d1e891" refersTo="~INP">
+                                                      <content xml:id="d1e893">
+                                                         <p xml:id="d1e895">where:</p>
+                                                      </content>
+                                                   </subparagraph>
+                                                   <hcontainer xml:id="d1e899" name="LLG">
+                                                      <content xml:id="d1e901">
+                                                         <p xml:id="d1e903">AB<sub xml:id="d1e905">SA</sub> = the amount calculated in
+                                                            accordance with point (a) of the second
+                                                            subparagraph of paragraph 1;</p>
+                                                      </content>
+                                                   </hcontainer>
+                                                   <hcontainer xml:id="d1e910" name="LLG">
+                                                      <content xml:id="d1e912">
+                                                         <p xml:id="d1e914">RA<sub xml:id="d1e916">SA</sub> = the total amount of specific
+                                                            credit risk adjustments;</p>
+                                                      </content>
+                                                   </hcontainer>
+                                                </hcontainer>
+                                             </hcontainer>
+                                          </point>
+                                          <point xml:id="d1e924">
+                                             <num xml:id="d1e926">(c)</num>
+                                             <content xml:id="d1e928">
+                                                <p xml:id="d1e930">the amount of Tier 2 items calculated in
+                                                  accordance with point (d) of Article 62.</p>
+                                             </content>
+                                          </point>
+                                       </list>
+                                    </paragraph>
+                                    <paragraph xml:id="d1e936">
+                                       <num xml:id="d1e938">8.</num>
+                                       <content xml:id="d1e940">
+                                          <p xml:id="d1e942">During the period set out in paragraph 6 of this
+                                             Article, in addition to disclosing the information
+                                             required in Part Eight, institutions that have decided
+                                             to apply the transitional arrangements set out in this
+                                             Article shall disclose the amounts of own funds, Common
+                                             Equity Tier 1 capital and Tier 1 capital, the Common
+                                             Equity Tier 1 capital ratio, the Tier 1 capital ratio,
+                                             the total capital ratio and the leverage ratio they
+                                             would have in case they were not to apply this
+                                             Article.</p>
+                                       </content>
+                                    </paragraph>
+                                    <paragraph xml:id="d1e946">
+                                       <num xml:id="d1e948">9.</num>
+                                       <subparagraph xml:id="d1e950">
+                                          <content xml:id="d1e952">
+                                             <p xml:id="d1e954">An institution shall decide whether to apply the
+                                                arrangements set out in this Article during the
+                                                transitional period and shall inform the competent
+                                                authority of its decision by 1 February 2018. Where
+                                                an institution has received the prior permission of
+                                                the competent authority, it may reverse once, during
+                                                the transitional period, its initial decision.
+                                                Institutions shall publicly disclose any decision
+                                                taken in accordance with this subparagraph.</p>
+                                          </content>
+                                       </subparagraph>
+                                       <subparagraph xml:id="d1e958">
+                                          <content xml:id="d1e960">
+                                             <p xml:id="d1e962">An institution that has decided to apply the
+                                                transitional arrangements set out in this Article
+                                                may decide not to apply paragraph 4 in which case it
+                                                shall inform the competent authority of its decision
+                                                by 1 February 2018. In such a case, the institution
+                                                shall set the amount A<sub xml:id="d1e964">4</sub> referred to in
+                                                paragraph 1 as equal to zero. Where an institution
+                                                has received the prior permission of the competent
+                                                authority, it may reverse once, during the
+                                                transitional period, its initial decision.
+                                                Institutions shall publicly disclose any decision
+                                                taken in accordance with this subparagraph.</p>
+                                          </content>
+                                       </subparagraph>
+                                    </paragraph>
+                                    <paragraph xml:id="d1e971">
+                                       <num xml:id="d1e973">10.</num>
+                                       <content xml:id="d1e975">
+                                          <p xml:id="d1e977">In accordance with Article 16 of Regulation (EU) No
+                                             1093/2010, the EBA shall issue guidelines by 30 June
+                                             2018 on the disclosure requirements laid down in this
+                                             Article.</p>
+                                       </content>
+                                    </paragraph>
+                                 </article>
+                              </quotedStructure><inline xml:id="d1e982" name="punctuationMod">;</inline></mod></p>
+                     </content>
+                  </point>
+                  <point xml:id="d1e987">
+                     <num xml:id="d1e989">(2)</num>
+                     <content xml:id="d1e991">
+                        <p xml:id="d1e993"><mod xml:id="modxyor8725">in Article 493, the following paragraphs are
+                                 added:<quotedStructure xml:id="d1e996" startQuote="‘" endQuote="’">
+                                 <paragraph xml:id="d1e998">
+                                    <num xml:id="d1e1000">4.</num>
+                                    <list xml:id="d1e1002">
+                                       <subparagraph xml:id="d1e1004" refersTo="~INP">
+                                          <content xml:id="d1e1006">
+                                             <p xml:id="d1e1008">By way of derogation from Article 395(1), competent
+                                                authorities may allow institutions to incur any of
+                                                the exposures provided for in paragraph 5 of this
+                                                Article meeting the conditions set out in paragraph
+                                                6 of this Article, up to the following limits:</p>
+                                          </content>
+                                       </subparagraph>
+                                       <point xml:id="d1e1012">
+                                          <num xml:id="d1e1014">(a)</num>
+                                          <content xml:id="d1e1016">
+                                             <p xml:id="d1e1018">100 % of the institution’s Tier 1 capital until 31
+                                                December 2018;</p>
+                                          </content>
+                                       </point>
+                                       <point xml:id="d1e1022">
+                                          <num xml:id="d1e1024">(b)</num>
+                                          <content xml:id="d1e1026">
+                                             <p xml:id="d1e1028">75 % of the institution’s Tier 1 capital until 31
+                                                December 2019;</p>
+                                          </content>
+                                       </point>
+                                       <point xml:id="d1e1032">
+                                          <num xml:id="d1e1034">(c)</num>
+                                          <content xml:id="d1e1036">
+                                             <p xml:id="d1e1038">50 % of the institution’s Tier 1 capital until 31
+                                                December 2020.</p>
+                                          </content>
+                                       </point>
+                                    </list>
+                                    <subparagraph xml:id="d1e1043">
+                                       <content xml:id="d1e1045">
+                                          <p xml:id="d1e1047">The limits referred to in points (a), (b) and (c) of
+                                             the first subparagraph shall apply to exposure values
+                                             after taking into account the effect of the credit risk
+                                             mitigation in accordance with Articles 399 to 403.</p>
+                                       </content>
+                                    </subparagraph>
+                                 </paragraph>
+                                 <paragraph xml:id="d1e1052">
+                                    <num xml:id="d1e1054">5.</num>
+                                    <list xml:id="d1e1056">
+                                       <subparagraph xml:id="d1e1058" refersTo="~INP">
+                                          <content xml:id="d1e1060">
+                                             <p xml:id="d1e1062">The transitional arrangements set out in paragraph 4
+                                                shall apply to the following exposures:</p>
+                                          </content>
+                                       </subparagraph>
+                                       <point xml:id="d1e1066">
+                                          <num xml:id="d1e1068">(a)</num>
+                                          <content xml:id="d1e1070">
+                                             <p xml:id="d1e1072">asset items constituting claims on central
+                                                governments, central banks, or public sector
+                                                entities of Member States;</p>
+                                          </content>
+                                       </point>
+                                       <point xml:id="d1e1076">
+                                          <num xml:id="d1e1078">(b)</num>
+                                          <content xml:id="d1e1080">
+                                             <p xml:id="d1e1082">asset items constituting claims expressly guaranteed
+                                                by central governments, central banks, or public
+                                                sector entities of Member States;</p>
+                                          </content>
+                                       </point>
+                                       <point xml:id="d1e1086">
+                                          <num xml:id="d1e1088">(c)</num>
+                                          <content xml:id="d1e1090">
+                                             <p xml:id="d1e1092">other exposures to, or guaranteed by, central
+                                                governments, central banks, or public sector
+                                                entities of Member States;</p>
+                                          </content>
+                                       </point>
+                                       <point xml:id="d1e1096">
+                                          <num xml:id="d1e1098">(d)</num>
+                                          <content xml:id="d1e1100">
+                                             <p xml:id="d1e1102">asset items constituting claims on regional
+                                                governments or local authorities of Member States
+                                                treated as exposures to a central government in
+                                                accordance with Article 115(2);</p>
+                                          </content>
+                                       </point>
+                                       <point xml:id="d1e1107">
+                                          <num xml:id="d1e1109">(e)</num>
+                                          <content xml:id="d1e1111">
+                                             <p xml:id="d1e1113">other exposures to, or guaranteed by, regional
+                                                governments or local authorities of Member States
+                                                treated as exposures to a central government in
+                                                accordance with Article 115(2).</p>
+                                          </content>
+                                       </point>
+                                    </list>
+                                    <subparagraph xml:id="d1e1118">
+                                       <content xml:id="d1e1120">
+                                          <p xml:id="d1e1122">For the purposes of points (a), (b) and (c) of the
+                                             first subparagraph, the transitional arrangements set
+                                             out in paragraph 4 of this Article shall apply only to
+                                             asset items and other exposures to, or guaranteed by,
+                                             public sector entities which are treated as exposures
+                                             to a central government, a regional government or a
+                                             local authority in accordance with Article 116(4).
+                                             Where asset items and other exposures to, or guaranteed
+                                             by, public sector entities are treated as exposures to
+                                             a regional government or a local authority in
+                                             accordance with Article 116(4), the transitional
+                                             arrangements set out in paragraph 4 of this Article
+                                             shall apply only where exposures to that regional
+                                             government or local authority are treated as exposures
+                                             to a central government in accordance with Article
+                                             115(2).</p>
+                                       </content>
+                                    </subparagraph>
+                                 </paragraph>
+                                 <paragraph xml:id="d1e1127">
+                                    <num xml:id="d1e1129">6.</num>
+                                    <list xml:id="d1e1131">
+                                       <subparagraph xml:id="d1e1133" refersTo="~INP">
+                                          <content xml:id="d1e1135">
+                                             <p xml:id="d1e1137">The transitional arrangements set out in paragraph 4
+                                                of this Article shall apply only where an exposure
+                                                referred to in paragraph 5 of this Article meets all
+                                                of the following conditions:</p>
+                                          </content>
+                                       </subparagraph>
+                                       <point xml:id="d1e1141">
+                                          <num xml:id="d1e1143">(a)</num>
+                                          <content xml:id="d1e1145">
+                                             <p xml:id="d1e1147">the exposure would be assigned a risk weight of 0 %
+                                                in accordance with the version of Article 495(2) in
+                                                force on 31 December 2017;</p>
+                                          </content>
+                                       </point>
+                                       <point xml:id="d1e1151">
+                                          <num xml:id="d1e1153">(b)</num>
+                                          <content xml:id="d1e1155">
+                                             <p xml:id="d1e1157">the exposure was incurred on or after 12 December
+                                                2017.</p>
+                                          </content>
+                                       </point>
+                                    </list>
+                                 </paragraph>
+                                 <paragraph xml:id="d1e1163">
+                                    <num xml:id="d1e1165">7.</num>
+                                    <content xml:id="d1e1167">
+                                       <p xml:id="d1e1169">An exposure as referred to in paragraph 5 of this Article
+                                          incurred before 12 December 2017 to which a risk weight of
+                                          0 % was assigned on 31 December 2017 in accordance with
+                                          Article 495(2) shall be exempted from the application of
+                                          Article 395(1).</p>
+                                    </content>
+                                 </paragraph>
+                              </quotedStructure><inline xml:id="d1e1173" name="punctuationMod">;</inline></mod></p>
+                     </content>
+                  </point>
+               </list>
+            </paragraph>
+         </article>
+         <article xml:id="d1e1181">
+            <num xml:id="d1e1183">Article 2 </num>
+            <paragraph xml:id="d1e1185">
+               <content xml:id="d1e1187">
+                  <p xml:id="d1e1189">This Regulation shall enter into force on the day following that of its
+                     publication in the Official Journal of the European Union.</p>
+               </content>
+            </paragraph>
+            <paragraph xml:id="d1e1193">
+               <content xml:id="d1e1195">
+                  <p xml:id="d1e1197">It shall apply from 1 January 2018.</p>
+               </content>
+            </paragraph>
+         </article>
+         <clause xml:id="d1e1202">
+            <content xml:id="d1e1204">
+               <p xml:id="d1e1206">This Regulation shall be binding in its entirety and directly applicable in all
+                  Member States.</p>
+            </content>
+         </clause>
+      </body>
+      <conclusions xml:id="d1e1211">
+         <p xml:id="d1e1213">Done at <location xml:id="d1e1215" refersTo="~BEL_BRU">Brussels</location>, <date xml:id="d1e1218" date="2017-12-12">12
+               December 2017</date>.</p>
+         <block xml:id="d1e1222" name="signatory">
+            <signature xml:id="d1e1224">
+               <organization xml:id="d1e1226" refersTo="~EP">For the European Parliament</organization>
+               <role xml:id="d1e1229" refersTo="~PRESID">The President</role>
+               <person xml:id="d1e1232" refersTo="">A. TAJANI</person>
+            </signature>
+            <signature xml:id="d1e1236">
+               <organization xml:id="d1e1238" refersTo="~CONSIL">For the Council</organization>
+               <role xml:id="d1e1241" refersTo="~PRESID">The President</role>
+               <person xml:id="d1e1244" refersTo="">M. MAASIKAS</person>
+            </signature>
+         </block>
+      </conclusions>
+   </act>
+</akomaNtoso>

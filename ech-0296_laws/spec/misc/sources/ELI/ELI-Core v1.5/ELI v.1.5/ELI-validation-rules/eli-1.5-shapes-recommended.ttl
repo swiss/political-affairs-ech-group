@@ -1,0 +1,415 @@
+@prefix schema: <http://schema.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix elishrec: <http://data.europa.eu/eli/shapes-recommended#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix text: <https://www.iana.org/assignments/media-types/text/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix eli: <http://data.europa.eu/eli/ontology#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix xls2rdf: <https://xls2rdf.sparna.fr/vocabulary#> .
+@prefix application: <https://www.iana.org/assignments/media-types/application/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+elishrec:Component_belongsToEli a sh:ConstraintComponent;
+  sh:parameter _:eb559f955f9d4974b990ebae92fed3761462;
+  sh:labelTemplate "Found in ELI ontology";
+  sh:nodeValidator elishrec:Component_belongsToEli-nodeValidator .
+
+_:eb559f955f9d4974b990ebae92fed3761462 sh:path elishrec:belongsToEli;
+  sh:name "déclaré dans ELI"@fr, "declared in ELI"@en .
+
+elishrec:Component_belongsToEli-nodeValidator a sh:SPARQLSelectValidator;
+  sh:message "Cannot be found in the ELI ontology";
+  sh:select """PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+SELECT $this
+WHERE {
+ # To work this requires the ELI OWL file
+ FILTER NOT EXISTS {
+ $this a ?predicateType . VALUES ?predicateType { owl:ObjectProperty owl:DatatypeProperty owl:AnnotationProperty }
+ }
+ FILTER ($belongsToEli) .
+}""" .
+
+<http://data.europa.eu/eli/shapes-recommended> a owl:Ontology, adms:Asset;
+  rdfs:label "ELI recommended shapes"@en;
+  dct:title "ELI recommended shapes"@en;
+  dct:description "This specification encodes the non-mandatory, \"recommended\" rules for ELI metadata encoding. It is a complement to the core validation rules for ELI metadata."@en;
+  owl:versionInfo "45778";
+  dct:conformsTo <https://www.w3.org/TR/shacl>;
+  dct:created "2025-09-26"^^xsd:date;
+  dct:modified "2025-12-12T00:00:00.000Z"^^xsd:dateTime;
+  dct:creator "ELI Taskforce"@en .
+
+eli:LegalResource a rdfs:Class, sh:NodeShape;
+  sh:property elishrec:LegalResourceLegalExpression_relevant_for, elishrec:LegalResourceLegalExpression_jurisdiction,
+    elishrec:LegalResource_date_document_or_date_publication_or_version_date .
+
+eli:LegalExpression a rdfs:Class, sh:NodeShape;
+  sh:property elishrec:LegalResourceLegalExpression_relevant_for, elishrec:LegalResourceLegalExpression_jurisdiction .
+
+eli:Format a rdfs:Class, sh:NodeShape;
+  sh:property elishrec:Format_media_type .
+
+eli:LegalResourceSubdivision a rdfs:Class, sh:NodeShape .
+
+eli:Work a rdfs:Class, sh:NodeShape;
+  sh:property elishrec:Work_is_about .
+
+eli:Expression a rdfs:Class, sh:NodeShape;
+  sh:property elishrec:Expression_language .
+
+eli:Manifestation a rdfs:Class, sh:NodeShape;
+  sh:property elishrec:Manifestation_format .
+
+eli:Person a rdfs:Class, sh:NodeShape .
+
+eli:Organization a rdfs:Class, sh:NodeShape .
+
+eli:ComplexWork a rdfs:Class, sh:NodeShape .
+
+eli:WorkSubdivision a rdfs:Class, sh:NodeShape .
+
+elishrec:AnyEliNamespaceProperty a sh:NodeShape;
+  sh:severity sh:Warning;
+  sh:target elishrec:AnyEliNamespaceProperty-target;
+  elishrec:belongsToEli "true" .
+
+elishrec:AnyEliNamespaceProperty-target sh:select """PREFIX eli: <http://data.europa.eu/eli/ontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT DISTINCT $this
+WHERE {
+ ?x $this ?o .
+ FILTER (STRSTARTS(STR($this), \"http://data.europa.eu/eli/ontology#\")) .
+}""" .
+
+elishrec:Work_is_about sh:path eli:is_about;
+  sh:severity sh:Info;
+  sh:description "eli:is_about CAN have an IRI value like \"^http://eurovoc.europa.eu(.*)\", but it is OK to use your own";
+  sh:pattern "^http://eurovoc.europa.eu(.*)" .
+
+elishrec:Expression_language sh:path eli:language;
+  sh:severity sh:Warning;
+  sh:description "eli:language SHOULD have an IRI value starting with \"^http://publications.europa.eu/resource/authority/language/(.*)\"";
+  sh:nodeKind sh:IRI;
+  sh:pattern "^http://publications.europa.eu/resource/authority/language/(.*)" .
+
+elishrec:LegalResourceLegalExpression_relevant_for sh:path eli:relevant_for;
+  sh:severity sh:Info;
+  sh:description "eli:relevant_for CAN have an IRI value like \"^http://publications.europa.eu/resource/authority/atu/(.*)\", but it is OK to use a local identifier";
+  sh:pattern "^http://publications.europa.eu/resource/authority/atu/(.*)" .
+
+elishrec:LegalResourceLegalExpression_jurisdiction sh:path eli:jurisdiction;
+  sh:severity sh:Info;
+  sh:description "eli:jurisdiction CAN have an IRI value like \"^http://publications.europa.eu/resource/authority/atu/(.*)\", but it is OK to use a local identifier";
+  sh:pattern "^http://publications.europa.eu/resource/authority/atu/(.*)" .
+
+elishrec:LegalResource_date_document_or_date_publication_or_version_date sh:path _:eb559f955f9d4974b990ebae92fed3761445;
+  sh:severity sh:Warning;
+  sh:description "Either eli:date_document or eli:date_publication or eli:version_date SHOULD be present on a LegalResource";
+  sh:minCount "1"^^xsd:integer .
+
+_:eb559f955f9d4974b990ebae92fed3761445 sh:alternativePath _:eb559f955f9d4974b990ebae92fed3761446 .
+
+_:eb559f955f9d4974b990ebae92fed3761446 rdf:first eli:date_document;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761447 .
+
+_:eb559f955f9d4974b990ebae92fed3761447 rdf:first eli:date_publication;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761448 .
+
+_:eb559f955f9d4974b990ebae92fed3761448 rdf:first eli:version_date;
+  rdf:rest rdf:nil .
+
+elishrec:Format_media_type sh:path eli:media_type;
+  sh:severity sh:Info;
+  sh:description "A Format CAN indicate a value for the property \"media_type\", with a IANA media-type, for content negotiation (if you use a IANA media-type, value will be the same for eli:format and eli:media_type).";
+  sh:minCount "1"^^xsd:integer .
+
+elishrec:Manifestation_format sh:path eli:format;
+  sh:severity sh:Warning;
+  sh:description "eli:format SHOULD have a value in application:xml, application:akn+xml, application:xhtml+xml, application:pdf, application:pdf;type=archival, application:pdf;type=generated, application:pdf;type=scanned, application:pdf;type=signed, text:html, text:plain, eli:print_format";
+  sh:in _:eb559f955f9d4974b990ebae92fed3761449 .
+
+_:eb559f955f9d4974b990ebae92fed3761449 rdf:first <http://www.iana.org/assignments/media-types/application/xml>;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761450 .
+
+_:eb559f955f9d4974b990ebae92fed3761450 rdf:first <http://www.iana.org/assignments/media-types/application/akn+xml>;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761451 .
+
+_:eb559f955f9d4974b990ebae92fed3761451 rdf:first <http://www.iana.org/assignments/media-types/application/xhtml+xml>;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761452 .
+
+_:eb559f955f9d4974b990ebae92fed3761452 rdf:first <http://www.iana.org/assignments/media-types/application/pdf>;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761453 .
+
+_:eb559f955f9d4974b990ebae92fed3761453 rdf:first <http://www.iana.org/assignments/media-types/application/pdf;type=archival>;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761454 .
+
+_:eb559f955f9d4974b990ebae92fed3761454 rdf:first <http://www.iana.org/assignments/media-types/application/pdf;type=generated>;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761455 .
+
+_:eb559f955f9d4974b990ebae92fed3761455 rdf:first <http://www.iana.org/assignments/media-types/application/pdf;type=scanned>;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761456 .
+
+_:eb559f955f9d4974b990ebae92fed3761456 rdf:first <http://www.iana.org/assignments/media-types/application/pdf;type=signed>;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761457 .
+
+_:eb559f955f9d4974b990ebae92fed3761457 rdf:first <http://www.iana.org/assignments/media-types/text/html>;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761458 .
+
+_:eb559f955f9d4974b990ebae92fed3761458 rdf:first <http://www.iana.org/assignments/media-types/text/plain>;
+  rdf:rest _:eb559f955f9d4974b990ebae92fed3761459 .
+
+_:eb559f955f9d4974b990ebae92fed3761459 rdf:first eli:print_format;
+  rdf:rest rdf:nil .
+
+elishrec:subjectsOfImplements_implements sh:path eli:implements;
+  sh:property _:eb559f955f9d4974b990ebae92fed3761460;
+  sh:severity sh:Warning;
+  sh:description "This property is deprecated";
+  sh:maxCount "0"^^xsd:integer .
+
+_:eb559f955f9d4974b990ebae92fed3761460 a sh:NodeShape;
+  sh:targetSubjectsOf eli:implements .
+
+elishrec:subjectsOfImplementedBy_implemented_by sh:path eli:implemented_by;
+  sh:property _:eb559f955f9d4974b990ebae92fed3761461;
+  sh:severity sh:Warning;
+  sh:description "This property is deprecated";
+  sh:maxCount "0"^^xsd:integer .
+
+_:eb559f955f9d4974b990ebae92fed3761461 a sh:NodeShape;
+  sh:targetSubjectsOf eli:implemented_by .
+
+elishrec:number a sh:NodeShape;
+  sh:targetSubjectsOf eli:number;
+  sh:severity sh:Warning;
+  sh:class eli:Work;
+  sh:message "Although officially allowed, finding this property elsewhere than on Work is suspicious" .
+
+elishrec:relevant_for a sh:NodeShape;
+  sh:targetSubjectsOf eli:relevant_for;
+  sh:severity sh:Warning;
+  sh:class eli:LegalResource;
+  sh:message "Although officially allowed, finding this property elsewhere than on LegalResource is suspicious" .
+
+elishrec:jurisdiction a sh:NodeShape;
+  sh:targetSubjectsOf eli:jurisdiction;
+  sh:severity sh:Warning;
+  sh:class eli:LegalResource;
+  sh:message "Although officially allowed, finding this property elsewhere than on LegalResource is suspicious" .
+
+elishrec:description a sh:NodeShape;
+  sh:targetSubjectsOf eli:description;
+  sh:severity sh:Warning;
+  sh:class eli:LegalResource;
+  sh:message "Although officially allowed, finding this property elsewhere than on LegalResource is suspicious" .
+
+elishrec:version a sh:NodeShape;
+  sh:targetSubjectsOf eli:version;
+  sh:severity sh:Warning;
+  sh:class eli:LegalResource;
+  sh:message "Although officially allowed, finding this property elsewhere than on LegalResource is suspicious" .
+
+elishrec:version_date a sh:NodeShape;
+  sh:targetSubjectsOf eli:version_date;
+  sh:severity sh:Warning;
+  sh:class eli:LegalResource;
+  sh:message "Although officially allowed, finding this property elsewhere than on LegalResource is suspicious" .
+
+elishrec:date_publication a sh:NodeShape;
+  sh:targetSubjectsOf eli:date_publication;
+  sh:severity sh:Warning;
+  sh:class eli:LegalResource;
+  sh:message "Although officially allowed, finding this property elsewhere than on LegalResource is suspicious" .
+
+elishrec:in_force a sh:NodeShape;
+  sh:targetSubjectsOf eli:in_force;
+  sh:severity sh:Warning;
+  sh:class eli:LegalResource;
+  sh:message "Although officially allowed, finding this property elsewhere than on LegalResource is suspicious" .
+
+elishrec:first_date_entry_in_force a sh:NodeShape;
+  sh:targetSubjectsOf eli:first_date_entry_in_force;
+  sh:severity sh:Warning;
+  sh:class eli:LegalResource;
+  sh:message "Although officially allowed, finding this property elsewhere than on LegalResource is suspicious" .
+
+elishrec:date_no_longer_in_force a sh:NodeShape;
+  sh:targetSubjectsOf eli:date_no_longer_in_force;
+  sh:severity sh:Warning;
+  sh:class eli:LegalResource;
+  sh:message "Although officially allowed, finding this property elsewhere than on LegalResource is suspicious" .
+
+elishrec:date_applicability a sh:NodeShape;
+  sh:targetSubjectsOf eli:date_applicability;
+  sh:severity sh:Warning;
+  sh:class eli:LegalResource;
+  sh:message "Although officially allowed, finding this property elsewhere than on LegalResource is suspicious" .
+
+elishrec:related_to a sh:NodeShape;
+  sh:targetSubjectsOf eli:related_to;
+  sh:severity sh:Warning;
+  sh:class eli:LegalResource;
+  sh:message "Although officially allowed, finding this property elsewhere than on LegalResource is suspicious" .
+
+elishrec:changes a sh:NodeShape;
+  sh:targetSubjectsOf eli:changes;
+  sh:severity sh:Warning;
+  sh:class eli:Work;
+  sh:message "Although officially allowed, finding this property elsewhere than on Work is suspicious" .
+
+elishrec:changed_by a sh:NodeShape;
+  sh:targetSubjectsOf eli:changed_by;
+  sh:severity sh:Warning;
+  sh:class eli:Work;
+  sh:message "Although officially allowed, finding this property elsewhere than on Work is suspicious" .
+
+elishrec:basis_for a sh:NodeShape;
+  sh:targetSubjectsOf eli:basis_for;
+  sh:severity sh:Warning;
+  sh:class eli:Work;
+  sh:message "Although officially allowed, finding this property elsewhere than on Work is suspicious" .
+
+elishrec:cites a sh:NodeShape;
+  sh:targetSubjectsOf eli:cites;
+  sh:severity sh:Warning;
+  sh:class eli:LegalResource;
+  sh:message "Although officially allowed, finding this property elsewhere than on LegalResource is suspicious" .
+
+elishrec:consolidates a sh:NodeShape;
+  sh:targetSubjectsOf eli:consolidates;
+  sh:severity sh:Warning;
+  sh:class eli:LegalResource;
+  sh:message "Although officially allowed, finding this property elsewhere than on LegalResource is suspicious" .
+
+elishrec:consolidated_by a sh:NodeShape;
+  sh:targetSubjectsOf eli:consolidated_by;
+  sh:severity sh:Warning;
+  sh:class eli:LegalResource;
+  sh:message "Although officially allowed, finding this property elsewhere than on LegalResource is suspicious" .
+
+elishrec:transposes a sh:NodeShape;
+  sh:targetSubjectsOf eli:transposes;
+  sh:severity sh:Warning;
+  sh:class eli:LegalResource;
+  sh:message "Although officially allowed, finding this property elsewhere than on LegalResource is suspicious" .
+
+elishrec:ensures_implementation_of a sh:NodeShape;
+  sh:targetSubjectsOf eli:ensures_implementation_of;
+  sh:severity sh:Warning;
+  sh:class eli:LegalResource;
+  sh:message "Although officially allowed, finding this property elsewhere than on LegalResource is suspicious" .
+
+elishrec:applies a sh:NodeShape;
+  sh:targetSubjectsOf eli:applies;
+  sh:severity sh:Warning;
+  sh:class eli:LegalResource;
+  sh:message "Although officially allowed, finding this property elsewhere than on LegalResource is suspicious" .
+
+elishrec:commences a sh:NodeShape;
+  sh:targetSubjectsOf eli:commences;
+  sh:severity sh:Warning;
+  sh:class eli:LegalResource;
+  sh:message "Although officially allowed, finding this property elsewhere than on LegalResource is suspicious" .
+
+elishrec:commenced_by a sh:NodeShape;
+  sh:targetSubjectsOf eli:commenced_by;
+  sh:severity sh:Warning;
+  sh:class eli:LegalResource;
+  sh:message "Although officially allowed, finding this property elsewhere than on LegalResource is suspicious" .
+
+elishrec:repeals a sh:NodeShape;
+  sh:targetSubjectsOf eli:repeals;
+  sh:severity sh:Warning;
+  sh:class eli:LegalResource;
+  sh:message "Although officially allowed, finding this property elsewhere than on LegalResource is suspicious" .
+
+elishrec:repealed_by a sh:NodeShape;
+  sh:targetSubjectsOf eli:repealed_by;
+  sh:severity sh:Warning;
+  sh:class eli:LegalResource;
+  sh:message "Although officially allowed, finding this property elsewhere than on LegalResource is suspicious" .
+
+elishrec:corrects a sh:NodeShape;
+  sh:targetSubjectsOf eli:corrects;
+  sh:severity sh:Warning;
+  sh:class eli:Work;
+  sh:message "Although officially allowed, finding this property elsewhere than on Work is suspicious" .
+
+elishrec:corrected_by a sh:NodeShape;
+  sh:targetSubjectsOf eli:corrected_by;
+  sh:severity sh:Warning;
+  sh:class eli:Work;
+  sh:message "Although officially allowed, finding this property elsewhere than on Work is suspicious" .
+
+elishrec:amends a sh:NodeShape;
+  sh:targetSubjectsOf eli:amends;
+  sh:severity sh:Warning;
+  sh:class eli:Work;
+  sh:message "Although officially allowed, finding this property elsewhere than on Work is suspicious" .
+
+elishrec:amended_by a sh:NodeShape;
+  sh:targetSubjectsOf eli:amended_by;
+  sh:severity sh:Warning;
+  sh:class eli:Work;
+  sh:message "Although officially allowed, finding this property elsewhere than on Work is suspicious" .
+
+elishrec:cited_by_case_law a sh:NodeShape;
+  sh:targetSubjectsOf eli:cited_by_case_law;
+  sh:severity sh:Warning;
+  sh:class eli:LegalResource;
+  sh:message "Although officially allowed, finding this property elsewhere than on LegalResource is suspicious" .
+
+elishrec:cited_by_case_law_reference a sh:NodeShape;
+  sh:targetSubjectsOf eli:cited_by_case_law_reference;
+  sh:severity sh:Warning;
+  sh:class eli:LegalResource;
+  sh:message "Although officially allowed, finding this property elsewhere than on LegalResource is suspicious" .
+
+elishrec:is_derivative_of a sh:NodeShape;
+  sh:targetSubjectsOf eli:is_derivative_of;
+  sh:severity sh:Warning;
+  sh:class eli:Work;
+  sh:message "Although officially allowed, finding this property elsewhere than on Work is suspicious" .
+
+elishrec:has_derivative a sh:NodeShape;
+  sh:targetSubjectsOf eli:has_derivative;
+  sh:severity sh:Warning;
+  sh:class eli:Work;
+  sh:message "Although officially allowed, finding this property elsewhere than on Work is suspicious" .
+
+elishrec:has_annex a sh:NodeShape;
+  sh:targetSubjectsOf eli:has_annex;
+  sh:severity sh:Warning;
+  sh:class eli:Work;
+  sh:message "Although officially allowed, finding this property elsewhere than on Work is suspicious" .
+
+elishrec:is_annex_of a sh:NodeShape;
+  sh:targetSubjectsOf eli:is_annex_of;
+  sh:severity sh:Warning;
+  sh:class eli:Work;
+  sh:message "Although officially allowed, finding this property elsewhere than on Work is suspicious" .
+
+elishrec:refers_to a sh:NodeShape;
+  sh:targetSubjectsOf eli:refers_to;
+  sh:severity sh:Warning;
+  sh:class eli:Work;
+  sh:message "Although officially allowed, finding this property elsewhere than on Work is suspicious" .

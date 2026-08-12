@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?><akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+	<doc name="ANNEX">
+		<meta>
+			<identification source="~PUBL">
+				<FRBRWork>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+						<akn4eu:fileCUID value="ckylbnre200e3396bz0ehzstx"/>
+					</preservation>
+					<FRBRcountry value="EU"/>
+					<FRBRprescriptive value="true"/>
+				</FRBRWork>
+				<FRBRExpression>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<FRBRlanguage language="en"/>
+				</FRBRExpression>
+				<FRBRManifestation>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+						<akn4eu:akn4euVersion value="4.1.1.0"/>
+						<akn4eu:akn4euDocumentation href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/akn4eu"/>
+					</preservation>
+				</FRBRManifestation>
+			</identification>
+			<references source="~PUBL">
+				<TLCReference name="language" href="http://publications.europa.eu/resource/authority/language/ENG" showAs="en"/>
+				<TLCReference xml:id="ANNEX" name="docType" href="http://publications.europa.eu/resource/authority/resource-type/ANNEX" showAs="Annex"/>
+				<TLCOrganization xml:id="PUBL" href="http://publications.europa.eu/resource/authority/corporate-body/PUBL" showAs="Publications Office"/>
+			</references>
+		</meta>
+		<preface xml:id="d1e72">
+			<container xml:id="d1e74" name="headerOfAnnex">
+				<block xml:id="d1e76" name="num">ANNEX IV</block>
+				<block xml:id="d1e79" name="heading">SEASONAL CLOSURES TO PROTECT SPAWNING COD</block>
+			</container>
+		</preface>
+		<mainBody xml:id="d1e84">
+			<paragraph xml:id="d1e86">
+				<content xml:id="d1e88">
+					<p xml:id="d1e90">The areas set out in the table below shall be closed for all gear, except pelagic gear
+						(purse seines and trawls), during the identified period:</p>
+				</content>
+			</paragraph>
+			<paragraph xml:id="d1e94">
+				<hcontainer xml:id="d1e96" name="BLOCK_TAB">
+					<hcontainer xml:id="d1e98" name="TAB">
+						<content xml:id="d1e100">
+							<table xml:id="d1e102">
+								<tr xml:id="d1e104">
+									<th xml:id="d1e106" colspan="5">
+										<p xml:id="d1e108">Time-limited closures</p>
+									</th>
+								</tr>
+								<tr xml:id="d1e112">
+									<th xml:id="d1e114">
+										<p xml:id="d1e116">No</p>
+									</th>
+									<th xml:id="d1e119">
+										<p xml:id="d1e121">Area name</p>
+									</th>
+									<th xml:id="d1e124">
+										<p xml:id="d1e126">Coordinates</p>
+									</th>
+									<th xml:id="d1e129">
+										<p xml:id="d1e131">Period</p>
+									</th>
+									<th xml:id="d1e134">
+										<p xml:id="d1e136">Additional comment</p>
+									</th>
+								</tr>
+								<tr xml:id="d1e140">
+									<td xml:id="d1e142">
+										<p xml:id="d1e144">1</p>
+									</td>
+									<td xml:id="d1e147">
+										<p xml:id="d1e149">Stanhope ground</p>
+									</td>
+									<td xml:id="d1e152">
+										<p xml:id="d1e154">60° 10' N - 01° 45' E</p>
+										<p xml:id="d1e156">60° 10' N - 02° 00' E</p>
+										<p xml:id="d1e158">60° 25' N - 01° 45' E</p>
+										<p xml:id="d1e160">60° 25' N - 02° 00' E</p>
+									</td>
+									<td xml:id="d1e163">
+										<p xml:id="d1e165">1 January to 30 April</p>
+									</td>
+									<td xml:id="d1e168"/>
+								</tr>
+								<tr xml:id="d1e171">
+									<td xml:id="d1e173">
+										<p xml:id="d1e175">2</p>
+									</td>
+									<td xml:id="d1e178">
+										<p xml:id="d1e180">Long Hole</p>
+									</td>
+									<td xml:id="d1e183">
+										<p xml:id="d1e185">59° 07,35' N - 0° 31,04' W</p>
+										<p xml:id="d1e187">59° 03,60' N - 0° 22,25' W</p>
+										<p xml:id="d1e189">58° 59,35' N - 0° 17,85' W</p>
+										<p xml:id="d1e191">58° 56,00' N - 0° 11,01' W</p>
+										<p xml:id="d1e193">58° 56,60' N - 0° 08,85' W</p>
+										<p xml:id="d1e196">58° 59,86' N - 0° 15,65' W</p>
+										<p xml:id="d1e198">59° 03,50' N - 0° 20,00' W</p>
+										<p xml:id="d1e200">59° 08,15' N - 0° 29,07' W</p>
+									</td>
+									<td xml:id="d1e203">
+										<p xml:id="d1e205">1 January to 31 March</p>
+									</td>
+									<td xml:id="d1e208"/>
+								</tr>
+								<tr xml:id="d1e211">
+									<td xml:id="d1e213">
+										<p xml:id="d1e215">3</p>
+									</td>
+									<td xml:id="d1e218">
+										<p xml:id="d1e220">Coral edge</p>
+									</td>
+									<td xml:id="d1e223">
+										<p xml:id="d1e225">58° 51,70' N - 03° 26,70' E</p>
+										<p xml:id="d1e227">58° 40,66' N - 03° 34,60' E</p>
+										<p xml:id="d1e229">58° 24,00' N - 03° 12,40' E</p>
+										<p xml:id="d1e231">58° 24,00' N - 02° 55,00' E</p>
+										<p xml:id="d1e233">58° 35,65' N - 02° 56,30' E</p>
+									</td>
+									<td xml:id="d1e236">
+										<p xml:id="d1e238">1 January to 28 February</p>
+									</td>
+									<td xml:id="d1e241"/>
+								</tr>
+								<tr xml:id="d1e245">
+									<td xml:id="d1e247">
+										<p xml:id="d1e249">4</p>
+									</td>
+									<td xml:id="d1e252">
+										<p xml:id="d1e254">Papa Bank</p>
+									</td>
+									<td xml:id="d1e257">
+										<p xml:id="d1e259">59° 56' N - 03° 08' W</p>
+										<p xml:id="d1e261">59° 56' N - 02° 45' W</p>
+										<p xml:id="d1e263">59° 35' N - 03° 15' W</p>
+										<p xml:id="d1e265">59° 35' N - 03° 35' W</p>
+									</td>
+									<td xml:id="d1e268">
+										<p xml:id="d1e270">1 January to 15 March</p>
+									</td>
+									<td xml:id="d1e273"/>
+								</tr>
+								<tr xml:id="d1e276">
+									<td xml:id="d1e278">
+										<p xml:id="d1e280">5</p>
+									</td>
+									<td xml:id="d1e283">
+										<p xml:id="d1e285">Foula Deeps</p>
+									</td>
+									<td xml:id="d1e288">
+										<p xml:id="d1e290">60° 17,50' N - 01° 45' W</p>
+										<p xml:id="d1e292">60° 11,00' N - 01° 45' W</p>
+										<p xml:id="d1e294">60° 11,00' N - 02° 10' W</p>
+										<p xml:id="d1e296">60° 20,00' N - 02° 00' W</p>
+										<p xml:id="d1e298">60° 20,00' N - 01° 50' W</p>
+									</td>
+									<td xml:id="d1e301">
+										<p xml:id="d1e303">1 November to 31 December</p>
+									</td>
+									<td xml:id="d1e306"/>
+								</tr>
+								<tr xml:id="d1e309">
+									<td xml:id="d1e311">
+										<p xml:id="d1e313">6</p>
+									</td>
+									<td xml:id="d1e316">
+										<p xml:id="d1e318">Egersund Bank</p>
+									</td>
+									<td xml:id="d1e321">
+										<p xml:id="d1e323">58° 07,40' N - 04° 33,00' E</p>
+										<p xml:id="d1e325">57° 53,00' N - 05° 12,00' E</p>
+										<p xml:id="d1e327">57° 40,00' N - 05° 10,90' E</p>
+										<p xml:id="d1e329">57° 57,90' N - 04° 31,90' E</p>
+									</td>
+									<td xml:id="d1e332">
+										<p xml:id="d1e334">1 January to 31 March</p>
+									</td>
+									<td xml:id="d1e337">
+										<p xml:id="d1e339">(10 × 25 nautical miles)</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e343">
+									<td xml:id="d1e345">
+										<p xml:id="d1e347">7</p>
+									</td>
+									<td xml:id="d1e350">
+										<p xml:id="d1e352">East of Fair Isle</p>
+									</td>
+									<td xml:id="d1e355">
+										<p xml:id="d1e357">59° 40' N - 01° 23' W</p>
+										<p xml:id="d1e359">59° 40' N - 01° 13' W</p>
+										<p xml:id="d1e361">59° 30' N - 01° 20' W</p>
+										<p xml:id="d1e363">59° 10' N - 01° 20' W</p>
+										<p xml:id="d1e365">59° 30' N - 01° 28' W</p>
+										<p xml:id="d1e368">59° 10' N - 01° 28' W</p>
+									</td>
+									<td xml:id="d1e371">
+										<p xml:id="d1e373">1 January to 15 March</p>
+									</td>
+									<td xml:id="d1e376"/>
+								</tr>
+								<tr xml:id="d1e379">
+									<td xml:id="d1e381">
+										<p xml:id="d1e383">8</p>
+									</td>
+									<td xml:id="d1e386">
+										<p xml:id="d1e388">West Bank</p>
+									</td>
+									<td xml:id="d1e391">
+										<p xml:id="d1e393">57° 15' N - 05° 01' E</p>
+										<p xml:id="d1e395">56° 56' N - 05° 00' E</p>
+										<p xml:id="d1e397">56° 56' N - 06° 20' E</p>
+										<p xml:id="d1e399">57° 15' N - 06° 20' E</p>
+									</td>
+									<td xml:id="d1e402">
+										<p xml:id="d1e404">1 February to 15 March</p>
+									</td>
+									<td xml:id="d1e407">
+										<p xml:id="d1e409">(18 × 4 nautical miles)</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e413">
+									<td xml:id="d1e415">
+										<p xml:id="d1e417">9</p>
+									</td>
+									<td xml:id="d1e420">
+										<p xml:id="d1e422">Revet</p>
+									</td>
+									<td xml:id="d1e425">
+										<p xml:id="d1e427">57° 28,43' N - 08° 05,66' E</p>
+										<p xml:id="d1e429">57° 27,44' N - 08° 07,20' E</p>
+										<p xml:id="d1e431">57° 51,77' N - 09° 26,33' E</p>
+										<p xml:id="d1e433">57° 52,88' N - 09° 25,00' E</p>
+									</td>
+									<td xml:id="d1e436">
+										<p xml:id="d1e438">1 February 15 March</p>
+									</td>
+									<td xml:id="d1e441">
+										<p xml:id="d1e443">(1,5 × 49 nautical miles)</p>
+									</td>
+								</tr>
+								<tr xml:id="d1e448">
+									<td xml:id="d1e450">
+										<p xml:id="d1e452">10</p>
+									</td>
+									<td xml:id="d1e455">
+										<p xml:id="d1e457">Rabarberen</p>
+									</td>
+									<td xml:id="d1e460">
+										<p xml:id="d1e462">57° 47,00' N - 11° 04,00' E</p>
+										<p xml:id="d1e464">57° 43,00' N - 11° 04,00' E</p>
+										<p xml:id="d1e466">57° 43,00' N - 11° 09,00' E</p>
+										<p xml:id="d1e468">57° 47,00' N - 11° 09,00' E</p>
+									</td>
+									<td xml:id="d1e471">
+										<p xml:id="d1e473">1 February – 15 March</p>
+									</td>
+									<td xml:id="d1e476">
+										<p xml:id="d1e478">East of Skagen</p>
+										<p xml:id="d1e480">(2,7 × 4 nautical miles)</p>
+									</td>
+								</tr>
+							</table>
+						</content>
+					</hcontainer>
+				</hcontainer>
+			</paragraph>
+		</mainBody>
+	</doc>
+</akomaNtoso>

@@ -1,0 +1,1 @@
+/eli/{jurisdiction}/{agent}/{subagent}/{year}/{month}/{day}/{type}/{subtype}/{domain}/{natural identifier}/{level 1…}/{point in time}/{version}/{language}

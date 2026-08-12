@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+	<doc name="EXPLANATORY_COUNCIL">
+		<meta>
+			<identification source="~PUBL">
+				<FRBRWork>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+						<akn4eu:fileCUID value="cl6caiyaf000b3a6knz4q6ktz"/>		
+					</preservation>
+					<FRBRcountry value="EU"/>
+					<FRBRnumber value="12955/17"/>	
+					<FRBRprescriptive value="false"/>
+				</FRBRWork>
+				<FRBRExpression>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<FRBRlanguage language="en"/>
+				</FRBRExpression>
+				<FRBRManifestation>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+						<akn4eu:akn4euVersion value="4.2.0.0"/>
+						<akn4eu:akn4euDocumentation href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/akn4eu"/>
+					</preservation>
+				</FRBRManifestation>
+			</identification>
+			<references source="~PUBL">
+				<TLCReference name="language" href="http://publications.europa.eu/resource/authority/language/ENG" showAs="en"/>
+				<TLCOrganization xml:id="PUBL" href="http://publications.europa.eu/resource/authority/corporate-body/PUBL" showAs="Publications Office"/>
+				<TLCReference xml:id="EXPLANATORY_COUNCIL" name="docType" href="http://publications.europa.eu/resource/authority/resource-type/EXPLANATORY_COUNCIL" showAs="Council explanatory"/>
+			</references>
+		</meta>
+		<preface xml:id="d1e74" status="ignored">
+			<longTitle xml:id="d1e76">
+				<p xml:id="d1e78"><docType xml:id="d1e79" refersTo="~EXPLANATORY_COUNCIL">Explanatory</docType></p>
+			</longTitle>
+		</preface>
+		<mainBody xml:id="d1e84">
+			<division xml:id="d1e86" class="type_1">
+				<num xml:id="d1e88">I.</num>
+				<heading xml:id="d1e90">INTRODUCTION</heading>
+			</division>
+			<level xml:id="d1e93">
+				<num xml:id="d1e95">1.</num>
+				<content xml:id="d1e97">
+					<p xml:id="d1e99">For the purposes of the <b xml:id="d1e101">WP TELE meeting of 18 October</b>, delegations will find
+						in Annex A a revised text of the ePrivacy proposal (ePR), focusing on <b xml:id="d1e103">Articles 1 to
+							5 and the related recitals</b>. The revisions are based on the discussions held in
+						the WP TELE and on the written comments provided by delegations, and are without
+						prejudice to any comments delegations might wish to make in the future, also bearing
+						in mind that most delegations are still analysing the proposal.</p>
+				</content>
+			</level>
+			<level xml:id="d1e108">
+				<num xml:id="d1e110">2.</num>
+				<content xml:id="d1e112">
+					<p xml:id="d1e114">For ease of reference, the latest changes to the text are <u xml:id="d1e116">underlined</u> while the
+						amendments to the Commission proposal are marked in <b xml:id="d1e118">bold</b> and deletions in <span xml:id="d1e120" class="strikethrough">strikethrough</span>. Some textual parts in the recitals have
+						been replaced by square brackets ([…]) as they concern parts of those recitals, which
+						are not relevant for the discussion on 18 October. The Presidency would also like to
+						inform delegations that art. 4a(2) will not be discussed during the meeting as it is
+						linked to the discussion on Article 8.</p>
+				</content>
+			</level>
+			<level xml:id="d1e126">
+				<num xml:id="d1e128">3.</num>
+				<content xml:id="d1e130">
+					<p xml:id="d1e132">To facilitate the examination of the proposal, delegations will find in <b xml:id="d1e134">Annex
+						B</b> definitions that are only referred to in art. 4 of ePR, such as the latest
+						version<authorialNote xml:id="d1e136" marker="1" placement="bottom"><p xml:id="d1e137">Doc. 12797/17 of 6 October 2017</p></authorialNote> of the relevant definitions from the European
+						Electronic Communications Code (the Code) (Art. 4(1)(b)), the definition of 'terminal
+						equipment' as provided in Commission Directive 2008/63/EC (art. 4(1)(c)) and the
+						definition of 'information society service' as provided in Directive 2015/1535 (art.
+						4(1)(d)).</p>
+				</content>
+			</level>
+			<level xml:id="d1e142">
+				<num xml:id="d1e144">4.</num>
+				<content xml:id="d1e146">
+					<p xml:id="d1e148">Delegations will find below an overview of all the amendments introduced in the
+						document.</p>
+				</content>
+			</level>
+			<division xml:id="d1e153" class="type_1">
+				<num xml:id="d1e155">II.</num>
+				<heading xml:id="d1e157">MAIN CHANGES</heading>
+			</division>
+			<block xml:id="d1e160" name="crossHeading">Link to the General Data Protection Regulation (GDPR)</block>
+			<level xml:id="d1e163">
+				<num xml:id="d1e165">5.</num>
+				<content xml:id="d1e167">
+					<p xml:id="d1e169">The Presidency has tried to further clarify the interplay between the ePR and GDPR in
+						a <b xml:id="d1e171">new recital 2a</b> (merged with text coming from former recital 5, now deleted)
+						and <b xml:id="d1e173">art. 1(3)</b>. The aim of the changes was to make clear that the ePR is a lex
+						specialis vis-à-vis the GDPR as far as personal data (i.e. of natural persons) are
+						concerned. If no specific rules are established in the ePR, the provisions of the GDPR
+						apply to any processing of electronic communications data that qualify as personal
+						data. Moreover, since the GDPR as such does not apply to legal persons, recital 2a
+						makes clear that relevant provisions of the GDPR shall apply to them only if the ePR
+						makes a specific reference (as for example in art. 4a).</p>
+				</content>
+			</level>
+			<block xml:id="d1e178" name="crossHeading">Legal persons</block>
+			<level xml:id="d1e181">
+				<num xml:id="d1e183">6.</num>
+				<content xml:id="d1e185">
+					<p xml:id="d1e187">In connection with the previous point, the changes in <b xml:id="d1e189">recitals 1 and 3</b> and
+						<b xml:id="d1e191">art. 1(1a) and 4a(1)</b> introduce further clarifications on the application of
+						the ePR to legal persons.</p>
+				</content>
+			</level>
+			<level xml:id="d1e196">
+				<num xml:id="d1e198">7.</num>
+				<content xml:id="d1e200">
+					<p xml:id="d1e202">In addition, <b xml:id="d1e204">new recital 3a</b> and <b xml:id="d1e206">art. 4a(1a)</b> aim at clarifying that the
+						purpose of the above provisions is not meant to affect national legislation on who can
+						represent legal persons in dealings with any third parties or in legal proceedings</p>
+				</content>
+			</level>			
+			<block xml:id="d1e212" name="crossHeading">Ancillary services</block>
+			<level xml:id="d1e215">
+				<num xml:id="d1e217">8.</num>
+				<content xml:id="d1e219">
+					<p xml:id="d1e221">The changes in <b xml:id="d1e223">art. 4(2)</b> make clear that the inclusion of ancillary services
+						in the definition of 'interpersonal communication service' applies only for the
+						purposes of the ePR, to avoid any interference with other legislative files.</p>
+				</content>
+			</level>
+			<level xml:id="d1e228">
+				<num xml:id="d1e230">9.</num>
+				<content xml:id="d1e232">
+					<p xml:id="d1e234"><b xml:id="d1e235">New recital 11a</b> provides more detail on how the ePR should apply to ancillary
+						functionalities and on what could be considered as an ancillary feature. Delegations
+						are invited to express their views on the proposed clarifications and, if necessary,
+						suggest further amendments to adequately address the issue of ancillary services.</p>
+				</content>
+			</level>
+			<block xml:id="d1e240" name="crossHeading">Machine-to-machine communications</block>
+			<level xml:id="d1e243">
+				<num xml:id="d1e245">10.</num>
+				<content xml:id="d1e247">
+					<p xml:id="d1e249">The Presidency has amended <b xml:id="d1e251">recital 12 and art. 5(2)</b>. Taking similar approach
+						as in the Telecoms Code (in particular recital 224 and the definition of electronic
+						communication service in art. 2(4)), the provisions now make a distinction between the
+						application and transmission layers of machine-to-machine services. It has been
+						clarified that the application layer of such services, which does not normally
+						constitute an electronic communication service, should not be covered by the ePR. On
+						the other hand, the transmission services used for the provision of machine-to-machine
+						services do constitute an electronic communications service and as such should be
+						subject to the principle of confidentiality of communications. Given the
+						clarifications provided in recital 12, delegations are invited to consider whether
+						there is a need for the text on machine-to-machine services in articles at all. The
+						Presidency notes that after the substance of the provisions on machine-to-machine
+						communications has been agreed upon, the Presidency will consider what would be the
+						most appropriate place for those provisions in the structure of the Regulation.</p>
+				</content>
+			</level>
+			<division xml:id="d1e256" class="type_1">
+				<num xml:id="d1e258">III.</num>
+				<heading xml:id="d1e260">OTHER CHANGES</heading>
+			</division>
+			<level xml:id="d1e264">
+				<num xml:id="d1e266">11.</num>
+				<content xml:id="d1e268">
+					<p xml:id="d1e270">In <b xml:id="d1e272">art. 2(1)(b) and 3(1)(c)</b>, the Presidency has deleted the words 'related
+						to'.</p>
+				</content>
+			</level>
+			<level xml:id="d1e277">
+				<num xml:id="d1e279">12.</num>
+				<content xml:id="d1e281">
+					<p xml:id="d1e283">The notion of 'publicly available services' used in <b xml:id="d1e285">art. 2(2)(c)</b> has been
+						further clarified in <b xml:id="d1e287">recital 13</b>.</p>
+				</content>
+			</level>
+			<level xml:id="d1e292">
+				<num xml:id="d1e294">13.</num>
+				<content xml:id="d1e296">
+					<p xml:id="d1e298">In <b xml:id="d1e300">art. 3(1)(aa), (c), (cb) and (cc)</b> the word 'located' has been replaced by
+						'who are' to align with a similar text in the GDPR (art. 3(2)). 'Who are' has been
+						added also in <b xml:id="d1e302">art. 3(1)(a)</b>.</p>
+				</content>
+			</level>
+			<level xml:id="d1e307">
+				<num xml:id="d1e309">14.</num>
+				<content xml:id="d1e311">
+					<p xml:id="d1e313"><b xml:id="d1e314">Recital 8</b> has been amended to clarify, in relation to the territorial scope of
+						application set out in art. 3, that the ePR should apply whether or not the processing
+						of data takes place in the Union and whether the service providers or persons
+						processing the data are established or located in the Union or not. <b xml:id="d1e316">Recital 9</b>
+						has been deleted to avoid repetition.</p>
+				</content>
+			</level>
+			<level xml:id="d1e321">
+				<num xml:id="d1e323">15.</num>
+				<content xml:id="d1e325">
+					<p xml:id="d1e327">Following the discussion in the WP TELE, <b xml:id="d1e329">art. 3(2)</b> lists all actors that have
+						the obligation to designate a representative. <b xml:id="d1e331">New art. 3(2a)</b>, inspired by a
+						similar provision in the GDPR (art. 27(2)), clarifies that this obligation should not
+						apply to occasional and low-risk activities.</p>
+				</content>
+			</level>
+			<level xml:id="d1e336">
+				<num xml:id="d1e338">16.</num>
+				<content xml:id="d1e340">
+					<p xml:id="d1e342">The wording of the definition of 'electronic communications metadata' in <b xml:id="d1e344">art.
+						4(3)(c)</b> has been aligned with similar wording in the definition of 'electronic
+						communications content'.</p>
+				</content>
+			</level>
+			<level xml:id="d1e350">
+				<num xml:id="d1e352">17.</num>
+				<content xml:id="d1e354">
+					<p xml:id="d1e356">Definition of 'electronic message' in <b xml:id="d1e358">art. 4(3)(e)</b> has been amended to avoid
+						circularity. Moreover, <b xml:id="d1e360">new recital 30a</b> clarifying what should be included in
+						this definition has been introduced in the proposal.</p>
+				</content>
+			</level>
+			<level xml:id="d1e365">
+				<num xml:id="d1e367">18.</num>
+				<content xml:id="d1e369">
+					<p xml:id="d1e371">Definition of 'direct marketing communications' in <b xml:id="d1e373">art. 4(3)(f)</b> has been
+						further improved and further details have been included in recital 32 to clarify what
+						forms of advertising should or should not be covered by the ePR.</p>
+				</content>
+			</level>
+			<level xml:id="d1e378">
+				<num xml:id="d1e380">19.</num>
+				<content xml:id="d1e382">
+					<p xml:id="d1e384">In <b xml:id="d1e386">art. 4a(1)</b> it has been clarified that 'provisions' (as opposed to
+						'conditions') for consent under the GDPR apply in the ePR context. In this way, for
+						example art. 8 of GDPR on child's consent also applies.</p>
+				</content>
+			</level>
+			<level xml:id="d1e391">
+				<num xml:id="d1e393">20.</num>
+				<content xml:id="d1e395">
+					<p xml:id="d1e397">The Presidency has included in <b xml:id="d1e399">art. 4a(3)</b> a possibility for the end-users to
+						request not to receive the periodic reminder of a possibility to withdraw their
+						consent.</p>
+				</content>
+			</level>
+			<level xml:id="d1e404">
+				<num xml:id="d1e406">21.</num>
+				<content xml:id="d1e408">
+					<p xml:id="d1e410">A number of minor corrections have been introduced for consistency or linguistic
+						purposes: <b xml:id="d1e412">recitals 15, 18, 19 and 20</b>.</p>
+				</content>
+			</level>			
+			<division xml:id="d1e417" class="type_1">
+				<num xml:id="d1e419">IV.</num>
+				<heading xml:id="d1e421">CONCLUSION</heading>
+			</division>
+			<level xml:id="d1e425">
+				<num xml:id="d1e427">22.</num>
+				<content xml:id="d1e429">
+					<p xml:id="d1e431">At the meetings of 18 October, the Presidency intends to discuss the text of the
+						proposal article-by-article. During the discussion, the Presidency will invite
+						delegations to express their <b xml:id="d1e433">views on proposed changes</b>.</p>
+				</content>
+			</level>
+			<level xml:id="d1e438">
+				<num xml:id="d1e440">23.</num>
+				<content xml:id="d1e442">
+					<p xml:id="d1e444">The Presidency kindly asks delegations to provide <b xml:id="d1e446">written comments by 6 November
+						2017</b>.</p>
+				</content>
+			</level>
+		</mainBody>
+	</doc>
+</akomaNtoso>

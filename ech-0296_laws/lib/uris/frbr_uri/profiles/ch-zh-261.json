@@ -1,0 +1,49 @@
+{
+  "_comment": "Stadt Zürich – AKN FRBR URI profile",
+  "tags": "akn, frbr, switzerland, stadt-zuerich",
+  "jurisdiction": "ch-zh-261",
+  "level": "municipality",
+  "name": "Stadt Zürich",
+  "country": "CH",
+  "subdivision": "ZH",
+  "municipality": "Zürich",
+  "bfs_number": "261",
+  "base_uri": "https://www.stadt-zuerich.ch/eli",
+  "akn_country": "ch",
+  "akn_prefix": "/akn/ch-zh-261",
+  "language_codes": {
+    "de": "deu"
+  },
+  "default_language": "de",
+  "document_types": {
+    "ordinance": {
+      "akn_type": "act",
+      "subtype": "gemeindeordnung",
+      "label_de": "Gemeindeordnung"
+    },
+    "regulation": {
+      "akn_type": "act",
+      "subtype": "reglement",
+      "label_de": "Reglement"
+    },
+    "decision": {
+      "akn_type": "act",
+      "subtype": "beschluss",
+      "label_de": "Beschluss"
+    },
+    "bylaw": {
+      "akn_type": "act",
+      "subtype": "satzung",
+      "label_de": "Satzung"
+    }
+  },
+  "numbering": {
+    "eli_pattern": "/eli/zh/261/{year}/{number}"
+  },
+  "uri_templates": {
+    "work": "/akn/ch-zh-261/{doc_type}/{date}/{number}",
+    "expression": "/akn/ch-zh-261/{doc_type}/{date}/{number}/{lang}@{version}",
+    "manifestation": "/akn/ch-zh-261/{doc_type}/{date}/{number}/{lang}@{version}.{format}",
+    "item": "/akn/ch-zh-261/{doc_type}/{date}/{number}/{lang}@{version}.{format}/{component}"
+  }
+}

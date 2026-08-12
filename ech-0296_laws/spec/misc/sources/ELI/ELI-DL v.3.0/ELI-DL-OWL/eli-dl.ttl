@@ -1,0 +1,1237 @@
+@prefix schema: <http://schema.org/> .
+@prefix eli: <http://data.europa.eu/eli/ontology#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix xls2rdf: <https://xls2rdf.sparna.fr/vocabulary#> .
+@prefix eli-dl: <http://data.europa.eu/eli/eli-draft-legislation-ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frbroo: <http://iflastandards.info/ns/fr/frbr/frbroo/> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+<http://data.europa.eu/eli/eli-draft-legislation-ontology#> a owl:Ontology;
+  owl:imports <http://iflastandards.info/ns/fr/frbr/frbroo/>, <http://www.cidoc-crm.org/cidoc-crm/>,
+    <http://www.w3.org/2004/02/skos/core>, <http://data.europa.eu/eli/ontology#> .
+
+eli-dl:Activity a owl:Class;
+  dc:identifier "Activity";
+  rdfs:subClassOf crm:E7_Activity, _:19b4974f821d43598180884296056517240, _:19b4974f821d43598180884296056517244,
+    _:19b4974f821d43598180884296056517245, _:19b4974f821d43598180884296056517246, _:19b4974f821d43598180884296056517247;
+  rdfs:label "Activity"@en;
+  rdfs:comment """An activity taking place in a legal context, either in legislative bodies like parliaments or executive bodies like governements or the European Commission.
+
+This may involve the creation of a document, or be triggered by a document created by a previous activity.
+
+This can be used to describe activities at an arbitrary level of precisions : either macro activities, like \\\"reading of text in a chamber\\\", or small-grained activities, like \\\"vote to elect the president of a commitee session\\\"."""@en .
+
+eli-dl:Participation a owl:Class;
+  dc:identifier "Participation";
+  rdfs:label "Participation"@en;
+  rdfs:comment "The participation of an Agent in an Activity, in a certain role, and possibly in the name of another Agent."@en;
+  rdfs:subClassOf _:19b4974f821d43598180884296056517263 .
+
+eli-dl:Process a owl:Class;
+  dc:identifier "Process";
+  rdfs:subClassOf eli-dl:Activity, _:19b4974f821d43598180884296056517231, _:19b4974f821d43598180884296056517233;
+  rdfs:label "Process"@en;
+  rdfs:comment "A process, either legislative (the drafting of a law) or non-legislative, that will not give birth to a legislation."@en .
+
+eli-dl:ForeseenActivity a owl:Class;
+  dc:identifier "ForeseenActivity";
+  rdfs:subClassOf eli-dl:Activity;
+  rdfs:label "Foreseen Activity"@en;
+  rdfs:comment "A planned, foreseen activity, in the future. Planned activities are regarded as specific (subclasses of) Activities, thus can be described with the same set of properties as a past activity."@en .
+
+eli-dl:TranspositionProcess a owl:Class;
+  dc:identifier "TranspositionProcess";
+  rdfs:subClassOf eli-dl:Process;
+  rdfs:label "Transposition Process"@en;
+  rdfs:comment "The process of transposing an EU legislation in national legislation."@en .
+
+eli-dl:Decision a owl:Class;
+  dc:identifier "Decision";
+  rdfs:subClassOf eli-dl:Activity;
+  rdfs:label "Decision"@en;
+  rdfs:comment "A specific kind of activity that resulted in a decision outcome. Decisions can be formally taken based on a written document."@en .
+
+eli-dl:Vote a owl:Class;
+  dc:identifier "Vote";
+  rdfs:subClassOf eli-dl:Decision, _:19b4974f821d43598180884296056517264, _:19b4974f821d43598180884296056517265,
+    _:19b4974f821d43598180884296056517266, _:19b4974f821d43598180884296056517267;
+  rdfs:label "Vote"@en;
+  rdfs:comment "A Vote activity"@en .
+
+eli-dl:LegislativeProcess a owl:Class;
+  dc:identifier "LegislativeProcess";
+  rdfs:subClassOf eli-dl:LegislativeActivity, eli-dl:Process, _:19b4974f821d43598180884296056517232;
+  rdfs:label "Legislative Process"@en;
+  rdfs:comment """A process of drafting a legislation, covering all stages of the legislation creation, from the initiation to its signature or promulgation to make it a legislation, including readings and assemblies and official signature of the law.
+
+Note that the activity of publishing the legislation in an Official Journal is usually not part of the legislative process, as it usually happens after the draft legislation has become an official legislation."""@en .
+
+eli-dl:LegislativeActivity a owl:Class;
+  dc:identifier "LegislativeActivity";
+  rdfs:subClassOf eli-dl:Activity;
+  rdfs:label "Legislative activity"@en;
+  rdfs:comment "Any activity taking place in the course of the drafting of a legislation."@en .
+
+eli-dl:LegislativeProcessWork a owl:Class;
+  dc:identifier "LegislativeProcessWork";
+  rdfs:subClassOf eli:Work, _:19b4974f821d43598180884296056517268;
+  rdfs:label "Legislative process work"@en;
+  rdfs:comment """Any work created by an activity during a legislative process.
+If the work is a version of the legislation draft or an amendment, more specific subclasses should be used.
+
+Example : an impact study, an opinion from a commitee, a debate recording or transcript."""@en .
+
+eli-dl:DraftLegislationWork a owl:Class;
+  dc:identifier "DraftLegislationWork";
+  rdfs:subClassOf eli-dl:LegislativeProcessWork;
+  rdfs:label "Draft legislation work"@en;
+  rdfs:comment """Works that are draft legislations.
+
+Like eli:LegalResource, this class can be used to identify either a specific version of the legislation draft, or the \\\"abstract\\\" legislation work, independantly of one of its versions (in FRBRoo terms, it encompasses the notion of \\\"Individual work\\\" and \\\"Complex work\\\").
+
+Example : the legislation draft \\\"as initiated\\\", the legislation draft \\\"after 1st reading\\\", the final version of the legislation draft."""@en .
+
+eli-dl:AmendmentToDraftLegislationWork a owl:Class;
+  dc:identifier "AmendmentToDraftLegislationWork";
+  rdfs:subClassOf eli-dl:LegislativeProcessWork;
+  rdfs:label "Amendment to draft legislation work"@en;
+  rdfs:comment """An amendment created to amend a specific version of a legislation draft.
+
+Amendments can be described and published even if they are not yet voted, or even if they were rejected.
+
+This is meant to identify both a single amendment, or a document containing a list of amendments.
+
+To describe a document containing a list of amendments, the relation has_part can be used between the instance of AmendmentToDraftLegislationWork identifying the amendment list and each instance of AmendmentToDraftLegislationWork that identifies an individual amendment within the list."""@en .
+
+eli-dl:ProcessStatus a owl:Class;
+  dc:identifier "ProcessStatus";
+  rdfs:subClassOf crm:E55_Type, skos:Concept;
+  rdfs:label "Status of a legislative process"@en;
+  rdfs:comment "The overall status of a legislative process. ELI-DL provides 3 possible values : Ongoing, Successful, or Abandonned. Other values can be defined by implementors."@en .
+
+eli-dl:LegislativeProcessWorkVersion a owl:Class;
+  dc:identifier "LegislativeProcessWorkVersion";
+  rdfs:subClassOf crm:E55_Type, skos:Concept;
+  rdfs:label "Version of a legislative process work"@en;
+  rdfs:comment """The version of a legislative process document. For example an amendment can be in a drafted (prepatory) status, before being tabled (final).
+
+ELI-DL provides 2 possible values : Preparatory and Final. Other values can be defined by implementors, to refine e.g. the possible statuses of a an amendment, an opinition, etC."""@en .
+
+eli-dl:ProcessStage a owl:Class;
+  dc:identifier "ProcessStage";
+  rdfs:subClassOf crm:E55_Type, skos:Concept;
+  rdfs:label "Stage of a (legislative) process"@en;
+  rdfs:comment """A stage in a workflow. Stages can be described at an arbitrary level of granularity.
+
+Possible values need to be described by each Member State depending on its workflow.
+
+Example : \\\"Dàil second stage\\\", \\\"1ère lecture\\\", \\\"examen en commission\\\", etc."""@en .
+
+eli-dl:ProcessType a owl:Class;
+  dc:identifier "ProcessType";
+  rdfs:subClassOf eli-dl:ActivityType;
+  rdfs:label "Type of a legislative process"@en;
+  rdfs:comment "A possible type for a legislative process."@en .
+
+eli-dl:LegislativeProcessWorkType a owl:Class;
+  dc:identifier "LegislativeProcessWorkType";
+  rdfs:subClassOf crm:E55_Type, skos:Concept;
+  rdfs:label "Type of a legislative process work"@en;
+  rdfs:comment "A possible type for a legislative projcet work."@en .
+
+eli-dl:ParliamentaryTerm a owl:Class;
+  dc:identifier "ParliamentaryTerm";
+  rdfs:subClassOf crm:E55_Type, skos:Concept;
+  rdfs:label "Parliamentary term"@en;
+  rdfs:comment "A parliamentary term, e.g. \"ninth legislature\""@en .
+
+eli-dl:ActivityType a owl:Class;
+  dc:identifier "ActivityType";
+  rdfs:subClassOf crm:E55_Type, skos:Concept;
+  rdfs:label "Type of an activity"@en;
+  rdfs:comment "The type of an activity, e.g. \"Reading\", \"Committee meeting\", \"Economic and social committee meeting\", etc."@en .
+
+eli-dl:ParticipationRole a owl:Class;
+  dc:identifier "ParticipationRole";
+  rdfs:subClassOf crm:E55_Type, skos:Concept;
+  rdfs:label "Role of an Agent in a Participation"@en;
+  rdfs:comment "The role of an Agent in a Participation, e.g. \"Rapporteur\", \"Shadow Rapporteur\", etc."@en .
+
+eli-dl:DecisionOutcome a owl:Class;
+  dc:identifier "DecisionOutcome";
+  rdfs:subClassOf crm:E55_Type, skos:Concept;
+  rdfs:label "Decision outcome"@en;
+  rdfs:comment "The possible outcomes of a decision. ELI-DL defines a simple list of possible values that can be extended by implementations"@en;
+  owl:equivalentClass _:19b4974f821d43598180884296056517230 .
+
+_:19b4974f821d43598180884296056517230 a owl:Restriction;
+  owl:onProperty skos:inScheme;
+  owl:hasValue eli-dl:DecisionOutcomeTable .
+
+eli-dl:DecisionMethod a owl:Class;
+  dc:identifier "DecisionMethod";
+  rdfs:subClassOf crm:E55_Type, skos:Concept;
+  rdfs:label "Decision method"@en;
+  rdfs:comment "A method to carry out a decision; the way a decision was made."@en .
+
+eli-dl:process_title a owl:DatatypeProperty;
+  dc:identifier "process_title";
+  rdfs:domain eli-dl:Process;
+  rdfs:range xsd:string;
+  rdfs:subPropertyOf eli-dl:activity_label;
+  rdfs:label "legislative process title"@en;
+  rdfs:comment """The name or title of a process.
+
+Example : \\\"Forestry (Planning Permission) (Amendment) Bill 2018\\\", \\\"Sports : organisation des jeux Olympiques et Paralympiques 2024\\\"."""@en .
+
+eli-dl:process_id a owl:DatatypeProperty;
+  dc:identifier "process_id";
+  rdfs:domain eli-dl:Process;
+  rdfs:range xsd:string;
+  rdfs:subPropertyOf eli-dl:activity_id;
+  rdfs:label "legislative process id"@en;
+  rdfs:comment """An identifier for the process. This is meant to capture how the process is identified by law makers. A process can have multiple identifiers for different institutions, e.g. an identifier for the government, and an identifier for the parliament.
+
+Note that a subproperty process_external_id exists to capture the identifier of another institution, depending on the point of view."""@en .
+
+eli-dl:process_description a owl:DatatypeProperty;
+  dc:identifier "process_description";
+  rdfs:domain eli-dl:Process;
+  rdfs:range xsd:string;
+  rdfs:subPropertyOf crm:P3_has_note;
+  rdfs:label "legislative process description"@en;
+  rdfs:comment "An account or summary for the process."@en .
+
+eli-dl:process_number a owl:DatatypeProperty, owl:FunctionalProperty;
+  dc:identifier "process_number";
+  rdfs:domain eli-dl:Process;
+  rdfs:range xsd:string;
+  rdfs:label "legislative process number"@en;
+  rdfs:comment "The number under which a process is known by the public. A process has only one number."@en .
+
+_:19b4974f821d43598180884296056517231 a owl:Restriction;
+  owl:onProperty eli-dl:process_number;
+  owl:maxCardinality "1"^^xsd:integer .
+
+eli-dl:process_status a owl:ObjectProperty;
+  dc:identifier "process_status";
+  rdfs:domain eli-dl:Process;
+  rdfs:range eli-dl:ProcessStatus;
+  rdfs:subPropertyOf crm:P2_has_type;
+  rdfs:label "legislative process status"@en;
+  rdfs:comment "The status of a process, in one of the possible values included in this model."@en .
+
+eli-dl:process_type a owl:ObjectProperty;
+  dc:identifier "process_type";
+  rdfs:domain eli-dl:Process;
+  rdfs:range eli-dl:ProcessType;
+  rdfs:subPropertyOf eli-dl:had_activity_type;
+  rdfs:label "legislative process type"@en;
+  rdfs:comment """The type of a process. The type of a process often determine the workflow being followed to create the law.
+
+The list of possible values need to be defined by each Member State.
+
+Example : \\\"Projet de loi\\\", \\\"Proposition de loi\\\", \\\"Revision of the Constitution\\\", \\\"Public Bill\\\"."""@en .
+
+eli-dl:process_keyword a owl:ObjectProperty;
+  dc:identifier "process_keyword";
+  rdfs:domain eli-dl:Process;
+  rdfs:range skos:Concept;
+  rdfs:subPropertyOf crm:P129_is_about;
+  rdfs:label "legislative process keyword"@en;
+  rdfs:comment """The keywords, subject or categories for a process.
+
+Example : Procedure 2016/0382/COD has Eurovoc keywords energy consumption, atmospheric pollution, renewable resources, EU programme, environmental cooperation, greenhouse gas, reduction of gas emissions, energy saving and renewable energy."""@en .
+
+eli-dl:foreseen_date_of_adoption a owl:DatatypeProperty, owl:FunctionalProperty;
+  dc:identifier "foreseen_date_of_adoption";
+  rdfs:domain eli-dl:LegislativeProcess;
+  rdfs:range xsd:date;
+  rdfs:label "foreseen date of adoption"@en;
+  rdfs:comment "The date at which the process is expected to be enacted to become an official act."@en .
+
+_:19b4974f821d43598180884296056517232 a owl:Restriction;
+  owl:onProperty eli-dl:foreseen_date_of_adoption;
+  owl:maxCardinality "1"^^xsd:integer .
+
+eli-dl:foreseen_type_document a owl:ObjectProperty;
+  dc:identifier "foreseen_type_document";
+  rdfs:domain eli-dl:LegislativeProcess;
+  rdfs:range eli:ResourceType;
+  rdfs:label "foreseen type of document"@en;
+  rdfs:comment """Indicates the expected type of the legislation that will be the result of this legislative process.
+The expected type of legislation can change over time.
+
+The value must be taken in the ResourceType table, already used for the eli:type_document property."""@en .
+
+eli-dl:date_last_update a owl:DatatypeProperty, owl:FunctionalProperty;
+  dc:identifier "date_last_update";
+  rdfs:domain eli-dl:Process;
+  rdfs:range xsd:date;
+  rdfs:label "date of last update"@en;
+  rdfs:comment """The date at which the process was last updated.
+
+A legislative process can have at most one value for this property."""@en .
+
+_:19b4974f821d43598180884296056517233 a owl:Restriction;
+  owl:onProperty eli-dl:date_last_update;
+  owl:maxCardinality "1"^^xsd:integer .
+
+eli-dl:latest_activity a owl:ObjectProperty;
+  dc:identifier "latest_activity";
+  rdfs:domain eli-dl:Process;
+  rdfs:range eli-dl:Activity;
+  rdfs:subPropertyOf eli-dl:consists_of;
+  rdfs:label "latest activity"@en;
+  rdfs:comment """Indicates the latest activity that took place within a process. This is used to indicate to a reader the latest stage of a process.
+Depending on the point of view, this can be used to point to the ongoing activity (not finished yet), or to the latest activity that actually completed."""@en .
+
+eli-dl:current_stage a owl:ObjectProperty;
+  dc:identifier "current_stage";
+  rdfs:domain eli-dl:Process;
+  rdfs:range eli-dl:ProcessStage;
+  rdfs:subPropertyOf crm:P2_has_type;
+  rdfs:label "current stage"@en;
+  rdfs:comment """The latest stage in which a process is currently in.
+
+This is a shortcut for the full path Process latest_activity Activity occured_at_stage ProcessStage.
+
+Example : Bill 105 of 2019 is currently in stage \\\"Seanad Éireann, Second Stage\\\"."""@en .
+
+eli-dl:created_a_realization_of_legal_resource a owl:ObjectProperty;
+  dc:identifier "created_a_realization_of_legal_resource";
+  rdfs:domain eli-dl:LegislativeActivity;
+  rdfs:range eli:LegalResource;
+  rdfs:subPropertyOf eli-dl:involved_work, frbroo:R19_created_a_realization_of;
+  rdfs:label "created a realization of legal resource"@en;
+  rdfs:comment "Indicates a LegalResource that is officialy published as part of the legislative activity. This is used to indicate the outcome of a LegislativeProcess, as well as other \\\"intermediate\\\" legal resources that may be published in the course of the legislation drafting."@en .
+
+eli-dl:created_legal_expression a owl:ObjectProperty;
+  dc:identifier "created_legal_expression";
+  rdfs:domain eli-dl:LegislativeActivity;
+  rdfs:range eli:LegalExpression;
+  rdfs:subPropertyOf eli-dl:created_expression;
+  rdfs:label "created legal expression"@en;
+  rdfs:comment """Indicates that a legislative activity created the a legal expression. Typically, a legislative process created the final legal expression of the legislation, as published in the OJ; but this can be used on legislative activities to link to \\\"intermediate\\\" expressions.
+This property is mostly here for compatibility with FRBRoo, but implementations would prefer using created_a_realization_of_legal_resource to link to the Work level.
+This could indicate that some Expressions of the final LegalResource were created by the legislative process, and some others were translated afterwards."""@en .
+
+eli-dl:is_subject_of a owl:ObjectProperty;
+  dc:identifier "is_subject_of";
+  rdfs:domain eli-dl:Process;
+  rdfs:range owl:Thing;
+  rdfs:subPropertyOf crm:P129i_is_subject_of;
+  rdfs:label "is subject of"@en;
+  rdfs:comment """A webpage or resource that describe a process. This property is meant to crosslink the websites of different institutions that describe the same legislative process.
+
+Example : the page of the legislation process in the OJ website, the page of the process in the Senate website, the page of the process in the State Council website."""@en .
+
+eli-dl:was_submitted_by a owl:ObjectProperty;
+  dc:identifier "was_submitted_by";
+  rdfs:domain eli-dl:Process;
+  rdfs:range eli:Agent;
+  rdfs:subPropertyOf crm:P11_had_participant, crm:P17_was_motivated_by;
+  rdfs:label "was submitted by"@en;
+  rdfs:comment "Indicates the organization or person that submitted a process to the parliament (this could be the government, the President, the Senate, a group of members of the parliament, a parliamentary committee, a group of citizens, etc.)."@en .
+
+eli-dl:transposition_deadline a owl:DatatypeProperty;
+  dc:identifier "transposition_deadline";
+  rdfs:domain eli-dl:TranspositionProcess;
+  rdfs:range xsd:date;
+  rdfs:label "has transposition deadline"@en;
+  rdfs:comment "The deadline for the transposition of the directive."@en .
+
+eli-dl:activity_label a owl:DatatypeProperty;
+  dc:identifier "activity_label";
+  rdfs:domain eli-dl:Activity;
+  rdfs:range xsd:string;
+  rdfs:label "activity label"@en;
+  rdfs:comment "A label on the activity, describing what is being carried out."@en .
+
+eli-dl:activity_date a owl:DatatypeProperty;
+  dc:identifier "activity_date";
+  rdfs:domain eli-dl:Activity;
+  rdfs:range _:19b4974f821d43598180884296056517234;
+  rdfs:label "activity date"@en;
+  rdfs:comment """The date of an activity, to indicate a single date. Alternatively, if an activity spans a time range, \\\"activity_start_date\\\" and \\\"activity_end_date\\\" can be used to indicate the beginning and end of the activity.
+
+Dates can be expressed either at a date precision (yyyy-mm-dd), or with time precision (yyyy-dd-mmYhh:mm:ss)"""@en .
+
+_:19b4974f821d43598180884296056517234 a rdfs:Datatype;
+  owl:unionOf _:19b4974f821d43598180884296056517235 .
+
+_:19b4974f821d43598180884296056517235 rdf:first xsd:date;
+  rdf:rest _:19b4974f821d43598180884296056517236 .
+
+_:19b4974f821d43598180884296056517236 rdf:first xsd:dateTime;
+  rdf:rest rdf:nil .
+
+eli-dl:activity_start_date a owl:DatatypeProperty, owl:FunctionalProperty;
+  dc:identifier "activity_start_date";
+  rdfs:domain eli-dl:Activity;
+  rdfs:range _:19b4974f821d43598180884296056517237;
+  rdfs:label "activity start date"@en;
+  rdfs:comment """The date at which an activity started.
+
+Dates can be expressed either at a date precision (yyyy-mm-dd), or with time precision (yyyy-dd-mmYhh:mm:ss)"""@en .
+
+_:19b4974f821d43598180884296056517237 a rdfs:Datatype;
+  owl:unionOf _:19b4974f821d43598180884296056517238 .
+
+_:19b4974f821d43598180884296056517238 rdf:first xsd:date;
+  rdf:rest _:19b4974f821d43598180884296056517239 .
+
+_:19b4974f821d43598180884296056517239 rdf:first xsd:dateTime;
+  rdf:rest rdf:nil .
+
+_:19b4974f821d43598180884296056517240 a owl:Restriction;
+  owl:onProperty eli-dl:activity_start_date;
+  owl:maxCardinality "1"^^xsd:integer .
+
+eli-dl:activity_end_date a owl:DatatypeProperty, owl:FunctionalProperty;
+  dc:identifier "activity_end_date";
+  rdfs:domain eli-dl:Activity;
+  rdfs:range _:19b4974f821d43598180884296056517241;
+  rdfs:label "activity end date"@en;
+  rdfs:comment """The date at which an activity ended.
+
+Dates can be expressed either at a date precision (yyyy-mm-dd), or with time precision (yyyy-dd-mmYhh:mm:ss)"""@en .
+
+_:19b4974f821d43598180884296056517241 a rdfs:Datatype;
+  owl:unionOf _:19b4974f821d43598180884296056517242 .
+
+_:19b4974f821d43598180884296056517242 rdf:first xsd:date;
+  rdf:rest _:19b4974f821d43598180884296056517243 .
+
+_:19b4974f821d43598180884296056517243 rdf:first xsd:dateTime;
+  rdf:rest rdf:nil .
+
+_:19b4974f821d43598180884296056517244 a owl:Restriction;
+  owl:onProperty eli-dl:activity_end_date;
+  owl:maxCardinality "1"^^xsd:integer .
+
+eli-dl:activity_id a owl:DatatypeProperty, owl:FunctionalProperty;
+  dc:identifier "activity_id";
+  rdfs:domain eli-dl:Activity;
+  rdfs:range xsd:string;
+  rdfs:label "activity id"@en;
+  rdfs:comment "An identifier fot the activity."@en .
+
+_:19b4974f821d43598180884296056517245 a owl:Restriction;
+  owl:onProperty eli-dl:activity_id;
+  owl:maxCardinality "1"^^xsd:integer .
+
+eli-dl:activity_order a owl:DatatypeProperty, owl:FunctionalProperty;
+  dc:identifier "activity_order";
+  rdfs:domain eli-dl:Activity;
+  rdfs:range xsd:decimal;
+  rdfs:label "activity order"@en;
+  rdfs:comment "Indicates the order of this activity in a sequence of activities. Note that the range of this property is xsd:decimal, so it is always possible to order a new activity in between two subsequent existing activities."@en .
+
+_:19b4974f821d43598180884296056517246 a owl:Restriction;
+  owl:onProperty eli-dl:activity_order;
+  owl:maxCardinality "1"^^xsd:integer .
+
+eli-dl:had_activity_type a owl:ObjectProperty, owl:FunctionalProperty;
+  dc:identifier "had_activity_type";
+  rdfs:domain eli-dl:Activity;
+  rdfs:range eli-dl:ActivityType;
+  rdfs:label "had activity type"@en;
+  rdfs:comment """The type of an activity.
+
+The list of possible values need to be defined by each Member State.
+
+Example : \"Committe meeting\", \"Plenary Session\", \"Committee Vote\", \"Opinion request\", etc."""@en .
+
+_:19b4974f821d43598180884296056517247 a owl:Restriction;
+  owl:onProperty eli-dl:had_activity_type;
+  owl:maxCardinality "1"^^xsd:integer .
+
+eli-dl:parliamentary_term a owl:ObjectProperty, owl:FunctionalProperty;
+  dc:identifier "parliamentary_term";
+  rdfs:domain _:19b4974f821d43598180884296056517248;
+  rdfs:range eli-dl:ParliamentaryTerm;
+  rdfs:label "parliamentary term"@en;
+  rdfs:comment "The parliamentary term in which the activity took place"@en .
+
+_:19b4974f821d43598180884296056517248 a owl:Class;
+  owl:unionOf _:19b4974f821d43598180884296056517249 .
+
+_:19b4974f821d43598180884296056517249 rdf:first eli-dl:Activity;
+  rdf:rest _:19b4974f821d43598180884296056517250 .
+
+_:19b4974f821d43598180884296056517250 rdf:first eli:Work;
+  rdf:rest rdf:nil .
+
+eli-dl:occured_at_stage a owl:ObjectProperty;
+  dc:identifier "occured_at_stage";
+  rdfs:domain eli-dl:Activity;
+  rdfs:range eli-dl:ProcessStage;
+  rdfs:subPropertyOf crm:P2_has_type;
+  rdfs:label "occured at stage"@en;
+  rdfs:comment """The stage at which an activity occured.
+
+The description of the stages themselves is left open for implementers.
+
+Example : The activity \\\"Presentation of Bill 78 of 2018\\\" corresponds to stage \\\"Presentation to the House\\\". The activity \\\"1ère lecture - Examen en commission du projet de loi 323\\\" corresponds to stage \\\"Examen en commission\\\"."""@en .
+
+eli-dl:had_legal_basis a owl:ObjectProperty;
+  dc:identifier "had_legal_basis";
+  rdfs:domain eli-dl:Activity;
+  rdfs:range eli:LegalResource;
+  rdfs:subPropertyOf crm:P33_used_specific_technique;
+  rdfs:label "had legal basis"@en;
+  rdfs:comment """Indicates an act that specified the legislative workflow in which this activity takes place.
+
+Example : \\\"The Signature by the President of the European Parliament and the President of the Council of Procedure 2016/0382/COD had the legal basis TFEU/art 294 and TFEU/art 194 par 2\\\"."""@en .
+
+eli-dl:forms_part_of a owl:ObjectProperty;
+  dc:identifier "forms_part_of";
+  rdfs:domain eli-dl:Activity;
+  rdfs:range eli-dl:Activity;
+  rdfs:subPropertyOf crm:P9i_forms_part_of;
+  rdfs:label "forms part of"@en;
+  owl:inverseOf eli-dl:consists_of;
+  rdfs:comment """Indicates another larger activity that encompasses this one. 
+
+Example : the activity \\\"Readng in commission of legislative process 384\\\" forms part of \\\"First lecture in assemblée nationale of legislative process 384\\\", which itself forms part \\\"Legislative process number 384\\\"."""@en .
+
+eli-dl:consists_of a owl:ObjectProperty;
+  dc:identifier "consists_of";
+  rdfs:domain eli-dl:Activity;
+  rdfs:range eli-dl:Activity;
+  rdfs:subPropertyOf crm:P9_consists_of;
+  rdfs:label "consists of"@en;
+  owl:inverseOf eli-dl:forms_part_of;
+  rdfs:comment """Indicates a more fine-grained activity that is taking place within this one. This allows to nest activities inside each other, at an arbitrary level of precision.
+
+Example : \\\"Legislative process number 384\\\" consists of \\\"Initiation of the process 384\\\", \\\"First lecture in assemblée nationale of legislative process 384\\\", \\\"First lecture in senate of legislative process 384\\\", \\\"joint commitee reading of legislative process 384\\\" and \\\"enactement of legislative process 384\\\"."""@en .
+
+eli-dl:motivated a owl:ObjectProperty;
+  dc:identifier "motivated";
+  rdfs:domain eli-dl:Activity;
+  rdfs:range eli-dl:Activity;
+  rdfs:subPropertyOf crm:P17i_motivated;
+  rdfs:label "motivated"@en;
+  owl:inverseOf eli-dl:was_motivated_by;
+  rdfs:comment """Annother activity that was \\\"triggered\\\" or \\\"logically followed\\\" this one.
+
+Example : the request for an opinion motivated the writing of an opinion."""@en .
+
+eli-dl:was_motivated_by a owl:ObjectProperty;
+  dc:identifier "was_motivated_by";
+  rdfs:domain eli-dl:Activity;
+  rdfs:range eli-dl:Activity;
+  rdfs:subPropertyOf crm:P17_was_motivated_by;
+  rdfs:label "was motivated by"@en;
+  owl:inverseOf eli-dl:motivated;
+  rdfs:comment """Another activity that \\\"triggered\\\" or \\\"logically preceded\\\" this activity.
+
+Example : the writing of an opinion was motivated by the transmission of a request for an opinion by the legislation service."""@en .
+
+eli-dl:based_on_a_realization_of a owl:ObjectProperty;
+  dc:identifier "based_on_a_realization_of";
+  rdfs:domain eli-dl:Activity;
+  rdfs:range eli:Work;
+  rdfs:subPropertyOf eli-dl:involved_work;
+  rdfs:label "based on a realization of"@en;
+  rdfs:comment """Indicates that an Activity used some Work .The works are seen as the \\\"input\\\" of the activity.
+
+Example : the work of a commitee \\\"used\\\" a specific version of the draft as input to produce an opinion document.
+
+Note : the naming \\\"used a realization of\\\" is taken from FRBRoo. Since a work is an idea, existing only in people's mind, an activity cannot be simply said to have \\\"used\\\" a work, but really \\\"used an expression of this work\\\"."""@en .
+
+eli-dl:involved_work a owl:ObjectProperty;
+  dc:identifier "involved_work";
+  rdfs:domain eli-dl:Activity;
+  rdfs:range eli:Work;
+  rdfs:subPropertyOf crm:P16_used_specific_object;
+  rdfs:label "involved work"@en;
+  rdfs:comment """Indicates that an Activity somehow used a work (document) to be conducted, without indicating how it was used.
+this covers both the documents used as \\\"input\\\" of the activity and also the document produced during the activity as \\\"output\\\".
+More precise properties exist to indicate if the works should be considered \\\"inputs\\\" or \\\"outputs\\\" of the activity."""@en .
+
+eli-dl:created_a_realization_of a owl:ObjectProperty;
+  dc:identifier "created_a_realization_of";
+  rdfs:domain eli-dl:Activity;
+  rdfs:range eli:Work;
+  rdfs:subPropertyOf eli-dl:involved_work, frbroo:R19_created_a_realization_of;
+  rdfs:label "created a realization of"@en;
+  rdfs:comment """Indicates that an Activity created some Work . The works are seen as the \\\"output\\\" of the activity.
+
+This property is meant to point to the text of the bill, the amendments, the opinions, etc. to point to the final LegalResource published as the outcome of a legislative process, use the alternative property \\\"created_a_realization_of_legal_resource\\\".
+
+For recording of debates, which are not really \\\"outputs\\\" of the activity, use the alternative property \\\"recorded_in_realization_of\\\".
+
+Note : the naming \\\"created a realization of\\\" is taken from FRBRoo. Since a work is an idea, existing only in people's mind, an activity cannot be simply said to have \\\"created\\\" a work, but really \\\"created an expression of this work\\\"."""@en .
+
+eli-dl:recorded_in_a_realization_of a owl:ObjectProperty;
+  dc:identifier "recorded_in_a_realization_of";
+  rdfs:domain eli-dl:Activity;
+  rdfs:range eli:Work;
+  rdfs:label "recorded in a realization of"@en;
+  rdfs:comment """Indicates that an activity was recorded in a related work.
+
+Note : this property is shortcut for an implicit FRBR \\\"Recording Event\\\" that would have created the Recording of the event."""@en .
+
+eli-dl:recorded_in_realization_of a owl:ObjectProperty;
+  dc:identifier "recorded_in_realization_of";
+  rdfs:label "recorded in realization of (deprecated)"@en;
+  rdfs:comment "This is deprecated. Use recorded_in_a_realization_of"@en;
+  owl:deprecated "true"^^xsd:boolean;
+  owl:equivalentProperty eli-dl:recorded_in_a_realization_of .
+
+eli-dl:documented_by_a_realization_of a owl:ObjectProperty;
+  dc:identifier "documented_by_a_realization_of";
+  rdfs:domain eli-dl:Activity;
+  rdfs:range eli:Work;
+  rdfs:subPropertyOf crm:P33_used_specific_technique;
+  rdfs:label "documented by a realization of"@en;
+  rdfs:comment "Indicates that the activity was or will be conducted according to the plan described by a Work. Typically these works are agendas that foreseen how future activities will take place."@en .
+
+eli-dl:created_expression a owl:ObjectProperty;
+  dc:identifier "created_expression";
+  rdfs:domain eli-dl:Activity;
+  rdfs:range eli:Expression;
+  rdfs:subPropertyOf frbroo:R17_created;
+  rdfs:label "created expression"@en;
+  rdfs:comment """Indicates that an activity created an Expression.
+This property is mostly here for compatibility with FRBRoo, but implementations would prefer using created_a_realization_of to link to the Work level.
+This could indicate that some Expressions of a Work were created by the activity, and some others were translated afterwards."""@en .
+
+eli-dl:produced_manifestation a owl:ObjectProperty;
+  dc:identifier "produced_manifestation";
+  rdfs:domain eli-dl:Activity;
+  rdfs:range eli:Manifestation;
+  rdfs:subPropertyOf frbroo:R18_created;
+  rdfs:label "produced manifestation"@en;
+  rdfs:comment """Indicates that an activity created a Manifestation.
+This property is mostly here for compatibility with FRBRoo, but implementations would prefer using created_a_realization_of to link to the Work level.
+This could indicate that some Manifestation/Formats of the final LegalResource were created by the legislative process, and some others were generated afterwards."""@en .
+
+eli-dl:executed a owl:ObjectProperty;
+  dc:identifier "executed";
+  rdfs:domain eli-dl:Activity;
+  rdfs:range eli-dl:ForeseenActivity;
+  rdfs:comment "The foreseen (planned) activity according to which this activity was executed. For example a meeting was executed according to the foreseen activity from the agenda."@en .
+
+eli-dl:was_executed_in a owl:ObjectProperty;
+  dc:identifier "was_executed_in";
+  rdfs:domain eli-dl:ForeseenActivity;
+  rdfs:range eli-dl:Activity;
+  rdfs:comment "The activity that executed this foreseen (planned) activity. For example a meeting agenda was executed in the meeting activity."@en .
+
+eli-dl:had_participation a owl:ObjectProperty;
+  dc:identifier "had_participation";
+  rdfs:domain eli-dl:Activity;
+  rdfs:range eli-dl:Participation;
+  rdfs:label "had participation"@en;
+  rdfs:comment "The participation of an Agent in an activity"@en .
+
+eli-dl:had_participant_person a owl:ObjectProperty;
+  dc:identifier "had_participant_person";
+  rdfs:domain _:19b4974f821d43598180884296056517251;
+  rdfs:range eli:Person;
+  rdfs:subPropertyOf crm:P11_had_participant;
+  rdfs:label "had participant person"@en;
+  rdfs:comment """A person participating in an activity. A more precise property exists to indicate the responsible person of an activity.
+
+Example : members in a commision work, speaker during a plenary session"""@en .
+
+_:19b4974f821d43598180884296056517251 a owl:Class;
+  owl:unionOf _:19b4974f821d43598180884296056517252 .
+
+_:19b4974f821d43598180884296056517252 rdf:first eli-dl:Activity;
+  rdf:rest _:19b4974f821d43598180884296056517253 .
+
+_:19b4974f821d43598180884296056517253 rdf:first eli-dl:Participation;
+  rdf:rest rdf:nil .
+
+eli-dl:participant_person_label a owl:DatatypeProperty;
+  dc:identifier "participant_person_label";
+  rdfs:domain eli-dl:Activity;
+  rdfs:range xsd:string;
+  rdfs:label "participant person label"@en;
+  rdfs:comment "The name of a person that participated in an activity."@en .
+
+eli-dl:had_participant_organization a owl:ObjectProperty;
+  dc:identifier "had_participant_organization";
+  rdfs:domain _:19b4974f821d43598180884296056517254;
+  rdfs:range eli:Organization;
+  rdfs:subPropertyOf crm:P11_had_participant;
+  rdfs:label "had participant organization"@en;
+  rdfs:comment "An organization participating in an activity, but not necessarily responsible for it."@en .
+
+_:19b4974f821d43598180884296056517254 a owl:Class;
+  owl:unionOf _:19b4974f821d43598180884296056517255 .
+
+_:19b4974f821d43598180884296056517255 rdf:first eli-dl:Activity;
+  rdf:rest _:19b4974f821d43598180884296056517256 .
+
+_:19b4974f821d43598180884296056517256 rdf:first eli-dl:Participation;
+  rdf:rest rdf:nil .
+
+eli-dl:participant_organization_label a owl:DatatypeProperty;
+  dc:identifier "participant_organization_label";
+  rdfs:domain eli-dl:Activity;
+  rdfs:range xsd:string;
+  rdfs:label "participant organization label"@en;
+  rdfs:comment "The name of an organization that participated in an activity."@en .
+
+eli-dl:had_responsible_person a owl:ObjectProperty;
+  dc:identifier "had_responsible_person";
+  rdfs:domain _:19b4974f821d43598180884296056517257;
+  rdfs:range eli:Person;
+  rdfs:subPropertyOf eli-dl:had_participant_person;
+  rdfs:label "had responsible person"@en;
+  rdfs:comment """The responsible person of an activity.
+
+Example : the \\\"rapporteur\\\" of a text in a commision."""@en .
+
+_:19b4974f821d43598180884296056517257 a owl:Class;
+  owl:unionOf _:19b4974f821d43598180884296056517258 .
+
+_:19b4974f821d43598180884296056517258 rdf:first eli-dl:Activity;
+  rdf:rest _:19b4974f821d43598180884296056517259 .
+
+_:19b4974f821d43598180884296056517259 rdf:first eli-dl:Participation;
+  rdf:rest rdf:nil .
+
+eli-dl:responsible_person_label a owl:DatatypeProperty;
+  dc:identifier "responsible_person_label";
+  rdfs:domain eli-dl:Activity;
+  rdfs:range xsd:string;
+  rdfs:label "responsible person label"@en;
+  rdfs:comment "The name of a person that was responsible for an activity."@en .
+
+eli-dl:had_responsible_organization a owl:ObjectProperty;
+  dc:identifier "had_responsible_organization";
+  rdfs:domain _:19b4974f821d43598180884296056517260;
+  rdfs:range eli:Organization;
+  rdfs:subPropertyOf eli-dl:had_participant_organization;
+  rdfs:label "had responsible organization"@en;
+  rdfs:comment """The organization responsible for carrying out the activity. This can be the institution in which the activity happened, or a service, a commission.
+
+Example :
+The activity \\\"1st reading of 2016/0382/COD\\\" had responsible organization European Parliament.
+The EU procedure 2016/0382/COD had responsible organization Directorate-General for Energy."""@en .
+
+_:19b4974f821d43598180884296056517260 a owl:Class;
+  owl:unionOf _:19b4974f821d43598180884296056517261 .
+
+_:19b4974f821d43598180884296056517261 rdf:first eli-dl:Activity;
+  rdf:rest _:19b4974f821d43598180884296056517262 .
+
+_:19b4974f821d43598180884296056517262 rdf:first eli-dl:Participation;
+  rdf:rest rdf:nil .
+
+eli-dl:responsible_organization_label a owl:DatatypeProperty;
+  dc:identifier "responsible_organization_label";
+  rdfs:domain eli-dl:Activity;
+  rdfs:range xsd:string;
+  rdfs:label "responsible organization label"@en;
+  rdfs:comment "The name of an organization that was responsible for an activity."@en .
+
+eli-dl:had_excused_person a owl:ObjectProperty;
+  dc:identifier "had_excused_person";
+  rdfs:domain eli-dl:Activity;
+  rdfs:range eli:Person;
+  rdfs:label "had excused person"@en;
+  rdfs:comment "A person that was excused from a meeting or another kind of activity."@en .
+
+eli-dl:excused_person_label a owl:DatatypeProperty;
+  dc:identifier "excused_person_label";
+  rdfs:domain eli-dl:Activity;
+  rdfs:range xsd:string;
+  rdfs:label "excused person label"@en;
+  rdfs:comment "The name of a person that was excused from a meeting or another kind of activity"@en .
+
+eli-dl:participation_role a owl:ObjectProperty, owl:FunctionalProperty;
+  dc:identifier "participation_role";
+  rdfs:domain eli-dl:Participation;
+  rdfs:range eli-dl:ParticipationRole;
+  rdfs:label "participation role"@en;
+  rdfs:comment "The role of the Agent in a Participation"@en .
+
+_:19b4974f821d43598180884296056517263 a owl:Restriction;
+  owl:onProperty eli-dl:participation_role;
+  owl:maxCardinality "1"^^xsd:integer .
+
+eli-dl:participation_in_name_of a owl:ObjectProperty;
+  dc:identifier "participation_in_name_of";
+  rdfs:domain eli-dl:Participation;
+  rdfs:range eli:Agent;
+  rdfs:label "participation in name of"@en;
+  rdfs:comment "The Agent in the name of which the participating agent acted. Typically the rapporteur of a legislative report contributes in the name of a committee."@en .
+
+eli-dl:appointed_participant a owl:ObjectProperty;
+  dc:identifier "appointed_participant";
+  rdfs:domain eli-dl:Activity;
+  rdfs:range eli-dl:Participation;
+  rdfs:label "appointed"@en;
+  rdfs:comment "Indicates a stakeholder appointed by the activity for another activity"@en .
+
+eli-dl:decided_on_a_realization_of a owl:ObjectProperty;
+  dc:identifier "decided_on_a_realization_of";
+  rdfs:domain eli-dl:Decision;
+  rdfs:range eli:Work;
+  rdfs:subPropertyOf eli-dl:based_on_a_realization_of;
+  rdfs:label "based on a realization of"@en;
+  rdfs:comment "Indicates the decision activity decided upon some Work. This is a specific kind of « input » of the activity"@en .
+
+eli-dl:decision_method a owl:ObjectProperty;
+  dc:identifier "decision_method";
+  rdfs:domain eli-dl:Decision;
+  rdfs:range eli-dl:DecisionMethod;
+  rdfs:subPropertyOf crm:P32_used_general_technique;
+  rdfs:label "decision method"@en;
+  rdfs:comment "The method used to carry out the decision activity (e.g. Roll call vote, etc.)"@en .
+
+eli-dl:decision_outcome a owl:ObjectProperty;
+  dc:identifier "decision_outcome";
+  rdfs:domain eli-dl:Decision;
+  rdfs:range eli-dl:DecisionOutcome;
+  rdfs:subPropertyOf crm:P2_has_type;
+  rdfs:label "decision outcome"@en;
+  rdfs:comment "Indicates the outcome of the decision, e.g. adopted, rejected, lapsed, etc."@en .
+
+eli-dl:had_voter_favor a owl:ObjectProperty;
+  dc:identifier "had_voter_favor";
+  rdfs:domain eli-dl:Vote;
+  rdfs:range eli:Person;
+  rdfs:subPropertyOf eli-dl:had_participant_person;
+  rdfs:label "had voter in favor"@en;
+  rdfs:comment "Indicates a person that took part in a vote with a vote in favor"@en .
+
+eli-dl:had_voter_against a owl:ObjectProperty;
+  dc:identifier "had_voter_against";
+  rdfs:domain eli-dl:Vote;
+  rdfs:range eli:Person;
+  rdfs:subPropertyOf eli-dl:had_participant_person;
+  rdfs:label "had voter against"@en;
+  rdfs:comment "Indicates a person that took part in a vote with a vote against"@en .
+
+eli-dl:had_voter_abstention a owl:ObjectProperty;
+  dc:identifier "had_voter_abstention";
+  rdfs:domain eli-dl:Vote;
+  rdfs:range eli:Person;
+  rdfs:subPropertyOf eli-dl:had_participant_person;
+  rdfs:label "had voter abstention"@en;
+  rdfs:comment "Indicates a person that took part in a vote with an abstention vote"@en .
+
+eli-dl:had_voter_intended_favor a owl:ObjectProperty;
+  dc:identifier "had_voter_intended_favor";
+  rdfs:domain eli-dl:Vote;
+  rdfs:range eli:Person;
+  rdfs:subPropertyOf eli-dl:had_participant_person;
+  rdfs:label "had voter intended in favor"@en;
+  rdfs:comment "Indicates a person that took part in a vote and expressed that he/she intended to vote in favor while he/she voted otherwise"@en .
+
+eli-dl:had_voter_intended_against a owl:ObjectProperty;
+  dc:identifier "had_voter_intended_against";
+  rdfs:domain eli-dl:Vote;
+  rdfs:range eli:Person;
+  rdfs:subPropertyOf eli-dl:had_participant_person;
+  rdfs:label "had voter intended against"@en;
+  rdfs:comment "Indicates a person that took part in a vote and expressed that he/she intended to vote against while he/she voted otherwise"@en .
+
+eli-dl:had_voter_intended_abstention a owl:ObjectProperty;
+  dc:identifier "had_voter_intended_abstention";
+  rdfs:domain eli-dl:Vote;
+  rdfs:range eli:Person;
+  rdfs:subPropertyOf eli-dl:had_participant_person;
+  rdfs:label "had voter intended abstention"@en;
+  rdfs:comment "Indicates a person that took part in a vote and expressed that he/she intended to vote abstention while he/she voted otherwise"@en .
+
+eli-dl:number_of_attendees a owl:DatatypeProperty, owl:FunctionalProperty;
+  dc:identifier "number_of_attendees";
+  rdfs:domain eli-dl:Vote;
+  rdfs:range xsd:integer;
+  rdfs:label "number of attendees"@en;
+  rdfs:comment "The total number of attendees to the Vote."@en .
+
+_:19b4974f821d43598180884296056517264 a owl:Restriction;
+  owl:onProperty eli-dl:number_of_attendees;
+  owl:maxCardinality "1"^^xsd:integer .
+
+eli-dl:number_of_votes_favor a owl:DatatypeProperty, owl:FunctionalProperty;
+  dc:identifier "number_of_votes_favor";
+  rdfs:domain eli-dl:Vote;
+  rdfs:range xsd:integer;
+  rdfs:label "number of vote favor"@en;
+  rdfs:comment "The total number of votes in favor"@en .
+
+_:19b4974f821d43598180884296056517265 a owl:Restriction;
+  owl:onProperty eli-dl:number_of_votes_favor;
+  owl:maxCardinality "1"^^xsd:integer .
+
+eli-dl:number_of_votes_against a owl:DatatypeProperty, owl:FunctionalProperty;
+  dc:identifier "number_of_votes_against";
+  rdfs:domain eli-dl:Vote;
+  rdfs:range xsd:integer;
+  rdfs:label "number of vote against"@en;
+  rdfs:comment "The total number of votes against"@en .
+
+_:19b4974f821d43598180884296056517266 a owl:Restriction;
+  owl:onProperty eli-dl:number_of_votes_against;
+  owl:maxCardinality "1"^^xsd:integer .
+
+eli-dl:number_of_votes_abstention a owl:DatatypeProperty, owl:FunctionalProperty;
+  dc:identifier "number_of_votes_abstention";
+  rdfs:domain eli-dl:Vote;
+  rdfs:range xsd:integer;
+  rdfs:label "number of vote abstention"@en;
+  rdfs:comment "The total number of votes abstention"@en .
+
+_:19b4974f821d43598180884296056517267 a owl:Restriction;
+  owl:onProperty eli-dl:number_of_votes_abstention;
+  owl:maxCardinality "1"^^xsd:integer .
+
+eli-dl:refers_to a owl:ObjectProperty;
+  dc:identifier "refers_to";
+  rdfs:label "refers to"@en;
+  owl:inverseOf eli-dl:is_referred_to_by;
+  rdfs:comment "Deprecated. This was generalised in the ELI ontology. Use eli:refers_to instead."@en;
+  owl:deprecated "true"^^xsd:boolean;
+  owl:equivalentProperty eli:refers_to .
+
+eli-dl:is_referred_to_by a owl:ObjectProperty;
+  dc:identifier "is_referred_to_by";
+  rdfs:label "is referred to by"@en;
+  owl:inverseOf eli-dl:refers_to;
+  rdfs:comment "Deprecated. This was generalised in the ELI ontology. Use eli:is_referred_to_by instead."@en;
+  owl:deprecated "true"^^xsd:boolean;
+  owl:equivalentProperty eli:is_referred_to_by .
+
+eli-dl:adopts a owl:ObjectProperty;
+  dc:identifier "adopts";
+  rdfs:domain eli:Work;
+  rdfs:range eli:Work;
+  rdfs:subPropertyOf eli:refers_to;
+  rdfs:label "adopts"@en;
+  owl:inverseOf eli-dl:is_adopted_in;
+  rdfs:comment "Indicates that the work represents the adopted work of one or several related works"@en .
+
+eli-dl:is_adopted_in a owl:ObjectProperty;
+  dc:identifier "is_adopted_in";
+  rdfs:domain eli:Work;
+  rdfs:range eli:Work;
+  rdfs:subPropertyOf eli:is_referred_to_by;
+  rdfs:label "is adopted in"@en;
+  owl:inverseOf eli-dl:adopts;
+  rdfs:comment "Indicates that the work was adopted in another adopted work"@en .
+
+eli-dl:answers_to a owl:ObjectProperty;
+  dc:identifier "answers_to";
+  rdfs:domain eli:Work;
+  rdfs:range eli:Work;
+  rdfs:subPropertyOf eli:refers_to;
+  rdfs:label "answers to"@en;
+  rdfs:comment "Indicates that this work is an answer the other work."@en .
+
+eli-dl:is_answered_in a owl:ObjectProperty;
+  dc:identifier "is_answered_in";
+  rdfs:domain eli:Work;
+  rdfs:range eli:Work;
+  rdfs:subPropertyOf eli:is_referred_to_by;
+  rdfs:label "is answered in"@en;
+  owl:inverseOf eli-dl:answers_to;
+  rdfs:comment "Indicates that this wark has an answer in another work"@en .
+
+eli-dl:legislative_process_work_id a owl:ObjectProperty;
+  dc:identifier "legislative_process_work_id";
+  rdfs:domain eli-dl:LegislativeProcessWork;
+  rdfs:range "0..*";
+  rdfs:label "legislative process work identifier"@en;
+  rdfs:comment "An identifier which can be used to refer to a legislative process work."@en .
+
+eli-dl:legislative_process_work_creator a owl:ObjectProperty;
+  dc:identifier "legislative_process_work_creator";
+  rdfs:domain eli-dl:LegislativeProcessWork;
+  rdfs:range eli:Agent;
+  rdfs:label "legislative process work creator"@en;
+  rdfs:comment "Indicates the creator of legislative process work."@en .
+
+eli-dl:legislative_process_work_date a owl:DatatypeProperty, owl:FunctionalProperty;
+  dc:identifier "legislative_process_work_date";
+  rdfs:domain eli-dl:LegislativeProcessWork;
+  rdfs:range xsd:date;
+  rdfs:label "legislative process work date"@en;
+  rdfs:comment "The date at which a legislative process work was created."@en .
+
+_:19b4974f821d43598180884296056517268 a owl:Restriction;
+  owl:onProperty eli-dl:legislative_process_work_date;
+  owl:maxCardinality "1"^^xsd:integer .
+
+eli-dl:legislative_process_work_description a owl:DatatypeProperty;
+  dc:identifier "legislative_process_work_description";
+  rdfs:domain eli-dl:LegislativeProcessWork;
+  rdfs:range xsd:string;
+  rdfs:subPropertyOf crm:P3_has_note;
+  rdfs:label "legislative process work description"@en;
+  rdfs:comment """An account or short description for a work created in the context of a legislative process.
+
+Example : \\\"Bill entitled an Act to amend the provisions of the Forestry Act 2014 to provide for planning permission for all forestry developments over 5 hectares; to amend the Planning and Development Act 2000; and to provide for related matters.\\\"."""@en .
+
+eli-dl:legislative_process_work_type a owl:ObjectProperty;
+  dc:identifier "legislative_process_work_type";
+  rdfs:domain eli-dl:LegislativeProcessWork;
+  rdfs:range eli-dl:LegislativeProcessWorkType;
+  rdfs:subPropertyOf crm:P2_has_type;
+  rdfs:label "legislative process work type"@en;
+  rdfs:comment """The type of a legislative process work. The list of possible types need to be defined by each Member States.
+
+Example : \\\"Opinition from the economic commitee\\\", \\\"Impact analysis\\\", \\\"text of the bill\\\", \\\"debate recording\\\", \\\"amendment\\\"."""@en .
+
+eli-dl:legislative_process_work_version a owl:ObjectProperty;
+  dc:identifier "legislative_process_work_version";
+  rdfs:domain eli-dl:LegislativeProcessWork;
+  rdfs:range eli-dl:ProcessStatus;
+  rdfs:subPropertyOf crm:P2_has_type;
+  rdfs:label "legislative process work version"@en;
+  rdfs:comment "The version, or status, in which the legislative process work is currently : preparatory, final, etc."@en .
+
+eli-dl:amends_draft a owl:ObjectProperty;
+  dc:identifier "amends_draft";
+  rdfs:domain eli-dl:AmendmentToDraftLegislationWork;
+  rdfs:range eli-dl:DraftLegislationWork;
+  rdfs:subPropertyOf eli:amends;
+  rdfs:label "amends draft"@en;
+  owl:inverseOf eli-dl:draft_amended_by;
+  rdfs:comment """Indicates the base work that a draft amendment refers to - whether voted or not. This can be a reference to a specific version of the draft, in which case it should refer to the \\\"previous\\\" version of the draft, or to the abstract draft work if the versions are not declared as separated entities.
+
+This property is mandatory on an amendment work, and an amendment work can amend only a single instance of a draft base work."""@en .
+
+eli-dl:draft_amended_by a owl:ObjectProperty;
+  dc:identifier "draft_amended_by";
+  rdfs:domain eli-dl:DraftLegislationWork;
+  rdfs:range eli-dl:AmendmentToDraftLegislationWork;
+  rdfs:subPropertyOf eli:amended_by;
+  rdfs:label "draft amendment by"@en;
+  owl:inverseOf eli-dl:amends_draft;
+  rdfs:comment "Indicates an amendment that amends this version of the draft - whether voted or not."@en .
+
+eli-dl:amendment_included_in a owl:ObjectProperty;
+  dc:identifier "amendment_included_in";
+  rdfs:domain eli-dl:AmendmentToDraftLegislationWork;
+  rdfs:range eli-dl:DraftLegislationWork;
+  rdfs:subPropertyOf eli:is_referred_to_by;
+  rdfs:label "amendment included in"@en;
+  owl:inverseOf eli-dl:includes_amendment;
+  rdfs:comment """Indicates the base work in which the modifications proposed by an amendment were integrated. This can be a reference to a specific version of the draft, in which case it should refer to the \\\"next\\\" version of the draft, or to the abstract draft work if the versions are not declared as separated entities.
+
+Amendments that have not been voted will not have this property, it is thus optional; amendments can be integrated in at most one draft work."""@en .
+
+eli-dl:includes_amendment a owl:ObjectProperty;
+  dc:identifier "includes_amendment";
+  rdfs:domain eli-dl:DraftLegislationWork;
+  rdfs:range eli-dl:AmendmentToDraftLegislationWork;
+  rdfs:subPropertyOf eli:refers_to;
+  rdfs:label "includes amendment"@en;
+  owl:inverseOf eli-dl:amendment_included_in;
+  rdfs:comment "Indicate an amendment that was passed and included in this version of the legislation draft. This property is meant to refer to individual amendments that have been voted to be integrated in the text of the law."@en .
+
+eli-dl:foresees_amendment_of a owl:ObjectProperty;
+  dc:identifier "foresees_amendment_of";
+  rdfs:domain _:19b4974f821d43598180884296056517269;
+  rdfs:range "eil:Work";
+  rdfs:subPropertyOf eli-dl:foresees_change_of;
+  rdfs:label "foresees amendment of"@en;
+  rdfs:comment """Indicates a LegalResource already published that the future law, if adopted, will amend. Readers should refer to the definition of the eli:amends property.
+Note the legal impacts can change in successive versions of the same document."""@en .
+
+_:19b4974f821d43598180884296056517269 a owl:Class;
+  owl:unionOf _:19b4974f821d43598180884296056517270 .
+
+_:19b4974f821d43598180884296056517270 rdf:first eli-dl:LegislativeProcessWork;
+  rdf:rest _:19b4974f821d43598180884296056517271 .
+
+_:19b4974f821d43598180884296056517271 rdf:first eli-dl:LegislativeActivity;
+  rdf:rest rdf:nil .
+
+eli-dl:foresees_application_of a owl:ObjectProperty;
+  dc:identifier "foresees_application_of";
+  rdfs:domain _:19b4974f821d43598180884296056517272;
+  rdfs:range "eil:Work";
+  rdfs:subPropertyOf eli:refers_to;
+  rdfs:label "foresees application of"@en;
+  rdfs:comment """Indicates a LegalResource already published that the future law, if adopted, will apply. Readers should refer to the definition of the eli:applies property.
+Note the legal impacts can change in successive versions of the same document."""@en .
+
+_:19b4974f821d43598180884296056517272 a owl:Class;
+  owl:unionOf _:19b4974f821d43598180884296056517273 .
+
+_:19b4974f821d43598180884296056517273 rdf:first eli-dl:LegislativeProcessWork;
+  rdf:rest _:19b4974f821d43598180884296056517274 .
+
+_:19b4974f821d43598180884296056517274 rdf:first eli-dl:LegislativeActivity;
+  rdf:rest rdf:nil .
+
+eli-dl:foresees_based_on a owl:ObjectProperty;
+  dc:identifier "foresees_based_on";
+  rdfs:domain _:19b4974f821d43598180884296056517275;
+  rdfs:range "eil:Work";
+  rdfs:subPropertyOf eli:refers_to;
+  rdfs:label "foresses based on"@en;
+  rdfs:comment """Indicates a LegalResource already published on which the future law, if adopted, will be based on. Readers should refer to the definition of the eli:based_on property.
+Note the legal impacts can change in successive versions of the same document."""@en .
+
+_:19b4974f821d43598180884296056517275 a owl:Class;
+  owl:unionOf _:19b4974f821d43598180884296056517276 .
+
+_:19b4974f821d43598180884296056517276 rdf:first eli-dl:LegislativeProcessWork;
+  rdf:rest _:19b4974f821d43598180884296056517277 .
+
+_:19b4974f821d43598180884296056517277 rdf:first eli-dl:LegislativeActivity;
+  rdf:rest rdf:nil .
+
+eli-dl:foresees_change_of a owl:ObjectProperty;
+  dc:identifier "foresees_change_of";
+  rdfs:domain _:19b4974f821d43598180884296056517278;
+  rdfs:range "eil:Work";
+  rdfs:subPropertyOf eli:refers_to;
+  rdfs:label "foresses change of"@en;
+  rdfs:comment """Indicates a LegalResource already published that the future law, if adopted, will change. Readers should refer to the definition of the eli:changes property.
+Note the legal impacts can change in successive versions of the same document."""@en .
+
+_:19b4974f821d43598180884296056517278 a owl:Class;
+  owl:unionOf _:19b4974f821d43598180884296056517279 .
+
+_:19b4974f821d43598180884296056517279 rdf:first eli-dl:LegislativeProcessWork;
+  rdf:rest _:19b4974f821d43598180884296056517280 .
+
+_:19b4974f821d43598180884296056517280 rdf:first eli-dl:LegislativeActivity;
+  rdf:rest rdf:nil .
+
+eli-dl:foresees_citation_of a owl:ObjectProperty;
+  dc:identifier "foresees_citation_of";
+  rdfs:domain _:19b4974f821d43598180884296056517281;
+  rdfs:range "eil:Work";
+  rdfs:subPropertyOf eli:refers_to;
+  rdfs:label "foresees citation of"@en;
+  rdfs:comment """Indicates a LegalResource already published that the future law, if adopted, will cite. Readers should refer to the definition of the eli:cites property.
+Note the legal impacts can change in successive versions of the same document."""@en .
+
+_:19b4974f821d43598180884296056517281 a owl:Class;
+  owl:unionOf _:19b4974f821d43598180884296056517282 .
+
+_:19b4974f821d43598180884296056517282 rdf:first eli-dl:LegislativeProcessWork;
+  rdf:rest _:19b4974f821d43598180884296056517283 .
+
+_:19b4974f821d43598180884296056517283 rdf:first eli-dl:LegislativeActivity;
+  rdf:rest rdf:nil .
+
+eli-dl:foresees_commencement_of a owl:ObjectProperty;
+  dc:identifier "foresees_commencement_of";
+  rdfs:domain _:19b4974f821d43598180884296056517284;
+  rdfs:range "eil:Work";
+  rdfs:subPropertyOf eli-dl:foresees_change_of;
+  rdfs:label "foresees commencement of"@en;
+  rdfs:comment """Indicates a LegalResource already published that the future law, if adopted, will commence. Readers should refer to the definition of the eli:commences property.
+Note the legal impacts can change in successive versions of the same document."""@en .
+
+_:19b4974f821d43598180884296056517284 a owl:Class;
+  owl:unionOf _:19b4974f821d43598180884296056517285 .
+
+_:19b4974f821d43598180884296056517285 rdf:first eli-dl:LegislativeProcessWork;
+  rdf:rest _:19b4974f821d43598180884296056517286 .
+
+_:19b4974f821d43598180884296056517286 rdf:first eli-dl:LegislativeActivity;
+  rdf:rest rdf:nil .
+
+eli-dl:foresees_consolidation_of a owl:ObjectProperty;
+  dc:identifier "foresees_consolidation_of";
+  rdfs:domain _:19b4974f821d43598180884296056517287;
+  rdfs:range "eil:Work";
+  rdfs:subPropertyOf eli:refers_to;
+  rdfs:label "foresees consolidation of"@en;
+  rdfs:comment """Indicates a LegalResource already published that the future law, if adopted, will consolidates. Readers should refer to the definition of the eli:consoidates property.
+Note the legal impacts can change in successive versions of the same document."""@en .
+
+_:19b4974f821d43598180884296056517287 a owl:Class;
+  owl:unionOf _:19b4974f821d43598180884296056517288 .
+
+_:19b4974f821d43598180884296056517288 rdf:first eli-dl:LegislativeProcessWork;
+  rdf:rest _:19b4974f821d43598180884296056517289 .
+
+_:19b4974f821d43598180884296056517289 rdf:first eli-dl:LegislativeActivity;
+  rdf:rest rdf:nil .
+
+eli-dl:foresees_repeal_of a owl:ObjectProperty;
+  dc:identifier "foresees_repeal_of";
+  rdfs:domain _:19b4974f821d43598180884296056517290;
+  rdfs:range "eil:Work";
+  rdfs:subPropertyOf eli-dl:foresees_change_of;
+  rdfs:label "foresees repeal of"@en;
+  rdfs:comment """Indicates a LegalResource already published that the future law, if adopted, will repeal. Readers should refer to the definition of the eli:repeals property.
+Note the legal impacts can change in successive versions of the same document."""@en .
+
+_:19b4974f821d43598180884296056517290 a owl:Class;
+  owl:unionOf _:19b4974f821d43598180884296056517291 .
+
+_:19b4974f821d43598180884296056517291 rdf:first eli-dl:LegislativeProcessWork;
+  rdf:rest _:19b4974f821d43598180884296056517292 .
+
+_:19b4974f821d43598180884296056517292 rdf:first eli-dl:LegislativeActivity;
+  rdf:rest rdf:nil .
+
+eli-dl:foresees_transposition_of a owl:ObjectProperty;
+  dc:identifier "foresees_transposition_of";
+  rdfs:domain _:19b4974f821d43598180884296056517293;
+  rdfs:range "eil:Work";
+  rdfs:subPropertyOf eli-dl:foresees_application_of;
+  rdfs:label "foresees transposition of"@en;
+  rdfs:comment """Indicates a LegalResource already published that the future law, if adopted, will transpose. Readers should refer to the definition of the eli:transposes property.
+Note the legal impacts can change in successive versions of the same document."""@en .
+
+_:19b4974f821d43598180884296056517293 a owl:Class;
+  owl:unionOf _:19b4974f821d43598180884296056517294 .
+
+_:19b4974f821d43598180884296056517294 rdf:first eli-dl:LegislativeProcessWork;
+  rdf:rest _:19b4974f821d43598180884296056517295 .
+
+_:19b4974f821d43598180884296056517295 rdf:first eli-dl:LegislativeActivity;
+  rdf:rest rdf:nil .
+
+eli-dl:foresees_execution_of a owl:ObjectProperty;
+  dc:identifier "foresees_execution_of";
+  rdfs:domain _:19b4974f821d43598180884296056517296;
+  rdfs:range "eil:Work";
+  rdfs:subPropertyOf eli-dl:foresees_application_of;
+  rdfs:label "foresees execution of"@en;
+  rdfs:comment """Indicates a LegalResource already published of which the future law, if adopted, will ensure the execution. Readers should refer to the definition of the eli:ensures_execution_of property.
+Note the legal impacts can change in successive versions of the same document."""@en .
+
+_:19b4974f821d43598180884296056517296 a owl:Class;
+  owl:unionOf _:19b4974f821d43598180884296056517297 .
+
+_:19b4974f821d43598180884296056517297 rdf:first eli-dl:LegislativeProcessWork;
+  rdf:rest _:19b4974f821d43598180884296056517298 .
+
+_:19b4974f821d43598180884296056517298 rdf:first eli-dl:LegislativeActivity;
+  rdf:rest rdf:nil .
+
+eli-dl:DecisionOutcome-Adopted skos:notation "DecisionOutcome-Adopted";
+  rdfs:label "Adopted"@en;
+  rdfs:comment "Indicates the decision is adopted"@en .
+
+eli-dl:DecisionOutcome-Rejected skos:notation "DecisionOutcome-Rejected";
+  rdfs:label "Rejected"@en;
+  rdfs:comment "Indicates the decision is rejected"@en .

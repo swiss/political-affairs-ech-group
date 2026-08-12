@@ -1,0 +1,9 @@
+#!/usr/bin/make -f
+
+export PYBUILD_NAME=eli_annotation
+
+%:
+	dh $@ --with python3 --buildsystem=pybuild
+
+# override_dh_qqch pour y faire le npm run build
+

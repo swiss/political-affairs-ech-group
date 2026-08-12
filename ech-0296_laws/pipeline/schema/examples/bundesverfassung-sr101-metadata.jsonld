@@ -1,0 +1,739 @@
+{
+  "@context": {
+    "jolux":   "http://data.legilux.public.lu/resource/ontology/jolux#",
+    "eli":     "http://data.europa.eu/eli/ontology#",
+    "akn4ch":  "https://fedlex.admin.ch/vocabulary/akn4ch#",
+    "schema":  "https://schema.org/",
+    "skos":    "http://www.w3.org/2004/02/skos/core#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "rdfs":    "http://www.w3.org/2000/01/rdf-schema#",
+    "rdf":     "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "xsd":     "http://www.w3.org/2001/XMLSchema#",
+    "owl":     "http://www.w3.org/2002/07/owl#",
+    "eu":      "http://publications.europa.eu/resource/authority/",
+    "lang":    "http://publications.europa.eu/resource/authority/language/",
+    "vocab":   "https://fedlex.data.admin.ch/vocabulary/"
+  },
+
+  "_comment": "Complete metadata record for the Swiss Federal Constitution (SR 101 / BV). Covers: JOLux ConsolidationAbstract + Consolidation + Act (OC/BBl), ELI Pillars 1-3, eli/dl Draft + Consultation lifecycle, and akn4ch article-level extensions. Generated per AKN4CH vocabulary draft v0.1.",
+
+  "@graph": [
+
+    {
+      "_section": "=== 1. CONSOLIDATION ABSTRACT (CC) — language/format-agnostic identity of the law ===",
+
+      "@id":   "https://fedlex.data.admin.ch/eli/cc/1999/404",
+      "@type": [
+        "jolux:ConsolidationAbstract",
+        "jolux:Work",
+        "eli:LegalResource",
+        "schema:Legislation"
+      ],
+
+      "_comment_identity": "ELI Pillar 1 — persistent URI",
+      "eli:id_local":             "SR 101",
+      "eli:eli":                  "https://fedlex.data.admin.ch/eli/cc/1999/404",
+      "schema:legislationIdentifier": "SR 101",
+
+      "_comment_classification": "Taxonomy / SR classification",
+      "jolux:classifiedByTaxonomyEntry": {
+        "@id": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/systematische-rechtssammlung/1"
+      },
+      "jolux:legalResourceGenre": {
+        "@id": "https://fedlex.data.admin.ch/vocabulary/legal-resource-genre/100",
+        "skos:prefLabel": { "@value": "Basic legislation", "@language": "en" }
+      },
+      "jolux:typeDocument": {
+        "@id": "https://fedlex.data.admin.ch/vocabulary/resource-type/24",
+        "skos:prefLabel": { "@value": "Bundesverfassung", "@language": "de" }
+      },
+      "jolux:processType": {
+        "@id": "https://fedlex.data.admin.ch/vocabulary/type-procedure/ord"
+      },
+
+      "_comment_force": "ELI Pillar 2 — legal force and dates",
+      "jolux:inForceStatus": {
+        "@id": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/1",
+        "skos:prefLabel": { "@value": "In force", "@language": "en" }
+      },
+      "jolux:dateDocument":       { "@value": "1999-04-18", "@type": "xsd:date" },
+      "jolux:dateEntryInForce":   { "@value": "2000-01-01", "@type": "xsd:date" },
+      "jolux:dateApplicability":  { "@value": "2000-01-01", "@type": "xsd:date" },
+      "jolux:dateNoLongerInForce": null,
+      "jolux:dateEndApplicability": null,
+      "eli:date_document":        { "@value": "1999-04-18", "@type": "xsd:date" },
+      "eli:in_force":             true,
+
+      "_comment_responsibility": "Responsible institution",
+      "jolux:responsibilityOf": {
+        "@id": "https://fedlex.data.admin.ch/vocabulary/legal-institution/196",
+        "skos:prefLabel": { "@value": "Bundeskanzlei BK", "@language": "de" }
+      },
+
+      "_comment_basicact": "ELI Pillar 3 — link back to original OC act",
+      "jolux:basicAct": {
+        "@id": "https://fedlex.data.admin.ch/eli/oc/1999/404"
+      },
+      "eli:based_on": {
+        "@id": "https://fedlex.data.admin.ch/eli/oc/1999/404"
+      },
+
+      "_comment_expressions": "Language-specific titles (jolux:Expression on ConsolidationAbstract)",
+      "jolux:isRealizedBy": [
+        {
+          "@id": "https://fedlex.data.admin.ch/eli/cc/1999/404/de",
+          "@type": ["jolux:Expression", "eli:LegalExpression"],
+          "jolux:language": { "@id": "lang:DEU" },
+          "eli:language":   { "@id": "lang:DEU" },
+          "jolux:title":    { "@value": "Bundesverfassung der Schweizerischen Eidgenossenschaft", "@language": "de" },
+          "jolux:titleShort": { "@value": "BV", "@language": "de" },
+          "eli:title":      { "@value": "Bundesverfassung der Schweizerischen Eidgenossenschaft", "@language": "de" },
+          "schema:name":    { "@value": "Bundesverfassung der Schweizerischen Eidgenossenschaft", "@language": "de" }
+        },
+        {
+          "@id": "https://fedlex.data.admin.ch/eli/cc/1999/404/fr",
+          "@type": ["jolux:Expression", "eli:LegalExpression"],
+          "jolux:language": { "@id": "lang:FRA" },
+          "jolux:title":    { "@value": "Constitution fédérale de la Confédération suisse", "@language": "fr" },
+          "jolux:titleShort": { "@value": "Cst.", "@language": "fr" },
+          "eli:title":      { "@value": "Constitution fédérale de la Confédération suisse", "@language": "fr" }
+        },
+        {
+          "@id": "https://fedlex.data.admin.ch/eli/cc/1999/404/it",
+          "@type": ["jolux:Expression", "eli:LegalExpression"],
+          "jolux:language": { "@id": "lang:ITA" },
+          "jolux:title":    { "@value": "Costituzione federale della Confederazione Svizzera", "@language": "it" },
+          "jolux:titleShort": { "@value": "Cost.", "@language": "it" },
+          "eli:title":      { "@value": "Costituzione federale della Confederazione Svizzera", "@language": "it" }
+        },
+        {
+          "@id": "https://fedlex.data.admin.ch/eli/cc/1999/404/rm",
+          "@type": ["jolux:Expression", "eli:LegalExpression"],
+          "jolux:language": { "@id": "lang:ROH" },
+          "jolux:title":    { "@value": "Constituziun federala da la Confederaziun svizra", "@language": "rm" },
+          "jolux:titleShort": { "@value": "CF", "@language": "rm" }
+        }
+      ],
+
+      "_comment_versions": "Version history — all jolux:Consolidation snapshots",
+      "jolux:hasConsolidation": [
+        { "@id": "https://fedlex.data.admin.ch/eli/cc/1999/404/20000101" },
+        { "@id": "https://fedlex.data.admin.ch/eli/cc/1999/404/20030201" },
+        { "@id": "https://fedlex.data.admin.ch/eli/cc/1999/404/20100101" },
+        { "@id": "https://fedlex.data.admin.ch/eli/cc/1999/404/20230101" },
+        { "@id": "https://fedlex.data.admin.ch/eli/cc/1999/404/20240303" }
+      ],
+
+      "_comment_impacts": "ELI Pillar 3 — amending acts (selected examples)",
+      "eli:amended_by": [
+        {
+          "@id": "https://fedlex.data.admin.ch/eli/oc/2003/245",
+          "jolux:dateEntryInForce": { "@value": "2003-04-01", "@type": "xsd:date" },
+          "rdfs:label": { "@value": "Änderung Art. 197 Ziff. 1 BV (AHV-Initiative)", "@language": "de" }
+        },
+        {
+          "@id": "https://fedlex.data.admin.ch/eli/oc/2024/114",
+          "jolux:dateEntryInForce": { "@value": "2024-01-01", "@type": "xsd:date" },
+          "rdfs:label": { "@value": "Änderung Art. 112 BV (13. AHV-Rente)", "@language": "de" }
+        }
+      ],
+
+      "_comment_citations": "jolux:Citation — laws that cite the constitution (selected)",
+      "akn4ch:citedBy": [
+        {
+          "@id": "https://fedlex.data.admin.ch/eli/cc/1958/1348_1341_1300",
+          "rdfs:label": { "@value": "Bundesgesetz über den Bund als Arbeitgeber (BPG)", "@language": "de" },
+          "jolux:citationToLegalResource": {
+            "@id": "https://fedlex.data.admin.ch/eli/cc/1999/404/text"
+          }
+        }
+      ],
+
+      "_comment_subdivisions": "jolux:LegalResourceSubdivision — top-level text node + article examples",
+      "jolux:hasSubdivision": [
+        {
+          "@id":   "https://fedlex.data.admin.ch/eli/cc/1999/404/text",
+          "@type": "jolux:LegalResourceSubdivision",
+          "jolux:legalResourceSubdivisionIsPartOf": {
+            "@id": "https://fedlex.data.admin.ch/eli/cc/1999/404"
+          },
+          "jolux:legalResourceSubdivisionType": {
+            "@id": "https://fedlex.data.admin.ch/vocabulary/subdivision-type/text"
+          }
+        },
+        {
+          "_comment": "Article 1 — Schweizerische Eidgenossenschaft",
+          "@id":   "https://fedlex.data.admin.ch/eli/cc/1999/404/art_1",
+          "@type": ["jolux:LegalResourceSubdivision", "akn4ch:ArticleNode"],
+          "jolux:legalResourceSubdivisionIsPartOf": {
+            "@id": "https://fedlex.data.admin.ch/eli/cc/1999/404"
+          },
+          "jolux:legalResourceSubdivisionType": {
+            "@id": "https://fedlex.data.admin.ch/vocabulary/subdivision-type/art"
+          },
+          "akn4ch:aknEId":        "art_1",
+          "akn4ch:articleNumber": "1",
+          "akn4ch:articleHeading": [
+            { "@value": "Schweizerische Eidgenossenschaft", "@language": "de" },
+            { "@value": "Confédération suisse",            "@language": "fr" },
+            { "@value": "Confederazione Svizzera",         "@language": "it" },
+            { "@value": "Confederaziun svizra",            "@language": "rm" }
+          ],
+          "akn4ch:articleText": [
+            { "@value": "Das Schweizer Volk und die Kantone Zürich, Bern, Luzern, Uri, Schwyz, Obwalden und Nidwalden, Glarus, Zug, Freiburg, Solothurn, Basel-Stadt und Basel-Landschaft, Schaffhausen, Appenzell Ausserrhoden und Appenzell Innerrhoden, St. Gallen, Graubünden, Aargau, Thurgau, Tessin, Waadt, Wallis, Neuenburg, Genf und Jura bilden die Schweizerische Eidgenossenschaft.", "@language": "de" },
+            { "@value": "Le peuple suisse et les cantons de Zurich, Berne, Lucerne, Uri, Schwyz, Obwald et Nidwald, Glaris, Zoug, Fribourg, Soleure, Bâle-Ville et Bâle-Campagne, Schaffhouse, Appenzell Rhodes-Extérieures et Appenzell Rhodes-Intérieures, Saint-Gall, Grisons, Argovie, Thurgovie, Tessin, Vaud, Valais, Neuchâtel, Genève et Jura forment la Confédération suisse.", "@language": "fr" },
+            { "@value": "Il popolo svizzero e i Cantoni di Zurigo, Berna, Lucerna, Uri, Svitto, Obvaldo e Nidvaldo, Glarona, Zugo, Friburgo, Soletta, Basilea Città e Basilea Campagna, Sciaffusa, Appenzello Esterno e Appenzello Interno, San Gallo, Grigioni, Argovia, Turgovia, Ticino, Vaud, Vallese, Neuchâtel, Ginevra e Giura formano la Confederazione Svizzera.", "@language": "it" }
+          ],
+          "akn4ch:paragraphs": [
+            {
+              "akn4ch:aknEId": "art_1/para_1",
+              "akn4ch:paragraphNumber": "1",
+              "akn4ch:paragraphText": [
+                { "@value": "Das Schweizer Volk und die Kantone ... bilden die Schweizerische Eidgenossenschaft.", "@language": "de" }
+              ]
+            }
+          ],
+          "akn4ch:motivatedBy": {
+            "_comment": "Link to Botschaft BBl 1997 I 1 — main dispatch document",
+            "akn4ch:botschaftDocument": {
+              "@id": "https://fedlex.data.admin.ch/eli/fga/1997/1_1_1",
+              "rdfs:label": { "@value": "Botschaft zur neuen Bundesverfassung vom 20. November 1996", "@language": "de" },
+              "jolux:dateDocument": { "@value": "1996-11-20", "@type": "xsd:date" }
+            },
+            "_comment_specific": "Article-specific explanation in Part 2 of the Botschaft",
+            "akn4ch:botschaftSection": {
+              "@id": "https://fedlex.data.admin.ch/eli/fga/1997/1_1_1#section-2-1-1",
+              "akn4ch:sectionLabel": { "@value": "Art. 1 — Erläuterungen", "@language": "de" },
+              "akn4ch:sectionReference": "BBl 1997 I 1, S. 131"
+            }
+          },
+          "akn4ch:implementedBy": [],
+          "eli:amended_by": []
+        },
+        {
+          "_comment": "Article 35 — Verwirklichung der Grundrechte",
+          "@id":   "https://fedlex.data.admin.ch/eli/cc/1999/404/art_35",
+          "@type": ["jolux:LegalResourceSubdivision", "akn4ch:ArticleNode"],
+          "jolux:legalResourceSubdivisionIsPartOf": {
+            "@id": "https://fedlex.data.admin.ch/eli/cc/1999/404"
+          },
+          "jolux:legalResourceSubdivisionType": {
+            "@id": "https://fedlex.data.admin.ch/vocabulary/subdivision-type/art"
+          },
+          "akn4ch:aknEId":        "art_35",
+          "akn4ch:articleNumber": "35",
+          "akn4ch:articleHeading": [
+            { "@value": "Verwirklichung der Grundrechte", "@language": "de" },
+            { "@value": "Réalisation des droits fondamentaux", "@language": "fr" },
+            { "@value": "Attuazione dei diritti fondamentali", "@language": "it" }
+          ],
+          "akn4ch:articleText": [
+            { "@value": "1 Die Grundrechte müssen in der ganzen Rechtsordnung zur Geltung kommen.\n2 Wer staatliche Aufgaben wahrnimmt, ist an die Grundrechte gebunden und verpflichtet, zu ihrer Verwirklichung beizutragen.\n3 Die Behörden sorgen dafür, dass die Grundrechte, soweit sie sich dazu eignen, auch unter Privaten wirksam werden.", "@language": "de" },
+            { "@value": "1 Les droits fondamentaux doivent être réalisés dans l'ensemble de l'ordre juridique.\n2 Quiconque assume une tâche de l'État est tenu de respecter les droits fondamentaux et de contribuer à leur réalisation.\n3 Les autorités veillent à ce que les droits fondamentaux, dans la mesure où ils s'y prêtent, soient aussi réalisés dans les relations qui lient les particuliers entre eux.", "@language": "fr" },
+            { "@value": "1 I diritti fondamentali devono essere attuati in tutto l'ordinamento giuridico.\n2 Chi svolge compiti statali è tenuto a rispettare i diritti fondamentali e a contribuire alla loro attuazione.\n3 Le autorità provvedono affinché i diritti fondamentali, per quanto vi si prestino, siano realizzati anche nelle relazioni tra privati.", "@language": "it" }
+          ],
+          "akn4ch:paragraphs": [
+            {
+              "akn4ch:aknEId": "art_35/para_1",
+              "akn4ch:paragraphNumber": "1",
+              "akn4ch:paragraphText": [
+                { "@value": "Die Grundrechte müssen in der ganzen Rechtsordnung zur Geltung kommen.", "@language": "de" }
+              ]
+            },
+            {
+              "akn4ch:aknEId": "art_35/para_2",
+              "akn4ch:paragraphNumber": "2",
+              "akn4ch:paragraphText": [
+                { "@value": "Wer staatliche Aufgaben wahrnimmt, ist an die Grundrechte gebunden und verpflichtet, zu ihrer Verwirklichung beizutragen.", "@language": "de" }
+              ]
+            },
+            {
+              "akn4ch:aknEId": "art_35/para_3",
+              "akn4ch:paragraphNumber": "3",
+              "akn4ch:paragraphText": [
+                { "@value": "Die Behörden sorgen dafür, dass die Grundrechte, soweit sie sich dazu eignen, auch unter Privaten wirksam werden.", "@language": "de" }
+              ]
+            }
+          ],
+          "akn4ch:motivatedBy": {
+            "akn4ch:botschaftDocument": {
+              "@id": "https://fedlex.data.admin.ch/eli/fga/1997/1_1_1",
+              "rdfs:label": { "@value": "Botschaft zur neuen Bundesverfassung", "@language": "de" }
+            },
+            "akn4ch:botschaftSection": {
+              "@id": "https://fedlex.data.admin.ch/eli/fga/1997/1_1_1#section-2-3-3",
+              "akn4ch:sectionLabel": { "@value": "Art. 35 — Erläuterungen", "@language": "de" },
+              "akn4ch:sectionReference": "BBl 1997 I 1, S. 147",
+              "akn4ch:articleRangeStart": "35",
+              "akn4ch:articleRangeEnd": "36"
+            }
+          },
+          "jolux:Citation": [
+            {
+              "@id": "https://fedlex.data.admin.ch/eli/cc/2005/370#art_35_citation_1",
+              "@type": "jolux:Citation",
+              "jolux:citationFromLegalResource": {
+                "@id": "https://fedlex.data.admin.ch/eli/cc/2005/370/text",
+                "rdfs:label": { "@value": "BGG — Bundesgesetz über das Bundesgericht", "@language": "de" }
+              },
+              "jolux:citationToLegalResource": {
+                "@id": "https://fedlex.data.admin.ch/eli/cc/1999/404/art_35"
+              }
+            }
+          ],
+          "eli:amended_by": [],
+          "akn4ch:implementedBy": []
+        }
+      ],
+
+      "_comment_curiavista": "akn4ch — Curia Vista / parliamentary affairs link",
+      "akn4ch:curiaVistaAffairId": "19960091",
+      "akn4ch:curiaVistaUrl": "https://www.parlament.ch/en/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=19960091"
+    },
+
+    {
+      "_section": "=== 2. CONSOLIDATION (versioned snapshot) — latest version 2024-03-03 ===",
+
+      "@id":   "https://fedlex.data.admin.ch/eli/cc/1999/404/20240303",
+      "@type": [
+        "jolux:Consolidation",
+        "jolux:Work",
+        "eli:LegalExpression"
+      ],
+
+      "jolux:isMemberOf": { "@id": "https://fedlex.data.admin.ch/eli/cc/1999/404" },
+      "jolux:dateApplicability":    { "@value": "2024-03-03", "@type": "xsd:date" },
+      "jolux:publicationDate":      { "@value": "2024-03-03", "@type": "xsd:date" },
+      "jolux:dateEndApplicability": null,
+
+      "_comment_manifestations": "Language expressions + file manifestations for this version",
+      "jolux:isRealizedBy": [
+        {
+          "@id":   "https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de",
+          "@type": ["jolux:Expression", "eli:LegalExpression"],
+          "jolux:language": { "@id": "lang:DEU" },
+          "eli:language":   { "@id": "lang:DEU" },
+          "jolux:isEmbodiedBy": [
+            {
+              "@id":   "https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/pdf-a",
+              "@type": "jolux:Manifestation",
+              "jolux:format": { "@id": "http://publications.europa.eu/resource/authority/file-type/PDF" },
+              "jolux:userFormat": { "@id": "https://fedlex.data.admin.ch/vocabulary/user-format/pdf-a" },
+              "jolux:isExemplifiedBy": {
+                "@id": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/pdf-a/fedlex-data-admin-ch-eli-cc-1999-404-20240303-de-pdf-a.pdf"
+              }
+            },
+            {
+              "@id":   "https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/xml",
+              "@type": "jolux:Manifestation",
+              "jolux:format": { "@id": "http://publications.europa.eu/resource/authority/file-type/XML" },
+              "jolux:userFormat": { "@id": "https://fedlex.data.admin.ch/vocabulary/user-format/xml" },
+              "akn4ch:aknStandard": "Akoma Ntoso 1.0",
+              "jolux:isExemplifiedBy": {
+                "@id": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/xml/fedlex-data-admin-ch-eli-cc-1999-404-20240303-de-xml.xml"
+              }
+            },
+            {
+              "@id":   "https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/html",
+              "@type": "jolux:Manifestation",
+              "jolux:format": { "@id": "http://publications.europa.eu/resource/authority/file-type/HTML" },
+              "jolux:userFormat": { "@id": "https://fedlex.data.admin.ch/vocabulary/user-format/html" },
+              "jolux:isExemplifiedBy": {
+                "@id": "https://www.fedlex.admin.ch/eli/cc/1999/404/20240303/de"
+              }
+            }
+          ]
+        },
+        {
+          "@id":   "https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/fr",
+          "@type": ["jolux:Expression", "eli:LegalExpression"],
+          "jolux:language": { "@id": "lang:FRA" },
+          "jolux:isEmbodiedBy": [
+            {
+              "@id": "https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/fr/pdf-a",
+              "@type": "jolux:Manifestation",
+              "jolux:format": { "@id": "http://publications.europa.eu/resource/authority/file-type/PDF" },
+              "jolux:isExemplifiedBy": {
+                "@id": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1999/404/20240303/fr/pdf-a/fedlex-data-admin-ch-eli-cc-1999-404-20240303-fr-pdf-a.pdf"
+              }
+            },
+            {
+              "@id": "https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/fr/xml",
+              "@type": "jolux:Manifestation",
+              "jolux:format": { "@id": "http://publications.europa.eu/resource/authority/file-type/XML" },
+              "jolux:isExemplifiedBy": {
+                "@id": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1999/404/20240303/fr/xml/fedlex-data-admin-ch-eli-cc-1999-404-20240303-fr-xml.xml"
+              }
+            }
+          ]
+        },
+        {
+          "@id":   "https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/it",
+          "@type": ["jolux:Expression", "eli:LegalExpression"],
+          "jolux:language": { "@id": "lang:ITA" },
+          "jolux:isEmbodiedBy": [
+            {
+              "@id": "https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/it/pdf-a",
+              "@type": "jolux:Manifestation",
+              "jolux:format": { "@id": "http://publications.europa.eu/resource/authority/file-type/PDF" },
+              "jolux:isExemplifiedBy": {
+                "@id": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1999/404/20240303/it/pdf-a/fedlex-data-admin-ch-eli-cc-1999-404-20240303-it-pdf-a.pdf"
+              }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "_section": "=== 3. ACT in Official Compilation (OC) — legally binding original publication ===",
+
+      "@id":   "https://fedlex.data.admin.ch/eli/oc/1999/404",
+      "@type": [
+        "jolux:Act",
+        "jolux:Work",
+        "eli:LegalResource"
+      ],
+
+      "jolux:publicationDate":    { "@value": "1999-08-27", "@type": "xsd:date" },
+      "jolux:dateDocument":       { "@value": "1999-04-18", "@type": "xsd:date" },
+      "jolux:dateEntryInForce":   { "@value": "2000-01-01", "@type": "xsd:date" },
+      "jolux:dateNoLongerInForce": null,
+      "jolux:dateEndApplicability": null,
+
+      "jolux:processType": { "@id": "https://fedlex.data.admin.ch/vocabulary/type-procedure/ord" },
+      "jolux:typeDocument": { "@id": "https://fedlex.data.admin.ch/vocabulary/resource-type/24" },
+      "jolux:legalResourceGenre": { "@id": "https://fedlex.data.admin.ch/vocabulary/legal-resource-genre/100" },
+      "jolux:responsibilityOf": { "@id": "https://fedlex.data.admin.ch/vocabulary/legal-institution/196" },
+      "jolux:classifiedByTaxonomyEntry": { "@id": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/systematische-rechtssammlung/1" },
+      "jolux:legalResourcePublicationCompleteness": {
+        "@id": "https://fedlex.data.admin.ch/vocabulary/publication-completeness/complete"
+      },
+
+      "_comment_memorial": "Weekly bulletin container",
+      "jolux:isPartOf": {
+        "@id":   "https://fedlex.data.admin.ch/eli/oc/1999/AS1999",
+        "@type": "jolux:Memorial",
+        "rdfs:label": { "@value": "Amtliche Sammlung 1999", "@language": "de" }
+      },
+
+      "jolux:isRealizedBy": [
+        {
+          "@id":   "https://fedlex.data.admin.ch/eli/oc/1999/404/de",
+          "@type": ["jolux:Expression", "eli:LegalExpression"],
+          "jolux:language": { "@id": "lang:DEU" },
+          "jolux:title":    { "@value": "Bundesverfassung der Schweizerischen Eidgenossenschaft", "@language": "de" },
+          "jolux:isEmbodiedBy": [
+            {
+              "@id":   "https://fedlex.data.admin.ch/eli/oc/1999/404/de/pdf-a",
+              "@type": "jolux:Manifestation",
+              "jolux:format": { "@id": "http://publications.europa.eu/resource/authority/file-type/PDF" },
+              "jolux:isExemplifiedBy": {
+                "@id": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/oc/1999/404/de/pdf-a/fedlex-data-admin-ch-eli-oc-1999-404-de-pdf-a.pdf"
+              }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "_section": "=== 4. FEDERAL GAZETTE ACT (BBl) — Botschaft / explanatory dispatch ===",
+
+      "@id":   "https://fedlex.data.admin.ch/eli/fga/1997/1_1_1",
+      "@type": [
+        "jolux:Act",
+        "jolux:Work",
+        "eli:LegalResource"
+      ],
+
+      "jolux:publicationDate":  { "@value": "1997-01-01", "@type": "xsd:date" },
+      "jolux:dateDocument":     { "@value": "1996-11-20", "@type": "xsd:date" },
+      "jolux:sequenceInTheYearOfPublication": 1,
+      "jolux:typeDocument": {
+        "@id": "https://fedlex.data.admin.ch/vocabulary/resource-type/23",
+        "skos:prefLabel": { "@value": "Botschaft des Bundesrates", "@language": "de" }
+      },
+      "jolux:legalResourceFamilyType": {
+        "@id": "https://fedlex.data.admin.ch/vocabulary/resource-family/fga"
+      },
+      "jolux:responsibilityOf": {
+        "@id": "https://fedlex.data.admin.ch/vocabulary/legal-institution/4",
+        "skos:prefLabel": { "@value": "Bundesrat", "@language": "de" }
+      },
+      "jolux:legalResourceWasPublishedByPublicationProcess": {
+        "@id": "https://fedlex.data.admin.ch/eli/fga/1997/1_1_1/publication-process"
+      },
+
+      "_comment_akn4ch": "akn4ch — Botschaft section index (article-specific explanations in Part 2)",
+      "akn4ch:botschaftSections": [
+        {
+          "akn4ch:sectionId":   "section-2-1-1",
+          "akn4ch:sectionLabel": { "@value": "Art. 1 — Schweizerische Eidgenossenschaft", "@language": "de" },
+          "akn4ch:articleRangeStart": "1",
+          "akn4ch:articleRangeEnd":   "1",
+          "akn4ch:sectionReference":  "BBl 1997 I 1, S. 131"
+        },
+        {
+          "akn4ch:sectionId":   "section-2-3-3",
+          "akn4ch:sectionLabel": { "@value": "Art. 35–36 — Verwirklichung und Einschränkung der Grundrechte", "@language": "de" },
+          "akn4ch:articleRangeStart": "35",
+          "akn4ch:articleRangeEnd":   "36",
+          "akn4ch:sectionReference":  "BBl 1997 I 1, S. 147"
+        }
+      ],
+
+      "jolux:isRealizedBy": [
+        {
+          "@id":   "https://fedlex.data.admin.ch/eli/fga/1997/1_1_1/de",
+          "@type": ["jolux:Expression", "eli:LegalExpression"],
+          "jolux:language": { "@id": "lang:DEU" },
+          "jolux:title":    { "@value": "Botschaft über eine neue Bundesverfassung", "@language": "de" },
+          "jolux:isEmbodiedBy": [
+            {
+              "@id":   "https://fedlex.data.admin.ch/eli/fga/1997/1_1_1/de/pdf-a",
+              "@type": "jolux:Manifestation",
+              "jolux:format": { "@id": "http://publications.europa.eu/resource/authority/file-type/PDF" },
+              "jolux:isExemplifiedBy": {
+                "@id": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/fga/1997/1_1_1/de/pdf-a/fedlex-data-admin-ch-eli-fga-1997-1_1_1-de-pdf-a.pdf"
+              }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "_section": "=== 5. DRAFT (eli/dl) — full legislative lifecycle ===",
+
+      "@id":   "https://fedlex.data.admin.ch/eli/dl/proj/1996/0091",
+      "@type": "jolux:Draft",
+
+      "jolux:draftId":            "0091",
+      "jolux:parliamentDraftId":  "19960091",
+      "akn4ch:curiaVistaAffairId": "19960091",
+      "akn4ch:curiaVistaUrl":     "https://www.parlament.ch/en/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=19960091",
+
+      "jolux:hasResultingLegalResource": {
+        "@id": "https://fedlex.data.admin.ch/eli/oc/1999/404"
+      },
+
+      "jolux:draftHasLegislativeTask": [
+        {
+          "_comment": "Task 1 — Consultation opening (Vernehmlassung)",
+          "@id":   "https://fedlex.data.admin.ch/eli/dl/proj/1996/0091/cons_1",
+          "@type": [
+            "jolux:Consultation",
+            "jolux:ConsultationPhase"
+          ],
+          "jolux:consultationStatus": {
+            "@id": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5",
+            "skos:prefLabel": { "@value": "Beendet", "@language": "de" }
+          },
+          "jolux:eventStartDate": { "@value": "1995-01-10", "@type": "xsd:date" },
+          "jolux:eventEndDate":   { "@value": "1995-04-30", "@type": "xsd:date" },
+          "jolux:eventTitle": { "@value": "Vernehmlassung zur neuen Bundesverfassung", "@language": "de" },
+          "jolux:foreseenImpactToLegalResource": {
+            "@id": "https://fedlex.data.admin.ch/eli/cc/1999/404"
+          },
+          "jolux:institutionInChargeOfTheEvent": {
+            "@id": "https://fedlex.data.admin.ch/vocabulary/legal-institution/196",
+            "skos:prefLabel": { "@value": "Bundeskanzlei BK", "@language": "de" }
+          },
+          "jolux:hasSubTask": [
+            {
+              "@type": "jolux:ConsultationPreparation",
+              "jolux:opinionHasDraftRelatedDocument": {
+                "@id": "https://fedlex.data.admin.ch/eli/fga/1995/1_1_1",
+                "jolux:draftProcessDocumentType": {
+                  "@id": "https://fedlex.data.admin.ch/vocabulary/draft-document-type/14",
+                  "skos:prefLabel": { "@value": "Adressatenliste", "@language": "de" }
+                }
+              }
+            },
+            {
+              "@type": "jolux:ConsultationPhase",
+              "jolux:opinionIsAboutDraftDocument": {
+                "@id": "https://fedlex.data.admin.ch/eli/fga/1995/1_2_1",
+                "jolux:draftProcessDocumentType": {
+                  "@id": "https://fedlex.data.admin.ch/vocabulary/draft-document-type/11",
+                  "skos:prefLabel": { "@value": "Vorentwurf", "@language": "de" }
+                }
+              },
+              "jolux:opinionHasDraftRelatedDocument": {
+                "@id": "https://fedlex.data.admin.ch/eli/fga/1995/1_3_1",
+                "jolux:draftProcessDocumentType": {
+                  "@id": "https://fedlex.data.admin.ch/vocabulary/draft-document-type/12",
+                  "skos:prefLabel": { "@value": "Erläuternder Bericht", "@language": "de" }
+                }
+              }
+            },
+            {
+              "@type": "jolux:PositionStatementPublication",
+              "jolux:opinionHasDraftRelatedDocument": {
+                "@id": "https://fedlex.data.admin.ch/eli/fga/1996/1_1_1",
+                "jolux:draftProcessDocumentType": {
+                  "@id": "https://fedlex.data.admin.ch/vocabulary/draft-document-type/21",
+                  "skos:prefLabel": { "@value": "Zusammenstellung der Stellungnahmen", "@language": "de" }
+                }
+              }
+            },
+            {
+              "@type": "jolux:ResultOfAConsultationPublication",
+              "jolux:opinionHasDraftRelatedDocument": {
+                "@id": "https://fedlex.data.admin.ch/eli/fga/1996/2_1_1",
+                "jolux:draftProcessDocumentType": {
+                  "@id": "https://fedlex.data.admin.ch/vocabulary/draft-document-type/31",
+                  "skos:prefLabel": { "@value": "Ergebnisbericht", "@language": "de" }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "_comment": "Task 2 — Botschaft (Federal Council Dispatch) published in BBl",
+          "@id":   "https://fedlex.data.admin.ch/eli/dl/proj/1996/0091/task_botschaft",
+          "@type": "jolux:LegislativeTask",
+          "jolux:legislativeTaskType": {
+            "@id": "https://fedlex.data.admin.ch/vocabulary/type-projet/3",
+            "skos:prefLabel": { "@value": "Botschaft", "@language": "de" }
+          },
+          "jolux:eventStartDate": { "@value": "1996-11-20", "@type": "xsd:date" },
+          "jolux:legislativeTaskHasResultingLegalResource": {
+            "@id": "https://fedlex.data.admin.ch/eli/fga/1997/1_1_1",
+            "rdfs:label": { "@value": "Botschaft BBl 1997 I 1", "@language": "de" }
+          }
+        },
+        {
+          "_comment": "Task 3 — Draft law published in BBl",
+          "@id":   "https://fedlex.data.admin.ch/eli/dl/proj/1996/0091/task_entwurf",
+          "@type": "jolux:LegislativeTask",
+          "jolux:legislativeTaskType": {
+            "@id": "https://fedlex.data.admin.ch/vocabulary/type-projet/2",
+            "skos:prefLabel": { "@value": "Gesetzesentwurf", "@language": "de" }
+          },
+          "jolux:legislativeTaskHasResultingLegalResource": {
+            "@id": "https://fedlex.data.admin.ch/eli/fga/1997/1_2_1",
+            "rdfs:label": { "@value": "Entwurf BV BBl 1997 I 1", "@language": "de" }
+          }
+        },
+        {
+          "_comment": "Task 4 — Parliamentary vote and approval",
+          "@id":   "https://fedlex.data.admin.ch/eli/dl/proj/1996/0091/task_parlament",
+          "@type": "jolux:LegislativeTask",
+          "jolux:legislativeTaskType": {
+            "@id": "https://fedlex.data.admin.ch/vocabulary/type-projet/4",
+            "skos:prefLabel": { "@value": "Parlamentarische Beratung", "@language": "de" }
+          },
+          "jolux:eventStartDate": { "@value": "1997-01-01", "@type": "xsd:date" },
+          "jolux:eventEndDate":   { "@value": "1998-12-18", "@type": "xsd:date" },
+          "akn4ch:curiaVistaAffairId": "19960091"
+        },
+        {
+          "_comment": "Task 5 — Referendum vote (18 April 1999)",
+          "@id":   "https://fedlex.data.admin.ch/eli/dl/proj/1996/0091/task_volksabstimmung",
+          "@type": "jolux:LegislativeTask",
+          "jolux:legislativeTaskType": {
+            "@id": "https://fedlex.data.admin.ch/vocabulary/type-projet/5",
+            "skos:prefLabel": { "@value": "Volksabstimmung", "@language": "de" }
+          },
+          "jolux:eventStartDate": { "@value": "1999-04-18", "@type": "xsd:date" },
+          "jolux:eventEndDate":   { "@value": "1999-04-18", "@type": "xsd:date" },
+          "akn4ch:voteResult": "approved",
+          "akn4ch:voteYesPercent": 59.2,
+          "akn4ch:voteCantonsMajority": true
+        },
+        {
+          "_comment": "Task 6 — Entry into force (OC publication)",
+          "@id":   "https://fedlex.data.admin.ch/eli/dl/proj/1996/0091/task_inkrafttreten",
+          "@type": "jolux:LegislativeTask",
+          "jolux:legislativeTaskType": {
+            "@id": "https://fedlex.data.admin.ch/vocabulary/type-projet/6",
+            "skos:prefLabel": { "@value": "Inkrafttreten", "@language": "de" }
+          },
+          "jolux:eventStartDate": { "@value": "2000-01-01", "@type": "xsd:date" },
+          "jolux:legislativeTaskHasResultingLegalResource": {
+            "@id": "https://fedlex.data.admin.ch/eli/oc/1999/404"
+          }
+        }
+      ]
+    },
+
+    {
+      "_section": "=== 6. IMPACT — example amendment to the Constitution ===",
+
+      "@id":   "https://fedlex.data.admin.ch/eli/oc/2024/114/legal-analysis/LegalResourceImpact/1",
+      "@type": "jolux:LegalResourceImpact",
+
+      "jolux:legalResourceImpactHasType": {
+        "@id": "https://fedlex.data.admin.ch/vocabulary/impact-type/12",
+        "skos:prefLabel": { "@value": "Änderung", "@language": "de" }
+      },
+      "jolux:informationSource": {
+        "@id": "https://fedlex.data.admin.ch/vocabulary/information-source/data-from-legiconso"
+      },
+      "jolux:legalResourceImpactHasDateEntryInForce": { "@value": "2024-01-01", "@type": "xsd:date" },
+
+      "jolux:impactFromLegalResource": {
+        "@id": "https://fedlex.data.admin.ch/eli/oc/2024/114/art_1",
+        "@type": "jolux:LegalResourceSubdivision",
+        "jolux:legalResourceSubdivisionIsPartOf": { "@id": "https://fedlex.data.admin.ch/eli/oc/2024/114" },
+        "jolux:legalResourceSubdivisionType": { "@id": "https://fedlex.data.admin.ch/vocabulary/subdivision-type/art" }
+      },
+      "jolux:impactToLegalResource": {
+        "@id": "https://fedlex.data.admin.ch/eli/cc/1999/404/art_112",
+        "@type": "jolux:LegalResourceSubdivision",
+        "jolux:legalResourceSubdivisionIsPartOf": { "@id": "https://fedlex.data.admin.ch/eli/cc/1999/404" },
+        "jolux:legalResourceSubdivisionType": { "@id": "https://fedlex.data.admin.ch/vocabulary/subdivision-type/art" },
+        "akn4ch:aknEId": "art_112",
+        "akn4ch:articleNumber": "112"
+      },
+      "jolux:impactConsolidatedBy": {
+        "@id": "https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/art_112",
+        "@type": "jolux:LegalResourceSubdivision",
+        "jolux:legalResourceSubdivisionIsPartOf": { "@id": "https://fedlex.data.admin.ch/eli/cc/1999/404/20240303" }
+      }
+    },
+
+    {
+      "_section": "=== 7. AKN4CH VOCABULARY DECLARATION (namespace definition) ===",
+
+      "@id":   "https://fedlex.admin.ch/vocabulary/akn4ch",
+      "@type": ["owl:Ontology", "skos:ConceptScheme"],
+      "rdfs:label":   { "@value": "AKN4CH — Akoma Ntoso for Switzerland Extension Vocabulary", "@language": "en" },
+      "dcterms:title": { "@value": "AKN4CH Ontologie — Schweizerische Erweiterung zu JOLux/ELI", "@language": "de" },
+      "dcterms:description": { "@value": "Extends JOLux and ELI with article-level RDF nodes, Botschaft linkage, Curia Vista integration, and public affairs metadata for Swiss federal legislation.", "@language": "en" },
+      "owl:versionInfo": "0.1-draft",
+      "dcterms:created": { "@value": "2026-06-01", "@type": "xsd:date" },
+
+      "_comment_properties": "Custom properties defined by AKN4CH",
+      "akn4ch:defines": [
+        { "@id": "akn4ch:ArticleNode",          "rdfs:comment": "Subclass of jolux:LegalResourceSubdivision for article-level RDF nodes bridged from Akoma Ntoso XML" },
+        { "@id": "akn4ch:aknEId",               "rdfs:comment": "The eId attribute value from the Akoma Ntoso XML, e.g. art_1 or art_1/para_1" },
+        { "@id": "akn4ch:articleNumber",         "rdfs:comment": "The display article number as string, e.g. '35'" },
+        { "@id": "akn4ch:articleHeading",        "rdfs:comment": "rdf:langString — article title per official language" },
+        { "@id": "akn4ch:articleText",           "rdfs:comment": "rdf:langString — full article text per language including all paragraphs" },
+        { "@id": "akn4ch:paragraphs",            "rdfs:comment": "Ordered list of paragraph nodes within an article" },
+        { "@id": "akn4ch:paragraphNumber",       "rdfs:comment": "Paragraph number as display string, e.g. '1', '2', '3'" },
+        { "@id": "akn4ch:paragraphText",         "rdfs:comment": "rdf:langString — text of a single paragraph per language" },
+        { "@id": "akn4ch:motivatedBy",           "rdfs:comment": "Links an article to its Botschaft explanation — both the main BBl document and the article-specific section in Part 2" },
+        { "@id": "akn4ch:botschaftDocument",     "rdfs:comment": "URI of the BBl jolux:Act containing the Botschaft" },
+        { "@id": "akn4ch:botschaftSection",      "rdfs:comment": "URI fragment of the specific section in the Botschaft explaining this article or range" },
+        { "@id": "akn4ch:sectionLabel",          "rdfs:comment": "rdf:langString — human-readable label of the Botschaft section" },
+        { "@id": "akn4ch:sectionReference",      "rdfs:comment": "Bibliographic reference string, e.g. BBl 1997 I 1, S. 131" },
+        { "@id": "akn4ch:articleRangeStart",     "rdfs:comment": "First article number covered by this Botschaft section" },
+        { "@id": "akn4ch:articleRangeEnd",       "rdfs:comment": "Last article number covered by this Botschaft section" },
+        { "@id": "akn4ch:botschaftSections",     "rdfs:comment": "Array of section objects on a BBl Act indexing article-specific explanations" },
+        { "@id": "akn4ch:implementedBy",         "rdfs:comment": "Links a federal article to its cantonal implementing law (article or law level)" },
+        { "@id": "akn4ch:aknStandard",           "rdfs:comment": "States the AKN version used in the XML manifestation, e.g. Akoma Ntoso 1.0" },
+        { "@id": "akn4ch:curiaVistaAffairId",    "rdfs:comment": "Affair ID in Curia Vista parliamentary database, e.g. 19960091" },
+        { "@id": "akn4ch:curiaVistaUrl",         "rdfs:comment": "Direct URL to the affair in parlament.ch Curia Vista" },
+        { "@id": "akn4ch:voteResult",            "rdfs:comment": "Result of a popular vote: approved | rejected" },
+        { "@id": "akn4ch:voteYesPercent",        "rdfs:comment": "Percentage of yes votes in a popular referendum" },
+        { "@id": "akn4ch:voteCantonsMajority",   "rdfs:comment": "Boolean — whether the cantons majority was reached" },
+        { "@id": "akn4ch:citedBy",               "rdfs:comment": "Inverse of jolux:Citation — laws citing this article" }
+      ]
+    }
+
+  ]
+}

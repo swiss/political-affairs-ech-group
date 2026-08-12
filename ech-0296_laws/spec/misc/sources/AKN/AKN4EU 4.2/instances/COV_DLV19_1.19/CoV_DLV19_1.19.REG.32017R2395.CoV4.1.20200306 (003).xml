@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Part of CoV 4.1(2022-06-02)
+-->
+<regulation xmlns="http://ifc.europa.eu/common_vocabulary">
+	<title_of_the_document>
+		<type_of_document>REGULATION (EU) 2017/2395 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL</type_of_document>
+of <date>12 December 2017</date>
+amending Regulation (EU) No 575/2013 as regards transitional arrangements for mitigating the impact of the introduction of IFRS 9 on own funds and for the large exposures treatment of certain public sector exposures denominated in the domestic currency of any Member State</title_of_the_document>
+	<EEA_relevance>(Text with EEA relevance)</EEA_relevance>
+	<preamble>
+		<acting_entity>THE EUROPEAN PARLIAMENT AND THE COUNCIL OF THE EUROPEAN UNION,</acting_entity>
+		<citation>Having regard to the <legal_basis>Treaty on the Functioning of the European Union, and in particular Article 114</legal_basis> thereof,</citation>
+		<citation>Having regard to the proposal from the European Commission,</citation>
+		<citation>After transmission of the draft legislative act to the national parliaments,</citation>
+		<citation>Having regard to the opinion of the European Central Bank<note>Opinion of 8 November 2017 (not yet published in the Official Journal).</note>,</citation>
+		<citation>Having regard to the opinion of the European Economic and Social Committee<note>OJ C 209, 30.6.2017, p. 36.</note>,</citation>
+		<citation>Acting in accordance with the ordinary legislative procedure<note>Position of the European Parliament of 30 November 2017 (not yet published in the Official Journal) and decision of the Council of 7 December 2017.</note>,</citation>
+		<introduction_to_the_recitals>Whereas:</introduction_to_the_recitals>
+		<recital>
+			<numbering>(1)</numbering>On 24 July 2014, the International Accounting Standards Board published International Financial Reporting Standard (IFRS) 9 Financial Instruments (IFRS 9). IFRS 9 aims to improve the financial reporting of financial instruments by addressing concerns that arose in that area during the financial crisis. In particular, IFRS 9 responds to the G20’s call to move to a more forward-looking model for the recognition of expected credit losses on financial assets. In relation to the recognition of expected credit losses on financial assets it replaces International Accounting Standard (IAS) 39.</recital>
+		<recital>
+			<numbering>(2)</numbering>The Commission adopted IFRS 9 through Commission Regulation (EU) 2016/2067<note>Commission Regulation (EU) 2016/2067 of 22 November 2016 amending Regulation (EC) No 1126/2008 adopting certain international accounting standards in accordance with Regulation (EC) No 1606/2002 of the European Parliament and of the Council as regards International Financial Reporting Standard 9 (OJ L 323, 29.11.2016, p. 1).</note>. In accordance with that Regulation, credit institutions and investment firms (‘institutions’) that use IFRS to prepare their financial statements are required to apply IFRS 9 as of the starting date of their first financial year starting on or after 1 January 2018.</recital>
+		<recital>
+			<numbering>(3)</numbering>The application of IFRS 9 may lead to a sudden significant increase in expected credit loss provisions and consequently to a sudden decrease in institutions’ Common Equity Tier 1 capital. While the Basel Committee on Banking Supervision is currently considering the longer-term regulatory treatment of expected credit loss provisions, transitional arrangements should be introduced in Regulation (EU) No 575/2013 of the European Parliament and of the Council<note>Regulation (EU) No 575/2013 of the European Parliament and of the Council of 26 June 2013 on prudential requirements for credit institutions and investment firms and amending Regulation (EU) No 648/2012 (OJ L 176, 27.6.2013, p. 1).</note> to mitigate that potentially significant negative impact on Common Equity Tier 1 capital arising from expected credit loss accounting.</recital>
+		<recital>
+			<numbering>(4)</numbering>In its resolution of 6 October 2016 on International Financial Reporting Standards: IFRS 9<note>Not yet published in the Official Journal.</note>, the European Parliament called for a progressive phase-in regime that would mitigate the impact of the new impairment model of IFRS 9.</recital>
+		<recital>
+			<numbering>(5)</numbering>Where an institution’s opening balance sheet on the day that it first applies IFRS 9 reflects a decrease in Common Equity Tier 1 capital as a result of increased expected credit loss provisions, including the loss allowance for lifetime expected credit losses for financial assets that are credit-impaired, as defined in Appendix A to IFRS 9 as set out in the Annex to Commission Regulation (EC) No 1126/2008<note>Commission Regulation (EC) No 1126/2008 of 3 November 2008 adopting certain international accounting standards in accordance with Regulation (EC) No 1606/2002 of the European Parliament and of the Council (OJ L 320, 29.11.2008, p. 1).</note> (‘Annex relating to IFRS 9’), compared to the closing balance sheet on the previous day, the institution should be allowed to include in its Common Equity Tier 1 capital a portion of the increased expected credit loss provisions for a transitional period. That transitional period should have a maximum duration of 5 years and should start in 2018. The portion of expected credit loss provisions that can be included in Common Equity Tier 1 capital should decrease over time down to zero to ensure the full implementation of IFRS 9 on the day immediately after the end of the transitional period. The impact of the expected credit loss provisions on Common Equity Tier 1 capital should not be fully neutralised during the transitional period.</recital>
+		<recital>
+			<numbering>(6)</numbering>Institutions should decide whether to apply those transitional arrangements and inform the competent authority accordingly. During the transitional period, an institution should have the possibility to reverse once its initial decision, subject to the prior permission of the competent authority which should ensure that such decision is not motivated by considerations of regulatory arbitrage.</recital>
+		<recital>
+			<numbering>(7)</numbering>As expected credit loss provisions incurred after the day that an institution first applies IFRS 9 could rise unexpectedly due to a worsening macroeconomic outlook, institutions should be granted additional relief in such cases.</recital>
+		<recital>
+			<numbering>(8)</numbering>Institutions that decide to apply transitional arrangements should be required to adjust the calculation of regulatory items which are directly affected by expected credit loss provisions to ensure that they do not receive inappropriate capital relief. For example, the specific credit risk adjustments by which the exposure value is reduced under the Standardised Approach for credit risk should be reduced by a factor which has the effect of increasing the exposure value. This would ensure that an institution would not benefit from both an increase in its Common Equity Tier 1 capital due to transitional arrangements as well as a reduced exposure value.</recital>
+		<recital>
+			<numbering>(9)</numbering>Institutions that decide to apply the IFRS 9 transitional arrangements specified in this Regulation should publicly disclose their own funds, capital ratios and leverage ratios both with and without the application of those arrangements in order to enable the public to determine the impact of those arrangements.</recital>
+		<recital>
+			<numbering>(10)</numbering>It is also appropriate to provide for transitional arrangements for the exemption from the large exposure limit available for exposures to certain public sector debt of Member States denominated in the domestic currency of any Member State. The transitional period should have a duration of 3 years starting from 1 January 2018 for exposures of this type incurred on or after 12 December 2017, whilst exposures of this type incurred before that date should be grandfathered and should continue to benefit from the large exposures exemption.</recital>
+		<recital>
+			<numbering>(11)</numbering>In order to enable the transitional arrangements provided for in this Regulation to be applied from 1 January 2018, this Regulation should enter into force on the day following that of its publication in the Official Journal of the European Union.</recital>
+		<recital>
+			<numbering>(12)</numbering>Regulation (EU) No 575/2013 should therefore be amended accordingly,</recital>
+		<enacting_formula>HAVE ADOPTED THIS REGULATION:</enacting_formula>
+	</preamble>
+	<enacting_terms>
+		<article>
+			<heading>Article <numbering>1</numbering>
+			</heading>
+			<unnumbered_paragraph>
+				<introductory_part>Regulation (EU) No 575/2013 is amended as follows:</introductory_part>
+				<point>
+					<numbering>(1)</numbering>the following Article is inserted:‘<text_of_the_amendment>
+						<article>
+							<heading>Article <numbering>473a</numbering>
+							</heading>
+							<subject>Introduction of IFRS 9</subject>
+							<numbered_paragraph>
+								<numbering>1.</numbering>
+								<subparagraph>
+									<introductory_part>By way of derogation from Article 50 and until the end of the transitional period set out in paragraph 6 of this Article, the following may include in their Common Equity Tier 1 capital the amount calculated in accordance with this paragraph:</introductory_part>
+									<point>
+										<numbering>(a)</numbering>institutions that prepare their accounts in conformity with the international accounting standards adopted in accordance with the procedure laid down in Article 6(2) of Regulation (EC) No 1606/2002;</point>
+									<point>
+										<numbering>(b)</numbering>institutions that, pursuant to Article 24(2) of this Regulation, effect the valuation of assets and off-balance sheet items and the determination of own funds in conformity with the international accounting standards adopted in accordance with the procedure laid down in Article 6(2) of Regulation (EC) No 1606/2002;</point>
+									<point>
+										<numbering>(c)</numbering>institutions that effect the valuation of assets and off-balance sheet items in conformity with accounting standards under Directive 86/635/EEC and that use an expected credit loss model that is the same as the one used in international accounting standards adopted in accordance with the procedure laid down in Article 6(2) of Regulation (EC) No 1606/2002.</point>
+								</subparagraph>
+								<subparagraph>
+									<introductory_part>The amount referred to in the first subparagraph shall be calculated as the sum of the following:</introductory_part>
+									<point>
+										<numbering>(a)</numbering>for exposures which are subject to risk weighting in accordance with Chapter 2 of Title II of Part Three, the amount (ABSA) calculated in accordance with the following formula:
+										<scientific_formula>ABSA = (A2,SA + A4,SA - t) · f</scientific_formula>
+										<legend>where:
+											<line_of_a_legend>A2,SA = the amount calculated in accordance with paragraph 2;</line_of_a_legend>
+											<line_of_a_legend>A4,SA = the amount calculated in accordance with paragraph 4 based on the amounts calculated in accordance with paragraph 3;</line_of_a_legend>
+											<line_of_a_legend>f = the applicable factor laid down in paragraph 6;</line_of_a_legend>
+											<line_of_a_legend>t = increase of Common Equity Tier 1 capital that is due to tax deductibility of the amounts A2,SA and A4,SA;</line_of_a_legend>
+										</legend>
+									</point>
+									<point>
+										<numbering>(b)</numbering>for exposures which are subject to risk weighting in accordance with Chapter 3 of Title II of Part Three, the amount (ABIRB) calculated in accordance with the following formula:
+										<scientific_formula>ABIRB = (A2,IRB + A4,IRB - t) · f</scientific_formula>
+										<legend>where: 
+											<line_of_a_legend>A2,IRB = the amount calculated in accordance with paragraph 2 adjusted in accordance with point (a) of paragraph 5;</line_of_a_legend>
+											<line_of_a_legend>A4,IRB = the amount calculated in accordance with paragraph 4 based on the amounts calculated in accordance with paragraph 3 which are adjusted in accordance with points (b) and (c) of paragraph 5;</line_of_a_legend>
+											<line_of_a_legend>f = the applicable factor laid down in paragraph 6;</line_of_a_legend>
+											<line_of_a_legend>t = increase of Common Equity Tier 1 capital that is due to tax deductibility of the amounts A2,IRB and A4,IRB.</line_of_a_legend>
+										</legend>
+									</point>
+								</subparagraph>
+							</numbered_paragraph>
+							<numbered_paragraph>
+								<numbering>2.</numbering>
+								<introductory_part>Institutions shall calculate the amounts A2,SA and A2,IRB referred to, respectively, in points (a) and (b) of the second subparagraph of paragraph 1 as the greater of the amounts referred to in points (a) and (b) of this paragraph separately for their exposures which are subject to risk weighting in accordance with Chapter 2 of Title II of Part Three and for their exposures which are subject to risk weighting in accordance with Chapter 3 of Title II of Part Three:</introductory_part>
+								<point>
+									<numbering>(a)</numbering>zero;</point>
+								<point>
+									<numbering>(b)</numbering>
+									<introductory_part>the amount calculated in accordance with point (i) reduced by the amount calculated in accordance with point (ii):</introductory_part>
+									<point>
+										<numbering>(i)</numbering>the sum of the 12-month expected credit losses determined in accordance with paragraph 5.5.5 of IFRS 9 as set out in the Annex to Commission Regulation (EC) No 1126/2008 (“Annex relating to IFRS 9”) and the amount of the loss allowance for lifetime expected credit losses determined in accordance with paragraph 5.5.3 of the Annex relating to IFRS 9 as of 1 January 2018 or on the date of initial application of IFRS 9;</point>
+									<point>
+										<numbering>(ii)</numbering>the total amount of impairment losses on financial assets classified as loans and receivables, held-to-maturity investments and available-for-sale financial assets, as defined in paragraph 9 of IAS 39, other than equity instruments and units or shares in collective investment undertakings, determined in accordance with paragraphs 63, 64, 65, 67, 68 and 70 of IAS 39 as set out in the Annex to Regulation (EC) No 1126/2008 as of 31 December 2017 or the day before the date of initial application of IFRS 9.</point>
+								</point>
+							</numbered_paragraph>
+							<numbered_paragraph>
+								<numbering>3.</numbering>
+								<introductory_part>Institutions shall calculate the amount by which the amount referred to in point (a) exceeds the amount referred to in point (b) separately for their exposures which are subject to risk weighting in accordance with Chapter 2 of Title II of Part Three and for their exposures which are subject to risk weighting in accordance with Chapter 3 of Title II of Part Three:</introductory_part>
+								<point>
+									<numbering>(a)</numbering>the sum of the 12-month expected credit losses determined in accordance with paragraph 5.5.5 of the Annex relating to IFRS 9 and the amount of the loss allowance for lifetime expected credit losses determined in accordance with paragraph 5.5.3 of the Annex relating to IFRS 9 excluding the loss allowance for lifetime expected credit losses for financial assets that are credit-impaired as defined in Appendix A to the Annex relating to IFRS 9 as of the reporting date;</point>
+								<point>
+									<numbering>(b)</numbering>the sum of the 12-month expected credit losses determined in accordance with paragraph 5.5.5 of the Annex relating to IFRS 9 and the amount of the loss allowance for lifetime expected credit losses determined in accordance with paragraph 5.5.3 of the Annex relating to IFRS 9 excluding the loss allowance for lifetime expected credit losses for financial assets that are credit-impaired as defined in Appendix A to the Annex relating to IFRS 9 as of 1 January 2018 or on the date of initial application of IFRS 9.</point>
+							</numbered_paragraph>
+							<numbered_paragraph>
+								<numbering>4.</numbering>
+								<subparagraph>For exposures which are subject to risk weighting in accordance with Chapter 2 of Title II of Part Three, where the amount specified in accordance with point (a) of paragraph 3 exceeds the amount specified in point (b) of paragraph 3, institutions shall set A4,SA as equal to the difference between those amounts, otherwise they shall set A4,SA as equal to zero.</subparagraph>
+								<subparagraph>For exposures which are subject to risk weighting in accordance with Chapter 3 of Title II of Part Three, where the amount specified in accordance with point (a) of paragraph 3, after applying point (b) of paragraph 5, exceeds the amount for these exposures as specified in point (b) of paragraph 3, after applying point (c) of paragraph 5, institutions shall set A4,IRB as equal to the difference between those amounts, otherwise they shall set A4,IRB as equal to zero.</subparagraph>
+							</numbered_paragraph>
+							<numbered_paragraph>
+								<numbering>5.</numbering>
+								<introductory_part>For exposures which are subject to risk weighting in accordance with Chapter 3 of Title II of Part Three, institutions shall apply paragraphs 2 to 4 as follows:</introductory_part>
+								<point>
+									<numbering>(a)</numbering>for the calculation of A2,IRB institutions shall reduce each of the amounts calculated in accordance with points (b)(i) and (ii) of paragraph 2 of this Article by the sum of expected loss amounts calculated in accordance with Article 158(5), (6) and (10) as of 31 December 2017 or the day before the date of initial application of IFRS 9. Where for the amount referred to in point (b)(i) of paragraph 2 of this Article the calculation results in a negative number, the institution shall set the value of that amount as equal to zero. Where for the amount referred to in point (b)(ii) of paragraph 2 of this Article the calculation results in a negative number, the institution shall set the value of that amount as equal to zero;</point>
+								<point>
+									<numbering>(b)</numbering>institutions shall replace the amount calculated in accordance with point (a) of paragraph 3 of this Article by the sum of the 12-month expected credit losses determined in accordance with paragraph 5.5.5 of the Annex relating to IFRS 9 and the amount of the loss allowance for lifetime expected credit losses determined in accordance with paragraph 5.5.3 of the Annex relating to IFRS 9 excluding the loss allowance for lifetime expected credit losses for financial assets that are credit-impaired, as defined in Appendix A to the Annex relating to IFRS 9, reduced by the sum of related expected loss amounts for the same exposures calculated in accordance with Article 158(5), (6) and (10) as of the reporting date. Where the calculation results in a negative number, the institution shall set the value of the amount referred to in point (a) of paragraph 3 of this Article as equal to zero;</point>
+								<point>
+									<numbering>(c)</numbering>institutions shall replace the amount calculated in accordance with point (b) of paragraph 3 of this Article by the sum of the 12-month expected credit losses determined in accordance with paragraph 5.5.5 of the Annex relating to IFRS 9 and the amount of the loss allowance for lifetime expected credit losses determined in accordance with paragraph 5.5.3 of the Annex relating to IFRS 9 excluding the loss allowance for lifetime expected credit losses for financial assets that are credit-impaired, as defined in Appendix A to the Annex relating to IFRS 9, as of 1 January 2018 or on the date of initial application of IFRS 9, reduced by the sum of related expected loss amounts for the same exposures calculated in accordance with Article 158(5), (6) and (10). Where the calculation results in a negative number, the institution shall set the value of the amount referred to in point (b) of paragraph 3 of this Article as equal to zero.</point>
+							</numbered_paragraph>
+							<numbered_paragraph>
+								<numbering>6.</numbering>
+								<subparagraph>
+									<introductory_part>Institutions shall apply the following factors to calculate the amounts ABSA and ABIRB referred to in points (a) and (b) of the second subparagraph of paragraph 1 respectively:</introductory_part>
+									<point>
+										<numbering>(a)</numbering>0,95 during the period from 1 January 2018 to 31 December 2018;</point>
+									<point>
+										<numbering>(b)</numbering>0,85 during the period from 1 January 2019 to 31 December 2019;</point>
+									<point>
+										<numbering>(c)</numbering>0,7 during the period from 1 January 2020 to 31 December 2020;</point>
+									<point>
+										<numbering>(d)</numbering>0,5 during the period from 1 January 2021 to 31 December 2021;</point>
+									<point>
+										<numbering>(e)</numbering>0,25 during the period from 1 January 2022 to 31 December 2022.</point>
+								</subparagraph>
+								<subparagraph>Institutions whose financial year commences after 1 January 2018 but before 1 January 2019 shall adjust the dates in points (a) to (e) of the first subparagraph so that they correspond to their financial year, shall report the adjusted dates to their competent authority and shall publicly disclose them.</subparagraph>
+								<subparagraph>Institutions which start to apply accounting standards as referred to in paragraph 1 on or after 1 January 2019 shall apply the relevant factors in accordance with points (b) to (e) of the first subparagraph starting with the factor corresponding to the year of the first application of those accounting standards.</subparagraph>
+							</numbered_paragraph>
+							<numbered_paragraph>
+								<numbering>7.</numbering>
+								<introductory_part>Where an institution includes in its Common Equity Tier 1 capital an amount in accordance with paragraph 1 of this Article, it shall recalculate all requirements laid down in this Regulation and in Directive 2013/36/EU that use any of the following items by not taking into account the effects that the expected credit loss provisions that it included in its Common Equity Tier 1 capital have on those items:</introductory_part>
+								<point>
+									<numbering>(a)</numbering>the amount of deferred tax assets that is deducted from Common Equity Tier 1 capital in accordance with point (c) of Article 36(1) or risk weighted in accordance with Article 48(4);</point>
+								<point>
+									<numbering>(b)</numbering>the exposure value as determined in accordance with Article 111(1) whereby the specific credit risk adjustments by which the exposure value shall be reduced shall be multiplied by the following scaling factor (sf):
+									<scientific_formula>sf =  1 - (ABSA / RASA)</scientific_formula>
+									<legend>where:
+										<line_of_a_legend>ABSA = the amount calculated in accordance with point (a) of the second subparagraph of paragraph 1;</line_of_a_legend>
+										<line_of_a_legend>RASA = the total amount of specific credit risk adjustments;</line_of_a_legend>
+									</legend>
+								</point>
+								<point>
+									<numbering>(c)</numbering>the amount of Tier 2 items calculated in accordance with point (d) of Article 62.</point>
+							</numbered_paragraph>
+							<numbered_paragraph>
+								<numbering>8.</numbering>During the period set out in paragraph 6 of this Article, in addition to disclosing the information required in Part Eight, institutions that have decided to apply the transitional arrangements set out in this Article shall disclose the amounts of own funds, Common Equity Tier 1 capital and Tier 1 capital, the Common Equity Tier 1 capital ratio, the Tier 1 capital ratio, the total capital ratio and the leverage ratio they would have in case they were not to apply this Article.</numbered_paragraph>
+							<numbered_paragraph>
+								<numbering>9.</numbering>
+								<subparagraph>An institution shall decide whether to apply the arrangements set out in this Article during the transitional period and shall inform the competent authority of its decision by 1 February 2018. Where an institution has received the prior permission of the competent authority, it may reverse once, during the transitional period, its initial decision. Institutions shall publicly disclose any decision taken in accordance with this subparagraph.</subparagraph>
+								<subparagraph>An institution that has decided to apply the transitional arrangements set out in this Article may decide not to apply paragraph 4 in which case it shall inform the competent authority of its decision by 1 February 2018. In such a case, the institution shall set the amount A4 referred to in paragraph 1 as equal to zero. Where an institution has received the prior permission of the competent authority, it may reverse once, during the transitional period, its initial decision. Institutions shall publicly disclose any decision taken in accordance with this subparagraph.</subparagraph>
+							</numbered_paragraph>
+							<numbered_paragraph>
+								<numbering>10.</numbering>In accordance with Article 16 of Regulation (EU) No 1093/2010, the EBA shall issue guidelines by 30 June 2018 on the disclosure requirements laid down in this Article.</numbered_paragraph>
+						</article></text_of_the_amendment>’;</point>
+				<point>
+					<numbering>(2)</numbering>in Article 493, the following paragraphs are added:‘<text_of_the_amendment>
+					<numbered_paragraph>
+							<numbering>4.</numbering>
+							<subparagraph>
+								<introductory_part>By way of derogation from Article 395(1), competent authorities may allow institutions to incur any of the exposures provided for in paragraph 5 of this Article meeting the conditions set out in paragraph 6 of this Article, up to the following limits:</introductory_part>
+								<point>
+									<numbering>(a)</numbering>100 % of the institution’s Tier 1 capital until 31 December 2018;</point>
+								<point>
+									<numbering>(b)</numbering>75 % of the institution’s Tier 1 capital until 31 December 2019;</point>
+								<point>
+									<numbering>(c)</numbering>50 % of the institution’s Tier 1 capital until 31 December 2020.</point>
+							</subparagraph>
+							<subparagraph>The limits referred to in points (a), (b) and (c) of the first subparagraph shall apply to exposure values after taking into account the effect of the credit risk mitigation in accordance with Articles 399 to 403.</subparagraph>
+						</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>5.</numbering>
+							<subparagraph>
+								<introductory_part>The transitional arrangements set out in paragraph 4 shall apply to the following exposures:</introductory_part>
+								<point>
+									<numbering>(a)</numbering>asset items constituting claims on central governments, central banks, or public sector entities of Member States;</point>
+								<point>
+									<numbering>(b)</numbering>asset items constituting claims expressly guaranteed by central governments, central banks, or public sector entities of Member States;</point>
+								<point>
+									<numbering>(c)</numbering>other exposures to, or guaranteed by, central governments, central banks, or public sector entities of Member States;</point>
+								<point>
+									<numbering>(d)</numbering>asset items constituting claims on regional governments or local authorities of Member States treated as exposures to a central government in accordance with Article 115(2);</point>
+								<point>
+									<numbering>(e)</numbering>other exposures to, or guaranteed by, regional governments or local authorities of Member States treated as exposures to a central government in accordance with Article 115(2).</point>
+							</subparagraph>
+							<subparagraph>For the purposes of points (a), (b) and (c) of the first subparagraph, the transitional arrangements set out in paragraph 4 of this Article shall apply only to asset items and other exposures to, or guaranteed by, public sector entities which are treated as exposures to a central government, a regional government or a local authority in accordance with Article 116(4). Where asset items and other exposures to, or guaranteed by, public sector entities are treated as exposures to a regional government or a local authority in accordance with Article 116(4), the transitional arrangements set out in paragraph 4 of this Article shall apply only where exposures to that regional government or local authority are treated as exposures to a central government in accordance with Article 115(2).</subparagraph>
+						</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>6.</numbering>
+							<introductory_part>The transitional arrangements set out in paragraph 4 of this Article shall apply only where an exposure referred to in paragraph 5 of this Article meets all of the following conditions:</introductory_part>
+							<point>
+								<numbering>(a)</numbering>the exposure would be assigned a risk weight of 0 % in accordance with the version of Article 495(2) in force on 31 December 2017;</point>
+							<point>
+								<numbering>(b)</numbering>the exposure was incurred on or after 12 December 2017.</point>
+						</numbered_paragraph>
+						<numbered_paragraph>
+							<numbering>7.</numbering>An exposure as referred to in paragraph 5 of this Article incurred before 12 December 2017 to which a risk weight of 0 % was assigned on 31 December 2017 in accordance with Article 495(2) shall be exempted from the application of Article 395(1).</numbered_paragraph></text_of_the_amendment>’;</point>
+			</unnumbered_paragraph>
+		</article>
+		<article>
+			<heading>Article <numbering>2</numbering>
+			</heading>
+			<unnumbered_paragraph>This Regulation shall enter into force on the day following that of its publication in the Official Journal of the European Union.</unnumbered_paragraph>
+			<unnumbered_paragraph>It shall apply from 1 January 2018.</unnumbered_paragraph>
+		</article>
+	</enacting_terms>
+	<direct_applicability>This Regulation shall be binding in its entirety and directly applicable in all Member States.</direct_applicability>
+	<signature>
+		<place_and_date>Done at Strasbourg, <date>12 December 2017</date>.</place_and_date>
+		<signatory>For the European Parliament
+The President
+A. TAJANI</signatory>
+		<signatory>For the Council
+The President
+M. MAASIKAS</signatory>
+	</signature>
+</regulation>

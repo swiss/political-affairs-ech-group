@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+	<documentCollection name="PROP_ACT">
+		<meta>
+			<identification source="~PUBL">
+				<FRBRWork>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<FRBRcountry value="EU"/>
+					<FRBRnumber value="COM(2020) 360" refersTo="~prs3y"/>
+					<FRBRprescriptive value="false"/>
+				</FRBRWork>
+				<FRBRExpression>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<FRBRversionNumber value="final"/>
+					<FRBRlanguage xml:id="FRBRlanguage" language="en"/>
+				</FRBRExpression>
+				<FRBRManifestation>
+					<FRBRthis value=""/>
+					<FRBRuri value=""/>
+					<FRBRdate date="2999-01-01" name=""/>
+					<FRBRauthor href=""/>
+					<preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+						<akn4eu:akn4euVersion value="4.2.0.0"/>
+						<akn4eu:akn4euDocumentation href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/akn4eu"/>
+					</preservation>
+				</FRBRManifestation>
+			</identification>
+			<references source="~PUBL">
+				<TLCReference name="language" href="http://publications.europa.eu/resource/authority/language/ENG" showAs="en"/>
+				<TLCOrganization xml:id="PUBL" href="http://publications.europa.eu/resource/authority/corporate-body/PUBL" showAs="Publications Office of the European Union"/>
+				<TLCOrganization xml:id="COM" href="http://publications.europa.eu/resource/authority/corporate-body/COM" showAs="European Commission"/>
+				<TLCLocation xml:id="BEL_BRU" href="http://publications.europa.eu/resource/authority/place/BEL_BRU" showAs="Brussels"/>
+				<TLCReference xml:id="PROP_ACT" name="docType" href="http://publications.europa.eu/resource/authority/resource-type/PROP_ACT" showAs="Proposal for an act"/>
+				<TLCReference xml:id="DIR" name="docType" href="http://publications.europa.eu/resource/authority/resource-type/DIR" showAs="Directive"/>
+				<TLCReference xml:id="procedure_2020_165" name="procedureReference" href="http://eur-lex.europa.eu/procedure/EN/2020_165" showAs="2020/0165 (CNS)" shortForm="2020/165/CNS"/>
+				<TLCReference xml:id="prs3y" name="identifier" href="http://publications.europa.eu/resource/authority/document-identifier-format/COM_NUMBER" showAs="COM(2020) 360" shortForm="COM/2020/360"/>
+			</references>
+		</meta>
+		<coverPage xml:id="d1e83">
+			<container xml:id="d1e85" name="logo">
+				<p xml:id="d1e87"><img xml:id="d1e88" src="EC.png" alt="EUROPEAN COMMISSION"/></p>
+			</container>
+			<container xml:id="d1e91" name="actingEntity">
+				<p xml:id="d1e93"><organization xml:id="d1e94" refersTo="~COM">EUROPEAN COMMISSION</organization></p>
+			</container>
+			<container xml:id="d1e98" name="mainDoc">
+				<block xml:id="d1e100" name="placeAndDate"><location xml:id="d1e101" refersTo="~BEL_BRU"/>Brussels, <date xml:id="d1e103" date="2020-08-07">7.8.2020</date></block>
+				<block xml:id="d1e106" name="reference">
+					<docNumber xml:id="d1e108" refersTo="~prs3y">COM(2020) 360 <inline xml:id="d1e110" name="version">final</inline></docNumber>
+				</block>
+			</container>
+			<container xml:id="d1e115" name="procedureIdentifier">
+				<p xml:id="d1e117">
+					<docketNumber xml:id="d1e119" refersTo="~procedure_2020_165">2020/0165 (CNS)</docketNumber>
+				</p>
+			</container>
+			<longTitle xml:id="d1e124">
+				<p xml:id="d1e126"><docStage xml:id="d1e127">Proposal for a</docStage>
+					<docType xml:id="d1e129" refersTo="~DIR">COUNCIL DIRECTIVE</docType>
+					<docPurpose xml:id="d1e132">amending <ref xml:id="d1e134" href="http://data.europa.eu/eli/dir/2006/112">Directive 2006/112/EC on the common system of value added tax as
+							regards the identification of taxable persons in Northern Ireland</ref></docPurpose>
+				</p>
+			</longTitle>
+			<container xml:id="d1e140" name="mainDocLanguage">
+				<p xml:id="d1e142"><inline xml:id="d1e143" name="language" refersTo="~FRBRlanguage">EN</inline></p>
+			</container>
+		</coverPage>
+		<collectionBody xml:id="d1e148">
+			<component xml:id="d1e150">
+				<documentRef xml:id="d1e152" href="EXPL_MEMORANDUM-ckylbnre200dz396bqqwm4gr0-en.xml" showAs="EXPLANATORY      MEMORANDUM"/>
+			</component>
+			<component xml:id="d1e155">
+				<documentRef xml:id="d1e157" href="DIR-ckylbnre200e8396bdqrf8d1m-en.xml" showAs="COUNCIL DIRECTIVE"/>
+			</component>
+		</collectionBody>
+	</documentCollection>
+</akomaNtoso>

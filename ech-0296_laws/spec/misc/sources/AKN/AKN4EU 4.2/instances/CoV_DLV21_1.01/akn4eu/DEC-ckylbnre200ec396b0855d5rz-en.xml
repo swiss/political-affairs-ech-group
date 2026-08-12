@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?><akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+   <bill name="DEC">
+      <meta>
+         <identification source="~PUBL">
+            <FRBRWork>
+               <FRBRthis value=""/>
+               <FRBRuri value=""/>
+               <FRBRdate date="2999-01-01" name=""/>
+               <FRBRauthor href=""/>
+            	<preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">						
+            		<akn4eu:fileCUID value="ckylbnre200ec396b0855d5rz"/>
+            	</preservation>
+            	<FRBRcountry value="EU"/>
+            	<FRBRnumber value="COM(2021) 354"/>
+            	<FRBRprescriptive value="true"/>
+            </FRBRWork>
+            <FRBRExpression>
+               <FRBRthis value=""/>
+               <FRBRuri value=""/>
+               <FRBRdate date="2999-01-01" name=""/>
+               <FRBRauthor href=""/>
+            	<FRBRversionNumber value="final"/>
+            	<FRBRlanguage language="en"/>
+            </FRBRExpression>
+            <FRBRManifestation>
+               <FRBRthis value=""/>
+               <FRBRuri value=""/>
+               <FRBRdate date="2999-01-01" name=""/>
+               <FRBRauthor href=""/>
+            	<preservation xmlns:akn4eu="http://imfc.europa.eu/akn4eu">
+            		<akn4eu:akn4euVersion value="4.1.1.0"/>
+            		<akn4eu:akn4euDocumentation href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/akn4eu"/>
+            	</preservation>
+            </FRBRManifestation>
+         </identification>
+         <references source="~PUBL">
+            <TLCReference name="language" href="http://publications.europa.eu/resource/authority/language/ENG" showAs="en"/>
+            <TLCReference xml:id="legalBasis" name="contentSubject" href="http://eurovoc.europa.eu/5456" showAs="Legal basis"/>
+            <TLCOrganization xml:id="PUBL" href="http://publications.europa.eu/resource/authority/corporate-body/PUBL" showAs="Publications Office of the European Union"/>
+            <TLCOrganization xml:id="CONSIL" href="http://publications.europa.eu/resource/authority/corporate-body/CONSIL" showAs="Council of the European Union"/>
+            <TLCRole xml:id="PRESID" href="http://publications.europa.eu/resource/authority/role/PRESID" showAs="President"/>
+            <TLCLocation xml:id="BEL_BRU" href="http://publications.europa.eu/resource/authority/place/BEL_BRU" showAs="Brussels"/>
+            <TLCReference xml:id="DEC" name="docType" href="http://publications.europa.eu/resource/authority/resource-type/DEC" showAs="Decision"/>
+            <TLCReference xml:id="ATTACHMENT" name="docType" href="http://publications.europa.eu/resource/authority/resource-type/ATTACHMENT" showAs="Attachment"/>
+            <TLCReference xml:id="procedure_2021_175" name="procedureReference" href="http://eur-lex.europa.eu/procedure/EN/2021_175" showAs="2021/0175 (NLE)" shortForm="2021/175/NLE"/>
+         </references>
+      </meta>
+      <preface xml:id="d1e90">
+         <container xml:id="d1e92" name="procedureIdentifier">
+         	<p xml:id="d1e94"><docketNumber xml:id="d1e95" refersTo="~procedure_2021_175">2021/0175 (NLE)</docketNumber></p>
+         </container>
+         <longTitle xml:id="d1e99">
+            <p xml:id="d1e101"><docStage xml:id="d1e102">Proposal for a</docStage>
+            	<docType xml:id="d1e104" refersTo="~DEC">COUNCIL DECISION</docType>
+               <docPurpose xml:id="d1e107">on the position to be adopted on behalf of the European Union, within the EEA Joint Committee concerning an amendment to Protocol 31 to the EEA Agreement, on cooperation in specific fields outside of the four freedoms (Budget line 07 20 03 01 - Social Security)</docPurpose>
+            </p>
+         </longTitle>
+         <container xml:id="d1e111" name="eeaRelevance">
+            <p xml:id="d1e113">(Text with EEA relevance)</p>
+         </container>
+      </preface>
+      <preamble xml:id="d1e117">
+         <formula xml:id="d1e119" name="actingEntity">
+            <p xml:id="d1e121">THE COUNCIL OF THE EUROPEAN UNION,</p>
+         </formula>
+         <citations xml:id="d1e124">
+            <citation xml:id="d1e126" refersTo="~legalBasis">
+               <p xml:id="d1e128">Having regard to the Treaty on the Functioning of the European Union, and in particular Article 46 and 48 in conjunction with Article 218(9) thereof,</p>
+            </citation>
+            <citation xml:id="d1e131">
+               <p xml:id="d1e133">Having regard to Council Regulation (EC) 2894/94 of 28 November 1994 concerning arrangements for implementing the Agreement on the European Economic Area<authorialNote xml:id="d1e135" marker="1" placement="bottom">
+                     <p xml:id="d1e137">OJ L 305, 30.11.1994, p. 6–8.</p>
+                  </authorialNote>, and in particular Article 1(3) thereof,</p>
+            </citation>
+            <citation xml:id="d1e142">
+               <p xml:id="d1e144">Having regard to the proposal from the European Commission,</p>
+            </citation>
+         </citations>
+         <recitals xml:id="d1e148">
+            <intro xml:id="d1e150">
+               <p xml:id="d1e152">Whereas:</p>
+            </intro>
+            <recital xml:id="d1e155">
+               <num xml:id="d1e157">(1)</num>
+               <p xml:id="d1e159">The Agreement on the European Economic Area<authorialNote xml:id="d1e161" marker="2" placement="bottom">
+                     <p xml:id="d1e163">OJ L 1, 3.1.1994, p. 3.</p>
+                  </authorialNote> ('the EEA Agreement') entered into force on 1 January 1994.</p>
+            </recital>
+            <recital xml:id="d1e168">
+               <num xml:id="d1e170">(2)</num>
+               <p xml:id="d1e172">Pursuant to Article 98 of the EEA Agreement, the EEA Joint Committee may decide to amend, inter alia, Protocol 31 to the EEA Agreement.</p>
+            </recital>
+            <recital xml:id="d1e175">
+               <num xml:id="d1e177">(3)</num>
+               <p xml:id="d1e179">Protocol 31 to the EEA Agreement contains provisions on cooperation in specific fields outside the four freedoms.</p>
+            </recital>
+            <recital xml:id="d1e182">
+               <num xml:id="d1e184">(4)</num>
+               <p xml:id="d1e186">It is appropriate to continue the cooperation of the Contracting Parties to the EEA Agreement to include cooperation concerning free movement of workers, coordination of social security systems and measures for migrants, including migrants from third countries.</p>
+            </recital>
+            <recital xml:id="d1e190">
+               <num xml:id="d1e192">(5)</num>
+               <p xml:id="d1e194">Protocol 31 to the EEA Agreement should therefore be amended in order to allow for this extended cooperation to continue from 1 January 2021.</p>
+            </recital>
+            <recital xml:id="d1e197">
+               <num xml:id="d1e199">(6)</num>
+               <p xml:id="d1e201">The position of the Union within the EEA Joint Committee should be based on the attached draft decision,</p>
+            </recital>
+         </recitals>
+         <formula xml:id="d1e205" name="enactingFormula">
+            <p xml:id="d1e207">HAVE ADOPTED THIS DECISION:</p>
+         </formula>
+      </preamble>
+      <body xml:id="d1e211">
+         <article xml:id="d1e213">
+            <num xml:id="d1e215">Article 1</num>
+            <paragraph xml:id="d1e217">
+               <content xml:id="d1e219">
+                  <p xml:id="d1e221">The position to be adopted, on the Union's behalf, within the EEA Joint Committee on the proposed amendment to Protocol 31 to the EEA Agreement, on cooperation in specific fields outside the four freedoms, shall be based on the draft decision of the EEA Joint Committee attached to this Decision.</p>
+               </content>
+            </paragraph>
+         </article>
+         <article xml:id="d1e226">
+            <num xml:id="d1e228">Article 2</num>
+            <paragraph xml:id="d1e230">
+               <content xml:id="d1e232">
+                  <p xml:id="d1e234">This Decision shall enter into force on the date of its adoption.</p>
+               </content>
+            </paragraph>
+         </article>
+      </body>
+      <conclusions xml:id="d1e240">
+         <p xml:id="d1e242">Done at <location xml:id="d1e244" refersTo="~BEL_BRU">Brussels</location>,</p>
+         <block xml:id="d1e248" name="signatory">
+            <signature xml:id="d1e250">
+               <organization xml:id="d1e252" refersTo="~CONSIL">For the Council</organization>
+               <role xml:id="d1e255" refersTo="~PRESID">The President</role>
+               <person xml:id="d1e258" refersTo=""/>
+            </signature>
+         </block>
+      </conclusions>
+      <attachments>
+         <attachment xml:id="d1e266" refersTo="~ATTACHMENT">
+            <num xml:id="d1e268">ANNEX</num>
+            <documentRef xml:id="d1e270" href="DEC-ckylbnre200ed396b38e4lvvq-en.xml" showAs="DECISION OF THE EEA JOINT COMMITTEE"/>
+         </attachment>
+      </attachments>
+   </bill>
+</akomaNtoso>

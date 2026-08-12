@@ -1,186 +1,91 @@
 # eCH-0296 – Erlasse und Gesetzestexte
 
-Spezifikation für die strukturierte Erfassung, Verwaltung und Veröffentlichung von Erlassen und Gesetzestexten in der Schweiz.
+Anwendungsprofile für **Akoma Ntoso** (AKN4CH / AKN-AP-CH) und den **European Legislation Identifier**
+(ELI-AP-CH) für die Schweiz. Grundlage für die Publikation und den Austausch von Erlassen und
+Gesetzestexten zwischen Bund, Kantonen und Gemeinden sowie mit dem Ausland.
 
-## Installation
+| | |
+|---|---|
+| eCH-Nummer | 0296 |
+| Kategorie | Standard |
+| Reifegrad | Definiert |
+| Version | 0.1.0 |
+| Status | In Arbeit |
+| Fachgruppe | Politische Geschäfte |
+| Sprachen | Deutsch (Original), Französisch (Übersetzung) |
+| Editor | Martin Gajdos ([martin.gajdos@me.com](mailto:martin.gajdos@me.com)) |
 
-### Prerequisites
+## Approach
 
-- Python 3.8+
-- Node.js 14+
-- pip (Python package manager)
+Sources are re-derived from the official ELI and Akoma Ntoso specifications and rebuilt as a
+**LinkML-native pipeline**: hand-authored source material in `spec/` feeds Python notebooks in
+`pipeline/` that generate the SSSOM mapping set, the SKOS controlled vocabularies, and the URI
+construction/resolution logic — rather than hand-maintaining a mapping document and a resolver
+separately. See [`PIPELINE.md`](PIPELINE.md) for how each tool works and how to run it.
 
-### Setup
-
-1. **Install Bikeshed** (if not already installed):
-   ```bash
-   cd bikeshed
-   python3 -m venv .venv
-   .venv/bin/pip install bikeshed
-   # Or via pipx (recommended):
-   pipx install bikeshed
-   ```
-
-2. **Install Node dependencies**:
-   ```bash
-   npm install
-   ```
-
-3. **Download dokieli CSS/JS** (already in `output/`):
-   - `output/dokieli.css` - dokieli UI styles
-   - `output/dokieli.js` - dokieli functionality
-
-## Project Structure
+## Repository structure
 
 ```
-ech-0296/
-├── bikeshed/              # Bikeshed tool (local install or .venv)
-│   ├── .venv/             # Local Python virtual environment
-│   ├── index.bs           # Main spec source (Bikeshed format)
-│   ├── header.include     # HTML header template
-│   └── ...
-├── input/                 # Authored content
-│   ├── css/               # Custom stylesheets
-│   │   ├── appendix.css
-│   │   ├── copy-btn.css
-│   │   ├── references.css
-│   │   ├── tables.css
-│   │   └── toc.css
-│   ├── js/                # Custom scripts
-│   │   ├── sidebar.js
-│   │   ├── appendix-toc.js
-│   │   ├── references.js
-│   │   ├── tof-tot.js
-│   │   └── copy-code.js
-│   ├── sections/          # Spec sections (markdown)
-│   │   ├── main/
-│   │   └── appendix/
-│   ├── examples/          # Code examples
-│   └── images/            # Images and logos
-├── output/                # Generated output
-│   ├── index.html         # Compiled spec
-│   ├── styles.css         # Concatenated CSS
-│   ├── scripts.js         # Concatenated JS
-│   ├── dokieli.css        # dokieli UI styles
-│   ├── dokieli.js         # dokieli functionality
-│   ├── basic.css          # dokieli typography layer
-│   └── images/
-├── misc/                  # Reference materials
-└── scripts/               # Build utilities
+spec/           the standard itself — sources + authored content
+  input/
+    main/       the 4 normative modules: identifier, content, metadata (+ intro, informative)
+    appendix/   dependencies, references, tooling, and the generated ELI↔AKN mapping annex
+    examples/   worked AKN/ELI examples (federal + cantonal)
+    schemas/    vendored AKN 3.0 XSDs (OASIS + Fedlex-flavoured), Fedlex Schematron
+  misc/         reference material: ELI (core/DL/I), AKN (NC, AKN4EU, AKN4CH), FRBR, the EU's
+                ELI Annotation Tool, Schematron/XProc references, drafting-methodology sources
+                (Bundeskanzlei guidelines, LeGes) — background reading, not normative
+
+lib/            runtime libraries
+  uris/         frbr_uri — FRBR-URI resolver, fragment identifiers, legacy-URL reverse-engineering
+  metadata/     ELI property definitions
+  data/         example AKN XML documents with ELI identifiers
+
+pipeline/       the tooling that builds spec/'s generated artifacts (not itself normative)
+  akn/          Word→AKN-XML construction: KAV/eCH Word templates, a FastAPI resolver API
+                (calls into lib/uris/); the actual Word→XML transform runs through Morgana XProc,
+                a separate tool not included in this repository
+  uri/          FRBR/ELI URI-template construction + validation (uri.ipynb)
+  schema/       the ELI↔AKN crosswalk: SSSOM mapping set, LinkML-generated SKOS vocabularies,
+                live SPARQL tooling against Fedlex's jolux data (schema.ipynb, fedlex-sparql/)
 ```
 
-## Development Workflow
+## Roadmap
 
-### Phase 1: Test Bikeshed Base (without dokieli)
+The three normative modules (**URI/identifier**, **metadata**, **content**) are each backed by a
+`pipeline/` tool that generates the corresponding `spec/` artifact rather than hand-maintaining it:
 
-1. Build the specification:
-   ```bash
-   npm run bikeshed:build
-   ```
+- **URI** (`pipeline/uri`) — constructs and validates the RFC 6570 URI templates for Swiss legal
+  resources (federal via Fedlex, cantonal/municipal where no ELI scheme exists yet), reusing
+  `lib/uris/frbr_uri`'s per-jurisdiction resolver profiles.
+- **Metadata** (`pipeline/schema`) — the ELI↔AKN crosswalk, generated with
+  [**sssom-py**](https://github.com/mapping-commons/sssom-py) from `pipeline/schema/mappings/eli-akn.sssom.tsv`
+  (the sole hand-curated mapping file — `spec/input/appendix/eli-akn-mapping.md` and the published
+  vocabularies are derived exports, not edited directly). Local SKOS concept schemes (resource type,
+  subdivision type, legal value, in-force status, …) are generated LinkML enum/CSV → SKOS, aligned to
+  ELI/Eurovoc. `pipeline/schema/fedlex-sparql/` queries the live Fedlex SPARQL endpoint to pull the
+  actual jolux metadata (concept schemes, vocabularies) that the mapping needs to check against.
+- **Content** (`pipeline/akn`) — the AKN XML structure, bounded to what AKN Level-2 conformance
+  requires (structure, FRBR URIs/IDs, metadata levels A–D), constructed from Word via Morgana XProc
+  and validated against the official XSD + Fedlex Schematron.
 
-2. Serve locally:
-   ```bash
-   npm run serve
-   ```
+Both the coverage of the crosswalk (mapped vs. unmapped, by conformance level A–D) and the vocabulary
+coverage (defined locally / reused from ELI / aligned to Eurovoc / missing) are rendered as living
+tables from `pipeline/schema/schema.ipynb`'s output — currently the substantive open work.
 
-3. Open http://localhost:3000 in your browser
+## Publication
 
-**Checklist**:
-- [ ] Title and structure render correctly
-- [ ] Table of Contents appears
-- [ ] Example 1: 12 lines numbered consistently
-- [ ] Example 2: lines 1-22 numbered, lines 6-22 highlighted
-- [ ] Copy button works on hover
-- [ ] Self-links (¶) appear on hover
-- [ ] German captions: "Abbildung" and "Tabelle"
-- [ ] Appendix lettering (A, B, C) in TOC
+The rendered standard (this content plus a generated coverage/mapping view) is published at
+[legaldocml.ch](https://legaldocml.ch) under `/ap` (machine-readable JSON-LD alignment) and
+`/application-profile` (the human-readable crosswalk) — generated from this same LinkML pipeline, with
+Word-document export as an additional output alongside the site, matching this working group's own
+`schema.yaml` → generated-`.docx` convention. That build tooling (an Astro site, deploy config) lives in
+the parent infrastructure monorepo and isn't included in this repository.
 
-### Phase 2: Test with dokieli
+## Standards in play
 
-1. Ensure dokieli files are in place:
-   ```bash
-   ls output/dokieli.css output/dokieli.js output/basic.css
-   ```
-
-2. Build and serve:
-   ```bash
-   npm run build && npm run serve
-   ```
-
-**Additional Checklist**:
-- [ ] Hamburger menu appears (top-left)
-- [ ] Hamburger menu is functional
-- [ ] dokieli annotation features work
-- [ ] Pre/code blocks not affected by basic.css styling
-- [ ] Links don't have unwanted borders
-
-### Phase 3: Watch Mode (Development)
-
-For live reloading during development:
-```bash
-npm run dev
-```
-
-This will watch for changes in:
-- `input/sections/` (markdown)
-- `input/css/` (stylesheets)
-- `input/js/` (scripts)
-- `bikeshed/*.bs` (Bikeshed source)
-
-## CSS Cascade Order
-
-Styles are applied in this order (later wins at equal specificity):
-
-1. Bikeshed embedded `<style>` blocks (grid layout, counters, etc.)
-2. `dokieli.css` (hamburger menu, annotation UI)
-3. `basic.css` (dokieli typography layer)
-4. Concatenated `styles.css` from `input/css/*.css`
-
-Our custom CSS in `input/css/` loads last and wins without needing `!important`.
-
-## Common Issues
-
-### Line numbers inconsistent between examples
-
-**Problem**: Example 2 shows numbers only for lines 6-22
-
-**Solution**: Ensure `line-numbers:` directive is in Example 2's include
-
-### Copy button not working
-
-**Problem**: Button appears but copy fails in some browsers
-
-**Solution**: Check that `copy-code.js` has fallback for older browsers
-
-### dokieli hamburger not showing
-
-**Problem**: Menu button doesn't appear
-
-**Solution**: Verify `dokieli.js` is loaded and `dokieli.css` is applied
-
-## Building for Deployment
-
-To build the final output for deployment:
-
-```bash
-npm run build
-```
-
-This creates:
-- `output/index.html` - Compiled specification
-- `output/styles.css` - All CSS concatenated
-- `output/scripts.js` - All JavaScript concatenated
-- `output/dokieli.css` - dokieli UI layer
-- `output/dokieli.js` - dokieli application
-- `output/basic.css` - dokieli typography
-- `output/images/` - All images
-
-## References
-
-- [Bikeshed](https://tabatkins.github.io/bikeshed/)
-- [Akoma Ntoso (AKN)](http://docs.oasis-open.org/legaldocml/)
-- [dokieli](https://dokie.li/)
-- [European Legislation Identifier (ELI)](https://op.europa.eu/en/web/eu-vocabularies/eli)
+ELI Core + ELI-DL (draft legislation) + ELI implementation guidance · schema.org · Akoma Ntoso 3.0
+(OASIS) + its Naming Convention (AKN-NC — AKN has no formal OWL ontology) · Eurovoc (subjects).
 
 ## License
 
