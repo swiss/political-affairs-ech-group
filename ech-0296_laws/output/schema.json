@@ -1,0 +1,2856 @@
+{
+    "$defs": {
+        "Act": {
+            "additionalProperties": false,
+            "description": "The legislative act element (akn:act). Main content container of an AkomaNtoso document. The @name attribute specifies the type of act (e.g. 'publicLaw').",
+            "properties": {
+                "act_name": {
+                    "$ref": "#/$defs/ActTypeEnum",
+                    "description": "Type of act (@name attribute of akn:act), e.g. 'publicLaw'."
+                },
+                "body": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/ActBody"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Main body of the act (akn:body)."
+                },
+                "meta": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/ActMeta"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Metadata section of the act (akn:meta)."
+                },
+                "preamble_ref": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Preamble"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Preamble of the act (akn:preamble)."
+                },
+                "preface_ref": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Preface"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Preface of the act (akn:preface)."
+                }
+            },
+            "title": "Act",
+            "type": "object"
+        },
+        "ActBody": {
+            "additionalProperties": false,
+            "description": "The main body of the act (akn:body), containing the legislative hierarchy. Allowed direct children are restricted to: book, title, part, chapter, subchapter, section, subsection, level, article, transitional, proviso. No other elements are permitted (FLX-BD-001).",
+            "properties": {
+                "articles": {
+                    "description": "Article child elements (akn:article).",
+                    "items": {
+                        "$ref": "#/$defs/Article"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "books": {
+                    "description": "Book-level child elements (akn:book).",
+                    "items": {
+                        "$ref": "#/$defs/Book"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "chapters": {
+                    "description": "Chapter-level child elements (akn:chapter).",
+                    "items": {
+                        "$ref": "#/$defs/Chapter"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "levels": {
+                    "description": "Transparent level child elements (akn:level).",
+                    "items": {
+                        "$ref": "#/$defs/Level"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "parts": {
+                    "description": "Part-level child elements (akn:part).",
+                    "items": {
+                        "$ref": "#/$defs/Part"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "provisos": {
+                    "description": "Proviso elements (akn:proviso).",
+                    "items": {
+                        "$ref": "#/$defs/Proviso"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "sections": {
+                    "description": "Section-level child elements (akn:section).",
+                    "items": {
+                        "$ref": "#/$defs/Section"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subchapters": {
+                    "description": "Subchapter-level child elements (akn:subchapter).",
+                    "items": {
+                        "$ref": "#/$defs/Subchapter"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subsections": {
+                    "description": "Subsection-level child elements (akn:subsection).",
+                    "items": {
+                        "$ref": "#/$defs/Subsection"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "titles": {
+                    "description": "Title-level child elements (akn:title).",
+                    "items": {
+                        "$ref": "#/$defs/Title"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "transitionals": {
+                    "description": "Transitional provision elements (akn:transitional).",
+                    "items": {
+                        "$ref": "#/$defs/Transitional"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "ActBody",
+            "type": "object"
+        },
+        "ActMeta": {
+            "additionalProperties": false,
+            "description": "Metadata section of the act (akn:meta). Contains FRBR identification (Work, Expression, Manifestation levels) and named reference definitions.",
+            "properties": {
+                "identification_ref": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Identification"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "FRBR identification block (akn:identification)."
+                },
+                "references_ref": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/References"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "References section of the meta (akn:references)."
+                }
+            },
+            "title": "ActMeta",
+            "type": "object"
+        },
+        "ActTypeEnum": {
+            "description": "Type of legislative act expressed in the akn:act/@name attribute.",
+            "enum": [
+                "publicLaw",
+                "privateAct",
+                "amendment",
+                "constitution"
+            ],
+            "title": "ActTypeEnum",
+            "type": "string"
+        },
+        "Article": {
+            "additionalProperties": false,
+            "description": "An article, the primary legislative unit (akn:article). Constraints (FLX-ART-*): - akn:num is mandatory (FLX-ART-001) - only heading elements (num, heading, subheading) plus akn:paragraph and akn:subdivision are allowed as children (FLX-ART-002) - requires unique @eId (FLX-ART-003)",
+            "properties": {
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": "string"
+                },
+                "heading": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MixedText"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Heading element for a hierarchical structure (akn:heading). May contain inline markup including akn:br (FLX-TXT-001: br permitted in heading context). Must precede subheading (FLX-HD-004, FLX-HD-005).\n"
+                },
+                "num": {
+                    "$ref": "#/$defs/MixedText",
+                    "description": "The article number (e.g. 'Art. 1'). Mandatory in every article (FLX-ART-001)."
+                },
+                "paragraphs": {
+                    "description": "Paragraph child elements (akn:paragraph) within an article or subdivision.",
+                    "items": {
+                        "$ref": "#/$defs/Paragraph"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subdivisions": {
+                    "description": "Subdivision child elements (akn:subdivision) within an article.",
+                    "items": {
+                        "$ref": "#/$defs/Subdivision"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subheading": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MixedText"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Subheading element for a hierarchical structure (akn:subheading). The fedlex:role='reference' attribute marks it as a reference heading (FLX-XF-005). Max one subheading per element (FLX-HD-006).\n"
+                }
+            },
+            "required": [
+                "eId",
+                "num"
+            ],
+            "title": "Article",
+            "type": "object"
+        },
+        "AuthorialNote": {
+            "additionalProperties": false,
+            "description": "An authorial footnote (akn:authorialNote). Recurses into block content: it contains one or more akn:p paragraphs, which themselves carry inline content.",
+            "properties": {
+                "block_paragraphs": {
+                    "description": "Block paragraph elements (akn:p) within content.",
+                    "items": {
+                        "$ref": "#/$defs/BlockParagraph"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "element_type": {
+                    "description": "Type designator discriminating the concrete InlineElement subclass (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote).\n",
+                    "enum": [
+                        "AuthorialNote"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "AuthorialNote",
+            "type": "object"
+        },
+        "B": {
+            "additionalProperties": false,
+            "description": "Bold inline markup (akn:b).",
+            "properties": {
+                "element_type": {
+                    "description": "Type designator discriminating the concrete InlineElement subclass (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote).\n",
+                    "enum": [
+                        "B"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "inline_content": {
+                    "description": "Ordered mixed content: a sequence of text runs and inline-markup elements (InlineElement subclasses). Document order is preserved by list order. Allowed inline elements: akn:ref, akn:b, akn:i, akn:sup, akn:span, akn:authorialNote, akn:inline, akn:placeholder, akn:br.\n",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/TextRun"
+                            },
+                            {
+                                "$ref": "#/$defs/Ref"
+                            },
+                            {
+                                "$ref": "#/$defs/B"
+                            },
+                            {
+                                "$ref": "#/$defs/I"
+                            },
+                            {
+                                "$ref": "#/$defs/Sup"
+                            },
+                            {
+                                "$ref": "#/$defs/Span"
+                            },
+                            {
+                                "$ref": "#/$defs/Br"
+                            },
+                            {
+                                "$ref": "#/$defs/Inline"
+                            },
+                            {
+                                "$ref": "#/$defs/Placeholder"
+                            },
+                            {
+                                "$ref": "#/$defs/AuthorialNote"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "B",
+            "type": "object"
+        },
+        "BlockList": {
+            "additionalProperties": false,
+            "description": "A block list of enumerated or lettered items (akn:blockList), optionally introduced by an akn:listIntroduction element.",
+            "properties": {
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "items": {
+                    "description": "Items in a block list (akn:item).",
+                    "items": {
+                        "$ref": "#/$defs/BlockListItem"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "list_introduction": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MixedText"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Optional introduction text before a block list (akn:listIntroduction)."
+                }
+            },
+            "title": "BlockList",
+            "type": "object"
+        },
+        "BlockListItem": {
+            "additionalProperties": false,
+            "description": "A single item in a block list (akn:item). Carries a num label and block content directly: prose paragraphs (akn:p) and optionally nested block lists.",
+            "properties": {
+                "block_lists": {
+                    "description": "Block list elements (akn:blockList) within content.",
+                    "items": {
+                        "$ref": "#/$defs/BlockList"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "block_paragraphs": {
+                    "description": "Block paragraph elements (akn:p) within content.",
+                    "items": {
+                        "$ref": "#/$defs/BlockParagraph"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "num": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MixedText"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Number element for a hierarchical structure or article (akn:num). In articles, num is mandatory (FLX-ART-001). The num element must precede heading and subheading (FLX-HD-001, FLX-HD-002, FLX-HD-003).\n"
+                }
+            },
+            "title": "BlockListItem",
+            "type": "object"
+        },
+        "BlockParagraph": {
+            "additionalProperties": false,
+            "description": "A prose paragraph within content (akn:p). May contain mixed content with inline markup (XmlContent type). Note: akn:br is not allowed here, only in heading elements (FLX-TXT-001).",
+            "properties": {
+                "inline_content": {
+                    "description": "Ordered mixed content: a sequence of text runs and inline-markup elements (InlineElement subclasses). Document order is preserved by list order. Allowed inline elements: akn:ref, akn:b, akn:i, akn:sup, akn:span, akn:authorialNote, akn:inline, akn:placeholder, akn:br.\n",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/TextRun"
+                            },
+                            {
+                                "$ref": "#/$defs/Ref"
+                            },
+                            {
+                                "$ref": "#/$defs/B"
+                            },
+                            {
+                                "$ref": "#/$defs/I"
+                            },
+                            {
+                                "$ref": "#/$defs/Sup"
+                            },
+                            {
+                                "$ref": "#/$defs/Span"
+                            },
+                            {
+                                "$ref": "#/$defs/Br"
+                            },
+                            {
+                                "$ref": "#/$defs/Inline"
+                            },
+                            {
+                                "$ref": "#/$defs/Placeholder"
+                            },
+                            {
+                                "$ref": "#/$defs/AuthorialNote"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "BlockParagraph",
+            "type": "object"
+        },
+        "Book": {
+            "additionalProperties": false,
+            "description": "Book-level division of an act (akn:book). Allowed children: title, part, chapter, subchapter, section, subsection, level (FLX-HR-001-bk). Requires unique @eId (FLX-HR-002-bk).",
+            "properties": {
+                "articles": {
+                    "description": "Article child elements (akn:article).",
+                    "items": {
+                        "$ref": "#/$defs/Article"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "chapters": {
+                    "description": "Chapter-level child elements (akn:chapter).",
+                    "items": {
+                        "$ref": "#/$defs/Chapter"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": "string"
+                },
+                "heading": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MixedText"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Heading element for a hierarchical structure (akn:heading). May contain inline markup including akn:br (FLX-TXT-001: br permitted in heading context). Must precede subheading (FLX-HD-004, FLX-HD-005).\n"
+                },
+                "levels": {
+                    "description": "Transparent level child elements (akn:level).",
+                    "items": {
+                        "$ref": "#/$defs/Level"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "num": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MixedText"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Number element for a hierarchical structure or article (akn:num). In articles, num is mandatory (FLX-ART-001). The num element must precede heading and subheading (FLX-HD-001, FLX-HD-002, FLX-HD-003).\n"
+                },
+                "parts": {
+                    "description": "Part-level child elements (akn:part).",
+                    "items": {
+                        "$ref": "#/$defs/Part"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "sections": {
+                    "description": "Section-level child elements (akn:section).",
+                    "items": {
+                        "$ref": "#/$defs/Section"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subchapters": {
+                    "description": "Subchapter-level child elements (akn:subchapter).",
+                    "items": {
+                        "$ref": "#/$defs/Subchapter"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subheading": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MixedText"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Subheading element for a hierarchical structure (akn:subheading). The fedlex:role='reference' attribute marks it as a reference heading (FLX-XF-005). Max one subheading per element (FLX-HD-006).\n"
+                },
+                "subsections": {
+                    "description": "Subsection-level child elements (akn:subsection).",
+                    "items": {
+                        "$ref": "#/$defs/Subsection"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "titles": {
+                    "description": "Title-level child elements (akn:title).",
+                    "items": {
+                        "$ref": "#/$defs/Title"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "eId"
+            ],
+            "title": "Book",
+            "type": "object"
+        },
+        "Br": {
+            "additionalProperties": false,
+            "description": "A line break (akn:br). In the (currently disabled) FLX-TXT-001 rule, br is restricted to heading-type elements.",
+            "properties": {
+                "element_type": {
+                    "description": "Type designator discriminating the concrete InlineElement subclass (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote).\n",
+                    "enum": [
+                        "Br"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Br",
+            "type": "object"
+        },
+        "Chapter": {
+            "additionalProperties": false,
+            "description": "Chapter-level division of an act (akn:chapter). Allowed children: subchapter, section, subsection, level, and directly article (FLX-HR-001-ch). Requires unique @eId (FLX-HR-002-ch).",
+            "properties": {
+                "articles": {
+                    "description": "Article child elements (akn:article).",
+                    "items": {
+                        "$ref": "#/$defs/Article"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": "string"
+                },
+                "heading": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MixedText"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Heading element for a hierarchical structure (akn:heading). May contain inline markup including akn:br (FLX-TXT-001: br permitted in heading context). Must precede subheading (FLX-HD-004, FLX-HD-005).\n"
+                },
+                "levels": {
+                    "description": "Transparent level child elements (akn:level).",
+                    "items": {
+                        "$ref": "#/$defs/Level"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "num": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MixedText"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Number element for a hierarchical structure or article (akn:num). In articles, num is mandatory (FLX-ART-001). The num element must precede heading and subheading (FLX-HD-001, FLX-HD-002, FLX-HD-003).\n"
+                },
+                "sections": {
+                    "description": "Section-level child elements (akn:section).",
+                    "items": {
+                        "$ref": "#/$defs/Section"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subchapters": {
+                    "description": "Subchapter-level child elements (akn:subchapter).",
+                    "items": {
+                        "$ref": "#/$defs/Subchapter"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subheading": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MixedText"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Subheading element for a hierarchical structure (akn:subheading). The fedlex:role='reference' attribute marks it as a reference heading (FLX-XF-005). Max one subheading per element (FLX-HD-006).\n"
+                },
+                "subsections": {
+                    "description": "Subsection-level child elements (akn:subsection).",
+                    "items": {
+                        "$ref": "#/$defs/Subsection"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "eId"
+            ],
+            "title": "Chapter",
+            "type": "object"
+        },
+        "Content": {
+            "additionalProperties": false,
+            "description": "The content of a paragraph (akn:content). Contains block-level elements: akn:p (prose), akn:blockList (numbered/lettered lists), akn:table. When used inside a akn:level, must contain an akn:mod element (FLX-HR-003).",
+            "properties": {
+                "block_lists": {
+                    "description": "Block list elements (akn:blockList) within content.",
+                    "items": {
+                        "$ref": "#/$defs/BlockList"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "block_paragraphs": {
+                    "description": "Block paragraph elements (akn:p) within content.",
+                    "items": {
+                        "$ref": "#/$defs/BlockParagraph"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "tables": {
+                    "description": "Table elements (akn:table) within content.",
+                    "items": {
+                        "$ref": "#/$defs/Table"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Content",
+            "type": "object"
+        },
+        "DocumentLanguageEnum": {
+            "description": "Language codes used for Swiss federal documents.",
+            "enum": [
+                "de",
+                "fr",
+                "it",
+                "rm",
+                "en"
+            ],
+            "title": "DocumentLanguageEnum",
+            "type": "string"
+        },
+        "FRBRAuthor": {
+            "additionalProperties": false,
+            "description": "An author or rights-holder entry for an FRBR entity (akn:FRBRauthor). @href references the organization; @as references the role (both as intra-document anchors).",
+            "properties": {
+                "as_role": {
+                    "description": "Role the author plays (akn:FRBRauthor/@as), as an anchor reference, e.g. '#publisher', '#rightsHolder'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "href": {
+                    "description": "URI reference (@href), used for links to organizations, roles, or external URIs.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "FRBRAuthor",
+            "type": "object"
+        },
+        "FRBRDate": {
+            "additionalProperties": false,
+            "description": "A date entry for an FRBR entity (akn:FRBRdate). The @name attribute uses Fedlex/JoLux vocabulary: jolux:dateEntryInForce, jolux:dateDocument, jolux:dateApplicability.",
+            "properties": {
+                "date": {
+                    "description": "An ISO 8601 date value (akn:FRBRdate/@date).",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "frbr_date_name": {
+                    "description": "Type of date (akn:FRBRdate/@name), using Fedlex/JoLux vocabulary, e.g. 'jolux:dateEntryInForce', 'jolux:dateDocument', 'jolux:dateApplicability'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "FRBRDate",
+            "type": "object"
+        },
+        "FRBRExpression": {
+            "additionalProperties": false,
+            "description": "FRBR Expression level (akn:FRBRExpression): a specific language version of the legislative text. Identified by an ELI URI that includes the language code.",
+            "properties": {
+                "frbr_authors": {
+                    "description": "Author/rights-holder entries for this FRBR entity (akn:FRBRauthor).",
+                    "items": {
+                        "$ref": "#/$defs/FRBRAuthor"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "frbr_dates": {
+                    "description": "Date entries for this FRBR entity (akn:FRBRdate). Multiple entries for different event types (dateEntryInForce, dateDocument, dateApplicability).\n",
+                    "items": {
+                        "$ref": "#/$defs/FRBRDate"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "frbr_language": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/LanguageType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Language code of this expression (akn:FRBRlanguage/@language)."
+                },
+                "frbr_this": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/UriValueType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Canonical ELI URI of this FRBR entity (akn:FRBRthis/@value)."
+                },
+                "frbr_uri": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/UriValueType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Base ELI URI of this FRBR entity (akn:FRBRuri/@value)."
+                }
+            },
+            "title": "FRBRExpression",
+            "type": "object"
+        },
+        "FRBRManifestation": {
+            "additionalProperties": false,
+            "description": "FRBR Manifestation level (akn:FRBRManifestation): a specific file format of the expression. For Fedlex XML files the format value is 'xml'. The optional fedlex:generator attribute is only permitted here (FLX-XF-002).",
+            "properties": {
+                "frbr_authors": {
+                    "description": "Author/rights-holder entries for this FRBR entity (akn:FRBRauthor).",
+                    "items": {
+                        "$ref": "#/$defs/FRBRAuthor"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "frbr_dates": {
+                    "description": "Date entries for this FRBR entity (akn:FRBRdate). Multiple entries for different event types (dateEntryInForce, dateDocument, dateApplicability).\n",
+                    "items": {
+                        "$ref": "#/$defs/FRBRDate"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "frbr_format": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/FormatType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "File format of this manifestation (akn:FRBRformat/@value), typically 'xml'."
+                },
+                "frbr_this": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/UriValueType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Canonical ELI URI of this FRBR entity (akn:FRBRthis/@value)."
+                },
+                "frbr_uri": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/UriValueType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Base ELI URI of this FRBR entity (akn:FRBRuri/@value)."
+                }
+            },
+            "title": "FRBRManifestation",
+            "type": "object"
+        },
+        "FRBRName": {
+            "additionalProperties": false,
+            "description": "A multilingual name entry for the FRBR Work (akn:FRBRname). Carries the full official name and an optional abbreviation. One entry per language.",
+            "properties": {
+                "short_form": {
+                    "description": "Short form abbreviation of the legislative name (@shortForm), e.g. 'BV' (German), 'Cst.' (French).\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "value": {
+                    "description": "Generic value attribute (@value) used across multiple AkomaNtoso elements.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "xml_lang": {
+                    "description": "XML language code attribute (xml:lang), e.g. 'de', 'fr', 'it', 'rm', 'en'.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "FRBRName",
+            "type": "object"
+        },
+        "FRBRWork": {
+            "additionalProperties": false,
+            "description": "FRBR Work level (akn:FRBRWork): the abstract legislative text independent of language or version. Contains ELI URIs, Fedlex/JoLux dates, authors, country code (CH), SR number, and multilingual names with short forms.",
+            "properties": {
+                "frbr_authoritative": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/ValueType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Whether this is the authoritative version (akn:FRBRauthoritative/@value)."
+                },
+                "frbr_authors": {
+                    "description": "Author/rights-holder entries for this FRBR entity (akn:FRBRauthor).",
+                    "items": {
+                        "$ref": "#/$defs/FRBRAuthor"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "frbr_country": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/ValueType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Country code for this legislative text (akn:FRBRcountry/@value), e.g. 'CH'."
+                },
+                "frbr_dates": {
+                    "description": "Date entries for this FRBR entity (akn:FRBRdate). Multiple entries for different event types (dateEntryInForce, dateDocument, dateApplicability).\n",
+                    "items": {
+                        "$ref": "#/$defs/FRBRDate"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "frbr_names": {
+                    "description": "Multilingual name entries for the FRBR Work (akn:FRBRname). One entry per language.",
+                    "items": {
+                        "$ref": "#/$defs/FRBRName"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "frbr_number": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/ValueType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "SR (Systematische Rechtssammlung) number (akn:FRBRnumber/@value), e.g. '101'."
+                },
+                "frbr_this": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/UriValueType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Canonical ELI URI of this FRBR entity (akn:FRBRthis/@value)."
+                },
+                "frbr_uri": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/UriValueType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Base ELI URI of this FRBR entity (akn:FRBRuri/@value)."
+                }
+            },
+            "title": "FRBRWork",
+            "type": "object"
+        },
+        "FedlexDocument": {
+            "additionalProperties": false,
+            "description": "Root element of a Fedlex AkomaNtoso document (akn:akomaNtoso). Must contain exactly one akn:act element and no other children (FLX-RT-001). Carries the AkomaNtoso namespace declaration and the Fedlex extension namespace.",
+            "properties": {
+                "act_ref": {
+                    "$ref": "#/$defs/Act",
+                    "description": "The legislative act (akn:act). Must be the only child of akn:akomaNtoso (FLX-RT-001)."
+                }
+            },
+            "required": [
+                "act_ref"
+            ],
+            "title": "FedlexDocument",
+            "type": "object"
+        },
+        "FedlexRoleEnum": {
+            "description": "Allowed values for the fedlex:role extension attribute (FLX-XF-003). 'marginal' is only permitted on akn:level elements (FLX-XF-004). 'reference' is only permitted on akn:subheading elements (FLX-XF-005).",
+            "enum": [
+                "marginal",
+                "reference"
+            ],
+            "title": "FedlexRoleEnum",
+            "type": "string"
+        },
+        "FormatType": {
+            "additionalProperties": false,
+            "description": "A holder for akn:FRBRformat: a @value (typically 'xml') plus the optional fedlex:generator extension attribute (FLX-XF-002).",
+            "properties": {
+                "fedlex_generator": {
+                    "description": "Fedlex extension attribute fedlex:generator on akn:FRBRformat[@value='xml']. Identifies the tool that generated the XML file. Only allowed on FRBRformat (FLX-XF-002).\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "value": {
+                    "description": "Generic value attribute (@value) used across multiple AkomaNtoso elements.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "FormatType",
+            "type": "object"
+        },
+        "I": {
+            "additionalProperties": false,
+            "description": "Italic inline markup (akn:i).",
+            "properties": {
+                "element_type": {
+                    "description": "Type designator discriminating the concrete InlineElement subclass (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote).\n",
+                    "enum": [
+                        "I"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "inline_content": {
+                    "description": "Ordered mixed content: a sequence of text runs and inline-markup elements (InlineElement subclasses). Document order is preserved by list order. Allowed inline elements: akn:ref, akn:b, akn:i, akn:sup, akn:span, akn:authorialNote, akn:inline, akn:placeholder, akn:br.\n",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/TextRun"
+                            },
+                            {
+                                "$ref": "#/$defs/Ref"
+                            },
+                            {
+                                "$ref": "#/$defs/B"
+                            },
+                            {
+                                "$ref": "#/$defs/I"
+                            },
+                            {
+                                "$ref": "#/$defs/Sup"
+                            },
+                            {
+                                "$ref": "#/$defs/Span"
+                            },
+                            {
+                                "$ref": "#/$defs/Br"
+                            },
+                            {
+                                "$ref": "#/$defs/Inline"
+                            },
+                            {
+                                "$ref": "#/$defs/Placeholder"
+                            },
+                            {
+                                "$ref": "#/$defs/AuthorialNote"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "I",
+            "type": "object"
+        },
+        "Identification": {
+            "additionalProperties": false,
+            "description": "FRBR identification block (akn:identification) grouping Work, Expression, and Manifestation descriptions. The @source attribute references the responsible organization as an intra-document anchor (e.g. '#ch.bk').",
+            "properties": {
+                "frbr_expression": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/FRBRExpression"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "FRBR Expression level description (akn:FRBRExpression)."
+                },
+                "frbr_manifestation": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/FRBRManifestation"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "FRBR Manifestation level description (akn:FRBRManifestation)."
+                },
+                "frbr_work": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/FRBRWork"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "FRBR Work level description (akn:FRBRWork)."
+                },
+                "source": {
+                    "description": "Anchor reference to the responsible organization (@source), e.g. '#ch.bk'.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Identification",
+            "type": "object"
+        },
+        "Inline": {
+            "additionalProperties": false,
+            "description": "A named presentational inline (akn:inline), e.g. name='man-font-style-normal'.",
+            "properties": {
+                "element_type": {
+                    "description": "Type designator discriminating the concrete InlineElement subclass (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote).\n",
+                    "enum": [
+                        "Inline"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "inline_content": {
+                    "description": "Ordered mixed content: a sequence of text runs and inline-markup elements (InlineElement subclasses). Document order is preserved by list order. Allowed inline elements: akn:ref, akn:b, akn:i, akn:sup, akn:span, akn:authorialNote, akn:inline, akn:placeholder, akn:br.\n",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/TextRun"
+                            },
+                            {
+                                "$ref": "#/$defs/Ref"
+                            },
+                            {
+                                "$ref": "#/$defs/B"
+                            },
+                            {
+                                "$ref": "#/$defs/I"
+                            },
+                            {
+                                "$ref": "#/$defs/Sup"
+                            },
+                            {
+                                "$ref": "#/$defs/Span"
+                            },
+                            {
+                                "$ref": "#/$defs/Br"
+                            },
+                            {
+                                "$ref": "#/$defs/Inline"
+                            },
+                            {
+                                "$ref": "#/$defs/Placeholder"
+                            },
+                            {
+                                "$ref": "#/$defs/AuthorialNote"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "name_attr": {
+                    "description": "The @name attribute on akn:inline, e.g. 'man-font-style-normal'.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Inline",
+            "type": "object"
+        },
+        "InlineElement": {
+            "additionalProperties": false,
+            "description": "Abstract base for a modeled inline-markup element inside mixed content.",
+            "properties": {
+                "element_type": {
+                    "description": "Type designator discriminating the concrete InlineElement subclass (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote).\n",
+                    "enum": [
+                        "InlineElement"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "InlineElement",
+            "type": "object"
+        },
+        "LanguageType": {
+            "additionalProperties": false,
+            "description": "A holder carrying a single @language attribute (akn:FRBRlanguage).",
+            "properties": {
+                "language_value": {
+                    "$ref": "#/$defs/DocumentLanguageEnum",
+                    "description": "The @language attribute of akn:FRBRlanguage, e.g. 'de'."
+                }
+            },
+            "title": "LanguageType",
+            "type": "object"
+        },
+        "Level": {
+            "additionalProperties": false,
+            "description": "Transparent structural division (akn:level). A level is 'transparent': its allowed children are the same as those of its nearest non-level ancestor (FLX-HR-001-lv). A level containing akn:content is only permitted when the content includes a modification element (akn:mod) \u2014 used for amending acts (FLX-HR-003). The fedlex:role='marginal' attribute marks it as a marginal note (FLX-XF-004). Requires unique @eId (FLX-HR-002-lv, FLX-HR-004).",
+            "properties": {
+                "articles": {
+                    "description": "Article child elements (akn:article).",
+                    "items": {
+                        "$ref": "#/$defs/Article"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "books": {
+                    "description": "Book-level child elements (akn:book).",
+                    "items": {
+                        "$ref": "#/$defs/Book"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "chapters": {
+                    "description": "Chapter-level child elements (akn:chapter).",
+                    "items": {
+                        "$ref": "#/$defs/Chapter"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "content_ref": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Content"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Content element within a paragraph (akn:content)."
+                },
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": "string"
+                },
+                "fedlex_role": {
+                    "$ref": "#/$defs/FedlexRoleEnum",
+                    "description": "When set, must be 'marginal' (FLX-XF-004). The value 'reference' is not allowed on level; it is reserved for subheading (FLX-XF-005).\n"
+                },
+                "heading": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MixedText"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Heading element for a hierarchical structure (akn:heading). May contain inline markup including akn:br (FLX-TXT-001: br permitted in heading context). Must precede subheading (FLX-HD-004, FLX-HD-005).\n"
+                },
+                "num": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MixedText"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Number element for a hierarchical structure or article (akn:num). In articles, num is mandatory (FLX-ART-001). The num element must precede heading and subheading (FLX-HD-001, FLX-HD-002, FLX-HD-003).\n"
+                },
+                "parts": {
+                    "description": "Part-level child elements (akn:part).",
+                    "items": {
+                        "$ref": "#/$defs/Part"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "sections": {
+                    "description": "Section-level child elements (akn:section).",
+                    "items": {
+                        "$ref": "#/$defs/Section"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subchapters": {
+                    "description": "Subchapter-level child elements (akn:subchapter).",
+                    "items": {
+                        "$ref": "#/$defs/Subchapter"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subheading": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MixedText"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Subheading element for a hierarchical structure (akn:subheading). The fedlex:role='reference' attribute marks it as a reference heading (FLX-XF-005). Max one subheading per element (FLX-HD-006).\n"
+                },
+                "subsections": {
+                    "description": "Subsection-level child elements (akn:subsection).",
+                    "items": {
+                        "$ref": "#/$defs/Subsection"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "titles": {
+                    "description": "Title-level child elements (akn:title).",
+                    "items": {
+                        "$ref": "#/$defs/Title"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "eId"
+            ],
+            "title": "Level",
+            "type": "object"
+        },
+        "MixedText": {
+            "additionalProperties": false,
+            "description": "Reusable mixed-content holder: an ordered run of text and inline markup. Used as the range for num, heading, subheading, listIntroduction, docTitle, so the wrapping element name comes from the referring slot's xml_element.",
+            "properties": {
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "inline_content": {
+                    "description": "Ordered mixed content: a sequence of text runs and inline-markup elements (InlineElement subclasses). Document order is preserved by list order. Allowed inline elements: akn:ref, akn:b, akn:i, akn:sup, akn:span, akn:authorialNote, akn:inline, akn:placeholder, akn:br.\n",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/TextRun"
+                            },
+                            {
+                                "$ref": "#/$defs/Ref"
+                            },
+                            {
+                                "$ref": "#/$defs/B"
+                            },
+                            {
+                                "$ref": "#/$defs/I"
+                            },
+                            {
+                                "$ref": "#/$defs/Sup"
+                            },
+                            {
+                                "$ref": "#/$defs/Span"
+                            },
+                            {
+                                "$ref": "#/$defs/Br"
+                            },
+                            {
+                                "$ref": "#/$defs/Inline"
+                            },
+                            {
+                                "$ref": "#/$defs/Placeholder"
+                            },
+                            {
+                                "$ref": "#/$defs/AuthorialNote"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "MixedText",
+            "type": "object"
+        },
+        "Paragraph": {
+            "additionalProperties": false,
+            "description": "A paragraph within an article or subdivision (akn:paragraph). Constraints (FLX-PR-*): - only heading elements and akn:content are allowed as children (FLX-PR-001) - only permitted as a direct child of akn:article or akn:subdivision (FLX-PR-002) - requires unique @eId (FLX-PR-003)",
+            "properties": {
+                "content_ref": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Content"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Content element within a paragraph (akn:content)."
+                },
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": "string"
+                },
+                "heading": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MixedText"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Heading element for a hierarchical structure (akn:heading). May contain inline markup including akn:br (FLX-TXT-001: br permitted in heading context). Must precede subheading (FLX-HD-004, FLX-HD-005).\n"
+                },
+                "num": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MixedText"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Number element for a hierarchical structure or article (akn:num). In articles, num is mandatory (FLX-ART-001). The num element must precede heading and subheading (FLX-HD-001, FLX-HD-002, FLX-HD-003).\n"
+                }
+            },
+            "required": [
+                "eId"
+            ],
+            "title": "Paragraph",
+            "type": "object"
+        },
+        "Part": {
+            "additionalProperties": false,
+            "description": "Part-level division of an act (akn:part). Allowed children: chapter, subchapter, section, subsection, level (FLX-HR-001-pt). Requires unique @eId (FLX-HR-002-pt).",
+            "properties": {
+                "articles": {
+                    "description": "Article child elements (akn:article).",
+                    "items": {
+                        "$ref": "#/$defs/Article"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "chapters": {
+                    "description": "Chapter-level child elements (akn:chapter).",
+                    "items": {
+                        "$ref": "#/$defs/Chapter"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": "string"
+                },
+                "heading": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MixedText"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Heading element for a hierarchical structure (akn:heading). May contain inline markup including akn:br (FLX-TXT-001: br permitted in heading context). Must precede subheading (FLX-HD-004, FLX-HD-005).\n"
+                },
+                "levels": {
+                    "description": "Transparent level child elements (akn:level).",
+                    "items": {
+                        "$ref": "#/$defs/Level"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "num": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MixedText"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Number element for a hierarchical structure or article (akn:num). In articles, num is mandatory (FLX-ART-001). The num element must precede heading and subheading (FLX-HD-001, FLX-HD-002, FLX-HD-003).\n"
+                },
+                "sections": {
+                    "description": "Section-level child elements (akn:section).",
+                    "items": {
+                        "$ref": "#/$defs/Section"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subchapters": {
+                    "description": "Subchapter-level child elements (akn:subchapter).",
+                    "items": {
+                        "$ref": "#/$defs/Subchapter"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subheading": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MixedText"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Subheading element for a hierarchical structure (akn:subheading). The fedlex:role='reference' attribute marks it as a reference heading (FLX-XF-005). Max one subheading per element (FLX-HD-006).\n"
+                },
+                "subsections": {
+                    "description": "Subsection-level child elements (akn:subsection).",
+                    "items": {
+                        "$ref": "#/$defs/Subsection"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "eId"
+            ],
+            "title": "Part",
+            "type": "object"
+        },
+        "Placeholder": {
+            "additionalProperties": false,
+            "description": "A placeholder for stripped content (akn:placeholder), carrying the fedlex:message extension attribute (e.g. 'E40S10-TAB').",
+            "properties": {
+                "element_type": {
+                    "description": "Type designator discriminating the concrete InlineElement subclass (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote).\n",
+                    "enum": [
+                        "Placeholder"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "fedlex_message": {
+                    "description": "Fedlex extension attribute fedlex:message on akn:placeholder, marking stripped content (e.g. 'E40S10-TAB').\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "inline_content": {
+                    "description": "Ordered mixed content: a sequence of text runs and inline-markup elements (InlineElement subclasses). Document order is preserved by list order. Allowed inline elements: akn:ref, akn:b, akn:i, akn:sup, akn:span, akn:authorialNote, akn:inline, akn:placeholder, akn:br.\n",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/TextRun"
+                            },
+                            {
+                                "$ref": "#/$defs/Ref"
+                            },
+                            {
+                                "$ref": "#/$defs/B"
+                            },
+                            {
+                                "$ref": "#/$defs/I"
+                            },
+                            {
+                                "$ref": "#/$defs/Sup"
+                            },
+                            {
+                                "$ref": "#/$defs/Span"
+                            },
+                            {
+                                "$ref": "#/$defs/Br"
+                            },
+                            {
+                                "$ref": "#/$defs/Inline"
+                            },
+                            {
+                                "$ref": "#/$defs/Placeholder"
+                            },
+                            {
+                                "$ref": "#/$defs/AuthorialNote"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Placeholder",
+            "type": "object"
+        },
+        "Preamble": {
+            "additionalProperties": false,
+            "description": "The preamble of the act (akn:preamble), containing introductory prose paragraphs preceding the operative body.",
+            "properties": {
+                "block_paragraphs": {
+                    "description": "Block paragraph elements (akn:p) within content.",
+                    "items": {
+                        "$ref": "#/$defs/BlockParagraph"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Preamble",
+            "type": "object"
+        },
+        "Preface": {
+            "additionalProperties": false,
+            "description": "The preface of the act (akn:preface), containing the document number and title. Fedlex Schematron requires both akn:docNumber (FLX-PF-001) and akn:docTitle (FLX-PF-002) to be present inside a akn:p element.",
+            "properties": {
+                "preface_paragraphs": {
+                    "description": "The akn:p paragraphs of the preface, wrapping docNumber/docTitle.",
+                    "items": {
+                        "$ref": "#/$defs/PrefaceP"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Preface",
+            "type": "object"
+        },
+        "PrefaceP": {
+            "additionalProperties": false,
+            "description": "A preface paragraph (akn:p) that wraps the document number and/or title. Fedlex requires akn:docNumber and akn:docTitle to sit inside a akn:p of the preface (FLX-PF-001/002).",
+            "properties": {
+                "doc_number": {
+                    "description": "Document number in the preface (akn:docNumber). Required by FLX-PF-001. Typically the SR number, e.g. '101'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "doc_title": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MixedText"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Document title in the preface (akn:docTitle). Required by FLX-PF-002. May contain inline markup and akn:br for line breaks.\n"
+                }
+            },
+            "title": "PrefaceP",
+            "type": "object"
+        },
+        "Proviso": {
+            "additionalProperties": false,
+            "description": "A proviso in the body of an act (akn:proviso). Permitted as a top-level body element (FLX-BD-001). Typically appears after the main articles.",
+            "properties": {
+                "articles": {
+                    "description": "Article child elements (akn:article).",
+                    "items": {
+                        "$ref": "#/$defs/Article"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": "string"
+                },
+                "heading": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MixedText"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Heading element for a hierarchical structure (akn:heading). May contain inline markup including akn:br (FLX-TXT-001: br permitted in heading context). Must precede subheading (FLX-HD-004, FLX-HD-005).\n"
+                },
+                "levels": {
+                    "description": "Transparent level child elements (akn:level).",
+                    "items": {
+                        "$ref": "#/$defs/Level"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "num": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MixedText"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Number element for a hierarchical structure or article (akn:num). In articles, num is mandatory (FLX-ART-001). The num element must precede heading and subheading (FLX-HD-001, FLX-HD-002, FLX-HD-003).\n"
+                },
+                "paragraphs": {
+                    "description": "Paragraph child elements (akn:paragraph) within an article or subdivision.",
+                    "items": {
+                        "$ref": "#/$defs/Paragraph"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "eId"
+            ],
+            "title": "Proviso",
+            "type": "object"
+        },
+        "Ref": {
+            "additionalProperties": false,
+            "description": "An inline reference (akn:ref). Carries @href, and for internal SR cross-references the Fedlex extension attributes fedlex:rs and fedlex:rs-uri.",
+            "properties": {
+                "element_type": {
+                    "description": "Type designator discriminating the concrete InlineElement subclass (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote).\n",
+                    "enum": [
+                        "Ref"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "fedlex_rs": {
+                    "description": "Fedlex extension attribute fedlex:rs on akn:ref: the SR number of the referenced law (e.g. '641.20').\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "fedlex_rs_uri": {
+                    "description": "Fedlex extension attribute fedlex:rs-uri on akn:ref: the ELI URI of the referenced law's systematic-collection entry.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "href": {
+                    "description": "URI reference (@href), used for links to organizations, roles, or external URIs.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "inline_content": {
+                    "description": "Ordered mixed content: a sequence of text runs and inline-markup elements (InlineElement subclasses). Document order is preserved by list order. Allowed inline elements: akn:ref, akn:b, akn:i, akn:sup, akn:span, akn:authorialNote, akn:inline, akn:placeholder, akn:br.\n",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/TextRun"
+                            },
+                            {
+                                "$ref": "#/$defs/Ref"
+                            },
+                            {
+                                "$ref": "#/$defs/B"
+                            },
+                            {
+                                "$ref": "#/$defs/I"
+                            },
+                            {
+                                "$ref": "#/$defs/Sup"
+                            },
+                            {
+                                "$ref": "#/$defs/Span"
+                            },
+                            {
+                                "$ref": "#/$defs/Br"
+                            },
+                            {
+                                "$ref": "#/$defs/Inline"
+                            },
+                            {
+                                "$ref": "#/$defs/Placeholder"
+                            },
+                            {
+                                "$ref": "#/$defs/AuthorialNote"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Ref",
+            "type": "object"
+        },
+        "References": {
+            "additionalProperties": false,
+            "description": "Named reference definitions used across the document (akn:references). Defines organizations, roles, and other entities that are referenced by anchor (@href='#eId') elsewhere in the document.",
+            "properties": {
+                "source": {
+                    "description": "Anchor reference to the responsible organization (@source), e.g. '#ch.bk'.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "tlc_organizations": {
+                    "description": "Named organization references in the document (akn:TLCOrganization).",
+                    "items": {
+                        "$ref": "#/$defs/TLCOrganization"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "tlc_references": {
+                    "description": "Generic named references in the document (akn:TLCReference).",
+                    "items": {
+                        "$ref": "#/$defs/TLCReference"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "tlc_roles": {
+                    "description": "Named role references in the document (akn:TLCRole).",
+                    "items": {
+                        "$ref": "#/$defs/TLCRole"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "References",
+            "type": "object"
+        },
+        "Section": {
+            "additionalProperties": false,
+            "description": "Section-level division (akn:section). Allowed children: subsection, level, and directly article (FLX-HR-001-sc). Requires unique @eId (FLX-HR-002-sc).",
+            "properties": {
+                "articles": {
+                    "description": "Article child elements (akn:article).",
+                    "items": {
+                        "$ref": "#/$defs/Article"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": "string"
+                },
+                "heading": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MixedText"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Heading element for a hierarchical structure (akn:heading). May contain inline markup including akn:br (FLX-TXT-001: br permitted in heading context). Must precede subheading (FLX-HD-004, FLX-HD-005).\n"
+                },
+                "levels": {
+                    "description": "Transparent level child elements (akn:level).",
+                    "items": {
+                        "$ref": "#/$defs/Level"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "num": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MixedText"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Number element for a hierarchical structure or article (akn:num). In articles, num is mandatory (FLX-ART-001). The num element must precede heading and subheading (FLX-HD-001, FLX-HD-002, FLX-HD-003).\n"
+                },
+                "subheading": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MixedText"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Subheading element for a hierarchical structure (akn:subheading). The fedlex:role='reference' attribute marks it as a reference heading (FLX-XF-005). Max one subheading per element (FLX-HD-006).\n"
+                },
+                "subsections": {
+                    "description": "Subsection-level child elements (akn:subsection).",
+                    "items": {
+                        "$ref": "#/$defs/Subsection"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "eId"
+            ],
+            "title": "Section",
+            "type": "object"
+        },
+        "Span": {
+            "additionalProperties": false,
+            "description": "Generic inline span (akn:span).",
+            "properties": {
+                "element_type": {
+                    "description": "Type designator discriminating the concrete InlineElement subclass (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote).\n",
+                    "enum": [
+                        "Span"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "inline_content": {
+                    "description": "Ordered mixed content: a sequence of text runs and inline-markup elements (InlineElement subclasses). Document order is preserved by list order. Allowed inline elements: akn:ref, akn:b, akn:i, akn:sup, akn:span, akn:authorialNote, akn:inline, akn:placeholder, akn:br.\n",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/TextRun"
+                            },
+                            {
+                                "$ref": "#/$defs/Ref"
+                            },
+                            {
+                                "$ref": "#/$defs/B"
+                            },
+                            {
+                                "$ref": "#/$defs/I"
+                            },
+                            {
+                                "$ref": "#/$defs/Sup"
+                            },
+                            {
+                                "$ref": "#/$defs/Span"
+                            },
+                            {
+                                "$ref": "#/$defs/Br"
+                            },
+                            {
+                                "$ref": "#/$defs/Inline"
+                            },
+                            {
+                                "$ref": "#/$defs/Placeholder"
+                            },
+                            {
+                                "$ref": "#/$defs/AuthorialNote"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Span",
+            "type": "object"
+        },
+        "Subchapter": {
+            "additionalProperties": false,
+            "description": "Subchapter-level division (akn:subchapter). Allowed children: section, subsection, level, and directly article (FLX-HR-001-sh). Requires unique @eId (FLX-HR-002-sh).",
+            "properties": {
+                "articles": {
+                    "description": "Article child elements (akn:article).",
+                    "items": {
+                        "$ref": "#/$defs/Article"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": "string"
+                },
+                "heading": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MixedText"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Heading element for a hierarchical structure (akn:heading). May contain inline markup including akn:br (FLX-TXT-001: br permitted in heading context). Must precede subheading (FLX-HD-004, FLX-HD-005).\n"
+                },
+                "levels": {
+                    "description": "Transparent level child elements (akn:level).",
+                    "items": {
+                        "$ref": "#/$defs/Level"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "num": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MixedText"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Number element for a hierarchical structure or article (akn:num). In articles, num is mandatory (FLX-ART-001). The num element must precede heading and subheading (FLX-HD-001, FLX-HD-002, FLX-HD-003).\n"
+                },
+                "sections": {
+                    "description": "Section-level child elements (akn:section).",
+                    "items": {
+                        "$ref": "#/$defs/Section"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subheading": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MixedText"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Subheading element for a hierarchical structure (akn:subheading). The fedlex:role='reference' attribute marks it as a reference heading (FLX-XF-005). Max one subheading per element (FLX-HD-006).\n"
+                },
+                "subsections": {
+                    "description": "Subsection-level child elements (akn:subsection).",
+                    "items": {
+                        "$ref": "#/$defs/Subsection"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "eId"
+            ],
+            "title": "Subchapter",
+            "type": "object"
+        },
+        "Subdivision": {
+            "additionalProperties": false,
+            "description": "A subdivision within an article grouping related paragraphs (akn:subdivision). Constraints (FLX-SD-*): - only heading elements and akn:paragraph are allowed as children (FLX-SD-001) - only permitted as a direct child of akn:article, not nested (FLX-SD-002) - requires unique @eId (FLX-SD-003)",
+            "properties": {
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": "string"
+                },
+                "heading": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MixedText"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Heading element for a hierarchical structure (akn:heading). May contain inline markup including akn:br (FLX-TXT-001: br permitted in heading context). Must precede subheading (FLX-HD-004, FLX-HD-005).\n"
+                },
+                "num": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MixedText"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Number element for a hierarchical structure or article (akn:num). In articles, num is mandatory (FLX-ART-001). The num element must precede heading and subheading (FLX-HD-001, FLX-HD-002, FLX-HD-003).\n"
+                },
+                "paragraphs": {
+                    "description": "Paragraph child elements (akn:paragraph) within an article or subdivision.",
+                    "items": {
+                        "$ref": "#/$defs/Paragraph"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subheading": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MixedText"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Subheading element for a hierarchical structure (akn:subheading). The fedlex:role='reference' attribute marks it as a reference heading (FLX-XF-005). Max one subheading per element (FLX-HD-006).\n"
+                }
+            },
+            "required": [
+                "eId"
+            ],
+            "title": "Subdivision",
+            "type": "object"
+        },
+        "Subsection": {
+            "additionalProperties": false,
+            "description": "Subsection-level division (akn:subsection). Allowed children: level, and directly article (FLX-HR-001-ss). Requires unique @eId (FLX-HR-002-ss).",
+            "properties": {
+                "articles": {
+                    "description": "Article child elements (akn:article).",
+                    "items": {
+                        "$ref": "#/$defs/Article"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": "string"
+                },
+                "heading": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MixedText"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Heading element for a hierarchical structure (akn:heading). May contain inline markup including akn:br (FLX-TXT-001: br permitted in heading context). Must precede subheading (FLX-HD-004, FLX-HD-005).\n"
+                },
+                "levels": {
+                    "description": "Transparent level child elements (akn:level).",
+                    "items": {
+                        "$ref": "#/$defs/Level"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "num": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MixedText"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Number element for a hierarchical structure or article (akn:num). In articles, num is mandatory (FLX-ART-001). The num element must precede heading and subheading (FLX-HD-001, FLX-HD-002, FLX-HD-003).\n"
+                },
+                "subheading": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MixedText"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Subheading element for a hierarchical structure (akn:subheading). The fedlex:role='reference' attribute marks it as a reference heading (FLX-XF-005). Max one subheading per element (FLX-HD-006).\n"
+                }
+            },
+            "required": [
+                "eId"
+            ],
+            "title": "Subsection",
+            "type": "object"
+        },
+        "Sup": {
+            "additionalProperties": false,
+            "description": "Superscript inline markup (akn:sup).",
+            "properties": {
+                "element_type": {
+                    "description": "Type designator discriminating the concrete InlineElement subclass (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote).\n",
+                    "enum": [
+                        "Sup"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "inline_content": {
+                    "description": "Ordered mixed content: a sequence of text runs and inline-markup elements (InlineElement subclasses). Document order is preserved by list order. Allowed inline elements: akn:ref, akn:b, akn:i, akn:sup, akn:span, akn:authorialNote, akn:inline, akn:placeholder, akn:br.\n",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/TextRun"
+                            },
+                            {
+                                "$ref": "#/$defs/Ref"
+                            },
+                            {
+                                "$ref": "#/$defs/B"
+                            },
+                            {
+                                "$ref": "#/$defs/I"
+                            },
+                            {
+                                "$ref": "#/$defs/Sup"
+                            },
+                            {
+                                "$ref": "#/$defs/Span"
+                            },
+                            {
+                                "$ref": "#/$defs/Br"
+                            },
+                            {
+                                "$ref": "#/$defs/Inline"
+                            },
+                            {
+                                "$ref": "#/$defs/Placeholder"
+                            },
+                            {
+                                "$ref": "#/$defs/AuthorialNote"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Sup",
+            "type": "object"
+        },
+        "TLCOrganization": {
+            "additionalProperties": false,
+            "description": "A named organization used as a reference throughout the document (akn:TLCOrganization). Example: the Federal Chancellery (ch.bk).",
+            "properties": {
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "href": {
+                    "description": "URI reference (@href), used for links to organizations, roles, or external URIs.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "show_as": {
+                    "description": "Human-readable display label for a TLC reference (@showAs).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "TLCOrganization",
+            "type": "object"
+        },
+        "TLCReference": {
+            "additionalProperties": false,
+            "description": "A generic named reference in the document (akn:TLCReference). Used for references that do not fit the TLCOrganization or TLCRole categories.",
+            "properties": {
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "href": {
+                    "description": "URI reference (@href), used for links to organizations, roles, or external URIs.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name_attr": {
+                    "description": "The @name attribute on akn:inline, e.g. 'man-font-style-normal'.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "show_as": {
+                    "description": "Human-readable display label for a TLC reference (@showAs).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "TLCReference",
+            "type": "object"
+        },
+        "TLCRole": {
+            "additionalProperties": false,
+            "description": "A named role used as a reference throughout the document (akn:TLCRole). Examples: publisher, rightsHolder.",
+            "properties": {
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "href": {
+                    "description": "URI reference (@href), used for links to organizations, roles, or external URIs.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "show_as": {
+                    "description": "Human-readable display label for a TLC reference (@showAs).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "TLCRole",
+            "type": "object"
+        },
+        "Table": {
+            "additionalProperties": false,
+            "description": "A table element within content (akn:table). Contains rows (akn:tr) with cells (akn:td). Corresponds to the HTML table model.",
+            "properties": {
+                "border": {
+                    "description": "The @border attribute on akn:table (HTML-style presentation).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "table_rows": {
+                    "description": "Rows in a table (akn:tr).",
+                    "items": {
+                        "$ref": "#/$defs/TableRow"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Table",
+            "type": "object"
+        },
+        "TableCell": {
+            "additionalProperties": false,
+            "description": "A cell in a table row (akn:td). Contains block content: prose paragraphs (akn:p) and block lists (akn:blockList).",
+            "properties": {
+                "block_lists": {
+                    "description": "Block list elements (akn:blockList) within content.",
+                    "items": {
+                        "$ref": "#/$defs/BlockList"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "block_paragraphs": {
+                    "description": "Block paragraph elements (akn:p) within content.",
+                    "items": {
+                        "$ref": "#/$defs/BlockParagraph"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "colspan": {
+                    "description": "The @colspan attribute on akn:td (HTML-style presentation).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "TableCell",
+            "type": "object"
+        },
+        "TableRow": {
+            "additionalProperties": false,
+            "description": "A row in an AkomaNtoso table (akn:tr).",
+            "properties": {
+                "table_cells": {
+                    "description": "Cells in a table row (akn:td).",
+                    "items": {
+                        "$ref": "#/$defs/TableCell"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "TableRow",
+            "type": "object"
+        },
+        "TextRun": {
+            "additionalProperties": false,
+            "description": "A plain run of character data within mixed content. Emitted as the text node of a mixed complexType, not as an element.",
+            "properties": {
+                "element_type": {
+                    "description": "Type designator discriminating the concrete InlineElement subclass (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote).\n",
+                    "enum": [
+                        "TextRun"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "text": {
+                    "description": "The character data of a TextRun; emitted as a text node in mixed content.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "TextRun",
+            "type": "object"
+        },
+        "Title": {
+            "additionalProperties": false,
+            "description": "Title-level division of an act (akn:title). Allowed children: book, part, chapter, subchapter, section, subsection, level (FLX-HR-001-ti). Requires unique @eId (FLX-HR-002-ti).",
+            "properties": {
+                "articles": {
+                    "description": "Article child elements (akn:article).",
+                    "items": {
+                        "$ref": "#/$defs/Article"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "books": {
+                    "description": "Book-level child elements (akn:book).",
+                    "items": {
+                        "$ref": "#/$defs/Book"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "chapters": {
+                    "description": "Chapter-level child elements (akn:chapter).",
+                    "items": {
+                        "$ref": "#/$defs/Chapter"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": "string"
+                },
+                "heading": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MixedText"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Heading element for a hierarchical structure (akn:heading). May contain inline markup including akn:br (FLX-TXT-001: br permitted in heading context). Must precede subheading (FLX-HD-004, FLX-HD-005).\n"
+                },
+                "levels": {
+                    "description": "Transparent level child elements (akn:level).",
+                    "items": {
+                        "$ref": "#/$defs/Level"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "num": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MixedText"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Number element for a hierarchical structure or article (akn:num). In articles, num is mandatory (FLX-ART-001). The num element must precede heading and subheading (FLX-HD-001, FLX-HD-002, FLX-HD-003).\n"
+                },
+                "parts": {
+                    "description": "Part-level child elements (akn:part).",
+                    "items": {
+                        "$ref": "#/$defs/Part"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "sections": {
+                    "description": "Section-level child elements (akn:section).",
+                    "items": {
+                        "$ref": "#/$defs/Section"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subchapters": {
+                    "description": "Subchapter-level child elements (akn:subchapter).",
+                    "items": {
+                        "$ref": "#/$defs/Subchapter"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subheading": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MixedText"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Subheading element for a hierarchical structure (akn:subheading). The fedlex:role='reference' attribute marks it as a reference heading (FLX-XF-005). Max one subheading per element (FLX-HD-006).\n"
+                },
+                "subsections": {
+                    "description": "Subsection-level child elements (akn:subsection).",
+                    "items": {
+                        "$ref": "#/$defs/Subsection"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "eId"
+            ],
+            "title": "Title",
+            "type": "object"
+        },
+        "Transitional": {
+            "additionalProperties": false,
+            "description": "A transitional provision in the body of an act (akn:transitional). Permitted as a top-level body element (FLX-BD-001). Structure follows article conventions.",
+            "properties": {
+                "articles": {
+                    "description": "Article child elements (akn:article).",
+                    "items": {
+                        "$ref": "#/$defs/Article"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": "string"
+                },
+                "heading": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MixedText"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Heading element for a hierarchical structure (akn:heading). May contain inline markup including akn:br (FLX-TXT-001: br permitted in heading context). Must precede subheading (FLX-HD-004, FLX-HD-005).\n"
+                },
+                "levels": {
+                    "description": "Transparent level child elements (akn:level).",
+                    "items": {
+                        "$ref": "#/$defs/Level"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "num": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MixedText"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Number element for a hierarchical structure or article (akn:num). In articles, num is mandatory (FLX-ART-001). The num element must precede heading and subheading (FLX-HD-001, FLX-HD-002, FLX-HD-003).\n"
+                },
+                "paragraphs": {
+                    "description": "Paragraph child elements (akn:paragraph) within an article or subdivision.",
+                    "items": {
+                        "$ref": "#/$defs/Paragraph"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "eId"
+            ],
+            "title": "Transitional",
+            "type": "object"
+        },
+        "UriValueType": {
+            "additionalProperties": false,
+            "description": "A holder carrying a single @value attribute typed as an ELI URI (AKN valueType). Reused for FRBRthis and FRBRuri.",
+            "properties": {
+                "value_uri": {
+                    "description": "A @value attribute typed as an ELI URI (akn:FRBRthis/@value, akn:FRBRuri/@value).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "UriValueType",
+            "type": "object"
+        },
+        "ValueType": {
+            "additionalProperties": false,
+            "description": "A simple holder carrying a single @value attribute (AKN valueType). Reused for FRBRcountry, FRBRnumber, FRBRauthoritative, etc.",
+            "properties": {
+                "value": {
+                    "description": "Generic value attribute (@value) used across multiple AkomaNtoso elements.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "ValueType",
+            "type": "object"
+        }
+    },
+    "$id": "https://ld.ech.ch/schema/0296/laws",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "additionalProperties": true,
+    "description": "Root element of a Fedlex AkomaNtoso document (akn:akomaNtoso). Must contain exactly one akn:act element and no other children (FLX-RT-001). Carries the AkomaNtoso namespace declaration and the Fedlex extension namespace.",
+    "metamodel_version": "1.11.0",
+    "properties": {
+        "act_ref": {
+            "$ref": "#/$defs/Act",
+            "description": "The legislative act (akn:act). Must be the only child of akn:akomaNtoso (FLX-RT-001)."
+        }
+    },
+    "required": [
+        "act_ref"
+    ],
+    "title": "ech-0296-laws-schema",
+    "type": "object",
+    "version": null
+}
+
