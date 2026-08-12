@@ -234,6 +234,8 @@ Voting
 
 {{include:ech-0293_operations/output/docs/MajorityTypeEnum.md}}
 
+{{include:ech-0293_operations/output/docs/TotalOther.md}}
+
 ## Individual Vote (voix individuelle)
 
 ## But de l'entité
@@ -264,7 +266,7 @@ D'autres données d'identification peuvent en outre être saisies :
 
 ## Types de voix
 
-TODO : traiter la manière de gérer les « autres » voix, c'est-à-dire les voix pour des possibilités qui ne relèvent pas de oui, non, abstention.
+Outre `yes`, `no` et `abstention`, le champ connaît trois autres valeurs : `not_voted` pour les membres présents qui n'ont pas voté, `tie_breaker` pour la voix prépondérante de la présidence et `other` pour tout ce qui ne se laisse pas ramener à cet axe. `other` est le pendant individuel de `total_other` : lors d'un vote sélectif, la personne a voté, mais ni oui ni non — l'option qu'elle a choisie est retenue par `type_label` (« Auswahl A »). La voix individuelle reste ainsi exploitable sans que la norme doive tenir chaque mécanique de sélection cantonale comme valeur d'énumération propre.
 
 Le champ **vote** saisit le type d'expression de la voix :
 

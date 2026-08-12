@@ -18,6 +18,12 @@ Anders als eine Entität ist eine Referenz nicht aus sich heraus identifiziert �
 
 {{include:ech-0293_operations/output/docs/GroupReference.md}}
 
+## Mehrsprachige Texte
+
+Bezeichnungen, Titel und Beschreibungen liegen in der Schweiz häufig in mehreren Sprachen vor. Statt je Sprache ein eigenes Feld zu führen, nimmt ein Slot vom Typ `MultilingualString` eine Liste von Einträgen mit `text` und `language` auf. Wer nur eine Sprache führt, liefert einen einzigen Eintrag — die Sprache ist auch dann anzugeben. Ebenso modelliert sind die Links: Viele Ratsinformationssysteme führen je Sprache eine eigene Adresse, weshalb auch `url` mehrsprachig ist.
+
+{{include:ech-0293_operations/output/docs/MultilingualString.md}}
+
 ## Mixin-Klassen
 
 Drei Klassen tragen keine eigenen Daten, sondern bündeln Slots, die in vielen Klassen gleich aussehen: die Identifikation einer Entität, ihre Erstellungs- und Änderungsdaten sowie der zeitliche Verlauf eines Ereignisses mit geplantem und tatsächlichem Beginn und Ende. Sie stammen aus dem gemeinsamen Schema der Fachgruppe (eCH-0292) und werden von deren Standards eingebunden, damit dieselben Angaben überall gleich heissen und gleich funktionieren.

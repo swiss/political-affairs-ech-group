@@ -234,6 +234,8 @@ Voting
 
 {{include:ech-0293_operations/output/docs/MajorityTypeEnum.md}}
 
+{{include:ech-0293_operations/output/docs/TotalOther.md}}
+
 ## Individual Vote (Einzelstimme)
 
 ## Zweck der Entität
@@ -264,7 +266,7 @@ Zusätzlich können weitere Identifikationsdaten erfasst werden:
 
 ## Arten von Stimmen
 
-TODO: Aufführen mit dem Umgang von "Anderen", Stimmen für möglichkeiten welche nicht Ja, Nein, Enthaltung umfassen.
+Neben `yes`, `no` und `abstention` kennt das Feld drei weitere Werte: `not_voted` für Mitglieder, die anwesend waren, aber nicht gestimmt haben, `tie_breaker` für den Stichentscheid des Präsidiums und `other` für alles, was sich nicht auf diese Achse bringen lässt. `other` ist das individuelle Gegenstück zu `total_other`: Bei einer Auswahlabstimmung hat die Person gestimmt, aber weder Ja noch Nein — welche Option sie gewählt hat, hält `type_label` fest („Auswahl A“). So bleibt die Einzelstimme auswertbar, ohne dass der Standard jede kantonale Auswahlmechanik als eigenen Enum-Wert führen muss.
 
 Das Feld **vote** erfasst die Art der Stimmabgabe:
 

@@ -81,7 +81,3 @@ Meeting
 {{include:ech-0293_operations/output/docs/TextSegment.md}}
 
 {{include:ech-0293_operations/output/docs/Media.md}}
-
-{{include:ech-0293_operations/output/docs/MultilingualString.md}}
-
-{{include:ech-0293_operations/output/docs/Container.md}}

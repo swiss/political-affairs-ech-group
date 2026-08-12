@@ -18,6 +18,12 @@ Contrairement à une entité, une référence n'est pas identifiée en propre �
 
 {{include:ech-0293_operations/output/docs/GroupReference.md}}
 
+## Textes multilingues
+
+En Suisse, les désignations, titres et descriptions existent souvent en plusieurs langues. Plutôt que de tenir un champ distinct par langue, un slot de type `MultilingualString` reprend une liste d'entrées comportant `text` et `language`. Qui ne tient qu'une seule langue livre une entrée unique — la langue doit être indiquée là aussi. Les liens sont modélisés de la même manière : de nombreux systèmes d'information parlementaire tiennent une adresse propre par langue, raison pour laquelle `url` est également multilingue.
+
+{{include:ech-0293_operations/output/docs/MultilingualString.md}}
+
 ## Classes mixin
 
 Trois classes ne portent pas de données propres : elles regroupent des slots qui se présentent de la même manière dans de nombreuses classes — l'identification d'une entité, ses dates de création et de modification ainsi que le déroulement temporel d'un événement, avec un début et une fin planifiés et effectifs. Elles proviennent du schéma commun du groupe spécialisé (eCH-0292) et sont intégrées par les normes de celui-ci, afin que les mêmes indications portent partout le même nom et fonctionnent de la même façon.

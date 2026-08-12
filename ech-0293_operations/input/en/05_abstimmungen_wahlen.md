@@ -234,6 +234,8 @@ Voting
 
 {{include:ech-0293_operations/output/docs/MajorityTypeEnum.md}}
 
+{{include:ech-0293_operations/output/docs/TotalOther.md}}
+
 ## Individual Vote
 
 ## Purpose of the entity
@@ -264,7 +266,7 @@ Additional identification data can be recorded as well:
 
 ## Types of votes
 
-TODO: describe the handling of "other" votes, i.e. votes for options that are not yes, no or abstention.
+Besides `yes`, `no` and `abstention`, the field knows three further values: `not_voted` for members who were present but did not vote, `tie_breaker` for the presiding officer's casting vote, and `other` for everything that cannot be put on that axis. `other` is the individual counterpart of `total_other`: in a selection voting the person did vote, but neither yes nor no — which option they chose is held by `type_label` ("Auswahl A"). The individual vote thus stays analysable without the standard having to carry every cantonal selection mechanism as an enum value of its own.
 
 The field **vote** records the type of the vote cast:
 

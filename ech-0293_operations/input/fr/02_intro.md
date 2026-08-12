@@ -16,3 +16,11 @@ La famille comprend :
 - **eCH-0297 – Consultations publiques (Consultations) :** structure les procédures de consultation, qui constituent souvent le point de départ des affaires parlementaires.
 
 L'objectif de cette famille de normes est de créer une structure utilisable en commun pour les données politiques et de mettre à la disposition des organisations qui publient des informations sur les affaires politiques un modèle de données robuste.
+
+## Structure d'une livraison
+
+Une livraison est un `Container` : une enveloppe dotée de sa propre `global_uri` et d'une collection par classe — `legislatures`, `sessions`, `meetings`, `agenda_items`, `protocols`, `votings`, `elections`, `individual_votes`, `attendances`, `individual_attendances`, `speeches` et `resolutions`. Toutes les collections sont facultatives : qui ne publie que des séances ne livre que `meetings`.
+
+Les entités y sont placées côte à côte, à plat, et reliées par des références — `parent_meeting`, `parent_voting`, `parent_attendance`, et ainsi de suite — plutôt qu'imbriquées les unes dans les autres. Il est ainsi possible de livrer après coup une séance isolée sans réémettre toute la législature, et de référencer la même entité depuis plusieurs endroits. Là où l'imbrication rend mieux le lien, elle reste possible : la session reprend ses séances sous forme de liste, le procès-verbal ses points de l'ordre du jour, ses votes et ses interventions.
+
+{{include:ech-0293_operations/output/docs/Container.md}}
