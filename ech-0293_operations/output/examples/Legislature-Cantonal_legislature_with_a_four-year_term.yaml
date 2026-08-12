@@ -1,7 +1,7 @@
 legislatures:
 - global_uri: ops:legislature_be_2022_2026
   local_id: GR-BE-2022-2026
-  administrative_id: https://ld.admin.ch/canton/2
+  spatial: https://ld.admin.ch/canton/2
   name:
   - text: Legislatur 2022–2026
     language: de

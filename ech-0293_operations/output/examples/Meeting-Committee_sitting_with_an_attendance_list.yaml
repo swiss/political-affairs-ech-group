@@ -1,6 +1,6 @@
 meetings:
 - global_uri: ops:meeting_be_committee_wak_2025_05_12
-  body_key: BE
+  spatial: https://ld.admin.ch/canton/2
   meeting_type: committee
   name:
   - text: Sitzung Kommission für Wirtschaft und Abgaben

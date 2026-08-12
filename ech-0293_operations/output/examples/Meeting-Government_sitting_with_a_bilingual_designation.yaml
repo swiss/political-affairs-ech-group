@@ -1,5 +1,5 @@
 meetings:
-- body_key: BE
+- spatial: https://ld.admin.ch/canton/2
   global_uri: ops:340dcf932fb044dd8f8c5c943267fbcc
   meeting_type: session
   name:

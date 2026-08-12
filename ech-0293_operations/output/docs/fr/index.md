@@ -72,7 +72,6 @@ Name: operations
 | [agenda_items](agenda_items.md) | Ensemble des points de l'ordre du jour |
 | [attendance_type](attendance_type.md) | Type de présence individuelle |
 | [attendances](attendances.md) | Ensemble des listes de présence |
-| [body_key](body_key.md) | Clé identifiant l'organe politique ou la collectivité (p |
 | [category](category.md) | Catégorie de l'élément |
 | [count](count.md) | Le nombre de voix pour la catégorie « autres » |
 | [date_actual](date_actual.md) | La date effective d'un événement ou d'une occurrence instantané (sans durée) |
@@ -160,6 +159,7 @@ Name: operations
 | [seat_nr](seat_nr.md) | Le numéro de siège correspondant à la voix individuelle, le cas échéant |
 | [sequential_number](sequential_number.md) | Numéro séquentiel de la séance, utilisé pour le tri |
 | [sessions](sessions.md) | Ensemble des sessions |
+| [spatial](spatial.md) | Référence spatiale à une ressource LINDAS (numéro OFS de commune, numéro OFS ... |
 | [speaking_actor_id](speaking_actor_id.md) | La ou le porte-parole ou la cheffe ou le chef du département pour le point de... |
 | [speeches](speeches.md) | Ensemble des interventions |
 | [start](start.md) | Indication de début ou position |

@@ -20,7 +20,7 @@ _Eine Parlamentssession, die mehrere Sitzungen gruppiert und sich über einen be
 | local_id | 0..1 <br/> [String](String.md) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](HasIdentification.md) |
 | global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](HasIdentification.md) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](HasIdentification.md) |
-| body_key | 0..1 <br/> [String](String.md) | Schlüssel zur Identifizierung des politischen Organs oder der Gerichtsbarkeit (z.B. BE für Bern, CHE für Schweiz).  |
+| spatial | 0..1 <br/> [String](String.md) | Räumliche Referenz auf eine LINDAS-Ressource (BFS-Gemeindenummer, BFS-Kantonsnummer, Bezirk oder Land). Formate: Gemeinde: https://ld.admin.ch/municipality/1234, Bezirk: https://ld.admin.ch/district/2301, Kanton: https://ld.admin.ch/canton/23, Bund: https://ld.admin.ch/country/CHE.  |
 | name | * <br/> [MultilingualString](MultilingualString.md) | Mehrsprachige vollständige Bezeichnung.  |
 | number | 0..1 <br/> [String](String.md) | Laufende Nummer, z.B. innerhalb der Legislatur, der Session oder des Jahres.  |
 | sequential_number | 0..1 <br/> [Integer](Integer.md) | Laufende Nummer der Sitzung, die zur Sortierung verwendet wird.  |
@@ -72,7 +72,7 @@ _Eine Parlamentssession, die mehrere Sitzungen gruppiert und sich über einen be
 ```yaml
 sessions:
 - global_uri: ops:session_5207
-  body_key: CHE
+  spatial: https://ld.admin.ch/country/CHE
   name:
   - text: Frühjahrssession 2025
     language: de
@@ -99,7 +99,7 @@ sessions:
 ```yaml
 sessions:
 - global_uri: ops:session_gl_landsgemeinde_2025_05_04
-  body_key: GL
+  spatial: https://ld.admin.ch/canton/8
   name:
   - text: Landsgemeinde vom 04. Mai 2025
     language: de
@@ -117,7 +117,7 @@ sessions:
 ```yaml
 sessions:
 - global_uri: ops:session_be_summer_2025
-  body_key: BE
+  spatial: https://ld.admin.ch/canton/2
   name:
   - text: Sommersession 2025
     language: de
@@ -141,7 +141,7 @@ sessions:
 ```yaml
 sessions:
 - global_uri: ops:session_gl_landrat_2025_02_26
-  body_key: GL
+  spatial: https://ld.admin.ch/canton/8
   name:
   - text: Sitzung des Landrates vom 26.02.2025
     language: de

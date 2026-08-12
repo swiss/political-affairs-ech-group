@@ -15,18 +15,18 @@ ops:legislature_51 a ops:Legislature ;
                     mcm:value "BV" ] ;
             mcm:globalURI actors:bundesversammlung ;
             mcm:label "Bundesversammlung" ] ;
-    ops:administrative_id "https://ld.admin.ch/country/CHE" ;
     ops:description "Amtsdauer der am 20. Oktober 2019 gewählten Bundesversammlung; sie endete am Vortag der konstituierenden Sitzung der 52. Legislaturperiode vom 4. Dezember 2023." ;
     ops:landingPage "https://www.parlament.ch/de/ratsbetrieb/sessionen" ;
     ops:name [ a ops:MultilingualString ;
             ops:text "51ª legislatura" ;
             mcm:language "it" ],
         [ a ops:MultilingualString ;
-            ops:text "51. Legislaturperiode" ;
-            mcm:language "de" ],
-        [ a ops:MultilingualString ;
             ops:text "51e législature" ;
-            mcm:language "fr" ] ;
+            mcm:language "fr" ],
+        [ a ops:MultilingualString ;
+            ops:text "51. Legislaturperiode" ;
+            mcm:language "de" ] ;
+    ops:spatial "https://ld.admin.ch/country/CHE" ;
     mcm:dateBeginActual "2019-12-02"^^xsd:date ;
     mcm:dateEndActual "2023-12-03"^^xsd:date ;
     mcm:datetimeCreated "2019-12-02T09:00:00+01:00"^^xsd:dateTime ;
@@ -40,14 +40,14 @@ ops:legislature_be_2022_2026 a ops:Legislature ;
                     mcm:value "GR" ] ;
             mcm:globalURI <https://api.openparldata.ch/v1/bodies/253> ;
             mcm:label "Grosser Rat Bern" ] ;
-    ops:administrative_id "https://ld.admin.ch/canton/2" ;
     ops:landingPage "https://www.gr.be.ch/de/start/grosser-rat.html" ;
     ops:name [ a ops:MultilingualString ;
-            ops:text "Legislatur 2022–2026" ;
-            mcm:language "de" ],
-        [ a ops:MultilingualString ;
             ops:text "Législature 2022-2026" ;
-            mcm:language "fr" ] ;
+            mcm:language "fr" ],
+        [ a ops:MultilingualString ;
+            ops:text "Legislatur 2022–2026" ;
+            mcm:language "de" ] ;
+    ops:spatial "https://ld.admin.ch/canton/2" ;
     mcm:dateBeginActual "2022-06-01"^^xsd:date ;
     mcm:dateBeginPlanned "2022-06-01"^^xsd:date ;
     mcm:dateEndActual "2026-05-31"^^xsd:date ;
@@ -63,12 +63,12 @@ ops:legislature_vd_2022_2027 a ops:Legislature ;
                     mcm:value "GC" ] ;
             mcm:globalURI actors:gc_vd ;
             mcm:label "Grand Conseil du canton de Vaud" ] ;
-    ops:administrative_id "https://ld.admin.ch/canton/22" ;
     ops:description "Le Grand Conseil vaudois est élu pour cinq ans." ;
     ops:landingPage "https://www.vd.ch/gc" ;
     ops:name [ a ops:MultilingualString ;
             ops:text "Législature 2022-2027" ;
             mcm:language "fr" ] ;
+    ops:spatial "https://ld.admin.ch/canton/22" ;
     mcm:dateBeginActual "2022-07-01"^^xsd:date ;
     mcm:dateEndPlanned "2027-06-30"^^xsd:date ;
     mcm:datetimeCreated "2022-05-10T14:00:00+02:00"^^xsd:dateTime ;

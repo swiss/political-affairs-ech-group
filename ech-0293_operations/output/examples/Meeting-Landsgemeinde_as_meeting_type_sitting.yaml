@@ -1,6 +1,6 @@
 meetings:
 - global_uri: ops:meeting_gl_landsgemeinde_2025
-  body_key: GL
+  spatial: https://ld.admin.ch/canton/8
   meeting_type: sitting
   name:
   - text: Landsgemeinde 2025

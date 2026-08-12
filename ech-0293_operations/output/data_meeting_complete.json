@@ -3,7 +3,7 @@
   "meetings": [
     {
       "global_uri": "ops:meeting_sg_2025_03_15",
-      "body_key": "SG",
+      "spatial": "https://ld.admin.ch/canton/17",
       "meeting_type": "session",
       "name": [
         {
@@ -40,7 +40,7 @@
     },
     {
       "global_uri": "ops:meeting_be_committee_wak_2025_05_12",
-      "body_key": "BE",
+      "spatial": "https://ld.admin.ch/canton/2",
       "meeting_type": "committee",
       "name": [
         {
@@ -81,7 +81,7 @@
     },
     {
       "global_uri": "ops:meeting_gl_landsgemeinde_2025",
-      "body_key": "GL",
+      "spatial": "https://ld.admin.ch/canton/8",
       "meeting_type": "sitting",
       "name": [
         {

@@ -3,7 +3,7 @@ global_uri: ops:meeting_examples_2025
 meetings:
 
 - global_uri: ops:meeting_sg_2025_03_15
-  body_key: "SG"
+  spatial: "https://ld.admin.ch/canton/17"
   meeting_type: "session"
   name:
     - text: "Kantonsratssitzung vom 15. März 2025"
@@ -29,7 +29,7 @@ meetings:
   datetime_modified: "2025-03-15T17:30:00Z"
 
 - global_uri: ops:meeting_be_committee_wak_2025_05_12
-  body_key: "BE"
+  spatial: "https://ld.admin.ch/canton/2"
   meeting_type: "committee"
   name:
     - text: "Sitzung Kommission für Wirtschaft und Abgaben"
@@ -57,7 +57,7 @@ meetings:
   datetime_modified: "2025-05-12T16:45:00Z"
 
 - global_uri: ops:meeting_gl_landsgemeinde_2025
-  body_key: "GL"
+  spatial: "https://ld.admin.ch/canton/8"
   meeting_type: "sitting"
   name:
     - text: "Landsgemeinde 2025"

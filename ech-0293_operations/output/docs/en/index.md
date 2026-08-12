@@ -72,7 +72,6 @@ Name: operations
 | [agenda_items](agenda_items.md) | Collection of agenda item records |
 | [attendance_type](attendance_type.md) | Type of individual attendance |
 | [attendances](attendances.md) | Collection of attendance records |
-| [body_key](body_key.md) | Key identifying the political body or jurisdiction (e |
 | [category](category.md) | Category of the element |
 | [count](count.md) | The count of votes for the total other category |
 | [date_actual](date_actual.md) | The actual date of an instantaneous event or occurrence (without time duratio... |
@@ -160,6 +159,7 @@ Name: operations
 | [seat_nr](seat_nr.md) | The seat number of the individual vote, if applicable |
 | [sequential_number](sequential_number.md) | Sequential number of the meeting, used for ordering |
 | [sessions](sessions.md) | Collection of session records |
+| [spatial](spatial.md) | Spatial reference to a LINDAS resource (fos-municipality number, fos-canton n... |
 | [speaking_actor_id](speaking_actor_id.md) | The speaker or head of the department for the agenda item |
 | [speeches](speeches.md) | Collection of speech records |
 | [start](start.md) | Start indicator or position |

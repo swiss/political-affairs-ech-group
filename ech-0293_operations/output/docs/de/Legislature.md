@@ -20,6 +20,7 @@ _Amtsdauer eines Parlaments als gesetzgebender Versammlung. Dauert in der Regel 
 | local_id | 0..1 <br/> [String](String.md) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](HasIdentification.md) |
 | global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](HasIdentification.md) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](HasIdentification.md) |
+| spatial | 0..1 <br/> [String](String.md) | Räumliche Referenz auf eine LINDAS-Ressource (BFS-Gemeindenummer, BFS-Kantonsnummer, Bezirk oder Land). Formate: Gemeinde: https://ld.admin.ch/municipality/1234, Bezirk: https://ld.admin.ch/district/2301, Kanton: https://ld.admin.ch/canton/23, Bund: https://ld.admin.ch/country/CHE.  |
 | administrative_id | 0..1 <br/> [String](String.md) | Verwaltungs-ID des gesetzgebenden Körpers, wie z.B. Gemeinde, Kanton oder Land.  |
 | name | * <br/> [MultilingualString](MultilingualString.md) | Mehrsprachige vollständige Bezeichnung.  |
 | description | 0..1 <br/> [String](String.md) | Beschreibender Text zum Element.  |
@@ -69,7 +70,7 @@ _Amtsdauer eines Parlaments als gesetzgebender Versammlung. Dauert in der Regel 
 legislatures:
 - global_uri: ops:legislature_vd_2022_2027
   wikidata_uri: http://www.wikidata.org/entity/Q131627357
-  administrative_id: https://ld.admin.ch/canton/22
+  spatial: https://ld.admin.ch/canton/22
   name:
   - text: Législature 2022-2027
     language: fr
@@ -93,7 +94,7 @@ legislatures:
 legislatures:
 - global_uri: ops:legislature_be_2022_2026
   local_id: GR-BE-2022-2026
-  administrative_id: https://ld.admin.ch/canton/2
+  spatial: https://ld.admin.ch/canton/2
   name:
   - text: Legislatur 2022–2026
     language: de
@@ -120,7 +121,7 @@ legislatures:
 legislatures:
 - global_uri: ops:legislature_51
   wikidata_uri: http://www.wikidata.org/entity/Q71712404
-  administrative_id: https://ld.admin.ch/country/CHE
+  spatial: https://ld.admin.ch/country/CHE
   name:
   - text: 51. Legislaturperiode
     language: de

@@ -20,7 +20,7 @@ _Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, Sessi
 | local_id | 0..1 <br/> [String](String.md) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](HasIdentification.md) |
 | global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](HasIdentification.md) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](HasIdentification.md) |
-| body_key | 0..1 <br/> [String](String.md) | Schlüssel zur Identifizierung des politischen Organs oder der Gerichtsbarkeit (z.B. BE für Bern, CHE für Schweiz).  |
+| spatial | 0..1 <br/> [String](String.md) | Räumliche Referenz auf eine LINDAS-Ressource (BFS-Gemeindenummer, BFS-Kantonsnummer, Bezirk oder Land). Formate: Gemeinde: https://ld.admin.ch/municipality/1234, Bezirk: https://ld.admin.ch/district/2301, Kanton: https://ld.admin.ch/canton/23, Bund: https://ld.admin.ch/country/CHE.  |
 | meeting_type | 0..1 <br/> [MeetingTypeEnum](MeetingTypeEnum.md) | Art der Sitzung, z.B. Session, Kommission, Sessionssitzung, Verschiedenes.  |
 | administrative_id | 0..1 <br/> [String](String.md) | Verwaltungs-ID des gesetzgebenden Körpers, wie z.B. Gemeinde, Kanton oder Land.  |
 | name | * <br/> [MultilingualString](MultilingualString.md) | Mehrsprachige vollständige Bezeichnung.  |
@@ -85,7 +85,7 @@ _Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, Sessi
 ```yaml
 meetings:
 - global_uri: parl:sr_winter25_sitzung_6
-  body_key: CHE
+  spatial: https://ld.admin.ch/country/CHE
   meeting_type: session
   name:
   - text: Sechste Sitzung
@@ -112,7 +112,7 @@ meetings:
 ```yaml
 meetings:
 - global_uri: ops:meeting_sg_2025_03_15
-  body_key: SG
+  spatial: https://ld.admin.ch/canton/17
   meeting_type: session
   name:
   - text: Kantonsratssitzung vom 15. März 2025
@@ -142,7 +142,7 @@ meetings:
 
 ```yaml
 meetings:
-- body_key: BE
+- spatial: https://ld.admin.ch/canton/2
   global_uri: ops:e7c5d453-848a-430a-b024-1dd2f6873aa6
   meeting_type: session
   name:
@@ -173,7 +173,7 @@ meetings:
 ```yaml
 meetings:
 - global_uri: ops:meeting_be_committee_wak_2025_05_12
-  body_key: BE
+  spatial: https://ld.admin.ch/canton/2
   meeting_type: committee
   name:
   - text: Sitzung Kommission für Wirtschaft und Abgaben
@@ -205,7 +205,7 @@ meetings:
 
 ```yaml
 meetings:
-- body_key: BE
+- spatial: https://ld.admin.ch/canton/2
   global_uri: ops:340dcf932fb044dd8f8c5c943267fbcc
   meeting_type: session
   name:
@@ -238,7 +238,7 @@ meetings:
 ```yaml
 meetings:
 - global_uri: ops:meeting_gl_landsgemeinde_2025
-  body_key: GL
+  spatial: https://ld.admin.ch/canton/8
   meeting_type: sitting
   name:
   - text: Landsgemeinde 2025

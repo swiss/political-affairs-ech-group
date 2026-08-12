@@ -1,7 +1,7 @@
 legislatures:
 - global_uri: ops:legislature_51
   wikidata_uri: http://www.wikidata.org/entity/Q71712404
-  administrative_id: https://ld.admin.ch/country/CHE
+  spatial: https://ld.admin.ch/country/CHE
   name:
   - text: 51. Legislaturperiode
     language: de

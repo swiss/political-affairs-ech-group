@@ -1,6 +1,6 @@
 sessions:
 - global_uri: ops:session_5207
-  body_key: CHE
+  spatial: https://ld.admin.ch/country/CHE
   name:
   - text: Frühjahrssession 2025
     language: de

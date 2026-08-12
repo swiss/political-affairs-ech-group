@@ -88,13 +88,29 @@ Legislature (legislature)
           └─ AgendaItem (agenda item)
 ```
 
-Legislatures form the long-term frame, sessions structure the work within a legislature, meetings are the concrete sittings in which affairs are deliberated, and agenda items structure the individual sitting. The first three classes are described below, the agenda item in the next chapter.
+The legislature forms the long-term frame, the session structures the work within a legislature, the meeting is the concrete sitting in which affairs are deliberated, and the agenda item structures the individual sitting. The levels interlock in two ways: the session takes its sittings as a list (`meetings`), while sitting and agenda item point upwards by reference (`parent_legislature`, `parent_meeting`, `parent_agenda_item`). Those who keep no sessions deliver their sittings individually and attach them to the legislature via `parent_legislature`.
 
-The three classes are deliberately built alike: identification, temporal data, the link to the body and linked documents are the same on all levels. `actor_id` points to the political actors according to eCH-0294, `documents` to FRBR works according to eCH-0292. Begin and end are recorded twice: at legislature level, planning (`*_planned`) and actual course (`*_actual`) hardly diverge, at sitting level they regularly do.
+The first three classes are described below, the agenda item in the next chapter.
+
+## Common elements
+
+The three classes are deliberately built alike. The following fields have the same meaning on all levels.
+
+**Identification.** `global_uri` is the identifier and is mandatory. `local_id` takes the id of the delivering system, `wikidata_uri` points to the Wikidata entry where one exists.
+
+**Begin and end.** The temporal data is recorded twice: `date_begin_planned` and `date_end_planned` hold what was scheduled, `date_begin_actual` and `date_end_actual` what actually happened. Where the time of day matters, the `datetime_*` variants are available.
+
+**Space and body.** `spatial` points to the spatial unit according to LINDAS — country, canton, district or commune, thus `https://ld.admin.ch/canton/2` rather than "BE". It is the same field with which eCH-0294 locates its groups, so that council operations and the actors who carry them point to the same resource. Who convenes within that spatial unit is stated by `actor_id`, a lightweight reference to the body according to eCH-0294.
+
+**Linked documents.** `documents` links documents as FRBR works according to eCH-0292 — for the legislature, for instance, membership and affair registers, for the session the session programme, for the meeting the protocol.
 
 ## Legislature
 
-A legislature denotes the period for which a parliament is elected and acts in its current composition. Its duration is not prescribed — the examples show a four-year and a five-year term.
+A legislature denotes the period for which a parliament is elected and acts in its current composition.
+
+### Duration and course
+
+The duration is not prescribed — the examples show a four-year and a five-year term. Unlike at the sitting level, planning and actual course hardly diverge here; where a legislature is fixed to the day by law, `*_planned` and `*_actual` carry the same dates.
 
 
 
@@ -118,6 +134,7 @@ _Term of office of a parliament as a legislative assembly. Usually lasts four ye
 | local_id | 0..1 <br/> String | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> Uriorcurie | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> Uriorcurie | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| spatial | 0..1 <br/> String | Spatial reference to a LINDAS resource (fos-municipality number, fos-canton number, district, or country). Formats: municipality: https://ld.admin.ch/municipality/1234, district: https://ld.admin.ch/district/2301, canton: https://ld.admin.ch/canton/23, country: https://ld.admin.ch/country/CHE.  |
 | administrative_id | 0..1 <br/> String | Administrative ID of the legislative body, such as a municipality, canton, or country.  |
 | name | * <br/> [MultilingualString](#MultilingualString) | Multilingual full designation.  |
 | description | 0..1 <br/> String | Descriptive text of the element.  |
@@ -167,7 +184,7 @@ _Term of office of a parliament as a legislative assembly. Usually lasts four ye
 legislatures:
 - global_uri: ops:legislature_vd_2022_2027
   wikidata_uri: http://www.wikidata.org/entity/Q131627357
-  administrative_id: https://ld.admin.ch/canton/22
+  spatial: https://ld.admin.ch/canton/22
   name:
   - text: Législature 2022-2027
     language: fr
@@ -191,7 +208,7 @@ legislatures:
 legislatures:
 - global_uri: ops:legislature_be_2022_2026
   local_id: GR-BE-2022-2026
-  administrative_id: https://ld.admin.ch/canton/2
+  spatial: https://ld.admin.ch/canton/2
   name:
   - text: Legislatur 2022–2026
     language: de
@@ -218,7 +235,7 @@ legislatures:
 legislatures:
 - global_uri: ops:legislature_51
   wikidata_uri: http://www.wikidata.org/entity/Q71712404
-  administrative_id: https://ld.admin.ch/country/CHE
+  spatial: https://ld.admin.ch/country/CHE
   name:
   - text: 51. Legislaturperiode
     language: de
@@ -252,9 +269,15 @@ legislatures:
 
 ## Session (sitting period)
 
-A session is a continuous sitting period in which several meetings take place. It is the middle level — and it is optional: federal entities without formal sessions leave it out and record their meetings directly. Session and meeting may also coincide: a one-day sitting of a cantonal parliament or a Landsgemeinde is recorded as a sitting period with a single meeting.
+A session is a continuous sitting period in which several meetings take place.
 
-Numbering practice differs widely, which is why four fields are available: `number` holds the running number as a figure, `sequential_number` the same information as a string (and therefore also Roman numerals), `position` the position within the legislature and `meeting_abbreviation` a short designation such as "FS24". The meeting has the same four fields. `body_key` holds the body as a short key (e.g. "NR", "SR"), `parent_legislature` assigns the session to its legislature.
+### Optional level
+
+The session is the only one of the three levels that may be dispensed with: federal entities without formal sessions leave it out and record their sittings directly. Session and meeting may also coincide — a one-day sitting of a cantonal parliament or a Landsgemeinde is recorded as a sitting period with a single meeting.
+
+### Numbering
+
+Numbering practice differs widely, which is why four fields are available: `number` holds the running number as a figure, `sequential_number` the same information as a string (and therefore also Roman numerals), `position` the position within the legislature and `meeting_abbreviation` a short designation such as "FS24". The meeting has the same four fields.
 
 
 
@@ -278,7 +301,7 @@ _A parliamentary session that groups multiple meetings and spans a specific time
 | local_id | 0..1 <br/> String | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> Uriorcurie | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> Uriorcurie | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| body_key | 0..1 <br/> String | Key identifying the political body or jurisdiction (e.g., BE for Bern, CHE for Switzerland).  |
+| spatial | 0..1 <br/> String | Spatial reference to a LINDAS resource (fos-municipality number, fos-canton number, district, or country). Formats: municipality: https://ld.admin.ch/municipality/1234, district: https://ld.admin.ch/district/2301, canton: https://ld.admin.ch/canton/23, country: https://ld.admin.ch/country/CHE.  |
 | name | * <br/> [MultilingualString](#MultilingualString) | Multilingual full designation.  |
 | number | 0..1 <br/> String | Sequential number, e.g. within the legislature, the session or the year.  |
 | sequential_number | 0..1 <br/> Integer | Sequential number of the meeting, used for ordering.  |
@@ -330,7 +353,7 @@ _A parliamentary session that groups multiple meetings and spans a specific time
 ```yaml
 sessions:
 - global_uri: ops:session_5207
-  body_key: CHE
+  spatial: https://ld.admin.ch/country/CHE
   name:
   - text: Frühjahrssession 2025
     language: de
@@ -357,7 +380,7 @@ sessions:
 ```yaml
 sessions:
 - global_uri: ops:session_gl_landsgemeinde_2025_05_04
-  body_key: GL
+  spatial: https://ld.admin.ch/canton/8
   name:
   - text: Landsgemeinde vom 04. Mai 2025
     language: de
@@ -375,7 +398,7 @@ sessions:
 ```yaml
 sessions:
 - global_uri: ops:session_be_summer_2025
-  body_key: BE
+  spatial: https://ld.admin.ch/canton/2
   name:
   - text: Sommersession 2025
     language: de
@@ -399,7 +422,7 @@ sessions:
 ```yaml
 sessions:
 - global_uri: ops:session_gl_landrat_2025_02_26
-  body_key: GL
+  spatial: https://ld.admin.ch/canton/8
   name:
   - text: Sitzung des Landrates vom 26.02.2025
     language: de
@@ -422,13 +445,19 @@ sessions:
 
 ## Meeting (individual sitting)
 
-A meeting is the individual sitting of a body — the level at which agenda items are deliberated, decisions taken and speeches recorded. `meeting_type` distinguishes four types: `session` for plenary sittings of a parliament or a chamber, `committee` for committee sittings, `sitting` for assemblies such as Landsgemeinden, communal assemblies and citizens' communal assemblies, and `various` as a catch-all. The value `sitting` is a deliberate choice: Landsgemeinden and communal assemblies are assemblies of the eligible voters themselves, but they decide as a convened body with an agenda and are therefore represented like a council sitting.
+A meeting is the individual sitting of a body — the level at which agenda items are deliberated, decisions taken and speeches recorded.
 
-At this level, planning and actual course regularly diverge: a sitting scheduled for 14:00 only begins at 14:25 because of delays and ends at 17:30 instead of 18:00. This is precisely what the `*_planned` and `*_actual` fields are for; for times of day, the `datetime_*` variants are to be used. Whether a sitting takes place as planned at all is held by `state` (`planned`, `canceled`, `postponed`); `state_name` takes a diverging, free-text status designation. `location` records the place of the sitting — the physical room ("Federal Palace, National Council chamber"), a video conference or a hybrid format.
+### Meeting types
 
-In addition to `actor_id` and `administrative_id`, `actor_name` holds the name of the body for quick access and `body_key` a short key; `group_name` and `group_id` supplement groupings where needed. `parent_meeting` represents sittings that are part of a superordinate sitting, `parent_legislature` assigns the sitting to the legislature. Numbering works as for the session.
+`meeting_type` distinguishes four types: `session` for plenary sittings of a parliament or a chamber, `committee` for committee sittings, `sitting` for assemblies such as Landsgemeinden, communal assemblies and citizens' communal assemblies, and `various` as a catch-all. The value `sitting` is a deliberate choice: Landsgemeinden and communal assemblies are assemblies of the eligible voters themselves, but they decide as a convened body with an agenda and are therefore represented like a council sitting.
 
-The meeting is the node to which the remaining classes of this standard attach: agenda items (`AgendaItem`), votings and elections (`Voting`, `Election`), speeches (`Speech`) as well as the attendance list (`Attendance.parent_meeting`). `documents` links sitting documents such as the bulletin or annexes, `protocol_ref` the protocol.
+### Planning and course
+
+At this level, scheduled and actual times regularly diverge: a sitting scheduled for 14:00 only begins at 14:25 because of delays and ends at 17:30 instead of 18:00. Whether a sitting takes place as planned at all is held by `state` (`planned`, `canceled`, `postponed`); `state_name` takes a diverging, free-text status designation. `location` records the place of the sitting — the physical room ("Federal Palace, National Council chamber"), a video conference or a hybrid format.
+
+### Anchor points
+
+The meeting is the node to which the remaining classes of this standard attach: agenda items (`AgendaItem`), votings and elections (`Voting`, `Election`), speeches (`Speech`) as well as the attendance list (`Attendance.parent_meeting`). `documents` links sitting documents such as the bulletin or annexes, `protocol_ref` the protocol. `parent_meeting` represents sittings that are part of a superordinate sitting; `actor_name`, `group_name` and `group_id` additionally hold body and grouping in plain text.
 
 
 
@@ -452,7 +481,7 @@ _A general meeting class used for Sessions, Comittee Meetings, individual sessio
 | local_id | 0..1 <br/> String | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> Uriorcurie | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> Uriorcurie | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| body_key | 0..1 <br/> String | Key identifying the political body or jurisdiction (e.g., BE for Bern, CHE for Switzerland).  |
+| spatial | 0..1 <br/> String | Spatial reference to a LINDAS resource (fos-municipality number, fos-canton number, district, or country). Formats: municipality: https://ld.admin.ch/municipality/1234, district: https://ld.admin.ch/district/2301, canton: https://ld.admin.ch/canton/23, country: https://ld.admin.ch/country/CHE.  |
 | meeting_type | 0..1 <br/> [MeetingTypeEnum](#MeetingTypeEnum) | Type of the meeting, e.g. session, committee, sitting, various.  |
 | administrative_id | 0..1 <br/> String | Administrative ID of the legislative body, such as a municipality, canton, or country.  |
 | name | * <br/> [MultilingualString](#MultilingualString) | Multilingual full designation.  |
@@ -517,7 +546,7 @@ _A general meeting class used for Sessions, Comittee Meetings, individual sessio
 ```yaml
 meetings:
 - global_uri: parl:sr_winter25_sitzung_6
-  body_key: CHE
+  spatial: https://ld.admin.ch/country/CHE
   meeting_type: session
   name:
   - text: Sechste Sitzung
@@ -544,7 +573,7 @@ meetings:
 ```yaml
 meetings:
 - global_uri: ops:meeting_sg_2025_03_15
-  body_key: SG
+  spatial: https://ld.admin.ch/canton/17
   meeting_type: session
   name:
   - text: Kantonsratssitzung vom 15. März 2025
@@ -574,7 +603,7 @@ meetings:
 
 ```yaml
 meetings:
-- body_key: BE
+- spatial: https://ld.admin.ch/canton/2
   global_uri: ops:e7c5d453-848a-430a-b024-1dd2f6873aa6
   meeting_type: session
   name:
@@ -605,7 +634,7 @@ meetings:
 ```yaml
 meetings:
 - global_uri: ops:meeting_be_committee_wak_2025_05_12
-  body_key: BE
+  spatial: https://ld.admin.ch/canton/2
   meeting_type: committee
   name:
   - text: Sitzung Kommission für Wirtschaft und Abgaben
@@ -637,7 +666,7 @@ meetings:
 
 ```yaml
 meetings:
-- body_key: BE
+- spatial: https://ld.admin.ch/canton/2
   global_uri: ops:340dcf932fb044dd8f8c5c943267fbcc
   meeting_type: session
   name:
@@ -670,7 +699,7 @@ meetings:
 ```yaml
 meetings:
 - global_uri: ops:meeting_gl_landsgemeinde_2025
-  body_key: GL
+  spatial: https://ld.admin.ch/canton/8
   meeting_type: sitting
   name:
   - text: Landsgemeinde 2025
@@ -4019,7 +4048,7 @@ _Container for the records of public council operations: legislatures, sessions,
 ```yaml
 global_uri: ops:meetings_1
 meetings:
-  - body_key: "BE"
+  - spatial: "https://ld.admin.ch/canton/2"
     global_uri: ops:340dcf932fb044dd8f8c5c943267fbcc
     meeting_type: "session"
     name:
@@ -4044,7 +4073,7 @@ meetings:
     datetime_created: "2024-10-28T01:22:26Z"
     datetime_modified: "2024-11-27T20:40:57Z"
 
-  - body_key: "BE"
+  - spatial: "https://ld.admin.ch/canton/2"
     global_uri: ops:e7c5d453-848a-430a-b024-1dd2f6873aa6
     meeting_type: "session"
     name:
@@ -4075,7 +4104,7 @@ global_uri: ops:data_meeting_sr_winter25_Sitzung6
 
 meetings:
   - global_uri: "parl:sr_winter25_sitzung_6"
-    body_key: "CHE"
+    spatial: "https://ld.admin.ch/country/CHE"
     meeting_type: "session"
     name:
       - text: "Sechste Sitzung"
@@ -4147,7 +4176,7 @@ global_uri: ops:meeting_examples_2025
 meetings:
 
 - global_uri: ops:meeting_sg_2025_03_15
-  body_key: "SG"
+  spatial: "https://ld.admin.ch/canton/17"
   meeting_type: "session"
   name:
     - text: "Kantonsratssitzung vom 15. März 2025"
@@ -4173,7 +4202,7 @@ meetings:
   datetime_modified: "2025-03-15T17:30:00Z"
 
 - global_uri: ops:meeting_be_committee_wak_2025_05_12
-  body_key: "BE"
+  spatial: "https://ld.admin.ch/canton/2"
   meeting_type: "committee"
   name:
     - text: "Sitzung Kommission für Wirtschaft und Abgaben"
@@ -4201,7 +4230,7 @@ meetings:
   datetime_modified: "2025-05-12T16:45:00Z"
 
 - global_uri: ops:meeting_gl_landsgemeinde_2025
-  body_key: "GL"
+  spatial: "https://ld.admin.ch/canton/8"
   meeting_type: "sitting"
   name:
     - text: "Landsgemeinde 2025"
@@ -4299,7 +4328,7 @@ legislatures:
 # Bund: abgeschlossene Legislaturperiode, vier Jahre, dreisprachige Bezeichnung.
 - global_uri: ops:legislature_51
   wikidata_uri: http://www.wikidata.org/entity/Q71712404
-  administrative_id: "https://ld.admin.ch/country/CHE"
+  spatial: "https://ld.admin.ch/country/CHE"
   name:
     - text: "51. Legislaturperiode"
       language: "de"
@@ -4324,7 +4353,7 @@ legislatures:
 # wegen auf den Tag festgelegt und deshalb schon bei der Planung bekannt.
 - global_uri: ops:legislature_be_2022_2026
   local_id: "GR-BE-2022-2026"
-  administrative_id: "https://ld.admin.ch/canton/2"
+  spatial: "https://ld.admin.ch/canton/2"
   name:
     - text: "Legislatur 2022–2026"
       language: "de"
@@ -4348,7 +4377,7 @@ legislatures:
 # geplant ist -- date_end_actual bleibt deshalb leer.
 - global_uri: ops:legislature_vd_2022_2027
   wikidata_uri: http://www.wikidata.org/entity/Q131627357
-  administrative_id: "https://ld.admin.ch/canton/22"
+  spatial: "https://ld.admin.ch/canton/22"
   name:
     - text: "Législature 2022-2027"
       language: "fr"
@@ -4818,7 +4847,7 @@ global_uri: ops:sessions_example_2025
 sessions:
 
 - global_uri: ops:session_5207
-  body_key: "CHE"
+  spatial: "https://ld.admin.ch/country/CHE"
   name:
     - text: "Frühjahrssession 2025"
       language: "de"
@@ -4840,7 +4869,7 @@ sessions:
   datetime_created: "2025-03-20T14:27:09Z"
 
 - global_uri: ops:session_be_summer_2025
-  body_key: "BE"
+  spatial: "https://ld.admin.ch/canton/2"
   name:
     - text: "Sommersession 2025"
       language: "de"
@@ -4857,7 +4886,7 @@ sessions:
   datetime_created: "2025-04-25T11:10:24Z"
 
 - global_uri: ops:session_gl_landrat_2025_02_26
-  body_key: "GL"
+  spatial: "https://ld.admin.ch/canton/8"
   name:
     - text: "Sitzung des Landrates vom 26.02.2025"
       language: "de"
@@ -4870,7 +4899,7 @@ sessions:
   datetime_created: "2025-04-23T22:58:39Z"
 
 - global_uri: ops:session_gl_landsgemeinde_2025_05_04
-  body_key: "GL"
+  spatial: "https://ld.admin.ch/canton/8"
   name:
     - text: "Landsgemeinde vom 04. Mai 2025"
       language: "de"

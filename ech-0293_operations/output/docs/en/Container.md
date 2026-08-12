@@ -55,7 +55,7 @@ _Container for the records of public council operations: legislatures, sessions,
 ```yaml
 global_uri: ops:meetings_1
 meetings:
-  - body_key: "BE"
+  - spatial: "https://ld.admin.ch/canton/2"
     global_uri: ops:340dcf932fb044dd8f8c5c943267fbcc
     meeting_type: "session"
     name:
@@ -80,7 +80,7 @@ meetings:
     datetime_created: "2024-10-28T01:22:26Z"
     datetime_modified: "2024-11-27T20:40:57Z"
 
-  - body_key: "BE"
+  - spatial: "https://ld.admin.ch/canton/2"
     global_uri: ops:e7c5d453-848a-430a-b024-1dd2f6873aa6
     meeting_type: "session"
     name:
@@ -111,7 +111,7 @@ global_uri: ops:data_meeting_sr_winter25_Sitzung6
 
 meetings:
   - global_uri: "parl:sr_winter25_sitzung_6"
-    body_key: "CHE"
+    spatial: "https://ld.admin.ch/country/CHE"
     meeting_type: "session"
     name:
       - text: "Sechste Sitzung"
@@ -183,7 +183,7 @@ global_uri: ops:meeting_examples_2025
 meetings:
 
 - global_uri: ops:meeting_sg_2025_03_15
-  body_key: "SG"
+  spatial: "https://ld.admin.ch/canton/17"
   meeting_type: "session"
   name:
     - text: "Kantonsratssitzung vom 15. März 2025"
@@ -209,7 +209,7 @@ meetings:
   datetime_modified: "2025-03-15T17:30:00Z"
 
 - global_uri: ops:meeting_be_committee_wak_2025_05_12
-  body_key: "BE"
+  spatial: "https://ld.admin.ch/canton/2"
   meeting_type: "committee"
   name:
     - text: "Sitzung Kommission für Wirtschaft und Abgaben"
@@ -237,7 +237,7 @@ meetings:
   datetime_modified: "2025-05-12T16:45:00Z"
 
 - global_uri: ops:meeting_gl_landsgemeinde_2025
-  body_key: "GL"
+  spatial: "https://ld.admin.ch/canton/8"
   meeting_type: "sitting"
   name:
     - text: "Landsgemeinde 2025"
@@ -335,7 +335,7 @@ legislatures:
 # Bund: abgeschlossene Legislaturperiode, vier Jahre, dreisprachige Bezeichnung.
 - global_uri: ops:legislature_51
   wikidata_uri: http://www.wikidata.org/entity/Q71712404
-  administrative_id: "https://ld.admin.ch/country/CHE"
+  spatial: "https://ld.admin.ch/country/CHE"
   name:
     - text: "51. Legislaturperiode"
       language: "de"
@@ -360,7 +360,7 @@ legislatures:
 # wegen auf den Tag festgelegt und deshalb schon bei der Planung bekannt.
 - global_uri: ops:legislature_be_2022_2026
   local_id: "GR-BE-2022-2026"
-  administrative_id: "https://ld.admin.ch/canton/2"
+  spatial: "https://ld.admin.ch/canton/2"
   name:
     - text: "Legislatur 2022–2026"
       language: "de"
@@ -384,7 +384,7 @@ legislatures:
 # geplant ist -- date_end_actual bleibt deshalb leer.
 - global_uri: ops:legislature_vd_2022_2027
   wikidata_uri: http://www.wikidata.org/entity/Q131627357
-  administrative_id: "https://ld.admin.ch/canton/22"
+  spatial: "https://ld.admin.ch/canton/22"
   name:
     - text: "Législature 2022-2027"
       language: "fr"
@@ -854,7 +854,7 @@ global_uri: ops:sessions_example_2025
 sessions:
 
 - global_uri: ops:session_5207
-  body_key: "CHE"
+  spatial: "https://ld.admin.ch/country/CHE"
   name:
     - text: "Frühjahrssession 2025"
       language: "de"
@@ -876,7 +876,7 @@ sessions:
   datetime_created: "2025-03-20T14:27:09Z"
 
 - global_uri: ops:session_be_summer_2025
-  body_key: "BE"
+  spatial: "https://ld.admin.ch/canton/2"
   name:
     - text: "Sommersession 2025"
       language: "de"
@@ -893,7 +893,7 @@ sessions:
   datetime_created: "2025-04-25T11:10:24Z"
 
 - global_uri: ops:session_gl_landrat_2025_02_26
-  body_key: "GL"
+  spatial: "https://ld.admin.ch/canton/8"
   name:
     - text: "Sitzung des Landrates vom 26.02.2025"
       language: "de"
@@ -906,7 +906,7 @@ sessions:
   datetime_created: "2025-04-23T22:58:39Z"
 
 - global_uri: ops:session_gl_landsgemeinde_2025_05_04
-  body_key: "GL"
+  spatial: "https://ld.admin.ch/canton/8"
   name:
     - text: "Landsgemeinde vom 04. Mai 2025"
       language: "de"

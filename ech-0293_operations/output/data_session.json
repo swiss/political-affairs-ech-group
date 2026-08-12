@@ -3,7 +3,7 @@
   "sessions": [
     {
       "global_uri": "ops:session_5207",
-      "body_key": "CHE",
+      "spatial": "https://ld.admin.ch/country/CHE",
       "name": [
         {
           "text": "Frühjahrssession 2025",
@@ -40,7 +40,7 @@
     },
     {
       "global_uri": "ops:session_be_summer_2025",
-      "body_key": "BE",
+      "spatial": "https://ld.admin.ch/canton/2",
       "name": [
         {
           "text": "Sommersession 2025",
@@ -68,7 +68,7 @@
     },
     {
       "global_uri": "ops:session_gl_landrat_2025_02_26",
-      "body_key": "GL",
+      "spatial": "https://ld.admin.ch/canton/8",
       "name": [
         {
           "text": "Sitzung des Landrates vom 26.02.2025",
@@ -88,7 +88,7 @@
     },
     {
       "global_uri": "ops:session_gl_landsgemeinde_2025_05_04",
-      "body_key": "GL",
+      "spatial": "https://ld.admin.ch/canton/8",
       "name": [
         {
           "text": "Landsgemeinde vom 04. Mai 2025",

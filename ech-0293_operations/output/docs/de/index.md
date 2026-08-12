@@ -72,7 +72,6 @@ Name: operations
 | [agenda_items](agenda_items.md) | Sammlung der Traktanden |
 | [attendance_type](attendance_type.md) | Art der individuellen Anwesenheit |
 | [attendances](attendances.md) | Sammlung der Anwesenheitslisten |
-| [body_key](body_key.md) | Schlüssel zur Identifizierung des politischen Organs oder der Gerichtsbarkeit... |
 | [category](category.md) | Kategorie des Elements |
 | [count](count.md) | Die Anzahl der Stimmen für die Kategorie „Andere“ |
 | [date_actual](date_actual.md) | Das tatsächliche Datum eines instantanen Ereignisses oder Vorkommnissen (ohne... |
@@ -160,6 +159,7 @@ Name: operations
 | [seat_nr](seat_nr.md) | Die Sitznummer der Einzelstimme, falls zutreffend |
 | [sequential_number](sequential_number.md) | Laufende Nummer der Sitzung, die zur Sortierung verwendet wird |
 | [sessions](sessions.md) | Sammlung der Sessionen |
+| [spatial](spatial.md) | Räumliche Referenz auf eine LINDAS-Ressource (BFS-Gemeindenummer, BFS-Kantons... |
 | [speaking_actor_id](speaking_actor_id.md) | Der Sprecher oder die Sprecherin bzw |
 | [speeches](speeches.md) | Sammlung der Wortmeldungen |
 | [start](start.md) | Startangabe oder Position |

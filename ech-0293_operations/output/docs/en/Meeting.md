@@ -20,7 +20,7 @@ _A general meeting class used for Sessions, Comittee Meetings, individual sessio
 | local_id | 0..1 <br/> [String](String.md) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
-| body_key | 0..1 <br/> [String](String.md) | Key identifying the political body or jurisdiction (e.g., BE for Bern, CHE for Switzerland).  |
+| spatial | 0..1 <br/> [String](String.md) | Spatial reference to a LINDAS resource (fos-municipality number, fos-canton number, district, or country). Formats: municipality: https://ld.admin.ch/municipality/1234, district: https://ld.admin.ch/district/2301, canton: https://ld.admin.ch/canton/23, country: https://ld.admin.ch/country/CHE.  |
 | meeting_type | 0..1 <br/> [MeetingTypeEnum](MeetingTypeEnum.md) | Type of the meeting, e.g. session, committee, sitting, various.  |
 | administrative_id | 0..1 <br/> [String](String.md) | Administrative ID of the legislative body, such as a municipality, canton, or country.  |
 | name | * <br/> [MultilingualString](MultilingualString.md) | Multilingual full designation.  |
@@ -85,7 +85,7 @@ _A general meeting class used for Sessions, Comittee Meetings, individual sessio
 ```yaml
 meetings:
 - global_uri: parl:sr_winter25_sitzung_6
-  body_key: CHE
+  spatial: https://ld.admin.ch/country/CHE
   meeting_type: session
   name:
   - text: Sechste Sitzung
@@ -112,7 +112,7 @@ meetings:
 ```yaml
 meetings:
 - global_uri: ops:meeting_sg_2025_03_15
-  body_key: SG
+  spatial: https://ld.admin.ch/canton/17
   meeting_type: session
   name:
   - text: Kantonsratssitzung vom 15. März 2025
@@ -142,7 +142,7 @@ meetings:
 
 ```yaml
 meetings:
-- body_key: BE
+- spatial: https://ld.admin.ch/canton/2
   global_uri: ops:e7c5d453-848a-430a-b024-1dd2f6873aa6
   meeting_type: session
   name:
@@ -173,7 +173,7 @@ meetings:
 ```yaml
 meetings:
 - global_uri: ops:meeting_be_committee_wak_2025_05_12
-  body_key: BE
+  spatial: https://ld.admin.ch/canton/2
   meeting_type: committee
   name:
   - text: Sitzung Kommission für Wirtschaft und Abgaben
@@ -205,7 +205,7 @@ meetings:
 
 ```yaml
 meetings:
-- body_key: BE
+- spatial: https://ld.admin.ch/canton/2
   global_uri: ops:340dcf932fb044dd8f8c5c943267fbcc
   meeting_type: session
   name:
@@ -238,7 +238,7 @@ meetings:
 ```yaml
 meetings:
 - global_uri: ops:meeting_gl_landsgemeinde_2025
-  body_key: GL
+  spatial: https://ld.admin.ch/canton/8
   meeting_type: sitting
   name:
   - text: Landsgemeinde 2025

@@ -1622,6 +1622,14 @@
                         "null"
                     ]
                 },
+                "spatial": {
+                    "description": "Spatial reference to a LINDAS resource (fos-municipality number, fos-canton number, district, or country). Formats: municipality: https://ld.admin.ch/municipality/1234, district: https://ld.admin.ch/district/2301, canton: https://ld.admin.ch/canton/23, country: https://ld.admin.ch/country/CHE.\n",
+                    "pattern": "^https://ld\\.admin\\.ch/(country/[A-Z]{3}|canton/[0-9]+|district/[0-9]+|municipality/[0-9]+)$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "wikidata_uri": {
                     "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans.\n",
                     "type": [
@@ -1777,13 +1785,6 @@
                 },
                 "administrative_id": {
                     "description": "Administrative ID of the legislative body, such as a municipality, canton, or country.\n",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "body_key": {
-                    "description": "Key identifying the political body or jurisdiction (e.g., BE for Bern, CHE for Switzerland).\n",
                     "type": [
                         "string",
                         "null"
@@ -2009,6 +2010,14 @@
                     "description": "Sequential number of the meeting, used for ordering.\n",
                     "type": [
                         "integer",
+                        "null"
+                    ]
+                },
+                "spatial": {
+                    "description": "Spatial reference to a LINDAS resource (fos-municipality number, fos-canton number, district, or country). Formats: municipality: https://ld.admin.ch/municipality/1234, district: https://ld.admin.ch/district/2301, canton: https://ld.admin.ch/canton/23, country: https://ld.admin.ch/country/CHE.\n",
+                    "pattern": "^https://ld\\.admin\\.ch/(country/[A-Z]{3}|canton/[0-9]+|district/[0-9]+|municipality/[0-9]+)$",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -2678,13 +2687,6 @@
             "additionalProperties": false,
             "description": "A parliamentary session that groups multiple meetings and spans a specific time period.",
             "properties": {
-                "body_key": {
-                    "description": "Key identifying the political body or jurisdiction (e.g., BE for Bern, CHE for Switzerland).\n",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "date_begin_actual": {
                     "description": "The actual start date of an event or occurrence with time duration.\n",
                     "format": "date",
@@ -2854,6 +2856,14 @@
                     "description": "Sequential number of the meeting, used for ordering.\n",
                     "type": [
                         "integer",
+                        "null"
+                    ]
+                },
+                "spatial": {
+                    "description": "Spatial reference to a LINDAS resource (fos-municipality number, fos-canton number, district, or country). Formats: municipality: https://ld.admin.ch/municipality/1234, district: https://ld.admin.ch/district/2301, canton: https://ld.admin.ch/canton/23, country: https://ld.admin.ch/country/CHE.\n",
+                    "pattern": "^https://ld\\.admin\\.ch/(country/[A-Z]{3}|canton/[0-9]+|district/[0-9]+|municipality/[0-9]+)$",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },

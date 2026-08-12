@@ -3,7 +3,7 @@
   "meetings": [
     {
       "global_uri": "parl:sr_winter25_sitzung_6",
-      "body_key": "CHE",
+      "spatial": "https://ld.admin.ch/country/CHE",
       "meeting_type": "session",
       "name": [
         {

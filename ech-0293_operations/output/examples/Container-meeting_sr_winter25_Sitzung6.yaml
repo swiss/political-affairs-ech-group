@@ -2,7 +2,7 @@ global_uri: ops:data_meeting_sr_winter25_Sitzung6
 
 meetings:
   - global_uri: "parl:sr_winter25_sitzung_6"
-    body_key: "CHE"
+    spatial: "https://ld.admin.ch/country/CHE"
     meeting_type: "session"
     name:
       - text: "Sechste Sitzung"
