@@ -33,10 +33,6 @@ Les trois classes sont délibérément construites de la même manière. Les cha
 
 Une législature désigne la période pour laquelle un parlement est élu et durant laquelle il exerce ses fonctions dans sa composition actuelle.
 
-### Durée et déroulement
-
-La durée n'est pas prescrite — les exemples montrent un mandat de quatre ans et un mandat de cinq ans. Contrairement à la séance, planification et déroulement ne divergent guère à ce niveau ; là où une législature est fixée au jour près par la loi, `*_planned` et `*_actual` portent les mêmes dates.
-
 {{include:ech-0293_operations/output/docs/Legislature.md}}
 
 ## Session (période de séance)

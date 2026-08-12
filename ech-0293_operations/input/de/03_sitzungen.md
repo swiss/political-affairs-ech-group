@@ -33,10 +33,6 @@ Die drei Klassen sind bewusst gleich gebaut. Die folgenden Felder haben auf alle
 
 Eine Legislaturperiode bezeichnet den Zeitraum, für den ein Parlament gewählt wird und in seiner aktuellen Zusammensetzung tätig ist.
 
-### Dauer und Verlauf
-
-Die Dauer ist nicht vorgegeben — die Beispiele zeigen eine vier- und eine fünfjährige Amtsdauer. Anders als bei der Sitzung fallen Planung und Verlauf hier kaum auseinander; wo eine Legislaturperiode gesetzlich auf den Tag festgelegt ist, tragen `*_planned` und `*_actual` dieselben Daten.
-
 {{include:ech-0293_operations/output/docs/Legislature.md}}
 
 ## Session (Sitzungsperiode)

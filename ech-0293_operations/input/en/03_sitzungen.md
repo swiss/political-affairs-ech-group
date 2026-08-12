@@ -33,10 +33,6 @@ The three classes are deliberately built alike. The following fields have the sa
 
 A legislature denotes the period for which a parliament is elected and acts in its current composition.
 
-### Duration and course
-
-The duration is not prescribed — the examples show a four-year and a five-year term. Unlike at the sitting level, planning and actual course hardly diverge here; where a legislature is fixed to the day by law, `*_planned` and `*_actual` carry the same dates.
-
 {{include:ech-0293_operations/output/docs/Legislature.md}}
 
 ## Session (sitting period)
