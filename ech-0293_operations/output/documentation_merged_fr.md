@@ -114,7 +114,7 @@ La durée n'est pas prescrite — les exemples montrent un mandat de quatre ans 
 
 
 
-## Classe: Legislature []{#Legislature}
+### Classe: Legislature []{#Legislature}
 
 
 _Durée du mandat d'un parlement en tant qu'assemblée législative. Elle est en règle générale de quatre ans._
@@ -127,7 +127,7 @@ _Durée du mandat d'un parlement en tant qu'assemblée législative. Elle est en
 
 
 
-### Attributs
+#### Attributs
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
@@ -158,7 +158,7 @@ _Durée du mandat d'un parlement en tant qu'assemblée législative. Elle est en
 
 
 
-### Utilisations
+#### Utilisations
 
 | Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
@@ -177,8 +177,8 @@ _Durée du mandat d'un parlement en tant qu'assemblée législative. Elle est en
 
 
 
-### Exemples
-#### Exemple Legislature : Législature cantonale en cours d'une durée de cinq ans
+#### Exemples
+##### Exemple Legislature : Législature cantonale en cours d'une durée de cinq ans
 
 ```yaml
 legislatures:
@@ -202,7 +202,7 @@ legislatures:
   datetime_modified: '2025-01-08T11:20:00+01:00'
 
 ```
-#### Exemple Legislature : Législature cantonale d'une durée de quatre ans
+##### Exemple Legislature : Cantonal legislature with a four-year term
 
 ```yaml
 legislatures:
@@ -229,7 +229,7 @@ legislatures:
   datetime_modified: '2026-06-01T07:00:00+02:00'
 
 ```
-#### Exemple Legislature : Législature fédérale achevée
+##### Exemple Legislature : Completed federal legislature
 
 ```yaml
 legislatures:
@@ -281,7 +281,7 @@ La numérotation varie fortement d'une pratique à l'autre, raison pour laquelle
 
 
 
-## Classe: Session []{#Session}
+### Classe: Session []{#Session}
 
 
 _Une session parlementaire qui regroupe plusieurs séances et s'étend sur une période déterminée._
@@ -294,7 +294,7 @@ _Une session parlementaire qui regroupe plusieurs séances et s'étend sur une p
 
 
 
-### Attributs
+#### Attributs
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
@@ -328,7 +328,7 @@ _Une session parlementaire qui regroupe plusieurs séances et s'étend sur une p
 
 
 
-### Utilisations
+#### Utilisations
 
 | Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
@@ -347,8 +347,8 @@ _Une session parlementaire qui regroupe plusieurs séances et s'étend sur une p
 
 
 
-### Exemples
-#### Exemple Session : Session fédérale avec désignation trilingue
+#### Exemples
+##### Exemple Session : Session fédérale avec désignation trilingue
 
 ```yaml
 sessions:
@@ -375,7 +375,7 @@ sessions:
   datetime_created: '2025-03-20T14:27:09Z'
 
 ```
-#### Exemple Session : Landsgemeinde comme période de séance
+##### Exemple Session : Landsgemeinde as a sitting period
 
 ```yaml
 sessions:
@@ -393,7 +393,7 @@ sessions:
   datetime_created: '2025-04-23T22:58:39Z'
 
 ```
-#### Exemple Session : Session cantonale avec désignation bilingue
+##### Exemple Session : Cantonal session with a bilingual designation
 
 ```yaml
 sessions:
@@ -417,7 +417,7 @@ sessions:
   datetime_created: '2025-04-25T11:10:24Z'
 
 ```
-#### Exemple Session : Période de séance d'un jour d'un Grand Conseil
+##### Exemple Session : One-day sitting period of a cantonal parliament
 
 ```yaml
 sessions:
@@ -461,7 +461,7 @@ Le Meeting est le nœud auquel se rattachent les autres classes de la présente 
 
 
 
-## Classe: Meeting []{#Meeting}
+### Classe: Meeting []{#Meeting}
 
 
 _Une classe générale de séance utilisée pour les sessions, les séances de commission, les séances individuelles d'une session et d'autres réunions diverses._
@@ -474,7 +474,7 @@ _Une classe générale de séance utilisée pour les sessions, les séances de c
 
 
 
-### Attributs
+#### Attributs
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
@@ -520,7 +520,7 @@ _Une classe générale de séance utilisée pour les sessions, les séances de c
 
 
 
-### Utilisations
+#### Utilisations
 
 | Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
@@ -540,8 +540,8 @@ _Une classe générale de séance utilisée pour les sessions, les séances de c
 
 
 
-### Exemples
-#### Exemple Meeting : Séance du Conseil des États avec procès-verbal et interventions
+#### Exemples
+##### Exemple Meeting : Séance du Conseil des États avec procès-verbal et interventions
 
 ```yaml
 meetings:
@@ -568,7 +568,7 @@ meetings:
   datetime_modified: '2026-01-12T00:00:00+01:00'
 
 ```
-#### Exemple Meeting : Séance de Grand Conseil avec points de l'ordre du jour et votes
+##### Exemple Meeting : Cantonal parliament sitting with agenda items and votings
 
 ```yaml
 meetings:
@@ -599,7 +599,7 @@ meetings:
   datetime_modified: '2025-03-15T17:30:00Z'
 
 ```
-#### Exemple Meeting : Séance d'une demi-journée au sein d'une session
+##### Exemple Meeting : Half-day sitting within a session
 
 ```yaml
 meetings:
@@ -629,7 +629,7 @@ meetings:
   datetime_modified: '2025-05-19T01:06:45Z'
 
 ```
-#### Exemple Meeting : Séance de commission avec liste de présence
+##### Exemple Meeting : Committee sitting with an attendance list
 
 ```yaml
 meetings:
@@ -662,7 +662,7 @@ meetings:
   datetime_modified: '2025-05-12T16:45:00Z'
 
 ```
-#### Exemple Meeting : Séance du gouvernement avec désignation bilingue
+##### Exemple Meeting : Government sitting with a bilingual designation
 
 ```yaml
 meetings:
@@ -694,7 +694,7 @@ meetings:
   datetime_modified: '2024-11-27T20:40:57Z'
 
 ```
-#### Exemple Meeting : Landsgemeinde comme type de séance « sitting »
+##### Exemple Meeting : Landsgemeinde as meeting type sitting
 
 ```yaml
 meetings:
@@ -733,7 +733,7 @@ meetings:
 
 </div>
 
-## Enum: MeetingTypeEnum []{#MeetingTypeEnum}
+### Enum: MeetingTypeEnum []{#MeetingTypeEnum}
 
 
 
@@ -747,7 +747,7 @@ _Type de séance._
 
 URI: [ops:MeetingTypeEnum](https://ch.paf.link/schema/operations/MeetingTypeEnum)
 
-### Valeurs admissibles
+#### Valeurs admissibles
 | Valeur | Description |
 |------------------------|----------------------------------------------------------------------------|
 | session |  Séance plénière de l'ensemble du parlement ou d'une chambre.  |
@@ -767,7 +767,7 @@ URI: [ops:MeetingTypeEnum](https://ch.paf.link/schema/operations/MeetingTypeEnum
 
 </div>
 
-## Enum: StateEnum []{#StateEnum}
+### Enum: StateEnum []{#StateEnum}
 
 
 
@@ -781,7 +781,7 @@ _État de la séance._
 
 URI: [ops:StateEnum](https://ch.paf.link/schema/operations/StateEnum)
 
-### Valeurs admissibles
+#### Valeurs admissibles
 | Valeur | Description |
 |------------------------|----------------------------------------------------------------------------|
 | planned |  La séance est planifiée et se tiendra comme prévu.  |
@@ -790,270 +790,6 @@ URI: [ops:StateEnum](https://ch.paf.link/schema/operations/StateEnum)
 | | [ops:enum/state/canceled](ops:enum/state/canceled) |
 | postponed |  La séance a été reportée.  |
 | | [ops:enum/state/postponed](ops:enum/state/postponed) |
-
-
-
-
-
-
-
-</div>
-
-# Présence et interventions
-
-Outre les décisions formelles, la norme documente également la participation aux séances et les débats menés. Les listes de présence consignent qui a participé à une séance, tandis que les interventions retiennent le débat parlementaire au moyen d'enregistrements textuels et médiatiques.
-
-## Attendance (présence)
-
-## Notion et signification
-
-L'Attendance (présence) saisit quels membres d'un organe parlementaire étaient présents, absents ou excusés lors d'une séance. Elle sert à documenter la participation et constitue la condition du quorum.
-
-## Structure à deux niveaux
-
-La norme distingue deux niveaux de saisie de la présence :
-
-### 1. Attendance (niveau agrégé)
-Récapitulation de la présence pour une séance :
-- Nombre total de personnes présentes
-- Nombre total de personnes absentes (excusées / non excusées)
-- Quorum
-
-### 2. IndividualAttendance (niveau individuel)
-Saisie détaillée pour chaque personne :
-- Qui était présent ?
-- Qui était absent ?
-- L'absence était-elle excusée ?
-
-```
-Meeting (séance du Conseil national du 4 mars 2024)
-  └─ Attendance (présence agrégée)
-      ├─ IndividualAttendance (personne A : présente)
-      ├─ IndividualAttendance (personne B : excusée)
-      ├─ IndividualAttendance (personne C : absente)
-      └─ ...
-```
-
-## Attendance (niveau agrégé)
-
-### Rattachement à la séance et à l'organe
-
-- **parent_meeting** : renvoi à la séance à laquelle se rapporte la liste de présence
-- **actor_id** : renvoi à l'organe (parlement, commission) selon eCH-0294 Actors
-- **datetime_begin** : moment de la constatation de la présence
-
-### Chiffres agrégés
-
-- **total_count** : nombre total de membres de l'organe (valeur de référence pour le calcul du quorum, p. ex. 200 pour le Conseil national, 46 pour le Conseil des États)
-- **total_present** : nombre de membres présents
-- **total_excused** : nombre de membres excusés
-- **total_absent** : nombre de membres absents non excusés
-
-**Exemple :**
-- Total : 200
-- Présents : 185
-- Excusés : 12
-- Absents : 3
-
-### Quorum
-
-Le quorum résulte du rapport entre `total_present` et `total_count` ainsi que des règles de quorum propres à l'organe. Il n'est donc pas enregistré comme champ distinct, mais calculé au besoin à partir des données.
-
-## IndividualAttendance (niveau individuel)
-
-### Lien
-
-- **parent_attendance** : renvoi à l'agrégat `Attendance` de rang supérieur (lui-même rattaché à la séance). La saisie individuelle est ainsi proprement rattachée à la séance.
-- **actor_id** : renvoi à la personne selon eCH-0294 Actors
-
-### Type de présence
-
-Le champ **attendance_type** (énumération `AttendanceTypeEnum`) saisit le type de présence :
-
-- **present** : présent en personne
-- **remote** : présent à distance (p. ex. visioconférence)
-- **substitute** : suppléance — une autre personne a participé en remplacement
-
-> La modélisation de la suppléance (p. ex. qui a remplacé qui, avec quel droit de vote) est approfondie dans l'[issue #24](https://github.com/swiss/political-affairs-ech-group/issues/24).
->
-> Un deuxième axe d'état `present` / `excused` / `absent` (« si présent ») parallèle à l'axe existant « comment présent » est en discussion comme extension.
-
-### Motif
-
-Le champ **reason** (multilingue) permet de saisir en texte libre le motif d'une absence ou d'un retard.
-
-## Différence : Attendance et IndividualVote
-
-Distinction importante :
-
-| Aspect | Attendance | IndividualVote |
-|--------|------------|----------------|
-| Saisit | Présence à la séance | Expression de la voix lors d'un vote |
-| Moment | Début / durant la séance | Moment du vote |
-| Granularité | Par séance | Par vote |
-
-**Exemple :** une personne peut être présente à la séance (Attendance : present), mais être enregistrée comme absente lors d'un vote déterminé (IndividualVote : absent), parce qu'elle a brièvement quitté la salle à ce moment-là.
-
-## Utilisations
-
-Les entités Attendance permettent :
-
-1. **Documentation** : saisie traçable de la participation
-2. **Vérification du quorum** : garantie de la capacité de décision
-3. **Transparence** : information publique sur la présence
-4. **Reddition de comptes** : contrôle de l'exécution des obligations
-5. **Statistiques** : évaluation des taux de présence
-6. **Administration** : calcul des indemnités et des frais
-
-
-
-## Classe: Attendance []{#Attendance}
-
-
-_Liste de présence agrégée pour une séance (nombre de membres présents, absents, excusés)._
-
-
-
-
-<div data-search-exclude markdown="1">
-
-
-
-
-### Attributs
-
-| Nom | Cardinalité et plage | Description |
-|------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
-| parent_meeting | 0..1 <br/> String | Identifiant de la séance liée qui regroupe la séance courante.  |
-| datetime_begin | 0..1 <br/> Datetime | La date et l'heure auxquelles la séance ou le vote commence.  |
-| actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Référence à l'organe agissant (instantané au moment de la mise en relation).  |
-| total_count | 0..1 <br/> Integer | Nombre total de membres de l'organe (valeur de référence pour le calcul du quorum).  |
-| total_present | 0..1 <br/> Integer | Nombre total de membres présents.  |
-| total_absent | 0..1 <br/> Integer | Nombre total de membres absents. La distinction entre absent et absent excusé se fait dans la liste de présence.  |
-| total_excused | 0..1 <br/> Integer | Nombre total d'absences excusées.  |
-| date_created | 0..1 <br/> Date | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_created | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
-| date_modified | 0..1 <br/> Date | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_modified | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
-
-
-
-
-
-### Utilisations
-
-| Utilisé par | Dans le slot | Rôle | Élément |
-| ---  | --- | --- | --- |
-| [Container](#Container) | attendances | range | [Attendance](#Attendance) |
-| [IndividualAttendance](#IndividualAttendance) | parent_attendance | range | [Attendance](#Attendance) |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-
-
-
-## Classe: IndividualAttendance []{#IndividualAttendance}
-
-
-_Constatation individuelle de la présence d'une personne à une séance (rattachée à l'agrégat Attendance parent)._
-
-
-
-
-<div data-search-exclude markdown="1">
-
-
-
-
-### Attributs
-
-| Nom | Cardinalité et plage | Description |
-|------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
-| parent_attendance | 0..1 <br/> [Attendance](#Attendance) | L'agrégat Attendance auquel appartient cette constatation individuelle de présence.  |
-| actor_id | 0..1 <br/> [PersonReference](#PersonReference) | Référence à la personne agissante (instantané au moment de la mise en relation).  |
-| attendance_type | 0..1 <br/> [AttendanceTypeEnum](#AttendanceTypeEnum) | Type de présence individuelle.  |
-| reason | * <br/> [MultilingualString](#MultilingualString) | Motif de l'absence ou du retard (texte libre, multilingue).  |
-| date_created | 0..1 <br/> Date | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_created | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
-| date_modified | 0..1 <br/> Date | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_modified | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
-
-
-
-
-
-### Utilisations
-
-| Utilisé par | Dans le slot | Rôle | Élément |
-| ---  | --- | --- | --- |
-| [Container](#Container) | individual_attendances | range | [IndividualAttendance](#IndividualAttendance) |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-
-## Enum: AttendanceTypeEnum []{#AttendanceTypeEnum}
-
-
-
-
-_Type de présence individuelle._
-
-
-
-
-<div data-search-exclude markdown="1">
-
-URI: [ops:AttendanceTypeEnum](https://ch.paf.link/schema/operations/AttendanceTypeEnum)
-
-### Valeurs admissibles
-| Valeur | Description |
-|------------------------|----------------------------------------------------------------------------|
-| remote |  Participation à distance  |
-| | [ops:enum/attendance_type/remote](ops:enum/attendance_type/remote) |
-| substitute |  Suppléance  |
-| | [ops:enum/attendance_type/substitute](ops:enum/attendance_type/substitute) |
-| present |  Présent en personne  |
-| | [ops:enum/attendance_type/present](ops:enum/attendance_type/present) |
 
 
 
@@ -1220,7 +956,7 @@ Un AgendaItem est le maillon central entre :
 
 
 
-## Classe: AgendaItem []{#AgendaItem}
+### Classe: AgendaItem []{#AgendaItem}
 
 
 _Un point de l'ordre du jour d'une séance._
@@ -1233,7 +969,7 @@ _Un point de l'ordre du jour d'une séance._
 
 
 
-### Attributs
+#### Attributs
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
@@ -1274,7 +1010,7 @@ _Un point de l'ordre du jour d'une séance._
 
 
 
-### Utilisations
+#### Utilisations
 
 | Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
@@ -1294,8 +1030,8 @@ _Un point de l'ordre du jour d'une séance._
 
 
 
-### Exemples
-#### Exemple AgendaItem : Point de l'ordre du jour budgétaire
+#### Exemples
+##### Exemple AgendaItem : Point de l'ordre du jour budgétaire
 
 ```yaml
 agenda_items:
@@ -1319,7 +1055,7 @@ agenda_items:
   datetime_modified: '2025-11-20T16:50:00Z'
 
 ```
-#### Exemple AgendaItem : Motion dans un groupe de points de l'ordre du jour
+##### Exemple AgendaItem : Motion within a group of agenda items
 
 ```yaml
 agenda_items:
@@ -1340,7 +1076,7 @@ agenda_items:
   datetime_modified: '2025-05-02T11:23:49Z'
 
 ```
-#### Exemple AgendaItem : Point de l'ordre du jour d'une séance du Conseil des États
+##### Exemple AgendaItem : Agenda item of a Council of States sitting
 
 ```yaml
 agenda_items:
@@ -1364,7 +1100,7 @@ agenda_items:
   datetime_modified: '2026-01-12T00:00:00+01:00'
 
 ```
-#### Exemple AgendaItem : Postulat, catégorie « voting »
+##### Exemple AgendaItem : Postulate category voting
 
 ```yaml
 agenda_items:
@@ -1390,7 +1126,7 @@ agenda_items:
   datetime_modified: '2025-01-29T06:59:41Z'
 
 ```
-#### Exemple AgendaItem : Interpellation d'un groupe parlementaire
+##### Exemple AgendaItem : Interpellation of a parliamentary group
 
 ```yaml
 agenda_items:
@@ -1414,7 +1150,7 @@ agenda_items:
   datetime_modified: '2025-01-17T21:25:52Z'
 
 ```
-#### Exemple AgendaItem : Pétition comme point de l'ordre du jour
+##### Exemple AgendaItem : Petition as an agenda item
 
 ```yaml
 agenda_items:
@@ -1436,7 +1172,7 @@ agenda_items:
   datetime_modified: '2025-04-25T11:11:40Z'
 
 ```
-#### Exemple AgendaItem : Révision partielle de plusieurs ordonnances, en français
+##### Exemple AgendaItem : Partial revision of several ordinances in French
 
 ```yaml
 agenda_items:
@@ -1467,7 +1203,7 @@ agenda_items:
   datetime_modified: '2024-12-06T10:50:04Z'
 
 ```
-#### Exemple AgendaItem : Affaire matérielle sans catégorie de point
+##### Exemple AgendaItem : Substantive affair without an agenda category
 
 ```yaml
 agenda_items:
@@ -1484,7 +1220,7 @@ agenda_items:
   datetime_modified: '2025-03-29T01:07:14Z'
 
 ```
-#### Exemple AgendaItem : Discussion par article d'une loi
+##### Exemple AgendaItem : Detailed deliberation of an article of an act
 
 ```yaml
 agenda_items:
@@ -1513,7 +1249,7 @@ agenda_items:
   datetime_modified: '2025-05-12T15:20:00Z'
 
 ```
-#### Exemple AgendaItem : Interpellation comme point de l'ordre du jour
+##### Exemple AgendaItem : Interpellation as an agenda item
 
 ```yaml
 agenda_items:
@@ -1531,7 +1267,7 @@ agenda_items:
   datetime_modified: '2025-03-21T23:15:19Z'
 
 ```
-#### Exemple AgendaItem : Affaire matérielle issue d'un système d'information parlementaire cantonal
+##### Exemple AgendaItem : Substantive affair from a cantonal parliamentary information system
 
 ```yaml
 agenda_items:
@@ -1547,7 +1283,7 @@ agenda_items:
   datetime_modified: '2025-04-25T11:10:35Z'
 
 ```
-#### Exemple AgendaItem : Point de l'ordre du jour avec vote final
+##### Exemple AgendaItem : Agenda item with a final vote
 
 ```yaml
 agenda_items:
@@ -1571,7 +1307,7 @@ agenda_items:
   datetime_modified: '2025-03-15T14:35:00Z'
 
 ```
-#### Exemple AgendaItem : Motion populaire dans un groupe de points de l'ordre du jour
+##### Exemple AgendaItem : Popular motion within a group of agenda items
 
 ```yaml
 agenda_items:
@@ -1594,7 +1330,7 @@ agenda_items:
   datetime_modified: '2025-05-02T11:23:49Z'
 
 ```
-#### Exemple AgendaItem : Point de l'ordre du jour en français (postulat)
+##### Exemple AgendaItem : French-language agenda item postulate
 
 ```yaml
 agenda_items:
@@ -1620,7 +1356,7 @@ agenda_items:
   datetime_modified: '2025-02-08T12:33:10Z'
 
 ```
-#### Exemple AgendaItem : Postulat avec vote
+##### Exemple AgendaItem : Postulate with a voting
 
 ```yaml
 agenda_items:
@@ -1646,7 +1382,7 @@ agenda_items:
   datetime_modified: '2025-01-29T06:59:41Z'
 
 ```
-#### Exemple AgendaItem : Interpellation urgente, en français
+##### Exemple AgendaItem : Urgent interpellation in French
 
 ```yaml
 agenda_items:
@@ -1682,7 +1418,7 @@ agenda_items:
 
 </div>
 
-## Enum: AgendaItemTypeEnum []{#AgendaItemTypeEnum}
+### Enum: AgendaItemTypeEnum []{#AgendaItemTypeEnum}
 
 
 
@@ -1696,7 +1432,7 @@ _Type de point de l'ordre du jour, distinguant les points isolés des points reg
 
 URI: [ops:AgendaItemTypeEnum](https://ch.paf.link/schema/operations/AgendaItemTypeEnum)
 
-### Valeurs admissibles
+#### Valeurs admissibles
 | Valeur | Description |
 |------------------------|----------------------------------------------------------------------------|
 | item |  Point isolé de l'ordre du jour  |
@@ -1731,7 +1467,7 @@ Meeting
 
 
 
-## Classe: Protocol []{#Protocol}
+### Classe: Protocol []{#Protocol}
 
 
 _Le procès-verbal établi après la séance. Un conteneur qui regroupe les points effectivement traités (protocol_items), les votes, les interventions, les segments de texte in extenso et les documents liés._
@@ -1744,7 +1480,7 @@ _Le procès-verbal établi après la séance. Un conteneur qui regroupe les poin
 
 
 
-### Attributs
+#### Attributs
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
@@ -1766,7 +1502,7 @@ _Le procès-verbal établi après la séance. Un conteneur qui regroupe les poin
 
 
 
-### Utilisations
+#### Utilisations
 
 | Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
@@ -1799,7 +1535,7 @@ _Le procès-verbal établi après la séance. Un conteneur qui regroupe les poin
 
 
 
-## Classe: ProtocolItem []{#ProtocolItem}
+### Classe: ProtocolItem []{#ProtocolItem}
 
 
 _Un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-verbal._
@@ -1812,7 +1548,7 @@ _Un point de l'ordre du jour tel qu'il a effectivement été consigné au procè
 
 
 
-### Attributs
+#### Attributs
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
@@ -1853,7 +1589,7 @@ _Un point de l'ordre du jour tel qu'il a effectivement été consigné au procè
 
 
 
-### Utilisations
+#### Utilisations
 
 | Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
@@ -1887,7 +1623,7 @@ _Un point de l'ordre du jour tel qu'il a effectivement été consigné au procè
 
 
 
-## Classe: JointDebate []{#JointDebate}
+### Classe: JointDebate []{#JointDebate}
 
 
 _Points de l'ordre du jour traités conjointement._
@@ -1900,7 +1636,7 @@ _Points de l'ordre du jour traités conjointement._
 
 
 
-### Attributs
+#### Attributs
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
@@ -2100,7 +1836,7 @@ Dans les parlements multilingues (CH, BE, etc.), les textes de décision doivent
 
 
 
-## Classe: Resolution []{#Resolution}
+### Classe: Resolution []{#Resolution}
 
 
 _Une décision prise sur un point de l'ordre du jour, y compris les procédures de vote._
@@ -2113,7 +1849,7 @@ _Une décision prise sur un point de l'ordre du jour, y compris les procédures 
 
 
 
-### Attributs
+#### Attributs
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
@@ -2126,7 +1862,7 @@ _Une décision prise sur un point de l'ordre du jour, y compris les procédures 
 
 
 
-### Utilisations
+#### Utilisations
 
 | Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
@@ -2154,7 +1890,7 @@ _Une décision prise sur un point de l'ordre du jour, y compris les procédures 
 
 </div>
 
-## Enum: ResolutionTypeEnum []{#ResolutionTypeEnum}
+### Enum: ResolutionTypeEnum []{#ResolutionTypeEnum}
 
 
 
@@ -2168,7 +1904,7 @@ _Type de décision prise sur un point de l'ordre du jour._
 
 URI: [ops:ResolutionTypeEnum](https://ch.paf.link/schema/operations/ResolutionTypeEnum)
 
-### Valeurs admissibles
+#### Valeurs admissibles
 | Valeur | Description |
 |------------------------|----------------------------------------------------------------------------|
 | accepted |  Acceptation  |
@@ -2238,7 +1974,7 @@ AgendaItem (Loi sur l'énergie — art. 15)
 
 
 
-## Classe: Motion []{#Motion}
+### Classe: Motion []{#Motion}
 
 
 _Une proposition formelle déposée au cours des délibérations._
@@ -2251,7 +1987,7 @@ _Une proposition formelle déposée au cours des délibérations._
 
 
 
-### Attributs
+#### Attributs
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
@@ -2517,7 +2253,7 @@ Voting
 
 
 
-## Classe: Voting []{#Voting}
+### Classe: Voting []{#Voting}
 
 
 _Une procédure de vote avec les voix individuelles et les résultats._
@@ -2530,7 +2266,7 @@ _Une procédure de vote avec les voix individuelles et les résultats._
 
 
 
-### Attributs
+#### Attributs
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
@@ -2571,7 +2307,7 @@ _Une procédure de vote avec les voix individuelles et les résultats._
 
 
 
-### Utilisations
+#### Utilisations
 
 | Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
@@ -2592,8 +2328,8 @@ _Une procédure de vote avec les voix individuelles et les résultats._
 
 
 
-### Exemples
-#### Exemple Voting : Vote intermédiaire sur une proposition de modification
+#### Exemples
+##### Exemple Voting : Vote intermédiaire sur une proposition de modification
 
 ```yaml
 votings:
@@ -2626,7 +2362,7 @@ votings:
   datetime_modified: '2025-06-05T10:15:00Z'
 
 ```
-#### Exemple Voting : Vote final avec voix individuelles
+##### Exemple Voting : Final vote with individual votes
 
 ```yaml
 votings:
@@ -2657,7 +2393,7 @@ votings:
   datetime_modified: '2025-03-15T14:35:00Z'
 
 ```
-#### Exemple Voting : Vote final sur le budget
+##### Exemple Voting : Final vote on the budget
 
 ```yaml
 votings:
@@ -2688,7 +2424,7 @@ votings:
   datetime_modified: '2025-11-20T16:50:00Z'
 
 ```
-#### Exemple Voting : Propositions de même sens avec choix multiple
+##### Exemple Voting : Motions in the same direction with multiple choice
 
 ```yaml
 votings:
@@ -2740,7 +2476,7 @@ votings:
 
 </div>
 
-## Enum: VotingTypeEnum []{#VotingTypeEnum}
+### Enum: VotingTypeEnum []{#VotingTypeEnum}
 
 
 
@@ -2754,7 +2490,7 @@ _Type de procédure de vote._
 
 URI: [ops:VotingTypeEnum](https://ch.paf.link/schema/operations/VotingTypeEnum)
 
-### Valeurs admissibles
+#### Valeurs admissibles
 | Valeur | Description |
 |------------------------|----------------------------------------------------------------------------|
 | preliminary_vote |  Vote intermédiaire  |
@@ -2776,7 +2512,7 @@ URI: [ops:VotingTypeEnum](https://ch.paf.link/schema/operations/VotingTypeEnum)
 
 </div>
 
-## Enum: MajorityTypeEnum []{#MajorityTypeEnum}
+### Enum: MajorityTypeEnum []{#MajorityTypeEnum}
 
 
 
@@ -2790,7 +2526,7 @@ _Type de majorité requise pour le vote._
 
 URI: [ops:MajorityTypeEnum](https://ch.paf.link/schema/operations/MajorityTypeEnum)
 
-### Valeurs admissibles
+#### Valeurs admissibles
 | Valeur | Description |
 |------------------------|----------------------------------------------------------------------------|
 | absolute |  Majorité absolue.  |
@@ -2922,7 +2658,7 @@ Les entités IndividualVote ne sont saisies que lors des votes nominatifs (ouver
 
 
 
-## Classe: IndividualVote []{#IndividualVote}
+### Classe: IndividualVote []{#IndividualVote}
 
 
 _Une voix individuelle exprimée par un membre lors d'une procédure de vote._
@@ -2935,7 +2671,7 @@ _Une voix individuelle exprimée par un membre lors d'une procédure de vote._
 
 
 
-### Attributs
+#### Attributs
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
@@ -2957,7 +2693,7 @@ _Une voix individuelle exprimée par un membre lors d'une procédure de vote._
 
 
 
-### Utilisations
+#### Utilisations
 
 | Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
@@ -2976,8 +2712,8 @@ _Une voix individuelle exprimée par un membre lors d'une procédure de vote._
 
 
 
-### Exemples
-#### Exemple IndividualVote : Voix « oui »
+#### Exemples
+##### Exemple IndividualVote : Voix « oui »
 
 ```yaml
 individual_votes:
@@ -2991,7 +2727,7 @@ individual_votes:
   datetime_created: '2025-03-15T14:30:00Z'
 
 ```
-#### Exemple IndividualVote : Voix « non »
+##### Exemple IndividualVote : No vote
 
 ```yaml
 individual_votes:
@@ -3005,7 +2741,7 @@ individual_votes:
   datetime_created: '2025-03-15T14:30:00Z'
 
 ```
-#### Exemple IndividualVote : Abstention
+##### Exemple IndividualVote : Abstention
 
 ```yaml
 individual_votes:
@@ -3019,7 +2755,7 @@ individual_votes:
   datetime_created: '2025-03-15T14:30:00Z'
 
 ```
-#### Exemple IndividualVote : Absent lors d'un choix multiple
+##### Exemple IndividualVote : Absent in a multiple-choice voting
 
 ```yaml
 individual_votes:
@@ -3033,7 +2769,7 @@ individual_votes:
   datetime_created: '2024-02-28T00:00:00Z'
 
 ```
-#### Exemple IndividualVote : Voix « oui » sur le budget
+##### Exemple IndividualVote : Yes vote on the budget
 
 ```yaml
 individual_votes:
@@ -3047,7 +2783,7 @@ individual_votes:
   datetime_created: '2025-11-20T16:45:00Z'
 
 ```
-#### Exemple IndividualVote : Voix « non » sur le budget
+##### Exemple IndividualVote : No vote on the budget
 
 ```yaml
 individual_votes:
@@ -3061,7 +2797,7 @@ individual_votes:
   datetime_created: '2025-11-20T16:45:00Z'
 
 ```
-#### Exemple IndividualVote : N'a pas voté
+##### Exemple IndividualVote : Did not vote
 
 ```yaml
 individual_votes:
@@ -3075,7 +2811,7 @@ individual_votes:
   datetime_created: '2025-03-15T14:30:00Z'
 
 ```
-#### Exemple IndividualVote : Voix individuelle pour l'option C
+##### Exemple IndividualVote : Individual vote for selection option C
 
 ```yaml
 individual_votes:
@@ -3090,7 +2826,7 @@ individual_votes:
   datetime_created: '2024-02-28T00:00:00Z'
 
 ```
-#### Exemple IndividualVote : Voix individuelle pour l'option A
+##### Exemple IndividualVote : Individual vote for selection option A
 
 ```yaml
 individual_votes:
@@ -3105,7 +2841,7 @@ individual_votes:
   datetime_created: '2024-02-28T00:00:00Z'
 
 ```
-#### Exemple IndividualVote : Voix individuelle pour l'option B
+##### Exemple IndividualVote : Individual vote for selection option B
 
 ```yaml
 individual_votes:
@@ -3128,7 +2864,7 @@ individual_votes:
 
 </div>
 
-## Enum: IndividualVoteTypeEnum []{#IndividualVoteTypeEnum}
+### Enum: IndividualVoteTypeEnum []{#IndividualVoteTypeEnum}
 
 
 
@@ -3142,7 +2878,7 @@ _Type de voix individuelle exprimée par un membre._
 
 URI: [ops:IndividualVoteTypeEnum](https://ch.paf.link/schema/operations/IndividualVoteTypeEnum)
 
-### Valeurs admissibles
+#### Valeurs admissibles
 | Valeur | Description |
 |------------------------|----------------------------------------------------------------------------|
 | yes |  Voix favorable (oui)  |
@@ -3385,7 +3121,7 @@ En cas d'élections ouvertes :
 
 
 
-## Classe: Election []{#Election}
+### Classe: Election []{#Election}
 
 
 _Une procédure d'élection visant à pourvoir des fonctions par des personnes._
@@ -3398,7 +3134,7 @@ _Une procédure d'élection visant à pourvoir des fonctions par des personnes._
 
 
 
-### Attributs
+#### Attributs
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
@@ -3430,7 +3166,7 @@ _Une procédure d'élection visant à pourvoir des fonctions par des personnes._
 
 
 
-### Utilisations
+#### Utilisations
 
 | Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
@@ -3456,7 +3192,7 @@ _Une procédure d'élection visant à pourvoir des fonctions par des personnes._
 
 </div>
 
-## Enum: ElectionTypeEnum []{#ElectionTypeEnum}
+### Enum: ElectionTypeEnum []{#ElectionTypeEnum}
 
 
 
@@ -3470,7 +3206,7 @@ _Type de procédure d'élection._
 
 URI: [ops:ElectionTypeEnum](https://ch.paf.link/schema/operations/ElectionTypeEnum)
 
-### Valeurs admissibles
+#### Valeurs admissibles
 | Valeur | Description |
 |------------------------|----------------------------------------------------------------------------|
 | secret |  Élection à bulletin secret  |
@@ -3490,14 +3226,285 @@ URI: [ops:ElectionTypeEnum](https://ch.paf.link/schema/operations/ElectionTypeEn
 
 \newpage
 
+# Présence
+
+Les listes de présence consignent qui a participé à une séance. Elles documentent la participation et constituent la base permettant d'apprécier la capacité de décision d'un organe.
+
+## Attendance (présence)
+
+## Notion et signification
+
+L'Attendance (présence) saisit quels membres d'un organe parlementaire étaient présents, absents ou excusés lors d'une séance. Elle sert à documenter la participation et constitue la condition du quorum.
+
+## Structure à deux niveaux
+
+La norme distingue deux niveaux de saisie de la présence :
+
+### 1. Attendance (niveau agrégé)
+Récapitulation de la présence pour une séance :
+- Nombre total de personnes présentes
+- Nombre total de personnes absentes (excusées / non excusées)
+- Quorum
+
+### 2. IndividualAttendance (niveau individuel)
+Saisie détaillée pour chaque personne :
+- Qui était présent ?
+- Qui était absent ?
+- L'absence était-elle excusée ?
+
+```
+Meeting (séance du Conseil national du 4 mars 2024)
+  └─ Attendance (présence agrégée)
+      ├─ IndividualAttendance (personne A : présente)
+      ├─ IndividualAttendance (personne B : excusée)
+      ├─ IndividualAttendance (personne C : absente)
+      └─ ...
+```
+
+## Attendance (niveau agrégé)
+
+### Rattachement à la séance et à l'organe
+
+- **parent_meeting** : renvoi à la séance à laquelle se rapporte la liste de présence
+- **actor_id** : renvoi à l'organe (parlement, commission) selon eCH-0294 Actors
+- **datetime_begin** : moment de la constatation de la présence
+
+### Chiffres agrégés
+
+- **total_count** : nombre total de membres de l'organe (valeur de référence pour le calcul du quorum, p. ex. 200 pour le Conseil national, 46 pour le Conseil des États)
+- **total_present** : nombre de membres présents
+- **total_excused** : nombre de membres excusés
+- **total_absent** : nombre de membres absents non excusés
+
+**Exemple :**
+- Total : 200
+- Présents : 185
+- Excusés : 12
+- Absents : 3
+
+### Quorum
+
+Le quorum résulte du rapport entre `total_present` et `total_count` ainsi que des règles de quorum propres à l'organe. Il n'est donc pas enregistré comme champ distinct, mais calculé au besoin à partir des données.
+
+## IndividualAttendance (niveau individuel)
+
+### Lien
+
+- **parent_attendance** : renvoi à l'agrégat `Attendance` de rang supérieur (lui-même rattaché à la séance). La saisie individuelle est ainsi proprement rattachée à la séance.
+- **actor_id** : renvoi à la personne selon eCH-0294 Actors
+
+### Type de présence
+
+Le champ **attendance_type** (énumération `AttendanceTypeEnum`) saisit le type de présence :
+
+- **present** : présent en personne
+- **remote** : présent à distance (p. ex. visioconférence)
+- **substitute** : suppléance — une autre personne a participé en remplacement
+
+> La modélisation de la suppléance (p. ex. qui a remplacé qui, avec quel droit de vote) est approfondie dans l'[issue #24](https://github.com/swiss/political-affairs-ech-group/issues/24).
+>
+> Un deuxième axe d'état `present` / `excused` / `absent` (« si présent ») parallèle à l'axe existant « comment présent » est en discussion comme extension.
+
+### Motif
+
+Le champ **reason** (multilingue) permet de saisir en texte libre le motif d'une absence ou d'un retard.
+
+## Différence : Attendance et IndividualVote
+
+Distinction importante :
+
+| Aspect | Attendance | IndividualVote |
+|--------|------------|----------------|
+| Saisit | Présence à la séance | Expression de la voix lors d'un vote |
+| Moment | Début / durant la séance | Moment du vote |
+| Granularité | Par séance | Par vote |
+
+**Exemple :** une personne peut être présente à la séance (Attendance : present), mais être enregistrée comme absente lors d'un vote déterminé (IndividualVote : absent), parce qu'elle a brièvement quitté la salle à ce moment-là.
+
+## Utilisations
+
+Les entités Attendance permettent :
+
+1. **Documentation** : saisie traçable de la participation
+2. **Vérification du quorum** : garantie de la capacité de décision
+3. **Transparence** : information publique sur la présence
+4. **Reddition de comptes** : contrôle de l'exécution des obligations
+5. **Statistiques** : évaluation des taux de présence
+6. **Administration** : calcul des indemnités et des frais
+
+
+
+### Classe: Attendance []{#Attendance}
+
+
+_Liste de présence agrégée pour une séance (nombre de membres présents, absents, excusés)._
+
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attributs
+
+| Nom | Cardinalité et plage | Description |
+|------------------------|----------------------|------------------------------------------------------|
+| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| parent_meeting | 0..1 <br/> String | Identifiant de la séance liée qui regroupe la séance courante.  |
+| datetime_begin | 0..1 <br/> Datetime | La date et l'heure auxquelles la séance ou le vote commence.  |
+| actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Référence à l'organe agissant (instantané au moment de la mise en relation).  |
+| total_count | 0..1 <br/> Integer | Nombre total de membres de l'organe (valeur de référence pour le calcul du quorum).  |
+| total_present | 0..1 <br/> Integer | Nombre total de membres présents.  |
+| total_absent | 0..1 <br/> Integer | Nombre total de membres absents. La distinction entre absent et absent excusé se fait dans la liste de présence.  |
+| total_excused | 0..1 <br/> Integer | Nombre total d'absences excusées.  |
+| date_created | 0..1 <br/> Date | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_created | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| date_modified | 0..1 <br/> Date | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_modified | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+
+
+
+
+
+#### Utilisations
+
+| Utilisé par | Dans le slot | Rôle | Élément |
+| ---  | --- | --- | --- |
+| [Container](#Container) | attendances | range | [Attendance](#Attendance) |
+| [IndividualAttendance](#IndividualAttendance) | parent_attendance | range | [Attendance](#Attendance) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+### Classe: IndividualAttendance []{#IndividualAttendance}
+
+
+_Constatation individuelle de la présence d'une personne à une séance (rattachée à l'agrégat Attendance parent)._
+
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attributs
+
+| Nom | Cardinalité et plage | Description |
+|------------------------|----------------------|------------------------------------------------------|
+| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| parent_attendance | 0..1 <br/> [Attendance](#Attendance) | L'agrégat Attendance auquel appartient cette constatation individuelle de présence.  |
+| actor_id | 0..1 <br/> [PersonReference](#PersonReference) | Référence à la personne agissante (instantané au moment de la mise en relation).  |
+| attendance_type | 0..1 <br/> [AttendanceTypeEnum](#AttendanceTypeEnum) | Type de présence individuelle.  |
+| reason | * <br/> [MultilingualString](#MultilingualString) | Motif de l'absence ou du retard (texte libre, multilingue).  |
+| date_created | 0..1 <br/> Date | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_created | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| date_modified | 0..1 <br/> Date | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_modified | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+
+
+
+
+
+#### Utilisations
+
+| Utilisé par | Dans le slot | Rôle | Élément |
+| ---  | --- | --- | --- |
+| [Container](#Container) | individual_attendances | range | [IndividualAttendance](#IndividualAttendance) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+### Enum: AttendanceTypeEnum []{#AttendanceTypeEnum}
+
+
+
+
+_Type de présence individuelle._
+
+
+
+
+<div data-search-exclude markdown="1">
+
+URI: [ops:AttendanceTypeEnum](https://ch.paf.link/schema/operations/AttendanceTypeEnum)
+
+#### Valeurs admissibles
+| Valeur | Description |
+|------------------------|----------------------------------------------------------------------------|
+| remote |  Participation à distance  |
+| | [ops:enum/attendance_type/remote](ops:enum/attendance_type/remote) |
+| substitute |  Suppléance  |
+| | [ops:enum/attendance_type/substitute](ops:enum/attendance_type/substitute) |
+| present |  Présent en personne  |
+| | [ops:enum/attendance_type/present](ops:enum/attendance_type/present) |
+
+
+
+
+
+
+
+</div>
+
+\newpage
+
 <!-- ToDo: David -->
 
-
+<!--
 Débat
 
 * -> Enregistrement vidéo -> transcription des propos
 *   -> Procès-verbal in extenso -> Text to Timestamp -> le texte contient les horodatages -> document texte (avec ou sans définition du format (types de span))
 *   -> Procès-verbal remanié -> AgendaItem to Timestamp
+-->
+
+# Interventions
+
+Les interventions consignent le débat parlementaire — qui a pris la parole, quand et sur quel point de l'ordre du jour, avec le texte in extenso et, lorsqu'il existe, l'enregistrement audio ou vidéo.
 
 ## Speech (intervention, prise de parole)
 
@@ -3638,7 +3645,7 @@ Le champ **speech_type** permet de distinguer différents types :
 
 
 
-## Classe: Speech []{#Speech}
+### Classe: Speech []{#Speech}
 
 
 _Une intervention prononcée au cours d'une séance (également appelée prise de parole)._
@@ -3651,7 +3658,7 @@ _Une intervention prononcée au cours d'une séance (également appelée prise d
 
 
 
-### Attributs
+#### Attributs
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
@@ -3682,7 +3689,7 @@ _Une intervention prononcée au cours d'une séance (également appelée prise d
 
 
 
-### Utilisations
+#### Utilisations
 
 | Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
@@ -3702,8 +3709,8 @@ _Une intervention prononcée au cours d'une séance (également appelée prise d
 
 
 
-### Exemples
-#### Exemple Speech : Intervention avec texte in extenso et enregistrement vidéo
+#### Exemples
+##### Exemple Speech : Intervention avec texte in extenso et enregistrement vidéo
 
 ```yaml
 speeches:
@@ -3742,6 +3749,7 @@ speeches:
 
 </div>
 
+\newpage
 
 # Textes et médias
 
@@ -3823,7 +3831,7 @@ Meeting
 
 
 
-## Classe: TextSegment []{#TextSegment}
+### Classe: TextSegment []{#TextSegment}
 
 
 _Un segment de texte tel qu'un renvoi ou un intertitre dans un procès-verbal de séance._
@@ -3836,7 +3844,7 @@ _Un segment de texte tel qu'un renvoi ou un intertitre dans un procès-verbal de
 
 
 
-### Attributs
+#### Attributs
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
@@ -3849,7 +3857,7 @@ _Un segment de texte tel qu'un renvoi ou un intertitre dans un procès-verbal de
 
 
 
-### Utilisations
+#### Utilisations
 
 | Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
@@ -3877,7 +3885,7 @@ _Un segment de texte tel qu'un renvoi ou un intertitre dans un procès-verbal de
 
 
 
-## Classe: Media []{#Media}
+### Classe: Media []{#Media}
 
 
 _Fichiers médias ou documents (y compris les procès-verbaux en PDF/HTML/WORD ou les liens vers des contenus audio/vidéo)._
@@ -3890,7 +3898,7 @@ _Fichiers médias ou documents (y compris les procès-verbaux en PDF/HTML/WORD o
 
 
 
-### Attributs
+#### Attributs
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
@@ -3928,7 +3936,7 @@ _Fichiers médias ou documents (y compris les procès-verbaux en PDF/HTML/WORD o
 
 
 
-## Classe: MultilingualString []{#MultilingualString}
+### Classe: MultilingualString []{#MultilingualString}
 
 
 _Une chaîne de caractères pouvant contenir du texte en plusieurs langues._
@@ -3941,7 +3949,7 @@ _Une chaîne de caractères pouvant contenir du texte en plusieurs langues._
 
 
 
-### Attributs
+#### Attributs
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
@@ -3952,7 +3960,7 @@ _Une chaîne de caractères pouvant contenir du texte en plusieurs langues._
 
 
 
-### Utilisations
+#### Utilisations
 
 | Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
@@ -3993,7 +4001,7 @@ _Une chaîne de caractères pouvant contenir du texte en plusieurs langues._
 
 
 
-## Classe: Container []{#Container}
+### Classe: Container []{#Container}
 
 
 _Conteneur pour les données de l'activité publique des conseils : législatures, sessions, séances, points de l'ordre du jour, procès-verbaux, votes, élections, présences, interventions et décisions._
@@ -4006,7 +4014,7 @@ _Conteneur pour les données de l'activité publique des conseils : législature
 
 
 
-### Attributs
+#### Attributs
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
@@ -4042,8 +4050,8 @@ _Conteneur pour les données de l'activité publique des conseils : législature
 
 
 
-### Exemples
-#### Exemple Container : meeting
+#### Exemples
+##### Exemple Container : meeting
 
 ```yaml
 global_uri: ops:meetings_1
@@ -4097,7 +4105,7 @@ meetings:
     datetime_modified: "2025-05-19T01:06:45Z"
 
 ```
-#### Exemple Container : meeting sr winter25 Sitzung6
+##### Exemple Container : meeting sr winter25 Sitzung6
 
 ```yaml
 global_uri: ops:data_meeting_sr_winter25_Sitzung6
@@ -4168,7 +4176,7 @@ speeches:
     media_format: "video/mp4"
 
 ```
-#### Exemple Container : meeting complete
+##### Exemple Container : meeting complete
 
 ```yaml
 global_uri: ops:meeting_examples_2025
@@ -4319,7 +4327,7 @@ agenda_items:
   datetime_modified: "2025-11-20T16:50:00Z"
 
 ```
-#### Exemple Container : legislature
+##### Exemple Container : legislature
 
 ```yaml
 global_uri: ops:legislature_examples
@@ -4395,7 +4403,7 @@ legislatures:
   datetime_modified: "2025-01-08T11:20:00+01:00"
 
 ```
-#### Exemple Container : meeting item
+##### Exemple Container : meeting item
 
 ```yaml
 global_uri: ops:agenda_items_1
@@ -4613,7 +4621,7 @@ agenda_items:
     datetime_modified: '2025-01-29T06:59:41Z'
 
 ```
-#### Exemple Container : voting
+##### Exemple Container : voting
 
 ```yaml
 global_uri: ops:voting_examples_2025
@@ -4840,7 +4848,7 @@ individual_votes:
   datetime_created: "2025-11-20T16:45:00Z"
 
 ```
-#### Exemple Container : session
+##### Exemple Container : session
 
 ```yaml
 global_uri: ops:sessions_example_2025
@@ -4938,7 +4946,7 @@ Contrairement à une entité, une référence n'est pas identifiée en propre �
 
 
 
-## Classe: PersonReference []{#PersonReference}
+### Classe: PersonReference []{#PersonReference}
 
 
 _Référence abrégée à une personne avec les principales données d'identification au moment de la liaison. Préserve l'exactitude historique même si la personne change ultérieurement. La personne référencée est désignée par `local_id` ou `global_uri` ; au moins l'un des deux est requis._
@@ -4951,7 +4959,7 @@ _Référence abrégée à une personne avec les principales données d'identific
 
 
 
-### Attributs
+#### Attributs
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
@@ -4962,7 +4970,7 @@ _Référence abrégée à une personne avec les principales données d'identific
 | label_long | 0..1 <br/> String | Nom d'affichage long facultatif comprenant les titres académiques et le nom officiel complet (par ex. « Dr. Maria Muster-Beispiel »).  |
 | group_label | 0..1 <br/> String | Nom de l'organe/du groupe au moment de la liaison.  |
 
-##### Contraintes
+###### Contraintes
 
 
 Au moins l'un des champs suivants doit être renseigné :
@@ -4979,7 +4987,7 @@ Au moins l'un des champs suivants doit être renseigné :
 
 
 
-### Utilisations
+#### Utilisations
 
 | Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
@@ -5009,7 +5017,7 @@ Au moins l'un des champs suivants doit être renseigné :
 
 
 
-## Classe: GroupReference []{#GroupReference}
+### Classe: GroupReference []{#GroupReference}
 
 
 _Référence abrégée à un groupe avec les principales données d'identification au moment de la liaison. Le groupe référencé est désigné par `local_id` ou `global_uri` ; au moins l'un des deux est requis. Un `local_id` est résolu au sein de la même livraison, un `global_uri` également au-delà._
@@ -5022,7 +5030,7 @@ _Référence abrégée à un groupe avec les principales données d'identificati
 
 
 
-### Attributs
+#### Attributs
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
@@ -5032,7 +5040,7 @@ _Référence abrégée à un groupe avec les principales données d'identificati
 | label | 0..1 <br/> String | Attribuer un label à une information structurée (par ex. nom d'affichage, poste, etc.).  |
 | abbreviation | * <br/> MultilingualValue | Abréviation (peut être multilingue).  |
 
-##### Contraintes
+###### Contraintes
 
 
 Au moins l'un des champs suivants doit être renseigné :
@@ -5049,7 +5057,7 @@ Au moins l'un des champs suivants doit être renseigné :
 
 
 
-### Utilisations
+#### Utilisations
 
 | Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
@@ -5088,7 +5096,7 @@ Un mixin n'est pas une superclasse : aucune instance d'une classe mixin n'est cr
 
 
 
-## Classe: HasIdentification []{#HasIdentification}
+### Classe: HasIdentification []{#HasIdentification}
 
 
 _Une classe mixin qui fournit des slots pour l'identification d'une entité. Elle est utilisée pour les entités identifiées en propre ; leur `global_uri` constitue l'identifiant et est donc obligatoire._
@@ -5101,7 +5109,7 @@ _Une classe mixin qui fournit des slots pour l'identification d'une entité. Ell
 
 
 
-### Attributs
+#### Attributs
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
@@ -5111,7 +5119,7 @@ _Une classe mixin qui fournit des slots pour l'identification d'une entité. Ell
 
 
 
-### Utilisation de mixin
+#### Utilisation de mixin
 
 [Container](#Container), [Legislature](#Legislature), [Session](#Session), [Meeting](#Meeting), [AgendaItem](#AgendaItem), [Protocol](#Protocol), [Voting](#Voting), [IndividualVote](#IndividualVote), [Election](#Election), [Attendance](#Attendance), [IndividualAttendance](#IndividualAttendance), [Speech](#Speech), [TextSegment](#TextSegment), [Motion](#Motion), [Media](#Media)
 
@@ -5139,7 +5147,7 @@ _Une classe mixin qui fournit des slots pour l'identification d'une entité. Ell
 
 
 
-## Classe: HasCreationModificationDates []{#HasCreationModificationDates}
+### Classe: HasCreationModificationDates []{#HasCreationModificationDates}
 
 
 _Une classe mixin qui fournit des slots pour modéliser les dates de création et de modification d'une entité._
@@ -5152,7 +5160,7 @@ _Une classe mixin qui fournit des slots pour modéliser les dates de création e
 
 
 
-### Attributs
+#### Attributs
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
@@ -5163,7 +5171,7 @@ _Une classe mixin qui fournit des slots pour modéliser les dates de création e
 
 
 
-### Utilisation de mixin
+#### Utilisation de mixin
 
 [Legislature](#Legislature), [Session](#Session), [Meeting](#Meeting), [AgendaItem](#AgendaItem), [Protocol](#Protocol), [Voting](#Voting), [IndividualVote](#IndividualVote), [Election](#Election), [Attendance](#Attendance), [IndividualAttendance](#IndividualAttendance), [Speech](#Speech)
 
@@ -5191,7 +5199,7 @@ _Une classe mixin qui fournit des slots pour modéliser les dates de création e
 
 
 
-## Classe: IsEventWithDuration []{#IsEventWithDuration}
+### Classe: IsEventWithDuration []{#IsEventWithDuration}
 
 
 _Une classe mixin qui fournit des slots pour modéliser des événements ou occurrences avec une durée._
@@ -5204,7 +5212,7 @@ _Une classe mixin qui fournit des slots pour modéliser des événements ou occu
 
 
 
-### Attributs
+#### Attributs
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
@@ -5219,7 +5227,7 @@ _Une classe mixin qui fournit des slots pour modéliser des événements ou occu
 
 
 
-### Utilisation de mixin
+#### Utilisation de mixin
 
 [Legislature](#Legislature), [Session](#Session), [Meeting](#Meeting), [AgendaItem](#AgendaItem)
 
