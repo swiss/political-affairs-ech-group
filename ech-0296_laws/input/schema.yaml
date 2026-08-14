@@ -229,7 +229,7 @@ classes:
       description_de: |
         Ein Datumseintrag einer FRBR-Entität (akn:FRBRdate). Das @name-Attribut verwendet Fedlex/JoLux-Vokabular: jolux:dateEntryInForce, jolux:dateDocument, jolux:dateApplicability.
     slots:
-    - date
+    - date_value
     - frbr_date_name
     exact_mappings:
     - akn:FRBRdate
@@ -1060,7 +1060,7 @@ slots:
       xml_name: fedlex:generator
       xml_namespace: http://fedlex.admin.ch/
       schematron_rule: 'FLX-XF-002: generator only allowed on FRBRformat[@value=''xml'']'
-  date:
+  date_value:
     description: An ISO 8601 date value (akn:FRBRdate/@date).
     range: date
     annotations:
