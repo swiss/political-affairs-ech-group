@@ -131,6 +131,7 @@ classes:
     annotations:
       description_de: |
         Wurzelelement eines Fedlex AkomaNtoso-Dokuments (akn:akomaNtoso). Muss genau ein akn:act-Element enthalten, keine weiteren Kinder (FLX-RT-001). Trägt die AkomaNtoso-Namespace-Deklaration und den Fedlex-Erweiterungs-Namespace.
+      xml_element: akn:akomaNtoso
       xml_namespace: http://docs.oasis-open.org/legaldocml/ns/akn/3.0
       xml_namespace_fedlex: http://fedlex.admin.ch/
       schematron_rule: 'FLX-RT-001: The document root should only contain an act'
@@ -144,6 +145,7 @@ classes:
     annotations:
       description_de: |
         Das Erlasselement (akn:act). Hauptinhaltselement eines AkomaNtoso-Dokuments. Das @name-Attribut gibt den Erlasstyp an (z.B. 'publicLaw').
+      xml_element: akn:act
     slots:
     - act_name
     - meta
@@ -158,6 +160,7 @@ classes:
     annotations:
       description_de: |
         Metadaten-Abschnitt des Erlasses (akn:meta). Enthält die FRBR-Identifikation (Work-, Expression-, Manifestations-Ebene) sowie benannte Referenz-Definitionen.
+      xml_element: akn:meta
     slots:
     - identification_ref
     - references_ref
@@ -169,6 +172,7 @@ classes:
     annotations:
       description_de: |
         FRBR-Identifikationsblock (akn:identification) mit Work-, Expression- und Manifestations-Beschreibungen. Das @source-Attribut referenziert die verantwortliche Organisation als Dokument-internen Anker (z.B. '#ch.bk').
+      xml_element: akn:identification
     slots:
     - source
     - frbr_work
@@ -182,6 +186,7 @@ classes:
     annotations:
       description_de: |
         FRBR-Work-Ebene (akn:FRBRWork): der abstrakte Erlass unabhängig von Sprache und Version. Enthält ELI-URIs, Fedlex/JoLux-Daten, Autoren, Ländercode (CH), SR-Nummer und mehrsprachige Namen mit Kurzformen.
+      xml_element: akn:FRBRWork
     slots:
     - frbr_this
     - frbr_uri
@@ -199,6 +204,7 @@ classes:
     annotations:
       description_de: |
         FRBR-Expression-Ebene (akn:FRBRExpression): eine sprachspezifische Version des Erlasses. Identifiziert durch einen ELI-URI mit Sprachcode.
+      xml_element: akn:FRBRExpression
     slots:
     - frbr_this
     - frbr_uri
@@ -213,6 +219,7 @@ classes:
     annotations:
       description_de: |
         FRBR-Manifestations-Ebene (akn:FRBRManifestation): ein spezifisches Dateiformat der Expression. Für Fedlex XML-Dateien ist der Formatwert 'xml'. Das optionale Attribut fedlex:generator ist nur hier erlaubt (FLX-XF-002).
+      xml_element: akn:FRBRManifestation
       schematron_note: 'FLX-XF-002: fedlex:generator only allowed on FRBRformat[@value=''xml'']'
     slots:
     - frbr_this
@@ -228,6 +235,7 @@ classes:
     annotations:
       description_de: |
         Ein Datumseintrag einer FRBR-Entität (akn:FRBRdate). Das @name-Attribut verwendet Fedlex/JoLux-Vokabular: jolux:dateEntryInForce, jolux:dateDocument, jolux:dateApplicability.
+      xml_element: akn:FRBRdate
     slots:
     - date_value
     - frbr_date_name
@@ -239,6 +247,7 @@ classes:
     annotations:
       description_de: |
         Ein Autoren- oder Rechteinhaber-Eintrag einer FRBR-Entität (akn:FRBRauthor). @href referenziert die Organisation; @as referenziert die Rolle (beide als Dokument-interne Anker).
+      xml_element: akn:FRBRauthor
     slots:
     - href
     - as_role
@@ -250,6 +259,7 @@ classes:
     annotations:
       description_de: |
         Ein mehrsprachiger Namenseintrag des FRBR-Works (akn:FRBRname). Enthält den offiziellen Langtitel und eine optionale Abkürzung. Ein Eintrag pro Sprache.
+      xml_element: akn:FRBRname
     slots:
     - xml_lang
     - value
@@ -293,6 +303,7 @@ classes:
     annotations:
       description_de: |
         Benannte Referenz-Definitionen für das gesamte Dokument (akn:references). Definiert Organisationen, Rollen und andere Entitäten, die über Anker (@href='#eId') referenziert werden.
+      xml_element: akn:references
     slots:
     - source
     - tlc_organizations
@@ -306,6 +317,7 @@ classes:
     annotations:
       description_de: |
         Eine benannte Organisation als Referenz im Dokument (akn:TLCOrganization). Beispiel: die Bundeskanzlei (ch.bk).
+      xml_element: akn:TLCOrganization
     slots:
     - eId
     - href
@@ -318,6 +330,7 @@ classes:
     annotations:
       description_de: |
         Eine benannte Rolle als Referenz im Dokument (akn:TLCRole). Beispiele: publisher, rightsHolder.
+      xml_element: akn:TLCRole
     slots:
     - eId
     - href
@@ -330,6 +343,7 @@ classes:
     annotations:
       description_de: |
         Eine generische benannte Referenz im Dokument (akn:TLCReference). Für Referenzen, die nicht TLCOrganization oder TLCRole entsprechen.
+      xml_element: akn:TLCReference
     slots:
     - eId
     - name_attr
@@ -343,6 +357,7 @@ classes:
     annotations:
       description_de: |
         Der Vorspann des Erlasses (akn:preface) mit Dokumentnummer und -titel. Fedlex Schematron verlangt akn:docNumber (FLX-PF-001) und akn:docTitle (FLX-PF-002) innerhalb eines akn:p-Elements.
+      xml_element: akn:preface
       schematron_rules: 'FLX-PF-001: Missing docNumber; FLX-PF-002: Missing docTitle'
     slots:
     - preface_paragraphs
@@ -354,6 +369,7 @@ classes:
     annotations:
       description_de: |
         Ein Vorspann-Absatz (akn:p), der Dokumentnummer und/oder -titel umschliesst. Fedlex verlangt akn:docNumber und akn:docTitle innerhalb eines akn:p des Vorspanns (FLX-PF-001/002).
+      xml_element: akn:p
       xsd_mixed: 'true'
     slots:
     - doc_number
@@ -371,6 +387,7 @@ classes:
     annotations:
       description_de: |
         Die Präambel des Erlasses (akn:preamble) mit einleitenden Fliesstext-Absätzen vor dem Hauptteil.
+      xml_element: akn:preamble
     slots:
     - block_paragraphs
     exact_mappings:
@@ -381,6 +398,7 @@ classes:
     annotations:
       description_de: |
         Der Hauptteil des Erlasses (akn:body) mit der Gesetzeshierarchie. Erlaubte direkte Kinder: book, title, part, chapter, subchapter, section, subsection, level, article, transitional, proviso. Keine anderen Elemente erlaubt (FLX-BD-001).
+      xml_element: akn:body
       xsd_content_model: choice
       schematron_rule: 'FLX-BD-001: Illegal element in body — only the listed hierarchy elements are permitted'
     slots:
@@ -403,6 +421,7 @@ classes:
     annotations:
       description_de: |
         Buch-Ebene eines Erlasses (akn:book). Erlaubte Kinder: title, part, chapter, subchapter, section, subsection, level (FLX-HR-001-bk). Benötigt eindeutiges @eId (FLX-HR-002-bk).
+      xml_element: akn:book
       xsd_content_model: choice
       schematron_rules: FLX-HR-001-bk, FLX-HR-002-bk
     slots:
@@ -429,6 +448,7 @@ classes:
     annotations:
       description_de: |
         Titel-Ebene eines Erlasses (akn:title). Erlaubte Kinder: book, part, chapter, subchapter, section, subsection, level (FLX-HR-001-ti). Benötigt eindeutiges @eId (FLX-HR-002-ti).
+      xml_element: akn:title
       xsd_content_model: choice
       schematron_rules: FLX-HR-001-ti, FLX-HR-002-ti
     slots:
@@ -455,6 +475,7 @@ classes:
     annotations:
       description_de: |
         Teil-Ebene eines Erlasses (akn:part). Erlaubte Kinder: chapter, subchapter, section, subsection, level (FLX-HR-001-pt). Benötigt eindeutiges @eId (FLX-HR-002-pt).
+      xml_element: akn:part
       xsd_content_model: choice
       schematron_rules: FLX-HR-001-pt, FLX-HR-002-pt
     slots:
@@ -479,6 +500,7 @@ classes:
     annotations:
       description_de: |
         Kapitel-Ebene eines Erlasses (akn:chapter). Erlaubte Kinder: subchapter, section, subsection, level, sowie direkt article (FLX-HR-001-ch). Benötigt eindeutiges @eId (FLX-HR-002-ch).
+      xml_element: akn:chapter
       xsd_content_model: choice
       schematron_rules: FLX-HR-001-ch, FLX-HR-002-ch
     slots:
@@ -502,6 +524,7 @@ classes:
     annotations:
       description_de: |
         Unterkapitel-Ebene (akn:subchapter). Erlaubte Kinder: section, subsection, level, sowie direkt article (FLX-HR-001-sh). Benötigt eindeutiges @eId (FLX-HR-002-sh).
+      xml_element: akn:subchapter
       xsd_content_model: choice
       schematron_rules: FLX-HR-001-sh, FLX-HR-002-sh
     slots:
@@ -524,6 +547,7 @@ classes:
     annotations:
       description_de: |
         Abschnitt-Ebene (akn:section). Erlaubte Kinder: subsection, level, sowie direkt article (FLX-HR-001-sc). Benötigt eindeutiges @eId (FLX-HR-002-sc).
+      xml_element: akn:section
       xsd_content_model: choice
       schematron_rules: FLX-HR-001-sc, FLX-HR-002-sc
     slots:
@@ -545,6 +569,7 @@ classes:
     annotations:
       description_de: |
         Unterabschnitt-Ebene (akn:subsection). Erlaubte Kinder: level, sowie direkt article (FLX-HR-001-ss). Benötigt eindeutiges @eId (FLX-HR-002-ss).
+      xml_element: akn:subsection
       xsd_content_model: choice
       schematron_rules: FLX-HR-001-ss, FLX-HR-002-ss
     slots:
@@ -565,6 +590,7 @@ classes:
     annotations:
       description_de: |
         Transparente Strukturebene (akn:level). Ein level ist 'transparent': erlaubte Kinder entsprechen denen des nächsten nicht-level-Vorfahren (FLX-HR-001-lv). Ein level mit akn:content ist nur erlaubt, wenn der Inhalt ein Änderungselement (akn:mod) enthält (FLX-HR-003). fedlex:role='marginal' kennzeichnet es als Randnote (FLX-XF-004). Benötigt eindeutiges @eId (FLX-HR-002-lv, FLX-HR-004).
+      xml_element: akn:level
       xsd_content_model: choice
       schematron_rules: FLX-HR-001-lv, FLX-HR-002-lv, FLX-HR-003, FLX-HR-004, FLX-XF-004
       transparency_note: |
@@ -601,6 +627,7 @@ classes:
     annotations:
       description_de: |
         Ein Artikel, die primäre legislative Einheit (akn:article). Constraints (FLX-ART-*): - akn:num ist obligatorisch (FLX-ART-001) - nur Überschriften-Elemente (num, heading, subheading) sowie akn:paragraph und akn:subdivision sind als Kinder erlaubt (FLX-ART-002) - benötigt eindeutiges @eId (FLX-ART-003)
+      xml_element: akn:article
       xsd_content_model: choice
       schematron_rules: |
         FLX-ART-001: num mandatory; FLX-ART-002: content restricted to heading+paragraph+subdivision; FLX-ART-003: eId required
@@ -627,6 +654,7 @@ classes:
     annotations:
       description_de: |
         Ein Unterabschnitt in einem Artikel, der zusammengehörige Absätze gruppiert (akn:subdivision). Constraints (FLX-SD-*): - nur Überschriften-Elemente und akn:paragraph als Kinder erlaubt (FLX-SD-001) - nur als direktes Kind von akn:article erlaubt, keine Verschachtelung (FLX-SD-002) - benötigt eindeutiges @eId (FLX-SD-003)
+      xml_element: akn:subdivision
       xsd_content_model: choice
       schematron_rules: 'FLX-SD-001: content restricted; FLX-SD-002: only in article; FLX-SD-003: eId
         required'
@@ -647,6 +675,7 @@ classes:
     annotations:
       description_de: |
         Ein Absatz innerhalb eines Artikels oder Unterabschnitts (akn:paragraph). Constraints (FLX-PR-*): - nur Überschriften-Elemente und akn:content als Kinder erlaubt (FLX-PR-001) - nur als direktes Kind von akn:article oder akn:subdivision erlaubt (FLX-PR-002) - benötigt eindeutiges @eId (FLX-PR-003)
+      xml_element: akn:paragraph
       schematron_rules: |
         FLX-PR-001: content restricted; FLX-PR-002: only in article/subdivision; FLX-PR-003: eId required
     slots:
@@ -665,6 +694,7 @@ classes:
     annotations:
       description_de: |
         Eine Übergangsbestimmung im Hauptteil eines Erlasses (akn:transitional). Als Hauptteil-Element auf oberster Ebene erlaubt (FLX-BD-001). Struktur wie Artikel.
+      xml_element: akn:transitional
       xsd_content_model: choice
     slots:
     - eId
@@ -684,6 +714,7 @@ classes:
     annotations:
       description_de: |
         Ein Vorbehalt im Hauptteil eines Erlasses (akn:proviso). Als Hauptteil-Element auf oberster Ebene erlaubt (FLX-BD-001). Erscheint typischerweise nach den Hauptartikeln.
+      xml_element: akn:proviso
       xsd_content_model: choice
     slots:
     - eId
@@ -703,6 +734,7 @@ classes:
     annotations:
       description_de: |
         Der Inhalt eines Absatzes (akn:content). Enthält Block-Elemente: akn:p (Fliesstext), akn:blockList (Aufzählungen), akn:table. Wenn in einem akn:level, muss ein akn:mod-Element enthalten sein (FLX-HR-003).
+      xml_element: akn:content
       xsd_content_model: choice
       schematron_note: 'FLX-HR-003: content in level only allowed for modifications (must contain akn:mod)'
     slots:
@@ -717,6 +749,7 @@ classes:
     annotations:
       description_de: |
         Ein Fliesstext-Absatz in Content (akn:p). Kann gemischten Inhalt mit Inline-Markup enthalten (XmlContent-Typ). Hinweis: akn:br ist hier nicht erlaubt, nur in Überschriften (FLX-TXT-001).
+      xml_element: akn:p
       schematron_note: 'FLX-TXT-001: br not allowed in p — only in heading/subheading/docTitle'
     slots:
     - inline_content
@@ -728,6 +761,7 @@ classes:
     annotations:
       description_de: |
         Eine Auflistung von nummerierten oder buchstabierten Punkten (akn:blockList), optional eingeleitet durch ein akn:listIntroduction-Element.
+      xml_element: akn:blockList
     slots:
     - eId
     - list_introduction
@@ -740,6 +774,7 @@ classes:
     annotations:
       description_de: |
         Ein einzelner Punkt in einer Auflistung (akn:item). Trägt ein num-Label und Block-Inhalt direkt: Fliesstext-Absätze (akn:p) und optional verschachtelte Listen.
+      xml_element: akn:item
       xsd_content_model: choice
     slots:
     - eId
@@ -754,6 +789,7 @@ classes:
     annotations:
       description_de: |
         Ein Tabellen-Element innerhalb von Content (akn:table). Enthält Zeilen (akn:tr) mit Zellen (akn:td). Entspricht dem HTML-Tabellenmodell.
+      xml_element: akn:table
     slots:
     - border
     - table_rows
@@ -763,6 +799,7 @@ classes:
     description: A row in an AkomaNtoso table (akn:tr).
     annotations:
       description_de: Eine Zeile in einer AkomaNtoso-Tabelle (akn:tr).
+      xml_element: akn:tr
     slots:
     - table_cells
     exact_mappings:
@@ -773,6 +810,7 @@ classes:
     annotations:
       description_de: |
         Eine Zelle in einer Tabellenzeile (akn:td). Enthält Block-Inhalt: Fliesstext-Absätze (akn:p) und Auflistungen (akn:blockList).
+      xml_element: akn:td
       xsd_content_model: choice
     slots:
     - colspan
@@ -812,6 +850,7 @@ classes:
     annotations:
       description_de: |
         Eine Inline-Referenz (akn:ref). Trägt @href, und bei internen SR-Querverweisen die Fedlex-Erweiterungsattribute fedlex:rs und fedlex:rs-uri.
+      xml_element: akn:ref
     slots:
     - href
     - fedlex_rs
@@ -824,6 +863,7 @@ classes:
     description: Bold inline markup (akn:b).
     annotations:
       description_de: Fett-Inline-Markup (akn:b).
+      xml_element: akn:b
     slots:
     - inline_content
     exact_mappings:
@@ -833,6 +873,7 @@ classes:
     description: Italic inline markup (akn:i).
     annotations:
       description_de: Kursiv-Inline-Markup (akn:i).
+      xml_element: akn:i
     slots:
     - inline_content
     exact_mappings:
@@ -842,6 +883,7 @@ classes:
     description: Superscript inline markup (akn:sup).
     annotations:
       description_de: Hochgestelltes Inline-Markup (akn:sup).
+      xml_element: akn:sup
     slots:
     - inline_content
     exact_mappings:
@@ -851,6 +893,7 @@ classes:
     description: Generic inline span (akn:span).
     annotations:
       description_de: Generischer Inline-Bereich (akn:span).
+      xml_element: akn:span
     slots:
     - inline_content
     exact_mappings:
@@ -862,6 +905,7 @@ classes:
     annotations:
       description_de: |
         Ein Zeilenumbruch (akn:br). In der (derzeit deaktivierten) Regel FLX-TXT-001 ist br auf Überschriften-Elemente beschränkt.
+      xml_element: akn:br
     exact_mappings:
     - akn:br
   Inline:
@@ -870,6 +914,7 @@ classes:
     annotations:
       description_de: |
         Ein benanntes präsentationsbezogenes Inline (akn:inline), z.B. name='man-font-style-normal'.
+      xml_element: akn:inline
     slots:
     - name_attr
     - inline_content
@@ -882,6 +927,7 @@ classes:
     annotations:
       description_de: |
         Ein Platzhalter für entfernten Inhalt (akn:placeholder) mit dem Erweiterungsattribut fedlex:message (z.B. 'E40S10-TAB').
+      xml_element: akn:placeholder
     slots:
     - fedlex_message
     - inline_content
@@ -894,6 +940,7 @@ classes:
     annotations:
       description_de: |
         Eine Fussnote des Autors (akn:authorialNote). Rekursiv in Block-Inhalt: enthält ein oder mehrere akn:p-Absätze, die selbst Inline-Inhalt tragen.
+      xml_element: akn:authorialNote
     slots:
     - block_paragraphs
     exact_mappings:
@@ -928,6 +975,7 @@ slots:
     multivalued: true
     annotations:
       description_de: Die akn:p-Absätze des Vorspanns, die docNumber/docTitle umschliessen.
+      xml_element: akn:p
     exact_mappings:
     - akn:p
   preamble_ref:
@@ -976,6 +1024,7 @@ slots:
     range: UriValueType
     annotations:
       description_de: Kanonische ELI-URI dieser FRBR-Entität (akn:FRBRthis/@value).
+      xml_element: akn:FRBRthis
     exact_mappings:
     - akn:FRBRthis
   frbr_uri:
@@ -983,6 +1032,7 @@ slots:
     range: UriValueType
     annotations:
       description_de: Basis-ELI-URI dieser FRBR-Entität (akn:FRBRuri/@value).
+      xml_element: akn:FRBRuri
     exact_mappings:
     - akn:FRBRuri
   frbr_dates:
@@ -1004,6 +1054,7 @@ slots:
     range: ValueType
     annotations:
       description_de: Ländercode für diesen Erlass (akn:FRBRcountry/@value), z.B. 'CH'.
+      xml_element: akn:FRBRcountry
     exact_mappings:
     - akn:FRBRcountry
   frbr_number:
@@ -1011,6 +1062,7 @@ slots:
     range: ValueType
     annotations:
       description_de: SR-Nummer (akn:FRBRnumber/@value), z.B. '101'.
+      xml_element: akn:FRBRnumber
     exact_mappings:
     - akn:FRBRnumber
   frbr_names:
@@ -1024,6 +1076,7 @@ slots:
     range: ValueType
     annotations:
       description_de: Ob dies die massgebliche Version ist (akn:FRBRauthoritative/@value).
+      xml_element: akn:FRBRauthoritative
     exact_mappings:
     - akn:FRBRauthoritative
   frbr_language:
@@ -1031,6 +1084,7 @@ slots:
     range: LanguageType
     annotations:
       description_de: Sprachcode dieser Expression (akn:FRBRlanguage/@language).
+      xml_element: akn:FRBRlanguage
     exact_mappings:
     - akn:FRBRlanguage
   frbr_format:
@@ -1038,6 +1092,7 @@ slots:
     range: FormatType
     annotations:
       description_de: Dateiformat dieser Manifestation (akn:FRBRformat/@value), typischerweise 'xml'.
+      xml_element: akn:FRBRformat
     exact_mappings:
     - akn:FRBRformat
   frbr_date_name:
@@ -1144,6 +1199,7 @@ slots:
     annotations:
       description_de: |
         Dokumentnummer im Vorspann (akn:docNumber). Pflicht gemäss FLX-PF-001. Typischerweise die SR-Nummer, z.B. '101'.
+      xml_element: akn:docNumber
     exact_mappings:
     - akn:docNumber
   doc_title:
@@ -1154,6 +1210,7 @@ slots:
     annotations:
       description_de: |
         Dokumenttitel im Vorspann (akn:docTitle). Pflicht gemäss FLX-PF-002. Kann Inline-Markup und akn:br für Zeilenumbrüche enthalten.
+      xml_element: akn:docTitle
       schematron_note: 'FLX-TXT-001: br allowed in docTitle (heading context)'
     exact_mappings:
     - akn:docTitle
@@ -1164,6 +1221,7 @@ slots:
     annotations:
       description_de: |
         Nummerierungselement für ein Strukturelement oder einen Artikel (akn:num). Bei Artikeln obligatorisch (FLX-ART-001). num muss vor heading und subheading stehen (FLX-HD-001, FLX-HD-002, FLX-HD-003).
+      xml_element: akn:num
       schematron_rules: 'FLX-HD-001: max one num; FLX-HD-002: num before heading; FLX-HD-003: num before
         subheading'
     exact_mappings:
@@ -1175,6 +1233,7 @@ slots:
     annotations:
       description_de: |
         Überschrift für ein Strukturelement (akn:heading). Kann Inline-Markup einschliesslich akn:br enthalten (FLX-TXT-001: br in Überschriften erlaubt). Muss vor subheading stehen (FLX-HD-004, FLX-HD-005).
+      xml_element: akn:heading
       schematron_rules: |
         FLX-HD-004: max one heading; FLX-HD-005: heading before subheading; FLX-TXT-001: br permitted here
     exact_mappings:
@@ -1186,6 +1245,7 @@ slots:
     annotations:
       description_de: |
         Unterüberschrift für ein Strukturelement (akn:subheading). fedlex:role='reference' kennzeichnet es als Referenzüberschrift (FLX-XF-005). Maximal eine subheading pro Element (FLX-HD-006).
+      xml_element: akn:subheading
       schematron_rules: |
         FLX-HD-006: max one subheading; FLX-XF-005: fedlex:role='reference' only allowed on subheading
     exact_mappings:
@@ -1393,6 +1453,7 @@ slots:
     range: MixedText
     annotations:
       description_de: Optionaler Einleitungstext vor einer Auflistung (akn:listIntroduction).
+      xml_element: akn:listIntroduction
     exact_mappings:
     - akn:listIntroduction
   items:
