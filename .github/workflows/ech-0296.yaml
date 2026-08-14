@@ -47,8 +47,17 @@ jobs:
           gen-owl --no-use-native-uris schema.yaml > ../output/schema.ttl
           gen-json-schema schema.yaml > ../output/schema.json
 
-          # Beispieldaten (data_*.yaml) gibt es noch keine; sobald welche
-          # vorliegen, kommen hier die linkml-convert-Aufrufe von eCH-0293 dazu.
+          # Beispieldaten nach JSON und RDF.
+          for yaml_file in data_*.yaml; do
+            base_name=$(basename "$yaml_file" .yaml)
+            linkml-convert -s schema.yaml -t json "$yaml_file" > "../output/${base_name}.json"
+            linkml-convert -s schema.yaml -t rdf "$yaml_file" > "../output/${base_name}.ttl"
+          done
+
+      - name: Extract examples from data files
+        # Reichert das Schema fuer gen-doc mit Beispielwerten an und schreibt die
+        # Instanz-Beispiele nach output/examples.
+        run: python .github/workflows/scripts/extract_examples.py ech-0296_laws
 
       - name: Export crosswalk (SSSOM + Tabelle)
         # Zieht die Mapping-Slots aus dem Schema: einmal als SSSOM-Mapping-Set
@@ -67,7 +76,7 @@ jobs:
 
           # Keep the enriched schema at its original relative location while
           # localizing, so local imports (../../ech-0292_meta/...) resolve.
-          BASE_DOC_SCHEMA="ech-0296_laws/input/schema.yaml"
+          BASE_DOC_SCHEMA="ech-0296_laws/output/pipeline_examples_generator_schema.yaml"
 
           for lang in de; do
             # English descriptions are already in the base schema.
@@ -86,7 +95,8 @@ jobs:
             # Generate per-language markdown fragments used later for docx/pdf.
             gen-doc "$DOC_SCHEMA" \
               --directory "ech-0296_laws/output/docs/${lang}" \
-              --template-directory "ech-0292_meta/input/docgen/${lang}"
+              --template-directory "ech-0292_meta/input/docgen/${lang}" \
+              --example-directory ech-0296_laws/output/examples
           done
 
 

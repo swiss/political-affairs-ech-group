@@ -1,0 +1,79 @@
+# Steuert extract_examples.py: welche Klassen und Slots im Dokument Beispiele
+# bekommen. Die Container-Beispiele (ganze data_*.yaml) entstehen immer.
+
+classes:
+  - Act
+  - ActMeta
+  - Identification
+  - FRBRWork
+  - FRBRExpression
+  - FRBRManifestation
+  - FRBRDate
+  - FRBRAuthor
+  - FRBRName
+  - References
+  - TLCOrganization
+  - TLCRole
+  - Preface
+  - PrefaceP
+  - Title
+  - Article
+  - Paragraph
+  - Content
+  - BlockParagraph
+  - BlockList
+  - BlockListItem
+  - TLCReference
+
+slots:
+  - act_name
+  - frbr_date_name
+  - eId
+  - href
+  - as_role
+  - short_form
+  - xml_lang
+  - doc_number
+  - element_type
+  - text
+
+max_examples_per_slot: 3
+
+# Sprechende Titel für einzelne Beispiele. Ein AKN-Dokument identifiziert seine
+# Bestandteile über `@eId` innerhalb des Dokuments, nicht über eine `local_id`
+# oder `global_uri` -- Schlüssel ist deshalb die `eId`. Wo eine Klasse gar keine
+# trägt (die FRBR-Blöcke etwa), erscheint das Beispiel unter Datei und Position.
+example_titles:
+
+  "tit_1":
+    de: Titel mit Nummer, Überschrift und Artikeln
+    fr: Titre avec numéro, intitulé et articles
+    en: Title with number, heading and articles
+  "art_1":
+    de: Artikel mit fett ausgezeichneter Nummer
+    fr: Article dont le numéro est en gras
+    en: Article with a bold article number
+  "art_1/para":
+    de: Absatz mit Fliesstext
+    fr: Alinéa avec texte suivi
+    en: Paragraph with running text
+  "ch.bk":
+    de: Deklaration der publizierenden Stelle
+    fr: Déclaration de l'organe de publication
+    en: Declaration of the publishing body
+  "publisher":
+    de: Rolle „Herausgeber“ als Anker
+    fr: Rôle « éditeur » comme ancre
+    en: Role "publisher" as an anchor
+  "art_2":
+    de: Artikel mit nummerierten Absätzen
+    fr: Article avec alinéas numérotés
+    en: Article with numbered paragraphs
+  "art_2/para_1":
+    de: Absatz mit Aufzählung statt Fliesstext
+    fr: Alinéa avec énumération au lieu de texte suivi
+    en: Paragraph with a list instead of running text
+  "art_2/para_1/lst":
+    de: Aufzählung mit Einleitungssatz
+    fr: Énumération avec phrase introductive
+    en: List with an introductory sentence

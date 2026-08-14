@@ -56,6 +56,29 @@ SLOT_TO_CLASS = {
     "resolutions": "Resolution",
     "documents": "Manifestation",
     "media": "Media",
+    # Laws-level: eCH-0296 verschachtelt seine Klassen, statt sie flach neben-
+    # einander im Container zu fuehren -- ein Dokument traegt genau einen Erlass,
+    # der Erlass seinen Metadatenblock, und so weiter bis zum Absatz.
+    "act_ref": "Act",
+    "meta": "ActMeta",
+    "identification_ref": "Identification",
+    "frbr_work": "FRBRWork",
+    "frbr_expression": "FRBRExpression",
+    "frbr_manifestation": "FRBRManifestation",
+    "frbr_dates": "FRBRDate",
+    "frbr_authors": "FRBRAuthor",
+    "frbr_names": "FRBRName",
+    "references_ref": "References",
+    "tlc_organizations": "TLCOrganization",
+    "tlc_roles": "TLCRole",
+    "preface_ref": "Preface",
+    "preface_paragraphs": "PrefaceP",
+    "body": "ActBody",
+    "titles": "Title",
+    "articles": "Article",
+    "paragraphs": "Paragraph",
+    "content_ref": "Content",
+    "block_paragraphs": "BlockParagraph",
 }
 
 
@@ -112,12 +135,14 @@ def title_for_instance(obj, titles: dict, lang: str) -> str:
 
     Keyed by `local_id`, or by `global_uri` where an instance carries no local
     identifier, so a data file can be reordered or renamed without breaking the
-    mapping. Falls back to German, then to any language present.
+    mapping. `eId` comes last, for the AKN-shaped data of eCH-0296 whose parts
+    are identified within their document. Falls back to German, then to any
+    language present.
     """
     if not isinstance(obj, dict):
         return ""
     entry = None
-    for key in ("local_id", "global_uri"):
+    for key in ("local_id", "global_uri", "eId"):
         entry = titles.get(str(obj.get(key, "")))
         if entry:
             break
@@ -154,10 +179,15 @@ def label_for_instance(obj, index: int) -> str:
 
 
 def instance_key(obj) -> str:
-    """The key an instance is addressed by in the configuration."""
+    """The key an instance is addressed by in the configuration.
+
+    `eId` comes last and serves eCH-0296: an AKN document identifies its parts
+    within the document rather than by a global identifier, so an article is
+    addressed as `art_1`, not by a `local_id` it does not have.
+    """
     if not isinstance(obj, dict):
         return ""
-    for key in ("local_id", "global_uri"):
+    for key in ("local_id", "global_uri", "eId"):
         value = obj.get(key)
         if value:
             return str(value)

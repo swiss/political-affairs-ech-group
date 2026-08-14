@@ -1,0 +1,151 @@
+# Auszug aus SR 101, Bundesverfassung der Schweizerischen Eidgenossenschaft,
+# Fassung vom 3. März 2024. Werte übernommen aus der Fedlex-Datei
+# misc/spec/input/examples/federal/SR-101-03032024-DE.xml -- gekürzt auf den
+# vollständigen Metadatenblock, den Vorspann und den ersten Artikel, damit die
+# Beispiele im Dokument lesbar bleiben.
+act_ref:
+  act_name: constitution
+
+  meta:
+    identification_ref:
+      # Der Anker zeigt auf die Organisation, die in references deklariert ist.
+      source: "#ch.bk"
+
+      frbr_work:
+        frbr_this:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/main-text
+        frbr_uri:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303
+        # Drei Datumsangaben desselben Werks, unterschieden über @name aus dem
+        # Fedlex/JoLux-Vokabular: Inkrafttreten, Erlassdatum, Nachführungsstand.
+        frbr_dates:
+          - date_value: "2000-01-01"
+            frbr_date_name: jolux:dateEntryInForce
+          - date_value: "1999-04-18"
+            frbr_date_name: jolux:dateDocument
+          - date_value: "2024-03-03"
+            frbr_date_name: jolux:dateApplicability
+        frbr_authors:
+          - href: "#ch.bk"
+            as_role: "#publisher"
+          - href: "#ch.bk"
+            as_role: "#rightsHolder"
+        frbr_country:
+          value: CH
+        frbr_number:
+          value: "101"
+        # Die SR-Nummer wird nicht übersetzt, der Titel schon: je Sprache ein
+        # Eintrag mit Kurzform.
+        frbr_names:
+          - xml_lang: de
+            value: Bundesverfassung der Schweizerischen Eidgenossenschaft vom 18. April 1999
+            short_form: BV
+          - xml_lang: fr
+            value: Constitution fédérale de la Confédération suisse du 18 avril 1999
+            short_form: Cst.
+          - xml_lang: it
+            value: Costituzione federale della Confederazione Svizzera del 18 aprile 1999
+            short_form: Cost.
+          - xml_lang: rm
+            value: Constituziun federala da la Confederaziun svizra dals 18 d'avrigl 1999
+            short_form: Cst.
+        frbr_authoritative:
+          value: "true"
+
+      # Die Expression ist die sprachliche Fassung: dieselbe URI mit Sprachanteil.
+      frbr_expression:
+        frbr_this:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/main-text
+        frbr_uri:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de
+        frbr_dates:
+          - date_value: "2000-01-01"
+            frbr_date_name: jolux:dateEntryInForce
+          - date_value: "1999-04-18"
+            frbr_date_name: jolux:dateDocument
+        frbr_authors:
+          - href: "#ch.bk"
+            as_role: "#publisher"
+        frbr_language:
+          language_value: de
+
+      # Die Manifestation ist die konkrete Datei -- hier das XML.
+      frbr_manifestation:
+        frbr_this:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/main-text
+        frbr_uri:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de
+        frbr_dates:
+          - date_value: "2024-03-03"
+            frbr_date_name: jolux:dateApplicability
+        frbr_authors:
+          - href: "#ch.bk"
+            as_role: "#publisher"
+        frbr_format:
+          value: xml
+
+    # Stellen und Rollen stehen einmal hier; die Elemente oben verweisen mit
+    # dokumentinternen Ankern darauf.
+    references_ref:
+      source: "#ch.bk"
+      tlc_organizations:
+        - eId: ch.bk
+          href: https://fedlex.data.admin.ch/vocabulary/legal-institution/2
+          show_as: Bundeskanzlei
+      tlc_roles:
+        - eId: publisher
+          href: http://data.legilux.public.lu/resource/ontology/jolux#publisher
+          show_as: Editeur
+        - eId: rightsHolder
+          href: http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder
+          show_as: Détenteur des droits
+
+  preface_ref:
+    preface_paragraphs:
+      - doc_number: "101"
+      - doc_title:
+          inline_content:
+            - element_type: TextRun
+              text: Bundesverfassung
+            - element_type: Br
+            - element_type: TextRun
+              text: der Schweizerischen Eidgenossenschaft
+
+  body:
+    titles:
+      - eId: tit_1
+        num:
+          inline_content:
+            - element_type: TextRun
+              text: "1. Titel: "
+        heading:
+          inline_content:
+            - element_type: TextRun
+              text: Allgemeine Bestimmungen
+        articles:
+          - eId: art_1
+            # Die Artikelnummer ist im Original fett ausgezeichnet: ein B-Element
+            # mit einem Textlauf darin, nicht eine Zeichenkette "Art. 1".
+            num:
+              inline_content:
+                - element_type: B
+                  inline_content:
+                    - element_type: TextRun
+                      text: Art. 1
+            heading:
+              inline_content:
+                - element_type: TextRun
+                  text: Schweizerische Eidgenossenschaft
+            paragraphs:
+              - eId: art_1/para
+                content_ref:
+                  block_paragraphs:
+                    - inline_content:
+                        - element_type: TextRun
+                          text: >-
+                            Das Schweizervolk und die Kantone Zürich, Bern, Luzern, Uri, Schwyz,
+                            Obwalden und Nidwalden, Glarus, Zug, Freiburg, Solothurn, Basel-Stadt
+                            und Basel-Landschaft, Schaffhausen, Appenzell Ausserrhoden und
+                            Appenzell Innerrhoden, St. Gallen, Graubünden, Aargau, Thurgau,
+                            Tessin, Waadt, Wallis, Neuenburg, Genf und Jura bilden die
+                            Schweizerische Eidgenossenschaft.
