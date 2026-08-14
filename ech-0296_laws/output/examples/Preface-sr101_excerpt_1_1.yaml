@@ -1,0 +1,10 @@
+preface_ref:
+  preface_paragraphs:
+  - doc_number: '101'
+  - doc_title:
+      inline_content:
+      - element_type: TextRun
+        text: Bundesverfassung
+      - element_type: Br
+      - element_type: TextRun
+        text: der Schweizerischen Eidgenossenschaft

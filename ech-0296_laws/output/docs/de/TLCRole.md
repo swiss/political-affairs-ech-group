@@ -44,6 +44,35 @@ _Eine benannte Rolle als Referenz im Dokument (akn:TLCRole). Beispiele: publishe
 
 
 
+### Beispiele
+#### Beispiel TLCRole: sr101 excerpt 1 2
+
+```yaml
+tlc_roles:
+- eId: rightsHolder
+  href: http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder
+  show_as: Détenteur des droits
+
+```
+#### Beispiel TLCRole: bgoe excerpt 1 2
+
+```yaml
+tlc_roles:
+- eId: rightsHolder
+  href: http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder
+  show_as: Détenteur des droits
+
+```
+#### Beispiel TLCRole: Role publisher as an anchor
+
+```yaml
+tlc_roles:
+- eId: publisher
+  href: http://data.legilux.public.lu/resource/ontology/jolux#publisher
+  show_as: Editeur
+
+```
+
 
 
 

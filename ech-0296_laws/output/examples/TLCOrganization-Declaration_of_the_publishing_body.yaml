@@ -1,0 +1,4 @@
+tlc_organizations:
+- eId: ch.bk
+  href: https://fedlex.data.admin.ch/vocabulary/legal-institution/2
+  show_as: Bundeskanzlei

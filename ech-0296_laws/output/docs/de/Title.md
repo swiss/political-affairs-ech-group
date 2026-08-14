@@ -55,6 +55,47 @@ _Titel-Ebene eines Erlasses (akn:title). Erlaubte Kinder: book, part, chapter, s
 
 
 
+### Beispiele
+#### Beispiel Title: Title with number heading and articles
+
+```yaml
+titles:
+- eId: tit_1
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '1. Titel: '
+  heading:
+    inline_content:
+    - element_type: TextRun
+      text: Allgemeine Bestimmungen
+  articles:
+  - eId: art_1
+    num:
+      inline_content:
+      - element_type: B
+        inline_content:
+        - element_type: TextRun
+          text: Art. 1
+    heading:
+      inline_content:
+      - element_type: TextRun
+        text: Schweizerische Eidgenossenschaft
+    paragraphs:
+    - eId: art_1/para
+      content_ref:
+        block_paragraphs:
+        - inline_content:
+          - element_type: TextRun
+            text: >-
+              Das Schweizervolk und die Kantone Zürich, Bern, Luzern, Uri, Schwyz,
+              Obwalden und Nidwalden, Glarus, Zug, Freiburg, Solothurn, Basel-Stadt
+              und Basel-Landschaft, Schaffhausen, Appenzell Ausserrhoden und Appenzell
+              Innerrhoden, St. Gallen, Graubünden, Aargau, Thurgau, Tessin, Waadt,
+              Wallis, Neuenburg, Genf und Jura bilden die Schweizerische Eidgenossenschaft.
+
+```
+
 
 
 

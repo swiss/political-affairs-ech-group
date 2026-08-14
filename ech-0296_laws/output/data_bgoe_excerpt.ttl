@@ -1,0 +1,172 @@
+@prefix laws: <https://ld.ech.ch/schema/0296/laws/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] a laws:FedlexDocument ;
+    laws:act_ref [ a laws:Act ;
+            laws:act_name "publicLaw" ;
+            laws:body [ a laws:ActBody ;
+                    laws:articles [ a laws:Article ;
+                            laws:eId "art_2" ;
+                            laws:heading [ a laws:MixedText ;
+                                    laws:inline_content [ laws:element_type "TextRun" ;
+                                            laws:text "Persönlicher Geltungsbereich" ] ] ;
+                            laws:num [ a laws:MixedText ;
+                                    laws:inline_content [ laws:element_type "B" ;
+                                            laws:inline_content [ laws:element_type "TextRun" ;
+                                                    laws:text "Art. 2" ] ] ] ;
+                            laws:paragraphs [ a laws:Paragraph ;
+                                    laws:content_ref [ a laws:Content ;
+                                            laws:block_lists [ a laws:BlockList ;
+                                                    laws:eId "art_2/para_1/lst" ;
+                                                    laws:items [ a laws:BlockListItem ;
+                                                            laws:block_paragraphs [ a laws:BlockParagraph ;
+                                                                    laws:inline_content [ laws:element_type "TextRun" ;
+                                                                            laws:text "die Bundesverwaltung;" ] ] ;
+                                                            laws:eId "art_2/para_1/lbl_a" ;
+                                                            laws:num [ a laws:MixedText ;
+                                                                    laws:inline_content [ laws:element_type "TextRun" ;
+                                                                            laws:text "a. " ] ] ],
+                                                        [ a laws:BlockListItem ;
+                                                            laws:block_paragraphs [ a laws:BlockParagraph ;
+                                                                    laws:inline_content [ laws:element_type "TextRun" ;
+                                                                            laws:text "Organisationen und Personen des öffentlichen oder privaten Rechts, die nicht der Bundesverwaltung angehören, soweit sie Erlasse oder erstinstanzliche Verfügungen im Sinne von Artikel 5 des Bundesgesetzes vom 20. Dezember 1968 über das Verwaltungsverfahren erlassen;" ] ] ;
+                                                            laws:eId "art_2/para_1/lbl_b" ;
+                                                            laws:num [ a laws:MixedText ;
+                                                                    laws:inline_content [ laws:element_type "TextRun" ;
+                                                                            laws:text "b. " ] ] ] ;
+                                                    laws:list_introduction [ a laws:MixedText ;
+                                                            laws:eId "art_2/para_1/listintro" ;
+                                                            laws:inline_content [ laws:element_type "TextRun" ;
+                                                                    laws:text " Dieses Gesetz gilt für:" ] ] ] ] ;
+                                    laws:eId "art_2/para_1" ;
+                                    laws:num [ a laws:MixedText ;
+                                            laws:inline_content [ laws:element_type "TextRun" ;
+                                                    laws:text "1" ] ] ] ],
+                        [ a laws:Article ;
+                            laws:eId "art_1" ;
+                            laws:heading [ a laws:MixedText ;
+                                    laws:inline_content [ laws:element_type "TextRun" ;
+                                            laws:text "Zweck und Gegenstand" ] ] ;
+                            laws:num [ a laws:MixedText ;
+                                    laws:inline_content [ laws:element_type "B" ;
+                                            laws:inline_content [ laws:element_type "TextRun" ;
+                                                    laws:text "Art. 1" ] ] ] ;
+                            laws:paragraphs [ a laws:Paragraph ;
+                                    laws:content_ref [ a laws:Content ;
+                                            laws:block_paragraphs [ a laws:BlockParagraph ;
+                                                    laws:inline_content [ laws:element_type "TextRun" ;
+                                                            laws:text "Dieses Gesetz soll die Transparenz über den Auftrag, die Organisation und die Tätigkeit der Verwaltung fördern. Zu diesem Zweck trägt es zur Information der Öffentlichkeit bei, indem es den Zugang zu amtlichen Dokumenten gewährleistet." ] ] ] ;
+                                    laws:eId "art_1/para" ] ] ] ;
+            laws:meta [ a laws:ActMeta ;
+                    laws:identification_ref [ a laws:Identification ;
+                            laws:frbr_expression [ a laws:FRBRExpression ;
+                                    laws:frbr_authors [ a laws:FRBRAuthor ;
+                                            laws:as_role "#publisher" ;
+                                            laws:href "#ch.bk" ] ;
+                                    laws:frbr_dates [ a laws:FRBRDate ;
+                                            laws:date_value "2023-11-01"^^xsd:date ;
+                                            laws:frbr_date_name "jolux:dateApplicability" ],
+                                        [ a laws:FRBRDate ;
+                                            laws:date_value "2006-07-01"^^xsd:date ;
+                                            laws:frbr_date_name "jolux:dateEntryInForce" ] ;
+                                    laws:frbr_language [ a laws:LanguageType ;
+                                            laws:language_value "de" ] ;
+                                    laws:frbr_this [ a laws:UriValueType ;
+                                            laws:value_uri <https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de/main-text> ] ;
+                                    laws:frbr_uri [ a laws:UriValueType ;
+                                            laws:value_uri <https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de> ] ] ;
+                            laws:frbr_manifestation [ a laws:FRBRManifestation ;
+                                    laws:frbr_authors [ a laws:FRBRAuthor ;
+                                            laws:as_role "#publisher" ;
+                                            laws:href "#ch.bk" ] ;
+                                    laws:frbr_dates [ a laws:FRBRDate ;
+                                            laws:date_value "2023-11-01"^^xsd:date ;
+                                            laws:frbr_date_name "jolux:dateApplicability" ] ;
+                                    laws:frbr_format [ a laws:FormatType ;
+                                            laws:fedlex_generator "2024-q4-rel-1.6.5" ;
+                                            laws:value "xml" ] ;
+                                    laws:frbr_this [ a laws:UriValueType ;
+                                            laws:value_uri <https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de/xml/main-text> ] ;
+                                    laws:frbr_uri [ a laws:UriValueType ;
+                                            laws:value_uri <https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de/xml> ] ] ;
+                            laws:frbr_work [ a laws:FRBRWork ;
+                                    laws:frbr_authoritative [ a laws:ValueType ;
+                                            laws:value "true" ] ;
+                                    laws:frbr_authors [ a laws:FRBRAuthor ;
+                                            laws:as_role "#rightsHolder" ;
+                                            laws:href "#ch.bk" ],
+                                        [ a laws:FRBRAuthor ;
+                                            laws:as_role "#publisher" ;
+                                            laws:href "#ch.bk" ] ;
+                                    laws:frbr_country [ a laws:ValueType ;
+                                            laws:value "CH" ] ;
+                                    laws:frbr_dates [ a laws:FRBRDate ;
+                                            laws:date_value "2004-12-17"^^xsd:date ;
+                                            laws:frbr_date_name "jolux:dateDocument" ],
+                                        [ a laws:FRBRDate ;
+                                            laws:date_value "2023-11-01"^^xsd:date ;
+                                            laws:frbr_date_name "jolux:dateApplicability" ],
+                                        [ a laws:FRBRDate ;
+                                            laws:date_value "2006-07-01"^^xsd:date ;
+                                            laws:frbr_date_name "jolux:dateEntryInForce" ] ;
+                                    laws:frbr_names [ a laws:FRBRName ;
+                                            laws:short_form "LTras" ;
+                                            laws:value "Legge federale del 17 dicembre 2004 sul principio di trasparenza dell'amministrazione (Legge sulla trasparenza, LTras)" ;
+                                            laws:xml_lang "it" ],
+                                        [ a laws:FRBRName ;
+                                            laws:short_form "BGÖ" ;
+                                            laws:value "Bundesgesetz vom 17. Dezember 2004 über das Öffentlichkeitsprinzip der Verwaltung (Öffentlichkeitsgesetz, BGÖ)" ;
+                                            laws:xml_lang "de" ],
+                                        [ a laws:FRBRName ;
+                                            laws:short_form "LTrans" ;
+                                            laws:value "Loi fédérale du 17 décembre 2004 sur le principe de la transparence dans l'administration (Loi sur la transparence, LTrans)" ;
+                                            laws:xml_lang "fr" ],
+                                        [ a laws:FRBRName ;
+                                            laws:short_form "FoIA" ;
+                                            laws:value "Federal Act of 17 December 2004 on Freedom of Information in the Administration (Freedom of Information Act, FoIA)" ;
+                                            laws:xml_lang "en" ],
+                                        [ a laws:FRBRName ;
+                                            laws:short_form "LTrans" ;
+                                            laws:value "Lescha federala dals 17 da december 2004 davart il princip da la transparenza da l'administraziun (Lescha da transparenza, LTrans)" ;
+                                            laws:xml_lang "rm" ] ;
+                                    laws:frbr_number [ a laws:ValueType ;
+                                            laws:value "152.3" ] ;
+                                    laws:frbr_this [ a laws:UriValueType ;
+                                            laws:value_uri <https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/main-text> ] ;
+                                    laws:frbr_uri [ a laws:UriValueType ;
+                                            laws:value_uri <https://fedlex.data.admin.ch/eli/cc/2006/355/20231101> ] ] ;
+                            laws:source "#ch.bk" ] ;
+                    laws:references_ref [ a laws:References ;
+                            laws:source "#ch.bk" ;
+                            laws:tlc_organizations [ a laws:TLCOrganization ;
+                                    laws:eId "ch.bk" ;
+                                    laws:href "https://fedlex.data.admin.ch/vocabulary/legal-institution/2" ;
+                                    laws:show_as "Bundeskanzlei" ] ;
+                            laws:tlc_references [ a laws:TLCReference ;
+                                    laws:href "http://publications.europa.eu/resource/authority/language/DEU" ;
+                                    laws:name_attr "language" ;
+                                    laws:show_as "de" ],
+                                [ a laws:TLCReference ;
+                                    laws:href "https://fedlex.data.admin.ch/vocabulary/user-format/xml" ;
+                                    laws:name_attr "format" ;
+                                    laws:show_as "xml" ] ;
+                            laws:tlc_roles [ a laws:TLCRole ;
+                                    laws:eId "publisher" ;
+                                    laws:href "http://data.legilux.public.lu/resource/ontology/jolux#publisher" ;
+                                    laws:show_as "Editeur" ],
+                                [ a laws:TLCRole ;
+                                    laws:eId "rightsHolder" ;
+                                    laws:href "http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder" ;
+                                    laws:show_as "Détenteur des droits" ] ] ] ;
+            laws:preface_ref [ a laws:Preface ;
+                    laws:preface_paragraphs [ a laws:PrefaceP ;
+                            laws:doc_number "152.3 " ],
+                        [ a laws:PrefaceP ;
+                            laws:doc_title [ a laws:MixedText ;
+                                    laws:inline_content [ laws:element_type "TextRun" ;
+                                            laws:text "Bundesgesetz" ],
+                                        [ laws:element_type "Br" ],
+                                        [ laws:element_type "TextRun" ;
+                                            laws:text "über das Öffentlichkeitsprinzip der Verwaltung" ] ] ] ] ] .
+
+

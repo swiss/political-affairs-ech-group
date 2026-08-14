@@ -1,0 +1,49 @@
+articles:
+- eId: art_2
+  num:
+    inline_content:
+    - element_type: B
+      inline_content:
+      - element_type: TextRun
+        text: Art. 2
+  heading:
+    inline_content:
+    - element_type: TextRun
+      text: Persönlicher Geltungsbereich
+  paragraphs:
+  - eId: art_2/para_1
+    num:
+      inline_content:
+      - element_type: TextRun
+        text: '1'
+    content_ref:
+      block_lists:
+      - eId: art_2/para_1/lst
+        list_introduction:
+          eId: art_2/para_1/listintro
+          inline_content:
+          - element_type: TextRun
+            text: ' Dieses Gesetz gilt für:'
+        items:
+        - eId: art_2/para_1/lbl_a
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: 'a. '
+          block_paragraphs:
+          - inline_content:
+            - element_type: TextRun
+              text: die Bundesverwaltung;
+        - eId: art_2/para_1/lbl_b
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: 'b. '
+          block_paragraphs:
+          - inline_content:
+            - element_type: TextRun
+              text: >-
+                Organisationen und Personen des öffentlichen oder privaten Rechts,
+                die nicht der Bundesverwaltung angehören, soweit sie Erlasse oder
+                erstinstanzliche Verfügungen im Sinne von Artikel 5 des Bundesgesetzes
+                vom 20. Dezember 1968 über das Verwaltungsverfahren erlassen;

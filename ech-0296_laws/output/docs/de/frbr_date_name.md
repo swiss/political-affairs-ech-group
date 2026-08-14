@@ -55,6 +55,15 @@ URI: [laws:frbr_date_name](https://ld.ech.ch/schema/0296/laws/frbr_date_name)
 
 
 
+## Beispiele
+
+| Wert |
+| --- |
+| jolux:dateApplicability |
+| jolux:dateDocument |
+| jolux:dateEntryInForce |
+
+
 
 
 
@@ -80,6 +89,10 @@ description: 'Datumstyp (akn:FRBRdate/@name), mit Fedlex/JoLux-Vokabular, z.B. '
   ''jolux:dateDocument'', ''jolux:dateApplicability''.
 
   '
+examples:
+- value: jolux:dateApplicability
+- value: jolux:dateDocument
+- value: jolux:dateEntryInForce
 from_schema: https://ld.ech.ch/schema/0296/laws
 rank: 1000
 domain_of:

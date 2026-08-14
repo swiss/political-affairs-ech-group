@@ -26,7 +26,7 @@ URI: [laws:doc_title](https://ld.ech.ch/schema/0296/laws/doc_title)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [PrefaceP](PrefaceP.md) | Ein Vorspann-Absatz (akn:p), der Dokumentnummer und/oder -titel umschliesst |  yes  |
+| [PrefaceP](PrefaceP.md) | Ein Vorspann-Absatz (akn:p), der Dokumentnummer und/oder -titel umschliesst |  no  |
 
 
 
@@ -46,7 +46,6 @@ URI: [laws:doc_title](https://ld.ech.ch/schema/0296/laws/doc_title)
 
 | Eigenschaft | Wert |
 | --- | --- |
-| Erforderlich | Yes |
 
 
 
@@ -88,7 +87,6 @@ rank: 1000
 domain_of:
 - PrefaceP
 range: MixedText
-required: true
 
 ```
 </details></div>

@@ -26,7 +26,7 @@ URI: [laws:doc_number](https://ld.ech.ch/schema/0296/laws/doc_number)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [PrefaceP](PrefaceP.md) | Ein Vorspann-Absatz (akn:p), der Dokumentnummer und/oder -titel umschliesst |  yes  |
+| [PrefaceP](PrefaceP.md) | Ein Vorspann-Absatz (akn:p), der Dokumentnummer und/oder -titel umschliesst |  no  |
 
 
 
@@ -46,7 +46,6 @@ URI: [laws:doc_number](https://ld.ech.ch/schema/0296/laws/doc_number)
 
 | Eigenschaft | Wert |
 | --- | --- |
-| Erforderlich | Yes |
 
 
 
@@ -54,6 +53,14 @@ URI: [laws:doc_number](https://ld.ech.ch/schema/0296/laws/doc_number)
 
 
 
+
+
+## Beispiele
+
+| Wert |
+| --- |
+| 101 |
+| 152.3  |
 
 
 
@@ -78,6 +85,9 @@ description: 'Dokumentnummer im Vorspann (akn:docNumber). Pflicht gemäss FLX-PF
   Typischerweise die SR-Nummer, z.B. ''101''.
 
   '
+examples:
+- value: '101'
+- value: '152.3 '
 from_schema: https://ld.ech.ch/schema/0296/laws
 exact_mappings:
 - akn:docNumber
@@ -85,7 +95,6 @@ rank: 1000
 domain_of:
 - PrefaceP
 range: string
-required: true
 
 ```
 </details></div>

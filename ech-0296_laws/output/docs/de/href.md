@@ -58,6 +58,15 @@ URI: [laws:href](https://ld.ech.ch/schema/0296/laws/href)
 
 
 
+## Beispiele
+
+| Wert |
+| --- |
+| #ch.bk |
+| http://data.legilux.public.lu/resource/ontology/jolux#publisher |
+| http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder |
+
+
 
 
 
@@ -76,6 +85,10 @@ annotations:
     value: 'true'
 description: URI-Referenz (@href), für Links zu Organisationen, Rollen oder externen
   URIs.
+examples:
+- value: '#ch.bk'
+- value: http://data.legilux.public.lu/resource/ontology/jolux#publisher
+- value: http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder
 from_schema: https://ld.ech.ch/schema/0296/laws
 rank: 1000
 domain_of:

@@ -71,6 +71,15 @@ URI: [laws:element_type](https://ld.ech.ch/schema/0296/laws/element_type)
 
 
 
+## Beispiele
+
+| Wert |
+| --- |
+| B |
+| Br |
+| TextRun |
+
+
 
 
 
@@ -84,6 +93,10 @@ annotations:
     tag: description_de
     value: Typ-Diskriminator für die konkrete InlineElement-Subklasse.
 description: Typ-Diskriminator für die konkrete InlineElement-Subklasse.
+examples:
+- value: B
+- value: Br
+- value: TextRun
 from_schema: https://ld.ech.ch/schema/0296/laws
 rank: 1000
 designates_type: true

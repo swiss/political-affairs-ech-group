@@ -1,0 +1,4 @@
+tlc_roles:
+- eId: rightsHolder
+  href: http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder
+  show_as: Détenteur des droits

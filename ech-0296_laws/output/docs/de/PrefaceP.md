@@ -20,6 +20,19 @@ _Ein Vorspann-Absatz (akn:p), der Dokumentnummer und/oder -titel umschliesst. Fe
 | doc_number | 0..1 <br/> [String](String.md) | Dokumentnummer im Vorspann (akn:docNumber). Pflicht gemäss FLX-PF-001. Typischerweise die SR-Nummer, z.B. '101'.  |
 | doc_title | 0..1 <br/> [MixedText](MixedText.md) | Dokumenttitel im Vorspann (akn:docTitle). Pflicht gemäss FLX-PF-002. Kann Inline-Markup und akn:br für Zeilenumbrüche enthalten.  |
 
+##### Einschränkungen
+
+
+Mindestens eines der folgenden Felder muss gesetzt sein:
+
+- [doc_number](doc_number.md)
+- [doc_title](doc_title.md)
+
+
+
+
+
+
 
 
 
@@ -42,6 +55,48 @@ _Ein Vorspann-Absatz (akn:p), der Dokumentnummer und/oder -titel umschliesst. Fe
 
 
 
+
+### Beispiele
+#### Beispiel PrefaceP: sr101 excerpt 1 1
+
+```yaml
+preface_paragraphs:
+- doc_number: '101'
+
+```
+#### Beispiel PrefaceP: sr101 excerpt 1 2
+
+```yaml
+preface_paragraphs:
+- doc_title:
+    inline_content:
+    - element_type: TextRun
+      text: Bundesverfassung
+    - element_type: Br
+    - element_type: TextRun
+      text: der Schweizerischen Eidgenossenschaft
+
+```
+#### Beispiel PrefaceP: bgoe excerpt 1 1
+
+```yaml
+preface_paragraphs:
+- doc_number: '152.3 '
+
+```
+#### Beispiel PrefaceP: bgoe excerpt 1 2
+
+```yaml
+preface_paragraphs:
+- doc_title:
+    inline_content:
+    - element_type: TextRun
+      text: Bundesgesetz
+    - element_type: Br
+    - element_type: TextRun
+      text: über das Öffentlichkeitsprinzip der Verwaltung
+
+```
 
 
 

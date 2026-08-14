@@ -54,6 +54,15 @@ URI: [laws:xml_lang](https://ld.ech.ch/schema/0296/laws/xml_lang)
 
 
 
+## Beispiele
+
+| Wert |
+| --- |
+| de |
+| en |
+| fr |
+
+
 
 
 
@@ -73,6 +82,10 @@ annotations:
     tag: xml_name
     value: xml:lang
 description: XML-Sprachattribut (xml:lang), z.B. 'de', 'fr', 'it', 'rm', 'en'.
+examples:
+- value: de
+- value: en
+- value: fr
 from_schema: https://ld.ech.ch/schema/0296/laws
 rank: 1000
 domain_of:

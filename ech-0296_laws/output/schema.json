@@ -1786,6 +1786,24 @@
         },
         "PrefaceP": {
             "additionalProperties": false,
+            "anyOf": [
+                {
+                    "properties": {
+                        "doc_number": {}
+                    },
+                    "required": [
+                        "doc_number"
+                    ]
+                },
+                {
+                    "properties": {
+                        "doc_title": {}
+                    },
+                    "required": [
+                        "doc_title"
+                    ]
+                }
+            ],
             "description": "A preface paragraph (akn:p) that wraps the document number and/or title. Fedlex requires akn:docNumber and akn:docTitle to sit inside a akn:p of the preface (FLX-PF-001/002).",
             "properties": {
                 "doc_number": {

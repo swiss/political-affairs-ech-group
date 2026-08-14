@@ -1,0 +1,13 @@
+references_ref:
+  source: '#ch.bk'
+  tlc_organizations:
+  - eId: ch.bk
+    href: https://fedlex.data.admin.ch/vocabulary/legal-institution/2
+    show_as: Bundeskanzlei
+  tlc_roles:
+  - eId: publisher
+    href: http://data.legilux.public.lu/resource/ontology/jolux#publisher
+    show_as: Editeur
+  - eId: rightsHolder
+    href: http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder
+    show_as: Détenteur des droits

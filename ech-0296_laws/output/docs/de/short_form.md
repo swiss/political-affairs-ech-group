@@ -55,6 +55,15 @@ URI: [laws:short_form](https://ld.ech.ch/schema/0296/laws/short_form)
 
 
 
+## Beispiele
+
+| Wert |
+| --- |
+| BGÖ |
+| BV |
+| Cost. |
+
+
 
 
 
@@ -80,6 +89,10 @@ description: 'Kurzform-Abkürzung des Gesetzesnamens (@shortForm), z.B. ''BV'' (
   ''Cst.'' (Französisch).
 
   '
+examples:
+- value: BGÖ
+- value: BV
+- value: Cost.
 from_schema: https://ld.ech.ch/schema/0296/laws
 rank: 1000
 domain_of:

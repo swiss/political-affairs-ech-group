@@ -45,6 +45,40 @@ _Ein Autoren- oder Rechteinhaber-Eintrag einer FRBR-Entität (akn:FRBRauthor). @
 
 
 
+### Beispiele
+#### Beispiel FRBRAuthor: sr101 excerpt 1 2
+
+```yaml
+frbr_authors:
+- href: '#ch.bk'
+  as_role: '#rightsHolder'
+
+```
+#### Beispiel FRBRAuthor: sr101 excerpt 1 1
+
+```yaml
+frbr_authors:
+- href: '#ch.bk'
+  as_role: '#publisher'
+
+```
+#### Beispiel FRBRAuthor: bgoe excerpt 1 1
+
+```yaml
+frbr_authors:
+- href: '#ch.bk'
+  as_role: '#publisher'
+
+```
+#### Beispiel FRBRAuthor: bgoe excerpt 1 2
+
+```yaml
+frbr_authors:
+- href: '#ch.bk'
+  as_role: '#rightsHolder'
+
+```
+
 
 
 

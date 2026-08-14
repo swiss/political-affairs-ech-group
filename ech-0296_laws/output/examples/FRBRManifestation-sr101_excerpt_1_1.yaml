@@ -1,0 +1,13 @@
+frbr_manifestation:
+  frbr_this:
+    value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/main-text
+  frbr_uri:
+    value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de
+  frbr_dates:
+  - date_value: '2024-03-03'
+    frbr_date_name: jolux:dateApplicability
+  frbr_authors:
+  - href: '#ch.bk'
+    as_role: '#publisher'
+  frbr_format:
+    value: xml

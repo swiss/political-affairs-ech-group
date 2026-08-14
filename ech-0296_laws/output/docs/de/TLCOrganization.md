@@ -44,6 +44,17 @@ _Eine benannte Organisation als Referenz im Dokument (akn:TLCOrganization). Beis
 
 
 
+### Beispiele
+#### Beispiel TLCOrganization: Declaration of the publishing body
+
+```yaml
+tlc_organizations:
+- eId: ch.bk
+  href: https://fedlex.data.admin.ch/vocabulary/legal-institution/2
+  show_as: Bundeskanzlei
+
+```
+
 
 
 

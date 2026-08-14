@@ -46,6 +46,34 @@ _Ein Fliesstext-Absatz in Content (akn:p). Kann gemischten Inhalt mit Inline-Mar
 
 
 
+### Beispiele
+#### Beispiel BlockParagraph: bgoe excerpt 1 1
+
+```yaml
+block_paragraphs:
+- inline_content:
+  - element_type: TextRun
+    text: >-
+      Dieses Gesetz soll die Transparenz über den Auftrag, die Organisation und die
+      Tätigkeit der Verwaltung fördern. Zu diesem Zweck trägt es zur Information der
+      Öffentlichkeit bei, indem es den Zugang zu amtlichen Dokumenten gewährleistet.
+
+```
+#### Beispiel BlockParagraph: sr101 excerpt 1 1
+
+```yaml
+block_paragraphs:
+- inline_content:
+  - element_type: TextRun
+    text: >-
+      Das Schweizervolk und die Kantone Zürich, Bern, Luzern, Uri, Schwyz, Obwalden
+      und Nidwalden, Glarus, Zug, Freiburg, Solothurn, Basel-Stadt und Basel-Landschaft,
+      Schaffhausen, Appenzell Ausserrhoden und Appenzell Innerrhoden, St. Gallen,
+      Graubünden, Aargau, Thurgau, Tessin, Waadt, Wallis, Neuenburg, Genf und Jura
+      bilden die Schweizerische Eidgenossenschaft.
+
+```
+
 
 
 
