@@ -961,6 +961,7 @@ slots:
     required: true
     annotations:
       description_de: Der Erlass (akn:act). Muss das einzige Kind von akn:akomaNtoso sein (FLX-RT-001).
+      xml_element: akn:act
   act_name:
     description: Type of act (@name attribute of akn:act), e.g. 'publicLaw'.
     range: ActTypeEnum
@@ -978,6 +979,7 @@ slots:
     range: Preface
     annotations:
       description_de: Vorspann des Erlasses (akn:preface).
+      xml_element: akn:preface
   preface_paragraphs:
     description: The akn:p paragraphs of the preface, wrapping docNumber/docTitle.
     range: PrefaceP
@@ -992,6 +994,7 @@ slots:
     range: Preamble
     annotations:
       description_de: Präambel des Erlasses (akn:preamble).
+      xml_element: akn:preamble
   body:
     description: Main body of the act (akn:body).
     range: ActBody
@@ -1002,6 +1005,7 @@ slots:
     range: Identification
     annotations:
       description_de: FRBR-Identifikationsblock (akn:identification).
+      xml_element: akn:identification
   source:
     description: Anchor reference to the responsible organization (@source), e.g. '#ch.bk'.
     range: AnchorRef
@@ -1013,6 +1017,7 @@ slots:
     range: References
     annotations:
       description_de: Referenzen-Abschnitt der Metadaten (akn:references).
+      xml_element: akn:references
   frbr_work:
     description: FRBR Work level description (akn:FRBRWork).
     range: FRBRWork
@@ -1141,6 +1146,7 @@ slots:
     range: date
     annotations:
       description_de: Ein ISO-8601-Datumswert (akn:FRBRdate/@date).
+      xml_name: date
       xml_attribute: 'true'
   href:
     description: URI reference (@href), used for links to organizations, roles, or external URIs.
@@ -1365,6 +1371,7 @@ slots:
     range: Content
     annotations:
       description_de: Inhaltselement innerhalb eines Absatzes (akn:content).
+      xml_element: akn:content
   block_paragraphs:
     description: Block paragraph elements (akn:p) within content.
     range: BlockParagraph
