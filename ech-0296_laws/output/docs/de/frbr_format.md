@@ -75,6 +75,8 @@ description: Dateiformat dieser Manifestation (akn:FRBRformat/@value), typischer
 from_schema: https://ld.ech.ch/schema/0296/laws
 exact_mappings:
 - akn:FRBRformat
+close_mappings:
+- eli:format
 rank: 1000
 domain_of:
 - FRBRManifestation

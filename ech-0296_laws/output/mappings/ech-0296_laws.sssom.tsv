@@ -1,5 +1,6 @@
 # curie_map:
 #   akn: http://docs.oasis-open.org/legaldocml/ns/akn/3.0/
+#   eli: http://data.europa.eu/eli/ontology#
 #   fedlex: http://fedlex.admin.ch/
 #   laws: https://ld.ech.ch/schema/0296/laws/
 #   linkml: https://w3id.org/linkml/
@@ -15,11 +16,15 @@ laws:Act	skos:exactMatch	akn:act	semapv:ManualMappingCuration	Act	act	owl class
 laws:ActMeta	skos:exactMatch	akn:meta	semapv:ManualMappingCuration	ActMeta	meta	owl class
 laws:Identification	skos:exactMatch	akn:identification	semapv:ManualMappingCuration	Identification	identification	owl class
 laws:FRBRWork	skos:exactMatch	akn:FRBRWork	semapv:ManualMappingCuration	FRBRWork	FRBRWork	owl class
+laws:FRBRWork	skos:closeMatch	eli:LegalResource	semapv:ManualMappingCuration	FRBRWork	LegalResource	owl class
 laws:FRBRExpression	skos:exactMatch	akn:FRBRExpression	semapv:ManualMappingCuration	FRBRExpression	FRBRExpression	owl class
+laws:FRBRExpression	skos:closeMatch	eli:LegalExpression	semapv:ManualMappingCuration	FRBRExpression	LegalExpression	owl class
 laws:FRBRManifestation	skos:exactMatch	akn:FRBRManifestation	semapv:ManualMappingCuration	FRBRManifestation	FRBRManifestation	owl class
+laws:FRBRManifestation	skos:closeMatch	eli:Format	semapv:ManualMappingCuration	FRBRManifestation	Format	owl class
 laws:FRBRDate	skos:exactMatch	akn:FRBRdate	semapv:ManualMappingCuration	FRBRDate	FRBRdate	owl class
 laws:FRBRAuthor	skos:exactMatch	akn:FRBRauthor	semapv:ManualMappingCuration	FRBRAuthor	FRBRauthor	owl class
 laws:FRBRName	skos:exactMatch	akn:FRBRname	semapv:ManualMappingCuration	FRBRName	FRBRname	owl class
+laws:FRBRName	skos:closeMatch	eli:title	semapv:ManualMappingCuration	FRBRName	title	owl class
 laws:References	skos:exactMatch	akn:references	semapv:ManualMappingCuration	References	references	owl class
 laws:TLCOrganization	skos:exactMatch	akn:TLCOrganization	semapv:ManualMappingCuration	TLCOrganization	TLCOrganization	owl class
 laws:TLCRole	skos:exactMatch	akn:TLCRole	semapv:ManualMappingCuration	TLCRole	TLCRole	owl class
@@ -60,11 +65,17 @@ laws:AuthorialNote	skos:exactMatch	akn:authorialNote	semapv:ManualMappingCuratio
 laws:preface_paragraphs	skos:exactMatch	akn:p	semapv:ManualMappingCuration	preface_paragraphs	p	owl object property
 laws:frbr_this	skos:exactMatch	akn:FRBRthis	semapv:ManualMappingCuration	frbr_this	FRBRthis	owl object property
 laws:frbr_uri	skos:exactMatch	akn:FRBRuri	semapv:ManualMappingCuration	frbr_uri	FRBRuri	owl object property
+laws:frbr_authors	skos:closeMatch	eli:passed_by	semapv:ManualMappingCuration	frbr_authors	passed_by	owl object property
 laws:frbr_country	skos:exactMatch	akn:FRBRcountry	semapv:ManualMappingCuration	frbr_country	FRBRcountry	owl object property
+laws:frbr_country	skos:closeMatch	eli:jurisdiction	semapv:ManualMappingCuration	frbr_country	jurisdiction	owl object property
 laws:frbr_number	skos:exactMatch	akn:FRBRnumber	semapv:ManualMappingCuration	frbr_number	FRBRnumber	owl object property
+laws:frbr_number	skos:closeMatch	eli:number	semapv:ManualMappingCuration	frbr_number	number	owl object property
 laws:frbr_authoritative	skos:exactMatch	akn:FRBRauthoritative	semapv:ManualMappingCuration	frbr_authoritative	FRBRauthoritative	owl object property
+laws:frbr_authoritative	skos:closeMatch	eli:legal_value	semapv:ManualMappingCuration	frbr_authoritative	legal_value	owl object property
 laws:frbr_language	skos:exactMatch	akn:FRBRlanguage	semapv:ManualMappingCuration	frbr_language	FRBRlanguage	owl object property
+laws:frbr_language	skos:closeMatch	eli:language	semapv:ManualMappingCuration	frbr_language	language	owl object property
 laws:frbr_format	skos:exactMatch	akn:FRBRformat	semapv:ManualMappingCuration	frbr_format	FRBRformat	owl object property
+laws:frbr_format	skos:closeMatch	eli:format	semapv:ManualMappingCuration	frbr_format	format	owl object property
 laws:doc_number	skos:exactMatch	akn:docNumber	semapv:ManualMappingCuration	doc_number	docNumber	owl object property
 laws:doc_title	skos:exactMatch	akn:docTitle	semapv:ManualMappingCuration	doc_title	docTitle	owl object property
 laws:num	skos:exactMatch	akn:num	semapv:ManualMappingCuration	num	num	owl object property

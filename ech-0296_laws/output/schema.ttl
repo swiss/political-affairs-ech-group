@@ -1,5 +1,6 @@
 @prefix akn: <http://docs.oasis-open.org/legaldocml/ns/akn/3.0/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix eli: <http://data.europa.eu/eli/ontology#> .
 @prefix laws: <https://ld.ech.ch/schema/0296/laws/> .
 @prefix linkml: <https://w3id.org/linkml/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -20,13 +21,13 @@
 laws:FedlexDocument a owl:Class ;
     rdfs:label "FedlexDocument" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty laws:act_ref ],
+        [ a owl:Restriction ;
             owl:allValuesFrom laws:Act ;
             owl:onProperty laws:act_ref ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty laws:act_ref ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
             owl:onProperty laws:act_ref ] ;
     skos:definition """Root element of a Fedlex AkomaNtoso document (akn:akomaNtoso). Must contain exactly one akn:act element and no other children (FLX-RT-001). Carries the AkomaNtoso namespace declaration and the Fedlex extension namespace.
 """ ;
@@ -42,14 +43,41 @@ laws:FedlexDocument a owl:Class ;
 laws:Act a owl:Class ;
     rdfs:label "Act" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom laws:Preface ;
+            owl:onProperty laws:preface_ref ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:body ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:preamble_ref ],
         [ a owl:Restriction ;
-            owl:allValuesFrom laws:Preface ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:meta ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty laws:preface_ref ],
         [ a owl:Restriction ;
             owl:allValuesFrom laws:ActMeta ;
             owl:onProperty laws:meta ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:Preamble ;
+            owl:onProperty laws:preamble_ref ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:ActBody ;
+            owl:onProperty laws:body ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:act_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:body ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:preamble_ref ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:preface_ref ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty laws:act_name ],
@@ -57,35 +85,8 @@ laws:Act a owl:Class ;
             owl:allValuesFrom laws:ActTypeEnum ;
             owl:onProperty laws:act_name ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:preamble_ref ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty laws:act_name ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:ActBody ;
-            owl:onProperty laws:body ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:meta ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:body ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:Preamble ;
-            owl:onProperty laws:preamble_ref ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:body ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:preface_ref ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:meta ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:preface_ref ] ;
+            owl:onProperty laws:meta ] ;
     skos:definition """The legislative act element (akn:act). Main content container of an AkomaNtoso document. The @name attribute specifies the type of act (e.g. 'publicLaw').
 """ ;
     skos:exactMatch akn:act ;
@@ -97,23 +98,32 @@ laws:Act a owl:Class ;
 laws:ActBody a owl:Class ;
     rdfs:label "ActBody" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom laws:Subchapter ;
-            owl:onProperty laws:subchapters ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:Book ;
-            owl:onProperty laws:books ],
-        [ a owl:Restriction ;
             owl:allValuesFrom laws:Title ;
             owl:onProperty laws:titles ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:levels ],
+            owl:allValuesFrom laws:Proviso ;
+            owl:onProperty laws:provisos ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:transitionals ],
         [ a owl:Restriction ;
+            owl:allValuesFrom laws:Subchapter ;
+            owl:onProperty laws:subchapters ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:Article ;
+            owl:onProperty laws:articles ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:titles ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:articles ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:Transitional ;
+            owl:onProperty laws:transitionals ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:subsections ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:books ],
@@ -121,47 +131,38 @@ laws:ActBody a owl:Class ;
             owl:allValuesFrom laws:Level ;
             owl:onProperty laws:levels ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:provisos ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:Section ;
-            owl:onProperty laws:sections ],
+            owl:allValuesFrom laws:Book ;
+            owl:onProperty laws:books ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:parts ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:subsections ],
         [ a owl:Restriction ;
             owl:allValuesFrom laws:Chapter ;
             owl:onProperty laws:chapters ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty laws:articles ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:Article ;
-            owl:onProperty laws:articles ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:Part ;
-            owl:onProperty laws:parts ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:sections ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:Transitional ;
-            owl:onProperty laws:transitionals ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:chapters ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:Proviso ;
-            owl:onProperty laws:provisos ],
+            owl:onProperty laws:levels ],
         [ a owl:Restriction ;
             owl:allValuesFrom laws:Subsection ;
             owl:onProperty laws:subsections ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty laws:subchapters ] ;
+            owl:onProperty laws:provisos ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:chapters ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:sections ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:subchapters ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:Section ;
+            owl:onProperty laws:sections ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:Part ;
+            owl:onProperty laws:parts ] ;
     skos:definition """The main body of the act (akn:body), containing the legislative hierarchy. Allowed direct children are restricted to: book, title, part, chapter, subchapter, section, subsection, level, article, transitional, proviso. No other elements are permitted (FLX-BD-001).
 """ ;
     skos:exactMatch akn:body ;
@@ -175,23 +176,23 @@ laws:ActBody a owl:Class ;
 laws:ActMeta a owl:Class ;
     rdfs:label "ActMeta" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:identification_ref ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:identification_ref ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty laws:references_ref ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty laws:identification_ref ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:Identification ;
-            owl:onProperty laws:identification_ref ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty laws:references_ref ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:identification_ref ],
         [ a owl:Restriction ;
             owl:allValuesFrom laws:References ;
-            owl:onProperty laws:references_ref ] ;
+            owl:onProperty laws:references_ref ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:Identification ;
+            owl:onProperty laws:identification_ref ] ;
     skos:definition """Metadata section of the act (akn:meta). Contains FRBR identification (Work, Expression, Manifestation levels) and named reference definitions.
 """ ;
     skos:exactMatch akn:meta ;
@@ -227,35 +228,35 @@ laws:ActMeta a owl:Class ;
 laws:BlockListItem a owl:Class ;
     rdfs:label "BlockListItem" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom laws:BlockList ;
-            owl:onProperty laws:block_lists ],
+            owl:minCardinality 0 ;
+            owl:onProperty laws:num ],
         [ a owl:Restriction ;
             owl:allValuesFrom laws:BlockParagraph ;
             owl:onProperty laws:block_paragraphs ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty laws:eId ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:block_lists ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:eId ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:block_paragraphs ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:num ],
         [ a owl:Restriction ;
             owl:allValuesFrom laws:MixedText ;
             owl:onProperty laws:num ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty laws:eId ],
+            owl:onProperty laws:block_paragraphs ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty laws:num ] ;
+            owl:onProperty laws:num ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:eId ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty laws:eId ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:eId ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:block_lists ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:BlockList ;
+            owl:onProperty laws:block_lists ] ;
     skos:definition """A single item in a block list (akn:item). Carries a num label and block content directly: prose paragraphs (akn:p) and optionally nested block lists.
 """ ;
     skos:exactMatch akn:item ;
@@ -298,44 +299,45 @@ laws:BlockListItem a owl:Class ;
 laws:FRBRExpression a owl:Class ;
     rdfs:label "FRBRExpression" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:frbr_language ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:frbr_this ],
+        [ a owl:Restriction ;
             owl:allValuesFrom laws:LanguageType ;
+            owl:onProperty laws:frbr_language ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:UriValueType ;
+            owl:onProperty laws:frbr_uri ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:frbr_dates ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty laws:frbr_language ],
         [ a owl:Restriction ;
             owl:allValuesFrom laws:FRBRAuthor ;
             owl:onProperty laws:frbr_authors ],
         [ a owl:Restriction ;
             owl:allValuesFrom laws:UriValueType ;
-            owl:onProperty laws:frbr_uri ],
+            owl:onProperty laws:frbr_this ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty laws:frbr_this ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty laws:frbr_language ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:frbr_dates ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:frbr_this ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty laws:frbr_uri ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:frbr_uri ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:frbr_authors ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:frbr_language ],
         [ a owl:Restriction ;
             owl:allValuesFrom laws:FRBRDate ;
             owl:onProperty laws:frbr_dates ],
         [ a owl:Restriction ;
-            owl:allValuesFrom laws:UriValueType ;
-            owl:onProperty laws:frbr_this ] ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:frbr_uri ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:frbr_authors ] ;
+    skos:closeMatch eli:LegalExpression ;
     skos:definition """FRBR Expression level (akn:FRBRExpression): a specific language version of the legislative text. Identified by an ELI URI that includes the language code.
 """ ;
     skos:exactMatch akn:FRBRExpression ;
@@ -347,17 +349,14 @@ laws:FRBRExpression a owl:Class ;
 laws:FRBRManifestation a owl:Class ;
     rdfs:label "FRBRManifestation" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:frbr_format ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:frbr_format ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty laws:frbr_this ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:UriValueType ;
-            owl:onProperty laws:frbr_uri ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:frbr_uri ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:frbr_authors ],
@@ -365,26 +364,30 @@ laws:FRBRManifestation a owl:Class ;
             owl:allValuesFrom laws:FormatType ;
             owl:onProperty laws:frbr_format ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
             owl:onProperty laws:frbr_uri ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:frbr_format ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:frbr_dates ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:FRBRDate ;
-            owl:onProperty laws:frbr_dates ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:FRBRAuthor ;
-            owl:onProperty laws:frbr_authors ],
+            owl:allValuesFrom laws:UriValueType ;
+            owl:onProperty laws:frbr_uri ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:frbr_this ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:frbr_uri ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:frbr_dates ],
+        [ a owl:Restriction ;
             owl:allValuesFrom laws:UriValueType ;
-            owl:onProperty laws:frbr_this ] ;
+            owl:onProperty laws:frbr_this ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:FRBRAuthor ;
+            owl:onProperty laws:frbr_authors ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:FRBRDate ;
+            owl:onProperty laws:frbr_dates ] ;
+    skos:closeMatch eli:Format ;
     skos:definition """FRBR Manifestation level (akn:FRBRManifestation): a specific file format of the expression. For Fedlex XML files the format value is 'xml'. The optional fedlex:generator attribute is only permitted here (FLX-XF-002).
 """ ;
     skos:exactMatch akn:FRBRManifestation ;
@@ -397,32 +400,33 @@ laws:FRBRManifestation a owl:Class ;
 laws:FRBRName a owl:Class ;
     rdfs:label "FRBRName" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty laws:short_form ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:short_form ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty laws:xml_lang ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:xml_lang ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:xml_lang ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:value ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:short_form ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:value ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:xml_lang ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty laws:value ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:short_form ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:xml_lang ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty laws:short_form ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty laws:xml_lang ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:short_form ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty laws:value ] ;
+    skos:closeMatch eli:title ;
     skos:definition """A multilingual name entry for the FRBR Work (akn:FRBRname). Carries the full official name and an optional abbreviation. One entry per language.
 """ ;
     skos:exactMatch akn:FRBRname ;
@@ -435,13 +439,25 @@ laws:FRBRWork a owl:Class ;
     rdfs:label "FRBRWork" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty laws:frbr_number ],
+            owl:onProperty laws:frbr_uri ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:frbr_this ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:frbr_country ],
+            owl:allValuesFrom laws:FRBRName ;
+            owl:onProperty laws:frbr_names ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:frbr_uri ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:UriValueType ;
+            owl:onProperty laws:frbr_this ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:ValueType ;
+            owl:onProperty laws:frbr_number ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:ValueType ;
+            owl:onProperty laws:frbr_authoritative ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:frbr_names ],
@@ -449,53 +465,42 @@ laws:FRBRWork a owl:Class ;
             owl:maxCardinality 1 ;
             owl:onProperty laws:frbr_country ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:frbr_uri ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:ValueType ;
-            owl:onProperty laws:frbr_authoritative ],
-        [ a owl:Restriction ;
             owl:allValuesFrom laws:FRBRAuthor ;
             owl:onProperty laws:frbr_authors ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:frbr_this ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:ValueType ;
+            owl:onProperty laws:frbr_country ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:frbr_authors ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:frbr_authoritative ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:frbr_number ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:frbr_number ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:frbr_authoritative ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:frbr_dates ],
         [ a owl:Restriction ;
-            owl:allValuesFrom laws:UriValueType ;
-            owl:onProperty laws:frbr_uri ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:FRBRName ;
-            owl:onProperty laws:frbr_names ],
+            owl:minCardinality 0 ;
+            owl:onProperty laws:frbr_country ],
         [ a owl:Restriction ;
             owl:allValuesFrom laws:FRBRDate ;
             owl:onProperty laws:frbr_dates ],
         [ a owl:Restriction ;
             owl:allValuesFrom laws:UriValueType ;
-            owl:onProperty laws:frbr_this ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:ValueType ;
-            owl:onProperty laws:frbr_number ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:frbr_uri ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:frbr_authors ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:frbr_number ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:frbr_authoritative ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:frbr_this ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:ValueType ;
-            owl:onProperty laws:frbr_country ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:frbr_authoritative ] ;
+            owl:onProperty laws:frbr_uri ] ;
+    skos:closeMatch eli:LegalResource ;
     skos:definition """FRBR Work level (akn:FRBRWork): the abstract legislative text independent of language or version. Contains ELI URIs, Fedlex/JoLux dates, authors, country code (CH), SR number, and multilingual names with short forms.
 """ ;
     skos:exactMatch akn:FRBRWork ;
@@ -523,20 +528,20 @@ laws:FormatType a owl:Class ;
             owl:minCardinality 0 ;
             owl:onProperty laws:value ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:fedlex_generator ],
+        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty laws:value ],
+            owl:onProperty laws:fedlex_generator ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:fedlex_generator ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty laws:value ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty laws:fedlex_generator ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty laws:fedlex_generator ] ;
+            owl:onProperty laws:value ] ;
     skos:definition """A holder for akn:FRBRformat: a @value (typically 'xml') plus the optional fedlex:generator extension attribute (FLX-XF-002).
 """ ;
     skos:inScheme <https://ld.ech.ch/schema/0296/laws> ;
@@ -546,40 +551,40 @@ laws:FormatType a owl:Class ;
 laws:Identification a owl:Class ;
     rdfs:label "Identification" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:source ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:frbr_expression ],
+        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
+            owl:onProperty laws:source ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty laws:source ],
         [ a owl:Restriction ;
             owl:allValuesFrom laws:FRBRExpression ;
             owl:onProperty laws:frbr_expression ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:frbr_expression ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:frbr_expression ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:FRBRWork ;
-            owl:onProperty laws:frbr_work ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:source ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:frbr_manifestation ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:source ],
-        [ a owl:Restriction ;
             owl:allValuesFrom laws:FRBRManifestation ;
             owl:onProperty laws:frbr_manifestation ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
             owl:onProperty laws:frbr_work ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:frbr_manifestation ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:frbr_manifestation ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty laws:frbr_expression ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:frbr_work ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:FRBRWork ;
             owl:onProperty laws:frbr_work ] ;
     skos:definition """FRBR identification block (akn:identification) grouping Work, Expression, and Manifestation descriptions. The @source attribute references the responsible organization as an intra-document anchor (e.g. '#ch.bk').
 """ ;
@@ -592,13 +597,13 @@ laws:Identification a owl:Class ;
 laws:LanguageType a owl:Class ;
     rdfs:label "LanguageType" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom laws:DocumentLanguageEnum ;
-            owl:onProperty laws:language_value ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:language_value ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty laws:language_value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:DocumentLanguageEnum ;
             owl:onProperty laws:language_value ] ;
     skos:definition "A holder carrying a single @language attribute (akn:FRBRlanguage)." ;
     skos:inScheme <https://ld.ech.ch/schema/0296/laws> ;
@@ -607,10 +612,10 @@ laws:LanguageType a owl:Class ;
 laws:Preamble a owl:Class ;
     rdfs:label "Preamble" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom laws:BlockParagraph ;
+            owl:minCardinality 0 ;
             owl:onProperty laws:block_paragraphs ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom laws:BlockParagraph ;
             owl:onProperty laws:block_paragraphs ] ;
     skos:definition """The preamble of the act (akn:preamble), containing introductory prose paragraphs preceding the operative body.
 """ ;
@@ -623,10 +628,10 @@ laws:Preamble a owl:Class ;
 laws:Preface a owl:Class ;
     rdfs:label "Preface" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom laws:PrefaceP ;
+            owl:minCardinality 0 ;
             owl:onProperty laws:preface_paragraphs ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom laws:PrefaceP ;
             owl:onProperty laws:preface_paragraphs ] ;
     skos:definition """The preface of the act (akn:preface), containing the document number and title. Fedlex Schematron requires both akn:docNumber (FLX-PF-001) and akn:docTitle (FLX-PF-002) to be present inside a akn:p element.
 """ ;
@@ -640,12 +645,6 @@ laws:Preface a owl:Class ;
 laws:PrefaceP a owl:Class ;
     rdfs:label "PrefaceP" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty laws:doc_title ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:doc_title ],
-        [ a owl:Restriction ;
             owl:allValuesFrom laws:MixedText ;
             owl:onProperty laws:doc_title ],
         [ a owl:Restriction ;
@@ -655,8 +654,14 @@ laws:PrefaceP a owl:Class ;
             owl:minCardinality 1 ;
             owl:onProperty laws:doc_number ],
         [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty laws:doc_title ],
+        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty laws:doc_number ] ;
+            owl:onProperty laws:doc_number ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:doc_title ] ;
     skos:definition """A preface paragraph (akn:p) that wraps the document number and/or title. Fedlex requires akn:docNumber and akn:docTitle to sit inside a akn:p of the preface (FLX-PF-001/002).
 """ ;
     skos:exactMatch akn:p ;
@@ -669,26 +674,14 @@ laws:PrefaceP a owl:Class ;
 laws:Proviso a owl:Class ;
     rdfs:label "Proviso" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:paragraphs ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:MixedText ;
-            owl:onProperty laws:heading ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:levels ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty laws:eId ],
         [ a owl:Restriction ;
             owl:allValuesFrom laws:MixedText ;
             owl:onProperty laws:num ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom laws:MixedText ;
             owl:onProperty laws:heading ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty laws:eId ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty laws:eId ],
@@ -699,17 +692,29 @@ laws:Proviso a owl:Class ;
             owl:minCardinality 0 ;
             owl:onProperty laws:heading ],
         [ a owl:Restriction ;
-            owl:allValuesFrom laws:Article ;
-            owl:onProperty laws:articles ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:Paragraph ;
-            owl:onProperty laws:paragraphs ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:articles ],
         [ a owl:Restriction ;
             owl:allValuesFrom laws:Level ;
             owl:onProperty laws:levels ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:heading ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:Paragraph ;
+            owl:onProperty laws:paragraphs ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty laws:eId ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:levels ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:Article ;
+            owl:onProperty laws:articles ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:paragraphs ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty laws:num ] ;
@@ -725,32 +730,32 @@ laws:Proviso a owl:Class ;
 laws:References a owl:Class ;
     rdfs:label "References" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty laws:source ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:source ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:TLCReference ;
-            owl:onProperty laws:tlc_references ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:tlc_references ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:tlc_organizations ],
         [ a owl:Restriction ;
-            owl:allValuesFrom laws:TLCRole ;
-            owl:onProperty laws:tlc_roles ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:tlc_roles ],
+            owl:allValuesFrom laws:TLCOrganization ;
+            owl:onProperty laws:tlc_organizations ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty laws:source ],
         [ a owl:Restriction ;
-            owl:allValuesFrom laws:TLCOrganization ;
-            owl:onProperty laws:tlc_organizations ] ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:source ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:tlc_roles ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:tlc_references ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:TLCRole ;
+            owl:onProperty laws:tlc_roles ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty laws:source ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:TLCReference ;
+            owl:onProperty laws:tlc_references ] ;
     skos:definition """Named reference definitions used across the document (akn:references). Defines organizations, roles, and other entities that are referenced by anchor (@href='#eId') elsewhere in the document.
 """ ;
     skos:exactMatch akn:references ;
@@ -762,29 +767,20 @@ laws:References a owl:Class ;
 laws:Subdivision a owl:Class ;
     rdfs:label "Subdivision" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:paragraphs ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty laws:eId ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty laws:eId ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:MixedText ;
-            owl:onProperty laws:heading ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty laws:num ],
         [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty laws:eId ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:subheading ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:heading ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:MixedText ;
-            owl:onProperty laws:subheading ],
         [ a owl:Restriction ;
             owl:allValuesFrom laws:MixedText ;
             owl:onProperty laws:num ],
@@ -792,17 +788,26 @@ laws:Subdivision a owl:Class ;
             owl:minCardinality 1 ;
             owl:onProperty laws:eId ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:paragraphs ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:MixedText ;
+            owl:onProperty laws:subheading ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:Paragraph ;
+            owl:onProperty laws:paragraphs ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty laws:heading ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty laws:subheading ],
         [ a owl:Restriction ;
-            owl:allValuesFrom laws:Paragraph ;
-            owl:onProperty laws:paragraphs ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty laws:num ] ;
+            owl:onProperty laws:num ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:MixedText ;
+            owl:onProperty laws:heading ] ;
     skos:definition """A subdivision within an article grouping related paragraphs (akn:subdivision). Constraints (FLX-SD-*): - only heading elements and akn:paragraph are allowed as children (FLX-SD-001) - only permitted as a direct child of akn:article, not nested (FLX-SD-002) - requires unique @eId (FLX-SD-003)
 """ ;
     skos:exactMatch akn:subdivision ;
@@ -819,20 +824,11 @@ laws:TLCOrganization a owl:Class ;
             owl:minCardinality 0 ;
             owl:onProperty laws:eId ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:show_as ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:href ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:show_as ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty laws:eId ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty laws:eId ],
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:show_as ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty laws:show_as ],
@@ -840,8 +836,17 @@ laws:TLCOrganization a owl:Class ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty laws:href ],
         [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty laws:eId ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty laws:href ] ;
+            owl:onProperty laws:href ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:href ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:show_as ] ;
     skos:definition """A named organization used as a reference throughout the document (akn:TLCOrganization). Example: the Federal Chancellery (ch.bk).
 """ ;
     skos:exactMatch akn:TLCOrganization ;
@@ -853,41 +858,41 @@ laws:TLCOrganization a owl:Class ;
 laws:TLCReference a owl:Class ;
     rdfs:label "TLCReference" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:href ],
+        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty laws:name_attr ],
+            owl:onProperty laws:href ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty laws:show_as ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:name_attr ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty laws:href ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty laws:eId ],
+            owl:onProperty laws:name_attr ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty laws:href ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:eId ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:maxCardinality 1 ;
             owl:onProperty laws:eId ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:show_as ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:eId ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty laws:eId ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty laws:name_attr ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:name_attr ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty laws:show_as ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:href ] ;
+            owl:onProperty laws:show_as ] ;
     skos:definition """A generic named reference in the document (akn:TLCReference). Used for references that do not fit the TLCOrganization or TLCRole categories.
 """ ;
     skos:exactMatch akn:TLCReference ;
@@ -900,31 +905,31 @@ laws:TLCRole a owl:Class ;
     rdfs:label "TLCRole" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty laws:href ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:show_as ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty laws:eId ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:eId ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:href ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty laws:show_as ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty laws:href ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:show_as ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:href ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty laws:show_as ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty laws:eId ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:show_as ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:eId ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty laws:href ] ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:eId ] ;
     skos:definition """A named role used as a reference throughout the document (akn:TLCRole). Examples: publisher, rightsHolder.
 """ ;
     skos:exactMatch akn:TLCRole ;
@@ -936,19 +941,19 @@ laws:TLCRole a owl:Class ;
 laws:Table a owl:Class ;
     rdfs:label "Table" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:border ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty laws:border ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:table_rows ],
         [ a owl:Restriction ;
             owl:allValuesFrom laws:TableRow ;
             owl:onProperty laws:table_rows ],
         [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty laws:border ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty laws:border ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty laws:border ] ;
     skos:definition """A table element within content (akn:table). Contains rows (akn:tr) with cells (akn:td). Corresponds to the HTML table model.
 """ ;
@@ -964,22 +969,22 @@ laws:TableCell a owl:Class ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty laws:colspan ],
         [ a owl:Restriction ;
-            owl:allValuesFrom laws:BlockParagraph ;
-            owl:onProperty laws:block_paragraphs ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty laws:colspan ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty laws:block_lists ],
+            owl:onProperty laws:block_paragraphs ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:colspan ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom laws:BlockList ;
+            owl:onProperty laws:block_lists ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:BlockParagraph ;
             owl:onProperty laws:block_paragraphs ],
         [ a owl:Restriction ;
-            owl:allValuesFrom laws:BlockList ;
+            owl:minCardinality 0 ;
             owl:onProperty laws:block_lists ] ;
     skos:definition """A cell in a table row (akn:td). Contains block content: prose paragraphs (akn:p) and block lists (akn:blockList).
 """ ;
@@ -1007,26 +1012,20 @@ laws:TableRow a owl:Class ;
 laws:Transitional a owl:Class ;
     rdfs:label "Transitional" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:levels ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:heading ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:Article ;
-            owl:onProperty laws:articles ],
-        [ a owl:Restriction ;
             owl:allValuesFrom laws:Level ;
             owl:onProperty laws:levels ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
             owl:onProperty laws:num ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty laws:heading ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty laws:eId ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty laws:heading ],
+            owl:onProperty laws:levels ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty laws:eId ],
@@ -1034,23 +1033,29 @@ laws:Transitional a owl:Class ;
             owl:minCardinality 0 ;
             owl:onProperty laws:articles ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:num ],
+        [ a owl:Restriction ;
             owl:allValuesFrom laws:MixedText ;
             owl:onProperty laws:heading ],
         [ a owl:Restriction ;
             owl:allValuesFrom laws:MixedText ;
             owl:onProperty laws:num ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:num ],
-        [ a owl:Restriction ;
             owl:allValuesFrom laws:Paragraph ;
             owl:onProperty laws:paragraphs ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:allValuesFrom laws:Article ;
+            owl:onProperty laws:articles ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty laws:eId ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty laws:paragraphs ] ;
+            owl:onProperty laws:paragraphs ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:heading ] ;
     skos:definition """A transitional provision in the body of an act (akn:transitional). Permitted as a top-level body element (FLX-BD-001). Structure follows article conventions.
 """ ;
     skos:exactMatch akn:transitional ;
@@ -1166,10 +1171,10 @@ laws:AuthorialNote a owl:Class ;
 laws:B a owl:Class ;
     rdfs:label "B" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom laws:InlineElement ;
             owl:onProperty laws:inline_content ],
         [ a owl:Restriction ;
-            owl:allValuesFrom laws:InlineElement ;
+            owl:minCardinality 0 ;
             owl:onProperty laws:inline_content ],
         laws:InlineElement ;
     skos:definition "Bold inline markup (akn:b)." ;
@@ -1196,18 +1201,18 @@ laws:Content a owl:Class ;
             owl:onProperty laws:block_lists ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty laws:tables ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:block_paragraphs ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:BlockParagraph ;
             owl:onProperty laws:block_paragraphs ],
         [ a owl:Restriction ;
             owl:allValuesFrom laws:BlockList ;
             owl:onProperty laws:block_lists ],
         [ a owl:Restriction ;
             owl:allValuesFrom laws:Table ;
-            owl:onProperty laws:tables ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:BlockParagraph ;
-            owl:onProperty laws:block_paragraphs ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty laws:tables ] ;
     skos:definition """The content of a paragraph (akn:content). Contains block-level elements: akn:p (prose), akn:blockList (numbered/lettered lists), akn:table. When used inside a akn:level, must contain an akn:mod element (FLX-HR-003).
 """ ;
@@ -1240,17 +1245,17 @@ laws:Inline a owl:Class ;
             owl:minCardinality 0 ;
             owl:onProperty laws:inline_content ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty laws:name_attr ],
+            owl:allValuesFrom laws:InlineElement ;
+            owl:onProperty laws:inline_content ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:name_attr ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty laws:name_attr ],
         [ a owl:Restriction ;
-            owl:allValuesFrom laws:InlineElement ;
-            owl:onProperty laws:inline_content ],
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:name_attr ],
         laws:InlineElement ;
     skos:definition "A named presentational inline (akn:inline), e.g. name='man-font-style-normal'." ;
     skos:exactMatch akn:inline ;
@@ -1262,19 +1267,19 @@ laws:Inline a owl:Class ;
 laws:Placeholder a owl:Class ;
     rdfs:label "Placeholder" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty laws:fedlex_message ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:fedlex_message ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom laws:InlineElement ;
             owl:onProperty laws:inline_content ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:fedlex_message ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty laws:fedlex_message ],
         [ a owl:Restriction ;
-            owl:allValuesFrom laws:InlineElement ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty laws:fedlex_message ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty laws:inline_content ],
         laws:InlineElement ;
     skos:definition """A placeholder for stripped content (akn:placeholder), carrying the fedlex:message extension attribute (e.g. 'E40S10-TAB').
@@ -1288,13 +1293,13 @@ laws:Placeholder a owl:Class ;
 laws:Ref a owl:Class ;
     rdfs:label "Ref" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom xsd:anyURI ;
             owl:onProperty laws:fedlex_rs_uri ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:fedlex_rs ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty laws:href ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:anyURI ;
+            owl:minCardinality 0 ;
             owl:onProperty laws:fedlex_rs_uri ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
@@ -1303,11 +1308,11 @@ laws:Ref a owl:Class ;
             owl:minCardinality 0 ;
             owl:onProperty laws:fedlex_rs ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:href ],
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:fedlex_rs ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty laws:fedlex_rs_uri ],
+            owl:onProperty laws:href ],
         [ a owl:Restriction ;
             owl:allValuesFrom laws:InlineElement ;
             owl:onProperty laws:inline_content ],
@@ -1318,8 +1323,8 @@ laws:Ref a owl:Class ;
             owl:maxCardinality 1 ;
             owl:onProperty laws:href ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty laws:href ],
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:fedlex_rs_uri ],
         laws:InlineElement ;
     skos:definition """An inline reference (akn:ref). Carries @href, and for internal SR cross-references the Fedlex extension attributes fedlex:rs and fedlex:rs-uri.
 """ ;
@@ -1332,10 +1337,10 @@ laws:Ref a owl:Class ;
 laws:Span a owl:Class ;
     rdfs:label "Span" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom laws:InlineElement ;
+            owl:minCardinality 0 ;
             owl:onProperty laws:inline_content ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom laws:InlineElement ;
             owl:onProperty laws:inline_content ],
         laws:InlineElement ;
     skos:definition "Generic inline span (akn:span)." ;
@@ -1347,10 +1352,10 @@ laws:Span a owl:Class ;
 laws:Sup a owl:Class ;
     rdfs:label "Sup" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom laws:InlineElement ;
             owl:onProperty laws:inline_content ],
         [ a owl:Restriction ;
-            owl:allValuesFrom laws:InlineElement ;
+            owl:minCardinality 0 ;
             owl:onProperty laws:inline_content ],
         laws:InlineElement ;
     skos:definition "Superscript inline markup (akn:sup)." ;
@@ -1362,13 +1367,13 @@ laws:Sup a owl:Class ;
 laws:TextRun a owl:Class ;
     rdfs:label "TextRun" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty laws:text ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty laws:text ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:minCardinality 0 ;
             owl:onProperty laws:text ],
         laws:InlineElement ;
     skos:definition """A plain run of character data within mixed content. Emitted as the text node of a mixed complexType, not as an element.
@@ -1523,6 +1528,7 @@ laws:fedlex_rs_uri a owl:DatatypeProperty ;
 laws:frbr_authoritative a owl:ObjectProperty ;
     rdfs:label "frbr_authoritative" ;
     rdfs:range laws:ValueType ;
+    skos:closeMatch eli:legal_value ;
     skos:definition "Whether this is the authoritative version (akn:FRBRauthoritative/@value)." ;
     skos:exactMatch akn:FRBRauthoritative ;
     skos:inScheme <https://ld.ech.ch/schema/0296/laws> ;
@@ -1532,6 +1538,7 @@ laws:frbr_authoritative a owl:ObjectProperty ;
 laws:frbr_country a owl:ObjectProperty ;
     rdfs:label "frbr_country" ;
     rdfs:range laws:ValueType ;
+    skos:closeMatch eli:jurisdiction ;
     skos:definition "Country code for this legislative text (akn:FRBRcountry/@value), e.g. 'CH'." ;
     skos:exactMatch akn:FRBRcountry ;
     skos:inScheme <https://ld.ech.ch/schema/0296/laws> ;
@@ -1559,6 +1566,7 @@ laws:frbr_expression a owl:ObjectProperty ;
 laws:frbr_format a owl:ObjectProperty ;
     rdfs:label "frbr_format" ;
     rdfs:range laws:FormatType ;
+    skos:closeMatch eli:format ;
     skos:definition "File format of this manifestation (akn:FRBRformat/@value), typically 'xml'." ;
     skos:exactMatch akn:FRBRformat ;
     skos:inScheme <https://ld.ech.ch/schema/0296/laws> ;
@@ -1568,6 +1576,7 @@ laws:frbr_format a owl:ObjectProperty ;
 laws:frbr_language a owl:ObjectProperty ;
     rdfs:label "frbr_language" ;
     rdfs:range laws:LanguageType ;
+    skos:closeMatch eli:language ;
     skos:definition "Language code of this expression (akn:FRBRlanguage/@language)." ;
     skos:exactMatch akn:FRBRlanguage ;
     skos:inScheme <https://ld.ech.ch/schema/0296/laws> ;
@@ -1584,6 +1593,7 @@ laws:frbr_manifestation a owl:ObjectProperty ;
 laws:frbr_number a owl:ObjectProperty ;
     rdfs:label "frbr_number" ;
     rdfs:range laws:ValueType ;
+    skos:closeMatch eli:number ;
     skos:definition "SR (Systematische Rechtssammlung) number (akn:FRBRnumber/@value), e.g. '101'." ;
     skos:exactMatch akn:FRBRnumber ;
     skos:inScheme <https://ld.ech.ch/schema/0296/laws> ;
@@ -1692,11 +1702,14 @@ xsd:anyURI a rdfs:Datatype .
 laws:BlockList a owl:Class ;
     rdfs:label "BlockList" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
             owl:onProperty laws:eId ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty laws:list_introduction ],
+            owl:onProperty laws:eId ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty laws:eId ],
         [ a owl:Restriction ;
             owl:allValuesFrom laws:MixedText ;
             owl:onProperty laws:list_introduction ],
@@ -1704,17 +1717,14 @@ laws:BlockList a owl:Class ;
             owl:allValuesFrom laws:BlockListItem ;
             owl:onProperty laws:items ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:list_introduction ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:list_introduction ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty laws:eId ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty laws:items ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:eId ] ;
+            owl:onProperty laws:items ] ;
     skos:definition """A block list of enumerated or lettered items (akn:blockList), optionally introduced by an akn:listIntroduction element.
 """ ;
     skos:exactMatch akn:blockList ;
@@ -1726,89 +1736,89 @@ laws:BlockList a owl:Class ;
 laws:Book a owl:Class ;
     rdfs:label "Book" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom laws:MixedText ;
-            owl:onProperty laws:heading ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:sections ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:Chapter ;
-            owl:onProperty laws:chapters ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:minCardinality 1 ;
             owl:onProperty laws:eId ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:MixedText ;
-            owl:onProperty laws:num ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:subsections ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:Section ;
-            owl:onProperty laws:sections ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:Title ;
-            owl:onProperty laws:titles ],
         [ a owl:Restriction ;
             owl:allValuesFrom laws:Article ;
             owl:onProperty laws:articles ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom laws:Level ;
             owl:onProperty laws:levels ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:eId ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:titles ],
         [ a owl:Restriction ;
-            owl:allValuesFrom laws:Subsection ;
-            owl:onProperty laws:subsections ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:subheading ],
+            owl:minCardinality 0 ;
+            owl:onProperty laws:sections ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty laws:num ],
+            owl:onProperty laws:heading ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:chapters ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:heading ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:eId ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:articles ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:parts ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty laws:eId ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:Part ;
-            owl:onProperty laws:parts ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:subheading ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:subchapters ],
         [ a owl:Restriction ;
-            owl:allValuesFrom laws:Level ;
-            owl:onProperty laws:levels ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:heading ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty laws:num ],
         [ a owl:Restriction ;
-            owl:allValuesFrom laws:MixedText ;
+            owl:allValuesFrom laws:Title ;
+            owl:onProperty laws:titles ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:Chapter ;
+            owl:onProperty laws:chapters ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty laws:subheading ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:articles ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:Part ;
+            owl:onProperty laws:parts ],
+        [ a owl:Restriction ;
             owl:allValuesFrom laws:Subchapter ;
-            owl:onProperty laws:subchapters ] ;
+            owl:onProperty laws:subchapters ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:heading ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:Section ;
+            owl:onProperty laws:sections ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty laws:eId ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:subheading ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:MixedText ;
+            owl:onProperty laws:heading ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:num ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:Subsection ;
+            owl:onProperty laws:subsections ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:MixedText ;
+            owl:onProperty laws:num ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:subsections ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:levels ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:MixedText ;
+            owl:onProperty laws:subheading ] ;
     skos:definition """Book-level division of an act (akn:book). Allowed children: title, part, chapter, subchapter, section, subsection, level (FLX-HR-001-bk). Requires unique @eId (FLX-HR-002-bk).
 """ ;
     skos:exactMatch akn:book ;
@@ -1822,22 +1832,22 @@ laws:Book a owl:Class ;
 laws:FRBRAuthor a owl:Class ;
     rdfs:label "FRBRAuthor" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:maxCardinality 1 ;
             owl:onProperty laws:as_role ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:href ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty laws:href ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
             owl:onProperty laws:as_role ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty laws:href ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty laws:href ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty laws:as_role ] ;
     skos:definition """An author or rights-holder entry for an FRBR entity (akn:FRBRauthor). @href references the organization; @as references the role (both as intra-document anchors).
 """ ;
@@ -1851,22 +1861,22 @@ laws:FRBRDate a owl:Class ;
     rdfs:label "FRBRDate" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty laws:date_value ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty laws:frbr_date_name ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty laws:frbr_date_name ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty laws:frbr_date_name ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:date_value ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty laws:date_value ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:date ;
-            owl:onProperty laws:date_value ] ;
+            owl:onProperty laws:date_value ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:frbr_date_name ] ;
     skos:definition """A date entry for an FRBR entity (akn:FRBRdate). The @name attribute uses Fedlex/JoLux vocabulary: jolux:dateEntryInForce, jolux:dateDocument, jolux:dateApplicability.
 """ ;
     skos:exactMatch akn:FRBRdate ;
@@ -1889,53 +1899,47 @@ laws:FedlexRoleEnum a owl:Class ;
 laws:Title a owl:Class ;
     rdfs:label "Title" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom laws:Subsection ;
-            owl:onProperty laws:subsections ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:num ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:chapters ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:Book ;
-            owl:onProperty laws:books ],
-        [ a owl:Restriction ;
             owl:allValuesFrom laws:MixedText ;
+            owl:onProperty laws:heading ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:Subchapter ;
+            owl:onProperty laws:subchapters ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:subchapters ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:levels ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty laws:subheading ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty laws:eId ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:sections ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:articles ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty laws:eId ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty laws:subchapters ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:Section ;
-            owl:onProperty laws:sections ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty laws:books ],
         [ a owl:Restriction ;
-            owl:allValuesFrom laws:Article ;
-            owl:onProperty laws:articles ],
+            owl:minCardinality 0 ;
+            owl:onProperty laws:subsections ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty laws:subheading ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:Level ;
             owl:onProperty laws:levels ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:Book ;
+            owl:onProperty laws:books ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty laws:eId ],
         [ a owl:Restriction ;
             owl:allValuesFrom laws:MixedText ;
             owl:onProperty laws:num ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty laws:parts ],
+            owl:onProperty laws:num ],
         [ a owl:Restriction ;
             owl:allValuesFrom laws:Part ;
             owl:onProperty laws:parts ],
@@ -1943,35 +1947,41 @@ laws:Title a owl:Class ;
             owl:allValuesFrom laws:Chapter ;
             owl:onProperty laws:chapters ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:heading ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom laws:MixedText ;
             owl:onProperty laws:subheading ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:heading ],
         [ a owl:Restriction ;
-            owl:allValuesFrom laws:MixedText ;
+            owl:allValuesFrom laws:Section ;
+            owl:onProperty laws:sections ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:Subsection ;
+            owl:onProperty laws:subsections ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty laws:heading ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty laws:eId ],
         [ a owl:Restriction ;
-            owl:allValuesFrom laws:Level ;
-            owl:onProperty laws:levels ],
+            owl:minCardinality 0 ;
+            owl:onProperty laws:chapters ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:subheading ],
+            owl:allValuesFrom laws:Article ;
+            owl:onProperty laws:articles ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:parts ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty laws:num ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty laws:subsections ],
+            owl:onProperty laws:articles ],
         [ a owl:Restriction ;
-            owl:allValuesFrom laws:Subchapter ;
-            owl:onProperty laws:subchapters ] ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:sections ] ;
     skos:definition """Title-level division of an act (akn:title). Allowed children: book, part, chapter, subchapter, section, subsection, level (FLX-HR-001-ti). Requires unique @eId (FLX-HR-002-ti).
 """ ;
     skos:exactMatch akn:title ;
@@ -1985,40 +1995,40 @@ laws:Title a owl:Class ;
 laws:Paragraph a owl:Class ;
     rdfs:label "Paragraph" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:heading ],
+            owl:minCardinality 1 ;
+            owl:onProperty laws:eId ],
         [ a owl:Restriction ;
             owl:allValuesFrom laws:MixedText ;
             owl:onProperty laws:num ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:heading ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:content_ref ],
         [ a owl:Restriction ;
             owl:allValuesFrom laws:Content ;
             owl:onProperty laws:content_ref ],
         [ a owl:Restriction ;
-            owl:allValuesFrom laws:MixedText ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:content_ref ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty laws:heading ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty laws:num ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:content_ref ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty laws:eId ],
+            owl:onProperty laws:heading ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:MixedText ;
+            owl:onProperty laws:heading ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:num ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty laws:eId ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:content_ref ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty laws:eId ] ;
     skos:definition """A paragraph within an article or subdivision (akn:paragraph). Constraints (FLX-PR-*): - only heading elements and akn:content are allowed as children (FLX-PR-001) - only permitted as a direct child of akn:article or akn:subdivision (FLX-PR-002) - requires unique @eId (FLX-PR-003)
 """ ;
@@ -2037,22 +2047,43 @@ laws:Part a owl:Class ;
             owl:onProperty laws:num ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty laws:subchapters ],
+            owl:onProperty laws:subsections ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:heading ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:Article ;
-            owl:onProperty laws:articles ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:MixedText ;
-            owl:onProperty laws:heading ],
+            owl:minCardinality 1 ;
+            owl:onProperty laws:eId ],
         [ a owl:Restriction ;
             owl:allValuesFrom laws:Subsection ;
             owl:onProperty laws:subsections ],
         [ a owl:Restriction ;
+            owl:allValuesFrom laws:Chapter ;
+            owl:onProperty laws:chapters ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:Level ;
+            owl:onProperty laws:levels ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty laws:subsections ],
+            owl:onProperty laws:subchapters ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:eId ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:MixedText ;
+            owl:onProperty laws:num ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:MixedText ;
+            owl:onProperty laws:subheading ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:heading ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:heading ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:subheading ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:sections ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:articles ],
@@ -2061,49 +2092,28 @@ laws:Part a owl:Class ;
             owl:onProperty laws:eId ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty laws:subheading ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty laws:levels ],
         [ a owl:Restriction ;
-            owl:allValuesFrom laws:MixedText ;
+            owl:allValuesFrom laws:Article ;
+            owl:onProperty laws:articles ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty laws:subheading ],
         [ a owl:Restriction ;
-            owl:allValuesFrom laws:Chapter ;
-            owl:onProperty laws:chapters ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty laws:eId ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:eId ],
+            owl:allValuesFrom laws:MixedText ;
+            owl:onProperty laws:heading ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty laws:num ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:sections ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:Section ;
-            owl:onProperty laws:sections ],
+            owl:allValuesFrom laws:Subchapter ;
+            owl:onProperty laws:subchapters ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:chapters ],
         [ a owl:Restriction ;
-            owl:allValuesFrom laws:Subchapter ;
-            owl:onProperty laws:subchapters ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:heading ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:Level ;
-            owl:onProperty laws:levels ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:subheading ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:MixedText ;
-            owl:onProperty laws:num ] ;
+            owl:allValuesFrom laws:Section ;
+            owl:onProperty laws:sections ] ;
     skos:definition """Part-level division of an act (akn:part). Allowed children: chapter, subchapter, section, subsection, level (FLX-HR-001-pt). Requires unique @eId (FLX-HR-002-pt).
 """ ;
     skos:exactMatch akn:part ;
@@ -2145,23 +2155,56 @@ laws:BlockParagraph a owl:Class ;
 laws:Chapter a owl:Class ;
     rdfs:label "Chapter" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom laws:MixedText ;
+            owl:onProperty laws:num ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:Subsection ;
+            owl:onProperty laws:subsections ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty laws:eId ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:subsections ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:heading ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:eId ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:MixedText ;
+            owl:onProperty laws:heading ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:Section ;
+            owl:onProperty laws:sections ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:MixedText ;
+            owl:onProperty laws:subheading ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:Subchapter ;
+            owl:onProperty laws:subchapters ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:num ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:heading ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:sections ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:num ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:levels ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:articles ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:subchapters ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:subheading ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:subsections ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:MixedText ;
-            owl:onProperty laws:num ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:heading ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:subheading ],
@@ -2169,47 +2212,14 @@ laws:Chapter a owl:Class ;
             owl:allValuesFrom laws:Article ;
             owl:onProperty laws:articles ],
         [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty laws:eId ],
+        [ a owl:Restriction ;
             owl:allValuesFrom laws:Level ;
             owl:onProperty laws:levels ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty laws:eId ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:MixedText ;
-            owl:onProperty laws:heading ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:levels ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:num ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:sections ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty laws:eId ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:Section ;
-            owl:onProperty laws:sections ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:Subchapter ;
-            owl:onProperty laws:subchapters ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:num ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:MixedText ;
-            owl:onProperty laws:subheading ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:Subsection ;
-            owl:onProperty laws:subsections ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty laws:eId ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:heading ] ;
+            owl:onProperty laws:subheading ] ;
     skos:definition """Chapter-level division of an act (akn:chapter). Allowed children: subchapter, section, subsection, level, and directly article (FLX-HR-001-ch). Requires unique @eId (FLX-HR-002-ch).
 """ ;
     skos:exactMatch akn:chapter ;
@@ -2223,10 +2233,10 @@ laws:Chapter a owl:Class ;
 laws:ValueType a owl:Class ;
     rdfs:label "ValueType" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
             owl:onProperty laws:value ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
             owl:onProperty laws:value ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
@@ -2261,6 +2271,7 @@ laws:content_ref a owl:ObjectProperty ;
 laws:frbr_authors a owl:ObjectProperty ;
     rdfs:label "frbr_authors" ;
     rdfs:range laws:FRBRAuthor ;
+    skos:closeMatch eli:passed_by ;
     skos:definition "Author/rights-holder entries for this FRBR entity (akn:FRBRauthor)." ;
     skos:inScheme <https://ld.ech.ch/schema/0296/laws> ;
     laws:description_de "Autoren-/Rechteinhaber-Einträge dieser FRBR-Entität (akn:FRBRauthor)." .
@@ -2313,65 +2324,65 @@ laws:DocumentLanguageEnum a owl:Class ;
 laws:Subchapter a owl:Class ;
     rdfs:label "Subchapter" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom laws:Level ;
-            owl:onProperty laws:levels ],
+            owl:minCardinality 0 ;
+            owl:onProperty laws:subsections ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:MixedText ;
+            owl:onProperty laws:heading ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:eId ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:subheading ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:Section ;
+            owl:onProperty laws:sections ],
         [ a owl:Restriction ;
             owl:allValuesFrom laws:Subsection ;
             owl:onProperty laws:subsections ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty laws:num ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:sections ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:Section ;
-            owl:onProperty laws:sections ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty laws:levels ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:subsections ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:subheading ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:MixedText ;
-            owl:onProperty laws:heading ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:minCardinality 1 ;
             owl:onProperty laws:eId ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:sections ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty laws:num ],
         [ a owl:Restriction ;
-            owl:allValuesFrom laws:MixedText ;
-            owl:onProperty laws:num ],
+            owl:minCardinality 0 ;
+            owl:onProperty laws:heading ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:articles ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom laws:MixedText ;
             owl:onProperty laws:subheading ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:eId ],
+            owl:allValuesFrom laws:Level ;
+            owl:onProperty laws:levels ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
             owl:onProperty laws:heading ],
         [ a owl:Restriction ;
             owl:allValuesFrom laws:Article ;
             owl:onProperty laws:articles ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty laws:eId ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:MixedText ;
+            owl:minCardinality 0 ;
             owl:onProperty laws:subheading ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty laws:heading ] ;
+            owl:onProperty laws:num ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty laws:eId ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:MixedText ;
+            owl:onProperty laws:num ] ;
     skos:definition """Subchapter-level division (akn:subchapter). Allowed children: section, subsection, level, and directly article (FLX-HR-001-sh). Requires unique @eId (FLX-HR-002-sh).
 """ ;
     skos:exactMatch akn:subchapter ;
@@ -2385,59 +2396,59 @@ laws:Subchapter a owl:Class ;
 laws:Section a owl:Class ;
     rdfs:label "Section" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:subheading ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:MixedText ;
-            owl:onProperty laws:num ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:num ],
+            owl:allValuesFrom laws:Subsection ;
+            owl:onProperty laws:subsections ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:articles ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:subsections ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty laws:subheading ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty laws:eId ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty laws:eId ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:MixedText ;
-            owl:onProperty laws:subheading ],
+            owl:onProperty laws:num ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty laws:levels ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:Subsection ;
             owl:onProperty laws:subsections ],
         [ a owl:Restriction ;
-            owl:allValuesFrom laws:Level ;
+            owl:minCardinality 0 ;
             owl:onProperty laws:levels ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty laws:eId ],
         [ a owl:Restriction ;
+            owl:allValuesFrom laws:Article ;
+            owl:onProperty laws:articles ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:subheading ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:eId ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:MixedText ;
+            owl:onProperty laws:subheading ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:heading ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty laws:heading ],
         [ a owl:Restriction ;
-            owl:allValuesFrom laws:MixedText ;
-            owl:onProperty laws:heading ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:num ],
         [ a owl:Restriction ;
-            owl:allValuesFrom laws:Article ;
-            owl:onProperty laws:articles ] ;
+            owl:allValuesFrom laws:MixedText ;
+            owl:onProperty laws:num ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty laws:eId ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:MixedText ;
+            owl:onProperty laws:heading ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:Level ;
+            owl:onProperty laws:levels ] ;
     skos:definition """Section-level division (akn:section). Allowed children: subsection, level, and directly article (FLX-HR-001-sc). Requires unique @eId (FLX-HR-002-sc).
 """ ;
     skos:exactMatch akn:section ;
@@ -2451,13 +2462,13 @@ laws:Section a owl:Class ;
 laws:UriValueType a owl:Class ;
     rdfs:label "UriValueType" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:value_uri ],
+        [ a owl:Restriction ;
             owl:allValuesFrom xsd:anyURI ;
             owl:onProperty laws:value_uri ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty laws:value_uri ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty laws:value_uri ] ;
     skos:definition """A holder carrying a single @value attribute typed as an ELI URI (AKN valueType). Reused for FRBRthis and FRBRuri.
 """ ;
@@ -2482,53 +2493,53 @@ laws:parts a owl:ObjectProperty ;
 laws:Subsection a owl:Class ;
     rdfs:label "Subsection" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:subheading ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:levels ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:num ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:articles ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:MixedText ;
+            owl:onProperty laws:subheading ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:num ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:MixedText ;
+            owl:onProperty laws:heading ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:eId ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty laws:eId ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:Level ;
+            owl:onProperty laws:levels ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:subheading ],
+        [ a owl:Restriction ;
             owl:allValuesFrom laws:Article ;
             owl:onProperty laws:articles ],
         [ a owl:Restriction ;
             owl:allValuesFrom laws:MixedText ;
             owl:onProperty laws:num ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:num ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
             owl:onProperty laws:heading ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:eId ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:MixedText ;
+            owl:minCardinality 0 ;
             owl:onProperty laws:heading ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty laws:eId ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:heading ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:articles ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:levels ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:num ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty laws:eId ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:subheading ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:subheading ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:MixedText ;
-            owl:onProperty laws:subheading ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:Level ;
-            owl:onProperty laws:levels ] ;
+            owl:onProperty laws:eId ] ;
     skos:definition """Subsection-level division (akn:subsection). Allowed children: level, and directly article (FLX-HR-001-ss). Requires unique @eId (FLX-HR-002-ss).
 """ ;
     skos:exactMatch akn:subsection ;
@@ -2592,106 +2603,106 @@ laws:Level a owl:Class ;
     rdfs:label "Level" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty laws:subsections ],
+            owl:onProperty laws:parts ],
         [ a owl:Restriction ;
-            owl:allValuesFrom laws:Subchapter ;
-            owl:onProperty laws:subchapters ],
+            owl:allValuesFrom laws:Chapter ;
+            owl:onProperty laws:chapters ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:num ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty laws:content_ref ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:sections ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:subheading ],
-        [ a owl:Restriction ;
             owl:allValuesFrom laws:Article ;
             owl:onProperty laws:articles ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:Subsection ;
-            owl:onProperty laws:subsections ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:MixedText ;
-            owl:onProperty laws:heading ],
         [ a owl:Restriction ;
             owl:allValuesFrom laws:MixedText ;
             owl:onProperty laws:num ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty laws:books ],
+            owl:onProperty laws:subchapters ],
         [ a owl:Restriction ;
-            owl:allValuesFrom laws:Chapter ;
-            owl:onProperty laws:chapters ],
+            owl:allValuesFrom laws:Title ;
+            owl:onProperty laws:titles ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty laws:eId ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:num ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:MixedText ;
+            owl:onProperty laws:heading ],
         [ a owl:Restriction ;
             owl:allValuesFrom laws:FedlexRoleEnum ;
             owl:onProperty laws:fedlex_role ],
         [ a owl:Restriction ;
-            owl:allValuesFrom laws:Book ;
-            owl:onProperty laws:books ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty laws:eId ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:titles ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:heading ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:heading ],
+            owl:allValuesFrom laws:Subchapter ;
+            owl:onProperty laws:subchapters ],
         [ a owl:Restriction ;
             owl:allValuesFrom laws:Content ;
             owl:onProperty laws:content_ref ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty laws:num ],
+            owl:onProperty laws:books ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:parts ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty laws:eId ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:MixedText ;
-            owl:onProperty laws:subheading ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:subchapters ],
+            owl:allValuesFrom laws:Book ;
+            owl:onProperty laws:books ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:chapters ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:Title ;
-            owl:onProperty laws:titles ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:subheading ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:num ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:articles ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:fedlex_role ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:content_ref ],
         [ a owl:Restriction ;
             owl:allValuesFrom laws:Part ;
             owl:onProperty laws:parts ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty laws:fedlex_role ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty laws:eId ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:subheading ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:MixedText ;
+            owl:onProperty laws:subheading ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:subsections ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:Subsection ;
+            owl:onProperty laws:subsections ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:fedlex_role ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:content_ref ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:sections ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:subheading ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:articles ],
+        [ a owl:Restriction ;
             owl:allValuesFrom laws:Section ;
-            owl:onProperty laws:sections ] ;
+            owl:onProperty laws:sections ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:heading ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:heading ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:titles ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:eId ] ;
     skos:definition """Transparent structural division (akn:level). A level is 'transparent': its allowed children are the same as those of its nearest non-level ancestor (FLX-HR-001-lv). A level containing akn:content is only permitted when the content includes a modification element (akn:mod) — used for amending acts (FLX-HR-003). The fedlex:role='marginal' attribute marks it as a marginal note (FLX-XF-004). Requires unique @eId (FLX-HR-002-lv, FLX-HR-004).
 """ ;
     skos:exactMatch akn:level ;
@@ -2707,52 +2718,52 @@ laws:Level a owl:Class ;
 laws:Article a owl:Class ;
     rdfs:label "Article" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty laws:eId ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty laws:subheading ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:num ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:MixedText ;
+            owl:onProperty laws:num ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:subdivisions ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:MixedText ;
             owl:onProperty laws:heading ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty laws:num ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:heading ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty laws:subheading ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty laws:paragraphs ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom laws:MixedText ;
+            owl:onProperty laws:subheading ],
         [ a owl:Restriction ;
             owl:allValuesFrom laws:Paragraph ;
             owl:onProperty laws:paragraphs ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty laws:eId ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:heading ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:subheading ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:paragraphs ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:subdivisions ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:MixedText ;
-            owl:onProperty laws:subheading ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty laws:num ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty laws:subheading ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:MixedText ;
-            owl:onProperty laws:num ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty laws:eId ],
-        [ a owl:Restriction ;
             owl:allValuesFrom laws:Subdivision ;
             owl:onProperty laws:subdivisions ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty laws:num ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom laws:MixedText ;
+            owl:minCardinality 0 ;
             owl:onProperty laws:heading ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty laws:eId ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty laws:eId ] ;
     skos:definition """An article, the primary legislative unit (akn:article). Constraints (FLX-ART-*): - akn:num is mandatory (FLX-ART-001) - only heading elements (num, heading, subheading) plus akn:paragraph and akn:subdivision are allowed as children (FLX-ART-002) - requires unique @eId (FLX-ART-003)
 """ ;
@@ -2821,13 +2832,13 @@ laws:levels a owl:ObjectProperty ;
 
 laws:InlineElement a owl:Class ;
     rdfs:label "InlineElement" ;
-    rdfs:subClassOf [ owl:unionOf ( laws:AuthorialNote laws:B laws:Br laws:I laws:Inline laws:Placeholder laws:Ref laws:Span laws:Sup laws:TextRun ) ],
-        [ a owl:Restriction ;
+    rdfs:subClassOf [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty laws:element_type ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty laws:element_type ],
+        [ owl:unionOf ( laws:AuthorialNote laws:B laws:Br laws:I laws:Inline laws:Placeholder laws:Ref laws:Span laws:Sup laws:TextRun ) ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:element_type ] ;
@@ -2883,20 +2894,20 @@ laws:num a owl:ObjectProperty ;
 laws:MixedText a owl:Class ;
     rdfs:label "MixedText" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom laws:InlineElement ;
-            owl:onProperty laws:inline_content ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty laws:eId ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty laws:eId ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty laws:eId ],
         [ a owl:Restriction ;
+            owl:allValuesFrom laws:InlineElement ;
+            owl:onProperty laws:inline_content ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty laws:inline_content ] ;
+            owl:onProperty laws:inline_content ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty laws:eId ] ;
     skos:definition """Reusable mixed-content holder: an ordered run of text and inline markup. Used as the range for num, heading, subheading, listIntroduction, docTitle, so the wrapping element name comes from the referring slot's xml_element.
 """ ;
     skos:inScheme <https://ld.ech.ch/schema/0296/laws> ;
@@ -2916,14 +2927,34 @@ laws:eId a owl:DatatypeProperty ;
 xsd:string a rdfs:Datatype .
 
 [] a owl:Restriction ;
+    rdfs:subClassOf laws:AuthorialNote ;
+    owl:onProperty laws:element_type ;
+    owl:someValuesFrom laws:AuthorialNote .
+
+[] a owl:Restriction ;
     rdfs:subClassOf laws:InlineElement ;
     owl:onProperty laws:element_type ;
     owl:someValuesFrom laws:InlineElement .
 
 [] a owl:Restriction ;
-    rdfs:subClassOf laws:B ;
+    rdfs:subClassOf laws:TextRun ;
     owl:onProperty laws:element_type ;
-    owl:someValuesFrom laws:B .
+    owl:someValuesFrom laws:TextRun .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf laws:Ref ;
+    owl:onProperty laws:element_type ;
+    owl:someValuesFrom laws:Ref .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf laws:Span ;
+    owl:onProperty laws:element_type ;
+    owl:someValuesFrom laws:Span .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf laws:I ;
+    owl:onProperty laws:element_type ;
+    owl:someValuesFrom laws:I .
 
 [] a owl:Restriction ;
     rdfs:subClassOf laws:Br ;
@@ -2936,38 +2967,18 @@ xsd:string a rdfs:Datatype .
     owl:someValuesFrom laws:Placeholder .
 
 [] a owl:Restriction ;
-    rdfs:subClassOf laws:Span ;
-    owl:onProperty laws:element_type ;
-    owl:someValuesFrom laws:Span .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf laws:TextRun ;
-    owl:onProperty laws:element_type ;
-    owl:someValuesFrom laws:TextRun .
-
-[] a owl:Restriction ;
     rdfs:subClassOf laws:Sup ;
     owl:onProperty laws:element_type ;
     owl:someValuesFrom laws:Sup .
 
 [] a owl:Restriction ;
-    rdfs:subClassOf laws:I ;
+    rdfs:subClassOf laws:B ;
     owl:onProperty laws:element_type ;
-    owl:someValuesFrom laws:I .
+    owl:someValuesFrom laws:B .
 
 [] a owl:Restriction ;
     rdfs:subClassOf laws:Inline ;
     owl:onProperty laws:element_type ;
     owl:someValuesFrom laws:Inline .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf laws:Ref ;
-    owl:onProperty laws:element_type ;
-    owl:someValuesFrom laws:Ref .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf laws:AuthorialNote ;
-    owl:onProperty laws:element_type ;
-    owl:someValuesFrom laws:AuthorialNote .
 
 

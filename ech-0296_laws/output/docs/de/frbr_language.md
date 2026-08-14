@@ -73,6 +73,8 @@ description: Sprachcode dieser Expression (akn:FRBRlanguage/@language).
 from_schema: https://ld.ech.ch/schema/0296/laws
 exact_mappings:
 - akn:FRBRlanguage
+close_mappings:
+- eli:language
 rank: 1000
 domain_of:
 - FRBRExpression

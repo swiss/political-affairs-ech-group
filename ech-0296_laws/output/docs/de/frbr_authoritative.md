@@ -73,6 +73,8 @@ description: Ob dies die massgebliche Version ist (akn:FRBRauthoritative/@value)
 from_schema: https://ld.ech.ch/schema/0296/laws
 exact_mappings:
 - akn:FRBRauthoritative
+close_mappings:
+- eli:legal_value
 rank: 1000
 domain_of:
 - FRBRWork

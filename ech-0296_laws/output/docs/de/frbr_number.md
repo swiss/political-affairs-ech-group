@@ -73,6 +73,8 @@ description: SR-Nummer (akn:FRBRnumber/@value), z.B. '101'.
 from_schema: https://ld.ech.ch/schema/0296/laws
 exact_mappings:
 - akn:FRBRnumber
+close_mappings:
+- eli:number
 rank: 1000
 domain_of:
 - FRBRWork

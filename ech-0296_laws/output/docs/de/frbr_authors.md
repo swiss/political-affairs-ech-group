@@ -71,6 +71,8 @@ annotations:
     value: Autoren-/Rechteinhaber-Einträge dieser FRBR-Entität (akn:FRBRauthor).
 description: Autoren-/Rechteinhaber-Einträge dieser FRBR-Entität (akn:FRBRauthor).
 from_schema: https://ld.ech.ch/schema/0296/laws
+close_mappings:
+- eli:passed_by
 rank: 1000
 domain_of:
 - FRBRWork
