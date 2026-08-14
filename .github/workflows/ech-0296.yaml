@@ -50,6 +50,14 @@ jobs:
           # Beispieldaten (data_*.yaml) gibt es noch keine; sobald welche
           # vorliegen, kommen hier die linkml-convert-Aufrufe von eCH-0293 dazu.
 
+      - name: Export crosswalk (SSSOM + Tabelle)
+        # Zieht die Mapping-Slots aus dem Schema: einmal als SSSOM-Mapping-Set
+        # zum Weiterverarbeiten, einmal als Tabelle fuer den Anhang.
+        run: |
+          for lang in de; do
+            python .github/workflows/scripts/export_mappings.py ech-0296_laws "$lang"
+          done
+
       - name: Generate LinkML documentation (de)
         run: |
           # Localized schema files are temporary helpers for docs only.
