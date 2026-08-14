@@ -86,7 +86,7 @@ Name: ech-0296-laws-schema
 | [chapters](chapters.md) | Kapitel-Kindelemente (akn:chapter) |
 | [colspan](colspan.md) | Das @colspan-Attribut auf akn:td (HTML-artige Darstellung) |
 | [content_ref](content_ref.md) | Inhaltselement innerhalb eines Absatzes (akn:content) |
-| [date](date.md) | Ein ISO-8601-Datumswert (akn:FRBRdate/@date) |
+| [date_value](date_value.md) | Ein ISO-8601-Datumswert (akn:FRBRdate/@date) |
 | [doc_number](doc_number.md) | Dokumentnummer im Vorspann (akn:docNumber) |
 | [doc_title](doc_title.md) | Dokumenttitel im Vorspann (akn:docTitle) |
 | [eId](eId.md) | Eindeutiger Element-Identifier im Dokument (@eId) |

@@ -815,7 +815,7 @@
             "additionalProperties": false,
             "description": "A date entry for an FRBR entity (akn:FRBRdate). The @name attribute uses Fedlex/JoLux vocabulary: jolux:dateEntryInForce, jolux:dateDocument, jolux:dateApplicability.",
             "properties": {
-                "date": {
+                "date_value": {
                     "description": "An ISO 8601 date value (akn:FRBRdate/@date).",
                     "format": "date",
                     "type": [

@@ -83,9 +83,6 @@ annotations:
       Muss vor subheading stehen (FLX-HD-004, FLX-HD-005).
 
       '
-  xml_element:
-    tag: xml_element
-    value: akn:heading
   schematron_rules:
     tag: schematron_rules
     value: 'FLX-HD-004: max one heading; FLX-HD-005: heading before subheading; FLX-TXT-001:
@@ -98,6 +95,8 @@ description: 'Überschrift für ein Strukturelement (akn:heading). Kann Inline-M
 
   '
 from_schema: https://ld.ech.ch/schema/0296/laws
+exact_mappings:
+- akn:heading
 rank: 1000
 domain_of:
 - Book

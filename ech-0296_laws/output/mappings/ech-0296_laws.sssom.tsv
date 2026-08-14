@@ -1,0 +1,73 @@
+# curie_map:
+#   akn: http://docs.oasis-open.org/legaldocml/ns/akn/3.0/
+#   fedlex: http://fedlex.admin.ch/
+#   laws: https://ld.ech.ch/schema/0296/laws/
+#   linkml: https://w3id.org/linkml/
+#   owl: http://www.w3.org/2002/07/owl#
+#   semapv: https://w3id.org/semapv/vocab/
+#   skos: http://www.w3.org/2004/02/skos/core#
+#   xsd: http://www.w3.org/2001/XMLSchema#
+# license: https://creativecommons.org/publicdomain/zero/1.0/
+# mapping_set_id: https://ld.ech.ch/schema/0296/laws/mappings
+subject_id	predicate_id	object_id	mapping_justification	subject_label	object_label	subject_type
+laws:FedlexDocument	skos:exactMatch	akn:akomaNtoso	semapv:ManualMappingCuration	FedlexDocument	akomaNtoso	owl class
+laws:Act	skos:exactMatch	akn:act	semapv:ManualMappingCuration	Act	act	owl class
+laws:ActMeta	skos:exactMatch	akn:meta	semapv:ManualMappingCuration	ActMeta	meta	owl class
+laws:Identification	skos:exactMatch	akn:identification	semapv:ManualMappingCuration	Identification	identification	owl class
+laws:FRBRWork	skos:exactMatch	akn:FRBRWork	semapv:ManualMappingCuration	FRBRWork	FRBRWork	owl class
+laws:FRBRExpression	skos:exactMatch	akn:FRBRExpression	semapv:ManualMappingCuration	FRBRExpression	FRBRExpression	owl class
+laws:FRBRManifestation	skos:exactMatch	akn:FRBRManifestation	semapv:ManualMappingCuration	FRBRManifestation	FRBRManifestation	owl class
+laws:FRBRDate	skos:exactMatch	akn:FRBRdate	semapv:ManualMappingCuration	FRBRDate	FRBRdate	owl class
+laws:FRBRAuthor	skos:exactMatch	akn:FRBRauthor	semapv:ManualMappingCuration	FRBRAuthor	FRBRauthor	owl class
+laws:FRBRName	skos:exactMatch	akn:FRBRname	semapv:ManualMappingCuration	FRBRName	FRBRname	owl class
+laws:References	skos:exactMatch	akn:references	semapv:ManualMappingCuration	References	references	owl class
+laws:TLCOrganization	skos:exactMatch	akn:TLCOrganization	semapv:ManualMappingCuration	TLCOrganization	TLCOrganization	owl class
+laws:TLCRole	skos:exactMatch	akn:TLCRole	semapv:ManualMappingCuration	TLCRole	TLCRole	owl class
+laws:TLCReference	skos:exactMatch	akn:TLCReference	semapv:ManualMappingCuration	TLCReference	TLCReference	owl class
+laws:Preface	skos:exactMatch	akn:preface	semapv:ManualMappingCuration	Preface	preface	owl class
+laws:PrefaceP	skos:exactMatch	akn:p	semapv:ManualMappingCuration	PrefaceP	p	owl class
+laws:Preamble	skos:exactMatch	akn:preamble	semapv:ManualMappingCuration	Preamble	preamble	owl class
+laws:ActBody	skos:exactMatch	akn:body	semapv:ManualMappingCuration	ActBody	body	owl class
+laws:Book	skos:exactMatch	akn:book	semapv:ManualMappingCuration	Book	book	owl class
+laws:Title	skos:exactMatch	akn:title	semapv:ManualMappingCuration	Title	title	owl class
+laws:Part	skos:exactMatch	akn:part	semapv:ManualMappingCuration	Part	part	owl class
+laws:Chapter	skos:exactMatch	akn:chapter	semapv:ManualMappingCuration	Chapter	chapter	owl class
+laws:Subchapter	skos:exactMatch	akn:subchapter	semapv:ManualMappingCuration	Subchapter	subchapter	owl class
+laws:Section	skos:exactMatch	akn:section	semapv:ManualMappingCuration	Section	section	owl class
+laws:Subsection	skos:exactMatch	akn:subsection	semapv:ManualMappingCuration	Subsection	subsection	owl class
+laws:Level	skos:exactMatch	akn:level	semapv:ManualMappingCuration	Level	level	owl class
+laws:Article	skos:exactMatch	akn:article	semapv:ManualMappingCuration	Article	article	owl class
+laws:Subdivision	skos:exactMatch	akn:subdivision	semapv:ManualMappingCuration	Subdivision	subdivision	owl class
+laws:Paragraph	skos:exactMatch	akn:paragraph	semapv:ManualMappingCuration	Paragraph	paragraph	owl class
+laws:Transitional	skos:exactMatch	akn:transitional	semapv:ManualMappingCuration	Transitional	transitional	owl class
+laws:Proviso	skos:exactMatch	akn:proviso	semapv:ManualMappingCuration	Proviso	proviso	owl class
+laws:Content	skos:exactMatch	akn:content	semapv:ManualMappingCuration	Content	content	owl class
+laws:BlockParagraph	skos:exactMatch	akn:p	semapv:ManualMappingCuration	BlockParagraph	p	owl class
+laws:BlockList	skos:exactMatch	akn:blockList	semapv:ManualMappingCuration	BlockList	blockList	owl class
+laws:BlockListItem	skos:exactMatch	akn:item	semapv:ManualMappingCuration	BlockListItem	item	owl class
+laws:Table	skos:exactMatch	akn:table	semapv:ManualMappingCuration	Table	table	owl class
+laws:TableRow	skos:exactMatch	akn:tr	semapv:ManualMappingCuration	TableRow	tr	owl class
+laws:TableCell	skos:exactMatch	akn:td	semapv:ManualMappingCuration	TableCell	td	owl class
+laws:Ref	skos:exactMatch	akn:ref	semapv:ManualMappingCuration	Ref	ref	owl class
+laws:B	skos:exactMatch	akn:b	semapv:ManualMappingCuration	B	b	owl class
+laws:I	skos:exactMatch	akn:i	semapv:ManualMappingCuration	I	i	owl class
+laws:Sup	skos:exactMatch	akn:sup	semapv:ManualMappingCuration	Sup	sup	owl class
+laws:Span	skos:exactMatch	akn:span	semapv:ManualMappingCuration	Span	span	owl class
+laws:Br	skos:exactMatch	akn:br	semapv:ManualMappingCuration	Br	br	owl class
+laws:Inline	skos:exactMatch	akn:inline	semapv:ManualMappingCuration	Inline	inline	owl class
+laws:Placeholder	skos:exactMatch	akn:placeholder	semapv:ManualMappingCuration	Placeholder	placeholder	owl class
+laws:AuthorialNote	skos:exactMatch	akn:authorialNote	semapv:ManualMappingCuration	AuthorialNote	authorialNote	owl class
+laws:preface_paragraphs	skos:exactMatch	akn:p	semapv:ManualMappingCuration	preface_paragraphs	p	owl object property
+laws:frbr_this	skos:exactMatch	akn:FRBRthis	semapv:ManualMappingCuration	frbr_this	FRBRthis	owl object property
+laws:frbr_uri	skos:exactMatch	akn:FRBRuri	semapv:ManualMappingCuration	frbr_uri	FRBRuri	owl object property
+laws:frbr_country	skos:exactMatch	akn:FRBRcountry	semapv:ManualMappingCuration	frbr_country	FRBRcountry	owl object property
+laws:frbr_number	skos:exactMatch	akn:FRBRnumber	semapv:ManualMappingCuration	frbr_number	FRBRnumber	owl object property
+laws:frbr_authoritative	skos:exactMatch	akn:FRBRauthoritative	semapv:ManualMappingCuration	frbr_authoritative	FRBRauthoritative	owl object property
+laws:frbr_language	skos:exactMatch	akn:FRBRlanguage	semapv:ManualMappingCuration	frbr_language	FRBRlanguage	owl object property
+laws:frbr_format	skos:exactMatch	akn:FRBRformat	semapv:ManualMappingCuration	frbr_format	FRBRformat	owl object property
+laws:doc_number	skos:exactMatch	akn:docNumber	semapv:ManualMappingCuration	doc_number	docNumber	owl object property
+laws:doc_title	skos:exactMatch	akn:docTitle	semapv:ManualMappingCuration	doc_title	docTitle	owl object property
+laws:num	skos:exactMatch	akn:num	semapv:ManualMappingCuration	num	num	owl object property
+laws:heading	skos:exactMatch	akn:heading	semapv:ManualMappingCuration	heading	heading	owl object property
+laws:subheading	skos:exactMatch	akn:subheading	semapv:ManualMappingCuration	subheading	subheading	owl object property
+laws:list_introduction	skos:exactMatch	akn:listIntroduction	semapv:ManualMappingCuration	list_introduction	listIntroduction	owl object property

@@ -517,7 +517,7 @@ _Ein Datumseintrag einer FRBR-Entität (akn:FRBRdate). Das @name-Attribut verwen
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
-| date | 0..1 <br/> date | Ein ISO-8601-Datumswert (akn:FRBRdate/@date). |
+| date_value | 0..1 <br/> Date | Ein ISO-8601-Datumswert (akn:FRBRdate/@date). |
 | frbr_date_name | 0..1 <br/> String | Datumstyp (akn:FRBRdate/@name), mit Fedlex/JoLux-Vokabular, z.B. 'jolux:dateEntryInForce', 'jolux:dateDocument', 'jolux:dateApplicability'.  |
 
 
@@ -3478,4 +3478,79 @@ Die folgenden Standards der Fachgruppe befinden sich alle in Arbeit; sie werden 
 ## Quellen und Werkzeuge
 
 Die Prüfregeln dieses Anwendungsprofils stammen aus dem Fedlex-Schematron (`AKN-fedlex-*.sch`); die zulässigen Elemente aus dem AKN-3.0-Schema (`akomantoso30.xsd`). Beide sowie das Referenzmaterial der Fachgruppe liegen im Ordner `misc/` dieses Standards.
+
+\newpage
+
+# Anhang B – Zuordnung zu Akoma Ntoso
+
+Jede Klasse und jeder Slot dieses Standards trägt die Entsprechung im Akoma-Ntoso-Vokabular am Element selbst — als `exact_mappings`, `close_mappings` und die weiteren Mapping-Angaben, die LinkML dafür vorsieht. Die folgende Tabelle ist daraus erzeugt und nicht von Hand geführt; wer eine Klasse an ein anderes Element bindet, ändert das Schema.
+
+Aus derselben Quelle entsteht ein Mapping-Set nach SSSOM (Simple Standard for Sharing Ontology Mappings) als `output/mappings/ech-0296_laws.sssom.tsv`. Es hält zu jeder Zeile fest, wie eng die Entsprechung ist (`exactMatch`, `closeMatch`, `narrowMatch`, `broadMatch`) und worauf sie beruht, und lässt sich mit den Werkzeugen der Mapping Commons prüfen und weiterverarbeiten. Dieselben Angaben stehen als `skos:exactMatch`-Tripel im RDF-Export des Schemas (`output/schema.ttl`).
+
+Die Zuordnung zum European Legislation Identifier steht noch aus. Sie kommt an dieselbe Stelle — als weiterer Eintrag bei den betroffenen Elementen — und erscheint dann ohne weiteres Zutun in dieser Tabelle und im Mapping-Set.
+
+| Element in diesem Standard | Art | Beziehung | Entspricht |
+|---|---|---|---|
+| `FedlexDocument` | Klasse | exactMatch | `akn:akomaNtoso` |
+| `Act` | Klasse | exactMatch | `akn:act` |
+| `ActMeta` | Klasse | exactMatch | `akn:meta` |
+| `Identification` | Klasse | exactMatch | `akn:identification` |
+| `FRBRWork` | Klasse | exactMatch | `akn:FRBRWork` |
+| `FRBRExpression` | Klasse | exactMatch | `akn:FRBRExpression` |
+| `FRBRManifestation` | Klasse | exactMatch | `akn:FRBRManifestation` |
+| `FRBRDate` | Klasse | exactMatch | `akn:FRBRdate` |
+| `FRBRAuthor` | Klasse | exactMatch | `akn:FRBRauthor` |
+| `FRBRName` | Klasse | exactMatch | `akn:FRBRname` |
+| `References` | Klasse | exactMatch | `akn:references` |
+| `TLCOrganization` | Klasse | exactMatch | `akn:TLCOrganization` |
+| `TLCRole` | Klasse | exactMatch | `akn:TLCRole` |
+| `TLCReference` | Klasse | exactMatch | `akn:TLCReference` |
+| `Preface` | Klasse | exactMatch | `akn:preface` |
+| `PrefaceP` | Klasse | exactMatch | `akn:p` |
+| `Preamble` | Klasse | exactMatch | `akn:preamble` |
+| `ActBody` | Klasse | exactMatch | `akn:body` |
+| `Book` | Klasse | exactMatch | `akn:book` |
+| `Title` | Klasse | exactMatch | `akn:title` |
+| `Part` | Klasse | exactMatch | `akn:part` |
+| `Chapter` | Klasse | exactMatch | `akn:chapter` |
+| `Subchapter` | Klasse | exactMatch | `akn:subchapter` |
+| `Section` | Klasse | exactMatch | `akn:section` |
+| `Subsection` | Klasse | exactMatch | `akn:subsection` |
+| `Level` | Klasse | exactMatch | `akn:level` |
+| `Article` | Klasse | exactMatch | `akn:article` |
+| `Subdivision` | Klasse | exactMatch | `akn:subdivision` |
+| `Paragraph` | Klasse | exactMatch | `akn:paragraph` |
+| `Transitional` | Klasse | exactMatch | `akn:transitional` |
+| `Proviso` | Klasse | exactMatch | `akn:proviso` |
+| `Content` | Klasse | exactMatch | `akn:content` |
+| `BlockParagraph` | Klasse | exactMatch | `akn:p` |
+| `BlockList` | Klasse | exactMatch | `akn:blockList` |
+| `BlockListItem` | Klasse | exactMatch | `akn:item` |
+| `Table` | Klasse | exactMatch | `akn:table` |
+| `TableRow` | Klasse | exactMatch | `akn:tr` |
+| `TableCell` | Klasse | exactMatch | `akn:td` |
+| `Ref` | Klasse | exactMatch | `akn:ref` |
+| `B` | Klasse | exactMatch | `akn:b` |
+| `I` | Klasse | exactMatch | `akn:i` |
+| `Sup` | Klasse | exactMatch | `akn:sup` |
+| `Span` | Klasse | exactMatch | `akn:span` |
+| `Br` | Klasse | exactMatch | `akn:br` |
+| `Inline` | Klasse | exactMatch | `akn:inline` |
+| `Placeholder` | Klasse | exactMatch | `akn:placeholder` |
+| `AuthorialNote` | Klasse | exactMatch | `akn:authorialNote` |
+| `preface_paragraphs` | Slot | exactMatch | `akn:p` |
+| `frbr_this` | Slot | exactMatch | `akn:FRBRthis` |
+| `frbr_uri` | Slot | exactMatch | `akn:FRBRuri` |
+| `frbr_country` | Slot | exactMatch | `akn:FRBRcountry` |
+| `frbr_number` | Slot | exactMatch | `akn:FRBRnumber` |
+| `frbr_authoritative` | Slot | exactMatch | `akn:FRBRauthoritative` |
+| `frbr_language` | Slot | exactMatch | `akn:FRBRlanguage` |
+| `frbr_format` | Slot | exactMatch | `akn:FRBRformat` |
+| `doc_number` | Slot | exactMatch | `akn:docNumber` |
+| `doc_title` | Slot | exactMatch | `akn:docTitle` |
+| `num` | Slot | exactMatch | `akn:num` |
+| `heading` | Slot | exactMatch | `akn:heading` |
+| `subheading` | Slot | exactMatch | `akn:subheading` |
+| `list_introduction` | Slot | exactMatch | `akn:listIntroduction` |
+
 

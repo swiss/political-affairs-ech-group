@@ -80,9 +80,6 @@ annotations:
       pro Element (FLX-HD-006).
 
       '
-  xml_element:
-    tag: xml_element
-    value: akn:subheading
   schematron_rules:
     tag: schematron_rules
     value: 'FLX-HD-006: max one subheading; FLX-XF-005: fedlex:role=''reference''
@@ -95,6 +92,8 @@ description: 'Unterüberschrift für ein Strukturelement (akn:subheading). fedle
 
   '
 from_schema: https://ld.ech.ch/schema/0296/laws
+exact_mappings:
+- akn:subheading
 rank: 1000
 domain_of:
 - Book

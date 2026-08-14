@@ -71,9 +71,6 @@ annotations:
       Inline-Markup und akn:br für Zeilenumbrüche enthalten.
 
       '
-  xml_element:
-    tag: xml_element
-    value: akn:docTitle
   schematron_note:
     tag: schematron_note
     value: 'FLX-TXT-001: br allowed in docTitle (heading context)'
@@ -82,6 +79,8 @@ description: 'Dokumenttitel im Vorspann (akn:docTitle). Pflicht gemäss FLX-PF-0
 
   '
 from_schema: https://ld.ech.ch/schema/0296/laws
+exact_mappings:
+- akn:docTitle
 rank: 1000
 domain_of:
 - PrefaceP

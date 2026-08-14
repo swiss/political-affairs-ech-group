@@ -84,9 +84,6 @@ annotations:
       stehen (FLX-HD-001, FLX-HD-002, FLX-HD-003).
 
       '
-  xml_element:
-    tag: xml_element
-    value: akn:num
   schematron_rules:
     tag: schematron_rules
     value: 'FLX-HD-001: max one num; FLX-HD-002: num before heading; FLX-HD-003: num
@@ -97,6 +94,8 @@ description: 'Nummerierungselement für ein Strukturelement oder einen Artikel (
 
   '
 from_schema: https://ld.ech.ch/schema/0296/laws
+exact_mappings:
+- akn:num
 rank: 1000
 domain_of:
 - Book

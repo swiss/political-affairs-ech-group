@@ -71,14 +71,13 @@ annotations:
       Typischerweise die SR-Nummer, z.B. ''101''.
 
       '
-  xml_element:
-    tag: xml_element
-    value: akn:docNumber
 description: 'Dokumentnummer im Vorspann (akn:docNumber). Pflicht gemäss FLX-PF-001.
   Typischerweise die SR-Nummer, z.B. ''101''.
 
   '
 from_schema: https://ld.ech.ch/schema/0296/laws
+exact_mappings:
+- akn:docNumber
 rank: 1000
 domain_of:
 - PrefaceP
