@@ -26,6 +26,7 @@ URI: [laws:inline_content](https://ld.ech.ch/schema/0296/laws/inline_content)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
+| [PrefaceP](PrefaceP.md) | Ein Vorspann-Absatz (akn:p), der Dokumentnummer und/oder -titel umschliesst |  no  |
 | [BlockParagraph](BlockParagraph.md) | Ein Fliesstext-Absatz in Content (akn:p) |  no  |
 | [MixedText](MixedText.md) | Wiederverwendbarer Halter für gemischten Inhalt: eine geordnete Folge aus Tex... |  no  |
 | [Ref](Ref.md) | Eine Inline-Referenz (akn:ref) |  no  |
@@ -48,7 +49,7 @@ URI: [laws:inline_content](https://ld.ech.ch/schema/0296/laws/inline_content)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [InlineElement](InlineElement.md) |
-| Domäne von | [BlockParagraph](BlockParagraph.md), [MixedText](MixedText.md), [Ref](Ref.md), [B](B.md), [I](I.md), [Sup](Sup.md), [Span](Span.md), [Inline](Inline.md), [Placeholder](Placeholder.md) |
+| Domäne von | [PrefaceP](PrefaceP.md), [BlockParagraph](BlockParagraph.md), [MixedText](MixedText.md), [Ref](Ref.md), [B](B.md), [I](I.md), [Sup](Sup.md), [Span](Span.md), [Inline](Inline.md), [Placeholder](Placeholder.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -91,6 +92,7 @@ description: 'Geordneter gemischter Inhalt: eine Folge aus Textabschnitten und I
 from_schema: https://ld.ech.ch/schema/0296/laws
 rank: 1000
 domain_of:
+- PrefaceP
 - BlockParagraph
 - MixedText
 - Ref

@@ -19,6 +19,7 @@ _Ein Vorspann-Absatz (akn:p), der Dokumentnummer und/oder -titel umschliesst. Fe
 |------------------------|----------------------|------------------------------------------------------|
 | doc_number | 0..1 <br/> [String](String.md) | Dokumentnummer im Vorspann (akn:docNumber). Pflicht gemäss FLX-PF-001. Typischerweise die SR-Nummer, z.B. '101'.  |
 | doc_title | 0..1 <br/> [MixedText](MixedText.md) | Dokumenttitel im Vorspann (akn:docTitle). Pflicht gemäss FLX-PF-002. Kann Inline-Markup und akn:br für Zeilenumbrüche enthalten.  |
+| inline_content | * <br/> [InlineElement](InlineElement.md) | Geordneter gemischter Inhalt: eine Folge aus Textabschnitten und Inline-Markup-Elementen (InlineElement-Subklassen). Die Dokumentreihenfolge wird durch die Listenreihenfolge bewahrt.  |
 
 ##### Einschränkungen
 
@@ -27,6 +28,7 @@ Mindestens eines der folgenden Felder muss gesetzt sein:
 
 - [doc_number](doc_number.md)
 - [doc_title](doc_title.md)
+- [inline_content](inline_content.md)
 
 
 

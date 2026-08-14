@@ -1802,6 +1802,17 @@
                     "required": [
                         "doc_title"
                     ]
+                },
+                {
+                    "properties": {
+                        "inline_content": {
+                            "items": {},
+                            "type": "array"
+                        }
+                    },
+                    "required": [
+                        "inline_content"
+                    ]
                 }
             ],
             "description": "A preface paragraph (akn:p) that wraps the document number and/or title. Fedlex requires akn:docNumber and akn:docTitle to sit inside a akn:p of the preface (FLX-PF-001/002).",
@@ -1823,6 +1834,47 @@
                         }
                     ],
                     "description": "Document title in the preface (akn:docTitle). Required by FLX-PF-002. May contain inline markup and akn:br for line breaks.\n"
+                },
+                "inline_content": {
+                    "description": "Ordered mixed content: a sequence of text runs and inline-markup elements (InlineElement subclasses). Document order is preserved by list order. Allowed inline elements: akn:ref, akn:b, akn:i, akn:sup, akn:span, akn:authorialNote, akn:inline, akn:placeholder, akn:br.\n",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/TextRun"
+                            },
+                            {
+                                "$ref": "#/$defs/Ref"
+                            },
+                            {
+                                "$ref": "#/$defs/B"
+                            },
+                            {
+                                "$ref": "#/$defs/I"
+                            },
+                            {
+                                "$ref": "#/$defs/Sup"
+                            },
+                            {
+                                "$ref": "#/$defs/Span"
+                            },
+                            {
+                                "$ref": "#/$defs/Br"
+                            },
+                            {
+                                "$ref": "#/$defs/Inline"
+                            },
+                            {
+                                "$ref": "#/$defs/Placeholder"
+                            },
+                            {
+                                "$ref": "#/$defs/AuthorialNote"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 }
             },
             "title": "PrefaceP",

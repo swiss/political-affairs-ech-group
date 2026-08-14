@@ -1794,6 +1794,7 @@ _Ein Vorspann-Absatz (akn:p), der Dokumentnummer und/oder -titel umschliesst. Fe
 |------------------------|----------------------|------------------------------------------------------|
 | doc_number | 0..1 <br/> String | Dokumentnummer im Vorspann (akn:docNumber). Pflicht gemäss FLX-PF-001. Typischerweise die SR-Nummer, z.B. '101'.  |
 | doc_title | 0..1 <br/> [MixedText](#MixedText) | Dokumenttitel im Vorspann (akn:docTitle). Pflicht gemäss FLX-PF-002. Kann Inline-Markup und akn:br für Zeilenumbrüche enthalten.  |
+| inline_content | * <br/> [InlineElement](#InlineElement) | Geordneter gemischter Inhalt: eine Folge aus Textabschnitten und Inline-Markup-Elementen (InlineElement-Subklassen). Die Dokumentreihenfolge wird durch die Listenreihenfolge bewahrt.  |
 
 ###### Einschränkungen
 
@@ -1802,6 +1803,7 @@ Mindestens eines der folgenden Felder muss gesetzt sein:
 
 - doc_number
 - doc_title
+- inline_content
 
 
 
@@ -3577,6 +3579,7 @@ _Abstrakte Basis für ein modelliertes Inline-Markup-Element in gemischtem Inhal
 
 | Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
+| [PrefaceP](#PrefaceP) | inline_content | range | [InlineElement](#InlineElement) |
 | [BlockParagraph](#BlockParagraph) | inline_content | range | [InlineElement](#InlineElement) |
 | [MixedText](#MixedText) | inline_content | range | [InlineElement](#InlineElement) |
 | [Ref](#Ref) | inline_content | range | [InlineElement](#InlineElement) |

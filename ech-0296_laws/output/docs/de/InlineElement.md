@@ -26,6 +26,7 @@ _Abstrakte Basis für ein modelliertes Inline-Markup-Element in gemischtem Inhal
 
 | Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
+| [PrefaceP](PrefaceP.md) | [inline_content](inline_content.md) | range | [InlineElement](InlineElement.md) |
 | [BlockParagraph](BlockParagraph.md) | [inline_content](inline_content.md) | range | [InlineElement](InlineElement.md) |
 | [MixedText](MixedText.md) | [inline_content](inline_content.md) | range | [InlineElement](InlineElement.md) |
 | [Ref](Ref.md) | [inline_content](inline_content.md) | range | [InlineElement](InlineElement.md) |

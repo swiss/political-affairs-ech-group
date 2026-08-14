@@ -63,38 +63,38 @@
                                     laws:frbr_authoritative [ a laws:ValueType ;
                                             laws:value "true" ] ;
                                     laws:frbr_authors [ a laws:FRBRAuthor ;
-                                            laws:as_role "#publisher" ;
+                                            laws:as_role "#rightsHolder" ;
                                             laws:href "#ch.bk" ],
                                         [ a laws:FRBRAuthor ;
-                                            laws:as_role "#rightsHolder" ;
+                                            laws:as_role "#publisher" ;
                                             laws:href "#ch.bk" ] ;
                                     laws:frbr_country [ a laws:ValueType ;
                                             laws:value "CH" ] ;
                                     laws:frbr_dates [ a laws:FRBRDate ;
-                                            laws:date_value "1999-04-18"^^xsd:date ;
-                                            laws:frbr_date_name "jolux:dateDocument" ],
-                                        [ a laws:FRBRDate ;
                                             laws:date_value "2000-01-01"^^xsd:date ;
                                             laws:frbr_date_name "jolux:dateEntryInForce" ],
                                         [ a laws:FRBRDate ;
                                             laws:date_value "2024-03-03"^^xsd:date ;
-                                            laws:frbr_date_name "jolux:dateApplicability" ] ;
+                                            laws:frbr_date_name "jolux:dateApplicability" ],
+                                        [ a laws:FRBRDate ;
+                                            laws:date_value "1999-04-18"^^xsd:date ;
+                                            laws:frbr_date_name "jolux:dateDocument" ] ;
                                     laws:frbr_names [ a laws:FRBRName ;
-                                            laws:short_form "Cst." ;
-                                            laws:value "Constitution fédérale de la Confédération suisse du 18 avril 1999" ;
-                                            laws:xml_lang "fr" ],
+                                            laws:short_form "Cost." ;
+                                            laws:value "Costituzione federale della Confederazione Svizzera del 18 aprile 1999" ;
+                                            laws:xml_lang "it" ],
                                         [ a laws:FRBRName ;
                                             laws:short_form "Cst." ;
                                             laws:value "Constituziun federala da la Confederaziun svizra dals 18 d'avrigl 1999" ;
                                             laws:xml_lang "rm" ],
                                         [ a laws:FRBRName ;
-                                            laws:short_form "Cost." ;
-                                            laws:value "Costituzione federale della Confederazione Svizzera del 18 aprile 1999" ;
-                                            laws:xml_lang "it" ],
-                                        [ a laws:FRBRName ;
                                             laws:short_form "BV" ;
                                             laws:value "Bundesverfassung der Schweizerischen Eidgenossenschaft vom 18. April 1999" ;
-                                            laws:xml_lang "de" ] ;
+                                            laws:xml_lang "de" ],
+                                        [ a laws:FRBRName ;
+                                            laws:short_form "Cst." ;
+                                            laws:value "Constitution fédérale de la Confédération suisse du 18 avril 1999" ;
+                                            laws:xml_lang "fr" ] ;
                                     laws:frbr_number [ a laws:ValueType ;
                                             laws:value "101" ] ;
                                     laws:frbr_this [ a laws:UriValueType ;
@@ -109,22 +109,22 @@
                                     laws:href "https://fedlex.data.admin.ch/vocabulary/legal-institution/2" ;
                                     laws:show_as "Bundeskanzlei" ] ;
                             laws:tlc_roles [ a laws:TLCRole ;
-                                    laws:eId "rightsHolder" ;
-                                    laws:href "http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder" ;
-                                    laws:show_as "Détenteur des droits" ],
-                                [ a laws:TLCRole ;
                                     laws:eId "publisher" ;
                                     laws:href "http://data.legilux.public.lu/resource/ontology/jolux#publisher" ;
-                                    laws:show_as "Editeur" ] ] ] ;
+                                    laws:show_as "Editeur" ],
+                                [ a laws:TLCRole ;
+                                    laws:eId "rightsHolder" ;
+                                    laws:href "http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder" ;
+                                    laws:show_as "Détenteur des droits" ] ] ] ;
             laws:preface_ref [ a laws:Preface ;
                     laws:preface_paragraphs [ a laws:PrefaceP ;
                             laws:doc_number "101" ],
                         [ a laws:PrefaceP ;
                             laws:doc_title [ a laws:MixedText ;
                                     laws:inline_content [ laws:element_type "TextRun" ;
-                                            laws:text "der Schweizerischen Eidgenossenschaft" ],
-                                        [ laws:element_type "Br" ],
+                                            laws:text "Bundesverfassung" ],
                                         [ laws:element_type "TextRun" ;
-                                            laws:text "Bundesverfassung" ] ] ] ] ] .
+                                            laws:text "der Schweizerischen Eidgenossenschaft" ],
+                                        [ laws:element_type "Br" ] ] ] ] ] .
 
 
