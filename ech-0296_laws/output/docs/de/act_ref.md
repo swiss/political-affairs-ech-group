@@ -67,6 +67,9 @@ annotations:
   description_de:
     tag: description_de
     value: Der Erlass (akn:act). Muss das einzige Kind von akn:akomaNtoso sein (FLX-RT-001).
+  xml_element:
+    tag: xml_element
+    value: akn:act
 description: Der Erlass (akn:act). Muss das einzige Kind von akn:akomaNtoso sein (FLX-RT-001).
 from_schema: https://ld.ech.ch/schema/0296/laws
 rank: 1000

@@ -66,6 +66,9 @@ annotations:
   description_de:
     tag: description_de
     value: Präambel des Erlasses (akn:preamble).
+  xml_element:
+    tag: xml_element
+    value: akn:preamble
 description: Präambel des Erlasses (akn:preamble).
 from_schema: https://ld.ech.ch/schema/0296/laws
 rank: 1000

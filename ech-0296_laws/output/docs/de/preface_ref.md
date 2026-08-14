@@ -66,6 +66,9 @@ annotations:
   description_de:
     tag: description_de
     value: Vorspann des Erlasses (akn:preface).
+  xml_element:
+    tag: xml_element
+    value: akn:preface
 description: Vorspann des Erlasses (akn:preface).
 from_schema: https://ld.ech.ch/schema/0296/laws
 rank: 1000

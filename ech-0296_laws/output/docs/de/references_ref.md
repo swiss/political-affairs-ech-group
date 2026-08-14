@@ -66,6 +66,9 @@ annotations:
   description_de:
     tag: description_de
     value: Referenzen-Abschnitt der Metadaten (akn:references).
+  xml_element:
+    tag: xml_element
+    value: akn:references
 description: Referenzen-Abschnitt der Metadaten (akn:references).
 from_schema: https://ld.ech.ch/schema/0296/laws
 rank: 1000

@@ -66,6 +66,9 @@ annotations:
   description_de:
     tag: description_de
     value: Ein ISO-8601-Datumswert (akn:FRBRdate/@date).
+  xml_name:
+    tag: xml_name
+    value: date
   xml_attribute:
     tag: xml_attribute
     value: 'true'

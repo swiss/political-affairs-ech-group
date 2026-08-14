@@ -66,6 +66,9 @@ annotations:
   description_de:
     tag: description_de
     value: FRBR-Identifikationsblock (akn:identification).
+  xml_element:
+    tag: xml_element
+    value: akn:identification
 description: FRBR-Identifikationsblock (akn:identification).
 from_schema: https://ld.ech.ch/schema/0296/laws
 rank: 1000
