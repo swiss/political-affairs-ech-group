@@ -383,6 +383,7 @@ classes:
     slots:
     - doc_number
     - doc_title
+    - inline_content
     exact_mappings:
     - akn:p
     any_of:
@@ -391,6 +392,9 @@ classes:
           required: true
     - slot_conditions:
         doc_title:
+          required: true
+    - slot_conditions:
+        inline_content:
           required: true
   Preamble:
     description: |
