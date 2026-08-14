@@ -68,6 +68,9 @@ annotations:
   description_de:
     tag: description_de
     value: Kanonische ELI-URI dieser FRBR-Entität (akn:FRBRthis/@value).
+  xml_element:
+    tag: xml_element
+    value: akn:FRBRthis
 description: Kanonische ELI-URI dieser FRBR-Entität (akn:FRBRthis/@value).
 from_schema: https://ld.ech.ch/schema/0296/laws
 exact_mappings:

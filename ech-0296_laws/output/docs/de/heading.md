@@ -83,6 +83,9 @@ annotations:
       Muss vor subheading stehen (FLX-HD-004, FLX-HD-005).
 
       '
+  xml_element:
+    tag: xml_element
+    value: akn:heading
   schematron_rules:
     tag: schematron_rules
     value: 'FLX-HD-004: max one heading; FLX-HD-005: heading before subheading; FLX-TXT-001:

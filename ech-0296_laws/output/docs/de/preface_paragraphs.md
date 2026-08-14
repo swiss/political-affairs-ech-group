@@ -67,6 +67,9 @@ annotations:
   description_de:
     tag: description_de
     value: Die akn:p-Absätze des Vorspanns, die docNumber/docTitle umschliessen.
+  xml_element:
+    tag: xml_element
+    value: akn:p
 description: Die akn:p-Absätze des Vorspanns, die docNumber/docTitle umschliessen.
 from_schema: https://ld.ech.ch/schema/0296/laws
 exact_mappings:

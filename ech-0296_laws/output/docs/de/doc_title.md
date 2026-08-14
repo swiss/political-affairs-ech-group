@@ -71,6 +71,9 @@ annotations:
       Inline-Markup und akn:br für Zeilenumbrüche enthalten.
 
       '
+  xml_element:
+    tag: xml_element
+    value: akn:docTitle
   schematron_note:
     tag: schematron_note
     value: 'FLX-TXT-001: br allowed in docTitle (heading context)'

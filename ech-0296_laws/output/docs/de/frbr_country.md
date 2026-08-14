@@ -66,6 +66,9 @@ annotations:
   description_de:
     tag: description_de
     value: Ländercode für diesen Erlass (akn:FRBRcountry/@value), z.B. 'CH'.
+  xml_element:
+    tag: xml_element
+    value: akn:FRBRcountry
 description: Ländercode für diesen Erlass (akn:FRBRcountry/@value), z.B. 'CH'.
 from_schema: https://ld.ech.ch/schema/0296/laws
 exact_mappings:

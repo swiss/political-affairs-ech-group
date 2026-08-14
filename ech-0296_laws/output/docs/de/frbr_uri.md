@@ -68,6 +68,9 @@ annotations:
   description_de:
     tag: description_de
     value: Basis-ELI-URI dieser FRBR-Entität (akn:FRBRuri/@value).
+  xml_element:
+    tag: xml_element
+    value: akn:FRBRuri
 description: Basis-ELI-URI dieser FRBR-Entität (akn:FRBRuri/@value).
 from_schema: https://ld.ech.ch/schema/0296/laws
 exact_mappings:

@@ -66,6 +66,9 @@ annotations:
   description_de:
     tag: description_de
     value: Optionaler Einleitungstext vor einer Auflistung (akn:listIntroduction).
+  xml_element:
+    tag: xml_element
+    value: akn:listIntroduction
 description: Optionaler Einleitungstext vor einer Auflistung (akn:listIntroduction).
 from_schema: https://ld.ech.ch/schema/0296/laws
 exact_mappings:

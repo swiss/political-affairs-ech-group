@@ -66,6 +66,9 @@ annotations:
   description_de:
     tag: description_de
     value: SR-Nummer (akn:FRBRnumber/@value), z.B. '101'.
+  xml_element:
+    tag: xml_element
+    value: akn:FRBRnumber
 description: SR-Nummer (akn:FRBRnumber/@value), z.B. '101'.
 from_schema: https://ld.ech.ch/schema/0296/laws
 exact_mappings:
