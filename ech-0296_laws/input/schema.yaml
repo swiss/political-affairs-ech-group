@@ -383,13 +383,15 @@ classes:
     slots:
     - doc_number
     - doc_title
-    slot_usage:
-      doc_number:
-        required: false
-      doc_title:
-        required: false
     exact_mappings:
     - akn:p
+    any_of:
+    - slot_conditions:
+        doc_number:
+          required: true
+    - slot_conditions:
+        doc_title:
+          required: true
   Preamble:
     description: |
       The preamble of the act (akn:preamble), containing introductory prose paragraphs preceding the operative body.
@@ -1222,7 +1224,6 @@ slots:
     description: |
       Document number in the preface (akn:docNumber). Required by FLX-PF-001. Typically the SR number, e.g. '101'.
     range: string
-    required: true
     annotations:
       description_de: |
         Dokumentnummer im Vorspann (akn:docNumber). Pflicht gemäss FLX-PF-001. Typischerweise die SR-Nummer, z.B. '101'.
@@ -1233,7 +1234,6 @@ slots:
     description: |
       Document title in the preface (akn:docTitle). Required by FLX-PF-002. May contain inline markup and akn:br for line breaks.
     range: MixedText
-    required: true
     annotations:
       description_de: |
         Dokumenttitel im Vorspann (akn:docTitle). Pflicht gemäss FLX-PF-002. Kann Inline-Markup und akn:br für Zeilenumbrüche enthalten.
