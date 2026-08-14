@@ -25,6 +25,7 @@ prefixes:
   akn: http://docs.oasis-open.org/legaldocml/ns/akn/3.0/
   fedlex: http://fedlex.admin.ch/
   xsd: http://www.w3.org/2001/XMLSchema#
+  eli: http://data.europa.eu/eli/ontology#
 default_prefix: laws
 default_range: string
 imports:
@@ -198,6 +199,8 @@ classes:
     - frbr_authoritative
     exact_mappings:
     - akn:FRBRWork
+    close_mappings:
+    - eli:LegalResource
   FRBRExpression:
     description: |
       FRBR Expression level (akn:FRBRExpression): a specific language version of the legislative text. Identified by an ELI URI that includes the language code.
@@ -213,6 +216,8 @@ classes:
     - frbr_language
     exact_mappings:
     - akn:FRBRExpression
+    close_mappings:
+    - eli:LegalExpression
   FRBRManifestation:
     description: |
       FRBR Manifestation level (akn:FRBRManifestation): a specific file format of the expression. For Fedlex XML files the format value is 'xml'. The optional fedlex:generator attribute is only permitted here (FLX-XF-002).
@@ -229,6 +234,8 @@ classes:
     - frbr_format
     exact_mappings:
     - akn:FRBRManifestation
+    close_mappings:
+    - eli:Format
   FRBRDate:
     description: |
       A date entry for an FRBR entity (akn:FRBRdate). The @name attribute uses Fedlex/JoLux vocabulary: jolux:dateEntryInForce, jolux:dateDocument, jolux:dateApplicability.
@@ -266,6 +273,8 @@ classes:
     - short_form
     exact_mappings:
     - akn:FRBRname
+    close_mappings:
+    - eli:title
   ValueType:
     description: |
       A simple holder carrying a single @value attribute (AKN valueType). Reused for FRBRcountry, FRBRnumber, FRBRauthoritative, etc.
@@ -1049,6 +1058,8 @@ slots:
     multivalued: true
     annotations:
       description_de: Autoren-/Rechteinhaber-Einträge dieser FRBR-Entität (akn:FRBRauthor).
+    close_mappings:
+    - eli:passed_by
   frbr_country:
     description: Country code for this legislative text (akn:FRBRcountry/@value), e.g. 'CH'.
     range: ValueType
@@ -1057,6 +1068,8 @@ slots:
       xml_element: akn:FRBRcountry
     exact_mappings:
     - akn:FRBRcountry
+    close_mappings:
+    - eli:jurisdiction
   frbr_number:
     description: SR (Systematische Rechtssammlung) number (akn:FRBRnumber/@value), e.g. '101'.
     range: ValueType
@@ -1065,6 +1078,8 @@ slots:
       xml_element: akn:FRBRnumber
     exact_mappings:
     - akn:FRBRnumber
+    close_mappings:
+    - eli:number
   frbr_names:
     description: Multilingual name entries for the FRBR Work (akn:FRBRname). One entry per language.
     range: FRBRName
@@ -1079,6 +1094,8 @@ slots:
       xml_element: akn:FRBRauthoritative
     exact_mappings:
     - akn:FRBRauthoritative
+    close_mappings:
+    - eli:legal_value
   frbr_language:
     description: Language code of this expression (akn:FRBRlanguage/@language).
     range: LanguageType
@@ -1087,6 +1104,8 @@ slots:
       xml_element: akn:FRBRlanguage
     exact_mappings:
     - akn:FRBRlanguage
+    close_mappings:
+    - eli:language
   frbr_format:
     description: File format of this manifestation (akn:FRBRformat/@value), typically 'xml'.
     range: FormatType
@@ -1095,6 +1114,8 @@ slots:
       xml_element: akn:FRBRformat
     exact_mappings:
     - akn:FRBRformat
+    close_mappings:
+    - eli:format
   frbr_date_name:
     description: |
       Type of date (akn:FRBRdate/@name), using Fedlex/JoLux vocabulary, e.g. 'jolux:dateEntryInForce', 'jolux:dateDocument', 'jolux:dateApplicability'.
