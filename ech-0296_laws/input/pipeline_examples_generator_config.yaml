@@ -30,6 +30,14 @@ classes:
   - MainBody
   - Container
   - Block
+  - Conclusions
+  - Attachments
+  - Notes
+  - Note
+  - Citations
+  - Citation
+  - Formula
+  - TLCConcept
 
 slots:
   - act_name
@@ -45,6 +53,8 @@ slots:
   - doc_name
   - container_name
   - block_name
+  - title_attr
+  - marker
 
 max_examples_per_slot: 3
 

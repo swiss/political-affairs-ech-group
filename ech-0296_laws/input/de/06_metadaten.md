@@ -33,3 +33,17 @@ Mehrere AKN-Elemente tragen ihren Inhalt nicht als Text, sondern in einem Attrib
 {{include:ech-0296_laws/output/docs/FormatType.md}}
 
 {{include:ech-0296_laws/output/docs/DocumentLanguageEnum.md}}
+
+## Anmerkungen und weitere Verweise
+
+Anmerkungen stehen nicht im Text, sondern im Metadatenblock; der Text verweist mit `akn:noteRef` darauf. Dazu kommen Verweise, die den Erlass in seinem Umfeld verorten: auf die ursprüngliche Fassung, auf die Erlasse, die er ändert, und auf Begriffe wie den zeitlichen Status.
+
+{{include:ech-0296_laws/output/docs/Notes.md}}
+
+{{include:ech-0296_laws/output/docs/Note.md}}
+
+{{include:ech-0296_laws/output/docs/OriginalRef.md}}
+
+{{include:ech-0296_laws/output/docs/ActiveRef.md}}
+
+{{include:ech-0296_laws/output/docs/TLCConcept.md}}

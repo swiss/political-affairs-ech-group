@@ -31,3 +31,21 @@ Diese Modellierung ist aufwendiger als ein einzelnes Textfeld, aber sie ist die 
 {{include:ech-0296_laws/output/docs/Br.md}}
 
 {{include:ech-0296_laws/output/docs/XmlContent.md}}
+
+## Auszeichnungen der kantonalen Praxis
+
+Der Kanton Zürich zeichnet im Text mehr aus als der Bund: den definierten Begriff, den Verweis auf eine Anmerkung, die handelnde Person und ihre Rolle, das Datum im Fliesstext, die Unterschriftszeile und den Zeilenumbruch innerhalb eines Absatzes. Person und Rolle verweisen dabei auf ihre Deklaration im Referenzblock, statt den Namen bloss hinzuschreiben.
+
+{{include:ech-0296_laws/output/docs/Def.md}}
+
+{{include:ech-0296_laws/output/docs/NoteRef.md}}
+
+{{include:ech-0296_laws/output/docs/Person.md}}
+
+{{include:ech-0296_laws/output/docs/Role.md}}
+
+{{include:ech-0296_laws/output/docs/DateInline.md}}
+
+{{include:ech-0296_laws/output/docs/Signature.md}}
+
+{{include:ech-0296_laws/output/docs/Eol.md}}

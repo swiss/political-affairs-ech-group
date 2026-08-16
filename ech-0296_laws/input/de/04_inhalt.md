@@ -8,13 +8,51 @@ Der Erlass selbst ist das Element `akn:act`. Es trägt den Erlasstyp im Attribut
 
 {{include:ech-0296_laws/output/docs/ActTypeEnum.md}}
 
-## Vorspann und Präambel
+## Vorspann und Vorspruch
+
+Der Vorspann trägt, was den Erlass benennt: Nummer, Titel, Kurztitel, Abkürzung und Datum. Wie fein das ausgezeichnet wird, unterscheidet sich zwischen den Ebenen. Fedlex setzt Nummer und Titel in je einen eigenen Absatz und lässt den Rest als Fliesstext stehen; der Kanton Zürich zeichnet in *einem* Absatz die Ordnungsnummer, den Erlasstitel, den Kurztitel, die Abkürzung und das Datum je einzeln aus.
+
+Deshalb sind diese Angaben nicht eigene Felder des Absatzes, sondern Inline-Elemente wie die Textauszeichnung: Nur so bleibt ihre Reihenfolge untereinander erhalten. Die Anforderung von Fedlex — Nummer und Titel müssen im Vorspann vorkommen (FLX-PF-001 und -002) — ist damit eine Regel über den Inhalt, nicht über die Struktur.
 
 {{include:ech-0296_laws/output/docs/Preface.md}}
 
 {{include:ech-0296_laws/output/docs/PrefaceP.md}}
 
+{{include:ech-0296_laws/output/docs/DocNumber.md}}
+
+{{include:ech-0296_laws/output/docs/DocTitle.md}}
+
+{{include:ech-0296_laws/output/docs/DocketNumber.md}}
+
+{{include:ech-0296_laws/output/docs/ShortTitle.md}}
+
+{{include:ech-0296_laws/output/docs/Abbr.md}}
+
+{{include:ech-0296_laws/output/docs/DocDate.md}}
+
+### Vorspruch
+
+Der Vorspruch nennt, wer den Erlass beschliesst und worauf er sich beruft: die Eingangsformel, die Erwägungen und die weiteren Absätze.
+
 {{include:ech-0296_laws/output/docs/Preamble.md}}
+
+{{include:ech-0296_laws/output/docs/Formula.md}}
+
+{{include:ech-0296_laws/output/docs/Citations.md}}
+
+{{include:ech-0296_laws/output/docs/Citation.md}}
+
+## Schlussformel und Beilagen
+
+Am Ende eines Erlasses stehen Ort, Datum und Unterschriften — im Kanton Zürich als `akn:conclusions`, das Fedlex nicht führt. Beilagen stehen in `akn:attachments`; jede Beilage ist wieder ein vollständiger Erlass, weshalb sie dieselbe Klasse verwendet.
+
+{{include:ech-0296_laws/output/docs/Conclusions.md}}
+
+{{include:ech-0296_laws/output/docs/Attachments.md}}
+
+{{include:ech-0296_laws/output/docs/Attachment.md}}
+
+{{include:ech-0296_laws/output/docs/ComponentRef.md}}
 
 ## Gesetzeshierarchie
 
