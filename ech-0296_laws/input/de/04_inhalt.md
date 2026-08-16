@@ -69,3 +69,29 @@ Auf der untersten Ebene stehen die Inhaltsblöcke: Absätze, Listen und Tabellen
 {{include:ech-0296_laws/output/docs/TableRow.md}}
 
 {{include:ech-0296_laws/output/docs/TableCell.md}}
+
+## Anhänge
+
+Ein Erlass kann Dokumente mitführen, die nicht Teil seines Artikeltextes sind — im Bundesrecht regelmässig einen Anhang. Solche Dokumente stehen in `akn:components` und sind je ein eigenes `akn:doc` mit eigenem Vorspann und eigenem Hauptteil. Beim Öffentlichkeitsgesetz enthält der Anhang die Änderung bisherigen Rechts, beim Datenschutzgesetz ebenso.
+
+Zwei Eigenheiten sind dabei festzuhalten. Erstens wiederholt der Anhang in den Fedlex-Dateien die Identifikation des Erlasses unverändert — dieselben ELI-URIs, dieselben Daten und Namen. Er ist also nicht eigenständig identifiziert, sondern Teil desselben Werks. Zweitens nutzt sein Vorspann nicht die Absatzstruktur des Erlasses, sondern die generischen Behälter `akn:container` und `akn:block`. Deren `@name` ist in AKN frei wählbar; dieser Standard führt die Werte, die Fedlex tatsächlich verwendet, als Aufzählung: `headerOfAnnex` für den Behälter, `heading` und `num` für den Block.
+
+Der Hauptteil eines Anhangs (`akn:mainBody`) kennt die Gesetzeshierarchie nicht. Er nimmt Absätze und Ebenen unmittelbar auf — und darin wieder dieselben Inhalts- und Auszeichnungselemente wie der Erlass selbst, bis hin zur Fussnote mit Verweis auf die Amtliche Sammlung.
+
+{{include:ech-0296_laws/output/docs/Components.md}}
+
+{{include:ech-0296_laws/output/docs/Component.md}}
+
+{{include:ech-0296_laws/output/docs/Doc.md}}
+
+{{include:ech-0296_laws/output/docs/DocNameEnum.md}}
+
+{{include:ech-0296_laws/output/docs/MainBody.md}}
+
+{{include:ech-0296_laws/output/docs/Container.md}}
+
+{{include:ech-0296_laws/output/docs/ContainerNameEnum.md}}
+
+{{include:ech-0296_laws/output/docs/Block.md}}
+
+{{include:ech-0296_laws/output/docs/BlockNameEnum.md}}

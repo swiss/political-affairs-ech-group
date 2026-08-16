@@ -24,6 +24,12 @@ classes:
   - BlockList
   - BlockListItem
   - TLCReference
+  - Components
+  - Component
+  - Doc
+  - MainBody
+  - Container
+  - Block
 
 slots:
   - act_name
@@ -36,6 +42,9 @@ slots:
   - doc_number
   - element_type
   - text
+  - doc_name
+  - container_name
+  - block_name
 
 max_examples_per_slot: 3
 
