@@ -133,6 +133,37 @@ enums:
         (FLX-XF-004). ''reference'' nur bei akn:subheading-Elementen (FLX-XF-005).
 
         '
+  DocNameEnum:
+    description: Kinds of embedded document Fedlex uses in akn:doc/@name.
+    annotations:
+      description_de: Arten beiliegender Dokumente, die Fedlex in akn:doc/@name verwendet.
+    permissible_values:
+      annex:
+        description: An annex to the act.
+        annotations:
+          description_de: Ein Anhang zum Erlass.
+  ContainerNameEnum:
+    description: Container purposes Fedlex uses in akn:container/@name.
+    annotations:
+      description_de: Zwecke, die Fedlex in akn:container/@name verwendet.
+    permissible_values:
+      headerOfAnnex:
+        description: Heading area of an annex.
+        annotations:
+          description_de: Kopfbereich eines Anhangs.
+  BlockNameEnum:
+    description: Block purposes Fedlex uses in akn:block/@name.
+    annotations:
+      description_de: Zwecke, die Fedlex in akn:block/@name verwendet.
+    permissible_values:
+      heading:
+        description: The heading of the enclosing container.
+        annotations:
+          description_de: Die Überschrift des umgebenden Behälters.
+      num:
+        description: The number of the enclosing container.
+        annotations:
+          description_de: Die Nummer des umgebenden Behälters.
 classes:
   FedlexDocument:
     tree_root: true
@@ -170,6 +201,7 @@ classes:
     - preface_ref
     - preamble_ref
     - body
+    - components_ref
     exact_mappings:
     - akn:act
   ActMeta:
@@ -449,6 +481,7 @@ classes:
       schematron_rules: 'FLX-PF-001: Missing docNumber; FLX-PF-002: Missing docTitle'
     slots:
     - preface_paragraphs
+    - containers
     exact_mappings:
     - akn:preface
   PrefaceP:
@@ -1175,6 +1208,84 @@ classes:
     - block_paragraphs
     exact_mappings:
     - akn:authorialNote
+  Components:
+    description: >-
+      Container for the documents embedded in an act (akn:components), such as its annex.
+    annotations:
+      description_de: 'Behälter für die Dokumente, die einem Erlass beiliegen (akn:components) — etwa seinen Anhang.
+
+        '
+      xml_element: akn:components
+    slots:
+    - component_list
+    exact_mappings:
+    - akn:components
+  Component:
+    description: A single embedded document (akn:component).
+    annotations:
+      description_de: Ein einzelnes beiliegendes Dokument (akn:component).
+      xml_element: akn:component
+    slots:
+    - doc_ref
+    exact_mappings:
+    - akn:component
+  Doc:
+    description: 'An embedded document (akn:doc). Its @name states the kind; Fedlex uses ''annex''. It carries its own identification,
+      which in the Fedlex files repeats the URIs of the act it belongs to.
+
+      '
+    annotations:
+      description_de: 'Ein beiliegendes Dokument (akn:doc). Das @name-Attribut nennt die Art; Fedlex verwendet ''annex''.
+        Es führt einen eigenen Identifikationsblock, der in den Fedlex-Dateien die URIs des zugehörigen Erlasses wiederholt.
+
+        '
+      xml_element: akn:doc
+    slots:
+    - doc_name
+    - meta
+    - preface_ref
+    - main_body
+    exact_mappings:
+    - akn:doc
+  MainBody:
+    description: 'Body of an embedded document (akn:mainBody). Unlike the act body it holds paragraphs and levels directly,
+      without the legislative hierarchy.
+
+      '
+    annotations:
+      description_de: 'Hauptteil eines beiliegenden Dokuments (akn:mainBody). Anders als der Erlasskörper nimmt er Absätze
+        und Ebenen unmittelbar auf, ohne die Gesetzeshierarchie.
+
+        '
+      xml_element: akn:mainBody
+    slots:
+    - block_paragraphs
+    - levels
+    - content_ref
+    exact_mappings:
+    - akn:mainBody
+  Container:
+    description: A generic container (akn:container) whose @name states its purpose.
+    annotations:
+      description_de: Ein generischer Behälter (akn:container), dessen @name den Zweck nennt.
+      xml_element: akn:container
+    slots:
+    - container_name
+    - blocks
+    exact_mappings:
+    - akn:container
+  Block:
+    description: >-
+      A generic block (akn:block) whose @name states its purpose; carries mixed content.
+    annotations:
+      description_de: >-
+        Ein generischer Block (akn:block), dessen @name den Zweck nennt; trägt gemischten Inhalt.
+      xml_element: akn:block
+    slots:
+    - block_name
+    - inline_content
+    exact_mappings:
+    - akn:block
 slots:
   act_ref:
     description: >-
@@ -1469,9 +1580,9 @@ slots:
         '
       xml_attribute: 'true'
     examples:
+    - value: annex_u1/lvl_u1
     - value: art_1
     - value: art_1/para
-    - value: art_2
   tlc_organizations:
     description: Named organization references in the document (akn:TLCOrganization).
     range: TLCOrganization
@@ -1714,9 +1825,9 @@ slots:
     annotations:
       description_de: Typ-Diskriminator für die konkrete InlineElement-Subklasse.
     examples:
+    - value: AuthorialNote
     - value: B
     - value: Br
-    - value: TextRun
   text:
     description: The character data of a TextRun; emitted as a text node in mixed content.
     range: string
@@ -1726,8 +1837,8 @@ slots:
       xsd_text: 'true'
     examples:
     - value: ' Dieses Gesetz gilt für:'
+    - value: (Art. 22)
     - value: '1'
-    - value: '1. Titel: '
   value_uri:
     description: >-
       A @value attribute typed as an ELI URI (akn:FRBRthis/@value, akn:FRBRuri/@value).
@@ -1828,6 +1939,84 @@ slots:
     multivalued: true
     annotations:
       description_de: Zellen in einer Tabellenzeile (akn:td).
+  components_ref:
+    description: The documents embedded in this act (akn:components).
+    annotations:
+      description_de: Die diesem Erlass beiliegenden Dokumente (akn:components).
+      xml_element: akn:components
+    exact_mappings:
+    - akn:components
+    range: Components
+  component_list:
+    description: The embedded documents (akn:component).
+    annotations:
+      description_de: Die beiliegenden Dokumente (akn:component).
+      xml_element: akn:component
+    exact_mappings:
+    - akn:component
+    range: Component
+    multivalued: true
+  doc_ref:
+    description: The embedded document itself (akn:doc).
+    annotations:
+      description_de: Das beiliegende Dokument selbst (akn:doc).
+      xml_element: akn:doc
+    exact_mappings:
+    - akn:doc
+    range: Doc
+  doc_name:
+    description: Kind of the embedded document (akn:doc/@name).
+    annotations:
+      description_de: Art des beiliegenden Dokuments (akn:doc/@name).
+      xml_attribute: 'true'
+      xml_name: name
+    range: DocNameEnum
+    examples:
+    - value: annex
+  main_body:
+    description: Body of the embedded document (akn:mainBody).
+    annotations:
+      description_de: Hauptteil des beiliegenden Dokuments (akn:mainBody).
+      xml_element: akn:mainBody
+    exact_mappings:
+    - akn:mainBody
+    range: MainBody
+  containers:
+    description: Containers of the preface (akn:container).
+    annotations:
+      description_de: Behälter des Vorspanns (akn:container).
+      xml_element: akn:container
+    exact_mappings:
+    - akn:container
+    range: Container
+    multivalued: true
+  container_name:
+    description: Purpose of the container (akn:container/@name).
+    annotations:
+      description_de: Zweck des Behälters (akn:container/@name).
+      xml_attribute: 'true'
+      xml_name: name
+    range: ContainerNameEnum
+    examples:
+    - value: headerOfAnnex
+  blocks:
+    description: Blocks within the container (akn:block).
+    annotations:
+      description_de: Blöcke innerhalb des Behälters (akn:block).
+      xml_element: akn:block
+    exact_mappings:
+    - akn:block
+    range: Block
+    multivalued: true
+  block_name:
+    description: Purpose of the block (akn:block/@name).
+    annotations:
+      description_de: Zweck des Blocks (akn:block/@name).
+      xml_attribute: 'true'
+      xml_name: name
+    range: BlockNameEnum
+    examples:
+    - value: heading
 annotations:
   description_de: 'LinkML-Schema für das Fedlex-spezifische Subset von AkomaNtoso 3.0 für schweizerische Bundeserlasse (eCH-0296).
     Modelliert die vollständige Dokumentenstruktur (act, FRBR-Metadaten, Vorspann, Hauptteil, Gesetzeshierarchie, Artikelinhalt)

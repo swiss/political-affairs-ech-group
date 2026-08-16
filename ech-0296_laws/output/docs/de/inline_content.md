@@ -36,6 +36,7 @@ URI: [laws:inline_content](https://ld.ech.ch/schema/0296/laws/inline_content)
 | [Span](Span.md) | Generischer Inline-Bereich (akn:span) |  no  |
 | [Inline](Inline.md) | Ein benanntes präsentationsbezogenes Inline (akn:inline), z |  no  |
 | [Placeholder](Placeholder.md) | Ein Platzhalter für entfernten Inhalt (akn:placeholder) mit dem Erweiterungsa... |  no  |
+| [Block](Block.md) | Ein generischer Block (akn:block), dessen @name den Zweck nennt; trägt gemisc... |  no  |
 
 
 
@@ -49,7 +50,7 @@ URI: [laws:inline_content](https://ld.ech.ch/schema/0296/laws/inline_content)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [InlineElement](InlineElement.md) |
-| Domäne von | [PrefaceP](PrefaceP.md), [BlockParagraph](BlockParagraph.md), [MixedText](MixedText.md), [Ref](Ref.md), [B](B.md), [I](I.md), [Sup](Sup.md), [Span](Span.md), [Inline](Inline.md), [Placeholder](Placeholder.md) |
+| Domäne von | [PrefaceP](PrefaceP.md), [BlockParagraph](BlockParagraph.md), [MixedText](MixedText.md), [Ref](Ref.md), [B](B.md), [I](I.md), [Sup](Sup.md), [Span](Span.md), [Inline](Inline.md), [Placeholder](Placeholder.md), [Block](Block.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -102,6 +103,7 @@ domain_of:
 - Span
 - Inline
 - Placeholder
+- Block
 range: InlineElement
 multivalued: true
 inlined: true

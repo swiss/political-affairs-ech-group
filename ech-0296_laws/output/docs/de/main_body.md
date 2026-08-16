@@ -3,10 +3,10 @@ search:
   boost: 5.0
 ---
 
-# Slot: preface_ref 
+# Slot: main_body 
 
 
-_Vorspann des Erlasses (akn:preface)._
+_Hauptteil des beiliegenden Dokuments (akn:mainBody)._
 
 
 
@@ -14,7 +14,7 @@ _Vorspann des Erlasses (akn:preface)._
 
 
 
-URI: [laws:preface_ref](https://ld.ech.ch/schema/0296/laws/preface_ref)
+URI: [laws:main_body](https://ld.ech.ch/schema/0296/laws/main_body)
 <!-- no inheritance hierarchy -->
 
 
@@ -25,7 +25,6 @@ URI: [laws:preface_ref](https://ld.ech.ch/schema/0296/laws/preface_ref)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [Act](Act.md) | Das Erlasselement (akn:act) |  no  |
 | [Doc](Doc.md) | Ein beiliegendes Dokument (akn:doc) |  no  |
 
 
@@ -39,8 +38,8 @@ URI: [laws:preface_ref](https://ld.ech.ch/schema/0296/laws/preface_ref)
 
 | Eigenschaft | Wert |
 | --- | --- |
-| Wertebereich | [Preface](Preface.md) |
-| Domäne von | [Act](Act.md), [Doc](Doc.md) |
+| Wertebereich | [MainBody](MainBody.md) |
+| Domäne von | [Doc](Doc.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -62,21 +61,22 @@ URI: [laws:preface_ref](https://ld.ech.ch/schema/0296/laws/preface_ref)
 
 <details>
 ```yaml
-name: preface_ref
+name: main_body
 annotations:
   description_de:
     tag: description_de
-    value: Vorspann des Erlasses (akn:preface).
+    value: Hauptteil des beiliegenden Dokuments (akn:mainBody).
   xml_element:
     tag: xml_element
-    value: akn:preface
-description: Vorspann des Erlasses (akn:preface).
+    value: akn:mainBody
+description: Hauptteil des beiliegenden Dokuments (akn:mainBody).
 from_schema: https://ld.ech.ch/schema/0296/laws
+exact_mappings:
+- akn:mainBody
 rank: 1000
 domain_of:
-- Act
 - Doc
-range: Preface
+range: MainBody
 
 ```
 </details></div>

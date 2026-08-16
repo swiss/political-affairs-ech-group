@@ -26,6 +26,7 @@ URI: [laws:meta](https://ld.ech.ch/schema/0296/laws/meta)
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
 | [Act](Act.md) | Das Erlasselement (akn:act) |  no  |
+| [Doc](Doc.md) | Ein beiliegendes Dokument (akn:doc) |  no  |
 
 
 
@@ -39,7 +40,7 @@ URI: [laws:meta](https://ld.ech.ch/schema/0296/laws/meta)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [ActMeta](ActMeta.md) |
-| Domäne von | [Act](Act.md) |
+| Domäne von | [Act](Act.md), [Doc](Doc.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -71,6 +72,7 @@ from_schema: https://ld.ech.ch/schema/0296/laws
 rank: 1000
 domain_of:
 - Act
+- Doc
 range: ActMeta
 
 ```

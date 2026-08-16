@@ -31,6 +31,7 @@ _Der Inhalt eines Absatzes (akn:content). Enthält Block-Elemente: akn:p (Fliess
 | ---  | --- | --- | --- |
 | [Level](Level.md) | [content_ref](content_ref.md) | range | [Content](Content.md) |
 | [Paragraph](Paragraph.md) | [content_ref](content_ref.md) | range | [Content](Content.md) |
+| [MainBody](MainBody.md) | [content_ref](content_ref.md) | range | [Content](Content.md) |
 
 
 

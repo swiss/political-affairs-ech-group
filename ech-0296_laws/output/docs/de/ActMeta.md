@@ -29,6 +29,7 @@ _Metadaten-Abschnitt des Erlasses (akn:meta). Enthält die FRBR-Identifikation (
 | Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
 | [Act](Act.md) | [meta](meta.md) | range | [ActMeta](ActMeta.md) |
+| [Doc](Doc.md) | [meta](meta.md) | range | [ActMeta](ActMeta.md) |
 
 
 

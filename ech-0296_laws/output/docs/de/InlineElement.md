@@ -36,6 +36,7 @@ _Abstrakte Basis für ein modelliertes Inline-Markup-Element in gemischtem Inhal
 | [Span](Span.md) | [inline_content](inline_content.md) | range | [InlineElement](InlineElement.md) |
 | [Inline](Inline.md) | [inline_content](inline_content.md) | range | [InlineElement](InlineElement.md) |
 | [Placeholder](Placeholder.md) | [inline_content](inline_content.md) | range | [InlineElement](InlineElement.md) |
+| [Block](Block.md) | [inline_content](inline_content.md) | range | [InlineElement](InlineElement.md) |
 
 
 

@@ -35,6 +35,7 @@ URI: [laws:levels](https://ld.ech.ch/schema/0296/laws/levels)
 | [Subsection](Subsection.md) | Unterabschnitt-Ebene (akn:subsection) |  no  |
 | [Transitional](Transitional.md) | Eine Übergangsbestimmung im Hauptteil eines Erlasses (akn:transitional) |  no  |
 | [Proviso](Proviso.md) | Ein Vorbehalt im Hauptteil eines Erlasses (akn:proviso) |  no  |
+| [MainBody](MainBody.md) | Hauptteil eines beiliegenden Dokuments (akn:mainBody) |  no  |
 
 
 
@@ -48,7 +49,7 @@ URI: [laws:levels](https://ld.ech.ch/schema/0296/laws/levels)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [Level](Level.md) |
-| Domäne von | [ActBody](ActBody.md), [Book](Book.md), [Title](Title.md), [Part](Part.md), [Chapter](Chapter.md), [Subchapter](Subchapter.md), [Section](Section.md), [Subsection](Subsection.md), [Transitional](Transitional.md), [Proviso](Proviso.md) |
+| Domäne von | [ActBody](ActBody.md), [Book](Book.md), [Title](Title.md), [Part](Part.md), [Chapter](Chapter.md), [Subchapter](Subchapter.md), [Section](Section.md), [Subsection](Subsection.md), [Transitional](Transitional.md), [Proviso](Proviso.md), [MainBody](MainBody.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -90,6 +91,7 @@ domain_of:
 - Subsection
 - Transitional
 - Proviso
+- MainBody
 range: Level
 multivalued: true
 

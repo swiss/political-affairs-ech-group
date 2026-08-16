@@ -19,6 +19,17 @@
                     ],
                     "description": "Main body of the act (akn:body)."
                 },
+                "components_ref": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Components"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The documents embedded in this act (akn:components)."
+                },
                 "meta": {
                     "anyOf": [
                         {
@@ -364,6 +375,59 @@
             "title": "B",
             "type": "object"
         },
+        "Block": {
+            "additionalProperties": false,
+            "description": "A generic block (akn:block) whose @name states its purpose; carries mixed content.",
+            "properties": {
+                "block_name": {
+                    "$ref": "#/$defs/BlockNameEnum",
+                    "description": "Purpose of the block (akn:block/@name)."
+                },
+                "inline_content": {
+                    "description": "Ordered mixed content: a sequence of text runs and inline-markup elements (InlineElement subclasses). Document order is preserved by list order. Allowed inline elements: akn:ref, akn:b, akn:i, akn:sup, akn:span, akn:authorialNote, akn:inline, akn:placeholder, akn:br.\n",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/TextRun"
+                            },
+                            {
+                                "$ref": "#/$defs/Ref"
+                            },
+                            {
+                                "$ref": "#/$defs/B"
+                            },
+                            {
+                                "$ref": "#/$defs/I"
+                            },
+                            {
+                                "$ref": "#/$defs/Sup"
+                            },
+                            {
+                                "$ref": "#/$defs/Span"
+                            },
+                            {
+                                "$ref": "#/$defs/Br"
+                            },
+                            {
+                                "$ref": "#/$defs/Inline"
+                            },
+                            {
+                                "$ref": "#/$defs/Placeholder"
+                            },
+                            {
+                                "$ref": "#/$defs/AuthorialNote"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Block",
+            "type": "object"
+        },
         "BlockList": {
             "additionalProperties": false,
             "description": "A block list of enumerated or lettered items (akn:blockList), optionally introduced by an akn:listIntroduction element.",
@@ -445,6 +509,15 @@
             },
             "title": "BlockListItem",
             "type": "object"
+        },
+        "BlockNameEnum": {
+            "description": "Block purposes Fedlex uses in akn:block/@name.",
+            "enum": [
+                "heading",
+                "num"
+            ],
+            "title": "BlockNameEnum",
+            "type": "string"
         },
         "BlockParagraph": {
             "additionalProperties": false,
@@ -739,6 +812,73 @@
             "title": "Chapter",
             "type": "object"
         },
+        "Component": {
+            "additionalProperties": false,
+            "description": "A single embedded document (akn:component).",
+            "properties": {
+                "doc_ref": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Doc"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The embedded document itself (akn:doc)."
+                }
+            },
+            "title": "Component",
+            "type": "object"
+        },
+        "Components": {
+            "additionalProperties": false,
+            "description": "Container for the documents embedded in an act (akn:components), such as its annex.",
+            "properties": {
+                "component_list": {
+                    "description": "The embedded documents (akn:component).",
+                    "items": {
+                        "$ref": "#/$defs/Component"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Components",
+            "type": "object"
+        },
+        "Container": {
+            "additionalProperties": false,
+            "description": "A generic container (akn:container) whose @name states its purpose.",
+            "properties": {
+                "blocks": {
+                    "description": "Blocks within the container (akn:block).",
+                    "items": {
+                        "$ref": "#/$defs/Block"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "container_name": {
+                    "$ref": "#/$defs/ContainerNameEnum",
+                    "description": "Purpose of the container (akn:container/@name)."
+                }
+            },
+            "title": "Container",
+            "type": "object"
+        },
+        "ContainerNameEnum": {
+            "description": "Container purposes Fedlex uses in akn:container/@name.",
+            "enum": [
+                "headerOfAnnex"
+            ],
+            "title": "ContainerNameEnum",
+            "type": "string"
+        },
         "Content": {
             "additionalProperties": false,
             "description": "The content of a paragraph (akn:content). Contains block-level elements: akn:p (prose), akn:blockList (numbered/lettered lists), akn:table. When used inside a akn:level, must contain an akn:mod element (FLX-HR-003).",
@@ -776,6 +916,59 @@
             },
             "title": "Content",
             "type": "object"
+        },
+        "Doc": {
+            "additionalProperties": false,
+            "description": "An embedded document (akn:doc). Its @name states the kind; Fedlex uses 'annex'. It carries its own identification, which in the Fedlex files repeats the URIs of the act it belongs to.",
+            "properties": {
+                "doc_name": {
+                    "$ref": "#/$defs/DocNameEnum",
+                    "description": "Kind of the embedded document (akn:doc/@name)."
+                },
+                "main_body": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MainBody"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Body of the embedded document (akn:mainBody)."
+                },
+                "meta": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/ActMeta"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Metadata section of the act (akn:meta)."
+                },
+                "preface_ref": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Preface"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Preface of the act (akn:preface)."
+                }
+            },
+            "title": "Doc",
+            "type": "object"
+        },
+        "DocNameEnum": {
+            "description": "Kinds of embedded document Fedlex uses in akn:doc/@name.",
+            "enum": [
+                "annex"
+            ],
+            "title": "DocNameEnum",
+            "type": "string"
         },
         "DocumentLanguageEnum": {
             "description": "Language codes used for Swiss federal documents.",
@@ -1470,6 +1663,45 @@
             "title": "Level",
             "type": "object"
         },
+        "MainBody": {
+            "additionalProperties": false,
+            "description": "Body of an embedded document (akn:mainBody). Unlike the act body it holds paragraphs and levels directly, without the legislative hierarchy.",
+            "properties": {
+                "block_paragraphs": {
+                    "description": "Block paragraph elements (akn:p) within content.",
+                    "items": {
+                        "$ref": "#/$defs/BlockParagraph"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "content_ref": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Content"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Content element within a paragraph (akn:content)."
+                },
+                "levels": {
+                    "description": "Transparent level child elements (akn:level).",
+                    "items": {
+                        "$ref": "#/$defs/Level"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "MainBody",
+            "type": "object"
+        },
         "MixedText": {
             "additionalProperties": false,
             "description": "Reusable mixed-content holder: an ordered run of text and inline markup. Used as the range for num, heading, subheading, listIntroduction, docTitle, so the wrapping element name comes from the referring slot's xml_element.",
@@ -1770,6 +2002,16 @@
             "additionalProperties": false,
             "description": "The preface of the act (akn:preface), containing the document number and title. Fedlex Schematron requires both akn:docNumber (FLX-PF-001) and akn:docTitle (FLX-PF-002) to be present inside a akn:p element.",
             "properties": {
+                "containers": {
+                    "description": "Containers of the preface (akn:container).",
+                    "items": {
+                        "$ref": "#/$defs/Container"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "preface_paragraphs": {
                     "description": "The akn:p paragraphs of the preface, wrapping docNumber/docTitle.",
                     "items": {

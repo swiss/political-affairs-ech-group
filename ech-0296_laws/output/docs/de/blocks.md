@@ -3,10 +3,10 @@ search:
   boost: 5.0
 ---
 
-# Slot: preface_ref 
+# Slot: blocks 
 
 
-_Vorspann des Erlasses (akn:preface)._
+_Blöcke innerhalb des Behälters (akn:block)._
 
 
 
@@ -14,7 +14,7 @@ _Vorspann des Erlasses (akn:preface)._
 
 
 
-URI: [laws:preface_ref](https://ld.ech.ch/schema/0296/laws/preface_ref)
+URI: [laws:blocks](https://ld.ech.ch/schema/0296/laws/blocks)
 <!-- no inheritance hierarchy -->
 
 
@@ -25,8 +25,7 @@ URI: [laws:preface_ref](https://ld.ech.ch/schema/0296/laws/preface_ref)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [Act](Act.md) | Das Erlasselement (akn:act) |  no  |
-| [Doc](Doc.md) | Ein beiliegendes Dokument (akn:doc) |  no  |
+| [Container](Container.md) | Ein generischer Behälter (akn:container), dessen @name den Zweck nennt |  no  |
 
 
 
@@ -39,13 +38,14 @@ URI: [laws:preface_ref](https://ld.ech.ch/schema/0296/laws/preface_ref)
 
 | Eigenschaft | Wert |
 | --- | --- |
-| Wertebereich | [Preface](Preface.md) |
-| Domäne von | [Act](Act.md), [Doc](Doc.md) |
+| Wertebereich | [Block](Block.md) |
+| Domäne von | [Container](Container.md) |
 
 ### Kardinalität und Anforderungen
 
 | Eigenschaft | Wert |
 | --- | --- |
+| Mehrwertig | Yes |
 
 
 
@@ -62,21 +62,23 @@ URI: [laws:preface_ref](https://ld.ech.ch/schema/0296/laws/preface_ref)
 
 <details>
 ```yaml
-name: preface_ref
+name: blocks
 annotations:
   description_de:
     tag: description_de
-    value: Vorspann des Erlasses (akn:preface).
+    value: Blöcke innerhalb des Behälters (akn:block).
   xml_element:
     tag: xml_element
-    value: akn:preface
-description: Vorspann des Erlasses (akn:preface).
+    value: akn:block
+description: Blöcke innerhalb des Behälters (akn:block).
 from_schema: https://ld.ech.ch/schema/0296/laws
+exact_mappings:
+- akn:block
 rank: 1000
 domain_of:
-- Act
-- Doc
-range: Preface
+- Container
+range: Block
+multivalued: true
 
 ```
 </details></div>

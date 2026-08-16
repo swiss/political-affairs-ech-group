@@ -27,6 +27,7 @@ URI: [laws:content_ref](https://ld.ech.ch/schema/0296/laws/content_ref)
 | --- | --- | --- |
 | [Level](Level.md) | Transparente Strukturebene (akn:level) |  no  |
 | [Paragraph](Paragraph.md) | Ein Absatz innerhalb eines Artikels oder Unterabschnitts (akn:paragraph) |  no  |
+| [MainBody](MainBody.md) | Hauptteil eines beiliegenden Dokuments (akn:mainBody) |  no  |
 
 
 
@@ -40,7 +41,7 @@ URI: [laws:content_ref](https://ld.ech.ch/schema/0296/laws/content_ref)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [Content](Content.md) |
-| Domäne von | [Level](Level.md), [Paragraph](Paragraph.md) |
+| Domäne von | [Level](Level.md), [Paragraph](Paragraph.md), [MainBody](MainBody.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -76,6 +77,7 @@ rank: 1000
 domain_of:
 - Level
 - Paragraph
+- MainBody
 range: Content
 
 ```

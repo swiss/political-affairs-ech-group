@@ -22,6 +22,7 @@ _Das Erlasselement (akn:act). Hauptinhaltselement eines AkomaNtoso-Dokuments. Da
 | preface_ref | 0..1 <br/> [Preface](Preface.md) | Vorspann des Erlasses (akn:preface). |
 | preamble_ref | 0..1 <br/> [Preamble](Preamble.md) | Präambel des Erlasses (akn:preamble). |
 | body | 0..1 <br/> [ActBody](ActBody.md) | Hauptteil des Erlasses (akn:body). |
+| components_ref | 0..1 <br/> [Components](Components.md) | Die diesem Erlass beiliegenden Dokumente (akn:components). |
 
 
 
@@ -370,6 +371,55 @@ act_ref:
                     die nicht der Bundesverwaltung angehören, soweit sie Erlasse oder
                     erstinstanzliche Verfügungen im Sinne von Artikel 5 des Bundesgesetzes
                     vom 20. Dezember 1968 über das Verwaltungsverfahren erlassen;
+  components_ref:
+    component_list:
+    - doc_ref:
+        doc_name: annex
+        preface_ref:
+          containers:
+          - container_name: headerOfAnnex
+            blocks:
+            - block_name: heading
+              inline_content:
+              - element_type: TextRun
+                text: Anhang
+        main_body:
+          block_paragraphs:
+          - inline_content:
+            - element_type: TextRun
+              text: (Art. 22)
+          levels:
+          - eId: annex_u1/lvl_u1
+            heading:
+              inline_content:
+              - element_type: TextRun
+                text: Änderung bisherigen Rechts
+            content_ref:
+              block_paragraphs:
+              - inline_content:
+                - element_type: TextRun
+                  text: 'Die nachstehenden Gesetze werden wie folgt geändert:'
+              - inline_content:
+                - element_type: TextRun
+                  text: …
+                - element_type: AuthorialNote
+                  block_paragraphs:
+                  - inline_content:
+                    - element_type: TextRun
+                      text: Die Änderungen können unter
+                    - element_type: Ref
+                      href: https://fedlex.data.admin.ch/eli/oc/2006/355
+                      inline_content:
+                      - element_type: TextRun
+                        text: AS
+                      - element_type: B
+                        inline_content:
+                        - element_type: TextRun
+                          text: '2006'
+                      - element_type: TextRun
+                        text: '2319'
+                    - element_type: TextRun
+                      text: konsultiert werden.
 
 ```
 

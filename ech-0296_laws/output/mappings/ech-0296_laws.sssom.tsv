@@ -62,6 +62,12 @@ laws:Br	skos:exactMatch	akn:br	semapv:ManualMappingCuration	Br	br	owl class
 laws:Inline	skos:exactMatch	akn:inline	semapv:ManualMappingCuration	Inline	inline	owl class
 laws:Placeholder	skos:exactMatch	akn:placeholder	semapv:ManualMappingCuration	Placeholder	placeholder	owl class
 laws:AuthorialNote	skos:exactMatch	akn:authorialNote	semapv:ManualMappingCuration	AuthorialNote	authorialNote	owl class
+laws:Components	skos:exactMatch	akn:components	semapv:ManualMappingCuration	Components	components	owl class
+laws:Component	skos:exactMatch	akn:component	semapv:ManualMappingCuration	Component	component	owl class
+laws:Doc	skos:exactMatch	akn:doc	semapv:ManualMappingCuration	Doc	doc	owl class
+laws:MainBody	skos:exactMatch	akn:mainBody	semapv:ManualMappingCuration	MainBody	mainBody	owl class
+laws:Container	skos:exactMatch	akn:container	semapv:ManualMappingCuration	Container	container	owl class
+laws:Block	skos:exactMatch	akn:block	semapv:ManualMappingCuration	Block	block	owl class
 laws:preface_paragraphs	skos:exactMatch	akn:p	semapv:ManualMappingCuration	preface_paragraphs	p	owl object property
 laws:frbr_this	skos:exactMatch	akn:FRBRthis	semapv:ManualMappingCuration	frbr_this	FRBRthis	owl object property
 laws:frbr_uri	skos:exactMatch	akn:FRBRuri	semapv:ManualMappingCuration	frbr_uri	FRBRuri	owl object property
@@ -82,3 +88,9 @@ laws:num	skos:exactMatch	akn:num	semapv:ManualMappingCuration	num	num	owl object
 laws:heading	skos:exactMatch	akn:heading	semapv:ManualMappingCuration	heading	heading	owl object property
 laws:subheading	skos:exactMatch	akn:subheading	semapv:ManualMappingCuration	subheading	subheading	owl object property
 laws:list_introduction	skos:exactMatch	akn:listIntroduction	semapv:ManualMappingCuration	list_introduction	listIntroduction	owl object property
+laws:components_ref	skos:exactMatch	akn:components	semapv:ManualMappingCuration	components_ref	components	owl object property
+laws:component_list	skos:exactMatch	akn:component	semapv:ManualMappingCuration	component_list	component	owl object property
+laws:doc_ref	skos:exactMatch	akn:doc	semapv:ManualMappingCuration	doc_ref	doc	owl object property
+laws:main_body	skos:exactMatch	akn:mainBody	semapv:ManualMappingCuration	main_body	mainBody	owl object property
+laws:containers	skos:exactMatch	akn:container	semapv:ManualMappingCuration	containers	container	owl object property
+laws:blocks	skos:exactMatch	akn:block	semapv:ManualMappingCuration	blocks	block	owl object property

@@ -77,9 +77,9 @@ URI: [laws:eId](https://ld.ech.ch/schema/0296/laws/eId)
 
 | Wert |
 | --- |
+| annex_u1/lvl_u1 |
 | art_1 |
 | art_1/para |
-| art_2 |
 
 
 
@@ -109,9 +109,9 @@ description: 'Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Sche
 
   '
 examples:
+- value: annex_u1/lvl_u1
 - value: art_1
 - value: art_1/para
-- value: art_2
 from_schema: https://ld.ech.ch/schema/0296/laws
 rank: 1000
 domain_of:

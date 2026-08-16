@@ -50,6 +50,7 @@ _Transparente Strukturebene (akn:level). Ein level ist 'transparent': erlaubte K
 | [Subsection](Subsection.md) | [levels](levels.md) | range | [Level](Level.md) |
 | [Transitional](Transitional.md) | [levels](levels.md) | range | [Level](Level.md) |
 | [Proviso](Proviso.md) | [levels](levels.md) | range | [Level](Level.md) |
+| [MainBody](MainBody.md) | [levels](levels.md) | range | [Level](Level.md) |
 
 
 

@@ -17,12 +17,17 @@ Name: ech-0296-laws-schema
 | [ActBody](ActBody.md) | Der Hauptteil des Erlasses (akn:body) mit der Gesetzeshierarchie |
 | [ActMeta](ActMeta.md) | Metadaten-Abschnitt des Erlasses (akn:meta) |
 | [Article](Article.md) | Ein Artikel, die primäre legislative Einheit (akn:article) |
+| [Block](Block.md) | Ein generischer Block (akn:block), dessen @name den Zweck nennt; trägt gemisc... |
 | [BlockList](BlockList.md) | Eine Auflistung von nummerierten oder buchstabierten Punkten (akn:blockList),... |
 | [BlockListItem](BlockListItem.md) | Ein einzelner Punkt in einer Auflistung (akn:item) |
 | [BlockParagraph](BlockParagraph.md) | Ein Fliesstext-Absatz in Content (akn:p) |
 | [Book](Book.md) | Buch-Ebene eines Erlasses (akn:book) |
 | [Chapter](Chapter.md) | Kapitel-Ebene eines Erlasses (akn:chapter) |
+| [Component](Component.md) | Ein einzelnes beiliegendes Dokument (akn:component) |
+| [Components](Components.md) | Behälter für die Dokumente, die einem Erlass beiliegen (akn:components) — etw... |
+| [Container](Container.md) | Ein generischer Behälter (akn:container), dessen @name den Zweck nennt |
 | [Content](Content.md) | Der Inhalt eines Absatzes (akn:content) |
+| [Doc](Doc.md) | Ein beiliegendes Dokument (akn:doc) |
 | [FedlexDocument](FedlexDocument.md) | Wurzelelement eines Fedlex AkomaNtoso-Dokuments (akn:akomaNtoso) |
 | [FormatType](FormatType.md) | Halter für akn:FRBRformat: ein @value (typischerweise 'xml') plus das optiona... |
 | [FRBRAuthor](FRBRAuthor.md) | Ein Autoren- oder Rechteinhaber-Eintrag einer FRBR-Entität (akn:FRBRauthor) |
@@ -45,6 +50,7 @@ Name: ech-0296-laws-schema
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TextRun](TextRun.md) | Ein einfacher Textabschnitt in gemischtem Inhalt |
 | [LanguageType](LanguageType.md) | Halter mit einem einzelnen @language-Attribut (akn:FRBRlanguage) |
 | [Level](Level.md) | Transparente Strukturebene (akn:level) |
+| [MainBody](MainBody.md) | Hauptteil eines beiliegenden Dokuments (akn:mainBody) |
 | [MixedText](MixedText.md) | Wiederverwendbarer Halter für gemischten Inhalt: eine geordnete Folge aus Tex... |
 | [Paragraph](Paragraph.md) | Ein Absatz innerhalb eines Artikels oder Unterabschnitts (akn:paragraph) |
 | [Part](Part.md) | Teil-Ebene eines Erlasses (akn:part) |
@@ -79,15 +85,23 @@ Name: ech-0296-laws-schema
 | [articles](articles.md) | Artikel-Kindelemente (akn:article) |
 | [as_role](as_role.md) | Rolle des Autors (akn:FRBRauthor/@as), als Anker-Referenz, z |
 | [block_lists](block_lists.md) | Auflistungs-Elemente (akn:blockList) innerhalb von Content |
+| [block_name](block_name.md) | Zweck des Blocks (akn:block/@name) |
 | [block_paragraphs](block_paragraphs.md) | Block-Absatz-Elemente (akn:p) innerhalb von Content |
+| [blocks](blocks.md) | Blöcke innerhalb des Behälters (akn:block) |
 | [body](body.md) | Hauptteil des Erlasses (akn:body) |
 | [books](books.md) | Buch-Kindelemente (akn:book) |
 | [border](border.md) | Das @border-Attribut auf akn:table (HTML-artige Darstellung) |
 | [chapters](chapters.md) | Kapitel-Kindelemente (akn:chapter) |
 | [colspan](colspan.md) | Das @colspan-Attribut auf akn:td (HTML-artige Darstellung) |
+| [component_list](component_list.md) | Die beiliegenden Dokumente (akn:component) |
+| [components_ref](components_ref.md) | Die diesem Erlass beiliegenden Dokumente (akn:components) |
+| [container_name](container_name.md) | Zweck des Behälters (akn:container/@name) |
+| [containers](containers.md) | Behälter des Vorspanns (akn:container) |
 | [content_ref](content_ref.md) | Inhaltselement innerhalb eines Absatzes (akn:content) |
 | [date_value](date_value.md) | Ein ISO-8601-Datumswert (akn:FRBRdate/@date) |
+| [doc_name](doc_name.md) | Art des beiliegenden Dokuments (akn:doc/@name) |
 | [doc_number](doc_number.md) | Dokumentnummer im Vorspann (akn:docNumber) |
+| [doc_ref](doc_ref.md) | Das beiliegende Dokument selbst (akn:doc) |
 | [doc_title](doc_title.md) | Dokumenttitel im Vorspann (akn:docTitle) |
 | [eId](eId.md) | Eindeutiger Element-Identifier im Dokument (@eId) |
 | [element_type](element_type.md) | Typ-Diskriminator für die konkrete InlineElement-Subklasse |
@@ -118,6 +132,7 @@ Name: ech-0296-laws-schema
 | [language_value](language_value.md) | Das @language-Attribut von akn:FRBRlanguage, z |
 | [levels](levels.md) | Transparente Level-Kindelemente (akn:level) |
 | [list_introduction](list_introduction.md) | Optionaler Einleitungstext vor einer Auflistung (akn:listIntroduction) |
+| [main_body](main_body.md) | Hauptteil des beiliegenden Dokuments (akn:mainBody) |
 | [meta](meta.md) | Metadaten-Abschnitt des Erlasses (akn:meta) |
 | [name_attr](name_attr.md) | Das @name-Attribut auf akn:inline, z |
 | [num](num.md) | Nummerierungselement für ein Strukturelement oder einen Artikel (akn:num) |
@@ -155,6 +170,9 @@ Name: ech-0296-laws-schema
 | Aufzählung | Beschreibung |
 | --- | --- |
 | [ActTypeEnum](ActTypeEnum.md) | Art des Erlasses, ausgedrückt im @name-Attribut von akn:act |
+| [BlockNameEnum](BlockNameEnum.md) | Zwecke, die Fedlex in akn:block/@name verwendet |
+| [ContainerNameEnum](ContainerNameEnum.md) | Zwecke, die Fedlex in akn:container/@name verwendet |
+| [DocNameEnum](DocNameEnum.md) | Arten beiliegender Dokumente, die Fedlex in akn:doc/@name verwendet |
 | [DocumentLanguageEnum](DocumentLanguageEnum.md) | Sprachcodes für schweizerische Bundesdokumente |
 | [FedlexRoleEnum](FedlexRoleEnum.md) | Erlaubte Werte für das Fedlex-Erweiterungsattribut fedlex:role (FLX-XF-003) |
 

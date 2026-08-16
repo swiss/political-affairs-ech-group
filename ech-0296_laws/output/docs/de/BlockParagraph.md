@@ -32,6 +32,7 @@ _Ein Fliesstext-Absatz in Content (akn:p). Kann gemischten Inhalt mit Inline-Mar
 | [BlockListItem](BlockListItem.md) | [block_paragraphs](block_paragraphs.md) | range | [BlockParagraph](BlockParagraph.md) |
 | [TableCell](TableCell.md) | [block_paragraphs](block_paragraphs.md) | range | [BlockParagraph](BlockParagraph.md) |
 | [AuthorialNote](AuthorialNote.md) | [block_paragraphs](block_paragraphs.md) | range | [BlockParagraph](BlockParagraph.md) |
+| [MainBody](MainBody.md) | [block_paragraphs](block_paragraphs.md) | range | [BlockParagraph](BlockParagraph.md) |
 
 
 

@@ -30,6 +30,7 @@ URI: [laws:block_paragraphs](https://ld.ech.ch/schema/0296/laws/block_paragraphs
 | [BlockListItem](BlockListItem.md) | Ein einzelner Punkt in einer Auflistung (akn:item) |  no  |
 | [TableCell](TableCell.md) | Eine Zelle in einer Tabellenzeile (akn:td) |  no  |
 | [AuthorialNote](AuthorialNote.md) | Eine Fussnote des Autors (akn:authorialNote) |  no  |
+| [MainBody](MainBody.md) | Hauptteil eines beiliegenden Dokuments (akn:mainBody) |  no  |
 
 
 
@@ -43,7 +44,7 @@ URI: [laws:block_paragraphs](https://ld.ech.ch/schema/0296/laws/block_paragraphs
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [BlockParagraph](BlockParagraph.md) |
-| Domäne von | [Preamble](Preamble.md), [Content](Content.md), [BlockListItem](BlockListItem.md), [TableCell](TableCell.md), [AuthorialNote](AuthorialNote.md) |
+| Domäne von | [Preamble](Preamble.md), [Content](Content.md), [BlockListItem](BlockListItem.md), [TableCell](TableCell.md), [AuthorialNote](AuthorialNote.md), [MainBody](MainBody.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -80,6 +81,7 @@ domain_of:
 - BlockListItem
 - TableCell
 - AuthorialNote
+- MainBody
 range: BlockParagraph
 multivalued: true
 

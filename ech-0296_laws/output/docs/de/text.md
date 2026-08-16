@@ -59,8 +59,8 @@ URI: [laws:text](https://ld.ech.ch/schema/0296/laws/text)
 | Wert |
 | --- |
 |  Dieses Gesetz gilt für: |
+| (Art. 22) |
 | 1 |
-| 1. Titel:  |
 
 
 
@@ -83,8 +83,8 @@ description: Die Zeichendaten eines TextRun; wird als Textknoten in gemischtem I
   ausgegeben.
 examples:
 - value: ' Dieses Gesetz gilt für:'
+- value: (Art. 22)
 - value: '1'
-- value: '1. Titel: '
 from_schema: https://ld.ech.ch/schema/0296/laws
 rank: 1000
 domain_of:

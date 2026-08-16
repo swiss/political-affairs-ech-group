@@ -51,6 +51,12 @@
 | `Inline` | Klasse | exactMatch | `akn:inline` |
 | `Placeholder` | Klasse | exactMatch | `akn:placeholder` |
 | `AuthorialNote` | Klasse | exactMatch | `akn:authorialNote` |
+| `Components` | Klasse | exactMatch | `akn:components` |
+| `Component` | Klasse | exactMatch | `akn:component` |
+| `Doc` | Klasse | exactMatch | `akn:doc` |
+| `MainBody` | Klasse | exactMatch | `akn:mainBody` |
+| `Container` | Klasse | exactMatch | `akn:container` |
+| `Block` | Klasse | exactMatch | `akn:block` |
 | `preface_paragraphs` | Slot | exactMatch | `akn:p` |
 | `frbr_this` | Slot | exactMatch | `akn:FRBRthis` |
 | `frbr_uri` | Slot | exactMatch | `akn:FRBRuri` |
@@ -71,3 +77,9 @@
 | `heading` | Slot | exactMatch | `akn:heading` |
 | `subheading` | Slot | exactMatch | `akn:subheading` |
 | `list_introduction` | Slot | exactMatch | `akn:listIntroduction` |
+| `components_ref` | Slot | exactMatch | `akn:components` |
+| `component_list` | Slot | exactMatch | `akn:component` |
+| `doc_ref` | Slot | exactMatch | `akn:doc` |
+| `main_body` | Slot | exactMatch | `akn:mainBody` |
+| `containers` | Slot | exactMatch | `akn:container` |
+| `blocks` | Slot | exactMatch | `akn:block` |
