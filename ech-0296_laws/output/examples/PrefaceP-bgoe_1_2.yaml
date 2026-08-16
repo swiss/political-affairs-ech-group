@@ -1,0 +1,7 @@
+preface_paragraphs:
+- doc_title:
+    inline_content:
+    - element_type: TextRun
+      text: Bundesgesetz
+    - element_type: Br
+    - … 1 weitere

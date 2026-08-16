@@ -17,7 +17,7 @@ _Ein Zeilenumbruch (akn:br). In der (derzeit deaktivierten) Regel FLX-TXT-001 is
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
-| element_type | 0..1 <br/> [String](String.md) | Typ-Diskriminator für die konkrete InlineElement-Subklasse.<br/><br/>Vererbung: [InlineElement](InlineElement.md) |
+| element_type | 0..1 <br/> [String](String.md) | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement. <br/><br/>Vererbung: [InlineElement](InlineElement.md) |
 
 
 

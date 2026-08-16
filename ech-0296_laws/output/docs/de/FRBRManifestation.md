@@ -47,7 +47,7 @@ _FRBR-Manifestations-Ebene (akn:FRBRManifestation): ein spezifisches Dateiformat
 
 
 ### Beispiele
-#### Beispiel FRBRManifestation: bgoe excerpt 1 1
+#### Beispiel FRBRManifestation: bgoe 1 1
 
 ```yaml
 frbr_manifestation:
@@ -56,32 +56,43 @@ frbr_manifestation:
   frbr_uri:
     value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de/xml
   frbr_dates:
-  - date_value: '2023-11-01'
-    frbr_date_name: jolux:dateApplicability
+  - date_value: '2006-07-01'
+    frbr_date_name: jolux:dateEntryInForce
+  - date_value: '2004-12-17'
+    frbr_date_name: jolux:dateDocument
+  - … 1 weitere
   frbr_authors:
   - href: '#ch.bk'
     as_role: '#publisher'
+  - href: '#ch.bk'
+    as_role: '#rightsHolder'
   frbr_format:
     value: xml
     fedlex_generator: 2024-q4-rel-1.6.5
 
 ```
-#### Beispiel FRBRManifestation: sr101 excerpt 1 1
+#### Beispiel FRBRManifestation: sr101 1 1
 
 ```yaml
 frbr_manifestation:
   frbr_this:
-    value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/main-text
+    value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/xml/main-text
   frbr_uri:
-    value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de
+    value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/xml
   frbr_dates:
-  - date_value: '2024-03-03'
-    frbr_date_name: jolux:dateApplicability
+  - date_value: '2000-01-01'
+    frbr_date_name: jolux:dateEntryInForce
+  - date_value: '1999-04-18'
+    frbr_date_name: jolux:dateDocument
+  - … 1 weitere
   frbr_authors:
   - href: '#ch.bk'
     as_role: '#publisher'
+  - href: '#ch.bk'
+    as_role: '#rightsHolder'
   frbr_format:
     value: xml
+    fedlex_generator: 2026-q1-rel-1.8.5
 
 ```
 

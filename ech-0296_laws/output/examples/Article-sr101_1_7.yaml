@@ -1,0 +1,16 @@
+articles:
+- eId: art_6
+  num:
+    inline_content:
+    - element_type: B
+      inline_content:
+      - …
+  heading:
+    inline_content:
+    - element_type: TextRun
+      text: Individuelle und gesellschaftliche Verantwortung
+  paragraphs:
+  - eId: art_6/para
+    content_ref:
+      content_blocks:
+      - …

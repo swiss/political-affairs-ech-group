@@ -49,6 +49,106 @@ _Ein Absatz innerhalb eines Artikels oder Unterabschnitts (akn:paragraph). Const
 
 
 ### Beispiele
+#### Beispiel Paragraph: sr101 5 2
+
+```yaml
+paragraphs:
+- eId: art_5/para_2
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '2'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+#### Beispiel Paragraph: sr101 3 1
+
+```yaml
+paragraphs:
+- eId: art_3/para
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+#### Beispiel Paragraph: sr101 6 1
+
+```yaml
+paragraphs:
+- eId: art_5_a/para
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+#### Beispiel Paragraph: sr101 2 4
+
+```yaml
+paragraphs:
+- eId: art_2/para_4
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '4'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+#### Beispiel Paragraph: sr101 5 1
+
+```yaml
+paragraphs:
+- eId: art_5/para_1
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '1'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+#### Beispiel Paragraph: sr101 4 1
+
+```yaml
+paragraphs:
+- eId: art_4/para
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+#### Beispiel Paragraph: sr101 5 3
+
+```yaml
+paragraphs:
+- eId: art_5/para_3
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '3'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
 #### Beispiel Paragraph: Paragraph with a list instead of running text
 
 ```yaml
@@ -59,36 +159,70 @@ paragraphs:
     - element_type: TextRun
       text: '1'
   content_ref:
-    block_lists:
-    - eId: art_2/para_1/lst
-      list_introduction:
-        eId: art_2/para_1/listintro
-        inline_content:
-        - element_type: TextRun
-          text: ' Dieses Gesetz gilt für:'
-      items:
-      - eId: art_2/para_1/lbl_a
-        num:
-          inline_content:
-          - element_type: TextRun
-            text: 'a. '
-        block_paragraphs:
-        - inline_content:
-          - element_type: TextRun
-            text: die Bundesverwaltung;
-      - eId: art_2/para_1/lbl_b
-        num:
-          inline_content:
-          - element_type: TextRun
-            text: 'b. '
-        block_paragraphs:
-        - inline_content:
-          - element_type: TextRun
-            text: >-
-              Organisationen und Personen des öffentlichen oder privaten Rechts, die
-              nicht der Bundesverwaltung angehören, soweit sie Erlasse oder erstinstanzliche
-              Verfügungen im Sinne von Artikel 5 des Bundesgesetzes vom 20. Dezember
-              1968 über das Verwaltungsverfahren erlassen;
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+#### Beispiel Paragraph: sr101 7 1
+
+```yaml
+paragraphs:
+- eId: art_6/para
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+#### Beispiel Paragraph: sr101 5 4
+
+```yaml
+paragraphs:
+- eId: art_5/para_4
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '4'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+#### Beispiel Paragraph: sr101 2 2
+
+```yaml
+paragraphs:
+- eId: art_2/para_2
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '2'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+#### Beispiel Paragraph: sr101 2 3
+
+```yaml
+paragraphs:
+- eId: art_2/para_3
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '3'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
 
 ```
 #### Beispiel Paragraph: Paragraph with running text
@@ -97,15 +231,10 @@ paragraphs:
 paragraphs:
 - eId: art_1/para
   content_ref:
-    block_paragraphs:
-    - inline_content:
-      - element_type: TextRun
-        text: >-
-          Das Schweizervolk und die Kantone Zürich, Bern, Luzern, Uri, Schwyz, Obwalden
-          und Nidwalden, Glarus, Zug, Freiburg, Solothurn, Basel-Stadt und Basel-Landschaft,
-          Schaffhausen, Appenzell Ausserrhoden und Appenzell Innerrhoden, St. Gallen,
-          Graubünden, Aargau, Thurgau, Tessin, Waadt, Wallis, Neuenburg, Genf und
-          Jura bilden die Schweizerische Eidgenossenschaft.
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
 
 ```
 

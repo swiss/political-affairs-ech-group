@@ -128,6 +128,16 @@ enums:
           description_de: 'Kennzeichnet eine Unterüberschrift als Referenzüberschrift. Nur bei akn:subheading erlaubt (FLX-XF-005).
 
             '
+      heading:
+        description: 'Marks a paragraph as a heading; found on akn:p in the preamble of the Federal Constitution. Outside
+          the reach of FLX-XF-003, which governs akn:level and akn:subheading.
+
+          '
+        annotations:
+          description_de: 'Kennzeichnet einen Absatz als Überschrift; kommt an akn:p in der Präambel der Bundesverfassung
+            vor. Ausserhalb der Reichweite von FLX-XF-003, die akn:level und akn:subheading regelt.
+
+            '
     annotations:
       description_de: 'Erlaubte Werte für das Fedlex-Erweiterungsattribut fedlex:role (FLX-XF-003). ''marginal'' nur bei akn:level-Elementen
         (FLX-XF-004). ''reference'' nur bei akn:subheading-Elementen (FLX-XF-005).
@@ -523,7 +533,7 @@ classes:
         '
       xml_element: akn:preamble
     slots:
-    - block_paragraphs
+    - content_blocks
     exact_mappings:
     - akn:preamble
   ActBody:
@@ -934,9 +944,9 @@ classes:
     - eId
     - num
     - heading
+    - paragraphs
     - levels
     - articles
-    - paragraphs
     slot_usage:
       eId:
         required: true
@@ -957,9 +967,7 @@ classes:
       schematron_note: >-
         FLX-HR-003: content in level only allowed for modifications (must contain akn:mod)
     slots:
-    - block_paragraphs
-    - block_lists
-    - tables
+    - content_blocks
     exact_mappings:
     - akn:content
   BlockParagraph:
@@ -975,9 +983,11 @@ classes:
       xml_element: akn:p
       schematron_note: 'FLX-TXT-001: br not allowed in p — only in heading/subheading/docTitle'
     slots:
+    - fedlex_role
     - inline_content
     exact_mappings:
     - akn:p
+    is_a: BlockElement
   BlockList:
     description: 'A block list of enumerated or lettered items (akn:blockList), optionally introduced by an akn:listIntroduction
       element.
@@ -995,6 +1005,7 @@ classes:
     - items
     exact_mappings:
     - akn:blockList
+    is_a: BlockElement
   BlockListItem:
     description: 'A single item in a block list (akn:item). Carries a num label and block content directly: prose paragraphs
       (akn:p) and optionally nested block lists.
@@ -1010,8 +1021,7 @@ classes:
     slots:
     - eId
     - num
-    - block_paragraphs
-    - block_lists
+    - content_blocks
     exact_mappings:
     - akn:item
   Table:
@@ -1030,6 +1040,7 @@ classes:
     - table_rows
     exact_mappings:
     - akn:table
+    is_a: BlockElement
   TableRow:
     description: A row in an AkomaNtoso table (akn:tr).
     annotations:
@@ -1052,8 +1063,7 @@ classes:
       xsd_content_model: choice
     slots:
     - colspan
-    - block_paragraphs
-    - block_lists
+    - content_blocks
     exact_mappings:
     - akn:td
   InlineElement:
@@ -1205,7 +1215,7 @@ classes:
         '
       xml_element: akn:authorialNote
     slots:
-    - block_paragraphs
+    - content_blocks
     exact_mappings:
     - akn:authorialNote
   Components:
@@ -1259,7 +1269,7 @@ classes:
         '
       xml_element: akn:mainBody
     slots:
-    - block_paragraphs
+    - content_blocks
     - levels
     - content_ref
     exact_mappings:
@@ -1286,6 +1296,19 @@ classes:
     - inline_content
     exact_mappings:
     - akn:block
+  BlockElement:
+    abstract: true
+    description: 'Abstract base for a block-level element inside content, a list item or a table cell (akn:p, akn:blockList,
+      akn:table).
+
+      '
+    annotations:
+      description_de: 'Abstrakte Basis für ein Element auf Blockebene innerhalb von Inhalt, Aufzählungsposition oder Tabellenzelle
+        (akn:p, akn:blockList, akn:table).
+
+        '
+    slots:
+    - element_type
 slots:
   act_ref:
     description: >-
@@ -1304,7 +1327,6 @@ slots:
       xml_attribute: 'true'
       xml_name: name
     examples:
-    - value: constitution
     - value: publicLaw
   meta:
     description: Metadata section of the act (akn:meta).
@@ -1683,14 +1705,16 @@ slots:
     exact_mappings:
     - akn:subheading
   fedlex_role:
-    description: 'Fedlex extension attribute fedlex:role. Only two values are permitted (FLX-XF-003): ''marginal'' (only on
-      akn:level, FLX-XF-004) and ''reference'' (only on akn:subheading, FLX-XF-005).
+    description: 'Fedlex extension attribute fedlex:role. FLX-XF-003 permits ''marginal'' (only on akn:level, FLX-XF-004)
+      and ''reference'' (only on akn:subheading, FLX-XF-005); the published Federal Constitution additionally carries ''heading''
+      on a preamble paragraph.
 
       '
     range: FedlexRoleEnum
     annotations:
-      description_de: 'Fedlex-Erweiterungsattribut fedlex:role. Nur zwei Werte erlaubt (FLX-XF-003): ''marginal'' (nur bei
-        akn:level, FLX-XF-004) und ''reference'' (nur bei akn:subheading, FLX-XF-005).
+      description_de: 'Fedlex-Erweiterungsattribut fedlex:role. FLX-XF-003 lässt ''marginal'' (nur an akn:level, FLX-XF-004)
+        und ''reference'' (nur an akn:subheading, FLX-XF-005) zu; die publizierte Bundesverfassung führt zusätzlich ''heading''
+        an einem Präambel-Absatz.
 
         '
       xml_attribute: 'true'
@@ -1816,18 +1840,20 @@ slots:
         '
       xsd_mixed: 'true'
   element_type:
-    description: 'Type designator discriminating the concrete InlineElement subclass (TextRun, Ref, B, I, Sup, Span, Br, Inline,
-      Placeholder, AuthorialNote).
+    description: 'Type designator discriminating the concrete subclass of an abstract base: InlineElement (TextRun, Ref, B,
+      I, Sup, Span, Br, Inline, Placeholder, AuthorialNote) or BlockElement (BlockParagraph, BlockList, Table).
 
       '
     designates_type: true
     range: string
     annotations:
-      description_de: Typ-Diskriminator für die konkrete InlineElement-Subklasse.
+      description_de: 'Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement.
+
+        '
     examples:
     - value: AuthorialNote
     - value: B
-    - value: Br
+    - value: BlockList
   text:
     description: The character data of a TextRun; emitted as a text node in mixed content.
     range: string
@@ -1836,9 +1862,9 @@ slots:
         Die Zeichendaten eines TextRun; wird als Textknoten in gemischtem Inhalt ausgegeben.
       xsd_text: 'true'
     examples:
-    - value: ' Dieses Gesetz gilt für:'
+    - value: (Alters-, Hinterlassenen- und Invalidenversicherung)
     - value: (Art. 22)
-    - value: '1'
+    - value: (BB vom 18. Dez. 1998, BRB vom 11. Aug. 1999 –
   value_uri:
     description: >-
       A @value attribute typed as an ELI URI (akn:FRBRthis/@value, akn:FRBRuri/@value).
@@ -2017,6 +2043,17 @@ slots:
     range: BlockNameEnum
     examples:
     - value: heading
+  content_blocks:
+    description: 'Block-level content in reading order: paragraphs, lists and tables as they follow one another in the document.
+
+      '
+    annotations:
+      description_de: 'Blockinhalt in Lesereihenfolge: Absätze, Aufzählungen und Tabellen, wie sie im Dokument aufeinanderfolgen.
+
+        '
+    range: BlockElement
+    multivalued: true
+    inlined_as_list: true
 annotations:
   description_de: 'LinkML-Schema für das Fedlex-spezifische Subset von AkomaNtoso 3.0 für schweizerische Bundeserlasse (eCH-0296).
     Modelliert die vollständige Dokumentenstruktur (act, FRBR-Metadaten, Vorspann, Hauptteil, Gesetzeshierarchie, Artikelinhalt)

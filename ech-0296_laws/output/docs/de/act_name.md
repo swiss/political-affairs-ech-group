@@ -58,7 +58,6 @@ URI: [laws:act_name](https://ld.ech.ch/schema/0296/laws/act_name)
 
 | Wert |
 | --- |
-| constitution |
 | publicLaw |
 
 
@@ -82,7 +81,6 @@ annotations:
     value: name
 description: Erlasstyp (@name-Attribut von akn:act), z.B. 'publicLaw'.
 examples:
-- value: constitution
 - value: publicLaw
 from_schema: https://ld.ech.ch/schema/0296/laws
 rank: 1000

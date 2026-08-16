@@ -58,9 +58,9 @@ URI: [laws:text](https://ld.ech.ch/schema/0296/laws/text)
 
 | Wert |
 | --- |
-|  Dieses Gesetz gilt für: |
+| (Alters-, Hinterlassenen- und Invalidenversicherung) |
 | (Art. 22) |
-| 1 |
+| (BB vom 18. Dez. 1998, BRB vom 11. Aug. 1999 – |
 
 
 
@@ -82,9 +82,9 @@ annotations:
 description: Die Zeichendaten eines TextRun; wird als Textknoten in gemischtem Inhalt
   ausgegeben.
 examples:
-- value: ' Dieses Gesetz gilt für:'
+- value: (Alters-, Hinterlassenen- und Invalidenversicherung)
 - value: (Art. 22)
-- value: '1'
+- value: (BB vom 18. Dez. 1998, BRB vom 11. Aug. 1999 –
 from_schema: https://ld.ech.ch/schema/0296/laws
 rank: 1000
 domain_of:

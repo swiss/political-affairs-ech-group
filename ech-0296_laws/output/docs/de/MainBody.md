@@ -17,7 +17,7 @@ _Hauptteil eines beiliegenden Dokuments (akn:mainBody). Anders als der Erlasskö
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
-| block_paragraphs | * <br/> [BlockParagraph](BlockParagraph.md) | Block-Absatz-Elemente (akn:p) innerhalb von Content. |
+| content_blocks | * <br/> [BlockElement](BlockElement.md) | Blockinhalt in Lesereihenfolge: Absätze, Aufzählungen und Tabellen, wie sie im Dokument aufeinanderfolgen.  |
 | levels | * <br/> [Level](Level.md) | Transparente Level-Kindelemente (akn:level). |
 | content_ref | 0..1 <br/> [Content](Content.md) | Inhaltselement innerhalb eines Absatzes (akn:content). |
 

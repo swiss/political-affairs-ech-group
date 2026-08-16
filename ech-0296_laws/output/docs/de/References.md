@@ -46,7 +46,7 @@ _Benannte Referenz-Definitionen für das gesamte Dokument (akn:references). Defi
 
 
 ### Beispiele
-#### Beispiel References: sr101 excerpt 1 1
+#### Beispiel References: bgoe 1 1
 
 ```yaml
 references_ref:
@@ -62,9 +62,16 @@ references_ref:
   - eId: rightsHolder
     href: http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder
     show_as: Détenteur des droits
+  tlc_references:
+  - name_attr: language
+    href: http://publications.europa.eu/resource/authority/language/DEU
+    show_as: de
+  - name_attr: format
+    href: https://fedlex.data.admin.ch/vocabulary/user-format/xml
+    show_as: xml
 
 ```
-#### Beispiel References: bgoe excerpt 1 1
+#### Beispiel References: sr101 1 1
 
 ```yaml
 references_ref:

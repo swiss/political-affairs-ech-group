@@ -16,7 +16,7 @@ _Abstrakte Basis für ein modelliertes Inline-Markup-Element in gemischtem Inhal
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
-| element_type | 0..1 <br/> [String](String.md) | Typ-Diskriminator für die konkrete InlineElement-Subklasse. |
+| element_type | 0..1 <br/> [String](String.md) | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement.  |
 
 
 

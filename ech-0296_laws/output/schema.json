@@ -292,10 +292,20 @@
             "additionalProperties": false,
             "description": "An authorial footnote (akn:authorialNote). Recurses into block content: it contains one or more akn:p paragraphs, which themselves carry inline content.",
             "properties": {
-                "block_paragraphs": {
-                    "description": "Block paragraph elements (akn:p) within content.",
+                "content_blocks": {
+                    "description": "Block-level content in reading order: paragraphs, lists and tables as they follow one another in the document.\n",
                     "items": {
-                        "$ref": "#/$defs/BlockParagraph"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/BlockParagraph"
+                            },
+                            {
+                                "$ref": "#/$defs/BlockList"
+                            },
+                            {
+                                "$ref": "#/$defs/Table"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -303,7 +313,7 @@
                     ]
                 },
                 "element_type": {
-                    "description": "Type designator discriminating the concrete InlineElement subclass (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote).\n",
+                    "description": "Type designator discriminating the concrete subclass of an abstract base: InlineElement (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote) or BlockElement (BlockParagraph, BlockList, Table).\n",
                     "enum": [
                         "AuthorialNote"
                     ],
@@ -321,7 +331,7 @@
             "description": "Bold inline markup (akn:b).",
             "properties": {
                 "element_type": {
-                    "description": "Type designator discriminating the concrete InlineElement subclass (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote).\n",
+                    "description": "Type designator discriminating the concrete subclass of an abstract base: InlineElement (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote) or BlockElement (BlockParagraph, BlockList, Table).\n",
                     "enum": [
                         "B"
                     ],
@@ -428,12 +438,40 @@
             "title": "Block",
             "type": "object"
         },
+        "BlockElement": {
+            "additionalProperties": false,
+            "description": "Abstract base for a block-level element inside content, a list item or a table cell (akn:p, akn:blockList, akn:table).",
+            "properties": {
+                "element_type": {
+                    "description": "Type designator discriminating the concrete subclass of an abstract base: InlineElement (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote) or BlockElement (BlockParagraph, BlockList, Table).\n",
+                    "enum": [
+                        "BlockElement"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "BlockElement",
+            "type": "object"
+        },
         "BlockList": {
             "additionalProperties": false,
             "description": "A block list of enumerated or lettered items (akn:blockList), optionally introduced by an akn:listIntroduction element.",
             "properties": {
                 "eId": {
                     "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "element_type": {
+                    "description": "Type designator discriminating the concrete subclass of an abstract base: InlineElement (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote) or BlockElement (BlockParagraph, BlockList, Table).\n",
+                    "enum": [
+                        "BlockList"
+                    ],
                     "type": [
                         "string",
                         "null"
@@ -468,20 +506,20 @@
             "additionalProperties": false,
             "description": "A single item in a block list (akn:item). Carries a num label and block content directly: prose paragraphs (akn:p) and optionally nested block lists.",
             "properties": {
-                "block_lists": {
-                    "description": "Block list elements (akn:blockList) within content.",
+                "content_blocks": {
+                    "description": "Block-level content in reading order: paragraphs, lists and tables as they follow one another in the document.\n",
                     "items": {
-                        "$ref": "#/$defs/BlockList"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "block_paragraphs": {
-                    "description": "Block paragraph elements (akn:p) within content.",
-                    "items": {
-                        "$ref": "#/$defs/BlockParagraph"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/BlockParagraph"
+                            },
+                            {
+                                "$ref": "#/$defs/BlockList"
+                            },
+                            {
+                                "$ref": "#/$defs/Table"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -523,6 +561,20 @@
             "additionalProperties": false,
             "description": "A prose paragraph within content (akn:p). May contain mixed content with inline markup (XmlContent type). Note: akn:br is not allowed here, only in heading elements (FLX-TXT-001).",
             "properties": {
+                "element_type": {
+                    "description": "Type designator discriminating the concrete subclass of an abstract base: InlineElement (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote) or BlockElement (BlockParagraph, BlockList, Table).\n",
+                    "enum": [
+                        "BlockParagraph"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "fedlex_role": {
+                    "$ref": "#/$defs/FedlexRoleEnum",
+                    "description": "Fedlex extension attribute fedlex:role. FLX-XF-003 permits 'marginal' (only on akn:level, FLX-XF-004) and 'reference' (only on akn:subheading, FLX-XF-005); the published Federal Constitution additionally carries 'heading' on a preamble paragraph.\n"
+                },
                 "inline_content": {
                     "description": "Ordered mixed content: a sequence of text runs and inline-markup elements (InlineElement subclasses). Document order is preserved by list order. Allowed inline elements: akn:ref, akn:b, akn:i, akn:sup, akn:span, akn:authorialNote, akn:inline, akn:placeholder, akn:br.\n",
                     "items": {
@@ -701,7 +753,7 @@
             "description": "A line break (akn:br). In the (currently disabled) FLX-TXT-001 rule, br is restricted to heading-type elements.",
             "properties": {
                 "element_type": {
-                    "description": "Type designator discriminating the concrete InlineElement subclass (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote).\n",
+                    "description": "Type designator discriminating the concrete subclass of an abstract base: InlineElement (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote) or BlockElement (BlockParagraph, BlockList, Table).\n",
                     "enum": [
                         "Br"
                     ],
@@ -883,30 +935,20 @@
             "additionalProperties": false,
             "description": "The content of a paragraph (akn:content). Contains block-level elements: akn:p (prose), akn:blockList (numbered/lettered lists), akn:table. When used inside a akn:level, must contain an akn:mod element (FLX-HR-003).",
             "properties": {
-                "block_lists": {
-                    "description": "Block list elements (akn:blockList) within content.",
+                "content_blocks": {
+                    "description": "Block-level content in reading order: paragraphs, lists and tables as they follow one another in the document.\n",
                     "items": {
-                        "$ref": "#/$defs/BlockList"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "block_paragraphs": {
-                    "description": "Block paragraph elements (akn:p) within content.",
-                    "items": {
-                        "$ref": "#/$defs/BlockParagraph"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "tables": {
-                    "description": "Table elements (akn:table) within content.",
-                    "items": {
-                        "$ref": "#/$defs/Table"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/BlockParagraph"
+                            },
+                            {
+                                "$ref": "#/$defs/BlockList"
+                            },
+                            {
+                                "$ref": "#/$defs/Table"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -1290,7 +1332,8 @@
             "description": "Allowed values for the fedlex:role extension attribute (FLX-XF-003). 'marginal' is only permitted on akn:level elements (FLX-XF-004). 'reference' is only permitted on akn:subheading elements (FLX-XF-005).",
             "enum": [
                 "marginal",
-                "reference"
+                "reference",
+                "heading"
             ],
             "title": "FedlexRoleEnum",
             "type": "string"
@@ -1322,7 +1365,7 @@
             "description": "Italic inline markup (akn:i).",
             "properties": {
                 "element_type": {
-                    "description": "Type designator discriminating the concrete InlineElement subclass (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote).\n",
+                    "description": "Type designator discriminating the concrete subclass of an abstract base: InlineElement (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote) or BlockElement (BlockParagraph, BlockList, Table).\n",
                     "enum": [
                         "I"
                     ],
@@ -1429,7 +1472,7 @@
             "description": "A named presentational inline (akn:inline), e.g. name='man-font-style-normal'.",
             "properties": {
                 "element_type": {
-                    "description": "Type designator discriminating the concrete InlineElement subclass (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote).\n",
+                    "description": "Type designator discriminating the concrete subclass of an abstract base: InlineElement (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote) or BlockElement (BlockParagraph, BlockList, Table).\n",
                     "enum": [
                         "Inline"
                     ],
@@ -1495,7 +1538,7 @@
             "description": "Abstract base for a modeled inline-markup element inside mixed content.",
             "properties": {
                 "element_type": {
-                    "description": "Type designator discriminating the concrete InlineElement subclass (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote).\n",
+                    "description": "Type designator discriminating the concrete subclass of an abstract base: InlineElement (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote) or BlockElement (BlockParagraph, BlockList, Table).\n",
                     "enum": [
                         "InlineElement"
                     ],
@@ -1667,10 +1710,20 @@
             "additionalProperties": false,
             "description": "Body of an embedded document (akn:mainBody). Unlike the act body it holds paragraphs and levels directly, without the legislative hierarchy.",
             "properties": {
-                "block_paragraphs": {
-                    "description": "Block paragraph elements (akn:p) within content.",
+                "content_blocks": {
+                    "description": "Block-level content in reading order: paragraphs, lists and tables as they follow one another in the document.\n",
                     "items": {
-                        "$ref": "#/$defs/BlockParagraph"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/BlockParagraph"
+                            },
+                            {
+                                "$ref": "#/$defs/BlockList"
+                            },
+                            {
+                                "$ref": "#/$defs/Table"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -1919,7 +1972,7 @@
             "description": "A placeholder for stripped content (akn:placeholder), carrying the fedlex:message extension attribute (e.g. 'E40S10-TAB').",
             "properties": {
                 "element_type": {
-                    "description": "Type designator discriminating the concrete InlineElement subclass (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote).\n",
+                    "description": "Type designator discriminating the concrete subclass of an abstract base: InlineElement (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote) or BlockElement (BlockParagraph, BlockList, Table).\n",
                     "enum": [
                         "Placeholder"
                     ],
@@ -1984,10 +2037,20 @@
             "additionalProperties": false,
             "description": "The preamble of the act (akn:preamble), containing introductory prose paragraphs preceding the operative body.",
             "properties": {
-                "block_paragraphs": {
-                    "description": "Block paragraph elements (akn:p) within content.",
+                "content_blocks": {
+                    "description": "Block-level content in reading order: paragraphs, lists and tables as they follow one another in the document.\n",
                     "items": {
-                        "$ref": "#/$defs/BlockParagraph"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/BlockParagraph"
+                            },
+                            {
+                                "$ref": "#/$defs/BlockList"
+                            },
+                            {
+                                "$ref": "#/$defs/Table"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -2194,7 +2257,7 @@
             "description": "An inline reference (akn:ref). Carries @href, and for internal SR cross-references the Fedlex extension attributes fedlex:rs and fedlex:rs-uri.",
             "properties": {
                 "element_type": {
-                    "description": "Type designator discriminating the concrete InlineElement subclass (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote).\n",
+                    "description": "Type designator discriminating the concrete subclass of an abstract base: InlineElement (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote) or BlockElement (BlockParagraph, BlockList, Table).\n",
                     "enum": [
                         "Ref"
                     ],
@@ -2397,7 +2460,7 @@
             "description": "Generic inline span (akn:span).",
             "properties": {
                 "element_type": {
-                    "description": "Type designator discriminating the concrete InlineElement subclass (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote).\n",
+                    "description": "Type designator discriminating the concrete subclass of an abstract base: InlineElement (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote) or BlockElement (BlockParagraph, BlockList, Table).\n",
                     "enum": [
                         "Span"
                     ],
@@ -2670,7 +2733,7 @@
             "description": "Superscript inline markup (akn:sup).",
             "properties": {
                 "element_type": {
-                    "description": "Type designator discriminating the concrete InlineElement subclass (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote).\n",
+                    "description": "Type designator discriminating the concrete subclass of an abstract base: InlineElement (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote) or BlockElement (BlockParagraph, BlockList, Table).\n",
                     "enum": [
                         "Sup"
                     ],
@@ -2829,6 +2892,16 @@
                         "null"
                     ]
                 },
+                "element_type": {
+                    "description": "Type designator discriminating the concrete subclass of an abstract base: InlineElement (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote) or BlockElement (BlockParagraph, BlockList, Table).\n",
+                    "enum": [
+                        "Table"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "table_rows": {
                     "description": "Rows in a table (akn:tr).",
                     "items": {
@@ -2847,30 +2920,30 @@
             "additionalProperties": false,
             "description": "A cell in a table row (akn:td). Contains block content: prose paragraphs (akn:p) and block lists (akn:blockList).",
             "properties": {
-                "block_lists": {
-                    "description": "Block list elements (akn:blockList) within content.",
-                    "items": {
-                        "$ref": "#/$defs/BlockList"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "block_paragraphs": {
-                    "description": "Block paragraph elements (akn:p) within content.",
-                    "items": {
-                        "$ref": "#/$defs/BlockParagraph"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "colspan": {
                     "description": "The @colspan attribute on akn:td (HTML-style presentation).",
                     "type": [
                         "string",
+                        "null"
+                    ]
+                },
+                "content_blocks": {
+                    "description": "Block-level content in reading order: paragraphs, lists and tables as they follow one another in the document.\n",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/BlockParagraph"
+                            },
+                            {
+                                "$ref": "#/$defs/BlockList"
+                            },
+                            {
+                                "$ref": "#/$defs/Table"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
                         "null"
                     ]
                 }
@@ -2901,7 +2974,7 @@
             "description": "A plain run of character data within mixed content. Emitted as the text node of a mixed complexType, not as an element.",
             "properties": {
                 "element_type": {
-                    "description": "Type designator discriminating the concrete InlineElement subclass (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote).\n",
+                    "description": "Type designator discriminating the concrete subclass of an abstract base: InlineElement (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote) or BlockElement (BlockParagraph, BlockList, Table).\n",
                     "enum": [
                         "TextRun"
                     ],

@@ -1,0 +1,185 @@
+act_ref:
+  act_name: publicLaw
+  meta:
+    identification_ref:
+      source: '#ch.bk'
+      frbr_work:
+        frbr_this:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/main-text
+        frbr_uri:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303
+        frbr_dates:
+        - date_value: '2000-01-01'
+          frbr_date_name: jolux:dateEntryInForce
+        - date_value: '1999-04-18'
+          frbr_date_name: jolux:dateDocument
+        - … 1 weitere
+        frbr_authors:
+        - href: '#ch.bk'
+          as_role: '#publisher'
+        - href: '#ch.bk'
+          as_role: '#rightsHolder'
+        frbr_country:
+          value: CH
+        frbr_number:
+          value: '101'
+        frbr_names:
+        - xml_lang: de
+          value: Bundesverfassung der Schweizerischen Eidgenossenschaft vom 18. April
+            1999
+          short_form: BV
+        - xml_lang: fr
+          value: Constitution fédérale de la Confédération suisse du 18 avril 1999
+          short_form: Cst.
+        - … 3 weitere
+        frbr_authoritative:
+          value: 'true'
+      frbr_expression:
+        frbr_this:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/main-text
+        frbr_uri:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de
+        frbr_dates:
+        - date_value: '2000-01-01'
+          frbr_date_name: jolux:dateEntryInForce
+        - date_value: '1999-04-18'
+          frbr_date_name: jolux:dateDocument
+        - … 1 weitere
+        frbr_authors:
+        - href: '#ch.bk'
+          as_role: '#publisher'
+        - href: '#ch.bk'
+          as_role: '#rightsHolder'
+        frbr_language:
+          language_value: de
+      frbr_manifestation:
+        frbr_this:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/xml/main-text
+        frbr_uri:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/xml
+        frbr_dates:
+        - date_value: '2000-01-01'
+          frbr_date_name: jolux:dateEntryInForce
+        - date_value: '1999-04-18'
+          frbr_date_name: jolux:dateDocument
+        - … 1 weitere
+        frbr_authors:
+        - href: '#ch.bk'
+          as_role: '#publisher'
+        - href: '#ch.bk'
+          as_role: '#rightsHolder'
+        frbr_format:
+          value: xml
+          fedlex_generator: 2026-q1-rel-1.8.5
+    references_ref:
+      source: '#ch.bk'
+      tlc_organizations:
+      - eId: ch.bk
+        href: https://fedlex.data.admin.ch/vocabulary/legal-institution/2
+        show_as: Bundeskanzlei
+      tlc_roles:
+      - eId: publisher
+        href: http://data.legilux.public.lu/resource/ontology/jolux#publisher
+        show_as: Editeur
+      - eId: rightsHolder
+        href: http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder
+        show_as: Détenteur des droits
+      tlc_references:
+      - name_attr: language
+        href: http://publications.europa.eu/resource/authority/language/DEU
+        show_as: de
+      - name_attr: format
+        href: https://fedlex.data.admin.ch/vocabulary/user-format/xml
+        show_as: xml
+  preface_ref:
+    preface_paragraphs:
+    - doc_number: '101'
+    - doc_title:
+        inline_content:
+        - …
+        - …
+        - … 1 weitere
+    - … 1 weitere
+  preamble_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      fedlex_role: heading
+      inline_content:
+      - element_type: B
+        inline_content:
+        - …
+    - element_type: BlockParagraph
+      inline_content:
+      - element_type: TextRun
+        text: Im Namen Gottes des Allmächtigen!
+    - … 7 weitere
+  body:
+    titles:
+    - eId: tit_1
+      num:
+        inline_content:
+        - …
+      heading:
+        inline_content:
+        - …
+      articles:
+      - eId: art_1
+        num: …
+        heading: …
+        paragraphs:
+        - …
+      - eId: art_2
+        num: …
+        heading: …
+        paragraphs:
+        - …
+        - …
+        - … 2 weitere
+      - … 5 weitere
+    - eId: tit_2
+      num:
+        inline_content:
+        - …
+      heading:
+        inline_content:
+        - …
+      chapters:
+      - eId: tit_2/chap_1
+        num: …
+        heading: …
+        articles:
+        - …
+        - …
+        - … 30 weitere
+      - eId: tit_2/chap_2
+        num: …
+        heading: …
+        articles:
+        - …
+        - …
+        - … 2 weitere
+      - … 1 weitere
+    - … 4 weitere
+    provisos:
+    - eId: disp_u1
+      heading:
+        inline_content:
+        - …
+      paragraphs:
+      - eId: disp_u1/para
+        content_ref: …
+    - eId: disp_u2
+      heading:
+        inline_content:
+        - …
+      paragraphs:
+      - eId: disp_u2/para
+        content_ref: …
+      levels:
+      - eId: disp_u2/lvl_A
+        num: …
+        content_ref: …
+      - eId: disp_u2/lvl_B
+        num: …
+        content_ref: …
+      - … 24 weitere

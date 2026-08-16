@@ -1,0 +1,19 @@
+frbr_manifestation:
+  frbr_this:
+    value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/xml/main-text
+  frbr_uri:
+    value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/xml
+  frbr_dates:
+  - date_value: '2000-01-01'
+    frbr_date_name: jolux:dateEntryInForce
+  - date_value: '1999-04-18'
+    frbr_date_name: jolux:dateDocument
+  - … 1 weitere
+  frbr_authors:
+  - href: '#ch.bk'
+    as_role: '#publisher'
+  - href: '#ch.bk'
+    as_role: '#rightsHolder'
+  frbr_format:
+    value: xml
+    fedlex_generator: 2026-q1-rel-1.8.5

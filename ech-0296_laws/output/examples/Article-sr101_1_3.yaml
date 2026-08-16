@@ -1,0 +1,16 @@
+articles:
+- eId: art_3
+  num:
+    inline_content:
+    - element_type: B
+      inline_content:
+      - …
+  heading:
+    inline_content:
+    - element_type: TextRun
+      text: Kantone
+  paragraphs:
+  - eId: art_3/para
+    content_ref:
+      content_blocks:
+      - …

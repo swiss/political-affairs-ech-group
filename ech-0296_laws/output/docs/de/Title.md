@@ -56,6 +56,130 @@ _Titel-Ebene eines Erlasses (akn:title). Erlaubte Kinder: book, part, chapter, s
 
 
 ### Beispiele
+#### Beispiel Title: sr101 1 3
+
+```yaml
+titles:
+- eId: tit_3
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '3. Titel:'
+  heading:
+    inline_content:
+    - element_type: TextRun
+      text: Bund, Kantone und Gemeinden
+  chapters:
+  - eId: tit_3/chap_1
+    num:
+      inline_content:
+      - …
+    heading:
+      inline_content:
+      - …
+    sections:
+    - eId: tit_3/chap_1/sec_1
+      num: …
+      heading: …
+      articles:
+      - …
+      - …
+      - … 1 weitere
+    - eId: tit_3/chap_1/sec_2
+      num: …
+      heading: …
+      articles:
+      - …
+      - …
+      - … 5 weitere
+    - … 2 weitere
+  - eId: tit_3/chap_2
+    num:
+      inline_content:
+      - …
+    heading:
+      inline_content:
+      - …
+    sections:
+    - eId: tit_3/chap_2/sec_1
+      num: …
+      heading: …
+      articles:
+      - …
+      - …
+      - … 1 weitere
+    - eId: tit_3/chap_2/sec_2
+      num: …
+      heading: …
+      articles:
+      - …
+      - …
+      - … 3 weitere
+    - … 8 weitere
+  - … 1 weitere
+
+```
+#### Beispiel Title: sr101 1 5
+
+```yaml
+titles:
+- eId: tit_5
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '5. Titel:'
+  heading:
+    inline_content:
+    - element_type: TextRun
+      text: Bundesbehörden
+  chapters:
+  - eId: tit_5/chap_1
+    num:
+      inline_content:
+      - …
+    heading:
+      inline_content:
+      - …
+    articles:
+    - eId: art_143
+      num: …
+      heading: …
+      paragraphs:
+      - …
+    - eId: art_144
+      num: …
+      heading: …
+      paragraphs:
+      - …
+      - …
+      - … 1 weitere
+    - … 3 weitere
+  - eId: tit_5/chap_2
+    num:
+      inline_content:
+      - …
+    heading:
+      inline_content:
+      - …
+    sections:
+    - eId: tit_5/chap_2/sec_1
+      num: …
+      heading: …
+      articles:
+      - …
+      - …
+      - … 6 weitere
+    - eId: tit_5/chap_2/sec_2
+      num: …
+      heading: …
+      articles:
+      - …
+      - …
+      - … 5 weitere
+    - … 1 weitere
+  - … 2 weitere
+
+```
 #### Beispiel Title: Title with number heading and articles
 
 ```yaml
@@ -64,7 +188,7 @@ titles:
   num:
     inline_content:
     - element_type: TextRun
-      text: '1. Titel: '
+      text: '1. Titel:'
   heading:
     inline_content:
     - element_type: TextRun
@@ -73,26 +197,206 @@ titles:
   - eId: art_1
     num:
       inline_content:
-      - element_type: B
-        inline_content:
-        - element_type: TextRun
-          text: Art. 1
+      - …
     heading:
       inline_content:
-      - element_type: TextRun
-        text: Schweizerische Eidgenossenschaft
+      - …
     paragraphs:
     - eId: art_1/para
-      content_ref:
-        block_paragraphs:
-        - inline_content:
-          - element_type: TextRun
-            text: >-
-              Das Schweizervolk und die Kantone Zürich, Bern, Luzern, Uri, Schwyz,
-              Obwalden und Nidwalden, Glarus, Zug, Freiburg, Solothurn, Basel-Stadt
-              und Basel-Landschaft, Schaffhausen, Appenzell Ausserrhoden und Appenzell
-              Innerrhoden, St. Gallen, Graubünden, Aargau, Thurgau, Tessin, Waadt,
-              Wallis, Neuenburg, Genf und Jura bilden die Schweizerische Eidgenossenschaft.
+      content_ref: …
+  - eId: art_2
+    num:
+      inline_content:
+      - …
+    heading:
+      inline_content:
+      - …
+    paragraphs:
+    - eId: art_2/para_1
+      num: …
+      content_ref: …
+    - eId: art_2/para_2
+      num: …
+      content_ref: …
+    - … 2 weitere
+  - … 5 weitere
+
+```
+#### Beispiel Title: sr101 1 6
+
+```yaml
+titles:
+- eId: tit_6
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '6. Titel:'
+  heading:
+    inline_content:
+    - element_type: TextRun
+      text: Revision der Bundesverfassung und Übergangsbestimmungen
+  chapters:
+  - eId: tit_6/chap_1
+    num:
+      inline_content:
+      - …
+    heading:
+      inline_content:
+      - …
+    articles:
+    - eId: art_192
+      num: …
+      heading: …
+      paragraphs:
+      - …
+      - …
+    - eId: art_193
+      num: …
+      heading: …
+      paragraphs:
+      - …
+      - …
+      - … 2 weitere
+    - … 2 weitere
+  - eId: tit_6/chap_2
+    num:
+      inline_content:
+      - …
+    heading:
+      inline_content:
+      - …
+    articles:
+    - eId: art_196
+      num: …
+      heading: …
+      subdivisions:
+      - …
+      - …
+      - … 14 weitere
+    - eId: art_197
+      num: …
+      heading: …
+      subdivisions:
+      - …
+      - …
+      - … 14 weitere
+
+```
+#### Beispiel Title: sr101 1 2
+
+```yaml
+titles:
+- eId: tit_2
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '2. Titel:'
+  heading:
+    inline_content:
+    - element_type: TextRun
+      text: Grundrechte, Bürgerrechte und Sozialziele
+  chapters:
+  - eId: tit_2/chap_1
+    num:
+      inline_content:
+      - …
+    heading:
+      inline_content:
+      - …
+    articles:
+    - eId: art_7
+      num: …
+      heading: …
+      paragraphs:
+      - …
+    - eId: art_8
+      num: …
+      heading: …
+      paragraphs:
+      - …
+      - …
+      - … 2 weitere
+    - … 30 weitere
+  - eId: tit_2/chap_2
+    num:
+      inline_content:
+      - …
+    heading:
+      inline_content:
+      - …
+    articles:
+    - eId: art_37
+      num: …
+      heading: …
+      paragraphs:
+      - …
+      - …
+    - eId: art_38
+      num: …
+      heading: …
+      paragraphs:
+      - …
+      - …
+      - … 1 weitere
+    - … 2 weitere
+  - … 1 weitere
+
+```
+#### Beispiel Title: sr101 1 4
+
+```yaml
+titles:
+- eId: tit_4
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '4. Titel:'
+  heading:
+    inline_content:
+    - element_type: TextRun
+      text: Volk und Stände
+  chapters:
+  - eId: tit_4/chap_1
+    num:
+      inline_content:
+      - …
+    heading:
+      inline_content:
+      - …
+    articles:
+    - eId: art_136
+      num: …
+      heading: …
+      paragraphs:
+      - …
+      - …
+    - eId: art_137
+      num: …
+      heading: …
+      paragraphs:
+      - …
+  - eId: tit_4/chap_2
+    num:
+      inline_content:
+      - …
+    heading:
+      inline_content:
+      - …
+    articles:
+    - eId: art_138
+      num: …
+      heading: …
+      paragraphs:
+      - …
+      - …
+    - eId: art_139
+      num: …
+      heading: …
+      paragraphs:
+      - …
+      - …
+      - … 3 weitere
+    - … 6 weitere
 
 ```
 

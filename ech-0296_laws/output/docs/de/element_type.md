@@ -6,7 +6,8 @@ search:
 # Slot: element_type 
 
 
-_Typ-Diskriminator für die konkrete InlineElement-Subklasse._
+_Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement._
+
 
 
 
@@ -26,6 +27,10 @@ URI: [laws:element_type](https://ld.ech.ch/schema/0296/laws/element_type)
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
 | [InlineElement](InlineElement.md) | Abstrakte Basis für ein modelliertes Inline-Markup-Element in gemischtem Inha... |  no  |
+| [BlockElement](BlockElement.md) | Abstrakte Basis für ein Element auf Blockebene innerhalb von Inhalt, Aufzählu... |  no  |
+| [BlockParagraph](BlockParagraph.md) | Ein Fliesstext-Absatz in Content (akn:p) |  no  |
+| [BlockList](BlockList.md) | Eine Auflistung von nummerierten oder buchstabierten Punkten (akn:blockList),... |  no  |
+| [Table](Table.md) | Ein Tabellen-Element innerhalb von Content (akn:table) |  no  |
 | [TextRun](TextRun.md) | Ein einfacher Textabschnitt in gemischtem Inhalt |  no  |
 | [Ref](Ref.md) | Eine Inline-Referenz (akn:ref) |  no  |
 | [B](B.md) | Fett-Inline-Markup (akn:b) |  no  |
@@ -49,7 +54,7 @@ URI: [laws:element_type](https://ld.ech.ch/schema/0296/laws/element_type)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [String](String.md) |
-| Domäne von | [InlineElement](InlineElement.md) |
+| Domäne von | [InlineElement](InlineElement.md), [BlockElement](BlockElement.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -77,7 +82,7 @@ URI: [laws:element_type](https://ld.ech.ch/schema/0296/laws/element_type)
 | --- |
 | AuthorialNote |
 | B |
-| Br |
+| BlockList |
 
 
 
@@ -91,17 +96,24 @@ name: element_type
 annotations:
   description_de:
     tag: description_de
-    value: Typ-Diskriminator für die konkrete InlineElement-Subklasse.
-description: Typ-Diskriminator für die konkrete InlineElement-Subklasse.
+    value: 'Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis:
+      InlineElement oder BlockElement.
+
+      '
+description: 'Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis:
+  InlineElement oder BlockElement.
+
+  '
 examples:
 - value: AuthorialNote
 - value: B
-- value: Br
+- value: BlockList
 from_schema: https://ld.ech.ch/schema/0296/laws
 rank: 1000
 designates_type: true
 domain_of:
 - InlineElement
+- BlockElement
 range: string
 
 ```

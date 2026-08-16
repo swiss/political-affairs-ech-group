@@ -1,0 +1,19 @@
+frbr_manifestation:
+  frbr_this:
+    value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de/xml/main-text
+  frbr_uri:
+    value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de/xml
+  frbr_dates:
+  - date_value: '2006-07-01'
+    frbr_date_name: jolux:dateEntryInForce
+  - date_value: '2004-12-17'
+    frbr_date_name: jolux:dateDocument
+  - … 1 weitere
+  frbr_authors:
+  - href: '#ch.bk'
+    as_role: '#publisher'
+  - href: '#ch.bk'
+    as_role: '#rightsHolder'
+  frbr_format:
+    value: xml
+    fedlex_generator: 2024-q4-rel-1.6.5

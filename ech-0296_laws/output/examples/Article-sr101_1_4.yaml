@@ -1,0 +1,16 @@
+articles:
+- eId: art_4
+  num:
+    inline_content:
+    - element_type: B
+      inline_content:
+      - …
+  heading:
+    inline_content:
+    - element_type: TextRun
+      text: Landessprachen
+  paragraphs:
+  - eId: art_4/para
+    content_ref:
+      content_blocks:
+      - …

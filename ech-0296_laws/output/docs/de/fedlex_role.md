@@ -6,7 +6,7 @@ search:
 # Slot: fedlex_role 
 
 
-_Fedlex-Erweiterungsattribut fedlex:role. Nur zwei Werte erlaubt (FLX-XF-003): 'marginal' (nur bei akn:level, FLX-XF-004) und 'reference' (nur bei akn:subheading, FLX-XF-005)._
+_Fedlex-Erweiterungsattribut fedlex:role. FLX-XF-003 lässt 'marginal' (nur an akn:level, FLX-XF-004) und 'reference' (nur an akn:subheading, FLX-XF-005) zu; die publizierte Bundesverfassung führt zusätzlich 'heading' an einem Präambel-Absatz._
 
 
 
@@ -27,6 +27,7 @@ URI: [laws:fedlex_role](https://ld.ech.ch/schema/0296/laws/fedlex_role)
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
 | [Level](Level.md) | Transparente Strukturebene (akn:level) |  yes  |
+| [BlockParagraph](BlockParagraph.md) | Ein Fliesstext-Absatz in Content (akn:p) |  no  |
 
 
 
@@ -40,7 +41,7 @@ URI: [laws:fedlex_role](https://ld.ech.ch/schema/0296/laws/fedlex_role)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [FedlexRoleEnum](FedlexRoleEnum.md) |
-| Domäne von | [Level](Level.md) |
+| Domäne von | [Level](Level.md), [BlockParagraph](BlockParagraph.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -66,9 +67,9 @@ name: fedlex_role
 annotations:
   description_de:
     tag: description_de
-    value: 'Fedlex-Erweiterungsattribut fedlex:role. Nur zwei Werte erlaubt (FLX-XF-003):
-      ''marginal'' (nur bei akn:level, FLX-XF-004) und ''reference'' (nur bei akn:subheading,
-      FLX-XF-005).
+    value: 'Fedlex-Erweiterungsattribut fedlex:role. FLX-XF-003 lässt ''marginal''
+      (nur an akn:level, FLX-XF-004) und ''reference'' (nur an akn:subheading, FLX-XF-005)
+      zu; die publizierte Bundesverfassung führt zusätzlich ''heading'' an einem Präambel-Absatz.
 
       '
   xml_attribute:
@@ -83,15 +84,16 @@ annotations:
   schematron_rules:
     tag: schematron_rules
     value: FLX-XF-003, FLX-XF-004, FLX-XF-005
-description: 'Fedlex-Erweiterungsattribut fedlex:role. Nur zwei Werte erlaubt (FLX-XF-003):
-  ''marginal'' (nur bei akn:level, FLX-XF-004) und ''reference'' (nur bei akn:subheading,
-  FLX-XF-005).
+description: 'Fedlex-Erweiterungsattribut fedlex:role. FLX-XF-003 lässt ''marginal''
+  (nur an akn:level, FLX-XF-004) und ''reference'' (nur an akn:subheading, FLX-XF-005)
+  zu; die publizierte Bundesverfassung führt zusätzlich ''heading'' an einem Präambel-Absatz.
 
   '
 from_schema: https://ld.ech.ch/schema/0296/laws
 rank: 1000
 domain_of:
 - Level
+- BlockParagraph
 range: FedlexRoleEnum
 
 ```

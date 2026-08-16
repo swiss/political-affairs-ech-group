@@ -19,16 +19,10 @@ _Ein Tabellen-Element innerhalb von Content (akn:table). Enthält Zeilen (akn:tr
 |------------------------|----------------------|------------------------------------------------------|
 | border | 0..1 <br/> [String](String.md) | Das @border-Attribut auf akn:table (HTML-artige Darstellung). |
 | table_rows | * <br/> [TableRow](TableRow.md) | Zeilen in einer Tabelle (akn:tr). |
+| element_type | 0..1 <br/> [String](String.md) | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement. <br/><br/>Vererbung: [BlockElement](BlockElement.md) |
 
 
 
-
-
-### Verwendungen
-
-| Verwendet von | Im Slot | Rolle | Element |
-| ---  | --- | --- | --- |
-| [Content](Content.md) | [tables](tables.md) | range | [Table](Table.md) |
 
 
 

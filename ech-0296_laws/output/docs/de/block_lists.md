@@ -21,17 +21,6 @@ URI: [laws:block_lists](https://ld.ech.ch/schema/0296/laws/block_lists)
 
 
 
-## Anwendbare Klassen
-
-| Name | Beschreibung | Ändert Slot |
-| --- | --- | --- |
-| [Content](Content.md) | Der Inhalt eines Absatzes (akn:content) |  no  |
-| [BlockListItem](BlockListItem.md) | Ein einzelner Punkt in einer Auflistung (akn:item) |  no  |
-| [TableCell](TableCell.md) | Eine Zelle in einer Tabellenzeile (akn:td) |  no  |
-
-
-
-
 
 
 ## Eigenschaften
@@ -41,7 +30,6 @@ URI: [laws:block_lists](https://ld.ech.ch/schema/0296/laws/block_lists)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [BlockList](BlockList.md) |
-| Domäne von | [Content](Content.md), [BlockListItem](BlockListItem.md), [TableCell](TableCell.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -72,10 +60,6 @@ annotations:
 description: Auflistungs-Elemente (akn:blockList) innerhalb von Content.
 from_schema: https://ld.ech.ch/schema/0296/laws
 rank: 1000
-domain_of:
-- Content
-- BlockListItem
-- TableCell
 range: BlockList
 multivalued: true
 

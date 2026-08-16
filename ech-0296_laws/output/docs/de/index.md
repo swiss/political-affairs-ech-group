@@ -18,9 +18,11 @@ Name: ech-0296-laws-schema
 | [ActMeta](ActMeta.md) | Metadaten-Abschnitt des Erlasses (akn:meta) |
 | [Article](Article.md) | Ein Artikel, die primäre legislative Einheit (akn:article) |
 | [Block](Block.md) | Ein generischer Block (akn:block), dessen @name den Zweck nennt; trägt gemisc... |
-| [BlockList](BlockList.md) | Eine Auflistung von nummerierten oder buchstabierten Punkten (akn:blockList),... |
+| [BlockElement](BlockElement.md) | Abstrakte Basis für ein Element auf Blockebene innerhalb von Inhalt, Aufzählu... |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[BlockList](BlockList.md) | Eine Auflistung von nummerierten oder buchstabierten Punkten (akn:blockList),... |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[BlockParagraph](BlockParagraph.md) | Ein Fliesstext-Absatz in Content (akn:p) |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Table](Table.md) | Ein Tabellen-Element innerhalb von Content (akn:table) |
 | [BlockListItem](BlockListItem.md) | Ein einzelner Punkt in einer Auflistung (akn:item) |
-| [BlockParagraph](BlockParagraph.md) | Ein Fliesstext-Absatz in Content (akn:p) |
 | [Book](Book.md) | Buch-Ebene eines Erlasses (akn:book) |
 | [Chapter](Chapter.md) | Kapitel-Ebene eines Erlasses (akn:chapter) |
 | [Component](Component.md) | Ein einzelnes beiliegendes Dokument (akn:component) |
@@ -63,7 +65,6 @@ Name: ech-0296-laws-schema
 | [Subchapter](Subchapter.md) | Unterkapitel-Ebene (akn:subchapter) |
 | [Subdivision](Subdivision.md) | Ein Unterabschnitt in einem Artikel, der zusammengehörige Absätze gruppiert (... |
 | [Subsection](Subsection.md) | Unterabschnitt-Ebene (akn:subsection) |
-| [Table](Table.md) | Ein Tabellen-Element innerhalb von Content (akn:table) |
 | [TableCell](TableCell.md) | Eine Zelle in einer Tabellenzeile (akn:td) |
 | [TableRow](TableRow.md) | Eine Zeile in einer AkomaNtoso-Tabelle (akn:tr) |
 | [Title](Title.md) | Titel-Ebene eines Erlasses (akn:title) |
@@ -97,6 +98,7 @@ Name: ech-0296-laws-schema
 | [components_ref](components_ref.md) | Die diesem Erlass beiliegenden Dokumente (akn:components) |
 | [container_name](container_name.md) | Zweck des Behälters (akn:container/@name) |
 | [containers](containers.md) | Behälter des Vorspanns (akn:container) |
+| [content_blocks](content_blocks.md) | Blockinhalt in Lesereihenfolge: Absätze, Aufzählungen und Tabellen, wie sie i... |
 | [content_ref](content_ref.md) | Inhaltselement innerhalb eines Absatzes (akn:content) |
 | [date_value](date_value.md) | Ein ISO-8601-Datumswert (akn:FRBRdate/@date) |
 | [doc_name](doc_name.md) | Art des beiliegenden Dokuments (akn:doc/@name) |
@@ -104,7 +106,7 @@ Name: ech-0296-laws-schema
 | [doc_ref](doc_ref.md) | Das beiliegende Dokument selbst (akn:doc) |
 | [doc_title](doc_title.md) | Dokumenttitel im Vorspann (akn:docTitle) |
 | [eId](eId.md) | Eindeutiger Element-Identifier im Dokument (@eId) |
-| [element_type](element_type.md) | Typ-Diskriminator für die konkrete InlineElement-Subklasse |
+| [element_type](element_type.md) | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: Inline... |
 | [fedlex_generator](fedlex_generator.md) | Fedlex-Erweiterungsattribut fedlex:generator bei akn:FRBRformat[@value='xml'] |
 | [fedlex_message](fedlex_message.md) | Fedlex-Erweiterungsattribut fedlex:message auf akn:placeholder, das entfernte... |
 | [fedlex_role](fedlex_role.md) | Fedlex-Erweiterungsattribut fedlex:role |

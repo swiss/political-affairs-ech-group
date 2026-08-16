@@ -1,0 +1,8 @@
+content_ref:
+  content_blocks:
+  - element_type: BlockParagraph
+    inline_content:
+    - element_type: TextRun
+      text: >-
+        Jede Person nimmt Verantwortung für sich selber wahr und trägt nach ihren
+        Kräften zur Bewältigung der Aufgaben in Staat und Gesellschaft bei.

@@ -58,6 +58,27 @@ _Ein Artikel, die primäre legislative Einheit (akn:article). Constraints (FLX-A
 
 
 ### Beispiele
+#### Beispiel Article: sr101 1 3
+
+```yaml
+articles:
+- eId: art_3
+  num:
+    inline_content:
+    - element_type: B
+      inline_content:
+      - …
+  heading:
+    inline_content:
+    - element_type: TextRun
+      text: Kantone
+  paragraphs:
+  - eId: art_3/para
+    content_ref:
+      content_blocks:
+      - …
+
+```
 #### Beispiel Article: Article with a bold article number
 
 ```yaml
@@ -67,8 +88,7 @@ articles:
     inline_content:
     - element_type: B
       inline_content:
-      - element_type: TextRun
-        text: Art. 1
+      - …
   heading:
     inline_content:
     - element_type: TextRun
@@ -76,15 +96,8 @@ articles:
   paragraphs:
   - eId: art_1/para
     content_ref:
-      block_paragraphs:
-      - inline_content:
-        - element_type: TextRun
-          text: >-
-            Das Schweizervolk und die Kantone Zürich, Bern, Luzern, Uri, Schwyz, Obwalden
-            und Nidwalden, Glarus, Zug, Freiburg, Solothurn, Basel-Stadt und Basel-Landschaft,
-            Schaffhausen, Appenzell Ausserrhoden und Appenzell Innerrhoden, St. Gallen,
-            Graubünden, Aargau, Thurgau, Tessin, Waadt, Wallis, Neuenburg, Genf und
-            Jura bilden die Schweizerische Eidgenossenschaft.
+      content_blocks:
+      - …
 
 ```
 #### Beispiel Article: Article with numbered paragraphs
@@ -96,49 +109,126 @@ articles:
     inline_content:
     - element_type: B
       inline_content:
-      - element_type: TextRun
-        text: Art. 2
+      - …
   heading:
     inline_content:
     - element_type: TextRun
-      text: Persönlicher Geltungsbereich
+      text: Zweck
   paragraphs:
   - eId: art_2/para_1
     num:
       inline_content:
-      - element_type: TextRun
-        text: '1'
+      - …
     content_ref:
-      block_lists:
-      - eId: art_2/para_1/lst
-        list_introduction:
-          eId: art_2/para_1/listintro
-          inline_content:
-          - element_type: TextRun
-            text: ' Dieses Gesetz gilt für:'
-        items:
-        - eId: art_2/para_1/lbl_a
-          num:
-            inline_content:
-            - element_type: TextRun
-              text: 'a. '
-          block_paragraphs:
-          - inline_content:
-            - element_type: TextRun
-              text: die Bundesverwaltung;
-        - eId: art_2/para_1/lbl_b
-          num:
-            inline_content:
-            - element_type: TextRun
-              text: 'b. '
-          block_paragraphs:
-          - inline_content:
-            - element_type: TextRun
-              text: >-
-                Organisationen und Personen des öffentlichen oder privaten Rechts,
-                die nicht der Bundesverwaltung angehören, soweit sie Erlasse oder
-                erstinstanzliche Verfügungen im Sinne von Artikel 5 des Bundesgesetzes
-                vom 20. Dezember 1968 über das Verwaltungsverfahren erlassen;
+      content_blocks:
+      - …
+  - eId: art_2/para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - … 2 weitere
+
+```
+#### Beispiel Article: sr101 1 4
+
+```yaml
+articles:
+- eId: art_4
+  num:
+    inline_content:
+    - element_type: B
+      inline_content:
+      - …
+  heading:
+    inline_content:
+    - element_type: TextRun
+      text: Landessprachen
+  paragraphs:
+  - eId: art_4/para
+    content_ref:
+      content_blocks:
+      - …
+
+```
+#### Beispiel Article: sr101 1 6
+
+```yaml
+articles:
+- eId: art_5_a
+  num:
+    inline_content:
+    - element_type: B
+      inline_content:
+      - …
+    - element_type: I
+      inline_content:
+      - …
+    - … 1 weitere
+  heading:
+    inline_content:
+    - element_type: TextRun
+      text: Subsidiarität
+  paragraphs:
+  - eId: art_5_a/para
+    content_ref:
+      content_blocks:
+      - …
+
+```
+#### Beispiel Article: sr101 1 7
+
+```yaml
+articles:
+- eId: art_6
+  num:
+    inline_content:
+    - element_type: B
+      inline_content:
+      - …
+  heading:
+    inline_content:
+    - element_type: TextRun
+      text: Individuelle und gesellschaftliche Verantwortung
+  paragraphs:
+  - eId: art_6/para
+    content_ref:
+      content_blocks:
+      - …
+
+```
+#### Beispiel Article: sr101 1 5
+
+```yaml
+articles:
+- eId: art_5
+  num:
+    inline_content:
+    - element_type: B
+      inline_content:
+      - …
+  heading:
+    inline_content:
+    - element_type: TextRun
+      text: Grundsätze rechtsstaatlichen Handelns
+  paragraphs:
+  - eId: art_5/para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: art_5/para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - … 2 weitere
 
 ```
 

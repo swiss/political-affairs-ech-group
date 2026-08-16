@@ -17,8 +17,8 @@ _Eine Fussnote des Autors (akn:authorialNote). Rekursiv in Block-Inhalt: enthäl
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
-| block_paragraphs | * <br/> [BlockParagraph](BlockParagraph.md) | Block-Absatz-Elemente (akn:p) innerhalb von Content. |
-| element_type | 0..1 <br/> [String](String.md) | Typ-Diskriminator für die konkrete InlineElement-Subklasse.<br/><br/>Vererbung: [InlineElement](InlineElement.md) |
+| content_blocks | * <br/> [BlockElement](BlockElement.md) | Blockinhalt in Lesereihenfolge: Absätze, Aufzählungen und Tabellen, wie sie im Dokument aufeinanderfolgen.  |
+| element_type | 0..1 <br/> [String](String.md) | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement. <br/><br/>Vererbung: [InlineElement](InlineElement.md) |
 
 
 

@@ -46,7 +46,15 @@ _Ein Datumseintrag einer FRBR-Entität (akn:FRBRdate). Das @name-Attribut verwen
 
 
 ### Beispiele
-#### Beispiel FRBRDate: sr101 excerpt 1 2
+#### Beispiel FRBRDate: bgoe 1 3
+
+```yaml
+frbr_dates:
+- date_value: '2023-11-01'
+  frbr_date_name: jolux:dateApplicability
+
+```
+#### Beispiel FRBRDate: sr101 1 2
 
 ```yaml
 frbr_dates:
@@ -54,15 +62,15 @@ frbr_dates:
   frbr_date_name: jolux:dateDocument
 
 ```
-#### Beispiel FRBRDate: bgoe excerpt 1 2
+#### Beispiel FRBRDate: bgoe 1 1
 
 ```yaml
 frbr_dates:
-- date_value: '2023-11-01'
-  frbr_date_name: jolux:dateApplicability
+- date_value: '2006-07-01'
+  frbr_date_name: jolux:dateEntryInForce
 
 ```
-#### Beispiel FRBRDate: sr101 excerpt 1 3
+#### Beispiel FRBRDate: sr101 1 3
 
 ```yaml
 frbr_dates:
@@ -70,28 +78,20 @@ frbr_dates:
   frbr_date_name: jolux:dateApplicability
 
 ```
-#### Beispiel FRBRDate: bgoe excerpt 1 3
+#### Beispiel FRBRDate: bgoe 1 2
 
 ```yaml
 frbr_dates:
-- date_value: '2023-11-01'
-  frbr_date_name: jolux:dateApplicability
+- date_value: '2004-12-17'
+  frbr_date_name: jolux:dateDocument
 
 ```
-#### Beispiel FRBRDate: bgoe excerpt 1 1
+#### Beispiel FRBRDate: sr101 1 1
 
 ```yaml
 frbr_dates:
-- date_value: '2023-11-01'
-  frbr_date_name: jolux:dateApplicability
-
-```
-#### Beispiel FRBRDate: sr101 excerpt 1 1
-
-```yaml
-frbr_dates:
-- date_value: '2024-03-03'
-  frbr_date_name: jolux:dateApplicability
+- date_value: '2000-01-01'
+  frbr_date_name: jolux:dateEntryInForce
 
 ```
 

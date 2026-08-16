@@ -17,6 +17,7 @@ URI: [laws:FedlexRoleEnum](https://ld.ech.ch/schema/0296/laws/FedlexRoleEnum)
 |------------------------|----------------------------------------------------------------------------|
 | marginal |  Kennzeichnet ein level als Randnote. Nur bei akn:level erlaubt (FLX-XF-004). |
 | reference |  Kennzeichnet eine Unterüberschrift als Referenzüberschrift. Nur bei akn:subheading erlaubt (FLX-XF-005).  |
+| heading |  Kennzeichnet einen Absatz als Überschrift; kommt an akn:p in der Präambel der Bundesverfassung vor. Ausserhalb der Reichweite von FLX-XF-003, die akn:level und akn:subheading regelt.  |
 
 
 

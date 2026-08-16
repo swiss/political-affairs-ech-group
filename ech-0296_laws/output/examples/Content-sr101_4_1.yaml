@@ -1,0 +1,6 @@
+content_ref:
+  content_blocks:
+  - element_type: BlockParagraph
+    inline_content:
+    - element_type: TextRun
+      text: Bund und Kantone beachten das Völkerrecht.

@@ -1,0 +1,20 @@
+articles:
+- eId: art_5_a
+  num:
+    inline_content:
+    - element_type: B
+      inline_content:
+      - …
+    - element_type: I
+      inline_content:
+      - …
+    - … 1 weitere
+  heading:
+    inline_content:
+    - element_type: TextRun
+      text: Subsidiarität
+  paragraphs:
+  - eId: art_5_a/para
+    content_ref:
+      content_blocks:
+      - …

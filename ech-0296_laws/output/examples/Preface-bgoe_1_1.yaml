@@ -1,0 +1,10 @@
+preface_ref:
+  preface_paragraphs:
+  - doc_number: '152.3 '
+  - doc_title:
+      inline_content:
+      - element_type: TextRun
+        text: Bundesgesetz
+      - element_type: Br
+      - … 1 weitere
+  - … 2 weitere

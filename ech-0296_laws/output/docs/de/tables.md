@@ -21,15 +21,6 @@ URI: [laws:tables](https://ld.ech.ch/schema/0296/laws/tables)
 
 
 
-## Anwendbare Klassen
-
-| Name | Beschreibung | Ändert Slot |
-| --- | --- | --- |
-| [Content](Content.md) | Der Inhalt eines Absatzes (akn:content) |  no  |
-
-
-
-
 
 
 ## Eigenschaften
@@ -39,7 +30,6 @@ URI: [laws:tables](https://ld.ech.ch/schema/0296/laws/tables)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [Table](Table.md) |
-| Domäne von | [Content](Content.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -70,8 +60,6 @@ annotations:
 description: Tabellen-Elemente (akn:table) innerhalb von Content.
 from_schema: https://ld.ech.ch/schema/0296/laws
 rank: 1000
-domain_of:
-- Content
 range: Table
 multivalued: true
 

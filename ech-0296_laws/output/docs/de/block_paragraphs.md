@@ -21,20 +21,6 @@ URI: [laws:block_paragraphs](https://ld.ech.ch/schema/0296/laws/block_paragraphs
 
 
 
-## Anwendbare Klassen
-
-| Name | Beschreibung | Ändert Slot |
-| --- | --- | --- |
-| [Preamble](Preamble.md) | Die Präambel des Erlasses (akn:preamble) mit einleitenden Fliesstext-Absätzen... |  no  |
-| [Content](Content.md) | Der Inhalt eines Absatzes (akn:content) |  no  |
-| [BlockListItem](BlockListItem.md) | Ein einzelner Punkt in einer Auflistung (akn:item) |  no  |
-| [TableCell](TableCell.md) | Eine Zelle in einer Tabellenzeile (akn:td) |  no  |
-| [AuthorialNote](AuthorialNote.md) | Eine Fussnote des Autors (akn:authorialNote) |  no  |
-| [MainBody](MainBody.md) | Hauptteil eines beiliegenden Dokuments (akn:mainBody) |  no  |
-
-
-
-
 
 
 ## Eigenschaften
@@ -44,7 +30,6 @@ URI: [laws:block_paragraphs](https://ld.ech.ch/schema/0296/laws/block_paragraphs
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [BlockParagraph](BlockParagraph.md) |
-| Domäne von | [Preamble](Preamble.md), [Content](Content.md), [BlockListItem](BlockListItem.md), [TableCell](TableCell.md), [AuthorialNote](AuthorialNote.md), [MainBody](MainBody.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -75,13 +60,6 @@ annotations:
 description: Block-Absatz-Elemente (akn:p) innerhalb von Content.
 from_schema: https://ld.ech.ch/schema/0296/laws
 rank: 1000
-domain_of:
-- Preamble
-- Content
-- BlockListItem
-- TableCell
-- AuthorialNote
-- MainBody
 range: BlockParagraph
 multivalued: true
 

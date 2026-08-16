@@ -324,7 +324,7 @@ _FRBR-Identifikationsblock (akn:identification) mit Work-, Expression- und Manif
 
 
 #### Beispiele
-##### Beispiel Identification: sr101 excerpt 1 1
+##### Beispiel Identification: sr101 1 1
 
 ```yaml
 identification_ref:
@@ -339,8 +339,7 @@ identification_ref:
       frbr_date_name: jolux:dateEntryInForce
     - date_value: '1999-04-18'
       frbr_date_name: jolux:dateDocument
-    - date_value: '2024-03-03'
-      frbr_date_name: jolux:dateApplicability
+    - … 1 weitere
     frbr_authors:
     - href: '#ch.bk'
       as_role: '#publisher'
@@ -358,12 +357,7 @@ identification_ref:
     - xml_lang: fr
       value: Constitution fédérale de la Confédération suisse du 18 avril 1999
       short_form: Cst.
-    - xml_lang: it
-      value: Costituzione federale della Confederazione Svizzera del 18 aprile 1999
-      short_form: Cost.
-    - xml_lang: rm
-      value: Constituziun federala da la Confederaziun svizra dals 18 d'avrigl 1999
-      short_form: Cst.
+    - … 3 weitere
     frbr_authoritative:
       value: 'true'
   frbr_expression:
@@ -376,27 +370,36 @@ identification_ref:
       frbr_date_name: jolux:dateEntryInForce
     - date_value: '1999-04-18'
       frbr_date_name: jolux:dateDocument
+    - … 1 weitere
     frbr_authors:
     - href: '#ch.bk'
       as_role: '#publisher'
+    - href: '#ch.bk'
+      as_role: '#rightsHolder'
     frbr_language:
       language_value: de
   frbr_manifestation:
     frbr_this:
-      value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/main-text
+      value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/xml/main-text
     frbr_uri:
-      value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de
+      value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/xml
     frbr_dates:
-    - date_value: '2024-03-03'
-      frbr_date_name: jolux:dateApplicability
+    - date_value: '2000-01-01'
+      frbr_date_name: jolux:dateEntryInForce
+    - date_value: '1999-04-18'
+      frbr_date_name: jolux:dateDocument
+    - … 1 weitere
     frbr_authors:
     - href: '#ch.bk'
       as_role: '#publisher'
+    - href: '#ch.bk'
+      as_role: '#rightsHolder'
     frbr_format:
       value: xml
+      fedlex_generator: 2026-q1-rel-1.8.5
 
 ```
-##### Beispiel Identification: bgoe excerpt 1 1
+##### Beispiel Identification: bgoe 1 1
 
 ```yaml
 identification_ref:
@@ -411,8 +414,7 @@ identification_ref:
       frbr_date_name: jolux:dateEntryInForce
     - date_value: '2004-12-17'
       frbr_date_name: jolux:dateDocument
-    - date_value: '2023-11-01'
-      frbr_date_name: jolux:dateApplicability
+    - … 1 weitere
     frbr_authors:
     - href: '#ch.bk'
       as_role: '#publisher'
@@ -423,31 +425,17 @@ identification_ref:
     frbr_number:
       value: '152.3'
     frbr_names:
-    - xml_lang: de
-      value: >-
-        Bundesgesetz vom 17. Dezember 2004 über das Öffentlichkeitsprinzip der Verwaltung
-        (Öffentlichkeitsgesetz, BGÖ)
-      short_form: BGÖ
-    - xml_lang: fr
-      value: >-
-        Loi fédérale du 17 décembre 2004 sur le principe de la transparence dans l'administration
-        (Loi sur la transparence, LTrans)
-      short_form: LTrans
     - xml_lang: it
       value: >-
         Legge federale del 17 dicembre 2004 sul principio di trasparenza dell'amministrazione
         (Legge sulla trasparenza, LTras)
       short_form: LTras
-    - xml_lang: rm
+    - xml_lang: fr
       value: >-
-        Lescha federala dals 17 da december 2004 davart il princip da la transparenza
-        da l'administraziun (Lescha da transparenza, LTrans)
+        Loi fédérale du 17 décembre 2004 sur le principe de la transparence dans l'administration
+        (Loi sur la transparence, LTrans)
       short_form: LTrans
-    - xml_lang: en
-      value: >-
-        Federal Act of 17 December 2004 on Freedom of Information in the Administration
-        (Freedom of Information Act, FoIA)
-      short_form: FoIA
+    - … 3 weitere
     frbr_authoritative:
       value: 'true'
   frbr_expression:
@@ -458,11 +446,14 @@ identification_ref:
     frbr_dates:
     - date_value: '2006-07-01'
       frbr_date_name: jolux:dateEntryInForce
-    - date_value: '2023-11-01'
-      frbr_date_name: jolux:dateApplicability
+    - date_value: '2004-12-17'
+      frbr_date_name: jolux:dateDocument
+    - … 1 weitere
     frbr_authors:
     - href: '#ch.bk'
       as_role: '#publisher'
+    - href: '#ch.bk'
+      as_role: '#rightsHolder'
     frbr_language:
       language_value: de
   frbr_manifestation:
@@ -471,11 +462,16 @@ identification_ref:
     frbr_uri:
       value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de/xml
     frbr_dates:
-    - date_value: '2023-11-01'
-      frbr_date_name: jolux:dateApplicability
+    - date_value: '2006-07-01'
+      frbr_date_name: jolux:dateEntryInForce
+    - date_value: '2004-12-17'
+      frbr_date_name: jolux:dateDocument
+    - … 1 weitere
     frbr_authors:
     - href: '#ch.bk'
       as_role: '#publisher'
+    - href: '#ch.bk'
+      as_role: '#rightsHolder'
     frbr_format:
       value: xml
       fedlex_generator: 2024-q4-rel-1.6.5
@@ -541,7 +537,46 @@ _FRBR-Work-Ebene (akn:FRBRWork): der abstrakte Erlass unabhängig von Sprache un
 
 
 #### Beispiele
-##### Beispiel FRBRWork: sr101 excerpt 1 1
+##### Beispiel FRBRWork: bgoe 1 1
+
+```yaml
+frbr_work:
+  frbr_this:
+    value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/main-text
+  frbr_uri:
+    value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101
+  frbr_dates:
+  - date_value: '2006-07-01'
+    frbr_date_name: jolux:dateEntryInForce
+  - date_value: '2004-12-17'
+    frbr_date_name: jolux:dateDocument
+  - … 1 weitere
+  frbr_authors:
+  - href: '#ch.bk'
+    as_role: '#publisher'
+  - href: '#ch.bk'
+    as_role: '#rightsHolder'
+  frbr_country:
+    value: CH
+  frbr_number:
+    value: '152.3'
+  frbr_names:
+  - xml_lang: it
+    value: >-
+      Legge federale del 17 dicembre 2004 sul principio di trasparenza dell'amministrazione
+      (Legge sulla trasparenza, LTras)
+    short_form: LTras
+  - xml_lang: fr
+    value: >-
+      Loi fédérale du 17 décembre 2004 sur le principe de la transparence dans l'administration
+      (Loi sur la transparence, LTrans)
+    short_form: LTrans
+  - … 3 weitere
+  frbr_authoritative:
+    value: 'true'
+
+```
+##### Beispiel FRBRWork: sr101 1 1
 
 ```yaml
 frbr_work:
@@ -554,8 +589,7 @@ frbr_work:
     frbr_date_name: jolux:dateEntryInForce
   - date_value: '1999-04-18'
     frbr_date_name: jolux:dateDocument
-  - date_value: '2024-03-03'
-    frbr_date_name: jolux:dateApplicability
+  - … 1 weitere
   frbr_authors:
   - href: '#ch.bk'
     as_role: '#publisher'
@@ -572,66 +606,7 @@ frbr_work:
   - xml_lang: fr
     value: Constitution fédérale de la Confédération suisse du 18 avril 1999
     short_form: Cst.
-  - xml_lang: it
-    value: Costituzione federale della Confederazione Svizzera del 18 aprile 1999
-    short_form: Cost.
-  - xml_lang: rm
-    value: Constituziun federala da la Confederaziun svizra dals 18 d'avrigl 1999
-    short_form: Cst.
-  frbr_authoritative:
-    value: 'true'
-
-```
-##### Beispiel FRBRWork: bgoe excerpt 1 1
-
-```yaml
-frbr_work:
-  frbr_this:
-    value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/main-text
-  frbr_uri:
-    value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101
-  frbr_dates:
-  - date_value: '2006-07-01'
-    frbr_date_name: jolux:dateEntryInForce
-  - date_value: '2004-12-17'
-    frbr_date_name: jolux:dateDocument
-  - date_value: '2023-11-01'
-    frbr_date_name: jolux:dateApplicability
-  frbr_authors:
-  - href: '#ch.bk'
-    as_role: '#publisher'
-  - href: '#ch.bk'
-    as_role: '#rightsHolder'
-  frbr_country:
-    value: CH
-  frbr_number:
-    value: '152.3'
-  frbr_names:
-  - xml_lang: de
-    value: >-
-      Bundesgesetz vom 17. Dezember 2004 über das Öffentlichkeitsprinzip der Verwaltung
-      (Öffentlichkeitsgesetz, BGÖ)
-    short_form: BGÖ
-  - xml_lang: fr
-    value: >-
-      Loi fédérale du 17 décembre 2004 sur le principe de la transparence dans l'administration
-      (Loi sur la transparence, LTrans)
-    short_form: LTrans
-  - xml_lang: it
-    value: >-
-      Legge federale del 17 dicembre 2004 sul principio di trasparenza dell'amministrazione
-      (Legge sulla trasparenza, LTras)
-    short_form: LTras
-  - xml_lang: rm
-    value: >-
-      Lescha federala dals 17 da december 2004 davart il princip da la transparenza
-      da l'administraziun (Lescha da transparenza, LTrans)
-    short_form: LTrans
-  - xml_lang: en
-    value: >-
-      Federal Act of 17 December 2004 on Freedom of Information in the Administration
-      (Freedom of Information Act, FoIA)
-    short_form: FoIA
+  - … 3 weitere
   frbr_authoritative:
     value: 'true'
 
@@ -693,7 +668,30 @@ _FRBR-Expression-Ebene (akn:FRBRExpression): eine sprachspezifische Version des 
 
 
 #### Beispiele
-##### Beispiel FRBRExpression: sr101 excerpt 1 1
+##### Beispiel FRBRExpression: bgoe 1 1
+
+```yaml
+frbr_expression:
+  frbr_this:
+    value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de/main-text
+  frbr_uri:
+    value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de
+  frbr_dates:
+  - date_value: '2006-07-01'
+    frbr_date_name: jolux:dateEntryInForce
+  - date_value: '2004-12-17'
+    frbr_date_name: jolux:dateDocument
+  - … 1 weitere
+  frbr_authors:
+  - href: '#ch.bk'
+    as_role: '#publisher'
+  - href: '#ch.bk'
+    as_role: '#rightsHolder'
+  frbr_language:
+    language_value: de
+
+```
+##### Beispiel FRBRExpression: sr101 1 1
 
 ```yaml
 frbr_expression:
@@ -706,29 +704,12 @@ frbr_expression:
     frbr_date_name: jolux:dateEntryInForce
   - date_value: '1999-04-18'
     frbr_date_name: jolux:dateDocument
+  - … 1 weitere
   frbr_authors:
   - href: '#ch.bk'
     as_role: '#publisher'
-  frbr_language:
-    language_value: de
-
-```
-##### Beispiel FRBRExpression: bgoe excerpt 1 1
-
-```yaml
-frbr_expression:
-  frbr_this:
-    value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de/main-text
-  frbr_uri:
-    value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de
-  frbr_dates:
-  - date_value: '2006-07-01'
-    frbr_date_name: jolux:dateEntryInForce
-  - date_value: '2023-11-01'
-    frbr_date_name: jolux:dateApplicability
-  frbr_authors:
   - href: '#ch.bk'
-    as_role: '#publisher'
+    as_role: '#rightsHolder'
   frbr_language:
     language_value: de
 
@@ -790,7 +771,7 @@ _FRBR-Manifestations-Ebene (akn:FRBRManifestation): ein spezifisches Dateiformat
 
 
 #### Beispiele
-##### Beispiel FRBRManifestation: bgoe excerpt 1 1
+##### Beispiel FRBRManifestation: bgoe 1 1
 
 ```yaml
 frbr_manifestation:
@@ -799,32 +780,43 @@ frbr_manifestation:
   frbr_uri:
     value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de/xml
   frbr_dates:
-  - date_value: '2023-11-01'
-    frbr_date_name: jolux:dateApplicability
+  - date_value: '2006-07-01'
+    frbr_date_name: jolux:dateEntryInForce
+  - date_value: '2004-12-17'
+    frbr_date_name: jolux:dateDocument
+  - … 1 weitere
   frbr_authors:
   - href: '#ch.bk'
     as_role: '#publisher'
+  - href: '#ch.bk'
+    as_role: '#rightsHolder'
   frbr_format:
     value: xml
     fedlex_generator: 2024-q4-rel-1.6.5
 
 ```
-##### Beispiel FRBRManifestation: sr101 excerpt 1 1
+##### Beispiel FRBRManifestation: sr101 1 1
 
 ```yaml
 frbr_manifestation:
   frbr_this:
-    value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/main-text
+    value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/xml/main-text
   frbr_uri:
-    value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de
+    value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/xml
   frbr_dates:
-  - date_value: '2024-03-03'
-    frbr_date_name: jolux:dateApplicability
+  - date_value: '2000-01-01'
+    frbr_date_name: jolux:dateEntryInForce
+  - date_value: '1999-04-18'
+    frbr_date_name: jolux:dateDocument
+  - … 1 weitere
   frbr_authors:
   - href: '#ch.bk'
     as_role: '#publisher'
+  - href: '#ch.bk'
+    as_role: '#rightsHolder'
   frbr_format:
     value: xml
+    fedlex_generator: 2026-q1-rel-1.8.5
 
 ```
 
@@ -883,7 +875,15 @@ _Ein Datumseintrag einer FRBR-Entität (akn:FRBRdate). Das @name-Attribut verwen
 
 
 #### Beispiele
-##### Beispiel FRBRDate: sr101 excerpt 1 2
+##### Beispiel FRBRDate: bgoe 1 3
+
+```yaml
+frbr_dates:
+- date_value: '2023-11-01'
+  frbr_date_name: jolux:dateApplicability
+
+```
+##### Beispiel FRBRDate: sr101 1 2
 
 ```yaml
 frbr_dates:
@@ -891,15 +891,15 @@ frbr_dates:
   frbr_date_name: jolux:dateDocument
 
 ```
-##### Beispiel FRBRDate: bgoe excerpt 1 2
+##### Beispiel FRBRDate: bgoe 1 1
 
 ```yaml
 frbr_dates:
-- date_value: '2023-11-01'
-  frbr_date_name: jolux:dateApplicability
+- date_value: '2006-07-01'
+  frbr_date_name: jolux:dateEntryInForce
 
 ```
-##### Beispiel FRBRDate: sr101 excerpt 1 3
+##### Beispiel FRBRDate: sr101 1 3
 
 ```yaml
 frbr_dates:
@@ -907,28 +907,20 @@ frbr_dates:
   frbr_date_name: jolux:dateApplicability
 
 ```
-##### Beispiel FRBRDate: bgoe excerpt 1 3
+##### Beispiel FRBRDate: bgoe 1 2
 
 ```yaml
 frbr_dates:
-- date_value: '2023-11-01'
-  frbr_date_name: jolux:dateApplicability
+- date_value: '2004-12-17'
+  frbr_date_name: jolux:dateDocument
 
 ```
-##### Beispiel FRBRDate: bgoe excerpt 1 1
+##### Beispiel FRBRDate: sr101 1 1
 
 ```yaml
 frbr_dates:
-- date_value: '2023-11-01'
-  frbr_date_name: jolux:dateApplicability
-
-```
-##### Beispiel FRBRDate: sr101 excerpt 1 1
-
-```yaml
-frbr_dates:
-- date_value: '2024-03-03'
-  frbr_date_name: jolux:dateApplicability
+- date_value: '2000-01-01'
+  frbr_date_name: jolux:dateEntryInForce
 
 ```
 
@@ -987,7 +979,15 @@ _Ein Autoren- oder Rechteinhaber-Eintrag einer FRBR-Entität (akn:FRBRauthor). @
 
 
 #### Beispiele
-##### Beispiel FRBRAuthor: sr101 excerpt 1 2
+##### Beispiel FRBRAuthor: sr101 1 1
+
+```yaml
+frbr_authors:
+- href: '#ch.bk'
+  as_role: '#publisher'
+
+```
+##### Beispiel FRBRAuthor: bgoe 1 2
 
 ```yaml
 frbr_authors:
@@ -995,7 +995,7 @@ frbr_authors:
   as_role: '#rightsHolder'
 
 ```
-##### Beispiel FRBRAuthor: sr101 excerpt 1 1
+##### Beispiel FRBRAuthor: bgoe 1 1
 
 ```yaml
 frbr_authors:
@@ -1003,15 +1003,7 @@ frbr_authors:
   as_role: '#publisher'
 
 ```
-##### Beispiel FRBRAuthor: bgoe excerpt 1 1
-
-```yaml
-frbr_authors:
-- href: '#ch.bk'
-  as_role: '#publisher'
-
-```
-##### Beispiel FRBRAuthor: bgoe excerpt 1 2
+##### Beispiel FRBRAuthor: sr101 1 2
 
 ```yaml
 frbr_authors:
@@ -1074,27 +1066,7 @@ _Ein mehrsprachiger Namenseintrag des FRBR-Works (akn:FRBRname). Enthält den of
 
 
 #### Beispiele
-##### Beispiel FRBRName: bgoe excerpt 1 4
-
-```yaml
-frbr_names:
-- xml_lang: rm
-  value: >-
-    Lescha federala dals 17 da december 2004 davart il princip da la transparenza
-    da l'administraziun (Lescha da transparenza, LTrans)
-  short_form: LTrans
-
-```
-##### Beispiel FRBRName: sr101 excerpt 1 3
-
-```yaml
-frbr_names:
-- xml_lang: it
-  value: Costituzione federale della Confederazione Svizzera del 18 aprile 1999
-  short_form: Cost.
-
-```
-##### Beispiel FRBRName: bgoe excerpt 1 3
+##### Beispiel FRBRName: bgoe 1 1
 
 ```yaml
 frbr_names:
@@ -1105,7 +1077,7 @@ frbr_names:
   short_form: LTras
 
 ```
-##### Beispiel FRBRName: sr101 excerpt 1 2
+##### Beispiel FRBRName: sr101 1 2
 
 ```yaml
 frbr_names:
@@ -1114,29 +1086,16 @@ frbr_names:
   short_form: Cst.
 
 ```
-##### Beispiel FRBRName: bgoe excerpt 1 2
-
-```yaml
-frbr_names:
-- xml_lang: fr
-  value: >-
-    Loi fédérale du 17 décembre 2004 sur le principe de la transparence dans l'administration
-    (Loi sur la transparence, LTrans)
-  short_form: LTrans
-
-```
-##### Beispiel FRBRName: bgoe excerpt 1 5
+##### Beispiel FRBRName: sr101 1 3
 
 ```yaml
 frbr_names:
 - xml_lang: en
-  value: >-
-    Federal Act of 17 December 2004 on Freedom of Information in the Administration
-    (Freedom of Information Act, FoIA)
-  short_form: FoIA
+  value: Federal Constitution of 18 April 1999 of the Swiss Confederation
+  short_form: Cst.
 
 ```
-##### Beispiel FRBRName: bgoe excerpt 1 1
+##### Beispiel FRBRName: bgoe 1 3
 
 ```yaml
 frbr_names:
@@ -1147,7 +1106,27 @@ frbr_names:
   short_form: BGÖ
 
 ```
-##### Beispiel FRBRName: sr101 excerpt 1 4
+##### Beispiel FRBRName: bgoe 1 4
+
+```yaml
+frbr_names:
+- xml_lang: en
+  value: >-
+    Federal Act of 17 December 2004 on Freedom of Information in the Administration
+    (Freedom of Information Act, FoIA)
+  short_form: FoIA
+
+```
+##### Beispiel FRBRName: sr101 1 5
+
+```yaml
+frbr_names:
+- xml_lang: it
+  value: Costituzione federale della Confederazione Svizzera del 18 aprile 1999
+  short_form: Cost.
+
+```
+##### Beispiel FRBRName: sr101 1 4
 
 ```yaml
 frbr_names:
@@ -1156,13 +1135,35 @@ frbr_names:
   short_form: Cst.
 
 ```
-##### Beispiel FRBRName: sr101 excerpt 1 1
+##### Beispiel FRBRName: bgoe 1 2
+
+```yaml
+frbr_names:
+- xml_lang: fr
+  value: >-
+    Loi fédérale du 17 décembre 2004 sur le principe de la transparence dans l'administration
+    (Loi sur la transparence, LTrans)
+  short_form: LTrans
+
+```
+##### Beispiel FRBRName: sr101 1 1
 
 ```yaml
 frbr_names:
 - xml_lang: de
   value: Bundesverfassung der Schweizerischen Eidgenossenschaft vom 18. April 1999
   short_form: BV
+
+```
+##### Beispiel FRBRName: bgoe 1 5
+
+```yaml
+frbr_names:
+- xml_lang: rm
+  value: >-
+    Lescha federala dals 17 da december 2004 davart il princip da la transparenza
+    da l'administraziun (Lescha da transparenza, LTrans)
+  short_form: LTrans
 
 ```
 
@@ -1327,142 +1328,7 @@ _Das Erlasselement (akn:act). Hauptinhaltselement eines AkomaNtoso-Dokuments. Da
 
 
 #### Beispiele
-##### Beispiel Act: sr101 excerpt 1
-
-```yaml
-act_ref:
-  act_name: constitution
-  meta:
-    identification_ref:
-      source: '#ch.bk'
-      frbr_work:
-        frbr_this:
-          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/main-text
-        frbr_uri:
-          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303
-        frbr_dates:
-        - date_value: '2000-01-01'
-          frbr_date_name: jolux:dateEntryInForce
-        - date_value: '1999-04-18'
-          frbr_date_name: jolux:dateDocument
-        - date_value: '2024-03-03'
-          frbr_date_name: jolux:dateApplicability
-        frbr_authors:
-        - href: '#ch.bk'
-          as_role: '#publisher'
-        - href: '#ch.bk'
-          as_role: '#rightsHolder'
-        frbr_country:
-          value: CH
-        frbr_number:
-          value: '101'
-        frbr_names:
-        - xml_lang: de
-          value: Bundesverfassung der Schweizerischen Eidgenossenschaft vom 18. April
-            1999
-          short_form: BV
-        - xml_lang: fr
-          value: Constitution fédérale de la Confédération suisse du 18 avril 1999
-          short_form: Cst.
-        - xml_lang: it
-          value: Costituzione federale della Confederazione Svizzera del 18 aprile
-            1999
-          short_form: Cost.
-        - xml_lang: rm
-          value: Constituziun federala da la Confederaziun svizra dals 18 d'avrigl
-            1999
-          short_form: Cst.
-        frbr_authoritative:
-          value: 'true'
-      frbr_expression:
-        frbr_this:
-          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/main-text
-        frbr_uri:
-          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de
-        frbr_dates:
-        - date_value: '2000-01-01'
-          frbr_date_name: jolux:dateEntryInForce
-        - date_value: '1999-04-18'
-          frbr_date_name: jolux:dateDocument
-        frbr_authors:
-        - href: '#ch.bk'
-          as_role: '#publisher'
-        frbr_language:
-          language_value: de
-      frbr_manifestation:
-        frbr_this:
-          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/main-text
-        frbr_uri:
-          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de
-        frbr_dates:
-        - date_value: '2024-03-03'
-          frbr_date_name: jolux:dateApplicability
-        frbr_authors:
-        - href: '#ch.bk'
-          as_role: '#publisher'
-        frbr_format:
-          value: xml
-    references_ref:
-      source: '#ch.bk'
-      tlc_organizations:
-      - eId: ch.bk
-        href: https://fedlex.data.admin.ch/vocabulary/legal-institution/2
-        show_as: Bundeskanzlei
-      tlc_roles:
-      - eId: publisher
-        href: http://data.legilux.public.lu/resource/ontology/jolux#publisher
-        show_as: Editeur
-      - eId: rightsHolder
-        href: http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder
-        show_as: Détenteur des droits
-  preface_ref:
-    preface_paragraphs:
-    - doc_number: '101'
-    - doc_title:
-        inline_content:
-        - element_type: TextRun
-          text: Bundesverfassung
-        - element_type: Br
-        - element_type: TextRun
-          text: der Schweizerischen Eidgenossenschaft
-  body:
-    titles:
-    - eId: tit_1
-      num:
-        inline_content:
-        - element_type: TextRun
-          text: '1. Titel: '
-      heading:
-        inline_content:
-        - element_type: TextRun
-          text: Allgemeine Bestimmungen
-      articles:
-      - eId: art_1
-        num:
-          inline_content:
-          - element_type: B
-            inline_content:
-            - element_type: TextRun
-              text: Art. 1
-        heading:
-          inline_content:
-          - element_type: TextRun
-            text: Schweizerische Eidgenossenschaft
-        paragraphs:
-        - eId: art_1/para
-          content_ref:
-            block_paragraphs:
-            - inline_content:
-              - element_type: TextRun
-                text: >-
-                  Das Schweizervolk und die Kantone Zürich, Bern, Luzern, Uri, Schwyz,
-                  Obwalden und Nidwalden, Glarus, Zug, Freiburg, Solothurn, Basel-Stadt
-                  und Basel-Landschaft, Schaffhausen, Appenzell Ausserrhoden und Appenzell
-                  Innerrhoden, St. Gallen, Graubünden, Aargau, Thurgau, Tessin, Waadt,
-                  Wallis, Neuenburg, Genf und Jura bilden die Schweizerische Eidgenossenschaft.
-
-```
-##### Beispiel Act: bgoe excerpt 1
+##### Beispiel Act: bgoe 1
 
 ```yaml
 act_ref:
@@ -1480,8 +1346,7 @@ act_ref:
           frbr_date_name: jolux:dateEntryInForce
         - date_value: '2004-12-17'
           frbr_date_name: jolux:dateDocument
-        - date_value: '2023-11-01'
-          frbr_date_name: jolux:dateApplicability
+        - … 1 weitere
         frbr_authors:
         - href: '#ch.bk'
           as_role: '#publisher'
@@ -1492,31 +1357,17 @@ act_ref:
         frbr_number:
           value: '152.3'
         frbr_names:
-        - xml_lang: de
-          value: >-
-            Bundesgesetz vom 17. Dezember 2004 über das Öffentlichkeitsprinzip der
-            Verwaltung (Öffentlichkeitsgesetz, BGÖ)
-          short_form: BGÖ
-        - xml_lang: fr
-          value: >-
-            Loi fédérale du 17 décembre 2004 sur le principe de la transparence dans
-            l'administration (Loi sur la transparence, LTrans)
-          short_form: LTrans
         - xml_lang: it
           value: >-
             Legge federale del 17 dicembre 2004 sul principio di trasparenza dell'amministrazione
             (Legge sulla trasparenza, LTras)
           short_form: LTras
-        - xml_lang: rm
+        - xml_lang: fr
           value: >-
-            Lescha federala dals 17 da december 2004 davart il princip da la transparenza
-            da l'administraziun (Lescha da transparenza, LTrans)
+            Loi fédérale du 17 décembre 2004 sur le principe de la transparence dans
+            l'administration (Loi sur la transparence, LTrans)
           short_form: LTrans
-        - xml_lang: en
-          value: >-
-            Federal Act of 17 December 2004 on Freedom of Information in the Administration
-            (Freedom of Information Act, FoIA)
-          short_form: FoIA
+        - … 3 weitere
         frbr_authoritative:
           value: 'true'
       frbr_expression:
@@ -1527,11 +1378,14 @@ act_ref:
         frbr_dates:
         - date_value: '2006-07-01'
           frbr_date_name: jolux:dateEntryInForce
-        - date_value: '2023-11-01'
-          frbr_date_name: jolux:dateApplicability
+        - date_value: '2004-12-17'
+          frbr_date_name: jolux:dateDocument
+        - … 1 weitere
         frbr_authors:
         - href: '#ch.bk'
           as_role: '#publisher'
+        - href: '#ch.bk'
+          as_role: '#rightsHolder'
         frbr_language:
           language_value: de
       frbr_manifestation:
@@ -1540,11 +1394,16 @@ act_ref:
         frbr_uri:
           value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de/xml
         frbr_dates:
-        - date_value: '2023-11-01'
-          frbr_date_name: jolux:dateApplicability
+        - date_value: '2006-07-01'
+          frbr_date_name: jolux:dateEntryInForce
+        - date_value: '2004-12-17'
+          frbr_date_name: jolux:dateDocument
+        - … 1 weitere
         frbr_authors:
         - href: '#ch.bk'
           as_role: '#publisher'
+        - href: '#ch.bk'
+          as_role: '#rightsHolder'
         frbr_format:
           value: xml
           fedlex_generator: 2024-q4-rel-1.6.5
@@ -1573,132 +1432,275 @@ act_ref:
     - doc_number: '152.3 '
     - doc_title:
         inline_content:
-        - element_type: TextRun
-          text: Bundesgesetz
-        - element_type: Br
-        - element_type: TextRun
-          text: über das Öffentlichkeitsprinzip der Verwaltung
+        - …
+        - …
+        - … 1 weitere
+    - … 2 weitere
+  preamble_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - element_type: TextRun
+        text: Die Bundesversammlung der Schweizerischen Eidgenossenschaft,
+    - element_type: BlockParagraph
+      inline_content:
+      - element_type: TextRun
+        text: gestützt auf Artikel 173 Absatz 2 der Bundesverfassung
+      - element_type: AuthorialNote
+        content_blocks:
+        - …
+      - … 5 weitere
+    - … 1 weitere
   body:
-    articles:
-    - eId: art_1
+    sections:
+    - eId: sec_1
       num:
         inline_content:
-        - element_type: B
-          inline_content:
-          - element_type: TextRun
-            text: Art. 1
+        - …
       heading:
         inline_content:
-        - element_type: TextRun
-          text: Zweck und Gegenstand
-      paragraphs:
-      - eId: art_1/para
-        content_ref:
-          block_paragraphs:
-          - inline_content:
-            - element_type: TextRun
-              text: >-
-                Dieses Gesetz soll die Transparenz über den Auftrag, die Organisation
-                und die Tätigkeit der Verwaltung fördern. Zu diesem Zweck trägt es
-                zur Information der Öffentlichkeit bei, indem es den Zugang zu amtlichen
-                Dokumenten gewährleistet.
-    - eId: art_2
+        - …
+      articles:
+      - eId: art_1
+        num: …
+        heading: …
+        paragraphs:
+        - …
+      - eId: art_2
+        num: …
+        heading: …
+        paragraphs:
+        - …
+        - …
+        - … 1 weitere
+      - … 3 weitere
+    - eId: sec_2
       num:
         inline_content:
-        - element_type: B
-          inline_content:
-          - element_type: TextRun
-            text: Art. 2
+        - …
       heading:
         inline_content:
-        - element_type: TextRun
-          text: Persönlicher Geltungsbereich
-      paragraphs:
-      - eId: art_2/para_1
-        num:
-          inline_content:
-          - element_type: TextRun
-            text: '1'
-        content_ref:
-          block_lists:
-          - eId: art_2/para_1/lst
-            list_introduction:
-              eId: art_2/para_1/listintro
-              inline_content:
-              - element_type: TextRun
-                text: ' Dieses Gesetz gilt für:'
-            items:
-            - eId: art_2/para_1/lbl_a
-              num:
-                inline_content:
-                - element_type: TextRun
-                  text: 'a. '
-              block_paragraphs:
-              - inline_content:
-                - element_type: TextRun
-                  text: die Bundesverwaltung;
-            - eId: art_2/para_1/lbl_b
-              num:
-                inline_content:
-                - element_type: TextRun
-                  text: 'b. '
-              block_paragraphs:
-              - inline_content:
-                - element_type: TextRun
-                  text: >-
-                    Organisationen und Personen des öffentlichen oder privaten Rechts,
-                    die nicht der Bundesverwaltung angehören, soweit sie Erlasse oder
-                    erstinstanzliche Verfügungen im Sinne von Artikel 5 des Bundesgesetzes
-                    vom 20. Dezember 1968 über das Verwaltungsverfahren erlassen;
+        - …
+      articles:
+      - eId: art_6
+        num: …
+        heading: …
+        paragraphs:
+        - …
+        - …
+        - … 1 weitere
+      - eId: art_7
+        num: …
+        heading: …
+        paragraphs:
+        - …
+        - …
+      - … 2 weitere
+    - … 3 weitere
   components_ref:
     component_list:
     - doc_ref:
         doc_name: annex
+        meta:
+          identification_ref: …
         preface_ref:
           containers:
-          - container_name: headerOfAnnex
-            blocks:
-            - block_name: heading
-              inline_content:
-              - element_type: TextRun
-                text: Anhang
+          - …
         main_body:
-          block_paragraphs:
-          - inline_content:
-            - element_type: TextRun
-              text: (Art. 22)
+          content_blocks:
+          - …
           levels:
-          - eId: annex_u1/lvl_u1
-            heading:
-              inline_content:
-              - element_type: TextRun
-                text: Änderung bisherigen Rechts
-            content_ref:
-              block_paragraphs:
-              - inline_content:
-                - element_type: TextRun
-                  text: 'Die nachstehenden Gesetze werden wie folgt geändert:'
-              - inline_content:
-                - element_type: TextRun
-                  text: …
-                - element_type: AuthorialNote
-                  block_paragraphs:
-                  - inline_content:
-                    - element_type: TextRun
-                      text: Die Änderungen können unter
-                    - element_type: Ref
-                      href: https://fedlex.data.admin.ch/eli/oc/2006/355
-                      inline_content:
-                      - element_type: TextRun
-                        text: AS
-                      - element_type: B
-                        inline_content:
-                        - element_type: TextRun
-                          text: '2006'
-                      - element_type: TextRun
-                        text: '2319'
-                    - element_type: TextRun
-                      text: konsultiert werden.
+          - …
+
+```
+##### Beispiel Act: sr101 1
+
+```yaml
+act_ref:
+  act_name: publicLaw
+  meta:
+    identification_ref:
+      source: '#ch.bk'
+      frbr_work:
+        frbr_this:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/main-text
+        frbr_uri:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303
+        frbr_dates:
+        - date_value: '2000-01-01'
+          frbr_date_name: jolux:dateEntryInForce
+        - date_value: '1999-04-18'
+          frbr_date_name: jolux:dateDocument
+        - … 1 weitere
+        frbr_authors:
+        - href: '#ch.bk'
+          as_role: '#publisher'
+        - href: '#ch.bk'
+          as_role: '#rightsHolder'
+        frbr_country:
+          value: CH
+        frbr_number:
+          value: '101'
+        frbr_names:
+        - xml_lang: de
+          value: Bundesverfassung der Schweizerischen Eidgenossenschaft vom 18. April
+            1999
+          short_form: BV
+        - xml_lang: fr
+          value: Constitution fédérale de la Confédération suisse du 18 avril 1999
+          short_form: Cst.
+        - … 3 weitere
+        frbr_authoritative:
+          value: 'true'
+      frbr_expression:
+        frbr_this:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/main-text
+        frbr_uri:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de
+        frbr_dates:
+        - date_value: '2000-01-01'
+          frbr_date_name: jolux:dateEntryInForce
+        - date_value: '1999-04-18'
+          frbr_date_name: jolux:dateDocument
+        - … 1 weitere
+        frbr_authors:
+        - href: '#ch.bk'
+          as_role: '#publisher'
+        - href: '#ch.bk'
+          as_role: '#rightsHolder'
+        frbr_language:
+          language_value: de
+      frbr_manifestation:
+        frbr_this:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/xml/main-text
+        frbr_uri:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/xml
+        frbr_dates:
+        - date_value: '2000-01-01'
+          frbr_date_name: jolux:dateEntryInForce
+        - date_value: '1999-04-18'
+          frbr_date_name: jolux:dateDocument
+        - … 1 weitere
+        frbr_authors:
+        - href: '#ch.bk'
+          as_role: '#publisher'
+        - href: '#ch.bk'
+          as_role: '#rightsHolder'
+        frbr_format:
+          value: xml
+          fedlex_generator: 2026-q1-rel-1.8.5
+    references_ref:
+      source: '#ch.bk'
+      tlc_organizations:
+      - eId: ch.bk
+        href: https://fedlex.data.admin.ch/vocabulary/legal-institution/2
+        show_as: Bundeskanzlei
+      tlc_roles:
+      - eId: publisher
+        href: http://data.legilux.public.lu/resource/ontology/jolux#publisher
+        show_as: Editeur
+      - eId: rightsHolder
+        href: http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder
+        show_as: Détenteur des droits
+      tlc_references:
+      - name_attr: language
+        href: http://publications.europa.eu/resource/authority/language/DEU
+        show_as: de
+      - name_attr: format
+        href: https://fedlex.data.admin.ch/vocabulary/user-format/xml
+        show_as: xml
+  preface_ref:
+    preface_paragraphs:
+    - doc_number: '101'
+    - doc_title:
+        inline_content:
+        - …
+        - …
+        - … 1 weitere
+    - … 1 weitere
+  preamble_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      fedlex_role: heading
+      inline_content:
+      - element_type: B
+        inline_content:
+        - …
+    - element_type: BlockParagraph
+      inline_content:
+      - element_type: TextRun
+        text: Im Namen Gottes des Allmächtigen!
+    - … 7 weitere
+  body:
+    titles:
+    - eId: tit_1
+      num:
+        inline_content:
+        - …
+      heading:
+        inline_content:
+        - …
+      articles:
+      - eId: art_1
+        num: …
+        heading: …
+        paragraphs:
+        - …
+      - eId: art_2
+        num: …
+        heading: …
+        paragraphs:
+        - …
+        - …
+        - … 2 weitere
+      - … 5 weitere
+    - eId: tit_2
+      num:
+        inline_content:
+        - …
+      heading:
+        inline_content:
+        - …
+      chapters:
+      - eId: tit_2/chap_1
+        num: …
+        heading: …
+        articles:
+        - …
+        - …
+        - … 30 weitere
+      - eId: tit_2/chap_2
+        num: …
+        heading: …
+        articles:
+        - …
+        - …
+        - … 2 weitere
+      - … 1 weitere
+    - … 4 weitere
+    provisos:
+    - eId: disp_u1
+      heading:
+        inline_content:
+        - …
+      paragraphs:
+      - eId: disp_u1/para
+        content_ref: …
+    - eId: disp_u2
+      heading:
+        inline_content:
+        - …
+      paragraphs:
+      - eId: disp_u2/para
+        content_ref: …
+      levels:
+      - eId: disp_u2/lvl_A
+        num: …
+        content_ref: …
+      - eId: disp_u2/lvl_B
+        num: …
+        content_ref: …
+      - … 24 weitere
 
 ```
 
@@ -1787,22 +1789,7 @@ _Der Vorspann des Erlasses (akn:preface) mit Dokumentnummer und -titel. Fedlex S
 
 
 #### Beispiele
-##### Beispiel Preface: sr101 excerpt 1 1
-
-```yaml
-preface_ref:
-  preface_paragraphs:
-  - doc_number: '101'
-  - doc_title:
-      inline_content:
-      - element_type: TextRun
-        text: Bundesverfassung
-      - element_type: Br
-      - element_type: TextRun
-        text: der Schweizerischen Eidgenossenschaft
-
-```
-##### Beispiel Preface: bgoe excerpt 1 1
+##### Beispiel Preface: bgoe 1 1
 
 ```yaml
 preface_ref:
@@ -1813,8 +1800,23 @@ preface_ref:
       - element_type: TextRun
         text: Bundesgesetz
       - element_type: Br
+      - … 1 weitere
+  - … 2 weitere
+
+```
+##### Beispiel Preface: sr101 1 1
+
+```yaml
+preface_ref:
+  preface_paragraphs:
+  - doc_number: '101'
+  - doc_title:
+      inline_content:
       - element_type: TextRun
-        text: über das Öffentlichkeitsprinzip der Verwaltung
+        text: Bundesverfassung
+      - element_type: Br
+      - … 1 weitere
+  - … 1 weitere
 
 ```
 
@@ -1886,14 +1888,14 @@ Mindestens eines der folgenden Felder muss gesetzt sein:
 
 
 #### Beispiele
-##### Beispiel PrefaceP: sr101 excerpt 1 1
+##### Beispiel PrefaceP: sr101 1 1
 
 ```yaml
 preface_paragraphs:
 - doc_number: '101'
 
 ```
-##### Beispiel PrefaceP: sr101 excerpt 1 2
+##### Beispiel PrefaceP: sr101 1 2
 
 ```yaml
 preface_paragraphs:
@@ -1902,18 +1904,28 @@ preface_paragraphs:
     - element_type: TextRun
       text: Bundesverfassung
     - element_type: Br
-    - element_type: TextRun
-      text: der Schweizerischen Eidgenossenschaft
+    - … 1 weitere
 
 ```
-##### Beispiel PrefaceP: bgoe excerpt 1 1
+##### Beispiel PrefaceP: sr101 1 3
 
 ```yaml
 preface_paragraphs:
-- doc_number: '152.3 '
+- inline_content:
+  - element_type: TextRun
+    text: vom 18. April 1999 (Stand am 3. März 2024)
 
 ```
-##### Beispiel PrefaceP: bgoe excerpt 1 2
+##### Beispiel PrefaceP: bgoe 1 3
+
+```yaml
+preface_paragraphs:
+- inline_content:
+  - element_type: TextRun
+    text: (Öffentlichkeitsgesetz, BGÖ)
+
+```
+##### Beispiel PrefaceP: bgoe 1 2
 
 ```yaml
 preface_paragraphs:
@@ -1922,8 +1934,23 @@ preface_paragraphs:
     - element_type: TextRun
       text: Bundesgesetz
     - element_type: Br
-    - element_type: TextRun
-      text: über das Öffentlichkeitsprinzip der Verwaltung
+    - … 1 weitere
+
+```
+##### Beispiel PrefaceP: bgoe 1 1
+
+```yaml
+preface_paragraphs:
+- doc_number: '152.3 '
+
+```
+##### Beispiel PrefaceP: bgoe 1 4
+
+```yaml
+preface_paragraphs:
+- inline_content:
+  - element_type: TextRun
+    text: vom 17. Dezember 2004 (Stand am 1. November 2023)
 
 ```
 
@@ -1953,7 +1980,7 @@ _Die Präambel des Erlasses (akn:preamble) mit einleitenden Fliesstext-Absätzen
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
-| block_paragraphs | * <br/> [BlockParagraph](#BlockParagraph) | Block-Absatz-Elemente (akn:p) innerhalb von Content. |
+| content_blocks | * <br/> [BlockElement](#BlockElement) | Blockinhalt in Lesereihenfolge: Absätze, Aufzählungen und Tabellen, wie sie im Dokument aufeinanderfolgen.  |
 
 
 
@@ -2174,7 +2201,131 @@ _Titel-Ebene eines Erlasses (akn:title). Erlaubte Kinder: book, part, chapter, s
 
 
 #### Beispiele
-##### Beispiel Title: Titel mit Nummer, Überschrift und Artikeln
+##### Beispiel Title: sr101 1 3
+
+```yaml
+titles:
+- eId: tit_3
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '3. Titel:'
+  heading:
+    inline_content:
+    - element_type: TextRun
+      text: Bund, Kantone und Gemeinden
+  chapters:
+  - eId: tit_3/chap_1
+    num:
+      inline_content:
+      - …
+    heading:
+      inline_content:
+      - …
+    sections:
+    - eId: tit_3/chap_1/sec_1
+      num: …
+      heading: …
+      articles:
+      - …
+      - …
+      - … 1 weitere
+    - eId: tit_3/chap_1/sec_2
+      num: …
+      heading: …
+      articles:
+      - …
+      - …
+      - … 5 weitere
+    - … 2 weitere
+  - eId: tit_3/chap_2
+    num:
+      inline_content:
+      - …
+    heading:
+      inline_content:
+      - …
+    sections:
+    - eId: tit_3/chap_2/sec_1
+      num: …
+      heading: …
+      articles:
+      - …
+      - …
+      - … 1 weitere
+    - eId: tit_3/chap_2/sec_2
+      num: …
+      heading: …
+      articles:
+      - …
+      - …
+      - … 3 weitere
+    - … 8 weitere
+  - … 1 weitere
+
+```
+##### Beispiel Title: sr101 1 5
+
+```yaml
+titles:
+- eId: tit_5
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '5. Titel:'
+  heading:
+    inline_content:
+    - element_type: TextRun
+      text: Bundesbehörden
+  chapters:
+  - eId: tit_5/chap_1
+    num:
+      inline_content:
+      - …
+    heading:
+      inline_content:
+      - …
+    articles:
+    - eId: art_143
+      num: …
+      heading: …
+      paragraphs:
+      - …
+    - eId: art_144
+      num: …
+      heading: …
+      paragraphs:
+      - …
+      - …
+      - … 1 weitere
+    - … 3 weitere
+  - eId: tit_5/chap_2
+    num:
+      inline_content:
+      - …
+    heading:
+      inline_content:
+      - …
+    sections:
+    - eId: tit_5/chap_2/sec_1
+      num: …
+      heading: …
+      articles:
+      - …
+      - …
+      - … 6 weitere
+    - eId: tit_5/chap_2/sec_2
+      num: …
+      heading: …
+      articles:
+      - …
+      - …
+      - … 5 weitere
+    - … 1 weitere
+  - … 2 weitere
+
+```
+##### Beispiel Title: Title with number heading and articles
 
 ```yaml
 titles:
@@ -2182,7 +2333,7 @@ titles:
   num:
     inline_content:
     - element_type: TextRun
-      text: '1. Titel: '
+      text: '1. Titel:'
   heading:
     inline_content:
     - element_type: TextRun
@@ -2191,26 +2342,206 @@ titles:
   - eId: art_1
     num:
       inline_content:
-      - element_type: B
-        inline_content:
-        - element_type: TextRun
-          text: Art. 1
+      - …
     heading:
       inline_content:
-      - element_type: TextRun
-        text: Schweizerische Eidgenossenschaft
+      - …
     paragraphs:
     - eId: art_1/para
-      content_ref:
-        block_paragraphs:
-        - inline_content:
-          - element_type: TextRun
-            text: >-
-              Das Schweizervolk und die Kantone Zürich, Bern, Luzern, Uri, Schwyz,
-              Obwalden und Nidwalden, Glarus, Zug, Freiburg, Solothurn, Basel-Stadt
-              und Basel-Landschaft, Schaffhausen, Appenzell Ausserrhoden und Appenzell
-              Innerrhoden, St. Gallen, Graubünden, Aargau, Thurgau, Tessin, Waadt,
-              Wallis, Neuenburg, Genf und Jura bilden die Schweizerische Eidgenossenschaft.
+      content_ref: …
+  - eId: art_2
+    num:
+      inline_content:
+      - …
+    heading:
+      inline_content:
+      - …
+    paragraphs:
+    - eId: art_2/para_1
+      num: …
+      content_ref: …
+    - eId: art_2/para_2
+      num: …
+      content_ref: …
+    - … 2 weitere
+  - … 5 weitere
+
+```
+##### Beispiel Title: sr101 1 6
+
+```yaml
+titles:
+- eId: tit_6
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '6. Titel:'
+  heading:
+    inline_content:
+    - element_type: TextRun
+      text: Revision der Bundesverfassung und Übergangsbestimmungen
+  chapters:
+  - eId: tit_6/chap_1
+    num:
+      inline_content:
+      - …
+    heading:
+      inline_content:
+      - …
+    articles:
+    - eId: art_192
+      num: …
+      heading: …
+      paragraphs:
+      - …
+      - …
+    - eId: art_193
+      num: …
+      heading: …
+      paragraphs:
+      - …
+      - …
+      - … 2 weitere
+    - … 2 weitere
+  - eId: tit_6/chap_2
+    num:
+      inline_content:
+      - …
+    heading:
+      inline_content:
+      - …
+    articles:
+    - eId: art_196
+      num: …
+      heading: …
+      subdivisions:
+      - …
+      - …
+      - … 14 weitere
+    - eId: art_197
+      num: …
+      heading: …
+      subdivisions:
+      - …
+      - …
+      - … 14 weitere
+
+```
+##### Beispiel Title: sr101 1 2
+
+```yaml
+titles:
+- eId: tit_2
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '2. Titel:'
+  heading:
+    inline_content:
+    - element_type: TextRun
+      text: Grundrechte, Bürgerrechte und Sozialziele
+  chapters:
+  - eId: tit_2/chap_1
+    num:
+      inline_content:
+      - …
+    heading:
+      inline_content:
+      - …
+    articles:
+    - eId: art_7
+      num: …
+      heading: …
+      paragraphs:
+      - …
+    - eId: art_8
+      num: …
+      heading: …
+      paragraphs:
+      - …
+      - …
+      - … 2 weitere
+    - … 30 weitere
+  - eId: tit_2/chap_2
+    num:
+      inline_content:
+      - …
+    heading:
+      inline_content:
+      - …
+    articles:
+    - eId: art_37
+      num: …
+      heading: …
+      paragraphs:
+      - …
+      - …
+    - eId: art_38
+      num: …
+      heading: …
+      paragraphs:
+      - …
+      - …
+      - … 1 weitere
+    - … 2 weitere
+  - … 1 weitere
+
+```
+##### Beispiel Title: sr101 1 4
+
+```yaml
+titles:
+- eId: tit_4
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '4. Titel:'
+  heading:
+    inline_content:
+    - element_type: TextRun
+      text: Volk und Stände
+  chapters:
+  - eId: tit_4/chap_1
+    num:
+      inline_content:
+      - …
+    heading:
+      inline_content:
+      - …
+    articles:
+    - eId: art_136
+      num: …
+      heading: …
+      paragraphs:
+      - …
+      - …
+    - eId: art_137
+      num: …
+      heading: …
+      paragraphs:
+      - …
+  - eId: tit_4/chap_2
+    num:
+      inline_content:
+      - …
+    heading:
+      inline_content:
+      - …
+    articles:
+    - eId: art_138
+      num: …
+      heading: …
+      paragraphs:
+      - …
+      - …
+    - eId: art_139
+      num: …
+      heading: …
+      paragraphs:
+      - …
+      - …
+      - … 3 weitere
+    - … 6 weitere
 
 ```
 
@@ -2672,7 +3003,28 @@ _Ein Artikel, die primäre legislative Einheit (akn:article). Constraints (FLX-A
 
 
 #### Beispiele
-##### Beispiel Article: Artikel mit fett ausgezeichneter Nummer
+##### Beispiel Article: sr101 1 3
+
+```yaml
+articles:
+- eId: art_3
+  num:
+    inline_content:
+    - element_type: B
+      inline_content:
+      - …
+  heading:
+    inline_content:
+    - element_type: TextRun
+      text: Kantone
+  paragraphs:
+  - eId: art_3/para
+    content_ref:
+      content_blocks:
+      - …
+
+```
+##### Beispiel Article: Article with a bold article number
 
 ```yaml
 articles:
@@ -2681,8 +3033,7 @@ articles:
     inline_content:
     - element_type: B
       inline_content:
-      - element_type: TextRun
-        text: Art. 1
+      - …
   heading:
     inline_content:
     - element_type: TextRun
@@ -2690,15 +3041,8 @@ articles:
   paragraphs:
   - eId: art_1/para
     content_ref:
-      block_paragraphs:
-      - inline_content:
-        - element_type: TextRun
-          text: >-
-            Das Schweizervolk und die Kantone Zürich, Bern, Luzern, Uri, Schwyz, Obwalden
-            und Nidwalden, Glarus, Zug, Freiburg, Solothurn, Basel-Stadt und Basel-Landschaft,
-            Schaffhausen, Appenzell Ausserrhoden und Appenzell Innerrhoden, St. Gallen,
-            Graubünden, Aargau, Thurgau, Tessin, Waadt, Wallis, Neuenburg, Genf und
-            Jura bilden die Schweizerische Eidgenossenschaft.
+      content_blocks:
+      - …
 
 ```
 ##### Beispiel Article: Article with numbered paragraphs
@@ -2710,49 +3054,126 @@ articles:
     inline_content:
     - element_type: B
       inline_content:
-      - element_type: TextRun
-        text: Art. 2
+      - …
   heading:
     inline_content:
     - element_type: TextRun
-      text: Persönlicher Geltungsbereich
+      text: Zweck
   paragraphs:
   - eId: art_2/para_1
     num:
       inline_content:
-      - element_type: TextRun
-        text: '1'
+      - …
     content_ref:
-      block_lists:
-      - eId: art_2/para_1/lst
-        list_introduction:
-          eId: art_2/para_1/listintro
-          inline_content:
-          - element_type: TextRun
-            text: ' Dieses Gesetz gilt für:'
-        items:
-        - eId: art_2/para_1/lbl_a
-          num:
-            inline_content:
-            - element_type: TextRun
-              text: 'a. '
-          block_paragraphs:
-          - inline_content:
-            - element_type: TextRun
-              text: die Bundesverwaltung;
-        - eId: art_2/para_1/lbl_b
-          num:
-            inline_content:
-            - element_type: TextRun
-              text: 'b. '
-          block_paragraphs:
-          - inline_content:
-            - element_type: TextRun
-              text: >-
-                Organisationen und Personen des öffentlichen oder privaten Rechts,
-                die nicht der Bundesverwaltung angehören, soweit sie Erlasse oder
-                erstinstanzliche Verfügungen im Sinne von Artikel 5 des Bundesgesetzes
-                vom 20. Dezember 1968 über das Verwaltungsverfahren erlassen;
+      content_blocks:
+      - …
+  - eId: art_2/para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - … 2 weitere
+
+```
+##### Beispiel Article: sr101 1 4
+
+```yaml
+articles:
+- eId: art_4
+  num:
+    inline_content:
+    - element_type: B
+      inline_content:
+      - …
+  heading:
+    inline_content:
+    - element_type: TextRun
+      text: Landessprachen
+  paragraphs:
+  - eId: art_4/para
+    content_ref:
+      content_blocks:
+      - …
+
+```
+##### Beispiel Article: sr101 1 6
+
+```yaml
+articles:
+- eId: art_5_a
+  num:
+    inline_content:
+    - element_type: B
+      inline_content:
+      - …
+    - element_type: I
+      inline_content:
+      - …
+    - … 1 weitere
+  heading:
+    inline_content:
+    - element_type: TextRun
+      text: Subsidiarität
+  paragraphs:
+  - eId: art_5_a/para
+    content_ref:
+      content_blocks:
+      - …
+
+```
+##### Beispiel Article: sr101 1 7
+
+```yaml
+articles:
+- eId: art_6
+  num:
+    inline_content:
+    - element_type: B
+      inline_content:
+      - …
+  heading:
+    inline_content:
+    - element_type: TextRun
+      text: Individuelle und gesellschaftliche Verantwortung
+  paragraphs:
+  - eId: art_6/para
+    content_ref:
+      content_blocks:
+      - …
+
+```
+##### Beispiel Article: sr101 1 5
+
+```yaml
+articles:
+- eId: art_5
+  num:
+    inline_content:
+    - element_type: B
+      inline_content:
+      - …
+  heading:
+    inline_content:
+    - element_type: TextRun
+      text: Grundsätze rechtsstaatlichen Handelns
+  paragraphs:
+  - eId: art_5/para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: art_5/para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - … 2 weitere
 
 ```
 
@@ -2869,7 +3290,107 @@ _Ein Absatz innerhalb eines Artikels oder Unterabschnitts (akn:paragraph). Const
 
 
 #### Beispiele
-##### Beispiel Paragraph: Absatz mit Aufzählung statt Fliesstext
+##### Beispiel Paragraph: sr101 5 2
+
+```yaml
+paragraphs:
+- eId: art_5/para_2
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '2'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+##### Beispiel Paragraph: sr101 3 1
+
+```yaml
+paragraphs:
+- eId: art_3/para
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+##### Beispiel Paragraph: sr101 6 1
+
+```yaml
+paragraphs:
+- eId: art_5_a/para
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+##### Beispiel Paragraph: sr101 2 4
+
+```yaml
+paragraphs:
+- eId: art_2/para_4
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '4'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+##### Beispiel Paragraph: sr101 5 1
+
+```yaml
+paragraphs:
+- eId: art_5/para_1
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '1'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+##### Beispiel Paragraph: sr101 4 1
+
+```yaml
+paragraphs:
+- eId: art_4/para
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+##### Beispiel Paragraph: sr101 5 3
+
+```yaml
+paragraphs:
+- eId: art_5/para_3
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '3'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+##### Beispiel Paragraph: Paragraph with a list instead of running text
 
 ```yaml
 paragraphs:
@@ -2879,36 +3400,70 @@ paragraphs:
     - element_type: TextRun
       text: '1'
   content_ref:
-    block_lists:
-    - eId: art_2/para_1/lst
-      list_introduction:
-        eId: art_2/para_1/listintro
-        inline_content:
-        - element_type: TextRun
-          text: ' Dieses Gesetz gilt für:'
-      items:
-      - eId: art_2/para_1/lbl_a
-        num:
-          inline_content:
-          - element_type: TextRun
-            text: 'a. '
-        block_paragraphs:
-        - inline_content:
-          - element_type: TextRun
-            text: die Bundesverwaltung;
-      - eId: art_2/para_1/lbl_b
-        num:
-          inline_content:
-          - element_type: TextRun
-            text: 'b. '
-        block_paragraphs:
-        - inline_content:
-          - element_type: TextRun
-            text: >-
-              Organisationen und Personen des öffentlichen oder privaten Rechts, die
-              nicht der Bundesverwaltung angehören, soweit sie Erlasse oder erstinstanzliche
-              Verfügungen im Sinne von Artikel 5 des Bundesgesetzes vom 20. Dezember
-              1968 über das Verwaltungsverfahren erlassen;
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+##### Beispiel Paragraph: sr101 7 1
+
+```yaml
+paragraphs:
+- eId: art_6/para
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+##### Beispiel Paragraph: sr101 5 4
+
+```yaml
+paragraphs:
+- eId: art_5/para_4
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '4'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+##### Beispiel Paragraph: sr101 2 2
+
+```yaml
+paragraphs:
+- eId: art_2/para_2
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '2'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+##### Beispiel Paragraph: sr101 2 3
+
+```yaml
+paragraphs:
+- eId: art_2/para_3
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '3'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
 
 ```
 ##### Beispiel Paragraph: Paragraph with running text
@@ -2917,15 +3472,10 @@ paragraphs:
 paragraphs:
 - eId: art_1/para
   content_ref:
-    block_paragraphs:
-    - inline_content:
-      - element_type: TextRun
-        text: >-
-          Das Schweizervolk und die Kantone Zürich, Bern, Luzern, Uri, Schwyz, Obwalden
-          und Nidwalden, Glarus, Zug, Freiburg, Solothurn, Basel-Stadt und Basel-Landschaft,
-          Schaffhausen, Appenzell Ausserrhoden und Appenzell Innerrhoden, St. Gallen,
-          Graubünden, Aargau, Thurgau, Tessin, Waadt, Wallis, Neuenburg, Genf und
-          Jura bilden die Schweizerische Eidgenossenschaft.
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
 
 ```
 
@@ -3014,9 +3564,9 @@ _Ein Vorbehalt im Hauptteil eines Erlasses (akn:proviso). Als Hauptteil-Element 
 | eId | 1 <br/> [EIdType](#EIdType) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
 | num | 0..1 <br/> [MixedText](#MixedText) | Nummerierungselement für ein Strukturelement oder einen Artikel (akn:num). Bei Artikeln obligatorisch (FLX-ART-001). num muss vor heading und subheading stehen (FLX-HD-001, FLX-HD-002, FLX-HD-003).  |
 | heading | 0..1 <br/> [MixedText](#MixedText) | Überschrift für ein Strukturelement (akn:heading). Kann Inline-Markup einschliesslich akn:br enthalten (FLX-TXT-001: br in Überschriften erlaubt). Muss vor subheading stehen (FLX-HD-004, FLX-HD-005).  |
+| paragraphs | * <br/> [Paragraph](#Paragraph) | Absatz-Kindelemente (akn:paragraph) innerhalb eines Artikels oder Unterabschnitts. |
 | levels | * <br/> [Level](#Level) | Transparente Level-Kindelemente (akn:level). |
 | articles | * <br/> [Article](#Article) | Artikel-Kindelemente (akn:article). |
-| paragraphs | * <br/> [Paragraph](#Paragraph) | Absatz-Kindelemente (akn:paragraph) innerhalb eines Artikels oder Unterabschnitts. |
 
 
 
@@ -3050,7 +3600,63 @@ _Ein Vorbehalt im Hauptteil eines Erlasses (akn:proviso). Als Hauptteil-Element 
 
 ## Blockinhalte
 
-Auf der untersten Ebene stehen die Inhaltsblöcke: Absätze, Listen und Tabellen.
+Auf der untersten Ebene stehen die Inhaltsblöcke: Absätze, Listen und Tabellen. Sie stehen nicht in getrennten Listen je Art, sondern in einer einzigen geordneten Folge — `content_blocks` —, weil ein Absatz im Erlass auf eine Aufzählung folgen kann und darauf wieder ein Absatz. Getrennte Listen würden diese Reihenfolge verlieren; in der Bundesverfassung betrifft das 23 Stellen. Welche Art ein Eintrag hat, sagt er selbst über `element_type` — dasselbe Verfahren, mit dem auch die Textauszeichnung ihre Reihenfolge hält.
+
+
+
+### Klasse: BlockElement []{#BlockElement}
+
+
+_Abstrakte Basis für ein Element auf Blockebene innerhalb von Inhalt, Aufzählungsposition oder Tabellenzelle (akn:p, akn:blockList, akn:table)._
+
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement.  |
+
+
+
+
+
+#### Verwendungen
+
+| Verwendet von | Im Slot | Rolle | Element |
+| ---  | --- | --- | --- |
+| [Preamble](#Preamble) | content_blocks | range | [BlockElement](#BlockElement) |
+| [Content](#Content) | content_blocks | range | [BlockElement](#BlockElement) |
+| [BlockListItem](#BlockListItem) | content_blocks | range | [BlockElement](#BlockElement) |
+| [TableCell](#TableCell) | content_blocks | range | [BlockElement](#BlockElement) |
+| [AuthorialNote](#AuthorialNote) | content_blocks | range | [BlockElement](#BlockElement) |
+| [MainBody](#MainBody) | content_blocks | range | [BlockElement](#BlockElement) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
 
 
 
@@ -3071,9 +3677,7 @@ _Der Inhalt eines Absatzes (akn:content). Enthält Block-Elemente: akn:p (Fliess
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
-| block_paragraphs | * <br/> [BlockParagraph](#BlockParagraph) | Block-Absatz-Elemente (akn:p) innerhalb von Content. |
-| block_lists | * <br/> [BlockList](#BlockList) | Auflistungs-Elemente (akn:blockList) innerhalb von Content. |
-| tables | * <br/> [Table](#Table) | Tabellen-Elemente (akn:table) innerhalb von Content. |
+| content_blocks | * <br/> [BlockElement](#BlockElement) | Blockinhalt in Lesereihenfolge: Absätze, Aufzählungen und Tabellen, wie sie im Dokument aufeinanderfolgen.  |
 
 
 
@@ -3101,55 +3705,52 @@ _Der Inhalt eines Absatzes (akn:content). Enthält Block-Elemente: akn:p (Fliess
 
 
 #### Beispiele
-##### Beispiel Content: bgoe excerpt 1 1
+##### Beispiel Content: sr101 2 1
 
 ```yaml
 content_ref:
-  block_lists:
-  - eId: art_2/para_1/lst
-    list_introduction:
-      eId: art_2/para_1/listintro
-      inline_content:
-      - element_type: TextRun
-        text: ' Dieses Gesetz gilt für:'
-    items:
-    - eId: art_2/para_1/lbl_a
-      num:
-        inline_content:
-        - element_type: TextRun
-          text: 'a. '
-      block_paragraphs:
-      - inline_content:
-        - element_type: TextRun
-          text: die Bundesverwaltung;
-    - eId: art_2/para_1/lbl_b
-      num:
-        inline_content:
-        - element_type: TextRun
-          text: 'b. '
-      block_paragraphs:
-      - inline_content:
-        - element_type: TextRun
-          text: >-
-            Organisationen und Personen des öffentlichen oder privaten Rechts, die
-            nicht der Bundesverwaltung angehören, soweit sie Erlasse oder erstinstanzliche
-            Verfügungen im Sinne von Artikel 5 des Bundesgesetzes vom 20. Dezember
-            1968 über das Verwaltungsverfahren erlassen;
-
-```
-##### Beispiel Content: sr101 excerpt 1 1
-
-```yaml
-content_ref:
-  block_paragraphs:
-  - inline_content:
+  content_blocks:
+  - element_type: BlockParagraph
+    inline_content:
     - element_type: TextRun
       text: >-
-        Das Schweizervolk und die Kantone Zürich, Bern, Luzern, Uri, Schwyz, Obwalden
-        und Nidwalden, Glarus, Zug, Freiburg, Solothurn, Basel-Stadt und Basel-Landschaft,
-        Schaffhausen, Appenzell Ausserrhoden und Appenzell Innerrhoden, St. Gallen,
-        Graubünden, Aargau, Thurgau, Tessin, Waadt, Wallis, Neuenburg, Genf und Jura
-        bilden die Schweizerische Eidgenossenschaft.
+        Staatliches Handeln muss im öffentlichen Interesse liegen und verhältnismässig
+        sein.
+
+```
+##### Beispiel Content: sr101 4 1
+
+```yaml
+content_ref:
+  content_blocks:
+  - element_type: BlockParagraph
+    inline_content:
+    - element_type: TextRun
+      text: Bund und Kantone beachten das Völkerrecht.
+
+```
+##### Beispiel Content: sr101 1 1
+
+```yaml
+content_ref:
+  content_blocks:
+  - element_type: BlockParagraph
+    inline_content:
+    - element_type: TextRun
+      text: >-
+        Jede Person nimmt Verantwortung für sich selber wahr und trägt nach ihren
+        Kräften zur Bewältigung der Aufgaben in Staat und Gesellschaft bei.
+
+```
+##### Beispiel Content: sr101 3 1
+
+```yaml
+content_ref:
+  content_blocks:
+  - element_type: BlockParagraph
+    inline_content:
+    - element_type: TextRun
+      text: Staatliche Organe und Private handeln nach Treu und Glauben.
 
 ```
 
@@ -3179,22 +3780,9 @@ _Ein Fliesstext-Absatz in Content (akn:p). Kann gemischten Inhalt mit Inline-Mar
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
+| fedlex_role | 0..1 <br/> [FedlexRoleEnum](#FedlexRoleEnum) | Fedlex-Erweiterungsattribut fedlex:role. FLX-XF-003 lässt 'marginal' (nur an akn:level, FLX-XF-004) und 'reference' (nur an akn:subheading, FLX-XF-005) zu; die publizierte Bundesverfassung führt zusätzlich 'heading' an einem Präambel-Absatz.  |
 | inline_content | * <br/> [InlineElement](#InlineElement) | Geordneter gemischter Inhalt: eine Folge aus Textabschnitten und Inline-Markup-Elementen (InlineElement-Subklassen). Die Dokumentreihenfolge wird durch die Listenreihenfolge bewahrt.  |
-
-
-
-
-
-#### Verwendungen
-
-| Verwendet von | Im Slot | Rolle | Element |
-| ---  | --- | --- | --- |
-| [Preamble](#Preamble) | block_paragraphs | range | [BlockParagraph](#BlockParagraph) |
-| [Content](#Content) | block_paragraphs | range | [BlockParagraph](#BlockParagraph) |
-| [BlockListItem](#BlockListItem) | block_paragraphs | range | [BlockParagraph](#BlockParagraph) |
-| [TableCell](#TableCell) | block_paragraphs | range | [BlockParagraph](#BlockParagraph) |
-| [AuthorialNote](#AuthorialNote) | block_paragraphs | range | [BlockParagraph](#BlockParagraph) |
-| [MainBody](#MainBody) | block_paragraphs | range | [BlockParagraph](#BlockParagraph) |
+| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement. <br/><br/>Vererbung: [BlockElement](#BlockElement) |
 
 
 
@@ -3209,33 +3797,8 @@ _Ein Fliesstext-Absatz in Content (akn:p). Kann gemischten Inhalt mit Inline-Mar
 
 
 
-#### Beispiele
-##### Beispiel BlockParagraph: bgoe excerpt 1 1
 
-```yaml
-block_paragraphs:
-- inline_content:
-  - element_type: TextRun
-    text: >-
-      Dieses Gesetz soll die Transparenz über den Auftrag, die Organisation und die
-      Tätigkeit der Verwaltung fördern. Zu diesem Zweck trägt es zur Information der
-      Öffentlichkeit bei, indem es den Zugang zu amtlichen Dokumenten gewährleistet.
 
-```
-##### Beispiel BlockParagraph: sr101 excerpt 1 1
-
-```yaml
-block_paragraphs:
-- inline_content:
-  - element_type: TextRun
-    text: >-
-      Das Schweizervolk und die Kantone Zürich, Bern, Luzern, Uri, Schwyz, Obwalden
-      und Nidwalden, Glarus, Zug, Freiburg, Solothurn, Basel-Stadt und Basel-Landschaft,
-      Schaffhausen, Appenzell Ausserrhoden und Appenzell Innerrhoden, St. Gallen,
-      Graubünden, Aargau, Thurgau, Tessin, Waadt, Wallis, Neuenburg, Genf und Jura
-      bilden die Schweizerische Eidgenossenschaft.
-
-```
 
 
 
@@ -3266,18 +3829,10 @@ _Eine Auflistung von nummerierten oder buchstabierten Punkten (akn:blockList), o
 | eId | 0..1 <br/> [EIdType](#EIdType) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
 | list_introduction | 0..1 <br/> [MixedText](#MixedText) | Optionaler Einleitungstext vor einer Auflistung (akn:listIntroduction). |
 | items | * <br/> [BlockListItem](#BlockListItem) | Punkte einer Auflistung (akn:item). |
+| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement. <br/><br/>Vererbung: [BlockElement](#BlockElement) |
 
 
 
-
-
-#### Verwendungen
-
-| Verwendet von | Im Slot | Rolle | Element |
-| ---  | --- | --- | --- |
-| [Content](#Content) | block_lists | range | [BlockList](#BlockList) |
-| [BlockListItem](#BlockListItem) | block_lists | range | [BlockList](#BlockList) |
-| [TableCell](#TableCell) | block_lists | range | [BlockList](#BlockList) |
 
 
 
@@ -3320,8 +3875,7 @@ _Ein einzelner Punkt in einer Auflistung (akn:item). Trägt ein num-Label und Bl
 |------------------------|----------------------|------------------------------------------------------|
 | eId | 0..1 <br/> [EIdType](#EIdType) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
 | num | 0..1 <br/> [MixedText](#MixedText) | Nummerierungselement für ein Strukturelement oder einen Artikel (akn:num). Bei Artikeln obligatorisch (FLX-ART-001). num muss vor heading und subheading stehen (FLX-HD-001, FLX-HD-002, FLX-HD-003).  |
-| block_paragraphs | * <br/> [BlockParagraph](#BlockParagraph) | Block-Absatz-Elemente (akn:p) innerhalb von Content. |
-| block_lists | * <br/> [BlockList](#BlockList) | Auflistungs-Elemente (akn:blockList) innerhalb von Content. |
+| content_blocks | * <br/> [BlockElement](#BlockElement) | Blockinhalt in Lesereihenfolge: Absätze, Aufzählungen und Tabellen, wie sie im Dokument aufeinanderfolgen.  |
 
 
 
@@ -3374,16 +3928,10 @@ _Ein Tabellen-Element innerhalb von Content (akn:table). Enthält Zeilen (akn:tr
 |------------------------|----------------------|------------------------------------------------------|
 | border | 0..1 <br/> String | Das @border-Attribut auf akn:table (HTML-artige Darstellung). |
 | table_rows | * <br/> [TableRow](#TableRow) | Zeilen in einer Tabelle (akn:tr). |
+| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement. <br/><br/>Vererbung: [BlockElement](#BlockElement) |
 
 
 
-
-
-#### Verwendungen
-
-| Verwendet von | Im Slot | Rolle | Element |
-| ---  | --- | --- | --- |
-| [Content](#Content) | tables | range | [Table](#Table) |
 
 
 
@@ -3475,8 +4023,7 @@ _Eine Zelle in einer Tabellenzeile (akn:td). Enthält Block-Inhalt: Fliesstext-A
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
 | colspan | 0..1 <br/> String | Das @colspan-Attribut auf akn:td (HTML-artige Darstellung). |
-| block_paragraphs | * <br/> [BlockParagraph](#BlockParagraph) | Block-Absatz-Elemente (akn:p) innerhalb von Content. |
-| block_lists | * <br/> [BlockList](#BlockList) | Auflistungs-Elemente (akn:blockList) innerhalb von Content. |
+| content_blocks | * <br/> [BlockElement](#BlockElement) | Blockinhalt in Lesereihenfolge: Absätze, Aufzählungen und Tabellen, wie sie im Dokument aufeinanderfolgen.  |
 
 
 
@@ -3716,7 +4263,7 @@ _Hauptteil eines beiliegenden Dokuments (akn:mainBody). Anders als der Erlasskö
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
-| block_paragraphs | * <br/> [BlockParagraph](#BlockParagraph) | Block-Absatz-Elemente (akn:p) innerhalb von Content. |
+| content_blocks | * <br/> [BlockElement](#BlockElement) | Blockinhalt in Lesereihenfolge: Absätze, Aufzählungen und Tabellen, wie sie im Dokument aufeinanderfolgen.  |
 | levels | * <br/> [Level](#Level) | Transparente Level-Kindelemente (akn:level). |
 | content_ref | 0..1 <br/> [Content](#Content) | Inhaltselement innerhalb eines Absatzes (akn:content). |
 
@@ -3795,419 +4342,379 @@ _Ein generischer Behälter (akn:container), dessen @name den Zweck nennt._
 
 
 #### Beispiele
-##### Beispiel Container: sr101 excerpt
+##### Beispiel Container: bgoe
 
 ```yaml
-# Auszug aus SR 101, Bundesverfassung der Schweizerischen Eidgenossenschaft,
-# Fassung vom 3. März 2024. Werte übernommen aus der Fedlex-Datei
-# misc/spec/input/examples/federal/SR-101-03032024-DE.xml -- gekürzt auf den
-# vollständigen Metadatenblock, den Vorspann und den ersten Artikel, damit die
-# Beispiele im Dokument lesbar bleiben.
-act_ref:
-  act_name: constitution
-
-  meta:
-    identification_ref:
-      # Der Anker zeigt auf die Organisation, die in references deklariert ist.
-      source: "#ch.bk"
-
-      frbr_work:
-        frbr_this:
-          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/main-text
-        frbr_uri:
-          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303
-        # Drei Datumsangaben desselben Werks, unterschieden über @name aus dem
-        # Fedlex/JoLux-Vokabular: Inkrafttreten, Erlassdatum, Nachführungsstand.
-        frbr_dates:
-          - date_value: "2000-01-01"
-            frbr_date_name: jolux:dateEntryInForce
-          - date_value: "1999-04-18"
-            frbr_date_name: jolux:dateDocument
-          - date_value: "2024-03-03"
-            frbr_date_name: jolux:dateApplicability
-        frbr_authors:
-          - href: "#ch.bk"
-            as_role: "#publisher"
-          - href: "#ch.bk"
-            as_role: "#rightsHolder"
-        frbr_country:
-          value: CH
-        frbr_number:
-          value: "101"
-        # Die SR-Nummer wird nicht übersetzt, der Titel schon: je Sprache ein
-        # Eintrag mit Kurzform.
-        frbr_names:
-          - xml_lang: de
-            value: Bundesverfassung der Schweizerischen Eidgenossenschaft vom 18. April 1999
-            short_form: BV
-          - xml_lang: fr
-            value: Constitution fédérale de la Confédération suisse du 18 avril 1999
-            short_form: Cst.
-          - xml_lang: it
-            value: Costituzione federale della Confederazione Svizzera del 18 aprile 1999
-            short_form: Cost.
-          - xml_lang: rm
-            value: Constituziun federala da la Confederaziun svizra dals 18 d'avrigl 1999
-            short_form: Cst.
-        frbr_authoritative:
-          value: "true"
-
-      # Die Expression ist die sprachliche Fassung: dieselbe URI mit Sprachanteil.
-      frbr_expression:
-        frbr_this:
-          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/main-text
-        frbr_uri:
-          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de
-        frbr_dates:
-          - date_value: "2000-01-01"
-            frbr_date_name: jolux:dateEntryInForce
-          - date_value: "1999-04-18"
-            frbr_date_name: jolux:dateDocument
-        frbr_authors:
-          - href: "#ch.bk"
-            as_role: "#publisher"
-        frbr_language:
-          language_value: de
-
-      # Die Manifestation ist die konkrete Datei -- hier das XML.
-      frbr_manifestation:
-        frbr_this:
-          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/main-text
-        frbr_uri:
-          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de
-        frbr_dates:
-          - date_value: "2024-03-03"
-            frbr_date_name: jolux:dateApplicability
-        frbr_authors:
-          - href: "#ch.bk"
-            as_role: "#publisher"
-        frbr_format:
-          value: xml
-
-    # Stellen und Rollen stehen einmal hier; die Elemente oben verweisen mit
-    # dokumentinternen Ankern darauf.
-    references_ref:
-      source: "#ch.bk"
-      tlc_organizations:
-        - eId: ch.bk
-          href: https://fedlex.data.admin.ch/vocabulary/legal-institution/2
-          show_as: Bundeskanzlei
-      tlc_roles:
-        - eId: publisher
-          href: http://data.legilux.public.lu/resource/ontology/jolux#publisher
-          show_as: Editeur
-        - eId: rightsHolder
-          href: http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder
-          show_as: Détenteur des droits
-
-  preface_ref:
-    preface_paragraphs:
-      - doc_number: "101"
-      - doc_title:
-          inline_content:
-            - element_type: TextRun
-              text: Bundesverfassung
-            - element_type: Br
-            - element_type: TextRun
-              text: der Schweizerischen Eidgenossenschaft
-
-  body:
-    titles:
-      - eId: tit_1
-        num:
-          inline_content:
-            - element_type: TextRun
-              text: "1. Titel: "
-        heading:
-          inline_content:
-            - element_type: TextRun
-              text: Allgemeine Bestimmungen
-        articles:
-          - eId: art_1
-            # Die Artikelnummer ist im Original fett ausgezeichnet: ein B-Element
-            # mit einem Textlauf darin, nicht eine Zeichenkette "Art. 1".
-            num:
-              inline_content:
-                - element_type: B
-                  inline_content:
-                    - element_type: TextRun
-                      text: Art. 1
-            heading:
-              inline_content:
-                - element_type: TextRun
-                  text: Schweizerische Eidgenossenschaft
-            paragraphs:
-              - eId: art_1/para
-                content_ref:
-                  block_paragraphs:
-                    - inline_content:
-                        - element_type: TextRun
-                          text: >-
-                            Das Schweizervolk und die Kantone Zürich, Bern, Luzern, Uri, Schwyz,
-                            Obwalden und Nidwalden, Glarus, Zug, Freiburg, Solothurn, Basel-Stadt
-                            und Basel-Landschaft, Schaffhausen, Appenzell Ausserrhoden und
-                            Appenzell Innerrhoden, St. Gallen, Graubünden, Aargau, Thurgau,
-                            Tessin, Waadt, Wallis, Neuenburg, Genf und Jura bilden die
-                            Schweizerische Eidgenossenschaft.
-
-```
-##### Beispiel Container: bgoe excerpt
-
-```yaml
-# Auszug aus SR 152.3, Bundesgesetz über das Öffentlichkeitsprinzip der
-# Verwaltung (Öffentlichkeitsgesetz, BGÖ), Fassung vom 1. November 2023.
-# Werte übernommen aus der Fedlex-Auslieferung
-# https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de/xml
-#
-# Zweites Beispiel neben der Bundesverfassung: ein gewöhnliches Bundesgesetz
-# (act_name: publicLaw statt constitution), mit Aufzählung im Absatz und den
-# Referenzeinträgen für Sprache und Format, welche die Verfassungsdatei nicht
-# führt.
 act_ref:
   act_name: publicLaw
-
   meta:
     identification_ref:
-      source: "#ch.bk"
-
+      source: '#ch.bk'
       frbr_work:
         frbr_this:
           value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/main-text
         frbr_uri:
           value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101
         frbr_dates:
-          - date_value: "2006-07-01"
-            frbr_date_name: jolux:dateEntryInForce
-          - date_value: "2004-12-17"
-            frbr_date_name: jolux:dateDocument
-          - date_value: "2023-11-01"
-            frbr_date_name: jolux:dateApplicability
+        - date_value: '2006-07-01'
+          frbr_date_name: jolux:dateEntryInForce
+        - date_value: '2004-12-17'
+          frbr_date_name: jolux:dateDocument
+        - … 1 weitere
         frbr_authors:
-          - href: "#ch.bk"
-            as_role: "#publisher"
-          - href: "#ch.bk"
-            as_role: "#rightsHolder"
+        - href: '#ch.bk'
+          as_role: '#publisher'
+        - href: '#ch.bk'
+          as_role: '#rightsHolder'
         frbr_country:
           value: CH
-        # Anders als die Verfassung trägt das Gesetz eine gegliederte SR-Nummer.
         frbr_number:
-          value: "152.3"
+          value: '152.3'
         frbr_names:
-          - xml_lang: de
-            value: Bundesgesetz vom 17. Dezember 2004 über das Öffentlichkeitsprinzip der Verwaltung (Öffentlichkeitsgesetz, BGÖ)
-            short_form: BGÖ
-          - xml_lang: fr
-            value: Loi fédérale du 17 décembre 2004 sur le principe de la transparence dans l'administration (Loi sur la transparence, LTrans)
-            short_form: LTrans
-          - xml_lang: it
-            value: Legge federale del 17 dicembre 2004 sul principio di trasparenza dell'amministrazione (Legge sulla trasparenza, LTras)
-            short_form: LTras
-          - xml_lang: rm
-            value: Lescha federala dals 17 da december 2004 davart il princip da la transparenza da l'administraziun (Lescha da transparenza, LTrans)
-            short_form: LTrans
-          - xml_lang: en
-            value: Federal Act of 17 December 2004 on Freedom of Information in the Administration (Freedom of Information Act, FoIA)
-            short_form: FoIA
+        - xml_lang: it
+          value: >-
+            Legge federale del 17 dicembre 2004 sul principio di trasparenza dell'amministrazione
+            (Legge sulla trasparenza, LTras)
+          short_form: LTras
+        - xml_lang: fr
+          value: >-
+            Loi fédérale du 17 décembre 2004 sur le principe de la transparence dans
+            l'administration (Loi sur la transparence, LTrans)
+          short_form: LTrans
+        - … 3 weitere
         frbr_authoritative:
-          value: "true"
-
+          value: 'true'
       frbr_expression:
         frbr_this:
           value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de/main-text
         frbr_uri:
           value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de
         frbr_dates:
-          - date_value: "2006-07-01"
-            frbr_date_name: jolux:dateEntryInForce
-          - date_value: "2023-11-01"
-            frbr_date_name: jolux:dateApplicability
+        - date_value: '2006-07-01'
+          frbr_date_name: jolux:dateEntryInForce
+        - date_value: '2004-12-17'
+          frbr_date_name: jolux:dateDocument
+        - … 1 weitere
         frbr_authors:
-          - href: "#ch.bk"
-            as_role: "#publisher"
+        - href: '#ch.bk'
+          as_role: '#publisher'
+        - href: '#ch.bk'
+          as_role: '#rightsHolder'
         frbr_language:
           language_value: de
-
       frbr_manifestation:
         frbr_this:
           value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de/xml/main-text
         frbr_uri:
           value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de/xml
         frbr_dates:
-          - date_value: "2023-11-01"
-            frbr_date_name: jolux:dateApplicability
+        - date_value: '2006-07-01'
+          frbr_date_name: jolux:dateEntryInForce
+        - date_value: '2004-12-17'
+          frbr_date_name: jolux:dateDocument
+        - … 1 weitere
         frbr_authors:
-          - href: "#ch.bk"
-            as_role: "#publisher"
-        # Fedlex vermerkt am Format zusätzlich, welche Werkzeugversion die Datei
-        # erzeugt hat -- ein Attribut aus dem Fedlex-Namensraum.
+        - href: '#ch.bk'
+          as_role: '#publisher'
+        - href: '#ch.bk'
+          as_role: '#rightsHolder'
         frbr_format:
           value: xml
           fedlex_generator: 2024-q4-rel-1.6.5
-
     references_ref:
-      source: "#ch.bk"
+      source: '#ch.bk'
       tlc_organizations:
-        - eId: ch.bk
-          href: https://fedlex.data.admin.ch/vocabulary/legal-institution/2
-          show_as: Bundeskanzlei
+      - eId: ch.bk
+        href: https://fedlex.data.admin.ch/vocabulary/legal-institution/2
+        show_as: Bundeskanzlei
       tlc_roles:
-        - eId: publisher
-          href: http://data.legilux.public.lu/resource/ontology/jolux#publisher
-          show_as: Editeur
-        - eId: rightsHolder
-          href: http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder
-          show_as: Détenteur des droits
-      # Sprache und Format zeigen auf kontrollierte Vokabulare: das der EU für
-      # die Sprache, das von Fedlex für das Dateiformat.
+      - eId: publisher
+        href: http://data.legilux.public.lu/resource/ontology/jolux#publisher
+        show_as: Editeur
+      - eId: rightsHolder
+        href: http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder
+        show_as: Détenteur des droits
       tlc_references:
-        - name_attr: language
-          href: http://publications.europa.eu/resource/authority/language/DEU
-          show_as: de
-        - name_attr: format
-          href: https://fedlex.data.admin.ch/vocabulary/user-format/xml
-          show_as: xml
-
+      - name_attr: language
+        href: http://publications.europa.eu/resource/authority/language/DEU
+        show_as: de
+      - name_attr: format
+        href: https://fedlex.data.admin.ch/vocabulary/user-format/xml
+        show_as: xml
   preface_ref:
     preface_paragraphs:
-      - doc_number: "152.3 "
-      - doc_title:
-          inline_content:
-            - element_type: TextRun
-              text: Bundesgesetz
-            - element_type: Br
-            - element_type: TextRun
-              text: über das Öffentlichkeitsprinzip der Verwaltung
-
+    - doc_number: '152.3 '
+    - doc_title:
+        inline_content:
+        - …
+        - …
+        - … 1 weitere
+    - … 2 weitere
+  preamble_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - element_type: TextRun
+        text: Die Bundesversammlung der Schweizerischen Eidgenossenschaft,
+    - element_type: BlockParagraph
+      inline_content:
+      - element_type: TextRun
+        text: gestützt auf Artikel 173 Absatz 2 der Bundesverfassung
+      - element_type: AuthorialNote
+        content_blocks:
+        - …
+      - … 5 weitere
+    - … 1 weitere
   body:
-    articles:
+    sections:
+    - eId: sec_1
+      num:
+        inline_content:
+        - …
+      heading:
+        inline_content:
+        - …
+      articles:
       - eId: art_1
-        num:
-          inline_content:
-            - element_type: B
-              inline_content:
-                - element_type: TextRun
-                  text: Art. 1
-        heading:
-          inline_content:
-            - element_type: TextRun
-              text: Zweck und Gegenstand
+        num: …
+        heading: …
         paragraphs:
-          # Ein einziger Absatz bleibt unnummeriert; die eId endet auf "para".
-          - eId: art_1/para
-            content_ref:
-              block_paragraphs:
-                - inline_content:
-                    - element_type: TextRun
-                      text: >-
-                        Dieses Gesetz soll die Transparenz über den Auftrag, die Organisation und
-                        die Tätigkeit der Verwaltung fördern. Zu diesem Zweck trägt es zur
-                        Information der Öffentlichkeit bei, indem es den Zugang zu amtlichen
-                        Dokumenten gewährleistet.
-
+        - …
       - eId: art_2
-        num:
-          inline_content:
-            - element_type: B
-              inline_content:
-                - element_type: TextRun
-                  text: Art. 2
-        heading:
-          inline_content:
-            - element_type: TextRun
-              text: Persönlicher Geltungsbereich
+        num: …
+        heading: …
         paragraphs:
-          # Mehrere Absätze werden nummeriert, und der Absatz führt statt eines
-          # Fliesstextes eine Aufzählung mit Einleitungssatz.
-          - eId: art_2/para_1
-            num:
-              inline_content:
-                - element_type: TextRun
-                  text: "1"
-            content_ref:
-              block_lists:
-                - eId: art_2/para_1/lst
-                  list_introduction:
-                    eId: art_2/para_1/listintro
-                    inline_content:
-                      - element_type: TextRun
-                        text: " Dieses Gesetz gilt für:"
-                  items:
-                    - eId: art_2/para_1/lbl_a
-                      num:
-                        inline_content:
-                          - element_type: TextRun
-                            text: "a. "
-                      block_paragraphs:
-                        - inline_content:
-                            - element_type: TextRun
-                              text: die Bundesverwaltung;
-                    - eId: art_2/para_1/lbl_b
-                      num:
-                        inline_content:
-                          - element_type: TextRun
-                            text: "b. "
-                      block_paragraphs:
-                        - inline_content:
-                            - element_type: TextRun
-                              text: >-
-                                Organisationen und Personen des öffentlichen oder privaten Rechts,
-                                die nicht der Bundesverwaltung angehören, soweit sie Erlasse oder
-                                erstinstanzliche Verfügungen im Sinne von Artikel 5 des
-                                Bundesgesetzes vom 20. Dezember 1968 über das
-                                Verwaltungsverfahren erlassen;
-
-  # Der Anhang des Erlasses: ein eigenes Dokument mit eigenem Vorspann und
-  # Hauptteil. Sein Identifikationsblock, der in der Fedlex-Datei die URIs des
-  # Erlasses unveraendert wiederholt, ist hier weggelassen.
+        - …
+        - …
+        - … 1 weitere
+      - … 3 weitere
+    - eId: sec_2
+      num:
+        inline_content:
+        - …
+      heading:
+        inline_content:
+        - …
+      articles:
+      - eId: art_6
+        num: …
+        heading: …
+        paragraphs:
+        - …
+        - …
+        - … 1 weitere
+      - eId: art_7
+        num: …
+        heading: …
+        paragraphs:
+        - …
+        - …
+      - … 2 weitere
+    - … 3 weitere
   components_ref:
     component_list:
     - doc_ref:
         doc_name: annex
+        meta:
+          identification_ref: …
         preface_ref:
           containers:
-          - container_name: headerOfAnnex
-            blocks:
-            - block_name: heading
-              inline_content:
-              - element_type: TextRun
-                text: Anhang
+          - …
         main_body:
-          block_paragraphs:
-          - inline_content:
-            - element_type: TextRun
-              text: (Art. 22)
+          content_blocks:
+          - …
           levels:
-          - eId: annex_u1/lvl_u1
-            heading:
-              inline_content:
-              - element_type: TextRun
-                text: Änderung bisherigen Rechts
-            content_ref:
-              block_paragraphs:
-              - inline_content:
-                - element_type: TextRun
-                  text: 'Die nachstehenden Gesetze werden wie folgt geändert:'
-              - inline_content:
-                - element_type: TextRun
-                  text: …
-                - element_type: AuthorialNote
-                  block_paragraphs:
-                  - inline_content:
-                    - element_type: TextRun
-                      text: Die Änderungen können unter
-                    - element_type: Ref
-                      href: https://fedlex.data.admin.ch/eli/oc/2006/355
-                      inline_content:
-                      - element_type: TextRun
-                        text: AS
-                      - element_type: B
-                        inline_content:
-                        - element_type: TextRun
-                          text: '2006'
-                      - element_type: TextRun
-                        text: '2319'
-                    - element_type: TextRun
-                      text: konsultiert werden.
+          - …
+
+```
+##### Beispiel Container: sr101
+
+```yaml
+act_ref:
+  act_name: publicLaw
+  meta:
+    identification_ref:
+      source: '#ch.bk'
+      frbr_work:
+        frbr_this:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/main-text
+        frbr_uri:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303
+        frbr_dates:
+        - date_value: '2000-01-01'
+          frbr_date_name: jolux:dateEntryInForce
+        - date_value: '1999-04-18'
+          frbr_date_name: jolux:dateDocument
+        - … 1 weitere
+        frbr_authors:
+        - href: '#ch.bk'
+          as_role: '#publisher'
+        - href: '#ch.bk'
+          as_role: '#rightsHolder'
+        frbr_country:
+          value: CH
+        frbr_number:
+          value: '101'
+        frbr_names:
+        - xml_lang: de
+          value: Bundesverfassung der Schweizerischen Eidgenossenschaft vom 18. April
+            1999
+          short_form: BV
+        - xml_lang: fr
+          value: Constitution fédérale de la Confédération suisse du 18 avril 1999
+          short_form: Cst.
+        - … 3 weitere
+        frbr_authoritative:
+          value: 'true'
+      frbr_expression:
+        frbr_this:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/main-text
+        frbr_uri:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de
+        frbr_dates:
+        - date_value: '2000-01-01'
+          frbr_date_name: jolux:dateEntryInForce
+        - date_value: '1999-04-18'
+          frbr_date_name: jolux:dateDocument
+        - … 1 weitere
+        frbr_authors:
+        - href: '#ch.bk'
+          as_role: '#publisher'
+        - href: '#ch.bk'
+          as_role: '#rightsHolder'
+        frbr_language:
+          language_value: de
+      frbr_manifestation:
+        frbr_this:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/xml/main-text
+        frbr_uri:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/xml
+        frbr_dates:
+        - date_value: '2000-01-01'
+          frbr_date_name: jolux:dateEntryInForce
+        - date_value: '1999-04-18'
+          frbr_date_name: jolux:dateDocument
+        - … 1 weitere
+        frbr_authors:
+        - href: '#ch.bk'
+          as_role: '#publisher'
+        - href: '#ch.bk'
+          as_role: '#rightsHolder'
+        frbr_format:
+          value: xml
+          fedlex_generator: 2026-q1-rel-1.8.5
+    references_ref:
+      source: '#ch.bk'
+      tlc_organizations:
+      - eId: ch.bk
+        href: https://fedlex.data.admin.ch/vocabulary/legal-institution/2
+        show_as: Bundeskanzlei
+      tlc_roles:
+      - eId: publisher
+        href: http://data.legilux.public.lu/resource/ontology/jolux#publisher
+        show_as: Editeur
+      - eId: rightsHolder
+        href: http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder
+        show_as: Détenteur des droits
+      tlc_references:
+      - name_attr: language
+        href: http://publications.europa.eu/resource/authority/language/DEU
+        show_as: de
+      - name_attr: format
+        href: https://fedlex.data.admin.ch/vocabulary/user-format/xml
+        show_as: xml
+  preface_ref:
+    preface_paragraphs:
+    - doc_number: '101'
+    - doc_title:
+        inline_content:
+        - …
+        - …
+        - … 1 weitere
+    - … 1 weitere
+  preamble_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      fedlex_role: heading
+      inline_content:
+      - element_type: B
+        inline_content:
+        - …
+    - element_type: BlockParagraph
+      inline_content:
+      - element_type: TextRun
+        text: Im Namen Gottes des Allmächtigen!
+    - … 7 weitere
+  body:
+    titles:
+    - eId: tit_1
+      num:
+        inline_content:
+        - …
+      heading:
+        inline_content:
+        - …
+      articles:
+      - eId: art_1
+        num: …
+        heading: …
+        paragraphs:
+        - …
+      - eId: art_2
+        num: …
+        heading: …
+        paragraphs:
+        - …
+        - …
+        - … 2 weitere
+      - … 5 weitere
+    - eId: tit_2
+      num:
+        inline_content:
+        - …
+      heading:
+        inline_content:
+        - …
+      chapters:
+      - eId: tit_2/chap_1
+        num: …
+        heading: …
+        articles:
+        - …
+        - …
+        - … 30 weitere
+      - eId: tit_2/chap_2
+        num: …
+        heading: …
+        articles:
+        - …
+        - …
+        - … 2 weitere
+      - … 1 weitere
+    - … 4 weitere
+    provisos:
+    - eId: disp_u1
+      heading:
+        inline_content:
+        - …
+      paragraphs:
+      - eId: disp_u1/para
+        content_ref: …
+    - eId: disp_u2
+      heading:
+        inline_content:
+        - …
+      paragraphs:
+      - eId: disp_u2/para
+        content_ref: …
+      levels:
+      - eId: disp_u2/lvl_A
+        num: …
+        content_ref: …
+      - eId: disp_u2/lvl_B
+        num: …
+        content_ref: …
+      - … 24 weitere
 
 ```
 
@@ -4438,7 +4945,7 @@ _Abstrakte Basis für ein modelliertes Inline-Markup-Element in gemischtem Inhal
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
-| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete InlineElement-Subklasse. |
+| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement.  |
 
 
 
@@ -4500,7 +5007,7 @@ _Ein einfacher Textabschnitt in gemischtem Inhalt. Wird als Textknoten eines mix
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
 | text | 0..1 <br/> String | Die Zeichendaten eines TextRun; wird als Textknoten in gemischtem Inhalt ausgegeben. |
-| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete InlineElement-Subklasse.<br/><br/>Vererbung: [InlineElement](#InlineElement) |
+| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement. <br/><br/>Vererbung: [InlineElement](#InlineElement) |
 
 
 
@@ -4548,7 +5055,7 @@ _Eine Inline-Referenz (akn:ref). Trägt @href, und bei internen SR-Querverweisen
 | fedlex_rs | 0..1 <br/> String | Fedlex-Erweiterungsattribut fedlex:rs auf akn:ref: die SR-Nummer des referenzierten Erlasses (z.B. '641.20').  |
 | fedlex_rs_uri | 0..1 <br/> [ELIURI](#ELIURI) | Fedlex-Erweiterungsattribut fedlex:rs-uri auf akn:ref: die ELI-URI des SR-Eintrags des referenzierten Erlasses.  |
 | inline_content | * <br/> [InlineElement](#InlineElement) | Geordneter gemischter Inhalt: eine Folge aus Textabschnitten und Inline-Markup-Elementen (InlineElement-Subklassen). Die Dokumentreihenfolge wird durch die Listenreihenfolge bewahrt.  |
-| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete InlineElement-Subklasse.<br/><br/>Vererbung: [InlineElement](#InlineElement) |
+| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement. <br/><br/>Vererbung: [InlineElement](#InlineElement) |
 
 
 
@@ -4592,8 +5099,8 @@ _Eine Fussnote des Autors (akn:authorialNote). Rekursiv in Block-Inhalt: enthäl
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
-| block_paragraphs | * <br/> [BlockParagraph](#BlockParagraph) | Block-Absatz-Elemente (akn:p) innerhalb von Content. |
-| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete InlineElement-Subklasse.<br/><br/>Vererbung: [InlineElement](#InlineElement) |
+| content_blocks | * <br/> [BlockElement](#BlockElement) | Blockinhalt in Lesereihenfolge: Absätze, Aufzählungen und Tabellen, wie sie im Dokument aufeinanderfolgen.  |
+| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement. <br/><br/>Vererbung: [InlineElement](#InlineElement) |
 
 
 
@@ -4639,7 +5146,7 @@ _Ein benanntes präsentationsbezogenes Inline (akn:inline), z.B. name='man-font-
 |------------------------|----------------------|------------------------------------------------------|
 | name_attr | 0..1 <br/> String | Das @name-Attribut auf akn:inline, z.B. 'man-font-style-normal'. |
 | inline_content | * <br/> [InlineElement](#InlineElement) | Geordneter gemischter Inhalt: eine Folge aus Textabschnitten und Inline-Markup-Elementen (InlineElement-Subklassen). Die Dokumentreihenfolge wird durch die Listenreihenfolge bewahrt.  |
-| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete InlineElement-Subklasse.<br/><br/>Vererbung: [InlineElement](#InlineElement) |
+| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement. <br/><br/>Vererbung: [InlineElement](#InlineElement) |
 
 
 
@@ -4685,7 +5192,7 @@ _Ein Platzhalter für entfernten Inhalt (akn:placeholder) mit dem Erweiterungsat
 |------------------------|----------------------|------------------------------------------------------|
 | fedlex_message | 0..1 <br/> String | Fedlex-Erweiterungsattribut fedlex:message auf akn:placeholder, das entfernten Inhalt kennzeichnet (z.B. 'E40S10-TAB').  |
 | inline_content | * <br/> [InlineElement](#InlineElement) | Geordneter gemischter Inhalt: eine Folge aus Textabschnitten und Inline-Markup-Elementen (InlineElement-Subklassen). Die Dokumentreihenfolge wird durch die Listenreihenfolge bewahrt.  |
-| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete InlineElement-Subklasse.<br/><br/>Vererbung: [InlineElement](#InlineElement) |
+| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement. <br/><br/>Vererbung: [InlineElement](#InlineElement) |
 
 
 
@@ -4729,7 +5236,7 @@ _Generischer Inline-Bereich (akn:span)._
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
 | inline_content | * <br/> [InlineElement](#InlineElement) | Geordneter gemischter Inhalt: eine Folge aus Textabschnitten und Inline-Markup-Elementen (InlineElement-Subklassen). Die Dokumentreihenfolge wird durch die Listenreihenfolge bewahrt.  |
-| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete InlineElement-Subklasse.<br/><br/>Vererbung: [InlineElement](#InlineElement) |
+| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement. <br/><br/>Vererbung: [InlineElement](#InlineElement) |
 
 
 
@@ -4773,7 +5280,7 @@ _Fett-Inline-Markup (akn:b)._
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
 | inline_content | * <br/> [InlineElement](#InlineElement) | Geordneter gemischter Inhalt: eine Folge aus Textabschnitten und Inline-Markup-Elementen (InlineElement-Subklassen). Die Dokumentreihenfolge wird durch die Listenreihenfolge bewahrt.  |
-| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete InlineElement-Subklasse.<br/><br/>Vererbung: [InlineElement](#InlineElement) |
+| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement. <br/><br/>Vererbung: [InlineElement](#InlineElement) |
 
 
 
@@ -4817,7 +5324,7 @@ _Kursiv-Inline-Markup (akn:i)._
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
 | inline_content | * <br/> [InlineElement](#InlineElement) | Geordneter gemischter Inhalt: eine Folge aus Textabschnitten und Inline-Markup-Elementen (InlineElement-Subklassen). Die Dokumentreihenfolge wird durch die Listenreihenfolge bewahrt.  |
-| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete InlineElement-Subklasse.<br/><br/>Vererbung: [InlineElement](#InlineElement) |
+| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement. <br/><br/>Vererbung: [InlineElement](#InlineElement) |
 
 
 
@@ -4861,7 +5368,7 @@ _Hochgestelltes Inline-Markup (akn:sup)._
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
 | inline_content | * <br/> [InlineElement](#InlineElement) | Geordneter gemischter Inhalt: eine Folge aus Textabschnitten und Inline-Markup-Elementen (InlineElement-Subklassen). Die Dokumentreihenfolge wird durch die Listenreihenfolge bewahrt.  |
-| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete InlineElement-Subklasse.<br/><br/>Vererbung: [InlineElement](#InlineElement) |
+| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement. <br/><br/>Vererbung: [InlineElement](#InlineElement) |
 
 
 
@@ -4905,7 +5412,7 @@ _Ein Zeilenumbruch (akn:br). In der (derzeit deaktivierten) Regel FLX-TXT-001 is
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
-| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete InlineElement-Subklasse.<br/><br/>Vererbung: [InlineElement](#InlineElement) |
+| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement. <br/><br/>Vererbung: [InlineElement](#InlineElement) |
 
 
 
@@ -5015,7 +5522,106 @@ _Metadaten-Abschnitt des Erlasses (akn:meta). Enthält die FRBR-Identifikation (
 
 
 #### Beispiele
-##### Beispiel ActMeta: sr101 excerpt 1 1
+##### Beispiel ActMeta: bgoe 1 1
+
+```yaml
+meta:
+  identification_ref:
+    source: '#ch.bk'
+    frbr_work:
+      frbr_this:
+        value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/main-text
+      frbr_uri:
+        value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101
+      frbr_dates:
+      - date_value: '2006-07-01'
+        frbr_date_name: jolux:dateEntryInForce
+      - date_value: '2004-12-17'
+        frbr_date_name: jolux:dateDocument
+      - … 1 weitere
+      frbr_authors:
+      - href: '#ch.bk'
+        as_role: '#publisher'
+      - href: '#ch.bk'
+        as_role: '#rightsHolder'
+      frbr_country:
+        value: CH
+      frbr_number:
+        value: '152.3'
+      frbr_names:
+      - xml_lang: it
+        value: >-
+          Legge federale del 17 dicembre 2004 sul principio di trasparenza dell'amministrazione
+          (Legge sulla trasparenza, LTras)
+        short_form: LTras
+      - xml_lang: fr
+        value: >-
+          Loi fédérale du 17 décembre 2004 sur le principe de la transparence dans
+          l'administration (Loi sur la transparence, LTrans)
+        short_form: LTrans
+      - … 3 weitere
+      frbr_authoritative:
+        value: 'true'
+    frbr_expression:
+      frbr_this:
+        value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de/main-text
+      frbr_uri:
+        value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de
+      frbr_dates:
+      - date_value: '2006-07-01'
+        frbr_date_name: jolux:dateEntryInForce
+      - date_value: '2004-12-17'
+        frbr_date_name: jolux:dateDocument
+      - … 1 weitere
+      frbr_authors:
+      - href: '#ch.bk'
+        as_role: '#publisher'
+      - href: '#ch.bk'
+        as_role: '#rightsHolder'
+      frbr_language:
+        language_value: de
+    frbr_manifestation:
+      frbr_this:
+        value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de/xml/main-text
+      frbr_uri:
+        value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de/xml
+      frbr_dates:
+      - date_value: '2006-07-01'
+        frbr_date_name: jolux:dateEntryInForce
+      - date_value: '2004-12-17'
+        frbr_date_name: jolux:dateDocument
+      - … 1 weitere
+      frbr_authors:
+      - href: '#ch.bk'
+        as_role: '#publisher'
+      - href: '#ch.bk'
+        as_role: '#rightsHolder'
+      frbr_format:
+        value: xml
+        fedlex_generator: 2024-q4-rel-1.6.5
+  references_ref:
+    source: '#ch.bk'
+    tlc_organizations:
+    - eId: ch.bk
+      href: https://fedlex.data.admin.ch/vocabulary/legal-institution/2
+      show_as: Bundeskanzlei
+    tlc_roles:
+    - eId: publisher
+      href: http://data.legilux.public.lu/resource/ontology/jolux#publisher
+      show_as: Editeur
+    - eId: rightsHolder
+      href: http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder
+      show_as: Détenteur des droits
+    tlc_references:
+    - name_attr: language
+      href: http://publications.europa.eu/resource/authority/language/DEU
+      show_as: de
+    - name_attr: format
+      href: https://fedlex.data.admin.ch/vocabulary/user-format/xml
+      show_as: xml
+
+```
+##### Beispiel ActMeta: sr101 1 1
 
 ```yaml
 meta:
@@ -5031,8 +5637,7 @@ meta:
         frbr_date_name: jolux:dateEntryInForce
       - date_value: '1999-04-18'
         frbr_date_name: jolux:dateDocument
-      - date_value: '2024-03-03'
-        frbr_date_name: jolux:dateApplicability
+      - … 1 weitere
       frbr_authors:
       - href: '#ch.bk'
         as_role: '#publisher'
@@ -5050,12 +5655,7 @@ meta:
       - xml_lang: fr
         value: Constitution fédérale de la Confédération suisse du 18 avril 1999
         short_form: Cst.
-      - xml_lang: it
-        value: Costituzione federale della Confederazione Svizzera del 18 aprile 1999
-        short_form: Cost.
-      - xml_lang: rm
-        value: Constituziun federala da la Confederaziun svizra dals 18 d'avrigl 1999
-        short_form: Cst.
+      - … 3 weitere
       frbr_authoritative:
         value: 'true'
     frbr_expression:
@@ -5068,123 +5668,33 @@ meta:
         frbr_date_name: jolux:dateEntryInForce
       - date_value: '1999-04-18'
         frbr_date_name: jolux:dateDocument
-      frbr_authors:
-      - href: '#ch.bk'
-        as_role: '#publisher'
-      frbr_language:
-        language_value: de
-    frbr_manifestation:
-      frbr_this:
-        value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/main-text
-      frbr_uri:
-        value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de
-      frbr_dates:
-      - date_value: '2024-03-03'
-        frbr_date_name: jolux:dateApplicability
-      frbr_authors:
-      - href: '#ch.bk'
-        as_role: '#publisher'
-      frbr_format:
-        value: xml
-  references_ref:
-    source: '#ch.bk'
-    tlc_organizations:
-    - eId: ch.bk
-      href: https://fedlex.data.admin.ch/vocabulary/legal-institution/2
-      show_as: Bundeskanzlei
-    tlc_roles:
-    - eId: publisher
-      href: http://data.legilux.public.lu/resource/ontology/jolux#publisher
-      show_as: Editeur
-    - eId: rightsHolder
-      href: http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder
-      show_as: Détenteur des droits
-
-```
-##### Beispiel ActMeta: bgoe excerpt 1 1
-
-```yaml
-meta:
-  identification_ref:
-    source: '#ch.bk'
-    frbr_work:
-      frbr_this:
-        value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/main-text
-      frbr_uri:
-        value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101
-      frbr_dates:
-      - date_value: '2006-07-01'
-        frbr_date_name: jolux:dateEntryInForce
-      - date_value: '2004-12-17'
-        frbr_date_name: jolux:dateDocument
-      - date_value: '2023-11-01'
-        frbr_date_name: jolux:dateApplicability
+      - … 1 weitere
       frbr_authors:
       - href: '#ch.bk'
         as_role: '#publisher'
       - href: '#ch.bk'
         as_role: '#rightsHolder'
-      frbr_country:
-        value: CH
-      frbr_number:
-        value: '152.3'
-      frbr_names:
-      - xml_lang: de
-        value: >-
-          Bundesgesetz vom 17. Dezember 2004 über das Öffentlichkeitsprinzip der Verwaltung
-          (Öffentlichkeitsgesetz, BGÖ)
-        short_form: BGÖ
-      - xml_lang: fr
-        value: >-
-          Loi fédérale du 17 décembre 2004 sur le principe de la transparence dans
-          l'administration (Loi sur la transparence, LTrans)
-        short_form: LTrans
-      - xml_lang: it
-        value: >-
-          Legge federale del 17 dicembre 2004 sul principio di trasparenza dell'amministrazione
-          (Legge sulla trasparenza, LTras)
-        short_form: LTras
-      - xml_lang: rm
-        value: >-
-          Lescha federala dals 17 da december 2004 davart il princip da la transparenza
-          da l'administraziun (Lescha da transparenza, LTrans)
-        short_form: LTrans
-      - xml_lang: en
-        value: >-
-          Federal Act of 17 December 2004 on Freedom of Information in the Administration
-          (Freedom of Information Act, FoIA)
-        short_form: FoIA
-      frbr_authoritative:
-        value: 'true'
-    frbr_expression:
-      frbr_this:
-        value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de/main-text
-      frbr_uri:
-        value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de
-      frbr_dates:
-      - date_value: '2006-07-01'
-        frbr_date_name: jolux:dateEntryInForce
-      - date_value: '2023-11-01'
-        frbr_date_name: jolux:dateApplicability
-      frbr_authors:
-      - href: '#ch.bk'
-        as_role: '#publisher'
       frbr_language:
         language_value: de
     frbr_manifestation:
       frbr_this:
-        value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de/xml/main-text
+        value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/xml/main-text
       frbr_uri:
-        value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de/xml
+        value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/xml
       frbr_dates:
-      - date_value: '2023-11-01'
-        frbr_date_name: jolux:dateApplicability
+      - date_value: '2000-01-01'
+        frbr_date_name: jolux:dateEntryInForce
+      - date_value: '1999-04-18'
+        frbr_date_name: jolux:dateDocument
+      - … 1 weitere
       frbr_authors:
       - href: '#ch.bk'
         as_role: '#publisher'
+      - href: '#ch.bk'
+        as_role: '#rightsHolder'
       frbr_format:
         value: xml
-        fedlex_generator: 2024-q4-rel-1.6.5
+        fedlex_generator: 2026-q1-rel-1.8.5
   references_ref:
     source: '#ch.bk'
     tlc_organizations:
@@ -5267,7 +5777,7 @@ _Benannte Referenz-Definitionen für das gesamte Dokument (akn:references). Defi
 
 
 #### Beispiele
-##### Beispiel References: sr101 excerpt 1 1
+##### Beispiel References: bgoe 1 1
 
 ```yaml
 references_ref:
@@ -5283,9 +5793,16 @@ references_ref:
   - eId: rightsHolder
     href: http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder
     show_as: Détenteur des droits
+  tlc_references:
+  - name_attr: language
+    href: http://publications.europa.eu/resource/authority/language/DEU
+    show_as: de
+  - name_attr: format
+    href: https://fedlex.data.admin.ch/vocabulary/user-format/xml
+    show_as: xml
 
 ```
-##### Beispiel References: bgoe excerpt 1 1
+##### Beispiel References: sr101 1 1
 
 ```yaml
 references_ref:
@@ -5429,16 +5946,7 @@ _Eine benannte Rolle als Referenz im Dokument (akn:TLCRole). Beispiele: publishe
 
 
 #### Beispiele
-##### Beispiel TLCRole: sr101 excerpt 1 2
-
-```yaml
-tlc_roles:
-- eId: rightsHolder
-  href: http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder
-  show_as: Détenteur des droits
-
-```
-##### Beispiel TLCRole: bgoe excerpt 1 2
+##### Beispiel TLCRole: bgoe 1 2
 
 ```yaml
 tlc_roles:
@@ -5454,6 +5962,15 @@ tlc_roles:
 - eId: publisher
   href: http://data.legilux.public.lu/resource/ontology/jolux#publisher
   show_as: Editeur
+
+```
+##### Beispiel TLCRole: sr101 1 2
+
+```yaml
+tlc_roles:
+- eId: rightsHolder
+  href: http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder
+  show_as: Détenteur des droits
 
 ```
 
@@ -5537,6 +6054,7 @@ URI: [laws:FedlexRoleEnum](https://ld.ech.ch/schema/0296/laws/FedlexRoleEnum)
 |------------------------|----------------------------------------------------------------------------|
 | marginal |  Kennzeichnet ein level als Randnote. Nur bei akn:level erlaubt (FLX-XF-004). |
 | reference |  Kennzeichnet eine Unterüberschrift als Referenzüberschrift. Nur bei akn:subheading erlaubt (FLX-XF-005).  |
+| heading |  Kennzeichnet einen Absatz als Überschrift; kommt an akn:p in der Präambel der Bundesverfassung vor. Ausserhalb der Reichweite von FLX-XF-003, die akn:level und akn:subheading regelt.  |
 
 
 

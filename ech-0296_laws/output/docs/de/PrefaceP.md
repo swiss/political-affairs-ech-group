@@ -59,14 +59,14 @@ Mindestens eines der folgenden Felder muss gesetzt sein:
 
 
 ### Beispiele
-#### Beispiel PrefaceP: sr101 excerpt 1 1
+#### Beispiel PrefaceP: sr101 1 1
 
 ```yaml
 preface_paragraphs:
 - doc_number: '101'
 
 ```
-#### Beispiel PrefaceP: sr101 excerpt 1 2
+#### Beispiel PrefaceP: sr101 1 2
 
 ```yaml
 preface_paragraphs:
@@ -75,18 +75,28 @@ preface_paragraphs:
     - element_type: TextRun
       text: Bundesverfassung
     - element_type: Br
-    - element_type: TextRun
-      text: der Schweizerischen Eidgenossenschaft
+    - … 1 weitere
 
 ```
-#### Beispiel PrefaceP: bgoe excerpt 1 1
+#### Beispiel PrefaceP: sr101 1 3
 
 ```yaml
 preface_paragraphs:
-- doc_number: '152.3 '
+- inline_content:
+  - element_type: TextRun
+    text: vom 18. April 1999 (Stand am 3. März 2024)
 
 ```
-#### Beispiel PrefaceP: bgoe excerpt 1 2
+#### Beispiel PrefaceP: bgoe 1 3
+
+```yaml
+preface_paragraphs:
+- inline_content:
+  - element_type: TextRun
+    text: (Öffentlichkeitsgesetz, BGÖ)
+
+```
+#### Beispiel PrefaceP: bgoe 1 2
 
 ```yaml
 preface_paragraphs:
@@ -95,8 +105,23 @@ preface_paragraphs:
     - element_type: TextRun
       text: Bundesgesetz
     - element_type: Br
-    - element_type: TextRun
-      text: über das Öffentlichkeitsprinzip der Verwaltung
+    - … 1 weitere
+
+```
+#### Beispiel PrefaceP: bgoe 1 1
+
+```yaml
+preface_paragraphs:
+- doc_number: '152.3 '
+
+```
+#### Beispiel PrefaceP: bgoe 1 4
+
+```yaml
+preface_paragraphs:
+- inline_content:
+  - element_type: TextRun
+    text: vom 17. Dezember 2004 (Stand am 1. November 2023)
 
 ```
 

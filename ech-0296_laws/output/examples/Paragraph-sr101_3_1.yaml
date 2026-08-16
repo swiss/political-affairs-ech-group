@@ -1,0 +1,7 @@
+paragraphs:
+- eId: art_3/para
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
