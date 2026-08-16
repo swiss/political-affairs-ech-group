@@ -18,7 +18,7 @@ _Ein Datumseintrag einer FRBR-Entität (akn:FRBRdate). Das @name-Attribut verwen
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
 | date_value | 0..1 <br/> [Date](Date.md) | Ein ISO-8601-Datumswert (akn:FRBRdate/@date). |
-| frbr_date_name | 0..1 <br/> [String](String.md) | Datumstyp (akn:FRBRdate/@name), mit Fedlex/JoLux-Vokabular, z.B. 'jolux:dateEntryInForce', 'jolux:dateDocument', 'jolux:dateApplicability'.  |
+| frbr_date_name | 0..1 <br/> [String](String.md)&nbsp;or&nbsp;<br />[FrbrDateNameEnum](FrbrDateNameEnum.md) | Art dieses Datums (akn:FRBRdate/@name). Fedlex verwendet das JoLux-Vokabular; die zulässigen Werte von FrbrDateNameEnum tragen die entsprechende ELI-Eigenschaft. Kantonale Publikationsstellen führen eigene Bezeichnungen, weshalb eine freie Zeichenkette zulässig bleibt.  |
 
 
 

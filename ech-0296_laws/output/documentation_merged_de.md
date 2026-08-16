@@ -847,7 +847,7 @@ _Ein Datumseintrag einer FRBR-Entität (akn:FRBRdate). Das @name-Attribut verwen
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
 | date_value | 0..1 <br/> Date | Ein ISO-8601-Datumswert (akn:FRBRdate/@date). |
-| frbr_date_name | 0..1 <br/> String | Datumstyp (akn:FRBRdate/@name), mit Fedlex/JoLux-Vokabular, z.B. 'jolux:dateEntryInForce', 'jolux:dateDocument', 'jolux:dateApplicability'.  |
+| frbr_date_name | 0..1 <br/> String&nbsp;or&nbsp;<br />[FrbrDateNameEnum](#FrbrDateNameEnum) | Art dieses Datums (akn:FRBRdate/@name). Fedlex verwendet das JoLux-Vokabular; die zulässigen Werte von FrbrDateNameEnum tragen die entsprechende ELI-Eigenschaft. Kantonale Publikationsstellen führen eigene Bezeichnungen, weshalb eine freie Zeichenkette zulässig bleibt.  |
 
 
 
@@ -923,6 +923,38 @@ frbr_dates:
   frbr_date_name: jolux:dateEntryInForce
 
 ```
+
+
+
+
+
+
+</div>
+
+### Enum: FrbrDateNameEnum []{#FrbrDateNameEnum}
+
+
+
+
+_Datumsarten, die Fedlex in akn:FRBRdate/@name verwendet, aus dem JoLux-Vokabular. Kantonale Publikationsstellen führen eigene Bezeichnungen, weshalb der Slot auch eine freie Zeichenkette zulässt._
+
+
+
+
+<div data-search-exclude markdown="1">
+
+URI: [laws:FrbrDateNameEnum](https://ld.ech.ch/schema/0296/laws/FrbrDateNameEnum)
+
+#### Zulässige Werte
+| Wert | Beschreibung |
+|------------------------|----------------------------------------------------------------------------|
+| jolux:dateDocument |  Datum der Verabschiedung oder Unterzeichnung des Erlasses. |
+| | [jolux:dateDocument](jolux:dateDocument) |
+| jolux:dateEntryInForce |  Datum, an dem der Erlass oder sein erster Teil in Kraft trat. |
+| | [jolux:dateEntryInForce](jolux:dateEntryInForce) |
+| jolux:dateApplicability |  Datum, auf das die konsolidierte Fassung nachgeführt ist — der „Stand am“ der Fedlex-Auslieferung.  |
+| | [jolux:dateApplicability](jolux:dateApplicability) |
+
 
 
 
@@ -6354,7 +6386,9 @@ Jede Klasse und jeder Slot dieses Standards trägt die Entsprechung im Akoma-Nto
 
 Aus derselben Quelle entsteht ein Mapping-Set nach SSSOM (Simple Standard for Sharing Ontology Mappings) als `output/mappings/ech-0296_laws.sssom.tsv`. Es hält zu jeder Zeile fest, wie eng die Entsprechung ist (`exactMatch`, `closeMatch`, `narrowMatch`, `broadMatch`) und worauf sie beruht, und lässt sich mit den Werkzeugen der Mapping Commons prüfen und weiterverarbeiten. Dieselben Angaben stehen als `skos:exactMatch`-Tripel im RDF-Export des Schemas (`output/schema.ttl`).
 
-Die Zuordnung zum European Legislation Identifier steht noch aus. Sie kommt an dieselbe Stelle — als weiterer Eintrag bei den betroffenen Elementen — und erscheint dann ohne weiteres Zutun in dieser Tabelle und im Mapping-Set.
+Die Zuordnung zum European Legislation Identifier ist für den Identifikationsblock gesetzt, und zwar auf zwei Arten. Wo die Entsprechung eins zu eins ist, trägt das Element den ELI-Begriff als eigene Identität (`class_uri`, `slot_uri`): Die FRBR-Ebenen *sind* `eli:LegalResource`, `eli:LegalExpression` und `eli:Format`, und der RDF-Export schreibt sie unmittelbar so. Wo die Entsprechung nur nahe liegt, bleibt es bei `closeMatch` — `frbr_country` etwa nennt einen Ländercode, wo ELI eine Verwaltungseinheit erwartet, und `frbr_authoritative` ist ein Wahrheitswert, wo ELI eine Werteliste führt.
+
+Eine dritte Art von Zuordnung hängt weder an der Klasse noch am Slot, sondern am **Wert**: Welche ELI-Eigenschaft ein Datum meint, entscheidet sein `@name`. Die zulässigen Werte tragen ihre Entsprechung deshalb selbst, und die Zuordnung stellt zwei fremde Vokabulare gegenüber — `jolux:dateEntryInForce` gegen `eli:first_date_entry_in_force`. Kantonale Publikationsstellen führen eigene Bezeichnungen wie `Beschlussdatum`; der Slot lässt sie zu, ohne Zuordnung.
 
 | Element in diesem Standard | Art | Beziehung | Entspricht |
 |---|---|---|---|
@@ -6362,12 +6396,12 @@ Die Zuordnung zum European Legislation Identifier steht noch aus. Sie kommt an d
 | `Act` | Klasse | exactMatch | `akn:act` |
 | `ActMeta` | Klasse | exactMatch | `akn:meta` |
 | `Identification` | Klasse | exactMatch | `akn:identification` |
+| `FRBRWork` | Klasse | exactMatch | `eli:LegalResource` |
 | `FRBRWork` | Klasse | exactMatch | `akn:FRBRWork` |
-| `FRBRWork` | Klasse | closeMatch | `eli:LegalResource` |
+| `FRBRExpression` | Klasse | exactMatch | `eli:LegalExpression` |
 | `FRBRExpression` | Klasse | exactMatch | `akn:FRBRExpression` |
-| `FRBRExpression` | Klasse | closeMatch | `eli:LegalExpression` |
+| `FRBRManifestation` | Klasse | exactMatch | `eli:Format` |
 | `FRBRManifestation` | Klasse | exactMatch | `akn:FRBRManifestation` |
-| `FRBRManifestation` | Klasse | closeMatch | `eli:Format` |
 | `FRBRDate` | Klasse | exactMatch | `akn:FRBRdate` |
 | `FRBRAuthor` | Klasse | exactMatch | `akn:FRBRauthor` |
 | `FRBRName` | Klasse | exactMatch | `akn:FRBRname` |
@@ -6421,14 +6455,14 @@ Die Zuordnung zum European Legislation Identifier steht noch aus. Sie kommt an d
 | `frbr_authors` | Slot | closeMatch | `eli:passed_by` |
 | `frbr_country` | Slot | exactMatch | `akn:FRBRcountry` |
 | `frbr_country` | Slot | closeMatch | `eli:jurisdiction` |
+| `frbr_number` | Slot | exactMatch | `eli:number` |
 | `frbr_number` | Slot | exactMatch | `akn:FRBRnumber` |
-| `frbr_number` | Slot | closeMatch | `eli:number` |
 | `frbr_authoritative` | Slot | exactMatch | `akn:FRBRauthoritative` |
 | `frbr_authoritative` | Slot | closeMatch | `eli:legal_value` |
+| `frbr_language` | Slot | exactMatch | `eli:language` |
 | `frbr_language` | Slot | exactMatch | `akn:FRBRlanguage` |
-| `frbr_language` | Slot | closeMatch | `eli:language` |
+| `frbr_format` | Slot | exactMatch | `eli:format` |
 | `frbr_format` | Slot | exactMatch | `akn:FRBRformat` |
-| `frbr_format` | Slot | closeMatch | `eli:format` |
 | `doc_number` | Slot | exactMatch | `akn:docNumber` |
 | `doc_title` | Slot | exactMatch | `akn:docTitle` |
 | `num` | Slot | exactMatch | `akn:num` |
@@ -6441,5 +6475,8 @@ Die Zuordnung zum European Legislation Identifier steht noch aus. Sie kommt an d
 | `main_body` | Slot | exactMatch | `akn:mainBody` |
 | `containers` | Slot | exactMatch | `akn:container` |
 | `blocks` | Slot | exactMatch | `akn:block` |
+| `jolux:dateDocument` | Enum | exactMatch | `eli:date_document` |
+| `jolux:dateEntryInForce` | Enum | exactMatch | `eli:first_date_entry_in_force` |
+| `jolux:dateApplicability` | Enum | exactMatch | `eli:date_applicability` |
 
 

@@ -14,7 +14,7 @@ _Sprachcode dieser Expression (akn:FRBRlanguage/@language)._
 
 
 
-URI: [laws:frbr_language](https://ld.ech.ch/schema/0296/laws/frbr_language)
+URI: [eli:language](http://data.europa.eu/eli/ontology#language)
 <!-- no inheritance hierarchy -->
 
 
@@ -40,6 +40,7 @@ URI: [laws:frbr_language](https://ld.ech.ch/schema/0296/laws/frbr_language)
 | --- | --- |
 | Wertebereich | [LanguageType](LanguageType.md) |
 | Domäne von | [FRBRExpression](FRBRExpression.md) |
+| Slot-URI | [eli:language](http://data.europa.eu/eli/ontology#language) |
 
 ### Kardinalität und Anforderungen
 
@@ -73,9 +74,8 @@ description: Sprachcode dieser Expression (akn:FRBRlanguage/@language).
 from_schema: https://ld.ech.ch/schema/0296/laws
 exact_mappings:
 - akn:FRBRlanguage
-close_mappings:
-- eli:language
 rank: 1000
+slot_uri: eli:language
 domain_of:
 - FRBRExpression
 range: LanguageType

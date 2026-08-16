@@ -115,7 +115,7 @@ Name: ech-0296-laws-schema
 | [frbr_authoritative](frbr_authoritative.md) | Ob dies die massgebliche Version ist (akn:FRBRauthoritative/@value) |
 | [frbr_authors](frbr_authors.md) | Autoren-/Rechteinhaber-Einträge dieser FRBR-Entität (akn:FRBRauthor) |
 | [frbr_country](frbr_country.md) | Ländercode für diesen Erlass (akn:FRBRcountry/@value), z |
-| [frbr_date_name](frbr_date_name.md) | Datumstyp (akn:FRBRdate/@name), mit Fedlex/JoLux-Vokabular, z |
+| [frbr_date_name](frbr_date_name.md) | Art dieses Datums (akn:FRBRdate/@name) |
 | [frbr_dates](frbr_dates.md) | Datumseinträge dieser FRBR-Entität (akn:FRBRdate) |
 | [frbr_expression](frbr_expression.md) | FRBR-Expression-Ebenen-Beschreibung (akn:FRBRExpression) |
 | [frbr_format](frbr_format.md) | Dateiformat dieser Manifestation (akn:FRBRformat/@value), typischerweise 'xml... |
@@ -177,6 +177,7 @@ Name: ech-0296-laws-schema
 | [DocNameEnum](DocNameEnum.md) | Arten beiliegender Dokumente, die Fedlex in akn:doc/@name verwendet |
 | [DocumentLanguageEnum](DocumentLanguageEnum.md) | Sprachcodes für schweizerische Bundesdokumente |
 | [FedlexRoleEnum](FedlexRoleEnum.md) | Erlaubte Werte für das Fedlex-Erweiterungsattribut fedlex:role (FLX-XF-003) |
+| [FrbrDateNameEnum](FrbrDateNameEnum.md) | Datumsarten, die Fedlex in akn:FRBRdate/@name verwendet, aus dem JoLux-Vokabu... |
 
 
 ## Typen

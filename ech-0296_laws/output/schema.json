@@ -1059,11 +1059,19 @@
                     ]
                 },
                 "frbr_date_name": {
-                    "description": "Type of date (akn:FRBRdate/@name), using Fedlex/JoLux vocabulary, e.g. 'jolux:dateEntryInForce', 'jolux:dateDocument', 'jolux:dateApplicability'.\n",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/FrbrDateNameEnum"
+                        },
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Type of this date (akn:FRBRdate/@name). Fedlex uses the JoLux vocabulary; the permissible values of FrbrDateNameEnum carry the corresponding ELI property. Cantonal publishers use their own designations, which is why a free string remains admissible.\n",
+                    "type": "string"
                 }
             },
             "title": "FRBRDate",
@@ -1359,6 +1367,16 @@
             },
             "title": "FormatType",
             "type": "object"
+        },
+        "FrbrDateNameEnum": {
+            "description": "Date types Fedlex uses in akn:FRBRdate/@name, taken from the JoLux vocabulary. Cantonal publishers use their own designations; the slot therefore also admits a free string.",
+            "enum": [
+                "jolux:dateDocument",
+                "jolux:dateEntryInForce",
+                "jolux:dateApplicability"
+            ],
+            "title": "FrbrDateNameEnum",
+            "type": "string"
         },
         "I": {
             "additionalProperties": false,

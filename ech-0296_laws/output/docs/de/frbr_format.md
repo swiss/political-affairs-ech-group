@@ -14,7 +14,7 @@ _Dateiformat dieser Manifestation (akn:FRBRformat/@value), typischerweise 'xml'.
 
 
 
-URI: [laws:frbr_format](https://ld.ech.ch/schema/0296/laws/frbr_format)
+URI: [eli:format](http://data.europa.eu/eli/ontology#format)
 <!-- no inheritance hierarchy -->
 
 
@@ -40,6 +40,7 @@ URI: [laws:frbr_format](https://ld.ech.ch/schema/0296/laws/frbr_format)
 | --- | --- |
 | Wertebereich | [FormatType](FormatType.md) |
 | Domäne von | [FRBRManifestation](FRBRManifestation.md) |
+| Slot-URI | [eli:format](http://data.europa.eu/eli/ontology#format) |
 
 ### Kardinalität und Anforderungen
 
@@ -75,9 +76,8 @@ description: Dateiformat dieser Manifestation (akn:FRBRformat/@value), typischer
 from_schema: https://ld.ech.ch/schema/0296/laws
 exact_mappings:
 - akn:FRBRformat
-close_mappings:
-- eli:format
 rank: 1000
+slot_uri: eli:format
 domain_of:
 - FRBRManifestation
 range: FormatType

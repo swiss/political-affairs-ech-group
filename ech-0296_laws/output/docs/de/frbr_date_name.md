@@ -6,7 +6,7 @@ search:
 # Slot: frbr_date_name 
 
 
-_Datumstyp (akn:FRBRdate/@name), mit Fedlex/JoLux-Vokabular, z.B. 'jolux:dateEntryInForce', 'jolux:dateDocument', 'jolux:dateApplicability'._
+_Art dieses Datums (akn:FRBRdate/@name). Fedlex verwendet das JoLux-Vokabular; die zulässigen Werte von FrbrDateNameEnum tragen die entsprechende ELI-Eigenschaft. Kantonale Publikationsstellen führen eigene Bezeichnungen, weshalb eine freie Zeichenkette zulässig bleibt._
 
 
 
@@ -39,13 +39,23 @@ URI: [laws:frbr_date_name](https://ld.ech.ch/schema/0296/laws/frbr_date_name)
 
 | Eigenschaft | Wert |
 | --- | --- |
-| Wertebereich | [String](String.md) |
+| Wertebereich | [String](String.md)&nbsp;or&nbsp;<br />[FrbrDateNameEnum](FrbrDateNameEnum.md) |
 | Domäne von | [FRBRDate](FRBRDate.md) |
 
 ### Kardinalität und Anforderungen
 
 | Eigenschaft | Wert |
 | --- | --- |
+<details>
+<summary>Expressions & Logic</summary>
+#### Any Of
+
+Value must satisfy at least one of:
+- AnonymousSlotExpression({'range': 'FrbrDateNameEnum'})
+- AnonymousSlotExpression({'range': 'string'})
+
+</details>
+
 
 
 
@@ -75,8 +85,10 @@ name: frbr_date_name
 annotations:
   description_de:
     tag: description_de
-    value: 'Datumstyp (akn:FRBRdate/@name), mit Fedlex/JoLux-Vokabular, z.B. ''jolux:dateEntryInForce'',
-      ''jolux:dateDocument'', ''jolux:dateApplicability''.
+    value: 'Art dieses Datums (akn:FRBRdate/@name). Fedlex verwendet das JoLux-Vokabular;
+      die zulässigen Werte von FrbrDateNameEnum tragen die entsprechende ELI-Eigenschaft.
+      Kantonale Publikationsstellen führen eigene Bezeichnungen, weshalb eine freie
+      Zeichenkette zulässig bleibt.
 
       '
   xml_attribute:
@@ -85,8 +97,10 @@ annotations:
   xml_name:
     tag: xml_name
     value: name
-description: 'Datumstyp (akn:FRBRdate/@name), mit Fedlex/JoLux-Vokabular, z.B. ''jolux:dateEntryInForce'',
-  ''jolux:dateDocument'', ''jolux:dateApplicability''.
+description: 'Art dieses Datums (akn:FRBRdate/@name). Fedlex verwendet das JoLux-Vokabular;
+  die zulässigen Werte von FrbrDateNameEnum tragen die entsprechende ELI-Eigenschaft.
+  Kantonale Publikationsstellen führen eigene Bezeichnungen, weshalb eine freie Zeichenkette
+  zulässig bleibt.
 
   '
 examples:
@@ -98,6 +112,9 @@ rank: 1000
 domain_of:
 - FRBRDate
 range: string
+any_of:
+- range: FrbrDateNameEnum
+- range: string
 
 ```
 </details></div>

@@ -14,7 +14,7 @@ _SR-Nummer (akn:FRBRnumber/@value), z.B. '101'._
 
 
 
-URI: [laws:frbr_number](https://ld.ech.ch/schema/0296/laws/frbr_number)
+URI: [eli:number](http://data.europa.eu/eli/ontology#number)
 <!-- no inheritance hierarchy -->
 
 
@@ -40,6 +40,7 @@ URI: [laws:frbr_number](https://ld.ech.ch/schema/0296/laws/frbr_number)
 | --- | --- |
 | Wertebereich | [ValueType](ValueType.md) |
 | Domäne von | [FRBRWork](FRBRWork.md) |
+| Slot-URI | [eli:number](http://data.europa.eu/eli/ontology#number) |
 
 ### Kardinalität und Anforderungen
 
@@ -73,9 +74,8 @@ description: SR-Nummer (akn:FRBRnumber/@value), z.B. '101'.
 from_schema: https://ld.ech.ch/schema/0296/laws
 exact_mappings:
 - akn:FRBRnumber
-close_mappings:
-- eli:number
 rank: 1000
+slot_uri: eli:number
 domain_of:
 - FRBRWork
 range: ValueType
