@@ -26,10 +26,19 @@ Die folgenden Standards der Fachgruppe befinden sich alle in Arbeit; sie werden 
 |Quelle|Beschreibung|
 |---|---|
 |AKN|Legal Document Markup Language (LegalDocML) – Akoma Ntoso Version 3.0, OASIS Standard: [http://docs.oasis-open.org/legaldocml/akn-core/v1.0/](http://docs.oasis-open.org/legaldocml/akn-core/v1.0/)|
-|ELI|European Legislation Identifier, Europäische Kommission: [https://op.europa.eu/en/web/eu-vocabularies/eli](https://op.europa.eu/en/web/eu-vocabularies/eli)|
+|ELI|European Legislation Identifier, Europäische Kommission: [https://op.europa.eu/en/web/eu-vocabularies/eli](https://op.europa.eu/en/web/eu-vocabularies/eli). Die Zuordnungen dieses Standards beziehen sich auf ELI Core 1.5, deren Ontologie unter `misc/spec/misc/sources/ELI` liegt|
 |FRBRoo|FRBRoo – Object Oriented Definition and Mapping of the FRBR, IFLA: [http://iflastandards.info/ns/fr/frbr/frbroo/](http://iflastandards.info/ns/fr/frbr/frbroo/)|
 |RFC 6570|URI Template, IETF: [https://www.rfc-editor.org/rfc/rfc6570](https://www.rfc-editor.org/rfc/rfc6570)|
 |Fedlex|Systematische Rechtssammlung und ELI-URIs des Bundes: [https://www.fedlex.admin.ch](https://www.fedlex.admin.ch)|
+
+## Verwandte Arbeiten
+
+|Quelle|Beschreibung|
+|---|---|
+|Loutsaris et al. 2023|Michalis Avgerinos Loutsaris, Charalampos Alexopoulos, Maria Ioanna Maratsi, Yannis Charalabidis: *Semantic Interoperability for Legal Information: Mapping the European Legislation Identifier (ELI) and Akoma Ntoso (AKN) Ontologies.* ICEGOV 2023, Belo Horizonte: [https://doi.org/10.1145/3614321.3614327](https://doi.org/10.1145/3614321.3614327)|
+|AKN4EU|Akoma Ntoso for the European Union, Version 4.2 — verankert ELI-URIs in AKN-Dokumenten: [https://interoperable-europe.ec.europa.eu/collection/semic-support-centre/solution/common-structured-format-eu-legislative-documents/discover-akn4eu](https://interoperable-europe.ec.europa.eu/collection/semic-support-centre/solution/common-structured-format-eu-legislative-documents/discover-akn4eu)|
+|JOLux|Datenmodell des Journal officiel du Grand-Duché de Luxembourg, das die ELI-Ontologie übernimmt und erweitert; von Fedlex für seine Metadaten verwendet: [https://data.legilux.public.lu/home/models](https://data.legilux.public.lu/home/models)|
+|Fedlex-JOLux|Dokumentation des von Fedlex verwendeten JOLux-Modells: [https://swiss.github.io/fedlex-jolux/](https://swiss.github.io/fedlex-jolux/)|
 
 ## Quellen und Werkzeuge
 
