@@ -1,0 +1,15 @@
+paragraphs:
+- eId: title_9__art_44__para_1
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '1'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+    - element_type: BlockList
+      eId: title_9__art_44__para___content__blocklist_1
+      items:
+      - …

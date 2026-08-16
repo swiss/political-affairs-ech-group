@@ -1,0 +1,28 @@
+titles:
+- eId: title_5
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '5. Abschnitt:'
+  heading:
+    eId: title_5__heading
+    inline_content:
+    - element_type: TextRun
+      text: Interessenabwägung
+  articles:
+  - eId: title_5__art_23
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_5__art_23__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_5__art_23__para_1
+      num: …
+      content_ref: …
+    - eId: title_5__art_23__para_2
+      num: …
+      content_ref: …
+    - … 1 weitere

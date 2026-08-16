@@ -3,7 +3,7 @@
 ## Klasse: PrefaceP 
 
 
-_Ein Vorspann-Absatz (akn:p), der Dokumentnummer und/oder -titel umschliesst. Fedlex verlangt akn:docNumber und akn:docTitle innerhalb eines akn:p des Vorspanns (FLX-PF-001/002)._
+_Ein Vorspann-Absatz (akn:p). Fedlex verlangt akn:docNumber und akn:docTitle irgendwo im Vorspann (FLX-PF-001/002); kantonale Sammlungen zeichnen zusätzlich Ordnungsnummer, Kurztitel, Abkürzung und Datum aus._
 
 
 
@@ -17,23 +17,8 @@ _Ein Vorspann-Absatz (akn:p), der Dokumentnummer und/oder -titel umschliesst. Fe
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
-| doc_number | 0..1 <br/> [String](String.md) | Dokumentnummer im Vorspann (akn:docNumber). Pflicht gemäss FLX-PF-001. Typischerweise die SR-Nummer, z.B. '101'.  |
-| doc_title | 0..1 <br/> [MixedText](MixedText.md) | Dokumenttitel im Vorspann (akn:docTitle). Pflicht gemäss FLX-PF-002. Kann Inline-Markup und akn:br für Zeilenumbrüche enthalten.  |
+| fedlex_role | 0..1 <br/> [FedlexRoleEnum](FedlexRoleEnum.md) | Fedlex-Erweiterungsattribut fedlex:role. FLX-XF-003 lässt 'marginal' (nur an akn:level, FLX-XF-004) und 'reference' (nur an akn:subheading, FLX-XF-005) zu; die publizierte Bundesverfassung führt zusätzlich 'heading' an einem Präambel-Absatz.  |
 | inline_content | * <br/> [InlineElement](InlineElement.md) | Geordneter gemischter Inhalt: eine Folge aus Textabschnitten und Inline-Markup-Elementen (InlineElement-Subklassen). Die Dokumentreihenfolge wird durch die Listenreihenfolge bewahrt.  |
-
-##### Einschränkungen
-
-
-Mindestens eines der folgenden Felder muss gesetzt sein:
-
-- [doc_number](doc_number.md)
-- [doc_title](doc_title.md)
-- [inline_content](inline_content.md)
-
-
-
-
-
 
 
 
@@ -63,14 +48,19 @@ Mindestens eines der folgenden Felder muss gesetzt sein:
 
 ```yaml
 preface_paragraphs:
-- doc_number: '101'
+- inline_content:
+  - element_type: DocNumber
+    inline_content:
+    - element_type: TextRun
+      text: '101'
 
 ```
 #### Beispiel PrefaceP: sr101 1 2
 
 ```yaml
 preface_paragraphs:
-- doc_title:
+- inline_content:
+  - element_type: DocTitle
     inline_content:
     - element_type: TextRun
       text: Bundesverfassung
@@ -100,7 +90,8 @@ preface_paragraphs:
 
 ```yaml
 preface_paragraphs:
-- doc_title:
+- inline_content:
+  - element_type: DocTitle
     inline_content:
     - element_type: TextRun
       text: Bundesgesetz
@@ -108,11 +99,35 @@ preface_paragraphs:
     - … 1 weitere
 
 ```
+#### Beispiel PrefaceP: zh idg 1 1
+
+```yaml
+preface_paragraphs:
+- inline_content:
+  - element_type: DocketNumber
+    eId: docketNum_1
+    title_attr: Orndungsnummer
+    inline_content:
+    - element_type: TextRun
+      text: '170.4'
+  - element_type: DocTitle
+    eId: actTitle
+    title_attr: Erlasstitel
+    inline_content:
+    - element_type: TextRun
+      text: Gesetz über die Information und den Datenschutz
+  - … 3 weitere
+
+```
 #### Beispiel PrefaceP: bgoe 1 1
 
 ```yaml
 preface_paragraphs:
-- doc_number: '152.3 '
+- inline_content:
+  - element_type: DocNumber
+    inline_content:
+    - element_type: TextRun
+      text: '152.3'
 
 ```
 #### Beispiel PrefaceP: bgoe 1 4

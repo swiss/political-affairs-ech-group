@@ -1,0 +1,32 @@
+articles:
+- eId: title_3__art_16
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 16.
+  heading:
+    eId: title_3__art_16__heading
+    inline_content:
+    - element_type: TextRun
+      text: Bekanntgabe von Personendaten
+  subheading:
+    eId: title_3__art_16__subheading
+    inline_content:
+    - element_type: TextRun
+      text: a. Allgemein
+  paragraphs:
+  - eId: title_3__art_16__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+      - …
+  - eId: title_3__art_16__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …

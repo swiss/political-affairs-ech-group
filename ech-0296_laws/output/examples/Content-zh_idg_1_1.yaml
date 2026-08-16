@@ -1,0 +1,20 @@
+content_ref:
+  content_blocks:
+  - element_type: BlockParagraph
+    inline_content:
+    - element_type: TextRun
+      text: 'Die nachfolgenden Gesetze werden wie folgt geändert:'
+  - element_type: BlockList
+    eId: title_9__art_44__para___content__blocklist_1
+    items:
+    - eId: title_9__art_44__para___content__blocklist_1__item_a
+      content_blocks:
+      - …
+      num:
+        inline_content:
+        - …
+      heading:
+        eId: title_9__art_44__para___content__blocklist_1__item_a__heading
+        inline_content:
+        - …
+        - …

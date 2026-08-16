@@ -28,7 +28,6 @@ _Wiederverwendbarer Halter für gemischten Inhalt: eine geordnete Folge aus Text
 
 | Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
-| [PrefaceP](PrefaceP.md) | [doc_title](doc_title.md) | range | [MixedText](MixedText.md) |
 | [Book](Book.md) | [num](num.md) | range | [MixedText](MixedText.md) |
 | [Book](Book.md) | [heading](heading.md) | range | [MixedText](MixedText.md) |
 | [Book](Book.md) | [subheading](subheading.md) | range | [MixedText](MixedText.md) |
@@ -67,6 +66,7 @@ _Wiederverwendbarer Halter für gemischten Inhalt: eine geordnete Folge aus Text
 | [Proviso](Proviso.md) | [heading](heading.md) | range | [MixedText](MixedText.md) |
 | [BlockList](BlockList.md) | [list_introduction](list_introduction.md) | range | [MixedText](MixedText.md) |
 | [BlockListItem](BlockListItem.md) | [num](num.md) | range | [MixedText](MixedText.md) |
+| [BlockListItem](BlockListItem.md) | [heading](heading.md) | range | [MixedText](MixedText.md) |
 
 
 

@@ -1,10 +1,13 @@
 preface_ref:
   preface_paragraphs:
-  - doc_number: '101'
-  - doc_title:
+  - inline_content:
+    - element_type: DocNumber
       inline_content:
-      - element_type: TextRun
-        text: Bundesverfassung
-      - element_type: Br
+      - …
+  - inline_content:
+    - element_type: DocTitle
+      inline_content:
+      - …
+      - …
       - … 1 weitere
   - … 1 weitere

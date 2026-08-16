@@ -45,6 +45,27 @@ URI: [laws:eId](https://ld.ech.ch/schema/0296/laws/eId)
 | [BlockList](BlockList.md) | Eine Auflistung von nummerierten oder buchstabierten Punkten (akn:blockList),... |  no  |
 | [BlockListItem](BlockListItem.md) | Ein einzelner Punkt in einer Auflistung (akn:item) |  no  |
 | [MixedText](MixedText.md) | Wiederverwendbarer Halter für gemischten Inhalt: eine geordnete Folge aus Tex... |  no  |
+| [DocNumber](DocNumber.md) | Die Dokumentnummer im Vorspann |  no  |
+| [DocTitle](DocTitle.md) | Der Dokumenttitel im Vorspann |  no  |
+| [DocketNumber](DocketNumber.md) | Die Ordnungsnummer des Erlasses, wie sie kantonale Sammlungen führen |  no  |
+| [ShortTitle](ShortTitle.md) | Der Kurztitel des Erlasses |  no  |
+| [Abbr](Abbr.md) | Die Abkürzung des Erlasses |  no  |
+| [DocDate](DocDate.md) | Ein Datum im Vorspann, mit dem maschinenlesbaren Wert in @date |  no  |
+| [DateInline](DateInline.md) | Ein Datum im Fliesstext, mit dem maschinenlesbaren Wert in @date |  no  |
+| [Signature](Signature.md) | Eine Unterschriftszeile |  no  |
+| [Conclusions](Conclusions.md) | Die Schlussformel eines Erlasses: Ort, Datum und Unterschriften |  no  |
+| [Note](Note.md) | Eine einzelne Anmerkung |  no  |
+| [TLCConcept](TLCConcept.md) | Ein Begriff, auf den das Dokument verweist (akn:TLCConcept), etwa ein zeitlic... |  no  |
+| [OriginalRef](OriginalRef.md) | Verweis auf die ursprüngliche Fassung des Erlasses (akn:original) |  no  |
+| [ComponentRef](ComponentRef.md) | Verweis auf einen anderswo gehaltenen Dokumentbestandteil (akn:componentRef) |  no  |
+| [Def](Def.md) | Ein im Text definierter Begriff |  no  |
+| [NoteRef](NoteRef.md) | Verweis auf eine in den Metadaten gehaltene Anmerkung |  no  |
+| [Role](Role.md) | Eine Rolle, die eine Person innehat, mit Verweis auf ihre Deklaration |  no  |
+| [Person](Person.md) | Eine Person, mit Verweis auf ihre Deklaration und die innegehabte Rolle |  no  |
+| [ActiveRef](ActiveRef.md) | Verweis auf einen Erlass, den dieses Dokument ändert |  no  |
+| [Formula](Formula.md) | Eine Eingangs- oder Schlussformel des Vorspruchs (akn:formula) |  no  |
+| [Citations](Citations.md) | Die Erwägungen des Vorspruchs — worauf sich der Erlass beruft |  no  |
+| [Citation](Citation.md) | Eine einzelne Erwägung |  no  |
 
 
 
@@ -58,7 +79,7 @@ URI: [laws:eId](https://ld.ech.ch/schema/0296/laws/eId)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [EIdType](EIdType.md) |
-| Domäne von | [TLCOrganization](TLCOrganization.md), [TLCRole](TLCRole.md), [TLCReference](TLCReference.md), [Book](Book.md), [Title](Title.md), [Part](Part.md), [Chapter](Chapter.md), [Subchapter](Subchapter.md), [Section](Section.md), [Subsection](Subsection.md), [Level](Level.md), [Article](Article.md), [Subdivision](Subdivision.md), [Paragraph](Paragraph.md), [Transitional](Transitional.md), [Proviso](Proviso.md), [BlockList](BlockList.md), [BlockListItem](BlockListItem.md), [MixedText](MixedText.md) |
+| Domäne von | [TLCOrganization](TLCOrganization.md), [TLCRole](TLCRole.md), [TLCReference](TLCReference.md), [Book](Book.md), [Title](Title.md), [Part](Part.md), [Chapter](Chapter.md), [Subchapter](Subchapter.md), [Section](Section.md), [Subsection](Subsection.md), [Level](Level.md), [Article](Article.md), [Subdivision](Subdivision.md), [Paragraph](Paragraph.md), [Transitional](Transitional.md), [Proviso](Proviso.md), [BlockList](BlockList.md), [BlockListItem](BlockListItem.md), [MixedText](MixedText.md), [DocNumber](DocNumber.md), [DocTitle](DocTitle.md), [DocketNumber](DocketNumber.md), [ShortTitle](ShortTitle.md), [Abbr](Abbr.md), [DocDate](DocDate.md), [DateInline](DateInline.md), [Signature](Signature.md), [Conclusions](Conclusions.md), [Note](Note.md), [TLCConcept](TLCConcept.md), [OriginalRef](OriginalRef.md), [ComponentRef](ComponentRef.md), [Def](Def.md), [NoteRef](NoteRef.md), [Role](Role.md), [Person](Person.md), [ActiveRef](ActiveRef.md), [Formula](Formula.md), [Citations](Citations.md), [Citation](Citation.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -77,9 +98,9 @@ URI: [laws:eId](https://ld.ech.ch/schema/0296/laws/eId)
 
 | Wert |
 | --- |
-| annex_u1/lvl_u1 |
-| art_1 |
-| art_1/para |
+| JI |
+| SK |
+| SK-Publ |
 
 
 
@@ -109,9 +130,9 @@ description: 'Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Sche
 
   '
 examples:
-- value: annex_u1/lvl_u1
-- value: art_1
-- value: art_1/para
+- value: JI
+- value: SK
+- value: SK-Publ
 from_schema: https://ld.ech.ch/schema/0296/laws
 rank: 1000
 domain_of:
@@ -134,6 +155,27 @@ domain_of:
 - BlockList
 - BlockListItem
 - MixedText
+- DocNumber
+- DocTitle
+- DocketNumber
+- ShortTitle
+- Abbr
+- DocDate
+- DateInline
+- Signature
+- Conclusions
+- Note
+- TLCConcept
+- OriginalRef
+- ComponentRef
+- Def
+- NoteRef
+- Role
+- Person
+- ActiveRef
+- Formula
+- Citations
+- Citation
 range: EIdType
 
 ```

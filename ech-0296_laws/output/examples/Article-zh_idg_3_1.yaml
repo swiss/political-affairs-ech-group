@@ -1,0 +1,27 @@
+articles:
+- eId: title_3__art_14
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 14.
+  heading:
+    eId: title_3__art_14__heading
+    inline_content:
+    - element_type: TextRun
+      text: Informationstätigkeit von Amtes wegen
+  paragraphs:
+  - eId: title_3__art_14__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: title_3__art_14__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - … 2 weitere

@@ -32,6 +32,10 @@ URI: [laws:content_blocks](https://ld.ech.ch/schema/0296/laws/content_blocks)
 | [TableCell](TableCell.md) | Eine Zelle in einer Tabellenzeile (akn:td) |  no  |
 | [AuthorialNote](AuthorialNote.md) | Eine Fussnote des Autors (akn:authorialNote) |  no  |
 | [MainBody](MainBody.md) | Hauptteil eines beiliegenden Dokuments (akn:mainBody) |  no  |
+| [Conclusions](Conclusions.md) | Die Schlussformel eines Erlasses: Ort, Datum und Unterschriften |  no  |
+| [Note](Note.md) | Eine einzelne Anmerkung |  no  |
+| [Formula](Formula.md) | Eine Eingangs- oder Schlussformel des Vorspruchs (akn:formula) |  no  |
+| [Citation](Citation.md) | Eine einzelne Erwägung |  no  |
 
 
 
@@ -45,7 +49,7 @@ URI: [laws:content_blocks](https://ld.ech.ch/schema/0296/laws/content_blocks)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [BlockElement](BlockElement.md) |
-| Domäne von | [Preamble](Preamble.md), [Content](Content.md), [BlockListItem](BlockListItem.md), [TableCell](TableCell.md), [AuthorialNote](AuthorialNote.md), [MainBody](MainBody.md) |
+| Domäne von | [Preamble](Preamble.md), [Content](Content.md), [BlockListItem](BlockListItem.md), [TableCell](TableCell.md), [AuthorialNote](AuthorialNote.md), [MainBody](MainBody.md), [Conclusions](Conclusions.md), [Note](Note.md), [Formula](Formula.md), [Citation](Citation.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -89,6 +93,10 @@ domain_of:
 - TableCell
 - AuthorialNote
 - MainBody
+- Conclusions
+- Note
+- Formula
+- Citation
 range: BlockElement
 multivalued: true
 inlined: true

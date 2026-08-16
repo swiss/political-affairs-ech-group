@@ -59,8 +59,9 @@ URI: [laws:as_role](https://ld.ech.ch/schema/0296/laws/as_role)
 
 | Wert |
 | --- |
-| #publisher |
-| #rightsHolder |
+| #authority |
+| #coEditor |
+| #editor |
 
 
 
@@ -89,8 +90,9 @@ description: 'Rolle des Autors (akn:FRBRauthor/@as), als Anker-Referenz, z.B. ''
 
   '
 examples:
-- value: '#publisher'
-- value: '#rightsHolder'
+- value: '#authority'
+- value: '#coEditor'
+- value: '#editor'
 from_schema: https://ld.ech.ch/schema/0296/laws
 rank: 1000
 domain_of:

@@ -1,5 +1,6 @@
 preface_paragraphs:
-- doc_title:
+- inline_content:
+  - element_type: DocTitle
     inline_content:
     - element_type: TextRun
       text: Bundesverfassung

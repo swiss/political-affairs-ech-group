@@ -1,0 +1,20 @@
+articles:
+- eId: title_4__art_21
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 21.
+  heading:
+    eId: title_4__art_21__heading
+    inline_content:
+    - element_type: TextRun
+      text: Schutz eigener Personendaten
+  paragraphs:
+  - eId: title_4__art_21__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+      - …

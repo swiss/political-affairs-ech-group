@@ -17,6 +17,8 @@ Name: ech-0296-laws-schema
 | [ActBody](ActBody.md) | Der Hauptteil des Erlasses (akn:body) mit der Gesetzeshierarchie |
 | [ActMeta](ActMeta.md) | Metadaten-Abschnitt des Erlasses (akn:meta) |
 | [Article](Article.md) | Ein Artikel, die primäre legislative Einheit (akn:article) |
+| [Attachment](Attachment.md) | Ein einzelnes beigefügtes Dokument |
+| [Attachments](Attachments.md) | Dem Erlass beigefügte Dokumente |
 | [Block](Block.md) | Ein generischer Block (akn:block), dessen @name den Zweck nennt; trägt gemisc... |
 | [BlockElement](BlockElement.md) | Abstrakte Basis für ein Element auf Blockebene innerhalb von Inhalt, Aufzählu... |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[BlockList](BlockList.md) | Eine Auflistung von nummerierten oder buchstabierten Punkten (akn:blockList),... |
@@ -25,13 +27,18 @@ Name: ech-0296-laws-schema
 | [BlockListItem](BlockListItem.md) | Ein einzelner Punkt in einer Auflistung (akn:item) |
 | [Book](Book.md) | Buch-Ebene eines Erlasses (akn:book) |
 | [Chapter](Chapter.md) | Kapitel-Ebene eines Erlasses (akn:chapter) |
+| [Citation](Citation.md) | Eine einzelne Erwägung |
+| [Citations](Citations.md) | Die Erwägungen des Vorspruchs — worauf sich der Erlass beruft |
 | [Component](Component.md) | Ein einzelnes beiliegendes Dokument (akn:component) |
+| [ComponentRef](ComponentRef.md) | Verweis auf einen anderswo gehaltenen Dokumentbestandteil (akn:componentRef) |
 | [Components](Components.md) | Behälter für die Dokumente, die einem Erlass beiliegen (akn:components) — etw... |
+| [Conclusions](Conclusions.md) | Die Schlussformel eines Erlasses: Ort, Datum und Unterschriften |
 | [Container](Container.md) | Ein generischer Behälter (akn:container), dessen @name den Zweck nennt |
 | [Content](Content.md) | Der Inhalt eines Absatzes (akn:content) |
 | [Doc](Doc.md) | Ein beiliegendes Dokument (akn:doc) |
 | [FedlexDocument](FedlexDocument.md) | Wurzelelement eines Fedlex AkomaNtoso-Dokuments (akn:akomaNtoso) |
 | [FormatType](FormatType.md) | Halter für akn:FRBRformat: ein @value (typischerweise 'xml') plus das optiona... |
+| [Formula](Formula.md) | Eine Eingangs- oder Schlussformel des Vorspruchs (akn:formula) |
 | [FRBRAuthor](FRBRAuthor.md) | Ein Autoren- oder Rechteinhaber-Eintrag einer FRBR-Entität (akn:FRBRauthor) |
 | [FRBRDate](FRBRDate.md) | Ein Datumseintrag einer FRBR-Entität (akn:FRBRdate) |
 | [FRBRExpression](FRBRExpression.md) | FRBR-Expression-Ebene (akn:FRBRExpression): eine sprachspezifische Version de... |
@@ -40,13 +47,27 @@ Name: ech-0296-laws-schema
 | [FRBRWork](FRBRWork.md) | FRBR-Work-Ebene (akn:FRBRWork): der abstrakte Erlass unabhängig von Sprache u... |
 | [Identification](Identification.md) | FRBR-Identifikationsblock (akn:identification) mit Work-, Expression- und Man... |
 | [InlineElement](InlineElement.md) | Abstrakte Basis für ein modelliertes Inline-Markup-Element in gemischtem Inha... |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Abbr](Abbr.md) | Die Abkürzung des Erlasses |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ActiveRef](ActiveRef.md) | Verweis auf einen Erlass, den dieses Dokument ändert |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[AuthorialNote](AuthorialNote.md) | Eine Fussnote des Autors (akn:authorialNote) |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[B](B.md) | Fett-Inline-Markup (akn:b) |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Br](Br.md) | Ein Zeilenumbruch (akn:br) |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DateInline](DateInline.md) | Ein Datum im Fliesstext, mit dem maschinenlesbaren Wert in @date |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Def](Def.md) | Ein im Text definierter Begriff |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DocDate](DocDate.md) | Ein Datum im Vorspann, mit dem maschinenlesbaren Wert in @date |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DocketNumber](DocketNumber.md) | Die Ordnungsnummer des Erlasses, wie sie kantonale Sammlungen führen |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DocNumber](DocNumber.md) | Die Dokumentnummer im Vorspann |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DocTitle](DocTitle.md) | Der Dokumenttitel im Vorspann |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Eol](Eol.md) | Ein Zeilenende innerhalb eines Absatzes |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[I](I.md) | Kursiv-Inline-Markup (akn:i) |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Inline](Inline.md) | Ein benanntes präsentationsbezogenes Inline (akn:inline), z |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[NoteRef](NoteRef.md) | Verweis auf eine in den Metadaten gehaltene Anmerkung |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Person](Person.md) | Eine Person, mit Verweis auf ihre Deklaration und die innegehabte Rolle |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Placeholder](Placeholder.md) | Ein Platzhalter für entfernten Inhalt (akn:placeholder) mit dem Erweiterungsa... |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Ref](Ref.md) | Eine Inline-Referenz (akn:ref) |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Role](Role.md) | Eine Rolle, die eine Person innehat, mit Verweis auf ihre Deklaration |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ShortTitle](ShortTitle.md) | Der Kurztitel des Erlasses |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Signature](Signature.md) | Eine Unterschriftszeile |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Span](Span.md) | Generischer Inline-Bereich (akn:span) |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Sup](Sup.md) | Hochgestelltes Inline-Markup (akn:sup) |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TextRun](TextRun.md) | Ein einfacher Textabschnitt in gemischtem Inhalt |
@@ -54,11 +75,14 @@ Name: ech-0296-laws-schema
 | [Level](Level.md) | Transparente Strukturebene (akn:level) |
 | [MainBody](MainBody.md) | Hauptteil eines beiliegenden Dokuments (akn:mainBody) |
 | [MixedText](MixedText.md) | Wiederverwendbarer Halter für gemischten Inhalt: eine geordnete Folge aus Tex... |
+| [Note](Note.md) | Eine einzelne Anmerkung |
+| [Notes](Notes.md) | Anmerkungsblock der Metadaten mit den Anmerkungen, auf die ein Erlass verweis... |
+| [OriginalRef](OriginalRef.md) | Verweis auf die ursprüngliche Fassung des Erlasses (akn:original) |
 | [Paragraph](Paragraph.md) | Ein Absatz innerhalb eines Artikels oder Unterabschnitts (akn:paragraph) |
 | [Part](Part.md) | Teil-Ebene eines Erlasses (akn:part) |
 | [Preamble](Preamble.md) | Die Präambel des Erlasses (akn:preamble) mit einleitenden Fliesstext-Absätzen... |
 | [Preface](Preface.md) | Der Vorspann des Erlasses (akn:preface) mit Dokumentnummer und -titel |
-| [PrefaceP](PrefaceP.md) | Ein Vorspann-Absatz (akn:p), der Dokumentnummer und/oder -titel umschliesst |
+| [PrefaceP](PrefaceP.md) | Ein Vorspann-Absatz (akn:p) |
 | [Proviso](Proviso.md) | Ein Vorbehalt im Hauptteil eines Erlasses (akn:proviso) |
 | [References](References.md) | Benannte Referenz-Definitionen für das gesamte Dokument (akn:references) |
 | [Section](Section.md) | Abschnitt-Ebene (akn:section) |
@@ -68,6 +92,7 @@ Name: ech-0296-laws-schema
 | [TableCell](TableCell.md) | Eine Zelle in einer Tabellenzeile (akn:td) |
 | [TableRow](TableRow.md) | Eine Zeile in einer AkomaNtoso-Tabelle (akn:tr) |
 | [Title](Title.md) | Titel-Ebene eines Erlasses (akn:title) |
+| [TLCConcept](TLCConcept.md) | Ein Begriff, auf den das Dokument verweist (akn:TLCConcept), etwa ein zeitlic... |
 | [TLCOrganization](TLCOrganization.md) | Eine benannte Organisation als Referenz im Dokument (akn:TLCOrganization) |
 | [TLCReference](TLCReference.md) | Eine generische benannte Referenz im Dokument (akn:TLCReference) |
 | [TLCRole](TLCRole.md) | Eine benannte Rolle als Referenz im Dokument (akn:TLCRole) |
@@ -81,10 +106,14 @@ Name: ech-0296-laws-schema
 
 | Slot | Beschreibung |
 | --- | --- |
-| [act_name](act_name.md) | Erlasstyp (@name-Attribut von akn:act), z |
+| [act_name](act_name.md) | Typ des Erlasses (akn:act/@name) |
 | [act_ref](act_ref.md) | Der Erlass (akn:act) |
+| [active_refs](active_refs.md) | Verweise auf die Erlasse, die dieses Dokument ändert (akn:activeRef) |
 | [articles](articles.md) | Artikel-Kindelemente (akn:article) |
+| [as_attr](as_attr.md) | Rolle, in der die Person handelt (@as) |
 | [as_role](as_role.md) | Rolle des Autors (akn:FRBRauthor/@as), als Anker-Referenz, z |
+| [attachment_list](attachment_list.md) | Die beigefügten Dokumente (akn:attachment) |
+| [attachments_ref](attachments_ref.md) | Die dem Erlass beigefügten Dokumente (akn:attachments) |
 | [block_lists](block_lists.md) | Auflistungs-Elemente (akn:blockList) innerhalb von Content |
 | [block_name](block_name.md) | Zweck des Blocks (akn:block/@name) |
 | [block_paragraphs](block_paragraphs.md) | Block-Absatz-Elemente (akn:p) innerhalb von Content |
@@ -93,18 +122,21 @@ Name: ech-0296-laws-schema
 | [books](books.md) | Buch-Kindelemente (akn:book) |
 | [border](border.md) | Das @border-Attribut auf akn:table (HTML-artige Darstellung) |
 | [chapters](chapters.md) | Kapitel-Kindelemente (akn:chapter) |
+| [citation_list](citation_list.md) | Die Erwägungen selbst (akn:citation) |
+| [citations_ref](citations_ref.md) | Die Erwägungen des Vorspruchs (akn:citations) |
 | [colspan](colspan.md) | Das @colspan-Attribut auf akn:td (HTML-artige Darstellung) |
 | [component_list](component_list.md) | Die beiliegenden Dokumente (akn:component) |
+| [component_refs](component_refs.md) | Verweise auf anderswo gehaltene Bestandteile (akn:componentRef) |
 | [components_ref](components_ref.md) | Die diesem Erlass beiliegenden Dokumente (akn:components) |
+| [conclusions_ref](conclusions_ref.md) | Die Schlussformel des Erlasses (akn:conclusions) |
 | [container_name](container_name.md) | Zweck des Behälters (akn:container/@name) |
 | [containers](containers.md) | Behälter des Vorspanns (akn:container) |
 | [content_blocks](content_blocks.md) | Blockinhalt in Lesereihenfolge: Absätze, Aufzählungen und Tabellen, wie sie i... |
 | [content_ref](content_ref.md) | Inhaltselement innerhalb eines Absatzes (akn:content) |
+| [date_attr](date_attr.md) | Das Datum, das dieses Element auszeichnet, nach ISO 8601 (@date) |
 | [date_value](date_value.md) | Ein ISO-8601-Datumswert (akn:FRBRdate/@date) |
 | [doc_name](doc_name.md) | Art des beiliegenden Dokuments (akn:doc/@name) |
-| [doc_number](doc_number.md) | Dokumentnummer im Vorspann (akn:docNumber) |
 | [doc_ref](doc_ref.md) | Das beiliegende Dokument selbst (akn:doc) |
-| [doc_title](doc_title.md) | Dokumenttitel im Vorspann (akn:docTitle) |
 | [eId](eId.md) | Eindeutiger Element-Identifier im Dokument (@eId) |
 | [element_type](element_type.md) | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: Inline... |
 | [fedlex_generator](fedlex_generator.md) | Fedlex-Erweiterungsattribut fedlex:generator bei akn:FRBRformat[@value='xml'] |
@@ -112,6 +144,7 @@ Name: ech-0296-laws-schema
 | [fedlex_role](fedlex_role.md) | Fedlex-Erweiterungsattribut fedlex:role |
 | [fedlex_rs](fedlex_rs.md) | Fedlex-Erweiterungsattribut fedlex:rs auf akn:ref: die SR-Nummer des referenz... |
 | [fedlex_rs_uri](fedlex_rs_uri.md) | Fedlex-Erweiterungsattribut fedlex:rs-uri auf akn:ref: die ELI-URI des SR-Ein... |
+| [formulas](formulas.md) | Formeln des Vorspruchs (akn:formula) |
 | [frbr_authoritative](frbr_authoritative.md) | Ob dies die massgebliche Version ist (akn:FRBRauthoritative/@value) |
 | [frbr_authors](frbr_authors.md) | Autoren-/Rechteinhaber-Einträge dieser FRBR-Entität (akn:FRBRauthor) |
 | [frbr_country](frbr_country.md) | Ländercode für diesen Erlass (akn:FRBRcountry/@value), z |
@@ -123,6 +156,7 @@ Name: ech-0296-laws-schema
 | [frbr_manifestation](frbr_manifestation.md) | FRBR-Manifestations-Ebenen-Beschreibung (akn:FRBRManifestation) |
 | [frbr_names](frbr_names.md) | Mehrsprachige Namenseinträge des FRBR-Works (akn:FRBRname) |
 | [frbr_number](frbr_number.md) | SR-Nummer (akn:FRBRnumber/@value), z |
+| [frbr_subtype](frbr_subtype.md) | Untertyp des Werks (akn:FRBRsubtype), z |
 | [frbr_this](frbr_this.md) | Kanonische ELI-URI dieser FRBR-Entität (akn:FRBRthis/@value) |
 | [frbr_uri](frbr_uri.md) | Basis-ELI-URI dieser FRBR-Entität (akn:FRBRuri/@value) |
 | [frbr_work](frbr_work.md) | FRBR-Work-Ebenen-Beschreibung (akn:FRBRWork) |
@@ -135,9 +169,14 @@ Name: ech-0296-laws-schema
 | [levels](levels.md) | Transparente Level-Kindelemente (akn:level) |
 | [list_introduction](list_introduction.md) | Optionaler Einleitungstext vor einer Auflistung (akn:listIntroduction) |
 | [main_body](main_body.md) | Hauptteil des beiliegenden Dokuments (akn:mainBody) |
+| [marker](marker.md) | Das gedruckte Zeichen eines Anmerkungsverweises (@marker) |
 | [meta](meta.md) | Metadaten-Abschnitt des Erlasses (akn:meta) |
 | [name_attr](name_attr.md) | Das @name-Attribut auf akn:inline, z |
+| [name_attr2](name_attr2.md) | Zweck der Formel (@name) |
+| [note_list](note_list.md) | Die Anmerkungen selbst (akn:note) |
+| [notes_ref](notes_ref.md) | Der Anmerkungsblock der Metadaten (akn:notes) |
 | [num](num.md) | Nummerierungselement für ein Strukturelement oder einen Artikel (akn:num) |
+| [original_ref](original_ref.md) | Verweis auf die ursprüngliche Fassung (akn:original) |
 | [paragraphs](paragraphs.md) | Absatz-Kindelemente (akn:paragraph) innerhalb eines Artikels oder Unterabschn... |
 | [parts](parts.md) | Teil-Kindelemente (akn:part) |
 | [preamble_ref](preamble_ref.md) | Präambel des Erlasses (akn:preamble) |
@@ -145,10 +184,12 @@ Name: ech-0296-laws-schema
 | [preface_ref](preface_ref.md) | Vorspann des Erlasses (akn:preface) |
 | [provisos](provisos.md) | Vorbehalt-Elemente (akn:proviso) |
 | [references_ref](references_ref.md) | Referenzen-Abschnitt der Metadaten (akn:references) |
+| [refers_to](refers_to.md) | Anker, der nennt, worauf sich das Element bezieht (@refersTo) |
 | [sections](sections.md) | Abschnitt-Kindelemente (akn:section) |
 | [short_form](short_form.md) | Kurzform-Abkürzung des Gesetzesnamens (@shortForm), z |
 | [show_as](show_as.md) | Lesbare Anzeigebezeichnung einer TLC-Referenz (@showAs) |
 | [source](source.md) | Anker-Referenz auf die verantwortliche Organisation (@source), z |
+| [src](src.md) | Ort des verwiesenen Bestandteils (@src) |
 | [subchapters](subchapters.md) | Unterkapitel-Kindelemente (akn:subchapter) |
 | [subdivisions](subdivisions.md) | Unterabschnitt-Kindelemente (akn:subdivision) innerhalb eines Artikels |
 | [subheading](subheading.md) | Unterüberschrift für ein Strukturelement (akn:subheading) |
@@ -157,7 +198,9 @@ Name: ech-0296-laws-schema
 | [table_rows](table_rows.md) | Zeilen in einer Tabelle (akn:tr) |
 | [tables](tables.md) | Tabellen-Elemente (akn:table) innerhalb von Content |
 | [text](text.md) | Die Zeichendaten eines TextRun; wird als Textknoten in gemischtem Inhalt ausg... |
+| [title_attr](title_attr.md) | Menschenlesbare Bezeichnung der ausgezeichneten Stelle (@title) |
 | [titles](titles.md) | Titel-Kindelemente (akn:title) |
+| [tlc_concepts](tlc_concepts.md) | Begriffe, auf die das Dokument verweist (akn:TLCConcept) |
 | [tlc_organizations](tlc_organizations.md) | Benannte Organisations-Referenzen im Dokument (akn:TLCOrganization) |
 | [tlc_references](tlc_references.md) | Generische benannte Referenzen im Dokument (akn:TLCReference) |
 | [tlc_roles](tlc_roles.md) | Benannte Rollen-Referenzen im Dokument (akn:TLCRole) |

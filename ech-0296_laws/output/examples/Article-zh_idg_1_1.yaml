@@ -1,0 +1,26 @@
+articles:
+- eId: title_1__art_1
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 1.
+  heading:
+    inline_content:
+    - element_type: TextRun
+      text: Gegenstand und Zweck
+  paragraphs:
+  - eId: title_1__art_1__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: ltitle_1__art_1__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+      - …

@@ -324,6 +324,58 @@ _FRBR-Identifikationsblock (akn:identification) mit Work-, Expression- und Manif
 
 
 #### Beispiele
+##### Beispiel Identification: zh idg 1 1
+
+```yaml
+identification_ref:
+  source: ''
+  frbr_work:
+    frbr_this:
+      value_uri: /akn/CH-ZH/act/2007-02-12/62-121/!main
+    frbr_uri:
+      value_uri: /akn/CH-ZH/act/2007-02-12/62-121
+    frbr_dates:
+    - date_value: '2007-02-12'
+      frbr_date_name: ''
+    frbr_authors:
+    - href: '#kantonsrat'
+      as_role: '#authority'
+    frbr_country:
+      value: CH-ZH
+    frbr_subtype:
+      value: Gesetz
+    frbr_number:
+      value: 62-121
+  frbr_expression:
+    frbr_this:
+      value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@/!main
+    frbr_uri:
+      value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@
+    frbr_dates:
+    - date_value: '2007-02-12'
+      frbr_date_name: ''
+    frbr_authors:
+    - href: '#SK'
+      as_role: '#editor'
+    - href: '#JI'
+      as_role: '#coEditor'
+    frbr_language:
+      language_value: ger
+  frbr_manifestation:
+    frbr_this:
+      value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@.akn/!main
+    frbr_uri:
+      value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@.akn
+    frbr_dates:
+    - date_value: '2007-02-12'
+      frbr_date_name: ''
+    frbr_authors:
+    - href: '#SK-Publ'
+      as_role: '#publisher'
+    frbr_format:
+      value: '#akn'
+
+```
 ##### Beispiel Identification: sr101 1 1
 
 ```yaml
@@ -509,6 +561,7 @@ _FRBR-Work-Ebene (akn:FRBRWork): der abstrakte Erlass unabhängig von Sprache un
 | frbr_dates | * <br/> [FRBRDate](#FRBRDate) | Datumseinträge dieser FRBR-Entität (akn:FRBRdate). Mehrere Einträge für verschiedene Ereignistypen.  |
 | frbr_authors | * <br/> [FRBRAuthor](#FRBRAuthor) | Autoren-/Rechteinhaber-Einträge dieser FRBR-Entität (akn:FRBRauthor). |
 | frbr_country | 0..1 <br/> [ValueType](#ValueType) | Ländercode für diesen Erlass (akn:FRBRcountry/@value), z.B. 'CH'. |
+| frbr_subtype | 0..1 <br/> [ValueType](#ValueType) | Untertyp des Werks (akn:FRBRsubtype), z.B. „Gesetz“. Von kantonalen Sammlungen verwendet. |
 | frbr_number | 0..1 <br/> [ValueType](#ValueType) | SR-Nummer (akn:FRBRnumber/@value), z.B. '101'. |
 | frbr_names | * <br/> [FRBRName](#FRBRName) | Mehrsprachige Namenseinträge des FRBR-Works (akn:FRBRname). Ein Eintrag pro Sprache. |
 | frbr_authoritative | 0..1 <br/> [ValueType](#ValueType) | Ob dies die massgebliche Version ist (akn:FRBRauthoritative/@value). |
@@ -537,6 +590,28 @@ _FRBR-Work-Ebene (akn:FRBRWork): der abstrakte Erlass unabhängig von Sprache un
 
 
 #### Beispiele
+##### Beispiel FRBRWork: zh idg 1 1
+
+```yaml
+frbr_work:
+  frbr_this:
+    value_uri: /akn/CH-ZH/act/2007-02-12/62-121/!main
+  frbr_uri:
+    value_uri: /akn/CH-ZH/act/2007-02-12/62-121
+  frbr_dates:
+  - date_value: '2007-02-12'
+    frbr_date_name: ''
+  frbr_authors:
+  - href: '#kantonsrat'
+    as_role: '#authority'
+  frbr_country:
+    value: CH-ZH
+  frbr_subtype:
+    value: Gesetz
+  frbr_number:
+    value: 62-121
+
+```
 ##### Beispiel FRBRWork: bgoe 1 1
 
 ```yaml
@@ -668,6 +743,26 @@ _FRBR-Expression-Ebene (akn:FRBRExpression): eine sprachspezifische Version des 
 
 
 #### Beispiele
+##### Beispiel FRBRExpression: zh idg 1 1
+
+```yaml
+frbr_expression:
+  frbr_this:
+    value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@/!main
+  frbr_uri:
+    value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@
+  frbr_dates:
+  - date_value: '2007-02-12'
+    frbr_date_name: ''
+  frbr_authors:
+  - href: '#SK'
+    as_role: '#editor'
+  - href: '#JI'
+    as_role: '#coEditor'
+  frbr_language:
+    language_value: ger
+
+```
 ##### Beispiel FRBRExpression: bgoe 1 1
 
 ```yaml
@@ -771,6 +866,24 @@ _FRBR-Manifestations-Ebene (akn:FRBRManifestation): ein spezifisches Dateiformat
 
 
 #### Beispiele
+##### Beispiel FRBRManifestation: zh idg 1 1
+
+```yaml
+frbr_manifestation:
+  frbr_this:
+    value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@.akn/!main
+  frbr_uri:
+    value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@.akn
+  frbr_dates:
+  - date_value: '2007-02-12'
+    frbr_date_name: ''
+  frbr_authors:
+  - href: '#SK-Publ'
+    as_role: '#publisher'
+  frbr_format:
+    value: '#akn'
+
+```
 ##### Beispiel FRBRManifestation: bgoe 1 1
 
 ```yaml
@@ -899,6 +1012,14 @@ frbr_dates:
   frbr_date_name: jolux:dateEntryInForce
 
 ```
+##### Beispiel FRBRDate: zh idg 1 1
+
+```yaml
+frbr_dates:
+- date_value: '2007-02-12'
+  frbr_date_name: ''
+
+```
 ##### Beispiel FRBRDate: sr101 1 3
 
 ```yaml
@@ -1019,12 +1140,28 @@ frbr_authors:
   as_role: '#publisher'
 
 ```
+##### Beispiel FRBRAuthor: zh idg 1 2
+
+```yaml
+frbr_authors:
+- href: '#JI'
+  as_role: '#coEditor'
+
+```
 ##### Beispiel FRBRAuthor: bgoe 1 2
 
 ```yaml
 frbr_authors:
 - href: '#ch.bk'
   as_role: '#rightsHolder'
+
+```
+##### Beispiel FRBRAuthor: zh idg 1 1
+
+```yaml
+frbr_authors:
+- href: '#SK-Publ'
+  as_role: '#publisher'
 
 ```
 ##### Beispiel FRBRAuthor: bgoe 1 1
@@ -1329,12 +1466,14 @@ _Das Erlasselement (akn:act). Hauptinhaltselement eines AkomaNtoso-Dokuments. Da
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
-| act_name | 0..1 <br/> [ActTypeEnum](#ActTypeEnum) | Erlasstyp (@name-Attribut von akn:act), z.B. 'publicLaw'. |
+| act_name | 0..1 <br/> String&nbsp;or&nbsp;<br />[ActTypeEnum](#ActTypeEnum) | Typ des Erlasses (akn:act/@name). Die zulässigen Werte von ActTypeEnum sind die von Fedlex verwendeten; kantonale Sammlungen benennen eigene Typen, weshalb eine freie Zeichenkette zulässig bleibt.  |
 | meta | 0..1 <br/> [ActMeta](#ActMeta) | Metadaten-Abschnitt des Erlasses (akn:meta). |
 | preface_ref | 0..1 <br/> [Preface](#Preface) | Vorspann des Erlasses (akn:preface). |
 | preamble_ref | 0..1 <br/> [Preamble](#Preamble) | Präambel des Erlasses (akn:preamble). |
 | body | 0..1 <br/> [ActBody](#ActBody) | Hauptteil des Erlasses (akn:body). |
 | components_ref | 0..1 <br/> [Components](#Components) | Die diesem Erlass beiliegenden Dokumente (akn:components). |
+| conclusions_ref | 0..1 <br/> [Conclusions](#Conclusions) | Die Schlussformel des Erlasses (akn:conclusions). |
+| attachments_ref | 0..1 <br/> [Attachments](#Attachments) | Die dem Erlass beigefügten Dokumente (akn:attachments). |
 
 
 
@@ -1345,6 +1484,7 @@ _Das Erlasselement (akn:act). Hauptinhaltselement eines AkomaNtoso-Dokuments. Da
 | Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
 | [FedlexDocument](#FedlexDocument) | act_ref | range | [Act](#Act) |
+| [Attachment](#Attachment) | act_ref | range | [Act](#Act) |
 
 
 
@@ -1461,8 +1601,12 @@ act_ref:
         show_as: xml
   preface_ref:
     preface_paragraphs:
-    - doc_number: '152.3 '
-    - doc_title:
+    - inline_content:
+      - element_type: DocNumber
+        inline_content:
+        - …
+    - inline_content:
+      - element_type: DocTitle
         inline_content:
         - …
         - …
@@ -1542,6 +1686,241 @@ act_ref:
           content_blocks:
           - …
           levels:
+          - …
+
+```
+##### Beispiel Act: zh idg 1
+
+```yaml
+act_ref:
+  act_name: Grunderlass
+  meta:
+    identification_ref:
+      source: ''
+      frbr_work:
+        frbr_this:
+          value_uri: /akn/CH-ZH/act/2007-02-12/62-121/!main
+        frbr_uri:
+          value_uri: /akn/CH-ZH/act/2007-02-12/62-121
+        frbr_dates:
+        - date_value: '2007-02-12'
+          frbr_date_name: ''
+        frbr_authors:
+        - href: '#kantonsrat'
+          as_role: '#authority'
+        frbr_country:
+          value: CH-ZH
+        frbr_subtype:
+          value: Gesetz
+        frbr_number:
+          value: 62-121
+      frbr_expression:
+        frbr_this:
+          value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@/!main
+        frbr_uri:
+          value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@
+        frbr_dates:
+        - date_value: '2007-02-12'
+          frbr_date_name: ''
+        frbr_authors:
+        - href: '#SK'
+          as_role: '#editor'
+        - href: '#JI'
+          as_role: '#coEditor'
+        frbr_language:
+          language_value: ger
+      frbr_manifestation:
+        frbr_this:
+          value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@.akn/!main
+        frbr_uri:
+          value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@.akn
+        frbr_dates:
+        - date_value: '2007-02-12'
+          frbr_date_name: ''
+        frbr_authors:
+        - href: '#SK-Publ'
+          as_role: '#publisher'
+        frbr_format:
+          value: '#akn'
+    references_ref:
+      source: '#source'
+      original_ref:
+        eId: ro
+        href: /akn/CH-ZH/act/EXPRESSION
+        show_as: Gesetz über .. vom ...
+      active_refs:
+      - eId: ra_1
+        href: /akn/CH-ZH/act/WORK
+        show_as: Gesetz über .. vom ...
+      - eId: ra_2
+        href: /akn/CH-ZH/act/2022-35/cons/(aktuelle konsolidierte Fassung)
+        show_as: Gesetz über .. vom ...
+      tlc_organizations:
+      - eId: kantonsrat
+        href: https://data.zh.ch/vocabulary/legal-institution/2
+        show_as: Kantonsrat
+      - eId: SK
+        href: https://data.zh.ch/vocabulary/organizational-entity/SK
+        show_as: Staatskanzlei
+      - … 2 weitere
+      tlc_roles:
+      - eId: authority
+        href: https://data.zh.ch/vocabulary/role/author
+        show_as: Beschliessendes Organ
+      - eId: editor
+        href: https://data.zh.ch/vocabulary/role/leadEditor
+        show_as: Federführende Einheit
+      - … 2 weitere
+      tlc_references:
+      - name_attr: language
+        href: http://publications.europa.eu/resource/authority/language/DEU
+        show_as: ger
+      - name_attr: xml
+        href: https://data.zh.ch/vocabulary/user-format/xml
+        show_as: XML
+      tlc_concepts:
+      - eId: inForce
+        href: ''
+        show_as: ''
+    notes_ref:
+      source: ''
+      note_list:
+      - eId: note_1
+        content_blocks:
+        - …
+      - eId: note_2
+        content_blocks:
+        - …
+      - … 4 weitere
+  preface_ref:
+    preface_paragraphs:
+    - inline_content:
+      - element_type: DocketNumber
+        eId: docketNum_1
+        title_attr: Orndungsnummer
+        inline_content:
+        - …
+      - element_type: DocTitle
+        eId: actTitle
+        title_attr: Erlasstitel
+        inline_content:
+        - …
+      - … 3 weitere
+  preamble_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - element_type: TextRun
+        text: nach Einsichtnahme in die Anträge
+    - element_type: BlockParagraph
+      inline_content:
+      - element_type: TextRun
+        text: und
+    - … 1 weitere
+    formulas:
+    - eId: formula_1
+      name_attr2: openFormula
+      content_blocks:
+      - element_type: BlockParagraph
+        inline_content:
+        - …
+    - eId: formula_2
+      name_attr2: Verb
+      content_blocks:
+      - element_type: BlockParagraph
+        inline_content:
+        - …
+    citations_ref:
+    - citation_list:
+      - eId: cit_1
+        refers_to: ''
+        content_blocks:
+        - …
+    - citation_list:
+      - eId: cit_2
+        refers_to: ''
+        content_blocks:
+        - …
+  body:
+    titles:
+    - eId: title_1
+      num:
+        inline_content:
+        - …
+      heading:
+        eId: title_1__heading_1
+        inline_content:
+        - …
+      articles:
+      - eId: title_1__art_1
+        num: …
+        heading: …
+        paragraphs:
+        - …
+        - …
+      - eId: title_1__art_2
+        num: …
+        heading: …
+        paragraphs:
+        - …
+        - …
+      - … 1 weitere
+    - eId: title_2
+      num:
+        inline_content:
+        - …
+      heading:
+        eId: title_2__heading_1
+        inline_content:
+        - …
+      chapters:
+      - eId: title_2__chp_A
+        num: …
+        heading: …
+        articles:
+        - …
+        - …
+        - … 2 weitere
+      - eId: title_2__chp_B
+        num: …
+        heading: …
+        articles:
+        - …
+        - …
+        - … 4 weitere
+    - … 7 weitere
+  conclusions_ref:
+    eId: conclusions
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - element_type: TextRun
+        text: Im Namen des Regierungsrates
+      - element_type: Eol
+      - … 2 weitere
+    - element_type: BlockList
+      eId: conclusions__blocklist_1
+      list_introduction:
+        inline_content:
+        - …
+      items:
+      - eId: conclusions__blocklist_1__item_1
+        content_blocks:
+        - …
+        num: …
+      - eId: conclusions__blocklist_1__item_2
+        content_blocks:
+        - …
+        num: …
+    - … 1 weitere
+  attachments_ref:
+    attachment_list:
+    - act_ref:
+        act_name: ''
+        meta:
+          identification_ref: …
+        body:
+          component_refs:
           - …
 
 ```
@@ -1643,8 +2022,12 @@ act_ref:
         show_as: xml
   preface_ref:
     preface_paragraphs:
-    - doc_number: '101'
-    - doc_title:
+    - inline_content:
+      - element_type: DocNumber
+        inline_content:
+        - …
+    - inline_content:
+      - element_type: DocTitle
         inline_content:
         - …
         - …
@@ -1772,7 +2155,11 @@ URI: [laws:ActTypeEnum](https://ld.ech.ch/schema/0296/laws/ActTypeEnum)
 
 </div>
 
-## Vorspann und Präambel
+## Vorspann und Vorspruch
+
+Der Vorspann trägt, was den Erlass benennt: Nummer, Titel, Kurztitel, Abkürzung und Datum. Wie fein das ausgezeichnet wird, unterscheidet sich zwischen den Ebenen. Fedlex setzt Nummer und Titel in je einen eigenen Absatz und lässt den Rest als Fliesstext stehen; der Kanton Zürich zeichnet in *einem* Absatz die Ordnungsnummer, den Erlasstitel, den Kurztitel, die Abkürzung und das Datum je einzeln aus.
+
+Deshalb sind diese Angaben nicht eigene Felder des Absatzes, sondern Inline-Elemente wie die Textauszeichnung: Nur so bleibt ihre Reihenfolge untereinander erhalten. Die Anforderung von Fedlex — Nummer und Titel müssen im Vorspann vorkommen (FLX-PF-001 und -002) — ist damit eine Regel über den Inhalt, nicht über die Struktur.
 
 
 
@@ -1826,12 +2213,15 @@ _Der Vorspann des Erlasses (akn:preface) mit Dokumentnummer und -titel. Fedlex S
 ```yaml
 preface_ref:
   preface_paragraphs:
-  - doc_number: '152.3 '
-  - doc_title:
+  - inline_content:
+    - element_type: DocNumber
       inline_content:
-      - element_type: TextRun
-        text: Bundesgesetz
-      - element_type: Br
+      - …
+  - inline_content:
+    - element_type: DocTitle
+      inline_content:
+      - …
+      - …
       - … 1 weitere
   - … 2 weitere
 
@@ -1841,14 +2231,36 @@ preface_ref:
 ```yaml
 preface_ref:
   preface_paragraphs:
-  - doc_number: '101'
-  - doc_title:
+  - inline_content:
+    - element_type: DocNumber
       inline_content:
-      - element_type: TextRun
-        text: Bundesverfassung
-      - element_type: Br
+      - …
+  - inline_content:
+    - element_type: DocTitle
+      inline_content:
+      - …
+      - …
       - … 1 weitere
   - … 1 weitere
+
+```
+##### Beispiel Preface: zh idg 1 1
+
+```yaml
+preface_ref:
+  preface_paragraphs:
+  - inline_content:
+    - element_type: DocketNumber
+      eId: docketNum_1
+      title_attr: Orndungsnummer
+      inline_content:
+      - …
+    - element_type: DocTitle
+      eId: actTitle
+      title_attr: Erlasstitel
+      inline_content:
+      - …
+    - … 3 weitere
 
 ```
 
@@ -1864,7 +2276,7 @@ preface_ref:
 ### Klasse: PrefaceP []{#PrefaceP}
 
 
-_Ein Vorspann-Absatz (akn:p), der Dokumentnummer und/oder -titel umschliesst. Fedlex verlangt akn:docNumber und akn:docTitle innerhalb eines akn:p des Vorspanns (FLX-PF-001/002)._
+_Ein Vorspann-Absatz (akn:p). Fedlex verlangt akn:docNumber und akn:docTitle irgendwo im Vorspann (FLX-PF-001/002); kantonale Sammlungen zeichnen zusätzlich Ordnungsnummer, Kurztitel, Abkürzung und Datum aus._
 
 
 
@@ -1878,23 +2290,8 @@ _Ein Vorspann-Absatz (akn:p), der Dokumentnummer und/oder -titel umschliesst. Fe
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
-| doc_number | 0..1 <br/> String | Dokumentnummer im Vorspann (akn:docNumber). Pflicht gemäss FLX-PF-001. Typischerweise die SR-Nummer, z.B. '101'.  |
-| doc_title | 0..1 <br/> [MixedText](#MixedText) | Dokumenttitel im Vorspann (akn:docTitle). Pflicht gemäss FLX-PF-002. Kann Inline-Markup und akn:br für Zeilenumbrüche enthalten.  |
+| fedlex_role | 0..1 <br/> [FedlexRoleEnum](#FedlexRoleEnum) | Fedlex-Erweiterungsattribut fedlex:role. FLX-XF-003 lässt 'marginal' (nur an akn:level, FLX-XF-004) und 'reference' (nur an akn:subheading, FLX-XF-005) zu; die publizierte Bundesverfassung führt zusätzlich 'heading' an einem Präambel-Absatz.  |
 | inline_content | * <br/> [InlineElement](#InlineElement) | Geordneter gemischter Inhalt: eine Folge aus Textabschnitten und Inline-Markup-Elementen (InlineElement-Subklassen). Die Dokumentreihenfolge wird durch die Listenreihenfolge bewahrt.  |
-
-###### Einschränkungen
-
-
-Mindestens eines der folgenden Felder muss gesetzt sein:
-
-- doc_number
-- doc_title
-- inline_content
-
-
-
-
-
 
 
 
@@ -1924,14 +2321,19 @@ Mindestens eines der folgenden Felder muss gesetzt sein:
 
 ```yaml
 preface_paragraphs:
-- doc_number: '101'
+- inline_content:
+  - element_type: DocNumber
+    inline_content:
+    - element_type: TextRun
+      text: '101'
 
 ```
 ##### Beispiel PrefaceP: sr101 1 2
 
 ```yaml
 preface_paragraphs:
-- doc_title:
+- inline_content:
+  - element_type: DocTitle
     inline_content:
     - element_type: TextRun
       text: Bundesverfassung
@@ -1961,7 +2363,8 @@ preface_paragraphs:
 
 ```yaml
 preface_paragraphs:
-- doc_title:
+- inline_content:
+  - element_type: DocTitle
     inline_content:
     - element_type: TextRun
       text: Bundesgesetz
@@ -1969,11 +2372,35 @@ preface_paragraphs:
     - … 1 weitere
 
 ```
+##### Beispiel PrefaceP: zh idg 1 1
+
+```yaml
+preface_paragraphs:
+- inline_content:
+  - element_type: DocketNumber
+    eId: docketNum_1
+    title_attr: Orndungsnummer
+    inline_content:
+    - element_type: TextRun
+      text: '170.4'
+  - element_type: DocTitle
+    eId: actTitle
+    title_attr: Erlasstitel
+    inline_content:
+    - element_type: TextRun
+      text: Gesetz über die Information und den Datenschutz
+  - … 3 weitere
+
+```
 ##### Beispiel PrefaceP: bgoe 1 1
 
 ```yaml
 preface_paragraphs:
-- doc_number: '152.3 '
+- inline_content:
+  - element_type: DocNumber
+    inline_content:
+    - element_type: TextRun
+      text: '152.3'
 
 ```
 ##### Beispiel PrefaceP: bgoe 1 4
@@ -1995,6 +2422,287 @@ preface_paragraphs:
 
 
 
+### Klasse: DocNumber []{#DocNumber}
+
+
+_Die Dokumentnummer im Vorspann._
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| eId | 0..1 <br/> [EIdType](#EIdType) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
+| title_attr | 0..1 <br/> String | Menschenlesbare Bezeichnung der ausgezeichneten Stelle (@title). |
+| inline_content | * <br/> [InlineElement](#InlineElement) | Geordneter gemischter Inhalt: eine Folge aus Textabschnitten und Inline-Markup-Elementen (InlineElement-Subklassen). Die Dokumentreihenfolge wird durch die Listenreihenfolge bewahrt.  |
+| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement. <br/><br/>Vererbung: [InlineElement](#InlineElement) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+### Klasse: DocTitle []{#DocTitle}
+
+
+_Der Dokumenttitel im Vorspann._
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| eId | 0..1 <br/> [EIdType](#EIdType) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
+| title_attr | 0..1 <br/> String | Menschenlesbare Bezeichnung der ausgezeichneten Stelle (@title). |
+| inline_content | * <br/> [InlineElement](#InlineElement) | Geordneter gemischter Inhalt: eine Folge aus Textabschnitten und Inline-Markup-Elementen (InlineElement-Subklassen). Die Dokumentreihenfolge wird durch die Listenreihenfolge bewahrt.  |
+| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement. <br/><br/>Vererbung: [InlineElement](#InlineElement) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+### Klasse: DocketNumber []{#DocketNumber}
+
+
+_Die Ordnungsnummer des Erlasses, wie sie kantonale Sammlungen führen._
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| eId | 0..1 <br/> [EIdType](#EIdType) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
+| title_attr | 0..1 <br/> String | Menschenlesbare Bezeichnung der ausgezeichneten Stelle (@title). |
+| inline_content | * <br/> [InlineElement](#InlineElement) | Geordneter gemischter Inhalt: eine Folge aus Textabschnitten und Inline-Markup-Elementen (InlineElement-Subklassen). Die Dokumentreihenfolge wird durch die Listenreihenfolge bewahrt.  |
+| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement. <br/><br/>Vererbung: [InlineElement](#InlineElement) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+### Klasse: ShortTitle []{#ShortTitle}
+
+
+_Der Kurztitel des Erlasses._
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| eId | 0..1 <br/> [EIdType](#EIdType) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
+| title_attr | 0..1 <br/> String | Menschenlesbare Bezeichnung der ausgezeichneten Stelle (@title). |
+| inline_content | * <br/> [InlineElement](#InlineElement) | Geordneter gemischter Inhalt: eine Folge aus Textabschnitten und Inline-Markup-Elementen (InlineElement-Subklassen). Die Dokumentreihenfolge wird durch die Listenreihenfolge bewahrt.  |
+| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement. <br/><br/>Vererbung: [InlineElement](#InlineElement) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+### Klasse: Abbr []{#Abbr}
+
+
+_Die Abkürzung des Erlasses._
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| eId | 0..1 <br/> [EIdType](#EIdType) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
+| title_attr | 0..1 <br/> String | Menschenlesbare Bezeichnung der ausgezeichneten Stelle (@title). |
+| inline_content | * <br/> [InlineElement](#InlineElement) | Geordneter gemischter Inhalt: eine Folge aus Textabschnitten und Inline-Markup-Elementen (InlineElement-Subklassen). Die Dokumentreihenfolge wird durch die Listenreihenfolge bewahrt.  |
+| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement. <br/><br/>Vererbung: [InlineElement](#InlineElement) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+### Klasse: DocDate []{#DocDate}
+
+
+_Ein Datum im Vorspann, mit dem maschinenlesbaren Wert in @date._
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| eId | 0..1 <br/> [EIdType](#EIdType) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
+| date_attr | 0..1 <br/> String | Das Datum, das dieses Element auszeichnet, nach ISO 8601 (@date). |
+| title_attr | 0..1 <br/> String | Menschenlesbare Bezeichnung der ausgezeichneten Stelle (@title). |
+| inline_content | * <br/> [InlineElement](#InlineElement) | Geordneter gemischter Inhalt: eine Folge aus Textabschnitten und Inline-Markup-Elementen (InlineElement-Subklassen). Die Dokumentreihenfolge wird durch die Listenreihenfolge bewahrt.  |
+| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement. <br/><br/>Vererbung: [InlineElement](#InlineElement) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+### Vorspruch
+
+Der Vorspruch nennt, wer den Erlass beschliesst und worauf er sich beruft: die Eingangsformel, die Erwägungen und die weiteren Absätze.
+
+
+
 ### Klasse: Preamble []{#Preamble}
 
 
@@ -2012,6 +2720,8 @@ _Die Präambel des Erlasses (akn:preamble) mit einleitenden Fliesstext-Absätzen
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
+| formulas | * <br/> [Formula](#Formula) | Formeln des Vorspruchs (akn:formula). |
+| citations_ref | * <br/> [Citations](#Citations) | Die Erwägungen des Vorspruchs (akn:citations). |
 | content_blocks | * <br/> [BlockElement](#BlockElement) | Blockinhalt in Lesereihenfolge: Absätze, Aufzählungen und Tabellen, wie sie im Dokument aufeinanderfolgen.  |
 
 
@@ -2023,6 +2733,368 @@ _Die Präambel des Erlasses (akn:preamble) mit einleitenden Fliesstext-Absätzen
 | Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
 | [Act](#Act) | preamble_ref | range | [Preamble](#Preamble) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+### Klasse: Formula []{#Formula}
+
+
+_Eine Eingangs- oder Schlussformel des Vorspruchs (akn:formula)._
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| eId | 0..1 <br/> [EIdType](#EIdType) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
+| name_attr2 | 0..1 <br/> String | Zweck der Formel (@name). |
+| content_blocks | * <br/> [BlockElement](#BlockElement) | Blockinhalt in Lesereihenfolge: Absätze, Aufzählungen und Tabellen, wie sie im Dokument aufeinanderfolgen.  |
+
+
+
+
+
+#### Verwendungen
+
+| Verwendet von | Im Slot | Rolle | Element |
+| ---  | --- | --- | --- |
+| [Preamble](#Preamble) | formulas | range | [Formula](#Formula) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+### Klasse: Citations []{#Citations}
+
+
+_Die Erwägungen des Vorspruchs — worauf sich der Erlass beruft._
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| eId | 0..1 <br/> [EIdType](#EIdType) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
+| citation_list | * <br/> [Citation](#Citation) | Die Erwägungen selbst (akn:citation). |
+
+
+
+
+
+#### Verwendungen
+
+| Verwendet von | Im Slot | Rolle | Element |
+| ---  | --- | --- | --- |
+| [Preamble](#Preamble) | citations_ref | range | [Citations](#Citations) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+### Klasse: Citation []{#Citation}
+
+
+_Eine einzelne Erwägung._
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| eId | 0..1 <br/> [EIdType](#EIdType) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
+| refers_to | 0..1 <br/> String | Anker, der nennt, worauf sich das Element bezieht (@refersTo). |
+| content_blocks | * <br/> [BlockElement](#BlockElement) | Blockinhalt in Lesereihenfolge: Absätze, Aufzählungen und Tabellen, wie sie im Dokument aufeinanderfolgen.  |
+
+
+
+
+
+#### Verwendungen
+
+| Verwendet von | Im Slot | Rolle | Element |
+| ---  | --- | --- | --- |
+| [Citations](#Citations) | citation_list | range | [Citation](#Citation) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+## Schlussformel und Beilagen
+
+Am Ende eines Erlasses stehen Ort, Datum und Unterschriften — im Kanton Zürich als `akn:conclusions`, das Fedlex nicht führt. Beilagen stehen in `akn:attachments`; jede Beilage ist wieder ein vollständiger Erlass, weshalb sie dieselbe Klasse verwendet.
+
+
+
+### Klasse: Conclusions []{#Conclusions}
+
+
+_Die Schlussformel eines Erlasses: Ort, Datum und Unterschriften._
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| eId | 0..1 <br/> [EIdType](#EIdType) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
+| content_blocks | * <br/> [BlockElement](#BlockElement) | Blockinhalt in Lesereihenfolge: Absätze, Aufzählungen und Tabellen, wie sie im Dokument aufeinanderfolgen.  |
+
+
+
+
+
+#### Verwendungen
+
+| Verwendet von | Im Slot | Rolle | Element |
+| ---  | --- | --- | --- |
+| [Act](#Act) | conclusions_ref | range | [Conclusions](#Conclusions) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+### Klasse: Attachments []{#Attachments}
+
+
+_Dem Erlass beigefügte Dokumente._
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| attachment_list | * <br/> [Attachment](#Attachment) | Die beigefügten Dokumente (akn:attachment). |
+
+
+
+
+
+#### Verwendungen
+
+| Verwendet von | Im Slot | Rolle | Element |
+| ---  | --- | --- | --- |
+| [Act](#Act) | attachments_ref | range | [Attachments](#Attachments) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+### Klasse: Attachment []{#Attachment}
+
+
+_Ein einzelnes beigefügtes Dokument._
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| act_ref | 1 <br/> [Act](#Act) | Der Erlass (akn:act). Muss das einzige Kind von akn:akomaNtoso sein (FLX-RT-001). |
+
+
+
+
+
+#### Verwendungen
+
+| Verwendet von | Im Slot | Rolle | Element |
+| ---  | --- | --- | --- |
+| [Attachments](#Attachments) | attachment_list | range | [Attachment](#Attachment) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+### Klasse: ComponentRef []{#ComponentRef}
+
+
+_Verweis auf einen anderswo gehaltenen Dokumentbestandteil (akn:componentRef)._
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| eId | 0..1 <br/> [EIdType](#EIdType) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
+| src | 0..1 <br/> String | Ort des verwiesenen Bestandteils (@src). |
+| show_as | 0..1 <br/> String | Lesbare Anzeigebezeichnung einer TLC-Referenz (@showAs). |
+
+
+
+
+
+#### Verwendungen
+
+| Verwendet von | Im Slot | Rolle | Element |
+| ---  | --- | --- | --- |
+| [ActBody](#ActBody) | component_refs | range | [ComponentRef](#ComponentRef) |
 
 
 
@@ -2080,6 +3152,7 @@ _Der Hauptteil des Erlasses (akn:body) mit der Gesetzeshierarchie. Erlaubte dire
 | articles | * <br/> [Article](#Article) | Artikel-Kindelemente (akn:article). |
 | transitionals | * <br/> [Transitional](#Transitional) | Übergangsbestimmungs-Elemente (akn:transitional). |
 | provisos | * <br/> [Proviso](#Proviso) | Vorbehalt-Elemente (akn:proviso). |
+| component_refs | * <br/> [ComponentRef](#ComponentRef) | Verweise auf anderswo gehaltene Bestandteile (akn:componentRef). |
 
 
 
@@ -2233,6 +3306,152 @@ _Titel-Ebene eines Erlasses (akn:title). Erlaubte Kinder: book, part, chapter, s
 
 
 #### Beispiele
+##### Beispiel Title: zh idg 1 6
+
+```yaml
+titles:
+- eId: title_6
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '6. Abschnitt:'
+  heading:
+    eId: title_2__chp_F__heading
+    inline_content:
+    - element_type: TextRun
+      text: Verfahren auf Zugang zu Information
+  articles:
+  - eId: title_6__art_24
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_6__art_24__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_6__art_24__para_1
+      num: …
+      content_ref: …
+    - eId: title_6__art_24__para_2
+      num: …
+      content_ref: …
+  - eId: ttitle_6__art_25
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_6_art_25__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: ttitle_6__art_25__para_1
+      num: …
+      content_ref: …
+    - eId: title_6__art_25__para_2
+      num: …
+      content_ref: …
+  - … 4 weitere
+
+```
+##### Beispiel Title: zh idg 1 3
+
+```yaml
+titles:
+- eId: title_3
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: C.
+  heading:
+    eId: title_3__heading
+    inline_content:
+    - element_type: TextRun
+      text: Bekanntgabe von Informationen
+  articles:
+  - eId: title_3__art_14
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_3__art_14__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_3__art_14__para_1
+      num: …
+      content_ref: …
+    - eId: title_3__art_14__para_2
+      num: …
+      content_ref: …
+    - … 2 weitere
+  - eId: title_3__art_15
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_3_art_15__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_3__art_15__para_1
+      num: …
+      content_ref: …
+    - eId: title_3__art_15__para_2
+      num: …
+      content_ref: …
+  - … 4 weitere
+
+```
+##### Beispiel Title: zh idg 1 7
+
+```yaml
+titles:
+- eId: title_7
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: 7. Abschnitt
+  heading:
+    eId: title_7__heading
+    inline_content:
+    - element_type: TextRun
+      text: 'Abschnitt: Beauftragte oder Beauftragter für Datenschutz'
+  articles:
+  - eId: title_7__art_30
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_7__art_30__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_7__art_30__para_1
+      num: …
+      content_ref: …
+    - eId: title_7__art_30__para_2
+      num: …
+      content_ref: …
+  - eId: title_7__art_31
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_7_art_31__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_7__art_31__para_1
+      num: …
+      content_ref: …
+    - eId: title_7__art_31__para_2
+      num: …
+      content_ref: …
+    - … 1 weitere
+  - … 8 weitere
+
+```
 ##### Beispiel Title: sr101 1 3
 
 ```yaml
@@ -2296,6 +3515,39 @@ titles:
   - … 1 weitere
 
 ```
+##### Beispiel Title: zh idg 1 5
+
+```yaml
+titles:
+- eId: title_5
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '5. Abschnitt:'
+  heading:
+    eId: title_5__heading
+    inline_content:
+    - element_type: TextRun
+      text: Interessenabwägung
+  articles:
+  - eId: title_5__art_23
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_5__art_23__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_5__art_23__para_1
+      num: …
+      content_ref: …
+    - eId: title_5__art_23__para_2
+      num: …
+      content_ref: …
+    - … 1 weitere
+
+```
 ##### Beispiel Title: sr101 1 5
 
 ```yaml
@@ -2357,6 +3609,175 @@ titles:
   - … 2 weitere
 
 ```
+##### Beispiel Title: zh idg 1 1
+
+```yaml
+titles:
+- eId: title_1
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '1. Abschnitt:'
+  heading:
+    eId: title_1__heading_1
+    inline_content:
+    - element_type: TextRun
+      text: Allgemeine Bestimmungen
+  articles:
+  - eId: title_1__art_1
+    num:
+      inline_content:
+      - …
+    heading:
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_1__art_1__para_1
+      num: …
+      content_ref: …
+    - eId: ltitle_1__art_1__para_2
+      num: …
+      content_ref: …
+  - eId: title_1__art_2
+    num:
+      inline_content:
+      - …
+    heading:
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_1__art_2__para_1
+      num: …
+      content_ref: …
+    - eId: title_1__art_2__para_2
+      num: …
+      content_ref: …
+  - … 1 weitere
+
+```
+##### Beispiel Title: zh idg 1 9
+
+```yaml
+titles:
+- eId: title_9
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '9. Abschnitt:'
+  heading:
+    eId: title_9__heading
+    inline_content:
+    - element_type: TextRun
+      text: Schluss- und Übergangsbestimmungen
+  articles:
+  - eId: title_9__art_41
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_9__art_41__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_9__art_41__para_1
+      num: …
+      content_ref: …
+  - eId: title_9__art_42
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_9__art_42__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_9__art_42__para_1
+      num: …
+      content_ref: …
+    - eId: title_9__art_42__para_2
+      num: …
+      content_ref: …
+  - … 2 weitere
+
+```
+##### Beispiel Title: zh idg 1 8
+
+```yaml
+titles:
+- eId: title_8
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '8. Abschnitt:'
+  heading:
+    eId: title_8__heading
+    inline_content:
+    - element_type: TextRun
+      text: Strafbestimmungen
+  articles:
+  - eId: title_8__art_40
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_8__art_40__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_8__art_40__para_1
+      num: …
+      content_ref: …
+    - eId: title_8__art_40__para_2
+      num: …
+      content_ref: …
+
+```
+##### Beispiel Title: zh idg 1 4
+
+```yaml
+titles:
+- eId: title_4
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '4.'
+  heading:
+    eId: title_2__chp_D__heading
+    inline_content:
+    - element_type: TextRun
+      text: 'Abschnit: Informationszugangsrecht und weitere Rechtsansprüche'
+  articles:
+  - eId: title_4__art_20
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_4__art_20__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_4__art_20__para_1
+      num: …
+      content_ref: …
+    - eId: title_4__art_20__para_2
+      num: …
+      content_ref: …
+    - … 1 weitere
+  - eId: title_4__art_21
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_4__art_21__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_4__art_21__para_1
+      num: …
+      content_ref: …
+  - … 1 weitere
+
+```
 ##### Beispiel Title: Title with number heading and articles
 
 ```yaml
@@ -2397,6 +3818,66 @@ titles:
       content_ref: …
     - … 2 weitere
   - … 5 weitere
+
+```
+##### Beispiel Title: zh idg 1 2
+
+```yaml
+titles:
+- eId: title_2
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '2. Abschnitt:'
+  heading:
+    eId: title_2__heading_1
+    inline_content:
+    - element_type: TextRun
+      text: Grundsätze im Umgang mit Informationen
+  chapters:
+  - eId: title_2__chp_A
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_2__chp_A__heading
+      inline_content:
+      - …
+    articles:
+    - eId: title_2__chp_A__art_4
+      num: …
+      heading: …
+      paragraphs:
+      - …
+    - eId: title_2__chp_A__art_5
+      num: …
+      heading: …
+      paragraphs:
+      - …
+      - …
+      - … 2 weitere
+    - … 2 weitere
+  - eId: title_2__chp_B
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_2__chp_B__heading
+      inline_content:
+      - …
+    articles:
+    - eId: title_2__chp_B__art_8
+      num: …
+      heading: …
+      paragraphs:
+      - …
+      - …
+    - num: …
+      heading: …
+      paragraphs:
+      - …
+      - …
+    - … 4 weitere
 
 ```
 ##### Beispiel Title: sr101 1 6
@@ -2994,7 +4475,7 @@ _Ein Artikel, die primäre legislative Einheit (akn:article). Constraints (FLX-A
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
-| eId | 1 <br/> [EIdType](#EIdType) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
+| eId | 0..1 <br/> [EIdType](#EIdType) | Element-Identifikator. Vom Fedlex-Schematron an jedem Artikel verlangt (FLX-EID-001); kantonale Sammlungen führen ihn nicht durchgehend.  |
 | num | 1 <br/> [MixedText](#MixedText) | Die Artikelnummer (z.B. 'Art. 1'). In jedem Artikel obligatorisch (FLX-ART-001). |
 | heading | 0..1 <br/> [MixedText](#MixedText) | Überschrift für ein Strukturelement (akn:heading). Kann Inline-Markup einschliesslich akn:br enthalten (FLX-TXT-001: br in Überschriften erlaubt). Muss vor subheading stehen (FLX-HD-004, FLX-HD-005).  |
 | subheading | 0..1 <br/> [MixedText](#MixedText) | Unterüberschrift für ein Strukturelement (akn:subheading). fedlex:role='reference' kennzeichnet es als Referenzüberschrift (FLX-XF-005). Maximal eine subheading pro Element (FLX-HD-006).  |
@@ -3035,6 +4516,39 @@ _Ein Artikel, die primäre legislative Einheit (akn:article). Constraints (FLX-A
 
 
 #### Beispiele
+##### Beispiel Article: zh idg 9 2
+
+```yaml
+articles:
+- eId: title_9__art_42
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 42.
+  heading:
+    eId: title_9__art_42__heading
+    inline_content:
+    - element_type: TextRun
+      text: Anpassung von Bezeichnungen
+  paragraphs:
+  - eId: title_9__art_42__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+      - …
+  - eId: title_9__art_42__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+      - …
+
+```
 ##### Beispiel Article: sr101 1 3
 
 ```yaml
@@ -3077,6 +4591,216 @@ articles:
       - …
 
 ```
+##### Beispiel Article: zh idg 3 6
+
+```yaml
+articles:
+- eId: title_3__art_19
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 19.
+  subheading:
+    eId: title_3__art_19__subheading
+    inline_content:
+    - element_type: TextRun
+      text: d. Grenzüberschreitend
+  paragraphs:
+  - eId: title_3__art_19__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+      - …
+
+```
+##### Beispiel Article: zh idg 7 4
+
+```yaml
+articles:
+- eId: title_7__art_33
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 33.
+  heading:
+    eId: title_7__art_33__heading
+    inline_content:
+    - element_type: TextRun
+      text: Beauftragte in Gemeinden und Organisationen
+  paragraphs:
+  - eId: title_7__art_33__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: title_7__art_33__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+
+```
+##### Beispiel Article: zh idg 3 5
+
+```yaml
+articles:
+- eId: title_3__art_18
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 18.
+  subheading:
+    eId: title_3__art_18__subheading
+    inline_content:
+    - element_type: TextRun
+      text: c. Für nicht personenbezogene Zwecke
+  paragraphs:
+  - eId: title_3__art_18__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: ttitle_3__art_18__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+
+```
+##### Beispiel Article: zh idg 3 3
+
+```yaml
+articles:
+- eId: title_3__art_16
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 16.
+  heading:
+    eId: title_3__art_16__heading
+    inline_content:
+    - element_type: TextRun
+      text: Bekanntgabe von Personendaten
+  subheading:
+    eId: title_3__art_16__subheading
+    inline_content:
+    - element_type: TextRun
+      text: a. Allgemein
+  paragraphs:
+  - eId: title_3__art_16__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+      - …
+  - eId: title_3__art_16__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+
+```
+##### Beispiel Article: zh idg 1 2
+
+```yaml
+articles:
+- eId: title_1__art_2
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 2.
+  heading:
+    inline_content:
+    - element_type: TextRun
+      text: Geltungsbereich
+  paragraphs:
+  - eId: title_1__art_2__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: title_1__art_2__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+
+```
+##### Beispiel Article: zh idg 7 7
+
+```yaml
+articles:
+- eId: title_7__art_36
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 36.
+  heading:
+    eId: title_7__art_36__heading
+    inline_content:
+    - element_type: TextRun
+      text: Empfehlungen und Einwirkungsbefugnisse
+  paragraphs:
+  - eId: title_7__art_36__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: title_7__art_36__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - … 1 weitere
+
+```
+##### Beispiel Article: zh idg 7 10
+
+```yaml
+articles:
+- eId: title_7__art_39
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 39.
+  heading:
+    eId: title_7__art_39__heading
+    inline_content:
+    - element_type: TextRun
+      text: Berichterstattung
+  paragraphs:
+  - eId: title_7__art_39__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+
+```
 ##### Beispiel Article: Article with numbered paragraphs
 
 ```yaml
@@ -3109,6 +4833,279 @@ articles:
   - … 2 weitere
 
 ```
+##### Beispiel Article: zh idg 6 6
+
+```yaml
+articles:
+- eId: title_6__art_29
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 29.
+  heading:
+    eId: title_6__art_29__heading
+    inline_content:
+    - element_type: TextRun
+      text: Gebühren und Entgelte
+  paragraphs:
+  - eId: title_6__art_29__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: title_6__art_29__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+      - …
+  - … 2 weitere
+
+```
+##### Beispiel Article: zh idg 3 2
+
+```yaml
+articles:
+- eId: title_3__art_15
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 15.
+  heading:
+    eId: title_3_art_15__heading
+    inline_content:
+    - element_type: TextRun
+      text: Medien
+  paragraphs:
+  - eId: title_3__art_15__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: title_3__art_15__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+
+```
+##### Beispiel Article: zh idg 6 3
+
+```yaml
+articles:
+- eId: title_6__art_26
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 26.
+  heading:
+    eId: title_6__art_26__heading
+    inline_content:
+    - element_type: TextRun
+      text: Anhörung betroffener Dritter
+  paragraphs:
+  - eId: ttitle_6__art_26__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: title_6__art_26__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+
+```
+##### Beispiel Article: zh idg 6 4
+
+```yaml
+articles:
+- eId: title_6__art_27
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 27.
+  heading:
+    eId: ttitle_6__art_27__heading
+    inline_content:
+    - element_type: TextRun
+      text: Verfügung
+  paragraphs:
+  - eId: title_2__chp_F__art_27__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: title_6__art_27__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+
+```
+##### Beispiel Article: zh idg 7 1
+
+```yaml
+articles:
+- eId: title_7__art_30
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 30.
+  heading:
+    eId: title_7__art_30__heading
+    inline_content:
+    - element_type: TextRun
+      text: Stellung
+  paragraphs:
+  - eId: title_7__art_30__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: title_7__art_30__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+
+```
+##### Beispiel Article: zh idg 6 2
+
+```yaml
+articles:
+- eId: ttitle_6__art_25
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 25.
+  heading:
+    eId: title_6_art_25__heading
+    inline_content:
+    - element_type: TextRun
+      text: Prüfung des Gesuchs
+  paragraphs:
+  - eId: ttitle_6__art_25__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: title_6__art_25__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+
+```
+##### Beispiel Article: zh idg 7 9
+
+```yaml
+articles:
+- eId: title_7__art_38
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 37.
+  heading:
+    eId: title_7__art_38__heading
+    inline_content:
+    - element_type: TextRun
+      text: Zusammenarbeit
+  paragraphs:
+  - eId: title_7__art_38__para_1
+    num: {}
+    content_ref:
+      content_blocks:
+      - …
+
+```
+##### Beispiel Article: zh idg 3 4
+
+```yaml
+articles:
+- eId: title_3__art_17
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 17.
+  subheading:
+    eId: ttitle_3__art_17__subheading
+    inline_content:
+    - element_type: TextRun
+      text: b. Besondere Personendaten
+  paragraphs:
+  - eId: title_3__art_17__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+      - …
+  - eId: ttitle_3__art_17__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+
+```
+##### Beispiel Article: zh idg 8 1
+
+```yaml
+articles:
+- eId: title_8__art_40
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 40.
+  heading:
+    eId: title_8__art_40__heading
+    inline_content:
+    - element_type: TextRun
+      text: Vertragswidriges Bearbeiten von Personendaten
+  paragraphs:
+  - eId: title_8__art_40__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: title_8__art_40__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+
+```
 ##### Beispiel Article: sr101 1 4
 
 ```yaml
@@ -3128,6 +5125,86 @@ articles:
     content_ref:
       content_blocks:
       - …
+
+```
+##### Beispiel Article: zh idg 9 3
+
+```yaml
+articles:
+- eId: title_9__art_43
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 43.
+  heading:
+    eId: title_9__art_43__heading
+    inline_content:
+    - element_type: TextRun
+      text: Aufhebung bisherigen Rechts
+  paragraphs:
+  - eId: title_9__art_43__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+
+```
+##### Beispiel Article: zh idg 6 1
+
+```yaml
+articles:
+- eId: title_6__art_24
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 24.
+  heading:
+    eId: title_6__art_24__heading
+    inline_content:
+    - element_type: TextRun
+      text: Gesuch
+  paragraphs:
+  - eId: title_6__art_24__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: title_6__art_24__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+
+```
+##### Beispiel Article: zh idg 1 3
+
+```yaml
+articles:
+- eId: title_1__art_3
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 3.
+  heading:
+    inline_content:
+    - element_type: TextRun
+      text: Begriffe
+  paragraphs:
+  - eId: title_1__art_3__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+      - …
+      - … 5 weitere
 
 ```
 ##### Beispiel Article: sr101 1 6
@@ -3176,6 +5253,383 @@ articles:
       - …
 
 ```
+##### Beispiel Article: zh idg 7 8
+
+```yaml
+articles:
+- eId: title_7__art_37
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 37.
+  heading:
+    eId: title_7__art_37__heading
+    inline_content:
+    - element_type: TextRun
+      text: Zusammenarbeit
+  paragraphs:
+  - eId: title_7__art_37__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+
+```
+##### Beispiel Article: zh idg 6 5
+
+```yaml
+articles:
+- eId: title_6__art_28
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 28.
+  heading:
+    eId: title_6__art_28__heading
+    inline_content:
+    - element_type: TextRun
+      text: Fristen
+  paragraphs:
+  - eId: title_6__art_28__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: title_6__art_28__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+
+```
+##### Beispiel Article: zh idg 3 1
+
+```yaml
+articles:
+- eId: title_3__art_14
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 14.
+  heading:
+    eId: title_3__art_14__heading
+    inline_content:
+    - element_type: TextRun
+      text: Informationstätigkeit von Amtes wegen
+  paragraphs:
+  - eId: title_3__art_14__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: title_3__art_14__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - … 2 weitere
+
+```
+##### Beispiel Article: zh idg 7 5
+
+```yaml
+articles:
+- eId: title_7__art_34
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 34.
+  heading:
+    eId: title_7__art_34__heading
+    inline_content:
+    - element_type: TextRun
+      text: Aufgaben
+  paragraphs:
+  - eId: title_2__chp_G__art_34__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+      - …
+
+```
+##### Beispiel Article: zh idg 4 3
+
+```yaml
+articles:
+- eId: title_4__art_22
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 22.
+  heading:
+    eId: ttitle_4__art_22__heading
+    inline_content:
+    - element_type: TextRun
+      text: Sperren von Personendaten
+  paragraphs:
+  - eId: ttitle_4__art_22__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: title_4__art_22__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+
+```
+##### Beispiel Article: zh idg 4 1
+
+```yaml
+articles:
+- eId: title_4__art_20
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 20.
+  heading:
+    eId: title_4__art_20__heading
+    inline_content:
+    - element_type: TextRun
+      text: Zugang zu Informationen
+  paragraphs:
+  - eId: title_4__art_20__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: title_4__art_20__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - … 1 weitere
+
+```
+##### Beispiel Article: zh idg 1 1
+
+```yaml
+articles:
+- eId: title_1__art_1
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 1.
+  heading:
+    inline_content:
+    - element_type: TextRun
+      text: Gegenstand und Zweck
+  paragraphs:
+  - eId: title_1__art_1__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: ltitle_1__art_1__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+      - …
+
+```
+##### Beispiel Article: zh idg 7 3
+
+```yaml
+articles:
+- eId: title_7__art_32
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 32.
+  heading:
+    eId: title_7__art_32__heading
+    inline_content:
+    - element_type: TextRun
+      text: Voranschlag und Haushaltführung
+  paragraphs:
+  - eId: title_7__art_32__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: title_7__art_32__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - … 1 weitere
+
+```
+##### Beispiel Article: zh idg 4 2
+
+```yaml
+articles:
+- eId: title_4__art_21
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 21.
+  heading:
+    eId: title_4__art_21__heading
+    inline_content:
+    - element_type: TextRun
+      text: Schutz eigener Personendaten
+  paragraphs:
+  - eId: title_4__art_21__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+      - …
+
+```
+##### Beispiel Article: zh idg 7 6
+
+```yaml
+articles:
+- eId: ttitle_7__art_35
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 35.
+  heading:
+    eId: title_7__art_35__heading
+    inline_content:
+    - element_type: TextRun
+      text: Kontrollbefugnisse
+  paragraphs:
+  - eId: title_7__art_35__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: title_7__art_35__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+
+```
+##### Beispiel Article: zh idg 9 4
+
+```yaml
+articles:
+- eId: title_9__art_44
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 44.
+  heading:
+    eId: title_9__art_44__heading
+    inline_content:
+    - element_type: TextRun
+      text: Anpassung anderer Erlasse
+  paragraphs:
+  - eId: title_9__art_44__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+      - …
+
+```
+##### Beispiel Article: zh idg 9 1
+
+```yaml
+articles:
+- eId: title_9__art_41
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 41.
+  heading:
+    eId: title_9__art_41__heading
+    inline_content:
+    - element_type: TextRun
+      text: Übergangsrecht
+  paragraphs:
+  - eId: title_9__art_41__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+      - …
+
+```
+##### Beispiel Article: zh idg 5 1
+
+```yaml
+articles:
+- eId: title_5__art_23
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 23
+  heading:
+    eId: title_5__art_23__heading
+    inline_content:
+    - element_type: TextRun
+      text: Interessenabwägung
+  paragraphs:
+  - eId: title_5__art_23__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: title_5__art_23__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+      - …
+  - … 1 weitere
+
+```
 ##### Beispiel Article: sr101 1 5
 
 ```yaml
@@ -3206,6 +5660,38 @@ articles:
       content_blocks:
       - …
   - … 2 weitere
+
+```
+##### Beispiel Article: zh idg 7 2
+
+```yaml
+articles:
+- eId: title_7__art_31
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 31.
+  heading:
+    eId: title_7_art_31__heading
+    inline_content:
+    - element_type: TextRun
+      text: Personal
+  paragraphs:
+  - eId: title_7__art_31__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: title_7__art_31__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - … 1 weitere
 
 ```
 
@@ -3322,6 +5808,80 @@ _Ein Absatz innerhalb eines Artikels oder Unterabschnitts (akn:paragraph). Const
 
 
 #### Beispiele
+##### Beispiel Paragraph: zh idg 5 1
+
+```yaml
+paragraphs:
+- eId: title_2__chp_G__art_34__para_1
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '1'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+    - element_type: BlockList
+      eId: title_7__art_34__para_1__content__blocklist_1
+      items:
+      - …
+      - …
+      - … 5 weitere
+
+```
+##### Beispiel Paragraph: zh idg 4 1
+
+```yaml
+paragraphs:
+- eId: title_9__art_44__para_1
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '1'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+    - element_type: BlockList
+      eId: title_9__art_44__para___content__blocklist_1
+      items:
+      - …
+
+```
+##### Beispiel Paragraph: zh idg 3 1
+
+```yaml
+paragraphs:
+- eId: title_9__art_43__para_1
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '1'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+##### Beispiel Paragraph: zh idg 7 1
+
+```yaml
+paragraphs:
+- eId: title_7__art_36__para_1
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '1'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
 ##### Beispiel Paragraph: sr101 5 2
 
 ```yaml
@@ -3350,6 +5910,93 @@ paragraphs:
       - …
 
 ```
+##### Beispiel Paragraph: zh idg 10 1
+
+```yaml
+paragraphs:
+- eId: title_7__art_39__para_1
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '1'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+##### Beispiel Paragraph: zh idg 4 2
+
+```yaml
+paragraphs:
+- eId: title_7__art_33__para_2
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '2'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+##### Beispiel Paragraph: zh idg 7 3
+
+```yaml
+paragraphs:
+- eId: title_7__art_36__para_3
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '3'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+      - …
+      - … 1 weitere
+
+```
+##### Beispiel Paragraph: zh idg 6 2
+
+```yaml
+paragraphs:
+- eId: title_7__art_35__para_2
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '2'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+##### Beispiel Paragraph: zh idg 2 2
+
+```yaml
+paragraphs:
+- eId: title_9__art_42__para_2
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '2'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+    - element_type: BlockList
+      eId: title_9__art_42__para_2__content__blocklist_1
+      items:
+      - …
+      - …
+
+```
 ##### Beispiel Paragraph: sr101 6 1
 
 ```yaml
@@ -3362,11 +6009,43 @@ paragraphs:
       - …
 
 ```
+##### Beispiel Paragraph: zh idg 6 3
+
+```yaml
+paragraphs:
+- eId: title_6__art_29__para_3
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '3'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
 ##### Beispiel Paragraph: sr101 2 4
 
 ```yaml
 paragraphs:
 - eId: art_2/para_4
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '4'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+##### Beispiel Paragraph: zh idg 1 4
+
+```yaml
+paragraphs:
+- eId: title_3__art_14__para_4
   num:
     inline_content:
     - element_type: TextRun
@@ -3406,6 +6085,22 @@ paragraphs:
       - …
 
 ```
+##### Beispiel Paragraph: zh idg 2 3
+
+```yaml
+paragraphs:
+- eId: title_7__art_31__para_3
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '3'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
 ##### Beispiel Paragraph: sr101 5 3
 
 ```yaml
@@ -3438,11 +6133,130 @@ paragraphs:
       - …
 
 ```
+##### Beispiel Paragraph: zh idg 6 4
+
+```yaml
+paragraphs:
+- eId: title_6__art_29__para_4
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '4'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+##### Beispiel Paragraph: zh idg 1 1
+
+```yaml
+paragraphs:
+- eId: title_9__art_41__para_1
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '1'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+    - element_type: BlockList
+      eId: title_9__art_41__para_1__content__blocklist_1
+      items:
+      - …
+      - …
+
+```
+##### Beispiel Paragraph: zh idg 6 1
+
+```yaml
+paragraphs:
+- eId: title_7__art_35__para_1
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '1'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+##### Beispiel Paragraph: zh idg 7 2
+
+```yaml
+paragraphs:
+- eId: title_7__art_36__para_2
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '2'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
 ##### Beispiel Paragraph: sr101 7 1
 
 ```yaml
 paragraphs:
 - eId: art_6/para
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+##### Beispiel Paragraph: zh idg 9 1
+
+```yaml
+paragraphs:
+- eId: title_7__art_38__para_1
+  num: {}
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+##### Beispiel Paragraph: zh idg 2 1
+
+```yaml
+paragraphs:
+- eId: title_9__art_42__para_1
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '1'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+    - element_type: BlockList
+      eId: title_9__art_42__para_1__content__blocklist_1
+      items:
+      - …
+      - …
+
+```
+##### Beispiel Paragraph: zh idg 8 1
+
+```yaml
+paragraphs:
+- eId: title_7__art_37__para_1
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '1'
   content_ref:
     content_blocks:
     - element_type: BlockParagraph
@@ -3482,6 +6296,22 @@ paragraphs:
       - …
 
 ```
+##### Beispiel Paragraph: zh idg 1 2
+
+```yaml
+paragraphs:
+- eId: title_8__art_40__para_2
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '2'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
 ##### Beispiel Paragraph: sr101 2 3
 
 ```yaml
@@ -3503,6 +6333,70 @@ paragraphs:
 ```yaml
 paragraphs:
 - eId: art_1/para
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+##### Beispiel Paragraph: zh idg 3 3
+
+```yaml
+paragraphs:
+- eId: title_7__art_32__para_3
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '3'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+##### Beispiel Paragraph: zh idg 1 3
+
+```yaml
+paragraphs:
+- eId: title_5__art_23__para_3
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '3'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+##### Beispiel Paragraph: zh idg 5 2
+
+```yaml
+paragraphs:
+- eId: title_6__art_28__para_2
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '2'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+##### Beispiel Paragraph: zh idg 3 2
+
+```yaml
+paragraphs:
+- eId: title_7__art_32__para_2
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '2'
   content_ref:
     content_blocks:
     - element_type: BlockParagraph
@@ -3669,6 +6563,10 @@ _Abstrakte Basis für ein Element auf Blockebene innerhalb von Inhalt, Aufzählu
 | [TableCell](#TableCell) | content_blocks | range | [BlockElement](#BlockElement) |
 | [AuthorialNote](#AuthorialNote) | content_blocks | range | [BlockElement](#BlockElement) |
 | [MainBody](#MainBody) | content_blocks | range | [BlockElement](#BlockElement) |
+| [Conclusions](#Conclusions) | content_blocks | range | [BlockElement](#BlockElement) |
+| [Note](#Note) | content_blocks | range | [BlockElement](#BlockElement) |
+| [Formula](#Formula) | content_blocks | range | [BlockElement](#BlockElement) |
+| [Citation](#Citation) | content_blocks | range | [BlockElement](#BlockElement) |
 
 
 
@@ -3737,6 +6635,48 @@ _Der Inhalt eines Absatzes (akn:content). Enthält Block-Elemente: akn:p (Fliess
 
 
 #### Beispiele
+##### Beispiel Content: zh idg 2 1
+
+```yaml
+content_ref:
+  content_blocks:
+  - element_type: BlockParagraph
+    inline_content:
+    - element_type: TextRun
+      text: >-
+        In den folgenden Gesetzen wird der Ausdruck «besonders schützenswerte Personendaten»
+        oder «besonders schützenswerte Daten» ersetzt durch den Ausdruck «besondere
+        Personendaten»:
+  - element_type: BlockList
+    eId: title_9__art_42__para_2__content__blocklist_1
+    items:
+    - eId: title_9__art_42__para_2__content__blocklist_1__item_a
+      content_blocks:
+      - …
+      num:
+        inline_content:
+        - …
+    - eId: title_9__art_42__para_2__content__blocklist_1__item_b
+      content_blocks:
+      - …
+      num:
+        inline_content:
+        - …
+
+```
+##### Beispiel Content: zh idg 4 1
+
+```yaml
+content_ref:
+  content_blocks:
+  - element_type: BlockParagraph
+    inline_content:
+    - element_type: TextRun
+      text: >-
+        Eignen sich Informationen für eine gewerbliche Nutzung, kann ein Entgelt erhoben
+        werden, das sich nach dem Markt richtet.
+
+```
 ##### Beispiel Content: sr101 2 1
 
 ```yaml
@@ -3759,6 +6699,48 @@ content_ref:
     inline_content:
     - element_type: TextRun
       text: Bund und Kantone beachten das Völkerrecht.
+
+```
+##### Beispiel Content: zh idg 1 1
+
+```yaml
+content_ref:
+  content_blocks:
+  - element_type: BlockParagraph
+    inline_content:
+    - element_type: TextRun
+      text: 'Die nachfolgenden Gesetze werden wie folgt geändert:'
+  - element_type: BlockList
+    eId: title_9__art_44__para___content__blocklist_1
+    items:
+    - eId: title_9__art_44__para___content__blocklist_1__item_a
+      content_blocks:
+      - …
+      num:
+        inline_content:
+        - …
+      heading:
+        eId: title_9__art_44__para___content__blocklist_1__item_a__heading
+        inline_content:
+        - …
+        - …
+
+```
+##### Beispiel Content: zh idg 3 1
+
+```yaml
+content_ref:
+  content_blocks:
+  - element_type: BlockParagraph
+    inline_content:
+    - element_type: TextRun
+      text: >-
+        Die oder der Beauftragte ist berechtigt, die Verfügung nach Massgabe des Verwaltungsrechtspflegegesetzes
+        vom 24. Mai 19596
+    - element_type: NoteRef
+      href: '#note_2'
+      marker: '2'
+    - … 1 weitere
 
 ```
 ##### Beispiel Content: sr101 1 1
@@ -3907,6 +6889,7 @@ _Ein einzelner Punkt in einer Auflistung (akn:item). Trägt ein num-Label und Bl
 |------------------------|----------------------|------------------------------------------------------|
 | eId | 0..1 <br/> [EIdType](#EIdType) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
 | num | 0..1 <br/> [MixedText](#MixedText) | Nummerierungselement für ein Strukturelement oder einen Artikel (akn:num). Bei Artikeln obligatorisch (FLX-ART-001). num muss vor heading und subheading stehen (FLX-HD-001, FLX-HD-002, FLX-HD-003).  |
+| heading | 0..1 <br/> [MixedText](#MixedText) | Überschrift für ein Strukturelement (akn:heading). Kann Inline-Markup einschliesslich akn:br enthalten (FLX-TXT-001: br in Überschriften erlaubt). Muss vor subheading stehen (FLX-HD-004, FLX-HD-005).  |
 | content_blocks | * <br/> [BlockElement](#BlockElement) | Blockinhalt in Lesereihenfolge: Absätze, Aufzählungen und Tabellen, wie sie im Dokument aufeinanderfolgen.  |
 
 
@@ -4475,8 +7458,12 @@ act_ref:
         show_as: xml
   preface_ref:
     preface_paragraphs:
-    - doc_number: '152.3 '
-    - doc_title:
+    - inline_content:
+      - element_type: DocNumber
+        inline_content:
+        - …
+    - inline_content:
+      - element_type: DocTitle
         inline_content:
         - …
         - …
@@ -4657,8 +7644,12 @@ act_ref:
         show_as: xml
   preface_ref:
     preface_paragraphs:
-    - doc_number: '101'
-    - doc_title:
+    - inline_content:
+      - element_type: DocNumber
+        inline_content:
+        - …
+    - inline_content:
+      - element_type: DocTitle
         inline_content:
         - …
         - …
@@ -4747,6 +7738,241 @@ act_ref:
         num: …
         content_ref: …
       - … 24 weitere
+
+```
+##### Beispiel Container: zh idg
+
+```yaml
+act_ref:
+  act_name: Grunderlass
+  meta:
+    identification_ref:
+      source: ''
+      frbr_work:
+        frbr_this:
+          value_uri: /akn/CH-ZH/act/2007-02-12/62-121/!main
+        frbr_uri:
+          value_uri: /akn/CH-ZH/act/2007-02-12/62-121
+        frbr_dates:
+        - date_value: '2007-02-12'
+          frbr_date_name: ''
+        frbr_authors:
+        - href: '#kantonsrat'
+          as_role: '#authority'
+        frbr_country:
+          value: CH-ZH
+        frbr_subtype:
+          value: Gesetz
+        frbr_number:
+          value: 62-121
+      frbr_expression:
+        frbr_this:
+          value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@/!main
+        frbr_uri:
+          value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@
+        frbr_dates:
+        - date_value: '2007-02-12'
+          frbr_date_name: ''
+        frbr_authors:
+        - href: '#SK'
+          as_role: '#editor'
+        - href: '#JI'
+          as_role: '#coEditor'
+        frbr_language:
+          language_value: ger
+      frbr_manifestation:
+        frbr_this:
+          value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@.akn/!main
+        frbr_uri:
+          value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@.akn
+        frbr_dates:
+        - date_value: '2007-02-12'
+          frbr_date_name: ''
+        frbr_authors:
+        - href: '#SK-Publ'
+          as_role: '#publisher'
+        frbr_format:
+          value: '#akn'
+    references_ref:
+      source: '#source'
+      original_ref:
+        eId: ro
+        href: /akn/CH-ZH/act/EXPRESSION
+        show_as: Gesetz über .. vom ...
+      active_refs:
+      - eId: ra_1
+        href: /akn/CH-ZH/act/WORK
+        show_as: Gesetz über .. vom ...
+      - eId: ra_2
+        href: /akn/CH-ZH/act/2022-35/cons/(aktuelle konsolidierte Fassung)
+        show_as: Gesetz über .. vom ...
+      tlc_organizations:
+      - eId: kantonsrat
+        href: https://data.zh.ch/vocabulary/legal-institution/2
+        show_as: Kantonsrat
+      - eId: SK
+        href: https://data.zh.ch/vocabulary/organizational-entity/SK
+        show_as: Staatskanzlei
+      - … 2 weitere
+      tlc_roles:
+      - eId: authority
+        href: https://data.zh.ch/vocabulary/role/author
+        show_as: Beschliessendes Organ
+      - eId: editor
+        href: https://data.zh.ch/vocabulary/role/leadEditor
+        show_as: Federführende Einheit
+      - … 2 weitere
+      tlc_references:
+      - name_attr: language
+        href: http://publications.europa.eu/resource/authority/language/DEU
+        show_as: ger
+      - name_attr: xml
+        href: https://data.zh.ch/vocabulary/user-format/xml
+        show_as: XML
+      tlc_concepts:
+      - eId: inForce
+        href: ''
+        show_as: ''
+    notes_ref:
+      source: ''
+      note_list:
+      - eId: note_1
+        content_blocks:
+        - …
+      - eId: note_2
+        content_blocks:
+        - …
+      - … 4 weitere
+  preface_ref:
+    preface_paragraphs:
+    - inline_content:
+      - element_type: DocketNumber
+        eId: docketNum_1
+        title_attr: Orndungsnummer
+        inline_content:
+        - …
+      - element_type: DocTitle
+        eId: actTitle
+        title_attr: Erlasstitel
+        inline_content:
+        - …
+      - … 3 weitere
+  preamble_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - element_type: TextRun
+        text: nach Einsichtnahme in die Anträge
+    - element_type: BlockParagraph
+      inline_content:
+      - element_type: TextRun
+        text: und
+    - … 1 weitere
+    formulas:
+    - eId: formula_1
+      name_attr2: openFormula
+      content_blocks:
+      - element_type: BlockParagraph
+        inline_content:
+        - …
+    - eId: formula_2
+      name_attr2: Verb
+      content_blocks:
+      - element_type: BlockParagraph
+        inline_content:
+        - …
+    citations_ref:
+    - citation_list:
+      - eId: cit_1
+        refers_to: ''
+        content_blocks:
+        - …
+    - citation_list:
+      - eId: cit_2
+        refers_to: ''
+        content_blocks:
+        - …
+  body:
+    titles:
+    - eId: title_1
+      num:
+        inline_content:
+        - …
+      heading:
+        eId: title_1__heading_1
+        inline_content:
+        - …
+      articles:
+      - eId: title_1__art_1
+        num: …
+        heading: …
+        paragraphs:
+        - …
+        - …
+      - eId: title_1__art_2
+        num: …
+        heading: …
+        paragraphs:
+        - …
+        - …
+      - … 1 weitere
+    - eId: title_2
+      num:
+        inline_content:
+        - …
+      heading:
+        eId: title_2__heading_1
+        inline_content:
+        - …
+      chapters:
+      - eId: title_2__chp_A
+        num: …
+        heading: …
+        articles:
+        - …
+        - …
+        - … 2 weitere
+      - eId: title_2__chp_B
+        num: …
+        heading: …
+        articles:
+        - …
+        - …
+        - … 4 weitere
+    - … 7 weitere
+  conclusions_ref:
+    eId: conclusions
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - element_type: TextRun
+        text: Im Namen des Regierungsrates
+      - element_type: Eol
+      - … 2 weitere
+    - element_type: BlockList
+      eId: conclusions__blocklist_1
+      list_introduction:
+        inline_content:
+        - …
+      items:
+      - eId: conclusions__blocklist_1__item_1
+        content_blocks:
+        - …
+        num: …
+      - eId: conclusions__blocklist_1__item_2
+        content_blocks:
+        - …
+        num: …
+    - … 1 weitere
+  attachments_ref:
+    attachment_list:
+    - act_ref:
+        act_name: ''
+        meta:
+          identification_ref: …
+        body:
+          component_refs:
+          - …
 
 ```
 
@@ -4899,7 +8125,6 @@ _Wiederverwendbarer Halter für gemischten Inhalt: eine geordnete Folge aus Text
 
 | Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
-| [PrefaceP](#PrefaceP) | doc_title | range | [MixedText](#MixedText) |
 | [Book](#Book) | num | range | [MixedText](#MixedText) |
 | [Book](#Book) | heading | range | [MixedText](#MixedText) |
 | [Book](#Book) | subheading | range | [MixedText](#MixedText) |
@@ -4938,6 +8163,7 @@ _Wiederverwendbarer Halter für gemischten Inhalt: eine geordnete Folge aus Text
 | [Proviso](#Proviso) | heading | range | [MixedText](#MixedText) |
 | [BlockList](#BlockList) | list_introduction | range | [MixedText](#MixedText) |
 | [BlockListItem](#BlockListItem) | num | range | [MixedText](#MixedText) |
+| [BlockListItem](#BlockListItem) | heading | range | [MixedText](#MixedText) |
 
 
 
@@ -4998,6 +8224,17 @@ _Abstrakte Basis für ein modelliertes Inline-Markup-Element in gemischtem Inhal
 | [Inline](#Inline) | inline_content | range | [InlineElement](#InlineElement) |
 | [Placeholder](#Placeholder) | inline_content | range | [InlineElement](#InlineElement) |
 | [Block](#Block) | inline_content | range | [InlineElement](#InlineElement) |
+| [DocNumber](#DocNumber) | inline_content | range | [InlineElement](#InlineElement) |
+| [DocTitle](#DocTitle) | inline_content | range | [InlineElement](#InlineElement) |
+| [DocketNumber](#DocketNumber) | inline_content | range | [InlineElement](#InlineElement) |
+| [ShortTitle](#ShortTitle) | inline_content | range | [InlineElement](#InlineElement) |
+| [Abbr](#Abbr) | inline_content | range | [InlineElement](#InlineElement) |
+| [DocDate](#DocDate) | inline_content | range | [InlineElement](#InlineElement) |
+| [DateInline](#DateInline) | inline_content | range | [InlineElement](#InlineElement) |
+| [Signature](#Signature) | inline_content | range | [InlineElement](#InlineElement) |
+| [Def](#Def) | inline_content | range | [InlineElement](#InlineElement) |
+| [Role](#Role) | inline_content | range | [InlineElement](#InlineElement) |
+| [Person](#Person) | inline_content | range | [InlineElement](#InlineElement) |
 
 
 
@@ -5501,6 +8738,329 @@ URI: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
 
 </div>
 
+## Auszeichnungen der kantonalen Praxis
+
+Der Kanton Zürich zeichnet im Text mehr aus als der Bund: den definierten Begriff, den Verweis auf eine Anmerkung, die handelnde Person und ihre Rolle, das Datum im Fliesstext, die Unterschriftszeile und den Zeilenumbruch innerhalb eines Absatzes. Person und Rolle verweisen dabei auf ihre Deklaration im Referenzblock, statt den Namen bloss hinzuschreiben.
+
+
+
+### Klasse: Def []{#Def}
+
+
+_Ein im Text definierter Begriff._
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| eId | 0..1 <br/> [EIdType](#EIdType) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
+| inline_content | * <br/> [InlineElement](#InlineElement) | Geordneter gemischter Inhalt: eine Folge aus Textabschnitten und Inline-Markup-Elementen (InlineElement-Subklassen). Die Dokumentreihenfolge wird durch die Listenreihenfolge bewahrt.  |
+| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement. <br/><br/>Vererbung: [InlineElement](#InlineElement) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+### Klasse: NoteRef []{#NoteRef}
+
+
+_Verweis auf eine in den Metadaten gehaltene Anmerkung._
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| eId | 0..1 <br/> [EIdType](#EIdType) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
+| href | 0..1 <br/> String | URI-Referenz (@href), für Links zu Organisationen, Rollen oder externen URIs. |
+| marker | 0..1 <br/> String | Das gedruckte Zeichen eines Anmerkungsverweises (@marker). |
+| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement. <br/><br/>Vererbung: [InlineElement](#InlineElement) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+### Klasse: Person []{#Person}
+
+
+_Eine Person, mit Verweis auf ihre Deklaration und die innegehabte Rolle._
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| eId | 0..1 <br/> [EIdType](#EIdType) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
+| refers_to | 0..1 <br/> String | Anker, der nennt, worauf sich das Element bezieht (@refersTo). |
+| as_attr | 0..1 <br/> String | Rolle, in der die Person handelt (@as). |
+| inline_content | * <br/> [InlineElement](#InlineElement) | Geordneter gemischter Inhalt: eine Folge aus Textabschnitten und Inline-Markup-Elementen (InlineElement-Subklassen). Die Dokumentreihenfolge wird durch die Listenreihenfolge bewahrt.  |
+| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement. <br/><br/>Vererbung: [InlineElement](#InlineElement) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+### Klasse: Role []{#Role}
+
+
+_Eine Rolle, die eine Person innehat, mit Verweis auf ihre Deklaration._
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| eId | 0..1 <br/> [EIdType](#EIdType) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
+| refers_to | 0..1 <br/> String | Anker, der nennt, worauf sich das Element bezieht (@refersTo). |
+| inline_content | * <br/> [InlineElement](#InlineElement) | Geordneter gemischter Inhalt: eine Folge aus Textabschnitten und Inline-Markup-Elementen (InlineElement-Subklassen). Die Dokumentreihenfolge wird durch die Listenreihenfolge bewahrt.  |
+| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement. <br/><br/>Vererbung: [InlineElement](#InlineElement) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+### Klasse: DateInline []{#DateInline}
+
+
+_Ein Datum im Fliesstext, mit dem maschinenlesbaren Wert in @date._
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| eId | 0..1 <br/> [EIdType](#EIdType) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
+| date_attr | 0..1 <br/> String | Das Datum, das dieses Element auszeichnet, nach ISO 8601 (@date). |
+| refers_to | 0..1 <br/> String | Anker, der nennt, worauf sich das Element bezieht (@refersTo). |
+| inline_content | * <br/> [InlineElement](#InlineElement) | Geordneter gemischter Inhalt: eine Folge aus Textabschnitten und Inline-Markup-Elementen (InlineElement-Subklassen). Die Dokumentreihenfolge wird durch die Listenreihenfolge bewahrt.  |
+| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement. <br/><br/>Vererbung: [InlineElement](#InlineElement) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+### Klasse: Signature []{#Signature}
+
+
+_Eine Unterschriftszeile._
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| eId | 0..1 <br/> [EIdType](#EIdType) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
+| inline_content | * <br/> [InlineElement](#InlineElement) | Geordneter gemischter Inhalt: eine Folge aus Textabschnitten und Inline-Markup-Elementen (InlineElement-Subklassen). Die Dokumentreihenfolge wird durch die Listenreihenfolge bewahrt.  |
+| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement. <br/><br/>Vererbung: [InlineElement](#InlineElement) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+### Klasse: Eol []{#Eol}
+
+
+_Ein Zeilenende innerhalb eines Absatzes._
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement. <br/><br/>Vererbung: [InlineElement](#InlineElement) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
 \newpage
 
 # Metadaten
@@ -5528,6 +9088,7 @@ _Metadaten-Abschnitt des Erlasses (akn:meta). Enthält die FRBR-Identifikation (
 |------------------------|----------------------|------------------------------------------------------|
 | identification_ref | 0..1 <br/> [Identification](#Identification) | FRBR-Identifikationsblock (akn:identification). |
 | references_ref | 0..1 <br/> [References](#References) | Referenzen-Abschnitt der Metadaten (akn:references). |
+| notes_ref | 0..1 <br/> [Notes](#Notes) | Der Anmerkungsblock der Metadaten (akn:notes). |
 
 
 
@@ -5651,6 +9212,113 @@ meta:
     - name_attr: format
       href: https://fedlex.data.admin.ch/vocabulary/user-format/xml
       show_as: xml
+
+```
+##### Beispiel ActMeta: zh idg 1 1
+
+```yaml
+meta:
+  identification_ref:
+    source: ''
+    frbr_work:
+      frbr_this:
+        value_uri: /akn/CH-ZH/act/2007-02-12/62-121/!main
+      frbr_uri:
+        value_uri: /akn/CH-ZH/act/2007-02-12/62-121
+      frbr_dates:
+      - date_value: '2007-02-12'
+        frbr_date_name: ''
+      frbr_authors:
+      - href: '#kantonsrat'
+        as_role: '#authority'
+      frbr_country:
+        value: CH-ZH
+      frbr_subtype:
+        value: Gesetz
+      frbr_number:
+        value: 62-121
+    frbr_expression:
+      frbr_this:
+        value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@/!main
+      frbr_uri:
+        value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@
+      frbr_dates:
+      - date_value: '2007-02-12'
+        frbr_date_name: ''
+      frbr_authors:
+      - href: '#SK'
+        as_role: '#editor'
+      - href: '#JI'
+        as_role: '#coEditor'
+      frbr_language:
+        language_value: ger
+    frbr_manifestation:
+      frbr_this:
+        value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@.akn/!main
+      frbr_uri:
+        value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@.akn
+      frbr_dates:
+      - date_value: '2007-02-12'
+        frbr_date_name: ''
+      frbr_authors:
+      - href: '#SK-Publ'
+        as_role: '#publisher'
+      frbr_format:
+        value: '#akn'
+  references_ref:
+    source: '#source'
+    original_ref:
+      eId: ro
+      href: /akn/CH-ZH/act/EXPRESSION
+      show_as: Gesetz über .. vom ...
+    active_refs:
+    - eId: ra_1
+      href: /akn/CH-ZH/act/WORK
+      show_as: Gesetz über .. vom ...
+    - eId: ra_2
+      href: /akn/CH-ZH/act/2022-35/cons/(aktuelle konsolidierte Fassung)
+      show_as: Gesetz über .. vom ...
+    tlc_organizations:
+    - eId: kantonsrat
+      href: https://data.zh.ch/vocabulary/legal-institution/2
+      show_as: Kantonsrat
+    - eId: SK
+      href: https://data.zh.ch/vocabulary/organizational-entity/SK
+      show_as: Staatskanzlei
+    - … 2 weitere
+    tlc_roles:
+    - eId: authority
+      href: https://data.zh.ch/vocabulary/role/author
+      show_as: Beschliessendes Organ
+    - eId: editor
+      href: https://data.zh.ch/vocabulary/role/leadEditor
+      show_as: Federführende Einheit
+    - … 2 weitere
+    tlc_references:
+    - name_attr: language
+      href: http://publications.europa.eu/resource/authority/language/DEU
+      show_as: ger
+    - name_attr: xml
+      href: https://data.zh.ch/vocabulary/user-format/xml
+      show_as: XML
+    tlc_concepts:
+    - eId: inForce
+      href: ''
+      show_as: ''
+  notes_ref:
+    source: ''
+    note_list:
+    - eId: note_1
+      content_blocks:
+      - element_type: BlockParagraph
+        inline_content:
+        - …
+    - eId: note_2
+      content_blocks:
+      - element_type: BlockParagraph
+        inline_content:
+        - …
+    - … 4 weitere
 
 ```
 ##### Beispiel ActMeta: sr101 1 1
@@ -5784,6 +9452,9 @@ _Benannte Referenz-Definitionen für das gesamte Dokument (akn:references). Defi
 | tlc_organizations | * <br/> [TLCOrganization](#TLCOrganization) | Benannte Organisations-Referenzen im Dokument (akn:TLCOrganization). |
 | tlc_roles | * <br/> [TLCRole](#TLCRole) | Benannte Rollen-Referenzen im Dokument (akn:TLCRole). |
 | tlc_references | * <br/> [TLCReference](#TLCReference) | Generische benannte Referenzen im Dokument (akn:TLCReference). |
+| tlc_concepts | * <br/> [TLCConcept](#TLCConcept) | Begriffe, auf die das Dokument verweist (akn:TLCConcept). |
+| original_ref | 0..1 <br/> [OriginalRef](#OriginalRef) | Verweis auf die ursprüngliche Fassung (akn:original). |
+| active_refs | * <br/> [ActiveRef](#ActiveRef) | Verweise auf die Erlasse, die dieses Dokument ändert (akn:activeRef). |
 
 
 
@@ -5859,6 +9530,51 @@ references_ref:
     show_as: xml
 
 ```
+##### Beispiel References: zh idg 1 1
+
+```yaml
+references_ref:
+  source: '#source'
+  original_ref:
+    eId: ro
+    href: /akn/CH-ZH/act/EXPRESSION
+    show_as: Gesetz über .. vom ...
+  active_refs:
+  - eId: ra_1
+    href: /akn/CH-ZH/act/WORK
+    show_as: Gesetz über .. vom ...
+  - eId: ra_2
+    href: /akn/CH-ZH/act/2022-35/cons/(aktuelle konsolidierte Fassung)
+    show_as: Gesetz über .. vom ...
+  tlc_organizations:
+  - eId: kantonsrat
+    href: https://data.zh.ch/vocabulary/legal-institution/2
+    show_as: Kantonsrat
+  - eId: SK
+    href: https://data.zh.ch/vocabulary/organizational-entity/SK
+    show_as: Staatskanzlei
+  - … 2 weitere
+  tlc_roles:
+  - eId: authority
+    href: https://data.zh.ch/vocabulary/role/author
+    show_as: Beschliessendes Organ
+  - eId: editor
+    href: https://data.zh.ch/vocabulary/role/leadEditor
+    show_as: Federführende Einheit
+  - … 2 weitere
+  tlc_references:
+  - name_attr: language
+    href: http://publications.europa.eu/resource/authority/language/DEU
+    show_as: ger
+  - name_attr: xml
+    href: https://data.zh.ch/vocabulary/user-format/xml
+    show_as: XML
+  tlc_concepts:
+  - eId: inForce
+    href: ''
+    show_as: ''
+
+```
 
 
 
@@ -5914,13 +9630,49 @@ _Eine benannte Organisation als Referenz im Dokument (akn:TLCOrganization). Beis
 
 
 #### Beispiele
-##### Beispiel TLCOrganization: Deklaration der publizierenden Stelle
+##### Beispiel TLCOrganization: zh idg 1 4
+
+```yaml
+tlc_organizations:
+- eId: SK-Publ
+  href: https://data.zh.ch/vocabulary/organizational-entity/SK-Publ
+  show_as: Abteilung Publikationen der Staatskanzlei
+
+```
+##### Beispiel TLCOrganization: zh idg 1 2
+
+```yaml
+tlc_organizations:
+- eId: SK
+  href: https://data.zh.ch/vocabulary/organizational-entity/SK
+  show_as: Staatskanzlei
+
+```
+##### Beispiel TLCOrganization: zh idg 1 1
+
+```yaml
+tlc_organizations:
+- eId: kantonsrat
+  href: https://data.zh.ch/vocabulary/legal-institution/2
+  show_as: Kantonsrat
+
+```
+##### Beispiel TLCOrganization: Declaration of the publishing body
 
 ```yaml
 tlc_organizations:
 - eId: ch.bk
   href: https://fedlex.data.admin.ch/vocabulary/legal-institution/2
   show_as: Bundeskanzlei
+
+```
+##### Beispiel TLCOrganization: zh idg 1 3
+
+```yaml
+tlc_organizations:
+- eId: JI
+  href: https://data.zh.ch/vocabulary/organizational-entity/JI
+  show_as: Direktion der Justiz und des Innern
 
 ```
 
@@ -5978,6 +9730,24 @@ _Eine benannte Rolle als Referenz im Dokument (akn:TLCRole). Beispiele: publishe
 
 
 #### Beispiele
+##### Beispiel TLCRole: zh idg 1 3
+
+```yaml
+tlc_roles:
+- eId: coEditor
+  href: https://data.zh.ch/vocabulary/role/coEditor
+  show_as: Mitwirkende Einheit
+
+```
+##### Beispiel TLCRole: zh idg 1 2
+
+```yaml
+tlc_roles:
+- eId: editor
+  href: https://data.zh.ch/vocabulary/role/leadEditor
+  show_as: Federführende Einheit
+
+```
 ##### Beispiel TLCRole: bgoe 1 2
 
 ```yaml
@@ -5987,13 +9757,22 @@ tlc_roles:
   show_as: Détenteur des droits
 
 ```
+##### Beispiel TLCRole: zh idg 1 1
+
+```yaml
+tlc_roles:
+- eId: authority
+  href: https://data.zh.ch/vocabulary/role/author
+  show_as: Beschliessendes Organ
+
+```
 ##### Beispiel TLCRole: Role publisher as an anchor
 
 ```yaml
 tlc_roles:
 - eId: publisher
-  href: http://data.legilux.public.lu/resource/ontology/jolux#publisher
-  show_as: Editeur
+  href: https://data.zh.ch/vocabulary/role/publisher
+  show_as: Herausgebende Stelle
 
 ```
 ##### Beispiel TLCRole: sr101 1 2
@@ -6130,6 +9909,7 @@ _Einfacher Halter mit einem einzelnen @value-Attribut (AKN valueType). Wiederver
 | Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
 | [FRBRWork](#FRBRWork) | frbr_country | range | [ValueType](#ValueType) |
+| [FRBRWork](#FRBRWork) | frbr_subtype | range | [ValueType](#ValueType) |
 | [FRBRWork](#FRBRWork) | frbr_number | range | [ValueType](#ValueType) |
 | [FRBRWork](#FRBRWork) | frbr_authoritative | range | [ValueType](#ValueType) |
 
@@ -6332,6 +10112,274 @@ URI: [laws:DocumentLanguageEnum](https://ld.ech.ch/schema/0296/laws/DocumentLang
 | it |  Italienisch |
 | rm |  Rätoromanisch |
 | en |  Englisch |
+| ger |  Deutsch nach ISO 639-2/B, wie es kantonale Sammlungen schreiben; Fedlex verwendet „de“ (ISO 639-1).  |
+| fre |  Französisch nach ISO 639-2/B, wie es kantonale Sammlungen schreiben; Fedlex verwendet „fr“ (ISO 639-1).  |
+| ita |  Italienisch nach ISO 639-2/B, wie es kantonale Sammlungen schreiben; Fedlex verwendet „it“ (ISO 639-1).  |
+| roh |  Rätoromanisch nach ISO 639-2/B, wie es kantonale Sammlungen schreiben; Fedlex verwendet „rm“ (ISO 639-1).  |
+| eng |  Englisch nach ISO 639-2/B, wie es kantonale Sammlungen schreiben; Fedlex verwendet „en“ (ISO 639-1).  |
+
+
+
+
+
+
+
+</div>
+
+## Anmerkungen und weitere Verweise
+
+Anmerkungen stehen nicht im Text, sondern im Metadatenblock; der Text verweist mit `akn:noteRef` darauf. Dazu kommen Verweise, die den Erlass in seinem Umfeld verorten: auf die ursprüngliche Fassung, auf die Erlasse, die er ändert, und auf Begriffe wie den zeitlichen Status.
+
+
+
+### Klasse: Notes []{#Notes}
+
+
+_Anmerkungsblock der Metadaten mit den Anmerkungen, auf die ein Erlass verweist._
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| source | 0..1 <br/> [AnchorRef](#AnchorRef) | Anker-Referenz auf die verantwortliche Organisation (@source), z.B. '#ch.bk'. |
+| note_list | * <br/> [Note](#Note) | Die Anmerkungen selbst (akn:note). |
+
+
+
+
+
+#### Verwendungen
+
+| Verwendet von | Im Slot | Rolle | Element |
+| ---  | --- | --- | --- |
+| [ActMeta](#ActMeta) | notes_ref | range | [Notes](#Notes) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+### Klasse: Note []{#Note}
+
+
+_Eine einzelne Anmerkung._
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| eId | 0..1 <br/> [EIdType](#EIdType) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
+| content_blocks | * <br/> [BlockElement](#BlockElement) | Blockinhalt in Lesereihenfolge: Absätze, Aufzählungen und Tabellen, wie sie im Dokument aufeinanderfolgen.  |
+
+
+
+
+
+#### Verwendungen
+
+| Verwendet von | Im Slot | Rolle | Element |
+| ---  | --- | --- | --- |
+| [Notes](#Notes) | note_list | range | [Note](#Note) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+### Klasse: OriginalRef []{#OriginalRef}
+
+
+_Verweis auf die ursprüngliche Fassung des Erlasses (akn:original)._
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| eId | 0..1 <br/> [EIdType](#EIdType) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
+| href | 0..1 <br/> String | URI-Referenz (@href), für Links zu Organisationen, Rollen oder externen URIs. |
+| show_as | 0..1 <br/> String | Lesbare Anzeigebezeichnung einer TLC-Referenz (@showAs). |
+
+
+
+
+
+#### Verwendungen
+
+| Verwendet von | Im Slot | Rolle | Element |
+| ---  | --- | --- | --- |
+| [References](#References) | original_ref | range | [OriginalRef](#OriginalRef) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+### Klasse: ActiveRef []{#ActiveRef}
+
+
+_Verweis auf einen Erlass, den dieses Dokument ändert._
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| eId | 0..1 <br/> [EIdType](#EIdType) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
+| href | 0..1 <br/> String | URI-Referenz (@href), für Links zu Organisationen, Rollen oder externen URIs. |
+| show_as | 0..1 <br/> String | Lesbare Anzeigebezeichnung einer TLC-Referenz (@showAs). |
+| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement. <br/><br/>Vererbung: [InlineElement](#InlineElement) |
+
+
+
+
+
+#### Verwendungen
+
+| Verwendet von | Im Slot | Rolle | Element |
+| ---  | --- | --- | --- |
+| [References](#References) | active_refs | range | [ActiveRef](#ActiveRef) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+### Klasse: TLCConcept []{#TLCConcept}
+
+
+_Ein Begriff, auf den das Dokument verweist (akn:TLCConcept), etwa ein zeitlicher Status._
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| eId | 0..1 <br/> [EIdType](#EIdType) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
+| href | 0..1 <br/> String | URI-Referenz (@href), für Links zu Organisationen, Rollen oder externen URIs. |
+| show_as | 0..1 <br/> String | Lesbare Anzeigebezeichnung einer TLC-Referenz (@showAs). |
+
+
+
+
+
+#### Verwendungen
+
+| Verwendet von | Im Slot | Rolle | Element |
+| ---  | --- | --- | --- |
+| [References](#References) | tlc_concepts | range | [TLCConcept](#TLCConcept) |
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6458,6 +10506,31 @@ Eine dritte Art von Zuordnung hängt weder an der Klasse noch am Slot, sondern a
 | `MainBody` | Klasse | exactMatch | `akn:mainBody` |
 | `Container` | Klasse | exactMatch | `akn:container` |
 | `Block` | Klasse | exactMatch | `akn:block` |
+| `DocNumber` | Klasse | exactMatch | `akn:docNumber` |
+| `DocTitle` | Klasse | exactMatch | `akn:docTitle` |
+| `DocketNumber` | Klasse | exactMatch | `akn:docketNumber` |
+| `ShortTitle` | Klasse | exactMatch | `akn:shortTitle` |
+| `Abbr` | Klasse | exactMatch | `akn:abbr` |
+| `DocDate` | Klasse | exactMatch | `akn:docDate` |
+| `DateInline` | Klasse | exactMatch | `akn:date` |
+| `Signature` | Klasse | exactMatch | `akn:signature` |
+| `Eol` | Klasse | exactMatch | `akn:eol` |
+| `Conclusions` | Klasse | exactMatch | `akn:conclusions` |
+| `Attachments` | Klasse | exactMatch | `akn:attachments` |
+| `Attachment` | Klasse | exactMatch | `akn:attachment` |
+| `Notes` | Klasse | exactMatch | `akn:notes` |
+| `Note` | Klasse | exactMatch | `akn:note` |
+| `TLCConcept` | Klasse | exactMatch | `akn:TLCConcept` |
+| `OriginalRef` | Klasse | exactMatch | `akn:original` |
+| `ComponentRef` | Klasse | exactMatch | `akn:componentRef` |
+| `Def` | Klasse | exactMatch | `akn:def` |
+| `NoteRef` | Klasse | exactMatch | `akn:noteRef` |
+| `Role` | Klasse | exactMatch | `akn:role` |
+| `Person` | Klasse | exactMatch | `akn:person` |
+| `ActiveRef` | Klasse | exactMatch | `akn:activeRef` |
+| `Formula` | Klasse | exactMatch | `akn:formula` |
+| `Citations` | Klasse | exactMatch | `akn:citations` |
+| `Citation` | Klasse | exactMatch | `akn:citation` |
 | `preface_paragraphs` | Slot | exactMatch | `akn:p` |
 | `frbr_this` | Slot | exactMatch | `akn:FRBRthis` |
 | `frbr_uri` | Slot | exactMatch | `akn:FRBRuri` |
@@ -6472,8 +10545,6 @@ Eine dritte Art von Zuordnung hängt weder an der Klasse noch am Slot, sondern a
 | `frbr_language` | Slot | exactMatch | `akn:FRBRlanguage` |
 | `frbr_format` | Slot | exactMatch | `eli:format` |
 | `frbr_format` | Slot | exactMatch | `akn:FRBRformat` |
-| `doc_number` | Slot | exactMatch | `akn:docNumber` |
-| `doc_title` | Slot | exactMatch | `akn:docTitle` |
 | `num` | Slot | exactMatch | `akn:num` |
 | `heading` | Slot | exactMatch | `akn:heading` |
 | `subheading` | Slot | exactMatch | `akn:subheading` |
@@ -6484,6 +10555,19 @@ Eine dritte Art von Zuordnung hängt weder an der Klasse noch am Slot, sondern a
 | `main_body` | Slot | exactMatch | `akn:mainBody` |
 | `containers` | Slot | exactMatch | `akn:container` |
 | `blocks` | Slot | exactMatch | `akn:block` |
+| `conclusions_ref` | Slot | exactMatch | `akn:conclusions` |
+| `attachments_ref` | Slot | exactMatch | `akn:attachments` |
+| `attachment_list` | Slot | exactMatch | `akn:attachment` |
+| `notes_ref` | Slot | exactMatch | `akn:notes` |
+| `note_list` | Slot | exactMatch | `akn:note` |
+| `frbr_subtype` | Slot | exactMatch | `akn:FRBRsubtype` |
+| `tlc_concepts` | Slot | exactMatch | `akn:TLCConcept` |
+| `original_ref` | Slot | exactMatch | `akn:original` |
+| `component_refs` | Slot | exactMatch | `akn:componentRef` |
+| `formulas` | Slot | exactMatch | `akn:formula` |
+| `citations_ref` | Slot | exactMatch | `akn:citations` |
+| `citation_list` | Slot | exactMatch | `akn:citation` |
+| `active_refs` | Slot | exactMatch | `akn:activeRef` |
 | `jolux:dateDocument` | Enum | exactMatch | `eli:date_document` |
 | `jolux:dateEntryInForce` | Enum | exactMatch | `eli:first_date_entry_in_force` |
 | `jolux:dateApplicability` | Enum | exactMatch | `eli:date_applicability` |

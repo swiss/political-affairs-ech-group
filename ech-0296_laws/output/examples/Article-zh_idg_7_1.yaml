@@ -1,0 +1,26 @@
+articles:
+- eId: title_7__art_30
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 30.
+  heading:
+    eId: title_7__art_30__heading
+    inline_content:
+    - element_type: TextRun
+      text: Stellung
+  paragraphs:
+  - eId: title_7__art_30__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: title_7__art_30__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …

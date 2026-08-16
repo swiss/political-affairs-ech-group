@@ -1,0 +1,17 @@
+frbr_work:
+  frbr_this:
+    value_uri: /akn/CH-ZH/act/2007-02-12/62-121/!main
+  frbr_uri:
+    value_uri: /akn/CH-ZH/act/2007-02-12/62-121
+  frbr_dates:
+  - date_value: '2007-02-12'
+    frbr_date_name: ''
+  frbr_authors:
+  - href: '#kantonsrat'
+    as_role: '#authority'
+  frbr_country:
+    value: CH-ZH
+  frbr_subtype:
+    value: Gesetz
+  frbr_number:
+    value: 62-121

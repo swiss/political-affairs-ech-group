@@ -1,0 +1,4 @@
+tlc_roles:
+- eId: authority
+  href: https://data.zh.ch/vocabulary/role/author
+  show_as: Beschliessendes Organ

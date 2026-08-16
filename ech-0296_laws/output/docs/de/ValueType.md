@@ -28,6 +28,7 @@ _Einfacher Halter mit einem einzelnen @value-Attribut (AKN valueType). Wiederver
 | Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
 | [FRBRWork](FRBRWork.md) | [frbr_country](frbr_country.md) | range | [ValueType](ValueType.md) |
+| [FRBRWork](FRBRWork.md) | [frbr_subtype](frbr_subtype.md) | range | [ValueType](ValueType.md) |
 | [FRBRWork](FRBRWork.md) | [frbr_number](frbr_number.md) | range | [ValueType](ValueType.md) |
 | [FRBRWork](FRBRWork.md) | [frbr_authoritative](frbr_authoritative.md) | range | [ValueType](ValueType.md) |
 

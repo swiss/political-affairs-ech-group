@@ -1,0 +1,26 @@
+articles:
+- eId: title_6__art_27
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 27.
+  heading:
+    eId: ttitle_6__art_27__heading
+    inline_content:
+    - element_type: TextRun
+      text: Verfügung
+  paragraphs:
+  - eId: title_2__chp_F__art_27__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: title_6__art_27__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …

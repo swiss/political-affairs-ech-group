@@ -22,6 +22,7 @@ _FRBR-Work-Ebene (akn:FRBRWork): der abstrakte Erlass unabhängig von Sprache un
 | frbr_dates | * <br/> [FRBRDate](FRBRDate.md) | Datumseinträge dieser FRBR-Entität (akn:FRBRdate). Mehrere Einträge für verschiedene Ereignistypen.  |
 | frbr_authors | * <br/> [FRBRAuthor](FRBRAuthor.md) | Autoren-/Rechteinhaber-Einträge dieser FRBR-Entität (akn:FRBRauthor). |
 | frbr_country | 0..1 <br/> [ValueType](ValueType.md) | Ländercode für diesen Erlass (akn:FRBRcountry/@value), z.B. 'CH'. |
+| frbr_subtype | 0..1 <br/> [ValueType](ValueType.md) | Untertyp des Werks (akn:FRBRsubtype), z.B. „Gesetz“. Von kantonalen Sammlungen verwendet. |
 | frbr_number | 0..1 <br/> [ValueType](ValueType.md) | SR-Nummer (akn:FRBRnumber/@value), z.B. '101'. |
 | frbr_names | * <br/> [FRBRName](FRBRName.md) | Mehrsprachige Namenseinträge des FRBR-Works (akn:FRBRname). Ein Eintrag pro Sprache. |
 | frbr_authoritative | 0..1 <br/> [ValueType](ValueType.md) | Ob dies die massgebliche Version ist (akn:FRBRauthoritative/@value). |
@@ -50,6 +51,28 @@ _FRBR-Work-Ebene (akn:FRBRWork): der abstrakte Erlass unabhängig von Sprache un
 
 
 ### Beispiele
+#### Beispiel FRBRWork: zh idg 1 1
+
+```yaml
+frbr_work:
+  frbr_this:
+    value_uri: /akn/CH-ZH/act/2007-02-12/62-121/!main
+  frbr_uri:
+    value_uri: /akn/CH-ZH/act/2007-02-12/62-121
+  frbr_dates:
+  - date_value: '2007-02-12'
+    frbr_date_name: ''
+  frbr_authors:
+  - href: '#kantonsrat'
+    as_role: '#authority'
+  frbr_country:
+    value: CH-ZH
+  frbr_subtype:
+    value: Gesetz
+  frbr_number:
+    value: 62-121
+
+```
 #### Beispiel FRBRWork: bgoe 1 1
 
 ```yaml

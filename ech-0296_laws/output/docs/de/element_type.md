@@ -41,6 +41,20 @@ URI: [laws:element_type](https://ld.ech.ch/schema/0296/laws/element_type)
 | [Inline](Inline.md) | Ein benanntes präsentationsbezogenes Inline (akn:inline), z |  no  |
 | [Placeholder](Placeholder.md) | Ein Platzhalter für entfernten Inhalt (akn:placeholder) mit dem Erweiterungsa... |  no  |
 | [AuthorialNote](AuthorialNote.md) | Eine Fussnote des Autors (akn:authorialNote) |  no  |
+| [DocNumber](DocNumber.md) | Die Dokumentnummer im Vorspann |  no  |
+| [DocTitle](DocTitle.md) | Der Dokumenttitel im Vorspann |  no  |
+| [DocketNumber](DocketNumber.md) | Die Ordnungsnummer des Erlasses, wie sie kantonale Sammlungen führen |  no  |
+| [ShortTitle](ShortTitle.md) | Der Kurztitel des Erlasses |  no  |
+| [Abbr](Abbr.md) | Die Abkürzung des Erlasses |  no  |
+| [DocDate](DocDate.md) | Ein Datum im Vorspann, mit dem maschinenlesbaren Wert in @date |  no  |
+| [DateInline](DateInline.md) | Ein Datum im Fliesstext, mit dem maschinenlesbaren Wert in @date |  no  |
+| [Signature](Signature.md) | Eine Unterschriftszeile |  no  |
+| [Eol](Eol.md) | Ein Zeilenende innerhalb eines Absatzes |  no  |
+| [Def](Def.md) | Ein im Text definierter Begriff |  no  |
+| [NoteRef](NoteRef.md) | Verweis auf eine in den Metadaten gehaltene Anmerkung |  no  |
+| [Role](Role.md) | Eine Rolle, die eine Person innehat, mit Verweis auf ihre Deklaration |  no  |
+| [Person](Person.md) | Eine Person, mit Verweis auf ihre Deklaration und die innegehabte Rolle |  no  |
+| [ActiveRef](ActiveRef.md) | Verweis auf einen Erlass, den dieses Dokument ändert |  no  |
 
 
 
@@ -80,9 +94,9 @@ URI: [laws:element_type](https://ld.ech.ch/schema/0296/laws/element_type)
 
 | Wert |
 | --- |
+| Abbr |
 | AuthorialNote |
 | B |
-| BlockList |
 
 
 
@@ -105,9 +119,9 @@ description: 'Typ-Diskriminator für die konkrete Unterklasse einer abstrakten B
 
   '
 examples:
+- value: Abbr
 - value: AuthorialNote
 - value: B
-- value: BlockList
 from_schema: https://ld.ech.ch/schema/0296/laws
 rank: 1000
 designates_type: true

@@ -33,6 +33,10 @@ _Abstrakte Basis für ein Element auf Blockebene innerhalb von Inhalt, Aufzählu
 | [TableCell](TableCell.md) | [content_blocks](content_blocks.md) | range | [BlockElement](BlockElement.md) |
 | [AuthorialNote](AuthorialNote.md) | [content_blocks](content_blocks.md) | range | [BlockElement](BlockElement.md) |
 | [MainBody](MainBody.md) | [content_blocks](content_blocks.md) | range | [BlockElement](BlockElement.md) |
+| [Conclusions](Conclusions.md) | [content_blocks](content_blocks.md) | range | [BlockElement](BlockElement.md) |
+| [Note](Note.md) | [content_blocks](content_blocks.md) | range | [BlockElement](BlockElement.md) |
+| [Formula](Formula.md) | [content_blocks](content_blocks.md) | range | [BlockElement](BlockElement.md) |
+| [Citation](Citation.md) | [content_blocks](content_blocks.md) | range | [BlockElement](BlockElement.md) |
 
 
 

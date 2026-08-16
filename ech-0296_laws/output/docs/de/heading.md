@@ -39,6 +39,7 @@ URI: [laws:heading](https://ld.ech.ch/schema/0296/laws/heading)
 | [Paragraph](Paragraph.md) | Ein Absatz innerhalb eines Artikels oder Unterabschnitts (akn:paragraph) |  no  |
 | [Transitional](Transitional.md) | Eine Übergangsbestimmung im Hauptteil eines Erlasses (akn:transitional) |  no  |
 | [Proviso](Proviso.md) | Ein Vorbehalt im Hauptteil eines Erlasses (akn:proviso) |  no  |
+| [BlockListItem](BlockListItem.md) | Ein einzelner Punkt in einer Auflistung (akn:item) |  no  |
 
 
 
@@ -52,7 +53,7 @@ URI: [laws:heading](https://ld.ech.ch/schema/0296/laws/heading)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [MixedText](MixedText.md) |
-| Domäne von | [Book](Book.md), [Title](Title.md), [Part](Part.md), [Chapter](Chapter.md), [Subchapter](Subchapter.md), [Section](Section.md), [Subsection](Subsection.md), [Level](Level.md), [Article](Article.md), [Subdivision](Subdivision.md), [Paragraph](Paragraph.md), [Transitional](Transitional.md), [Proviso](Proviso.md) |
+| Domäne von | [Book](Book.md), [Title](Title.md), [Part](Part.md), [Chapter](Chapter.md), [Subchapter](Subchapter.md), [Section](Section.md), [Subsection](Subsection.md), [Level](Level.md), [Article](Article.md), [Subdivision](Subdivision.md), [Paragraph](Paragraph.md), [Transitional](Transitional.md), [Proviso](Proviso.md), [BlockListItem](BlockListItem.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -115,6 +116,7 @@ domain_of:
 - Paragraph
 - Transitional
 - Proviso
+- BlockListItem
 range: MixedText
 
 ```

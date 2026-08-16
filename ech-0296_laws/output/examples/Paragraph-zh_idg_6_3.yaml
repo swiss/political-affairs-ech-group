@@ -1,0 +1,11 @@
+paragraphs:
+- eId: title_6__art_29__para_3
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '3'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …

@@ -1,0 +1,11 @@
+paragraphs:
+- eId: title_3__art_14__para_4
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '4'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …

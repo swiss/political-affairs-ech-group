@@ -47,6 +47,24 @@ _FRBR-Manifestations-Ebene (akn:FRBRManifestation): ein spezifisches Dateiformat
 
 
 ### Beispiele
+#### Beispiel FRBRManifestation: zh idg 1 1
+
+```yaml
+frbr_manifestation:
+  frbr_this:
+    value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@.akn/!main
+  frbr_uri:
+    value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@.akn
+  frbr_dates:
+  - date_value: '2007-02-12'
+    frbr_date_name: ''
+  frbr_authors:
+  - href: '#SK-Publ'
+    as_role: '#publisher'
+  frbr_format:
+    value: '#akn'
+
+```
 #### Beispiel FRBRManifestation: bgoe 1 1
 
 ```yaml

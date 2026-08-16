@@ -17,12 +17,14 @@ _Das Erlasselement (akn:act). Hauptinhaltselement eines AkomaNtoso-Dokuments. Da
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
-| act_name | 0..1 <br/> [ActTypeEnum](ActTypeEnum.md) | Erlasstyp (@name-Attribut von akn:act), z.B. 'publicLaw'. |
+| act_name | 0..1 <br/> [String](String.md)&nbsp;or&nbsp;<br />[ActTypeEnum](ActTypeEnum.md) | Typ des Erlasses (akn:act/@name). Die zulässigen Werte von ActTypeEnum sind die von Fedlex verwendeten; kantonale Sammlungen benennen eigene Typen, weshalb eine freie Zeichenkette zulässig bleibt.  |
 | meta | 0..1 <br/> [ActMeta](ActMeta.md) | Metadaten-Abschnitt des Erlasses (akn:meta). |
 | preface_ref | 0..1 <br/> [Preface](Preface.md) | Vorspann des Erlasses (akn:preface). |
 | preamble_ref | 0..1 <br/> [Preamble](Preamble.md) | Präambel des Erlasses (akn:preamble). |
 | body | 0..1 <br/> [ActBody](ActBody.md) | Hauptteil des Erlasses (akn:body). |
 | components_ref | 0..1 <br/> [Components](Components.md) | Die diesem Erlass beiliegenden Dokumente (akn:components). |
+| conclusions_ref | 0..1 <br/> [Conclusions](Conclusions.md) | Die Schlussformel des Erlasses (akn:conclusions). |
+| attachments_ref | 0..1 <br/> [Attachments](Attachments.md) | Die dem Erlass beigefügten Dokumente (akn:attachments). |
 
 
 
@@ -33,6 +35,7 @@ _Das Erlasselement (akn:act). Hauptinhaltselement eines AkomaNtoso-Dokuments. Da
 | Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
 | [FedlexDocument](FedlexDocument.md) | [act_ref](act_ref.md) | range | [Act](Act.md) |
+| [Attachment](Attachment.md) | [act_ref](act_ref.md) | range | [Act](Act.md) |
 
 
 
@@ -149,8 +152,12 @@ act_ref:
         show_as: xml
   preface_ref:
     preface_paragraphs:
-    - doc_number: '152.3 '
-    - doc_title:
+    - inline_content:
+      - element_type: DocNumber
+        inline_content:
+        - …
+    - inline_content:
+      - element_type: DocTitle
         inline_content:
         - …
         - …
@@ -230,6 +237,241 @@ act_ref:
           content_blocks:
           - …
           levels:
+          - …
+
+```
+#### Beispiel Act: zh idg 1
+
+```yaml
+act_ref:
+  act_name: Grunderlass
+  meta:
+    identification_ref:
+      source: ''
+      frbr_work:
+        frbr_this:
+          value_uri: /akn/CH-ZH/act/2007-02-12/62-121/!main
+        frbr_uri:
+          value_uri: /akn/CH-ZH/act/2007-02-12/62-121
+        frbr_dates:
+        - date_value: '2007-02-12'
+          frbr_date_name: ''
+        frbr_authors:
+        - href: '#kantonsrat'
+          as_role: '#authority'
+        frbr_country:
+          value: CH-ZH
+        frbr_subtype:
+          value: Gesetz
+        frbr_number:
+          value: 62-121
+      frbr_expression:
+        frbr_this:
+          value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@/!main
+        frbr_uri:
+          value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@
+        frbr_dates:
+        - date_value: '2007-02-12'
+          frbr_date_name: ''
+        frbr_authors:
+        - href: '#SK'
+          as_role: '#editor'
+        - href: '#JI'
+          as_role: '#coEditor'
+        frbr_language:
+          language_value: ger
+      frbr_manifestation:
+        frbr_this:
+          value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@.akn/!main
+        frbr_uri:
+          value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@.akn
+        frbr_dates:
+        - date_value: '2007-02-12'
+          frbr_date_name: ''
+        frbr_authors:
+        - href: '#SK-Publ'
+          as_role: '#publisher'
+        frbr_format:
+          value: '#akn'
+    references_ref:
+      source: '#source'
+      original_ref:
+        eId: ro
+        href: /akn/CH-ZH/act/EXPRESSION
+        show_as: Gesetz über .. vom ...
+      active_refs:
+      - eId: ra_1
+        href: /akn/CH-ZH/act/WORK
+        show_as: Gesetz über .. vom ...
+      - eId: ra_2
+        href: /akn/CH-ZH/act/2022-35/cons/(aktuelle konsolidierte Fassung)
+        show_as: Gesetz über .. vom ...
+      tlc_organizations:
+      - eId: kantonsrat
+        href: https://data.zh.ch/vocabulary/legal-institution/2
+        show_as: Kantonsrat
+      - eId: SK
+        href: https://data.zh.ch/vocabulary/organizational-entity/SK
+        show_as: Staatskanzlei
+      - … 2 weitere
+      tlc_roles:
+      - eId: authority
+        href: https://data.zh.ch/vocabulary/role/author
+        show_as: Beschliessendes Organ
+      - eId: editor
+        href: https://data.zh.ch/vocabulary/role/leadEditor
+        show_as: Federführende Einheit
+      - … 2 weitere
+      tlc_references:
+      - name_attr: language
+        href: http://publications.europa.eu/resource/authority/language/DEU
+        show_as: ger
+      - name_attr: xml
+        href: https://data.zh.ch/vocabulary/user-format/xml
+        show_as: XML
+      tlc_concepts:
+      - eId: inForce
+        href: ''
+        show_as: ''
+    notes_ref:
+      source: ''
+      note_list:
+      - eId: note_1
+        content_blocks:
+        - …
+      - eId: note_2
+        content_blocks:
+        - …
+      - … 4 weitere
+  preface_ref:
+    preface_paragraphs:
+    - inline_content:
+      - element_type: DocketNumber
+        eId: docketNum_1
+        title_attr: Orndungsnummer
+        inline_content:
+        - …
+      - element_type: DocTitle
+        eId: actTitle
+        title_attr: Erlasstitel
+        inline_content:
+        - …
+      - … 3 weitere
+  preamble_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - element_type: TextRun
+        text: nach Einsichtnahme in die Anträge
+    - element_type: BlockParagraph
+      inline_content:
+      - element_type: TextRun
+        text: und
+    - … 1 weitere
+    formulas:
+    - eId: formula_1
+      name_attr2: openFormula
+      content_blocks:
+      - element_type: BlockParagraph
+        inline_content:
+        - …
+    - eId: formula_2
+      name_attr2: Verb
+      content_blocks:
+      - element_type: BlockParagraph
+        inline_content:
+        - …
+    citations_ref:
+    - citation_list:
+      - eId: cit_1
+        refers_to: ''
+        content_blocks:
+        - …
+    - citation_list:
+      - eId: cit_2
+        refers_to: ''
+        content_blocks:
+        - …
+  body:
+    titles:
+    - eId: title_1
+      num:
+        inline_content:
+        - …
+      heading:
+        eId: title_1__heading_1
+        inline_content:
+        - …
+      articles:
+      - eId: title_1__art_1
+        num: …
+        heading: …
+        paragraphs:
+        - …
+        - …
+      - eId: title_1__art_2
+        num: …
+        heading: …
+        paragraphs:
+        - …
+        - …
+      - … 1 weitere
+    - eId: title_2
+      num:
+        inline_content:
+        - …
+      heading:
+        eId: title_2__heading_1
+        inline_content:
+        - …
+      chapters:
+      - eId: title_2__chp_A
+        num: …
+        heading: …
+        articles:
+        - …
+        - …
+        - … 2 weitere
+      - eId: title_2__chp_B
+        num: …
+        heading: …
+        articles:
+        - …
+        - …
+        - … 4 weitere
+    - … 7 weitere
+  conclusions_ref:
+    eId: conclusions
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - element_type: TextRun
+        text: Im Namen des Regierungsrates
+      - element_type: Eol
+      - … 2 weitere
+    - element_type: BlockList
+      eId: conclusions__blocklist_1
+      list_introduction:
+        inline_content:
+        - …
+      items:
+      - eId: conclusions__blocklist_1__item_1
+        content_blocks:
+        - …
+        num: …
+      - eId: conclusions__blocklist_1__item_2
+        content_blocks:
+        - …
+        num: …
+    - … 1 weitere
+  attachments_ref:
+    attachment_list:
+    - act_ref:
+        act_name: ''
+        meta:
+          identification_ref: …
+        body:
+          component_refs:
           - …
 
 ```
@@ -331,8 +573,12 @@ act_ref:
         show_as: xml
   preface_ref:
     preface_paragraphs:
-    - doc_number: '101'
-    - doc_title:
+    - inline_content:
+      - element_type: DocNumber
+        inline_content:
+        - …
+    - inline_content:
+      - element_type: DocTitle
         inline_content:
         - …
         - …

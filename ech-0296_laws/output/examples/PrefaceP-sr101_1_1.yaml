@@ -1,2 +1,6 @@
 preface_paragraphs:
-- doc_number: '101'
+- inline_content:
+  - element_type: DocNumber
+    inline_content:
+    - element_type: TextRun
+      text: '101'

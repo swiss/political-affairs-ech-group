@@ -1,0 +1,26 @@
+articles:
+- eId: title_3__art_15
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 15.
+  heading:
+    eId: title_3_art_15__heading
+    inline_content:
+    - element_type: TextRun
+      text: Medien
+  paragraphs:
+  - eId: title_3__art_15__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: title_3__art_15__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …

@@ -1,0 +1,26 @@
+articles:
+- eId: title_3__art_18
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 18.
+  subheading:
+    eId: title_3__art_18__subheading
+    inline_content:
+    - element_type: TextRun
+      text: c. Für nicht personenbezogene Zwecke
+  paragraphs:
+  - eId: title_3__art_18__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: ttitle_3__art_18__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …

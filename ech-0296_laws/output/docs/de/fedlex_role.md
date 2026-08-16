@@ -26,6 +26,7 @@ URI: [laws:fedlex_role](https://ld.ech.ch/schema/0296/laws/fedlex_role)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
+| [PrefaceP](PrefaceP.md) | Ein Vorspann-Absatz (akn:p) |  no  |
 | [Level](Level.md) | Transparente Strukturebene (akn:level) |  yes  |
 | [BlockParagraph](BlockParagraph.md) | Ein Fliesstext-Absatz in Content (akn:p) |  no  |
 
@@ -41,7 +42,7 @@ URI: [laws:fedlex_role](https://ld.ech.ch/schema/0296/laws/fedlex_role)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [FedlexRoleEnum](FedlexRoleEnum.md) |
-| Domäne von | [Level](Level.md), [BlockParagraph](BlockParagraph.md) |
+| Domäne von | [PrefaceP](PrefaceP.md), [Level](Level.md), [BlockParagraph](BlockParagraph.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -92,6 +93,7 @@ description: 'Fedlex-Erweiterungsattribut fedlex:role. FLX-XF-003 lässt ''margi
 from_schema: https://ld.ech.ch/schema/0296/laws
 rank: 1000
 domain_of:
+- PrefaceP
 - Level
 - BlockParagraph
 range: FedlexRoleEnum

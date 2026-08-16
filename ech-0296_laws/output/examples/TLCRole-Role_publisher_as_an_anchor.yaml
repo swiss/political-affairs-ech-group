@@ -1,4 +1,4 @@
 tlc_roles:
 - eId: publisher
-  href: http://data.legilux.public.lu/resource/ontology/jolux#publisher
-  show_as: Editeur
+  href: https://data.zh.ch/vocabulary/role/publisher
+  show_as: Herausgebende Stelle

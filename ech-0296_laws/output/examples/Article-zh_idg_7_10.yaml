@@ -1,0 +1,19 @@
+articles:
+- eId: title_7__art_39
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 39.
+  heading:
+    eId: title_7__art_39__heading
+    inline_content:
+    - element_type: TextRun
+      text: Berichterstattung
+  paragraphs:
+  - eId: title_7__art_39__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …

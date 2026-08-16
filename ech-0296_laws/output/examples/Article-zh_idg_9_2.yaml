@@ -1,0 +1,28 @@
+articles:
+- eId: title_9__art_42
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 42.
+  heading:
+    eId: title_9__art_42__heading
+    inline_content:
+    - element_type: TextRun
+      text: Anpassung von Bezeichnungen
+  paragraphs:
+  - eId: title_9__art_42__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+      - …
+  - eId: title_9__art_42__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+      - …

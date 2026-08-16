@@ -1,0 +1,26 @@
+articles:
+- eId: title_6__art_28
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 28.
+  heading:
+    eId: title_6__art_28__heading
+    inline_content:
+    - element_type: TextRun
+      text: Fristen
+  paragraphs:
+  - eId: title_6__art_28__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: title_6__art_28__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …

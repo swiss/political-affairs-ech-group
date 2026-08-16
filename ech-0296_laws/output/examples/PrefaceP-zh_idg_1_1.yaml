@@ -1,0 +1,15 @@
+preface_paragraphs:
+- inline_content:
+  - element_type: DocketNumber
+    eId: docketNum_1
+    title_attr: Orndungsnummer
+    inline_content:
+    - element_type: TextRun
+      text: '170.4'
+  - element_type: DocTitle
+    eId: actTitle
+    title_attr: Erlasstitel
+    inline_content:
+    - element_type: TextRun
+      text: Gesetz über die Information und den Datenschutz
+  - … 3 weitere

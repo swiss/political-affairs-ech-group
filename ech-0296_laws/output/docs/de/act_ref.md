@@ -26,6 +26,7 @@ URI: [laws:act_ref](https://ld.ech.ch/schema/0296/laws/act_ref)
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
 | [FedlexDocument](FedlexDocument.md) | Wurzelelement eines Fedlex AkomaNtoso-Dokuments (akn:akomaNtoso) |  no  |
+| [Attachment](Attachment.md) | Ein einzelnes beigefügtes Dokument |  no  |
 
 
 
@@ -39,7 +40,7 @@ URI: [laws:act_ref](https://ld.ech.ch/schema/0296/laws/act_ref)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [Act](Act.md) |
-| Domäne von | [FedlexDocument](FedlexDocument.md) |
+| Domäne von | [FedlexDocument](FedlexDocument.md), [Attachment](Attachment.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -75,6 +76,7 @@ from_schema: https://ld.ech.ch/schema/0296/laws
 rank: 1000
 domain_of:
 - FedlexDocument
+- Attachment
 range: Act
 required: true
 

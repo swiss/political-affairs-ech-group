@@ -37,6 +37,17 @@ _Abstrakte Basis für ein modelliertes Inline-Markup-Element in gemischtem Inhal
 | [Inline](Inline.md) | [inline_content](inline_content.md) | range | [InlineElement](InlineElement.md) |
 | [Placeholder](Placeholder.md) | [inline_content](inline_content.md) | range | [InlineElement](InlineElement.md) |
 | [Block](Block.md) | [inline_content](inline_content.md) | range | [InlineElement](InlineElement.md) |
+| [DocNumber](DocNumber.md) | [inline_content](inline_content.md) | range | [InlineElement](InlineElement.md) |
+| [DocTitle](DocTitle.md) | [inline_content](inline_content.md) | range | [InlineElement](InlineElement.md) |
+| [DocketNumber](DocketNumber.md) | [inline_content](inline_content.md) | range | [InlineElement](InlineElement.md) |
+| [ShortTitle](ShortTitle.md) | [inline_content](inline_content.md) | range | [InlineElement](InlineElement.md) |
+| [Abbr](Abbr.md) | [inline_content](inline_content.md) | range | [InlineElement](InlineElement.md) |
+| [DocDate](DocDate.md) | [inline_content](inline_content.md) | range | [InlineElement](InlineElement.md) |
+| [DateInline](DateInline.md) | [inline_content](inline_content.md) | range | [InlineElement](InlineElement.md) |
+| [Signature](Signature.md) | [inline_content](inline_content.md) | range | [InlineElement](InlineElement.md) |
+| [Def](Def.md) | [inline_content](inline_content.md) | range | [InlineElement](InlineElement.md) |
+| [Role](Role.md) | [inline_content](inline_content.md) | range | [InlineElement](InlineElement.md) |
+| [Person](Person.md) | [inline_content](inline_content.md) | range | [InlineElement](InlineElement.md) |
 
 
 

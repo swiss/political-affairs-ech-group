@@ -30,6 +30,10 @@ URI: [laws:href](https://ld.ech.ch/schema/0296/laws/href)
 | [TLCRole](TLCRole.md) | Eine benannte Rolle als Referenz im Dokument (akn:TLCRole) |  no  |
 | [TLCReference](TLCReference.md) | Eine generische benannte Referenz im Dokument (akn:TLCReference) |  no  |
 | [Ref](Ref.md) | Eine Inline-Referenz (akn:ref) |  no  |
+| [TLCConcept](TLCConcept.md) | Ein Begriff, auf den das Dokument verweist (akn:TLCConcept), etwa ein zeitlic... |  no  |
+| [OriginalRef](OriginalRef.md) | Verweis auf die ursprüngliche Fassung des Erlasses (akn:original) |  no  |
+| [NoteRef](NoteRef.md) | Verweis auf eine in den Metadaten gehaltene Anmerkung |  no  |
+| [ActiveRef](ActiveRef.md) | Verweis auf einen Erlass, den dieses Dokument ändert |  no  |
 
 
 
@@ -43,7 +47,7 @@ URI: [laws:href](https://ld.ech.ch/schema/0296/laws/href)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [String](String.md) |
-| Domäne von | [FRBRAuthor](FRBRAuthor.md), [TLCOrganization](TLCOrganization.md), [TLCRole](TLCRole.md), [TLCReference](TLCReference.md), [Ref](Ref.md) |
+| Domäne von | [FRBRAuthor](FRBRAuthor.md), [TLCOrganization](TLCOrganization.md), [TLCRole](TLCRole.md), [TLCReference](TLCReference.md), [Ref](Ref.md), [TLCConcept](TLCConcept.md), [OriginalRef](OriginalRef.md), [NoteRef](NoteRef.md), [ActiveRef](ActiveRef.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -62,9 +66,9 @@ URI: [laws:href](https://ld.ech.ch/schema/0296/laws/href)
 
 | Wert |
 | --- |
-| #ch.bk |
-| http://data.legilux.public.lu/resource/ontology/jolux#publisher |
-| http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder |
+|  |
+| #JI |
+| #SK |
 
 
 
@@ -86,9 +90,9 @@ annotations:
 description: URI-Referenz (@href), für Links zu Organisationen, Rollen oder externen
   URIs.
 examples:
-- value: '#ch.bk'
-- value: http://data.legilux.public.lu/resource/ontology/jolux#publisher
-- value: http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder
+- value: ''
+- value: '#JI'
+- value: '#SK'
 from_schema: https://ld.ech.ch/schema/0296/laws
 rank: 1000
 domain_of:
@@ -97,6 +101,10 @@ domain_of:
 - TLCRole
 - TLCReference
 - Ref
+- TLCConcept
+- OriginalRef
+- NoteRef
+- ActiveRef
 range: string
 
 ```

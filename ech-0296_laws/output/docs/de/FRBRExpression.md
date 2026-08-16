@@ -47,6 +47,26 @@ _FRBR-Expression-Ebene (akn:FRBRExpression): eine sprachspezifische Version des 
 
 
 ### Beispiele
+#### Beispiel FRBRExpression: zh idg 1 1
+
+```yaml
+frbr_expression:
+  frbr_this:
+    value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@/!main
+  frbr_uri:
+    value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@
+  frbr_dates:
+  - date_value: '2007-02-12'
+    frbr_date_name: ''
+  frbr_authors:
+  - href: '#SK'
+    as_role: '#editor'
+  - href: '#JI'
+    as_role: '#coEditor'
+  frbr_language:
+    language_value: ger
+
+```
 #### Beispiel FRBRExpression: bgoe 1 1
 
 ```yaml

@@ -1,0 +1,102 @@
+meta:
+  identification_ref:
+    source: ''
+    frbr_work:
+      frbr_this:
+        value_uri: /akn/CH-ZH/act/2007-02-12/62-121/!main
+      frbr_uri:
+        value_uri: /akn/CH-ZH/act/2007-02-12/62-121
+      frbr_dates:
+      - date_value: '2007-02-12'
+        frbr_date_name: ''
+      frbr_authors:
+      - href: '#kantonsrat'
+        as_role: '#authority'
+      frbr_country:
+        value: CH-ZH
+      frbr_subtype:
+        value: Gesetz
+      frbr_number:
+        value: 62-121
+    frbr_expression:
+      frbr_this:
+        value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@/!main
+      frbr_uri:
+        value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@
+      frbr_dates:
+      - date_value: '2007-02-12'
+        frbr_date_name: ''
+      frbr_authors:
+      - href: '#SK'
+        as_role: '#editor'
+      - href: '#JI'
+        as_role: '#coEditor'
+      frbr_language:
+        language_value: ger
+    frbr_manifestation:
+      frbr_this:
+        value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@.akn/!main
+      frbr_uri:
+        value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@.akn
+      frbr_dates:
+      - date_value: '2007-02-12'
+        frbr_date_name: ''
+      frbr_authors:
+      - href: '#SK-Publ'
+        as_role: '#publisher'
+      frbr_format:
+        value: '#akn'
+  references_ref:
+    source: '#source'
+    original_ref:
+      eId: ro
+      href: /akn/CH-ZH/act/EXPRESSION
+      show_as: Gesetz über .. vom ...
+    active_refs:
+    - eId: ra_1
+      href: /akn/CH-ZH/act/WORK
+      show_as: Gesetz über .. vom ...
+    - eId: ra_2
+      href: /akn/CH-ZH/act/2022-35/cons/(aktuelle konsolidierte Fassung)
+      show_as: Gesetz über .. vom ...
+    tlc_organizations:
+    - eId: kantonsrat
+      href: https://data.zh.ch/vocabulary/legal-institution/2
+      show_as: Kantonsrat
+    - eId: SK
+      href: https://data.zh.ch/vocabulary/organizational-entity/SK
+      show_as: Staatskanzlei
+    - … 2 weitere
+    tlc_roles:
+    - eId: authority
+      href: https://data.zh.ch/vocabulary/role/author
+      show_as: Beschliessendes Organ
+    - eId: editor
+      href: https://data.zh.ch/vocabulary/role/leadEditor
+      show_as: Federführende Einheit
+    - … 2 weitere
+    tlc_references:
+    - name_attr: language
+      href: http://publications.europa.eu/resource/authority/language/DEU
+      show_as: ger
+    - name_attr: xml
+      href: https://data.zh.ch/vocabulary/user-format/xml
+      show_as: XML
+    tlc_concepts:
+    - eId: inForce
+      href: ''
+      show_as: ''
+  notes_ref:
+    source: ''
+    note_list:
+    - eId: note_1
+      content_blocks:
+      - element_type: BlockParagraph
+        inline_content:
+        - …
+    - eId: note_2
+      content_blocks:
+      - element_type: BlockParagraph
+        inline_content:
+        - …
+    - … 4 weitere

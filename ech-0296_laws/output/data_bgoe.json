@@ -182,24 +182,37 @@
     "preface_ref": {
       "preface_paragraphs": [
         {
-          "doc_number": "152.3 "
+          "inline_content": [
+            {
+              "element_type": "DocNumber",
+              "inline_content": [
+                {
+                  "element_type": "TextRun",
+                  "text": "152.3"
+                }
+              ]
+            }
+          ]
         },
         {
-          "doc_title": {
-            "inline_content": [
-              {
-                "element_type": "TextRun",
-                "text": "Bundesgesetz"
-              },
-              {
-                "element_type": "Br"
-              },
-              {
-                "element_type": "TextRun",
-                "text": "über das Öffentlichkeitsprinzip der Verwaltung"
-              }
-            ]
-          }
+          "inline_content": [
+            {
+              "element_type": "DocTitle",
+              "inline_content": [
+                {
+                  "element_type": "TextRun",
+                  "text": "Bundesgesetz"
+                },
+                {
+                  "element_type": "Br"
+                },
+                {
+                  "element_type": "TextRun",
+                  "text": "über das Öffentlichkeitsprinzip der Verwaltung"
+                }
+              ]
+            }
+          ]
         },
         {
           "inline_content": [
@@ -349,7 +362,6 @@
           },
           "articles": [
             {
-              "eId": "art_1",
               "num": {
                 "inline_content": [
                   {
@@ -363,6 +375,7 @@
                   }
                 ]
               },
+              "eId": "art_1",
               "heading": {
                 "inline_content": [
                   {
@@ -391,7 +404,6 @@
               ]
             },
             {
-              "eId": "art_2",
               "num": {
                 "inline_content": [
                   {
@@ -405,6 +417,7 @@
                   }
                 ]
               },
+              "eId": "art_2",
               "heading": {
                 "inline_content": [
                   {
@@ -732,7 +745,6 @@
               ]
             },
             {
-              "eId": "art_3",
               "num": {
                 "inline_content": [
                   {
@@ -746,6 +758,7 @@
                   }
                 ]
               },
+              "eId": "art_3",
               "heading": {
                 "inline_content": [
                   {
@@ -1093,7 +1106,6 @@
               ]
             },
             {
-              "eId": "art_4",
               "num": {
                 "inline_content": [
                   {
@@ -1107,6 +1119,7 @@
                   }
                 ]
               },
+              "eId": "art_4",
               "heading": {
                 "inline_content": [
                   {
@@ -1184,7 +1197,6 @@
               ]
             },
             {
-              "eId": "art_5",
               "num": {
                 "inline_content": [
                   {
@@ -1198,6 +1210,7 @@
                   }
                 ]
               },
+              "eId": "art_5",
               "heading": {
                 "inline_content": [
                   {
@@ -1445,7 +1458,6 @@
           },
           "articles": [
             {
-              "eId": "art_6",
               "num": {
                 "inline_content": [
                   {
@@ -1459,6 +1471,7 @@
                   }
                 ]
               },
+              "eId": "art_6",
               "heading": {
                 "inline_content": [
                   {
@@ -1543,7 +1556,6 @@
               ]
             },
             {
-              "eId": "art_7",
               "num": {
                 "inline_content": [
                   {
@@ -1557,6 +1569,7 @@
                   }
                 ]
               },
+              "eId": "art_7",
               "heading": {
                 "inline_content": [
                   {
@@ -1798,7 +1811,6 @@
               ]
             },
             {
-              "eId": "art_8",
               "num": {
                 "inline_content": [
                   {
@@ -1812,6 +1824,7 @@
                   }
                 ]
               },
+              "eId": "art_8",
               "heading": {
                 "inline_content": [
                   {
@@ -1944,7 +1957,6 @@
               ]
             },
             {
-              "eId": "art_9",
               "num": {
                 "inline_content": [
                   {
@@ -2026,6 +2038,7 @@
                   }
                 ]
               },
+              "eId": "art_9",
               "heading": {
                 "inline_content": [
                   {
@@ -2186,7 +2199,6 @@
           },
           "articles": [
             {
-              "eId": "art_10",
               "num": {
                 "inline_content": [
                   {
@@ -2200,6 +2212,7 @@
                   }
                 ]
               },
+              "eId": "art_10",
               "heading": {
                 "inline_content": [
                   {
@@ -2379,7 +2392,6 @@
               ]
             },
             {
-              "eId": "art_11",
               "num": {
                 "inline_content": [
                   {
@@ -2461,6 +2473,7 @@
                   }
                 ]
               },
+              "eId": "art_11",
               "heading": {
                 "inline_content": [
                   {
@@ -2521,7 +2534,6 @@
               ]
             },
             {
-              "eId": "art_12",
               "num": {
                 "inline_content": [
                   {
@@ -2535,6 +2547,7 @@
                   }
                 ]
               },
+              "eId": "art_12",
               "heading": {
                 "inline_content": [
                   {
@@ -2779,7 +2792,6 @@
               ]
             },
             {
-              "eId": "art_13",
               "num": {
                 "inline_content": [
                   {
@@ -2793,6 +2805,7 @@
                   }
                 ]
               },
+              "eId": "art_13",
               "heading": {
                 "inline_content": [
                   {
@@ -3039,7 +3052,6 @@
               ]
             },
             {
-              "eId": "art_14",
               "num": {
                 "inline_content": [
                   {
@@ -3053,6 +3065,7 @@
                   }
                 ]
               },
+              "eId": "art_14",
               "heading": {
                 "inline_content": [
                   {
@@ -3153,7 +3166,6 @@
               ]
             },
             {
-              "eId": "art_15",
               "num": {
                 "inline_content": [
                   {
@@ -3167,6 +3179,7 @@
                   }
                 ]
               },
+              "eId": "art_15",
               "heading": {
                 "inline_content": [
                   {
@@ -3401,7 +3414,6 @@
               ]
             },
             {
-              "eId": "art_16",
               "num": {
                 "inline_content": [
                   {
@@ -3493,6 +3505,7 @@
                   }
                 ]
               },
+              "eId": "art_16",
               "heading": {
                 "inline_content": [
                   {
@@ -3553,7 +3566,6 @@
               ]
             },
             {
-              "eId": "art_17",
               "num": {
                 "inline_content": [
                   {
@@ -3567,6 +3579,7 @@
                   }
                 ]
               },
+              "eId": "art_17",
               "heading": {
                 "inline_content": [
                   {
@@ -4024,7 +4037,6 @@
           },
           "articles": [
             {
-              "eId": "art_18",
               "num": {
                 "inline_content": [
                   {
@@ -4038,6 +4050,7 @@
                   }
                 ]
               },
+              "eId": "art_18",
               "heading": {
                 "inline_content": [
                   {
@@ -4409,7 +4422,6 @@
               ]
             },
             {
-              "eId": "art_19",
               "num": {
                 "inline_content": [
                   {
@@ -4423,6 +4435,7 @@
                   }
                 ]
               },
+              "eId": "art_19",
               "heading": {
                 "inline_content": [
                   {
@@ -4507,7 +4520,6 @@
               ]
             },
             {
-              "eId": "art_20",
               "num": {
                 "inline_content": [
                   {
@@ -4521,6 +4533,7 @@
                   }
                 ]
               },
+              "eId": "art_20",
               "heading": {
                 "inline_content": [
                   {
@@ -4670,7 +4683,6 @@
           },
           "articles": [
             {
-              "eId": "art_21",
               "num": {
                 "inline_content": [
                   {
@@ -4684,6 +4696,7 @@
                   }
                 ]
               },
+              "eId": "art_21",
               "heading": {
                 "inline_content": [
                   {
@@ -4783,7 +4796,6 @@
               ]
             },
             {
-              "eId": "art_22",
               "num": {
                 "inline_content": [
                   {
@@ -4797,6 +4809,7 @@
                   }
                 ]
               },
+              "eId": "art_22",
               "heading": {
                 "inline_content": [
                   {
@@ -4825,7 +4838,6 @@
               ]
             },
             {
-              "eId": "art_23",
               "num": {
                 "inline_content": [
                   {
@@ -4839,6 +4851,7 @@
                   }
                 ]
               },
+              "eId": "art_23",
               "heading": {
                 "inline_content": [
                   {
@@ -4867,7 +4880,6 @@
               ]
             },
             {
-              "eId": "art_23_a",
               "num": {
                 "inline_content": [
                   {
@@ -4972,6 +4984,7 @@
                   }
                 ]
               },
+              "eId": "art_23_a",
               "heading": {
                 "inline_content": [
                   {
@@ -5000,7 +5013,6 @@
               ]
             },
             {
-              "eId": "art_24",
               "num": {
                 "inline_content": [
                   {
@@ -5014,6 +5026,7 @@
                   }
                 ]
               },
+              "eId": "art_24",
               "heading": {
                 "inline_content": [
                   {

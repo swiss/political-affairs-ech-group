@@ -1,0 +1,28 @@
+articles:
+- eId: title_5__art_23
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 23
+  heading:
+    eId: title_5__art_23__heading
+    inline_content:
+    - element_type: TextRun
+      text: Interessenabwägung
+  paragraphs:
+  - eId: title_5__art_23__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: title_5__art_23__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+      - …
+  - … 1 weitere

@@ -1,0 +1,43 @@
+titles:
+- eId: title_6
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '6. Abschnitt:'
+  heading:
+    eId: title_2__chp_F__heading
+    inline_content:
+    - element_type: TextRun
+      text: Verfahren auf Zugang zu Information
+  articles:
+  - eId: title_6__art_24
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_6__art_24__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_6__art_24__para_1
+      num: …
+      content_ref: …
+    - eId: title_6__art_24__para_2
+      num: …
+      content_ref: …
+  - eId: ttitle_6__art_25
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_6_art_25__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: ttitle_6__art_25__para_1
+      num: …
+      content_ref: …
+    - eId: title_6__art_25__para_2
+      num: …
+      content_ref: …
+  - … 4 weitere

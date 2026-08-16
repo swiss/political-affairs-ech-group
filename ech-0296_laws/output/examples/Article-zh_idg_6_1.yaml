@@ -1,0 +1,26 @@
+articles:
+- eId: title_6__art_24
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 24.
+  heading:
+    eId: title_6__art_24__heading
+    inline_content:
+    - element_type: TextRun
+      text: Gesuch
+  paragraphs:
+  - eId: title_6__art_24__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: title_6__art_24__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …

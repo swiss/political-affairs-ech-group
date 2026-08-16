@@ -26,7 +26,7 @@ URI: [laws:inline_content](https://ld.ech.ch/schema/0296/laws/inline_content)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [PrefaceP](PrefaceP.md) | Ein Vorspann-Absatz (akn:p), der Dokumentnummer und/oder -titel umschliesst |  no  |
+| [PrefaceP](PrefaceP.md) | Ein Vorspann-Absatz (akn:p) |  no  |
 | [BlockParagraph](BlockParagraph.md) | Ein Fliesstext-Absatz in Content (akn:p) |  no  |
 | [MixedText](MixedText.md) | Wiederverwendbarer Halter für gemischten Inhalt: eine geordnete Folge aus Tex... |  no  |
 | [Ref](Ref.md) | Eine Inline-Referenz (akn:ref) |  no  |
@@ -37,6 +37,17 @@ URI: [laws:inline_content](https://ld.ech.ch/schema/0296/laws/inline_content)
 | [Inline](Inline.md) | Ein benanntes präsentationsbezogenes Inline (akn:inline), z |  no  |
 | [Placeholder](Placeholder.md) | Ein Platzhalter für entfernten Inhalt (akn:placeholder) mit dem Erweiterungsa... |  no  |
 | [Block](Block.md) | Ein generischer Block (akn:block), dessen @name den Zweck nennt; trägt gemisc... |  no  |
+| [DocNumber](DocNumber.md) | Die Dokumentnummer im Vorspann |  no  |
+| [DocTitle](DocTitle.md) | Der Dokumenttitel im Vorspann |  no  |
+| [DocketNumber](DocketNumber.md) | Die Ordnungsnummer des Erlasses, wie sie kantonale Sammlungen führen |  no  |
+| [ShortTitle](ShortTitle.md) | Der Kurztitel des Erlasses |  no  |
+| [Abbr](Abbr.md) | Die Abkürzung des Erlasses |  no  |
+| [DocDate](DocDate.md) | Ein Datum im Vorspann, mit dem maschinenlesbaren Wert in @date |  no  |
+| [DateInline](DateInline.md) | Ein Datum im Fliesstext, mit dem maschinenlesbaren Wert in @date |  no  |
+| [Signature](Signature.md) | Eine Unterschriftszeile |  no  |
+| [Def](Def.md) | Ein im Text definierter Begriff |  no  |
+| [Role](Role.md) | Eine Rolle, die eine Person innehat, mit Verweis auf ihre Deklaration |  no  |
+| [Person](Person.md) | Eine Person, mit Verweis auf ihre Deklaration und die innegehabte Rolle |  no  |
 
 
 
@@ -50,7 +61,7 @@ URI: [laws:inline_content](https://ld.ech.ch/schema/0296/laws/inline_content)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [InlineElement](InlineElement.md) |
-| Domäne von | [PrefaceP](PrefaceP.md), [BlockParagraph](BlockParagraph.md), [MixedText](MixedText.md), [Ref](Ref.md), [B](B.md), [I](I.md), [Sup](Sup.md), [Span](Span.md), [Inline](Inline.md), [Placeholder](Placeholder.md), [Block](Block.md) |
+| Domäne von | [PrefaceP](PrefaceP.md), [BlockParagraph](BlockParagraph.md), [MixedText](MixedText.md), [Ref](Ref.md), [B](B.md), [I](I.md), [Sup](Sup.md), [Span](Span.md), [Inline](Inline.md), [Placeholder](Placeholder.md), [Block](Block.md), [DocNumber](DocNumber.md), [DocTitle](DocTitle.md), [DocketNumber](DocketNumber.md), [ShortTitle](ShortTitle.md), [Abbr](Abbr.md), [DocDate](DocDate.md), [DateInline](DateInline.md), [Signature](Signature.md), [Def](Def.md), [Role](Role.md), [Person](Person.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -104,6 +115,17 @@ domain_of:
 - Inline
 - Placeholder
 - Block
+- DocNumber
+- DocTitle
+- DocketNumber
+- ShortTitle
+- Abbr
+- DocDate
+- DateInline
+- Signature
+- Def
+- Role
+- Person
 range: InlineElement
 multivalued: true
 inlined: true

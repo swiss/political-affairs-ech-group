@@ -1,0 +1,20 @@
+articles:
+- eId: title_9__art_41
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 41.
+  heading:
+    eId: title_9__art_41__heading
+    inline_content:
+    - element_type: TextRun
+      text: Übergangsrecht
+  paragraphs:
+  - eId: title_9__art_41__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+      - …

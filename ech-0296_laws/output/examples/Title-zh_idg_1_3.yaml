@@ -1,0 +1,44 @@
+titles:
+- eId: title_3
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: C.
+  heading:
+    eId: title_3__heading
+    inline_content:
+    - element_type: TextRun
+      text: Bekanntgabe von Informationen
+  articles:
+  - eId: title_3__art_14
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_3__art_14__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_3__art_14__para_1
+      num: …
+      content_ref: …
+    - eId: title_3__art_14__para_2
+      num: …
+      content_ref: …
+    - … 2 weitere
+  - eId: title_3__art_15
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_3_art_15__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_3__art_15__para_1
+      num: …
+      content_ref: …
+    - eId: title_3__art_15__para_2
+      num: …
+      content_ref: …
+  - … 4 weitere

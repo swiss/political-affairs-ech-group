@@ -1,12 +1,149 @@
 {
     "$defs": {
+        "Abbr": {
+            "additionalProperties": false,
+            "description": "The abbreviation of the act.",
+            "properties": {
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "element_type": {
+                    "description": "Type designator discriminating the concrete subclass of an abstract base: InlineElement (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote) or BlockElement (BlockParagraph, BlockList, Table).\n",
+                    "enum": [
+                        "Abbr"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "inline_content": {
+                    "description": "Ordered mixed content: a sequence of text runs and inline-markup elements (InlineElement subclasses). Document order is preserved by list order. Allowed inline elements: akn:ref, akn:b, akn:i, akn:sup, akn:span, akn:authorialNote, akn:inline, akn:placeholder, akn:br.\n",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/TextRun"
+                            },
+                            {
+                                "$ref": "#/$defs/Ref"
+                            },
+                            {
+                                "$ref": "#/$defs/B"
+                            },
+                            {
+                                "$ref": "#/$defs/I"
+                            },
+                            {
+                                "$ref": "#/$defs/Sup"
+                            },
+                            {
+                                "$ref": "#/$defs/Span"
+                            },
+                            {
+                                "$ref": "#/$defs/Br"
+                            },
+                            {
+                                "$ref": "#/$defs/Inline"
+                            },
+                            {
+                                "$ref": "#/$defs/Placeholder"
+                            },
+                            {
+                                "$ref": "#/$defs/AuthorialNote"
+                            },
+                            {
+                                "$ref": "#/$defs/DocNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/DocTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/DocketNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/ShortTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/Abbr"
+                            },
+                            {
+                                "$ref": "#/$defs/DocDate"
+                            },
+                            {
+                                "$ref": "#/$defs/DateInline"
+                            },
+                            {
+                                "$ref": "#/$defs/Signature"
+                            },
+                            {
+                                "$ref": "#/$defs/Eol"
+                            },
+                            {
+                                "$ref": "#/$defs/Def"
+                            },
+                            {
+                                "$ref": "#/$defs/NoteRef"
+                            },
+                            {
+                                "$ref": "#/$defs/Role"
+                            },
+                            {
+                                "$ref": "#/$defs/Person"
+                            },
+                            {
+                                "$ref": "#/$defs/ActiveRef"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "title_attr": {
+                    "description": "Human-readable label of the marked-up passage (@title).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Abbr",
+            "type": "object"
+        },
         "Act": {
             "additionalProperties": false,
             "description": "The legislative act element (akn:act). Main content container of an AkomaNtoso document. The @name attribute specifies the type of act (e.g. 'publicLaw').",
             "properties": {
                 "act_name": {
-                    "$ref": "#/$defs/ActTypeEnum",
-                    "description": "Type of act (@name attribute of akn:act), e.g. 'publicLaw'."
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/ActTypeEnum"
+                        },
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Type of the act (akn:act/@name). The permissible values of ActTypeEnum are those Fedlex uses; cantonal collections name their own types, which is why a free string remains admissible.\n",
+                    "type": "string"
+                },
+                "attachments_ref": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Attachments"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The documents attached to the act (akn:attachments)."
                 },
                 "body": {
                     "anyOf": [
@@ -29,6 +166,17 @@
                         }
                     ],
                     "description": "The documents embedded in this act (akn:components)."
+                },
+                "conclusions_ref": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Conclusions"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The concluding formula of the act (akn:conclusions)."
                 },
                 "meta": {
                     "anyOf": [
@@ -95,6 +243,16 @@
                     "description": "Chapter-level child elements (akn:chapter).",
                     "items": {
                         "$ref": "#/$defs/Chapter"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "component_refs": {
+                    "description": "Pointers to components held elsewhere (akn:componentRef).",
+                    "items": {
+                        "$ref": "#/$defs/ComponentRef"
                     },
                     "type": [
                         "array",
@@ -200,6 +358,17 @@
                     ],
                     "description": "FRBR identification block (akn:identification)."
                 },
+                "notes_ref": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Notes"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The notes block of the metadata (akn:notes)."
+                },
                 "references_ref": {
                     "anyOf": [
                         {
@@ -226,13 +395,55 @@
             "title": "ActTypeEnum",
             "type": "string"
         },
+        "ActiveRef": {
+            "additionalProperties": false,
+            "description": "Reference to an act this document modifies.",
+            "properties": {
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "element_type": {
+                    "description": "Type designator discriminating the concrete subclass of an abstract base: InlineElement (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote) or BlockElement (BlockParagraph, BlockList, Table).\n",
+                    "enum": [
+                        "ActiveRef"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "href": {
+                    "description": "URI reference (@href), used for links to organizations, roles, or external URIs.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "show_as": {
+                    "description": "Human-readable display label for a TLC reference (@showAs).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "ActiveRef",
+            "type": "object"
+        },
         "Article": {
             "additionalProperties": false,
             "description": "An article, the primary legislative unit (akn:article). Constraints (FLX-ART-*): - akn:num is mandatory (FLX-ART-001) - only heading elements (num, heading, subheading) plus akn:paragraph and akn:subdivision are allowed as children (FLX-ART-002) - requires unique @eId (FLX-ART-003)",
             "properties": {
                 "eId": {
-                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
-                    "type": "string"
+                    "description": "Element identifier. Required on every article by the Fedlex Schematron (FLX-EID-001); cantonal collections do not always carry it.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "heading": {
                     "anyOf": [
@@ -282,10 +493,42 @@
                 }
             },
             "required": [
-                "eId",
                 "num"
             ],
             "title": "Article",
+            "type": "object"
+        },
+        "Attachment": {
+            "additionalProperties": false,
+            "description": "A single attached document.",
+            "properties": {
+                "act_ref": {
+                    "$ref": "#/$defs/Act",
+                    "description": "The legislative act (akn:act). Must be the only child of akn:akomaNtoso (FLX-RT-001)."
+                }
+            },
+            "required": [
+                "act_ref"
+            ],
+            "title": "Attachment",
+            "type": "object"
+        },
+        "Attachments": {
+            "additionalProperties": false,
+            "description": "Documents attached to the act.",
+            "properties": {
+                "attachment_list": {
+                    "description": "The attached documents (akn:attachment).",
+                    "items": {
+                        "$ref": "#/$defs/Attachment"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Attachments",
             "type": "object"
         },
         "AuthorialNote": {
@@ -373,6 +616,48 @@
                             },
                             {
                                 "$ref": "#/$defs/AuthorialNote"
+                            },
+                            {
+                                "$ref": "#/$defs/DocNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/DocTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/DocketNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/ShortTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/Abbr"
+                            },
+                            {
+                                "$ref": "#/$defs/DocDate"
+                            },
+                            {
+                                "$ref": "#/$defs/DateInline"
+                            },
+                            {
+                                "$ref": "#/$defs/Signature"
+                            },
+                            {
+                                "$ref": "#/$defs/Eol"
+                            },
+                            {
+                                "$ref": "#/$defs/Def"
+                            },
+                            {
+                                "$ref": "#/$defs/NoteRef"
+                            },
+                            {
+                                "$ref": "#/$defs/Role"
+                            },
+                            {
+                                "$ref": "#/$defs/Person"
+                            },
+                            {
+                                "$ref": "#/$defs/ActiveRef"
                             }
                         ]
                     },
@@ -426,6 +711,48 @@
                             },
                             {
                                 "$ref": "#/$defs/AuthorialNote"
+                            },
+                            {
+                                "$ref": "#/$defs/DocNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/DocTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/DocketNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/ShortTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/Abbr"
+                            },
+                            {
+                                "$ref": "#/$defs/DocDate"
+                            },
+                            {
+                                "$ref": "#/$defs/DateInline"
+                            },
+                            {
+                                "$ref": "#/$defs/Signature"
+                            },
+                            {
+                                "$ref": "#/$defs/Eol"
+                            },
+                            {
+                                "$ref": "#/$defs/Def"
+                            },
+                            {
+                                "$ref": "#/$defs/NoteRef"
+                            },
+                            {
+                                "$ref": "#/$defs/Role"
+                            },
+                            {
+                                "$ref": "#/$defs/Person"
+                            },
+                            {
+                                "$ref": "#/$defs/ActiveRef"
                             }
                         ]
                     },
@@ -533,6 +860,17 @@
                         "null"
                     ]
                 },
+                "heading": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MixedText"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Heading element for a hierarchical structure (akn:heading). May contain inline markup including akn:br (FLX-TXT-001: br permitted in heading context). Must precede subheading (FLX-HD-004, FLX-HD-005).\n"
+                },
                 "num": {
                     "anyOf": [
                         {
@@ -608,6 +946,48 @@
                             },
                             {
                                 "$ref": "#/$defs/AuthorialNote"
+                            },
+                            {
+                                "$ref": "#/$defs/DocNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/DocTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/DocketNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/ShortTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/Abbr"
+                            },
+                            {
+                                "$ref": "#/$defs/DocDate"
+                            },
+                            {
+                                "$ref": "#/$defs/DateInline"
+                            },
+                            {
+                                "$ref": "#/$defs/Signature"
+                            },
+                            {
+                                "$ref": "#/$defs/Eol"
+                            },
+                            {
+                                "$ref": "#/$defs/Def"
+                            },
+                            {
+                                "$ref": "#/$defs/NoteRef"
+                            },
+                            {
+                                "$ref": "#/$defs/Role"
+                            },
+                            {
+                                "$ref": "#/$defs/Person"
+                            },
+                            {
+                                "$ref": "#/$defs/ActiveRef"
                             }
                         ]
                     },
@@ -864,6 +1244,73 @@
             "title": "Chapter",
             "type": "object"
         },
+        "Citation": {
+            "additionalProperties": false,
+            "description": "A single citation.",
+            "properties": {
+                "content_blocks": {
+                    "description": "Block-level content in reading order: paragraphs, lists and tables as they follow one another in the document.\n",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/BlockParagraph"
+                            },
+                            {
+                                "$ref": "#/$defs/BlockList"
+                            },
+                            {
+                                "$ref": "#/$defs/Table"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "refers_to": {
+                    "description": "Anchor naming what this element refers to (@refersTo).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Citation",
+            "type": "object"
+        },
+        "Citations": {
+            "additionalProperties": false,
+            "description": "The citations of the preamble -- what the act invokes.",
+            "properties": {
+                "citation_list": {
+                    "description": "The citations themselves (akn:citation).",
+                    "items": {
+                        "$ref": "#/$defs/Citation"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Citations",
+            "type": "object"
+        },
         "Component": {
             "additionalProperties": false,
             "description": "A single embedded document (akn:component).",
@@ -883,6 +1330,35 @@
             "title": "Component",
             "type": "object"
         },
+        "ComponentRef": {
+            "additionalProperties": false,
+            "description": "Pointer to a document component held elsewhere (akn:componentRef).",
+            "properties": {
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "show_as": {
+                    "description": "Human-readable display label for a TLC reference (@showAs).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "src": {
+                    "description": "Location of the referenced component (@src).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "ComponentRef",
+            "type": "object"
+        },
         "Components": {
             "additionalProperties": false,
             "description": "Container for the documents embedded in an act (akn:components), such as its annex.",
@@ -899,6 +1375,41 @@
                 }
             },
             "title": "Components",
+            "type": "object"
+        },
+        "Conclusions": {
+            "additionalProperties": false,
+            "description": "The concluding formula of an act: place, date and signatures.",
+            "properties": {
+                "content_blocks": {
+                    "description": "Block-level content in reading order: paragraphs, lists and tables as they follow one another in the document.\n",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/BlockParagraph"
+                            },
+                            {
+                                "$ref": "#/$defs/BlockList"
+                            },
+                            {
+                                "$ref": "#/$defs/Table"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Conclusions",
             "type": "object"
         },
         "Container": {
@@ -959,6 +1470,236 @@
             "title": "Content",
             "type": "object"
         },
+        "DateInline": {
+            "additionalProperties": false,
+            "description": "A date in running text, with the machine-readable value in @date.",
+            "properties": {
+                "date_attr": {
+                    "description": "The date this element marks up, in ISO 8601 (@date).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "element_type": {
+                    "description": "Type designator discriminating the concrete subclass of an abstract base: InlineElement (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote) or BlockElement (BlockParagraph, BlockList, Table).\n",
+                    "enum": [
+                        "DateInline"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "inline_content": {
+                    "description": "Ordered mixed content: a sequence of text runs and inline-markup elements (InlineElement subclasses). Document order is preserved by list order. Allowed inline elements: akn:ref, akn:b, akn:i, akn:sup, akn:span, akn:authorialNote, akn:inline, akn:placeholder, akn:br.\n",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/TextRun"
+                            },
+                            {
+                                "$ref": "#/$defs/Ref"
+                            },
+                            {
+                                "$ref": "#/$defs/B"
+                            },
+                            {
+                                "$ref": "#/$defs/I"
+                            },
+                            {
+                                "$ref": "#/$defs/Sup"
+                            },
+                            {
+                                "$ref": "#/$defs/Span"
+                            },
+                            {
+                                "$ref": "#/$defs/Br"
+                            },
+                            {
+                                "$ref": "#/$defs/Inline"
+                            },
+                            {
+                                "$ref": "#/$defs/Placeholder"
+                            },
+                            {
+                                "$ref": "#/$defs/AuthorialNote"
+                            },
+                            {
+                                "$ref": "#/$defs/DocNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/DocTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/DocketNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/ShortTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/Abbr"
+                            },
+                            {
+                                "$ref": "#/$defs/DocDate"
+                            },
+                            {
+                                "$ref": "#/$defs/DateInline"
+                            },
+                            {
+                                "$ref": "#/$defs/Signature"
+                            },
+                            {
+                                "$ref": "#/$defs/Eol"
+                            },
+                            {
+                                "$ref": "#/$defs/Def"
+                            },
+                            {
+                                "$ref": "#/$defs/NoteRef"
+                            },
+                            {
+                                "$ref": "#/$defs/Role"
+                            },
+                            {
+                                "$ref": "#/$defs/Person"
+                            },
+                            {
+                                "$ref": "#/$defs/ActiveRef"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "refers_to": {
+                    "description": "Anchor naming what this element refers to (@refersTo).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "DateInline",
+            "type": "object"
+        },
+        "Def": {
+            "additionalProperties": false,
+            "description": "A term being defined in the text.",
+            "properties": {
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "element_type": {
+                    "description": "Type designator discriminating the concrete subclass of an abstract base: InlineElement (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote) or BlockElement (BlockParagraph, BlockList, Table).\n",
+                    "enum": [
+                        "Def"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "inline_content": {
+                    "description": "Ordered mixed content: a sequence of text runs and inline-markup elements (InlineElement subclasses). Document order is preserved by list order. Allowed inline elements: akn:ref, akn:b, akn:i, akn:sup, akn:span, akn:authorialNote, akn:inline, akn:placeholder, akn:br.\n",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/TextRun"
+                            },
+                            {
+                                "$ref": "#/$defs/Ref"
+                            },
+                            {
+                                "$ref": "#/$defs/B"
+                            },
+                            {
+                                "$ref": "#/$defs/I"
+                            },
+                            {
+                                "$ref": "#/$defs/Sup"
+                            },
+                            {
+                                "$ref": "#/$defs/Span"
+                            },
+                            {
+                                "$ref": "#/$defs/Br"
+                            },
+                            {
+                                "$ref": "#/$defs/Inline"
+                            },
+                            {
+                                "$ref": "#/$defs/Placeholder"
+                            },
+                            {
+                                "$ref": "#/$defs/AuthorialNote"
+                            },
+                            {
+                                "$ref": "#/$defs/DocNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/DocTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/DocketNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/ShortTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/Abbr"
+                            },
+                            {
+                                "$ref": "#/$defs/DocDate"
+                            },
+                            {
+                                "$ref": "#/$defs/DateInline"
+                            },
+                            {
+                                "$ref": "#/$defs/Signature"
+                            },
+                            {
+                                "$ref": "#/$defs/Eol"
+                            },
+                            {
+                                "$ref": "#/$defs/Def"
+                            },
+                            {
+                                "$ref": "#/$defs/NoteRef"
+                            },
+                            {
+                                "$ref": "#/$defs/Role"
+                            },
+                            {
+                                "$ref": "#/$defs/Person"
+                            },
+                            {
+                                "$ref": "#/$defs/ActiveRef"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Def",
+            "type": "object"
+        },
         "Doc": {
             "additionalProperties": false,
             "description": "An embedded document (akn:doc). Its @name states the kind; Fedlex uses 'annex'. It carries its own identification, which in the Fedlex files repeats the URIs of the act it belongs to.",
@@ -1004,6 +1745,128 @@
             "title": "Doc",
             "type": "object"
         },
+        "DocDate": {
+            "additionalProperties": false,
+            "description": "A date in the preface, with the machine-readable value in @date.",
+            "properties": {
+                "date_attr": {
+                    "description": "The date this element marks up, in ISO 8601 (@date).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "element_type": {
+                    "description": "Type designator discriminating the concrete subclass of an abstract base: InlineElement (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote) or BlockElement (BlockParagraph, BlockList, Table).\n",
+                    "enum": [
+                        "DocDate"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "inline_content": {
+                    "description": "Ordered mixed content: a sequence of text runs and inline-markup elements (InlineElement subclasses). Document order is preserved by list order. Allowed inline elements: akn:ref, akn:b, akn:i, akn:sup, akn:span, akn:authorialNote, akn:inline, akn:placeholder, akn:br.\n",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/TextRun"
+                            },
+                            {
+                                "$ref": "#/$defs/Ref"
+                            },
+                            {
+                                "$ref": "#/$defs/B"
+                            },
+                            {
+                                "$ref": "#/$defs/I"
+                            },
+                            {
+                                "$ref": "#/$defs/Sup"
+                            },
+                            {
+                                "$ref": "#/$defs/Span"
+                            },
+                            {
+                                "$ref": "#/$defs/Br"
+                            },
+                            {
+                                "$ref": "#/$defs/Inline"
+                            },
+                            {
+                                "$ref": "#/$defs/Placeholder"
+                            },
+                            {
+                                "$ref": "#/$defs/AuthorialNote"
+                            },
+                            {
+                                "$ref": "#/$defs/DocNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/DocTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/DocketNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/ShortTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/Abbr"
+                            },
+                            {
+                                "$ref": "#/$defs/DocDate"
+                            },
+                            {
+                                "$ref": "#/$defs/DateInline"
+                            },
+                            {
+                                "$ref": "#/$defs/Signature"
+                            },
+                            {
+                                "$ref": "#/$defs/Eol"
+                            },
+                            {
+                                "$ref": "#/$defs/Def"
+                            },
+                            {
+                                "$ref": "#/$defs/NoteRef"
+                            },
+                            {
+                                "$ref": "#/$defs/Role"
+                            },
+                            {
+                                "$ref": "#/$defs/Person"
+                            },
+                            {
+                                "$ref": "#/$defs/ActiveRef"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "title_attr": {
+                    "description": "Human-readable label of the marked-up passage (@title).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "DocDate",
+            "type": "object"
+        },
         "DocNameEnum": {
             "description": "Kinds of embedded document Fedlex uses in akn:doc/@name.",
             "enum": [
@@ -1012,6 +1875,351 @@
             "title": "DocNameEnum",
             "type": "string"
         },
+        "DocNumber": {
+            "additionalProperties": false,
+            "description": "The document number in the preface.",
+            "properties": {
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "element_type": {
+                    "description": "Type designator discriminating the concrete subclass of an abstract base: InlineElement (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote) or BlockElement (BlockParagraph, BlockList, Table).\n",
+                    "enum": [
+                        "DocNumber"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "inline_content": {
+                    "description": "Ordered mixed content: a sequence of text runs and inline-markup elements (InlineElement subclasses). Document order is preserved by list order. Allowed inline elements: akn:ref, akn:b, akn:i, akn:sup, akn:span, akn:authorialNote, akn:inline, akn:placeholder, akn:br.\n",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/TextRun"
+                            },
+                            {
+                                "$ref": "#/$defs/Ref"
+                            },
+                            {
+                                "$ref": "#/$defs/B"
+                            },
+                            {
+                                "$ref": "#/$defs/I"
+                            },
+                            {
+                                "$ref": "#/$defs/Sup"
+                            },
+                            {
+                                "$ref": "#/$defs/Span"
+                            },
+                            {
+                                "$ref": "#/$defs/Br"
+                            },
+                            {
+                                "$ref": "#/$defs/Inline"
+                            },
+                            {
+                                "$ref": "#/$defs/Placeholder"
+                            },
+                            {
+                                "$ref": "#/$defs/AuthorialNote"
+                            },
+                            {
+                                "$ref": "#/$defs/DocNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/DocTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/DocketNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/ShortTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/Abbr"
+                            },
+                            {
+                                "$ref": "#/$defs/DocDate"
+                            },
+                            {
+                                "$ref": "#/$defs/DateInline"
+                            },
+                            {
+                                "$ref": "#/$defs/Signature"
+                            },
+                            {
+                                "$ref": "#/$defs/Eol"
+                            },
+                            {
+                                "$ref": "#/$defs/Def"
+                            },
+                            {
+                                "$ref": "#/$defs/NoteRef"
+                            },
+                            {
+                                "$ref": "#/$defs/Role"
+                            },
+                            {
+                                "$ref": "#/$defs/Person"
+                            },
+                            {
+                                "$ref": "#/$defs/ActiveRef"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "title_attr": {
+                    "description": "Human-readable label of the marked-up passage (@title).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "DocNumber",
+            "type": "object"
+        },
+        "DocTitle": {
+            "additionalProperties": false,
+            "description": "The document title in the preface.",
+            "properties": {
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "element_type": {
+                    "description": "Type designator discriminating the concrete subclass of an abstract base: InlineElement (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote) or BlockElement (BlockParagraph, BlockList, Table).\n",
+                    "enum": [
+                        "DocTitle"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "inline_content": {
+                    "description": "Ordered mixed content: a sequence of text runs and inline-markup elements (InlineElement subclasses). Document order is preserved by list order. Allowed inline elements: akn:ref, akn:b, akn:i, akn:sup, akn:span, akn:authorialNote, akn:inline, akn:placeholder, akn:br.\n",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/TextRun"
+                            },
+                            {
+                                "$ref": "#/$defs/Ref"
+                            },
+                            {
+                                "$ref": "#/$defs/B"
+                            },
+                            {
+                                "$ref": "#/$defs/I"
+                            },
+                            {
+                                "$ref": "#/$defs/Sup"
+                            },
+                            {
+                                "$ref": "#/$defs/Span"
+                            },
+                            {
+                                "$ref": "#/$defs/Br"
+                            },
+                            {
+                                "$ref": "#/$defs/Inline"
+                            },
+                            {
+                                "$ref": "#/$defs/Placeholder"
+                            },
+                            {
+                                "$ref": "#/$defs/AuthorialNote"
+                            },
+                            {
+                                "$ref": "#/$defs/DocNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/DocTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/DocketNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/ShortTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/Abbr"
+                            },
+                            {
+                                "$ref": "#/$defs/DocDate"
+                            },
+                            {
+                                "$ref": "#/$defs/DateInline"
+                            },
+                            {
+                                "$ref": "#/$defs/Signature"
+                            },
+                            {
+                                "$ref": "#/$defs/Eol"
+                            },
+                            {
+                                "$ref": "#/$defs/Def"
+                            },
+                            {
+                                "$ref": "#/$defs/NoteRef"
+                            },
+                            {
+                                "$ref": "#/$defs/Role"
+                            },
+                            {
+                                "$ref": "#/$defs/Person"
+                            },
+                            {
+                                "$ref": "#/$defs/ActiveRef"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "title_attr": {
+                    "description": "Human-readable label of the marked-up passage (@title).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "DocTitle",
+            "type": "object"
+        },
+        "DocketNumber": {
+            "additionalProperties": false,
+            "description": "The systematic number of the act, as cantonal collections carry it.",
+            "properties": {
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "element_type": {
+                    "description": "Type designator discriminating the concrete subclass of an abstract base: InlineElement (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote) or BlockElement (BlockParagraph, BlockList, Table).\n",
+                    "enum": [
+                        "DocketNumber"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "inline_content": {
+                    "description": "Ordered mixed content: a sequence of text runs and inline-markup elements (InlineElement subclasses). Document order is preserved by list order. Allowed inline elements: akn:ref, akn:b, akn:i, akn:sup, akn:span, akn:authorialNote, akn:inline, akn:placeholder, akn:br.\n",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/TextRun"
+                            },
+                            {
+                                "$ref": "#/$defs/Ref"
+                            },
+                            {
+                                "$ref": "#/$defs/B"
+                            },
+                            {
+                                "$ref": "#/$defs/I"
+                            },
+                            {
+                                "$ref": "#/$defs/Sup"
+                            },
+                            {
+                                "$ref": "#/$defs/Span"
+                            },
+                            {
+                                "$ref": "#/$defs/Br"
+                            },
+                            {
+                                "$ref": "#/$defs/Inline"
+                            },
+                            {
+                                "$ref": "#/$defs/Placeholder"
+                            },
+                            {
+                                "$ref": "#/$defs/AuthorialNote"
+                            },
+                            {
+                                "$ref": "#/$defs/DocNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/DocTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/DocketNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/ShortTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/Abbr"
+                            },
+                            {
+                                "$ref": "#/$defs/DocDate"
+                            },
+                            {
+                                "$ref": "#/$defs/DateInline"
+                            },
+                            {
+                                "$ref": "#/$defs/Signature"
+                            },
+                            {
+                                "$ref": "#/$defs/Eol"
+                            },
+                            {
+                                "$ref": "#/$defs/Def"
+                            },
+                            {
+                                "$ref": "#/$defs/NoteRef"
+                            },
+                            {
+                                "$ref": "#/$defs/Role"
+                            },
+                            {
+                                "$ref": "#/$defs/Person"
+                            },
+                            {
+                                "$ref": "#/$defs/ActiveRef"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "title_attr": {
+                    "description": "Human-readable label of the marked-up passage (@title).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "DocketNumber",
+            "type": "object"
+        },
         "DocumentLanguageEnum": {
             "description": "Language codes used for Swiss federal documents.",
             "enum": [
@@ -1019,10 +2227,33 @@
                 "fr",
                 "it",
                 "rm",
-                "en"
+                "en",
+                "ger",
+                "fre",
+                "ita",
+                "roh",
+                "eng"
             ],
             "title": "DocumentLanguageEnum",
             "type": "string"
+        },
+        "Eol": {
+            "additionalProperties": false,
+            "description": "An end of line within a paragraph.",
+            "properties": {
+                "element_type": {
+                    "description": "Type designator discriminating the concrete subclass of an abstract base: InlineElement (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote) or BlockElement (BlockParagraph, BlockList, Table).\n",
+                    "enum": [
+                        "Eol"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Eol",
+            "type": "object"
         },
         "FRBRAuthor": {
             "additionalProperties": false,
@@ -1295,6 +2526,17 @@
                     ],
                     "description": "SR (Systematische Rechtssammlung) number (akn:FRBRnumber/@value), e.g. '101'."
                 },
+                "frbr_subtype": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/ValueType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Subtype of the work (akn:FRBRsubtype), e.g. 'Gesetz'. Used by cantonal collections."
+                },
                 "frbr_this": {
                     "anyOf": [
                         {
@@ -1368,6 +2610,48 @@
             "title": "FormatType",
             "type": "object"
         },
+        "Formula": {
+            "additionalProperties": false,
+            "description": "An opening or closing formula of the preamble (akn:formula).",
+            "properties": {
+                "content_blocks": {
+                    "description": "Block-level content in reading order: paragraphs, lists and tables as they follow one another in the document.\n",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/BlockParagraph"
+                            },
+                            {
+                                "$ref": "#/$defs/BlockList"
+                            },
+                            {
+                                "$ref": "#/$defs/Table"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name_attr2": {
+                    "description": "Purpose of the formula (@name).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Formula",
+            "type": "object"
+        },
         "FrbrDateNameEnum": {
             "description": "Date types Fedlex uses in akn:FRBRdate/@name, taken from the JoLux vocabulary. Cantonal publishers use their own designations; the slot therefore also admits a free string.",
             "enum": [
@@ -1425,6 +2709,48 @@
                             },
                             {
                                 "$ref": "#/$defs/AuthorialNote"
+                            },
+                            {
+                                "$ref": "#/$defs/DocNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/DocTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/DocketNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/ShortTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/Abbr"
+                            },
+                            {
+                                "$ref": "#/$defs/DocDate"
+                            },
+                            {
+                                "$ref": "#/$defs/DateInline"
+                            },
+                            {
+                                "$ref": "#/$defs/Signature"
+                            },
+                            {
+                                "$ref": "#/$defs/Eol"
+                            },
+                            {
+                                "$ref": "#/$defs/Def"
+                            },
+                            {
+                                "$ref": "#/$defs/NoteRef"
+                            },
+                            {
+                                "$ref": "#/$defs/Role"
+                            },
+                            {
+                                "$ref": "#/$defs/Person"
+                            },
+                            {
+                                "$ref": "#/$defs/ActiveRef"
                             }
                         ]
                     },
@@ -1532,6 +2858,48 @@
                             },
                             {
                                 "$ref": "#/$defs/AuthorialNote"
+                            },
+                            {
+                                "$ref": "#/$defs/DocNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/DocTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/DocketNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/ShortTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/Abbr"
+                            },
+                            {
+                                "$ref": "#/$defs/DocDate"
+                            },
+                            {
+                                "$ref": "#/$defs/DateInline"
+                            },
+                            {
+                                "$ref": "#/$defs/Signature"
+                            },
+                            {
+                                "$ref": "#/$defs/Eol"
+                            },
+                            {
+                                "$ref": "#/$defs/Def"
+                            },
+                            {
+                                "$ref": "#/$defs/NoteRef"
+                            },
+                            {
+                                "$ref": "#/$defs/Role"
+                            },
+                            {
+                                "$ref": "#/$defs/Person"
+                            },
+                            {
+                                "$ref": "#/$defs/ActiveRef"
                             }
                         ]
                     },
@@ -1817,6 +3185,48 @@
                             },
                             {
                                 "$ref": "#/$defs/AuthorialNote"
+                            },
+                            {
+                                "$ref": "#/$defs/DocNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/DocTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/DocketNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/ShortTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/Abbr"
+                            },
+                            {
+                                "$ref": "#/$defs/DocDate"
+                            },
+                            {
+                                "$ref": "#/$defs/DateInline"
+                            },
+                            {
+                                "$ref": "#/$defs/Signature"
+                            },
+                            {
+                                "$ref": "#/$defs/Eol"
+                            },
+                            {
+                                "$ref": "#/$defs/Def"
+                            },
+                            {
+                                "$ref": "#/$defs/NoteRef"
+                            },
+                            {
+                                "$ref": "#/$defs/Role"
+                            },
+                            {
+                                "$ref": "#/$defs/Person"
+                            },
+                            {
+                                "$ref": "#/$defs/ActiveRef"
                             }
                         ]
                     },
@@ -1827,6 +3237,134 @@
                 }
             },
             "title": "MixedText",
+            "type": "object"
+        },
+        "Note": {
+            "additionalProperties": false,
+            "description": "A single note.",
+            "properties": {
+                "content_blocks": {
+                    "description": "Block-level content in reading order: paragraphs, lists and tables as they follow one another in the document.\n",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/BlockParagraph"
+                            },
+                            {
+                                "$ref": "#/$defs/BlockList"
+                            },
+                            {
+                                "$ref": "#/$defs/Table"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Note",
+            "type": "object"
+        },
+        "NoteRef": {
+            "additionalProperties": false,
+            "description": "Reference to a note held in the metadata.",
+            "properties": {
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "element_type": {
+                    "description": "Type designator discriminating the concrete subclass of an abstract base: InlineElement (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote) or BlockElement (BlockParagraph, BlockList, Table).\n",
+                    "enum": [
+                        "NoteRef"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "href": {
+                    "description": "URI reference (@href), used for links to organizations, roles, or external URIs.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "marker": {
+                    "description": "The marker printed for a note reference (@marker).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "NoteRef",
+            "type": "object"
+        },
+        "Notes": {
+            "additionalProperties": false,
+            "description": "Notes block of the metadata, holding the notes an act refers to.",
+            "properties": {
+                "note_list": {
+                    "description": "The notes themselves (akn:note).",
+                    "items": {
+                        "$ref": "#/$defs/Note"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "source": {
+                    "description": "Anchor reference to the responsible organization (@source), e.g. '#ch.bk'.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Notes",
+            "type": "object"
+        },
+        "OriginalRef": {
+            "additionalProperties": false,
+            "description": "Reference to the original version of the act (akn:original).",
+            "properties": {
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "href": {
+                    "description": "URI reference (@href), used for links to organizations, roles, or external URIs.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "show_as": {
+                    "description": "Human-readable display label for a TLC reference (@showAs).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "OriginalRef",
             "type": "object"
         },
         "Paragraph": {
@@ -1985,6 +3523,128 @@
             "title": "Part",
             "type": "object"
         },
+        "Person": {
+            "additionalProperties": false,
+            "description": "A person, pointing at its declaration and the role held.",
+            "properties": {
+                "as_attr": {
+                    "description": "Role in which the person acts (@as).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "element_type": {
+                    "description": "Type designator discriminating the concrete subclass of an abstract base: InlineElement (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote) or BlockElement (BlockParagraph, BlockList, Table).\n",
+                    "enum": [
+                        "Person"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "inline_content": {
+                    "description": "Ordered mixed content: a sequence of text runs and inline-markup elements (InlineElement subclasses). Document order is preserved by list order. Allowed inline elements: akn:ref, akn:b, akn:i, akn:sup, akn:span, akn:authorialNote, akn:inline, akn:placeholder, akn:br.\n",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/TextRun"
+                            },
+                            {
+                                "$ref": "#/$defs/Ref"
+                            },
+                            {
+                                "$ref": "#/$defs/B"
+                            },
+                            {
+                                "$ref": "#/$defs/I"
+                            },
+                            {
+                                "$ref": "#/$defs/Sup"
+                            },
+                            {
+                                "$ref": "#/$defs/Span"
+                            },
+                            {
+                                "$ref": "#/$defs/Br"
+                            },
+                            {
+                                "$ref": "#/$defs/Inline"
+                            },
+                            {
+                                "$ref": "#/$defs/Placeholder"
+                            },
+                            {
+                                "$ref": "#/$defs/AuthorialNote"
+                            },
+                            {
+                                "$ref": "#/$defs/DocNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/DocTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/DocketNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/ShortTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/Abbr"
+                            },
+                            {
+                                "$ref": "#/$defs/DocDate"
+                            },
+                            {
+                                "$ref": "#/$defs/DateInline"
+                            },
+                            {
+                                "$ref": "#/$defs/Signature"
+                            },
+                            {
+                                "$ref": "#/$defs/Eol"
+                            },
+                            {
+                                "$ref": "#/$defs/Def"
+                            },
+                            {
+                                "$ref": "#/$defs/NoteRef"
+                            },
+                            {
+                                "$ref": "#/$defs/Role"
+                            },
+                            {
+                                "$ref": "#/$defs/Person"
+                            },
+                            {
+                                "$ref": "#/$defs/ActiveRef"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "refers_to": {
+                    "description": "Anchor naming what this element refers to (@refersTo).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Person",
+            "type": "object"
+        },
         "Placeholder": {
             "additionalProperties": false,
             "description": "A placeholder for stripped content (akn:placeholder), carrying the fedlex:message extension attribute (e.g. 'E40S10-TAB').",
@@ -2039,6 +3699,48 @@
                             },
                             {
                                 "$ref": "#/$defs/AuthorialNote"
+                            },
+                            {
+                                "$ref": "#/$defs/DocNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/DocTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/DocketNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/ShortTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/Abbr"
+                            },
+                            {
+                                "$ref": "#/$defs/DocDate"
+                            },
+                            {
+                                "$ref": "#/$defs/DateInline"
+                            },
+                            {
+                                "$ref": "#/$defs/Signature"
+                            },
+                            {
+                                "$ref": "#/$defs/Eol"
+                            },
+                            {
+                                "$ref": "#/$defs/Def"
+                            },
+                            {
+                                "$ref": "#/$defs/NoteRef"
+                            },
+                            {
+                                "$ref": "#/$defs/Role"
+                            },
+                            {
+                                "$ref": "#/$defs/Person"
+                            },
+                            {
+                                "$ref": "#/$defs/ActiveRef"
                             }
                         ]
                     },
@@ -2055,6 +3757,16 @@
             "additionalProperties": false,
             "description": "The preamble of the act (akn:preamble), containing introductory prose paragraphs preceding the operative body.",
             "properties": {
+                "citations_ref": {
+                    "description": "The citations of the preamble (akn:citations).",
+                    "items": {
+                        "$ref": "#/$defs/Citations"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "content_blocks": {
                     "description": "Block-level content in reading order: paragraphs, lists and tables as they follow one another in the document.\n",
                     "items": {
@@ -2069,6 +3781,16 @@
                                 "$ref": "#/$defs/Table"
                             }
                         ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "formulas": {
+                    "description": "Formulas of the preamble (akn:formula).",
+                    "items": {
+                        "$ref": "#/$defs/Formula"
                     },
                     "type": [
                         "array",
@@ -2109,54 +3831,11 @@
         },
         "PrefaceP": {
             "additionalProperties": false,
-            "anyOf": [
-                {
-                    "properties": {
-                        "doc_number": {}
-                    },
-                    "required": [
-                        "doc_number"
-                    ]
-                },
-                {
-                    "properties": {
-                        "doc_title": {}
-                    },
-                    "required": [
-                        "doc_title"
-                    ]
-                },
-                {
-                    "properties": {
-                        "inline_content": {
-                            "items": {},
-                            "type": "array"
-                        }
-                    },
-                    "required": [
-                        "inline_content"
-                    ]
-                }
-            ],
-            "description": "A preface paragraph (akn:p) that wraps the document number and/or title. Fedlex requires akn:docNumber and akn:docTitle to sit inside a akn:p of the preface (FLX-PF-001/002).",
+            "description": "A preface paragraph (akn:p). Fedlex requires akn:docNumber and akn:docTitle somewhere in the preface (FLX-PF-001/002); cantonal collections additionally mark up the systematic number, the short title, the abbreviation and the date.",
             "properties": {
-                "doc_number": {
-                    "description": "Document number in the preface (akn:docNumber). Required by FLX-PF-001. Typically the SR number, e.g. '101'.\n",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "doc_title": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/$defs/MixedText"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "Document title in the preface (akn:docTitle). Required by FLX-PF-002. May contain inline markup and akn:br for line breaks.\n"
+                "fedlex_role": {
+                    "$ref": "#/$defs/FedlexRoleEnum",
+                    "description": "Fedlex extension attribute fedlex:role. FLX-XF-003 permits 'marginal' (only on akn:level, FLX-XF-004) and 'reference' (only on akn:subheading, FLX-XF-005); the published Federal Constitution additionally carries 'heading' on a preamble paragraph.\n"
                 },
                 "inline_content": {
                     "description": "Ordered mixed content: a sequence of text runs and inline-markup elements (InlineElement subclasses). Document order is preserved by list order. Allowed inline elements: akn:ref, akn:b, akn:i, akn:sup, akn:span, akn:authorialNote, akn:inline, akn:placeholder, akn:br.\n",
@@ -2191,6 +3870,48 @@
                             },
                             {
                                 "$ref": "#/$defs/AuthorialNote"
+                            },
+                            {
+                                "$ref": "#/$defs/DocNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/DocTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/DocketNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/ShortTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/Abbr"
+                            },
+                            {
+                                "$ref": "#/$defs/DocDate"
+                            },
+                            {
+                                "$ref": "#/$defs/DateInline"
+                            },
+                            {
+                                "$ref": "#/$defs/Signature"
+                            },
+                            {
+                                "$ref": "#/$defs/Eol"
+                            },
+                            {
+                                "$ref": "#/$defs/Def"
+                            },
+                            {
+                                "$ref": "#/$defs/NoteRef"
+                            },
+                            {
+                                "$ref": "#/$defs/Role"
+                            },
+                            {
+                                "$ref": "#/$defs/Person"
+                            },
+                            {
+                                "$ref": "#/$defs/ActiveRef"
                             }
                         ]
                     },
@@ -2338,6 +4059,48 @@
                             },
                             {
                                 "$ref": "#/$defs/AuthorialNote"
+                            },
+                            {
+                                "$ref": "#/$defs/DocNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/DocTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/DocketNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/ShortTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/Abbr"
+                            },
+                            {
+                                "$ref": "#/$defs/DocDate"
+                            },
+                            {
+                                "$ref": "#/$defs/DateInline"
+                            },
+                            {
+                                "$ref": "#/$defs/Signature"
+                            },
+                            {
+                                "$ref": "#/$defs/Eol"
+                            },
+                            {
+                                "$ref": "#/$defs/Def"
+                            },
+                            {
+                                "$ref": "#/$defs/NoteRef"
+                            },
+                            {
+                                "$ref": "#/$defs/Role"
+                            },
+                            {
+                                "$ref": "#/$defs/Person"
+                            },
+                            {
+                                "$ref": "#/$defs/ActiveRef"
                             }
                         ]
                     },
@@ -2354,10 +4117,41 @@
             "additionalProperties": false,
             "description": "Named reference definitions used across the document (akn:references). Defines organizations, roles, and other entities that are referenced by anchor (@href='#eId') elsewhere in the document.",
             "properties": {
+                "active_refs": {
+                    "description": "References to the acts this document modifies (akn:activeRef).",
+                    "items": {
+                        "$ref": "#/$defs/ActiveRef"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "original_ref": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/OriginalRef"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Reference to the original version (akn:original)."
+                },
                 "source": {
                     "description": "Anchor reference to the responsible organization (@source), e.g. '#ch.bk'.",
                     "type": [
                         "string",
+                        "null"
+                    ]
+                },
+                "tlc_concepts": {
+                    "description": "Concepts referred to by the document (akn:TLCConcept).",
+                    "items": {
+                        "$ref": "#/$defs/TLCConcept"
+                    },
+                    "type": [
+                        "array",
                         "null"
                     ]
                 },
@@ -2393,6 +4187,121 @@
                 }
             },
             "title": "References",
+            "type": "object"
+        },
+        "Role": {
+            "additionalProperties": false,
+            "description": "A role a person holds, pointing at its declaration.",
+            "properties": {
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "element_type": {
+                    "description": "Type designator discriminating the concrete subclass of an abstract base: InlineElement (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote) or BlockElement (BlockParagraph, BlockList, Table).\n",
+                    "enum": [
+                        "Role"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "inline_content": {
+                    "description": "Ordered mixed content: a sequence of text runs and inline-markup elements (InlineElement subclasses). Document order is preserved by list order. Allowed inline elements: akn:ref, akn:b, akn:i, akn:sup, akn:span, akn:authorialNote, akn:inline, akn:placeholder, akn:br.\n",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/TextRun"
+                            },
+                            {
+                                "$ref": "#/$defs/Ref"
+                            },
+                            {
+                                "$ref": "#/$defs/B"
+                            },
+                            {
+                                "$ref": "#/$defs/I"
+                            },
+                            {
+                                "$ref": "#/$defs/Sup"
+                            },
+                            {
+                                "$ref": "#/$defs/Span"
+                            },
+                            {
+                                "$ref": "#/$defs/Br"
+                            },
+                            {
+                                "$ref": "#/$defs/Inline"
+                            },
+                            {
+                                "$ref": "#/$defs/Placeholder"
+                            },
+                            {
+                                "$ref": "#/$defs/AuthorialNote"
+                            },
+                            {
+                                "$ref": "#/$defs/DocNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/DocTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/DocketNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/ShortTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/Abbr"
+                            },
+                            {
+                                "$ref": "#/$defs/DocDate"
+                            },
+                            {
+                                "$ref": "#/$defs/DateInline"
+                            },
+                            {
+                                "$ref": "#/$defs/Signature"
+                            },
+                            {
+                                "$ref": "#/$defs/Eol"
+                            },
+                            {
+                                "$ref": "#/$defs/Def"
+                            },
+                            {
+                                "$ref": "#/$defs/NoteRef"
+                            },
+                            {
+                                "$ref": "#/$defs/Role"
+                            },
+                            {
+                                "$ref": "#/$defs/Person"
+                            },
+                            {
+                                "$ref": "#/$defs/ActiveRef"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "refers_to": {
+                    "description": "Anchor naming what this element refers to (@refersTo).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Role",
             "type": "object"
         },
         "Section": {
@@ -2473,6 +4382,229 @@
             "title": "Section",
             "type": "object"
         },
+        "ShortTitle": {
+            "additionalProperties": false,
+            "description": "The short title of the act.",
+            "properties": {
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "element_type": {
+                    "description": "Type designator discriminating the concrete subclass of an abstract base: InlineElement (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote) or BlockElement (BlockParagraph, BlockList, Table).\n",
+                    "enum": [
+                        "ShortTitle"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "inline_content": {
+                    "description": "Ordered mixed content: a sequence of text runs and inline-markup elements (InlineElement subclasses). Document order is preserved by list order. Allowed inline elements: akn:ref, akn:b, akn:i, akn:sup, akn:span, akn:authorialNote, akn:inline, akn:placeholder, akn:br.\n",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/TextRun"
+                            },
+                            {
+                                "$ref": "#/$defs/Ref"
+                            },
+                            {
+                                "$ref": "#/$defs/B"
+                            },
+                            {
+                                "$ref": "#/$defs/I"
+                            },
+                            {
+                                "$ref": "#/$defs/Sup"
+                            },
+                            {
+                                "$ref": "#/$defs/Span"
+                            },
+                            {
+                                "$ref": "#/$defs/Br"
+                            },
+                            {
+                                "$ref": "#/$defs/Inline"
+                            },
+                            {
+                                "$ref": "#/$defs/Placeholder"
+                            },
+                            {
+                                "$ref": "#/$defs/AuthorialNote"
+                            },
+                            {
+                                "$ref": "#/$defs/DocNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/DocTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/DocketNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/ShortTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/Abbr"
+                            },
+                            {
+                                "$ref": "#/$defs/DocDate"
+                            },
+                            {
+                                "$ref": "#/$defs/DateInline"
+                            },
+                            {
+                                "$ref": "#/$defs/Signature"
+                            },
+                            {
+                                "$ref": "#/$defs/Eol"
+                            },
+                            {
+                                "$ref": "#/$defs/Def"
+                            },
+                            {
+                                "$ref": "#/$defs/NoteRef"
+                            },
+                            {
+                                "$ref": "#/$defs/Role"
+                            },
+                            {
+                                "$ref": "#/$defs/Person"
+                            },
+                            {
+                                "$ref": "#/$defs/ActiveRef"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "title_attr": {
+                    "description": "Human-readable label of the marked-up passage (@title).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "ShortTitle",
+            "type": "object"
+        },
+        "Signature": {
+            "additionalProperties": false,
+            "description": "A signature line.",
+            "properties": {
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "element_type": {
+                    "description": "Type designator discriminating the concrete subclass of an abstract base: InlineElement (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote) or BlockElement (BlockParagraph, BlockList, Table).\n",
+                    "enum": [
+                        "Signature"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "inline_content": {
+                    "description": "Ordered mixed content: a sequence of text runs and inline-markup elements (InlineElement subclasses). Document order is preserved by list order. Allowed inline elements: akn:ref, akn:b, akn:i, akn:sup, akn:span, akn:authorialNote, akn:inline, akn:placeholder, akn:br.\n",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/TextRun"
+                            },
+                            {
+                                "$ref": "#/$defs/Ref"
+                            },
+                            {
+                                "$ref": "#/$defs/B"
+                            },
+                            {
+                                "$ref": "#/$defs/I"
+                            },
+                            {
+                                "$ref": "#/$defs/Sup"
+                            },
+                            {
+                                "$ref": "#/$defs/Span"
+                            },
+                            {
+                                "$ref": "#/$defs/Br"
+                            },
+                            {
+                                "$ref": "#/$defs/Inline"
+                            },
+                            {
+                                "$ref": "#/$defs/Placeholder"
+                            },
+                            {
+                                "$ref": "#/$defs/AuthorialNote"
+                            },
+                            {
+                                "$ref": "#/$defs/DocNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/DocTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/DocketNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/ShortTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/Abbr"
+                            },
+                            {
+                                "$ref": "#/$defs/DocDate"
+                            },
+                            {
+                                "$ref": "#/$defs/DateInline"
+                            },
+                            {
+                                "$ref": "#/$defs/Signature"
+                            },
+                            {
+                                "$ref": "#/$defs/Eol"
+                            },
+                            {
+                                "$ref": "#/$defs/Def"
+                            },
+                            {
+                                "$ref": "#/$defs/NoteRef"
+                            },
+                            {
+                                "$ref": "#/$defs/Role"
+                            },
+                            {
+                                "$ref": "#/$defs/Person"
+                            },
+                            {
+                                "$ref": "#/$defs/ActiveRef"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Signature",
+            "type": "object"
+        },
         "Span": {
             "additionalProperties": false,
             "description": "Generic inline span (akn:span).",
@@ -2520,6 +4652,48 @@
                             },
                             {
                                 "$ref": "#/$defs/AuthorialNote"
+                            },
+                            {
+                                "$ref": "#/$defs/DocNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/DocTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/DocketNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/ShortTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/Abbr"
+                            },
+                            {
+                                "$ref": "#/$defs/DocDate"
+                            },
+                            {
+                                "$ref": "#/$defs/DateInline"
+                            },
+                            {
+                                "$ref": "#/$defs/Signature"
+                            },
+                            {
+                                "$ref": "#/$defs/Eol"
+                            },
+                            {
+                                "$ref": "#/$defs/Def"
+                            },
+                            {
+                                "$ref": "#/$defs/NoteRef"
+                            },
+                            {
+                                "$ref": "#/$defs/Role"
+                            },
+                            {
+                                "$ref": "#/$defs/Person"
+                            },
+                            {
+                                "$ref": "#/$defs/ActiveRef"
                             }
                         ]
                     },
@@ -2793,6 +4967,48 @@
                             },
                             {
                                 "$ref": "#/$defs/AuthorialNote"
+                            },
+                            {
+                                "$ref": "#/$defs/DocNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/DocTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/DocketNumber"
+                            },
+                            {
+                                "$ref": "#/$defs/ShortTitle"
+                            },
+                            {
+                                "$ref": "#/$defs/Abbr"
+                            },
+                            {
+                                "$ref": "#/$defs/DocDate"
+                            },
+                            {
+                                "$ref": "#/$defs/DateInline"
+                            },
+                            {
+                                "$ref": "#/$defs/Signature"
+                            },
+                            {
+                                "$ref": "#/$defs/Eol"
+                            },
+                            {
+                                "$ref": "#/$defs/Def"
+                            },
+                            {
+                                "$ref": "#/$defs/NoteRef"
+                            },
+                            {
+                                "$ref": "#/$defs/Role"
+                            },
+                            {
+                                "$ref": "#/$defs/Person"
+                            },
+                            {
+                                "$ref": "#/$defs/ActiveRef"
                             }
                         ]
                     },
@@ -2803,6 +5019,35 @@
                 }
             },
             "title": "Sup",
+            "type": "object"
+        },
+        "TLCConcept": {
+            "additionalProperties": false,
+            "description": "A concept referred to by the document (akn:TLCConcept), such as a temporal status.",
+            "properties": {
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "href": {
+                    "description": "URI reference (@href), used for links to organizations, roles, or external URIs.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "show_as": {
+                    "description": "Human-readable display label for a TLC reference (@showAs).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "TLCConcept",
             "type": "object"
         },
         "TLCOrganization": {

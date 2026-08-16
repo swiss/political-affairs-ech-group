@@ -1,0 +1,26 @@
+articles:
+- eId: ttitle_7__art_35
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 35.
+  heading:
+    eId: title_7__art_35__heading
+    inline_content:
+    - element_type: TextRun
+      text: Kontrollbefugnisse
+  paragraphs:
+  - eId: title_7__art_35__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: title_7__art_35__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …

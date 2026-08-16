@@ -28,6 +28,10 @@ URI: [laws:show_as](https://ld.ech.ch/schema/0296/laws/show_as)
 | [TLCOrganization](TLCOrganization.md) | Eine benannte Organisation als Referenz im Dokument (akn:TLCOrganization) |  no  |
 | [TLCRole](TLCRole.md) | Eine benannte Rolle als Referenz im Dokument (akn:TLCRole) |  no  |
 | [TLCReference](TLCReference.md) | Eine generische benannte Referenz im Dokument (akn:TLCReference) |  no  |
+| [TLCConcept](TLCConcept.md) | Ein Begriff, auf den das Dokument verweist (akn:TLCConcept), etwa ein zeitlic... |  no  |
+| [OriginalRef](OriginalRef.md) | Verweis auf die ursprüngliche Fassung des Erlasses (akn:original) |  no  |
+| [ComponentRef](ComponentRef.md) | Verweis auf einen anderswo gehaltenen Dokumentbestandteil (akn:componentRef) |  no  |
+| [ActiveRef](ActiveRef.md) | Verweis auf einen Erlass, den dieses Dokument ändert |  no  |
 
 
 
@@ -41,7 +45,7 @@ URI: [laws:show_as](https://ld.ech.ch/schema/0296/laws/show_as)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [String](String.md) |
-| Domäne von | [TLCOrganization](TLCOrganization.md), [TLCRole](TLCRole.md), [TLCReference](TLCReference.md) |
+| Domäne von | [TLCOrganization](TLCOrganization.md), [TLCRole](TLCRole.md), [TLCReference](TLCReference.md), [TLCConcept](TLCConcept.md), [OriginalRef](OriginalRef.md), [ComponentRef](ComponentRef.md), [ActiveRef](ActiveRef.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -81,6 +85,10 @@ domain_of:
 - TLCOrganization
 - TLCRole
 - TLCReference
+- TLCConcept
+- OriginalRef
+- ComponentRef
+- ActiveRef
 range: string
 
 ```

@@ -1,0 +1,26 @@
+articles:
+- eId: title_4__art_22
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 22.
+  heading:
+    eId: ttitle_4__art_22__heading
+    inline_content:
+    - element_type: TextRun
+      text: Sperren von Personendaten
+  paragraphs:
+  - eId: ttitle_4__art_22__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: title_4__art_22__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …

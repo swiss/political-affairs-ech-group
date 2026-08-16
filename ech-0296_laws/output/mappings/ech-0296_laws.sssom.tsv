@@ -69,6 +69,31 @@ laws:Doc	skos:exactMatch	akn:doc	semapv:ManualMappingCuration	Doc	doc	owl class
 laws:MainBody	skos:exactMatch	akn:mainBody	semapv:ManualMappingCuration	MainBody	mainBody	owl class
 laws:Container	skos:exactMatch	akn:container	semapv:ManualMappingCuration	Container	container	owl class
 laws:Block	skos:exactMatch	akn:block	semapv:ManualMappingCuration	Block	block	owl class
+laws:DocNumber	skos:exactMatch	akn:docNumber	semapv:ManualMappingCuration	DocNumber	docNumber	owl class
+laws:DocTitle	skos:exactMatch	akn:docTitle	semapv:ManualMappingCuration	DocTitle	docTitle	owl class
+laws:DocketNumber	skos:exactMatch	akn:docketNumber	semapv:ManualMappingCuration	DocketNumber	docketNumber	owl class
+laws:ShortTitle	skos:exactMatch	akn:shortTitle	semapv:ManualMappingCuration	ShortTitle	shortTitle	owl class
+laws:Abbr	skos:exactMatch	akn:abbr	semapv:ManualMappingCuration	Abbr	abbr	owl class
+laws:DocDate	skos:exactMatch	akn:docDate	semapv:ManualMappingCuration	DocDate	docDate	owl class
+laws:DateInline	skos:exactMatch	akn:date	semapv:ManualMappingCuration	DateInline	date	owl class
+laws:Signature	skos:exactMatch	akn:signature	semapv:ManualMappingCuration	Signature	signature	owl class
+laws:Eol	skos:exactMatch	akn:eol	semapv:ManualMappingCuration	Eol	eol	owl class
+laws:Conclusions	skos:exactMatch	akn:conclusions	semapv:ManualMappingCuration	Conclusions	conclusions	owl class
+laws:Attachments	skos:exactMatch	akn:attachments	semapv:ManualMappingCuration	Attachments	attachments	owl class
+laws:Attachment	skos:exactMatch	akn:attachment	semapv:ManualMappingCuration	Attachment	attachment	owl class
+laws:Notes	skos:exactMatch	akn:notes	semapv:ManualMappingCuration	Notes	notes	owl class
+laws:Note	skos:exactMatch	akn:note	semapv:ManualMappingCuration	Note	note	owl class
+laws:TLCConcept	skos:exactMatch	akn:TLCConcept	semapv:ManualMappingCuration	TLCConcept	TLCConcept	owl class
+laws:OriginalRef	skos:exactMatch	akn:original	semapv:ManualMappingCuration	OriginalRef	original	owl class
+laws:ComponentRef	skos:exactMatch	akn:componentRef	semapv:ManualMappingCuration	ComponentRef	componentRef	owl class
+laws:Def	skos:exactMatch	akn:def	semapv:ManualMappingCuration	Def	def	owl class
+laws:NoteRef	skos:exactMatch	akn:noteRef	semapv:ManualMappingCuration	NoteRef	noteRef	owl class
+laws:Role	skos:exactMatch	akn:role	semapv:ManualMappingCuration	Role	role	owl class
+laws:Person	skos:exactMatch	akn:person	semapv:ManualMappingCuration	Person	person	owl class
+laws:ActiveRef	skos:exactMatch	akn:activeRef	semapv:ManualMappingCuration	ActiveRef	activeRef	owl class
+laws:Formula	skos:exactMatch	akn:formula	semapv:ManualMappingCuration	Formula	formula	owl class
+laws:Citations	skos:exactMatch	akn:citations	semapv:ManualMappingCuration	Citations	citations	owl class
+laws:Citation	skos:exactMatch	akn:citation	semapv:ManualMappingCuration	Citation	citation	owl class
 laws:preface_paragraphs	skos:exactMatch	akn:p	semapv:ManualMappingCuration	preface_paragraphs	p	owl object property
 laws:frbr_this	skos:exactMatch	akn:FRBRthis	semapv:ManualMappingCuration	frbr_this	FRBRthis	owl object property
 laws:frbr_uri	skos:exactMatch	akn:FRBRuri	semapv:ManualMappingCuration	frbr_uri	FRBRuri	owl object property
@@ -83,8 +108,6 @@ laws:frbr_language	skos:exactMatch	eli:language	semapv:ManualMappingCuration	frb
 laws:frbr_language	skos:exactMatch	akn:FRBRlanguage	semapv:ManualMappingCuration	frbr_language	FRBRlanguage	owl object property
 laws:frbr_format	skos:exactMatch	eli:format	semapv:ManualMappingCuration	frbr_format	format	owl object property
 laws:frbr_format	skos:exactMatch	akn:FRBRformat	semapv:ManualMappingCuration	frbr_format	FRBRformat	owl object property
-laws:doc_number	skos:exactMatch	akn:docNumber	semapv:ManualMappingCuration	doc_number	docNumber	owl object property
-laws:doc_title	skos:exactMatch	akn:docTitle	semapv:ManualMappingCuration	doc_title	docTitle	owl object property
 laws:num	skos:exactMatch	akn:num	semapv:ManualMappingCuration	num	num	owl object property
 laws:heading	skos:exactMatch	akn:heading	semapv:ManualMappingCuration	heading	heading	owl object property
 laws:subheading	skos:exactMatch	akn:subheading	semapv:ManualMappingCuration	subheading	subheading	owl object property
@@ -95,6 +118,19 @@ laws:doc_ref	skos:exactMatch	akn:doc	semapv:ManualMappingCuration	doc_ref	doc	ow
 laws:main_body	skos:exactMatch	akn:mainBody	semapv:ManualMappingCuration	main_body	mainBody	owl object property
 laws:containers	skos:exactMatch	akn:container	semapv:ManualMappingCuration	containers	container	owl object property
 laws:blocks	skos:exactMatch	akn:block	semapv:ManualMappingCuration	blocks	block	owl object property
+laws:conclusions_ref	skos:exactMatch	akn:conclusions	semapv:ManualMappingCuration	conclusions_ref	conclusions	owl object property
+laws:attachments_ref	skos:exactMatch	akn:attachments	semapv:ManualMappingCuration	attachments_ref	attachments	owl object property
+laws:attachment_list	skos:exactMatch	akn:attachment	semapv:ManualMappingCuration	attachment_list	attachment	owl object property
+laws:notes_ref	skos:exactMatch	akn:notes	semapv:ManualMappingCuration	notes_ref	notes	owl object property
+laws:note_list	skos:exactMatch	akn:note	semapv:ManualMappingCuration	note_list	note	owl object property
+laws:frbr_subtype	skos:exactMatch	akn:FRBRsubtype	semapv:ManualMappingCuration	frbr_subtype	FRBRsubtype	owl object property
+laws:tlc_concepts	skos:exactMatch	akn:TLCConcept	semapv:ManualMappingCuration	tlc_concepts	TLCConcept	owl object property
+laws:original_ref	skos:exactMatch	akn:original	semapv:ManualMappingCuration	original_ref	original	owl object property
+laws:component_refs	skos:exactMatch	akn:componentRef	semapv:ManualMappingCuration	component_refs	componentRef	owl object property
+laws:formulas	skos:exactMatch	akn:formula	semapv:ManualMappingCuration	formulas	formula	owl object property
+laws:citations_ref	skos:exactMatch	akn:citations	semapv:ManualMappingCuration	citations_ref	citations	owl object property
+laws:citation_list	skos:exactMatch	akn:citation	semapv:ManualMappingCuration	citation_list	citation	owl object property
+laws:active_refs	skos:exactMatch	akn:activeRef	semapv:ManualMappingCuration	active_refs	activeRef	owl object property
 jolux:dateDocument	skos:exactMatch	eli:date_document	semapv:ManualMappingCuration	jolux:dateDocument	date_document	skos concept
 jolux:dateEntryInForce	skos:exactMatch	eli:first_date_entry_in_force	semapv:ManualMappingCuration	jolux:dateEntryInForce	first_date_entry_in_force	skos concept
 jolux:dateApplicability	skos:exactMatch	eli:date_applicability	semapv:ManualMappingCuration	jolux:dateApplicability	date_applicability	skos concept

@@ -6,7 +6,8 @@ search:
 # Slot: act_name 
 
 
-_Erlasstyp (@name-Attribut von akn:act), z.B. 'publicLaw'._
+_Typ des Erlasses (akn:act/@name). Die zulässigen Werte von ActTypeEnum sind die von Fedlex verwendeten; kantonale Sammlungen benennen eigene Typen, weshalb eine freie Zeichenkette zulässig bleibt._
+
 
 
 
@@ -38,13 +39,23 @@ URI: [laws:act_name](https://ld.ech.ch/schema/0296/laws/act_name)
 
 | Eigenschaft | Wert |
 | --- | --- |
-| Wertebereich | [ActTypeEnum](ActTypeEnum.md) |
+| Wertebereich | [String](String.md)&nbsp;or&nbsp;<br />[ActTypeEnum](ActTypeEnum.md) |
 | Domäne von | [Act](Act.md) |
 
 ### Kardinalität und Anforderungen
 
 | Eigenschaft | Wert |
 | --- | --- |
+<details>
+<summary>Expressions & Logic</summary>
+#### Any Of
+
+Value must satisfy at least one of:
+- AnonymousSlotExpression({'range': 'ActTypeEnum'})
+- AnonymousSlotExpression({'range': 'string'})
+
+</details>
+
 
 
 
@@ -58,6 +69,8 @@ URI: [laws:act_name](https://ld.ech.ch/schema/0296/laws/act_name)
 
 | Wert |
 | --- |
+|  |
+| Grunderlass |
 | publicLaw |
 
 
@@ -72,21 +85,34 @@ name: act_name
 annotations:
   description_de:
     tag: description_de
-    value: Erlasstyp (@name-Attribut von akn:act), z.B. 'publicLaw'.
+    value: 'Typ des Erlasses (akn:act/@name). Die zulässigen Werte von ActTypeEnum
+      sind die von Fedlex verwendeten; kantonale Sammlungen benennen eigene Typen,
+      weshalb eine freie Zeichenkette zulässig bleibt.
+
+      '
   xml_attribute:
     tag: xml_attribute
     value: 'true'
   xml_name:
     tag: xml_name
     value: name
-description: Erlasstyp (@name-Attribut von akn:act), z.B. 'publicLaw'.
+description: 'Typ des Erlasses (akn:act/@name). Die zulässigen Werte von ActTypeEnum
+  sind die von Fedlex verwendeten; kantonale Sammlungen benennen eigene Typen, weshalb
+  eine freie Zeichenkette zulässig bleibt.
+
+  '
 examples:
+- value: ''
+- value: Grunderlass
 - value: publicLaw
 from_schema: https://ld.ech.ch/schema/0296/laws
 rank: 1000
 domain_of:
 - Act
-range: ActTypeEnum
+range: string
+any_of:
+- range: ActTypeEnum
+- range: string
 
 ```
 </details></div>

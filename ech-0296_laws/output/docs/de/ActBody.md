@@ -28,6 +28,7 @@ _Der Hauptteil des Erlasses (akn:body) mit der Gesetzeshierarchie. Erlaubte dire
 | articles | * <br/> [Article](Article.md) | Artikel-Kindelemente (akn:article). |
 | transitionals | * <br/> [Transitional](Transitional.md) | Übergangsbestimmungs-Elemente (akn:transitional). |
 | provisos | * <br/> [Proviso](Proviso.md) | Vorbehalt-Elemente (akn:proviso). |
+| component_refs | * <br/> [ComponentRef](ComponentRef.md) | Verweise auf anderswo gehaltene Bestandteile (akn:componentRef). |
 
 
 

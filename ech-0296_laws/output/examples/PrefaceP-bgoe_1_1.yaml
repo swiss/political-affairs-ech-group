@@ -1,2 +1,6 @@
 preface_paragraphs:
-- doc_number: '152.3 '
+- inline_content:
+  - element_type: DocNumber
+    inline_content:
+    - element_type: TextRun
+      text: '152.3'

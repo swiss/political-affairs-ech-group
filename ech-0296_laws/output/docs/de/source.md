@@ -27,6 +27,7 @@ URI: [laws:source](https://ld.ech.ch/schema/0296/laws/source)
 | --- | --- | --- |
 | [Identification](Identification.md) | FRBR-Identifikationsblock (akn:identification) mit Work-, Expression- und Man... |  no  |
 | [References](References.md) | Benannte Referenz-Definitionen für das gesamte Dokument (akn:references) |  no  |
+| [Notes](Notes.md) | Anmerkungsblock der Metadaten mit den Anmerkungen, auf die ein Erlass verweis... |  no  |
 
 
 
@@ -40,7 +41,7 @@ URI: [laws:source](https://ld.ech.ch/schema/0296/laws/source)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [AnchorRef](AnchorRef.md) |
-| Domäne von | [Identification](Identification.md), [References](References.md) |
+| Domäne von | [Identification](Identification.md), [References](References.md), [Notes](Notes.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -76,6 +77,7 @@ rank: 1000
 domain_of:
 - Identification
 - References
+- Notes
 range: AnchorRef
 
 ```

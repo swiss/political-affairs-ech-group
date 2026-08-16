@@ -1,0 +1,26 @@
+articles:
+- eId: title_7__art_33
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 33.
+  heading:
+    eId: title_7__art_33__heading
+    inline_content:
+    - element_type: TextRun
+      text: Beauftragte in Gemeinden und Organisationen
+  paragraphs:
+  - eId: title_7__art_33__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: title_7__art_33__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …

@@ -56,6 +56,152 @@ _Titel-Ebene eines Erlasses (akn:title). Erlaubte Kinder: book, part, chapter, s
 
 
 ### Beispiele
+#### Beispiel Title: zh idg 1 6
+
+```yaml
+titles:
+- eId: title_6
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '6. Abschnitt:'
+  heading:
+    eId: title_2__chp_F__heading
+    inline_content:
+    - element_type: TextRun
+      text: Verfahren auf Zugang zu Information
+  articles:
+  - eId: title_6__art_24
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_6__art_24__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_6__art_24__para_1
+      num: …
+      content_ref: …
+    - eId: title_6__art_24__para_2
+      num: …
+      content_ref: …
+  - eId: ttitle_6__art_25
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_6_art_25__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: ttitle_6__art_25__para_1
+      num: …
+      content_ref: …
+    - eId: title_6__art_25__para_2
+      num: …
+      content_ref: …
+  - … 4 weitere
+
+```
+#### Beispiel Title: zh idg 1 3
+
+```yaml
+titles:
+- eId: title_3
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: C.
+  heading:
+    eId: title_3__heading
+    inline_content:
+    - element_type: TextRun
+      text: Bekanntgabe von Informationen
+  articles:
+  - eId: title_3__art_14
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_3__art_14__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_3__art_14__para_1
+      num: …
+      content_ref: …
+    - eId: title_3__art_14__para_2
+      num: …
+      content_ref: …
+    - … 2 weitere
+  - eId: title_3__art_15
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_3_art_15__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_3__art_15__para_1
+      num: …
+      content_ref: …
+    - eId: title_3__art_15__para_2
+      num: …
+      content_ref: …
+  - … 4 weitere
+
+```
+#### Beispiel Title: zh idg 1 7
+
+```yaml
+titles:
+- eId: title_7
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: 7. Abschnitt
+  heading:
+    eId: title_7__heading
+    inline_content:
+    - element_type: TextRun
+      text: 'Abschnitt: Beauftragte oder Beauftragter für Datenschutz'
+  articles:
+  - eId: title_7__art_30
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_7__art_30__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_7__art_30__para_1
+      num: …
+      content_ref: …
+    - eId: title_7__art_30__para_2
+      num: …
+      content_ref: …
+  - eId: title_7__art_31
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_7_art_31__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_7__art_31__para_1
+      num: …
+      content_ref: …
+    - eId: title_7__art_31__para_2
+      num: …
+      content_ref: …
+    - … 1 weitere
+  - … 8 weitere
+
+```
 #### Beispiel Title: sr101 1 3
 
 ```yaml
@@ -119,6 +265,39 @@ titles:
   - … 1 weitere
 
 ```
+#### Beispiel Title: zh idg 1 5
+
+```yaml
+titles:
+- eId: title_5
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '5. Abschnitt:'
+  heading:
+    eId: title_5__heading
+    inline_content:
+    - element_type: TextRun
+      text: Interessenabwägung
+  articles:
+  - eId: title_5__art_23
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_5__art_23__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_5__art_23__para_1
+      num: …
+      content_ref: …
+    - eId: title_5__art_23__para_2
+      num: …
+      content_ref: …
+    - … 1 weitere
+
+```
 #### Beispiel Title: sr101 1 5
 
 ```yaml
@@ -180,6 +359,175 @@ titles:
   - … 2 weitere
 
 ```
+#### Beispiel Title: zh idg 1 1
+
+```yaml
+titles:
+- eId: title_1
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '1. Abschnitt:'
+  heading:
+    eId: title_1__heading_1
+    inline_content:
+    - element_type: TextRun
+      text: Allgemeine Bestimmungen
+  articles:
+  - eId: title_1__art_1
+    num:
+      inline_content:
+      - …
+    heading:
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_1__art_1__para_1
+      num: …
+      content_ref: …
+    - eId: ltitle_1__art_1__para_2
+      num: …
+      content_ref: …
+  - eId: title_1__art_2
+    num:
+      inline_content:
+      - …
+    heading:
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_1__art_2__para_1
+      num: …
+      content_ref: …
+    - eId: title_1__art_2__para_2
+      num: …
+      content_ref: …
+  - … 1 weitere
+
+```
+#### Beispiel Title: zh idg 1 9
+
+```yaml
+titles:
+- eId: title_9
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '9. Abschnitt:'
+  heading:
+    eId: title_9__heading
+    inline_content:
+    - element_type: TextRun
+      text: Schluss- und Übergangsbestimmungen
+  articles:
+  - eId: title_9__art_41
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_9__art_41__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_9__art_41__para_1
+      num: …
+      content_ref: …
+  - eId: title_9__art_42
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_9__art_42__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_9__art_42__para_1
+      num: …
+      content_ref: …
+    - eId: title_9__art_42__para_2
+      num: …
+      content_ref: …
+  - … 2 weitere
+
+```
+#### Beispiel Title: zh idg 1 8
+
+```yaml
+titles:
+- eId: title_8
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '8. Abschnitt:'
+  heading:
+    eId: title_8__heading
+    inline_content:
+    - element_type: TextRun
+      text: Strafbestimmungen
+  articles:
+  - eId: title_8__art_40
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_8__art_40__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_8__art_40__para_1
+      num: …
+      content_ref: …
+    - eId: title_8__art_40__para_2
+      num: …
+      content_ref: …
+
+```
+#### Beispiel Title: zh idg 1 4
+
+```yaml
+titles:
+- eId: title_4
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '4.'
+  heading:
+    eId: title_2__chp_D__heading
+    inline_content:
+    - element_type: TextRun
+      text: 'Abschnit: Informationszugangsrecht und weitere Rechtsansprüche'
+  articles:
+  - eId: title_4__art_20
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_4__art_20__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_4__art_20__para_1
+      num: …
+      content_ref: …
+    - eId: title_4__art_20__para_2
+      num: …
+      content_ref: …
+    - … 1 weitere
+  - eId: title_4__art_21
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_4__art_21__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_4__art_21__para_1
+      num: …
+      content_ref: …
+  - … 1 weitere
+
+```
 #### Beispiel Title: Title with number heading and articles
 
 ```yaml
@@ -220,6 +568,66 @@ titles:
       content_ref: …
     - … 2 weitere
   - … 5 weitere
+
+```
+#### Beispiel Title: zh idg 1 2
+
+```yaml
+titles:
+- eId: title_2
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '2. Abschnitt:'
+  heading:
+    eId: title_2__heading_1
+    inline_content:
+    - element_type: TextRun
+      text: Grundsätze im Umgang mit Informationen
+  chapters:
+  - eId: title_2__chp_A
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_2__chp_A__heading
+      inline_content:
+      - …
+    articles:
+    - eId: title_2__chp_A__art_4
+      num: …
+      heading: …
+      paragraphs:
+      - …
+    - eId: title_2__chp_A__art_5
+      num: …
+      heading: …
+      paragraphs:
+      - …
+      - …
+      - … 2 weitere
+    - … 2 weitere
+  - eId: title_2__chp_B
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_2__chp_B__heading
+      inline_content:
+      - …
+    articles:
+    - eId: title_2__chp_B__art_8
+      num: …
+      heading: …
+      paragraphs:
+      - …
+      - …
+    - num: …
+      heading: …
+      paragraphs:
+      - …
+      - …
+    - … 4 weitere
 
 ```
 #### Beispiel Title: sr101 1 6

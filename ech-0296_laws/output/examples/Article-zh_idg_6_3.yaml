@@ -1,0 +1,26 @@
+articles:
+- eId: title_6__art_26
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 26.
+  heading:
+    eId: title_6__art_26__heading
+    inline_content:
+    - element_type: TextRun
+      text: Anhörung betroffener Dritter
+  paragraphs:
+  - eId: ttitle_6__art_26__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: title_6__art_26__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …

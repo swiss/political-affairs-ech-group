@@ -1,0 +1,44 @@
+titles:
+- eId: title_7
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: 7. Abschnitt
+  heading:
+    eId: title_7__heading
+    inline_content:
+    - element_type: TextRun
+      text: 'Abschnitt: Beauftragte oder Beauftragter für Datenschutz'
+  articles:
+  - eId: title_7__art_30
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_7__art_30__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_7__art_30__para_1
+      num: …
+      content_ref: …
+    - eId: title_7__art_30__para_2
+      num: …
+      content_ref: …
+  - eId: title_7__art_31
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_7_art_31__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_7__art_31__para_1
+      num: …
+      content_ref: …
+    - eId: title_7__art_31__para_2
+      num: …
+      content_ref: …
+    - … 1 weitere
+  - … 8 weitere

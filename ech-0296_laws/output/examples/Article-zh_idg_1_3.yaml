@@ -1,0 +1,20 @@
+articles:
+- eId: title_1__art_3
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 3.
+  heading:
+    inline_content:
+    - element_type: TextRun
+      text: Begriffe
+  paragraphs:
+  - eId: title_1__art_3__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+      - …
+      - … 5 weitere

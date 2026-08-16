@@ -50,12 +50,15 @@ _Der Vorspann des Erlasses (akn:preface) mit Dokumentnummer und -titel. Fedlex S
 ```yaml
 preface_ref:
   preface_paragraphs:
-  - doc_number: '152.3 '
-  - doc_title:
+  - inline_content:
+    - element_type: DocNumber
       inline_content:
-      - element_type: TextRun
-        text: Bundesgesetz
-      - element_type: Br
+      - …
+  - inline_content:
+    - element_type: DocTitle
+      inline_content:
+      - …
+      - …
       - … 1 weitere
   - … 2 weitere
 
@@ -65,14 +68,36 @@ preface_ref:
 ```yaml
 preface_ref:
   preface_paragraphs:
-  - doc_number: '101'
-  - doc_title:
+  - inline_content:
+    - element_type: DocNumber
       inline_content:
-      - element_type: TextRun
-        text: Bundesverfassung
-      - element_type: Br
+      - …
+  - inline_content:
+    - element_type: DocTitle
+      inline_content:
+      - …
+      - …
       - … 1 weitere
   - … 1 weitere
+
+```
+#### Beispiel Preface: zh idg 1 1
+
+```yaml
+preface_ref:
+  preface_paragraphs:
+  - inline_content:
+    - element_type: DocketNumber
+      eId: docketNum_1
+      title_attr: Orndungsnummer
+      inline_content:
+      - …
+    - element_type: DocTitle
+      eId: actTitle
+      title_attr: Erlasstitel
+      inline_content:
+      - …
+    - … 3 weitere
 
 ```
 

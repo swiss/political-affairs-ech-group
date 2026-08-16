@@ -1,0 +1,27 @@
+articles:
+- eId: title_7__art_31
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 31.
+  heading:
+    eId: title_7_art_31__heading
+    inline_content:
+    - element_type: TextRun
+      text: Personal
+  paragraphs:
+  - eId: title_7__art_31__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: title_7__art_31__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - … 1 weitere

@@ -1,0 +1,17 @@
+articles:
+- eId: title_7__art_38
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 37.
+  heading:
+    eId: title_7__art_38__heading
+    inline_content:
+    - element_type: TextRun
+      text: Zusammenarbeit
+  paragraphs:
+  - eId: title_7__art_38__para_1
+    num: {}
+    content_ref:
+      content_blocks:
+      - …

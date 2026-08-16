@@ -1,0 +1,8 @@
+content_ref:
+  content_blocks:
+  - element_type: BlockParagraph
+    inline_content:
+    - element_type: TextRun
+      text: >-
+        Eignen sich Informationen für eine gewerbliche Nutzung, kann ein Entgelt erhoben
+        werden, das sich nach dem Markt richtet.

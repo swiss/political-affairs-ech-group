@@ -1,0 +1,40 @@
+titles:
+- eId: title_9
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '9. Abschnitt:'
+  heading:
+    eId: title_9__heading
+    inline_content:
+    - element_type: TextRun
+      text: Schluss- und Übergangsbestimmungen
+  articles:
+  - eId: title_9__art_41
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_9__art_41__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_9__art_41__para_1
+      num: …
+      content_ref: …
+  - eId: title_9__art_42
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_9__art_42__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_9__art_42__para_1
+      num: …
+      content_ref: …
+    - eId: title_9__art_42__para_2
+      num: …
+      content_ref: …
+  - … 2 weitere

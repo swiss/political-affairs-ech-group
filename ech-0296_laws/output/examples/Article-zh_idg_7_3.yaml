@@ -1,0 +1,27 @@
+articles:
+- eId: title_7__art_32
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 32.
+  heading:
+    eId: title_7__art_32__heading
+    inline_content:
+    - element_type: TextRun
+      text: Voranschlag und Haushaltführung
+  paragraphs:
+  - eId: title_7__art_32__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: title_7__art_32__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - … 1 weitere

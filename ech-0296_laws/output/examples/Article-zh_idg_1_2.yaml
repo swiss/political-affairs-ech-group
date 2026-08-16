@@ -1,0 +1,25 @@
+articles:
+- eId: title_1__art_2
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 2.
+  heading:
+    inline_content:
+    - element_type: TextRun
+      text: Geltungsbereich
+  paragraphs:
+  - eId: title_1__art_2__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: title_1__art_2__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …

@@ -54,12 +54,28 @@ frbr_authors:
   as_role: '#publisher'
 
 ```
+#### Beispiel FRBRAuthor: zh idg 1 2
+
+```yaml
+frbr_authors:
+- href: '#JI'
+  as_role: '#coEditor'
+
+```
 #### Beispiel FRBRAuthor: bgoe 1 2
 
 ```yaml
 frbr_authors:
 - href: '#ch.bk'
   as_role: '#rightsHolder'
+
+```
+#### Beispiel FRBRAuthor: zh idg 1 1
+
+```yaml
+frbr_authors:
+- href: '#SK-Publ'
+  as_role: '#publisher'
 
 ```
 #### Beispiel FRBRAuthor: bgoe 1 1

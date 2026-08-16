@@ -70,6 +70,14 @@ frbr_dates:
   frbr_date_name: jolux:dateEntryInForce
 
 ```
+#### Beispiel FRBRDate: zh idg 1 1
+
+```yaml
+frbr_dates:
+- date_value: '2007-02-12'
+  frbr_date_name: ''
+
+```
 #### Beispiel FRBRDate: sr101 1 3
 
 ```yaml

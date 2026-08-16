@@ -1,0 +1,27 @@
+articles:
+- eId: title_7__art_36
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 36.
+  heading:
+    eId: title_7__art_36__heading
+    inline_content:
+    - element_type: TextRun
+      text: Empfehlungen und Einwirkungsbefugnisse
+  paragraphs:
+  - eId: title_7__art_36__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: title_7__art_36__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - … 1 weitere

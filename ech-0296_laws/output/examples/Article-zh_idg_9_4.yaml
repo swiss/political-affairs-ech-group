@@ -1,0 +1,20 @@
+articles:
+- eId: title_9__art_44
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 44.
+  heading:
+    eId: title_9__art_44__heading
+    inline_content:
+    - element_type: TextRun
+      text: Anpassung anderer Erlasse
+  paragraphs:
+  - eId: title_9__art_44__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+      - …

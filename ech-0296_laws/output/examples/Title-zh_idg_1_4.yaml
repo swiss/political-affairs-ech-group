@@ -1,0 +1,41 @@
+titles:
+- eId: title_4
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '4.'
+  heading:
+    eId: title_2__chp_D__heading
+    inline_content:
+    - element_type: TextRun
+      text: 'Abschnit: Informationszugangsrecht und weitere Rechtsansprüche'
+  articles:
+  - eId: title_4__art_20
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_4__art_20__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_4__art_20__para_1
+      num: …
+      content_ref: …
+    - eId: title_4__art_20__para_2
+      num: …
+      content_ref: …
+    - … 1 weitere
+  - eId: title_4__art_21
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_4__art_21__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_4__art_21__para_1
+      num: …
+      content_ref: …
+  - … 1 weitere

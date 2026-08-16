@@ -110,6 +110,47 @@ enums:
         description: English
         annotations:
           description_de: Englisch
+      ger:
+        description: >-
+          Deutsch in ISO 639-2/B, as cantonal collections write it; Fedlex uses 'de' (ISO 639-1).
+        annotations:
+          description_de: 'Deutsch nach ISO 639-2/B, wie es kantonale Sammlungen schreiben; Fedlex verwendet „de“ (ISO 639-1).
+
+            '
+      fre:
+        description: 'Französisch in ISO 639-2/B, as cantonal collections write it; Fedlex uses ''fr'' (ISO 639-1).
+
+          '
+        annotations:
+          description_de: 'Französisch nach ISO 639-2/B, wie es kantonale Sammlungen schreiben; Fedlex verwendet „fr“ (ISO
+            639-1).
+
+            '
+      ita:
+        description: 'Italienisch in ISO 639-2/B, as cantonal collections write it; Fedlex uses ''it'' (ISO 639-1).
+
+          '
+        annotations:
+          description_de: 'Italienisch nach ISO 639-2/B, wie es kantonale Sammlungen schreiben; Fedlex verwendet „it“ (ISO
+            639-1).
+
+            '
+      roh:
+        description: 'Rätoromanisch in ISO 639-2/B, as cantonal collections write it; Fedlex uses ''rm'' (ISO 639-1).
+
+          '
+        annotations:
+          description_de: 'Rätoromanisch nach ISO 639-2/B, wie es kantonale Sammlungen schreiben; Fedlex verwendet „rm“ (ISO
+            639-1).
+
+            '
+      eng:
+        description: >-
+          Englisch in ISO 639-2/B, as cantonal collections write it; Fedlex uses 'en' (ISO 639-1).
+        annotations:
+          description_de: 'Englisch nach ISO 639-2/B, wie es kantonale Sammlungen schreiben; Fedlex verwendet „en“ (ISO 639-1).
+
+            '
     annotations:
       description_de: Sprachcodes für schweizerische Bundesdokumente.
   FedlexRoleEnum:
@@ -249,6 +290,8 @@ classes:
     - preamble_ref
     - body
     - components_ref
+    - conclusions_ref
+    - attachments_ref
     exact_mappings:
     - akn:act
   ActMeta:
@@ -265,6 +308,7 @@ classes:
     slots:
     - identification_ref
     - references_ref
+    - notes_ref
     exact_mappings:
     - akn:meta
   Identification:
@@ -302,6 +346,7 @@ classes:
     - frbr_dates
     - frbr_authors
     - frbr_country
+    - frbr_subtype
     - frbr_number
     - frbr_names
     - frbr_authoritative
@@ -459,6 +504,9 @@ classes:
     - tlc_organizations
     - tlc_roles
     - tlc_references
+    - tlc_concepts
+    - original_ref
+    - active_refs
     exact_mappings:
     - akn:references
   TLCOrganization:
@@ -529,33 +577,22 @@ classes:
     exact_mappings:
     - akn:preface
   PrefaceP:
-    description: 'A preface paragraph (akn:p) that wraps the document number and/or title. Fedlex requires akn:docNumber and
-      akn:docTitle to sit inside a akn:p of the preface (FLX-PF-001/002).
+    description: 'A preface paragraph (akn:p). Fedlex requires akn:docNumber and akn:docTitle somewhere in the preface (FLX-PF-001/002);
+      cantonal collections additionally mark up the systematic number, the short title, the abbreviation and the date.
 
       '
     annotations:
-      description_de: 'Ein Vorspann-Absatz (akn:p), der Dokumentnummer und/oder -titel umschliesst. Fedlex verlangt akn:docNumber
-        und akn:docTitle innerhalb eines akn:p des Vorspanns (FLX-PF-001/002).
+      description_de: 'Ein Vorspann-Absatz (akn:p). Fedlex verlangt akn:docNumber und akn:docTitle irgendwo im Vorspann (FLX-PF-001/002);
+        kantonale Sammlungen zeichnen zusätzlich Ordnungsnummer, Kurztitel, Abkürzung und Datum aus.
 
         '
       xml_element: akn:p
       xsd_mixed: 'true'
     slots:
-    - doc_number
-    - doc_title
+    - fedlex_role
     - inline_content
     exact_mappings:
     - akn:p
-    any_of:
-    - slot_conditions:
-        doc_number:
-          required: true
-    - slot_conditions:
-        doc_title:
-          required: true
-    - slot_conditions:
-        inline_content:
-          required: true
   Preamble:
     description: 'The preamble of the act (akn:preamble), containing introductory prose paragraphs preceding the operative
       body.
@@ -567,6 +604,8 @@ classes:
         '
       xml_element: akn:preamble
     slots:
+    - formulas
+    - citations_ref
     - content_blocks
     exact_mappings:
     - akn:preamble
@@ -598,6 +637,7 @@ classes:
     - articles
     - transitionals
     - provisos
+    - component_refs
     exact_mappings:
     - akn:body
   Book:
@@ -877,7 +917,16 @@ classes:
     - subdivisions
     slot_usage:
       eId:
-        required: true
+        required: false
+        description: 'Element identifier. Required on every article by the Fedlex Schematron (FLX-EID-001); cantonal collections
+          do not always carry it.
+
+          '
+        annotations:
+          description_de: 'Element-Identifikator. Vom Fedlex-Schematron an jedem Artikel verlangt (FLX-EID-001); kantonale
+            Sammlungen führen ihn nicht durchgehend.
+
+            '
       num:
         required: true
         description: The article number (e.g. 'Art. 1'). Mandatory in every article (FLX-ART-001).
@@ -1055,6 +1104,7 @@ classes:
     slots:
     - eId
     - num
+    - heading
     - content_blocks
     exact_mappings:
     - akn:item
@@ -1343,6 +1393,287 @@ classes:
         '
     slots:
     - element_type
+  DocNumber:
+    description: The document number in the preface.
+    annotations:
+      description_de: Die Dokumentnummer im Vorspann.
+      xml_element: akn:docNumber
+    slots:
+    - eId
+    - title_attr
+    - inline_content
+    exact_mappings:
+    - akn:docNumber
+    is_a: InlineElement
+  DocTitle:
+    description: The document title in the preface.
+    annotations:
+      description_de: Der Dokumenttitel im Vorspann.
+      xml_element: akn:docTitle
+    slots:
+    - eId
+    - title_attr
+    - inline_content
+    exact_mappings:
+    - akn:docTitle
+    is_a: InlineElement
+  DocketNumber:
+    description: The systematic number of the act, as cantonal collections carry it.
+    annotations:
+      description_de: Die Ordnungsnummer des Erlasses, wie sie kantonale Sammlungen führen.
+      xml_element: akn:docketNumber
+    slots:
+    - eId
+    - title_attr
+    - inline_content
+    exact_mappings:
+    - akn:docketNumber
+    is_a: InlineElement
+  ShortTitle:
+    description: The short title of the act.
+    annotations:
+      description_de: Der Kurztitel des Erlasses.
+      xml_element: akn:shortTitle
+    slots:
+    - eId
+    - title_attr
+    - inline_content
+    exact_mappings:
+    - akn:shortTitle
+    is_a: InlineElement
+  Abbr:
+    description: The abbreviation of the act.
+    annotations:
+      description_de: Die Abkürzung des Erlasses.
+      xml_element: akn:abbr
+    slots:
+    - eId
+    - title_attr
+    - inline_content
+    exact_mappings:
+    - akn:abbr
+    is_a: InlineElement
+  DocDate:
+    description: A date in the preface, with the machine-readable value in @date.
+    annotations:
+      description_de: Ein Datum im Vorspann, mit dem maschinenlesbaren Wert in @date.
+      xml_element: akn:docDate
+    slots:
+    - eId
+    - date_attr
+    - title_attr
+    - inline_content
+    exact_mappings:
+    - akn:docDate
+    is_a: InlineElement
+  DateInline:
+    description: A date in running text, with the machine-readable value in @date.
+    annotations:
+      description_de: Ein Datum im Fliesstext, mit dem maschinenlesbaren Wert in @date.
+      xml_element: akn:date
+    slots:
+    - eId
+    - date_attr
+    - refers_to
+    - inline_content
+    exact_mappings:
+    - akn:date
+    is_a: InlineElement
+  Signature:
+    description: A signature line.
+    annotations:
+      description_de: Eine Unterschriftszeile.
+      xml_element: akn:signature
+    slots:
+    - eId
+    - inline_content
+    exact_mappings:
+    - akn:signature
+    is_a: InlineElement
+  Eol:
+    description: An end of line within a paragraph.
+    annotations:
+      description_de: Ein Zeilenende innerhalb eines Absatzes.
+      xml_element: akn:eol
+    slots: []
+    exact_mappings:
+    - akn:eol
+    is_a: InlineElement
+  Conclusions:
+    description: 'The concluding formula of an act: place, date and signatures.'
+    annotations:
+      description_de: 'Die Schlussformel eines Erlasses: Ort, Datum und Unterschriften.'
+      xml_element: akn:conclusions
+    slots:
+    - eId
+    - content_blocks
+    exact_mappings:
+    - akn:conclusions
+  Attachments:
+    description: Documents attached to the act.
+    annotations:
+      description_de: Dem Erlass beigefügte Dokumente.
+      xml_element: akn:attachments
+    slots:
+    - attachment_list
+    exact_mappings:
+    - akn:attachments
+  Attachment:
+    description: A single attached document.
+    annotations:
+      description_de: Ein einzelnes beigefügtes Dokument.
+      xml_element: akn:attachment
+    slots:
+    - act_ref
+    exact_mappings:
+    - akn:attachment
+  Notes:
+    description: Notes block of the metadata, holding the notes an act refers to.
+    annotations:
+      description_de: Anmerkungsblock der Metadaten mit den Anmerkungen, auf die ein Erlass verweist.
+      xml_element: akn:notes
+    slots:
+    - source
+    - note_list
+    exact_mappings:
+    - akn:notes
+  Note:
+    description: A single note.
+    annotations:
+      description_de: Eine einzelne Anmerkung.
+      xml_element: akn:note
+    slots:
+    - eId
+    - content_blocks
+    exact_mappings:
+    - akn:note
+  TLCConcept:
+    description: >-
+      A concept referred to by the document (akn:TLCConcept), such as a temporal status.
+    annotations:
+      description_de: >-
+        Ein Begriff, auf den das Dokument verweist (akn:TLCConcept), etwa ein zeitlicher Status.
+      xml_element: akn:TLCConcept
+    slots:
+    - eId
+    - href
+    - show_as
+    exact_mappings:
+    - akn:TLCConcept
+  OriginalRef:
+    description: Reference to the original version of the act (akn:original).
+    annotations:
+      description_de: Verweis auf die ursprüngliche Fassung des Erlasses (akn:original).
+      xml_element: akn:original
+    slots:
+    - eId
+    - href
+    - show_as
+    exact_mappings:
+    - akn:original
+  ComponentRef:
+    description: Pointer to a document component held elsewhere (akn:componentRef).
+    annotations:
+      description_de: Verweis auf einen anderswo gehaltenen Dokumentbestandteil (akn:componentRef).
+      xml_element: akn:componentRef
+    slots:
+    - eId
+    - src
+    - show_as
+    exact_mappings:
+    - akn:componentRef
+  Def:
+    description: A term being defined in the text.
+    annotations:
+      description_de: Ein im Text definierter Begriff.
+      xml_element: akn:def
+    slots:
+    - eId
+    - inline_content
+    exact_mappings:
+    - akn:def
+    is_a: InlineElement
+  NoteRef:
+    description: Reference to a note held in the metadata.
+    annotations:
+      description_de: Verweis auf eine in den Metadaten gehaltene Anmerkung.
+      xml_element: akn:noteRef
+    slots:
+    - eId
+    - href
+    - marker
+    exact_mappings:
+    - akn:noteRef
+    is_a: InlineElement
+  Role:
+    description: A role a person holds, pointing at its declaration.
+    annotations:
+      description_de: Eine Rolle, die eine Person innehat, mit Verweis auf ihre Deklaration.
+      xml_element: akn:role
+    slots:
+    - eId
+    - refers_to
+    - inline_content
+    exact_mappings:
+    - akn:role
+    is_a: InlineElement
+  Person:
+    description: A person, pointing at its declaration and the role held.
+    annotations:
+      description_de: Eine Person, mit Verweis auf ihre Deklaration und die innegehabte Rolle.
+      xml_element: akn:person
+    slots:
+    - eId
+    - refers_to
+    - as_attr
+    - inline_content
+    exact_mappings:
+    - akn:person
+    is_a: InlineElement
+  ActiveRef:
+    description: Reference to an act this document modifies.
+    annotations:
+      description_de: Verweis auf einen Erlass, den dieses Dokument ändert.
+      xml_element: akn:activeRef
+    slots:
+    - eId
+    - href
+    - show_as
+    exact_mappings:
+    - akn:activeRef
+    is_a: InlineElement
+  Formula:
+    description: An opening or closing formula of the preamble (akn:formula).
+    annotations:
+      description_de: Eine Eingangs- oder Schlussformel des Vorspruchs (akn:formula).
+      xml_element: akn:formula
+    slots:
+    - eId
+    - name_attr2
+    - content_blocks
+    exact_mappings:
+    - akn:formula
+  Citations:
+    description: The citations of the preamble -- what the act invokes.
+    annotations:
+      description_de: Die Erwägungen des Vorspruchs — worauf sich der Erlass beruft.
+      xml_element: akn:citations
+    slots:
+    - eId
+    - citation_list
+    exact_mappings:
+    - akn:citations
+  Citation:
+    description: A single citation.
+    annotations:
+      description_de: Eine einzelne Erwägung.
+      xml_element: akn:citation
+    slots:
+    - eId
+    - refers_to
+    - content_blocks
+    exact_mappings:
+    - akn:citation
 slots:
   act_ref:
     description: >-
@@ -1354,13 +1685,23 @@ slots:
         Der Erlass (akn:act). Muss das einzige Kind von akn:akomaNtoso sein (FLX-RT-001).
       xml_element: akn:act
   act_name:
-    description: Type of act (@name attribute of akn:act), e.g. 'publicLaw'.
-    range: ActTypeEnum
+    description: 'Type of the act (akn:act/@name). The permissible values of ActTypeEnum are those Fedlex uses; cantonal collections
+      name their own types, which is why a free string remains admissible.
+
+      '
     annotations:
-      description_de: Erlasstyp (@name-Attribut von akn:act), z.B. 'publicLaw'.
+      description_de: 'Typ des Erlasses (akn:act/@name). Die zulässigen Werte von ActTypeEnum sind die von Fedlex verwendeten;
+        kantonale Sammlungen benennen eigene Typen, weshalb eine freie Zeichenkette zulässig bleibt.
+
+        '
       xml_attribute: 'true'
       xml_name: name
+    any_of:
+    - range: ActTypeEnum
+    - range: string
     examples:
+    - value: ''
+    - value: Grunderlass
     - value: publicLaw
   meta:
     description: Metadata section of the act (akn:meta).
@@ -1534,9 +1875,9 @@ slots:
     - range: FrbrDateNameEnum
     - range: string
     examples:
+    - value: ''
     - value: jolux:dateApplicability
     - value: jolux:dateDocument
-    - value: jolux:dateEntryInForce
   fedlex_generator:
     description: 'Fedlex extension attribute fedlex:generator on akn:FRBRformat[@value=''xml'']. Identifies the tool that
       generated the XML file. Only allowed on FRBRformat (FLX-XF-002).
@@ -1566,9 +1907,9 @@ slots:
       description_de: URI-Referenz (@href), für Links zu Organisationen, Rollen oder externen URIs.
       xml_attribute: 'true'
     examples:
-    - value: '#ch.bk'
-    - value: http://data.legilux.public.lu/resource/ontology/jolux#publisher
-    - value: http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder
+    - value: ''
+    - value: '#JI'
+    - value: '#SK'
   as_role:
     description: 'Role the author plays (akn:FRBRauthor/@as), as an anchor reference, e.g. ''#publisher'', ''#rightsHolder''.
 
@@ -1581,8 +1922,9 @@ slots:
       xml_attribute: 'true'
       xml_name: as
     examples:
-    - value: '#publisher'
-    - value: '#rightsHolder'
+    - value: '#authority'
+    - value: '#coEditor'
+    - value: '#editor'
   xml_lang:
     description: XML language code attribute (xml:lang), e.g. 'de', 'fr', 'it', 'rm', 'en'.
     range: string
@@ -1637,9 +1979,9 @@ slots:
         '
       xml_attribute: 'true'
     examples:
-    - value: annex_u1/lvl_u1
-    - value: art_1
-    - value: art_1/para
+    - value: JI
+    - value: SK
+    - value: SK-Publ
   tlc_organizations:
     description: Named organization references in the document (akn:TLCOrganization).
     range: TLCOrganization
@@ -1658,37 +2000,6 @@ slots:
     multivalued: true
     annotations:
       description_de: Generische benannte Referenzen im Dokument (akn:TLCReference).
-  doc_number:
-    description: 'Document number in the preface (akn:docNumber). Required by FLX-PF-001. Typically the SR number, e.g. ''101''.
-
-      '
-    range: string
-    annotations:
-      description_de: 'Dokumentnummer im Vorspann (akn:docNumber). Pflicht gemäss FLX-PF-001. Typischerweise die SR-Nummer,
-        z.B. ''101''.
-
-        '
-      xml_element: akn:docNumber
-    exact_mappings:
-    - akn:docNumber
-    examples:
-    - value: '101'
-    - value: '152.3 '
-  doc_title:
-    description: 'Document title in the preface (akn:docTitle). Required by FLX-PF-002. May contain inline markup and akn:br
-      for line breaks.
-
-      '
-    range: MixedText
-    annotations:
-      description_de: 'Dokumenttitel im Vorspann (akn:docTitle). Pflicht gemäss FLX-PF-002. Kann Inline-Markup und akn:br
-        für Zeilenumbrüche enthalten.
-
-        '
-      xml_element: akn:docTitle
-      schematron_note: 'FLX-TXT-001: br allowed in docTitle (heading context)'
-    exact_mappings:
-    - akn:docTitle
   num:
     description: 'Number element for a hierarchical structure or article (akn:num). In articles, num is mandatory (FLX-ART-001).
       The num element must precede heading and subheading (FLX-HD-001, FLX-HD-002, FLX-HD-003).
@@ -1886,9 +2197,9 @@ slots:
 
         '
     examples:
+    - value: Abbr
     - value: AuthorialNote
     - value: B
-    - value: BlockList
   text:
     description: The character data of a TextRun; emitted as a text node in mixed content.
     range: string
@@ -2089,6 +2400,170 @@ slots:
     range: BlockElement
     multivalued: true
     inlined_as_list: true
+  title_attr:
+    description: Human-readable label of the marked-up passage (@title).
+    annotations:
+      description_de: Menschenlesbare Bezeichnung der ausgezeichneten Stelle (@title).
+      xml_attribute: 'true'
+      xml_name: title
+    examples:
+    - value: Abkürzung
+    - value: Erlasstitel
+    - value: Kurztitel
+  date_attr:
+    description: The date this element marks up, in ISO 8601 (@date).
+    annotations:
+      description_de: Das Datum, das dieses Element auszeichnet, nach ISO 8601 (@date).
+      xml_attribute: 'true'
+      xml_name: date
+  refers_to:
+    description: Anchor naming what this element refers to (@refersTo).
+    annotations:
+      description_de: Anker, der nennt, worauf sich das Element bezieht (@refersTo).
+      xml_attribute: 'true'
+      xml_name: refersTo
+  conclusions_ref:
+    description: The concluding formula of the act (akn:conclusions).
+    annotations:
+      description_de: Die Schlussformel des Erlasses (akn:conclusions).
+      xml_element: akn:conclusions
+    exact_mappings:
+    - akn:conclusions
+    range: Conclusions
+  attachments_ref:
+    description: The documents attached to the act (akn:attachments).
+    annotations:
+      description_de: Die dem Erlass beigefügten Dokumente (akn:attachments).
+      xml_element: akn:attachments
+    exact_mappings:
+    - akn:attachments
+    range: Attachments
+  attachment_list:
+    description: The attached documents (akn:attachment).
+    annotations:
+      description_de: Die beigefügten Dokumente (akn:attachment).
+      xml_element: akn:attachment
+    exact_mappings:
+    - akn:attachment
+    range: Attachment
+    multivalued: true
+  notes_ref:
+    description: The notes block of the metadata (akn:notes).
+    annotations:
+      description_de: Der Anmerkungsblock der Metadaten (akn:notes).
+      xml_element: akn:notes
+    exact_mappings:
+    - akn:notes
+    range: Notes
+  note_list:
+    description: The notes themselves (akn:note).
+    annotations:
+      description_de: Die Anmerkungen selbst (akn:note).
+      xml_element: akn:note
+    exact_mappings:
+    - akn:note
+    range: Note
+    multivalued: true
+  frbr_subtype:
+    description: >-
+      Subtype of the work (akn:FRBRsubtype), e.g. 'Gesetz'. Used by cantonal collections.
+    annotations:
+      description_de: >-
+        Untertyp des Werks (akn:FRBRsubtype), z.B. „Gesetz“. Von kantonalen Sammlungen verwendet.
+      xml_element: akn:FRBRsubtype
+    exact_mappings:
+    - akn:FRBRsubtype
+    range: ValueType
+  src:
+    description: Location of the referenced component (@src).
+    annotations:
+      description_de: Ort des verwiesenen Bestandteils (@src).
+      xml_attribute: 'true'
+      xml_name: src
+  tlc_concepts:
+    description: Concepts referred to by the document (akn:TLCConcept).
+    annotations:
+      description_de: Begriffe, auf die das Dokument verweist (akn:TLCConcept).
+      xml_element: akn:TLCConcept
+    exact_mappings:
+    - akn:TLCConcept
+    range: TLCConcept
+    multivalued: true
+  original_ref:
+    description: Reference to the original version (akn:original).
+    annotations:
+      description_de: Verweis auf die ursprüngliche Fassung (akn:original).
+      xml_element: akn:original
+    exact_mappings:
+    - akn:original
+    range: OriginalRef
+  component_refs:
+    description: Pointers to components held elsewhere (akn:componentRef).
+    annotations:
+      description_de: Verweise auf anderswo gehaltene Bestandteile (akn:componentRef).
+      xml_element: akn:componentRef
+    exact_mappings:
+    - akn:componentRef
+    range: ComponentRef
+    multivalued: true
+  marker:
+    description: The marker printed for a note reference (@marker).
+    annotations:
+      description_de: Das gedruckte Zeichen eines Anmerkungsverweises (@marker).
+      xml_attribute: 'true'
+      xml_name: marker
+    examples:
+    - value: '1'
+    - value: '2'
+    - value: '3'
+  as_attr:
+    description: Role in which the person acts (@as).
+    annotations:
+      description_de: Rolle, in der die Person handelt (@as).
+      xml_attribute: 'true'
+      xml_name: as
+  name_attr2:
+    description: Purpose of the formula (@name).
+    annotations:
+      description_de: Zweck der Formel (@name).
+      xml_attribute: 'true'
+      xml_name: name
+  formulas:
+    description: Formulas of the preamble (akn:formula).
+    annotations:
+      description_de: Formeln des Vorspruchs (akn:formula).
+      xml_element: akn:formula
+    exact_mappings:
+    - akn:formula
+    range: Formula
+    multivalued: true
+  citations_ref:
+    description: The citations of the preamble (akn:citations).
+    annotations:
+      description_de: Die Erwägungen des Vorspruchs (akn:citations).
+      xml_element: akn:citations
+    exact_mappings:
+    - akn:citations
+    range: Citations
+    multivalued: true
+  citation_list:
+    description: The citations themselves (akn:citation).
+    annotations:
+      description_de: Die Erwägungen selbst (akn:citation).
+      xml_element: akn:citation
+    exact_mappings:
+    - akn:citation
+    range: Citation
+    multivalued: true
+  active_refs:
+    description: References to the acts this document modifies (akn:activeRef).
+    annotations:
+      description_de: Verweise auf die Erlasse, die dieses Dokument ändert (akn:activeRef).
+      xml_element: akn:activeRef
+    exact_mappings:
+    - akn:activeRef
+    range: ActiveRef
+    multivalued: true
 annotations:
   description_de: 'LinkML-Schema für das Fedlex-spezifische Subset von AkomaNtoso 3.0 für schweizerische Bundeserlasse (eCH-0296).
     Modelliert die vollständige Dokumentenstruktur (act, FRBR-Metadaten, Vorspann, Hauptteil, Gesetzeshierarchie, Artikelinhalt)

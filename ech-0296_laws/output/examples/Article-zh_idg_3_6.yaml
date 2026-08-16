@@ -1,0 +1,20 @@
+articles:
+- eId: title_3__art_19
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 19.
+  subheading:
+    eId: title_3__art_19__subheading
+    inline_content:
+    - element_type: TextRun
+      text: d. Grenzüberschreitend
+  paragraphs:
+  - eId: title_3__art_19__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+      - …

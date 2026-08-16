@@ -1,0 +1,27 @@
+titles:
+- eId: title_8
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '8. Abschnitt:'
+  heading:
+    eId: title_8__heading
+    inline_content:
+    - element_type: TextRun
+      text: Strafbestimmungen
+  articles:
+  - eId: title_8__art_40
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_8__art_40__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_8__art_40__para_1
+      num: …
+      content_ref: …
+    - eId: title_8__art_40__para_2
+      num: …
+      content_ref: …

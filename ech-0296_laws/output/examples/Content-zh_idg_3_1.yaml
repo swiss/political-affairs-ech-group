@@ -1,0 +1,12 @@
+content_ref:
+  content_blocks:
+  - element_type: BlockParagraph
+    inline_content:
+    - element_type: TextRun
+      text: >-
+        Die oder der Beauftragte ist berechtigt, die Verfügung nach Massgabe des Verwaltungsrechtspflegegesetzes
+        vom 24. Mai 19596
+    - element_type: NoteRef
+      href: '#note_2'
+      marker: '2'
+    - … 1 weitere

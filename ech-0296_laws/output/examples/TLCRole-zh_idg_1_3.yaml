@@ -1,0 +1,4 @@
+tlc_roles:
+- eId: coEditor
+  href: https://data.zh.ch/vocabulary/role/coEditor
+  show_as: Mitwirkende Einheit

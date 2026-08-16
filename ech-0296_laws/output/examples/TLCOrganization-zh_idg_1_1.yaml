@@ -1,0 +1,4 @@
+tlc_organizations:
+- eId: kantonsrat
+  href: https://data.zh.ch/vocabulary/legal-institution/2
+  show_as: Kantonsrat

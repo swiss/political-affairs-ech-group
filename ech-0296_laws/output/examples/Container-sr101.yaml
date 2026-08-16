@@ -93,8 +93,12 @@ act_ref:
         show_as: xml
   preface_ref:
     preface_paragraphs:
-    - doc_number: '101'
-    - doc_title:
+    - inline_content:
+      - element_type: DocNumber
+        inline_content:
+        - …
+    - inline_content:
+      - element_type: DocTitle
         inline_content:
         - …
         - …

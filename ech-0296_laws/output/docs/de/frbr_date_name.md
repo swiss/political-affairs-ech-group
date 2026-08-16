@@ -69,9 +69,9 @@ Value must satisfy at least one of:
 
 | Wert |
 | --- |
+|  |
 | jolux:dateApplicability |
 | jolux:dateDocument |
-| jolux:dateEntryInForce |
 
 
 
@@ -104,9 +104,9 @@ description: 'Art dieses Datums (akn:FRBRdate/@name). Fedlex verwendet das JoLux
 
   '
 examples:
+- value: ''
 - value: jolux:dateApplicability
 - value: jolux:dateDocument
-- value: jolux:dateEntryInForce
 from_schema: https://ld.ech.ch/schema/0296/laws
 rank: 1000
 domain_of:

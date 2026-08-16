@@ -1,0 +1,16 @@
+paragraphs:
+- eId: title_9__art_42__para_2
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '2'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+    - element_type: BlockList
+      eId: title_9__art_42__para_2__content__blocklist_1
+      items:
+      - …
+      - …

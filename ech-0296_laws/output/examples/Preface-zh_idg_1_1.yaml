@@ -1,0 +1,14 @@
+preface_ref:
+  preface_paragraphs:
+  - inline_content:
+    - element_type: DocketNumber
+      eId: docketNum_1
+      title_attr: Orndungsnummer
+      inline_content:
+      - …
+    - element_type: DocTitle
+      eId: actTitle
+      title_attr: Erlasstitel
+      inline_content:
+      - …
+    - … 3 weitere

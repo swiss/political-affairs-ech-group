@@ -1,0 +1,27 @@
+articles:
+- eId: title_3__art_17
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 17.
+  subheading:
+    eId: ttitle_3__art_17__subheading
+    inline_content:
+    - element_type: TextRun
+      text: b. Besondere Personendaten
+  paragraphs:
+  - eId: title_3__art_17__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+      - …
+  - eId: ttitle_3__art_17__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
