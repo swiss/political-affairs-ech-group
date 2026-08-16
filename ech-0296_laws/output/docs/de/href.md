@@ -34,6 +34,10 @@ URI: [laws:href](https://ld.ech.ch/schema/0296/laws/href)
 | [OriginalRef](OriginalRef.md) | Verweis auf die ursprüngliche Fassung des Erlasses (akn:original) |  no  |
 | [NoteRef](NoteRef.md) | Verweis auf eine in den Metadaten gehaltene Anmerkung |  no  |
 | [ActiveRef](ActiveRef.md) | Verweis auf einen Erlass, den dieses Dokument ändert |  no  |
+| [ModSource](ModSource.md) | Die Stelle, welche die Änderung bewirkt |  no  |
+| [ModDestination](ModDestination.md) | Die Stelle, die geändert wird |  no  |
+| [ModOld](ModOld.md) | Der Text, wie er vor der Änderung lautete |  no  |
+| [ModNew](ModNew.md) | Der Text, wie er nach der Änderung lautet |  no  |
 
 
 
@@ -47,7 +51,7 @@ URI: [laws:href](https://ld.ech.ch/schema/0296/laws/href)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [String](String.md) |
-| Domäne von | [FRBRAuthor](FRBRAuthor.md), [TLCOrganization](TLCOrganization.md), [TLCRole](TLCRole.md), [TLCReference](TLCReference.md), [Ref](Ref.md), [TLCConcept](TLCConcept.md), [OriginalRef](OriginalRef.md), [NoteRef](NoteRef.md), [ActiveRef](ActiveRef.md) |
+| Domäne von | [FRBRAuthor](FRBRAuthor.md), [TLCOrganization](TLCOrganization.md), [TLCRole](TLCRole.md), [TLCReference](TLCReference.md), [Ref](Ref.md), [TLCConcept](TLCConcept.md), [OriginalRef](OriginalRef.md), [NoteRef](NoteRef.md), [ActiveRef](ActiveRef.md), [ModSource](ModSource.md), [ModDestination](ModDestination.md), [ModOld](ModOld.md), [ModNew](ModNew.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -105,6 +109,10 @@ domain_of:
 - OriginalRef
 - NoteRef
 - ActiveRef
+- ModSource
+- ModDestination
+- ModOld
+- ModNew
 range: string
 
 ```

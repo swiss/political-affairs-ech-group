@@ -259,6 +259,13 @@
                         "null"
                     ]
                 },
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "levels": {
                     "description": "Transparent level child elements (akn:level).",
                     "items": {
@@ -279,6 +286,13 @@
                         "null"
                     ]
                 },
+                "period": {
+                    "description": "The temporal group during which the modification applies (@period).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "provisos": {
                     "description": "Proviso elements (akn:proviso).",
                     "items": {
@@ -296,6 +310,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "status": {
+                    "description": "Editorial state of the element (@status), e.g. 'edited'.",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -347,6 +368,17 @@
             "additionalProperties": false,
             "description": "Metadata section of the act (akn:meta). Contains FRBR identification (Work, Expression, Manifestation levels) and named reference definitions.",
             "properties": {
+                "analysis_ref": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Analysis"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The analysis block of the metadata (akn:analysis)."
+                },
                 "identification_ref": {
                     "anyOf": [
                         {
@@ -379,6 +411,17 @@
                         }
                     ],
                     "description": "References section of the meta (akn:references)."
+                },
+                "temporal_data_ref": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/TemporalData"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The temporal data of the metadata (akn:temporalData)."
                 }
             },
             "title": "ActMeta",
@@ -394,6 +437,38 @@
             ],
             "title": "ActTypeEnum",
             "type": "string"
+        },
+        "ActiveModifications": {
+            "additionalProperties": false,
+            "description": "The modifications this act makes to others.",
+            "properties": {
+                "modifications": {
+                    "description": "The modifications, in the order they are recorded (akn:textualMod, akn:forceMod).",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/TextualMod"
+                            },
+                            {
+                                "$ref": "#/$defs/ForceMod"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "source": {
+                    "description": "Anchor reference to the responsible organization (@source), e.g. '#ch.bk'.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "ActiveModifications",
+            "type": "object"
         },
         "ActiveRef": {
             "additionalProperties": false,
@@ -432,6 +507,43 @@
                 }
             },
             "title": "ActiveRef",
+            "type": "object"
+        },
+        "Analysis": {
+            "additionalProperties": false,
+            "description": "The analysis block: which modifications this act makes and receives. Fedlex does not use it; cantonal collections record their amendments here.",
+            "properties": {
+                "active_modifications": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/ActiveModifications"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The modifications this act makes to others (akn:activeModifications)."
+                },
+                "passive_modifications": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/PassiveModifications"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The modifications other acts make to this one (akn:passiveModifications)."
+                },
+                "source": {
+                    "description": "Anchor reference to the responsible organization (@source), e.g. '#ch.bk'.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Analysis",
             "type": "object"
         },
         "Article": {
@@ -547,6 +659,12 @@
                             },
                             {
                                 "$ref": "#/$defs/Table"
+                            },
+                            {
+                                "$ref": "#/$defs/Formula"
+                            },
+                            {
+                                "$ref": "#/$defs/Citations"
                             }
                         ]
                     },
@@ -555,11 +673,25 @@
                         "null"
                     ]
                 },
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "element_type": {
                     "description": "Type designator discriminating the concrete subclass of an abstract base: InlineElement (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote) or BlockElement (BlockParagraph, BlockList, Table).\n",
                     "enum": [
                         "AuthorialNote"
                     ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "marker": {
+                    "description": "The marker printed for a note reference (@marker).",
                     "type": [
                         "string",
                         "null"
@@ -767,7 +899,7 @@
         },
         "BlockElement": {
             "additionalProperties": false,
-            "description": "Abstract base for a block-level element inside content, a list item or a table cell (akn:p, akn:blockList, akn:table).",
+            "description": "Abstract base for a block-level element: the paragraphs, lists and tables of the content, and the formula and citations of the preamble.",
             "properties": {
                 "element_type": {
                     "description": "Type designator discriminating the concrete subclass of an abstract base: InlineElement (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote) or BlockElement (BlockParagraph, BlockList, Table).\n",
@@ -824,6 +956,13 @@
                         }
                     ],
                     "description": "Optional introduction text before a block list (akn:listIntroduction)."
+                },
+                "style": {
+                    "description": "Presentation hint of the element (@style).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "title": "BlockList",
@@ -845,6 +984,12 @@
                             },
                             {
                                 "$ref": "#/$defs/Table"
+                            },
+                            {
+                                "$ref": "#/$defs/Formula"
+                            },
+                            {
+                                "$ref": "#/$defs/Citations"
                             }
                         ]
                     },
@@ -1260,6 +1405,12 @@
                             },
                             {
                                 "$ref": "#/$defs/Table"
+                            },
+                            {
+                                "$ref": "#/$defs/Formula"
+                            },
+                            {
+                                "$ref": "#/$defs/Citations"
                             }
                         ]
                     },
@@ -1302,6 +1453,16 @@
                 },
                 "eId": {
                     "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "element_type": {
+                    "description": "Type designator discriminating the concrete subclass of an abstract base: InlineElement (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote) or BlockElement (BlockParagraph, BlockList, Table).\n",
+                    "enum": [
+                        "Citations"
+                    ],
                     "type": [
                         "string",
                         "null"
@@ -1393,6 +1554,12 @@
                             },
                             {
                                 "$ref": "#/$defs/Table"
+                            },
+                            {
+                                "$ref": "#/$defs/Formula"
+                            },
+                            {
+                                "$ref": "#/$defs/Citations"
                             }
                         ]
                     },
@@ -1458,11 +1625,24 @@
                             },
                             {
                                 "$ref": "#/$defs/Table"
+                            },
+                            {
+                                "$ref": "#/$defs/Formula"
+                            },
+                            {
+                                "$ref": "#/$defs/Citations"
                             }
                         ]
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 }
@@ -2588,12 +2768,86 @@
             "title": "FedlexRoleEnum",
             "type": "string"
         },
+        "ForceMod": {
+            "additionalProperties": false,
+            "description": "A modification of legal force: an act, or a part of it, enters into force, ceases, is postponed, prorogued, re-enacted or declared unconstitutional.",
+            "properties": {
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "element_type": {
+                    "description": "Type designator discriminating the concrete subclass of an abstract base: InlineElement (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote) or BlockElement (BlockParagraph, BlockList, Table).\n",
+                    "enum": [
+                        "ForceMod"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "mod_destinations": {
+                    "description": "The passages that are modified (akn:destination).",
+                    "items": {
+                        "$ref": "#/$defs/ModDestination"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "mod_sources": {
+                    "description": "The passages causing the modification (akn:source).",
+                    "items": {
+                        "$ref": "#/$defs/ModSource"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "mod_type": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/ModTypeEnum"
+                        },
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Kind of the modification (@type); the permissible values are those of Akoma Ntoso.",
+                    "type": "string"
+                },
+                "period": {
+                    "description": "The temporal group during which the modification applies (@period).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "ForceMod",
+            "type": "object"
+        },
         "FormatType": {
             "additionalProperties": false,
             "description": "A holder for akn:FRBRformat: a @value (typically 'xml') plus the optional fedlex:generator extension attribute (FLX-XF-002).",
             "properties": {
                 "fedlex_generator": {
                     "description": "Fedlex extension attribute fedlex:generator on akn:FRBRformat[@value='xml']. Identifies the tool that generated the XML file. Only allowed on FRBRformat (FLX-XF-002).\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "show_as": {
+                    "description": "Human-readable display label for a TLC reference (@showAs).",
                     "type": [
                         "string",
                         "null"
@@ -2626,6 +2880,12 @@
                             },
                             {
                                 "$ref": "#/$defs/Table"
+                            },
+                            {
+                                "$ref": "#/$defs/Formula"
+                            },
+                            {
+                                "$ref": "#/$defs/Citations"
                             }
                         ]
                     },
@@ -2636,6 +2896,16 @@
                 },
                 "eId": {
                     "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "element_type": {
+                    "description": "Type designator discriminating the concrete subclass of an abstract base: InlineElement (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote) or BlockElement (BlockParagraph, BlockList, Table).\n",
+                    "enum": [
+                        "Formula"
+                    ],
                     "type": [
                         "string",
                         "null"
@@ -2944,6 +3214,13 @@
                 "language_value": {
                     "$ref": "#/$defs/DocumentLanguageEnum",
                     "description": "The @language attribute of akn:FRBRlanguage, e.g. 'de'."
+                },
+                "show_as": {
+                    "description": "Human-readable display label for a TLC reference (@showAs).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "title": "LanguageType",
@@ -3108,6 +3385,12 @@
                             },
                             {
                                 "$ref": "#/$defs/Table"
+                            },
+                            {
+                                "$ref": "#/$defs/Formula"
+                            },
+                            {
+                                "$ref": "#/$defs/Citations"
                             }
                         ]
                     },
@@ -3239,6 +3522,188 @@
             "title": "MixedText",
             "type": "object"
         },
+        "ModDestination": {
+            "additionalProperties": false,
+            "description": "The passage that is modified.",
+            "properties": {
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "href": {
+                    "description": "URI reference (@href), used for links to organizations, roles, or external URIs.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "pos": {
+                    "description": "Position of the change relative to the destination (@pos), e.g. 'before'.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "up_to": {
+                    "description": "End of a range of destinations (@upTo).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "ModDestination",
+            "type": "object"
+        },
+        "ModNew": {
+            "additionalProperties": false,
+            "description": "The text as it stands after the modification.",
+            "properties": {
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "href": {
+                    "description": "URI reference (@href), used for links to organizations, roles, or external URIs.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "pos": {
+                    "description": "Position of the change relative to the destination (@pos), e.g. 'before'.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "up_to": {
+                    "description": "End of a range of destinations (@upTo).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "ModNew",
+            "type": "object"
+        },
+        "ModOld": {
+            "additionalProperties": false,
+            "description": "The text as it stood before the modification.",
+            "properties": {
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "href": {
+                    "description": "URI reference (@href), used for links to organizations, roles, or external URIs.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "pos": {
+                    "description": "Position of the change relative to the destination (@pos), e.g. 'before'.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "up_to": {
+                    "description": "End of a range of destinations (@upTo).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "ModOld",
+            "type": "object"
+        },
+        "ModSource": {
+            "additionalProperties": false,
+            "description": "The passage that causes the modification.",
+            "properties": {
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "href": {
+                    "description": "URI reference (@href), used for links to organizations, roles, or external URIs.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "pos": {
+                    "description": "Position of the change relative to the destination (@pos), e.g. 'before'.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "up_to": {
+                    "description": "End of a range of destinations (@upTo).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "ModSource",
+            "type": "object"
+        },
+        "ModTypeEnum": {
+            "description": "Kinds of modification defined by Akoma Ntoso: the textual ones from the TextualMods list, those of legal force from ForceMods.",
+            "enum": [
+                "repeal",
+                "substitution",
+                "insertion",
+                "replacement",
+                "renumbering",
+                "split",
+                "join",
+                "entryIntoForce",
+                "endOfEnactment",
+                "postponementOfEntryIntoForce",
+                "prorogationOfForce",
+                "reEnactment",
+                "unconstitutionality"
+            ],
+            "title": "ModTypeEnum",
+            "type": "string"
+        },
+        "Modification": {
+            "additionalProperties": false,
+            "description": "Abstract base for a modification recorded in the analysis.",
+            "properties": {
+                "element_type": {
+                    "description": "Type designator discriminating the concrete subclass of an abstract base: InlineElement (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote) or BlockElement (BlockParagraph, BlockList, Table).\n",
+                    "enum": [
+                        "Modification"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Modification",
+            "type": "object"
+        },
         "Note": {
             "additionalProperties": false,
             "description": "A single note.",
@@ -3255,6 +3720,12 @@
                             },
                             {
                                 "$ref": "#/$defs/Table"
+                            },
+                            {
+                                "$ref": "#/$defs/Formula"
+                            },
+                            {
+                                "$ref": "#/$defs/Citations"
                             }
                         ]
                     },
@@ -3523,6 +3994,38 @@
             "title": "Part",
             "type": "object"
         },
+        "PassiveModifications": {
+            "additionalProperties": false,
+            "description": "The modifications other acts make to this one.",
+            "properties": {
+                "modifications": {
+                    "description": "The modifications, in the order they are recorded (akn:textualMod, akn:forceMod).",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/TextualMod"
+                            },
+                            {
+                                "$ref": "#/$defs/ForceMod"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "source": {
+                    "description": "Anchor reference to the responsible organization (@source), e.g. '#ch.bk'.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "PassiveModifications",
+            "type": "object"
+        },
         "Person": {
             "additionalProperties": false,
             "description": "A person, pointing at its declaration and the role held.",
@@ -3757,16 +4260,6 @@
             "additionalProperties": false,
             "description": "The preamble of the act (akn:preamble), containing introductory prose paragraphs preceding the operative body.",
             "properties": {
-                "citations_ref": {
-                    "description": "The citations of the preamble (akn:citations).",
-                    "items": {
-                        "$ref": "#/$defs/Citations"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "content_blocks": {
                     "description": "Block-level content in reading order: paragraphs, lists and tables as they follow one another in the document.\n",
                     "items": {
@@ -3779,18 +4272,14 @@
                             },
                             {
                                 "$ref": "#/$defs/Table"
+                            },
+                            {
+                                "$ref": "#/$defs/Formula"
+                            },
+                            {
+                                "$ref": "#/$defs/Citations"
                             }
                         ]
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "formulas": {
-                    "description": "Formulas of the preamble (akn:formula).",
-                    "items": {
-                        "$ref": "#/$defs/Formula"
                     },
                     "type": [
                         "array",
@@ -3995,6 +4484,13 @@
             "additionalProperties": false,
             "description": "An inline reference (akn:ref). Carries @href, and for internal SR cross-references the Fedlex extension attributes fedlex:rs and fedlex:rs-uri.",
             "properties": {
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "element_type": {
                     "description": "Type designator discriminating the concrete subclass of an abstract base: InlineElement (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote) or BlockElement (BlockParagraph, BlockList, Table).\n",
                     "enum": [
@@ -5202,6 +5698,12 @@
                             },
                             {
                                 "$ref": "#/$defs/Table"
+                            },
+                            {
+                                "$ref": "#/$defs/Formula"
+                            },
+                            {
+                                "$ref": "#/$defs/Citations"
                             }
                         ]
                     },
@@ -5232,6 +5734,56 @@
             "title": "TableRow",
             "type": "object"
         },
+        "TemporalData": {
+            "additionalProperties": false,
+            "description": "The temporal groups a modification refers to. Each group holds the interval during which it applies.",
+            "properties": {
+                "source": {
+                    "description": "Anchor reference to the responsible organization (@source), e.g. '#ch.bk'.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "temporal_groups": {
+                    "description": "The temporal groups (akn:temporalGroup).",
+                    "items": {
+                        "$ref": "#/$defs/TemporalGroup"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "TemporalData",
+            "type": "object"
+        },
+        "TemporalGroup": {
+            "additionalProperties": false,
+            "description": "A named period, referred to by a modification through @period.",
+            "properties": {
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "time_intervals": {
+                    "description": "The intervals of this group (akn:timeInterval).",
+                    "items": {
+                        "$ref": "#/$defs/TimeInterval"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "TemporalGroup",
+            "type": "object"
+        },
         "TextRun": {
             "additionalProperties": false,
             "description": "A plain run of character data within mixed content. Emitted as the text node of a mixed complexType, not as an element.",
@@ -5255,6 +5807,129 @@
                 }
             },
             "title": "TextRun",
+            "type": "object"
+        },
+        "TextualMod": {
+            "additionalProperties": false,
+            "description": "A textual modification: the wording of another act is inserted, substituted, repealed, renumbered, split or joined.",
+            "properties": {
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "element_type": {
+                    "description": "Type designator discriminating the concrete subclass of an abstract base: InlineElement (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote) or BlockElement (BlockParagraph, BlockList, Table).\n",
+                    "enum": [
+                        "TextualMod"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "mod_destinations": {
+                    "description": "The passages that are modified (akn:destination).",
+                    "items": {
+                        "$ref": "#/$defs/ModDestination"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "mod_new": {
+                    "description": "The new wording (akn:new).",
+                    "items": {
+                        "$ref": "#/$defs/ModNew"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "mod_old": {
+                    "description": "The previous wording (akn:old).",
+                    "items": {
+                        "$ref": "#/$defs/ModOld"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "mod_sources": {
+                    "description": "The passages causing the modification (akn:source).",
+                    "items": {
+                        "$ref": "#/$defs/ModSource"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "mod_type": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/ModTypeEnum"
+                        },
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Kind of the modification (@type); the permissible values are those of Akoma Ntoso.",
+                    "type": "string"
+                },
+                "period": {
+                    "description": "The temporal group during which the modification applies (@period).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "TextualMod",
+            "type": "object"
+        },
+        "TimeInterval": {
+            "additionalProperties": false,
+            "description": "An interval between two dates. Start and end name date elements in the document by anchor rather than carrying the date themselves; an empty end means the interval is still open.",
+            "properties": {
+                "eId": {
+                    "description": "Unique element identifier within the document (@eId). Required by Fedlex Schematron on all hierarchical structure elements, articles, subdivisions, and paragraphs. Follows the AKN eId naming convention (hierarchical path notation), e.g. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "end_ref": {
+                    "description": "Anchor of the date on which the interval ends (@end); empty while open.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "refers_to": {
+                    "description": "Anchor naming what this element refers to (@refersTo).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "start_ref": {
+                    "description": "Anchor of the date on which the interval begins (@start).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "TimeInterval",
             "type": "object"
         },
         "Title": {
@@ -5456,6 +6131,13 @@
             "additionalProperties": false,
             "description": "A holder carrying a single @value attribute typed as an ELI URI (AKN valueType). Reused for FRBRthis and FRBRuri.",
             "properties": {
+                "show_as": {
+                    "description": "Human-readable display label for a TLC reference (@showAs).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "value_uri": {
                     "description": "A @value attribute typed as an ELI URI (akn:FRBRthis/@value, akn:FRBRuri/@value).",
                     "type": [
@@ -5471,6 +6153,13 @@
             "additionalProperties": false,
             "description": "A simple holder carrying a single @value attribute (AKN valueType). Reused for FRBRcountry, FRBRnumber, FRBRauthoritative, etc.",
             "properties": {
+                "show_as": {
+                    "description": "Human-readable display label for a TLC reference (@showAs).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "value": {
                     "description": "Generic value attribute (@value) used across multiple AkomaNtoso elements.",
                     "type": [

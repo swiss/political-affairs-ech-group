@@ -18,6 +18,8 @@ _Metadaten-Abschnitt des Erlasses (akn:meta). Enthält die FRBR-Identifikation (
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
 | identification_ref | 0..1 <br/> [Identification](Identification.md) | FRBR-Identifikationsblock (akn:identification). |
+| analysis_ref | 0..1 <br/> [Analysis](Analysis.md) | Der Analyseblock der Metadaten (akn:analysis). |
+| temporal_data_ref | 0..1 <br/> [TemporalData](TemporalData.md) | Die Zeitangaben der Metadaten (akn:temporalData). |
 | references_ref | 0..1 <br/> [References](References.md) | Referenzen-Abschnitt der Metadaten (akn:references). |
 | notes_ref | 0..1 <br/> [Notes](Notes.md) | Der Anmerkungsblock der Metadaten (akn:notes). |
 
@@ -196,6 +198,44 @@ meta:
         as_role: '#publisher'
       frbr_format:
         value: '#akn'
+        show_as: akn
+  analysis_ref:
+    source: '#source'
+    active_modifications:
+      modifications:
+      - element_type: ForceMod
+        eId: amod_1
+        mod_type: entryIntoForce
+        period: '#tmgr_1'
+        mod_sources:
+        - …
+        mod_destinations:
+        - …
+      - element_type: TextualMod
+        eId: amod_2
+        mod_type: insertion
+        period: '#tmgr_1'
+        mod_sources:
+        - …
+        mod_destinations:
+        - …
+        mod_new:
+        - …
+      - … 1 weitere
+  temporal_data_ref:
+    source: '#source'
+    temporal_groups:
+    - eId: tmgr_1
+      time_intervals:
+      - refers_to: '#inForce'
+        start_ref: '#date_1'
+        end_ref: ''
+    - eId: tmgr_2
+      time_intervals:
+      - refers_to: '#inForce'
+        start_ref: '#date_2'
+        end_ref: ''
+    - … 1 weitere
   references_ref:
     source: '#source'
     original_ref:

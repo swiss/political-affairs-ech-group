@@ -13,5 +13,6 @@ articles:
   - eId: title_7__art_38__para_1
     num: {}
     content_ref:
+      eId: title_7__art_38__para_1__content
       content_blocks:
       - …

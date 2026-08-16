@@ -96,6 +96,7 @@ identification_ref:
       as_role: '#publisher'
     frbr_format:
       value: '#akn'
+      show_as: akn
 
 ```
 #### Beispiel Identification: sr101 1 1

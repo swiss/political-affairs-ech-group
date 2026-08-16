@@ -18,6 +18,7 @@ _Halter mit einem @value-Attribut vom Typ ELI-URI (AKN valueType). Wiederverwend
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
 | value_uri | 0..1 <br/> [ELIURI](ELIURI.md) | Ein @value-Attribut vom Typ ELI-URI (akn:FRBRthis/@value, akn:FRBRuri/@value). |
+| show_as | 0..1 <br/> [String](String.md) | Lesbare Anzeigebezeichnung einer TLC-Referenz (@showAs). |
 
 
 

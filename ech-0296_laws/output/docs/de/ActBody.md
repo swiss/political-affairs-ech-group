@@ -17,6 +17,9 @@ _Der Hauptteil des Erlasses (akn:body) mit der Gesetzeshierarchie. Erlaubte dire
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
+| eId | 0..1 <br/> [EIdType](EIdType.md) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
+| period | 0..1 <br/> [String](String.md) | Die Zeitgruppe, in der die Änderung gilt (@period). |
+| status | 0..1 <br/> [String](String.md) | Bearbeitungsstand des Elements (@status), z.B. „edited“. |
 | books | * <br/> [Book](Book.md) | Buch-Kindelemente (akn:book). |
 | titles | * <br/> [Title](Title.md) | Titel-Kindelemente (akn:title). |
 | parts | * <br/> [Part](Part.md) | Teil-Kindelemente (akn:part). |

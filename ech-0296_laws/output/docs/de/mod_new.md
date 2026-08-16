@@ -3,10 +3,10 @@ search:
   boost: 5.0
 ---
 
-# Slot: formulas 
+# Slot: mod_new 
 
 
-_Formeln des Vorspruchs (akn:formula)._
+_Der neue Wortlaut (akn:new)._
 
 
 
@@ -14,7 +14,7 @@ _Formeln des Vorspruchs (akn:formula)._
 
 
 
-URI: [laws:formulas](https://ld.ech.ch/schema/0296/laws/formulas)
+URI: [laws:mod_new](https://ld.ech.ch/schema/0296/laws/mod_new)
 <!-- no inheritance hierarchy -->
 
 
@@ -25,7 +25,7 @@ URI: [laws:formulas](https://ld.ech.ch/schema/0296/laws/formulas)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [Preamble](Preamble.md) | Die Präambel des Erlasses (akn:preamble) mit einleitenden Fliesstext-Absätzen... |  no  |
+| [TextualMod](TextualMod.md) | Eine Textänderung: der Wortlaut eines anderen Erlasses wird eingefügt, ersetz... |  no  |
 
 
 
@@ -38,8 +38,8 @@ URI: [laws:formulas](https://ld.ech.ch/schema/0296/laws/formulas)
 
 | Eigenschaft | Wert |
 | --- | --- |
-| Wertebereich | [Formula](Formula.md) |
-| Domäne von | [Preamble](Preamble.md) |
+| Wertebereich | [ModNew](ModNew.md) |
+| Domäne von | [TextualMod](TextualMod.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -62,22 +62,22 @@ URI: [laws:formulas](https://ld.ech.ch/schema/0296/laws/formulas)
 
 <details>
 ```yaml
-name: formulas
+name: mod_new
 annotations:
   description_de:
     tag: description_de
-    value: Formeln des Vorspruchs (akn:formula).
+    value: Der neue Wortlaut (akn:new).
   xml_element:
     tag: xml_element
-    value: akn:formula
-description: Formeln des Vorspruchs (akn:formula).
+    value: akn:new
+description: Der neue Wortlaut (akn:new).
 from_schema: https://ld.ech.ch/schema/0296/laws
 exact_mappings:
-- akn:formula
+- akn:new
 rank: 1000
 domain_of:
-- Preamble
-range: Formula
+- TextualMod
+range: ModNew
 multivalued: true
 
 ```

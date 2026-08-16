@@ -5,6 +5,7 @@ paragraphs:
     - element_type: TextRun
       text: '1'
   content_ref:
+    eId: title_7__art_39__para_1__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:

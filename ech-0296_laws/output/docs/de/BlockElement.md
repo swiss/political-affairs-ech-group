@@ -3,7 +3,7 @@
 ## Klasse: BlockElement 
 
 
-_Abstrakte Basis für ein Element auf Blockebene innerhalb von Inhalt, Aufzählungsposition oder Tabellenzelle (akn:p, akn:blockList, akn:table)._
+_Abstrakte Basis für ein Element auf Blockebene: die Absätze, Aufzählungen und Tabellen des Inhalts sowie Formel und Erwägungen des Vorspruchs._
 
 
 

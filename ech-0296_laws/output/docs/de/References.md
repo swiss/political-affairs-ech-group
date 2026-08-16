@@ -18,12 +18,12 @@ _Benannte Referenz-Definitionen für das gesamte Dokument (akn:references). Defi
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
 | source | 0..1 <br/> [AnchorRef](AnchorRef.md) | Anker-Referenz auf die verantwortliche Organisation (@source), z.B. '#ch.bk'. |
+| original_ref | 0..1 <br/> [OriginalRef](OriginalRef.md) | Verweis auf die ursprüngliche Fassung (akn:original). |
+| active_refs | * <br/> [ActiveRef](ActiveRef.md) | Verweise auf die Erlasse, die dieses Dokument ändert (akn:activeRef). |
 | tlc_organizations | * <br/> [TLCOrganization](TLCOrganization.md) | Benannte Organisations-Referenzen im Dokument (akn:TLCOrganization). |
 | tlc_roles | * <br/> [TLCRole](TLCRole.md) | Benannte Rollen-Referenzen im Dokument (akn:TLCRole). |
 | tlc_references | * <br/> [TLCReference](TLCReference.md) | Generische benannte Referenzen im Dokument (akn:TLCReference). |
 | tlc_concepts | * <br/> [TLCConcept](TLCConcept.md) | Begriffe, auf die das Dokument verweist (akn:TLCConcept). |
-| original_ref | 0..1 <br/> [OriginalRef](OriginalRef.md) | Verweis auf die ursprüngliche Fassung (akn:original). |
-| active_refs | * <br/> [ActiveRef](ActiveRef.md) | Verweise auf die Erlasse, die dieses Dokument ändert (akn:activeRef). |
 
 
 

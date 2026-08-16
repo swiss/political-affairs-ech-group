@@ -29,6 +29,7 @@ URI: [laws:eId](https://ld.ech.ch/schema/0296/laws/eId)
 | [TLCOrganization](TLCOrganization.md) | Eine benannte Organisation als Referenz im Dokument (akn:TLCOrganization) |  no  |
 | [TLCRole](TLCRole.md) | Eine benannte Rolle als Referenz im Dokument (akn:TLCRole) |  no  |
 | [TLCReference](TLCReference.md) | Eine generische benannte Referenz im Dokument (akn:TLCReference) |  no  |
+| [ActBody](ActBody.md) | Der Hauptteil des Erlasses (akn:body) mit der Gesetzeshierarchie |  no  |
 | [Book](Book.md) | Buch-Ebene eines Erlasses (akn:book) |  yes  |
 | [Title](Title.md) | Titel-Ebene eines Erlasses (akn:title) |  yes  |
 | [Part](Part.md) | Teil-Ebene eines Erlasses (akn:part) |  yes  |
@@ -42,9 +43,12 @@ URI: [laws:eId](https://ld.ech.ch/schema/0296/laws/eId)
 | [Paragraph](Paragraph.md) | Ein Absatz innerhalb eines Artikels oder Unterabschnitts (akn:paragraph) |  yes  |
 | [Transitional](Transitional.md) | Eine Übergangsbestimmung im Hauptteil eines Erlasses (akn:transitional) |  yes  |
 | [Proviso](Proviso.md) | Ein Vorbehalt im Hauptteil eines Erlasses (akn:proviso) |  yes  |
+| [Content](Content.md) | Der Inhalt eines Absatzes (akn:content) |  no  |
 | [BlockList](BlockList.md) | Eine Auflistung von nummerierten oder buchstabierten Punkten (akn:blockList),... |  no  |
 | [BlockListItem](BlockListItem.md) | Ein einzelner Punkt in einer Auflistung (akn:item) |  no  |
 | [MixedText](MixedText.md) | Wiederverwendbarer Halter für gemischten Inhalt: eine geordnete Folge aus Tex... |  no  |
+| [Ref](Ref.md) | Eine Inline-Referenz (akn:ref) |  no  |
+| [AuthorialNote](AuthorialNote.md) | Eine Fussnote des Autors (akn:authorialNote) |  no  |
 | [DocNumber](DocNumber.md) | Die Dokumentnummer im Vorspann |  no  |
 | [DocTitle](DocTitle.md) | Der Dokumenttitel im Vorspann |  no  |
 | [DocketNumber](DocketNumber.md) | Die Ordnungsnummer des Erlasses, wie sie kantonale Sammlungen führen |  no  |
@@ -66,6 +70,14 @@ URI: [laws:eId](https://ld.ech.ch/schema/0296/laws/eId)
 | [Formula](Formula.md) | Eine Eingangs- oder Schlussformel des Vorspruchs (akn:formula) |  no  |
 | [Citations](Citations.md) | Die Erwägungen des Vorspruchs — worauf sich der Erlass beruft |  no  |
 | [Citation](Citation.md) | Eine einzelne Erwägung |  no  |
+| [ModSource](ModSource.md) | Die Stelle, welche die Änderung bewirkt |  no  |
+| [ModDestination](ModDestination.md) | Die Stelle, die geändert wird |  no  |
+| [ModOld](ModOld.md) | Der Text, wie er vor der Änderung lautete |  no  |
+| [ModNew](ModNew.md) | Der Text, wie er nach der Änderung lautet |  no  |
+| [TextualMod](TextualMod.md) | Eine Textänderung: der Wortlaut eines anderen Erlasses wird eingefügt, ersetz... |  no  |
+| [ForceMod](ForceMod.md) | Eine Änderung der Rechtskraft: ein Erlass oder ein Teil davon tritt in Kraft,... |  no  |
+| [TemporalGroup](TemporalGroup.md) | Ein benannter Zeitraum, auf den sich eine Änderung über @period bezieht |  no  |
+| [TimeInterval](TimeInterval.md) | Ein Intervall zwischen zwei Daten |  no  |
 
 
 
@@ -79,7 +91,7 @@ URI: [laws:eId](https://ld.ech.ch/schema/0296/laws/eId)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [EIdType](EIdType.md) |
-| Domäne von | [TLCOrganization](TLCOrganization.md), [TLCRole](TLCRole.md), [TLCReference](TLCReference.md), [Book](Book.md), [Title](Title.md), [Part](Part.md), [Chapter](Chapter.md), [Subchapter](Subchapter.md), [Section](Section.md), [Subsection](Subsection.md), [Level](Level.md), [Article](Article.md), [Subdivision](Subdivision.md), [Paragraph](Paragraph.md), [Transitional](Transitional.md), [Proviso](Proviso.md), [BlockList](BlockList.md), [BlockListItem](BlockListItem.md), [MixedText](MixedText.md), [DocNumber](DocNumber.md), [DocTitle](DocTitle.md), [DocketNumber](DocketNumber.md), [ShortTitle](ShortTitle.md), [Abbr](Abbr.md), [DocDate](DocDate.md), [DateInline](DateInline.md), [Signature](Signature.md), [Conclusions](Conclusions.md), [Note](Note.md), [TLCConcept](TLCConcept.md), [OriginalRef](OriginalRef.md), [ComponentRef](ComponentRef.md), [Def](Def.md), [NoteRef](NoteRef.md), [Role](Role.md), [Person](Person.md), [ActiveRef](ActiveRef.md), [Formula](Formula.md), [Citations](Citations.md), [Citation](Citation.md) |
+| Domäne von | [TLCOrganization](TLCOrganization.md), [TLCRole](TLCRole.md), [TLCReference](TLCReference.md), [ActBody](ActBody.md), [Book](Book.md), [Title](Title.md), [Part](Part.md), [Chapter](Chapter.md), [Subchapter](Subchapter.md), [Section](Section.md), [Subsection](Subsection.md), [Level](Level.md), [Article](Article.md), [Subdivision](Subdivision.md), [Paragraph](Paragraph.md), [Transitional](Transitional.md), [Proviso](Proviso.md), [Content](Content.md), [BlockList](BlockList.md), [BlockListItem](BlockListItem.md), [MixedText](MixedText.md), [Ref](Ref.md), [AuthorialNote](AuthorialNote.md), [DocNumber](DocNumber.md), [DocTitle](DocTitle.md), [DocketNumber](DocketNumber.md), [ShortTitle](ShortTitle.md), [Abbr](Abbr.md), [DocDate](DocDate.md), [DateInline](DateInline.md), [Signature](Signature.md), [Conclusions](Conclusions.md), [Note](Note.md), [TLCConcept](TLCConcept.md), [OriginalRef](OriginalRef.md), [ComponentRef](ComponentRef.md), [Def](Def.md), [NoteRef](NoteRef.md), [Role](Role.md), [Person](Person.md), [ActiveRef](ActiveRef.md), [Formula](Formula.md), [Citations](Citations.md), [Citation](Citation.md), [ModSource](ModSource.md), [ModDestination](ModDestination.md), [ModOld](ModOld.md), [ModNew](ModNew.md), [TextualMod](TextualMod.md), [ForceMod](ForceMod.md), [TemporalGroup](TemporalGroup.md), [TimeInterval](TimeInterval.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -139,6 +151,7 @@ domain_of:
 - TLCOrganization
 - TLCRole
 - TLCReference
+- ActBody
 - Book
 - Title
 - Part
@@ -152,9 +165,12 @@ domain_of:
 - Paragraph
 - Transitional
 - Proviso
+- Content
 - BlockList
 - BlockListItem
 - MixedText
+- Ref
+- AuthorialNote
 - DocNumber
 - DocTitle
 - DocketNumber
@@ -176,6 +192,14 @@ domain_of:
 - Formula
 - Citations
 - Citation
+- ModSource
+- ModDestination
+- ModOld
+- ModNew
+- TextualMod
+- ForceMod
+- TemporalGroup
+- TimeInterval
 range: EIdType
 
 ```

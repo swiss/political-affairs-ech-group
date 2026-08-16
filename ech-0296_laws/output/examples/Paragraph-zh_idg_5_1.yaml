@@ -5,11 +5,13 @@ paragraphs:
     - element_type: TextRun
       text: '1'
   content_ref:
+    eId: title_7__art_34__para_1__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
       - …
     - element_type: BlockList
+      style: ''
       eId: title_7__art_34__para_1__content__blocklist_1
       items:
       - …

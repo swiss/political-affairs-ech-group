@@ -19,6 +19,7 @@ _Halter für akn:FRBRformat: ein @value (typischerweise 'xml') plus das optional
 |------------------------|----------------------|------------------------------------------------------|
 | value | 0..1 <br/> [String](String.md) | Generisches Wert-Attribut (@value), in mehreren AkomaNtoso-Elementen verwendet. |
 | fedlex_generator | 0..1 <br/> [String](String.md) | Fedlex-Erweiterungsattribut fedlex:generator bei akn:FRBRformat[@value='xml']. Identifiziert das Werkzeug, das die XML-Datei erzeugt hat. Nur bei FRBRformat erlaubt (FLX-XF-002).  |
+| show_as | 0..1 <br/> [String](String.md) | Lesbare Anzeigebezeichnung einer TLC-Referenz (@showAs). |
 
 
 

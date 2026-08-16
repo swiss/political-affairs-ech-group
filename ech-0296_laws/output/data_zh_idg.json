@@ -80,12 +80,138 @@
             }
           ],
           "frbr_format": {
-            "value": "#akn"
+            "value": "#akn",
+            "show_as": "akn"
           }
         }
       },
+      "analysis_ref": {
+        "source": "#source",
+        "active_modifications": {
+          "modifications": [
+            {
+              "element_type": "ForceMod",
+              "eId": "amod_1",
+              "mod_type": "entryIntoForce",
+              "period": "#tmgr_1",
+              "mod_sources": [
+                {
+                  "href": "#title_9__art_43__para_1__content"
+                }
+              ],
+              "mod_destinations": [
+                {
+                  "href": "#ra_2"
+                }
+              ]
+            },
+            {
+              "element_type": "TextualMod",
+              "eId": "amod_2",
+              "mod_type": "insertion",
+              "period": "#tmgr_1",
+              "mod_sources": [
+                {
+                  "href": "#level_II__art_1__heading"
+                }
+              ],
+              "mod_destinations": [
+                {
+                  "href": "(aktuelle konsoldierte Fassung)#art_1__para_1",
+                  "pos": "before"
+                }
+              ],
+              "mod_new": [
+                {
+                  "href": "#level_II__art_1__heading__mod_1__qstr_1"
+                }
+              ]
+            },
+            {
+              "element_type": "TextualMod",
+              "eId": "amod_3",
+              "mod_type": "substitution",
+              "period": "#tmgr_2",
+              "mod_sources": [
+                {
+                  "href": "#level_III__art_1__para_1"
+                }
+              ],
+              "mod_destinations": [
+                {
+                  "href": "(aktueller konsoldierte Fassung)#art_1__para_1__content"
+                }
+              ],
+              "mod_old": [
+                {
+                  "href": "/akn/CH-ZH/act/2009-12-09/65-10/ger@2010-03-01/main#art_1__para_1__content"
+                }
+              ],
+              "mod_new": [
+                {
+                  "href": "#level_III__art_1__para_1__content__mod_1__qstr_1"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "temporal_data_ref": {
+        "source": "#source",
+        "temporal_groups": [
+          {
+            "eId": "tmgr_1",
+            "time_intervals": [
+              {
+                "refers_to": "#inForce",
+                "start_ref": "#date_1",
+                "end_ref": ""
+              }
+            ]
+          },
+          {
+            "eId": "tmgr_2",
+            "time_intervals": [
+              {
+                "refers_to": "#inForce",
+                "start_ref": "#date_2",
+                "end_ref": ""
+              }
+            ]
+          },
+          {
+            "eId": "tmgr_3",
+            "time_intervals": [
+              {
+                "refers_to": "#inForce",
+                "start_ref": "#date_3",
+                "end_ref": ""
+              }
+            ]
+          }
+        ]
+      },
       "references_ref": {
         "source": "#source",
+        "original_ref": {
+          "eId": "ro",
+          "href": "/akn/CH-ZH/act/EXPRESSION",
+          "show_as": "Gesetz über .. vom ..."
+        },
+        "active_refs": [
+          {
+            "element_type": "ActiveRef",
+            "eId": "ra_1",
+            "href": "/akn/CH-ZH/act/WORK",
+            "show_as": "Gesetz über .. vom ..."
+          },
+          {
+            "element_type": "ActiveRef",
+            "eId": "ra_2",
+            "href": "/akn/CH-ZH/act/2022-35/cons/(aktuelle konsolidierte Fassung)",
+            "show_as": "Gesetz über .. vom ..."
+          }
+        ],
         "tlc_organizations": [
           {
             "eId": "kantonsrat",
@@ -147,25 +273,6 @@
             "eId": "inForce",
             "href": "",
             "show_as": ""
-          }
-        ],
-        "original_ref": {
-          "eId": "ro",
-          "href": "/akn/CH-ZH/act/EXPRESSION",
-          "show_as": "Gesetz über .. vom ..."
-        },
-        "active_refs": [
-          {
-            "element_type": "ActiveRef",
-            "eId": "ra_1",
-            "href": "/akn/CH-ZH/act/WORK",
-            "show_as": "Gesetz über .. vom ..."
-          },
-          {
-            "element_type": "ActiveRef",
-            "eId": "ra_2",
-            "href": "/akn/CH-ZH/act/2022-35/cons/(aktuelle konsolidierte Fassung)",
-            "show_as": "Gesetz über .. vom ..."
           }
         ]
       },
@@ -358,8 +465,9 @@
       ]
     },
     "preamble_ref": {
-      "formulas": [
+      "content_blocks": [
         {
+          "element_type": "Formula",
           "eId": "formula_1",
           "name_attr2": "openFormula",
           "content_blocks": [
@@ -380,28 +488,16 @@
           ]
         },
         {
-          "eId": "formula_2",
-          "name_attr2": "Verb",
-          "content_blocks": [
+          "element_type": "BlockParagraph",
+          "inline_content": [
             {
-              "element_type": "BlockParagraph",
-              "inline_content": [
-                {
-                  "element_type": "I",
-                  "inline_content": [
-                    {
-                      "element_type": "TextRun",
-                      "text": "beschliesst:"
-                    }
-                  ]
-                }
-              ]
+              "element_type": "TextRun",
+              "text": "nach Einsichtnahme in die Anträge"
             }
           ]
-        }
-      ],
-      "citations_ref": [
+        },
         {
+          "element_type": "Citations",
           "citation_list": [
             {
               "eId": "cit_1",
@@ -426,6 +522,16 @@
           ]
         },
         {
+          "element_type": "BlockParagraph",
+          "inline_content": [
+            {
+              "element_type": "TextRun",
+              "text": "und"
+            }
+          ]
+        },
+        {
+          "element_type": "Citations",
           "citation_list": [
             {
               "eId": "cit_2",
@@ -443,26 +549,6 @@
               ]
             }
           ]
-        }
-      ],
-      "content_blocks": [
-        {
-          "element_type": "BlockParagraph",
-          "inline_content": [
-            {
-              "element_type": "TextRun",
-              "text": "nach Einsichtnahme in die Anträge"
-            }
-          ]
-        },
-        {
-          "element_type": "BlockParagraph",
-          "inline_content": [
-            {
-              "element_type": "TextRun",
-              "text": "und"
-            }
-          ]
         },
         {
           "element_type": "BlockParagraph",
@@ -472,10 +558,33 @@
               "text": ","
             }
           ]
+        },
+        {
+          "element_type": "Formula",
+          "eId": "formula_2",
+          "name_attr2": "Verb",
+          "content_blocks": [
+            {
+              "element_type": "BlockParagraph",
+              "inline_content": [
+                {
+                  "element_type": "I",
+                  "inline_content": [
+                    {
+                      "element_type": "TextRun",
+                      "text": "beschliesst:"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ]
     },
     "body": {
+      "period": "tmgr_1",
+      "status": "edited",
       "titles": [
         {
           "eId": "title_1",
@@ -551,6 +660,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_1__art_1__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -563,6 +673,7 @@
                       },
                       {
                         "element_type": "BlockList",
+                        "style": "Buchstaben",
                         "eId": "title_1__art_1__para_2__content__blocklist",
                         "items": [
                           {
@@ -585,6 +696,8 @@
                                   },
                                   {
                                     "element_type": "AuthorialNote",
+                                    "marker": "a",
+                                    "eId": "authNote_a",
                                     "content_blocks": [
                                       {
                                         "element_type": "BlockParagraph",
@@ -674,6 +787,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_1__art_2__para_1__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -698,6 +812,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "level_I__art_2__para_2__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -743,6 +858,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_1__art_3__para_1__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -755,6 +871,7 @@
                       },
                       {
                         "element_type": "BlockList",
+                        "style": "",
                         "eId": "title_1__art_3__para_1__content__blocklist_1",
                         "list_introduction": {
                           "inline_content": [
@@ -844,6 +961,7 @@
                       },
                       {
                         "element_type": "BlockList",
+                        "style": "",
                         "eId": "title_1__art_3__para_1__content__blocklist_2",
                         "list_introduction": {
                           "inline_content": [
@@ -889,6 +1007,7 @@
                       },
                       {
                         "element_type": "BlockList",
+                        "style": "",
                         "eId": "title_1_art_3__para_1__content__blocklist_3",
                         "list_introduction": {
                           "inline_content": [
@@ -934,6 +1053,7 @@
                       },
                       {
                         "element_type": "BlockList",
+                        "style": "Grossbuchstaben",
                         "eId": "title_1__art_3__para_1__content__blocklist_4",
                         "list_introduction": {
                           "inline_content": [
@@ -1095,6 +1215,7 @@
                       },
                       {
                         "element_type": "BlockList",
+                        "style": "",
                         "eId": "ltitle_1__art_3__para_1__content__blocklist_5",
                         "list_introduction": {
                           "inline_content": [
@@ -1140,6 +1261,7 @@
                       },
                       {
                         "element_type": "BlockList",
+                        "style": "",
                         "eId": "title_1__art_3__para_1__content__blocklist_6",
                         "list_introduction": {
                           "inline_content": [
@@ -1253,6 +1375,7 @@
                     {
                       "eId": "title_2__chp_A__art_4__para_1",
                       "content_ref": {
+                        "eId": "title_2__chp_A__art_4__para_1__content",
                         "content_blocks": [
                           {
                             "element_type": "BlockParagraph",
@@ -1299,6 +1422,7 @@
                         ]
                       },
                       "content_ref": {
+                        "eId": "title_2__chp_A__art_5__para_1__content",
                         "content_blocks": [
                           {
                             "element_type": "BlockParagraph",
@@ -1323,6 +1447,7 @@
                         ]
                       },
                       "content_ref": {
+                        "eId": "title_2__chp_A__art_5__para_2__content",
                         "content_blocks": [
                           {
                             "element_type": "BlockParagraph",
@@ -1347,6 +1472,7 @@
                         ]
                       },
                       "content_ref": {
+                        "eId": "title_2__chp_A__art_5__para_3__content",
                         "content_blocks": [
                           {
                             "element_type": "BlockParagraph",
@@ -1371,6 +1497,7 @@
                         ]
                       },
                       "content_ref": {
+                        "eId": "title_2__chp_A__art_5__para_4__content",
                         "content_blocks": [
                           {
                             "element_type": "BlockParagraph",
@@ -1417,6 +1544,7 @@
                         ]
                       },
                       "content_ref": {
+                        "eId": "title_2__chp_A__art_6__para_1__content",
                         "content_blocks": [
                           {
                             "element_type": "BlockParagraph",
@@ -1441,6 +1569,7 @@
                         ]
                       },
                       "content_ref": {
+                        "eId": "title_2__chp_A__art_6__para_2__content",
                         "content_blocks": [
                           {
                             "element_type": "BlockParagraph",
@@ -1487,6 +1616,7 @@
                         ]
                       },
                       "content_ref": {
+                        "eId": "title_2__chp_A__art_7__para_1__content",
                         "content_blocks": [
                           {
                             "element_type": "BlockParagraph",
@@ -1511,6 +1641,7 @@
                         ]
                       },
                       "content_ref": {
+                        "eId": "title_2__chp_A__art_7__para_2__content",
                         "content_blocks": [
                           {
                             "element_type": "BlockParagraph",
@@ -1651,6 +1782,7 @@
                         ]
                       },
                       "content_ref": {
+                        "eId": "title_2__chp_A__art_7__para_3__content",
                         "content_blocks": [
                           {
                             "element_type": "BlockParagraph",
@@ -1719,6 +1851,7 @@
                         ]
                       },
                       "content_ref": {
+                        "eId": "title_22__chp_B__art_8__para_1__content",
                         "content_blocks": [
                           {
                             "element_type": "BlockParagraph",
@@ -1743,6 +1876,7 @@
                         ]
                       },
                       "content_ref": {
+                        "eId": "title_2__chp_B__art_8__para_2__content",
                         "content_blocks": [
                           {
                             "element_type": "BlockParagraph",
@@ -1788,6 +1922,7 @@
                         ]
                       },
                       "content_ref": {
+                        "eId": "title_2__chp_B__art_9__para_1__content",
                         "content_blocks": [
                           {
                             "element_type": "BlockParagraph",
@@ -1812,6 +1947,7 @@
                         ]
                       },
                       "content_ref": {
+                        "eId": "title_2__chp_B__art_9__para_2__content",
                         "content_blocks": [
                           {
                             "element_type": "BlockParagraph",
@@ -1849,6 +1985,7 @@
                     {
                       "eId": "title_2__chp_B__art_10__para_1",
                       "content_ref": {
+                        "eId": "title_2__chp_B__art_10__para_1__content",
                         "content_blocks": [
                           {
                             "element_type": "BlockParagraph",
@@ -1894,6 +2031,7 @@
                         ]
                       },
                       "content_ref": {
+                        "eId": "title_2__chp_B__art_11__para_1__content",
                         "content_blocks": [
                           {
                             "element_type": "BlockParagraph",
@@ -1918,6 +2056,7 @@
                         ]
                       },
                       "content_ref": {
+                        "eId": "title_2__chp_B__art_11__para_2__content",
                         "content_blocks": [
                           {
                             "element_type": "BlockParagraph",
@@ -1963,6 +2102,7 @@
                         ]
                       },
                       "content_ref": {
+                        "eId": "title_2__chp_B__art_12__para_1__content",
                         "content_blocks": [
                           {
                             "element_type": "BlockParagraph",
@@ -1987,6 +2127,7 @@
                         ]
                       },
                       "content_ref": {
+                        "eId": "title_2__chp_B__art_12__para_2__content",
                         "content_blocks": [
                           {
                             "element_type": "BlockParagraph",
@@ -2032,6 +2173,7 @@
                         ]
                       },
                       "content_ref": {
+                        "eId": "title_2__chp_B__art_13__para_1__content",
                         "content_blocks": [
                           {
                             "element_type": "BlockParagraph",
@@ -2056,6 +2198,7 @@
                         ]
                       },
                       "content_ref": {
+                        "eId": "title_2__chp_B__art_13__para_2__content",
                         "content_blocks": [
                           {
                             "element_type": "BlockParagraph",
@@ -2126,6 +2269,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_3__art_14__para_1__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -2150,6 +2294,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_3__art_14__para_2__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -2174,6 +2319,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_3__art_14__para_3__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -2198,6 +2344,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_3__art_14__para_4__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -2244,6 +2391,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_3__art_15__para_1__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -2268,6 +2416,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_3__art_15__para_2__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -2323,6 +2472,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_3__art_16__para_1__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -2335,6 +2485,7 @@
                       },
                       {
                         "element_type": "BlockList",
+                        "style": "",
                         "eId": "title_3__art_16__para_1__content__blocklist_1",
                         "items": [
                           {
@@ -2419,6 +2570,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_3__art_16__para_2__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -2465,6 +2617,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "ttitle_3__art_17__para_1__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -2477,6 +2630,7 @@
                       },
                       {
                         "element_type": "BlockList",
+                        "style": "",
                         "eId": "title_3__art_17__para_1__content__blocklist_1",
                         "items": [
                           {
@@ -2561,6 +2715,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_3__art_17__para_2__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -2607,6 +2762,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_3__art_18__para_1__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -2631,6 +2787,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_3__art_18__para_2__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -2677,6 +2834,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_3__art_19__para_1__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -2689,6 +2847,7 @@
                       },
                       {
                         "element_type": "BlockList",
+                        "style": "",
                         "eId": "title_3__art_19__para_1__content__blocklist_1",
                         "items": [
                           {
@@ -2817,6 +2976,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_4__art_20__para_1__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -2841,6 +3001,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_4__art_20__para_2__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -2865,6 +3026,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_4__art_20__para_3__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -2911,6 +3073,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_4__art_21__para_1__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -2923,6 +3086,7 @@
                       },
                       {
                         "element_type": "BlockList",
+                        "style": "",
                         "eId": "title_4__art_21__para_1__content__blocklist_1",
                         "items": [
                           {
@@ -3051,6 +3215,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_4__art_22__para_1__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -3075,6 +3240,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_4__art_22__para_2__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -3143,6 +3309,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "ttitle_5__art_23__para_1__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -3167,6 +3334,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_5__art_23__para_2__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -3179,6 +3347,7 @@
                       },
                       {
                         "element_type": "BlockList",
+                        "style": "",
                         "eId": "title_5__art_23__para_2__content__blocklist_1",
                         "items": [
                           {
@@ -3307,6 +3476,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_5__art_23__para_3__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -3375,6 +3545,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_6__art_24__para_1__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -3399,6 +3570,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_6__art_24__para_2__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -3445,6 +3617,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_6__art_25__para_1__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -3469,6 +3642,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_6__art_25__para_2__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -3515,6 +3689,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_6__art_26__para_1__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -3539,6 +3714,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_6__art_26__para_2__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -3585,6 +3761,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_6__art_27__para_1__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -3609,6 +3786,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_6__art_27__para_2__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -3655,6 +3833,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_6__art_28__para_1__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -3679,6 +3858,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_6__art_28__para_2__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -3725,6 +3905,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_6__art_29__para_1__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -3749,6 +3930,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_6__art_29__para_2__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -3761,6 +3943,7 @@
                       },
                       {
                         "element_type": "BlockList",
+                        "style": "",
                         "eId": "title_6__art_29__para_2__content__blocklist_1",
                         "items": [
                           {
@@ -3845,6 +4028,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_6__art_29__para_3__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -3869,6 +4053,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_6__art_29__para_4__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -3937,6 +4122,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "ttitle_7__art_30__para_1__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -3961,6 +4147,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_7__art_30__para_2__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -4007,6 +4194,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_7__art_31__para_1__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -4031,6 +4219,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_7__art_31__para_2__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -4055,6 +4244,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_7__art_31__para_3__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -4101,6 +4291,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_7__art_32__para_1__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -4125,6 +4316,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_7__art_32__para_2__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -4149,6 +4341,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_7__art_32__para_3__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -4195,6 +4388,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_7__art_33__para_1__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -4219,6 +4413,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_7__art_33__para_2__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -4265,6 +4460,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_7__art_34__para_1__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -4277,6 +4473,7 @@
                       },
                       {
                         "element_type": "BlockList",
+                        "style": "",
                         "eId": "title_7__art_34__para_1__content__blocklist_1",
                         "items": [
                           {
@@ -4471,6 +4668,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_7__art_35__para_1__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -4495,6 +4693,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_7__art_35__para_2__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -4541,6 +4740,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_7__art_36__para_1__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -4565,6 +4765,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_7__art_36__para_2__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -4589,6 +4790,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_7__art_36__para_3__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -4644,6 +4846,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_7__art_37__para_1__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -4682,6 +4885,7 @@
                 {
                   "eId": "title_7__art_38__para_1",
                   "content_ref": {
+                    "eId": "title_7__art_38__para_1__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -4728,6 +4932,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_7__art_39__para_1__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -4796,6 +5001,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_8__art_40__para_1__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -4820,6 +5026,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_8__art_40__para_2__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -4888,6 +5095,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_9__art_41__para_1__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -4984,6 +5192,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_9__art_42__para_1__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -5076,6 +5285,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_9__art_42__para_2__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -5181,6 +5391,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_9__art_43__para_1__content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -5227,6 +5438,7 @@
                     ]
                   },
                   "content_ref": {
+                    "eId": "title_9__art_44__para___content",
                     "content_blocks": [
                       {
                         "element_type": "BlockParagraph",
@@ -5389,6 +5601,7 @@
                     },
                     {
                       "element_type": "Ref",
+                      "eId": "ç",
                       "href": "https://www.amtsblatt.zh.ch",
                       "inline_content": [
                         {
@@ -5603,7 +5816,8 @@
                     }
                   ],
                   "frbr_format": {
-                    "value": "#akn"
+                    "value": "#akn",
+                    "show_as": "akn"
                   }
                 }
               }

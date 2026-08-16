@@ -479,6 +479,40 @@ act_ref:
           as_role: '#publisher'
         frbr_format:
           value: '#akn'
+          show_as: akn
+    analysis_ref:
+      source: '#source'
+      active_modifications:
+        modifications:
+        - element_type: ForceMod
+          eId: amod_1
+          mod_type: entryIntoForce
+          period: '#tmgr_1'
+          mod_sources:
+          - …
+          mod_destinations:
+          - …
+        - element_type: TextualMod
+          eId: amod_2
+          mod_type: insertion
+          period: '#tmgr_1'
+          mod_sources:
+          - …
+          mod_destinations:
+          - …
+          mod_new:
+          - …
+        - … 1 weitere
+    temporal_data_ref:
+      source: '#source'
+      temporal_groups:
+      - eId: tmgr_1
+        time_intervals:
+        - …
+      - eId: tmgr_2
+        time_intervals:
+        - …
+      - … 1 weitere
     references_ref:
       source: '#source'
       original_ref:
@@ -545,40 +579,21 @@ act_ref:
       - … 3 weitere
   preamble_ref:
     content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - element_type: TextRun
-        text: nach Einsichtnahme in die Anträge
-    - element_type: BlockParagraph
-      inline_content:
-      - element_type: TextRun
-        text: und
-    - … 1 weitere
-    formulas:
-    - eId: formula_1
+    - element_type: Formula
+      eId: formula_1
       name_attr2: openFormula
       content_blocks:
       - element_type: BlockParagraph
         inline_content:
         - …
-    - eId: formula_2
-      name_attr2: Verb
-      content_blocks:
-      - element_type: BlockParagraph
-        inline_content:
-        - …
-    citations_ref:
-    - citation_list:
-      - eId: cit_1
-        refers_to: ''
-        content_blocks:
-        - …
-    - citation_list:
-      - eId: cit_2
-        refers_to: ''
-        content_blocks:
-        - …
+    - element_type: BlockParagraph
+      inline_content:
+      - element_type: TextRun
+        text: nach Einsichtnahme in die Anträge
+    - … 5 weitere
   body:
+    period: tmgr_1
+    status: edited
     titles:
     - eId: title_1
       num:

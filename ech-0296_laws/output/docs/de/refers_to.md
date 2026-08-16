@@ -29,6 +29,7 @@ URI: [laws:refers_to](https://ld.ech.ch/schema/0296/laws/refers_to)
 | [Role](Role.md) | Eine Rolle, die eine Person innehat, mit Verweis auf ihre Deklaration |  no  |
 | [Person](Person.md) | Eine Person, mit Verweis auf ihre Deklaration und die innegehabte Rolle |  no  |
 | [Citation](Citation.md) | Eine einzelne Erwägung |  no  |
+| [TimeInterval](TimeInterval.md) | Ein Intervall zwischen zwei Daten |  no  |
 
 
 
@@ -42,7 +43,7 @@ URI: [laws:refers_to](https://ld.ech.ch/schema/0296/laws/refers_to)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [String](String.md) |
-| Domäne von | [DateInline](DateInline.md), [Role](Role.md), [Person](Person.md), [Citation](Citation.md) |
+| Domäne von | [DateInline](DateInline.md), [Role](Role.md), [Person](Person.md), [Citation](Citation.md), [TimeInterval](TimeInterval.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -83,6 +84,7 @@ domain_of:
 - Role
 - Person
 - Citation
+- TimeInterval
 range: string
 
 ```

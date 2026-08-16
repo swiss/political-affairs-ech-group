@@ -18,6 +18,7 @@ _Einfacher Halter mit einem einzelnen @value-Attribut (AKN valueType). Wiederver
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
 | value | 0..1 <br/> [String](String.md) | Generisches Wert-Attribut (@value), in mehreren AkomaNtoso-Elementen verwendet. |
+| show_as | 0..1 <br/> [String](String.md) | Lesbare Anzeigebezeichnung einer TLC-Referenz (@showAs). |
 
 
 

@@ -17,6 +17,7 @@ _Der Inhalt eines Absatzes (akn:content). Enthält Block-Elemente: akn:p (Fliess
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
+| eId | 0..1 <br/> [EIdType](EIdType.md) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
 | content_blocks | * <br/> [BlockElement](BlockElement.md) | Blockinhalt in Lesereihenfolge: Absätze, Aufzählungen und Tabellen, wie sie im Dokument aufeinanderfolgen.  |
 
 
@@ -49,6 +50,7 @@ _Der Inhalt eines Absatzes (akn:content). Enthält Block-Elemente: akn:p (Fliess
 
 ```yaml
 content_ref:
+  eId: title_9__art_42__para_2__content
   content_blocks:
   - element_type: BlockParagraph
     inline_content:
@@ -78,6 +80,7 @@ content_ref:
 
 ```yaml
 content_ref:
+  eId: title_6__art_29__para_4__content
   content_blocks:
   - element_type: BlockParagraph
     inline_content:
@@ -115,6 +118,7 @@ content_ref:
 
 ```yaml
 content_ref:
+  eId: title_9__art_44__para___content
   content_blocks:
   - element_type: BlockParagraph
     inline_content:
@@ -140,6 +144,7 @@ content_ref:
 
 ```yaml
 content_ref:
+  eId: title_7__art_36__para_3__content
   content_blocks:
   - element_type: BlockParagraph
     inline_content:

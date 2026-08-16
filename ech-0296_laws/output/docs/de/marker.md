@@ -25,6 +25,7 @@ URI: [laws:marker](https://ld.ech.ch/schema/0296/laws/marker)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
+| [AuthorialNote](AuthorialNote.md) | Eine Fussnote des Autors (akn:authorialNote) |  no  |
 | [NoteRef](NoteRef.md) | Verweis auf eine in den Metadaten gehaltene Anmerkung |  no  |
 
 
@@ -39,7 +40,7 @@ URI: [laws:marker](https://ld.ech.ch/schema/0296/laws/marker)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [String](String.md) |
-| Domäne von | [NoteRef](NoteRef.md) |
+| Domäne von | [AuthorialNote](AuthorialNote.md), [NoteRef](NoteRef.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -89,6 +90,7 @@ examples:
 from_schema: https://ld.ech.ch/schema/0296/laws
 rank: 1000
 domain_of:
+- AuthorialNote
 - NoteRef
 range: string
 

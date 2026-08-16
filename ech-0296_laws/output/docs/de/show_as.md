@@ -25,6 +25,10 @@ URI: [laws:show_as](https://ld.ech.ch/schema/0296/laws/show_as)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
+| [ValueType](ValueType.md) | Einfacher Halter mit einem einzelnen @value-Attribut (AKN valueType) |  no  |
+| [UriValueType](UriValueType.md) | Halter mit einem @value-Attribut vom Typ ELI-URI (AKN valueType) |  no  |
+| [LanguageType](LanguageType.md) | Halter mit einem einzelnen @language-Attribut (akn:FRBRlanguage) |  no  |
+| [FormatType](FormatType.md) | Halter für akn:FRBRformat: ein @value (typischerweise 'xml') plus das optiona... |  no  |
 | [TLCOrganization](TLCOrganization.md) | Eine benannte Organisation als Referenz im Dokument (akn:TLCOrganization) |  no  |
 | [TLCRole](TLCRole.md) | Eine benannte Rolle als Referenz im Dokument (akn:TLCRole) |  no  |
 | [TLCReference](TLCReference.md) | Eine generische benannte Referenz im Dokument (akn:TLCReference) |  no  |
@@ -45,7 +49,7 @@ URI: [laws:show_as](https://ld.ech.ch/schema/0296/laws/show_as)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [String](String.md) |
-| Domäne von | [TLCOrganization](TLCOrganization.md), [TLCRole](TLCRole.md), [TLCReference](TLCReference.md), [TLCConcept](TLCConcept.md), [OriginalRef](OriginalRef.md), [ComponentRef](ComponentRef.md), [ActiveRef](ActiveRef.md) |
+| Domäne von | [ValueType](ValueType.md), [UriValueType](UriValueType.md), [LanguageType](LanguageType.md), [FormatType](FormatType.md), [TLCOrganization](TLCOrganization.md), [TLCRole](TLCRole.md), [TLCReference](TLCReference.md), [TLCConcept](TLCConcept.md), [OriginalRef](OriginalRef.md), [ComponentRef](ComponentRef.md), [ActiveRef](ActiveRef.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -82,6 +86,10 @@ description: Lesbare Anzeigebezeichnung einer TLC-Referenz (@showAs).
 from_schema: https://ld.ech.ch/schema/0296/laws
 rank: 1000
 domain_of:
+- ValueType
+- UriValueType
+- LanguageType
+- FormatType
 - TLCOrganization
 - TLCRole
 - TLCReference

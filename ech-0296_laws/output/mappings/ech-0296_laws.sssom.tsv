@@ -94,6 +94,19 @@ laws:ActiveRef	skos:exactMatch	akn:activeRef	semapv:ManualMappingCuration	Active
 laws:Formula	skos:exactMatch	akn:formula	semapv:ManualMappingCuration	Formula	formula	owl class
 laws:Citations	skos:exactMatch	akn:citations	semapv:ManualMappingCuration	Citations	citations	owl class
 laws:Citation	skos:exactMatch	akn:citation	semapv:ManualMappingCuration	Citation	citation	owl class
+laws:ModSource	skos:exactMatch	akn:source	semapv:ManualMappingCuration	ModSource	source	owl class
+laws:ModDestination	skos:exactMatch	akn:destination	semapv:ManualMappingCuration	ModDestination	destination	owl class
+laws:ModOld	skos:exactMatch	akn:old	semapv:ManualMappingCuration	ModOld	old	owl class
+laws:ModNew	skos:exactMatch	akn:new	semapv:ManualMappingCuration	ModNew	new	owl class
+laws:Modification	skos:exactMatch	akn:mod	semapv:ManualMappingCuration	Modification	mod	owl class
+laws:TextualMod	skos:exactMatch	akn:textualMod	semapv:ManualMappingCuration	TextualMod	textualMod	owl class
+laws:ForceMod	skos:exactMatch	akn:forceMod	semapv:ManualMappingCuration	ForceMod	forceMod	owl class
+laws:ActiveModifications	skos:exactMatch	akn:activeModifications	semapv:ManualMappingCuration	ActiveModifications	activeModifications	owl class
+laws:PassiveModifications	skos:exactMatch	akn:passiveModifications	semapv:ManualMappingCuration	PassiveModifications	passiveModifications	owl class
+laws:Analysis	skos:exactMatch	akn:analysis	semapv:ManualMappingCuration	Analysis	analysis	owl class
+laws:TemporalData	skos:exactMatch	akn:temporalData	semapv:ManualMappingCuration	TemporalData	temporalData	owl class
+laws:TemporalGroup	skos:exactMatch	akn:temporalGroup	semapv:ManualMappingCuration	TemporalGroup	temporalGroup	owl class
+laws:TimeInterval	skos:exactMatch	akn:timeInterval	semapv:ManualMappingCuration	TimeInterval	timeInterval	owl class
 laws:preface_paragraphs	skos:exactMatch	akn:p	semapv:ManualMappingCuration	preface_paragraphs	p	owl object property
 laws:frbr_this	skos:exactMatch	akn:FRBRthis	semapv:ManualMappingCuration	frbr_this	FRBRthis	owl object property
 laws:frbr_uri	skos:exactMatch	akn:FRBRuri	semapv:ManualMappingCuration	frbr_uri	FRBRuri	owl object property
@@ -127,10 +140,18 @@ laws:frbr_subtype	skos:exactMatch	akn:FRBRsubtype	semapv:ManualMappingCuration	f
 laws:tlc_concepts	skos:exactMatch	akn:TLCConcept	semapv:ManualMappingCuration	tlc_concepts	TLCConcept	owl object property
 laws:original_ref	skos:exactMatch	akn:original	semapv:ManualMappingCuration	original_ref	original	owl object property
 laws:component_refs	skos:exactMatch	akn:componentRef	semapv:ManualMappingCuration	component_refs	componentRef	owl object property
-laws:formulas	skos:exactMatch	akn:formula	semapv:ManualMappingCuration	formulas	formula	owl object property
-laws:citations_ref	skos:exactMatch	akn:citations	semapv:ManualMappingCuration	citations_ref	citations	owl object property
 laws:citation_list	skos:exactMatch	akn:citation	semapv:ManualMappingCuration	citation_list	citation	owl object property
 laws:active_refs	skos:exactMatch	akn:activeRef	semapv:ManualMappingCuration	active_refs	activeRef	owl object property
+laws:mod_sources	skos:exactMatch	akn:source	semapv:ManualMappingCuration	mod_sources	source	owl object property
+laws:mod_destinations	skos:exactMatch	akn:destination	semapv:ManualMappingCuration	mod_destinations	destination	owl object property
+laws:mod_old	skos:exactMatch	akn:old	semapv:ManualMappingCuration	mod_old	old	owl object property
+laws:mod_new	skos:exactMatch	akn:new	semapv:ManualMappingCuration	mod_new	new	owl object property
+laws:active_modifications	skos:exactMatch	akn:activeModifications	semapv:ManualMappingCuration	active_modifications	activeModifications	owl object property
+laws:passive_modifications	skos:exactMatch	akn:passiveModifications	semapv:ManualMappingCuration	passive_modifications	passiveModifications	owl object property
+laws:temporal_groups	skos:exactMatch	akn:temporalGroup	semapv:ManualMappingCuration	temporal_groups	temporalGroup	owl object property
+laws:time_intervals	skos:exactMatch	akn:timeInterval	semapv:ManualMappingCuration	time_intervals	timeInterval	owl object property
+laws:analysis_ref	skos:exactMatch	akn:analysis	semapv:ManualMappingCuration	analysis_ref	analysis	owl object property
+laws:temporal_data_ref	skos:exactMatch	akn:temporalData	semapv:ManualMappingCuration	temporal_data_ref	temporalData	owl object property
 jolux:dateDocument	skos:exactMatch	eli:date_document	semapv:ManualMappingCuration	jolux:dateDocument	date_document	skos concept
 jolux:dateEntryInForce	skos:exactMatch	eli:first_date_entry_in_force	semapv:ManualMappingCuration	jolux:dateEntryInForce	first_date_entry_in_force	skos concept
 jolux:dateApplicability	skos:exactMatch	eli:date_applicability	semapv:ManualMappingCuration	jolux:dateApplicability	date_applicability	skos concept

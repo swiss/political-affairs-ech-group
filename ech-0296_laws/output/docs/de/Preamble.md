@@ -17,8 +17,6 @@ _Die Präambel des Erlasses (akn:preamble) mit einleitenden Fliesstext-Absätzen
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
-| formulas | * <br/> [Formula](Formula.md) | Formeln des Vorspruchs (akn:formula). |
-| citations_ref | * <br/> [Citations](Citations.md) | Die Erwägungen des Vorspruchs (akn:citations). |
 | content_blocks | * <br/> [BlockElement](BlockElement.md) | Blockinhalt in Lesereihenfolge: Absätze, Aufzählungen und Tabellen, wie sie im Dokument aufeinanderfolgen.  |
 
 

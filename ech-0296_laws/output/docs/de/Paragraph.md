@@ -59,11 +59,13 @@ paragraphs:
     - element_type: TextRun
       text: '1'
   content_ref:
+    eId: title_7__art_34__para_1__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
       - …
     - element_type: BlockList
+      style: ''
       eId: title_7__art_34__para_1__content__blocklist_1
       items:
       - …
@@ -81,6 +83,7 @@ paragraphs:
     - element_type: TextRun
       text: '1'
   content_ref:
+    eId: title_9__art_44__para___content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -101,6 +104,7 @@ paragraphs:
     - element_type: TextRun
       text: '1'
   content_ref:
+    eId: title_9__art_43__para_1__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -117,6 +121,7 @@ paragraphs:
     - element_type: TextRun
       text: '1'
   content_ref:
+    eId: title_7__art_36__para_1__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -161,6 +166,7 @@ paragraphs:
     - element_type: TextRun
       text: '1'
   content_ref:
+    eId: title_7__art_39__para_1__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -177,6 +183,7 @@ paragraphs:
     - element_type: TextRun
       text: '2'
   content_ref:
+    eId: title_7__art_33__para_2__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -193,6 +200,7 @@ paragraphs:
     - element_type: TextRun
       text: '3'
   content_ref:
+    eId: title_7__art_36__para_3__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -211,6 +219,7 @@ paragraphs:
     - element_type: TextRun
       text: '2'
   content_ref:
+    eId: title_7__art_35__para_2__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -227,6 +236,7 @@ paragraphs:
     - element_type: TextRun
       text: '2'
   content_ref:
+    eId: title_9__art_42__para_2__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -260,6 +270,7 @@ paragraphs:
     - element_type: TextRun
       text: '3'
   content_ref:
+    eId: title_6__art_29__para_3__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -292,6 +303,7 @@ paragraphs:
     - element_type: TextRun
       text: '4'
   content_ref:
+    eId: title_3__art_14__para_4__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -336,6 +348,7 @@ paragraphs:
     - element_type: TextRun
       text: '3'
   content_ref:
+    eId: title_7__art_31__para_3__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -384,6 +397,7 @@ paragraphs:
     - element_type: TextRun
       text: '4'
   content_ref:
+    eId: title_6__art_29__para_4__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -400,6 +414,7 @@ paragraphs:
     - element_type: TextRun
       text: '1'
   content_ref:
+    eId: title_9__art_41__para_1__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -421,6 +436,7 @@ paragraphs:
     - element_type: TextRun
       text: '1'
   content_ref:
+    eId: title_7__art_35__para_1__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -437,6 +453,7 @@ paragraphs:
     - element_type: TextRun
       text: '2'
   content_ref:
+    eId: title_7__art_36__para_2__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -462,6 +479,7 @@ paragraphs:
 - eId: title_7__art_38__para_1
   num: {}
   content_ref:
+    eId: title_7__art_38__para_1__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -478,6 +496,7 @@ paragraphs:
     - element_type: TextRun
       text: '1'
   content_ref:
+    eId: title_9__art_42__para_1__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -499,6 +518,7 @@ paragraphs:
     - element_type: TextRun
       text: '1'
   content_ref:
+    eId: title_7__art_37__para_1__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -547,6 +567,7 @@ paragraphs:
     - element_type: TextRun
       text: '2'
   content_ref:
+    eId: title_8__art_40__para_2__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -591,6 +612,7 @@ paragraphs:
     - element_type: TextRun
       text: '3'
   content_ref:
+    eId: title_7__art_32__para_3__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -607,6 +629,7 @@ paragraphs:
     - element_type: TextRun
       text: '3'
   content_ref:
+    eId: title_5__art_23__para_3__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -623,6 +646,7 @@ paragraphs:
     - element_type: TextRun
       text: '2'
   content_ref:
+    eId: title_6__art_28__para_2__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -639,6 +663,7 @@ paragraphs:
     - element_type: TextRun
       text: '2'
   content_ref:
+    eId: title_7__art_32__para_2__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:

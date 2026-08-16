@@ -3,10 +3,10 @@ search:
   boost: 5.0
 ---
 
-# Slot: citations_ref 
+# Slot: mod_old 
 
 
-_Die Erwägungen des Vorspruchs (akn:citations)._
+_Der bisherige Wortlaut (akn:old)._
 
 
 
@@ -14,7 +14,7 @@ _Die Erwägungen des Vorspruchs (akn:citations)._
 
 
 
-URI: [laws:citations_ref](https://ld.ech.ch/schema/0296/laws/citations_ref)
+URI: [laws:mod_old](https://ld.ech.ch/schema/0296/laws/mod_old)
 <!-- no inheritance hierarchy -->
 
 
@@ -25,7 +25,7 @@ URI: [laws:citations_ref](https://ld.ech.ch/schema/0296/laws/citations_ref)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [Preamble](Preamble.md) | Die Präambel des Erlasses (akn:preamble) mit einleitenden Fliesstext-Absätzen... |  no  |
+| [TextualMod](TextualMod.md) | Eine Textänderung: der Wortlaut eines anderen Erlasses wird eingefügt, ersetz... |  no  |
 
 
 
@@ -38,8 +38,8 @@ URI: [laws:citations_ref](https://ld.ech.ch/schema/0296/laws/citations_ref)
 
 | Eigenschaft | Wert |
 | --- | --- |
-| Wertebereich | [Citations](Citations.md) |
-| Domäne von | [Preamble](Preamble.md) |
+| Wertebereich | [ModOld](ModOld.md) |
+| Domäne von | [TextualMod](TextualMod.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -62,22 +62,22 @@ URI: [laws:citations_ref](https://ld.ech.ch/schema/0296/laws/citations_ref)
 
 <details>
 ```yaml
-name: citations_ref
+name: mod_old
 annotations:
   description_de:
     tag: description_de
-    value: Die Erwägungen des Vorspruchs (akn:citations).
+    value: Der bisherige Wortlaut (akn:old).
   xml_element:
     tag: xml_element
-    value: akn:citations
-description: Die Erwägungen des Vorspruchs (akn:citations).
+    value: akn:old
+description: Der bisherige Wortlaut (akn:old).
 from_schema: https://ld.ech.ch/schema/0296/laws
 exact_mappings:
-- akn:citations
+- akn:old
 rank: 1000
 domain_of:
-- Preamble
-range: Citations
+- TextualMod
+range: ModOld
 multivalued: true
 
 ```

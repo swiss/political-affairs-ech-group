@@ -374,6 +374,7 @@ identification_ref:
       as_role: '#publisher'
     frbr_format:
       value: '#akn'
+      show_as: akn
 
 ```
 ##### Beispiel Identification: sr101 1 1
@@ -882,6 +883,7 @@ frbr_manifestation:
     as_role: '#publisher'
   frbr_format:
     value: '#akn'
+    show_as: akn
 
 ```
 ##### Beispiel FRBRManifestation: bgoe 1 1
@@ -1742,6 +1744,40 @@ act_ref:
           as_role: '#publisher'
         frbr_format:
           value: '#akn'
+          show_as: akn
+    analysis_ref:
+      source: '#source'
+      active_modifications:
+        modifications:
+        - element_type: ForceMod
+          eId: amod_1
+          mod_type: entryIntoForce
+          period: '#tmgr_1'
+          mod_sources:
+          - …
+          mod_destinations:
+          - …
+        - element_type: TextualMod
+          eId: amod_2
+          mod_type: insertion
+          period: '#tmgr_1'
+          mod_sources:
+          - …
+          mod_destinations:
+          - …
+          mod_new:
+          - …
+        - … 1 weitere
+    temporal_data_ref:
+      source: '#source'
+      temporal_groups:
+      - eId: tmgr_1
+        time_intervals:
+        - …
+      - eId: tmgr_2
+        time_intervals:
+        - …
+      - … 1 weitere
     references_ref:
       source: '#source'
       original_ref:
@@ -1808,40 +1844,21 @@ act_ref:
       - … 3 weitere
   preamble_ref:
     content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - element_type: TextRun
-        text: nach Einsichtnahme in die Anträge
-    - element_type: BlockParagraph
-      inline_content:
-      - element_type: TextRun
-        text: und
-    - … 1 weitere
-    formulas:
-    - eId: formula_1
+    - element_type: Formula
+      eId: formula_1
       name_attr2: openFormula
       content_blocks:
       - element_type: BlockParagraph
         inline_content:
         - …
-    - eId: formula_2
-      name_attr2: Verb
-      content_blocks:
-      - element_type: BlockParagraph
-        inline_content:
-        - …
-    citations_ref:
-    - citation_list:
-      - eId: cit_1
-        refers_to: ''
-        content_blocks:
-        - …
-    - citation_list:
-      - eId: cit_2
-        refers_to: ''
-        content_blocks:
-        - …
+    - element_type: BlockParagraph
+      inline_content:
+      - element_type: TextRun
+        text: nach Einsichtnahme in die Anträge
+    - … 5 weitere
   body:
+    period: tmgr_1
+    status: edited
     titles:
     - eId: title_1
       num:
@@ -2720,8 +2737,6 @@ _Die Präambel des Erlasses (akn:preamble) mit einleitenden Fliesstext-Absätzen
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
-| formulas | * <br/> [Formula](#Formula) | Formeln des Vorspruchs (akn:formula). |
-| citations_ref | * <br/> [Citations](#Citations) | Die Erwägungen des Vorspruchs (akn:citations). |
 | content_blocks | * <br/> [BlockElement](#BlockElement) | Blockinhalt in Lesereihenfolge: Absätze, Aufzählungen und Tabellen, wie sie im Dokument aufeinanderfolgen.  |
 
 
@@ -2775,16 +2790,10 @@ _Eine Eingangs- oder Schlussformel des Vorspruchs (akn:formula)._
 | eId | 0..1 <br/> [EIdType](#EIdType) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
 | name_attr2 | 0..1 <br/> String | Zweck der Formel (@name). |
 | content_blocks | * <br/> [BlockElement](#BlockElement) | Blockinhalt in Lesereihenfolge: Absätze, Aufzählungen und Tabellen, wie sie im Dokument aufeinanderfolgen.  |
+| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement. <br/><br/>Vererbung: [BlockElement](#BlockElement) |
 
 
 
-
-
-#### Verwendungen
-
-| Verwendet von | Im Slot | Rolle | Element |
-| ---  | --- | --- | --- |
-| [Preamble](#Preamble) | formulas | range | [Formula](#Formula) |
 
 
 
@@ -2826,16 +2835,10 @@ _Die Erwägungen des Vorspruchs — worauf sich der Erlass beruft._
 |------------------------|----------------------|------------------------------------------------------|
 | eId | 0..1 <br/> [EIdType](#EIdType) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
 | citation_list | * <br/> [Citation](#Citation) | Die Erwägungen selbst (akn:citation). |
+| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement. <br/><br/>Vererbung: [BlockElement](#BlockElement) |
 
 
 
-
-
-#### Verwendungen
-
-| Verwendet von | Im Slot | Rolle | Element |
-| ---  | --- | --- | --- |
-| [Preamble](#Preamble) | citations_ref | range | [Citations](#Citations) |
 
 
 
@@ -3141,6 +3144,9 @@ _Der Hauptteil des Erlasses (akn:body) mit der Gesetzeshierarchie. Erlaubte dire
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
+| eId | 0..1 <br/> [EIdType](#EIdType) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
+| period | 0..1 <br/> String | Die Zeitgruppe, in der die Änderung gilt (@period). |
+| status | 0..1 <br/> String | Bearbeitungsstand des Elements (@status), z.B. „edited“. |
 | books | * <br/> [Book](#Book) | Buch-Kindelemente (akn:book). |
 | titles | * <br/> [Title](#Title) | Titel-Kindelemente (akn:title). |
 | parts | * <br/> [Part](#Part) | Teil-Kindelemente (akn:part). |
@@ -4536,6 +4542,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_9__art_42__para_1__content
       content_blocks:
       - …
       - …
@@ -4544,6 +4551,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_9__art_42__para_2__content
       content_blocks:
       - …
       - …
@@ -4611,6 +4619,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_3__art_19__para_1__content
       content_blocks:
       - …
       - …
@@ -4636,6 +4645,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_7__art_33__para_1__content
       content_blocks:
       - …
   - eId: title_7__art_33__para_2
@@ -4643,6 +4653,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_7__art_33__para_2__content
       content_blocks:
       - …
 
@@ -4667,6 +4678,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_3__art_18__para_1__content
       content_blocks:
       - …
   - eId: ttitle_3__art_18__para_2
@@ -4674,6 +4686,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_3__art_18__para_2__content
       content_blocks:
       - …
 
@@ -4703,6 +4716,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_3__art_16__para_1__content
       content_blocks:
       - …
       - …
@@ -4711,6 +4725,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_3__art_16__para_2__content
       content_blocks:
       - …
 
@@ -4734,6 +4749,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_1__art_2__para_1__content
       content_blocks:
       - …
   - eId: title_1__art_2__para_2
@@ -4741,6 +4757,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: level_I__art_2__para_2__content
       content_blocks:
       - …
 
@@ -4765,6 +4782,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_7__art_36__para_1__content
       content_blocks:
       - …
   - eId: title_7__art_36__para_2
@@ -4772,6 +4790,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_7__art_36__para_2__content
       content_blocks:
       - …
   - … 1 weitere
@@ -4797,6 +4816,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_7__art_39__para_1__content
       content_blocks:
       - …
 
@@ -4853,6 +4873,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_6__art_29__para_1__content
       content_blocks:
       - …
   - eId: title_6__art_29__para_2
@@ -4860,6 +4881,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_6__art_29__para_2__content
       content_blocks:
       - …
       - …
@@ -4886,6 +4908,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_3__art_15__para_1__content
       content_blocks:
       - …
   - eId: title_3__art_15__para_2
@@ -4893,6 +4916,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_3__art_15__para_2__content
       content_blocks:
       - …
 
@@ -4917,6 +4941,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_6__art_26__para_1__content
       content_blocks:
       - …
   - eId: title_6__art_26__para_2
@@ -4924,6 +4949,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_6__art_26__para_2__content
       content_blocks:
       - …
 
@@ -4948,6 +4974,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_6__art_27__para_1__content
       content_blocks:
       - …
   - eId: title_6__art_27__para_2
@@ -4955,6 +4982,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_6__art_27__para_2__content
       content_blocks:
       - …
 
@@ -4979,6 +5007,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: ttitle_7__art_30__para_1__content
       content_blocks:
       - …
   - eId: title_7__art_30__para_2
@@ -4986,6 +5015,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_7__art_30__para_2__content
       content_blocks:
       - …
 
@@ -5010,6 +5040,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_6__art_25__para_1__content
       content_blocks:
       - …
   - eId: title_6__art_25__para_2
@@ -5017,6 +5048,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_6__art_25__para_2__content
       content_blocks:
       - …
 
@@ -5039,6 +5071,7 @@ articles:
   - eId: title_7__art_38__para_1
     num: {}
     content_ref:
+      eId: title_7__art_38__para_1__content
       content_blocks:
       - …
 
@@ -5063,6 +5096,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: ttitle_3__art_17__para_1__content
       content_blocks:
       - …
       - …
@@ -5071,6 +5105,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_3__art_17__para_2__content
       content_blocks:
       - …
 
@@ -5095,6 +5130,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_8__art_40__para_1__content
       content_blocks:
       - …
   - eId: title_8__art_40__para_2
@@ -5102,6 +5138,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_8__art_40__para_2__content
       content_blocks:
       - …
 
@@ -5147,6 +5184,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_9__art_43__para_1__content
       content_blocks:
       - …
 
@@ -5171,6 +5209,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_6__art_24__para_1__content
       content_blocks:
       - …
   - eId: title_6__art_24__para_2
@@ -5178,6 +5217,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_6__art_24__para_2__content
       content_blocks:
       - …
 
@@ -5201,6 +5241,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_1__art_3__para_1__content
       content_blocks:
       - …
       - …
@@ -5273,6 +5314,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_7__art_37__para_1__content
       content_blocks:
       - …
 
@@ -5297,6 +5339,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_6__art_28__para_1__content
       content_blocks:
       - …
   - eId: title_6__art_28__para_2
@@ -5304,6 +5347,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_6__art_28__para_2__content
       content_blocks:
       - …
 
@@ -5328,6 +5372,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_3__art_14__para_1__content
       content_blocks:
       - …
   - eId: title_3__art_14__para_2
@@ -5335,6 +5380,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_3__art_14__para_2__content
       content_blocks:
       - …
   - … 2 weitere
@@ -5360,6 +5406,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_7__art_34__para_1__content
       content_blocks:
       - …
       - …
@@ -5385,6 +5432,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_4__art_22__para_1__content
       content_blocks:
       - …
   - eId: title_4__art_22__para_2
@@ -5392,6 +5440,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_4__art_22__para_2__content
       content_blocks:
       - …
 
@@ -5416,6 +5465,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_4__art_20__para_1__content
       content_blocks:
       - …
   - eId: title_4__art_20__para_2
@@ -5423,6 +5473,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_4__art_20__para_2__content
       content_blocks:
       - …
   - … 1 weitere
@@ -5454,6 +5505,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_1__art_1__content
       content_blocks:
       - …
       - …
@@ -5479,6 +5531,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_7__art_32__para_1__content
       content_blocks:
       - …
   - eId: title_7__art_32__para_2
@@ -5486,6 +5539,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_7__art_32__para_2__content
       content_blocks:
       - …
   - … 1 weitere
@@ -5511,6 +5565,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_4__art_21__para_1__content
       content_blocks:
       - …
       - …
@@ -5536,6 +5591,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_7__art_35__para_1__content
       content_blocks:
       - …
   - eId: title_7__art_35__para_2
@@ -5543,6 +5599,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_7__art_35__para_2__content
       content_blocks:
       - …
 
@@ -5567,6 +5624,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_9__art_44__para___content
       content_blocks:
       - …
       - …
@@ -5592,6 +5650,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_9__art_41__para_1__content
       content_blocks:
       - …
       - …
@@ -5617,6 +5676,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: ttitle_5__art_23__para_1__content
       content_blocks:
       - …
   - eId: title_5__art_23__para_2
@@ -5624,6 +5684,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_5__art_23__para_2__content
       content_blocks:
       - …
       - …
@@ -5682,6 +5743,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_7__art_31__para_1__content
       content_blocks:
       - …
   - eId: title_7__art_31__para_2
@@ -5689,6 +5751,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_7__art_31__para_2__content
       content_blocks:
       - …
   - … 1 weitere
@@ -5818,11 +5881,13 @@ paragraphs:
     - element_type: TextRun
       text: '1'
   content_ref:
+    eId: title_7__art_34__para_1__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
       - …
     - element_type: BlockList
+      style: ''
       eId: title_7__art_34__para_1__content__blocklist_1
       items:
       - …
@@ -5840,6 +5905,7 @@ paragraphs:
     - element_type: TextRun
       text: '1'
   content_ref:
+    eId: title_9__art_44__para___content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -5860,6 +5926,7 @@ paragraphs:
     - element_type: TextRun
       text: '1'
   content_ref:
+    eId: title_9__art_43__para_1__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -5876,6 +5943,7 @@ paragraphs:
     - element_type: TextRun
       text: '1'
   content_ref:
+    eId: title_7__art_36__para_1__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -5920,6 +5988,7 @@ paragraphs:
     - element_type: TextRun
       text: '1'
   content_ref:
+    eId: title_7__art_39__para_1__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -5936,6 +6005,7 @@ paragraphs:
     - element_type: TextRun
       text: '2'
   content_ref:
+    eId: title_7__art_33__para_2__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -5952,6 +6022,7 @@ paragraphs:
     - element_type: TextRun
       text: '3'
   content_ref:
+    eId: title_7__art_36__para_3__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -5970,6 +6041,7 @@ paragraphs:
     - element_type: TextRun
       text: '2'
   content_ref:
+    eId: title_7__art_35__para_2__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -5986,6 +6058,7 @@ paragraphs:
     - element_type: TextRun
       text: '2'
   content_ref:
+    eId: title_9__art_42__para_2__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -6019,6 +6092,7 @@ paragraphs:
     - element_type: TextRun
       text: '3'
   content_ref:
+    eId: title_6__art_29__para_3__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -6051,6 +6125,7 @@ paragraphs:
     - element_type: TextRun
       text: '4'
   content_ref:
+    eId: title_3__art_14__para_4__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -6095,6 +6170,7 @@ paragraphs:
     - element_type: TextRun
       text: '3'
   content_ref:
+    eId: title_7__art_31__para_3__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -6143,6 +6219,7 @@ paragraphs:
     - element_type: TextRun
       text: '4'
   content_ref:
+    eId: title_6__art_29__para_4__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -6159,6 +6236,7 @@ paragraphs:
     - element_type: TextRun
       text: '1'
   content_ref:
+    eId: title_9__art_41__para_1__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -6180,6 +6258,7 @@ paragraphs:
     - element_type: TextRun
       text: '1'
   content_ref:
+    eId: title_7__art_35__para_1__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -6196,6 +6275,7 @@ paragraphs:
     - element_type: TextRun
       text: '2'
   content_ref:
+    eId: title_7__art_36__para_2__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -6221,6 +6301,7 @@ paragraphs:
 - eId: title_7__art_38__para_1
   num: {}
   content_ref:
+    eId: title_7__art_38__para_1__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -6237,6 +6318,7 @@ paragraphs:
     - element_type: TextRun
       text: '1'
   content_ref:
+    eId: title_9__art_42__para_1__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -6258,6 +6340,7 @@ paragraphs:
     - element_type: TextRun
       text: '1'
   content_ref:
+    eId: title_7__art_37__para_1__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -6306,6 +6389,7 @@ paragraphs:
     - element_type: TextRun
       text: '2'
   content_ref:
+    eId: title_8__art_40__para_2__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -6350,6 +6434,7 @@ paragraphs:
     - element_type: TextRun
       text: '3'
   content_ref:
+    eId: title_7__art_32__para_3__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -6366,6 +6451,7 @@ paragraphs:
     - element_type: TextRun
       text: '3'
   content_ref:
+    eId: title_5__art_23__para_3__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -6382,6 +6468,7 @@ paragraphs:
     - element_type: TextRun
       text: '2'
   content_ref:
+    eId: title_6__art_28__para_2__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -6398,6 +6485,7 @@ paragraphs:
     - element_type: TextRun
       text: '2'
   content_ref:
+    eId: title_7__art_32__para_2__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -6533,7 +6621,7 @@ Auf der untersten Ebene stehen die Inhaltsblöcke: Absätze, Listen und Tabellen
 ### Klasse: BlockElement []{#BlockElement}
 
 
-_Abstrakte Basis für ein Element auf Blockebene innerhalb von Inhalt, Aufzählungsposition oder Tabellenzelle (akn:p, akn:blockList, akn:table)._
+_Abstrakte Basis für ein Element auf Blockebene: die Absätze, Aufzählungen und Tabellen des Inhalts sowie Formel und Erwägungen des Vorspruchs._
 
 
 
@@ -6607,6 +6695,7 @@ _Der Inhalt eines Absatzes (akn:content). Enthält Block-Elemente: akn:p (Fliess
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
+| eId | 0..1 <br/> [EIdType](#EIdType) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
 | content_blocks | * <br/> [BlockElement](#BlockElement) | Blockinhalt in Lesereihenfolge: Absätze, Aufzählungen und Tabellen, wie sie im Dokument aufeinanderfolgen.  |
 
 
@@ -6639,6 +6728,7 @@ _Der Inhalt eines Absatzes (akn:content). Enthält Block-Elemente: akn:p (Fliess
 
 ```yaml
 content_ref:
+  eId: title_9__art_42__para_2__content
   content_blocks:
   - element_type: BlockParagraph
     inline_content:
@@ -6668,6 +6758,7 @@ content_ref:
 
 ```yaml
 content_ref:
+  eId: title_6__art_29__para_4__content
   content_blocks:
   - element_type: BlockParagraph
     inline_content:
@@ -6705,6 +6796,7 @@ content_ref:
 
 ```yaml
 content_ref:
+  eId: title_9__art_44__para___content
   content_blocks:
   - element_type: BlockParagraph
     inline_content:
@@ -6730,6 +6822,7 @@ content_ref:
 
 ```yaml
 content_ref:
+  eId: title_7__art_36__para_3__content
   content_blocks:
   - element_type: BlockParagraph
     inline_content:
@@ -6840,6 +6933,7 @@ _Eine Auflistung von nummerierten oder buchstabierten Punkten (akn:blockList), o
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
+| style | 0..1 <br/> String | Darstellungsangabe des Elements (@style). |
 | eId | 0..1 <br/> [EIdType](#EIdType) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
 | list_introduction | 0..1 <br/> [MixedText](#MixedText) | Optionaler Einleitungstext vor einer Auflistung (akn:listIntroduction). |
 | items | * <br/> [BlockListItem](#BlockListItem) | Punkte einer Auflistung (akn:item). |
@@ -7793,6 +7887,40 @@ act_ref:
           as_role: '#publisher'
         frbr_format:
           value: '#akn'
+          show_as: akn
+    analysis_ref:
+      source: '#source'
+      active_modifications:
+        modifications:
+        - element_type: ForceMod
+          eId: amod_1
+          mod_type: entryIntoForce
+          period: '#tmgr_1'
+          mod_sources:
+          - …
+          mod_destinations:
+          - …
+        - element_type: TextualMod
+          eId: amod_2
+          mod_type: insertion
+          period: '#tmgr_1'
+          mod_sources:
+          - …
+          mod_destinations:
+          - …
+          mod_new:
+          - …
+        - … 1 weitere
+    temporal_data_ref:
+      source: '#source'
+      temporal_groups:
+      - eId: tmgr_1
+        time_intervals:
+        - …
+      - eId: tmgr_2
+        time_intervals:
+        - …
+      - … 1 weitere
     references_ref:
       source: '#source'
       original_ref:
@@ -7859,40 +7987,21 @@ act_ref:
       - … 3 weitere
   preamble_ref:
     content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - element_type: TextRun
-        text: nach Einsichtnahme in die Anträge
-    - element_type: BlockParagraph
-      inline_content:
-      - element_type: TextRun
-        text: und
-    - … 1 weitere
-    formulas:
-    - eId: formula_1
+    - element_type: Formula
+      eId: formula_1
       name_attr2: openFormula
       content_blocks:
       - element_type: BlockParagraph
         inline_content:
         - …
-    - eId: formula_2
-      name_attr2: Verb
-      content_blocks:
-      - element_type: BlockParagraph
-        inline_content:
-        - …
-    citations_ref:
-    - citation_list:
-      - eId: cit_1
-        refers_to: ''
-        content_blocks:
-        - …
-    - citation_list:
-      - eId: cit_2
-        refers_to: ''
-        content_blocks:
-        - …
+    - element_type: BlockParagraph
+      inline_content:
+      - element_type: TextRun
+        text: nach Einsichtnahme in die Anträge
+    - … 5 weitere
   body:
+    period: tmgr_1
+    status: edited
     titles:
     - eId: title_1
       num:
@@ -8320,6 +8429,7 @@ _Eine Inline-Referenz (akn:ref). Trägt @href, und bei internen SR-Querverweisen
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
+| eId | 0..1 <br/> [EIdType](#EIdType) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
 | href | 0..1 <br/> String | URI-Referenz (@href), für Links zu Organisationen, Rollen oder externen URIs. |
 | fedlex_rs | 0..1 <br/> String | Fedlex-Erweiterungsattribut fedlex:rs auf akn:ref: die SR-Nummer des referenzierten Erlasses (z.B. '641.20').  |
 | fedlex_rs_uri | 0..1 <br/> [ELIURI](#ELIURI) | Fedlex-Erweiterungsattribut fedlex:rs-uri auf akn:ref: die ELI-URI des SR-Eintrags des referenzierten Erlasses.  |
@@ -8368,6 +8478,8 @@ _Eine Fussnote des Autors (akn:authorialNote). Rekursiv in Block-Inhalt: enthäl
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
+| marker | 0..1 <br/> String | Das gedruckte Zeichen eines Anmerkungsverweises (@marker). |
+| eId | 0..1 <br/> [EIdType](#EIdType) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
 | content_blocks | * <br/> [BlockElement](#BlockElement) | Blockinhalt in Lesereihenfolge: Absätze, Aufzählungen und Tabellen, wie sie im Dokument aufeinanderfolgen.  |
 | element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement. <br/><br/>Vererbung: [InlineElement](#InlineElement) |
 
@@ -9087,6 +9199,8 @@ _Metadaten-Abschnitt des Erlasses (akn:meta). Enthält die FRBR-Identifikation (
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
 | identification_ref | 0..1 <br/> [Identification](#Identification) | FRBR-Identifikationsblock (akn:identification). |
+| analysis_ref | 0..1 <br/> [Analysis](#Analysis) | Der Analyseblock der Metadaten (akn:analysis). |
+| temporal_data_ref | 0..1 <br/> [TemporalData](#TemporalData) | Die Zeitangaben der Metadaten (akn:temporalData). |
 | references_ref | 0..1 <br/> [References](#References) | Referenzen-Abschnitt der Metadaten (akn:references). |
 | notes_ref | 0..1 <br/> [Notes](#Notes) | Der Anmerkungsblock der Metadaten (akn:notes). |
 
@@ -9265,6 +9379,44 @@ meta:
         as_role: '#publisher'
       frbr_format:
         value: '#akn'
+        show_as: akn
+  analysis_ref:
+    source: '#source'
+    active_modifications:
+      modifications:
+      - element_type: ForceMod
+        eId: amod_1
+        mod_type: entryIntoForce
+        period: '#tmgr_1'
+        mod_sources:
+        - …
+        mod_destinations:
+        - …
+      - element_type: TextualMod
+        eId: amod_2
+        mod_type: insertion
+        period: '#tmgr_1'
+        mod_sources:
+        - …
+        mod_destinations:
+        - …
+        mod_new:
+        - …
+      - … 1 weitere
+  temporal_data_ref:
+    source: '#source'
+    temporal_groups:
+    - eId: tmgr_1
+      time_intervals:
+      - refers_to: '#inForce'
+        start_ref: '#date_1'
+        end_ref: ''
+    - eId: tmgr_2
+      time_intervals:
+      - refers_to: '#inForce'
+        start_ref: '#date_2'
+        end_ref: ''
+    - … 1 weitere
   references_ref:
     source: '#source'
     original_ref:
@@ -9449,12 +9601,12 @@ _Benannte Referenz-Definitionen für das gesamte Dokument (akn:references). Defi
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
 | source | 0..1 <br/> [AnchorRef](#AnchorRef) | Anker-Referenz auf die verantwortliche Organisation (@source), z.B. '#ch.bk'. |
+| original_ref | 0..1 <br/> [OriginalRef](#OriginalRef) | Verweis auf die ursprüngliche Fassung (akn:original). |
+| active_refs | * <br/> [ActiveRef](#ActiveRef) | Verweise auf die Erlasse, die dieses Dokument ändert (akn:activeRef). |
 | tlc_organizations | * <br/> [TLCOrganization](#TLCOrganization) | Benannte Organisations-Referenzen im Dokument (akn:TLCOrganization). |
 | tlc_roles | * <br/> [TLCRole](#TLCRole) | Benannte Rollen-Referenzen im Dokument (akn:TLCRole). |
 | tlc_references | * <br/> [TLCReference](#TLCReference) | Generische benannte Referenzen im Dokument (akn:TLCReference). |
 | tlc_concepts | * <br/> [TLCConcept](#TLCConcept) | Begriffe, auf die das Dokument verweist (akn:TLCConcept). |
-| original_ref | 0..1 <br/> [OriginalRef](#OriginalRef) | Verweis auf die ursprüngliche Fassung (akn:original). |
-| active_refs | * <br/> [ActiveRef](#ActiveRef) | Verweise auf die Erlasse, die dieses Dokument ändert (akn:activeRef). |
 
 
 
@@ -9899,6 +10051,7 @@ _Einfacher Halter mit einem einzelnen @value-Attribut (AKN valueType). Wiederver
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
 | value | 0..1 <br/> String | Generisches Wert-Attribut (@value), in mehreren AkomaNtoso-Elementen verwendet. |
+| show_as | 0..1 <br/> String | Lesbare Anzeigebezeichnung einer TLC-Referenz (@showAs). |
 
 
 
@@ -9953,6 +10106,7 @@ _Halter mit einem @value-Attribut vom Typ ELI-URI (AKN valueType). Wiederverwend
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
 | value_uri | 0..1 <br/> [ELIURI](#ELIURI) | Ein @value-Attribut vom Typ ELI-URI (akn:FRBRthis/@value, akn:FRBRuri/@value). |
+| show_as | 0..1 <br/> String | Lesbare Anzeigebezeichnung einer TLC-Referenz (@showAs). |
 
 
 
@@ -10008,6 +10162,7 @@ _Halter mit einem einzelnen @language-Attribut (akn:FRBRlanguage)._
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
 | language_value | 0..1 <br/> [DocumentLanguageEnum](#DocumentLanguageEnum) | Das @language-Attribut von akn:FRBRlanguage, z.B. 'de'. |
+| show_as | 0..1 <br/> String | Lesbare Anzeigebezeichnung einer TLC-Referenz (@showAs). |
 
 
 
@@ -10060,6 +10215,7 @@ _Halter für akn:FRBRformat: ein @value (typischerweise 'xml') plus das optional
 |------------------------|----------------------|------------------------------------------------------|
 | value | 0..1 <br/> String | Generisches Wert-Attribut (@value), in mehreren AkomaNtoso-Elementen verwendet. |
 | fedlex_generator | 0..1 <br/> String | Fedlex-Erweiterungsattribut fedlex:generator bei akn:FRBRformat[@value='xml']. Identifiziert das Werkzeug, das die XML-Datei erzeugt hat. Nur bei FRBRformat erlaubt (FLX-XF-002).  |
+| show_as | 0..1 <br/> String | Lesbare Anzeigebezeichnung einer TLC-Referenz (@showAs). |
 
 
 
@@ -10389,6 +10545,730 @@ _Ein Begriff, auf den das Dokument verweist (akn:TLCConcept), etwa ein zeitliche
 
 </div>
 
+## Änderungen und Zeitverläufe
+
+Ein Erlass ändert andere und wird selbst geändert. Akoma Ntoso hält das im Analyseblock fest, und zwar auf der Ebene der Textstelle: Eine Änderung nennt die Stelle, die sie bewirkt (`akn:source`), die Stelle, die sie trifft (`akn:destination`), und bei einer Textänderung den bisherigen und den neuen Wortlaut (`akn:old`, `akn:new`). Der Typ sagt, was geschieht — eingefügt, ersetzt, aufgehoben, neu nummeriert, geteilt, zusammengeführt — oder, bei einer Änderung der Rechtskraft, ob etwas in Kraft tritt, ausser Kraft fällt oder aufgeschoben wird.
+
+Wann eine Änderung gilt, steht nicht bei ihr, sondern hinter einem Verweis: `@period` zeigt auf eine Zeitgruppe, deren Intervall wiederum auf Datumselemente im Text zeigt. Diese Umleitung ist Absicht — dasselbe Datum trägt oft mehrere Änderungen, und im Text steht es ohnehin.
+
+Der Bund nutzt diesen Block nicht: Fedlex liefert konsolidierte Fassungen mit Datumsangaben, ohne die einzelnen Änderungsschritte auszuweisen. Der Kanton Zürich tut es, und daran zeigt sich, worüber bei der Zuordnung zu ELI zu entscheiden ist: ELI kennt Beziehungen zwischen *Erlassen* (`eli:amends`, `eli:repeals`, `eli:consolidates`), Akoma Ntoso beschreibt Änderungen zwischen *Textstellen*. Aus „diese Passage wurde am 1. Juni 2007 ersetzt" wird nicht von selbst „Erlass A ändert Erlass B"; diese Hochrechnung ist eine fachliche Entscheidung und steht noch aus.
+
+
+
+### Klasse: Analysis []{#Analysis}
+
+
+_Der Analyseblock: welche Änderungen dieser Erlass vornimmt und erfährt. Fedlex verwendet ihn nicht; kantonale Sammlungen halten hier ihre Änderungen fest._
+
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| source | 0..1 <br/> [AnchorRef](#AnchorRef) | Anker-Referenz auf die verantwortliche Organisation (@source), z.B. '#ch.bk'. |
+| active_modifications | 0..1 <br/> [ActiveModifications](#ActiveModifications) | Die Änderungen, die dieser Erlass an anderen vornimmt (akn:activeModifications). |
+| passive_modifications | 0..1 <br/> [PassiveModifications](#PassiveModifications) | Die Änderungen, die andere Erlasse an diesem vornehmen (akn:passiveModifications). |
+
+
+
+
+
+#### Verwendungen
+
+| Verwendet von | Im Slot | Rolle | Element |
+| ---  | --- | --- | --- |
+| [ActMeta](#ActMeta) | analysis_ref | range | [Analysis](#Analysis) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+### Klasse: ActiveModifications []{#ActiveModifications}
+
+
+_Die Änderungen, die dieser Erlass an anderen vornimmt._
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| source | 0..1 <br/> [AnchorRef](#AnchorRef) | Anker-Referenz auf die verantwortliche Organisation (@source), z.B. '#ch.bk'. |
+| modifications | * <br/> [Modification](#Modification) | Die Änderungen in der Reihenfolge ihrer Aufzeichnung (akn:textualMod, akn:forceMod). |
+
+
+
+
+
+#### Verwendungen
+
+| Verwendet von | Im Slot | Rolle | Element |
+| ---  | --- | --- | --- |
+| [Analysis](#Analysis) | active_modifications | range | [ActiveModifications](#ActiveModifications) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+### Klasse: PassiveModifications []{#PassiveModifications}
+
+
+_Die Änderungen, die andere Erlasse an diesem vornehmen._
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| source | 0..1 <br/> [AnchorRef](#AnchorRef) | Anker-Referenz auf die verantwortliche Organisation (@source), z.B. '#ch.bk'. |
+| modifications | * <br/> [Modification](#Modification) | Die Änderungen in der Reihenfolge ihrer Aufzeichnung (akn:textualMod, akn:forceMod). |
+
+
+
+
+
+#### Verwendungen
+
+| Verwendet von | Im Slot | Rolle | Element |
+| ---  | --- | --- | --- |
+| [Analysis](#Analysis) | passive_modifications | range | [PassiveModifications](#PassiveModifications) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+### Klasse: Modification []{#Modification}
+
+
+_Abstrakte Basis für eine im Analyseblock vermerkte Änderung._
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement.  |
+
+
+
+
+
+#### Verwendungen
+
+| Verwendet von | Im Slot | Rolle | Element |
+| ---  | --- | --- | --- |
+| [ActiveModifications](#ActiveModifications) | modifications | range | [Modification](#Modification) |
+| [PassiveModifications](#PassiveModifications) | modifications | range | [Modification](#Modification) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+### Klasse: TextualMod []{#TextualMod}
+
+
+_Eine Textänderung: der Wortlaut eines anderen Erlasses wird eingefügt, ersetzt, aufgehoben, neu nummeriert, geteilt oder zusammengeführt._
+
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| eId | 0..1 <br/> [EIdType](#EIdType) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
+| mod_type | 0..1 <br/> String&nbsp;or&nbsp;<br />[ModTypeEnum](#ModTypeEnum) | Art der Änderung (@type); die zulässigen Werte sind die von Akoma Ntoso. |
+| period | 0..1 <br/> String | Die Zeitgruppe, in der die Änderung gilt (@period). |
+| mod_sources | * <br/> [ModSource](#ModSource) | Die Stellen, welche die Änderung bewirken (akn:source). |
+| mod_destinations | * <br/> [ModDestination](#ModDestination) | Die Stellen, die geändert werden (akn:destination). |
+| mod_old | * <br/> [ModOld](#ModOld) | Der bisherige Wortlaut (akn:old). |
+| mod_new | * <br/> [ModNew](#ModNew) | Der neue Wortlaut (akn:new). |
+| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement. <br/><br/>Vererbung: [Modification](#Modification) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+### Klasse: ForceMod []{#ForceMod}
+
+
+_Eine Änderung der Rechtskraft: ein Erlass oder ein Teil davon tritt in Kraft, ausser Kraft, wird aufgeschoben, verlängert, neu erlassen oder für verfassungswidrig erklärt._
+
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| eId | 0..1 <br/> [EIdType](#EIdType) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
+| mod_type | 0..1 <br/> String&nbsp;or&nbsp;<br />[ModTypeEnum](#ModTypeEnum) | Art der Änderung (@type); die zulässigen Werte sind die von Akoma Ntoso. |
+| period | 0..1 <br/> String | Die Zeitgruppe, in der die Änderung gilt (@period). |
+| mod_sources | * <br/> [ModSource](#ModSource) | Die Stellen, welche die Änderung bewirken (akn:source). |
+| mod_destinations | * <br/> [ModDestination](#ModDestination) | Die Stellen, die geändert werden (akn:destination). |
+| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement. <br/><br/>Vererbung: [Modification](#Modification) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+### Enum: ModTypeEnum []{#ModTypeEnum}
+
+
+
+
+_Änderungsarten, die Akoma Ntoso definiert: die textlichen aus der Liste TextualMods, die der Rechtskraft aus ForceMods._
+
+
+
+
+<div data-search-exclude markdown="1">
+
+URI: [laws:ModTypeEnum](https://ld.ech.ch/schema/0296/laws/ModTypeEnum)
+
+#### Zulässige Werte
+| Wert | Beschreibung |
+|------------------------|----------------------------------------------------------------------------|
+| repeal |  Wortlaut wird aufgehoben. |
+| substitution |  Wortlaut wird durch anderen ersetzt. |
+| insertion |  Wortlaut wird eingefügt. |
+| replacement |  Ein Element wird als Ganzes ersetzt. |
+| renumbering |  Ein Element wird neu nummeriert. |
+| split |  Ein Element wird in mehrere geteilt. |
+| join |  Mehrere Elemente werden zu einem zusammengeführt. |
+| entryIntoForce |  Tritt in Kraft. |
+| endOfEnactment |  Tritt ausser Kraft. |
+| postponementOfEntryIntoForce |  Das Inkrafttreten wird aufgeschoben. |
+| prorogationOfForce |  Die Geltung wird verlängert. |
+| reEnactment |  Wird neu erlassen. |
+| unconstitutionality |  Wird für verfassungswidrig erklärt. |
+
+
+
+
+
+
+
+</div>
+
+
+
+### Klasse: ModSource []{#ModSource}
+
+
+_Die Stelle, welche die Änderung bewirkt._
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| eId | 0..1 <br/> [EIdType](#EIdType) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
+| href | 0..1 <br/> String | URI-Referenz (@href), für Links zu Organisationen, Rollen oder externen URIs. |
+| pos | 0..1 <br/> String | Lage der Änderung zum Ziel (@pos), z.B. „before“. |
+| up_to | 0..1 <br/> String | Ende eines Zielbereichs (@upTo). |
+
+
+
+
+
+#### Verwendungen
+
+| Verwendet von | Im Slot | Rolle | Element |
+| ---  | --- | --- | --- |
+| [TextualMod](#TextualMod) | mod_sources | range | [ModSource](#ModSource) |
+| [ForceMod](#ForceMod) | mod_sources | range | [ModSource](#ModSource) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+### Klasse: ModDestination []{#ModDestination}
+
+
+_Die Stelle, die geändert wird._
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| eId | 0..1 <br/> [EIdType](#EIdType) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
+| href | 0..1 <br/> String | URI-Referenz (@href), für Links zu Organisationen, Rollen oder externen URIs. |
+| pos | 0..1 <br/> String | Lage der Änderung zum Ziel (@pos), z.B. „before“. |
+| up_to | 0..1 <br/> String | Ende eines Zielbereichs (@upTo). |
+
+
+
+
+
+#### Verwendungen
+
+| Verwendet von | Im Slot | Rolle | Element |
+| ---  | --- | --- | --- |
+| [TextualMod](#TextualMod) | mod_destinations | range | [ModDestination](#ModDestination) |
+| [ForceMod](#ForceMod) | mod_destinations | range | [ModDestination](#ModDestination) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+### Klasse: ModOld []{#ModOld}
+
+
+_Der Text, wie er vor der Änderung lautete._
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| eId | 0..1 <br/> [EIdType](#EIdType) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
+| href | 0..1 <br/> String | URI-Referenz (@href), für Links zu Organisationen, Rollen oder externen URIs. |
+| pos | 0..1 <br/> String | Lage der Änderung zum Ziel (@pos), z.B. „before“. |
+| up_to | 0..1 <br/> String | Ende eines Zielbereichs (@upTo). |
+
+
+
+
+
+#### Verwendungen
+
+| Verwendet von | Im Slot | Rolle | Element |
+| ---  | --- | --- | --- |
+| [TextualMod](#TextualMod) | mod_old | range | [ModOld](#ModOld) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+### Klasse: ModNew []{#ModNew}
+
+
+_Der Text, wie er nach der Änderung lautet._
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| eId | 0..1 <br/> [EIdType](#EIdType) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
+| href | 0..1 <br/> String | URI-Referenz (@href), für Links zu Organisationen, Rollen oder externen URIs. |
+| pos | 0..1 <br/> String | Lage der Änderung zum Ziel (@pos), z.B. „before“. |
+| up_to | 0..1 <br/> String | Ende eines Zielbereichs (@upTo). |
+
+
+
+
+
+#### Verwendungen
+
+| Verwendet von | Im Slot | Rolle | Element |
+| ---  | --- | --- | --- |
+| [TextualMod](#TextualMod) | mod_new | range | [ModNew](#ModNew) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+### Klasse: TemporalData []{#TemporalData}
+
+
+_Die Zeitgruppen, auf die sich eine Änderung bezieht. Jede Gruppe hält das Intervall, in dem sie gilt._
+
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| source | 0..1 <br/> [AnchorRef](#AnchorRef) | Anker-Referenz auf die verantwortliche Organisation (@source), z.B. '#ch.bk'. |
+| temporal_groups | * <br/> [TemporalGroup](#TemporalGroup) | Die Zeitgruppen (akn:temporalGroup). |
+
+
+
+
+
+#### Verwendungen
+
+| Verwendet von | Im Slot | Rolle | Element |
+| ---  | --- | --- | --- |
+| [ActMeta](#ActMeta) | temporal_data_ref | range | [TemporalData](#TemporalData) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+### Klasse: TemporalGroup []{#TemporalGroup}
+
+
+_Ein benannter Zeitraum, auf den sich eine Änderung über @period bezieht._
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| eId | 0..1 <br/> [EIdType](#EIdType) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
+| time_intervals | * <br/> [TimeInterval](#TimeInterval) | Die Intervalle dieser Gruppe (akn:timeInterval). |
+
+
+
+
+
+#### Verwendungen
+
+| Verwendet von | Im Slot | Rolle | Element |
+| ---  | --- | --- | --- |
+| [TemporalData](#TemporalData) | temporal_groups | range | [TemporalGroup](#TemporalGroup) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+### Klasse: TimeInterval []{#TimeInterval}
+
+
+_Ein Intervall zwischen zwei Daten. Anfang und Ende benennen Datumselemente im Dokument über einen Anker, statt das Datum selbst zu tragen; ein leeres Ende heisst, dass das Intervall offen ist._
+
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| eId | 0..1 <br/> [EIdType](#EIdType) | Eindeutiger Element-Identifier im Dokument (@eId). Vom Fedlex Schematron gefordert bei allen Hierarchieelementen, Artikeln, Unterabschnitten und Absätzen. Folgt der AKN-eId-Namenskonvention (hierarchische Pfadnotation), z.B. 'ti_1', 'ch_1', 'art_1', 'art_1-para_1'.  |
+| refers_to | 0..1 <br/> String | Anker, der nennt, worauf sich das Element bezieht (@refersTo). |
+| start_ref | 0..1 <br/> String | Anker des Datums, an dem das Intervall beginnt (@start). |
+| end_ref | 0..1 <br/> String | Anker des Datums, an dem das Intervall endet (@end); leer, solange es offen ist. |
+
+
+
+
+
+#### Verwendungen
+
+| Verwendet von | Im Slot | Rolle | Element |
+| ---  | --- | --- | --- |
+| [TemporalGroup](#TemporalGroup) | time_intervals | range | [TimeInterval](#TimeInterval) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
 \newpage
 
 # Anhang A – Referenzen & Bibliographie
@@ -10531,6 +11411,19 @@ Eine dritte Art von Zuordnung hängt weder an der Klasse noch am Slot, sondern a
 | `Formula` | Klasse | exactMatch | `akn:formula` |
 | `Citations` | Klasse | exactMatch | `akn:citations` |
 | `Citation` | Klasse | exactMatch | `akn:citation` |
+| `ModSource` | Klasse | exactMatch | `akn:source` |
+| `ModDestination` | Klasse | exactMatch | `akn:destination` |
+| `ModOld` | Klasse | exactMatch | `akn:old` |
+| `ModNew` | Klasse | exactMatch | `akn:new` |
+| `Modification` | Klasse | exactMatch | `akn:mod` |
+| `TextualMod` | Klasse | exactMatch | `akn:textualMod` |
+| `ForceMod` | Klasse | exactMatch | `akn:forceMod` |
+| `ActiveModifications` | Klasse | exactMatch | `akn:activeModifications` |
+| `PassiveModifications` | Klasse | exactMatch | `akn:passiveModifications` |
+| `Analysis` | Klasse | exactMatch | `akn:analysis` |
+| `TemporalData` | Klasse | exactMatch | `akn:temporalData` |
+| `TemporalGroup` | Klasse | exactMatch | `akn:temporalGroup` |
+| `TimeInterval` | Klasse | exactMatch | `akn:timeInterval` |
 | `preface_paragraphs` | Slot | exactMatch | `akn:p` |
 | `frbr_this` | Slot | exactMatch | `akn:FRBRthis` |
 | `frbr_uri` | Slot | exactMatch | `akn:FRBRuri` |
@@ -10564,10 +11457,18 @@ Eine dritte Art von Zuordnung hängt weder an der Klasse noch am Slot, sondern a
 | `tlc_concepts` | Slot | exactMatch | `akn:TLCConcept` |
 | `original_ref` | Slot | exactMatch | `akn:original` |
 | `component_refs` | Slot | exactMatch | `akn:componentRef` |
-| `formulas` | Slot | exactMatch | `akn:formula` |
-| `citations_ref` | Slot | exactMatch | `akn:citations` |
 | `citation_list` | Slot | exactMatch | `akn:citation` |
 | `active_refs` | Slot | exactMatch | `akn:activeRef` |
+| `mod_sources` | Slot | exactMatch | `akn:source` |
+| `mod_destinations` | Slot | exactMatch | `akn:destination` |
+| `mod_old` | Slot | exactMatch | `akn:old` |
+| `mod_new` | Slot | exactMatch | `akn:new` |
+| `active_modifications` | Slot | exactMatch | `akn:activeModifications` |
+| `passive_modifications` | Slot | exactMatch | `akn:passiveModifications` |
+| `temporal_groups` | Slot | exactMatch | `akn:temporalGroup` |
+| `time_intervals` | Slot | exactMatch | `akn:timeInterval` |
+| `analysis_ref` | Slot | exactMatch | `akn:analysis` |
+| `temporal_data_ref` | Slot | exactMatch | `akn:temporalData` |
 | `jolux:dateDocument` | Enum | exactMatch | `eli:date_document` |
 | `jolux:dateEntryInForce` | Enum | exactMatch | `eli:first_date_entry_in_force` |
 | `jolux:dateApplicability` | Enum | exactMatch | `eli:date_applicability` |

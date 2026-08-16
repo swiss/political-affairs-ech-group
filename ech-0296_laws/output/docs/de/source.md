@@ -28,6 +28,10 @@ URI: [laws:source](https://ld.ech.ch/schema/0296/laws/source)
 | [Identification](Identification.md) | FRBR-Identifikationsblock (akn:identification) mit Work-, Expression- und Man... |  no  |
 | [References](References.md) | Benannte Referenz-Definitionen für das gesamte Dokument (akn:references) |  no  |
 | [Notes](Notes.md) | Anmerkungsblock der Metadaten mit den Anmerkungen, auf die ein Erlass verweis... |  no  |
+| [ActiveModifications](ActiveModifications.md) | Die Änderungen, die dieser Erlass an anderen vornimmt |  no  |
+| [PassiveModifications](PassiveModifications.md) | Die Änderungen, die andere Erlasse an diesem vornehmen |  no  |
+| [Analysis](Analysis.md) | Der Analyseblock: welche Änderungen dieser Erlass vornimmt und erfährt |  no  |
+| [TemporalData](TemporalData.md) | Die Zeitgruppen, auf die sich eine Änderung bezieht |  no  |
 
 
 
@@ -41,7 +45,7 @@ URI: [laws:source](https://ld.ech.ch/schema/0296/laws/source)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [AnchorRef](AnchorRef.md) |
-| Domäne von | [Identification](Identification.md), [References](References.md), [Notes](Notes.md) |
+| Domäne von | [Identification](Identification.md), [References](References.md), [Notes](Notes.md), [ActiveModifications](ActiveModifications.md), [PassiveModifications](PassiveModifications.md), [Analysis](Analysis.md), [TemporalData](TemporalData.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -78,6 +82,10 @@ domain_of:
 - Identification
 - References
 - Notes
+- ActiveModifications
+- PassiveModifications
+- Analysis
+- TemporalData
 range: AnchorRef
 
 ```

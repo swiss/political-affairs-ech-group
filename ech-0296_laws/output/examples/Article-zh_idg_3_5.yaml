@@ -15,6 +15,7 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_3__art_18__para_1__content
       content_blocks:
       - …
   - eId: ttitle_3__art_18__para_2
@@ -22,5 +23,6 @@ articles:
       inline_content:
       - …
     content_ref:
+      eId: title_3__art_18__para_2__content
       content_blocks:
       - …

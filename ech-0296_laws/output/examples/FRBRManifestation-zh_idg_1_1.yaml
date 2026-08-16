@@ -11,3 +11,4 @@ frbr_manifestation:
     as_role: '#publisher'
   frbr_format:
     value: '#akn'
+    show_as: akn

@@ -17,6 +17,7 @@ _Halter mit einem einzelnen @language-Attribut (akn:FRBRlanguage)._
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
 | language_value | 0..1 <br/> [DocumentLanguageEnum](DocumentLanguageEnum.md) | Das @language-Attribut von akn:FRBRlanguage, z.B. 'de'. |
+| show_as | 0..1 <br/> [String](String.md) | Lesbare Anzeigebezeichnung einer TLC-Referenz (@showAs). |
 
 
 

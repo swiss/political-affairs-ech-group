@@ -63,6 +63,7 @@ frbr_manifestation:
     as_role: '#publisher'
   frbr_format:
     value: '#akn'
+    show_as: akn
 
 ```
 #### Beispiel FRBRManifestation: bgoe 1 1
