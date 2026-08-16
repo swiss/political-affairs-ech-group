@@ -16,6 +16,21 @@ import xml.etree.ElementTree as etree
 
 AKN = "http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
 XML = "http://www.w3.org/XML/1998/namespace"
+FEDLEX = "http://fedlex.admin.ch/"
+NAMESPACES = {"akn": AKN, "xml": XML, "fedlex": FEDLEX}
+
+
+def attr_key(name):
+    """Attributname aus dem Schema in die Schreibweise von ElementTree.
+
+    `xml_name` kann einen Praefix tragen -- xml:lang, fedlex:generator --, und
+    ElementTree adressiert solche Attribute ueber {Namensraum}name. Ohne diese
+    Umsetzung liest `element.get("xml:lang")` schlicht nichts.
+    """
+    prefix, sep, local = name.partition(":")
+    if sep and prefix in NAMESPACES:
+        return f"{{{NAMESPACES[prefix]}}}{local}"
+    return name
 
 
 class Schema:
@@ -33,13 +48,20 @@ class Schema:
             el = self._ann(defn).get("xml_element")
             if el:
                 self.class_by_element[el.split(":")[-1]].append(name)
-        # Subklassen von InlineElement, fuer den gemischten Inhalt.
-        self.inline_by_element = {}
+        # Subklassen der abstrakten Basen: InlineElement fuer den gemischten
+        # Inhalt, BlockElement fuer die geordnete Folge aus Absatz, Aufzaehlung
+        # und Tabelle.
+        self.inline_by_element = self._subclasses("InlineElement")
+        self.block_by_element = self._subclasses("BlockElement")
+
+    def _subclasses(self, base):
+        out = {}
         for name, defn in self.classes.items():
-            if defn.get("is_a") == "InlineElement":
+            if defn.get("is_a") == base:
                 el = self._ann(defn).get("xml_element")
                 if el:
-                    self.inline_by_element[el.split(":")[-1]] = name
+                    out[el.split(":")[-1]] = name
+        return out
 
     @staticmethod
     def _ann(defn):
@@ -104,14 +126,40 @@ class Converter:
         out = {}
 
         for slot, attr in self.s.attribute_slots(cls):
-            value = element.get(attr) or element.get(f"{{{XML}}}{attr}")
-            if value is None and attr == "lang":
-                value = element.get(f"{{{XML}}}lang")
+            value = element.get(attr_key(attr))
             if value is not None:
                 out[slot] = value
 
         children = self.s.child_slots(cls)
         by_element = {el: (slot, rng, multi) for slot, rng, multi, el in children if el}
+
+        # Blockinhalt in Lesereihenfolge, mit Typ-Diskriminator je Eintrag.
+        if any(slot == "content_blocks" for slot, _, _, _ in children):
+            blocks = []
+            for child in element:
+                if not isinstance(child.tag, str):
+                    continue
+                name = local(child.tag)
+                block_cls = self.s.block_by_element.get(name)
+                if not block_cls:
+                    self.skipped[f"{local(element.tag)} > {name}"] += 1
+                    continue
+                item = {"element_type": block_cls}
+                item.update(self.convert(child, block_cls))
+                blocks.append(item)
+            if blocks:
+                out["content_blocks"] = blocks
+            elif not out:
+                # Leeres Element, etwa eine leere Tabellenzelle: der LinkML-Lader
+                # nimmt in einer Liste kein leeres Objekt an, eine leere Liste
+                # aber schon -- und beim Zurueckschreiben entsteht dasselbe
+                # leere Element.
+                out["content_blocks"] = []
+            # Klassen, die neben dem Blockinhalt eigene Kinder fuehren -- der
+            # Hauptteil eines Anhangs etwa --, holen diese anschliessend ab.
+            if not any(slot not in ("content_blocks",) and rng
+                       for slot, rng, _, _ in children):
+                return out
 
         has_inline = any(slot == "inline_content" for slot, _, _, _ in children)
         # Eine Klasse, die nur gemischten Inhalt kennt, liest Text und
@@ -145,6 +193,17 @@ class Converter:
             leftover = self.inline(element, skip=set(by_element))
             if leftover:
                 out["inline_content"] = leftover
+
+        # Eine leere Tabellenzelle traegt nichts -- und ein leeres Objekt lehnt
+        # der LinkML-Lader in einer Liste ab ("Empty list elements are not
+        # allowed"). Der erste mehrwertige Slot der Klasse wird deshalb
+        # ausdruecklich als leere Liste gesetzt: sachlich dasselbe, und beim
+        # Zurueckschreiben entsteht wieder das leere Element.
+        if not out:
+            for slot, rng, multi, _ in children:
+                if multi:
+                    out[slot] = []
+                    break
         return out
 
     def inline(self, element, skip=frozenset()):

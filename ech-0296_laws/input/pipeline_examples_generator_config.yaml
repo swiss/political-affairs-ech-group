@@ -48,6 +48,13 @@ slots:
 
 max_examples_per_slot: 3
 
+# Die Datendateien halten den vollstaendigen Erlass. Fuer das Dokument werden
+# die gedruckten Beispiele hier gekuerzt: Listen zeigen die ersten Eintraege und
+# sagen, wie viele folgen; tiefer als die angegebene Ebene steht eine
+# Auslassung. Die Daten selbst bleiben unangetastet.
+example_max_depth: 7
+example_max_items: 2
+
 # Sprechende Titel für einzelne Beispiele. Ein AKN-Dokument identifiziert seine
 # Bestandteile über `@eId` innerhalb des Dokuments, nicht über eine `local_id`
 # oder `global_uri` -- Schlüssel ist deshalb die `eId`. Wo eine Klasse gar keine

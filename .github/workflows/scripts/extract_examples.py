@@ -119,6 +119,32 @@ def represent_str(dumper, data):
 yaml.add_representer(str, represent_str)
 
 
+def shorten(value, max_depth, max_items, depth=0):
+    """Ein Beispiel auf Lesbarkeit kuerzen, ohne die Daten anzutasten.
+
+    Die Datendateien halten den vollstaendigen Erlass -- die Bundesverfassung
+    sind 10315 Knoten. Als Codeblock im Word-Dokument waere das unlesbar, und
+    kuerzen liesse sich das nur durch Verstuemmeln der Quelle. Deshalb geschieht
+    es hier, zwischen Daten und Dokument: Listen behalten ihre ersten Eintraege
+    und sagen, wie viele folgen; unterhalb der erlaubten Tiefe steht eine
+    Auslassung. Ohne Angabe in der Konfiguration wird nicht gekuerzt, womit
+    alle uebrigen Standards unveraendert bleiben.
+    """
+    if max_depth is None and max_items is None:
+        return value
+    if isinstance(value, dict):
+        if max_depth is not None and depth >= max_depth:
+            return "…"
+        return {k: shorten(v, max_depth, max_items, depth + 1) for k, v in value.items()}
+    if isinstance(value, list):
+        head = value if max_items is None else value[:max_items]
+        out = [shorten(v, max_depth, max_items, depth + 1) for v in head]
+        if max_items is not None and len(value) > max_items:
+            out.append(f"… {len(value) - max_items} weitere")
+        return out
+    return value
+
+
 def slugify(text: str) -> str:
     """Turn a title into a file name; gen-doc renders it back as the heading.
 
@@ -351,6 +377,9 @@ def extract(ech_folder: str):
     # -- which gen-doc renders as the heading -- are written in the schema
     # language (English) rather than duplicated per language.
     title_lang = config.get("example_title_language", "en")
+    # Kuerzung der gedruckten Beispiele; ohne Angabe wird nicht gekuerzt.
+    max_depth = config.get("example_max_depth")
+    max_items = config.get("example_max_items")
     # Composite examples show several instances together -- the only way to make
     # a relation between them, such as parent_groups, visible in one listing.
     composites = config.get("composite_examples") or []
@@ -376,7 +405,15 @@ def extract(ech_folder: str):
         stem = data_file.stem.replace("data_", "")
 
         container_dest = examples_dir / f"Container-{stem}.yaml"
-        shutil.copy2(data_file, container_dest)
+        if max_depth is None and max_items is None:
+            shutil.copy2(data_file, container_dest)
+        else:
+            with open(data_file, encoding="utf-8") as fh:
+                whole = yaml.safe_load(fh)
+            with open(container_dest, "w", encoding="utf-8") as fh:
+                yaml.dump(shorten(whole, max_depth, max_items), fh,
+                          default_flow_style=False, allow_unicode=True,
+                          sort_keys=False, width=YAML_WIDTH)
         print(f"  Container-{stem}.yaml")
 
         with open(data_file, encoding="utf-8") as f:
@@ -392,8 +429,9 @@ def extract(ech_folder: str):
         for filename, item in extracted:
             filepath = examples_dir / filename
             with open(filepath, "w", encoding="utf-8") as f:
-                yaml.dump(item, f, default_flow_style=False,
-                          allow_unicode=True, sort_keys=False, width=YAML_WIDTH)
+                yaml.dump(shorten(item, max_depth, max_items), f,
+                          default_flow_style=False, allow_unicode=True,
+                          sort_keys=False, width=YAML_WIDTH)
             print(f"  {filename}")
 
         # Slot values

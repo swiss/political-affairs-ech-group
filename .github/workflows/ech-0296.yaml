@@ -47,12 +47,28 @@ jobs:
           gen-owl --no-use-native-uris schema.yaml > ../output/schema.ttl
           gen-json-schema schema.yaml > ../output/schema.json
 
-          # Beispieldaten nach JSON und RDF.
+          # Beispieldaten nach JSON. Die Datendateien halten den vollstaendigen
+          # Erlass -- die Bundesverfassung sind 10315 Knoten -- und brauchen dafuer
+          # rund drei Sekunden. Der RDF-Export derselben Datei laeuft mehr als vier
+          # Minuten ohne Ergebnis, weshalb er hier fehlt; die semantische Fassung
+          # des Standards ist output/schema.ttl, die dokumentnahe das AKN-XML.
           for yaml_file in data_*.yaml; do
             base_name=$(basename "$yaml_file" .yaml)
             linkml-convert -s schema.yaml -t json "$yaml_file" > "../output/${base_name}.json"
-            linkml-convert -s schema.yaml -t rdf "$yaml_file" > "../output/${base_name}.ttl"
           done
+
+          # Rundlauf: aus den Daten wieder AKN-XML erzeugen. Das Ergebnis gehoert
+          # zu den Artefakten des Standards -- an ihm laesst sich pruefen, ob das
+          # Modell den amtlichen Erlass vollstaendig traegt.
+          cd ../..
+          mkdir -p ech-0296_laws/output/akn
+          for yaml_file in ech-0296_laws/input/data_*.yaml; do
+            base_name=$(basename "$yaml_file" .yaml)
+            python .github/workflows/scripts/linkml_to_akn.py \
+              ech-0296_laws/input/schema.yaml "$yaml_file" \
+              "ech-0296_laws/output/akn/${base_name}.xml"
+          done
+          cd ech-0296_laws/input
 
       - name: Extract examples from data files
         # Reichert das Schema fuer gen-doc mit Beispielwerten an und schreibt die

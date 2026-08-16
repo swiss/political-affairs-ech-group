@@ -54,7 +54,9 @@ Eine Eigenheit ist `akn:level`: Seine erlaubten Kinder sind diejenigen des näch
 
 ## Blockinhalte
 
-Auf der untersten Ebene stehen die Inhaltsblöcke: Absätze, Listen und Tabellen.
+Auf der untersten Ebene stehen die Inhaltsblöcke: Absätze, Listen und Tabellen. Sie stehen nicht in getrennten Listen je Art, sondern in einer einzigen geordneten Folge — `content_blocks` —, weil ein Absatz im Erlass auf eine Aufzählung folgen kann und darauf wieder ein Absatz. Getrennte Listen würden diese Reihenfolge verlieren; in der Bundesverfassung betrifft das 23 Stellen. Welche Art ein Eintrag hat, sagt er selbst über `element_type` — dasselbe Verfahren, mit dem auch die Textauszeichnung ihre Reihenfolge hält.
+
+{{include:ech-0296_laws/output/docs/BlockElement.md}}
 
 {{include:ech-0296_laws/output/docs/Content.md}}
 

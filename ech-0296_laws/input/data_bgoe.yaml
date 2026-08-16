@@ -1,0 +1,2638 @@
+# SR 152.3, Bundesgesetz über das Öffentlichkeitsprinzip der Verwaltung (BGÖ), Fassung vom 1. November 2023
+#
+# Der vollstaendige Erlass, nicht ein Ausschnitt. Erzeugt aus der amtlichen
+# AKN-Auslieferung mit
+#   python .github/workflows/scripts/akn_to_linkml.py \
+#       ech-0296_laws/input/schema.yaml <akn.xml> <diese Datei>
+# Quelle: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de/xml
+#
+# Der Rueckweg fuehrt zum Ausgangspunkt zurueck: linkml_to_akn.py erzeugt
+# daraus wieder AKN-XML, das mit dem Original in allen 753 Knoten
+# uebereinstimmt -- Pfad, Attribute, Text und Reihenfolge.
+#
+# Fuer das Word-Dokument werden die Beispiele gekuerzt; das steuert
+# input/pipeline_examples_generator_config.yaml, nicht diese Datei.
+act_ref:
+  act_name: publicLaw
+  meta:
+    identification_ref:
+      source: '#ch.bk'
+      frbr_work:
+        frbr_this:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/main-text
+        frbr_uri:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101
+        frbr_dates:
+        - date_value: '2006-07-01'
+          frbr_date_name: jolux:dateEntryInForce
+        - date_value: '2004-12-17'
+          frbr_date_name: jolux:dateDocument
+        - date_value: '2023-11-01'
+          frbr_date_name: jolux:dateApplicability
+        frbr_authors:
+        - href: '#ch.bk'
+          as_role: '#publisher'
+        - href: '#ch.bk'
+          as_role: '#rightsHolder'
+        frbr_country:
+          value: CH
+        frbr_number:
+          value: '152.3'
+        frbr_names:
+        - xml_lang: it
+          value: Legge federale del 17 dicembre 2004 sul principio di trasparenza dell'amministrazione
+            (Legge sulla trasparenza, LTras)
+          short_form: LTras
+        - xml_lang: fr
+          value: Loi fédérale du 17 décembre 2004 sur le principe de la transparence dans l'administration
+            (Loi sur la transparence, LTrans)
+          short_form: LTrans
+        - xml_lang: de
+          value: Bundesgesetz vom 17. Dezember 2004 über das Öffentlichkeitsprinzip der Verwaltung (Öffentlichkeitsgesetz,
+            BGÖ)
+          short_form: BGÖ
+        - xml_lang: en
+          value: Federal Act of 17 December 2004 on Freedom of Information in the Administration (Freedom
+            of Information Act, FoIA)
+          short_form: FoIA
+        - xml_lang: rm
+          value: Lescha federala dals 17 da december 2004 davart il princip da la transparenza da l'administraziun
+            (Lescha da transparenza, LTrans)
+          short_form: LTrans
+        frbr_authoritative:
+          value: 'true'
+      frbr_expression:
+        frbr_this:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de/main-text
+        frbr_uri:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de
+        frbr_dates:
+        - date_value: '2006-07-01'
+          frbr_date_name: jolux:dateEntryInForce
+        - date_value: '2004-12-17'
+          frbr_date_name: jolux:dateDocument
+        - date_value: '2023-11-01'
+          frbr_date_name: jolux:dateApplicability
+        frbr_authors:
+        - href: '#ch.bk'
+          as_role: '#publisher'
+        - href: '#ch.bk'
+          as_role: '#rightsHolder'
+        frbr_language:
+          language_value: de
+      frbr_manifestation:
+        frbr_this:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de/xml/main-text
+        frbr_uri:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de/xml
+        frbr_dates:
+        - date_value: '2006-07-01'
+          frbr_date_name: jolux:dateEntryInForce
+        - date_value: '2004-12-17'
+          frbr_date_name: jolux:dateDocument
+        - date_value: '2023-11-01'
+          frbr_date_name: jolux:dateApplicability
+        frbr_authors:
+        - href: '#ch.bk'
+          as_role: '#publisher'
+        - href: '#ch.bk'
+          as_role: '#rightsHolder'
+        frbr_format:
+          value: xml
+          fedlex_generator: 2024-q4-rel-1.6.5
+    references_ref:
+      source: '#ch.bk'
+      tlc_organizations:
+      - eId: ch.bk
+        href: https://fedlex.data.admin.ch/vocabulary/legal-institution/2
+        show_as: Bundeskanzlei
+      tlc_roles:
+      - eId: publisher
+        href: http://data.legilux.public.lu/resource/ontology/jolux#publisher
+        show_as: Editeur
+      - eId: rightsHolder
+        href: http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder
+        show_as: Détenteur des droits
+      tlc_references:
+      - name_attr: language
+        href: http://publications.europa.eu/resource/authority/language/DEU
+        show_as: de
+      - name_attr: format
+        href: https://fedlex.data.admin.ch/vocabulary/user-format/xml
+        show_as: xml
+  preface_ref:
+    preface_paragraphs:
+    - doc_number: '152.3 '
+    - doc_title:
+        inline_content:
+        - element_type: TextRun
+          text: Bundesgesetz
+        - element_type: Br
+        - element_type: TextRun
+          text: über das Öffentlichkeitsprinzip der Verwaltung
+    - inline_content:
+      - element_type: TextRun
+        text: (Öffentlichkeitsgesetz, BGÖ)
+    - inline_content:
+      - element_type: TextRun
+        text: vom 17. Dezember 2004 (Stand am 1. November 2023)
+  preamble_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - element_type: TextRun
+        text: Die Bundesversammlung der Schweizerischen Eidgenossenschaft,
+    - element_type: BlockParagraph
+      inline_content:
+      - element_type: TextRun
+        text: gestützt auf Artikel 173 Absatz 2 der Bundesverfassung
+      - element_type: AuthorialNote
+        content_blocks:
+        - element_type: BlockParagraph
+          inline_content:
+          - element_type: Ref
+            href: https://fedlex.data.admin.ch/eli/cc/1999/404
+            inline_content:
+            - element_type: TextRun
+              text: SR
+            - element_type: B
+              inline_content:
+              - element_type: TextRun
+                text: '101'
+      - element_type: TextRun
+        text: ','
+      - element_type: Br
+      - element_type: TextRun
+        text: nach Einsicht in die Botschaft des Bundesrates vom 12. Februar 2003
+      - element_type: AuthorialNote
+        content_blocks:
+        - element_type: BlockParagraph
+          inline_content:
+          - element_type: Ref
+            href: https://fedlex.data.admin.ch/eli/fga/2003/246
+            inline_content:
+            - element_type: TextRun
+              text: BBl
+            - element_type: B
+              inline_content:
+              - element_type: TextRun
+                text: '2003'
+            - element_type: TextRun
+              text: '1963'
+      - element_type: TextRun
+        text: ','
+    - element_type: BlockParagraph
+      inline_content:
+      - element_type: TextRun
+        text: 'beschliesst:'
+  body:
+    sections:
+    - eId: sec_1
+      num:
+        inline_content:
+        - element_type: TextRun
+          text: '1. Abschnitt:'
+      heading:
+        inline_content:
+        - element_type: TextRun
+          text: Allgemeine Bestimmungen
+      articles:
+      - eId: art_1
+        num:
+          inline_content:
+          - element_type: B
+            inline_content:
+            - element_type: TextRun
+              text: Art. 1
+        heading:
+          inline_content:
+          - element_type: TextRun
+            text: Zweck und Gegenstand
+        paragraphs:
+        - eId: art_1/para
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Dieses Gesetz soll die Transparenz über den Auftrag, die Organisation und die Tätigkeit
+                  der Verwaltung fördern. Zu diesem Zweck trägt es zur Information der Öffentlichkeit
+                  bei, indem es den Zugang zu amtlichen Dokumenten gewährleistet.
+      - eId: art_2
+        num:
+          inline_content:
+          - element_type: B
+            inline_content:
+            - element_type: TextRun
+              text: Art. 2
+        heading:
+          inline_content:
+          - element_type: TextRun
+            text: Persönlicher Geltungsbereich
+        paragraphs:
+        - eId: art_2/para_1
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '1'
+          content_ref:
+            content_blocks:
+            - element_type: BlockList
+              list_introduction:
+                eId: art_2/para_1/listintro
+                inline_content:
+                - element_type: TextRun
+                  text: 'Dieses Gesetz gilt für:'
+              items:
+              - eId: art_2/para_1/lbl_a
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: die Bundesverwaltung;
+                num:
+                  inline_content:
+                  - element_type: TextRun
+                    text: a.
+              - eId: art_2/para_1/lbl_b
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: Organisationen und Personen des öffentlichen oder privaten Rechts, die nicht
+                      der Bundesverwaltung angehören, soweit sie Erlasse oder erstinstanzlich Verfügungen
+                      im Sinn von Artikel 5 des Bundesgesetzes vom 20. Dezember 1968
+                  - element_type: AuthorialNote
+                    content_blocks:
+                    - element_type: BlockParagraph
+                      inline_content:
+                      - element_type: Ref
+                        href: https://fedlex.data.admin.ch/eli/cc/1969/737_757_755
+                        inline_content:
+                        - element_type: TextRun
+                          text: SR
+                        - element_type: B
+                          inline_content:
+                          - element_type: TextRun
+                            text: '172.021'
+                  - element_type: TextRun
+                    text: über das Verwaltungsverfahren (Verwaltungsverfahrensgesetz) erlassen;
+                num:
+                  inline_content:
+                  - element_type: TextRun
+                    text: b.
+              - eId: art_2/para_1/lbl_c
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: die Parlamentsdienste.
+                num:
+                  inline_content:
+                  - element_type: TextRun
+                    text: c.
+        - eId: art_2/para_2
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '2'
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Das Gesetz gilt nicht für die Schweizerische Nationalbank und die Eidgenössische
+                  Finanzmarktaufsicht.
+              - element_type: AuthorialNote
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: Fassung gemäss Anhang Ziff. 1 des Finanzmarktaufsichtsgesetzes vom 22. Juni
+                      2007, in Kraft seit 1. Jan. 2009 (
+                  - element_type: Ref
+                    href: https://fedlex.data.admin.ch/eli/oc/2008/736
+                    inline_content:
+                    - element_type: TextRun
+                      text: AS
+                    - element_type: B
+                      inline_content:
+                      - element_type: TextRun
+                        text: '2008'
+                    - element_type: TextRun
+                      text: '5207'
+                  - element_type: TextRun
+                    text: ;
+                  - element_type: Ref
+                    href: https://fedlex.data.admin.ch/eli/fga/2006/303
+                    inline_content:
+                    - element_type: TextRun
+                      text: BBl
+                    - element_type: B
+                      inline_content:
+                      - element_type: TextRun
+                        text: '2006'
+                    - element_type: TextRun
+                      text: '2829'
+                  - element_type: TextRun
+                    text: ).
+        - eId: art_2/para_3
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '3'
+          content_ref:
+            content_blocks:
+            - element_type: BlockList
+              list_introduction:
+                eId: art_2/para_3/listintro
+                inline_content:
+                - element_type: TextRun
+                  text: 'Der Bundesrat kann weitere Einheiten der Bundesverwaltung sowie weitere Organisationen
+                    und Personen, die nicht der Bundesverwaltung angehören, vom Geltungsbereich ausnehmen,
+                    wenn:'
+              items:
+              - eId: art_2/para_3/lbl_a
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: dies für die Erfüllung der ihnen übertragenen Aufgaben erforderlich ist;
+                num:
+                  inline_content:
+                  - element_type: TextRun
+                    text: a.
+              - eId: art_2/para_3/lbl_b
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: deren Wettbewerbsfähigkeit durch die Unterstellung unter dieses Gesetz beeinträchtigt
+                      würde; oder
+                num:
+                  inline_content:
+                  - element_type: TextRun
+                    text: b.
+              - eId: art_2/para_3/lbl_c
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: die ihnen übertragenen Aufgaben von geringer Bedeutung sind.
+                num:
+                  inline_content:
+                  - element_type: TextRun
+                    text: c.
+      - eId: art_3
+        num:
+          inline_content:
+          - element_type: B
+            inline_content:
+            - element_type: TextRun
+              text: Art. 3
+        heading:
+          inline_content:
+          - element_type: TextRun
+            text: Sachlicher Geltungsbereich
+        paragraphs:
+        - eId: art_3/para_1
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '1'
+          content_ref:
+            content_blocks:
+            - element_type: BlockList
+              list_introduction:
+                eId: art_3/para_1/listintro
+                inline_content:
+                - element_type: TextRun
+                  text: 'Dieses Gesetz gilt nicht für:'
+              items:
+              - eId: art_3/para_1/lbl_a
+                content_blocks:
+                - element_type: BlockList
+                  list_introduction:
+                    eId: art_3/para_1/lbl_a/listintro
+                    inline_content:
+                    - element_type: TextRun
+                      text: 'den Zugang zu amtlichen Dokumenten betreffend:'
+                  items:
+                  - eId: art_3/para_1/lbl_a/lbl_1
+                    content_blocks:
+                    - element_type: BlockParagraph
+                      inline_content:
+                      - element_type: TextRun
+                        text: Zivilverfahren,
+                    num:
+                      inline_content:
+                      - element_type: TextRun
+                        text: '1.'
+                  - eId: art_3/para_1/lbl_a/lbl_2
+                    content_blocks:
+                    - element_type: BlockParagraph
+                      inline_content:
+                      - element_type: TextRun
+                        text: Strafverfahren,
+                    num:
+                      inline_content:
+                      - element_type: TextRun
+                        text: '2.'
+                  - eId: art_3/para_1/lbl_a/lbl_3
+                    content_blocks:
+                    - element_type: BlockParagraph
+                      inline_content:
+                      - element_type: TextRun
+                        text: Verfahren der internationalen Rechts- und Amtshilfe,
+                    num:
+                      inline_content:
+                      - element_type: TextRun
+                        text: '3.'
+                  - eId: art_3/para_1/lbl_a/lbl_4
+                    content_blocks:
+                    - element_type: BlockParagraph
+                      inline_content:
+                      - element_type: TextRun
+                        text: internationale Verfahren zur Streitbeilegung,
+                    num:
+                      inline_content:
+                      - element_type: TextRun
+                        text: '4.'
+                  - eId: art_3/para_1/lbl_a/lbl_5
+                    content_blocks:
+                    - element_type: BlockParagraph
+                      inline_content:
+                      - element_type: TextRun
+                        text: Verfahren der Staats- und Verwaltungsrechtspflege oder
+                    num:
+                      inline_content:
+                      - element_type: TextRun
+                        text: '5.'
+                  - eId: art_3/para_1/lbl_a/lbl_6
+                    content_blocks:
+                    - element_type: BlockParagraph
+                      inline_content:
+                      - element_type: TextRun
+                        text: Schiedsverfahren;
+                    num:
+                      inline_content:
+                      - element_type: TextRun
+                        text: '6.'
+                num:
+                  inline_content:
+                  - element_type: TextRun
+                    text: a.
+              - eId: art_3/para_1/lbl_b
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: die Einsichtnahme einer Partei in die Akten eines erstinstanzlichen Verwaltungsverfahrens.
+                num:
+                  inline_content:
+                  - element_type: TextRun
+                    text: b.
+        - eId: art_3/para_2
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '2'
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Der Zugang zu amtlichen Dokumenten, die Personendaten der Gesuchstellerin oder des
+                  Gesuchstellers enthalten, richtet sich nach dem Datenschutzgesetz vom 25. September
+                  2020
+              - element_type: AuthorialNote
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: Ref
+                    href: https://fedlex.data.admin.ch/eli/cc/2022/491
+                    inline_content:
+                    - element_type: TextRun
+                      text: SR
+                    - element_type: B
+                      inline_content:
+                      - element_type: TextRun
+                        text: '235.1'
+              - element_type: TextRun
+                text: (DSG).
+              - element_type: AuthorialNote
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: Fassung gemäss Anhang 1 Ziff. II 10 des Datenschutzgesetzes vom 25. Sept. 2020,
+                      in Kraft seit 1. Sept. 2023 (
+                  - element_type: Ref
+                    href: https://fedlex.data.admin.ch/eli/oc/2022/491
+                    inline_content:
+                    - element_type: TextRun
+                      text: AS
+                    - element_type: B
+                      inline_content:
+                      - element_type: TextRun
+                        text: '2022'
+                    - element_type: TextRun
+                      text: '491'
+                  - element_type: TextRun
+                    text: ;
+                  - element_type: Ref
+                    href: https://fedlex.data.admin.ch/eli/fga/2017/2057
+                    inline_content:
+                    - element_type: TextRun
+                      text: BBl
+                    - element_type: B
+                      inline_content:
+                      - element_type: TextRun
+                        text: '2017'
+                    - element_type: TextRun
+                      text: '6941'
+                  - element_type: TextRun
+                    text: ).
+      - eId: art_4
+        num:
+          inline_content:
+          - element_type: B
+            inline_content:
+            - element_type: TextRun
+              text: Art. 4
+        heading:
+          inline_content:
+          - element_type: TextRun
+            text: Vorbehalt von Spezialbestimmungen
+        paragraphs:
+        - eId: art_4/para
+          content_ref:
+            content_blocks:
+            - element_type: BlockList
+              list_introduction:
+                eId: art_4/para/listintro
+                inline_content:
+                - element_type: TextRun
+                  text: 'Vorbehalten bleiben spezielle Bestimmungen anderer Bundesgesetze, die:'
+              items:
+              - eId: art_4/para/lbl_a
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: bestimmte Informationen als geheim bezeichnen; oder
+                num:
+                  inline_content:
+                  - element_type: TextRun
+                    text: a.
+              - eId: art_4/para/lbl_b
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: von diesem Gesetz abweichende Voraussetzungen für den Zugang zu bestimmten Informationen
+                      vorsehen.
+                num:
+                  inline_content:
+                  - element_type: TextRun
+                    text: b.
+      - eId: art_5
+        num:
+          inline_content:
+          - element_type: B
+            inline_content:
+            - element_type: TextRun
+              text: Art. 5
+        heading:
+          inline_content:
+          - element_type: TextRun
+            text: Amtliche Dokumente
+        paragraphs:
+        - eId: art_5/para_1
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '1'
+          content_ref:
+            content_blocks:
+            - element_type: BlockList
+              list_introduction:
+                eId: art_5/para_1/listintro
+                inline_content:
+                - element_type: TextRun
+                  text: 'Ein amtliches Dokument ist jede Information, die:'
+              items:
+              - eId: art_5/para_1/lbl_a
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: auf einem beliebigen Informationsträger aufgezeichnet ist;
+                num:
+                  inline_content:
+                  - element_type: TextRun
+                    text: a.
+              - eId: art_5/para_1/lbl_b
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: sich im Besitz einer Behörde befindet, von der sie stammt oder der sie mitgeteilt
+                      worden ist; und
+                num:
+                  inline_content:
+                  - element_type: TextRun
+                    text: b.
+              - eId: art_5/para_1/lbl_c
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: die Erfüllung einer öffentlichen Aufgabe betrifft.
+                num:
+                  inline_content:
+                  - element_type: TextRun
+                    text: c.
+        - eId: art_5/para_2
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '2'
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Als amtliche Dokumente gelten auch solche, die durch einen einfachen elektronischen
+                  Vorgang aus aufgezeichneten Informationen erstellt werden können, welche die Anforderungen
+                  nach Absatz 1 Buchstaben b und c erfüllen.
+        - eId: art_5/para_3
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '3'
+          content_ref:
+            content_blocks:
+            - element_type: BlockList
+              list_introduction:
+                eId: art_5/para_3/listintro
+                inline_content:
+                - element_type: TextRun
+                  text: 'Nicht als amtliche Dokumente gelten Dokumente, die:'
+              items:
+              - eId: art_5/para_3/lbl_a
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: durch eine Behörde kommerziell genutzt werden;
+                num:
+                  inline_content:
+                  - element_type: TextRun
+                    text: a.
+              - eId: art_5/para_3/lbl_b
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: nicht fertig gestellt sind; oder
+                num:
+                  inline_content:
+                  - element_type: TextRun
+                    text: b.
+              - eId: art_5/para_3/lbl_c
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: zum persönlichen Gebrauch bestimmt sind.
+                num:
+                  inline_content:
+                  - element_type: TextRun
+                    text: c.
+    - eId: sec_2
+      num:
+        inline_content:
+        - element_type: TextRun
+          text: '2. Abschnitt:'
+      heading:
+        inline_content:
+        - element_type: TextRun
+          text: Recht auf Zugang zu amtlichen Dokumenten
+      articles:
+      - eId: art_6
+        num:
+          inline_content:
+          - element_type: B
+            inline_content:
+            - element_type: TextRun
+              text: Art. 6
+        heading:
+          inline_content:
+          - element_type: TextRun
+            text: Öffentlichkeitsprinzip
+        paragraphs:
+        - eId: art_6/para_1
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '1'
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Jede Person hat das Recht, amtliche Dokumente einzusehen und von den Behörden Auskünfte
+                  über den Inhalt amtlicher Dokumente zu erhalten.
+        - eId: art_6/para_2
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '2'
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Die Dokumente können vor Ort eingesehen werden, oder es können Kopien davon angefordert
+                  werden. Die Gesetzgebung über das Urheberrecht bleibt vorbehalten.
+        - eId: art_6/para_3
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '3'
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Ist ein amtliches Dokument in einem Publikationsorgan oder auf einer Internetseite
+                  des Bundes veröffentlicht, so gilt der Anspruch nach den Absätzen 1 und 2 für jedermann
+                  als erfüllt.
+      - eId: art_7
+        num:
+          inline_content:
+          - element_type: B
+            inline_content:
+            - element_type: TextRun
+              text: Art. 7
+        heading:
+          inline_content:
+          - element_type: TextRun
+            text: Ausnahmen
+        paragraphs:
+        - eId: art_7/para_1
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '1'
+          content_ref:
+            content_blocks:
+            - element_type: BlockList
+              list_introduction:
+                eId: art_7/para_1/listintro
+                inline_content:
+                - element_type: TextRun
+                  text: 'Der Zugang zu amtlichen Dokumenten wird eingeschränkt, aufgeschoben oder verweigert,
+                    wenn durch seine Gewährung:'
+              items:
+              - eId: art_7/para_1/lbl_a
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: die freie Meinungs- und Willensbildung einer diesem Gesetz unterstellten Behörde,
+                      eines anderen legislativen oder administrativen Organes oder einer gerichtlichen
+                      Instanz wesentlich beeinträchtigt werden kann;
+                num:
+                  inline_content:
+                  - element_type: TextRun
+                    text: a.
+              - eId: art_7/para_1/lbl_b
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: die zielkonforme Durchführung konkreter behördlicher Massnahmen beeinträchtigt
+                      würde;
+                num:
+                  inline_content:
+                  - element_type: TextRun
+                    text: b.
+              - eId: art_7/para_1/lbl_c
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: die innere oder äussere Sicherheit der Schweiz gefährdet werden kann;
+                num:
+                  inline_content:
+                  - element_type: TextRun
+                    text: c.
+              - eId: art_7/para_1/lbl_d
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: die aussenpolitischen Interessen oder die internationalen Beziehungen der Schweiz
+                      beeinträchtigt werden können;
+                num:
+                  inline_content:
+                  - element_type: TextRun
+                    text: d.
+              - eId: art_7/para_1/lbl_e
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: die Beziehungen zwischen dem Bund und den Kantonen oder zwischen Kantonen beeinträchtigt
+                      werden können;
+                num:
+                  inline_content:
+                  - element_type: TextRun
+                    text: e.
+              - eId: art_7/para_1/lbl_f
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: die wirtschafts-, geld- und währungspolitischen Interessen der Schweiz gefährdet
+                      werden können;
+                num:
+                  inline_content:
+                  - element_type: TextRun
+                    text: f.
+              - eId: art_7/para_1/lbl_g
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: Berufs-, Geschäfts- oder Fabrikationsgeheimnisse offenbart werden können;
+                num:
+                  inline_content:
+                  - element_type: TextRun
+                    text: g.
+              - eId: art_7/para_1/lbl_h
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: Informationen vermittelt werden können, die der Behörde von Dritten freiwillig
+                      mitgeteilt worden sind und deren Geheimhaltung die Behörde zugesichert hat.
+                num:
+                  inline_content:
+                  - element_type: TextRun
+                    text: h.
+        - eId: art_7/para_2
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '2'
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Der Zugang zu amtlichen Dokumenten wird eingeschränkt, aufgeschoben oder verweigert,
+                  wenn durch seine Gewährung die Privatsphäre Dritter beeinträchtigt werden kann; ausnahmsweise
+                  kann jedoch das öffentliche Interesse am Zugang überwiegen.
+      - eId: art_8
+        num:
+          inline_content:
+          - element_type: B
+            inline_content:
+            - element_type: TextRun
+              text: Art. 8
+        heading:
+          inline_content:
+          - element_type: TextRun
+            text: Besondere Fälle
+        paragraphs:
+        - eId: art_8/para_1
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '1'
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Es besteht kein Recht auf Zugang zu amtlichen Dokumenten des Mitberichtsverfahrens.
+        - eId: art_8/para_2
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '2'
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Amtliche Dokumente dürfen erst zugänglich gemacht werden, wenn der politische oder
+                  administrative Entscheid, für den sie die Grundlage darstellen, getroffen ist.
+        - eId: art_8/para_3
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '3'
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Der Bundesrat kann ausnahmsweise beschliessen, amtliche Dokumente des Ämterkonsultationsverfahrens
+                  auch nach dem Entscheid nicht zugänglich zu machen.
+        - eId: art_8/para_4
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '4'
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Amtliche Dokumente über Positionen in laufenden und künftigen Verhandlungen sind
+                  in keinem Fall zugänglich.
+        - eId: art_8/para_5
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '5'
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Der Zugang zu Berichten über die Evaluation der Leistungsfähigkeit der Bundesverwaltung
+                  und die Wirksamkeit ihrer Massnahmen ist gewährleistet.
+      - eId: art_9
+        num:
+          inline_content:
+          - element_type: B
+            inline_content:
+            - element_type: TextRun
+              text: Art. 9
+          - element_type: AuthorialNote
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Fassung gemäss Anhang 1 Ziff. II 10 des Datenschutzgesetzes vom 25. Sept. 2020,
+                  in Kraft seit 1. Sept. 2023 (
+              - element_type: Ref
+                href: https://fedlex.data.admin.ch/eli/oc/2022/491
+                inline_content:
+                - element_type: TextRun
+                  text: AS
+                - element_type: B
+                  inline_content:
+                  - element_type: TextRun
+                    text: '2022'
+                - element_type: TextRun
+                  text: '491'
+              - element_type: TextRun
+                text: ;
+              - element_type: Ref
+                href: https://fedlex.data.admin.ch/eli/fga/2017/2057
+                inline_content:
+                - element_type: TextRun
+                  text: BBl
+                - element_type: B
+                  inline_content:
+                  - element_type: TextRun
+                    text: '2017'
+                - element_type: TextRun
+                  text: '6941'
+              - element_type: TextRun
+                text: ).
+        heading:
+          inline_content:
+          - element_type: TextRun
+            text: Schutz von Personendaten und von Daten juristischer Personen
+        paragraphs:
+        - eId: art_9/para_1
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '1'
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Amtliche Dokumente, die Personendaten oder Daten juristischer Personen enthalten,
+                  sind nach Möglichkeit vor der Einsichtnahme zu anonymisieren.
+        - eId: art_9/para_2
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '2'
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Zugangsgesuche, die sich auf amtliche Dokumente beziehen, die nicht anonymisiert
+                  werden können, sind für Personendaten nach Artikel 36 DSG
+              - element_type: AuthorialNote
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: Ref
+                    href: https://fedlex.data.admin.ch/eli/cc/2022/491
+                    inline_content:
+                    - element_type: TextRun
+                      text: SR
+                    - element_type: B
+                      inline_content:
+                      - element_type: TextRun
+                        text: '235.1'
+              - element_type: TextRun
+                text: und für Daten juristischer Personen nach Artikel 57
+              - element_type: I
+                inline_content:
+                - element_type: TextRun
+                  text: s
+              - element_type: TextRun
+                text: des Regierungs- und Verwaltungsorganisationsgesetzes vom 21. März 1997
+              - element_type: AuthorialNote
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: Ref
+                    href: https://fedlex.data.admin.ch/eli/cc/1997/2022_2022_2022
+                    inline_content:
+                    - element_type: TextRun
+                      text: SR
+                    - element_type: B
+                      inline_content:
+                      - element_type: TextRun
+                        text: '172.010'
+              - element_type: TextRun
+                text: zu beurteilen. Das Zugangsverfahren richtet sich nach dem vorliegenden Gesetz.
+    - eId: sec_3
+      num:
+        inline_content:
+        - element_type: TextRun
+          text: '3. Abschnitt:'
+      heading:
+        inline_content:
+        - element_type: TextRun
+          text: Verfahren für den Zugang zu amtlichen Dokumenten
+      articles:
+      - eId: art_10
+        num:
+          inline_content:
+          - element_type: B
+            inline_content:
+            - element_type: TextRun
+              text: Art. 10
+        heading:
+          inline_content:
+          - element_type: TextRun
+            text: Gesuch
+        paragraphs:
+        - eId: art_10/para_1
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '1'
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Das Gesuch um Zugang zu amtlichen Dokumenten ist an die Behörde zu richten, die
+                  das Dokument erstellt oder von Dritten, die nicht diesem Gesetz unterstehen, als Hauptadressatin
+                  erhalten hat.
+        - eId: art_10/para_2
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '2'
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Der Bundesrat kann ein besonderes Verfahren für den Zugang zu amtlichen Dokumenten
+                  der schweizerischen Vertretungen im Ausland und der Missionen bei internationalen Organisationen
+                  vorsehen.
+        - eId: art_10/para_3
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '3'
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Das Gesuch muss hinreichend genau formuliert sein.
+        - eId: art_10/para_4
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '4'
+          content_ref:
+            content_blocks:
+            - element_type: BlockList
+              list_introduction:
+                eId: art_10/para_4/listintro
+                inline_content:
+                - element_type: TextRun
+                  text: 'Der Bundesrat regelt die Einzelheiten des Verfahrens:'
+              items:
+              - eId: art_10/para_4/lbl_a
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: Er nimmt auf die besonderen Bedürfnisse der Medien Rücksicht.
+                num:
+                  inline_content:
+                  - element_type: TextRun
+                    text: a.
+              - eId: art_10/para_4/lbl_b
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: Er kann für Fälle, in denen eine Vielzahl von Gesuchen sich auf dieselben Dokumente
+                      bezieht, andere Modalitäten des Zugangs vorsehen.
+                num:
+                  inline_content:
+                  - element_type: TextRun
+                    text: b.
+              - eId: art_10/para_4/lbl_c
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: Er kann für Gesuche, die eine besonders aufwendige Bearbeitung erfordern, längere
+                      Bearbeitungsfristen vorsehen.
+                num:
+                  inline_content:
+                  - element_type: TextRun
+                    text: c.
+      - eId: art_11
+        num:
+          inline_content:
+          - element_type: B
+            inline_content:
+            - element_type: TextRun
+              text: Art. 11
+          - element_type: AuthorialNote
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Fassung gemäss Anhang 1 Ziff. II 10 des Datenschutzgesetzes vom 25. Sept. 2020,
+                  in Kraft seit 1. Sept. 2023 (
+              - element_type: Ref
+                href: https://fedlex.data.admin.ch/eli/oc/2022/491
+                inline_content:
+                - element_type: TextRun
+                  text: AS
+                - element_type: B
+                  inline_content:
+                  - element_type: TextRun
+                    text: '2022'
+                - element_type: TextRun
+                  text: '491'
+              - element_type: TextRun
+                text: ;
+              - element_type: Ref
+                href: https://fedlex.data.admin.ch/eli/fga/2017/2057
+                inline_content:
+                - element_type: TextRun
+                  text: BBl
+                - element_type: B
+                  inline_content:
+                  - element_type: TextRun
+                    text: '2017'
+                - element_type: TextRun
+                  text: '6941'
+              - element_type: TextRun
+                text: ).
+        heading:
+          inline_content:
+          - element_type: TextRun
+            text: Anhörung
+        paragraphs:
+        - eId: art_11/para_1
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '1'
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Zieht die Behörde in Erwägung, den Zugang zu amtlichen Dokumenten zu gewähren, durch
+                  deren Zugänglichmachung die Privatsphäre Dritter beeinträchtigt werden kann, so konsultiert
+                  sie den betroffenen Dritten und gibt ihm Gelegenheit zur Stellungnahme innert zehn Tagen.
+        - eId: art_11/para_2
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '2'
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Sie informiert die angehörte Person über ihre Stellungnahme zum Gesuch.
+      - eId: art_12
+        num:
+          inline_content:
+          - element_type: B
+            inline_content:
+            - element_type: TextRun
+              text: Art. 12
+        heading:
+          inline_content:
+          - element_type: TextRun
+            text: Stellungnahme der Behörde
+        paragraphs:
+        - eId: art_12/para_1
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '1'
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Die Behörde nimmt so rasch als möglich Stellung, in jedem Fall aber innert 20 Tagen
+                  nach Eingang des Gesuches.
+        - eId: art_12/para_2
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '2'
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Die Frist kann ausnahmsweise um 20 Tage verlängert werden, wenn das Gesuch umfangreiche,
+                  komplexe oder schwer beschaffbare Dokumente betrifft. Sie wird um die erforderliche
+                  Dauer verlängert, wenn sich ein Gesuch auf amtliche Dokumente bezieht, durch deren Zugänglichmachung
+                  die Privatsphäre Dritter beeinträchtigt werden kann.
+              - element_type: AuthorialNote
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: Fassung des zweiten Satzes gemäss Anhang 1 Ziff. II 10 des Datenschutzgesetzes
+                      vom 25. Sept. 2020, in Kraft seit 1. Sept. 2023 (
+                  - element_type: Ref
+                    href: https://fedlex.data.admin.ch/eli/oc/2022/491
+                    inline_content:
+                    - element_type: TextRun
+                      text: AS
+                    - element_type: B
+                      inline_content:
+                      - element_type: TextRun
+                        text: '2022'
+                    - element_type: TextRun
+                      text: '491'
+                  - element_type: TextRun
+                    text: ;
+                  - element_type: Ref
+                    href: https://fedlex.data.admin.ch/eli/fga/2017/2057
+                    inline_content:
+                    - element_type: TextRun
+                      text: BBl
+                    - element_type: B
+                      inline_content:
+                      - element_type: TextRun
+                        text: '2017'
+                    - element_type: TextRun
+                      text: '6941'
+                  - element_type: TextRun
+                    text: ).
+        - eId: art_12/para_3
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '3'
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Betrifft das Gesuch amtliche Dokumente, durch deren Zugänglichmachung die Privatsphäre
+                  Dritter beeinträchtigt werden kann, so schiebt die Behörde den Zugang auf, bis die Rechtslage
+                  geklärt ist.
+              - element_type: AuthorialNote
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: Fassung gemäss Anhang 1 Ziff. II 10 des Datenschutzgesetzes vom 25. Sept. 2020,
+                      in Kraft seit 1. Sept. 2023 (
+                  - element_type: Ref
+                    href: https://fedlex.data.admin.ch/eli/oc/2022/491
+                    inline_content:
+                    - element_type: TextRun
+                      text: AS
+                    - element_type: B
+                      inline_content:
+                      - element_type: TextRun
+                        text: '2022'
+                    - element_type: TextRun
+                      text: '491'
+                  - element_type: TextRun
+                    text: ;
+                  - element_type: Ref
+                    href: https://fedlex.data.admin.ch/eli/fga/2017/2057
+                    inline_content:
+                    - element_type: TextRun
+                      text: BBl
+                    - element_type: B
+                      inline_content:
+                      - element_type: TextRun
+                        text: '2017'
+                    - element_type: TextRun
+                      text: '6941'
+                  - element_type: TextRun
+                    text: ).
+        - eId: art_12/para_4
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '4'
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Die Behörde informiert die Gesuchstellerinnen und Gesuchsteller über eine Fristverlängerung
+                  oder über eine Beschränkung oder Verweigerung des Zugangs und begründet sie summarisch.
+                  Die Information über die Beschränkung oder Verweigerung des Zugangs sowie die Begründung
+                  erfolgen schriftlich.
+      - eId: art_13
+        num:
+          inline_content:
+          - element_type: B
+            inline_content:
+            - element_type: TextRun
+              text: Art. 13
+        heading:
+          inline_content:
+          - element_type: TextRun
+            text: Schlichtung
+        paragraphs:
+        - eId: art_13/para_1
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '1'
+          content_ref:
+            content_blocks:
+            - element_type: BlockList
+              list_introduction:
+                eId: art_13/para_1/listintro
+                inline_content:
+                - element_type: TextRun
+                  text: 'Einen Schlichtungsantrag stellen kann eine Person:'
+                - element_type: AuthorialNote
+                  content_blocks:
+                  - element_type: BlockParagraph
+                    inline_content:
+                    - element_type: TextRun
+                      text: Die Berichtigung vom 30. Sept. 2022, veröffentlicht am 25. Sept. 2023 betrifft
+                        nur den
+                  - element_type: BlockParagraph
+                    inline_content:
+                    - element_type: TextRun
+                      text: italienischen Text (AS 2023 538).
+              items:
+              - eId: art_13/para_1/lbl_a
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: deren Zugang zu amtlichen Dokumenten eingeschränkt, aufgeschoben oder verweigert
+                      wird;
+                num:
+                  inline_content:
+                  - element_type: TextRun
+                    text: a.
+              - eId: art_13/para_1/lbl_b
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: zu deren Gesuch die Behörde nicht fristgerecht Stellung genommen hat; oder
+                num:
+                  inline_content:
+                  - element_type: TextRun
+                    text: b.
+              - eId: art_13/para_1/lbl_c
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: die nach Artikel 11 angehört worden ist, wenn die Behörde gegen ihren Willen
+                      den Zugang gewähren will.
+                num:
+                  inline_content:
+                  - element_type: TextRun
+                    text: c.
+        - eId: art_13/para_2
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '2'
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Der Schlichtungsantrag ist dem Eidgenössischen Datenschutz- und Öffentlichkeitsbeauftragten
+                  (EDÖB) innert 20 Tagen nach Empfang der Stellungnahme oder nach Ablauf der der Behörde
+                  für die Stellungnahme zur Verfügung stehenden Frist schriftlich zu stellen.
+              - element_type: AuthorialNote
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: Fassung gemäss Anhang 1 Ziff. II 10 des Datenschutzgesetzes vom 25. Sept. 2020,
+                      in Kraft seit 1. Sept. 2023 (
+                  - element_type: Ref
+                    href: https://fedlex.data.admin.ch/eli/oc/2022/491
+                    inline_content:
+                    - element_type: TextRun
+                      text: AS
+                    - element_type: B
+                      inline_content:
+                      - element_type: TextRun
+                        text: '2022'
+                    - element_type: TextRun
+                      text: '491'
+                  - element_type: TextRun
+                    text: ;
+                  - element_type: Ref
+                    href: https://fedlex.data.admin.ch/eli/fga/2017/2057
+                    inline_content:
+                    - element_type: TextRun
+                      text: BBl
+                    - element_type: B
+                      inline_content:
+                      - element_type: TextRun
+                        text: '2017'
+                    - element_type: TextRun
+                      text: '6941'
+                  - element_type: TextRun
+                    text: ).
+        - eId: art_13/para_3
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '3'
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Kommt eine Schlichtung zustande, so gilt das Verfahren als erledigt.
+      - eId: art_14
+        num:
+          inline_content:
+          - element_type: B
+            inline_content:
+            - element_type: TextRun
+              text: Art. 14
+        heading:
+          inline_content:
+          - element_type: TextRun
+            text: Empfehlung
+        paragraphs:
+        - eId: art_14/para
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Kommt keine Schlichtung zustande, so gibt der EDÖB
+              - element_type: AuthorialNote
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: Ausdruck gemäss Anhang 1 Ziff. II 10 des Datenschutzgesetzes vom 25. Sept. 2020,
+                      in Kraft seit 1. Sept. 2023 (
+                  - element_type: Ref
+                    href: https://fedlex.data.admin.ch/eli/oc/2022/491
+                    inline_content:
+                    - element_type: TextRun
+                      text: AS
+                    - element_type: B
+                      inline_content:
+                      - element_type: TextRun
+                        text: '2022'
+                    - element_type: TextRun
+                      text: '491'
+                  - element_type: TextRun
+                    text: ;
+                  - element_type: Ref
+                    href: https://fedlex.data.admin.ch/eli/fga/2017/2057
+                    inline_content:
+                    - element_type: TextRun
+                      text: BBl
+                    - element_type: B
+                      inline_content:
+                      - element_type: TextRun
+                        text: '2017'
+                    - element_type: TextRun
+                      text: '6941'
+                  - element_type: TextRun
+                    text: ). Diese Änd. wurde im ganzen Erlass berücksichtigt.
+              - element_type: TextRun
+                text: innert 30 Tagen nach Empfang des Schlichtungsantrages den am Schlichtungsverfahren
+                  Beteiligten eine schriftliche Empfehlung ab.
+      - eId: art_15
+        num:
+          inline_content:
+          - element_type: B
+            inline_content:
+            - element_type: TextRun
+              text: Art. 15
+        heading:
+          inline_content:
+          - element_type: TextRun
+            text: Verfügung
+        paragraphs:
+        - eId: art_15/para_1
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '1'
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Der Gesuchsteller, die Gesuchstellerin oder die angehörte Person kann innerhalb
+                  von zehn Tagen nach Erhalt der Empfehlung den Erlass einer Verfügung nach Artikel 5
+                  des Verwaltungsverfahrensgesetzes vom 20. Dezember 1968
+              - element_type: AuthorialNote
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: Ref
+                    href: https://fedlex.data.admin.ch/eli/cc/1969/737_757_755
+                    inline_content:
+                    - element_type: TextRun
+                      text: SR
+                    - element_type: B
+                      inline_content:
+                      - element_type: TextRun
+                        text: '172.021'
+              - element_type: TextRun
+                text: verlangen.
+        - eId: art_15/para_2
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '2'
+          content_ref:
+            content_blocks:
+            - element_type: BlockList
+              list_introduction:
+                eId: art_15/para_2/listintro
+                inline_content:
+                - element_type: TextRun
+                  text: 'Im Übrigen erlässt die Behörde eine Verfügung, wenn sie in Abweichung von der
+                    Empfehlung:'
+              items:
+              - eId: art_15/para_2/lbl_a
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: das Recht auf Zugang zu einem amtlichen Dokument einschränken, aufschieben oder
+                      verweigern will;
+                num:
+                  inline_content:
+                  - element_type: TextRun
+                    text: a.
+              - eId: art_15/para_2/lbl_b
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: den Zugang zu einem amtlichen Dokument gewähren will, durch dessen Zugänglichmachung
+                      die Privatsphäre Dritter beeinträchtigt werden kann.
+                num:
+                  inline_content:
+                  - element_type: TextRun
+                    text: b.
+                  - element_type: AuthorialNote
+                    content_blocks:
+                    - element_type: BlockParagraph
+                      inline_content:
+                      - element_type: TextRun
+                        text: Fassung gemäss Anhang 1 Ziff. II 10 des Datenschutzgesetzes vom 25. Sept.
+                          2020, in Kraft seit 1. Sept. 2023 (
+                      - element_type: Ref
+                        href: https://fedlex.data.admin.ch/eli/oc/2022/491
+                        inline_content:
+                        - element_type: TextRun
+                          text: AS
+                        - element_type: B
+                          inline_content:
+                          - element_type: TextRun
+                            text: '2022'
+                        - element_type: TextRun
+                          text: '491'
+                      - element_type: TextRun
+                        text: ;
+                      - element_type: Ref
+                        href: https://fedlex.data.admin.ch/eli/fga/2017/2057
+                        inline_content:
+                        - element_type: TextRun
+                          text: BBl
+                        - element_type: B
+                          inline_content:
+                          - element_type: TextRun
+                            text: '2017'
+                        - element_type: TextRun
+                          text: '6941'
+                      - element_type: TextRun
+                        text: ).
+        - eId: art_15/para_3
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '3'
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Die Verfügung ist innert 20 Tagen nach Empfang der Empfehlung oder nach Eingang
+                  des Gesuches nach Absatz 1 zu erlassen.
+      - eId: art_16
+        num:
+          inline_content:
+          - element_type: B
+            inline_content:
+            - element_type: TextRun
+              text: Art. 16
+          - element_type: AuthorialNote
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Fassung gemäss Anhang Ziff. 7 des Verwaltungsgerichtsgesetzes vom 17. Juni 2005,
+                  in Kraft seit 1. Jan. 2007 (
+              - element_type: Ref
+                href: https://fedlex.data.admin.ch/eli/oc/2006/352
+                inline_content:
+                - element_type: TextRun
+                  text: AS
+                - element_type: B
+                  inline_content:
+                  - element_type: TextRun
+                    text: '2006'
+                - element_type: TextRun
+                  text: '2197'
+              - element_type: Ref
+                href: https://fedlex.data.admin.ch/eli/oc/2006/188
+                inline_content:
+                - element_type: TextRun
+                  text: '1069'
+              - element_type: TextRun
+                text: ;
+              - element_type: Ref
+                href: https://fedlex.data.admin.ch/eli/fga/2001/731
+                inline_content:
+                - element_type: TextRun
+                  text: BBl
+                - element_type: B
+                  inline_content:
+                  - element_type: TextRun
+                    text: '2001'
+                - element_type: TextRun
+                  text: '4202'
+              - element_type: TextRun
+                text: ).
+        heading:
+          inline_content:
+          - element_type: TextRun
+            text: Beschwerde
+        paragraphs:
+        - eId: art_16/para_1
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '1'
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Das Beschwerdeverfahren richtet sich nach den allgemeinen Bestimmungen über die
+                  Bundesrechtspflege.
+        - eId: art_16/para_2
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '2'
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Die Beschwerdeinstanzen haben auch Zugang zu amtlichen Dokumenten, die der Geheimhaltung
+                  unterliegen.
+      - eId: art_17
+        num:
+          inline_content:
+          - element_type: B
+            inline_content:
+            - element_type: TextRun
+              text: Art. 17
+        heading:
+          inline_content:
+          - element_type: TextRun
+            text: Kostenloser Zugang zu amtlichen Dokumenten
+          - element_type: AuthorialNote
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Fassung gemäss Ziff. I des BG vom 30. Sept. 2022, in Kraft seit 1. Nov. 2023 (
+              - element_type: Ref
+                href: https://fedlex.data.admin.ch/eli/oc/2023/584
+                inline_content:
+                - element_type: TextRun
+                  text: AS
+                - element_type: B
+                  inline_content:
+                  - element_type: TextRun
+                    text: '2023'
+                - element_type: TextRun
+                  text: '584'
+              - element_type: TextRun
+                text: ;
+              - element_type: Ref
+                href: https://fedlex.data.admin.ch/eli/fga/2020/2277
+                inline_content:
+                - element_type: TextRun
+                  text: BBl
+                - element_type: B
+                  inline_content:
+                  - element_type: TextRun
+                    text: '2020'
+                - element_type: TextRun
+                  text: '8657'
+              - element_type: TextRun
+                text: ','
+              - element_type: Ref
+                href: https://fedlex.data.admin.ch/eli/fga/2020/2628
+                inline_content:
+                - element_type: TextRun
+                  text: '9681'
+              - element_type: TextRun
+                text: ).
+        paragraphs:
+        - eId: art_17/para_1
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '1'
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: In Verfahren für den Zugang zu amtlichen Dokumenten werden keine Gebühren erhoben.
+              - element_type: AuthorialNote
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: Fassung gemäss Ziff. I des BG vom 30. Sept. 2022, in Kraft seit 1. Nov. 2023
+                      (
+                  - element_type: Ref
+                    href: https://fedlex.data.admin.ch/eli/oc/2023/584
+                    inline_content:
+                    - element_type: TextRun
+                      text: AS
+                    - element_type: B
+                      inline_content:
+                      - element_type: TextRun
+                        text: '2023'
+                    - element_type: TextRun
+                      text: '584'
+                  - element_type: TextRun
+                    text: ;
+                  - element_type: Ref
+                    href: https://fedlex.data.admin.ch/eli/fga/2020/2277
+                    inline_content:
+                    - element_type: TextRun
+                      text: BBl
+                    - element_type: B
+                      inline_content:
+                      - element_type: TextRun
+                        text: '2020'
+                    - element_type: TextRun
+                      text: '8657'
+                  - element_type: TextRun
+                    text: ','
+                  - element_type: Ref
+                    href: https://fedlex.data.admin.ch/eli/fga/2020/2628
+                    inline_content:
+                    - element_type: TextRun
+                      text: '9681'
+                  - element_type: TextRun
+                    text: ).
+        - eId: art_17/para_2
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '2'
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Ausnahmsweise können Gebühren erhoben werden, wenn ein Zugangsgesuch eine besonders
+                  aufwändige Bearbeitung durch die Behörde erfordert. Der Bundesrat legt die Einzelheiten
+                  und den Gebührentarif nach Aufwand fest. Der Gesuchsteller oder die Gesuchstellerin
+                  wird vorgängig über die Absicht der Behörde, eine Gebühr zu erheben, sowie über die
+                  Höhe dieser Gebühr informiert.
+              - element_type: AuthorialNote
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: Fassung gemäss Ziff. I des BG vom 30. Sept. 2022, in Kraft seit 1. Nov. 2023
+                      (
+                  - element_type: Ref
+                    href: https://fedlex.data.admin.ch/eli/oc/2023/584
+                    inline_content:
+                    - element_type: TextRun
+                      text: AS
+                    - element_type: B
+                      inline_content:
+                      - element_type: TextRun
+                        text: '2023'
+                    - element_type: TextRun
+                      text: '584'
+                  - element_type: TextRun
+                    text: ;
+                  - element_type: Ref
+                    href: https://fedlex.data.admin.ch/eli/fga/2020/2277
+                    inline_content:
+                    - element_type: TextRun
+                      text: BBl
+                    - element_type: B
+                      inline_content:
+                      - element_type: TextRun
+                        text: '2020'
+                    - element_type: TextRun
+                      text: '8657'
+                  - element_type: TextRun
+                    text: ','
+                  - element_type: Ref
+                    href: https://fedlex.data.admin.ch/eli/fga/2020/2628
+                    inline_content:
+                    - element_type: TextRun
+                      text: '9681'
+                  - element_type: TextRun
+                    text: ).
+        - eId: art_17/para_3
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '3'
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: In Schlichtungsverfahren (Art. 13) und Verfahren auf Erlass einer Verfügung (Art.
+                  15) werden in keinem Fall Gebühren erhoben.
+              - element_type: AuthorialNote
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: Fassung gemäss Ziff. I des BG vom 30. Sept. 2022, in Kraft seit 1. Nov. 2023
+                      (
+                  - element_type: Ref
+                    href: https://fedlex.data.admin.ch/eli/oc/2023/584
+                    inline_content:
+                    - element_type: TextRun
+                      text: AS
+                    - element_type: B
+                      inline_content:
+                      - element_type: TextRun
+                        text: '2023'
+                    - element_type: TextRun
+                      text: '584'
+                  - element_type: TextRun
+                    text: ;
+                  - element_type: Ref
+                    href: https://fedlex.data.admin.ch/eli/fga/2020/2277
+                    inline_content:
+                    - element_type: TextRun
+                      text: BBl
+                    - element_type: B
+                      inline_content:
+                      - element_type: TextRun
+                        text: '2020'
+                    - element_type: TextRun
+                      text: '8657'
+                  - element_type: TextRun
+                    text: ','
+                  - element_type: Ref
+                    href: https://fedlex.data.admin.ch/eli/fga/2020/2628
+                    inline_content:
+                    - element_type: TextRun
+                      text: '9681'
+                  - element_type: TextRun
+                    text: ).
+        - eId: art_17/para_4
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '4'
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Für die Abgabe von Berichten, Broschüren oder anderen Drucksachen und Informationsträgern
+                  kann in jedem Fall eine Gebühr erhoben werden.
+    - eId: sec_4
+      num:
+        inline_content:
+        - element_type: TextRun
+          text: '4. Abschnitt:'
+      heading:
+        inline_content:
+        - element_type: TextRun
+          text: Der EDÖB
+      articles:
+      - eId: art_18
+        num:
+          inline_content:
+          - element_type: B
+            inline_content:
+            - element_type: TextRun
+              text: Art. 18
+        heading:
+          inline_content:
+          - element_type: TextRun
+            text: Aufgaben und Kompetenzen
+        paragraphs:
+        - eId: art_18/para
+          content_ref:
+            content_blocks:
+            - element_type: BlockList
+              list_introduction:
+                eId: art_18/para/listintro
+                inline_content:
+                - element_type: TextRun
+                  text: 'Der EDÖB hat nach dem vorliegenden Gesetz insbesondere folgende Aufgaben und
+                    Kompetenzen:'
+                - element_type: AuthorialNote
+                  content_blocks:
+                  - element_type: BlockParagraph
+                    inline_content:
+                    - element_type: TextRun
+                      text: Fassung gemäss Anhang 1 Ziff. II 10 des Datenschutzgesetzes vom 25. Sept.
+                        2020, in Kraft seit 1. Sept. 2023 (
+                    - element_type: Ref
+                      href: https://fedlex.data.admin.ch/eli/oc/2022/491
+                      inline_content:
+                      - element_type: TextRun
+                        text: AS
+                      - element_type: B
+                        inline_content:
+                        - element_type: TextRun
+                          text: '2022'
+                      - element_type: TextRun
+                        text: '491'
+                    - element_type: TextRun
+                      text: ;
+                    - element_type: Ref
+                      href: https://fedlex.data.admin.ch/eli/fga/2017/2057
+                      inline_content:
+                      - element_type: TextRun
+                        text: BBl
+                      - element_type: B
+                        inline_content:
+                        - element_type: TextRun
+                          text: '2017'
+                      - element_type: TextRun
+                        text: '6941'
+                    - element_type: TextRun
+                      text: ).
+              items:
+              - eId: art_18/para/lbl_a
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: Er leitet das Schlichtungsverfahren (Art. 13) und gibt, für den Fall, dass es
+                      zu keiner Schlichtung kommt, eine Empfehlung ab (Art. 14).
+                num:
+                  inline_content:
+                  - element_type: TextRun
+                    text: a.
+                  - element_type: AuthorialNote
+                    content_blocks:
+                    - element_type: BlockParagraph
+                      inline_content:
+                      - element_type: TextRun
+                        text: Fassung gemäss Anhang 1 Ziff. II 10 des Datenschutzgesetzes vom 25. Sept.
+                          2020, in Kraft seit 1. Sept. 2023 (
+                      - element_type: Ref
+                        href: https://fedlex.data.admin.ch/eli/oc/2022/491
+                        inline_content:
+                        - element_type: TextRun
+                          text: AS
+                        - element_type: B
+                          inline_content:
+                          - element_type: TextRun
+                            text: '2022'
+                        - element_type: TextRun
+                          text: '491'
+                      - element_type: TextRun
+                        text: ;
+                      - element_type: Ref
+                        href: https://fedlex.data.admin.ch/eli/fga/2017/2057
+                        inline_content:
+                        - element_type: TextRun
+                          text: BBl
+                        - element_type: B
+                          inline_content:
+                          - element_type: TextRun
+                            text: '2017'
+                        - element_type: TextRun
+                          text: '6941'
+                      - element_type: TextRun
+                        text: ).
+              - eId: art_18/para/lbl_b
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: Er informiert von Amtes wegen oder auf Anfrage Private und Behörden über die
+                      Modalitäten des Zugangs zu amtlichen Dokumenten.
+                num:
+                  inline_content:
+                  - element_type: TextRun
+                    text: b.
+                  - element_type: AuthorialNote
+                    content_blocks:
+                    - element_type: BlockParagraph
+                      inline_content:
+                      - element_type: TextRun
+                        text: Fassung gemäss Anhang 1 Ziff. II 10 des Datenschutzgesetzes vom 25. Sept.
+                          2020, in Kraft seit 1. Sept. 2023 (
+                      - element_type: Ref
+                        href: https://fedlex.data.admin.ch/eli/oc/2022/491
+                        inline_content:
+                        - element_type: TextRun
+                          text: AS
+                        - element_type: B
+                          inline_content:
+                          - element_type: TextRun
+                            text: '2022'
+                        - element_type: TextRun
+                          text: '491'
+                      - element_type: TextRun
+                        text: ;
+                      - element_type: Ref
+                        href: https://fedlex.data.admin.ch/eli/fga/2017/2057
+                        inline_content:
+                        - element_type: TextRun
+                          text: BBl
+                        - element_type: B
+                          inline_content:
+                          - element_type: TextRun
+                            text: '2017'
+                        - element_type: TextRun
+                          text: '6941'
+                      - element_type: TextRun
+                        text: ).
+              - eId: art_18/para/lbl_c
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: Er kann sich zu Erlassentwürfen und Massnahmen des Bundes, welche das Öffentlichkeitsprinzip
+                      wesentlich betreffen, äussern.
+                num:
+                  inline_content:
+                  - element_type: TextRun
+                    text: c.
+                  - element_type: AuthorialNote
+                    content_blocks:
+                    - element_type: BlockParagraph
+                      inline_content:
+                      - element_type: TextRun
+                        text: Fassung gemäss Anhang 1 Ziff. II 10 des Datenschutzgesetzes vom 25. Sept.
+                          2020, in Kraft seit 1. Sept. 2023 (
+                      - element_type: Ref
+                        href: https://fedlex.data.admin.ch/eli/oc/2022/491
+                        inline_content:
+                        - element_type: TextRun
+                          text: AS
+                        - element_type: B
+                          inline_content:
+                          - element_type: TextRun
+                            text: '2022'
+                        - element_type: TextRun
+                          text: '491'
+                      - element_type: TextRun
+                        text: ;
+                      - element_type: Ref
+                        href: https://fedlex.data.admin.ch/eli/fga/2017/2057
+                        inline_content:
+                        - element_type: TextRun
+                          text: BBl
+                        - element_type: B
+                          inline_content:
+                          - element_type: TextRun
+                            text: '2017'
+                        - element_type: TextRun
+                          text: '6941'
+                      - element_type: TextRun
+                        text: ).
+      - eId: art_19
+        num:
+          inline_content:
+          - element_type: B
+            inline_content:
+            - element_type: TextRun
+              text: Art. 19
+        heading:
+          inline_content:
+          - element_type: TextRun
+            text: Evaluation
+        paragraphs:
+        - eId: art_19/para_1
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '1'
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Der EDÖB überprüft den Vollzug und die Wirksamkeit dieses Gesetzes sowie insbesondere
+                  die durch seine Umsetzung verursachten Kosten und erstattet dem Bundesrat regelmässig
+                  Bericht.
+        - eId: art_19/para_2
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '2'
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Ein erster Bericht über die Umsetzungskosten ist dem Bundesrat innert drei Jahren
+                  nach Inkrafttreten dieses Gesetzes vorzulegen.
+        - eId: art_19/para_3
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '3'
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Die Berichte des EDÖB werden veröffentlicht.
+      - eId: art_20
+        num:
+          inline_content:
+          - element_type: B
+            inline_content:
+            - element_type: TextRun
+              text: Art. 20
+        heading:
+          inline_content:
+          - element_type: TextRun
+            text: Auskunfts- und Einsichtsrechte
+        paragraphs:
+        - eId: art_20/para_1
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '1'
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Im Rahmen des Schlichtungsverfahrens hat der EDÖB auch Zugang zu amtlichen Dokumenten,
+                  die der Geheimhaltung unterliegen.
+        - eId: art_20/para_2
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '2'
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Der EDÖB untersteht dem Amtsgeheimnis im gleichen Ausmass wie die Behörden, in deren
+                  amtliche Dokumente er Einsicht nimmt oder die ihm Auskunft erteilen.
+              - element_type: AuthorialNote
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: Fassung gemäss Anhang 1 Ziff. II 10 des Datenschutzgesetzes vom 25. Sept. 2020,
+                      in Kraft seit 1. Sept. 2023 (
+                  - element_type: Ref
+                    href: https://fedlex.data.admin.ch/eli/oc/2022/491
+                    inline_content:
+                    - element_type: TextRun
+                      text: AS
+                    - element_type: B
+                      inline_content:
+                      - element_type: TextRun
+                        text: '2022'
+                    - element_type: TextRun
+                      text: '491'
+                  - element_type: TextRun
+                    text: ;
+                  - element_type: Ref
+                    href: https://fedlex.data.admin.ch/eli/fga/2017/2057
+                    inline_content:
+                    - element_type: TextRun
+                      text: BBl
+                    - element_type: B
+                      inline_content:
+                      - element_type: TextRun
+                        text: '2017'
+                    - element_type: TextRun
+                      text: '6941'
+                  - element_type: TextRun
+                    text: ).
+    - eId: sec_5
+      num:
+        inline_content:
+        - element_type: TextRun
+          text: '5. Abschnitt:'
+      heading:
+        inline_content:
+        - element_type: TextRun
+          text: Schlussbestimmungen
+      articles:
+      - eId: art_21
+        num:
+          inline_content:
+          - element_type: B
+            inline_content:
+            - element_type: TextRun
+              text: Art. 21
+        heading:
+          inline_content:
+          - element_type: TextRun
+            text: Vollzug
+        paragraphs:
+        - eId: art_21/para
+          content_ref:
+            content_blocks:
+            - element_type: BlockList
+              list_introduction:
+                eId: art_21/para/listintro
+                inline_content:
+                - element_type: TextRun
+                  text: 'Der Bundesrat kann insbesondere Vorschriften erlassen über:'
+              items:
+              - eId: art_21/para/lbl_a
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: die Bewirtschaftung amtlicher Dokumente;
+                num:
+                  inline_content:
+                  - element_type: TextRun
+                    text: a.
+              - eId: art_21/para/lbl_b
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: die Information über amtliche Dokumente;
+                num:
+                  inline_content:
+                  - element_type: TextRun
+                    text: b.
+              - eId: art_21/para/lbl_c
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: die Publikation amtlicher Dokumente.
+                num:
+                  inline_content:
+                  - element_type: TextRun
+                    text: c.
+      - eId: art_22
+        num:
+          inline_content:
+          - element_type: B
+            inline_content:
+            - element_type: TextRun
+              text: Art. 22
+        heading:
+          inline_content:
+          - element_type: TextRun
+            text: Änderung bisherigen Rechts
+        paragraphs:
+        - eId: art_22/para
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Die Änderung bisherigen Rechts wird im Anhang geregelt.
+      - eId: art_23
+        num:
+          inline_content:
+          - element_type: B
+            inline_content:
+            - element_type: TextRun
+              text: Art. 23
+        heading:
+          inline_content:
+          - element_type: TextRun
+            text: Übergangsbestimmung
+        paragraphs:
+        - eId: art_23/para
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Dieses Gesetz ist auf amtliche Dokumente anwendbar, die nach seinem Inkrafttreten
+                  von einer Behörde erstellt oder empfangen wurden.
+      - eId: art_23_a
+        num:
+          inline_content:
+          - element_type: B
+            inline_content:
+            - element_type: TextRun
+              text: Art. 23
+          - element_type: I
+            inline_content:
+            - element_type: TextRun
+              text: a
+          - element_type: AuthorialNote
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Eingefügt durch Ziff. I des BG vom 30. Sept. 2022, in Kraft seit 1. Nov. 2023 (
+              - element_type: Ref
+                href: https://fedlex.data.admin.ch/eli/oc/2023/584
+                inline_content:
+                - element_type: TextRun
+                  text: AS
+                - element_type: B
+                  inline_content:
+                  - element_type: TextRun
+                    text: '2023'
+                - element_type: TextRun
+                  text: '584'
+              - element_type: TextRun
+                text: ;
+              - element_type: Ref
+                href: https://fedlex.data.admin.ch/eli/fga/2020/2277
+                inline_content:
+                - element_type: TextRun
+                  text: BBl
+                - element_type: B
+                  inline_content:
+                  - element_type: TextRun
+                    text: '2020'
+                - element_type: TextRun
+                  text: '8657'
+              - element_type: TextRun
+                text: ','
+              - element_type: Ref
+                href: https://fedlex.data.admin.ch/eli/fga/2020/2628
+                inline_content:
+                - element_type: TextRun
+                  text: '9681'
+              - element_type: TextRun
+                text: ).
+        heading:
+          inline_content:
+          - element_type: TextRun
+            text: Übergangsbestimmung zur Änderung vom 30. September 2022
+        paragraphs:
+        - eId: art_23_a/para
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Auf Gesuche, die im Zeitpunkt des Inkrafttretens der Änderung vom 30. September
+                  2022 hängig sind, findet das bisherige Recht Anwendung.
+      - eId: art_24
+        num:
+          inline_content:
+          - element_type: B
+            inline_content:
+            - element_type: TextRun
+              text: Art. 24
+        heading:
+          inline_content:
+          - element_type: TextRun
+            text: Referendum und Inkrafttreten
+        paragraphs:
+        - eId: art_24/para_1
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '1'
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Dieses Gesetz untersteht dem fakultativen Referendum.
+        - eId: art_24/para_2
+          num:
+            inline_content:
+            - element_type: TextRun
+              text: '2'
+          content_ref:
+            content_blocks:
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: Der Bundesrat bestimmt das Inkrafttreten.
+            - element_type: BlockParagraph
+              inline_content:
+              - element_type: TextRun
+                text: 'Datum des Inkrafttretens: 1. Juli 2006'
+              - element_type: AuthorialNote
+                content_blocks:
+                - element_type: BlockParagraph
+                  inline_content:
+                  - element_type: TextRun
+                    text: BRB vom 24. Mai 2006
+  components_ref:
+    component_list:
+    - doc_ref:
+        doc_name: annex
+        meta:
+          identification_ref:
+            source: '#ch.bk'
+            frbr_work:
+              frbr_this:
+                value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/main-text
+              frbr_uri:
+                value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101
+              frbr_dates:
+              - date_value: '2006-07-01'
+                frbr_date_name: jolux:dateEntryInForce
+              - date_value: '2004-12-17'
+                frbr_date_name: jolux:dateDocument
+              - date_value: '2023-11-01'
+                frbr_date_name: jolux:dateApplicability
+              frbr_authors:
+              - href: '#ch.bk'
+                as_role: '#publisher'
+              - href: '#ch.bk'
+                as_role: '#rightsHolder'
+              frbr_country:
+                value: CH
+              frbr_number:
+                value: '152.3'
+              frbr_names:
+              - xml_lang: it
+                value: Legge federale del 17 dicembre 2004 sul principio di trasparenza dell'amministrazione
+                  (Legge sulla trasparenza, LTras)
+                short_form: LTras
+              - xml_lang: fr
+                value: Loi fédérale du 17 décembre 2004 sur le principe de la transparence dans l'administration
+                  (Loi sur la transparence, LTrans)
+                short_form: LTrans
+              - xml_lang: de
+                value: Bundesgesetz vom 17. Dezember 2004 über das Öffentlichkeitsprinzip der Verwaltung
+                  (Öffentlichkeitsgesetz, BGÖ)
+                short_form: BGÖ
+              - xml_lang: en
+                value: Federal Act of 17 December 2004 on Freedom of Information in the Administration
+                  (Freedom of Information Act, FoIA)
+                short_form: FoIA
+              - xml_lang: rm
+                value: Lescha federala dals 17 da december 2004 davart il princip da la transparenza da
+                  l'administraziun (Lescha da transparenza, LTrans)
+                short_form: LTrans
+              frbr_authoritative:
+                value: 'true'
+            frbr_expression:
+              frbr_this:
+                value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de/main-text
+              frbr_uri:
+                value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de
+              frbr_dates:
+              - date_value: '2006-07-01'
+                frbr_date_name: jolux:dateEntryInForce
+              - date_value: '2004-12-17'
+                frbr_date_name: jolux:dateDocument
+              - date_value: '2023-11-01'
+                frbr_date_name: jolux:dateApplicability
+              frbr_authors:
+              - href: '#ch.bk'
+                as_role: '#publisher'
+              - href: '#ch.bk'
+                as_role: '#rightsHolder'
+              frbr_language:
+                language_value: de
+            frbr_manifestation:
+              frbr_this:
+                value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de/xml/main-text
+              frbr_uri:
+                value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de/xml
+              frbr_dates:
+              - date_value: '2006-07-01'
+                frbr_date_name: jolux:dateEntryInForce
+              - date_value: '2004-12-17'
+                frbr_date_name: jolux:dateDocument
+              - date_value: '2023-11-01'
+                frbr_date_name: jolux:dateApplicability
+              frbr_authors:
+              - href: '#ch.bk'
+                as_role: '#publisher'
+              - href: '#ch.bk'
+                as_role: '#rightsHolder'
+              frbr_format:
+                value: xml
+        preface_ref:
+          containers:
+          - container_name: headerOfAnnex
+            blocks:
+            - block_name: heading
+              inline_content:
+              - element_type: TextRun
+                text: Anhang
+        main_body:
+          content_blocks:
+          - element_type: BlockParagraph
+            inline_content:
+            - element_type: TextRun
+              text: (Art. 22)
+          levels:
+          - eId: annex_u1/lvl_u1
+            heading:
+              inline_content:
+              - element_type: TextRun
+                text: Änderung bisherigen Rechts
+            content_ref:
+              content_blocks:
+              - element_type: BlockParagraph
+                inline_content:
+                - element_type: TextRun
+                  text: 'Die nachstehenden Gesetze werden wie folgt geändert:'
+              - element_type: BlockParagraph
+                inline_content:
+                - element_type: TextRun
+                  text: …
+                - element_type: AuthorialNote
+                  content_blocks:
+                  - element_type: BlockParagraph
+                    inline_content:
+                    - element_type: TextRun
+                      text: Die Änderungen können unter
+                    - element_type: Ref
+                      href: https://fedlex.data.admin.ch/eli/oc/2006/355
+                      inline_content:
+                      - element_type: TextRun
+                        text: AS
+                      - element_type: B
+                        inline_content:
+                        - element_type: TextRun
+                          text: '2006'
+                      - element_type: TextRun
+                        text: '2319'
+                    - element_type: TextRun
+                      text: konsultiert werden.
