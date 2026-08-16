@@ -43,6 +43,8 @@ Der FRBR-Block `akn:identification` trägt die drei Ebenen Work, Expression und 
 
 {{include:ech-0296_laws/output/docs/FRBRDate.md}}
 
+{{include:ech-0296_laws/output/docs/FrbrDateNameEnum.md}}
+
 {{include:ech-0296_laws/output/docs/FRBRAuthor.md}}
 
 {{include:ech-0296_laws/output/docs/FRBRName.md}}

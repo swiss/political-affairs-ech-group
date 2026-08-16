@@ -63,24 +63,52 @@ FIXED_PREFIXES = {
 }
 
 
+def row(subject, predicate, target, subject_type, kind, label=None):
+    return {
+        "subject_id": subject,
+        "predicate_id": predicate,
+        "object_id": target,
+        "mapping_justification": JUSTIFICATION,
+        "subject_label": label or subject.split(":", 1)[-1],
+        "object_label": target.split(":", 1)[-1],
+        "subject_type": subject_type,
+        "_kind": kind,
+    }
+
+
 def collect(schema, lang):
     """Eine Zeile je Mapping, in der Reihenfolge des Schemas."""
     rows = []
     default_prefix = schema.get("default_prefix") or "this"
+    own = f"{default_prefix}:"
     for kind, (subject_type, labels) in KINDS.items():
+        kind_label = labels.get(lang, labels["en"])
         for name, defn in (schema.get(kind) or {}).items():
+            defn = defn or {}
+            subject = f"{default_prefix}:{name}"
+
+            # Traegt das Element eine fremde Identitaet -- class_uri oder
+            # slot_uri aus einem anderen Vokabular --, dann ist das keine
+            # Aehnlichkeit, sondern Gleichsetzung.
+            identity = defn.get("class_uri") or defn.get("slot_uri")
+            if identity and not identity.startswith(own):
+                rows.append(row(subject, "skos:exactMatch", identity,
+                                subject_type, kind_label, name))
+
             for slot, predicate in PREDICATES.items():
-                for target in (defn or {}).get(slot, []):
-                    rows.append({
-                        "subject_id": f"{default_prefix}:{name}",
-                        "predicate_id": predicate,
-                        "object_id": target,
-                        "mapping_justification": JUSTIFICATION,
-                        "subject_label": name,
-                        "object_label": target.split(":", 1)[-1],
-                        "subject_type": subject_type,
-                        "_kind": labels.get(lang, labels["en"]),
-                    })
+                for target in defn.get(slot, []):
+                    rows.append(row(subject, predicate, target,
+                                    subject_type, kind_label, name))
+
+            # Zuordnungen an einzelnen Aufzaehlungswerten: welche fremde
+            # Eigenschaft ein Wert meint, haengt am Wert, nicht an der Klasse.
+            for value, pv in (defn.get("permissible_values") or {}).items():
+                pv = pv or {}
+                subject_value = pv.get("meaning") or f"{subject}/{value}"
+                for slot, predicate in PREDICATES.items():
+                    for target in pv.get(slot, []):
+                        rows.append(row(subject_value, predicate, target,
+                                        "skos concept", kind_label, value))
     return rows
 
 

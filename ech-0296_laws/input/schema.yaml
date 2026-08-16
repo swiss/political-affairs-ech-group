@@ -26,6 +26,7 @@ prefixes:
   fedlex: http://fedlex.admin.ch/
   xsd: http://www.w3.org/2001/XMLSchema#
   eli: http://data.europa.eu/eli/ontology#
+  jolux: http://data.legilux.public.lu/resource/ontology/jolux#
 default_prefix: laws
 default_range: string
 imports:
@@ -161,6 +162,36 @@ enums:
         description: The number of the enclosing container.
         annotations:
           description_de: Die Nummer des umgebenden Behälters.
+  FrbrDateNameEnum:
+    description: |
+      Date types Fedlex uses in akn:FRBRdate/@name, taken from the JoLux vocabulary. Cantonal publishers use their own designations; the slot therefore also admits a free string.
+    annotations:
+      description_de: |
+        Datumsarten, die Fedlex in akn:FRBRdate/@name verwendet, aus dem JoLux-Vokabular. Kantonale Publikationsstellen führen eigene Bezeichnungen, weshalb der Slot auch eine freie Zeichenkette zulässt.
+    permissible_values:
+      jolux:dateDocument:
+        description: Date of adoption or signature of the act.
+        annotations:
+          description_de: Datum der Verabschiedung oder Unterzeichnung des Erlasses.
+        exact_mappings:
+        - eli:date_document
+        meaning: jolux:dateDocument
+      jolux:dateEntryInForce:
+        description: Date on which the act, or its first part, came into force.
+        annotations:
+          description_de: Datum, an dem der Erlass oder sein erster Teil in Kraft trat.
+        exact_mappings:
+        - eli:first_date_entry_in_force
+        meaning: jolux:dateEntryInForce
+      jolux:dateApplicability:
+        description: |
+          Date up to which the consolidated version reflects the law -- the 'Stand am' of the Fedlex delivery.
+        annotations:
+          description_de: |
+            Datum, auf das die konsolidierte Fassung nachgeführt ist — der „Stand am“ der Fedlex-Auslieferung.
+        exact_mappings:
+        - eli:date_applicability
+        meaning: jolux:dateApplicability
 classes:
   FedlexDocument:
     tree_root: true
@@ -237,8 +268,7 @@ classes:
     - frbr_authoritative
     exact_mappings:
     - akn:FRBRWork
-    close_mappings:
-    - eli:LegalResource
+    class_uri: eli:LegalResource
   FRBRExpression:
     description: |
       FRBR Expression level (akn:FRBRExpression): a specific language version of the legislative text. Identified by an ELI URI that includes the language code.
@@ -254,8 +284,7 @@ classes:
     - frbr_language
     exact_mappings:
     - akn:FRBRExpression
-    close_mappings:
-    - eli:LegalExpression
+    class_uri: eli:LegalExpression
   FRBRManifestation:
     description: |
       FRBR Manifestation level (akn:FRBRManifestation): a specific file format of the expression. For Fedlex XML files the format value is 'xml'. The optional fedlex:generator attribute is only permitted here (FLX-XF-002).
@@ -272,8 +301,7 @@ classes:
     - frbr_format
     exact_mappings:
     - akn:FRBRManifestation
-    close_mappings:
-    - eli:Format
+    class_uri: eli:Format
   FRBRDate:
     description: |
       A date entry for an FRBR entity (akn:FRBRdate). The @name attribute uses Fedlex/JoLux vocabulary: jolux:dateEntryInForce, jolux:dateDocument, jolux:dateApplicability.
@@ -1204,8 +1232,7 @@ slots:
       xml_element: akn:FRBRnumber
     exact_mappings:
     - akn:FRBRnumber
-    close_mappings:
-    - eli:number
+    slot_uri: eli:number
   frbr_names:
     description: Multilingual name entries for the FRBR Work (akn:FRBRname). One entry per language.
     range: FRBRName
@@ -1230,8 +1257,7 @@ slots:
       xml_element: akn:FRBRlanguage
     exact_mappings:
     - akn:FRBRlanguage
-    close_mappings:
-    - eli:language
+    slot_uri: eli:language
   frbr_format:
     description: File format of this manifestation (akn:FRBRformat/@value), typically 'xml'.
     range: FormatType
@@ -1240,17 +1266,18 @@ slots:
       xml_element: akn:FRBRformat
     exact_mappings:
     - akn:FRBRformat
-    close_mappings:
-    - eli:format
+    slot_uri: eli:format
   frbr_date_name:
     description: |
-      Type of date (akn:FRBRdate/@name), using Fedlex/JoLux vocabulary, e.g. 'jolux:dateEntryInForce', 'jolux:dateDocument', 'jolux:dateApplicability'.
-    range: string
+      Type of this date (akn:FRBRdate/@name). Fedlex uses the JoLux vocabulary; the permissible values of FrbrDateNameEnum carry the corresponding ELI property. Cantonal publishers use their own designations, which is why a free string remains admissible.
     annotations:
       description_de: |
-        Datumstyp (akn:FRBRdate/@name), mit Fedlex/JoLux-Vokabular, z.B. 'jolux:dateEntryInForce', 'jolux:dateDocument', 'jolux:dateApplicability'.
+        Art dieses Datums (akn:FRBRdate/@name). Fedlex verwendet das JoLux-Vokabular; die zulässigen Werte von FrbrDateNameEnum tragen die entsprechende ELI-Eigenschaft. Kantonale Publikationsstellen führen eigene Bezeichnungen, weshalb eine freie Zeichenkette zulässig bleibt.
       xml_attribute: 'true'
       xml_name: name
+    any_of:
+    - range: FrbrDateNameEnum
+    - range: string
   fedlex_generator:
     description: |
       Fedlex extension attribute fedlex:generator on akn:FRBRformat[@value='xml']. Identifies the tool that generated the XML file. Only allowed on FRBRformat (FLX-XF-002).
