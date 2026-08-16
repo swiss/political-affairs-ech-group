@@ -174,6 +174,8 @@ class Converter:
             if not isinstance(child.tag, str):
                 continue  # Kommentar oder Verarbeitungsanweisung
             name = local(child.tag)
+            if name in self.s.block_by_element and "content_blocks" in out:
+                continue  # oben schon als Blockinhalt abgeholt
             if name not in by_element:
                 self.skipped[f"{local(element.tag)} > {name}"] += 1
                 continue
