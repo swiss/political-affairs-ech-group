@@ -38,6 +38,13 @@ classes:
   - Citation
   - Formula
   - TLCConcept
+  - Analysis
+  - ActiveModifications
+  - TextualMod
+  - ForceMod
+  - TemporalData
+  - TemporalGroup
+  - TimeInterval
 
 slots:
   - act_name
@@ -55,6 +62,8 @@ slots:
   - block_name
   - title_attr
   - marker
+  - mod_type
+  - period
 
 max_examples_per_slot: 3
 

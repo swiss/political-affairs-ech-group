@@ -51,8 +51,13 @@ class Schema:
         # Subklassen der abstrakten Basen: InlineElement fuer den gemischten
         # Inhalt, BlockElement fuer die geordnete Folge aus Absatz, Aufzaehlung
         # und Tabelle.
-        self.inline_by_element = self._subclasses("InlineElement")
-        self.block_by_element = self._subclasses("BlockElement")
+        # Je abstrakte Basisklasse: welches Element welche konkrete Subklasse
+        # meint. Der Konverter kennt damit keine Namen -- er liest, welche
+        # Klassen abstrakt sind, und behandelt deren Listen als geordnete Folge
+        # mit Typ-Diskriminator.
+        self.subclasses = {name: self._subclasses(name)
+                           for name, defn in self.classes.items() if defn.get("abstract")}
+        self.inline_by_element = self.subclasses.get("InlineElement", {})
 
     def _subclasses(self, base):
         out = {}
@@ -61,6 +66,16 @@ class Schema:
                 el = self._ann(defn).get("xml_element")
                 if el:
                     out[el.split(":")[-1]] = name
+        return out
+
+    def polymorphic_slots(self, cls):
+        """Slots, deren Range eine abstrakte Klasse ist -- ohne inline_content,
+        das seinen Text mitfuehrt und deshalb eigen behandelt wird."""
+        out = {}
+        for slot in self.class_slots(cls):
+            rng = self.slot_def(slot).get("range")
+            if rng and rng in self.subclasses and slot != "inline_content":
+                out[slot] = self.subclasses[rng]
         return out
 
     @staticmethod
@@ -133,32 +148,38 @@ class Converter:
         children = self.s.child_slots(cls)
         by_element = {el: (slot, rng, multi) for slot, rng, multi, el in children if el}
 
-        # Blockinhalt in Lesereihenfolge, mit Typ-Diskriminator je Eintrag.
-        if any(slot == "content_blocks" for slot, _, _, _ in children):
+        # Geordnete Folgen mit Typ-Diskriminator: Blockinhalt, Aenderungen und
+        # was sonst noch eine abstrakte Basis hat.
+        poly = self.s.polymorphic_slots(cls)
+        polymorphic_elements = {el for mapping in poly.values() for el in mapping}
+        for slot, mapping in poly.items():
             blocks = []
             for child in element:
                 if not isinstance(child.tag, str):
                     continue
                 name = local(child.tag)
-                block_cls = self.s.block_by_element.get(name)
-                if not block_cls:
-                    self.skipped[f"{local(element.tag)} > {name}"] += 1
+                item_cls = mapping.get(name)
+                if not item_cls:
                     continue
-                item = {"element_type": block_cls}
-                item.update(self.convert(child, block_cls))
+                item = {"element_type": item_cls}
+                item.update(self.convert(child, item_cls))
                 blocks.append(item)
             if blocks:
-                out["content_blocks"] = blocks
-            elif not out:
+                out[slot] = blocks
+        if poly:
+            for child in element:
+                if isinstance(child.tag, str) and local(child.tag) not in polymorphic_elements \
+                        and local(child.tag) not in by_element:
+                    self.skipped[f"{local(element.tag)} > {local(child.tag)}"] += 1
+            if "content_blocks" in poly and "content_blocks" not in out and not out:
                 # Leeres Element, etwa eine leere Tabellenzelle: der LinkML-Lader
                 # nimmt in einer Liste kein leeres Objekt an, eine leere Liste
                 # aber schon -- und beim Zurueckschreiben entsteht dasselbe
                 # leere Element.
                 out["content_blocks"] = []
-            # Klassen, die neben dem Blockinhalt eigene Kinder fuehren -- der
-            # Hauptteil eines Anhangs etwa --, holen diese anschliessend ab.
-            if not any(slot not in ("content_blocks",) and rng
-                       for slot, rng, _, _ in children):
+            # Klassen, die neben der geordneten Folge eigene Kinder fuehren --
+            # der Hauptteil eines Anhangs etwa --, holen diese anschliessend ab.
+            if not any(slot not in poly and rng for slot, rng, _, _ in children):
                 return out
 
         has_inline = any(slot == "inline_content" for slot, _, _, _ in children)
@@ -174,8 +195,8 @@ class Converter:
             if not isinstance(child.tag, str):
                 continue  # Kommentar oder Verarbeitungsanweisung
             name = local(child.tag)
-            if name in self.s.block_by_element and "content_blocks" in out:
-                continue  # oben schon als Blockinhalt abgeholt
+            if name in polymorphic_elements:
+                continue  # oben schon als geordnete Folge abgeholt
             if name not in by_element:
                 self.skipped[f"{local(element.tag)} > {name}"] += 1
                 continue

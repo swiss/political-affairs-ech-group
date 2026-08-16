@@ -221,6 +221,65 @@ enums:
         exact_mappings:
         - eli:date_applicability
         meaning: jolux:dateApplicability
+  ModTypeEnum:
+    description: |
+      Kinds of modification defined by Akoma Ntoso: the textual ones from the TextualMods list, those of legal force from ForceMods.
+    annotations:
+      description_de: |
+        Änderungsarten, die Akoma Ntoso definiert: die textlichen aus der Liste TextualMods, die der Rechtskraft aus ForceMods.
+    permissible_values:
+      repeal:
+        description: Wording is repealed.
+        annotations:
+          description_de: Wortlaut wird aufgehoben.
+      substitution:
+        description: Wording is replaced by other wording.
+        annotations:
+          description_de: Wortlaut wird durch anderen ersetzt.
+      insertion:
+        description: Wording is inserted.
+        annotations:
+          description_de: Wortlaut wird eingefügt.
+      replacement:
+        description: An element is replaced as a whole.
+        annotations:
+          description_de: Ein Element wird als Ganzes ersetzt.
+      renumbering:
+        description: An element is renumbered.
+        annotations:
+          description_de: Ein Element wird neu nummeriert.
+      split:
+        description: An element is split into several.
+        annotations:
+          description_de: Ein Element wird in mehrere geteilt.
+      join:
+        description: Several elements are joined into one.
+        annotations:
+          description_de: Mehrere Elemente werden zu einem zusammengeführt.
+      entryIntoForce:
+        description: Comes into force.
+        annotations:
+          description_de: Tritt in Kraft.
+      endOfEnactment:
+        description: Ceases to be in force.
+        annotations:
+          description_de: Tritt ausser Kraft.
+      postponementOfEntryIntoForce:
+        description: Entry into force is postponed.
+        annotations:
+          description_de: Das Inkrafttreten wird aufgeschoben.
+      prorogationOfForce:
+        description: Force is extended.
+        annotations:
+          description_de: Die Geltung wird verlängert.
+      reEnactment:
+        description: Is enacted anew.
+        annotations:
+          description_de: Wird neu erlassen.
+      unconstitutionality:
+        description: Is declared unconstitutional.
+        annotations:
+          description_de: Wird für verfassungswidrig erklärt.
 classes:
   FedlexDocument:
     tree_root: true
@@ -264,6 +323,8 @@ classes:
       xml_element: akn:meta
     slots:
     - identification_ref
+    - analysis_ref
+    - temporal_data_ref
     - references_ref
     - notes_ref
     exact_mappings:
@@ -379,6 +440,7 @@ classes:
       A simple holder carrying a single @value attribute (AKN valueType). Reused for FRBRcountry, FRBRnumber, FRBRauthoritative, etc.
     slots:
     - value
+    - show_as
     annotations:
       description_de: |
         Einfacher Halter mit einem einzelnen @value-Attribut (AKN valueType). Wiederverwendet für FRBRcountry, FRBRnumber, FRBRauthoritative usw.
@@ -387,6 +449,7 @@ classes:
       A holder carrying a single @value attribute typed as an ELI URI (AKN valueType). Reused for FRBRthis and FRBRuri.
     slots:
     - value_uri
+    - show_as
     annotations:
       description_de: |
         Halter mit einem @value-Attribut vom Typ ELI-URI (AKN valueType). Wiederverwendet für FRBRthis und FRBRuri.
@@ -394,6 +457,7 @@ classes:
     description: A holder carrying a single @language attribute (akn:FRBRlanguage).
     slots:
     - language_value
+    - show_as
     annotations:
       description_de: Halter mit einem einzelnen @language-Attribut (akn:FRBRlanguage).
   FormatType:
@@ -402,6 +466,7 @@ classes:
     slots:
     - value
     - fedlex_generator
+    - show_as
     annotations:
       description_de: |
         Halter für akn:FRBRformat: ein @value (typischerweise 'xml') plus das optionale Erweiterungsattribut fedlex:generator (FLX-XF-002).
@@ -414,12 +479,12 @@ classes:
       xml_element: akn:references
     slots:
     - source
+    - original_ref
+    - active_refs
     - tlc_organizations
     - tlc_roles
     - tlc_references
     - tlc_concepts
-    - original_ref
-    - active_refs
     exact_mappings:
     - akn:references
   TLCOrganization:
@@ -496,8 +561,6 @@ classes:
         Die Präambel des Erlasses (akn:preamble) mit einleitenden Fliesstext-Absätzen vor dem Hauptteil.
       xml_element: akn:preamble
     slots:
-    - formulas
-    - citations_ref
     - content_blocks
     exact_mappings:
     - akn:preamble
@@ -511,6 +574,9 @@ classes:
       xsd_content_model: choice
       schematron_rule: 'FLX-BD-001: Illegal element in body — only the listed hierarchy elements are permitted'
     slots:
+    - eId
+    - period
+    - status
     - books
     - titles
     - parts
@@ -853,6 +919,7 @@ classes:
       xsd_content_model: choice
       schematron_note: 'FLX-HR-003: content in level only allowed for modifications (must contain akn:mod)'
     slots:
+    - eId
     - content_blocks
     exact_mappings:
     - akn:content
@@ -878,6 +945,7 @@ classes:
         Eine Auflistung von nummerierten oder buchstabierten Punkten (akn:blockList), optional eingeleitet durch ein akn:listIntroduction-Element.
       xml_element: akn:blockList
     slots:
+    - style
     - eId
     - list_introduction
     - items
@@ -968,6 +1036,7 @@ classes:
         Eine Inline-Referenz (akn:ref). Trägt @href, und bei internen SR-Querverweisen die Fedlex-Erweiterungsattribute fedlex:rs und fedlex:rs-uri.
       xml_element: akn:ref
     slots:
+    - eId
     - href
     - fedlex_rs
     - fedlex_rs_uri
@@ -1058,6 +1127,8 @@ classes:
         Eine Fussnote des Autors (akn:authorialNote). Rekursiv in Block-Inhalt: enthält ein oder mehrere akn:p-Absätze, die selbst Inline-Inhalt tragen.
       xml_element: akn:authorialNote
     slots:
+    - marker
+    - eId
     - content_blocks
     exact_mappings:
     - akn:authorialNote
@@ -1131,10 +1202,10 @@ classes:
   BlockElement:
     abstract: true
     description: |
-      Abstract base for a block-level element inside content, a list item or a table cell (akn:p, akn:blockList, akn:table).
+      Abstract base for a block-level element: the paragraphs, lists and tables of the content, and the formula and citations of the preamble.
     annotations:
       description_de: |
-        Abstrakte Basis für ein Element auf Blockebene innerhalb von Inhalt, Aufzählungsposition oder Tabellenzelle (akn:p, akn:blockList, akn:table).
+        Abstrakte Basis für ein Element auf Blockebene: die Absätze, Aufzählungen und Tabellen des Inhalts sowie Formel und Erwägungen des Vorspruchs.
     slots:
     - element_type
   DocNumber:
@@ -1396,6 +1467,7 @@ classes:
     - content_blocks
     exact_mappings:
     - akn:formula
+    is_a: BlockElement
   Citations:
     description: The citations of the preamble -- what the act invokes.
     annotations:
@@ -1406,6 +1478,7 @@ classes:
     - citation_list
     exact_mappings:
     - akn:citations
+    is_a: BlockElement
   Citation:
     description: A single citation.
     annotations:
@@ -1417,6 +1490,167 @@ classes:
     - content_blocks
     exact_mappings:
     - akn:citation
+  ModSource:
+    description: The passage that causes the modification.
+    annotations:
+      description_de: Die Stelle, welche die Änderung bewirkt.
+      xml_element: akn:source
+    slots:
+    - eId
+    - href
+    - pos
+    - up_to
+    exact_mappings:
+    - akn:source
+  ModDestination:
+    description: The passage that is modified.
+    annotations:
+      description_de: Die Stelle, die geändert wird.
+      xml_element: akn:destination
+    slots:
+    - eId
+    - href
+    - pos
+    - up_to
+    exact_mappings:
+    - akn:destination
+  ModOld:
+    description: The text as it stood before the modification.
+    annotations:
+      description_de: Der Text, wie er vor der Änderung lautete.
+      xml_element: akn:old
+    slots:
+    - eId
+    - href
+    - pos
+    - up_to
+    exact_mappings:
+    - akn:old
+  ModNew:
+    description: The text as it stands after the modification.
+    annotations:
+      description_de: Der Text, wie er nach der Änderung lautet.
+      xml_element: akn:new
+    slots:
+    - eId
+    - href
+    - pos
+    - up_to
+    exact_mappings:
+    - akn:new
+  Modification:
+    description: Abstract base for a modification recorded in the analysis.
+    annotations:
+      description_de: Abstrakte Basis für eine im Analyseblock vermerkte Änderung.
+      xml_element: akn:mod
+    slots:
+    - element_type
+    exact_mappings:
+    - akn:mod
+    abstract: true
+  TextualMod:
+    description: |
+      A textual modification: the wording of another act is inserted, substituted, repealed, renumbered, split or joined.
+    annotations:
+      description_de: |
+        Eine Textänderung: der Wortlaut eines anderen Erlasses wird eingefügt, ersetzt, aufgehoben, neu nummeriert, geteilt oder zusammengeführt.
+      xml_element: akn:textualMod
+    slots:
+    - eId
+    - mod_type
+    - period
+    - mod_sources
+    - mod_destinations
+    - mod_old
+    - mod_new
+    exact_mappings:
+    - akn:textualMod
+    is_a: Modification
+  ForceMod:
+    description: |
+      A modification of legal force: an act, or a part of it, enters into force, ceases, is postponed, prorogued, re-enacted or declared unconstitutional.
+    annotations:
+      description_de: |
+        Eine Änderung der Rechtskraft: ein Erlass oder ein Teil davon tritt in Kraft, ausser Kraft, wird aufgeschoben, verlängert, neu erlassen oder für verfassungswidrig erklärt.
+      xml_element: akn:forceMod
+    slots:
+    - eId
+    - mod_type
+    - period
+    - mod_sources
+    - mod_destinations
+    exact_mappings:
+    - akn:forceMod
+    is_a: Modification
+  ActiveModifications:
+    description: The modifications this act makes to others.
+    annotations:
+      description_de: Die Änderungen, die dieser Erlass an anderen vornimmt.
+      xml_element: akn:activeModifications
+    slots:
+    - source
+    - modifications
+    exact_mappings:
+    - akn:activeModifications
+  PassiveModifications:
+    description: The modifications other acts make to this one.
+    annotations:
+      description_de: Die Änderungen, die andere Erlasse an diesem vornehmen.
+      xml_element: akn:passiveModifications
+    slots:
+    - source
+    - modifications
+    exact_mappings:
+    - akn:passiveModifications
+  Analysis:
+    description: |
+      The analysis block: which modifications this act makes and receives. Fedlex does not use it; cantonal collections record their amendments here.
+    annotations:
+      description_de: |
+        Der Analyseblock: welche Änderungen dieser Erlass vornimmt und erfährt. Fedlex verwendet ihn nicht; kantonale Sammlungen halten hier ihre Änderungen fest.
+      xml_element: akn:analysis
+    slots:
+    - source
+    - active_modifications
+    - passive_modifications
+    exact_mappings:
+    - akn:analysis
+  TemporalData:
+    description: |
+      The temporal groups a modification refers to. Each group holds the interval during which it applies.
+    annotations:
+      description_de: |
+        Die Zeitgruppen, auf die sich eine Änderung bezieht. Jede Gruppe hält das Intervall, in dem sie gilt.
+      xml_element: akn:temporalData
+    slots:
+    - source
+    - temporal_groups
+    exact_mappings:
+    - akn:temporalData
+  TemporalGroup:
+    description: A named period, referred to by a modification through @period.
+    annotations:
+      description_de: Ein benannter Zeitraum, auf den sich eine Änderung über @period bezieht.
+      xml_element: akn:temporalGroup
+    slots:
+    - eId
+    - time_intervals
+    exact_mappings:
+    - akn:temporalGroup
+  TimeInterval:
+    description: |
+      An interval between two dates. Start and end name date elements in the document by anchor rather than carrying the date themselves; an empty end means the interval is still open.
+    annotations:
+      description_de: |
+        Ein Intervall zwischen zwei Daten. Anfang und Ende benennen Datumselemente im Dokument über einen Anker, statt das Datum selbst zu tragen; ein leeres Ende heisst, dass das Intervall offen ist.
+      xml_element: akn:timeInterval
+    slots:
+    - eId
+    - refers_to
+    - start_ref
+    - end_ref
+    exact_mappings:
+    - akn:timeInterval
 slots:
   act_ref:
     description: The legislative act (akn:act). Must be the only child of akn:akomaNtoso (FLX-RT-001).
@@ -2145,24 +2379,6 @@ slots:
       description_de: Zweck der Formel (@name).
       xml_attribute: 'true'
       xml_name: name
-  formulas:
-    description: Formulas of the preamble (akn:formula).
-    annotations:
-      description_de: Formeln des Vorspruchs (akn:formula).
-      xml_element: akn:formula
-    exact_mappings:
-    - akn:formula
-    range: Formula
-    multivalued: true
-  citations_ref:
-    description: The citations of the preamble (akn:citations).
-    annotations:
-      description_de: Die Erwägungen des Vorspruchs (akn:citations).
-      xml_element: akn:citations
-    exact_mappings:
-    - akn:citations
-    range: Citations
-    multivalued: true
   citation_list:
     description: The citations themselves (akn:citation).
     annotations:
@@ -2181,6 +2397,150 @@ slots:
     - akn:activeRef
     range: ActiveRef
     multivalued: true
+  mod_type:
+    description: Kind of the modification (@type); the permissible values are those of Akoma Ntoso.
+    annotations:
+      description_de: Art der Änderung (@type); die zulässigen Werte sind die von Akoma Ntoso.
+      xml_attribute: 'true'
+      xml_name: type
+    any_of:
+    - range: ModTypeEnum
+    - range: string
+  period:
+    description: The temporal group during which the modification applies (@period).
+    annotations:
+      description_de: Die Zeitgruppe, in der die Änderung gilt (@period).
+      xml_attribute: 'true'
+      xml_name: period
+  pos:
+    description: Position of the change relative to the destination (@pos), e.g. 'before'.
+    annotations:
+      description_de: Lage der Änderung zum Ziel (@pos), z.B. „before“.
+      xml_attribute: 'true'
+      xml_name: pos
+  up_to:
+    description: End of a range of destinations (@upTo).
+    annotations:
+      description_de: Ende eines Zielbereichs (@upTo).
+      xml_attribute: 'true'
+      xml_name: upTo
+  start_ref:
+    description: Anchor of the date on which the interval begins (@start).
+    annotations:
+      description_de: Anker des Datums, an dem das Intervall beginnt (@start).
+      xml_attribute: 'true'
+      xml_name: start
+  end_ref:
+    description: Anchor of the date on which the interval ends (@end); empty while open.
+    annotations:
+      description_de: Anker des Datums, an dem das Intervall endet (@end); leer, solange es offen ist.
+      xml_attribute: 'true'
+      xml_name: end
+  mod_sources:
+    description: The passages causing the modification (akn:source).
+    annotations:
+      description_de: Die Stellen, welche die Änderung bewirken (akn:source).
+      xml_element: akn:source
+    exact_mappings:
+    - akn:source
+    range: ModSource
+    multivalued: true
+  mod_destinations:
+    description: The passages that are modified (akn:destination).
+    annotations:
+      description_de: Die Stellen, die geändert werden (akn:destination).
+      xml_element: akn:destination
+    exact_mappings:
+    - akn:destination
+    range: ModDestination
+    multivalued: true
+  mod_old:
+    description: The previous wording (akn:old).
+    annotations:
+      description_de: Der bisherige Wortlaut (akn:old).
+      xml_element: akn:old
+    exact_mappings:
+    - akn:old
+    range: ModOld
+    multivalued: true
+  mod_new:
+    description: The new wording (akn:new).
+    annotations:
+      description_de: Der neue Wortlaut (akn:new).
+      xml_element: akn:new
+    exact_mappings:
+    - akn:new
+    range: ModNew
+    multivalued: true
+  modifications:
+    description: The modifications, in the order they are recorded (akn:textualMod, akn:forceMod).
+    annotations:
+      description_de: Die Änderungen in der Reihenfolge ihrer Aufzeichnung (akn:textualMod, akn:forceMod).
+    range: Modification
+    multivalued: true
+    inlined_as_list: true
+  active_modifications:
+    description: The modifications this act makes to others (akn:activeModifications).
+    annotations:
+      description_de: Die Änderungen, die dieser Erlass an anderen vornimmt (akn:activeModifications).
+      xml_element: akn:activeModifications
+    exact_mappings:
+    - akn:activeModifications
+    range: ActiveModifications
+  passive_modifications:
+    description: The modifications other acts make to this one (akn:passiveModifications).
+    annotations:
+      description_de: Die Änderungen, die andere Erlasse an diesem vornehmen (akn:passiveModifications).
+      xml_element: akn:passiveModifications
+    exact_mappings:
+    - akn:passiveModifications
+    range: PassiveModifications
+  temporal_groups:
+    description: The temporal groups (akn:temporalGroup).
+    annotations:
+      description_de: Die Zeitgruppen (akn:temporalGroup).
+      xml_element: akn:temporalGroup
+    exact_mappings:
+    - akn:temporalGroup
+    range: TemporalGroup
+    multivalued: true
+  time_intervals:
+    description: The intervals of this group (akn:timeInterval).
+    annotations:
+      description_de: Die Intervalle dieser Gruppe (akn:timeInterval).
+      xml_element: akn:timeInterval
+    exact_mappings:
+    - akn:timeInterval
+    range: TimeInterval
+    multivalued: true
+  analysis_ref:
+    description: The analysis block of the metadata (akn:analysis).
+    annotations:
+      description_de: Der Analyseblock der Metadaten (akn:analysis).
+      xml_element: akn:analysis
+    exact_mappings:
+    - akn:analysis
+    range: Analysis
+  temporal_data_ref:
+    description: The temporal data of the metadata (akn:temporalData).
+    annotations:
+      description_de: Die Zeitangaben der Metadaten (akn:temporalData).
+      xml_element: akn:temporalData
+    exact_mappings:
+    - akn:temporalData
+    range: TemporalData
+  status:
+    description: Editorial state of the element (@status), e.g. 'edited'.
+    annotations:
+      description_de: Bearbeitungsstand des Elements (@status), z.B. „edited“.
+      xml_attribute: 'true'
+      xml_name: status
+  style:
+    description: Presentation hint of the element (@style).
+    annotations:
+      description_de: Darstellungsangabe des Elements (@style).
+      xml_attribute: 'true'
+      xml_name: style
 annotations:
   description_de: |
     LinkML-Schema für das Fedlex-spezifische Subset von AkomaNtoso 3.0 für schweizerische Bundeserlasse (eCH-0296). Modelliert die vollständige Dokumentenstruktur (act, FRBR-Metadaten, Vorspann, Hauptteil, Gesetzeshierarchie, Artikelinhalt) und kodiert alle Fedlex-Schematron-Constraints (AKN-fedlex-1.sch) als Annotierungen.

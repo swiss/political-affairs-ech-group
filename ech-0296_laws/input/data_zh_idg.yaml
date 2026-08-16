@@ -9,9 +9,9 @@
 # ausgezeichneter Vorspann (Ordnungsnummer, Kurztitel, Abkuerzung, Datum),
 # dazu Schlussformel, Beilagen und Anmerkungen, die Fedlex nicht fuehrt.
 #
-# Nicht enthalten sind akn:analysis und akn:temporalData -- die AKN-Angaben
-# zu Aenderungen und Zeitverlaeufen. Sie sind im Schema noch nicht
-# modelliert; von 884 Elementen der Quelle fehlen dadurch 21.
+# Enthaelt auch akn:analysis und akn:temporalData -- die Aenderungen, die der
+# Erlass an anderen vornimmt, und die Zeitraeume, in denen sie gelten. Der
+# Rueckweg trifft alle 884 Knoten der Quelle.
 act_ref:
   act_name: Grunderlass
   meta:
@@ -62,6 +62,60 @@ act_ref:
           as_role: '#publisher'
         frbr_format:
           value: '#akn'
+          show_as: akn
+    analysis_ref:
+      source: '#source'
+      active_modifications:
+        modifications:
+        - element_type: ForceMod
+          eId: amod_1
+          mod_type: entryIntoForce
+          period: '#tmgr_1'
+          mod_sources:
+          - href: '#title_9__art_43__para_1__content'
+          mod_destinations:
+          - href: '#ra_2'
+        - element_type: TextualMod
+          eId: amod_2
+          mod_type: insertion
+          period: '#tmgr_1'
+          mod_sources:
+          - href: '#level_II__art_1__heading'
+          mod_destinations:
+          - href: (aktuelle konsoldierte Fassung)#art_1__para_1
+            pos: before
+          mod_new:
+          - href: '#level_II__art_1__heading__mod_1__qstr_1'
+        - element_type: TextualMod
+          eId: amod_3
+          mod_type: substitution
+          period: '#tmgr_2'
+          mod_sources:
+          - href: '#level_III__art_1__para_1'
+          mod_destinations:
+          - href: (aktueller konsoldierte Fassung)#art_1__para_1__content
+          mod_old:
+          - href: /akn/CH-ZH/act/2009-12-09/65-10/ger@2010-03-01/main#art_1__para_1__content
+          mod_new:
+          - href: '#level_III__art_1__para_1__content__mod_1__qstr_1'
+    temporal_data_ref:
+      source: '#source'
+      temporal_groups:
+      - eId: tmgr_1
+        time_intervals:
+        - refers_to: '#inForce'
+          start_ref: '#date_1'
+          end_ref: ''
+      - eId: tmgr_2
+        time_intervals:
+        - refers_to: '#inForce'
+          start_ref: '#date_2'
+          end_ref: ''
+      - eId: tmgr_3
+        time_intervals:
+        - refers_to: '#inForce'
+          start_ref: '#date_3'
+          end_ref: ''
     references_ref:
       source: '#source'
       original_ref:
@@ -203,20 +257,8 @@ act_ref:
           text: 12. Februar 2007
   preamble_ref:
     content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - element_type: TextRun
-        text: nach Einsichtnahme in die Anträge
-    - element_type: BlockParagraph
-      inline_content:
-      - element_type: TextRun
-        text: und
-    - element_type: BlockParagraph
-      inline_content:
-      - element_type: TextRun
-        text: ','
-    formulas:
-    - eId: formula_1
+    - element_type: Formula
+      eId: formula_1
       name_attr2: openFormula
       content_blocks:
       - element_type: BlockParagraph
@@ -225,17 +267,12 @@ act_ref:
           inline_content:
           - element_type: TextRun
             text: Der Kantonsrat,
-    - eId: formula_2
-      name_attr2: Verb
-      content_blocks:
-      - element_type: BlockParagraph
-        inline_content:
-        - element_type: I
-          inline_content:
-          - element_type: TextRun
-            text: 'beschliesst:'
-    citations_ref:
-    - citation_list:
+    - element_type: BlockParagraph
+      inline_content:
+      - element_type: TextRun
+        text: nach Einsichtnahme in die Anträge
+    - element_type: Citations
+      citation_list:
       - eId: cit_1
         refers_to: ''
         content_blocks:
@@ -246,7 +283,12 @@ act_ref:
           - element_type: NoteRef
             href: '#note_1'
             marker: '1'
-    - citation_list:
+    - element_type: BlockParagraph
+      inline_content:
+      - element_type: TextRun
+        text: und
+    - element_type: Citations
+      citation_list:
       - eId: cit_2
         refers_to: ''
         content_blocks:
@@ -254,7 +296,23 @@ act_ref:
           inline_content:
           - element_type: TextRun
             text: Kommission für Staat und Gemeinden vom 15. September 2006
+    - element_type: BlockParagraph
+      inline_content:
+      - element_type: TextRun
+        text: ','
+    - element_type: Formula
+      eId: formula_2
+      name_attr2: Verb
+      content_blocks:
+      - element_type: BlockParagraph
+        inline_content:
+        - element_type: I
+          inline_content:
+          - element_type: TextRun
+            text: 'beschliesst:'
   body:
+    period: tmgr_1
+    status: edited
     titles:
     - eId: title_1
       num:
@@ -294,12 +352,14 @@ act_ref:
             - element_type: TextRun
               text: '2'
           content_ref:
+            eId: title_1__art_1__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
               - element_type: TextRun
                 text: Es bezweckt,
             - element_type: BlockList
+              style: Buchstaben
               eId: title_1__art_1__para_2__content__blocklist
               items:
               - eId: title_1_art_1__para_2__content__blocklist__item_a
@@ -309,6 +369,8 @@ act_ref:
                   - element_type: TextRun
                     text: das Handeln der öffentlichen Organe
                   - element_type: AuthorialNote
+                    marker: a
+                    eId: authNote_a
                     content_blocks:
                     - element_type: BlockParagraph
                       inline_content:
@@ -354,6 +416,7 @@ act_ref:
             - element_type: TextRun
               text: '1'
           content_ref:
+            eId: title_1__art_2__para_1__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -366,6 +429,7 @@ act_ref:
             - element_type: TextRun
               text: '2'
           content_ref:
+            eId: level_I__art_2__para_2__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -388,12 +452,14 @@ act_ref:
             - element_type: TextRun
               text: '1'
           content_ref:
+            eId: title_1__art_3__para_1__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
               - element_type: TextRun
                 text: 'In diesem Gesetz bedeuten:'
             - element_type: BlockList
+              style: ''
               eId: title_1__art_3__para_1__content__blocklist_1
               list_introduction:
                 inline_content:
@@ -436,6 +502,7 @@ act_ref:
                   - element_type: TextRun
                     text: c.
             - element_type: BlockList
+              style: ''
               eId: title_1__art_3__para_1__content__blocklist_2
               list_introduction:
                 inline_content:
@@ -460,6 +527,7 @@ act_ref:
                   - element_type: TextRun
                     text: '1'
             - element_type: BlockList
+              style: ''
               eId: title_1_art_3__para_1__content__blocklist_3
               list_introduction:
                 inline_content:
@@ -481,6 +549,7 @@ act_ref:
                   - element_type: TextRun
                     text: '1'
             - element_type: BlockList
+              style: Grossbuchstaben
               eId: title_1__art_3__para_1__content__blocklist_4
               list_introduction:
                 inline_content:
@@ -560,6 +629,7 @@ act_ref:
                   - element_type: TextRun
                     text: b.
             - element_type: BlockList
+              style: ''
               eId: ltitle_1__art_3__para_1__content__blocklist_5
               list_introduction:
                 inline_content:
@@ -582,6 +652,7 @@ act_ref:
                   - element_type: TextRun
                     text: '1'
             - element_type: BlockList
+              style: ''
               eId: title_1__art_3__para_1__content__blocklist_6
               list_introduction:
                 inline_content:
@@ -639,6 +710,7 @@ act_ref:
           - eId: title_2__chp_A__art_4__para_1
             num: {}
             content_ref:
+              eId: title_2__chp_A__art_4__para_1__content
               content_blocks:
               - element_type: BlockParagraph
                 inline_content:
@@ -662,6 +734,7 @@ act_ref:
               - element_type: TextRun
                 text: '1'
             content_ref:
+              eId: title_2__chp_A__art_5__para_1__content
               content_blocks:
               - element_type: BlockParagraph
                 inline_content:
@@ -675,6 +748,7 @@ act_ref:
               - element_type: TextRun
                 text: '2'
             content_ref:
+              eId: title_2__chp_A__art_5__para_2__content
               content_blocks:
               - element_type: BlockParagraph
                 inline_content:
@@ -687,6 +761,7 @@ act_ref:
               - element_type: TextRun
                 text: '3'
             content_ref:
+              eId: title_2__chp_A__art_5__para_3__content
               content_blocks:
               - element_type: BlockParagraph
                 inline_content:
@@ -700,6 +775,7 @@ act_ref:
               - element_type: TextRun
                 text: '4'
             content_ref:
+              eId: title_2__chp_A__art_5__para_4__content
               content_blocks:
               - element_type: BlockParagraph
                 inline_content:
@@ -722,6 +798,7 @@ act_ref:
               - element_type: TextRun
                 text: '1'
             content_ref:
+              eId: title_2__chp_A__art_6__para_1__content
               content_blocks:
               - element_type: BlockParagraph
                 inline_content:
@@ -734,6 +811,7 @@ act_ref:
               - element_type: TextRun
                 text: '2'
             content_ref:
+              eId: title_2__chp_A__art_6__para_2__content
               content_blocks:
               - element_type: BlockParagraph
                 inline_content:
@@ -756,6 +834,7 @@ act_ref:
               - element_type: TextRun
                 text: '1'
             content_ref:
+              eId: title_2__chp_A__art_7__para_1__content
               content_blocks:
               - element_type: BlockParagraph
                 inline_content:
@@ -768,6 +847,7 @@ act_ref:
               - element_type: TextRun
                 text: '2'
             content_ref:
+              eId: title_2__chp_A__art_7__para_2__content
               content_blocks:
               - element_type: BlockParagraph
                 inline_content:
@@ -832,6 +912,7 @@ act_ref:
               - element_type: TextRun
                 text: '3'
             content_ref:
+              eId: title_2__chp_A__art_7__para_3__content
               content_blocks:
               - element_type: BlockParagraph
                 inline_content:
@@ -866,6 +947,7 @@ act_ref:
               - element_type: TextRun
                 text: '1'
             content_ref:
+              eId: title_22__chp_B__art_8__para_1__content
               content_blocks:
               - element_type: BlockParagraph
                 inline_content:
@@ -878,6 +960,7 @@ act_ref:
               - element_type: TextRun
                 text: '2'
             content_ref:
+              eId: title_2__chp_B__art_8__para_2__content
               content_blocks:
               - element_type: BlockParagraph
                 inline_content:
@@ -900,6 +983,7 @@ act_ref:
               - element_type: TextRun
                 text: '1'
             content_ref:
+              eId: title_2__chp_B__art_9__para_1__content
               content_blocks:
               - element_type: BlockParagraph
                 inline_content:
@@ -913,6 +997,7 @@ act_ref:
               - element_type: TextRun
                 text: '2'
             content_ref:
+              eId: title_2__chp_B__art_9__para_2__content
               content_blocks:
               - element_type: BlockParagraph
                 inline_content:
@@ -933,6 +1018,7 @@ act_ref:
           - eId: title_2__chp_B__art_10__para_1
             num: {}
             content_ref:
+              eId: title_2__chp_B__art_10__para_1__content
               content_blocks:
               - element_type: BlockParagraph
                 inline_content:
@@ -956,6 +1042,7 @@ act_ref:
               - element_type: TextRun
                 text: '1'
             content_ref:
+              eId: title_2__chp_B__art_11__para_1__content
               content_blocks:
               - element_type: BlockParagraph
                 inline_content:
@@ -969,6 +1056,7 @@ act_ref:
               - element_type: TextRun
                 text: '2'
             content_ref:
+              eId: title_2__chp_B__art_11__para_2__content
               content_blocks:
               - element_type: BlockParagraph
                 inline_content:
@@ -991,6 +1079,7 @@ act_ref:
               - element_type: TextRun
                 text: '1'
             content_ref:
+              eId: title_2__chp_B__art_12__para_1__content
               content_blocks:
               - element_type: BlockParagraph
                 inline_content:
@@ -1003,6 +1092,7 @@ act_ref:
               - element_type: TextRun
                 text: '2'
             content_ref:
+              eId: title_2__chp_B__art_12__para_2__content
               content_blocks:
               - element_type: BlockParagraph
                 inline_content:
@@ -1025,6 +1115,7 @@ act_ref:
               - element_type: TextRun
                 text: '1'
             content_ref:
+              eId: title_2__chp_B__art_13__para_1__content
               content_blocks:
               - element_type: BlockParagraph
                 inline_content:
@@ -1038,6 +1129,7 @@ act_ref:
               - element_type: TextRun
                 text: '2'
             content_ref:
+              eId: title_2__chp_B__art_13__para_2__content
               content_blocks:
               - element_type: BlockParagraph
                 inline_content:
@@ -1071,6 +1163,7 @@ act_ref:
             - element_type: TextRun
               text: '1'
           content_ref:
+            eId: title_3__art_14__para_1__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -1083,6 +1176,7 @@ act_ref:
             - element_type: TextRun
               text: '2'
           content_ref:
+            eId: title_3__art_14__para_2__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -1095,6 +1189,7 @@ act_ref:
             - element_type: TextRun
               text: '3'
           content_ref:
+            eId: title_3__art_14__para_3__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -1108,6 +1203,7 @@ act_ref:
             - element_type: TextRun
               text: '4'
           content_ref:
+            eId: title_3__art_14__para_4__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -1131,6 +1227,7 @@ act_ref:
             - element_type: TextRun
               text: '1'
           content_ref:
+            eId: title_3__art_15__para_1__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -1143,6 +1240,7 @@ act_ref:
             - element_type: TextRun
               text: '2'
           content_ref:
+            eId: title_3__art_15__para_2__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -1170,12 +1268,14 @@ act_ref:
             - element_type: TextRun
               text: '1'
           content_ref:
+            eId: title_3__art_16__para_1__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
               - element_type: TextRun
                 text: Das öffentliche Organ gibt Personendaten bekannt, wenn
             - element_type: BlockList
+              style: ''
               eId: title_3__art_16__para_1__content__blocklist_1
               items:
               - eId: title_3__art_16__para_1__content__blocklist_1__item_a
@@ -1215,6 +1315,7 @@ act_ref:
             - element_type: TextRun
               text: '2'
           content_ref:
+            eId: title_3__art_16__para_2__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -1239,12 +1340,14 @@ act_ref:
             - element_type: TextRun
               text: '1'
           content_ref:
+            eId: ttitle_3__art_17__para_1__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
               - element_type: TextRun
                 text: Das öffentliche Organ gibt besondere Personendaten bekannt, wenn
             - element_type: BlockList
+              style: ''
               eId: title_3__art_17__para_1__content__blocklist_1
               items:
               - eId: title_3__art_17__para_1__content__blocklist_1__item_a
@@ -1285,6 +1388,7 @@ act_ref:
             - element_type: TextRun
               text: '2'
           content_ref:
+            eId: title_3__art_17__para_2__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -1309,6 +1413,7 @@ act_ref:
             - element_type: TextRun
               text: '1'
           content_ref:
+            eId: title_3__art_18__para_1__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -1322,6 +1427,7 @@ act_ref:
             - element_type: TextRun
               text: '2'
           content_ref:
+            eId: title_3__art_18__para_2__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -1346,6 +1452,7 @@ act_ref:
             - element_type: TextRun
               text: '1'
           content_ref:
+            eId: title_3__art_19__para_1__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -1354,6 +1461,7 @@ act_ref:
                   Menschen bei der automatischen Verarbeitung personenbezogener Daten nicht unterstehen,
                   gibt das öffentliche Organ Personendaten bekannt, wenn
             - element_type: BlockList
+              style: ''
               eId: title_3__art_19__para_1__content__blocklist_1
               items:
               - eId: title_3__art_19__para_1__content__blocklist_1__item_a
@@ -1417,6 +1525,7 @@ act_ref:
             - element_type: TextRun
               text: '1'
           content_ref:
+            eId: title_4__art_20__para_1__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -1429,6 +1538,7 @@ act_ref:
             - element_type: TextRun
               text: '2'
           content_ref:
+            eId: title_4__art_20__para_2__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -1440,6 +1550,7 @@ act_ref:
             - element_type: TextRun
               text: '3'
           content_ref:
+            eId: title_4__art_20__para_3__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -1463,12 +1574,14 @@ act_ref:
             - element_type: TextRun
               text: '1'
           content_ref:
+            eId: title_4__art_21__para_1__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
               - element_type: TextRun
                 text: Die betroffene Person kann vom öffentlichen Organ verlangen, dass es
             - element_type: BlockList
+              style: ''
               eId: title_4__art_21__para_1__content__blocklist_1
               items:
               - eId: ttitle_4__art_21__para_1__content__blocklist_1__item_a
@@ -1528,6 +1641,7 @@ act_ref:
             - element_type: TextRun
               text: '1'
           content_ref:
+            eId: title_4__art_22__para_1__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -1541,6 +1655,7 @@ act_ref:
             - element_type: TextRun
               text: '2'
           content_ref:
+            eId: title_4__art_22__para_2__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -1576,6 +1691,7 @@ act_ref:
             - element_type: TextRun
               text: '1'
           content_ref:
+            eId: ttitle_5__art_23__para_1__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -1589,12 +1705,14 @@ act_ref:
             - element_type: TextRun
               text: '2'
           content_ref:
+            eId: title_5__art_23__para_2__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
               - element_type: TextRun
                 text: Ein öffentliches Interesse liegt insbesondere vor, wenn
             - element_type: BlockList
+              style: ''
               eId: title_5__art_23__para_2__content__blocklist_1
               items:
               - eId: title_5__art_23__para_2__content__blocklist_1__item_a
@@ -1657,6 +1775,7 @@ act_ref:
             - element_type: TextRun
               text: '3'
           content_ref:
+            eId: title_5__art_23__para_3__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -1691,6 +1810,7 @@ act_ref:
             - element_type: TextRun
               text: '1'
           content_ref:
+            eId: title_6__art_24__para_1__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -1702,6 +1822,7 @@ act_ref:
             - element_type: TextRun
               text: '2'
           content_ref:
+            eId: title_6__art_24__para_2__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -1724,6 +1845,7 @@ act_ref:
             - element_type: TextRun
               text: '1'
           content_ref:
+            eId: title_6__art_25__para_1__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -1737,6 +1859,7 @@ act_ref:
             - element_type: TextRun
               text: '2'
           content_ref:
+            eId: title_6__art_25__para_2__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -1761,6 +1884,7 @@ act_ref:
             - element_type: TextRun
               text: '1'
           content_ref:
+            eId: title_6__art_26__para_1__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -1774,6 +1898,7 @@ act_ref:
             - element_type: TextRun
               text: '2'
           content_ref:
+            eId: title_6__art_26__para_2__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -1797,6 +1922,7 @@ act_ref:
             - element_type: TextRun
               text: '1'
           content_ref:
+            eId: title_6__art_27__para_1__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -1809,6 +1935,7 @@ act_ref:
             - element_type: TextRun
               text: '2'
           content_ref:
+            eId: title_6__art_27__para_2__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -1832,6 +1959,7 @@ act_ref:
             - element_type: TextRun
               text: '1'
           content_ref:
+            eId: title_6__art_28__para_1__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -1844,6 +1972,7 @@ act_ref:
             - element_type: TextRun
               text: '2'
           content_ref:
+            eId: title_6__art_28__para_2__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -1868,6 +1997,7 @@ act_ref:
             - element_type: TextRun
               text: '1'
           content_ref:
+            eId: title_6__art_29__para_1__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -1879,12 +2009,14 @@ act_ref:
             - element_type: TextRun
               text: '2'
           content_ref:
+            eId: title_6__art_29__para_2__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
               - element_type: TextRun
                 text: Keine Gebühr wird erhoben
             - element_type: BlockList
+              style: ''
               eId: title_6__art_29__para_2__content__blocklist_1
               items:
               - eId: title_6__art_29__para_2__content__blocklist_1__item_a
@@ -1924,6 +2056,7 @@ act_ref:
             - element_type: TextRun
               text: '3'
           content_ref:
+            eId: title_6__art_29__para_3__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -1937,6 +2070,7 @@ act_ref:
             - element_type: TextRun
               text: '4'
           content_ref:
+            eId: title_6__art_29__para_4__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -1971,6 +2105,7 @@ act_ref:
             - element_type: TextRun
               text: '1'
           content_ref:
+            eId: ttitle_7__art_30__para_1__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -1983,6 +2118,7 @@ act_ref:
             - element_type: TextRun
               text: '2'
           content_ref:
+            eId: title_7__art_30__para_2__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -2006,6 +2142,7 @@ act_ref:
             - element_type: TextRun
               text: '1'
           content_ref:
+            eId: title_7__art_31__para_1__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -2018,6 +2155,7 @@ act_ref:
             - element_type: TextRun
               text: '2'
           content_ref:
+            eId: title_7__art_31__para_2__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -2030,6 +2168,7 @@ act_ref:
             - element_type: TextRun
               text: '3'
           content_ref:
+            eId: title_7__art_31__para_3__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -2052,6 +2191,7 @@ act_ref:
             - element_type: TextRun
               text: '1'
           content_ref:
+            eId: title_7__art_32__para_1__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -2064,6 +2204,7 @@ act_ref:
             - element_type: TextRun
               text: '2'
           content_ref:
+            eId: title_7__art_32__para_2__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -2077,6 +2218,7 @@ act_ref:
             - element_type: TextRun
               text: '3'
           content_ref:
+            eId: title_7__art_32__para_3__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -2099,6 +2241,7 @@ act_ref:
             - element_type: TextRun
               text: '1'
           content_ref:
+            eId: title_7__art_33__para_1__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -2112,6 +2255,7 @@ act_ref:
             - element_type: TextRun
               text: '2'
           content_ref:
+            eId: title_7__art_33__para_2__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -2137,12 +2281,14 @@ act_ref:
             - element_type: TextRun
               text: '1'
           content_ref:
+            eId: title_7__art_34__para_1__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
               - element_type: TextRun
                 text: Die oder der Beauftragte
             - element_type: BlockList
+              style: ''
               eId: title_7__art_34__para_1__content__blocklist_1
               items:
               - eId: ttitle_7__art_34__para_2__content__blocklist_1__item_a
@@ -2233,6 +2379,7 @@ act_ref:
             - element_type: TextRun
               text: '1'
           content_ref:
+            eId: title_7__art_35__para_1__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -2247,6 +2394,7 @@ act_ref:
             - element_type: TextRun
               text: '2'
           content_ref:
+            eId: title_7__art_35__para_2__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -2270,6 +2418,7 @@ act_ref:
             - element_type: TextRun
               text: '1'
           content_ref:
+            eId: title_7__art_36__para_1__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -2283,6 +2432,7 @@ act_ref:
             - element_type: TextRun
               text: '2'
           content_ref:
+            eId: title_7__art_36__para_2__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -2294,6 +2444,7 @@ act_ref:
             - element_type: TextRun
               text: '3'
           content_ref:
+            eId: title_7__art_36__para_3__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -2322,6 +2473,7 @@ act_ref:
             - element_type: TextRun
               text: '1'
           content_ref:
+            eId: title_7__art_37__para_1__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -2343,6 +2495,7 @@ act_ref:
         - eId: title_7__art_38__para_1
           num: {}
           content_ref:
+            eId: title_7__art_38__para_1__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -2367,6 +2520,7 @@ act_ref:
             - element_type: TextRun
               text: '1'
           content_ref:
+            eId: title_7__art_39__para_1__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -2402,6 +2556,7 @@ act_ref:
             - element_type: TextRun
               text: '1'
           content_ref:
+            eId: title_8__art_40__para_1__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -2415,6 +2570,7 @@ act_ref:
             - element_type: TextRun
               text: '2'
           content_ref:
+            eId: title_8__art_40__para_2__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -2448,6 +2604,7 @@ act_ref:
             - element_type: TextRun
               text: '1'
           content_ref:
+            eId: title_9__art_41__para_1__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -2496,6 +2653,7 @@ act_ref:
             - element_type: TextRun
               text: '1'
           content_ref:
+            eId: title_9__art_42__para_1__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -2542,6 +2700,7 @@ act_ref:
             - element_type: TextRun
               text: '2'
           content_ref:
+            eId: title_9__art_42__para_2__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -2593,6 +2752,7 @@ act_ref:
             - element_type: TextRun
               text: '1'
           content_ref:
+            eId: title_9__art_43__para_1__content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -2615,6 +2775,7 @@ act_ref:
             - element_type: TextRun
               text: '1'
           content_ref:
+            eId: title_9__art_44__para___content
             content_blocks:
             - element_type: BlockParagraph
               inline_content:
@@ -2692,6 +2853,7 @@ act_ref:
             text: Das Gesetz über die Information und den Datenschutz (IDG) vom 12. Februar 2007 ist rechtskräftig
               (
           - element_type: Ref
+            eId: ç
             href: https://www.amtsblatt.zh.ch
             inline_content:
             - element_type: TextRun
@@ -2813,6 +2975,7 @@ act_ref:
                 as_role: '#publisher'
               frbr_format:
                 value: '#akn'
+                show_as: akn
         body:
           component_refs:
           - src: ''

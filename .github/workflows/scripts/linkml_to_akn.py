@@ -86,9 +86,10 @@ class Writer:
                 continue
             if slot in ("inline_content", "element_type"):
                 continue
-            if slot == "content_blocks":
-                # Geordnete Folge: der Diskriminator nennt die Klasse, die
-                # Klasse ihr Element.
+            if isinstance(value[slot], list) and value[slot] \
+                    and isinstance(value[slot][0], dict) and "element_type" in value[slot][0]:
+                # Geordnete Folge mit Typ-Diskriminator: der Eintrag nennt seine
+                # Klasse, die Klasse ihr Element.
                 for item in value[slot]:
                     item_cls = item.get("element_type")
                     tag = self._ann(self.classes.get(item_cls, {})).get("xml_element")
