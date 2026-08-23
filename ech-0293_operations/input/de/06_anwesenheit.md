@@ -6,21 +6,21 @@ Anwesenheitslisten halten fest, wer an einer Sitzung teilgenommen hat. Sie dokum
 
 ## Attendance (Anwesenheit)
 
-## Begriff und Bedeutung
+### Begriff und Bedeutung
 
 Die Attendance (Anwesenheit) erfasst, welche Mitglieder eines parlamentarischen Organs bei einer Sitzung anwesend, abwesend oder entschuldigt waren. Sie dient der Dokumentation der Teilnahme und ist Voraussetzung für die Beschlussfähigkeit (Quorum).
 
-## Zweiebenen-Struktur
+### Zweiebenen-Struktur
 
 Der Standard unterscheidet zwischen zwei Ebenen der Anwesenheitserfassung:
 
-### 1. Attendance (Aggregierte Ebene)
+#### 1. Attendance (Aggregierte Ebene)
 Zusammenfassung der Anwesenheit für ein Meeting:
 - Gesamtzahl Anwesende
 - Gesamtzahl Abwesende (entschuldigt/unentschuldigt)
 - Beschlussfähigkeit
 
-### 2. IndividualAttendance (Individuelle Ebene)
+#### 2. IndividualAttendance (Individuelle Ebene)
 Detaillierte Erfassung für jede einzelne Person:
 - Wer war anwesend?
 - Wer war abwesend?
@@ -37,13 +37,13 @@ Meeting (Nationalratssitzung 4. März 2024)
 
 ## Attendance (Aggregierte Ebene)
 
-### Zuordnung zu Meeting und Organ
+#### Zuordnung zu Meeting und Organ
 
 - **parent_meeting**: Verweis auf die spezifische Sitzung, zu der die Anwesenheitsliste gehört
 - **actor_id**: Verweis auf das Organ (Parlament, Kommission) gemäss eCH-0294 Actors
 - **datetime_begin**: Zeitpunkt der Anwesenheitserfassung
 
-### Aggregierte Zahlen
+#### Aggregierte Zahlen
 
 - **total_count**: Gesamtzahl aller Mitglieder des Gremiums (Bezugsgrösse für Quorum-Berechnungen, z.B. 200 für Nationalrat, 46 für Ständerat)
 - **total_present**: Anzahl anwesender Mitglieder
@@ -56,18 +56,18 @@ Meeting (Nationalratssitzung 4. März 2024)
 - Entschuldigt: 12
 - Abwesend: 3
 
-### Beschlussfähigkeit
+#### Beschlussfähigkeit
 
 Die Beschlussfähigkeit (Quorum) ergibt sich aus dem Verhältnis von `total_present` zu `total_count` und den jeweiligen Quorum-Regeln des Gremiums. Sie wird daher nicht als eigenes Feld gespeichert, sondern bei Bedarf datenseitig berechnet.
 
 ## IndividualAttendance (Individuelle Ebene)
 
-### Verknüpfung
+#### Verknüpfung
 
 - **parent_attendance**: Verweis auf das übergeordnete `Attendance`-Aggregat (das wiederum am Meeting hängt). So wird die individuelle Erfassung sauber dem Meeting zugeordnet.
 - **actor_id**: Verweis auf die Person gemäss eCH-0294 Actors
 
-### Anwesenheitstyp
+#### Anwesenheitstyp
 
 Das Feld **attendance_type** (Enum `AttendanceTypeEnum`) erfasst die Art der Anwesenheit:
 
@@ -79,11 +79,11 @@ Das Feld **attendance_type** (Enum `AttendanceTypeEnum`) erfasst die Art der Anw
 >
 > Eine zweite Status-Achse `present` / `excused` / `absent` ("ob anwesend") parallel zur bestehenden Achse "wie anwesend" ist als Erweiterung in Diskussion.
 
-### Grund
+#### Grund
 
 Das Feld **reason** (mehrsprachig) kann den Grund für Abwesenheit oder Verspätung als Freitext erfassen.
 
-## Unterschied: Attendance vs. IndividualVote
+### Unterschied: Attendance vs. IndividualVote
 
 Wichtige Abgrenzung:
 
@@ -95,7 +95,7 @@ Wichtige Abgrenzung:
 
 **Beispiel:** Eine Person kann bei der Sitzung anwesend sein (Attendance: present), aber bei einer spezifischen Abstimmung als absent erfasst werden (IndividualVote: absent), weil sie in diesem Moment kurz den Raum verlassen hat.
 
-## Verwendungszwecke
+### Verwendungszwecke
 
 Die Attendance-Entitäten ermöglichen:
 

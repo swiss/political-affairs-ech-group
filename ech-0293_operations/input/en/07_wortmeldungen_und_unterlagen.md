@@ -16,34 +16,34 @@ Speeches record the parliamentary debate — who spoke when and on which agenda 
 
 ## Speech
 
-## Term and meaning
+### Term and meaning
 
 A speech denotes an oral contribution by a person during a parliamentary sitting. It is the central instrument of political debate and of expressing opinions in parliament.
 
-## Types of speeches
+### Types of speeches
 
 Parliamentary speeches take various forms:
 
-### Main statements
+#### Main statements
 - Detailed positions on an affair
 - Justification of motions
 - Presentation of the group's opinion
 
-### Short interventions
+#### Short interventions
 - Brief statements
 - Interposed questions
 - Corrections
 
-### Group declarations
+#### Group declarations
 - Official position of a parliamentary group
 - Delivered by the group's spokesperson
 
-### Government statements
+#### Government statements
 - Positions of government members
 - Answering of questions
 - Defence of bills
 
-## Structure and assignment
+### Structure and assignment
 
 A speech is always assigned to a specific context:
 
@@ -56,19 +56,19 @@ Meeting (sitting)
           └─ Media (video recording)
 ```
 
-### Assignment fields
+#### Assignment fields
 
 - **meeting_id**: the sitting in which the speech was made
 - **agenda_item_id**: the agenda item that was spoken to
 - **person_id**: the speaking person (according to eCH-0294 Actors)
 
-## Identification of the speakers
+### Identification of the speakers
 
 - **person_id**: unique identification of the person
 - **person_name**: name for quick access
 - **role**: role of the person (e.g. "group president", "rapporteur", "Federal Councillor")
 
-## Temporal recording
+### Temporal recording
 
 - **start_time**: start of the speech
 - **end_time**: end of the speech
@@ -79,7 +79,7 @@ These time indications enable:
 - analysis of speaking time per person / group
 - monitoring of compliance with time limits
 
-## Language of the speech
+### Language of the speech
 
 The field **language** records the language in which the speech was made:
 
@@ -89,27 +89,27 @@ The field **language** records the language in which the speech was made:
 - **rm**: Romansh
 - **en**: English
 
-## Text documents
+### Text documents
 
 The field **text_segments** references TextSegment entities containing the spoken text.
 
-### Different text versions
+#### Different text versions
 
-#### Raw transcript
+##### Raw transcript
 - Verbatim transcription
 - Unedited, with filler words
 - Available directly after the sitting
 
-#### Edited transcript
+##### Edited transcript
 - Editorially revised
 - Grammatically corrected
 - Official protocol version
 
-#### Translations
+##### Translations
 - Into other national languages
 - For international publications
 
-### TextSegment structure
+#### TextSegment structure
 
 Every TextSegment can contain:
 - **text**: the actual text
@@ -117,31 +117,31 @@ Every TextSegment can contain:
 - **version**: kind of version (raw, edited, translated)
 - **format**: format (plain, markdown, HTML)
 
-## Multimedia recordings
+### Multimedia recordings
 
 The field **media** references Media entities with audio and video recordings.
 
-### Audio recordings
+#### Audio recordings
 - Original sound of the speech
 - Format: MP3, WAV, etc.
 - Technical metadata (quality, bitrate)
 
-### Video recordings
+#### Video recordings
 - Visual recording (in plenary sittings)
 - Format: MP4, WebM, etc.
 - Various resolutions
 
-### Livestreaming
+#### Livestreaming
 - Real-time transmission
 - URL of the stream
 - Archiving after the sitting
 
-## Title and description
+### Title and description
 
 - **title**: short title (e.g. "Statement on energy policy")
 - **description**: summary or context of the speech
 
-## Type of speech
+### Type of speech
 
 The field **speech_type** can distinguish various kinds:
 

@@ -8,15 +8,15 @@ Parlamentarische Beschlussfassungen erfolgen entweder durch Abstimmungen über S
 
 ## Voting (Abstimmung)
 
-## Zweck der Entität
+### Zweck der Entität
 
 "Voting" erfasst den Abstimmungsprozess und das Ergebnis einer formalen Entscheidung im Parlament. Die Entität dokumentiert sowohl den Abstimmungsgegenstand (Frage), als auch das Verfahren (wie wurde abgestimmt) und das Resultat (mit welchem Stimmenverhältnis).
 
-## Arten von Abstimmungen
+### Arten von Abstimmungen
 
 Der Standard unterscheidet verschiedene Abstimmungstypen über das Feld **voting_type**:
 
-### intermediate
+#### intermediate
 Zwischenabstimmungen während der Beratung.
 
 **Beispiele:**
@@ -27,7 +27,7 @@ Zwischenabstimmungen während der Beratung.
 - Abstimmung über einen einzelnen Artikel eines Gesetzes
 - Gesamtabstimmung nach der ersten Lesung eines Erlasses, der in zwei Lesungen beraten wird
 
-### final
+#### final
 Die abschliessende Abstimmung über die gesamte Vorlage
 
 **Beispiele:**
@@ -36,10 +36,10 @@ Die abschliessende Abstimmung über die gesamte Vorlage
 - Annahme oder Ablehnung einer Vorlage in ihrer Gesamtheit
 - Punktweise Abstimmung über einen Vorstoss
 
-### casting
+#### casting
 Stichentscheid des/der Vorsitzenden bei Stimmengleichheit. Vorsitzende nehmen an Abstimmungen nicht teil, haben bei Stimmengleichheit jedoch den Stichentscheid. Bei geheimer Abstimmung gilt bei Stimmengleichheit der Antrag des vorberatenden Ratsorgans als angenommen. 
 
-### secret
+#### secret
 Geheime Stimmabgabe bei Abstimmungen und Wahlen
 
 **Anwendung:**
@@ -48,7 +48,7 @@ Geheime Stimmabgabe bei Abstimmungen und Wahlen
 - Abstimmung nach geheimer Beratung
 - Geheime Abstimmung auf Antrag 
 
-## Struktur einer Abstimmung
+### Struktur einer Abstimmung
 
 Eine Abstimmung ist immer einer Sitzungsphase und/oder einer Sitzung, einem Traktandum (Agenda-Item) und einem Geschäft mit Geschäftstitel und mit Geschäftsnummer zugeordnet. Sie umfasst den Abstimmungstyp, den Abstimmungsgegenstand (Frage), das Ergebnis und – bei nicht geheimer Abstimmung – die Einzelstimmen der Mitglieder. 
 Sie kann entweder:
@@ -66,11 +66,11 @@ Beispiel Auswahl:
 3 Optionen: https://www.gemeinderat-zuerich.ch/abstimmungen/detail.php?aid=aa10c137274f424fa4eda877e7644a89
 5 Optionen: https://www.gemeinderat-zuerich.ch/abstimmungen/detail.php?aid=23f01ba9b3f3410cb9cfb85f32f3dfe0
 
-## Abstimmungsverfahren
+### Abstimmungsverfahren
 
 Das Feld **procedure** beschreibt die Art der Durchführung:
 
-### Open procedures (Offene Abstimmungen)
+#### Open procedures (Offene Abstimmungen)
 - **show_of_hands**: Handzeichen (traditionell)
 - **standing**: Aufstehen (seltener)
 - **electronic**: Elektronische Abstimmung (häufig auf Bundesebene und Kantonsebene)
@@ -79,7 +79,7 @@ Das Feld **procedure** beschreibt die Art der Durchführung:
 - **circulation_voting**: Zirkulationsverfahren bei Krisen (Das Parlamentspräsidium führt die Abstimmung im Zirkulationsverfahren durch und informiert über das Ergebnis)
 - **virtual_voting**: Stimmabgabe an virtuellen Sitzungen in Krisenfällen.
 
-### Secret procedures (Geheime Abstimmungen)
+#### Secret procedures (Geheime Abstimmungen)
 - **secret_ballot**: Geheime Wahl mit Stimmzetteln
 - **electronic_secret**: Elektronische geheime Abstimmung
 
@@ -88,11 +88,11 @@ Die Wahl des Verfahrens beeinflusst, ob Einzelstimmen erfasst werden können:
 - Geheime Verfahren: Nur Gesamtergebnis verfügbar
 
 
-## Abstimmungsergebnis
+### Abstimmungsergebnis
 
 Das Ergebnis wird auf zwei Arten erfasst:
 
-### Detaillierte Zahlen
+#### Detaillierte Zahlen
 - **total_count_yes**: Anzahl Ja-Stimmen
 - **total_count_no**: Anzahl Nein-Stimmen
 - **total_count_abstention**: Anzahl Enthaltungen
@@ -101,7 +101,7 @@ Das Ergebnis wird auf zwei Arten erfasst:
 - **total**: Gesamtzahl der abstimmenden Mitglieder (ohne Abwesende und Präsidiumsstimme)
 - **majority_count**: Anzahl Stimmen, die für die erforderliche Mehrheit nötig waren
 
-### Gesamtergebnis
+#### Gesamtergebnis
 Das Ergebnis wird als Freitext im Feld **result_text** beschrieben (z.B. "Mit 120 zu 75 Stimmen bei 5 Enthaltungen angenommen"). Die kategorische Entscheidung (angenommen / abgelehnt / Kenntnisnahme usw.) wird nicht auf der Abstimmung selbst, sondern über die Klasse **Resolution** (Slot **resolution_type**) zum Traktandum festgehalten. Bei Stimmengleichheit wird ein allfälliger Stichentscheid des Präsidiums über eine eigene Abstimmung (`voting_type: tie_breaker_president`) bzw. eine neue Abstimmung modelliert.
 
 **Beispiel** (Schlussabstimmung, einfache Ja/Nein-Abstimmung):
@@ -115,7 +115,7 @@ Das Ergebnis wird als Freitext im Feld **result_text** beschrieben (z.B. "Mit 12
 
 <!-- TODO: weitere komplexere Beispiele ergänzen — Ordnungsantrag, Wiederholung einer Abstimmung. (Cup-/Mehrfachabstimmung und Stichentscheid sind abgedeckt.) -->
 
-### Mehrfachoptionen (Auswahlabstimmungen / "gleichgerichtete Anträge")
+#### Mehrfachoptionen (Auswahlabstimmungen / "gleichgerichtete Anträge")
 
 Nicht jede Abstimmung kennt nur Ja, Nein und Enthaltung. Liegen zu derselben Sachfrage mehrere gleichgerichtete Anträge vor, stimmen die Mitglieder über mehr als zwei Varianten gleichzeitig ab (in Zürich umgangssprachlich "Cup-Abstimmung", technisch über mehrere Abstimmungsknöpfe). Die obsiegende Variante ist diejenige mit den meisten Stimmen.
 
@@ -142,11 +142,11 @@ Solche Verfahren werden wie folgt abgebildet:
 
 Die vollständige Modellierung dieses Falls findet sich in `data_voting.yaml` (`ops:voting_zh_gr_2024_2023_361`).
 
-## Mehrheitstypen
+### Mehrheitstypen
 
 Das Feld **majority_type** definiert die erforderliche Mehrheit:
 
-### simple
+#### simple
 Einfache Mehrheit (mehr Ja als Nein)
 
 **Anwendung:**
@@ -155,7 +155,7 @@ Einfache Mehrheit (mehr Ja als Nein)
 
 **Beispiel:** 100 Ja, 80 Nein, 20 Enthaltungen → Angenommen
 
-### absolute
+#### absolute
 Absolute Mehrheit (mehr als die Hälfte aller Mitglieder)
 
 **Anwendung:**
@@ -165,7 +165,7 @@ Absolute Mehrheit (mehr als die Hälfte aller Mitglieder)
 
 **Beispiel:** Bei 200 Mitgliedern sind mindestens 101 Ja-Stimmen erforderlich
 
-### two_thirds
+#### two_thirds
 Zweidrittelmehrheit
 
 **Anwendung:**
@@ -175,24 +175,24 @@ Zweidrittelmehrheit
 
 **Beispiel:** Bei 200 Mitgliedern sind mindestens 134 Ja-Stimmen erforderlich
 
-### qualified
+#### qualified
 Qualifizierte Mehrheit (andere Schwellenwerte)
 
 **Anwendung:**
 - Spezielle Anforderungen in einzelnen Kantonen oder Gemeinden
 - Das konkrete Quorum wird in **majority_threshold** angegeben
 
-## Schwellenwert
+### Schwellenwert
 
 Das Feld **majority_threshold** gibt bei qualifizierten Mehrheiten den genauen Schwellenwert an (z.B. 0.6 für 60%).
 
-## Quorum
+### Quorum
 
 Das Feld **quorum** definiert die Mindestanzahl anwesender Mitglieder für die Beschlussfähigkeit:
 
 **Beispiel:** Ein Parlament mit 200 Mitgliedern ist beschlussfähig, wenn mindestens 100 Mitglieder anwesend sind (quorum: 100).
 
-## Namentliche Abstimmungen
+### Namentliche Abstimmungen
 Das Feld **named_vote** zeigt an, ob es sich um eine namentliche Abstimmung handelt: 
 
 - **true**: Die Einzelstimmen werden erfasst und publiziert
@@ -203,7 +203,7 @@ Namentliche Abstimmungen sind wichtig für:
 - Analyse von Abstimmungsmustern
 - Rechenschaftspflicht gegenüber Wählerinnen
 
-## Beziehung zu Einzelstimmen
+### Beziehung zu Einzelstimmen
 
 Bei namentlichen Abstimmungen verweist die Voting-Entität auf die einzelnen IndividualVote-Entitäten:
 
@@ -217,12 +217,12 @@ Voting
 **Beispiel:** Namensliste in Akkordeon https://www.tagblatt.gr.be.ch/shareparl?agendaItemUid=e65d81c90d1d43deb19ef078f7e363f3&segmentType=vote&unitName=default&scroll=true&autoplay=false 
 
 
-## Beschreibung und Dokumentation
+### Beschreibung und Dokumentation
 
 - **description**: Beschreibung worüber abgestimmt wurde (Abstimmungsgegenstand, Abstimmungsfrage)
 - **url**: Mehrsprachige URLs zu Abstimmungsdetails
 
-## Zeitstempel
+### Zeitstempel
 
 - **datetime_created**: Zeitpunkt der Durchführung der Abstimmung
 - **datetime_modified**: Letzte Aktualisierung (z.B. bei Korrekturen des Abstimmungsprotkolls)
@@ -238,11 +238,11 @@ Voting
 
 ## Individual Vote (Einzelstimme)
 
-## Zweck der Entität
+### Zweck der Entität
 
 IndividualVote erfasst das Stimmverhalten einzelner Parlamentsmitglieder bei namentlichen Abstimmungen. Die Entität wird nur erstellt, wenn eine Abstimmung nicht geheim durchgeführt wird (Voting.is_nominal = true).
 
-## Beziehung zur Abstimmung
+### Beziehung zur Abstimmung
 
 Jede Individual Vote ist Teil eines übergeordneten Votings (Abstimmung):
 
@@ -254,7 +254,7 @@ Voting (Schlussabstimmung Energiegesetz)
   └─ ...
 ```
 
-## Identifikation der Person
+### Identifikation der Person
 
 Die stimmende Person wird über das Feld **person_id** referenziert. Diese ID entspricht einer Person gemäss eCH-0294 Actors Standard.
 
@@ -264,41 +264,41 @@ Zusätzlich können weitere Identifikationsdaten erfasst werden:
 - **person_political_group**: Fraktionszugehörigkeit
 - **person_party**: Parteizugehörigkeit
 
-## Arten von Stimmen
+### Arten von Stimmen
 
 Neben `yes`, `no` und `abstention` kennt das Feld drei weitere Werte: `not_voted` für Mitglieder, die anwesend waren, aber nicht gestimmt haben, `tie_breaker` für den Stichentscheid des Präsidiums und `other` für alles, was sich nicht auf diese Achse bringen lässt. `other` ist das individuelle Gegenstück zu `total_other`: Bei einer Auswahlabstimmung hat die Person gestimmt, aber weder Ja noch Nein — welche Option sie gewählt hat, hält `type_label` fest („Auswahl A“). So bleibt die Einzelstimme auswertbar, ohne dass der Standard jede kantonale Auswahlmechanik als eigenen Enum-Wert führen muss.
 
 Das Feld **vote** erfasst die Art der Stimmabgabe:
 
-### yes
+#### yes
 Ja-Stimme (Zustimmung)
 
 **Bedeutung:** Die Person stimmt der Vorlage/dem Antrag zu.
 
-### no
+#### no
 Nein-Stimme (Ablehnung)
 
 **Bedeutung:** Die Person lehnt die Vorlage/den Antrag ab.
 
-### abstention
+#### abstention
 Enthaltung
 
 **Bedeutung:** Die Person nimmt an der Abstimmung teil, enthält sich aber der Stimme. Bei elektronischer Stimmabgabe drückt sie den Knopf "Enthaltung". 
 
-## Stimmgewicht
+### Stimmgewicht
 
 Das Feld **weight** erfasst das Stimmgewicht:
 
 - **Standardfall**: 1.0 (eine Stimme)
 - **Spezialfälle**: Andere Werte möglich
 
-### Anwendungsfälle für abweichendes Stimmgewicht
+#### Anwendungsfälle für abweichendes Stimmgewicht
 
 1. **Stellvertretung**: In einigen Systemen kann eine Person für eine abwesende Person mitstimmen (weight: 2.0)
 3. **Gemeindeversammlungen**: In speziellen Fällen können juristische Personen mehrere Stimmen haben
 4. **Historische Systeme**: Früher hatten in einigen Kantonen verschiedene Personengruppen unterschiedliches Stimmgewicht
 
-## Gruppenzugehörigkeit
+### Gruppenzugehörigkeit
 
 Das Feld **group_id** erfasst die Fraktionszugehörigkeit zum Zeitpunkt der Abstimmung:
 
@@ -309,7 +309,7 @@ Das Feld **group_id** erfasst die Fraktionszugehörigkeit zum Zeitpunkt der Abst
 
 **Beispiel:** Bei einer Abstimmung über das Energiegesetz stimmen 90% der SP-Fraktion mit Ja, 80% der SVP-Fraktion mit Nein.
 
-## Position und Reihenfolge
+### Position und Reihenfolge
 
 Das Feld **position** definiert die Gruppierung und Sortierreihenfolge bei der Darstellung:
 
@@ -319,7 +319,7 @@ Das Feld **position** definiert die Gruppierung und Sortierreihenfolge bei der D
 - Sortierung nach Stimmabgabe (erst Ja, dann Nein, dann Enthaltungen)
 - Gruppierung nach Fraktion, innerhalb der Fraktion nach Ja, Nein, Enthaltungen und innerhalb der Untergruppe alphabetisch sortiert
 
-## Beschreibung und Kontext
+### Beschreibung und Kontext
 
 Das Feld **description** kann zusätzliche Informationen erfassen:
 
@@ -327,12 +327,12 @@ Das Feld **description** kann zusätzliche Informationen erfassen:
 - "Enthaltung wegen Interessenkonflikt (Verwaltungsrat Energieunternehmen)"
 - "Abwesend wegen Krankheit"
 
-## Zeitstempel
+### Zeitstempel
 
 - **datetime_created**: Erste Publikation
 - **datetime_modified**: Letzte Aktualisierung (z.B. bei Korrekturen der Publikation)
 
-## Anwesenheit vs. Stimmabgabe
+### Anwesenheit vs. Stimmabgabe
 
 Wichtiger Unterschied:
 
@@ -341,7 +341,7 @@ Wichtiger Unterschied:
 
 Eine Person kann bei einer Sitzung anwesend sein (Attendance), aber bei einzelnen Abstimmungen mit "absent" oder "did_not_vote" erfasst werden (z.B. wenn sie kurz den Raum verlässt).
 
-## Namentliche vs. geheime Abstimmungen
+### Namentliche vs. geheime Abstimmungen
 
 IndividualVote-Entitäten werden nur bei namentlichen (offenen) Abstimmungen erfasst:
 
@@ -354,11 +354,11 @@ IndividualVote-Entitäten werden nur bei namentlichen (offenen) Abstimmungen erf
 
 ## Election (Wahl)
 
-## Begriff und Bedeutung
+### Begriff und Bedeutung
 
 Eine Election (Wahl) bezeichnet die Bestimmung einer oder mehrerer Personen für ein Amt oder eine Funktion durch ein parlamentarisches Organ. Im Gegensatz zu Abstimmungen (Votings), bei denen über Sachfragen entschieden wird, geht es bei Wahlen um Personenentscheidungen.
 
-## Unterschied: Wahl vs. Abstimmung
+### Unterschied: Wahl vs. Abstimmung
 
 | Kriterium | Election (Wahl) | Voting (Abstimmung) |
 |-----------|-----------------|---------------------|
@@ -367,11 +367,11 @@ Eine Election (Wahl) bezeichnet die Bestimmung einer oder mehrerer Personen für
 | Verfahren | Oft geheim | Oft offen |
 | Mehrheit | Meist absolut | Meist einfach |
 
-## Arten von Wahlen
+### Arten von Wahlen
 
 Der Standard unterscheidet verschiedene Wahltypen über das Feld **election_type**:
 
-### open
+#### open
 Offene Wahl
 
 **Charakteristik:**
@@ -384,7 +384,7 @@ Offene Wahl
 - Bei unumstrittenen Wahlen
 - In kleineren Gremien
 
-### secret
+#### secret
 Geheime Wahl
 
 **Charakteristik:**
@@ -412,7 +412,7 @@ Geheime Wahl
 - Wahl idien
 - Wahl der Kommissions
 
-### tacit
+#### tacit
 Stille Wahl
 
 **Charakteristik:**
@@ -427,7 +427,7 @@ Stille Wahl
 
 **Beispiel:** Wiederwahl eines Kommissionspräsidenten ohne Gegenkandidatur
 
-## Zuordnung zu Traktanden
+### Zuordnung zu Traktanden
 
 Jede Wahl ist einem AgendaItem zugeordnet:
 
@@ -439,12 +439,12 @@ AgendaItem (Wahl des Bundesrats)
       └─ Leere Stimmzettel: 5
 ```
 
-## Beschreibung und Titel
+### Beschreibung und Titel
 
 - **title**: Titel der Wahl (z.B. "Wahl Kommissionspräsidium WAK")
 - **description**: Ausführliche Beschreibung, Kontext, besondere Umstände
 
-## Wahlergebnis
+### Wahlergebnis
 
 Das Feld **result** erfasst das Ergebnis:
 
@@ -453,13 +453,13 @@ Das Feld **result** erfasst das Ergebnis:
 - **deferred**: Wahl verschoben
 - **withdrawn**: Wahl zurückgezogen
 
-## Gewählte Person(en)
+### Gewählte Person(en)
 
 Das Feld **elected_person_id** enthält die ID(s) der gewählten Person(en) gemäss eCH-0294 Actors.
 
 Bei Mehrfachwahlen (z.B. Wahl mehrerer Kommissionsmitglieder gleichzeitig) können mehrere IDs erfasst werden.
 
-## Stimmenverteilung
+### Stimmenverteilung
 
 Bei offenen Wahlen oder nach Publikation der Ergebnisse:
 
@@ -470,7 +470,7 @@ Bei offenen Wahlen oder nach Publikation der Ergebnisse:
 
 Zusätzlich Details pro Kandidat (über separate Entitäten oder als strukturierte Daten).
 
-## Wahlverfahren
+### Wahlverfahren
 
 Das Feld **procedure** beschreibt das konkrete Verfahren:
 
@@ -479,11 +479,11 @@ Das Feld **procedure** beschreibt das konkrete Verfahren:
 - **show_of_hands**: Handzeichen (bei offenen Wahlen)
 - **acclamation**: Akklamation (bei stillen Wahlen)
 
-## Mehrheitsverhältnisse
+### Mehrheitsverhältnisse
 
 Das Feld **majority_type** definiert die erforderliche Mehrheit:
 
-### absolute
+#### absolute
 Absolute Mehrheit (mehr als die Hälfte der Stimmenden)
 
 **Anwendung:**
@@ -495,21 +495,21 @@ Absolute Mehrheit (mehr als die Hälfte der Stimmenden)
 
 **Besonderheit:** Wenn im ersten Wahlgang niemand die absolute Mehrheit erreicht, folgt meist ein zweiter Wahlgang, in dem die einfache Mehrheit genügt.
 
-### simple
+#### simple
 Einfache Mehrheit (mehr Stimmen als andere Kandidaten)
 
 **Anwendung:**
 - Zweiter Wahlgang nach erfolglosem ersten Wahlgang
 - Einige Kommissionswahlen
 
-### qualified
+#### qualified
 Qualifizierte Mehrheit
 
 **Anwendung:**
 - Seltener bei Wahlen
 - Spezielle Funktionen mit erhöhten Anforderungen
 
-## Wahlgänge
+### Wahlgänge
 
 Bei Wahlen mit absoluter Mehrheit im ersten Wahlgang:
 
@@ -523,39 +523,39 @@ Bei Wahlen mit absoluter Mehrheit im ersten Wahlgang:
 
 Jeder Wahlgang wird als separate Election-Entität erfasst, verbunden über das gemeinsame AgendaItem.
 
-## Zeitstempel
+### Zeitstempel
 
 - **datetime_created**: Zeitpunkt der Durchführung
 - **datetime_modified**: Letzte Aktualisierung
 
-## URL und Dokumentation
+### URL und Dokumentation
 
 - **url**: Mehrsprachige URLs zu Wahlunterlagen:
   - Kandidatenprofile
   - Wahlresultate
   - Protokolle
 
-## Besonderheiten verschiedener Wahlen
+### Besonderheiten verschiedener Wahlen
 
-### Bundesratswahl
+#### Bundesratswahl
 - Geheime Wahl
 - Absolute Mehrheit erforderlich (im 1. Wahlgang)
 - Durch die Vereinigte Bundesversammlung
 
-### Bundesrichterwahl
+#### Bundesrichterwahl
 - Geheime Wahl
 - Proporzprinzip (Berücksichtigung von Parteien, Landesteilen, Geschlechtern)
 
-### Kommissionspräsidien
+#### Kommissionspräsidien
 - Wahl durch das jeweilige Parlament
 - Oft weniger öffentlich
 
-### Kantons- und Gemeindeebene
+#### Kantons- und Gemeindeebene
 - Grosse Vielfalt an Wahlverfahren
 - Teilweise Volkswahl statt parlamentarische Wahl
 - Unterschiedliche Mehrheitserfordernisse
 
-## Transparenz und Geheimhaltung
+### Transparenz und Geheimhaltung
 
 Spannungsfeld:
 - **Wahlgeheimnis**: Schutz der individuellen Wahlentscheidung
