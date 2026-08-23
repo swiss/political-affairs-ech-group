@@ -375,6 +375,7 @@ classes:
     - frbr_uri
     - frbr_dates
     - frbr_authors
+    - frbr_authoritative
     - frbr_language
     exact_mappings:
     - akn:FRBRExpression
@@ -1002,6 +1003,7 @@ classes:
     - content_blocks
     exact_mappings:
     - akn:td
+    is_a: Cell
   InlineElement:
     abstract: true
     description: Abstract base for a modeled inline-markup element inside mixed content.
@@ -1651,6 +1653,25 @@ classes:
     - end_ref
     exact_mappings:
     - akn:timeInterval
+  Cell:
+    abstract: true
+    description: 'Abstract base for a cell of a table row: a data cell (akn:td) or a header cell (akn:th).'
+    annotations:
+      description_de: |
+        Abstrakte Basis für eine Zelle einer Tabellenzeile: eine Datenzelle (akn:td) oder eine Kopfzelle (akn:th).
+    slots:
+    - element_type
+  TableHeaderCell:
+    is_a: Cell
+    description: A header cell of a table row (akn:th).
+    annotations:
+      description_de: Eine Kopfzelle einer Tabellenzeile (akn:th).
+      xml_element: akn:th
+    slots:
+    - colspan
+    - content_blocks
+    exact_mappings:
+    - akn:th
 slots:
   act_ref:
     description: The legislative act (akn:act). Must be the only child of akn:akomaNtoso (FLX-RT-001).
@@ -2175,11 +2196,13 @@ slots:
     annotations:
       description_de: Zeilen in einer Tabelle (akn:tr).
   table_cells:
-    description: Cells in a table row (akn:td).
-    range: TableCell
+    description: 'Cells of a table row in reading order: data cells and header cells (akn:td, akn:th).'
+    range: Cell
     multivalued: true
     annotations:
-      description_de: Zellen in einer Tabellenzeile (akn:td).
+      description_de: |
+        Zellen einer Tabellenzeile in Lesereihenfolge: Datenzellen und Kopfzellen (akn:td, akn:th).
+    inlined_as_list: true
   components_ref:
     description: The documents embedded in this act (akn:components).
     annotations:

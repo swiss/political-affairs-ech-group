@@ -108,7 +108,13 @@ Auf der untersten Ebene stehen die Inhaltsblöcke: Absätze, Listen und Tabellen
 
 {{include:ech-0296_laws/output/docs/TableRow.md}}
 
+Eine Zeile kann Kopf- und Datenzellen mischen; beide stehen deshalb in einer geordneten Folge, wie schon der Blockinhalt.
+
+{{include:ech-0296_laws/output/docs/Cell.md}}
+
 {{include:ech-0296_laws/output/docs/TableCell.md}}
+
+{{include:ech-0296_laws/output/docs/TableHeaderCell.md}}
 
 ## Anhänge
 

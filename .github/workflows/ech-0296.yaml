@@ -75,6 +75,12 @@ jobs:
         # Instanz-Beispiele nach output/examples.
         run: python .github/workflows/scripts/extract_examples.py ech-0296_laws
 
+      - name: Rundlauf gegen die amtlichen AKN-Dateien
+        # Das Schema speist auch den XSD- und XML-Konverter, der nicht in diesem
+        # Repo liegt. Bricht eine Aenderung dessen Annahmen, faellt das hier
+        # sonst nicht auf -- dieser Schritt prueft sie am echten Erlass.
+        run: python .github/workflows/scripts/check_akn_roundtrip.py ech-0296_laws
+
       - name: Export crosswalk (SSSOM + Tabelle)
         # Zieht die Mapping-Slots aus dem Schema: einmal als SSSOM-Mapping-Set
         # zum Weiterverarbeiten, einmal als Tabelle fuer den Anhang.

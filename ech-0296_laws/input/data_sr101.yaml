@@ -20748,14 +20748,17 @@ act_ref:
                   border: '1'
                   table_rows:
                   - table_cells:
-                    - content_blocks: []
-                    - content_blocks:
+                    - element_type: TableCell
+                      content_blocks: []
+                    - element_type: TableCell
+                      content_blocks:
                       - element_type: BlockParagraph
                         inline_content:
                         - element_type: TextRun
                           text: Fr.
                   - table_cells:
-                    - content_blocks:
+                    - element_type: TableCell
+                      content_blocks:
                       - element_type: BlockList
                         items:
                         - content_blocks:
@@ -20767,9 +20770,11 @@ act_ref:
                             inline_content:
                             - element_type: TextRun
                               text: a.
-                    - content_blocks: []
+                    - element_type: TableCell
+                      content_blocks: []
                   - table_cells:
-                    - content_blocks:
+                    - element_type: TableCell
+                      content_blocks:
                       - element_type: BlockList
                         items:
                         - content_blocks:
@@ -20781,13 +20786,15 @@ act_ref:
                             inline_content:
                             - element_type: TextRun
                               text: –
-                    - content_blocks:
+                    - element_type: TableCell
+                      content_blocks:
                       - element_type: BlockParagraph
                         inline_content:
                         - element_type: TextRun
                           text: '650'
                   - table_cells:
-                    - content_blocks:
+                    - element_type: TableCell
+                      content_blocks:
                       - element_type: BlockList
                         items:
                         - content_blocks:
@@ -20799,13 +20806,15 @@ act_ref:
                             inline_content:
                             - element_type: TextRun
                               text: –
-                    - content_blocks:
+                    - element_type: TableCell
+                      content_blocks:
                       - element_type: BlockParagraph
                         inline_content:
                         - element_type: TextRun
                           text: '2000'
                   - table_cells:
-                    - content_blocks:
+                    - element_type: TableCell
+                      content_blocks:
                       - element_type: BlockList
                         items:
                         - content_blocks:
@@ -20817,13 +20826,15 @@ act_ref:
                             inline_content:
                             - element_type: TextRun
                               text: –
-                    - content_blocks:
+                    - element_type: TableCell
+                      content_blocks:
                       - element_type: BlockParagraph
                         inline_content:
                         - element_type: TextRun
                           text: '3000'
                   - table_cells:
-                    - content_blocks:
+                    - element_type: TableCell
+                      content_blocks:
                       - element_type: BlockList
                         items:
                         - content_blocks:
@@ -20835,13 +20846,15 @@ act_ref:
                             inline_content:
                             - element_type: TextRun
                               text: –
-                    - content_blocks:
+                    - element_type: TableCell
+                      content_blocks:
                       - element_type: BlockParagraph
                         inline_content:
                         - element_type: TextRun
                           text: '4000'
                   - table_cells:
-                    - colspan: '2'
+                    - element_type: TableCell
+                      colspan: '2'
                       content_blocks:
                       - element_type: BlockList
                         items:
@@ -20855,7 +20868,8 @@ act_ref:
                             - element_type: TextRun
                               text: b.
                   - table_cells:
-                    - content_blocks:
+                    - element_type: TableCell
+                      content_blocks:
                       - element_type: BlockList
                         items:
                         - content_blocks:
@@ -20867,13 +20881,15 @@ act_ref:
                             inline_content:
                             - element_type: TextRun
                               text: –
-                    - content_blocks:
+                    - element_type: TableCell
+                      content_blocks:
                       - element_type: BlockParagraph
                         inline_content:
                         - element_type: TextRun
                           text: '650'
                   - table_cells:
-                    - content_blocks:
+                    - element_type: TableCell
+                      content_blocks:
                       - element_type: BlockList
                         items:
                         - content_blocks:
@@ -20885,13 +20901,15 @@ act_ref:
                             inline_content:
                             - element_type: TextRun
                               text: –
-                    - content_blocks:
+                    - element_type: TableCell
+                      content_blocks:
                       - element_type: BlockParagraph
                         inline_content:
                         - element_type: TextRun
                           text: '1500'
                   - table_cells:
-                    - content_blocks:
+                    - element_type: TableCell
+                      content_blocks:
                       - element_type: BlockList
                         items:
                         - content_blocks:
@@ -20903,13 +20921,15 @@ act_ref:
                             inline_content:
                             - element_type: TextRun
                               text: –
-                    - content_blocks:
+                    - element_type: TableCell
+                      content_blocks:
                       - element_type: BlockParagraph
                         inline_content:
                         - element_type: TextRun
                           text: '2000'
                   - table_cells:
-                    - content_blocks:
+                    - element_type: TableCell
+                      content_blocks:
                       - element_type: BlockList
                         items:
                         - content_blocks:
@@ -20921,7 +20941,8 @@ act_ref:
                             inline_content:
                             - element_type: TextRun
                               text: c.
-                    - content_blocks:
+                    - element_type: TableCell
+                      content_blocks:
                       - element_type: BlockParagraph
                         inline_content:
                         - element_type: TextRun
