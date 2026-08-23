@@ -1291,6 +1291,24 @@
             "title": "Br",
             "type": "object"
         },
+        "Cell": {
+            "additionalProperties": false,
+            "description": "Abstract base for a cell of a table row: a data cell (akn:td) or a header cell (akn:th).",
+            "properties": {
+                "element_type": {
+                    "description": "Type designator discriminating the concrete subclass of an abstract base: InlineElement (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote) or BlockElement (BlockParagraph, BlockList, Table).\n",
+                    "enum": [
+                        "Cell"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Cell",
+            "type": "object"
+        },
         "Chapter": {
             "additionalProperties": false,
             "description": "Chapter-level division of an act (akn:chapter). Allowed children: subchapter, section, subsection, level, and directly article (FLX-HR-001-ch). Requires unique @eId (FLX-HR-002-ch).",
@@ -2492,6 +2510,17 @@
             "additionalProperties": false,
             "description": "FRBR Expression level (akn:FRBRExpression): a specific language version of the legislative text. Identified by an ELI URI that includes the language code.",
             "properties": {
+                "frbr_authoritative": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/ValueType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Whether this is the authoritative version (akn:FRBRauthoritative/@value)."
+                },
                 "frbr_authors": {
                     "description": "Author/rights-holder entries for this FRBR entity (akn:FRBRauthor).",
                     "items": {
@@ -5711,9 +5740,70 @@
                         "array",
                         "null"
                     ]
+                },
+                "element_type": {
+                    "description": "Type designator discriminating the concrete subclass of an abstract base: InlineElement (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote) or BlockElement (BlockParagraph, BlockList, Table).\n",
+                    "enum": [
+                        "TableCell"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "title": "TableCell",
+            "type": "object"
+        },
+        "TableHeaderCell": {
+            "additionalProperties": false,
+            "description": "A header cell of a table row (akn:th).",
+            "properties": {
+                "colspan": {
+                    "description": "The @colspan attribute on akn:td (HTML-style presentation).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "content_blocks": {
+                    "description": "Block-level content in reading order: paragraphs, lists and tables as they follow one another in the document.\n",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/BlockParagraph"
+                            },
+                            {
+                                "$ref": "#/$defs/BlockList"
+                            },
+                            {
+                                "$ref": "#/$defs/Table"
+                            },
+                            {
+                                "$ref": "#/$defs/Formula"
+                            },
+                            {
+                                "$ref": "#/$defs/Citations"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "element_type": {
+                    "description": "Type designator discriminating the concrete subclass of an abstract base: InlineElement (TextRun, Ref, B, I, Sup, Span, Br, Inline, Placeholder, AuthorialNote) or BlockElement (BlockParagraph, BlockList, Table).\n",
+                    "enum": [
+                        "TableHeaderCell"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "TableHeaderCell",
             "type": "object"
         },
         "TableRow": {
@@ -5721,9 +5811,16 @@
             "description": "A row in an AkomaNtoso table (akn:tr).",
             "properties": {
                 "table_cells": {
-                    "description": "Cells in a table row (akn:td).",
+                    "description": "Cells of a table row in reading order: data cells and header cells (akn:td, akn:th).",
                     "items": {
-                        "$ref": "#/$defs/TableCell"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/TableCell"
+                            },
+                            {
+                                "$ref": "#/$defs/TableHeaderCell"
+                            }
+                        ]
                     },
                     "type": [
                         "array",

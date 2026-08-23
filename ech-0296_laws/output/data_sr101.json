@@ -42507,6 +42507,10 @@
                                   {
                                     "table_cells": [
                                       {
+                                        "element_type": "TableCell"
+                                      },
+                                      {
+                                        "element_type": "TableCell",
                                         "content_blocks": [
                                           {
                                             "element_type": "BlockParagraph",
@@ -42524,6 +42528,7 @@
                                   {
                                     "table_cells": [
                                       {
+                                        "element_type": "TableCell",
                                         "content_blocks": [
                                           {
                                             "element_type": "BlockList",
@@ -42552,12 +42557,16 @@
                                             ]
                                           }
                                         ]
+                                      },
+                                      {
+                                        "element_type": "TableCell"
                                       }
                                     ]
                                   },
                                   {
                                     "table_cells": [
                                       {
+                                        "element_type": "TableCell",
                                         "content_blocks": [
                                           {
                                             "element_type": "BlockList",
@@ -42588,6 +42597,7 @@
                                         ]
                                       },
                                       {
+                                        "element_type": "TableCell",
                                         "content_blocks": [
                                           {
                                             "element_type": "BlockParagraph",
@@ -42605,6 +42615,7 @@
                                   {
                                     "table_cells": [
                                       {
+                                        "element_type": "TableCell",
                                         "content_blocks": [
                                           {
                                             "element_type": "BlockList",
@@ -42635,6 +42646,7 @@
                                         ]
                                       },
                                       {
+                                        "element_type": "TableCell",
                                         "content_blocks": [
                                           {
                                             "element_type": "BlockParagraph",
@@ -42652,6 +42664,7 @@
                                   {
                                     "table_cells": [
                                       {
+                                        "element_type": "TableCell",
                                         "content_blocks": [
                                           {
                                             "element_type": "BlockList",
@@ -42682,6 +42695,7 @@
                                         ]
                                       },
                                       {
+                                        "element_type": "TableCell",
                                         "content_blocks": [
                                           {
                                             "element_type": "BlockParagraph",
@@ -42699,6 +42713,7 @@
                                   {
                                     "table_cells": [
                                       {
+                                        "element_type": "TableCell",
                                         "content_blocks": [
                                           {
                                             "element_type": "BlockList",
@@ -42729,6 +42744,7 @@
                                         ]
                                       },
                                       {
+                                        "element_type": "TableCell",
                                         "content_blocks": [
                                           {
                                             "element_type": "BlockParagraph",
@@ -42746,6 +42762,7 @@
                                   {
                                     "table_cells": [
                                       {
+                                        "element_type": "TableCell",
                                         "colspan": "2",
                                         "content_blocks": [
                                           {
@@ -42781,6 +42798,7 @@
                                   {
                                     "table_cells": [
                                       {
+                                        "element_type": "TableCell",
                                         "content_blocks": [
                                           {
                                             "element_type": "BlockList",
@@ -42811,6 +42829,7 @@
                                         ]
                                       },
                                       {
+                                        "element_type": "TableCell",
                                         "content_blocks": [
                                           {
                                             "element_type": "BlockParagraph",
@@ -42828,6 +42847,7 @@
                                   {
                                     "table_cells": [
                                       {
+                                        "element_type": "TableCell",
                                         "content_blocks": [
                                           {
                                             "element_type": "BlockList",
@@ -42858,6 +42878,7 @@
                                         ]
                                       },
                                       {
+                                        "element_type": "TableCell",
                                         "content_blocks": [
                                           {
                                             "element_type": "BlockParagraph",
@@ -42875,6 +42896,7 @@
                                   {
                                     "table_cells": [
                                       {
+                                        "element_type": "TableCell",
                                         "content_blocks": [
                                           {
                                             "element_type": "BlockList",
@@ -42905,6 +42927,7 @@
                                         ]
                                       },
                                       {
+                                        "element_type": "TableCell",
                                         "content_blocks": [
                                           {
                                             "element_type": "BlockParagraph",
@@ -42922,6 +42945,7 @@
                                   {
                                     "table_cells": [
                                       {
+                                        "element_type": "TableCell",
                                         "content_blocks": [
                                           {
                                             "element_type": "BlockList",
@@ -42952,6 +42976,7 @@
                                         ]
                                       },
                                       {
+                                        "element_type": "TableCell",
                                         "content_blocks": [
                                           {
                                             "element_type": "BlockParagraph",

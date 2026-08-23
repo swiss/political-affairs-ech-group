@@ -16,7 +16,7 @@ _Eine Zeile in einer AkomaNtoso-Tabelle (akn:tr)._
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
-| table_cells | * <br/> [TableCell](TableCell.md) | Zellen in einer Tabellenzeile (akn:td). |
+| table_cells | * <br/> [Cell](Cell.md) | Zellen einer Tabellenzeile in Lesereihenfolge: Datenzellen und Kopfzellen (akn:td, akn:th).  |
 
 
 

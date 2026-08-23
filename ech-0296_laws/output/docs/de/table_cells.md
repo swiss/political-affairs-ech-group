@@ -6,7 +6,8 @@ search:
 # Slot: table_cells 
 
 
-_Zellen in einer Tabellenzeile (akn:td)._
+_Zellen einer Tabellenzeile in Lesereihenfolge: Datenzellen und Kopfzellen (akn:td, akn:th)._
+
 
 
 
@@ -38,7 +39,7 @@ URI: [laws:table_cells](https://ld.ech.ch/schema/0296/laws/table_cells)
 
 | Eigenschaft | Wert |
 | --- | --- |
-| Wertebereich | [TableCell](TableCell.md) |
+| Wertebereich | [Cell](Cell.md) |
 | Domäne von | [TableRow](TableRow.md) |
 
 ### Kardinalität und Anforderungen
@@ -66,14 +67,22 @@ name: table_cells
 annotations:
   description_de:
     tag: description_de
-    value: Zellen in einer Tabellenzeile (akn:td).
-description: Zellen in einer Tabellenzeile (akn:td).
+    value: 'Zellen einer Tabellenzeile in Lesereihenfolge: Datenzellen und Kopfzellen
+      (akn:td, akn:th).
+
+      '
+description: 'Zellen einer Tabellenzeile in Lesereihenfolge: Datenzellen und Kopfzellen
+  (akn:td, akn:th).
+
+  '
 from_schema: https://ld.ech.ch/schema/0296/laws
 rank: 1000
 domain_of:
 - TableRow
-range: TableCell
+range: Cell
 multivalued: true
+inlined: true
+inlined_as_list: true
 
 ```
 </details></div>

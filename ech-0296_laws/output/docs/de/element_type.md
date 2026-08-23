@@ -29,9 +29,11 @@ URI: [laws:element_type](https://ld.ech.ch/schema/0296/laws/element_type)
 | [InlineElement](InlineElement.md) | Abstrakte Basis für ein modelliertes Inline-Markup-Element in gemischtem Inha... |  no  |
 | [BlockElement](BlockElement.md) | Abstrakte Basis für ein Element auf Blockebene: die Absätze, Aufzählungen und... |  no  |
 | [Modification](Modification.md) | Abstrakte Basis für eine im Analyseblock vermerkte Änderung |  no  |
+| [Cell](Cell.md) | Abstrakte Basis für eine Zelle einer Tabellenzeile: eine Datenzelle (akn:td) ... |  no  |
 | [BlockParagraph](BlockParagraph.md) | Ein Fliesstext-Absatz in Content (akn:p) |  no  |
 | [BlockList](BlockList.md) | Eine Auflistung von nummerierten oder buchstabierten Punkten (akn:blockList),... |  no  |
 | [Table](Table.md) | Ein Tabellen-Element innerhalb von Content (akn:table) |  no  |
+| [TableCell](TableCell.md) | Eine Zelle in einer Tabellenzeile (akn:td) |  no  |
 | [TextRun](TextRun.md) | Ein einfacher Textabschnitt in gemischtem Inhalt |  no  |
 | [Ref](Ref.md) | Eine Inline-Referenz (akn:ref) |  no  |
 | [B](B.md) | Fett-Inline-Markup (akn:b) |  no  |
@@ -60,6 +62,7 @@ URI: [laws:element_type](https://ld.ech.ch/schema/0296/laws/element_type)
 | [Citations](Citations.md) | Die Erwägungen des Vorspruchs — worauf sich der Erlass beruft |  no  |
 | [TextualMod](TextualMod.md) | Eine Textänderung: der Wortlaut eines anderen Erlasses wird eingefügt, ersetz... |  no  |
 | [ForceMod](ForceMod.md) | Eine Änderung der Rechtskraft: ein Erlass oder ein Teil davon tritt in Kraft,... |  no  |
+| [TableHeaderCell](TableHeaderCell.md) | Eine Kopfzelle einer Tabellenzeile (akn:th) |  no  |
 
 
 
@@ -73,7 +76,7 @@ URI: [laws:element_type](https://ld.ech.ch/schema/0296/laws/element_type)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [String](String.md) |
-| Domäne von | [InlineElement](InlineElement.md), [BlockElement](BlockElement.md), [Modification](Modification.md) |
+| Domäne von | [InlineElement](InlineElement.md), [BlockElement](BlockElement.md), [Modification](Modification.md), [Cell](Cell.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -134,6 +137,7 @@ domain_of:
 - InlineElement
 - BlockElement
 - Modification
+- Cell
 range: string
 
 ```

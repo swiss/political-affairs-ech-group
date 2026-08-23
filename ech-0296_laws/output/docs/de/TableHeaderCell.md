@@ -1,10 +1,9 @@
 
 
-## Klasse: TableCell 
+## Klasse: TableHeaderCell 
 
 
-_Eine Zelle in einer Tabellenzeile (akn:td). Enthält Block-Inhalt: Fliesstext-Absätze (akn:p) und Auflistungen (akn:blockList)._
-
+_Eine Kopfzelle einer Tabellenzeile (akn:th)._
 
 
 

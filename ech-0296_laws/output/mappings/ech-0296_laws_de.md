@@ -95,6 +95,7 @@
 | `TemporalData` | Klasse | exactMatch | `akn:temporalData` |
 | `TemporalGroup` | Klasse | exactMatch | `akn:temporalGroup` |
 | `TimeInterval` | Klasse | exactMatch | `akn:timeInterval` |
+| `TableHeaderCell` | Klasse | exactMatch | `akn:th` |
 | `preface_paragraphs` | Slot | exactMatch | `akn:p` |
 | `frbr_this` | Slot | exactMatch | `akn:FRBRthis` |
 | `frbr_uri` | Slot | exactMatch | `akn:FRBRuri` |

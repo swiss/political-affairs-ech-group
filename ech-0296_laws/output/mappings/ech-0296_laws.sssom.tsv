@@ -107,6 +107,7 @@ laws:Analysis	skos:exactMatch	akn:analysis	semapv:ManualMappingCuration	Analysis
 laws:TemporalData	skos:exactMatch	akn:temporalData	semapv:ManualMappingCuration	TemporalData	temporalData	owl class
 laws:TemporalGroup	skos:exactMatch	akn:temporalGroup	semapv:ManualMappingCuration	TemporalGroup	temporalGroup	owl class
 laws:TimeInterval	skos:exactMatch	akn:timeInterval	semapv:ManualMappingCuration	TimeInterval	timeInterval	owl class
+laws:TableHeaderCell	skos:exactMatch	akn:th	semapv:ManualMappingCuration	TableHeaderCell	th	owl class
 laws:preface_paragraphs	skos:exactMatch	akn:p	semapv:ManualMappingCuration	preface_paragraphs	p	owl object property
 laws:frbr_this	skos:exactMatch	akn:FRBRthis	semapv:ManualMappingCuration	frbr_this	FRBRthis	owl object property
 laws:frbr_uri	skos:exactMatch	akn:FRBRuri	semapv:ManualMappingCuration	frbr_uri	FRBRuri	owl object property
