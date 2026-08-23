@@ -211,17 +211,17 @@ ops:voting_zh_gr_2024_2023_361 a ops:Voting ;
     ops:total 112 ;
     ops:total_absent 13 ;
     ops:total_other [ a ops:TotalOther ;
+            ops:count 75 ;
+            mcm:label "Auswahl A (siegreich)" ],
+        [ a ops:TotalOther ;
             ops:count 0 ;
             mcm:label "Auswahl D" ],
-        [ a ops:TotalOther ;
-            ops:count 25 ;
-            mcm:label "Auswahl B" ],
         [ a ops:TotalOther ;
             ops:count 12 ;
             mcm:label "Auswahl C" ],
         [ a ops:TotalOther ;
-            ops:count 75 ;
-            mcm:label "Auswahl A (siegreich)" ] ;
+            ops:count 25 ;
+            mcm:label "Auswahl B" ] ;
     ops:type_label "Gleichgerichtete Anträge (Mehrfachauswahl)" ;
     ops:voting_title [ a ops:MultilingualString ;
             ops:text "Liegenschaften Stadt Zürich, Wohnhaus Magnusstrasse 27, Gesamtinstandsetzung, Grundrissanpassung, Netto-Zusatzkredit (Geschäft 2023/361)" ;

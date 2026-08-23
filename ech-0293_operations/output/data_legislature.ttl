@@ -18,14 +18,14 @@ ops:legislature_51 a ops:Legislature ;
     ops:description "Amtsdauer der am 20. Oktober 2019 gewählten Bundesversammlung; sie endete am Vortag der konstituierenden Sitzung der 52. Legislaturperiode vom 4. Dezember 2023." ;
     ops:landingPage "https://www.parlament.ch/de/ratsbetrieb/sessionen" ;
     ops:name [ a ops:MultilingualString ;
-            ops:text "51ª legislatura" ;
-            mcm:language "it" ],
+            ops:text "51. Legislaturperiode" ;
+            mcm:language "de" ],
         [ a ops:MultilingualString ;
             ops:text "51e législature" ;
             mcm:language "fr" ],
         [ a ops:MultilingualString ;
-            ops:text "51. Legislaturperiode" ;
-            mcm:language "de" ] ;
+            ops:text "51ª legislatura" ;
+            mcm:language "it" ] ;
     ops:spatial "https://ld.admin.ch/country/CHE" ;
     mcm:dateBeginActual "2019-12-02"^^xsd:date ;
     mcm:dateEndActual "2023-12-03"^^xsd:date ;

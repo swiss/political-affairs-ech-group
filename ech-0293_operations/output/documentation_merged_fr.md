@@ -2962,15 +2962,15 @@ Les décisions parlementaires sont prises soit par des votes sur des questions m
 
 ## Voting (vote)
 
-## But de l'entité
+### But de l'entité
 
 « Voting » saisit le processus de vote et le résultat d'une décision formelle au parlement. L'entité documente aussi bien l'objet du vote (la question) que la procédure (comment il a été voté) et le résultat (avec quel rapport de voix).
 
-## Types de votes
+### Types de votes
 
 La norme distingue différents types de votes au moyen du champ **voting_type** :
 
-### intermediate
+#### intermediate
 Votes intermédiaires en cours de délibération.
 
 **Exemples :**
@@ -2981,7 +2981,7 @@ Votes intermédiaires en cours de délibération.
 - Vote sur un article isolé d'une loi
 - Vote sur l'ensemble après la première lecture d'un acte délibéré en deux lectures
 
-### final
+#### final
 Le vote final portant sur l'ensemble du projet
 
 **Exemples :**
@@ -2990,10 +2990,10 @@ Le vote final portant sur l'ensemble du projet
 - Acceptation ou rejet d'un projet dans son ensemble
 - Vote point par point sur une intervention
 
-### casting
+#### casting
 Voix prépondérante de la présidence en cas d'égalité des voix. La présidence ne participe pas aux votes, mais départage en cas d'égalité. En cas de vote secret, la proposition de l'organe qui a procédé à l'examen préalable est réputée acceptée en cas d'égalité des voix.
 
-### secret
+#### secret
 Expression secrète de la voix lors de votes et d'élections
 
 **Application :**
@@ -3002,7 +3002,7 @@ Expression secrète de la voix lors de votes et d'élections
 - Vote après délibération à huis clos
 - Vote secret sur proposition
 
-## Structure d'un vote
+### Structure d'un vote
 
 Un vote est toujours rattaché à une phase de séance et/ou à une séance, à un point de l'ordre du jour (Agenda Item) et à une affaire avec son titre et son numéro. Il comprend le type de vote, l'objet du vote (la question), le résultat et — en cas de vote non secret — les voix individuelles des membres.
 Il peut soit :
@@ -3020,11 +3020,11 @@ Exemple de sélection :
 3 options : https://www.gemeinderat-zuerich.ch/abstimmungen/detail.php?aid=aa10c137274f424fa4eda877e7644a89
 5 options : https://www.gemeinderat-zuerich.ch/abstimmungen/detail.php?aid=23f01ba9b3f3410cb9cfb85f32f3dfe0
 
-## Procédures de vote
+### Procédures de vote
 
 Le champ **procedure** décrit le mode de déroulement :
 
-### Open procedures (votes ouverts)
+#### Open procedures (votes ouverts)
 - **show_of_hands** : à main levée (traditionnel)
 - **standing** : par assis et levé (plus rare)
 - **electronic** : vote électronique (fréquent aux niveaux fédéral et cantonal)
@@ -3033,7 +3033,7 @@ Le champ **procedure** décrit le mode de déroulement :
 - **circulation_voting** : procédure par voie de circulation en situation de crise (la présidence du parlement organise le vote par voie de circulation et informe du résultat)
 - **virtual_voting** : expression de la voix lors de séances virtuelles en situation de crise.
 
-### Secret procedures (votes secrets)
+#### Secret procedures (votes secrets)
 - **secret_ballot** : vote secret avec bulletins
 - **electronic_secret** : vote secret électronique
 
@@ -3042,11 +3042,11 @@ Le choix de la procédure détermine si les voix individuelles peuvent être sai
 - Procédures secrètes : seul le résultat global est disponible
 
 
-## Résultat du vote
+### Résultat du vote
 
 Le résultat est saisi de deux manières :
 
-### Chiffres détaillés
+#### Chiffres détaillés
 - **total_count_yes** : nombre de voix « oui »
 - **total_count_no** : nombre de voix « non »
 - **total_count_abstention** : nombre d'abstentions
@@ -3055,7 +3055,7 @@ Le résultat est saisi de deux manières :
 - **total** : nombre total de membres votants (sans les absents ni la voix de la présidence)
 - **majority_count** : nombre de voix nécessaires pour atteindre la majorité requise
 
-### Résultat global
+#### Résultat global
 Le résultat est décrit en texte libre dans le champ **result_text** (p. ex. « Accepté par 120 voix contre 75 et 5 abstentions »). La décision catégorielle (accepté / rejeté / pris acte, etc.) n'est pas consignée sur le vote lui-même, mais au moyen de la classe **Resolution** (slot **resolution_type**) rattachée au point de l'ordre du jour. En cas d'égalité des voix, une éventuelle voix prépondérante de la présidence est modélisée au moyen d'un vote distinct (`voting_type: tie_breaker_president`), respectivement d'un nouveau vote.
 
 **Exemple** (vote final, vote simple oui/non) :
@@ -3069,7 +3069,7 @@ Le résultat est décrit en texte libre dans le champ **result_text** (p. ex. «
 
 <!-- TODO: weitere komplexere Beispiele ergänzen — Ordnungsantrag, Wiederholung einer Abstimmung. (Cup-/Mehrfachabstimmung und Stichentscheid sind abgedeckt.) -->
 
-### Options multiples (votes de sélection / « propositions de même sens »)
+#### Options multiples (votes de sélection / « propositions de même sens »)
 
 Tout vote ne se limite pas à oui, non et abstention. Lorsque plusieurs propositions de même sens portent sur la même question matérielle, les membres votent simultanément sur plus de deux variantes (à Zurich, familièrement « vote en coupe », techniquement au moyen de plusieurs boutons de vote). La variante qui l'emporte est celle qui obtient le plus de voix.
 
@@ -3096,11 +3096,11 @@ De telles procédures sont représentées comme suit :
 
 La modélisation complète de ce cas figure dans `data_voting.yaml` (`ops:voting_zh_gr_2024_2023_361`).
 
-## Types de majorité
+### Types de majorité
 
 Le champ **majority_type** définit la majorité requise :
 
-### simple
+#### simple
 Majorité simple (plus de oui que de non)
 
 **Application :**
@@ -3109,7 +3109,7 @@ Majorité simple (plus de oui que de non)
 
 **Exemple :** 100 oui, 80 non, 20 abstentions → accepté
 
-### absolute
+#### absolute
 Majorité absolue (plus de la moitié de tous les membres)
 
 **Application :**
@@ -3119,7 +3119,7 @@ Majorité absolue (plus de la moitié de tous les membres)
 
 **Exemple :** avec 200 membres, au moins 101 voix « oui » sont nécessaires
 
-### two_thirds
+#### two_thirds
 Majorité des deux tiers
 
 **Application :**
@@ -3129,24 +3129,24 @@ Majorité des deux tiers
 
 **Exemple :** avec 200 membres, au moins 134 voix « oui » sont nécessaires
 
-### qualified
+#### qualified
 Majorité qualifiée (autres seuils)
 
 **Application :**
 - Exigences particulières dans certains cantons ou certaines communes
 - Le quorum concret est indiqué dans **majority_threshold**
 
-## Seuil
+### Seuil
 
 Le champ **majority_threshold** indique, pour les majorités qualifiées, le seuil exact (p. ex. 0,6 pour 60 %).
 
-## Quorum
+### Quorum
 
 Le champ **quorum** définit le nombre minimal de membres présents pour que l'organe puisse valablement décider :
 
 **Exemple :** un parlement de 200 membres peut valablement décider lorsque 100 membres au moins sont présents (quorum : 100).
 
-## Votes nominatifs
+### Votes nominatifs
 Le champ **named_vote** indique s'il s'agit d'un vote nominatif :
 
 - **true** : les voix individuelles sont saisies et publiées
@@ -3157,7 +3157,7 @@ Les votes nominatifs sont importants pour :
 - l'analyse des schémas de vote
 - la reddition de comptes envers l'électorat
 
-## Relation avec les voix individuelles
+### Relation avec les voix individuelles
 
 Lors des votes nominatifs, l'entité Voting renvoie aux différentes entités IndividualVote :
 
@@ -3171,12 +3171,12 @@ Voting
 **Exemple :** liste nominative en accordéon https://www.tagblatt.gr.be.ch/shareparl?agendaItemUid=e65d81c90d1d43deb19ef078f7e363f3&segmentType=vote&unitName=default&scroll=true&autoplay=false
 
 
-## Description et documentation
+### Description et documentation
 
 - **description** : description de l'objet du vote (objet, question soumise au vote)
 - **url** : URL multilingues vers les détails du vote
 
-## Horodatage
+### Horodatage
 
 - **datetime_created** : moment du déroulement du vote
 - **datetime_modified** : dernière actualisation (p. ex. en cas de corrections du procès-verbal de vote)
@@ -3529,11 +3529,11 @@ _Décomptes de voix supplémentaires lorsque plusieurs options sont soumises au 
 
 ## Individual Vote (voix individuelle)
 
-## But de l'entité
+### But de l'entité
 
 IndividualVote saisit le comportement de vote de chaque membre du parlement lors des votes nominatifs. L'entité n'est créée que lorsqu'un vote n'a pas lieu à bulletin secret (Voting.is_nominal = true).
 
-## Relation avec le vote
+### Relation avec le vote
 
 Chaque Individual Vote fait partie d'un Voting de rang supérieur :
 
@@ -3545,7 +3545,7 @@ Voting (vote final loi sur l'énergie)
   └─ ...
 ```
 
-## Identification de la personne
+### Identification de la personne
 
 La personne votante est référencée au moyen du champ **person_id**. Cet identifiant correspond à une personne selon la norme eCH-0294 Actors.
 
@@ -3555,41 +3555,41 @@ D'autres données d'identification peuvent en outre être saisies :
 - **person_political_group** : appartenance à un groupe parlementaire
 - **person_party** : appartenance à un parti
 
-## Types de voix
+### Types de voix
 
 Outre `yes`, `no` et `abstention`, le champ connaît trois autres valeurs : `not_voted` pour les membres présents qui n'ont pas voté, `tie_breaker` pour la voix prépondérante de la présidence et `other` pour tout ce qui ne se laisse pas ramener à cet axe. `other` est le pendant individuel de `total_other` : lors d'un vote sélectif, la personne a voté, mais ni oui ni non — l'option qu'elle a choisie est retenue par `type_label` (« Auswahl A »). La voix individuelle reste ainsi exploitable sans que la norme doive tenir chaque mécanique de sélection cantonale comme valeur d'énumération propre.
 
 Le champ **vote** saisit le type d'expression de la voix :
 
-### yes
+#### yes
 Voix « oui » (approbation)
 
 **Signification :** la personne approuve le projet ou la proposition.
 
-### no
+#### no
 Voix « non » (rejet)
 
 **Signification :** la personne rejette le projet ou la proposition.
 
-### abstention
+#### abstention
 Abstention
 
 **Signification :** la personne participe au vote, mais s'abstient. En cas de vote électronique, elle appuie sur le bouton « abstention ».
 
-## Poids de la voix
+### Poids de la voix
 
 Le champ **weight** saisit le poids de la voix :
 
 - **Cas standard** : 1.0 (une voix)
 - **Cas particuliers** : d'autres valeurs sont possibles
 
-### Cas d'application d'un poids de voix divergent
+#### Cas d'application d'un poids de voix divergent
 
 1. **Suppléance** : dans certains systèmes, une personne peut voter pour une personne absente (weight : 2.0)
 3. **Assemblées communales** : dans des cas particuliers, des personnes morales peuvent disposer de plusieurs voix
 4. **Systèmes historiques** : autrefois, dans certains cantons, différents groupes de personnes disposaient d'un poids de voix différent
 
-## Appartenance à un groupe
+### Appartenance à un groupe
 
 Le champ **group_id** saisit l'appartenance au groupe parlementaire au moment du vote :
 
@@ -3600,7 +3600,7 @@ Le champ **group_id** saisit l'appartenance au groupe parlementaire au moment du
 
 **Exemple :** lors d'un vote sur la loi sur l'énergie, 90 % du groupe PS votent oui et 80 % du groupe UDC votent non.
 
-## Position et ordre
+### Position et ordre
 
 Le champ **position** définit le regroupement et l'ordre de tri à l'affichage :
 
@@ -3610,7 +3610,7 @@ Le champ **position** définit le regroupement et l'ordre de tri à l'affichage 
 - Tri par expression de la voix (d'abord les oui, puis les non, puis les abstentions)
 - Regroupement par groupe parlementaire, à l'intérieur du groupe par oui, non, abstentions et, à l'intérieur du sous-groupe, par ordre alphabétique
 
-## Description et contexte
+### Description et contexte
 
 Le champ **description** peut saisir des informations supplémentaires :
 
@@ -3618,12 +3618,12 @@ Le champ **description** peut saisir des informations supplémentaires :
 - « Abstention en raison d'un conflit d'intérêts (membre du conseil d'administration d'une entreprise énergétique) »
 - « Absent pour cause de maladie »
 
-## Horodatage
+### Horodatage
 
 - **datetime_created** : première publication
 - **datetime_modified** : dernière actualisation (p. ex. en cas de corrections de la publication)
 
-## Présence et expression de la voix
+### Présence et expression de la voix
 
 Différence importante :
 
@@ -3632,7 +3632,7 @@ Différence importante :
 
 Une personne peut être présente à une séance (Attendance), mais être enregistrée comme « absent » ou « did_not_vote » lors de votes isolés (p. ex. lorsqu'elle quitte brièvement la salle).
 
-## Votes nominatifs et votes secrets
+### Votes nominatifs et votes secrets
 
 Les entités IndividualVote ne sont saisies que lors des votes nominatifs (ouverts) :
 
@@ -3887,11 +3887,11 @@ URI: [ops:IndividualVoteTypeEnum](https://ch.paf.link/schema/operations/Individu
 
 ## Election (élection)
 
-## Notion et signification
+### Notion et signification
 
 Une Election (élection) désigne la désignation d'une ou de plusieurs personnes à une fonction par un organe parlementaire. Contrairement aux votes (Votings), qui portent sur des questions matérielles, les élections portent sur des décisions relatives à des personnes.
 
-## Différence : élection et vote
+### Différence : élection et vote
 
 | Critère | Election (élection) | Voting (vote) |
 |---------|---------------------|---------------|
@@ -3900,11 +3900,11 @@ Une Election (élection) désigne la désignation d'une ou de plusieurs personne
 | Procédure | Souvent secrète | Souvent ouverte |
 | Majorité | Le plus souvent absolue | Le plus souvent simple |
 
-## Types d'élections
+### Types d'élections
 
 La norme distingue différents types d'élections au moyen du champ **election_type** :
 
-### open
+#### open
 Élection ouverte
 
 **Caractéristique :**
@@ -3917,7 +3917,7 @@ La norme distingue différents types d'élections au moyen du champ **election_t
 - Lors d'élections non contestées
 - Dans les organes de petite taille
 
-### secret
+#### secret
 Élection à bulletin secret
 
 **Caractéristique :**
@@ -3943,7 +3943,7 @@ La norme distingue différents types d'élections au moyen du champ **election_t
 - Élection de la chancelière ou du chancelier d'État
 - Élection des présidentes ou des présidents de commission
 
-### tacit
+#### tacit
 Élection tacite
 
 **Caractéristique :**
@@ -3958,7 +3958,7 @@ La norme distingue différents types d'élections au moyen du champ **election_t
 
 **Exemple :** réélection d'une présidence de commission sans candidature adverse
 
-## Rattachement aux points de l'ordre du jour
+### Rattachement aux points de l'ordre du jour
 
 Chaque élection est rattachée à un AgendaItem :
 
@@ -3970,12 +3970,12 @@ AgendaItem (élection du Conseil fédéral)
       └─ Bulletins blancs : 5
 ```
 
-## Description et titre
+### Description et titre
 
 - **title** : titre de l'élection (p. ex. « Élection de la présidence de la CER »)
 - **description** : description détaillée, contexte, circonstances particulières
 
-## Résultat de l'élection
+### Résultat de l'élection
 
 Le champ **result** saisit le résultat :
 
@@ -3984,13 +3984,13 @@ Le champ **result** saisit le résultat :
 - **deferred** : élection reportée
 - **withdrawn** : élection retirée
 
-## Personne(s) élue(s)
+### Personne(s) élue(s)
 
 Le champ **elected_person_id** contient le ou les identifiants des personnes élues selon eCH-0294 Actors.
 
 En cas d'élections multiples (p. ex. élection simultanée de plusieurs membres d'une commission), plusieurs identifiants peuvent être saisis.
 
-## Répartition des voix
+### Répartition des voix
 
 Lors d'élections ouvertes ou après la publication des résultats :
 
@@ -4001,7 +4001,7 @@ Lors d'élections ouvertes ou après la publication des résultats :
 
 En complément, des détails par candidature (au moyen d'entités distinctes ou de données structurées).
 
-## Procédure d'élection
+### Procédure d'élection
 
 Le champ **procedure** décrit la procédure concrète :
 
@@ -4010,11 +4010,11 @@ Le champ **procedure** décrit la procédure concrète :
 - **show_of_hands** : à main levée (lors d'élections ouvertes)
 - **acclamation** : par acclamation (lors d'élections tacites)
 
-## Rapports de majorité
+### Rapports de majorité
 
 Le champ **majority_type** définit la majorité requise :
 
-### absolute
+#### absolute
 Majorité absolue (plus de la moitié des votants)
 
 **Application :**
@@ -4026,21 +4026,21 @@ Majorité absolue (plus de la moitié des votants)
 
 **Particularité :** si personne n'atteint la majorité absolue au premier tour, un second tour suit généralement, au cours duquel la majorité simple suffit.
 
-### simple
+#### simple
 Majorité simple (plus de voix que les autres candidatures)
 
 **Application :**
 - Second tour après un premier tour infructueux
 - Certaines élections de commission
 
-### qualified
+#### qualified
 Majorité qualifiée
 
 **Application :**
 - Plus rare lors d'élections
 - Fonctions particulières soumises à des exigences accrues
 
-## Tours de scrutin
+### Tours de scrutin
 
 Lors d'élections requérant la majorité absolue au premier tour :
 
@@ -4054,39 +4054,39 @@ Lors d'élections requérant la majorité absolue au premier tour :
 
 Chaque tour de scrutin est saisi comme une entité Election distincte, reliée par l'AgendaItem commun.
 
-## Horodatage
+### Horodatage
 
 - **datetime_created** : moment du déroulement
 - **datetime_modified** : dernière actualisation
 
-## URL et documentation
+### URL et documentation
 
 - **url** : URL multilingues vers les documents électoraux :
   - profils des candidatures
   - résultats de l'élection
   - procès-verbaux
 
-## Particularités des différentes élections
+### Particularités des différentes élections
 
-### Élection du Conseil fédéral
+#### Élection du Conseil fédéral
 - Élection à bulletin secret
 - Majorité absolue requise (au 1er tour)
 - Par l'Assemblée fédérale (Chambres réunies)
 
-### Élection des juges fédéraux
+#### Élection des juges fédéraux
 - Élection à bulletin secret
 - Principe proportionnel (prise en compte des partis, des régions linguistiques, des genres)
 
-### Présidences de commission
+#### Présidences de commission
 - Élection par le parlement concerné
 - Souvent moins publique
 
-### Niveaux cantonal et communal
+#### Niveaux cantonal et communal
 - Grande diversité de procédures électorales
 - En partie élection populaire au lieu d'une élection parlementaire
 - Exigences de majorité différentes
 
-## Transparence et confidentialité
+### Transparence et confidentialité
 
 Champ de tension :
 - **Secret du vote** : protection de la décision électorale individuelle
@@ -4215,21 +4215,21 @@ Les listes de présence consignent qui a participé à une séance. Elles docume
 
 ## Attendance (présence)
 
-## Notion et signification
+### Notion et signification
 
 L'Attendance (présence) saisit quels membres d'un organe parlementaire étaient présents, absents ou excusés lors d'une séance. Elle sert à documenter la participation et constitue la condition du quorum.
 
-## Structure à deux niveaux
+### Structure à deux niveaux
 
 La norme distingue deux niveaux de saisie de la présence :
 
-### 1. Attendance (niveau agrégé)
+#### 1. Attendance (niveau agrégé)
 Récapitulation de la présence pour une séance :
 - Nombre total de personnes présentes
 - Nombre total de personnes absentes (excusées / non excusées)
 - Quorum
 
-### 2. IndividualAttendance (niveau individuel)
+#### 2. IndividualAttendance (niveau individuel)
 Saisie détaillée pour chaque personne :
 - Qui était présent ?
 - Qui était absent ?
@@ -4246,13 +4246,13 @@ Meeting (séance du Conseil national du 4 mars 2024)
 
 ## Attendance (niveau agrégé)
 
-### Rattachement à la séance et à l'organe
+#### Rattachement à la séance et à l'organe
 
 - **parent_meeting** : renvoi à la séance à laquelle se rapporte la liste de présence
 - **actor_id** : renvoi à l'organe (parlement, commission) selon eCH-0294 Actors
 - **datetime_begin** : moment de la constatation de la présence
 
-### Chiffres agrégés
+#### Chiffres agrégés
 
 - **total_count** : nombre total de membres de l'organe (valeur de référence pour le calcul du quorum, p. ex. 200 pour le Conseil national, 46 pour le Conseil des États)
 - **total_present** : nombre de membres présents
@@ -4265,18 +4265,18 @@ Meeting (séance du Conseil national du 4 mars 2024)
 - Excusés : 12
 - Absents : 3
 
-### Quorum
+#### Quorum
 
 Le quorum résulte du rapport entre `total_present` et `total_count` ainsi que des règles de quorum propres à l'organe. Il n'est donc pas enregistré comme champ distinct, mais calculé au besoin à partir des données.
 
 ## IndividualAttendance (niveau individuel)
 
-### Lien
+#### Lien
 
 - **parent_attendance** : renvoi à l'agrégat `Attendance` de rang supérieur (lui-même rattaché à la séance). La saisie individuelle est ainsi proprement rattachée à la séance.
 - **actor_id** : renvoi à la personne selon eCH-0294 Actors
 
-### Type de présence
+#### Type de présence
 
 Le champ **attendance_type** (énumération `AttendanceTypeEnum`) saisit le type de présence :
 
@@ -4288,11 +4288,11 @@ Le champ **attendance_type** (énumération `AttendanceTypeEnum`) saisit le type
 >
 > Un deuxième axe d'état `present` / `excused` / `absent` (« si présent ») parallèle à l'axe existant « comment présent » est en discussion comme extension.
 
-### Motif
+#### Motif
 
 Le champ **reason** (multilingue) permet de saisir en texte libre le motif d'une absence ou d'un retard.
 
-## Différence : Attendance et IndividualVote
+### Différence : Attendance et IndividualVote
 
 Distinction importante :
 
@@ -4304,7 +4304,7 @@ Distinction importante :
 
 **Exemple :** une personne peut être présente à la séance (Attendance : present), mais être enregistrée comme absente lors d'un vote déterminé (IndividualVote : absent), parce qu'elle a brièvement quitté la salle à ce moment-là.
 
-## Utilisations
+### Utilisations
 
 Les entités Attendance permettent :
 
@@ -4491,34 +4491,34 @@ Les interventions consignent le débat parlementaire — qui a pris la parole, q
 
 ## Speech (intervention, prise de parole)
 
-## Notion et signification
+### Notion et signification
 
 Une Speech (intervention, prise de parole) désigne une contribution orale d'une personne au cours d'une séance parlementaire. Elle est l'instrument central du débat politique et de l'expression des opinions au parlement.
 
-## Types de Speeches
+### Types de Speeches
 
 Les interventions parlementaires prennent différentes formes :
 
-### Interventions principales
+#### Interventions principales
 - Prises de position détaillées sur une affaire
 - Motivation de propositions
 - Exposé de la position du groupe
 
-### Interventions brèves
+#### Interventions brèves
 - Prises de parole courtes
 - Questions intercalaires
 - Rectifications
 
-### Déclarations de groupe
+#### Déclarations de groupe
 - Prise de position officielle d'un groupe
 - Présentée par la ou le porte-parole du groupe
 
-### Interventions gouvernementales
+#### Interventions gouvernementales
 - Prises de position de membres du gouvernement
 - Réponses aux questions
 - Défense de projets
 
-## Structure et rattachement
+### Structure et rattachement
 
 Une Speech est toujours rattachée à un contexte déterminé :
 
@@ -4531,19 +4531,19 @@ Meeting (séance)
           └─ Media (enregistrement vidéo)
 ```
 
-### Champs de rattachement
+#### Champs de rattachement
 
 - **meeting_id** : la séance au cours de laquelle l'intervention a eu lieu
 - **agenda_item_id** : le point de l'ordre du jour auquel se rapporte l'intervention
 - **person_id** : la personne qui s'exprime (selon eCH-0294 Actors)
 
-## Identification des personnes qui s'expriment
+### Identification des personnes qui s'expriment
 
 - **person_id** : identification univoque de la personne
 - **person_name** : nom, pour un accès rapide
 - **role** : rôle de la personne (p. ex. « présidence de groupe », « rapporteuse ou rapporteur », « conseillère fédérale / conseiller fédéral »)
 
-## Saisie temporelle
+### Saisie temporelle
 
 - **start_time** : début de l'intervention
 - **end_time** : fin de l'intervention
@@ -4554,7 +4554,7 @@ Ces indications temporelles permettent :
 - l'analyse du temps de parole par personne ou par groupe
 - le contrôle du respect des limites de temps
 
-## Langue de l'intervention
+### Langue de l'intervention
 
 Le champ **language** saisit la langue dans laquelle l'intervention a été prononcée :
 
@@ -4564,27 +4564,27 @@ Le champ **language** saisit la langue dans laquelle l'intervention a été pron
 - **rm** : romanche
 - **en** : anglais
 
-## Documents textuels
+### Documents textuels
 
 Le champ **text_segments** renvoie aux entités TextSegment qui contiennent le texte prononcé.
 
-### Différentes versions du texte
+#### Différentes versions du texte
 
-#### Transcription brute
+##### Transcription brute
 - Retranscription littérale
 - Non remaniée, avec les mots de remplissage
 - Disponible directement après la séance
 
-#### Transcription remaniée
+##### Transcription remaniée
 - Revue sur le plan rédactionnel
 - Corrigée grammaticalement
 - Version officielle du procès-verbal
 
-#### Traductions
+##### Traductions
 - Dans d'autres langues nationales
 - Pour les publications internationales
 
-### Structure de TextSegment
+#### Structure de TextSegment
 
 Chaque TextSegment peut contenir :
 - **text** : le texte proprement dit
@@ -4592,31 +4592,31 @@ Chaque TextSegment peut contenir :
 - **version** : type de version (raw, edited, translated)
 - **format** : format (plain, markdown, HTML)
 
-## Enregistrements multimédias
+### Enregistrements multimédias
 
 Le champ **media** renvoie aux entités Media comportant des enregistrements audio et vidéo.
 
-### Enregistrements audio
+#### Enregistrements audio
 - Son original de l'intervention
 - Format : MP3, WAV, etc.
 - Métadonnées techniques (qualité, débit binaire)
 
-### Enregistrements vidéo
+#### Enregistrements vidéo
 - Enregistrement visuel (lors des séances plénières)
 - Format : MP4, WebM, etc.
 - Différentes résolutions
 
-### Diffusion en direct
+#### Diffusion en direct
 - Transmission en temps réel
 - URL du flux
 - Archivage après la séance
 
-## Titre et description
+### Titre et description
 
 - **title** : titre court (p. ex. « Intervention sur la politique énergétique »)
 - **description** : résumé ou contexte de l'intervention
 
-## Type d'intervention
+### Type d'intervention
 
 Le champ **speech_type** permet de distinguer différents types :
 

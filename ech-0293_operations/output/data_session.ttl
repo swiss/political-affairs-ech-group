@@ -21,14 +21,14 @@ ops:session_5207 a ops:Session ;
     ops:parent_legislature "ops:legislature_51" ;
     ops:spatial "https://ld.admin.ch/country/CHE" ;
     ops:url [ a ops:MultilingualString ;
-            ops:text "https://www.parlament.ch/it/ratsbetrieb/sessionen/fruehjahr-2025" ;
-            mcm:language "it" ],
+            ops:text "https://www.parlament.ch/fr/ratsbetrieb/sessionen/fruehjahr-2025" ;
+            mcm:language "fr" ],
         [ a ops:MultilingualString ;
             ops:text "https://www.parlament.ch/de/ratsbetrieb/sessionen/fruehjahr-2025" ;
             mcm:language "de" ],
         [ a ops:MultilingualString ;
-            ops:text "https://www.parlament.ch/fr/ratsbetrieb/sessionen/fruehjahr-2025" ;
-            mcm:language "fr" ] ;
+            ops:text "https://www.parlament.ch/it/ratsbetrieb/sessionen/fruehjahr-2025" ;
+            mcm:language "it" ] ;
     mcm:dateBeginPlanned "2025-03-03"^^xsd:date ;
     mcm:dateEndPlanned "2025-03-21"^^xsd:date ;
     mcm:datetimeCreated "2025-03-20T14:27:09+00:00"^^xsd:dateTime ;

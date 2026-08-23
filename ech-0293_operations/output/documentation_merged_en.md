@@ -2962,15 +2962,15 @@ Parliamentary decisions are taken either by votings on substantive questions or 
 
 ## Voting
 
-## Purpose of the entity
+### Purpose of the entity
 
 "Voting" records the voting process and the result of a formal decision in parliament. The entity documents the subject of the voting (the question), the procedure (how the vote was taken) and the result (with which ratio of votes).
 
-## Types of votings
+### Types of votings
 
 The standard distinguishes different voting types via the field **voting_type**:
 
-### intermediate
+#### intermediate
 Intermediate votings during the deliberation.
 
 **Examples:**
@@ -2981,7 +2981,7 @@ Intermediate votings during the deliberation.
 - Voting on a single article of an act
 - Overall vote after the first reading of an enactment deliberated in two readings
 
-### final
+#### final
 The concluding voting on the entire bill
 
 **Examples:**
@@ -2990,10 +2990,10 @@ The concluding voting on the entire bill
 - Acceptance or rejection of a bill as a whole
 - Point-by-point voting on a parliamentary initiative
 
-### casting
+#### casting
 Deciding vote of the chair in case of a tie. The chair does not take part in votings but has the deciding vote in case of a tie. In a secret voting, in case of a tie the motion of the preliminarily deliberating council body counts as accepted.
 
-### secret
+#### secret
 Secret casting of votes in votings and elections
 
 **Application:**
@@ -3002,7 +3002,7 @@ Secret casting of votes in votings and elections
 - Voting after a confidential deliberation
 - Secret voting upon request
 
-## Structure of a voting
+### Structure of a voting
 
 A voting is always assigned to a sitting phase and/or a sitting, an agenda item and an affair with an affair title and an affair number. It comprises the voting type, the subject of the voting (the question), the result and — in a non-secret voting — the individual votes of the members.
 It can either:
@@ -3020,11 +3020,11 @@ Example selection:
 3 options: https://www.gemeinderat-zuerich.ch/abstimmungen/detail.php?aid=aa10c137274f424fa4eda877e7644a89
 5 options: https://www.gemeinderat-zuerich.ch/abstimmungen/detail.php?aid=23f01ba9b3f3410cb9cfb85f32f3dfe0
 
-## Voting procedures
+### Voting procedures
 
 The field **procedure** describes how the vote is conducted:
 
-### Open procedures
+#### Open procedures
 - **show_of_hands**: show of hands (traditional)
 - **standing**: standing up (rarer)
 - **electronic**: electronic voting (frequent at federal and cantonal level)
@@ -3033,7 +3033,7 @@ The field **procedure** describes how the vote is conducted:
 - **circulation_voting**: circulation procedure during crises (the parliamentary presidency conducts the voting by circulation and informs about the result)
 - **virtual_voting**: casting of votes at virtual sittings during crises.
 
-### Secret procedures
+#### Secret procedures
 - **secret_ballot**: secret ballot with voting slips
 - **electronic_secret**: electronic secret voting
 
@@ -3042,11 +3042,11 @@ The choice of procedure determines whether individual votes can be recorded:
 - Secret procedures: only the overall result is available
 
 
-## Voting result
+### Voting result
 
 The result is recorded in two ways:
 
-### Detailed figures
+#### Detailed figures
 - **total_count_yes**: number of yes votes
 - **total_count_no**: number of no votes
 - **total_count_abstention**: number of abstentions
@@ -3055,7 +3055,7 @@ The result is recorded in two ways:
 - **total**: total number of voting members (without absentees and the presidency's vote)
 - **majority_count**: number of votes required for the necessary majority
 
-### Overall result
+#### Overall result
 The result is described as free text in the field **result_text** (e.g. "Accepted with 120 to 75 votes and 5 abstentions"). The categorical decision (accepted / rejected / noted etc.) is not recorded on the voting itself but via the class **Resolution** (slot **resolution_type**) on the agenda item. In case of a tie, a possible deciding vote of the presidency is modelled via a separate voting (`voting_type: tie_breaker_president`) respectively a new voting.
 
 **Example** (final vote, simple yes/no voting):
@@ -3069,7 +3069,7 @@ The result is described as free text in the field **result_text** (e.g. "Accepte
 
 <!-- TODO: weitere komplexere Beispiele ergänzen — Ordnungsantrag, Wiederholung einer Abstimmung. (Cup-/Mehrfachabstimmung und Stichentscheid sind abgedeckt.) -->
 
-### Multiple options (selection votings / "motions in the same direction")
+#### Multiple options (selection votings / "motions in the same direction")
 
 Not every voting knows only yes, no and abstention. If several motions in the same direction relate to the same substantive question, the members vote on more than two variants simultaneously (in Zurich colloquially "cup voting", technically via several voting buttons). The prevailing variant is the one with the most votes.
 
@@ -3096,11 +3096,11 @@ Such procedures are represented as follows:
 
 The complete modelling of this case can be found in `data_voting.yaml` (`ops:voting_zh_gr_2024_2023_361`).
 
-## Majority types
+### Majority types
 
 The field **majority_type** defines the required majority:
 
-### simple
+#### simple
 Simple majority (more yes than no)
 
 **Application:**
@@ -3109,7 +3109,7 @@ Simple majority (more yes than no)
 
 **Example:** 100 yes, 80 no, 20 abstentions → accepted
 
-### absolute
+#### absolute
 Absolute majority (more than half of all members)
 
 **Application:**
@@ -3119,7 +3119,7 @@ Absolute majority (more than half of all members)
 
 **Example:** with 200 members at least 101 yes votes are required
 
-### two_thirds
+#### two_thirds
 Two-thirds majority
 
 **Application:**
@@ -3129,24 +3129,24 @@ Two-thirds majority
 
 **Example:** with 200 members at least 134 yes votes are required
 
-### qualified
+#### qualified
 Qualified majority (other thresholds)
 
 **Application:**
 - Special requirements in individual cantons or communes
 - The concrete quorum is indicated in **majority_threshold**
 
-## Threshold
+### Threshold
 
 For qualified majorities, the field **majority_threshold** indicates the exact threshold (e.g. 0.6 for 60%).
 
-## Quorum
+### Quorum
 
 The field **quorum** defines the minimum number of members present for the capacity to take decisions:
 
 **Example:** a parliament with 200 members can take decisions if at least 100 members are present (quorum: 100).
 
-## Roll-call votings
+### Roll-call votings
 The field **named_vote** indicates whether the voting is a roll-call voting:
 
 - **true**: the individual votes are recorded and published
@@ -3157,7 +3157,7 @@ Roll-call votings are important for:
 - analysis of voting patterns
 - accountability towards the electorate
 
-## Relation to individual votes
+### Relation to individual votes
 
 In roll-call votings the Voting entity references the individual IndividualVote entities:
 
@@ -3171,12 +3171,12 @@ Voting
 **Example:** name list in an accordion https://www.tagblatt.gr.be.ch/shareparl?agendaItemUid=e65d81c90d1d43deb19ef078f7e363f3&segmentType=vote&unitName=default&scroll=true&autoplay=false
 
 
-## Description and documentation
+### Description and documentation
 
 - **description**: description of what was voted on (subject of the voting, voting question)
 - **url**: multilingual URLs to voting details
 
-## Timestamps
+### Timestamps
 
 - **datetime_created**: point in time of conducting the voting
 - **datetime_modified**: last update (e.g. in case of corrections to the voting protocol)
@@ -3529,11 +3529,11 @@ _Additional vote counts when multiple options are presented (e.g., Zurich uses 5
 
 ## Individual Vote
 
-## Purpose of the entity
+### Purpose of the entity
 
 IndividualVote records the voting behaviour of individual members of parliament in roll-call votings. The entity is only created if a voting is not conducted secretly (Voting.is_nominal = true).
 
-## Relation to the voting
+### Relation to the voting
 
 Every individual vote is part of a superordinate voting:
 
@@ -3545,7 +3545,7 @@ Voting (final vote energy act)
   └─ ...
 ```
 
-## Identification of the person
+### Identification of the person
 
 The voting person is referenced via the field **person_id**. This ID corresponds to a person according to the eCH-0294 Actors standard.
 
@@ -3555,41 +3555,41 @@ Additional identification data can be recorded as well:
 - **person_political_group**: parliamentary group affiliation
 - **person_party**: party affiliation
 
-## Types of votes
+### Types of votes
 
 Besides `yes`, `no` and `abstention`, the field knows three further values: `not_voted` for members who were present but did not vote, `tie_breaker` for the presiding officer's casting vote, and `other` for everything that cannot be put on that axis. `other` is the individual counterpart of `total_other`: in a selection voting the person did vote, but neither yes nor no — which option they chose is held by `type_label` ("Auswahl A"). The individual vote thus stays analysable without the standard having to carry every cantonal selection mechanism as an enum value of its own.
 
 The field **vote** records the type of the vote cast:
 
-### yes
+#### yes
 Yes vote (approval)
 
 **Meaning:** the person approves the bill / the motion.
 
-### no
+#### no
 No vote (rejection)
 
 **Meaning:** the person rejects the bill / the motion.
 
-### abstention
+#### abstention
 Abstention
 
 **Meaning:** the person takes part in the voting but abstains. When voting electronically, they press the "abstention" button.
 
-## Vote weight
+### Vote weight
 
 The field **weight** records the weight of the vote:
 
 - **Standard case**: 1.0 (one vote)
 - **Special cases**: other values possible
 
-### Use cases for a divergent vote weight
+#### Use cases for a divergent vote weight
 
 1. **Substitution**: in some systems a person can vote on behalf of an absent person (weight: 2.0)
 3. **Communal assemblies**: in special cases legal entities can hold several votes
 4. **Historical systems**: in some cantons different groups of persons formerly had different vote weights
 
-## Group affiliation
+### Group affiliation
 
 The field **group_id** records the parliamentary group affiliation at the time of the voting:
 
@@ -3600,7 +3600,7 @@ The field **group_id** records the parliamentary group affiliation at the time o
 
 **Example:** in a voting on the energy act 90% of the SP group vote yes, 80% of the SVP group vote no.
 
-## Position and order
+### Position and order
 
 The field **position** defines the grouping and sort order in the presentation:
 
@@ -3610,7 +3610,7 @@ The field **position** defines the grouping and sort order in the presentation:
 - Sorting by vote cast (first yes, then no, then abstentions)
 - Grouping by parliamentary group, within the group by yes, no, abstentions and within the subgroup alphabetically
 
-## Description and context
+### Description and context
 
 The field **description** can record additional information:
 
@@ -3618,12 +3618,12 @@ The field **description** can record additional information:
 - "Abstention due to a conflict of interest (board member of an energy company)"
 - "Absent due to illness"
 
-## Timestamps
+### Timestamps
 
 - **datetime_created**: first publication
 - **datetime_modified**: last update (e.g. in case of corrections to the publication)
 
-## Attendance vs. casting a vote
+### Attendance vs. casting a vote
 
 Important difference:
 
@@ -3632,7 +3632,7 @@ Important difference:
 
 A person can be present at a sitting (Attendance) but be recorded as "absent" or "did_not_vote" in individual votings (e.g. when briefly leaving the room).
 
-## Roll-call vs. secret votings
+### Roll-call vs. secret votings
 
 IndividualVote entities are only recorded in roll-call (open) votings:
 
@@ -3887,11 +3887,11 @@ URI: [ops:IndividualVoteTypeEnum](https://ch.paf.link/schema/operations/Individu
 
 ## Election
 
-## Term and meaning
+### Term and meaning
 
 An election denotes the designation of one or more persons to an office or a function by a parliamentary body. In contrast to votings, in which substantive questions are decided, elections concern decisions about persons.
 
-## Difference: election vs. voting
+### Difference: election vs. voting
 
 | Criterion | Election | Voting |
 |-----------|----------|--------|
@@ -3900,11 +3900,11 @@ An election denotes the designation of one or more persons to an office or a fun
 | Procedure | Often secret | Often open |
 | Majority | Mostly absolute | Mostly simple |
 
-## Types of elections
+### Types of elections
 
 The standard distinguishes different election types via the field **election_type**:
 
-### open
+#### open
 Open election
 
 **Characteristic:**
@@ -3917,7 +3917,7 @@ Open election
 - In uncontested elections
 - In smaller bodies
 
-### secret
+#### secret
 Secret election
 
 **Characteristic:**
@@ -3943,7 +3943,7 @@ Secret election
 - Election of the state chancellor
 - Election of the committee presidencies
 
-### tacit
+#### tacit
 Tacit election
 
 **Characteristic:**
@@ -3958,7 +3958,7 @@ Tacit election
 
 **Example:** re-election of a committee president without an opposing candidacy
 
-## Assignment to agenda items
+### Assignment to agenda items
 
 Every election is assigned to an agenda item:
 
@@ -3970,12 +3970,12 @@ AgendaItem (election of the Federal Council)
       └─ Blank ballots: 5
 ```
 
-## Description and title
+### Description and title
 
 - **title**: title of the election (e.g. "Election of the WAK committee presidency")
 - **description**: detailed description, context, special circumstances
 
-## Election result
+### Election result
 
 The field **result** records the result:
 
@@ -3984,13 +3984,13 @@ The field **result** records the result:
 - **deferred**: election postponed
 - **withdrawn**: election withdrawn
 
-## Elected person(s)
+### Elected person(s)
 
 The field **elected_person_id** contains the ID(s) of the elected person(s) according to eCH-0294 Actors.
 
 In case of multiple elections (e.g. election of several committee members at once) several IDs can be recorded.
 
-## Distribution of votes
+### Distribution of votes
 
 In open elections or after publication of the results:
 
@@ -4001,7 +4001,7 @@ In open elections or after publication of the results:
 
 Additionally details per candidate (via separate entities or as structured data).
 
-## Election procedure
+### Election procedure
 
 The field **procedure** describes the concrete procedure:
 
@@ -4010,11 +4010,11 @@ The field **procedure** describes the concrete procedure:
 - **show_of_hands**: show of hands (in open elections)
 - **acclamation**: acclamation (in tacit elections)
 
-## Majority requirements
+### Majority requirements
 
 The field **majority_type** defines the required majority:
 
-### absolute
+#### absolute
 Absolute majority (more than half of those voting)
 
 **Application:**
@@ -4026,21 +4026,21 @@ Absolute majority (more than half of those voting)
 
 **Particularity:** if nobody reaches the absolute majority in the first round, a second round usually follows in which a simple majority suffices.
 
-### simple
+#### simple
 Simple majority (more votes than the other candidates)
 
 **Application:**
 - Second round after an unsuccessful first round
 - Some committee elections
 
-### qualified
+#### qualified
 Qualified majority
 
 **Application:**
 - Rarer in elections
 - Special functions with increased requirements
 
-## Rounds of voting
+### Rounds of voting
 
 In elections requiring an absolute majority in the first round:
 
@@ -4054,39 +4054,39 @@ In elections requiring an absolute majority in the first round:
 
 Every round is recorded as a separate Election entity, connected via the common agenda item.
 
-## Timestamps
+### Timestamps
 
 - **datetime_created**: point in time of conducting the election
 - **datetime_modified**: last update
 
-## URL and documentation
+### URL and documentation
 
 - **url**: multilingual URLs to election documents:
   - candidate profiles
   - election results
   - protocols
 
-## Particularities of the various elections
+### Particularities of the various elections
 
-### Federal Council election
+#### Federal Council election
 - Secret election
 - Absolute majority required (in the 1st round)
 - By the United Federal Assembly
 
-### Federal judge election
+#### Federal judge election
 - Secret election
 - Proportional principle (consideration of parties, regions, genders)
 
-### Committee presidencies
+#### Committee presidencies
 - Election by the respective parliament
 - Often less public
 
-### Cantonal and communal level
+#### Cantonal and communal level
 - Great variety of election procedures
 - Partly popular election instead of parliamentary election
 - Differing majority requirements
 
-## Transparency and confidentiality
+### Transparency and confidentiality
 
 Field of tension:
 - **Secrecy of the ballot**: protection of the individual electoral decision
@@ -4215,21 +4215,21 @@ Attendance lists record who took part in a sitting. They document participation 
 
 ## Attendance
 
-## Term and meaning
+### Term and meaning
 
 Attendance records which members of a parliamentary body were present, absent or excused at a sitting. It serves to document participation and is a prerequisite for the quorum.
 
-## Two-level structure
+### Two-level structure
 
 The standard distinguishes two levels of attendance recording:
 
-### 1. Attendance (aggregated level)
+#### 1. Attendance (aggregated level)
 Summary of attendance for a meeting:
 - Total number of persons present
 - Total number of persons absent (excused / unexcused)
 - Quorum
 
-### 2. IndividualAttendance (individual level)
+#### 2. IndividualAttendance (individual level)
 Detailed recording for each individual person:
 - Who was present?
 - Who was absent?
@@ -4246,13 +4246,13 @@ Meeting (National Council sitting 4 March 2024)
 
 ## Attendance (aggregated level)
 
-### Assignment to meeting and body
+#### Assignment to meeting and body
 
 - **parent_meeting**: reference to the specific sitting to which the attendance list belongs
 - **actor_id**: reference to the body (parliament, committee) according to eCH-0294 Actors
 - **datetime_begin**: point in time of the attendance recording
 
-### Aggregated figures
+#### Aggregated figures
 
 - **total_count**: total number of all members of the body (reference value for quorum calculations, e.g. 200 for the National Council, 46 for the Council of States)
 - **total_present**: number of members present
@@ -4265,18 +4265,18 @@ Meeting (National Council sitting 4 March 2024)
 - Excused: 12
 - Absent: 3
 
-### Quorum
+#### Quorum
 
 The quorum results from the ratio of `total_present` to `total_count` and the respective quorum rules of the body. It is therefore not stored as a separate field but calculated from the data where needed.
 
 ## IndividualAttendance (individual level)
 
-### Link
+#### Link
 
 - **parent_attendance**: reference to the superordinate `Attendance` aggregate (which in turn hangs on the meeting). The individual record is thereby cleanly assigned to the meeting.
 - **actor_id**: reference to the person according to eCH-0294 Actors
 
-### Attendance type
+#### Attendance type
 
 The field **attendance_type** (enum `AttendanceTypeEnum`) records the type of attendance:
 
@@ -4288,11 +4288,11 @@ The field **attendance_type** (enum `AttendanceTypeEnum`) records the type of at
 >
 > A second status axis `present` / `excused` / `absent` ("whether present") in parallel to the existing axis "how present" is under discussion as an extension.
 
-### Reason
+#### Reason
 
 The field **reason** (multilingual) can record the reason for absence or lateness as free text.
 
-## Difference: Attendance vs. IndividualVote
+### Difference: Attendance vs. IndividualVote
 
 Important delimitation:
 
@@ -4304,7 +4304,7 @@ Important delimitation:
 
 **Example:** a person can be present at the sitting (Attendance: present) but be recorded as absent for a specific voting (IndividualVote: absent) because they briefly left the room at that moment.
 
-## Purposes of use
+### Purposes of use
 
 The attendance entities enable:
 
@@ -4491,34 +4491,34 @@ Speeches record the parliamentary debate — who spoke when and on which agenda 
 
 ## Speech
 
-## Term and meaning
+### Term and meaning
 
 A speech denotes an oral contribution by a person during a parliamentary sitting. It is the central instrument of political debate and of expressing opinions in parliament.
 
-## Types of speeches
+### Types of speeches
 
 Parliamentary speeches take various forms:
 
-### Main statements
+#### Main statements
 - Detailed positions on an affair
 - Justification of motions
 - Presentation of the group's opinion
 
-### Short interventions
+#### Short interventions
 - Brief statements
 - Interposed questions
 - Corrections
 
-### Group declarations
+#### Group declarations
 - Official position of a parliamentary group
 - Delivered by the group's spokesperson
 
-### Government statements
+#### Government statements
 - Positions of government members
 - Answering of questions
 - Defence of bills
 
-## Structure and assignment
+### Structure and assignment
 
 A speech is always assigned to a specific context:
 
@@ -4531,19 +4531,19 @@ Meeting (sitting)
           └─ Media (video recording)
 ```
 
-### Assignment fields
+#### Assignment fields
 
 - **meeting_id**: the sitting in which the speech was made
 - **agenda_item_id**: the agenda item that was spoken to
 - **person_id**: the speaking person (according to eCH-0294 Actors)
 
-## Identification of the speakers
+### Identification of the speakers
 
 - **person_id**: unique identification of the person
 - **person_name**: name for quick access
 - **role**: role of the person (e.g. "group president", "rapporteur", "Federal Councillor")
 
-## Temporal recording
+### Temporal recording
 
 - **start_time**: start of the speech
 - **end_time**: end of the speech
@@ -4554,7 +4554,7 @@ These time indications enable:
 - analysis of speaking time per person / group
 - monitoring of compliance with time limits
 
-## Language of the speech
+### Language of the speech
 
 The field **language** records the language in which the speech was made:
 
@@ -4564,27 +4564,27 @@ The field **language** records the language in which the speech was made:
 - **rm**: Romansh
 - **en**: English
 
-## Text documents
+### Text documents
 
 The field **text_segments** references TextSegment entities containing the spoken text.
 
-### Different text versions
+#### Different text versions
 
-#### Raw transcript
+##### Raw transcript
 - Verbatim transcription
 - Unedited, with filler words
 - Available directly after the sitting
 
-#### Edited transcript
+##### Edited transcript
 - Editorially revised
 - Grammatically corrected
 - Official protocol version
 
-#### Translations
+##### Translations
 - Into other national languages
 - For international publications
 
-### TextSegment structure
+#### TextSegment structure
 
 Every TextSegment can contain:
 - **text**: the actual text
@@ -4592,31 +4592,31 @@ Every TextSegment can contain:
 - **version**: kind of version (raw, edited, translated)
 - **format**: format (plain, markdown, HTML)
 
-## Multimedia recordings
+### Multimedia recordings
 
 The field **media** references Media entities with audio and video recordings.
 
-### Audio recordings
+#### Audio recordings
 - Original sound of the speech
 - Format: MP3, WAV, etc.
 - Technical metadata (quality, bitrate)
 
-### Video recordings
+#### Video recordings
 - Visual recording (in plenary sittings)
 - Format: MP4, WebM, etc.
 - Various resolutions
 
-### Livestreaming
+#### Livestreaming
 - Real-time transmission
 - URL of the stream
 - Archiving after the sitting
 
-## Title and description
+### Title and description
 
 - **title**: short title (e.g. "Statement on energy policy")
 - **description**: summary or context of the speech
 
-## Type of speech
+### Type of speech
 
 The field **speech_type** can distinguish various kinds:
 
