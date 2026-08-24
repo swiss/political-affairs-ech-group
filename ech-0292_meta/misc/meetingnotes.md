@@ -7,7 +7,7 @@ _Internal note: update the next subgroup meeting in the [README](https://github.
 ## Next meeting: 24 August (15-16.00) – 4th MO of every month
 
 - 06_richtext_definition.md
-- ...
+- Erstellung der Kapitel 03 bis 07
 
 ## 22 June
 - Themenklassifikation: vgl. https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0297_consultations/misc/2026-06-19-session.md
@@ -18,6 +18,22 @@ _Internal note: update the next subgroup meeting in the [README](https://github.
         - Mögliche Kategorisierungen/Listen: siehe https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0297_consultations/misc/2026-06-19-session.md
 - 05_data_publishing.md
     - https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0292_meta/input/05_data_publishing.md
+
+## 02 June (Plenum)
+
+[Excerpt Slides](https://docs.google.com/presentation/d/1ODF9bV3lhlJ2uzAC1uN6x3bm3OCrFlQHE8kHiVsPIEU/edit?slide=id.g3e5e7c861c9_0_0#slide=id.g3e5e7c861c9_0_0):
+
+### Ready for (internal) consultation end of summer.
+- 03_design_principles.md
+- 04_common_data_elements.md
+- 05_data_publishing.md
+- 06_richtext_definition.md
+- 07_legacy_documents.md
+  - FRBR
+  - Dokumentkategorien
+### Next Steps
+- Permanente URL/URI/DOI
+- Chronologie/”Lifecycle” Geschäft
 
 
 ## 1 June 2026
