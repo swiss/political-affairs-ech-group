@@ -21,7 +21,7 @@ The eCH Specialist Group Political Affairs uses a data-centric approach to devel
 
 ## Important Documents
 
-- [Design Principles](docs/common/design_principles.md): A high level overview of the design principles followed by the eCH Specialist Group Political Affairs.
+- [Design Principles](ech-0292_meta/input/03_design_principles.md): A high level overview of the design principles followed by the eCH Specialist Group Political Affairs.
 - [LinkML Guidelines](docs/common/linkml_guidelines.md): A set of guidelines and best practices for using LinkML in the context of the eCH Specialist Group Political Affairs.
 - [Naming Conventions and URI Concept](docs/common/naming.md): A document describing the naming conventions and URI concept used in the data schemata.
 - [Documentation Workflow](docs/common/workflow.md): A document describing the workflow for generating documentation from the LinkML data schemata.
