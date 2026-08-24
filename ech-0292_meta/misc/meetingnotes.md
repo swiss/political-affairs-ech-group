@@ -6,8 +6,19 @@ _Internal note: update the next subgroup meeting in the [README](https://github.
 
 ## Next meeting: 24 August (15-16.00) – 4th MO of every month
 
-- 06_richtext_definition.md
-- Erstellung der Kapitel 03 bis 07
+- **To do: Entwurf der Kapitel 03 bis 07 bis 1 Woche vor nächster Sitzung: 21. September**
+    - 01_head.md: Michael und Christian
+    - 02_introduction.md: Michael und Christian
+    - 03_design_principles.md: Benedikt
+    - 04_common_data_elements.md: Benedikt
+    - 05_data_publishing.md: Christian (tbc by Michael)
+    - 06_richtext_definition.md: Michael
+    - 07_legacy_documents.md: Michel und Michael
+    - Versand Aufgaben inkl. wer ist noch dabei?: Florin
+ - Vorabinfo: GitHub als Tool von eCH, Fachgruppe als "Versuchskaninchen", Koordination/Austausch läuft künftig über Meta-Gruppe
+ - 06_richtext_definition.md
+     - basierend auf BK/Parlamentsdienste Bund
+     - Florin: Daniela, Nicole und Simon fragen, wie sie Texte handhaben
 
 ## 22 June
 - Themenklassifikation: vgl. https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0297_consultations/misc/2026-06-19-session.md
