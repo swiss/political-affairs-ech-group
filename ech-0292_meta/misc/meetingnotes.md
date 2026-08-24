@@ -4,7 +4,9 @@ _Internal note: update the next subgroup meeting in the [README](https://github.
 
 **Meeting Link:** https://teams.microsoft.com/meet/3879512933733?p=rTdaRaFWPi0JWENkuE
 
-## Next meeting: 24 August (15-16.00) – 4th MO of every month
+## Next meeting: 28 September (15-16.00) – 4th MO of every month
+
+## 24 August
 
 - **To do: Entwurf der Kapitel 03 bis 07 bis 1 Woche vor nächster Sitzung: 21. September**
     - 01_head.md: Michael und Christian
