@@ -73,12 +73,6 @@ Die Familie umfasst:
 
 Ziel dieser Standardfamilie ist es, eine gemeinsam nutzbare Struktur für politische Daten zu schaffen und Organisationen, die Informationen zu politischen Geschäften veröffentlichen, ein tragfähiges Datenmodell an die Hand zu geben.
 
-## Aufbau einer Lieferung
-
-Eine Lieferung ist ein `Container`: ein Umschlag mit einer eigenen `global_uri` und je einer Sammlung pro Klasse — `legislatures`, `sessions`, `meetings`, `agenda_items`, `protocols`, `votings`, `elections`, `individual_votes`, `attendances`, `individual_attendances`, `speeches` und `resolutions`. Alle Sammlungen sind optional: Wer nur Sitzungen veröffentlicht, liefert nur `meetings`.
-
-Die Entitäten liegen darin flach nebeneinander und sind über Referenzen verbunden — `parent_meeting`, `parent_voting`, `parent_attendance` und so fort —, statt ineinander verschachtelt zu sein. So lässt sich eine einzelne Sitzung nachliefern, ohne die ganze Legislaturperiode erneut zu senden, und dieselbe Entität von mehreren Stellen referenzieren. Wo die Verschachtelung den Zusammenhang besser abbildet, ist sie zusätzlich möglich: Die Session nimmt ihre Sitzungen als Liste auf, das Protokoll seine Traktanden, Abstimmungen und Wortmeldungen.
-
 
 
 ### Klasse: Container []{#Container}
