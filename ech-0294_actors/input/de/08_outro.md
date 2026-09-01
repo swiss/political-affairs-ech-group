@@ -1,4 +1,4 @@
-/newpage
+\newpage
 
 # Sicherheitsüberlegungen
 
