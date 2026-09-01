@@ -76,29 +76,6 @@ At least one of the following must be set:
 
 
 ### Examples
-#### Example InterestLink: Own company run operationally
-
-```yaml
-interest_links:
-- global_uri: act:il_burkart_001
-  person_reference:
-    global_uri: http://www.wikidata.org/entity/Q23060472
-    label: Thierry Burkart
-    group_label: FDP.Die Liberalen
-  interest_type: professional_activity
-  organization_name:
-  - value: Burkart Advisory GmbH, Baden
-    language: de
-  legal_form: '0107'
-  committee:
-  - value: Geschäftsleitung
-    language: de
-  function_role:
-  - value: Geschäftsführer
-    language: de
-  is_paid: true
-
-```
 #### Example InterestLink: Foundation board mandate with the organisations UID
 
 ```yaml
@@ -121,6 +98,96 @@ interest_links:
   - value: Vizepräsident
     language: de
   is_paid: false
+
+```
+#### Example InterestLink: Mandate held as a delegate of the persons own commune
+
+```yaml
+interest_links:
+- global_uri: act:il_zanini_001
+  person_reference:
+    global_uri: >-
+      https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=2160
+    label: Cristina Zanini Barzaghi
+    group_label: PS, GISO e FA
+  interest_type: governing_body
+  organization_name:
+  - value: Fondazione Giovanni Stamm
+    language: it
+  legal_form: '0110'
+  committee:
+  - value: Consiglio di amministrazione
+    language: it
+  function_role:
+  - value: Membro
+    language: it
+  is_ex_officio: true
+
+```
+#### Example InterestLink: Public office at another federal level
+
+```yaml
+interest_links:
+- global_uri: act:il_dafond_001
+  person_reference:
+    global_uri: >-
+      https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=14
+    label: Felice Dafond
+    group_label: PLR
+  interest_type: public_mandate
+  organization_name:
+  - value: Municipio di Minusio
+    language: it
+  legal_form: '0223'
+  function_role:
+  - value: Sindaco
+    language: it
+
+```
+#### Example InterestLink: Federation presidency  the counterpart decides not the function
+
+```yaml
+interest_links:
+- global_uri: act:il_burkart_005
+  person_reference:
+    global_uri: http://www.wikidata.org/entity/Q23060472
+    label: Thierry Burkart
+    group_label: FDP.Die Liberalen
+  interest_type: interest_group_mandate
+  organization_name:
+  - value: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
+    language: de
+  legal_form: '0109'
+  committee:
+  - value: Zentralvorstand
+    language: de
+  function_role:
+  - value: Präsident
+    language: de
+  is_paid: true
+
+```
+#### Example InterestLink: Cantonal link person from the same delivery
+
+```yaml
+interest_links:
+- global_uri: act:il_beretta_001
+  person_reference:
+    local_id: 1269
+    global_uri: >-
+      https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269
+    label: Gerri Beretta-Piccoli
+  interest_type: governing_body
+  organization_name:
+  - value: Fondazione Gruppo Intervento Maltrattamento Infantile (GIMI), Lugano
+    language: it
+  legal_form: '0110'
+  committee:
+  - value: Consiglio di fondazione
+    language: it
+  function_role:
+  - value: Vice Presidente
+    language: it
 
 ```
 #### Example InterestLink: Leading role for an interest group
@@ -152,46 +219,45 @@ interest_links:
     language: de
 
 ```
-#### Example InterestLink: Cantonal link person from the same delivery
+#### Example InterestLink: Own company run operationally
 
 ```yaml
 interest_links:
-- global_uri: act:il_beretta_001
+- global_uri: act:il_burkart_001
   person_reference:
-    local_id: 1269
-    global_uri: >-
-      https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269
-    label: Gerri Beretta-Piccoli
-  interest_type: governing_body
+    global_uri: http://www.wikidata.org/entity/Q23060472
+    label: Thierry Burkart
+    group_label: FDP.Die Liberalen
+  interest_type: professional_activity
   organization_name:
-  - value: Fondazione Gruppo Intervento Maltrattamento Infantile (GIMI), Lugano
-    language: it
-  legal_form: '0110'
+  - value: Burkart Advisory GmbH, Baden
+    language: de
+  legal_form: '0107'
   committee:
-  - value: Consiglio di fondazione
-    language: it
+  - value: Geschäftsleitung
+    language: de
   function_role:
-  - value: Vice Presidente
-    language: it
+  - value: Geschäftsführer
+    language: de
+  is_paid: true
 
 ```
-#### Example InterestLink: Public office at another federal level
+#### Example InterestLink: The same value for a seat on a body
 
 ```yaml
 interest_links:
-- global_uri: act:il_dafond_001
+- global_uri: act:il_quadranti_001
   person_reference:
     global_uri: >-
-      https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=14
-    label: Felice Dafond
-    group_label: PLR
+      https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1487
+    label: Matteo Quadranti
+    group_label: Partito liberale radicale ticinese (PLR)
   interest_type: public_mandate
   organization_name:
-  - value: Municipio di Minusio
+  - value: Commissione Cantonale Cultura
     language: it
-  legal_form: '0223'
   function_role:
-  - value: Sindaco
+  - value: Vice-presidente
     language: it
 
 ```
@@ -215,72 +281,6 @@ interest_links:
   function_role:
   - value: Membre
     language: fr
-
-```
-#### Example InterestLink: Mandate held as a delegate of the persons own commune
-
-```yaml
-interest_links:
-- global_uri: act:il_zanini_001
-  person_reference:
-    global_uri: >-
-      https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=2160
-    label: Cristina Zanini Barzaghi
-    group_label: PS, GISO e FA
-  interest_type: governing_body
-  organization_name:
-  - value: Fondazione Giovanni Stamm
-    language: it
-  legal_form: '0110'
-  committee:
-  - value: Consiglio di amministrazione
-    language: it
-  function_role:
-  - value: Membro
-    language: it
-  is_ex_officio: true
-
-```
-#### Example InterestLink: Federation presidency  the counterpart decides not the function
-
-```yaml
-interest_links:
-- global_uri: act:il_burkart_005
-  person_reference:
-    global_uri: http://www.wikidata.org/entity/Q23060472
-    label: Thierry Burkart
-    group_label: FDP.Die Liberalen
-  interest_type: interest_group_mandate
-  organization_name:
-  - value: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
-    language: de
-  legal_form: '0109'
-  committee:
-  - value: Zentralvorstand
-    language: de
-  function_role:
-  - value: Präsident
-    language: de
-  is_paid: true
-
-```
-#### Example InterestLink: The same value for a seat on a body
-
-```yaml
-interest_links:
-- global_uri: act:il_quadranti_001
-  person_reference:
-    global_uri: >-
-      https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1487
-    label: Matteo Quadranti
-    group_label: Partito liberale radicale ticinese (PLR)
-  interest_type: public_mandate
-  organization_name:
-  - value: Commissione Cantonale Cultura
-    language: it
-  function_role:
-  - value: Vice-presidente
-    language: it
 
 ```
 

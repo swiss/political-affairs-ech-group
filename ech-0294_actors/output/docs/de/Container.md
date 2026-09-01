@@ -42,341 +42,219 @@ _Container für politische Akteure, Gruppen und Beziehungen._
 
 
 ### Beispiele
-#### Beispiel Container: interest links
+#### Beispiel Container: memberships
 
 ```yaml
-# Interessenbindungen Beispieldaten
-# Quelle: parlament.ch (Bundesversammlung) sowie die Register der Kantone
-# Tessin, Genf und Freiburg.
+# Mitgliedschaften einer einzigen Person über drei föderale Ebenen hinweg.
+# Alle Einträge sind echte, publizierte Fälle (Quellen: grosserrat.bs.ch,
+# regierungsrat.bs.ch, parlament.ch, admin.ch).
 #
-# Die Beispiele decken bewusst beide Ebenen ab: Der Bund publiziert die
-# Bindungen strukturiert mit Organ, Funktion und Entschädigung, die Kantone
-# oft nur als Bezeichnung mit Funktion. Beides muss das Schema tragen — die
-# Pflichtangabe ist einzig, dass die Organisation entweder über
-# `organization_name` oder über `organization_uid` benannt ist.
+# Die Mitgliedschaft ist das Bindeglied zwischen Person und Gruppe: Sie führt
+# keine eigenen Angaben über die beiden, sondern verweist auf sie und hält
+# fest, was nur für diese Verbindung gilt — Dauer, Rolle, Stimmrecht,
+# Wahlkreis. Deshalb bleibt die Person hier immer dieselbe (Beat Jans, wie in
+# data_swiss_politicians.yaml erfasst), während sich die Gruppe ändert.
 #
-# Die Bezeichnungen bleiben in der Sprache, in der sie publiziert werden;
-# übersetzt wird nichts.
-
-global_uri: act:interest_links_example
-interest_links:
-
-  # --- Bundesebene: Thierry Burkart (FDP, Ständerat AG) ---
-
-  # Berufliche Tätigkeit: eigene Beratungsfirma. Der Bund führt Organ
-  # (`committee`), Funktion (`function_role`) und Entschädigung getrennt.
-  - global_uri: act:il_burkart_001
+# Referenziert wird über `local_id` und `global_uri`: Die `local_id` ist
+# innerhalb derselben Lieferung auflösbar — bei der Person auf den Eintrag in
+# data_swiss_politicians.yaml, bei Grossem Rat und Regierungsrat auf die
+# Einträge in data_groups.yaml. Gruppen ausserhalb dieser Lieferung werden
+# allein über ihre `global_uri` bezeichnet; das `any_of` von GroupReference
+# verlangt mindestens eines von beiden.
+#
+# Die Mitgliedschaft ist eine eigenständig identifizierte Entität und braucht
+# deshalb eine eigene `global_uri`. Die publizierenden Stellen vergeben dafür
+# keine Adresse — sie zeigen Mitgliedschaften nur als Zeilen auf der Personen-
+# oder Gremienseite. Für die Beispiele wird deshalb eine Kennung im Namensraum
+# des Standards vergeben; produktiv tritt an ihre Stelle die Adresse aus dem
+# Ratsinformationssystem der publizierenden Stelle.
+global_uri: act:memberships_example
+memberships:
+  # Kantonales Parlamentsmandat, der Grundfall: Person und Gruppe sind beide in
+  # dieser Lieferung erfasst und werden über ihre `local_id` aufgelöst.
+  # Der Wahlkreis hängt an der Mitgliedschaft und nicht an der Person.
+  # Kleinbasel ist einer der fünf Wahlkreise des Grossen Rates. Zwei davon sind
+  # Gemeinden und über LINDAS identifizierbar (Riehen, Bettingen), die drei
+  # städtischen — Grossbasel-Ost, Grossbasel-West, Kleinbasel — fassen
+  # Wohnviertel der Gemeinde Basel zusammen und haben dort keine Entsprechung.
+  # Die `global_uri` ist deshalb eine Adresse im Namensraum der publizierenden
+  # Stelle; so sähe ein eindeutiger Identifikator des Wahlkreises dort aus.
+  - global_uri: act:ms_jans_grossrat_bs
     person_reference:
-      global_uri: http://www.wikidata.org/entity/Q23060472
-      label: Thierry Burkart
-      group_label: FDP.Die Liberalen
-    interest_type: professional_activity
-    organization_name:
-      - value: Burkart Advisory GmbH, Baden
-        language: de
-    legal_form: "0107"  # GmbH
-    committee:
-      - value: Geschäftsleitung
-        language: de
-    function_role:
-      - value: Geschäftsführer
-        language: de
-    is_paid: true
+      local_id: 4032
+      global_uri: https://www.admin.ch/de/beat-jans
+      label: Beat Jans
+    group_reference:
+      local_id: 33
+      global_uri: https://www.grosserrat.bs.ch/
+      label: Grosser Rat Basel-Stadt
+    electoral_district:
+      global_uri: https://grosserrat.bs.ch/wahlkreise/kleinbasel
+      label:
+        - value: Kleinbasel
+          language: de
+    role_type:
+      role_type_enum: member
+    authorized_to_vote: true
+    valid_from: 2001-02-07
+    valid_through: 2011-04-30
+    is_active: false
 
-  # Verbandspräsidium. Formal ein Sitz im Zentralvorstand, also ein
-  # Führungsgremium — massgebend ist aber das Gegenüber: Die ASTAG ist ein
-  # Branchenverband, ihr Zweck ist die Interessenvertretung selbst. Deshalb
-  # `interest_group_mandate` und nicht `governing_body`.
-  - global_uri: act:il_burkart_005
+  # Fraktionsmitgliedschaft parallel zum Ratsmandat, mit derselben Dauer. Sie
+  # ist eine eigene Mitgliedschaft und nicht ein Merkmal des Ratsmandats, weil
+  # ein Fraktionswechsel während der Amtsdauer möglich ist. Ein Wahlkreis wird
+  # hier nicht geführt: In die Fraktion wird nicht gewählt. Die Fraktion ist in
+  # dieser Lieferung nicht erfasst und wird deshalb über ihre `global_uri`
+  # bezeichnet.
+  - global_uri: act:ms_jans_fraktion_sp_bs
     person_reference:
-      global_uri: http://www.wikidata.org/entity/Q23060472
-      label: Thierry Burkart
-      group_label: FDP.Die Liberalen
-    interest_type: interest_group_mandate
-    organization_name:
-      - value: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
-        language: de
-    legal_form: "0109"  # Verein
-    committee:
-      - value: Zentralvorstand
-        language: de
-    function_role:
-      - value: Präsident
-        language: de
-    is_paid: true
+      local_id: 4032
+      global_uri: https://www.admin.ch/de/beat-jans
+      label: Beat Jans
+    group_reference:
+      global_uri: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen/sp
+      label: Sozialdemokratische Partei (SP)
+    role_type:
+      role_type_enum: member
+    authorized_to_vote: true
+    valid_from: 2001-02-07
+    valid_through: 2011-04-30
+    is_active: false
 
-  # Stiftungsratsmandat, ehrenamtlich. Die Stiftung räumt Minen — sie verfolgt
-  # einen eigenen Zweck und vertritt keine Interessen, deshalb `governing_body`.
-  # Einziges Beispiel mit `organization_uid`: Ist die Organisation im
-  # UID-Register eingetragen, wird sie darüber eindeutig bezeichnet, und der
-  # Name dient nur noch der Lesbarkeit.
-  - global_uri: act:il_burkart_007
+  # Kommissionsmitgliedschaft: dritte gleichzeitige Mitgliedschaft derselben
+  # Person im selben Parlament, mit eigener Dauer. Erst die Mitgliedschaft
+  # trennt diese Fälle sauber — die Person ist einmal erfasst, die Kommission
+  # ebenfalls, und nur ihre Verbindung ist befristet.
+  - global_uri: act:ms_jans_wak_bs
     person_reference:
-      global_uri: http://www.wikidata.org/entity/Q23060472
-      label: Thierry Burkart
-      group_label: FDP.Die Liberalen
-    interest_type: governing_body
-    organization_name:
-      - value: FONDATION SUISSE DE DEMINAGE (FSD), Genf
-        language: de
-    organization_uid: CHE109810537
-    legal_form: "0110"  # Stiftung
-    committee:
-      - value: Stiftungsrat
-        language: de
-    function_role:
-      - value: Vizepräsident
-        language: de
-    is_paid: false
+      local_id: 4032
+      global_uri: https://www.admin.ch/de/beat-jans
+      label: Beat Jans
+    group_reference:
+      global_uri: https://grosserrat.bs.ch/gremien/sachkommissionen/wirtschaft-abgaben
+      label: Wirtschafts- und Abgabekommission (WAK)
+    role_type:
+      role_type_enum: member
+    authorized_to_vote: true
+    valid_from: 2003-02-12
+    valid_through: 2011-04-30
+    is_active: false
 
-  # --- Kanton Tessin ---
-
-  # Die Person ist in dieser Lieferung erfasst (data_swiss_politicians.yaml)
-  # und wird über ihre `local_id` aufgelöst. Das Tessin publiziert die Bindung
-  # ohne Angabe zur Entschädigung — `is_paid` bleibt deshalb leer, statt eine
-  # Annahme zu treffen.
-  - global_uri: act:il_beretta_001
+  # Eidgenössisches Mandat derselben Person, zeitlich überlappend mit dem
+  # Grossratsmandat (Nachrücken in den Nationalrat am 31.05.2010, Rücktritt aus
+  # dem Grossen Rat auf den 30.04.2011). Der Wahlkreis ist ein anderer als oben
+  # — für den Nationalrat der Kanton als Ganzes. Er hat als amtliche
+  # Raumeinheit eine LINDAS-Ressource und wird über diese identifiziert. Genau
+  # diese Überschneidung zeigt, dass der Wahlkreis am Mandat hängt: dieselbe
+  # Person, gleichzeitig, zwei verschiedene Wahlkreise.
+  #
+  # Die Bundesversammlung führt je Legislatur eine eigene Mitgliedschaft. Hier
+  # steht die 48. Legislatur; Beat Jans war bis zum 17.12.2020 im Nationalrat,
+  # verteilt auf vier solche Einträge.
+  - global_uri: act:ms_jans_nationalrat
     person_reference:
-      local_id: 1269
-      global_uri: "https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269"
-      label: Gerri Beretta-Piccoli
-    interest_type: governing_body
-    organization_name:
-      - value: Fondazione Gruppo Intervento Maltrattamento Infantile (GIMI), Lugano
-        language: it
-    legal_form: "0110"  # Stiftung
-    committee:
-      - value: Consiglio di fondazione
-        language: it
-    function_role:
-      - value: Vice Presidente
-        language: it
+      local_id: 4032
+      global_uri: https://www.admin.ch/de/beat-jans
+      label: Beat Jans
+    group_reference:
+      global_uri: https://www.parlament.ch/de/organe/nationalrat
+      label: Nationalrat
+    electoral_district:
+      global_uri: https://ld.admin.ch/canton/12
+      label:
+        - value: Basel-Stadt
+          language: de
+    role_type:
+      role_type_enum: member
+      role_label:
+        - value: Mitglied
+          language: de
+        - value: Membro
+          language: it
+    authorized_to_vote: true
+    valid_from: 2010-05-31
+    valid_through: 2011-12-04
+    is_active: false
 
-  # Amt in der öffentlichen Hand auf einer anderen föderalen Ebene. Das
-  # Gemeindepräsidium ist keine Mitgliedschaft im Sinne von `Membership`, weil
-  # die Gemeinde ausserhalb der gelieferten Gruppen liegt; es wird als
-  # Interessenbindung des kantonalen Mandats offengelegt. Die Rechtsform kommt
-  # hier aus dem öffentlich-rechtlichen Teil der Codeliste.
-  - global_uri: act:il_dafond_001
+  # Exekutivmandat, ebenfalls in dieser Lieferung auflösbar (Regierungsrat
+  # Basel-Stadt in data_groups.yaml). Es trägt die Rolle: gewählt wurde direkt
+  # ins Präsidium, deshalb `president` mit der amtlichen Bezeichnung im
+  # `role_label`. Ein Wahlkreis wird nicht geführt — der Regierungsrat wird im
+  # Gesamtkanton gewählt.
+  - global_uri: act:ms_jans_regierungsrat_bs
     person_reference:
-      global_uri: "https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=14"
-      label: Felice Dafond
-      group_label: PLR
-    interest_type: public_mandate
-    organization_name:
-      - value: Municipio di Minusio
-        language: it
-    legal_form: "0223"  # Verwaltungseinheit der Gemeinde
-    function_role:
-      - value: Sindaco
-        language: it
+      local_id: 4032
+      global_uri: https://www.admin.ch/de/beat-jans
+      label: Beat Jans
+    group_reference:
+      local_id: 1300
+      global_uri: https://www.regierungsrat.bs.ch/
+      label: Regierungsrat Basel-Stadt
+    role_type:
+      role_type_enum: president
+      role_label:
+        - value: Regierungspräsident
+          language: de
+    authorized_to_vote: true
+    valid_from: 2021-02-03
+    valid_through: 2023-12-31
+    is_active: false
 
-  # Zweiter Fall desselben Werts: Gremiensitz statt Amt. Die Register
-  # unterscheiden das mehrheitlich nicht — 20 von 24 führen nur eine der beiden
-  # Kategorien —, deshalb trägt `public_mandate` beides.
-  - global_uri: act:il_quadranti_001
+  # Parteimitgliedschaft. Sie ist von der Fraktionsmitgliedschaft getrennt
+  # (andere Gruppe, andere Ebene) und wird ohne Zeitangaben publiziert: Das
+  # Eintrittsdatum ist nicht bekannt, die Mitgliedschaft besteht. Deshalb wird
+  # die Aktivität hier explizit über `is_active` gesetzt statt aus
+  # `valid_from`/`valid_through` abgeleitet.
+  - global_uri: act:ms_jans_partei_sp
     person_reference:
-      global_uri: "https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1487"
-      label: Matteo Quadranti
-      group_label: Partito liberale radicale ticinese (PLR)
-    interest_type: public_mandate
-    organization_name:
-      - value: Commissione Cantonale Cultura
-        language: it
-    function_role:
-      - value: Vice-presidente
-        language: it
+      local_id: 4032
+      global_uri: https://www.admin.ch/de/beat-jans
+      label: Beat Jans
+    group_reference:
+      global_uri: https://www.sp-ps.ch/
+      label: Sozialdemokratische Partei der Schweiz
+    role_type:
+      role_type_enum: member
+    is_active: true
 
-  # Verwaltungsratssitz, den die Person nicht privat hält, sondern als
-  # Vertretung ihrer Gemeinde wahrnimmt. Das Tessiner Register schreibt die
-  # Delegation in die Funktionsbezeichnung („Membro, rappresentante
-  # Municipio"); im Standard trägt sie `is_ex_officio`, damit sie auswertbar
-  # ist. Der Typ bleibt derselbe wie bei einem privat gehaltenen Sitz.
-  - global_uri: act:il_zanini_001
+  # Laufendes Mandat in der Landesregierung: `valid_from` ohne
+  # `valid_through`. In den Bundesrat wird nicht aus einem Wahlkreis gewählt,
+  # `electoral_district` bleibt deshalb leer — die Kantonszugehörigkeit eines
+  # Mitglieds ist keine Wahlkreiszuteilung.
+  - global_uri: act:ms_jans_bundesrat
     person_reference:
-      global_uri: "https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=2160"
-      label: Cristina Zanini Barzaghi
-      group_label: PS, GISO e FA
-    interest_type: governing_body
-    organization_name:
-      - value: Fondazione Giovanni Stamm
-        language: it
-    legal_form: "0110"  # Stiftung
-    committee:
-      - value: Consiglio di amministrazione
-        language: it
-    function_role:
-      - value: Membro
-        language: it
-    is_ex_officio: true
+      local_id: 4032
+      global_uri: https://www.admin.ch/de/beat-jans
+      label: Beat Jans
+    group_reference:
+      global_uri: https://www.admin.ch/de/der-bundesrat
+      label: Bundesrat
+    role_type:
+      role_type_enum: member
+    authorized_to_vote: true
+    valid_from: 2024-01-01
+    is_active: true
 
-  # --- Kanton Genf ---
-
-  # Verwaltungsratsmandat, französische Bezeichnungen. Genf publiziert weder
-  # UID noch Entschädigung; getragen wird der Eintrag allein von
-  # `organization_name`.
-  - global_uri: act:il_balaban_001
+  # Die Departementsleitung ist eine eigene Mitgliedschaft, nicht ein Merkmal
+  # des Bundesratsmandats: Mitglied ist die Person im Kollegium Bundesrat, das
+  # Departement ist eine andere Gruppe, und die Zuteilung kann wechseln, ohne
+  # dass das Mandat endet. Die Rolle kennt `RoleEnum` nicht — dann gilt `other`,
+  # und die Bezeichnung muss im `role_label` stehen.
+  - global_uri: act:ms_jans_ejpd
     person_reference:
-      global_uri: https://ge.ch/grandconseil/gc/depute/2517/
-      label: Stefan Balaban
-      group_label: LJS
-    interest_type: governing_body
-    organization_name:
-      - value: X-net SA
-        language: fr
-    legal_form: "0106"  # AG
-    committee:
-      - value: Conseil d'administration
-        language: fr
-    function_role:
-      - value: Membre
-        language: fr
-
-  # --- Kanton Freiburg ---
-
-  # Dauernde Leitungstätigkeit für eine Interessengruppe, aus einem
-  # zweisprachigen Register: Freiburg publiziert Name, Gremium und Funktion
-  # auf Französisch und auf Deutsch. Erfasst wird pro Sprache ein Eintrag,
-  # übersetzt wird nichts.
-  - global_uri: act:il_mauron_001
-    person_reference:
-      global_uri: https://www.fr.ch/parlinfo/membres-du-grand-conseil/5ee6eb9754704902bfd4b4ee01dcf327
-      label: Pierre Mauron
-      group_label: Parti socialiste
-    interest_type: interest_group_mandate
-    organization_name:
-      - value: ASLOCA Fribourg
-        language: fr
-      - value: ASLOCA Freiburg
-        language: de
-    legal_form: "0109"  # Verein
-    committee:
-      - value: Comité
-        language: fr
-      - value: Vorstand
-        language: de
-    function_role:
-      - value: Président
-        language: fr
-      - value: Präsident
-        language: de
-
-```
-#### Beispiel Container: swiss politicians
-
-```yaml
-global_uri: act:swiss_politicians_example
-persons:
-  - local_id: 4032
-    global_uri: https://www.admin.ch/de/beat-jans
-    wikidata_uri: http://www.wikidata.org/entity/Q813067
-    label: Beat Jans
-    label_long: Beat Jans, dipl. nat. ETH
-    birth_year: 1964
-    birth_date: 1964-07-12
-    picture: https://commons.wikimedia.org/wiki/File:Beat_Jans_(2026)_(cropped).jpg
-    names:
-      - name_type: PersonFirstName
-        value: Beat
-      - name_type: PersonOfficialName
-        value: Jans
-        valid_from: 1964-07-12
-    addresses:
-      - address_type: businessAddress
-        postal_locality: Basel-Stadt
-    language_proficiencies:
-      - language: de
-        is_correspondence: true
-        is_native: true
-    citizenships:
-      - country: CH
-        valid_from: 1964-07-12
-    genders:
-      - gender_code: male
-        valid_from: 1964-07-12
-    occupations:
-      - label: Politiker
-        valid_from: 1964-01-01
-        is_active: true
-    trainings:
-      - training_type: "3223"  # Master Universität, ETH (inklusive Lizentiat / Diplom)
-        value: dipl. nat. ETH
-    contacts:
-      - contact_type: email
-        value: beat.jans@admin.ch
-      - contact_type: contact_website
-        value: http://www.beat-jans.ch
-
-  # Use case Namensverwendung — Gleichnamigkeit: Im Kanton Uri gibt es zwei
-  # verschiedene Personen mit identischem Namen "Alois Arnold". Das obligatorische
-  # `label` unterscheidet sie über das Geburtsjahr.
-  - local_id: 6447
-    global_uri: https://www.ur.ch/behoerdenmitglieder/6447
-    label: Alois Arnold (1981)
-    birth_year: 1981
-    names:
-      - name_type: PersonFirstName
-        value: Alois
-      - name_type: PersonOfficialName
-        value: Arnold
-
-  - local_id: 6370
-    global_uri: https://www.ur.ch/behoerdenmitglieder/6370
-    label: Alois Arnold (1965)
-    birth_year: 1965
-    names:
-      - name_type: PersonFirstName
-        value: Alois
-      - name_type: PersonOfficialName
-        value: Arnold
-
-  # Use case Namensverwendung — Rufname: Der amtliche Vorname ("Fausto",
-  # PersonFirstName) weicht vom Rufnamen ("Gerri", PersonCallFirstName) ab;
-  # das `label` nutzt den Rufnamen.
-  - local_id: 1269
-    global_uri: "https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269"
-    label: Gerri Beretta-Piccoli
-    names:
-      - name_type: PersonFirstName
-        value: Fausto
-      - name_type: PersonCallFirstName
-        value: Gerri
-      - name_type: PersonOfficialName
-        value: Beretta-Piccoli
-
-  # Use case Namensverwendung — Namensvariante (echter Fall, Stadtparlament
-  # Winterthur): "Cristina Bozzi-Brunel" wird auch als "Cristina Brunel" geführt.
-  # Der amtliche Doppelname und der Ledigname werden über typisierte `names`
-  # abgebildet (Annahme: Brunel = Ledigname/PersonOriginalName — bei Bedarf anpassen).
-  - local_id: 280958
-    global_uri: https://parlament.winterthur.ch/behoerdenmitglieder/280958
-    label: Cristina Bozzi-Brunel
-    names:
-      - name_type: PersonFirstName
-        value: Cristina
-      - name_type: PersonOfficialName
-        value: Bozzi-Brunel
-      - name_type: PersonOriginalName
-        value: Brunel
-
-  - local_id: 72c7232be92944e3876f3b6723824ff9
-    global_uri: https://stadtrat.bern.ch/de/mitglieder/detail.php?gid=72c7232be92944e3876f3b6723824ff9
-    label: Sofia Fisch
-    birth_year: 1996
-    names:
-      - name_type: PersonFirstName
-        value: Sofia
-      - name_type: PersonOfficialName
-        value: Fisch
-    genders:
-      - gender_code: non_binary
-        label: divers
-    occupations:
-      - label: Jurist*in
-        is_active: true
-    trainings:
-      - training_type: "3223"  # Master Universität, ETH (inklusive Lizentiat / Diplom)
-        value: MLaw
+      local_id: 4032
+      global_uri: https://www.admin.ch/de/beat-jans
+      label: Beat Jans
+    group_reference:
+      global_uri: https://www.ejpd.admin.ch/
+      label: Eidgenössisches Justiz- und Polizeidepartement
+    role_type:
+      role_type_enum: other
+      role_label:
+        - value: Departementsvorsteher
+          language: de
+    valid_from: 2024-01-01
+    is_active: true
 
 ```
 #### Beispiel Container: groups
@@ -702,219 +580,341 @@ groups:
     valid_from: 2007-12-12
 
 ```
-#### Beispiel Container: memberships
+#### Beispiel Container: swiss politicians
 
 ```yaml
-# Mitgliedschaften einer einzigen Person über drei föderale Ebenen hinweg.
-# Alle Einträge sind echte, publizierte Fälle (Quellen: grosserrat.bs.ch,
-# regierungsrat.bs.ch, parlament.ch, admin.ch).
+global_uri: act:swiss_politicians_example
+persons:
+  - local_id: 4032
+    global_uri: https://www.admin.ch/de/beat-jans
+    wikidata_uri: http://www.wikidata.org/entity/Q813067
+    label: Beat Jans
+    label_long: Beat Jans, dipl. nat. ETH
+    birth_year: 1964
+    birth_date: 1964-07-12
+    picture: https://commons.wikimedia.org/wiki/File:Beat_Jans_(2026)_(cropped).jpg
+    names:
+      - name_type: PersonFirstName
+        value: Beat
+      - name_type: PersonOfficialName
+        value: Jans
+        valid_from: 1964-07-12
+    addresses:
+      - address_type: businessAddress
+        postal_locality: Basel-Stadt
+    language_proficiencies:
+      - language: de
+        is_correspondence: true
+        is_native: true
+    citizenships:
+      - country: CH
+        valid_from: 1964-07-12
+    genders:
+      - gender_code: male
+        valid_from: 1964-07-12
+    occupations:
+      - label: Politiker
+        valid_from: 1964-01-01
+        is_active: true
+    trainings:
+      - training_type: "3223"  # Master Universität, ETH (inklusive Lizentiat / Diplom)
+        value: dipl. nat. ETH
+    contacts:
+      - contact_type: email
+        value: beat.jans@admin.ch
+      - contact_type: contact_website
+        value: http://www.beat-jans.ch
+
+  # Use case Namensverwendung — Gleichnamigkeit: Im Kanton Uri gibt es zwei
+  # verschiedene Personen mit identischem Namen "Alois Arnold". Das obligatorische
+  # `label` unterscheidet sie über das Geburtsjahr.
+  - local_id: 6447
+    global_uri: https://www.ur.ch/behoerdenmitglieder/6447
+    label: Alois Arnold (1981)
+    birth_year: 1981
+    names:
+      - name_type: PersonFirstName
+        value: Alois
+      - name_type: PersonOfficialName
+        value: Arnold
+
+  - local_id: 6370
+    global_uri: https://www.ur.ch/behoerdenmitglieder/6370
+    label: Alois Arnold (1965)
+    birth_year: 1965
+    names:
+      - name_type: PersonFirstName
+        value: Alois
+      - name_type: PersonOfficialName
+        value: Arnold
+
+  # Use case Namensverwendung — Rufname: Der amtliche Vorname ("Fausto",
+  # PersonFirstName) weicht vom Rufnamen ("Gerri", PersonCallFirstName) ab;
+  # das `label` nutzt den Rufnamen.
+  - local_id: 1269
+    global_uri: "https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269"
+    label: Gerri Beretta-Piccoli
+    names:
+      - name_type: PersonFirstName
+        value: Fausto
+      - name_type: PersonCallFirstName
+        value: Gerri
+      - name_type: PersonOfficialName
+        value: Beretta-Piccoli
+
+  # Use case Namensverwendung — Namensvariante (echter Fall, Stadtparlament
+  # Winterthur): "Cristina Bozzi-Brunel" wird auch als "Cristina Brunel" geführt.
+  # Der amtliche Doppelname und der Ledigname werden über typisierte `names`
+  # abgebildet (Annahme: Brunel = Ledigname/PersonOriginalName — bei Bedarf anpassen).
+  - local_id: 280958
+    global_uri: https://parlament.winterthur.ch/behoerdenmitglieder/280958
+    label: Cristina Bozzi-Brunel
+    names:
+      - name_type: PersonFirstName
+        value: Cristina
+      - name_type: PersonOfficialName
+        value: Bozzi-Brunel
+      - name_type: PersonOriginalName
+        value: Brunel
+
+  - local_id: 72c7232be92944e3876f3b6723824ff9
+    global_uri: https://stadtrat.bern.ch/de/mitglieder/detail.php?gid=72c7232be92944e3876f3b6723824ff9
+    label: Sofia Fisch
+    birth_year: 1996
+    names:
+      - name_type: PersonFirstName
+        value: Sofia
+      - name_type: PersonOfficialName
+        value: Fisch
+    genders:
+      - gender_code: non_binary
+        label: divers
+    occupations:
+      - label: Jurist*in
+        is_active: true
+    trainings:
+      - training_type: "3223"  # Master Universität, ETH (inklusive Lizentiat / Diplom)
+        value: MLaw
+
+```
+#### Beispiel Container: interest links
+
+```yaml
+# Interessenbindungen Beispieldaten
+# Quelle: parlament.ch (Bundesversammlung) sowie die Register der Kantone
+# Tessin, Genf und Freiburg.
 #
-# Die Mitgliedschaft ist das Bindeglied zwischen Person und Gruppe: Sie führt
-# keine eigenen Angaben über die beiden, sondern verweist auf sie und hält
-# fest, was nur für diese Verbindung gilt — Dauer, Rolle, Stimmrecht,
-# Wahlkreis. Deshalb bleibt die Person hier immer dieselbe (Beat Jans, wie in
-# data_swiss_politicians.yaml erfasst), während sich die Gruppe ändert.
+# Die Beispiele decken bewusst beide Ebenen ab: Der Bund publiziert die
+# Bindungen strukturiert mit Organ, Funktion und Entschädigung, die Kantone
+# oft nur als Bezeichnung mit Funktion. Beides muss das Schema tragen — die
+# Pflichtangabe ist einzig, dass die Organisation entweder über
+# `organization_name` oder über `organization_uid` benannt ist.
 #
-# Referenziert wird über `local_id` und `global_uri`: Die `local_id` ist
-# innerhalb derselben Lieferung auflösbar — bei der Person auf den Eintrag in
-# data_swiss_politicians.yaml, bei Grossem Rat und Regierungsrat auf die
-# Einträge in data_groups.yaml. Gruppen ausserhalb dieser Lieferung werden
-# allein über ihre `global_uri` bezeichnet; das `any_of` von GroupReference
-# verlangt mindestens eines von beiden.
-#
-# Die Mitgliedschaft ist eine eigenständig identifizierte Entität und braucht
-# deshalb eine eigene `global_uri`. Die publizierenden Stellen vergeben dafür
-# keine Adresse — sie zeigen Mitgliedschaften nur als Zeilen auf der Personen-
-# oder Gremienseite. Für die Beispiele wird deshalb eine Kennung im Namensraum
-# des Standards vergeben; produktiv tritt an ihre Stelle die Adresse aus dem
-# Ratsinformationssystem der publizierenden Stelle.
-global_uri: act:memberships_example
-memberships:
-  # Kantonales Parlamentsmandat, der Grundfall: Person und Gruppe sind beide in
-  # dieser Lieferung erfasst und werden über ihre `local_id` aufgelöst.
-  # Der Wahlkreis hängt an der Mitgliedschaft und nicht an der Person.
-  # Kleinbasel ist einer der fünf Wahlkreise des Grossen Rates. Zwei davon sind
-  # Gemeinden und über LINDAS identifizierbar (Riehen, Bettingen), die drei
-  # städtischen — Grossbasel-Ost, Grossbasel-West, Kleinbasel — fassen
-  # Wohnviertel der Gemeinde Basel zusammen und haben dort keine Entsprechung.
-  # Die `global_uri` ist deshalb eine Adresse im Namensraum der publizierenden
-  # Stelle; so sähe ein eindeutiger Identifikator des Wahlkreises dort aus.
-  - global_uri: act:ms_jans_grossrat_bs
-    person_reference:
-      local_id: 4032
-      global_uri: https://www.admin.ch/de/beat-jans
-      label: Beat Jans
-    group_reference:
-      local_id: 33
-      global_uri: https://www.grosserrat.bs.ch/
-      label: Grosser Rat Basel-Stadt
-    electoral_district:
-      global_uri: https://grosserrat.bs.ch/wahlkreise/kleinbasel
-      label:
-        - value: Kleinbasel
-          language: de
-    role_type:
-      role_type_enum: member
-    authorized_to_vote: true
-    valid_from: 2001-02-07
-    valid_through: 2011-04-30
-    is_active: false
+# Die Bezeichnungen bleiben in der Sprache, in der sie publiziert werden;
+# übersetzt wird nichts.
 
-  # Fraktionsmitgliedschaft parallel zum Ratsmandat, mit derselben Dauer. Sie
-  # ist eine eigene Mitgliedschaft und nicht ein Merkmal des Ratsmandats, weil
-  # ein Fraktionswechsel während der Amtsdauer möglich ist. Ein Wahlkreis wird
-  # hier nicht geführt: In die Fraktion wird nicht gewählt. Die Fraktion ist in
-  # dieser Lieferung nicht erfasst und wird deshalb über ihre `global_uri`
-  # bezeichnet.
-  - global_uri: act:ms_jans_fraktion_sp_bs
-    person_reference:
-      local_id: 4032
-      global_uri: https://www.admin.ch/de/beat-jans
-      label: Beat Jans
-    group_reference:
-      global_uri: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen/sp
-      label: Sozialdemokratische Partei (SP)
-    role_type:
-      role_type_enum: member
-    authorized_to_vote: true
-    valid_from: 2001-02-07
-    valid_through: 2011-04-30
-    is_active: false
+global_uri: act:interest_links_example
+interest_links:
 
-  # Kommissionsmitgliedschaft: dritte gleichzeitige Mitgliedschaft derselben
-  # Person im selben Parlament, mit eigener Dauer. Erst die Mitgliedschaft
-  # trennt diese Fälle sauber — die Person ist einmal erfasst, die Kommission
-  # ebenfalls, und nur ihre Verbindung ist befristet.
-  - global_uri: act:ms_jans_wak_bs
-    person_reference:
-      local_id: 4032
-      global_uri: https://www.admin.ch/de/beat-jans
-      label: Beat Jans
-    group_reference:
-      global_uri: https://grosserrat.bs.ch/gremien/sachkommissionen/wirtschaft-abgaben
-      label: Wirtschafts- und Abgabekommission (WAK)
-    role_type:
-      role_type_enum: member
-    authorized_to_vote: true
-    valid_from: 2003-02-12
-    valid_through: 2011-04-30
-    is_active: false
+  # --- Bundesebene: Thierry Burkart (FDP, Ständerat AG) ---
 
-  # Eidgenössisches Mandat derselben Person, zeitlich überlappend mit dem
-  # Grossratsmandat (Nachrücken in den Nationalrat am 31.05.2010, Rücktritt aus
-  # dem Grossen Rat auf den 30.04.2011). Der Wahlkreis ist ein anderer als oben
-  # — für den Nationalrat der Kanton als Ganzes. Er hat als amtliche
-  # Raumeinheit eine LINDAS-Ressource und wird über diese identifiziert. Genau
-  # diese Überschneidung zeigt, dass der Wahlkreis am Mandat hängt: dieselbe
-  # Person, gleichzeitig, zwei verschiedene Wahlkreise.
-  #
-  # Die Bundesversammlung führt je Legislatur eine eigene Mitgliedschaft. Hier
-  # steht die 48. Legislatur; Beat Jans war bis zum 17.12.2020 im Nationalrat,
-  # verteilt auf vier solche Einträge.
-  - global_uri: act:ms_jans_nationalrat
+  # Berufliche Tätigkeit: eigene Beratungsfirma. Der Bund führt Organ
+  # (`committee`), Funktion (`function_role`) und Entschädigung getrennt.
+  - global_uri: act:il_burkart_001
     person_reference:
-      local_id: 4032
-      global_uri: https://www.admin.ch/de/beat-jans
-      label: Beat Jans
-    group_reference:
-      global_uri: https://www.parlament.ch/de/organe/nationalrat
-      label: Nationalrat
-    electoral_district:
-      global_uri: https://ld.admin.ch/canton/12
-      label:
-        - value: Basel-Stadt
-          language: de
-    role_type:
-      role_type_enum: member
-      role_label:
-        - value: Mitglied
-          language: de
-        - value: Membro
-          language: it
-    authorized_to_vote: true
-    valid_from: 2010-05-31
-    valid_through: 2011-12-04
-    is_active: false
+      global_uri: http://www.wikidata.org/entity/Q23060472
+      label: Thierry Burkart
+      group_label: FDP.Die Liberalen
+    interest_type: professional_activity
+    organization_name:
+      - value: Burkart Advisory GmbH, Baden
+        language: de
+    legal_form: "0107"  # GmbH
+    committee:
+      - value: Geschäftsleitung
+        language: de
+    function_role:
+      - value: Geschäftsführer
+        language: de
+    is_paid: true
 
-  # Exekutivmandat, ebenfalls in dieser Lieferung auflösbar (Regierungsrat
-  # Basel-Stadt in data_groups.yaml). Es trägt die Rolle: gewählt wurde direkt
-  # ins Präsidium, deshalb `president` mit der amtlichen Bezeichnung im
-  # `role_label`. Ein Wahlkreis wird nicht geführt — der Regierungsrat wird im
-  # Gesamtkanton gewählt.
-  - global_uri: act:ms_jans_regierungsrat_bs
+  # Verbandspräsidium. Formal ein Sitz im Zentralvorstand, also ein
+  # Führungsgremium — massgebend ist aber das Gegenüber: Die ASTAG ist ein
+  # Branchenverband, ihr Zweck ist die Interessenvertretung selbst. Deshalb
+  # `interest_group_mandate` und nicht `governing_body`.
+  - global_uri: act:il_burkart_005
     person_reference:
-      local_id: 4032
-      global_uri: https://www.admin.ch/de/beat-jans
-      label: Beat Jans
-    group_reference:
-      local_id: 1300
-      global_uri: https://www.regierungsrat.bs.ch/
-      label: Regierungsrat Basel-Stadt
-    role_type:
-      role_type_enum: president
-      role_label:
-        - value: Regierungspräsident
-          language: de
-    authorized_to_vote: true
-    valid_from: 2021-02-03
-    valid_through: 2023-12-31
-    is_active: false
+      global_uri: http://www.wikidata.org/entity/Q23060472
+      label: Thierry Burkart
+      group_label: FDP.Die Liberalen
+    interest_type: interest_group_mandate
+    organization_name:
+      - value: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
+        language: de
+    legal_form: "0109"  # Verein
+    committee:
+      - value: Zentralvorstand
+        language: de
+    function_role:
+      - value: Präsident
+        language: de
+    is_paid: true
 
-  # Parteimitgliedschaft. Sie ist von der Fraktionsmitgliedschaft getrennt
-  # (andere Gruppe, andere Ebene) und wird ohne Zeitangaben publiziert: Das
-  # Eintrittsdatum ist nicht bekannt, die Mitgliedschaft besteht. Deshalb wird
-  # die Aktivität hier explizit über `is_active` gesetzt statt aus
-  # `valid_from`/`valid_through` abgeleitet.
-  - global_uri: act:ms_jans_partei_sp
+  # Stiftungsratsmandat, ehrenamtlich. Die Stiftung räumt Minen — sie verfolgt
+  # einen eigenen Zweck und vertritt keine Interessen, deshalb `governing_body`.
+  # Einziges Beispiel mit `organization_uid`: Ist die Organisation im
+  # UID-Register eingetragen, wird sie darüber eindeutig bezeichnet, und der
+  # Name dient nur noch der Lesbarkeit.
+  - global_uri: act:il_burkart_007
     person_reference:
-      local_id: 4032
-      global_uri: https://www.admin.ch/de/beat-jans
-      label: Beat Jans
-    group_reference:
-      global_uri: https://www.sp-ps.ch/
-      label: Sozialdemokratische Partei der Schweiz
-    role_type:
-      role_type_enum: member
-    is_active: true
+      global_uri: http://www.wikidata.org/entity/Q23060472
+      label: Thierry Burkart
+      group_label: FDP.Die Liberalen
+    interest_type: governing_body
+    organization_name:
+      - value: FONDATION SUISSE DE DEMINAGE (FSD), Genf
+        language: de
+    organization_uid: CHE109810537
+    legal_form: "0110"  # Stiftung
+    committee:
+      - value: Stiftungsrat
+        language: de
+    function_role:
+      - value: Vizepräsident
+        language: de
+    is_paid: false
 
-  # Laufendes Mandat in der Landesregierung: `valid_from` ohne
-  # `valid_through`. In den Bundesrat wird nicht aus einem Wahlkreis gewählt,
-  # `electoral_district` bleibt deshalb leer — die Kantonszugehörigkeit eines
-  # Mitglieds ist keine Wahlkreiszuteilung.
-  - global_uri: act:ms_jans_bundesrat
-    person_reference:
-      local_id: 4032
-      global_uri: https://www.admin.ch/de/beat-jans
-      label: Beat Jans
-    group_reference:
-      global_uri: https://www.admin.ch/de/der-bundesrat
-      label: Bundesrat
-    role_type:
-      role_type_enum: member
-    authorized_to_vote: true
-    valid_from: 2024-01-01
-    is_active: true
+  # --- Kanton Tessin ---
 
-  # Die Departementsleitung ist eine eigene Mitgliedschaft, nicht ein Merkmal
-  # des Bundesratsmandats: Mitglied ist die Person im Kollegium Bundesrat, das
-  # Departement ist eine andere Gruppe, und die Zuteilung kann wechseln, ohne
-  # dass das Mandat endet. Die Rolle kennt `RoleEnum` nicht — dann gilt `other`,
-  # und die Bezeichnung muss im `role_label` stehen.
-  - global_uri: act:ms_jans_ejpd
+  # Die Person ist in dieser Lieferung erfasst (data_swiss_politicians.yaml)
+  # und wird über ihre `local_id` aufgelöst. Das Tessin publiziert die Bindung
+  # ohne Angabe zur Entschädigung — `is_paid` bleibt deshalb leer, statt eine
+  # Annahme zu treffen.
+  - global_uri: act:il_beretta_001
     person_reference:
-      local_id: 4032
-      global_uri: https://www.admin.ch/de/beat-jans
-      label: Beat Jans
-    group_reference:
-      global_uri: https://www.ejpd.admin.ch/
-      label: Eidgenössisches Justiz- und Polizeidepartement
-    role_type:
-      role_type_enum: other
-      role_label:
-        - value: Departementsvorsteher
-          language: de
-    valid_from: 2024-01-01
-    is_active: true
+      local_id: 1269
+      global_uri: "https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269"
+      label: Gerri Beretta-Piccoli
+    interest_type: governing_body
+    organization_name:
+      - value: Fondazione Gruppo Intervento Maltrattamento Infantile (GIMI), Lugano
+        language: it
+    legal_form: "0110"  # Stiftung
+    committee:
+      - value: Consiglio di fondazione
+        language: it
+    function_role:
+      - value: Vice Presidente
+        language: it
+
+  # Amt in der öffentlichen Hand auf einer anderen föderalen Ebene. Das
+  # Gemeindepräsidium ist keine Mitgliedschaft im Sinne von `Membership`, weil
+  # die Gemeinde ausserhalb der gelieferten Gruppen liegt; es wird als
+  # Interessenbindung des kantonalen Mandats offengelegt. Die Rechtsform kommt
+  # hier aus dem öffentlich-rechtlichen Teil der Codeliste.
+  - global_uri: act:il_dafond_001
+    person_reference:
+      global_uri: "https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=14"
+      label: Felice Dafond
+      group_label: PLR
+    interest_type: public_mandate
+    organization_name:
+      - value: Municipio di Minusio
+        language: it
+    legal_form: "0223"  # Verwaltungseinheit der Gemeinde
+    function_role:
+      - value: Sindaco
+        language: it
+
+  # Zweiter Fall desselben Werts: Gremiensitz statt Amt. Die Register
+  # unterscheiden das mehrheitlich nicht — 20 von 24 führen nur eine der beiden
+  # Kategorien —, deshalb trägt `public_mandate` beides.
+  - global_uri: act:il_quadranti_001
+    person_reference:
+      global_uri: "https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1487"
+      label: Matteo Quadranti
+      group_label: Partito liberale radicale ticinese (PLR)
+    interest_type: public_mandate
+    organization_name:
+      - value: Commissione Cantonale Cultura
+        language: it
+    function_role:
+      - value: Vice-presidente
+        language: it
+
+  # Verwaltungsratssitz, den die Person nicht privat hält, sondern als
+  # Vertretung ihrer Gemeinde wahrnimmt. Das Tessiner Register schreibt die
+  # Delegation in die Funktionsbezeichnung („Membro, rappresentante
+  # Municipio"); im Standard trägt sie `is_ex_officio`, damit sie auswertbar
+  # ist. Der Typ bleibt derselbe wie bei einem privat gehaltenen Sitz.
+  - global_uri: act:il_zanini_001
+    person_reference:
+      global_uri: "https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=2160"
+      label: Cristina Zanini Barzaghi
+      group_label: PS, GISO e FA
+    interest_type: governing_body
+    organization_name:
+      - value: Fondazione Giovanni Stamm
+        language: it
+    legal_form: "0110"  # Stiftung
+    committee:
+      - value: Consiglio di amministrazione
+        language: it
+    function_role:
+      - value: Membro
+        language: it
+    is_ex_officio: true
+
+  # --- Kanton Genf ---
+
+  # Verwaltungsratsmandat, französische Bezeichnungen. Genf publiziert weder
+  # UID noch Entschädigung; getragen wird der Eintrag allein von
+  # `organization_name`.
+  - global_uri: act:il_balaban_001
+    person_reference:
+      global_uri: https://ge.ch/grandconseil/gc/depute/2517/
+      label: Stefan Balaban
+      group_label: LJS
+    interest_type: governing_body
+    organization_name:
+      - value: X-net SA
+        language: fr
+    legal_form: "0106"  # AG
+    committee:
+      - value: Conseil d'administration
+        language: fr
+    function_role:
+      - value: Membre
+        language: fr
+
+  # --- Kanton Freiburg ---
+
+  # Dauernde Leitungstätigkeit für eine Interessengruppe, aus einem
+  # zweisprachigen Register: Freiburg publiziert Name, Gremium und Funktion
+  # auf Französisch und auf Deutsch. Erfasst wird pro Sprache ein Eintrag,
+  # übersetzt wird nichts.
+  - global_uri: act:il_mauron_001
+    person_reference:
+      global_uri: https://www.fr.ch/parlinfo/membres-du-grand-conseil/5ee6eb9754704902bfd4b4ee01dcf327
+      label: Pierre Mauron
+      group_label: Parti socialiste
+    interest_type: interest_group_mandate
+    organization_name:
+      - value: ASLOCA Fribourg
+        language: fr
+      - value: ASLOCA Freiburg
+        language: de
+    legal_form: "0109"  # Verein
+    committee:
+      - value: Comité
+        language: fr
+      - value: Vorstand
+        language: de
+    function_role:
+      - value: Président
+        language: fr
+      - value: Präsident
+        language: de
 
 ```
 
