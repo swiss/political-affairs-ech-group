@@ -34,3 +34,24 @@ Die Standards der Fachgruppe entstehen gemeinsam und verweisen aufeinander. Sie 
 |ISO 639-1|ISO (International Organization for Standardization). Sprachcodes, verwendet im Slot `language` von `MultilingualValue`.|
 |schema.org|Gemeinsames Vokabular für strukturierte Daten. Quelle mehrerer `slot_uri`-Zuordnungen: [https://schema.org](https://schema.org)|
 |LinkML|Modellierungssprache, in der dieser Standard definiert ist: [https://linkml.io](https://linkml.io)|
+
+# Anhang B - Mitarbeit & Überprüfung
+
+| Name | Organisation |
+|------|--------------|
+| Christian Gutknecht | Glue Sofware Engineering |
+| Michael Luggen | Bundeskanzlei |
+
+# Anhang C - Abkürzungen und Glossar
+
+| Begriff | Bedeutung |
+|------|--------------|
+| I14Y | Interoperabilitätsplattform des Bundesamts für Statistik |
+
+# Anhang D – Änderungen gegenüber Vorversion
+
+Dies ist die erste Version.
+
+# Anhang E - Abbildungsverzeichnis
+
+# Anhang F - Tabellenverzeichnis
