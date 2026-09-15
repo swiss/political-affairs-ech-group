@@ -23,7 +23,7 @@ meetings:
     # Referenz auf das Protokoll: nur der Identifikator. Das Protokoll selbst
     # steht unten unter `protocols` und wird in der Regel spaeter geliefert als
     # die Sitzung.
-    protocol_ref: "ops:protokoll_sr_winter25_sitzung_6"
+    has_protocol: "ops:protokoll_sr_winter25_sitzung_6"
     datetime_created: "2026-01-12T00:00:00+01:00"
     datetime_modified: "2026-01-12T00:00:00+01:00"
 
