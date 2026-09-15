@@ -1925,6 +1925,13 @@
                         "null"
                     ]
                 },
+                "has_protocol": {
+                    "description": "Reference to the protocol (minutes) of this meeting, recorded after the meeting. Only the identifier of the protocol is given; the protocol itself is delivered in the container's `protocols` list. It is an entity in its own right with its own identifier and is usually published later than the meeting, so it is referenced rather than embedded.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "landing_page": {
                     "description": "URL providing further information.\n",
                     "type": [
@@ -1990,13 +1997,6 @@
                 },
                 "position": {
                     "description": "Integer position within the superordinate sequence.\n",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "protocol_ref": {
-                    "description": "Reference to the protocol (minutes) of this meeting, recorded after the meeting. Only the identifier of the protocol is given; the protocol itself is delivered in the container's `protocols` list. It is an entity in its own right with its own identifier and is usually published later than the meeting, so it is referenced rather than embedded.\n",
                     "type": [
                         "string",
                         "null"

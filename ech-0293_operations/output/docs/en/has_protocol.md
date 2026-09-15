@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: protocol_ref 
+# Slot: has_protocol 
 
 
 _Reference to the protocol (minutes) of this meeting, recorded after the meeting. Only the identifier of the protocol is given; the protocol itself is delivered in the container's `protocols` list. It is an entity in its own right with its own identifier and is usually published later than the meeting, so it is referenced rather than embedded._
@@ -15,7 +15,7 @@ _Reference to the protocol (minutes) of this meeting, recorded after the meeting
 
 
 
-URI: [ops:protocolRef](https://ch.paf.link/schema/operations/protocolRef)
+URI: [ops:hasProtocol](https://ch.paf.link/schema/operations/hasProtocol)
 <!-- no inheritance hierarchy -->
 
 
@@ -41,7 +41,7 @@ URI: [ops:protocolRef](https://ch.paf.link/schema/operations/protocolRef)
 | --- | --- |
 | Range | [Protocol](Protocol.md) |
 | Domain Of | [Meeting](Meeting.md) |
-| Slot URI | [ops:protocolRef](https://ch.paf.link/schema/operations/protocolRef) |
+| Slot URI | [ops:hasProtocol](https://ch.paf.link/schema/operations/hasProtocol) |
 
 ### Cardinality and Requirements
 
@@ -63,7 +63,7 @@ URI: [ops:protocolRef](https://ch.paf.link/schema/operations/protocolRef)
 
 <details>
 ```yaml
-name: protocol_ref
+name: has_protocol
 annotations:
   description_de:
     tag: description_de
@@ -92,7 +92,7 @@ description: 'Reference to the protocol (minutes) of this meeting, recorded afte
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-slot_uri: ops:protocolRef
+slot_uri: ops:hasProtocol
 domain_of:
 - Meeting
 range: Protocol

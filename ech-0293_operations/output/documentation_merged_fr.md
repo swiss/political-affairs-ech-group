@@ -307,7 +307,7 @@ meetings:
     # Referenz auf das Protokoll: nur der Identifikator. Das Protokoll selbst
     # steht unten unter `protocols` und wird in der Regel spaeter geliefert als
     # die Sitzung.
-    protocol_ref: "ops:protokoll_sr_winter25_sitzung_6"
+    has_protocol: "ops:protokoll_sr_winter25_sitzung_6"
     datetime_created: "2026-01-12T00:00:00+01:00"
     datetime_modified: "2026-01-12T00:00:00+01:00"
 
@@ -1415,7 +1415,7 @@ Un Meeting est la séance individuelle d'un organe — le niveau auquel les poin
 
 ### Points d'ancrage
 
-Le Meeting est le nœud auquel se rattachent les autres classes de la présente norme : les points de l'ordre du jour (`AgendaItem`), les votes et élections (`Voting`, `Election`), les interventions (`Speech`) ainsi que la liste de présence (`Attendance.parent_meeting`). `documents` relie les documents de séance tels que le bulletin ou les annexes, `protocol_ref` le procès-verbal. `parent_meeting` représente les séances qui font partie d'une séance de rang supérieur ; `actor_name`, `group_name` et `group_id` retiennent en clair l'organe et le regroupement.
+Le Meeting est le nœud auquel se rattachent les autres classes de la présente norme : les points de l'ordre du jour (`AgendaItem`), les votes et élections (`Voting`, `Election`), les interventions (`Speech`) ainsi que la liste de présence (`Attendance.parent_meeting`). `documents` relie les documents de séance tels que le bulletin ou les annexes, `has_protocol` le procès-verbal. `parent_meeting` représente les séances qui font partie d'une séance de rang supérieur ; `actor_name`, `group_name` et `group_id` retiennent en clair l'organe et le regroupement.
 
 
 
@@ -1460,7 +1460,7 @@ _Une classe générale de séance utilisée pour les sessions, les séances de c
 | parent_meeting | 0..1 <br/> String | Identifiant de la séance à laquelle cet enregistrement se rattache. Pour une séance, il désigne la séance supérieure ; pour un point de l'ordre du jour, un vote, une élection, une intervention ou un procès-verbal, la séance au cours de laquelle l'enregistrement est né.  |
 | parent_legislature | 0..1 <br/> String | La législature dans le cadre de laquelle la séance a lieu.  |
 | documents | * <br/> Work | Liste des documents (FRBR Works) liés à l'entité.  |
-| protocol_ref | 0..1 <br/> [Protocol](#Protocol) | Référence au procès-verbal de cette séance, établi après celle-ci. Seul l'identifiant du procès-verbal est indiqué ; le procès-verbal lui-même est livré dans la liste `protocols` du conteneur. Il constitue une entité à part entière dotée de son propre identifiant et est en règle générale publié après la séance, raison pour laquelle il est référencé et non imbriqué.  |
+| has_protocol | 0..1 <br/> [Protocol](#Protocol) | Référence au procès-verbal de cette séance, établi après celle-ci. Seul l'identifiant du procès-verbal est indiqué ; le procès-verbal lui-même est livré dans la liste `protocols` du conteneur. Il constitue une entité à part entière dotée de son propre identifiant et est en règle générale publié après la séance, raison pour laquelle il est référencé et non imbriqué.  |
 | date_begin_actual | 0..1 <br/> Date | La date de début effective d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
 | datetime_begin_actual | 0..1 <br/> Datetime | La date et l'heure de début effectives d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
 | date_begin_planned | 0..1 <br/> Date | La date de début planifiée d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
@@ -1586,7 +1586,7 @@ meetings:
       language: de
   actor_name: Ständerat
   datetime_begin_planned: '2025-12-19T08:15:00+01:00'
-  protocol_ref: ops:protokoll_sr_winter25_sitzung_6
+  has_protocol: ops:protokoll_sr_winter25_sitzung_6
   datetime_created: '2026-01-12T00:00:00+01:00'
   datetime_modified: '2026-01-12T00:00:00+01:00'
 
@@ -2413,14 +2413,14 @@ URI: [ops:AgendaItemTypeEnum](https://ch.paf.link/schema/operations/AgendaItemTy
 
 Alors que les points de l'ordre du jour représentent la **planification** d'une séance, le procès-verbal consigne le **déroulement effectif** après la séance. `Protocol` est un conteneur tenu exactement une fois par séance (`Meeting`) et qui regroupe les points effectivement traités (`protocol_items`), les votes, les interventions ainsi que les segments de texte in extenso et les documents.
 
-Le procès-verbal est **référencé et non imbriqué** : `Meeting.protocol_ref` ne contient que l'identifiant, le procès-verbal lui-même figure comme entrée propre dans `Container.protocols`. La règle appliquée de bout en bout par la présente norme vaut donc ici aussi : est imbriqué ce qui ne possède pas d'identité propre (par exemple `PersonReference` ou `GroupReference`), est référencé ce qui en possède une. Le procès-verbal dispose de sa propre `global_uri` et peut être cité de manière autonome ; le Bulletin officiel, par exemple, est accessible à une adresse qui lui est propre. Surtout, il est établi après la séance : imbriqué, il faudrait relivrer la séance entière dès que le procès-verbal existe ; référencé, la livraison ultérieure du seul procès-verbal suffit.
+Le procès-verbal est **référencé et non imbriqué** : `Meeting.has_protocol` ne contient que l'identifiant, le procès-verbal lui-même figure comme entrée propre dans `Container.protocols`. La règle appliquée de bout en bout par la présente norme vaut donc ici aussi : est imbriqué ce qui ne possède pas d'identité propre (par exemple `PersonReference` ou `GroupReference`), est référencé ce qui en possède une. Le procès-verbal dispose de sa propre `global_uri` et peut être cité de manière autonome ; le Bulletin officiel, par exemple, est accessible à une adresse qui lui est propre. Surtout, il est établi après la séance : imbriqué, il faudrait relivrer la séance entière dès que le procès-verbal existe ; référencé, la livraison ultérieure du seul procès-verbal suffit.
 
 À l'intérieur du procès-verbal, les collections restent imbriquées, car elles naissent et sont livrées avec lui. Qui publie des votes ou des interventions indépendamment du procès-verbal les livre à plat dans `Container.votings` ou `Container.speeches` et les relie par `parent_meeting` et `parent_agenda_item`.
 
 ```
 Container
   ├─ meetings       → Meeting
-  │                     └─ protocol_ref  → identifiant du procès-verbal
+  │                     └─ has_protocol → identifiant du procès-verbal
   ├─ agenda_items   → AgendaItem  (avant : points planifiés, parent_meeting)
   └─ protocols      → Protocol    (après : consignation, parent_meeting)
                         ├─ protocol_items  → ProtocolItem (comme AgendaItem)
@@ -2472,7 +2472,7 @@ _Le procès-verbal établi après la séance. Un conteneur qui regroupe les poin
 | Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | [Container](#Container) | protocols | range | [Protocol](#Protocol) |
-| [Meeting](#Meeting) | protocol_ref | range | [Protocol](#Protocol) |
+| [Meeting](#Meeting) | has_protocol | range | [Protocol](#Protocol) |
 
 
 

@@ -40,7 +40,7 @@ _The minutes of a meeting, recorded after the meeting. A wrapper container bundl
 | Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [protocols](protocols.md) | range | [Protocol](Protocol.md) |
-| [Meeting](Meeting.md) | [protocol_ref](protocol_ref.md) | range | [Protocol](Protocol.md) |
+| [Meeting](Meeting.md) | [has_protocol](has_protocol.md) | range | [Protocol](Protocol.md) |
 
 
 

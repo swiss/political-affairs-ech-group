@@ -301,7 +301,7 @@ meetings:
     # Referenz auf das Protokoll: nur der Identifikator. Das Protokoll selbst
     # steht unten unter `protocols` und wird in der Regel spaeter geliefert als
     # die Sitzung.
-    protocol_ref: "ops:protokoll_sr_winter25_sitzung_6"
+    has_protocol: "ops:protokoll_sr_winter25_sitzung_6"
     datetime_created: "2026-01-12T00:00:00+01:00"
     datetime_modified: "2026-01-12T00:00:00+01:00"
 
@@ -1409,7 +1409,7 @@ Auf dieser Ebene fallen die geplanten und die tatsächlichen Zeiten regelmässig
 
 ### Anknüpfungspunkte
 
-Das Meeting ist der Knoten, an dem die übrigen Klassen dieses Standards hängen: Traktanden (`AgendaItem`), Abstimmungen und Wahlen (`Voting`, `Election`), Wortmeldungen (`Speech`) sowie die Anwesenheitsliste (`Attendance.parent_meeting`). `documents` verknüpft Sitzungsunterlagen wie Tagblatt oder Beilagen, `protocol_ref` das Protokoll. `parent_meeting` bildet Sitzungen ab, die Teil einer übergeordneten Sitzung sind; `actor_name`, `group_name` und `group_id` halten Organ und Gruppierung zusätzlich im Klartext fest.
+Das Meeting ist der Knoten, an dem die übrigen Klassen dieses Standards hängen: Traktanden (`AgendaItem`), Abstimmungen und Wahlen (`Voting`, `Election`), Wortmeldungen (`Speech`) sowie die Anwesenheitsliste (`Attendance.parent_meeting`). `documents` verknüpft Sitzungsunterlagen wie Tagblatt oder Beilagen, `has_protocol` das Protokoll. `parent_meeting` bildet Sitzungen ab, die Teil einer übergeordneten Sitzung sind; `actor_name`, `group_name` und `group_id` halten Organ und Gruppierung zusätzlich im Klartext fest.
 
 
 
@@ -1454,7 +1454,7 @@ _Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, Sessi
 | parent_meeting | 0..1 <br/> String | Identifikator der Sitzung, zu der dieser Eintrag gehört. Bei einer Sitzung bezeichnet er die übergeordnete Sitzung, bei Traktandum, Abstimmung, Wahl, Wortmeldung oder Protokoll die Sitzung, in der der Eintrag entstanden ist.  |
 | parent_legislature | 0..1 <br/> String | Der gesetzgebende Körper, auf dem die Sitzung basiert.  |
 | documents | * <br/> Work | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.  |
-| protocol_ref | 0..1 <br/> [Protocol](#Protocol) | Referenz auf das nach der Sitzung erstellte Protokoll dieser Sitzung. Angegeben wird nur der Identifikator des Protokolls; das Protokoll selbst wird in der Liste `protocols` des Containers geliefert. Es ist eine eigenständige Entität mit eigenem Identifikator und wird in der Regel später veröffentlicht als die Sitzung, weshalb es referenziert und nicht eingebettet wird.  |
+| has_protocol | 0..1 <br/> [Protocol](#Protocol) | Referenz auf das nach der Sitzung erstellte Protokoll dieser Sitzung. Angegeben wird nur der Identifikator des Protokolls; das Protokoll selbst wird in der Liste `protocols` des Containers geliefert. Es ist eine eigenständige Entität mit eigenem Identifikator und wird in der Regel später veröffentlicht als die Sitzung, weshalb es referenziert und nicht eingebettet wird.  |
 | date_begin_actual | 0..1 <br/> Date | Das tatsächliche Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](#IsEventWithDuration) |
 | datetime_begin_actual | 0..1 <br/> Datetime | Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](#IsEventWithDuration) |
 | date_begin_planned | 0..1 <br/> Date | Das geplante Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](#IsEventWithDuration) |
@@ -1580,7 +1580,7 @@ meetings:
       language: de
   actor_name: Ständerat
   datetime_begin_planned: '2025-12-19T08:15:00+01:00'
-  protocol_ref: ops:protokoll_sr_winter25_sitzung_6
+  has_protocol: ops:protokoll_sr_winter25_sitzung_6
   datetime_created: '2026-01-12T00:00:00+01:00'
   datetime_modified: '2026-01-12T00:00:00+01:00'
 
@@ -2407,14 +2407,14 @@ URI: [ops:AgendaItemTypeEnum](https://ch.paf.link/schema/operations/AgendaItemTy
 
 Während die Traktanden die **Planung** einer Sitzung abbilden, hält das Protokoll den **tatsächlichen Verlauf** nach der Sitzung fest. `Protocol` ist ein Wrapper-Container, der pro Sitzung (`Meeting`) genau einmal geführt wird und die effektiv behandelten Traktanden (`protocol_items`), Abstimmungen, Wortmeldungen sowie Wortlaut-Textsegmente und Dokumente bündelt.
 
-Das Protokoll wird **referenziert, nicht eingebettet**: `Meeting.protocol_ref` enthält allein den Identifikator, das Protokoll selbst steht als eigener Eintrag in `Container.protocols`. Damit gilt auch hier die Regel, die dieser Standard durchgehend anwendet — eingebettet wird, was keine eigene Identität besitzt (etwa `PersonReference` oder `GroupReference`), referenziert wird, was eine besitzt. Das Protokoll hat eine eigene `global_uri` und ist eigenständig zitierbar; das Amtliche Bulletin etwa ist unter einer eigenen Adresse abrufbar. Vor allem aber entsteht es später als die Sitzung: Eingebettet müsste die gesamte Sitzung erneut geliefert werden, sobald das Protokoll vorliegt, referenziert genügt die Nachlieferung des Protokolls allein.
+Das Protokoll wird **referenziert, nicht eingebettet**: `Meeting.has_protocol` enthält allein den Identifikator, das Protokoll selbst steht als eigener Eintrag in `Container.protocols`. Damit gilt auch hier die Regel, die dieser Standard durchgehend anwendet — eingebettet wird, was keine eigene Identität besitzt (etwa `PersonReference` oder `GroupReference`), referenziert wird, was eine besitzt. Das Protokoll hat eine eigene `global_uri` und ist eigenständig zitierbar; das Amtliche Bulletin etwa ist unter einer eigenen Adresse abrufbar. Vor allem aber entsteht es später als die Sitzung: Eingebettet müsste die gesamte Sitzung erneut geliefert werden, sobald das Protokoll vorliegt, referenziert genügt die Nachlieferung des Protokolls allein.
 
 Innerhalb des Protokolls bleiben die Sammlungen eingebettet, weil sie zusammen mit ihm entstehen und geliefert werden. Wer Abstimmungen oder Wortmeldungen unabhängig vom Protokoll publiziert, liefert sie stattdessen flach in `Container.votings` bzw. `Container.speeches` und verknüpft sie über `parent_meeting` und `parent_agenda_item`.
 
 ```
 Container
   ├─ meetings       → Meeting
-  │                     └─ protocol_ref  → Identifikator des Protokolls
+  │                     └─ has_protocol → Identifikator des Protokolls
   ├─ agenda_items   → AgendaItem  (vorher: geplante Traktanden, parent_meeting)
   └─ protocols      → Protocol    (nachher: Niederschrift, parent_meeting)
                         ├─ protocol_items  → ProtocolItem (wie AgendaItem)
@@ -2466,7 +2466,7 @@ _Das nach der Sitzung erstellte Protokoll. Ein Wrapper-Container, der die tatsä
 | Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
 | [Container](#Container) | protocols | range | [Protocol](#Protocol) |
-| [Meeting](#Meeting) | protocol_ref | range | [Protocol](#Protocol) |
+| [Meeting](#Meeting) | has_protocol | range | [Protocol](#Protocol) |
 
 
 

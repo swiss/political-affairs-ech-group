@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: protocol_ref 
+# Slot: has_protocol 
 
 
 _Référence au procès-verbal de cette séance, établi après celle-ci. Seul l'identifiant du procès-verbal est indiqué ; le procès-verbal lui-même est livré dans la liste `protocols` du conteneur. Il constitue une entité à part entière dotée de son propre identifiant et est en règle générale publié après la séance, raison pour laquelle il est référencé et non imbriqué._
@@ -15,7 +15,7 @@ _Référence au procès-verbal de cette séance, établi après celle-ci. Seul l
 
 
 
-URI: [ops:protocolRef](https://ch.paf.link/schema/operations/protocolRef)
+URI: [ops:hasProtocol](https://ch.paf.link/schema/operations/hasProtocol)
 <!-- no inheritance hierarchy -->
 
 
@@ -41,7 +41,7 @@ URI: [ops:protocolRef](https://ch.paf.link/schema/operations/protocolRef)
 | --- | --- |
 | Plage | [Protocol](Protocol.md) |
 | Domaine de | [Meeting](Meeting.md) |
-| URI du slot | [ops:protocolRef](https://ch.paf.link/schema/operations/protocolRef) |
+| URI du slot | [ops:hasProtocol](https://ch.paf.link/schema/operations/hasProtocol) |
 
 ### Cardinalité et exigences
 
@@ -63,7 +63,7 @@ URI: [ops:protocolRef](https://ch.paf.link/schema/operations/protocolRef)
 
 <details>
 ```yaml
-name: protocol_ref
+name: has_protocol
 annotations:
   description_de:
     tag: description_de
@@ -92,7 +92,7 @@ description: 'Référence au procès-verbal de cette séance, établi après cel
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-slot_uri: ops:protocolRef
+slot_uri: ops:hasProtocol
 domain_of:
 - Meeting
 range: Protocol

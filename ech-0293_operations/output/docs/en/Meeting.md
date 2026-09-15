@@ -41,7 +41,7 @@ _A general meeting class used for Sessions, Comittee Meetings, individual sessio
 | parent_meeting | 0..1 <br/> [String](String.md) | Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.  |
 | parent_legislature | 0..1 <br/> [String](String.md) | The legislative body in which the meeting is based.  |
 | documents | * <br/> [Work](Work.md) | List of documents (FRBR Works) linked to the entity.  |
-| protocol_ref | 0..1 <br/> [Protocol](Protocol.md) | Reference to the protocol (minutes) of this meeting, recorded after the meeting. Only the identifier of the protocol is given; the protocol itself is delivered in the container's `protocols` list. It is an entity in its own right with its own identifier and is usually published later than the meeting, so it is referenced rather than embedded.  |
+| has_protocol | 0..1 <br/> [Protocol](Protocol.md) | Reference to the protocol (minutes) of this meeting, recorded after the meeting. Only the identifier of the protocol is given; the protocol itself is delivered in the container's `protocols` list. It is an entity in its own right with its own identifier and is usually published later than the meeting, so it is referenced rather than embedded.  |
 | date_begin_actual | 0..1 <br/> [Date](Date.md) | The actual start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
 | datetime_begin_actual | 0..1 <br/> [Datetime](Datetime.md) | The actual start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
 | date_begin_planned | 0..1 <br/> [Date](Date.md) | The planned start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
@@ -167,7 +167,7 @@ meetings:
       language: de
   actor_name: Ständerat
   datetime_begin_planned: '2025-12-19T08:15:00+01:00'
-  protocol_ref: ops:protokoll_sr_winter25_sitzung_6
+  has_protocol: ops:protokoll_sr_winter25_sitzung_6
   datetime_created: '2026-01-12T00:00:00+01:00'
   datetime_modified: '2026-01-12T00:00:00+01:00'
 

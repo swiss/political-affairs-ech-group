@@ -108,6 +108,7 @@ Name: operations
 | [group_id](group_id.md) | Référence au groupe ou à l'organe (instantané au moment de la mise en relatio... |
 | [group_label](group_label.md) | Nom de l'organe/du groupe au moment de la liaison |
 | [group_name](group_name.md) | Nom du groupe ou de l'organe |
+| [has_protocol](has_protocol.md) | Référence au procès-verbal de cette séance, établi après celle-ci |
 | [has_resolution](has_resolution.md) | La décision prise sur ce point de l'ordre du jour |
 | [id](id.md) | Identifiant univoque de l'élément |
 | [individual_attendances](individual_attendances.md) | Ensemble des constatations individuelles de présence |
@@ -147,7 +148,6 @@ Name: operations
 | [parent_voting](parent_voting.md) | L'identifiant du vote auquel se rattache la voix individuelle |
 | [position](position.md) | Position (nombre entier) au sein de la séquence supérieure |
 | [protocol_items](protocol_items.md) | Points de l'ordre du jour tels qu'ils ont effectivement été consignés au proc... |
-| [protocol_ref](protocol_ref.md) | Référence au procès-verbal de cette séance, établi après celle-ci |
 | [protocols](protocols.md) | Ensemble des procès-verbaux |
 | [reason](reason.md) | Motif de l'absence ou du retard (texte libre, multilingue) |
 | [remark](remark.md) | Remarque ou note en texte libre pour les cas particuliers ou pour un contexte... |

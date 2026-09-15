@@ -108,6 +108,7 @@ Name: operations
 | [group_id](group_id.md) | Reference to the group or body (lightweight snapshot at time of linking) |
 | [group_label](group_label.md) | Name of the body/group at time of linking |
 | [group_name](group_name.md) | Name of the group or body |
+| [has_protocol](has_protocol.md) | Reference to the protocol (minutes) of this meeting, recorded after the meeti... |
 | [has_resolution](has_resolution.md) | The resolution or decision taken on this agenda item |
 | [id](id.md) | Unique identifier of the element |
 | [individual_attendances](individual_attendances.md) | Collection of individual attendance records |
@@ -147,7 +148,6 @@ Name: operations
 | [parent_voting](parent_voting.md) | The ID of the voting associated with the individual vote |
 | [position](position.md) | Integer position within the superordinate sequence |
 | [protocol_items](protocol_items.md) | Agenda items as actually recorded in the protocol |
-| [protocol_ref](protocol_ref.md) | Reference to the protocol (minutes) of this meeting, recorded after the meeti... |
 | [protocols](protocols.md) | Collection of protocol records |
 | [reason](reason.md) | Reason for absence or lateness (free-text, multilingual) |
 | [remark](remark.md) | Free-text remark or note for edge cases or additional context on a process st... |

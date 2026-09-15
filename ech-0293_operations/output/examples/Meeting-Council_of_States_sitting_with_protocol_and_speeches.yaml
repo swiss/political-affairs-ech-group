@@ -18,6 +18,6 @@ meetings:
       language: de
   actor_name: Ständerat
   datetime_begin_planned: '2025-12-19T08:15:00+01:00'
-  protocol_ref: ops:protokoll_sr_winter25_sitzung_6
+  has_protocol: ops:protokoll_sr_winter25_sitzung_6
   datetime_created: '2026-01-12T00:00:00+01:00'
   datetime_modified: '2026-01-12T00:00:00+01:00'

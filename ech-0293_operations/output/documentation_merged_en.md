@@ -307,7 +307,7 @@ meetings:
     # Referenz auf das Protokoll: nur der Identifikator. Das Protokoll selbst
     # steht unten unter `protocols` und wird in der Regel spaeter geliefert als
     # die Sitzung.
-    protocol_ref: "ops:protokoll_sr_winter25_sitzung_6"
+    has_protocol: "ops:protokoll_sr_winter25_sitzung_6"
     datetime_created: "2026-01-12T00:00:00+01:00"
     datetime_modified: "2026-01-12T00:00:00+01:00"
 
@@ -1415,7 +1415,7 @@ At this level, scheduled and actual times regularly diverge: a sitting scheduled
 
 ### Anchor points
 
-The meeting is the node to which the remaining classes of this standard attach: agenda items (`AgendaItem`), votings and elections (`Voting`, `Election`), speeches (`Speech`) as well as the attendance list (`Attendance.parent_meeting`). `documents` links sitting documents such as the bulletin or annexes, `protocol_ref` the protocol. `parent_meeting` represents sittings that are part of a superordinate sitting; `actor_name`, `group_name` and `group_id` additionally hold body and grouping in plain text.
+The meeting is the node to which the remaining classes of this standard attach: agenda items (`AgendaItem`), votings and elections (`Voting`, `Election`), speeches (`Speech`) as well as the attendance list (`Attendance.parent_meeting`). `documents` links sitting documents such as the bulletin or annexes, `has_protocol` the protocol. `parent_meeting` represents sittings that are part of a superordinate sitting; `actor_name`, `group_name` and `group_id` additionally hold body and grouping in plain text.
 
 
 
@@ -1460,7 +1460,7 @@ _A general meeting class used for Sessions, Comittee Meetings, individual sessio
 | parent_meeting | 0..1 <br/> String | Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.  |
 | parent_legislature | 0..1 <br/> String | The legislative body in which the meeting is based.  |
 | documents | * <br/> Work | List of documents (FRBR Works) linked to the entity.  |
-| protocol_ref | 0..1 <br/> [Protocol](#Protocol) | Reference to the protocol (minutes) of this meeting, recorded after the meeting. Only the identifier of the protocol is given; the protocol itself is delivered in the container's `protocols` list. It is an entity in its own right with its own identifier and is usually published later than the meeting, so it is referenced rather than embedded.  |
+| has_protocol | 0..1 <br/> [Protocol](#Protocol) | Reference to the protocol (minutes) of this meeting, recorded after the meeting. Only the identifier of the protocol is given; the protocol itself is delivered in the container's `protocols` list. It is an entity in its own right with its own identifier and is usually published later than the meeting, so it is referenced rather than embedded.  |
 | date_begin_actual | 0..1 <br/> Date | The actual start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
 | datetime_begin_actual | 0..1 <br/> Datetime | The actual start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
 | date_begin_planned | 0..1 <br/> Date | The planned start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
@@ -1586,7 +1586,7 @@ meetings:
       language: de
   actor_name: Ständerat
   datetime_begin_planned: '2025-12-19T08:15:00+01:00'
-  protocol_ref: ops:protokoll_sr_winter25_sitzung_6
+  has_protocol: ops:protokoll_sr_winter25_sitzung_6
   datetime_created: '2026-01-12T00:00:00+01:00'
   datetime_modified: '2026-01-12T00:00:00+01:00'
 
@@ -2413,14 +2413,14 @@ URI: [ops:AgendaItemTypeEnum](https://ch.paf.link/schema/operations/AgendaItemTy
 
 While the agenda items represent the **planning** of a sitting, the protocol records the **actual course** after the sitting. `Protocol` is a wrapper container kept exactly once per sitting (`Meeting`) that bundles the agenda items actually dealt with (`protocol_items`), votings, speeches as well as verbatim text segments and documents.
 
-The protocol is **referenced, not embedded**: `Meeting.protocol_ref` holds the identifier alone, the protocol itself is an entry of its own in `Container.protocols`. The rule this standard applies throughout therefore holds here as well — what has no identity of its own is embedded (`PersonReference` or `GroupReference`, say), what has one is referenced. The protocol carries its own `global_uri` and can be cited independently; the Official Bulletin, for instance, is available at an address of its own. Above all it comes into being after the sitting: embedded, the entire sitting would have to be delivered again once the protocol exists; referenced, delivering the protocol alone is enough.
+The protocol is **referenced, not embedded**: `Meeting.has_protocol` holds the identifier alone, the protocol itself is an entry of its own in `Container.protocols`. The rule this standard applies throughout therefore holds here as well — what has no identity of its own is embedded (`PersonReference` or `GroupReference`, say), what has one is referenced. The protocol carries its own `global_uri` and can be cited independently; the Official Bulletin, for instance, is available at an address of its own. Above all it comes into being after the sitting: embedded, the entire sitting would have to be delivered again once the protocol exists; referenced, delivering the protocol alone is enough.
 
 Within the protocol the collections stay embedded, because they arise and are delivered together with it. Anyone publishing votings or speeches independently of the protocol delivers them flat in `Container.votings` or `Container.speeches` instead and links them through `parent_meeting` and `parent_agenda_item`.
 
 ```
 Container
   ├─ meetings       → Meeting
-  │                     └─ protocol_ref  → identifier of the protocol
+  │                     └─ has_protocol → identifier of the protocol
   ├─ agenda_items   → AgendaItem  (before: planned agenda items, parent_meeting)
   └─ protocols      → Protocol    (after: the record, parent_meeting)
                         ├─ protocol_items  → ProtocolItem (like AgendaItem)
@@ -2472,7 +2472,7 @@ _The minutes of a meeting, recorded after the meeting. A wrapper container bundl
 | Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Container](#Container) | protocols | range | [Protocol](#Protocol) |
-| [Meeting](#Meeting) | protocol_ref | range | [Protocol](#Protocol) |
+| [Meeting](#Meeting) | has_protocol | range | [Protocol](#Protocol) |
 
 
 

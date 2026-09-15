@@ -108,6 +108,7 @@ Name: operations
 | [group_id](group_id.md) | Referenz auf die Gruppe oder das Gremium (Momentaufnahme zum Zeitpunkt der Ve... |
 | [group_label](group_label.md) | Name des Gremiums zum Zeitpunkt der Verknüpfung |
 | [group_name](group_name.md) | Name der Gruppe oder des Gremiums |
+| [has_protocol](has_protocol.md) | Referenz auf das nach der Sitzung erstellte Protokoll dieser Sitzung |
 | [has_resolution](has_resolution.md) | Die Resolution oder Entscheidung zu diesem Traktandum |
 | [id](id.md) | Eindeutiger Identifikator des Elements |
 | [individual_attendances](individual_attendances.md) | Sammlung der einzelnen Anwesenheitsfeststellungen |
@@ -147,7 +148,6 @@ Name: operations
 | [parent_voting](parent_voting.md) | Die ID der Abstimmung, die mit der Einzelstimme verbunden ist |
 | [position](position.md) | Ganzzahlige Position innerhalb der übergeordneten Reihenfolge |
 | [protocol_items](protocol_items.md) | Traktanden, wie sie im Protokoll tatsächlich festgehalten wurden |
-| [protocol_ref](protocol_ref.md) | Referenz auf das nach der Sitzung erstellte Protokoll dieser Sitzung |
 | [protocols](protocols.md) | Sammlung der Protokolle |
 | [reason](reason.md) | Grund für Abwesenheit oder Verspätung (Freitext, mehrsprachig) |
 | [remark](remark.md) | Freitext-Bemerkung oder Notiz für Sonderfälle oder zusätzlichen Kontext zu ei... |

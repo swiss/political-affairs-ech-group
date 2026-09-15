@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: protocol_ref 
+# Slot: has_protocol 
 
 
 _Referenz auf das nach der Sitzung erstellte Protokoll dieser Sitzung. Angegeben wird nur der Identifikator des Protokolls; das Protokoll selbst wird in der Liste `protocols` des Containers geliefert. Es ist eine eigenständige Entität mit eigenem Identifikator und wird in der Regel später veröffentlicht als die Sitzung, weshalb es referenziert und nicht eingebettet wird._
@@ -15,7 +15,7 @@ _Referenz auf das nach der Sitzung erstellte Protokoll dieser Sitzung. Angegeben
 
 
 
-URI: [ops:protocolRef](https://ch.paf.link/schema/operations/protocolRef)
+URI: [ops:hasProtocol](https://ch.paf.link/schema/operations/hasProtocol)
 <!-- no inheritance hierarchy -->
 
 
@@ -41,7 +41,7 @@ URI: [ops:protocolRef](https://ch.paf.link/schema/operations/protocolRef)
 | --- | --- |
 | Wertebereich | [Protocol](Protocol.md) |
 | Domäne von | [Meeting](Meeting.md) |
-| Slot-URI | [ops:protocolRef](https://ch.paf.link/schema/operations/protocolRef) |
+| Slot-URI | [ops:hasProtocol](https://ch.paf.link/schema/operations/hasProtocol) |
 
 ### Kardinalität und Anforderungen
 
@@ -63,7 +63,7 @@ URI: [ops:protocolRef](https://ch.paf.link/schema/operations/protocolRef)
 
 <details>
 ```yaml
-name: protocol_ref
+name: has_protocol
 annotations:
   description_de:
     tag: description_de
@@ -92,7 +92,7 @@ description: 'Referenz auf das nach der Sitzung erstellte Protokoll dieser Sitzu
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-slot_uri: ops:protocolRef
+slot_uri: ops:hasProtocol
 domain_of:
 - Meeting
 range: Protocol
