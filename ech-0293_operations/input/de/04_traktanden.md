@@ -163,14 +163,14 @@ Ein AgendaItem ist das zentrale Bindeglied zwischen:
 
 Während die Traktanden die **Planung** einer Sitzung abbilden, hält das Protokoll den **tatsächlichen Verlauf** nach der Sitzung fest. `Protocol` ist ein Wrapper-Container, der pro Sitzung (`Meeting`) genau einmal geführt wird und die effektiv behandelten Traktanden (`protocol_items`), Abstimmungen, Wortmeldungen sowie Wortlaut-Textsegmente und Dokumente bündelt.
 
-Das Protokoll wird **referenziert, nicht eingebettet**: `Meeting.protocol_ref` enthält allein den Identifikator, das Protokoll selbst steht als eigener Eintrag in `Container.protocols`. Damit gilt auch hier die Regel, die dieser Standard durchgehend anwendet — eingebettet wird, was keine eigene Identität besitzt (etwa `PersonReference` oder `GroupReference`), referenziert wird, was eine besitzt. Das Protokoll hat eine eigene `global_uri` und ist eigenständig zitierbar; das Amtliche Bulletin etwa ist unter einer eigenen Adresse abrufbar. Vor allem aber entsteht es später als die Sitzung: Eingebettet müsste die gesamte Sitzung erneut geliefert werden, sobald das Protokoll vorliegt, referenziert genügt die Nachlieferung des Protokolls allein.
+Das Protokoll wird **referenziert, nicht eingebettet**: `Meeting.has_protocol` enthält allein den Identifikator, das Protokoll selbst steht als eigener Eintrag in `Container.protocols`. Damit gilt auch hier die Regel, die dieser Standard durchgehend anwendet — eingebettet wird, was keine eigene Identität besitzt (etwa `PersonReference` oder `GroupReference`), referenziert wird, was eine besitzt. Das Protokoll hat eine eigene `global_uri` und ist eigenständig zitierbar; das Amtliche Bulletin etwa ist unter einer eigenen Adresse abrufbar. Vor allem aber entsteht es später als die Sitzung: Eingebettet müsste die gesamte Sitzung erneut geliefert werden, sobald das Protokoll vorliegt, referenziert genügt die Nachlieferung des Protokolls allein.
 
 Innerhalb des Protokolls bleiben die Sammlungen eingebettet, weil sie zusammen mit ihm entstehen und geliefert werden. Wer Abstimmungen oder Wortmeldungen unabhängig vom Protokoll publiziert, liefert sie stattdessen flach in `Container.votings` bzw. `Container.speeches` und verknüpft sie über `parent_meeting` und `parent_agenda_item`.
 
 ```
 Container
   ├─ meetings       → Meeting
-  │                     └─ protocol_ref  → Identifikator des Protokolls
+  │                     └─ has_protocol → Identifikator des Protokolls
   ├─ agenda_items   → AgendaItem  (vorher: geplante Traktanden, parent_meeting)
   └─ protocols      → Protocol    (nachher: Niederschrift, parent_meeting)
                         ├─ protocol_items  → ProtocolItem (wie AgendaItem)

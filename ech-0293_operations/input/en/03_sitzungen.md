@@ -63,7 +63,7 @@ At this level, scheduled and actual times regularly diverge: a sitting scheduled
 
 ### Anchor points
 
-The meeting is the node to which the remaining classes of this standard attach: agenda items (`AgendaItem`), votings and elections (`Voting`, `Election`), speeches (`Speech`) as well as the attendance list (`Attendance.parent_meeting`). `documents` links sitting documents such as the bulletin or annexes, `protocol_ref` the protocol. `parent_meeting` represents sittings that are part of a superordinate sitting; `actor_name`, `group_name` and `group_id` additionally hold body and grouping in plain text.
+The meeting is the node to which the remaining classes of this standard attach: agenda items (`AgendaItem`), votings and elections (`Voting`, `Election`), speeches (`Speech`) as well as the attendance list (`Attendance.parent_meeting`). `documents` links sitting documents such as the bulletin or annexes, `has_protocol` the protocol. `parent_meeting` represents sittings that are part of a superordinate sitting; `actor_name`, `group_name` and `group_id` additionally hold body and grouping in plain text.
 
 {{include:ech-0293_operations/output/docs/Meeting.md}}
 

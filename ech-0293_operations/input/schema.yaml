@@ -150,7 +150,7 @@ classes:
       - parent_meeting
       - parent_legislature
       - documents
-      - protocol_ref
+      - has_protocol
     slot_usage:
       actor_id:
         range: GroupReference
@@ -1236,8 +1236,8 @@ slots:
     multivalued: true
     inlined_as_list: true
 
-  protocol_ref:
-    slot_uri: ops:protocolRef
+  has_protocol:
+    slot_uri: ops:hasProtocol
     description: |
       Reference to the protocol (minutes) of this meeting, recorded after the meeting. Only the identifier of the protocol is given; the protocol itself is delivered in the container's `protocols` list. It is an entity in its own right with its own identifier and is usually published later than the meeting, so it is referenced rather than embedded.
     annotations:
