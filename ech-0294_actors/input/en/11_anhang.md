@@ -1,6 +1,6 @@
 \newpage
 
-# Appendix A – References & Bibliography
+# Annex A – References & Bibliography
 
 Where a version is stated, it is the one this standard was developed against.
 
@@ -34,3 +34,93 @@ The standards of the specialist group are developed jointly and reference one an
 |ISO 639-1|ISO (International Organization for Standardization). Language codes, used in the `language` slot of `MultilingualValue`.|
 |schema.org|Shared vocabulary for structured data. Source of several `slot_uri` assignments: [https://schema.org](https://schema.org)|
 |LinkML|The modelling language in which this standard is defined: [https://linkml.io](https://linkml.io)|
+
+\newpage
+
+# Annex B – Cooperation & Verification
+
+Specialist group "Political Affairs", subgroup "Political Actors":
+
+| | |
+|---|---|
+|Julie Silberstein|Federal Statistical Office|
+|Laurence Brandenberger|University of Zurich, IPZ|
+|Daniela Koller|Canton of Thurgau|
+|Thomas Roth||
+|Stefan Oderbolz|EBP|
+|Fabian Davolio|Parliamentary Services|
+|Orhan Saeedi|Canton of Basel-Stadt|
+|Christian Gutknecht|Glue AG|
+|Michael Luggen|Federal Chancellery|
+
+<!-- TODO specialist group: complete/correct organisations and the version history. -->
+
+| Version | Date | Author | Remark |
+|---|---|---|---|
+| 1.0.0 | 2026-08-10 | Specialist group "Political Affairs" | Submitted as proposal |
+
+# Annex C – Abbreviations and Glossary
+
+| | |
+|---|---|
+|FADP|Swiss Federal Act on Data Protection, in force since 1 September 2023.|
+|I14Y|Interoperability platform of the Federal Statistical Office; source of several code lists.|
+|IRI|Internationalized Resource Identifier. Extension of the URI to the full Unicode character set.|
+|JSON-LD|JSON for Linking Data. Serialisation of linked data in JSON.|
+|LINDAS|Linked Data Service of the Swiss Federal Administration.|
+|LinkML|Linked Data Modeling Language. The modelling language in which this standard is defined.|
+|NOGA|General Classification of Economic Activities of the Federal Statistical Office.|
+|RDF|Resource Description Framework. Data model for linked data; delivered here as Turtle (.ttl).|
+|UID|Business Identification Number. Unique key of a Swiss enterprise according to the Federal Statistical Office.|
+|URI|Uniform Resource Identifier. Unique identifier of a resource.|
+|XSD|XML Schema Definition. W3C recommendation for defining structures of XML documents.|
+
+# Annex D – Changes in comparison to the previous version
+
+This is the first version.
+
+\newpage
+
+# Annex E – Table of Figures
+
+```{=openxml}
+<w:p>
+  <w:r>
+    <w:fldChar w:fldCharType="begin" w:dirty="true"/>
+  </w:r>
+  <w:r>
+    <w:instrText xml:space="preserve"> TOC \h \z \c "Abbildung" </w:instrText>
+  </w:r>
+  <w:r>
+    <w:fldChar w:fldCharType="separate"/>
+  </w:r>
+  <w:r>
+    <w:t>Right-click &gt; "Update field" to generate the table of figures.</w:t>
+  </w:r>
+  <w:r>
+    <w:fldChar w:fldCharType="end"/>
+  </w:r>
+</w:p>
+```
+
+# Annex F – Table of Tables
+
+```{=openxml}
+<w:p>
+  <w:r>
+    <w:fldChar w:fldCharType="begin" w:dirty="true"/>
+  </w:r>
+  <w:r>
+    <w:instrText xml:space="preserve"> TOC \h \z \c "Tabelle" </w:instrText>
+  </w:r>
+  <w:r>
+    <w:fldChar w:fldCharType="separate"/>
+  </w:r>
+  <w:r>
+    <w:t>Right-click &gt; "Update field" to generate the table of tables.</w:t>
+  </w:r>
+  <w:r>
+    <w:fldChar w:fldCharType="end"/>
+  </w:r>
+</w:p>
+```
