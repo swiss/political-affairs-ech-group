@@ -50,6 +50,252 @@ _Container for the records of public council operations: legislatures, sessions,
 
 
 ### Examples
+#### Example Container: legislature
+
+```yaml
+global_uri: ops:legislature_examples
+legislatures:
+
+# Bund: abgeschlossene Legislaturperiode, vier Jahre, dreisprachige Bezeichnung.
+- global_uri: ops:legislature_51
+  wikidata_uri: http://www.wikidata.org/entity/Q71712404
+  spatial: "https://ld.admin.ch/country/CHE"
+  name:
+    - text: "51. Legislaturperiode"
+      language: "de"
+    - text: "51e législature"
+      language: "fr"
+    - text: "51ª legislatura"
+      language: "it"
+  description: "Amtsdauer der am 20. Oktober 2019 gewählten Bundesversammlung; sie endete am Vortag der konstituierenden Sitzung der 52. Legislaturperiode vom 4. Dezember 2023."
+  landing_page: "https://www.parlament.ch/de/ratsbetrieb/sessionen"
+  actor_id:
+    global_uri: "actors:bundesversammlung"
+    label: "Bundesversammlung"
+    abbreviation:
+      - value: "BV"
+        language: de
+  date_begin_actual: "2019-12-02"
+  date_end_actual: "2023-12-03"
+  datetime_created: "2019-12-02T09:00:00+01:00"
+  datetime_modified: "2023-12-04T08:30:00+01:00"
+
+# Kanton mit vierjähriger Amtsdauer; Beginn und Ende sind hier von Gesetzes
+# wegen auf den Tag festgelegt und deshalb schon bei der Planung bekannt.
+- global_uri: ops:legislature_be_2022_2026
+  local_id: "GR-BE-2022-2026"
+  spatial: "https://ld.admin.ch/canton/2"
+  name:
+    - text: "Legislatur 2022–2026"
+      language: "de"
+    - text: "Législature 2022-2026"
+      language: "fr"
+  landing_page: "https://www.gr.be.ch/de/start/grosser-rat.html"
+  actor_id:
+    global_uri: "actors:gr_be"
+    label: "Grosser Rat Bern"
+    abbreviation:
+      - value: "GR"
+        language: de
+  date_begin_planned: "2022-06-01"
+  date_end_planned: "2026-05-31"
+  date_begin_actual: "2022-06-01"
+  date_end_actual: "2026-05-31"
+  datetime_created: "2022-04-01T10:15:00+02:00"
+  datetime_modified: "2026-06-01T07:00:00+02:00"
+
+# Kanton mit fünfjähriger Amtsdauer: laufende Legislatur, deren Ende erst
+# geplant ist -- date_end_actual bleibt deshalb leer.
+- global_uri: ops:legislature_vd_2022_2027
+  wikidata_uri: http://www.wikidata.org/entity/Q131627357
+  spatial: "https://ld.admin.ch/canton/22"
+  name:
+    - text: "Législature 2022-2027"
+      language: "fr"
+  description: "Le Grand Conseil vaudois est élu pour cinq ans."
+  landing_page: "https://www.vd.ch/gc"
+  actor_id:
+    global_uri: "actors:gc_vd"
+    label: "Grand Conseil du canton de Vaud"
+    abbreviation:
+      - value: "GC"
+        language: fr
+  date_begin_actual: "2022-07-01"
+  date_end_planned: "2027-06-30"
+  datetime_created: "2022-05-10T14:00:00+02:00"
+  datetime_modified: "2025-01-08T11:20:00+01:00"
+
+```
+#### Example Container: session
+
+```yaml
+global_uri: ops:sessions_example_2025
+sessions:
+
+- global_uri: ops:session_5207
+  spatial: "https://ld.admin.ch/country/CHE"
+  name:
+    - text: "Frühjahrssession 2025"
+      language: "de"
+    - text: "Session de printemps 2025"
+      language: "fr"
+    - text: "Sessione primaverile 2025"
+      language: "it"
+  url:
+    - text: "https://www.parlament.ch/de/ratsbetrieb/sessionen/fruehjahr-2025"
+      language: "de"
+    - text: "https://www.parlament.ch/fr/ratsbetrieb/sessionen/fruehjahr-2025"
+      language: "fr"
+    - text: "https://www.parlament.ch/it/ratsbetrieb/sessionen/fruehjahr-2025"
+      language: "it"
+  date_begin_planned: "2025-03-03"
+  date_end_planned: "2025-03-21"
+  parent_legislature: ops:legislature_51
+  datetime_modified: "2025-04-24T00:19:37Z"
+  datetime_created: "2025-03-20T14:27:09Z"
+
+- global_uri: ops:session_be_summer_2025
+  spatial: "https://ld.admin.ch/canton/2"
+  name:
+    - text: "Sommersession 2025"
+      language: "de"
+    - text: "Session d'été 2025"
+      language: "fr"
+  url:
+    - text: "https://www.gr.be.ch/de/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8"
+      language: "de"
+    - text: "https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8"
+      language: "fr"
+  date_begin_planned: "2025-06-02"
+  date_end_planned: "2025-06-12"
+  datetime_modified: "2025-05-19T01:06:44Z"
+  datetime_created: "2025-04-25T11:10:24Z"
+
+- global_uri: ops:session_gl_landrat_2025_02_26
+  spatial: "https://ld.admin.ch/canton/8"
+  name:
+    - text: "Sitzung des Landrates vom 26.02.2025"
+      language: "de"
+  url:
+    - text: "https://www.gl.ch/parlament/landrat/landratsprotokolle-ab-30-juni-2010.html/239"
+      language: "de"
+  date_begin_planned: "2025-02-26"
+  date_end_planned: "2025-02-26"
+  datetime_modified: "2025-04-25T13:40:34Z"
+  datetime_created: "2025-04-23T22:58:39Z"
+
+- global_uri: ops:session_gl_landsgemeinde_2025_05_04
+  spatial: "https://ld.admin.ch/canton/8"
+  name:
+    - text: "Landsgemeinde vom 04. Mai 2025"
+      language: "de"
+  url:
+    - text: "https://www.landsgemeinde.gl.ch/landsgemeinde/2025-05-04"
+      language: "de"
+  date_begin_planned: "2025-05-04"
+  date_end_planned: "2025-05-04"
+  datetime_modified: "2025-04-25T13:40:34Z"
+  datetime_created: "2025-04-23T22:58:39Z"
+
+```
+#### Example Container: meeting sr winter25 Sitzung6
+
+```yaml
+global_uri: ops:data_meeting_sr_winter25_Sitzung6
+
+meetings:
+  - global_uri: "parl:sr_winter25_sitzung_6"
+    spatial: "https://ld.admin.ch/country/CHE"
+    meeting_type: "session"
+    name:
+      - text: "Sechste Sitzung"
+        language: "de"
+      - text: "Sixième séance"
+        language: "fr"
+    url:
+      - text: "https://www.parlament.ch/de/ratsbetrieb/suche-Amtliches-bulletin"
+        language: "de"
+    actor_id:
+      global_uri: "actors:staenderat"
+      label: "Ständerat"
+      abbreviation:
+        - value: "SR"
+          language: de
+    actor_name: "Ständerat"
+    datetime_begin_planned: "2025-12-19T08:15:00+01:00"
+    # Referenz auf das Protokoll: nur der Identifikator. Das Protokoll selbst
+    # steht unten unter `protocols` und wird in der Regel spaeter geliefert als
+    # die Sitzung.
+    protocol_ref: "ops:protokoll_sr_winter25_sitzung_6"
+    datetime_created: "2026-01-12T00:00:00+01:00"
+    datetime_modified: "2026-01-12T00:00:00+01:00"
+
+agenda_items:
+  - global_uri: ops:69905
+    parent_meeting: "parl:sr_winter25_sitzung_6"
+    agenda_item_type: "item"
+    datetime_begin_planned: "2025-12-19T09:15:00+01:00"
+    datetime_begin_actual: "2025-12-19T09:20:00+01:00"
+    agenda_item_number: "6"
+    agenda_item_position: 4
+    agenda_item_title:
+      - text: "Postulat Broulis Pascal. Bauprojekte im Mobilitätsbereich. Einen Vergleich durchführen, um die Verzögerungen zu verstehen"
+        language: "de"
+    affair_id: "affairs:24.4471"
+    landing_page: "https://www.parlament.ch/de/ratsbetrieb/amtliches-bulletin/amtliches-bulletin-die-verhandlungen?SubjectId=69905#votum3"
+    agenda_item_category: "agenda_item"
+    datetime_created: "2026-01-12T00:00:00+01:00"
+    datetime_modified: "2026-01-12T00:00:00+01:00"
+
+speeches:
+  - global_uri: ops:366631
+    parent_meeting: "parl:sr_winter25_sitzung_6"
+    parent_agenda_item: "ops:69905"
+    language: "fr"
+    datetime_begin: "2025-12-19T09:20:00+01:00"
+    datetime_end: "2025-12-19T09:25:00+01:00"
+    actor_fullname: "Pascal Broulis"
+    actor_id:
+      global_uri: "actors:person_pascal_broulis"
+      wikidata_uri: "http://www.wikidata.org/entity/Q116407"
+      label: "Pascal Broulis"
+    role: "speaker"
+    text: >-
+      Je remercie la rapporteuse pour son rapport exhaustif. J'ai également lu avec attention
+      les différents commentaires qui ont été effectués sur mon postulat. Cela reste un postulat,
+      ce n'est pas une motion. D'abord, je ne partage pas l'avis selon lequel ce postulat
+      n'apporterait pas une valeur ajoutée. En effet, un "benchmark", à savoir un modèle chiffré
+      de performance, permettrait de mieux comprendre les raisons des retards que notre pays
+      rencontre en comparaison avec les principaux pays européens.
+    text_format: "html"
+    text_type: "final"
+    landing_page: "https://www.parlament.ch/de/ratsbetrieb/amtliches-bulletin/amtliches-bulletin-die-videos?TranscriptId=366631"
+    media_url: "https://par-pcache.simplex.tv/content?externalid=366631"
+    media_type: "video"
+    media_format: "video/mp4"
+
+protocols:
+  - global_uri: ops:protokoll_sr_winter25_sitzung_6
+    parent_meeting: "parl:sr_winter25_sitzung_6"
+    protocol_items:
+      - global_uri: ops:protokollpunkt_69905
+        parent_meeting: "parl:sr_winter25_sitzung_6"
+        agenda_item_type: "item"
+        agenda_item_number: "6"
+        agenda_item_position: 4
+        agenda_item_title:
+          - text: "Postulat Broulis Pascal. Bauprojekte im Mobilitätsbereich. Einen Vergleich durchführen, um die Verzögerungen zu verstehen"
+            language: "de"
+        affair_id: "affairs:24.4471"
+        datetime_begin_actual: "2025-12-19T09:20:00+01:00"
+        landing_page: "https://www.parlament.ch/de/ratsbetrieb/amtliches-bulletin/amtliches-bulletin-die-verhandlungen?SubjectId=69905#votum3"
+        agenda_item_category: "agenda_item"
+        datetime_created: "2026-01-12T00:00:00+01:00"
+        datetime_modified: "2026-01-12T00:00:00+01:00"
+    datetime_created: "2026-01-12T00:00:00+01:00"
+    datetime_modified: "2026-01-12T00:00:00+01:00"
+
+```
 #### Example Container: voting
 
 ```yaml
@@ -428,76 +674,58 @@ agenda_items:
   datetime_modified: "2025-11-20T16:50:00Z"
 
 ```
-#### Example Container: session
+#### Example Container: meeting
 
 ```yaml
-global_uri: ops:sessions_example_2025
-sessions:
+global_uri: ops:meetings_1
+meetings:
+  - spatial: "https://ld.admin.ch/canton/2"
+    global_uri: ops:340dcf932fb044dd8f8c5c943267fbcc
+    meeting_type: "session"
+    name:
+      - text: "Regierungssitzung vom 31. März 2021"
+        language: "de"
+      - text: "Séance du gouvernement du 31 mars 2021"
+        language: "fr"
+    url:
+      - text: "https://www.rr.be.ch/de/start/beschluesse/beschluesse-unterlagen-nach-sitzungen/sitzungs-detail?guid=340dcf932fb044dd8f8c5c943267fbcc"
+        language: "de"
+      - text: "https://www.rr.be.ch/fr/start/beschluesse/beschluesse-unterlagen-nach-sitzungen/sitzungs-detail?guid=340dcf932fb044dd8f8c5c943267fbcc"
+        language: "fr"
+    actor_id:
+      global_uri: "actors:rr_be"
+      label: "Regierungsrat Bern"
+      abbreviation:
+        - value: "RR"
+          language: de
+    actor_name: "Regierungsrat Bern"
+    date_begin_planned: "2021-03-31"
+    date_end_planned: "2021-03-31"
+    datetime_created: "2024-10-28T01:22:26Z"
+    datetime_modified: "2024-11-27T20:40:57Z"
 
-- global_uri: ops:session_5207
-  spatial: "https://ld.admin.ch/country/CHE"
-  name:
-    - text: "Frühjahrssession 2025"
-      language: "de"
-    - text: "Session de printemps 2025"
-      language: "fr"
-    - text: "Sessione primaverile 2025"
-      language: "it"
-  url:
-    - text: "https://www.parlament.ch/de/ratsbetrieb/sessionen/fruehjahr-2025"
-      language: "de"
-    - text: "https://www.parlament.ch/fr/ratsbetrieb/sessionen/fruehjahr-2025"
-      language: "fr"
-    - text: "https://www.parlament.ch/it/ratsbetrieb/sessionen/fruehjahr-2025"
-      language: "it"
-  date_begin_planned: "2025-03-03"
-  date_end_planned: "2025-03-21"
-  parent_legislature: ops:legislature_51
-  datetime_modified: "2025-04-24T00:19:37Z"
-  datetime_created: "2025-03-20T14:27:09Z"
-
-- global_uri: ops:session_be_summer_2025
-  spatial: "https://ld.admin.ch/canton/2"
-  name:
-    - text: "Sommersession 2025"
-      language: "de"
-    - text: "Session d'été 2025"
-      language: "fr"
-  url:
-    - text: "https://www.gr.be.ch/de/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8"
-      language: "de"
-    - text: "https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8"
-      language: "fr"
-  date_begin_planned: "2025-06-02"
-  date_end_planned: "2025-06-12"
-  datetime_modified: "2025-05-19T01:06:44Z"
-  datetime_created: "2025-04-25T11:10:24Z"
-
-- global_uri: ops:session_gl_landrat_2025_02_26
-  spatial: "https://ld.admin.ch/canton/8"
-  name:
-    - text: "Sitzung des Landrates vom 26.02.2025"
-      language: "de"
-  url:
-    - text: "https://www.gl.ch/parlament/landrat/landratsprotokolle-ab-30-juni-2010.html/239"
-      language: "de"
-  date_begin_planned: "2025-02-26"
-  date_end_planned: "2025-02-26"
-  datetime_modified: "2025-04-25T13:40:34Z"
-  datetime_created: "2025-04-23T22:58:39Z"
-
-- global_uri: ops:session_gl_landsgemeinde_2025_05_04
-  spatial: "https://ld.admin.ch/canton/8"
-  name:
-    - text: "Landsgemeinde vom 04. Mai 2025"
-      language: "de"
-  url:
-    - text: "https://www.landsgemeinde.gl.ch/landsgemeinde/2025-05-04"
-      language: "de"
-  date_begin_planned: "2025-05-04"
-  date_end_planned: "2025-05-04"
-  datetime_modified: "2025-04-25T13:40:34Z"
-  datetime_created: "2025-04-23T22:58:39Z"
+  - spatial: "https://ld.admin.ch/canton/2"
+    global_uri: ops:e7c5d453-848a-430a-b024-1dd2f6873aa6
+    meeting_type: "session"
+    name:
+      - text: "Donnerstag (Nachmittag)"
+        language: "de"
+    url:
+      - text: "https://www.gr.be.ch/de/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8"
+        language: "de"
+      - text: "https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8"
+        language: "fr"
+    actor_id:
+      global_uri: "actors:gr_be"
+      label: "Grosser Rat Bern"
+      abbreviation:
+        - value: "GR"
+          language: de
+    actor_name: "Grosser Rat Bern"
+    date_begin_planned: "2025-06-05"
+    date_end_planned: "2025-06-05"
+    datetime_created: "2025-04-25T11:10:25Z"
+    datetime_modified: "2025-05-19T01:06:45Z"
 
 ```
 #### Example Container: meeting item
@@ -716,207 +944,6 @@ agenda_items:
     affair_id: affairs:2023P_102
     datetime_created: '2025-01-29T06:59:41Z'
     datetime_modified: '2025-01-29T06:59:41Z'
-
-```
-#### Example Container: legislature
-
-```yaml
-global_uri: ops:legislature_examples
-legislatures:
-
-# Bund: abgeschlossene Legislaturperiode, vier Jahre, dreisprachige Bezeichnung.
-- global_uri: ops:legislature_51
-  wikidata_uri: http://www.wikidata.org/entity/Q71712404
-  spatial: "https://ld.admin.ch/country/CHE"
-  name:
-    - text: "51. Legislaturperiode"
-      language: "de"
-    - text: "51e législature"
-      language: "fr"
-    - text: "51ª legislatura"
-      language: "it"
-  description: "Amtsdauer der am 20. Oktober 2019 gewählten Bundesversammlung; sie endete am Vortag der konstituierenden Sitzung der 52. Legislaturperiode vom 4. Dezember 2023."
-  landing_page: "https://www.parlament.ch/de/ratsbetrieb/sessionen"
-  actor_id:
-    global_uri: "actors:bundesversammlung"
-    label: "Bundesversammlung"
-    abbreviation:
-      - value: "BV"
-        language: de
-  date_begin_actual: "2019-12-02"
-  date_end_actual: "2023-12-03"
-  datetime_created: "2019-12-02T09:00:00+01:00"
-  datetime_modified: "2023-12-04T08:30:00+01:00"
-
-# Kanton mit vierjähriger Amtsdauer; Beginn und Ende sind hier von Gesetzes
-# wegen auf den Tag festgelegt und deshalb schon bei der Planung bekannt.
-- global_uri: ops:legislature_be_2022_2026
-  local_id: "GR-BE-2022-2026"
-  spatial: "https://ld.admin.ch/canton/2"
-  name:
-    - text: "Legislatur 2022–2026"
-      language: "de"
-    - text: "Législature 2022-2026"
-      language: "fr"
-  landing_page: "https://www.gr.be.ch/de/start/grosser-rat.html"
-  actor_id:
-    global_uri: "actors:gr_be"
-    label: "Grosser Rat Bern"
-    abbreviation:
-      - value: "GR"
-        language: de
-  date_begin_planned: "2022-06-01"
-  date_end_planned: "2026-05-31"
-  date_begin_actual: "2022-06-01"
-  date_end_actual: "2026-05-31"
-  datetime_created: "2022-04-01T10:15:00+02:00"
-  datetime_modified: "2026-06-01T07:00:00+02:00"
-
-# Kanton mit fünfjähriger Amtsdauer: laufende Legislatur, deren Ende erst
-# geplant ist -- date_end_actual bleibt deshalb leer.
-- global_uri: ops:legislature_vd_2022_2027
-  wikidata_uri: http://www.wikidata.org/entity/Q131627357
-  spatial: "https://ld.admin.ch/canton/22"
-  name:
-    - text: "Législature 2022-2027"
-      language: "fr"
-  description: "Le Grand Conseil vaudois est élu pour cinq ans."
-  landing_page: "https://www.vd.ch/gc"
-  actor_id:
-    global_uri: "actors:gc_vd"
-    label: "Grand Conseil du canton de Vaud"
-    abbreviation:
-      - value: "GC"
-        language: fr
-  date_begin_actual: "2022-07-01"
-  date_end_planned: "2027-06-30"
-  datetime_created: "2022-05-10T14:00:00+02:00"
-  datetime_modified: "2025-01-08T11:20:00+01:00"
-
-```
-#### Example Container: meeting
-
-```yaml
-global_uri: ops:meetings_1
-meetings:
-  - spatial: "https://ld.admin.ch/canton/2"
-    global_uri: ops:340dcf932fb044dd8f8c5c943267fbcc
-    meeting_type: "session"
-    name:
-      - text: "Regierungssitzung vom 31. März 2021"
-        language: "de"
-      - text: "Séance du gouvernement du 31 mars 2021"
-        language: "fr"
-    url:
-      - text: "https://www.rr.be.ch/de/start/beschluesse/beschluesse-unterlagen-nach-sitzungen/sitzungs-detail?guid=340dcf932fb044dd8f8c5c943267fbcc"
-        language: "de"
-      - text: "https://www.rr.be.ch/fr/start/beschluesse/beschluesse-unterlagen-nach-sitzungen/sitzungs-detail?guid=340dcf932fb044dd8f8c5c943267fbcc"
-        language: "fr"
-    actor_id:
-      global_uri: "actors:rr_be"
-      label: "Regierungsrat Bern"
-      abbreviation:
-        - value: "RR"
-          language: de
-    actor_name: "Regierungsrat Bern"
-    date_begin_planned: "2021-03-31"
-    date_end_planned: "2021-03-31"
-    datetime_created: "2024-10-28T01:22:26Z"
-    datetime_modified: "2024-11-27T20:40:57Z"
-
-  - spatial: "https://ld.admin.ch/canton/2"
-    global_uri: ops:e7c5d453-848a-430a-b024-1dd2f6873aa6
-    meeting_type: "session"
-    name:
-      - text: "Donnerstag (Nachmittag)"
-        language: "de"
-    url:
-      - text: "https://www.gr.be.ch/de/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8"
-        language: "de"
-      - text: "https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8"
-        language: "fr"
-    actor_id:
-      global_uri: "actors:gr_be"
-      label: "Grosser Rat Bern"
-      abbreviation:
-        - value: "GR"
-          language: de
-    actor_name: "Grosser Rat Bern"
-    date_begin_planned: "2025-06-05"
-    date_end_planned: "2025-06-05"
-    datetime_created: "2025-04-25T11:10:25Z"
-    datetime_modified: "2025-05-19T01:06:45Z"
-
-```
-#### Example Container: meeting sr winter25 Sitzung6
-
-```yaml
-global_uri: ops:data_meeting_sr_winter25_Sitzung6
-
-meetings:
-  - global_uri: "parl:sr_winter25_sitzung_6"
-    spatial: "https://ld.admin.ch/country/CHE"
-    meeting_type: "session"
-    name:
-      - text: "Sechste Sitzung"
-        language: "de"
-      - text: "Sixième séance"
-        language: "fr"
-    url:
-      - text: "https://www.parlament.ch/de/ratsbetrieb/suche-Amtliches-bulletin"
-        language: "de"
-    actor_id:
-      global_uri: "actors:staenderat"
-      label: "Ständerat"
-      abbreviation:
-        - value: "SR"
-          language: de
-    actor_name: "Ständerat"
-    datetime_begin_planned: "2025-12-19T08:15:00+01:00"
-    datetime_created: "2026-01-12T00:00:00+01:00"
-    datetime_modified: "2026-01-12T00:00:00+01:00"
-
-agenda_items:
-  - global_uri: ops:69905
-    parent_meeting: "parl:sr_winter25_sitzung_6"
-    agenda_item_type: "item"
-    datetime_begin_planned: "2025-12-19T09:15:00+01:00"
-    datetime_begin_actual: "2025-12-19T09:20:00+01:00"
-    agenda_item_number: "6"
-    agenda_item_position: 4
-    agenda_item_title:
-      - text: "Postulat Broulis Pascal. Bauprojekte im Mobilitätsbereich. Einen Vergleich durchführen, um die Verzögerungen zu verstehen"
-        language: "de"
-    affair_id: "affairs:24.4471"
-    landing_page: "https://www.parlament.ch/de/ratsbetrieb/amtliches-bulletin/amtliches-bulletin-die-verhandlungen?SubjectId=69905#votum3"
-    agenda_item_category: "agenda_item"
-    datetime_created: "2026-01-12T00:00:00+01:00"
-    datetime_modified: "2026-01-12T00:00:00+01:00"
-
-speeches:
-  - global_uri: ops:366631
-    language: "fr"
-    datetime_begin: "2025-12-19T09:20:00+01:00"
-    datetime_end: "2025-12-19T09:25:00+01:00"
-    actor_fullname: "Pascal Broulis"
-    actor_id:
-      global_uri: "actors:person_pascal_broulis"
-      wikidata_uri: "http://www.wikidata.org/entity/Q116407"
-      label: "Pascal Broulis"
-    role: "speaker"
-    text: >-
-      Je remercie la rapporteuse pour son rapport exhaustif. J'ai également lu avec attention
-      les différents commentaires qui ont été effectués sur mon postulat. Cela reste un postulat,
-      ce n'est pas une motion. D'abord, je ne partage pas l'avis selon lequel ce postulat
-      n'apporterait pas une valeur ajoutée. En effet, un "benchmark", à savoir un modèle chiffré
-      de performance, permettrait de mieux comprendre les raisons des retards que notre pays
-      rencontre en comparaison avec les principaux pays européens.
-    text_format: "html"
-    text_type: "final"
-    landing_page: "https://www.parlament.ch/de/ratsbetrieb/amtliches-bulletin/amtliches-bulletin-die-videos?TranscriptId=366631"
-    media_url: "https://par-pcache.simplex.tv/content?externalid=366631"
-    media_type: "video"
-    media_format: "video/mp4"
 
 ```
 

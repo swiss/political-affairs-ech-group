@@ -7,6 +7,7 @@
 ops:data_meeting_sr_winter25_Sitzung6 a ops:Container ;
     ops:agendaItem ops:69905 ;
     ops:meeting parl:sr_winter25_sitzung_6 ;
+    ops:protocol ops:protokoll_sr_winter25_sitzung_6 ;
     ops:speech ops:366631 .
 
 ops:366631 a ops:Speech ;
@@ -21,6 +22,8 @@ ops:366631 a ops:Speech ;
     ops:media_format "video/mp4" ;
     ops:media_type "video" ;
     ops:media_url "https://par-pcache.simplex.tv/content?externalid=366631" ;
+    ops:parent_agenda_item "ops:69905" ;
+    ops:parent_meeting "parl:sr_winter25_sitzung_6" ;
     ops:role "speaker" ;
     ops:text "Je remercie la rapporteuse pour son rapport exhaustif. J'ai également lu avec attention les différents commentaires qui ont été effectués sur mon postulat. Cela reste un postulat, ce n'est pas une motion. D'abord, je ne partage pas l'avis selon lequel ce postulat n'apporterait pas une valeur ajoutée. En effet, un \"benchmark\", à savoir un modèle chiffré de performance, permettrait de mieux comprendre les raisons des retards que notre pays rencontre en comparaison avec les principaux pays européens." ;
     ops:text_format "html" ;
@@ -43,6 +46,21 @@ ops:69905 a ops:AgendaItem ;
     mcm:datetimeCreated "2026-01-12T00:00:00+01:00"^^xsd:dateTime ;
     mcm:datetimeModified "2026-01-12T00:00:00+01:00"^^xsd:dateTime .
 
+ops:protokollpunkt_69905 a ops:ProtocolItem ;
+    ops:affair_id "affairs:24.4471" ;
+    ops:agenda_item_category "agenda_item" ;
+    ops:agenda_item_number "6" ;
+    ops:agenda_item_position 4 ;
+    ops:agenda_item_title [ a ops:MultilingualString ;
+            ops:text "Postulat Broulis Pascal. Bauprojekte im Mobilitätsbereich. Einen Vergleich durchführen, um die Verzögerungen zu verstehen" ;
+            mcm:language "de" ] ;
+    ops:agenda_item_type <https://ch.paf.link/schema/operations/enum/agenda_item_type/item> ;
+    ops:landingPage "https://www.parlament.ch/de/ratsbetrieb/amtliches-bulletin/amtliches-bulletin-die-verhandlungen?SubjectId=69905#votum3" ;
+    ops:parent_meeting "parl:sr_winter25_sitzung_6" ;
+    mcm:datetimeBeginActual "2025-12-19T09:20:00+01:00"^^xsd:dateTime ;
+    mcm:datetimeCreated "2026-01-12T00:00:00+01:00"^^xsd:dateTime ;
+    mcm:datetimeModified "2026-01-12T00:00:00+01:00"^^xsd:dateTime .
+
 parl:sr_winter25_sitzung_6 a ops:Meeting ;
     ops:actor_id [ a mcm:GroupReference ;
             mcm:abbreviation [ a mcm:MultilingualValue ;
@@ -53,16 +71,23 @@ parl:sr_winter25_sitzung_6 a ops:Meeting ;
     ops:actor_name "Ständerat" ;
     ops:meetingType <https://ch.paf.link/schema/operations/enum/meeting_type/session> ;
     ops:name [ a ops:MultilingualString ;
-            ops:text "Sechste Sitzung" ;
-            mcm:language "de" ],
-        [ a ops:MultilingualString ;
             ops:text "Sixième séance" ;
-            mcm:language "fr" ] ;
+            mcm:language "fr" ],
+        [ a ops:MultilingualString ;
+            ops:text "Sechste Sitzung" ;
+            mcm:language "de" ] ;
+    ops:protocolRef ops:protokoll_sr_winter25_sitzung_6 ;
     ops:spatial "https://ld.admin.ch/country/CHE" ;
     ops:url [ a ops:MultilingualString ;
             ops:text "https://www.parlament.ch/de/ratsbetrieb/suche-Amtliches-bulletin" ;
             mcm:language "de" ] ;
     mcm:datetimeBeginPlanned "2025-12-19T08:15:00+01:00"^^xsd:dateTime ;
+    mcm:datetimeCreated "2026-01-12T00:00:00+01:00"^^xsd:dateTime ;
+    mcm:datetimeModified "2026-01-12T00:00:00+01:00"^^xsd:dateTime .
+
+ops:protokoll_sr_winter25_sitzung_6 a ops:Protocol ;
+    ops:parent_meeting "parl:sr_winter25_sitzung_6" ;
+    ops:protocolItem ops:protokollpunkt_69905 ;
     mcm:datetimeCreated "2026-01-12T00:00:00+01:00"^^xsd:dateTime ;
     mcm:datetimeModified "2026-01-12T00:00:00+01:00"^^xsd:dateTime .
 

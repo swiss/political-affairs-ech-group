@@ -6,7 +6,7 @@ search:
 # Slot: protocol_ref 
 
 
-_Le procès-verbal de cette séance, établi après celle-ci._
+_Référence au procès-verbal de cette séance, établi après celle-ci. Seul l'identifiant du procès-verbal est indiqué ; le procès-verbal lui-même est livré dans la liste `protocols` du conteneur. Il constitue une entité à part entière dotée de son propre identifiant et est en règle générale publié après la séance, raison pour laquelle il est référencé et non imbriqué._
 
 
 
@@ -67,15 +67,27 @@ name: protocol_ref
 annotations:
   description_de:
     tag: description_de
-    value: 'Das nach der Sitzung erstellte Protokoll dieser Sitzung.
+    value: 'Referenz auf das nach der Sitzung erstellte Protokoll dieser Sitzung.
+      Angegeben wird nur der Identifikator des Protokolls; das Protokoll selbst wird
+      in der Liste `protocols` des Containers geliefert. Es ist eine eigenständige
+      Entität mit eigenem Identifikator und wird in der Regel später veröffentlicht
+      als die Sitzung, weshalb es referenziert und nicht eingebettet wird.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Le procès-verbal de cette séance, établi après celle-ci.
+    value: 'Référence au procès-verbal de cette séance, établi après celle-ci. Seul
+      l''identifiant du procès-verbal est indiqué ; le procès-verbal lui-même est
+      livré dans la liste `protocols` du conteneur. Il constitue une entité à part
+      entière dotée de son propre identifiant et est en règle générale publié après
+      la séance, raison pour laquelle il est référencé et non imbriqué.
 
       '
-description: 'Le procès-verbal de cette séance, établi après celle-ci.
+description: 'Référence au procès-verbal de cette séance, établi après celle-ci. Seul
+  l''identifiant du procès-verbal est indiqué ; le procès-verbal lui-même est livré
+  dans la liste `protocols` du conteneur. Il constitue une entité à part entière dotée
+  de son propre identifiant et est en règle générale publié après la séance, raison
+  pour laquelle il est référencé et non imbriqué.
 
   '
 from_schema: https://ch.paf.link/schema/operations
@@ -84,7 +96,6 @@ slot_uri: ops:protocolRef
 domain_of:
 - Meeting
 range: Protocol
-inlined: true
 
 ```
 </details></div>

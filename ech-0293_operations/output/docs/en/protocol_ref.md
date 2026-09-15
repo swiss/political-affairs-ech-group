@@ -6,7 +6,7 @@ search:
 # Slot: protocol_ref 
 
 
-_The protocol (minutes) of this meeting, recorded after the meeting._
+_Reference to the protocol (minutes) of this meeting, recorded after the meeting. Only the identifier of the protocol is given; the protocol itself is delivered in the container's `protocols` list. It is an entity in its own right with its own identifier and is usually published later than the meeting, so it is referenced rather than embedded._
 
 
 
@@ -67,15 +67,27 @@ name: protocol_ref
 annotations:
   description_de:
     tag: description_de
-    value: 'Das nach der Sitzung erstellte Protokoll dieser Sitzung.
+    value: 'Referenz auf das nach der Sitzung erstellte Protokoll dieser Sitzung.
+      Angegeben wird nur der Identifikator des Protokolls; das Protokoll selbst wird
+      in der Liste `protocols` des Containers geliefert. Es ist eine eigenständige
+      Entität mit eigenem Identifikator und wird in der Regel später veröffentlicht
+      als die Sitzung, weshalb es referenziert und nicht eingebettet wird.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Le procès-verbal de cette séance, établi après celle-ci.
+    value: 'Référence au procès-verbal de cette séance, établi après celle-ci. Seul
+      l''identifiant du procès-verbal est indiqué ; le procès-verbal lui-même est
+      livré dans la liste `protocols` du conteneur. Il constitue une entité à part
+      entière dotée de son propre identifiant et est en règle générale publié après
+      la séance, raison pour laquelle il est référencé et non imbriqué.
 
       '
-description: 'The protocol (minutes) of this meeting, recorded after the meeting.
+description: 'Reference to the protocol (minutes) of this meeting, recorded after
+  the meeting. Only the identifier of the protocol is given; the protocol itself is
+  delivered in the container''s `protocols` list. It is an entity in its own right
+  with its own identifier and is usually published later than the meeting, so it is
+  referenced rather than embedded.
 
   '
 from_schema: https://ch.paf.link/schema/operations
@@ -84,7 +96,6 @@ slot_uri: ops:protocolRef
 domain_of:
 - Meeting
 range: Protocol
-inlined: true
 
 ```
 </details></div>

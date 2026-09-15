@@ -151,4 +151,8 @@ The field **speech_type** can distinguish various kinds:
 - **procedural**: procedural motion
 - **declaration**: declaration
 
+### Placing a speech within the sitting
+
+`parent_meeting` and `parent_agenda_item` record in which sitting and under which agenda item a speech was given. Both are needed because a speech can be delivered in two ways: embedded in the protocol, where the sitting follows from the surrounding `Protocol` but the agenda item does not — or flat in `Container.speeches`, where without these references any link would be missing. They carry the same values as on `Voting` and `Election` and thus make the speech evaluable regardless of the delivery form it came in.
+
 {{include:ech-0293_operations/output/docs/Speech.md}}

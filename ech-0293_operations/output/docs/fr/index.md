@@ -139,15 +139,15 @@ Name: operations
 | [name](name.md) | Désignation complète multilingue |
 | [number](number.md) | Numéro courant, p |
 | [optional](optional.md) | Indique si la séance ou le vote est facultatif |
-| [parent_agenda_item](parent_agenda_item.md) | Au besoin, ce slot permet de construire une hiérarchie de points de l'ordre d... |
+| [parent_agenda_item](parent_agenda_item.md) | Identifiant du point de l'ordre du jour auquel cet enregistrement se rattache |
 | [parent_attendance](parent_attendance.md) | L'agrégat Attendance auquel appartient cette constatation individuelle de pré... |
 | [parent_legislature](parent_legislature.md) | La législature dans le cadre de laquelle la séance a lieu |
-| [parent_meeting](parent_meeting.md) | Identifiant de la séance liée qui regroupe la séance courante |
+| [parent_meeting](parent_meeting.md) | Identifiant de la séance à laquelle cet enregistrement se rattache |
 | [parent_type](parent_type.md) | Type de l'objet parent (séance, point de l'ordre du jour, intervention, affai... |
 | [parent_voting](parent_voting.md) | L'identifiant du vote auquel se rattache la voix individuelle |
 | [position](position.md) | Position (nombre entier) au sein de la séquence supérieure |
 | [protocol_items](protocol_items.md) | Points de l'ordre du jour tels qu'ils ont effectivement été consignés au proc... |
-| [protocol_ref](protocol_ref.md) | Le procès-verbal de cette séance, établi après celle-ci |
+| [protocol_ref](protocol_ref.md) | Référence au procès-verbal de cette séance, établi après celle-ci |
 | [protocols](protocols.md) | Ensemble des procès-verbaux |
 | [reason](reason.md) | Motif de l'absence ou du retard (texte libre, multilingue) |
 | [remark](remark.md) | Remarque ou note en texte libre pour les cas particuliers ou pour un contexte... |

@@ -139,15 +139,15 @@ Name: operations
 | [name](name.md) | Multilingual full designation |
 | [number](number.md) | Sequential number, e |
 | [optional](optional.md) | Indicates if the meeting or voting is optional |
-| [parent_agenda_item](parent_agenda_item.md) | If needed, this slot builds a hierarchy of agenda items |
+| [parent_agenda_item](parent_agenda_item.md) | Identifier of the agenda item this record belongs to |
 | [parent_attendance](parent_attendance.md) | The Attendance aggregate this individual attendance record belongs to |
 | [parent_legislature](parent_legislature.md) | The legislative body in which the meeting is based |
-| [parent_meeting](parent_meeting.md) | The linked meeting ID that groups the current meeting |
+| [parent_meeting](parent_meeting.md) | Identifier of the meeting this record belongs to |
 | [parent_type](parent_type.md) | Type of parent object (meeting, agenda, speech, affair) |
 | [parent_voting](parent_voting.md) | The ID of the voting associated with the individual vote |
 | [position](position.md) | Integer position within the superordinate sequence |
 | [protocol_items](protocol_items.md) | Agenda items as actually recorded in the protocol |
-| [protocol_ref](protocol_ref.md) | The protocol (minutes) of this meeting, recorded after the meeting |
+| [protocol_ref](protocol_ref.md) | Reference to the protocol (minutes) of this meeting, recorded after the meeti... |
 | [protocols](protocols.md) | Collection of protocol records |
 | [reason](reason.md) | Reason for absence or lateness (free-text, multilingual) |
 | [remark](remark.md) | Free-text remark or note for edge cases or additional context on a process st... |

@@ -199,14 +199,14 @@
                     ]
                 },
                 "parent_agenda_item": {
-                    "description": "If needed, this slot builds a hierarchy of agenda items.\n",
+                    "description": "Identifier of the agenda item this record belongs to. On an agenda item it builds a hierarchy of agenda items; on a voting, election or speech it names the agenda item under which the record was handled.\n",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
                 "parent_meeting": {
-                    "description": "The linked meeting ID that groups the current meeting.\n",
+                    "description": "Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.\n",
                     "type": [
                         "string",
                         "null"
@@ -333,7 +333,7 @@
                     ]
                 },
                 "parent_meeting": {
-                    "description": "The linked meeting ID that groups the current meeting.\n",
+                    "description": "Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.\n",
                     "type": [
                         "string",
                         "null"
@@ -701,14 +701,14 @@
                     "description": "Type of majority required for the vote (absolute, two-thirds, etc.).\n"
                 },
                 "parent_agenda_item": {
-                    "description": "If needed, this slot builds a hierarchy of agenda items.\n",
+                    "description": "Identifier of the agenda item this record belongs to. On an agenda item it builds a hierarchy of agenda items; on a voting, election or speech it names the agenda item under which the record was handled.\n",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
                 "parent_meeting": {
-                    "description": "The linked meeting ID that groups the current meeting.\n",
+                    "description": "Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.\n",
                     "type": [
                         "string",
                         "null"
@@ -1982,7 +1982,7 @@
                     ]
                 },
                 "parent_meeting": {
-                    "description": "The linked meeting ID that groups the current meeting.\n",
+                    "description": "Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.\n",
                     "type": [
                         "string",
                         "null"
@@ -1996,15 +1996,11 @@
                     ]
                 },
                 "protocol_ref": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/$defs/Protocol"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "The protocol (minutes) of this meeting, recorded after the meeting.\n"
+                    "description": "Reference to the protocol (minutes) of this meeting, recorded after the meeting. Only the identifier of the protocol is given; the protocol itself is delivered in the container's `protocols` list. It is an entity in its own right with its own identifier and is usually published later than the meeting, so it is referenced rather than embedded.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "sequential_number": {
                     "description": "Sequential number of the meeting, used for ordering.\n",
@@ -2312,7 +2308,7 @@
                     ]
                 },
                 "parent_meeting": {
-                    "description": "The linked meeting ID that groups the current meeting.\n",
+                    "description": "Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.\n",
                     "type": [
                         "string",
                         "null"
@@ -2571,14 +2567,14 @@
                     ]
                 },
                 "parent_agenda_item": {
-                    "description": "If needed, this slot builds a hierarchy of agenda items.\n",
+                    "description": "Identifier of the agenda item this record belongs to. On an agenda item it builds a hierarchy of agenda items; on a voting, election or speech it names the agenda item under which the record was handled.\n",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
                 "parent_meeting": {
-                    "description": "The linked meeting ID that groups the current meeting.\n",
+                    "description": "Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.\n",
                     "type": [
                         "string",
                         "null"
@@ -3018,6 +3014,20 @@
                         "null"
                     ]
                 },
+                "parent_agenda_item": {
+                    "description": "Identifier of the agenda item this record belongs to. On an agenda item it builds a hierarchy of agenda items; on a voting, election or speech it names the agenda item under which the record was handled.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "parent_meeting": {
+                    "description": "Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "role": {
                     "description": "Role of the person (e.g., commission speaker).\n",
                     "type": [
@@ -3269,14 +3279,14 @@
                     ]
                 },
                 "parent_agenda_item": {
-                    "description": "If needed, this slot builds a hierarchy of agenda items.\n",
+                    "description": "Identifier of the agenda item this record belongs to. On an agenda item it builds a hierarchy of agenda items; on a voting, election or speech it names the agenda item under which the record was handled.\n",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
                 "parent_meeting": {
-                    "description": "The linked meeting ID that groups the current meeting.\n",
+                    "description": "Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.\n",
                     "type": [
                         "string",
                         "null"

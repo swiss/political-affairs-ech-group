@@ -32,6 +32,7 @@
         ],
         "global_uri": "actors:staenderat"
       },
+      "protocol_ref": "ops:protokoll_sr_winter25_sitzung_6",
       "datetime_begin_planned": "2025-12-19T08:15:00+01:00",
       "datetime_created": "2026-01-12T00:00:00+01:00",
       "datetime_modified": "2026-01-12T00:00:00+01:00"
@@ -59,10 +60,41 @@
       "datetime_modified": "2026-01-12T00:00:00+01:00"
     }
   ],
+  "protocols": [
+    {
+      "global_uri": "ops:protokoll_sr_winter25_sitzung_6",
+      "parent_meeting": "parl:sr_winter25_sitzung_6",
+      "protocol_items": [
+        {
+          "global_uri": "ops:protokollpunkt_69905",
+          "parent_meeting": "parl:sr_winter25_sitzung_6",
+          "agenda_item_type": "item",
+          "agenda_item_number": "6",
+          "agenda_item_position": 4,
+          "agenda_item_title": [
+            {
+              "text": "Postulat Broulis Pascal. Bauprojekte im Mobilitätsbereich. Einen Vergleich durchführen, um die Verzögerungen zu verstehen",
+              "language": "de"
+            }
+          ],
+          "affair_id": "affairs:24.4471",
+          "landing_page": "https://www.parlament.ch/de/ratsbetrieb/amtliches-bulletin/amtliches-bulletin-die-verhandlungen?SubjectId=69905#votum3",
+          "agenda_item_category": "agenda_item",
+          "datetime_begin_actual": "2025-12-19T09:20:00+01:00",
+          "datetime_created": "2026-01-12T00:00:00+01:00",
+          "datetime_modified": "2026-01-12T00:00:00+01:00"
+        }
+      ],
+      "datetime_created": "2026-01-12T00:00:00+01:00",
+      "datetime_modified": "2026-01-12T00:00:00+01:00"
+    }
+  ],
   "speeches": [
     {
       "global_uri": "ops:366631",
       "text": "Je remercie la rapporteuse pour son rapport exhaustif. J'ai également lu avec attention les différents commentaires qui ont été effectués sur mon postulat. Cela reste un postulat, ce n'est pas une motion. D'abord, je ne partage pas l'avis selon lequel ce postulat n'apporterait pas une valeur ajoutée. En effet, un \"benchmark\", à savoir un modèle chiffré de performance, permettrait de mieux comprendre les raisons des retards que notre pays rencontre en comparaison avec les principaux pays européens.",
+      "parent_meeting": "parl:sr_winter25_sitzung_6",
+      "parent_agenda_item": "ops:69905",
       "language": "fr",
       "datetime_begin": "2025-12-19T09:20:00+01:00",
       "datetime_end": "2025-12-19T09:25:00+01:00",

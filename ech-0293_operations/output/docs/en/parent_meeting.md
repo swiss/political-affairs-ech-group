@@ -6,7 +6,7 @@ search:
 # Slot: parent_meeting 
 
 
-_The linked meeting ID that groups the current meeting._
+_Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose._
 
 
 
@@ -32,6 +32,7 @@ URI: [ops:parent_meeting](https://ch.paf.link/schema/operations/parent_meeting)
 | [Voting](Voting.md) | A voting procedure with individual votes and results |  no  |
 | [Election](Election.md) | An election procedure for selecting persons to positions |  no  |
 | [Attendance](Attendance.md) | Aggregated attendance record for a meeting (number of members present, absent... |  no  |
+| [Speech](Speech.md) | A speech or statement made during a meeting (also called Votum or speaker seg... |  no  |
 | [ProtocolItem](ProtocolItem.md) | An agenda item as actually recorded in the protocol |  no  |
 
 
@@ -46,7 +47,7 @@ URI: [ops:parent_meeting](https://ch.paf.link/schema/operations/parent_meeting)
 | Property | Value |
 | --- | --- |
 | Range | [String](String.md) |
-| Domain Of | [Meeting](Meeting.md), [AgendaItem](AgendaItem.md), [Protocol](Protocol.md), [Voting](Voting.md), [Election](Election.md), [Attendance](Attendance.md) |
+| Domain Of | [Meeting](Meeting.md), [AgendaItem](AgendaItem.md), [Protocol](Protocol.md), [Voting](Voting.md), [Election](Election.md), [Attendance](Attendance.md), [Speech](Speech.md) |
 
 ### Cardinality and Requirements
 
@@ -72,15 +73,22 @@ name: parent_meeting
 annotations:
   description_de:
     tag: description_de
-    value: 'Die verknüpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert.
+    value: 'Identifikator der Sitzung, zu der dieser Eintrag gehört. Bei einer Sitzung
+      bezeichnet er die übergeordnete Sitzung, bei Traktandum, Abstimmung, Wahl, Wortmeldung
+      oder Protokoll die Sitzung, in der der Eintrag entstanden ist.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Identifiant de la séance liée qui regroupe la séance courante.
+    value: 'Identifiant de la séance à laquelle cet enregistrement se rattache. Pour
+      une séance, il désigne la séance supérieure ; pour un point de l''ordre du jour,
+      un vote, une élection, une intervention ou un procès-verbal, la séance au cours
+      de laquelle l''enregistrement est né.
 
       '
-description: 'The linked meeting ID that groups the current meeting.
+description: 'Identifier of the meeting this record belongs to. On a meeting it names
+  the superordinate meeting; on an agenda item, voting, election, speech or protocol
+  it names the meeting in which the record arose.
 
   '
 from_schema: https://ch.paf.link/schema/operations
@@ -92,6 +100,7 @@ domain_of:
 - Voting
 - Election
 - Attendance
+- Speech
 range: string
 
 ```

@@ -31,8 +31,8 @@ _Ein Wahlverfahren zur Wahl von Personen in Positionen._
 | majority_type | 0..1 <br/> [MajorityTypeEnum](MajorityTypeEnum.md) | Art der für die Abstimmung erforderlichen Mehrheit (absolut, Zweidrittel usw.).  |
 | majority_count | 0..1 <br/> [Integer](Integer.md) | Anzahl der Stimmen, die für die relevante Mehrheitsschwelle erforderlich sind.  |
 | result_text | 0..1 <br/> [String](String.md) | Freitext zur Beschreibung des Ergebnisses der Abstimmung, z.B. „Mit 78 Stimmen angenommen“.  |
-| parent_meeting | 0..1 <br/> [String](String.md) | Die verknüpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert.  |
-| parent_agenda_item | 0..1 <br/> [String](String.md) | Wenn erforderlich, baut dieser Slot eine Hierarchie von Traktanden auf.  |
+| parent_meeting | 0..1 <br/> [String](String.md) | Identifikator der Sitzung, zu der dieser Eintrag gehört. Bei einer Sitzung bezeichnet er die übergeordnete Sitzung, bei Traktandum, Abstimmung, Wahl, Wortmeldung oder Protokoll die Sitzung, in der der Eintrag entstanden ist.  |
+| parent_agenda_item | 0..1 <br/> [String](String.md) | Identifikator des Traktandums, zu dem dieser Eintrag gehört. Bei einem Traktandum baut er eine Hierarchie von Traktanden auf, bei Abstimmung, Wahl oder Wortmeldung bezeichnet er das Traktandum, unter dem der Eintrag behandelt wurde.  |
 | affair_id | 0..1 <br/> [String](String.md) | Die Verbindung zu den Geschäften des Traktandums.  |
 | actor_id | 0..1 <br/> [GroupReference](GroupReference.md) | Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
 | documents | * <br/> [Work](Work.md) | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.  |

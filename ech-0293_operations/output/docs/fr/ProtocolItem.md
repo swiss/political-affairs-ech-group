@@ -20,7 +20,7 @@ _Un point de l'ordre du jour tel qu'il a effectivement été consigné au procè
 | local_id | 0..1 <br/> [String](String.md) | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](HasIdentification.md) |
 | global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](HasIdentification.md) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](HasIdentification.md) |
-| parent_meeting | 0..1 <br/> [String](String.md) | Identifiant de la séance liée qui regroupe la séance courante. <br/><br/>Héritage : [AgendaItem](AgendaItem.md) |
+| parent_meeting | 0..1 <br/> [String](String.md) | Identifiant de la séance à laquelle cet enregistrement se rattache. Pour une séance, il désigne la séance supérieure ; pour un point de l'ordre du jour, un vote, une élection, une intervention ou un procès-verbal, la séance au cours de laquelle l'enregistrement est né. <br/><br/>Héritage : [AgendaItem](AgendaItem.md) |
 | agenda_item_type | 0..1 <br/> [AgendaItemTypeEnum](AgendaItemTypeEnum.md) | Type de point de l'ordre du jour, distinguant les points isolés des groupes de points. <br/><br/>Héritage : [AgendaItem](AgendaItem.md) |
 | agenda_item_number | 0..1 <br/> [String](String.md) | Numéro d'ordre du point de l'ordre du jour (type chaîne, afin de permettre les chiffres romains). <br/><br/>Héritage : [AgendaItem](AgendaItem.md) |
 | agenda_item_position | 0..1 <br/> [Integer](Integer.md) | Position (nombre entier) du point de l'ordre du jour dans le déroulement de la séance. <br/><br/>Héritage : [AgendaItem](AgendaItem.md) |
@@ -34,7 +34,7 @@ _Un point de l'ordre du jour tel qu'il a effectivement été consigné au procè
 | landing_page | 0..1 <br/> [String](String.md) | URL fournissant des informations complémentaires. <br/><br/>Héritage : [AgendaItem](AgendaItem.md) |
 | url | * <br/> [MultilingualString](MultilingualString.md) | Page d'accueil ou adresse web complémentaire, multilingue. <br/><br/>Héritage : [AgendaItem](AgendaItem.md) |
 | agenda_item_category | 0..1 <br/> [String](String.md) | Catégorie pour les points de l'ordre du jour regroupés (p. ex. introduction, par département, points techniques). <br/><br/>Héritage : [AgendaItem](AgendaItem.md) |
-| parent_agenda_item | 0..1 <br/> [String](String.md) | Au besoin, ce slot permet de construire une hiérarchie de points de l'ordre du jour. <br/><br/>Héritage : [AgendaItem](AgendaItem.md) |
+| parent_agenda_item | 0..1 <br/> [String](String.md) | Identifiant du point de l'ordre du jour auquel cet enregistrement se rattache. Pour un point de l'ordre du jour, il construit une hiérarchie de points ; pour un vote, une élection ou une intervention, il désigne le point sous lequel l'enregistrement a été traité. <br/><br/>Héritage : [AgendaItem](AgendaItem.md) |
 | has_resolution | 0..1 <br/> [Resolution](Resolution.md) | La décision prise sur ce point de l'ordre du jour. <br/><br/>Héritage : [AgendaItem](AgendaItem.md) |
 | documents | * <br/> [Work](Work.md) | Liste des documents (FRBR Works) liés à l'entité. <br/><br/>Héritage : [AgendaItem](AgendaItem.md) |
 | date_begin_actual | 0..1 <br/> [Date](Date.md) | La date de début effective d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](IsEventWithDuration.md) |

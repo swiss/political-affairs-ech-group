@@ -34,6 +34,7 @@ SLOT_TO_CLASS = {
     "speeches": "Speech",
     "votings": "Voting",
     "elections": "Election",
+    "protocols": "Protocol",
     # Nested slots (inside Person, etc.)
     "names": "Name",
     "addresses": "Address",

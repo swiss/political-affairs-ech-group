@@ -31,8 +31,8 @@ _Une procédure d'élection visant à pourvoir des fonctions par des personnes._
 | majority_type | 0..1 <br/> [MajorityTypeEnum](MajorityTypeEnum.md) | Type de majorité requise pour le vote (absolue, deux tiers, etc.).  |
 | majority_count | 0..1 <br/> [Integer](Integer.md) | Nombre de voix requis pour atteindre le seuil de majorité déterminant.  |
 | result_text | 0..1 <br/> [String](String.md) | Texte libre décrivant le résultat du vote, p. ex. « Accepté par 78 voix ».  |
-| parent_meeting | 0..1 <br/> [String](String.md) | Identifiant de la séance liée qui regroupe la séance courante.  |
-| parent_agenda_item | 0..1 <br/> [String](String.md) | Au besoin, ce slot permet de construire une hiérarchie de points de l'ordre du jour.  |
+| parent_meeting | 0..1 <br/> [String](String.md) | Identifiant de la séance à laquelle cet enregistrement se rattache. Pour une séance, il désigne la séance supérieure ; pour un point de l'ordre du jour, un vote, une élection, une intervention ou un procès-verbal, la séance au cours de laquelle l'enregistrement est né.  |
+| parent_agenda_item | 0..1 <br/> [String](String.md) | Identifiant du point de l'ordre du jour auquel cet enregistrement se rattache. Pour un point de l'ordre du jour, il construit une hiérarchie de points ; pour un vote, une élection ou une intervention, il désigne le point sous lequel l'enregistrement a été traité.  |
 | affair_id | 0..1 <br/> [String](String.md) | Le lien vers les affaires rattachées au point de l'ordre du jour.  |
 | actor_id | 0..1 <br/> [GroupReference](GroupReference.md) | Référence à l'organe agissant (instantané au moment de la mise en relation).  |
 | documents | * <br/> [Work](Work.md) | Liste des documents (FRBR Works) liés à l'entité.  |
