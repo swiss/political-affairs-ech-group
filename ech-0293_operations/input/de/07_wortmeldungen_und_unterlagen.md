@@ -151,4 +151,8 @@ Das Feld **speech_type** kann verschiedene Arten unterscheiden:
 - **procedural**: Verfahrensantrag
 - **declaration**: Erklärung
 
+### Einordnung in die Sitzung
+
+`parent_meeting` und `parent_agenda_item` halten fest, in welcher Sitzung und unter welchem Traktandum eine Wortmeldung gefallen ist. Beide sind nötig, weil eine Wortmeldung auf zwei Wegen geliefert werden kann: eingebettet im Protokoll, wo sich die Sitzung aus dem umgebenden `Protocol` ergibt, das Traktandum aber nicht — oder flach in `Container.speeches`, wo ohne diese Referenzen jeder Bezug fehlte. Sie tragen dieselben Werte wie bei `Voting` und `Election` und machen die Wortmeldung damit unabhängig davon auswertbar, aus welcher Lieferform sie stammt.
+
 {{include:ech-0293_operations/output/docs/Speech.md}}

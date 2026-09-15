@@ -151,4 +151,8 @@ Le champ **speech_type** permet de distinguer différents types :
 - **procedural** : proposition d'ordre
 - **declaration** : déclaration
 
+### Rattachement à la séance
+
+`parent_meeting` et `parent_agenda_item` indiquent au cours de quelle séance et sous quel point de l'ordre du jour une intervention a été prononcée. Les deux sont nécessaires, car une intervention peut être livrée de deux manières : imbriquée dans le procès-verbal, où la séance ressort du `Protocol` environnant mais non le point de l'ordre du jour — ou à plat dans `Container.speeches`, où tout rattachement ferait défaut sans ces références. Elles portent les mêmes valeurs que pour `Voting` et `Election` et rendent ainsi l'intervention exploitable indépendamment de sa forme de livraison.
+
 {{include:ech-0293_operations/output/docs/Speech.md}}
