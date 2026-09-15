@@ -31,8 +31,8 @@ _An election procedure for selecting persons to positions._
 | majority_type | 0..1 <br/> [MajorityTypeEnum](MajorityTypeEnum.md) | Type of majority required for the vote (absolute, two-thirds, etc.).  |
 | majority_count | 0..1 <br/> [Integer](Integer.md) | Number of votes required for the relevant majority threshold.  |
 | result_text | 0..1 <br/> [String](String.md) | Free text describing the outcome of the vote, e.g., "Accepted with 78 votes".  |
-| parent_meeting | 0..1 <br/> [String](String.md) | The linked meeting ID that groups the current meeting.  |
-| parent_agenda_item | 0..1 <br/> [String](String.md) | If needed, this slot builds a hierarchy of agenda items.  |
+| parent_meeting | 0..1 <br/> [String](String.md) | Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.  |
+| parent_agenda_item | 0..1 <br/> [String](String.md) | Identifier of the agenda item this record belongs to. On an agenda item it builds a hierarchy of agenda items; on a voting, election or speech it names the agenda item under which the record was handled.  |
 | affair_id | 0..1 <br/> [String](String.md) | The connection to the affairs (business items) of the agenda item.  |
 | actor_id | 0..1 <br/> [GroupReference](GroupReference.md) | Reference to the acting body/organ (lightweight snapshot at time of linking).  |
 | documents | * <br/> [Work](Work.md) | List of documents (FRBR Works) linked to the entity.  |

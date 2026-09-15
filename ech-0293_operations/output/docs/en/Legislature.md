@@ -64,6 +64,33 @@ _Term of office of a parliament as a legislative assembly. Usually lasts four ye
 
 
 ### Examples
+#### Example Legislature: Cantonal legislature with a four-year term
+
+```yaml
+legislatures:
+- global_uri: ops:legislature_be_2022_2026
+  local_id: GR-BE-2022-2026
+  spatial: https://ld.admin.ch/canton/2
+  name:
+  - text: Legislatur 2022–2026
+    language: de
+  - text: Législature 2022-2026
+    language: fr
+  landing_page: https://www.gr.be.ch/de/start/grosser-rat.html
+  actor_id:
+    global_uri: actors:gr_be
+    label: Grosser Rat Bern
+    abbreviation:
+    - value: GR
+      language: de
+  date_begin_planned: '2022-06-01'
+  date_end_planned: '2026-05-31'
+  date_begin_actual: '2022-06-01'
+  date_end_actual: '2026-05-31'
+  datetime_created: '2022-04-01T10:15:00+02:00'
+  datetime_modified: '2026-06-01T07:00:00+02:00'
+
+```
 #### Example Legislature: Completed federal legislature
 
 ```yaml
@@ -116,33 +143,6 @@ legislatures:
   date_end_planned: '2027-06-30'
   datetime_created: '2022-05-10T14:00:00+02:00'
   datetime_modified: '2025-01-08T11:20:00+01:00'
-
-```
-#### Example Legislature: Cantonal legislature with a four-year term
-
-```yaml
-legislatures:
-- global_uri: ops:legislature_be_2022_2026
-  local_id: GR-BE-2022-2026
-  spatial: https://ld.admin.ch/canton/2
-  name:
-  - text: Legislatur 2022–2026
-    language: de
-  - text: Législature 2022-2026
-    language: fr
-  landing_page: https://www.gr.be.ch/de/start/grosser-rat.html
-  actor_id:
-    global_uri: actors:gr_be
-    label: Grosser Rat Bern
-    abbreviation:
-    - value: GR
-      language: de
-  date_begin_planned: '2022-06-01'
-  date_end_planned: '2026-05-31'
-  date_begin_actual: '2022-06-01'
-  date_end_actual: '2026-05-31'
-  datetime_created: '2022-04-01T10:15:00+02:00'
-  datetime_modified: '2026-06-01T07:00:00+02:00'
 
 ```
 

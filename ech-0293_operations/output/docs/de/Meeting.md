@@ -38,10 +38,10 @@ _Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, Sessi
 | state_name | 0..1 <br/> [String](String.md) | Benutzerdefinierte Zustandsbeschreibung für die Sitzung.  |
 | description | 0..1 <br/> [String](String.md) | Beschreibender Text zum Element.  |
 | location | 0..1 <br/> [String](String.md) | Ort, an dem die Sitzung stattfindet (physischer Raum, Videokonferenz oder hybrides Format).  |
-| parent_meeting | 0..1 <br/> [String](String.md) | Die verknüpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert.  |
+| parent_meeting | 0..1 <br/> [String](String.md) | Identifikator der Sitzung, zu der dieser Eintrag gehört. Bei einer Sitzung bezeichnet er die übergeordnete Sitzung, bei Traktandum, Abstimmung, Wahl, Wortmeldung oder Protokoll die Sitzung, in der der Eintrag entstanden ist.  |
 | parent_legislature | 0..1 <br/> [String](String.md) | Der gesetzgebende Körper, auf dem die Sitzung basiert.  |
 | documents | * <br/> [Work](Work.md) | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.  |
-| protocol_ref | 0..1 <br/> [Protocol](Protocol.md) | Das nach der Sitzung erstellte Protokoll dieser Sitzung.  |
+| protocol_ref | 0..1 <br/> [Protocol](Protocol.md) | Referenz auf das nach der Sitzung erstellte Protokoll dieser Sitzung. Angegeben wird nur der Identifikator des Protokolls; das Protokoll selbst wird in der Liste `protocols` des Containers geliefert. Es ist eine eigenständige Entität mit eigenem Identifikator und wird in der Regel später veröffentlicht als die Sitzung, weshalb es referenziert und nicht eingebettet wird.  |
 | date_begin_actual | 0..1 <br/> [Date](Date.md) | Das tatsächliche Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](IsEventWithDuration.md) |
 | datetime_begin_actual | 0..1 <br/> [Datetime](Datetime.md) | Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](IsEventWithDuration.md) |
 | date_begin_planned | 0..1 <br/> [Date](Date.md) | Das geplante Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](IsEventWithDuration.md) |
@@ -80,64 +80,6 @@ _Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, Sessi
 
 
 ### Beispiele
-#### Beispiel Meeting: Cantonal parliament sitting with agenda items and votings
-
-```yaml
-meetings:
-- global_uri: ops:meeting_sg_2025_03_15
-  spatial: https://ld.admin.ch/canton/17
-  meeting_type: session
-  name:
-  - text: Kantonsratssitzung vom 15. März 2025
-    language: de
-  url:
-  - text: https://www.ratsinfo.sg.ch/sessions/2025-03-15
-    language: de
-  actor_id:
-    global_uri: actors:kr_sg
-    label: Kantonsrat St. Gallen
-    abbreviation:
-    - value: KR
-      language: de
-  actor_name: Kantonsrat St. Gallen
-  datetime_begin_planned: '2025-03-15T08:00:00Z'
-  datetime_end_planned: '2025-03-15T18:00:00Z'
-  datetime_begin_actual: '2025-03-15T08:15:00Z'
-  datetime_end_actual: '2025-03-15T17:30:00Z'
-  state: planned
-  location: Kantonsratssaal, Regierungsgebäude St. Gallen
-  parent_legislature: ops:legislature_sg_2024_2028
-  datetime_created: '2025-02-01T10:00:00Z'
-  datetime_modified: '2025-03-15T17:30:00Z'
-
-```
-#### Beispiel Meeting: Council of States sitting with protocol and speeches
-
-```yaml
-meetings:
-- global_uri: parl:sr_winter25_sitzung_6
-  spatial: https://ld.admin.ch/country/CHE
-  meeting_type: session
-  name:
-  - text: Sechste Sitzung
-    language: de
-  - text: Sixième séance
-    language: fr
-  url:
-  - text: https://www.parlament.ch/de/ratsbetrieb/suche-Amtliches-bulletin
-    language: de
-  actor_id:
-    global_uri: actors:staenderat
-    label: Ständerat
-    abbreviation:
-    - value: SR
-      language: de
-  actor_name: Ständerat
-  datetime_begin_planned: '2025-12-19T08:15:00+01:00'
-  datetime_created: '2026-01-12T00:00:00+01:00'
-  datetime_modified: '2026-01-12T00:00:00+01:00'
-
-```
 #### Beispiel Meeting: Committee sitting with an attendance list
 
 ```yaml
@@ -171,36 +113,6 @@ meetings:
   datetime_modified: '2025-05-12T16:45:00Z'
 
 ```
-#### Beispiel Meeting: Half-day sitting within a session
-
-```yaml
-meetings:
-- spatial: https://ld.admin.ch/canton/2
-  global_uri: ops:e7c5d453-848a-430a-b024-1dd2f6873aa6
-  meeting_type: session
-  name:
-  - text: Donnerstag (Nachmittag)
-    language: de
-  url:
-  - text: >-
-      https://www.gr.be.ch/de/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8
-    language: de
-  - text: >-
-      https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8
-    language: fr
-  actor_id:
-    global_uri: actors:gr_be
-    label: Grosser Rat Bern
-    abbreviation:
-    - value: GR
-      language: de
-  actor_name: Grosser Rat Bern
-  date_begin_planned: '2025-06-05'
-  date_end_planned: '2025-06-05'
-  datetime_created: '2025-04-25T11:10:25Z'
-  datetime_modified: '2025-05-19T01:06:45Z'
-
-```
 #### Beispiel Meeting: Landsgemeinde as meeting type sitting
 
 ```yaml
@@ -230,6 +142,34 @@ meetings:
   parent_legislature: ops:legislature_gl_2024_2028
   datetime_created: '2025-01-10T12:00:00Z'
   datetime_modified: '2025-05-04T13:45:00Z'
+
+```
+#### Beispiel Meeting: Council of States sitting with protocol and speeches
+
+```yaml
+meetings:
+- global_uri: parl:sr_winter25_sitzung_6
+  spatial: https://ld.admin.ch/country/CHE
+  meeting_type: session
+  name:
+  - text: Sechste Sitzung
+    language: de
+  - text: Sixième séance
+    language: fr
+  url:
+  - text: https://www.parlament.ch/de/ratsbetrieb/suche-Amtliches-bulletin
+    language: de
+  actor_id:
+    global_uri: actors:staenderat
+    label: Ständerat
+    abbreviation:
+    - value: SR
+      language: de
+  actor_name: Ständerat
+  datetime_begin_planned: '2025-12-19T08:15:00+01:00'
+  protocol_ref: ops:protokoll_sr_winter25_sitzung_6
+  datetime_created: '2026-01-12T00:00:00+01:00'
+  datetime_modified: '2026-01-12T00:00:00+01:00'
 
 ```
 #### Beispiel Meeting: Government sitting with a bilingual designation
@@ -262,6 +202,67 @@ meetings:
   date_end_planned: '2021-03-31'
   datetime_created: '2024-10-28T01:22:26Z'
   datetime_modified: '2024-11-27T20:40:57Z'
+
+```
+#### Beispiel Meeting: Cantonal parliament sitting with agenda items and votings
+
+```yaml
+meetings:
+- global_uri: ops:meeting_sg_2025_03_15
+  spatial: https://ld.admin.ch/canton/17
+  meeting_type: session
+  name:
+  - text: Kantonsratssitzung vom 15. März 2025
+    language: de
+  url:
+  - text: https://www.ratsinfo.sg.ch/sessions/2025-03-15
+    language: de
+  actor_id:
+    global_uri: actors:kr_sg
+    label: Kantonsrat St. Gallen
+    abbreviation:
+    - value: KR
+      language: de
+  actor_name: Kantonsrat St. Gallen
+  datetime_begin_planned: '2025-03-15T08:00:00Z'
+  datetime_end_planned: '2025-03-15T18:00:00Z'
+  datetime_begin_actual: '2025-03-15T08:15:00Z'
+  datetime_end_actual: '2025-03-15T17:30:00Z'
+  state: planned
+  location: Kantonsratssaal, Regierungsgebäude St. Gallen
+  parent_legislature: ops:legislature_sg_2024_2028
+  datetime_created: '2025-02-01T10:00:00Z'
+  datetime_modified: '2025-03-15T17:30:00Z'
+
+```
+#### Beispiel Meeting: Half-day sitting within a session
+
+```yaml
+meetings:
+- spatial: https://ld.admin.ch/canton/2
+  global_uri: ops:e7c5d453-848a-430a-b024-1dd2f6873aa6
+  meeting_type: session
+  name:
+  - text: Donnerstag (Nachmittag)
+    language: de
+  url:
+  - text: >-
+      https://www.gr.be.ch/de/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8
+    language: de
+  - text: >-
+      https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8
+    language: fr
+  actor_id:
+    global_uri: actors:gr_be
+    label: Grosser Rat Bern
+    abbreviation:
+    - value: GR
+      language: de
+  actor_name: Grosser Rat Bern
+  date_begin_planned: '2025-06-05'
+  date_end_planned: '2025-06-05'
+  datetime_created: '2025-04-25T11:10:25Z'
+  datetime_modified: '2025-05-19T01:06:45Z'
 
 ```
 

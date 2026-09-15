@@ -6,7 +6,7 @@ search:
 # Slot: parent_meeting 
 
 
-_Identifiant de la séance liée qui regroupe la séance courante._
+_Identifiant de la séance à laquelle cet enregistrement se rattache. Pour une séance, il désigne la séance supérieure ; pour un point de l'ordre du jour, un vote, une élection, une intervention ou un procès-verbal, la séance au cours de laquelle l'enregistrement est né._
 
 
 
@@ -32,6 +32,7 @@ URI: [ops:parent_meeting](https://ch.paf.link/schema/operations/parent_meeting)
 | [Voting](Voting.md) | Une procédure de vote avec les voix individuelles et les résultats |  no  |
 | [Election](Election.md) | Une procédure d'élection visant à pourvoir des fonctions par des personnes |  no  |
 | [Attendance](Attendance.md) | Liste de présence agrégée pour une séance (nombre de membres présents, absent... |  no  |
+| [Speech](Speech.md) | Une intervention prononcée au cours d'une séance (également appelée prise de ... |  no  |
 | [ProtocolItem](ProtocolItem.md) | Un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-... |  no  |
 
 
@@ -46,7 +47,7 @@ URI: [ops:parent_meeting](https://ch.paf.link/schema/operations/parent_meeting)
 | Propriété | Valeur |
 | --- | --- |
 | Plage | [String](String.md) |
-| Domaine de | [Meeting](Meeting.md), [AgendaItem](AgendaItem.md), [Protocol](Protocol.md), [Voting](Voting.md), [Election](Election.md), [Attendance](Attendance.md) |
+| Domaine de | [Meeting](Meeting.md), [AgendaItem](AgendaItem.md), [Protocol](Protocol.md), [Voting](Voting.md), [Election](Election.md), [Attendance](Attendance.md), [Speech](Speech.md) |
 
 ### Cardinalité et exigences
 
@@ -72,15 +73,23 @@ name: parent_meeting
 annotations:
   description_de:
     tag: description_de
-    value: 'Die verknüpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert.
+    value: 'Identifikator der Sitzung, zu der dieser Eintrag gehört. Bei einer Sitzung
+      bezeichnet er die übergeordnete Sitzung, bei Traktandum, Abstimmung, Wahl, Wortmeldung
+      oder Protokoll die Sitzung, in der der Eintrag entstanden ist.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Identifiant de la séance liée qui regroupe la séance courante.
+    value: 'Identifiant de la séance à laquelle cet enregistrement se rattache. Pour
+      une séance, il désigne la séance supérieure ; pour un point de l''ordre du jour,
+      un vote, une élection, une intervention ou un procès-verbal, la séance au cours
+      de laquelle l''enregistrement est né.
 
       '
-description: 'Identifiant de la séance liée qui regroupe la séance courante.
+description: 'Identifiant de la séance à laquelle cet enregistrement se rattache.
+  Pour une séance, il désigne la séance supérieure ; pour un point de l''ordre du
+  jour, un vote, une élection, une intervention ou un procès-verbal, la séance au
+  cours de laquelle l''enregistrement est né.
 
   '
 from_schema: https://ch.paf.link/schema/operations
@@ -92,6 +101,7 @@ domain_of:
 - Voting
 - Election
 - Attendance
+- Speech
 range: string
 
 ```

@@ -139,15 +139,15 @@ Name: operations
 | [name](name.md) | Mehrsprachige vollständige Bezeichnung |
 | [number](number.md) | Laufende Nummer, z |
 | [optional](optional.md) | Gibt an, ob die Sitzung oder Abstimmung optional ist |
-| [parent_agenda_item](parent_agenda_item.md) | Wenn erforderlich, baut dieser Slot eine Hierarchie von Traktanden auf |
+| [parent_agenda_item](parent_agenda_item.md) | Identifikator des Traktandums, zu dem dieser Eintrag gehört |
 | [parent_attendance](parent_attendance.md) | Das Attendance-Aggregat, zu dem dieser einzelne Anwesenheits-Eintrag gehört |
 | [parent_legislature](parent_legislature.md) | Der gesetzgebende Körper, auf dem die Sitzung basiert |
-| [parent_meeting](parent_meeting.md) | Die verknüpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert |
+| [parent_meeting](parent_meeting.md) | Identifikator der Sitzung, zu der dieser Eintrag gehört |
 | [parent_type](parent_type.md) | Typ des übergeordneten Objekts (Sitzung, Traktandum, Wortmeldung, Geschäft) |
 | [parent_voting](parent_voting.md) | Die ID der Abstimmung, die mit der Einzelstimme verbunden ist |
 | [position](position.md) | Ganzzahlige Position innerhalb der übergeordneten Reihenfolge |
 | [protocol_items](protocol_items.md) | Traktanden, wie sie im Protokoll tatsächlich festgehalten wurden |
-| [protocol_ref](protocol_ref.md) | Das nach der Sitzung erstellte Protokoll dieser Sitzung |
+| [protocol_ref](protocol_ref.md) | Referenz auf das nach der Sitzung erstellte Protokoll dieser Sitzung |
 | [protocols](protocols.md) | Sammlung der Protokolle |
 | [reason](reason.md) | Grund für Abwesenheit oder Verspätung (Freitext, mehrsprachig) |
 | [remark](remark.md) | Freitext-Bemerkung oder Notiz für Sonderfälle oder zusätzlichen Kontext zu ei... |

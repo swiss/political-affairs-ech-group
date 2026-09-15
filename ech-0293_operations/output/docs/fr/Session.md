@@ -67,48 +67,6 @@ _Une session parlementaire qui regroupe plusieurs séances et s'étend sur une p
 
 
 ### Exemples
-#### Exemple Session : Landsgemeinde as a sitting period
-
-```yaml
-sessions:
-- global_uri: ops:session_gl_landsgemeinde_2025_05_04
-  spatial: https://ld.admin.ch/canton/8
-  name:
-  - text: Landsgemeinde vom 04. Mai 2025
-    language: de
-  url:
-  - text: https://www.landsgemeinde.gl.ch/landsgemeinde/2025-05-04
-    language: de
-  date_begin_planned: '2025-05-04'
-  date_end_planned: '2025-05-04'
-  datetime_modified: '2025-04-25T13:40:34Z'
-  datetime_created: '2025-04-23T22:58:39Z'
-
-```
-#### Exemple Session : Cantonal session with a bilingual designation
-
-```yaml
-sessions:
-- global_uri: ops:session_be_summer_2025
-  spatial: https://ld.admin.ch/canton/2
-  name:
-  - text: Sommersession 2025
-    language: de
-  - text: Session d'été 2025
-    language: fr
-  url:
-  - text: >-
-      https://www.gr.be.ch/de/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8
-    language: de
-  - text: >-
-      https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8
-    language: fr
-  date_begin_planned: '2025-06-02'
-  date_end_planned: '2025-06-12'
-  datetime_modified: '2025-05-19T01:06:44Z'
-  datetime_created: '2025-04-25T11:10:24Z'
-
-```
 #### Exemple Session : One-day sitting period of a cantonal parliament
 
 ```yaml
@@ -123,6 +81,24 @@ sessions:
     language: de
   date_begin_planned: '2025-02-26'
   date_end_planned: '2025-02-26'
+  datetime_modified: '2025-04-25T13:40:34Z'
+  datetime_created: '2025-04-23T22:58:39Z'
+
+```
+#### Exemple Session : Landsgemeinde as a sitting period
+
+```yaml
+sessions:
+- global_uri: ops:session_gl_landsgemeinde_2025_05_04
+  spatial: https://ld.admin.ch/canton/8
+  name:
+  - text: Landsgemeinde vom 04. Mai 2025
+    language: de
+  url:
+  - text: https://www.landsgemeinde.gl.ch/landsgemeinde/2025-05-04
+    language: de
+  date_begin_planned: '2025-05-04'
+  date_end_planned: '2025-05-04'
   datetime_modified: '2025-04-25T13:40:34Z'
   datetime_created: '2025-04-23T22:58:39Z'
 
@@ -152,6 +128,30 @@ sessions:
   parent_legislature: ops:legislature_51
   datetime_modified: '2025-04-24T00:19:37Z'
   datetime_created: '2025-03-20T14:27:09Z'
+
+```
+#### Exemple Session : Cantonal session with a bilingual designation
+
+```yaml
+sessions:
+- global_uri: ops:session_be_summer_2025
+  spatial: https://ld.admin.ch/canton/2
+  name:
+  - text: Sommersession 2025
+    language: de
+  - text: Session d'été 2025
+    language: fr
+  url:
+  - text: >-
+      https://www.gr.be.ch/de/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8
+    language: de
+  - text: >-
+      https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8
+    language: fr
+  date_begin_planned: '2025-06-02'
+  date_end_planned: '2025-06-12'
+  datetime_modified: '2025-05-19T01:06:44Z'
+  datetime_created: '2025-04-25T11:10:24Z'
 
 ```
 
