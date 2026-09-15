@@ -174,37 +174,19 @@ _Une personne avec des identifiants, des noms, des adresses, des nationalités e
 
 
 ### Exemples
-#### Exemple Person : Variante de nom à côté du double nom officiel
+#### Exemple Person : Distinguer des personnes homonymes par le label
 
 ```yaml
 persons:
-- local_id: 280958
-  global_uri: https://parlament.winterthur.ch/behoerdenmitglieder/280958
-  label: Cristina Bozzi-Brunel
+- local_id: 6447
+  global_uri: https://www.ur.ch/behoerdenmitglieder/6447
+  label: Alois Arnold (1981)
+  birth_year: 1981
   names:
   - name_type: PersonFirstName
-    value: Cristina
+    value: Alois
   - name_type: PersonOfficialName
-    value: Bozzi-Brunel
-  - name_type: PersonOriginalName
-    value: Brunel
-
-```
-#### Exemple Person : Prénom usuel différent du prénom officiel
-
-```yaml
-persons:
-- local_id: 1269
-  global_uri: >-
-    https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269
-  label: Gerri Beretta-Piccoli
-  names:
-  - name_type: PersonFirstName
-    value: Fausto
-  - name_type: PersonCallFirstName
-    value: Gerri
-  - name_type: PersonOfficialName
-    value: Beretta-Piccoli
+    value: Arnold
 
 ```
 #### Exemple Person : Indication de sexe non binaire avec profession et formation
@@ -232,19 +214,52 @@ persons:
     value: MLaw
 
 ```
-#### Exemple Person : Distinguer des personnes homonymes par le label
+#### Exemple Person : Distinguer des personnes homonymes par le label (deuxième personne)
 
 ```yaml
 persons:
-- local_id: 6447
-  global_uri: https://www.ur.ch/behoerdenmitglieder/6447
-  label: Alois Arnold (1981)
-  birth_year: 1981
+- local_id: 6370
+  global_uri: https://www.ur.ch/behoerdenmitglieder/6370
+  label: Alois Arnold (1965)
+  birth_year: 1965
   names:
   - name_type: PersonFirstName
     value: Alois
   - name_type: PersonOfficialName
     value: Arnold
+
+```
+#### Exemple Person : Prénom usuel différent du prénom officiel
+
+```yaml
+persons:
+- local_id: 1269
+  global_uri: >-
+    https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269
+  label: Gerri Beretta-Piccoli
+  names:
+  - name_type: PersonFirstName
+    value: Fausto
+  - name_type: PersonCallFirstName
+    value: Gerri
+  - name_type: PersonOfficialName
+    value: Beretta-Piccoli
+
+```
+#### Exemple Person : Variante de nom à côté du double nom officiel
+
+```yaml
+persons:
+- local_id: 280958
+  global_uri: https://parlament.winterthur.ch/behoerdenmitglieder/280958
+  label: Cristina Bozzi-Brunel
+  names:
+  - name_type: PersonFirstName
+    value: Cristina
+  - name_type: PersonOfficialName
+    value: Bozzi-Brunel
+  - name_type: PersonOriginalName
+    value: Brunel
 
 ```
 #### Exemple Person : Personne saisie de manière complète
@@ -290,21 +305,6 @@ persons:
     value: beat.jans@admin.ch
   - contact_type: contact_website
     value: http://www.beat-jans.ch
-
-```
-#### Exemple Person : Distinguer des personnes homonymes par le label (deuxième personne)
-
-```yaml
-persons:
-- local_id: 6370
-  global_uri: https://www.ur.ch/behoerdenmitglieder/6370
-  label: Alois Arnold (1965)
-  birth_year: 1965
-  names:
-  - name_type: PersonFirstName
-    value: Alois
-  - name_type: PersonOfficialName
-    value: Arnold
 
 ```
 
@@ -960,6 +960,115 @@ _Un groupe, une organisation ou une collectivité politique (p. ex. parti, commi
 
 
 ### Exemples
+#### Exemple Group : Bureau du conseil renvoyant à son parlement
+
+```yaml
+groups:
+- local_id: 50
+  global_uri: https://grosserrat.bs.ch/gremien/praesidium-und-buero
+  label:
+  - value: Büro des Grossen Rates
+    language: de
+  group_type:
+    group_type_enum: council_bureau
+    label:
+    - value: Ratsbüro
+      language: de
+  spatial: https://ld.admin.ch/canton/12
+  parent_groups:
+  - local_id: 33
+    global_uri: https://www.grosserrat.bs.ch/
+    label: Grosser Rat Basel-Stadt
+
+- local_id: 33
+  global_uri: https://www.grosserrat.bs.ch/
+  label:
+  - value: Grosser Rat Basel-Stadt
+    language: de
+  group_type:
+    group_type_enum: council_legislative
+    label:
+    - value: Parlament (Legislativrat)
+      language: de
+  spatial: https://ld.admin.ch/canton/12
+
+```
+#### Exemple Group : Parti cantonal renvoyant au parti national
+
+```yaml
+groups:
+- global_uri: https://www.evp-bs.ch/
+  label:
+  - value: Evangelische Volkspartei Basel-Stadt
+    language: de
+  abbreviation:
+  - value: EVP BS
+    language: de
+  group_type:
+    group_type_enum: party
+    label:
+    - value: Partei
+      language: de
+  spatial: https://ld.admin.ch/canton/12
+  parent_groups:
+  - global_uri: https://www.evppev.ch/
+    label: Evangelische Volkspartei der Schweiz
+    abbreviation:
+    - value: EVP
+      language: de
+
+```
+#### Exemple Group : Groupe d'intérêt avec nom trilingue et contact
+
+```yaml
+groups:
+- local_id: 6627
+  global_uri: https://www.parlament.ch/de/organe/gruppen/konsumenteninformation-und-schutz
+  label:
+  - value: Konsumenteninformation und -schutz
+    language: de
+  - value: Information et défense des consommateurs
+    language: fr
+  - value: Informazione e tutela dei consumatori
+    language: it
+  description:
+  - value: >-
+      L'intergroupe parlementaire « Information et défense des consommateurs » réunit
+      toutes les sensibilités politiques. Cet intergroupe a pour mission d'informer
+      et de sensibiliser les élu·e·s aux questions relatives à la défense des consommateur·rice·s
+      en Suisse.
+    language: fr
+  landing_page:
+  - value: https://www.parlament.ch/centers/documents/de/gruppen-der-bundesversammlung.pdf
+    language: de
+  contacts:
+  - contact_type: email
+    value: l.altwegg@frc.ch
+    label: Sekretariat
+  - contact_type: phone
+    value: +41 21 331 00 95
+    label: Sekretariat
+  addresses:
+  - address_type: businessAddress
+    address_uri: https://geo.ld.admin.ch/location/address/101009806
+    street_address: Fédération romande des consommateurs, Rue de Genève 17, case postale
+      585
+    postal_code: '1001'
+    postal_locality: Lausanne
+    country: CH
+  group_type:
+    group_type_enum: interest_group
+    label:
+    - value: Interessengruppe
+      language: de
+    - value: Groupe d'intérêt
+      language: fr
+    - value: Gruppo d'interesse
+      language: it
+  spatial: https://ld.admin.ch/country/CHE
+  valid_from: 2012-01-01
+
+```
 #### Exemple Group : Groupe parlementaire renvoyant au parlement dont il relève
 
 ```yaml
@@ -979,6 +1088,78 @@ groups:
   - local_id: 33
     global_uri: https://www.grosserrat.bs.ch/
     label: Grosser Rat Basel-Stadt
+
+```
+#### Exemple Group : Association avec IDE et forme juridique du registre du commerce
+
+```yaml
+groups:
+- global_uri: https://www.frc.ch/
+  organization_uid: CHE106063525
+  legal_form: '0109'
+  label:
+  - value: Fédération romande des consommateurs
+    language: fr
+  abbreviation:
+  - value: FRC
+    language: fr
+  group_type:
+    group_type_enum: association
+    label:
+    - value: Verein
+      language: de
+  spatial: https://ld.admin.ch/canton/22
+
+```
+#### Exemple Group : Chancellerie d'État renvoyant à son gouvernement
+
+```yaml
+groups:
+- local_id: 7172
+  global_uri: https://www.bs.ch/regierungsrat/staatskanzlei
+  label:
+  - value: Staatskanzlei Basel-Stadt
+    language: de
+  group_type:
+    group_type_enum: council_secretariat
+    label:
+    - value: Staatskanzlei
+      language: de
+  spatial: https://ld.admin.ch/canton/12
+  parent_groups:
+  - local_id: 1300
+    global_uri: https://www.regierungsrat.bs.ch/
+    label: Regierungsrat Basel-Stadt
+
+- local_id: 1300
+  global_uri: https://www.regierungsrat.bs.ch/
+  label:
+  - value: Regierungsrat Basel-Stadt
+    language: de
+  group_type:
+    group_type_enum: council_executive
+    label:
+    - value: Regierung (Exekutivrat)
+      language: de
+  spatial: https://ld.admin.ch/canton/12
+
+```
+#### Exemple Group : Parlement communal avec référence spatiale
+
+```yaml
+groups:
+- local_id: 700
+  global_uri: >-
+    https://www.stadt.sg.ch/home/verwaltung-politik/demokratie-politik/stadtparlament.html
+  label:
+  - value: Stadtparlament St. Gallen
+    language: de
+  group_type:
+    group_type_enum: council_legislative
+    label:
+    - value: Parlament (Legislativrat)
+      language: de
+  spatial: https://ld.admin.ch/municipality/3203
 
 ```
 #### Exemple Group : Commission renvoyant à son conseil cantonal
@@ -1016,39 +1197,6 @@ groups:
     - value: Parlament (Legislativrat)
       language: de
   spatial: https://ld.admin.ch/canton/15
-
-```
-#### Exemple Group : Chancellerie d'État renvoyant à son gouvernement
-
-```yaml
-groups:
-- local_id: 7172
-  global_uri: https://www.bs.ch/regierungsrat/staatskanzlei
-  label:
-  - value: Staatskanzlei Basel-Stadt
-    language: de
-  group_type:
-    group_type_enum: council_secretariat
-    label:
-    - value: Staatskanzlei
-      language: de
-  spatial: https://ld.admin.ch/canton/12
-  parent_groups:
-  - local_id: 1300
-    global_uri: https://www.regierungsrat.bs.ch/
-    label: Regierungsrat Basel-Stadt
-
-- local_id: 1300
-  global_uri: https://www.regierungsrat.bs.ch/
-  label:
-  - value: Regierungsrat Basel-Stadt
-    language: de
-  group_type:
-    group_type_enum: council_executive
-    label:
-    - value: Regierung (Exekutivrat)
-      language: de
-  spatial: https://ld.admin.ch/canton/12
 
 ```
 #### Exemple Group : Délégation bilingue auprès d'un organe intercantonal
@@ -1126,154 +1274,6 @@ groups:
     - value: Ausserparlamentarische Kommission
       language: de
   spatial: https://ld.admin.ch/country/CHE
-
-```
-#### Exemple Group : Parti cantonal renvoyant au parti national
-
-```yaml
-groups:
-- global_uri: https://www.evp-bs.ch/
-  label:
-  - value: Evangelische Volkspartei Basel-Stadt
-    language: de
-  abbreviation:
-  - value: EVP BS
-    language: de
-  group_type:
-    group_type_enum: party
-    label:
-    - value: Partei
-      language: de
-  spatial: https://ld.admin.ch/canton/12
-  parent_groups:
-  - global_uri: https://www.evppev.ch/
-    label: Evangelische Volkspartei der Schweiz
-    abbreviation:
-    - value: EVP
-      language: de
-
-```
-#### Exemple Group : Parlement communal avec référence spatiale
-
-```yaml
-groups:
-- local_id: 700
-  global_uri: >-
-    https://www.stadt.sg.ch/home/verwaltung-politik/demokratie-politik/stadtparlament.html
-  label:
-  - value: Stadtparlament St. Gallen
-    language: de
-  group_type:
-    group_type_enum: council_legislative
-    label:
-    - value: Parlament (Legislativrat)
-      language: de
-  spatial: https://ld.admin.ch/municipality/3203
-
-```
-#### Exemple Group : Association avec IDE et forme juridique du registre du commerce
-
-```yaml
-groups:
-- global_uri: https://www.frc.ch/
-  organization_uid: CHE106063525
-  legal_form: '0109'
-  label:
-  - value: Fédération romande des consommateurs
-    language: fr
-  abbreviation:
-  - value: FRC
-    language: fr
-  group_type:
-    group_type_enum: association
-    label:
-    - value: Verein
-      language: de
-  spatial: https://ld.admin.ch/canton/22
-
-```
-#### Exemple Group : Bureau du conseil renvoyant à son parlement
-
-```yaml
-groups:
-- local_id: 50
-  global_uri: https://grosserrat.bs.ch/gremien/praesidium-und-buero
-  label:
-  - value: Büro des Grossen Rates
-    language: de
-  group_type:
-    group_type_enum: council_bureau
-    label:
-    - value: Ratsbüro
-      language: de
-  spatial: https://ld.admin.ch/canton/12
-  parent_groups:
-  - local_id: 33
-    global_uri: https://www.grosserrat.bs.ch/
-    label: Grosser Rat Basel-Stadt
-
-- local_id: 33
-  global_uri: https://www.grosserrat.bs.ch/
-  label:
-  - value: Grosser Rat Basel-Stadt
-    language: de
-  group_type:
-    group_type_enum: council_legislative
-    label:
-    - value: Parlament (Legislativrat)
-      language: de
-  spatial: https://ld.admin.ch/canton/12
-
-```
-#### Exemple Group : Groupe d'intérêt avec nom trilingue et contact
-
-```yaml
-groups:
-- local_id: 6627
-  global_uri: https://www.parlament.ch/de/organe/gruppen/konsumenteninformation-und-schutz
-  label:
-  - value: Konsumenteninformation und -schutz
-    language: de
-  - value: Information et défense des consommateurs
-    language: fr
-  - value: Informazione e tutela dei consumatori
-    language: it
-  description:
-  - value: >-
-      L'intergroupe parlementaire « Information et défense des consommateurs » réunit
-      toutes les sensibilités politiques. Cet intergroupe a pour mission d'informer
-      et de sensibiliser les élu·e·s aux questions relatives à la défense des consommateur·rice·s
-      en Suisse.
-    language: fr
-  landing_page:
-  - value: https://www.parlament.ch/centers/documents/de/gruppen-der-bundesversammlung.pdf
-    language: de
-  contacts:
-  - contact_type: email
-    value: l.altwegg@frc.ch
-    label: Sekretariat
-  - contact_type: phone
-    value: +41 21 331 00 95
-    label: Sekretariat
-  addresses:
-  - address_type: businessAddress
-    address_uri: https://geo.ld.admin.ch/location/address/101009806
-    street_address: Fédération romande des consommateurs, Rue de Genève 17, case postale
-      585
-    postal_code: '1001'
-    postal_locality: Lausanne
-    country: CH
-  group_type:
-    group_type_enum: interest_group
-    label:
-    - value: Interessengruppe
-      language: de
-    - value: Groupe d'intérêt
-      language: fr
-    - value: Gruppo d'interesse
-      language: it
-  spatial: https://ld.admin.ch/country/CHE
-  valid_from: 2012-01-01
 
 ```
 
@@ -1485,6 +1485,86 @@ _Une relation d'affiliation entre une personne et un groupe, représentant une a
 
 
 ### Exemples
+#### Exemple Membership : Rôle hors du vocabulaire, désigné dans le role_label
+
+```yaml
+memberships:
+- global_uri: act:ms_jans_ejpd
+  person_reference:
+    local_id: 4032
+    global_uri: https://www.admin.ch/de/beat-jans
+    label: Beat Jans
+  group_reference:
+    global_uri: https://www.ejpd.admin.ch/
+    label: Eidgenössisches Justiz- und Polizeidepartement
+  role_type:
+    role_type_enum: other
+    role_label:
+    - value: Departementsvorsteher
+      language: de
+  valid_from: 2024-01-01
+  is_active: true
+
+```
+#### Exemple Membership : Mandat en cours sans date de fin
+
+```yaml
+memberships:
+- global_uri: act:ms_jans_bundesrat
+  person_reference:
+    local_id: 4032
+    global_uri: https://www.admin.ch/de/beat-jans
+    label: Beat Jans
+  group_reference:
+    global_uri: https://www.admin.ch/de/der-bundesrat
+    label: Bundesrat
+  role_type:
+    role_type_enum: member
+  authorized_to_vote: true
+  valid_from: 2024-01-01
+  is_active: true
+
+```
+#### Exemple Membership : Appartenance à un groupe parlementaire parallèle au mandat
+
+```yaml
+memberships:
+- global_uri: act:ms_jans_fraktion_sp_bs
+  person_reference:
+    local_id: 4032
+    global_uri: https://www.admin.ch/de/beat-jans
+    label: Beat Jans
+  group_reference:
+    global_uri: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen/sp
+    label: Sozialdemokratische Partei (SP)
+  role_type:
+    role_type_enum: member
+  authorized_to_vote: true
+  valid_from: 2001-02-07
+  valid_through: 2011-04-30
+  is_active: false
+
+```
+#### Exemple Membership : Appartenance à une commission avec sa propre durée
+
+```yaml
+memberships:
+- global_uri: act:ms_jans_wak_bs
+  person_reference:
+    local_id: 4032
+    global_uri: https://www.admin.ch/de/beat-jans
+    label: Beat Jans
+  group_reference:
+    global_uri: https://grosserrat.bs.ch/gremien/sachkommissionen/wirtschaft-abgaben
+    label: Wirtschafts- und Abgabekommission (WAK)
+  role_type:
+    role_type_enum: member
+  authorized_to_vote: true
+  valid_from: 2003-02-12
+  valid_through: 2011-04-30
+  is_active: false
+
+```
 #### Exemple Membership : La même personne à un autre niveau, avec une autre circonscription
 
 ```yaml
@@ -1565,65 +1645,6 @@ memberships:
   is_active: false
 
 ```
-#### Exemple Membership : Mandat en cours sans date de fin
-
-```yaml
-memberships:
-- global_uri: act:ms_jans_bundesrat
-  person_reference:
-    local_id: 4032
-    global_uri: https://www.admin.ch/de/beat-jans
-    label: Beat Jans
-  group_reference:
-    global_uri: https://www.admin.ch/de/der-bundesrat
-    label: Bundesrat
-  role_type:
-    role_type_enum: member
-  authorized_to_vote: true
-  valid_from: 2024-01-01
-  is_active: true
-
-```
-#### Exemple Membership : Appartenance à un groupe parlementaire parallèle au mandat
-
-```yaml
-memberships:
-- global_uri: act:ms_jans_fraktion_sp_bs
-  person_reference:
-    local_id: 4032
-    global_uri: https://www.admin.ch/de/beat-jans
-    label: Beat Jans
-  group_reference:
-    global_uri: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen/sp
-    label: Sozialdemokratische Partei (SP)
-  role_type:
-    role_type_enum: member
-  authorized_to_vote: true
-  valid_from: 2001-02-07
-  valid_through: 2011-04-30
-  is_active: false
-
-```
-#### Exemple Membership : Appartenance à une commission avec sa propre durée
-
-```yaml
-memberships:
-- global_uri: act:ms_jans_wak_bs
-  person_reference:
-    local_id: 4032
-    global_uri: https://www.admin.ch/de/beat-jans
-    label: Beat Jans
-  group_reference:
-    global_uri: https://grosserrat.bs.ch/gremien/sachkommissionen/wirtschaft-abgaben
-    label: Wirtschafts- und Abgabekommission (WAK)
-  role_type:
-    role_type_enum: member
-  authorized_to_vote: true
-  valid_from: 2003-02-12
-  valid_through: 2011-04-30
-  is_active: false
-
-```
 #### Exemple Membership : Affiliation à un parti sans indications temporelles
 
 ```yaml
@@ -1638,27 +1659,6 @@ memberships:
     label: Sozialdemokratische Partei der Schweiz
   role_type:
     role_type_enum: member
-  is_active: true
-
-```
-#### Exemple Membership : Rôle hors du vocabulaire, désigné dans le role_label
-
-```yaml
-memberships:
-- global_uri: act:ms_jans_ejpd
-  person_reference:
-    local_id: 4032
-    global_uri: https://www.admin.ch/de/beat-jans
-    label: Beat Jans
-  group_reference:
-    global_uri: https://www.ejpd.admin.ch/
-    label: Eidgenössisches Justiz- und Polizeidepartement
-  role_type:
-    role_type_enum: other
-    role_label:
-    - value: Departementsvorsteher
-      language: de
-  valid_from: 2024-01-01
   is_active: true
 
 ```
@@ -1942,6 +1942,45 @@ Au moins l'un des champs suivants doit être renseigné :
 
 
 ### Exemples
+#### Exemple InterestLink : Fonction publique à un autre niveau fédéral
+
+```yaml
+interest_links:
+- global_uri: act:il_dafond_001
+  person_reference:
+    global_uri: >-
+      https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=14
+    label: Felice Dafond
+    group_label: PLR
+  interest_type: public_mandate
+  organization_name:
+  - value: Municipio di Minusio
+    language: it
+  legal_form: '0223'
+  function_role:
+  - value: Sindaco
+    language: it
+
+```
+#### Exemple InterestLink : La même valeur pour le siège dans un organe
+
+```yaml
+interest_links:
+- global_uri: act:il_quadranti_001
+  person_reference:
+    global_uri: >-
+      https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1487
+    label: Matteo Quadranti
+    group_label: Partito liberale radicale ticinese (PLR)
+  interest_type: public_mandate
+  organization_name:
+  - value: Commissione Cantonale Cultura
+    language: it
+  function_role:
+  - value: Vice-presidente
+    language: it
+
+```
 #### Exemple InterestLink : Société propre, dirigée à titre opérationnel
 
 ```yaml
@@ -1963,30 +2002,6 @@ interest_links:
   - value: Geschäftsführer
     language: de
   is_paid: true
-
-```
-#### Exemple InterestLink : Mandat au conseil de fondation avec IDE de l'organisation
-
-```yaml
-interest_links:
-- global_uri: act:il_burkart_007
-  person_reference:
-    global_uri: http://www.wikidata.org/entity/Q23060472
-    label: Thierry Burkart
-    group_label: FDP.Die Liberalen
-  interest_type: governing_body
-  organization_name:
-  - value: FONDATION SUISSE DE DEMINAGE (FSD), Genf
-    language: de
-  organization_uid: CHE109810537
-  legal_form: '0110'
-  committee:
-  - value: Stiftungsrat
-    language: de
-  function_role:
-  - value: Vizepräsident
-    language: de
-  is_paid: false
 
 ```
 #### Exemple InterestLink : Fonction de direction pour un groupe d'intérêts
@@ -2018,6 +2033,28 @@ interest_links:
     language: de
 
 ```
+#### Exemple InterestLink : Mandat d'administrateur sans IDE ni indication de rémunération
+
+```yaml
+interest_links:
+- global_uri: act:il_balaban_001
+  person_reference:
+    global_uri: https://ge.ch/grandconseil/gc/depute/2517/
+    label: Stefan Balaban
+    group_label: LJS
+  interest_type: governing_body
+  organization_name:
+  - value: X-net SA
+    language: fr
+  legal_form: '0106'
+  committee:
+  - value: Conseil d'administration
+    language: fr
+  function_role:
+  - value: Membre
+    language: fr
+
+```
 #### Exemple InterestLink : Lien cantonal, personne issue de la même livraison
 
 ```yaml
@@ -2041,46 +2078,28 @@ interest_links:
     language: it
 
 ```
-#### Exemple InterestLink : Fonction publique à un autre niveau fédéral
+#### Exemple InterestLink : Mandat au conseil de fondation avec IDE de l'organisation
 
 ```yaml
 interest_links:
-- global_uri: act:il_dafond_001
+- global_uri: act:il_burkart_007
   person_reference:
-    global_uri: >-
-      https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=14
-    label: Felice Dafond
-    group_label: PLR
-  interest_type: public_mandate
-  organization_name:
-  - value: Municipio di Minusio
-    language: it
-  legal_form: '0223'
-  function_role:
-  - value: Sindaco
-    language: it
-
-```
-#### Exemple InterestLink : Mandat d'administrateur sans IDE ni indication de rémunération
-
-```yaml
-interest_links:
-- global_uri: act:il_balaban_001
-  person_reference:
-    global_uri: https://ge.ch/grandconseil/gc/depute/2517/
-    label: Stefan Balaban
-    group_label: LJS
+    global_uri: http://www.wikidata.org/entity/Q23060472
+    label: Thierry Burkart
+    group_label: FDP.Die Liberalen
   interest_type: governing_body
   organization_name:
-  - value: X-net SA
-    language: fr
-  legal_form: '0106'
+  - value: FONDATION SUISSE DE DEMINAGE (FSD), Genf
+    language: de
+  organization_uid: CHE109810537
+  legal_form: '0110'
   committee:
-  - value: Conseil d'administration
-    language: fr
+  - value: Stiftungsrat
+    language: de
   function_role:
-  - value: Membre
-    language: fr
+  - value: Vizepräsident
+    language: de
+  is_paid: false
 
 ```
 #### Exemple InterestLink : Mandat exercé comme représentation de sa propre commune
@@ -2128,25 +2147,6 @@ interest_links:
   - value: Präsident
     language: de
   is_paid: true
-
-```
-#### Exemple InterestLink : La même valeur pour le siège dans un organe
-
-```yaml
-interest_links:
-- global_uri: act:il_quadranti_001
-  person_reference:
-    global_uri: >-
-      https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1487
-    label: Matteo Quadranti
-    group_label: Partito liberale radicale ticinese (PLR)
-  interest_type: public_mandate
-  organization_name:
-  - value: Commissione Cantonale Cultura
-    language: it
-  function_role:
-  - value: Vice-presidente
-    language: it
 
 ```
 
@@ -2525,14 +2525,6 @@ Au moins l'un des champs suivants doit être renseigné :
 
 
 ### Exemples
-#### Exemple Address : swiss politicians Beat Jans 1
-
-```yaml
-addresses:
-- address_type: businessAddress
-  postal_locality: Basel-Stadt
-
-```
 #### Exemple Address : groups Konsumenteninformation und -schutz 1
 
 ```yaml
@@ -2544,6 +2536,14 @@ addresses:
   postal_code: '1001'
   postal_locality: Lausanne
   country: CH
+
+```
+#### Exemple Address : swiss politicians Beat Jans 1
+
+```yaml
+addresses:
+- address_type: businessAddress
+  postal_locality: Basel-Stadt
 
 ```
 
@@ -2851,6 +2851,51 @@ _Une classe mixin qui fournit des slots pour modéliser les dates de création e
 
 \newpage
 
+# Sécurité
+
+<!-- PROJET — à faire vérifier par le groupe de spécialistes sur le plan technique et juridique.
+     Traduction du chapitre allemand 08_sicherheitsueberlegungen.md. -->
+
+La présente norme décrit des données concernant des personnes physiques. Il s'agit de données personnelles au sens de l'art. 5 let. a de la loi fédérale sur la protection des données (LPD, en vigueur depuis le 1er septembre 2023). Les indications sur l'appartenance à un parti, sur les mandats et sur les liens d'intérêts permettent de déduire des opinions politiques et constituent donc des données sensibles (art. 5 let. c LPD).
+
+La norme ne crée aucune base légale de publication. Elle structure des données dont la publication découle du principe de transparence, d'obligations de publicité des parlements ou d'un consentement. La décision de publier un élément de données appartient à l'organe qui publie, non au schéma.
+
+Lors de l'application, il convient en particulier de tenir compte des points suivants :
+
+- **Base légale pour chaque élément.** Tout élément du schéma n'est pas publiable dans tous les contextes. L'organe qui publie vérifie, pour chaque élément renseigné, l'existence d'une base légale ou d'un consentement.
+- **Minimisation des données.** Les éléments facultatifs — en particulier la date de naissance, l'adresse et les coordonnées — ne sont renseignés que s'ils sont nécessaires au but de la publication.
+- **Adresses privées du domicile.** Leur publication fait l'objet d'interventions parlementaires (cf. annexe A). Lorsqu'une adresse est nécessaire, il convient d'utiliser si possible une adresse professionnelle ou de correspondance.
+- **Agrégation.** Le regroupement de plusieurs sources peut produire des profils de la personnalité allant au-delà du but de chaque publication prise isolément. Quiconque regroupe des données selon la présente norme réexamine la finalité du traitement.
+- **Indications historiques dans les références.** `PersonReference` et `GroupReference` conservent des caractéristiques locales au moment de la mise en relation. Elles ne doivent pas être interprétées comme l'état actuel.
+- **Transmission et accès.** Lorsque des données sont échangées selon la présente norme avant d'être publiques, les précautions usuelles s'imposent : transport chiffré, accès réservé aux personnes autorisées, protection contre toute modification pendant la transmission.
+- **Traitement de données provenant de tiers.** Avant tout traitement ultérieur d'une livraison, une validation par rapport au schéma est effectuée. Les contenus transmis dans des champs de texte libre sont échappés avant l'affichage.
+
+\newpage
+
+# Exclusion de responsabilité – droits de tiers
+
+Les normes élaborées par l'Association eCH et mises gratuitement à la disposition des utilisatrices et utilisateurs ainsi que les normes de tiers adoptées, ont seulement valeur de recommandations. L'Association eCH ne peut en aucun cas être tenue pour responsable des décisions ou mesures prises par une utilisatrice ou un utilisateur sur la base des documents qu'elle met à disposition. L'utilisatrice ou utilisateur est tenu(e) d'étudier attentivement les documents avant de les mettre en application et au besoin de procéder aux consultations appropriées. Les normes eCH ne remplacent en aucun cas les consultations techniques, organisationnelles ou juridiques appropriées dans un cas concret.
+
+Les documents, méthodes, normes, procédés ou produits référencés dans les normes eCH peuvent le cas échéant être protégés par des dispositions légales sur les marques, les droits d'auteur ou les brevets. L'obtention des autorisations nécessaires auprès des personnes ou organisations détentrices des droits relève de la seule responsabilité de l'utilisatrice ou de l'utilisateur.
+
+Bien que l'Association eCH mette tout en œuvre pour assurer la qualité des normes qu'elle publie, elle ne peut fournir aucune assurance ou garantie quant à l'absence d'erreur, l'actualité, l'exhaustivité et l'exactitude des documents et informations mis à disposition. La teneur des normes eCH peut être modifiée à tout moment sans préavis.
+
+Toute responsabilité relative à des dommages que l'utilisatrice ou l'utilisateur pourrait subir par suite de l'utilisation des normes eCH est exclue dans les limites des règlementations applicables.
+
+\newpage
+
+# Droits d'auteur
+
+Quiconque élabore des normes eCH en conserve la propriété intellectuelle. Elle ou il s'engage toutefois à mettre gratuitement, et pour autant que ce soit possible, la propriété intellectuelle en question ou ses droits à une propriété intellectuelle de tiers à la disposition des groupes de spécialistes respectifs ainsi qu'à l'Association eCH pour une utilisation et un développement sans restriction dans le cadre des buts de l'association.
+
+Les normes élaborées par les groupes de spécialistes peuvent, moyennant mention du détenteur/de la détentrice des droits d'auteur eCH respectifs, être utilisées, développées et déployées gratuitement et sans restriction.
+
+Les normes eCH sont complètement documentées et libres de toute restriction relevant du droit des brevets ou de droits de licence. La documentation correspondante peut être obtenue gratuitement.
+
+Les présentes dispositions s'appliquent exclusivement aux normes élaborées par eCH, non aux normes ou produits de tiers auxquels il est fait référence dans les normes eCH. Les normes incluront les références appropriées aux droits de tiers.
+
+\newpage
+
 # Annexe A – Références et bibliographie
 
 Lorsqu'une version est indiquée, il s'agit de celle sur la base de laquelle la présente norme a été élaborée.
@@ -2885,4 +2930,94 @@ Les normes du groupe spécialisé sont élaborées conjointement et se renvoient
 |ISO 639-1|ISO (International Organization for Standardization). Codes de langue, utilisés dans le slot `language` de `MultilingualValue`.|
 |schema.org|Vocabulaire commun pour les données structurées. Source de plusieurs affectations `slot_uri` : [https://schema.org](https://schema.org)|
 |LinkML|Langage de modélisation dans lequel la présente norme est définie : [https://linkml.io](https://linkml.io)|
+
+\newpage
+
+# Annexe B – Collaboration & vérification
+
+Groupe de spécialistes « Affaires politiques », sous-groupe « Acteurs politiques » :
+
+| | |
+|---|---|
+|Julie Silberstein|Office fédéral de la statistique|
+|Laurence Brandenberger|Université de Zurich, IPZ|
+|Daniela Koller|Canton de Thurgovie|
+|Thomas Roth||
+|Stefan Oderbolz|EBP|
+|Fabian Davolio|Services du Parlement|
+|Orhan Saeedi|Canton de Bâle-Ville|
+|Christian Gutknecht|Glue AG|
+|Michael Luggen|Chancellerie fédérale|
+
+<!-- TODO groupe de spécialistes : compléter/corriger les organisations et l'historique des versions. -->
+
+| Version | Date | Auteur | Remarque |
+|---|---|---|---|
+| 1.0.0 | 2026-08-10 | Groupe de spécialistes « Affaires politiques » | Dépôt en tant que proposition |
+
+# Annexe C – Abréviations et glossaire
+
+| | |
+|---|---|
+|IDE|Numéro d'identification des entreprises. Clé univoque d'une entreprise suisse selon l'Office fédéral de la statistique.|
+|I14Y|Plateforme d'interopérabilité de l'Office fédéral de la statistique ; source de plusieurs listes de codes.|
+|IRI|Internationalized Resource Identifier. Extension de l'URI à l'ensemble du jeu de caractères Unicode.|
+|JSON-LD|JSON for Linking Data. Sérialisation de données liées en JSON.|
+|LINDAS|Linked Data Service de l'administration fédérale suisse.|
+|LinkML|Linked Data Modeling Language. Langage de modélisation dans lequel la présente norme est définie.|
+|LPD|Loi fédérale sur la protection des données, en vigueur depuis le 1er septembre 2023.|
+|NOGA|Nomenclature générale des activités économiques de l'Office fédéral de la statistique.|
+|RDF|Resource Description Framework. Modèle de données pour les données liées ; livré ici au format Turtle (.ttl).|
+|URI|Uniform Resource Identifier. Identifiant univoque d'une ressource.|
+|XSD|XML Schema Definition. Recommandation du W3C pour la définition de structures de documents XML.|
+
+# Annexe D – Modifications par rapport à la version précédente
+
+Il s'agit de la première version.
+
+\newpage
+
+# Annexe E – Liste des illustrations
+
+```{=openxml}
+<w:p>
+  <w:r>
+    <w:fldChar w:fldCharType="begin" w:dirty="true"/>
+  </w:r>
+  <w:r>
+    <w:instrText xml:space="preserve"> TOC \h \z \c "Abbildung" </w:instrText>
+  </w:r>
+  <w:r>
+    <w:fldChar w:fldCharType="separate"/>
+  </w:r>
+  <w:r>
+    <w:t>Clic droit &gt; « Mettre à jour les champs » pour générer la liste des illustrations.</w:t>
+  </w:r>
+  <w:r>
+    <w:fldChar w:fldCharType="end"/>
+  </w:r>
+</w:p>
+```
+
+# Annexe F – Liste des tableaux
+
+```{=openxml}
+<w:p>
+  <w:r>
+    <w:fldChar w:fldCharType="begin" w:dirty="true"/>
+  </w:r>
+  <w:r>
+    <w:instrText xml:space="preserve"> TOC \h \z \c "Tabelle" </w:instrText>
+  </w:r>
+  <w:r>
+    <w:fldChar w:fldCharType="separate"/>
+  </w:r>
+  <w:r>
+    <w:t>Clic droit &gt; « Mettre à jour les champs » pour générer la liste des tableaux.</w:t>
+  </w:r>
+  <w:r>
+    <w:fldChar w:fldCharType="end"/>
+  </w:r>
+</w:p>
+```
 

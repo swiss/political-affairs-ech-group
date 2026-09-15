@@ -76,6 +76,45 @@ Au moins l'un des champs suivants doit être renseigné :
 
 
 ### Exemples
+#### Exemple InterestLink : Public office at another federal level
+
+```yaml
+interest_links:
+- global_uri: act:il_dafond_001
+  person_reference:
+    global_uri: >-
+      https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=14
+    label: Felice Dafond
+    group_label: PLR
+  interest_type: public_mandate
+  organization_name:
+  - value: Municipio di Minusio
+    language: it
+  legal_form: '0223'
+  function_role:
+  - value: Sindaco
+    language: it
+
+```
+#### Exemple InterestLink : The same value for a seat on a body
+
+```yaml
+interest_links:
+- global_uri: act:il_quadranti_001
+  person_reference:
+    global_uri: >-
+      https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1487
+    label: Matteo Quadranti
+    group_label: Partito liberale radicale ticinese (PLR)
+  interest_type: public_mandate
+  organization_name:
+  - value: Commissione Cantonale Cultura
+    language: it
+  function_role:
+  - value: Vice-presidente
+    language: it
+
+```
 #### Exemple InterestLink : Own company run operationally
 
 ```yaml
@@ -97,30 +136,6 @@ interest_links:
   - value: Geschäftsführer
     language: de
   is_paid: true
-
-```
-#### Exemple InterestLink : Foundation board mandate with the organisations UID
-
-```yaml
-interest_links:
-- global_uri: act:il_burkart_007
-  person_reference:
-    global_uri: http://www.wikidata.org/entity/Q23060472
-    label: Thierry Burkart
-    group_label: FDP.Die Liberalen
-  interest_type: governing_body
-  organization_name:
-  - value: FONDATION SUISSE DE DEMINAGE (FSD), Genf
-    language: de
-  organization_uid: CHE109810537
-  legal_form: '0110'
-  committee:
-  - value: Stiftungsrat
-    language: de
-  function_role:
-  - value: Vizepräsident
-    language: de
-  is_paid: false
 
 ```
 #### Exemple InterestLink : Leading role for an interest group
@@ -152,6 +167,28 @@ interest_links:
     language: de
 
 ```
+#### Exemple InterestLink : Board mandate without a UID and without payment information
+
+```yaml
+interest_links:
+- global_uri: act:il_balaban_001
+  person_reference:
+    global_uri: https://ge.ch/grandconseil/gc/depute/2517/
+    label: Stefan Balaban
+    group_label: LJS
+  interest_type: governing_body
+  organization_name:
+  - value: X-net SA
+    language: fr
+  legal_form: '0106'
+  committee:
+  - value: Conseil d'administration
+    language: fr
+  function_role:
+  - value: Membre
+    language: fr
+
+```
 #### Exemple InterestLink : Cantonal link person from the same delivery
 
 ```yaml
@@ -175,46 +212,28 @@ interest_links:
     language: it
 
 ```
-#### Exemple InterestLink : Public office at another federal level
+#### Exemple InterestLink : Foundation board mandate with the organisations UID
 
 ```yaml
 interest_links:
-- global_uri: act:il_dafond_001
+- global_uri: act:il_burkart_007
   person_reference:
-    global_uri: >-
-      https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=14
-    label: Felice Dafond
-    group_label: PLR
-  interest_type: public_mandate
-  organization_name:
-  - value: Municipio di Minusio
-    language: it
-  legal_form: '0223'
-  function_role:
-  - value: Sindaco
-    language: it
-
-```
-#### Exemple InterestLink : Board mandate without a UID and without payment information
-
-```yaml
-interest_links:
-- global_uri: act:il_balaban_001
-  person_reference:
-    global_uri: https://ge.ch/grandconseil/gc/depute/2517/
-    label: Stefan Balaban
-    group_label: LJS
+    global_uri: http://www.wikidata.org/entity/Q23060472
+    label: Thierry Burkart
+    group_label: FDP.Die Liberalen
   interest_type: governing_body
   organization_name:
-  - value: X-net SA
-    language: fr
-  legal_form: '0106'
+  - value: FONDATION SUISSE DE DEMINAGE (FSD), Genf
+    language: de
+  organization_uid: CHE109810537
+  legal_form: '0110'
   committee:
-  - value: Conseil d'administration
-    language: fr
+  - value: Stiftungsrat
+    language: de
   function_role:
-  - value: Membre
-    language: fr
+  - value: Vizepräsident
+    language: de
+  is_paid: false
 
 ```
 #### Exemple InterestLink : Mandate held as a delegate of the persons own commune
@@ -262,25 +281,6 @@ interest_links:
   - value: Präsident
     language: de
   is_paid: true
-
-```
-#### Exemple InterestLink : The same value for a seat on a body
-
-```yaml
-interest_links:
-- global_uri: act:il_quadranti_001
-  person_reference:
-    global_uri: >-
-      https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1487
-    label: Matteo Quadranti
-    group_label: Partito liberale radicale ticinese (PLR)
-  interest_type: public_mandate
-  organization_name:
-  - value: Commissione Cantonale Cultura
-    language: it
-  function_role:
-  - value: Vice-presidente
-    language: it
 
 ```
 
