@@ -6,6 +6,9 @@ _Internal note: update the next subgroup meeting in the [README](https://github.
 
 ## Next meeting: 28 September (15-16.00) – 4th MO of every month
 
+- Glossar
+- 
+
 ## 24 August
 
 - **To do: Entwurf der Kapitel 03 bis 07 bis 1 Woche vor nächster Sitzung: 21. September**
