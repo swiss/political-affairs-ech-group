@@ -167,7 +167,7 @@ Während die Traktanden die **Planung** einer Sitzung abbilden, hält das Protok
 Meeting
   ├─ agenda_items   (vorher: geplante Traktanden)
   └─ protocol_ref   (nachher: Niederschrift)
-        ├─ protocol_items  → ProtocolItem (wie AgendaItem)
+        ├─ protocol_items  → ProtocolItem (gleiche Elemente wie AgendaItem)
         ├─ votings
         ├─ speeches
         ├─ text_segments
@@ -178,7 +178,7 @@ Meeting
 
 ### ProtocolItem (protokolliertes Traktandum)
 
-`ProtocolItem` erbt sämtliche Felder von `AgendaItem` (`is_a: AgendaItem`) und bildet ein Traktandum so ab, wie es im Protokoll tatsächlich festgehalten wurde.
+`ProtocolItem` bildet ein Traktandum so ab, wie es im Protokoll tatsächlich festgehalten wurde. Es führt dieselben Elemente wie `AgendaItem`, ist aber keine Ableitung davon: Beide Klassen beziehen die Traktandumsfelder aus dem Mixin `IsAgendaItem`. Das Protokollierte ist kein Sonderfall des Geplanten — es entsteht unabhängig und kann Traktanden enthalten, die nie traktandiert waren, so wie die Traktandenliste Punkte enthalten kann, die nie behandelt wurden.
 
 {{include:ech-0293_operations/output/docs/ProtocolItem.md}}
 

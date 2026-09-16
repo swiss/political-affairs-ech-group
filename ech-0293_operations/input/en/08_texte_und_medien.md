@@ -35,6 +35,10 @@ Speech
   └─ TextSegment (summary, de)
 ```
 
+### Carriers of a text segment
+
+Text segments are not tied to the verbatim record alone: `Protocol` carries them for the wording of the whole sitting, and `AgendaItem` — respectively the recorded `ProtocolItem` — for text belonging to one agenda item, such as a subtitle, a cross-reference or a reasoning already published with the agenda. Because both classes carry the `IsAgendaItem` mixin, `text_segments` is available on the planned as well as on the recorded side. A single contribution, by contrast, carries its wording directly in `text`, `text_format` and `text_type`.
+
 ## Media
 
 ### Purpose

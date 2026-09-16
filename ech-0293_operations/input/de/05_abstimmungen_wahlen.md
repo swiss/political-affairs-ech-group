@@ -12,6 +12,10 @@ Parlamentarische Beschlussfassungen erfolgen entweder durch Abstimmungen über S
 
 "Voting" erfasst den Abstimmungsprozess und das Ergebnis einer formalen Entscheidung im Parlament. Die Entität dokumentiert sowohl den Abstimmungsgegenstand (Frage), als auch das Verfahren (wie wurde abgestimmt) und das Resultat (mit welchem Stimmenverhältnis).
 
+### Verankerung im Protokoll
+
+Abgestimmt und gewählt wird im Verlauf der Sitzung. `Voting` und `Election` hängen deshalb über `parent_protocol` am Protokoll und nicht an der vorgängig publizierten Traktandenliste: Was traktandiert wurde, sagt noch nicht, worüber tatsächlich abgestimmt wurde. Wurde unter einem Traktandum abgestimmt, verweist zusätzlich `parent_protocol_item` auf das protokollierte Traktandum (`ProtocolItem`); ohne Traktandierung bleibt dieses Feld leer, und die Zuordnung ergibt sich aus `parent_protocol` und `parent_meeting`. Umgekehrt nimmt `Protocol` die Abstimmungen und Wahlen als Listen auf (`votings`, `elections`).
+
 ### Arten von Abstimmungen
 
 Der Standard unterscheidet verschiedene Abstimmungstypen über das Feld **voting_type**:

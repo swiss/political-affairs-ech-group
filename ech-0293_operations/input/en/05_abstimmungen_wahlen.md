@@ -12,6 +12,10 @@ Parliamentary decisions are taken either by votings on substantive questions or 
 
 "Voting" records the voting process and the result of a formal decision in parliament. The entity documents the subject of the voting (the question), the procedure (how the vote was taken) and the result (with which ratio of votes).
 
+### Anchoring in the minutes
+
+Votings and elections take place during the sitting. `Voting` and `Election` are therefore anchored in the minutes via `parent_protocol` and not in the agenda published beforehand: what was put on the agenda does not yet say what was actually voted on. Where the vote was taken under an agenda item, `parent_protocol_item` additionally points to the recorded agenda item (`ProtocolItem`); without an agenda item this field stays empty and the assignment follows from `parent_protocol` and `parent_meeting`. Conversely, `Protocol` takes up the votings and elections as lists (`votings`, `elections`).
+
 ### Types of votings
 
 The standard distinguishes different voting types via the field **voting_type**:

@@ -163,18 +163,15 @@ classes:
           description_fr: |
             Référence à l'organe agissant (instantané au moment de la mise en relation).
 
-  AgendaItem:
+  IsAgendaItem:
+    mixin: true
     description: |
-      An agenda item of a meeting.
+      A mixin class that provides the elements of an agenda item: designation, type, actors, the link to the affair, state, resolution and attached texts and documents. It is used by the planned agenda item (AgendaItem) and by the recorded one (ProtocolItem), so that both carry the same elements without one depending on the other.
     annotations:
       description_de: |
-        Ein Traktandum einer Sitzung.
+        Eine Mixin-Klasse, welche die Elemente eines Traktandums bereitstellt: Bezeichnung, Art, Akteure, Bezug zum Geschäft, Status, Beschluss sowie angehängte Texte und Dokumente. Sie wird vom geplanten Traktandum (AgendaItem) und vom protokollierten (ProtocolItem) verwendet, damit beide dieselben Elemente führen, ohne dass das eine vom anderen abhängt.
       description_fr: |
-        Un point de l'ordre du jour d'une séance.
-    mixins:
-      - HasIdentification
-      - IsEventWithDuration
-      - HasCreationModificationDates
+        Une classe mixin qui fournit les éléments d'un point de l'ordre du jour : désignation, type, acteurs, lien avec l'affaire, état, décision ainsi que les textes et documents rattachés. Elle est utilisée par le point planifié (AgendaItem) et par le point consigné (ProtocolItem), de sorte que les deux portent les mêmes éléments sans que l'un dépende de l'autre.
     slots:
       - parent_meeting
       - agenda_item_type
@@ -192,7 +189,22 @@ classes:
       - agenda_item_category
       - parent_agenda_item
       - has_resolution
+      - text_segments
       - documents
+
+  AgendaItem:
+    description: |
+      An agenda item of a meeting.
+    annotations:
+      description_de: |
+        Ein Traktandum einer Sitzung.
+      description_fr: |
+        Un point de l'ordre du jour d'une séance.
+    mixins:
+      - HasIdentification
+      - IsEventWithDuration
+      - HasCreationModificationDates
+      - IsAgendaItem
 
   Protocol:
     description: |
@@ -209,19 +221,24 @@ classes:
       - parent_meeting
       - protocol_items
       - votings
+      - elections
       - speeches
       - text_segments
       - documents
 
   ProtocolItem:
-    is_a: AgendaItem
     description: |
-      An agenda item as actually recorded in the protocol.
+      An agenda item as actually recorded in the protocol. It carries the same elements as AgendaItem through the IsAgendaItem mixin, but is a class in its own right: the record is not a special case of the plan.
     annotations:
       description_de: |
-        Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde.
+        Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde. Es führt über den Mixin IsAgendaItem dieselben Elemente wie AgendaItem, ist aber eine eigenständige Klasse: Das Protokollierte ist kein Sonderfall des Geplanten.
       description_fr: |
-        Un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-verbal.
+        Un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-verbal. Il porte, via le mixin IsAgendaItem, les mêmes éléments qu'AgendaItem, tout en restant une classe à part entière : le point consigné n'est pas un cas particulier du point planifié.
+    mixins:
+      - HasIdentification
+      - IsEventWithDuration
+      - HasCreationModificationDates
+      - IsAgendaItem
 
   JointDebate:
     description: |
@@ -281,7 +298,8 @@ classes:
       - majority_count
       - result_text
       - parent_meeting
-      - parent_agenda_item
+      - parent_protocol
+      - parent_protocol_item
       - affair_id
       - actor_id
       - documents
@@ -343,7 +361,8 @@ classes:
       - majority_count
       - result_text
       - parent_meeting
-      - parent_agenda_item
+      - parent_protocol
+      - parent_protocol_item
       - affair_id
       - actor_id
       - documents
@@ -437,12 +456,12 @@ classes:
 
   TextSegment:
     description: |
-      A text segment such as cross-references or subtitles in meeting protocols.
+      A text segment such as cross-references or subtitles. Text segments are carried by the protocol, by a speech or by an agenda item (planned AgendaItem or recorded ProtocolItem).
     annotations:
       description_de: |
-        Ein Textsegment wie Querverweise oder Zwischentitel in Sitzungsprotokollen.
+        Ein Textsegment wie Querverweise oder Zwischentitel. Textsegmente werden am Protokoll, an einer Wortmeldung oder an einem Traktandum geführt (geplantes AgendaItem oder protokolliertes ProtocolItem).
       description_fr: |
-        Un segment de texte tel qu'un renvoi ou un intertitre dans un procès-verbal de séance.
+        Un segment de texte tel qu'un renvoi ou un intertitre. Les segments de texte sont portés par le procès-verbal, par une intervention ou par un point de l'ordre du jour (AgendaItem planifié ou ProtocolItem consigné).
     mixins:
       - HasIdentification
     slots:
@@ -872,6 +891,28 @@ slots:
       description_fr: |
         Au besoin, ce slot permet de construire une hiérarchie de points de l'ordre du jour.
     range: string
+
+  parent_protocol:
+    slot_uri: ops:parentProtocol
+    description: |
+      The protocol in which the voting or election is recorded. A vote is held during the sitting and is therefore anchored in the minutes, not in the agenda planned beforehand.
+    annotations:
+      description_de: |
+        Das Protokoll, in dem die Abstimmung oder Wahl festgehalten ist. Abgestimmt wird im Verlauf der Sitzung; die Abstimmung hängt deshalb am Protokoll und nicht an der vorgängig geplanten Traktandenliste.
+      description_fr: |
+        Le procès-verbal dans lequel le vote ou l'élection est consigné. Un vote a lieu au cours de la séance et se rattache donc au procès-verbal et non à l'ordre du jour planifié à l'avance.
+    range: Protocol
+
+  parent_protocol_item:
+    slot_uri: ops:parentProtocolItem
+    description: |
+      The recorded agenda item (ProtocolItem) under which the voting or election took place. Omitted when the vote was taken without an agenda item; the link to the sitting is then given by parent_protocol and parent_meeting alone.
+    annotations:
+      description_de: |
+        Das protokollierte Traktandum (ProtocolItem), unter dem abgestimmt oder gewählt wurde. Entfällt, wenn ohne Traktandierung abgestimmt wurde; die Zuordnung zur Sitzung ergibt sich dann allein aus parent_protocol und parent_meeting.
+      description_fr: |
+        Le point consigné au procès-verbal (ProtocolItem) sous lequel le vote ou l'élection a eu lieu. Absent lorsque le vote a eu lieu sans point de l'ordre du jour ; le rattachement à la séance découle alors uniquement de parent_protocol et parent_meeting.
+    range: ProtocolItem
 
   has_resolution:
     description: |

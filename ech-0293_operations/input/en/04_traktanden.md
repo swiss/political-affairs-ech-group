@@ -167,7 +167,7 @@ While the agenda items represent the **planning** of a sitting, the protocol rec
 Meeting
   ├─ agenda_items   (before: planned agenda items)
   └─ protocol_ref   (after: the record)
-        ├─ protocol_items  → ProtocolItem (like AgendaItem)
+        ├─ protocol_items  → ProtocolItem (same elements as AgendaItem)
         ├─ votings
         ├─ speeches
         ├─ text_segments
@@ -178,7 +178,7 @@ Meeting
 
 ### ProtocolItem (agenda item as recorded)
 
-`ProtocolItem` inherits all fields of `AgendaItem` (`is_a: AgendaItem`) and represents an agenda item as it was actually recorded in the protocol.
+`ProtocolItem` represents an agenda item as it was actually recorded in the protocol. It carries the same elements as `AgendaItem` without being derived from it: both classes take the agenda item fields from the `IsAgendaItem` mixin. The record is not a special case of the plan — it arises independently and may contain items that were never put on the agenda, just as the agenda may contain items that were never dealt with.
 
 {{include:ech-0293_operations/output/docs/ProtocolItem.md}}
 
