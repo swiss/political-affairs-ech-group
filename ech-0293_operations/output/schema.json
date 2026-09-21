@@ -3419,10 +3419,6 @@
                 "id": {
                     "description": "Unique identifier of the element.\n",
                     "type": "string"
-                },
-                "work_type": {
-                    "$ref": "#/$defs/WorkTypesEnum",
-                    "description": "Type of the document (e.g. minutes, submitted version, current law).\n"
                 }
             },
             "required": [
@@ -3455,16 +3451,6 @@
             ],
             "title": "WorkContainer",
             "type": "object"
-        },
-        "WorkTypesEnum": {
-            "description": "Type of a document (FRBR Work).",
-            "enum": [
-                "pv",
-                "submitted_version",
-                "current_law"
-            ],
-            "title": "WorkTypesEnum",
-            "type": "string"
         }
     },
     "$id": "https://ch.paf.link/schema/operations",

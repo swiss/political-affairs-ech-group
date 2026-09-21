@@ -195,7 +195,6 @@ Name: operations
 | [votings](votings.md) | Ensemble des votes |
 | [weight](weight.md) | Le nombre de voix dont dispose la personne, le cas échéant (p |
 | [wikidata_uri](wikidata_uri.md) | Une URI qui renvoie à une entité Wikidata, par ex |
-| [work_type](work_type.md) | Type de document (p |
 | [works](works.md) | Les documents (FRBR Works) contenus dans le conteneur |
 | [xdate](xdate.md) | La valeur de date elle-même |
 
@@ -215,7 +214,6 @@ Name: operations
 | [ResolutionTypeEnum](ResolutionTypeEnum.md) | Type de décision prise sur un point de l'ordre du jour |
 | [StateEnum](StateEnum.md) | État de la séance |
 | [VotingTypeEnum](VotingTypeEnum.md) | Type de procédure de vote |
-| [WorkTypesEnum](WorkTypesEnum.md) | Type d'un document (FRBR Work) |
 
 
 ## Types

@@ -195,7 +195,6 @@ Name: operations
 | [votings](votings.md) | Sammlung der Abstimmungen |
 | [weight](weight.md) | Die Anzahl der Stimmen, die die Einzelperson hat, falls zutreffend (z |
 | [wikidata_uri](wikidata_uri.md) | Eine URI, die auf eine Wikidata-Entität verweist, z |
-| [work_type](work_type.md) | Art des Dokuments (z |
 | [works](works.md) | Die im Container enthaltenen Dokumente (FRBR Works) |
 | [xdate](xdate.md) | Der Datumswert selbst |
 
@@ -215,7 +214,6 @@ Name: operations
 | [ResolutionTypeEnum](ResolutionTypeEnum.md) | Art der Resolution zu einem Traktandum |
 | [StateEnum](StateEnum.md) | Status der Sitzung |
 | [VotingTypeEnum](VotingTypeEnum.md) | Art des Abstimmungsverfahrens |
-| [WorkTypesEnum](WorkTypesEnum.md) | Art eines Dokuments (FRBR Work) |
 
 
 ## Typen
