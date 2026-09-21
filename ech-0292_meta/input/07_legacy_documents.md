@@ -22,7 +22,9 @@ Manifestation is "the physical embodiment of an expression of a work. As an enti
 <to be added the document modell>
 
 
-## Dokumentenkategorien
+## Dokumentenkategorien (work_type)
+
+
 
 
 
