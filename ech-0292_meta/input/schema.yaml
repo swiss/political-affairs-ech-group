@@ -30,7 +30,6 @@ classes:
         FRBR Work : le document abstrait en tant que tel, indépendamment d'une version linguistique ou d'un format de fichier concrets.
     slots:
       - id
-      - work_type
       - document_category
       - expressions
     
@@ -147,18 +146,6 @@ slots:
       description_fr: |
         Identifiant univoque de l'élément.
     required: true
-
-  work_type:
-    slot_uri: meta:workType
-    description: |
-      Type of the document (e.g. minutes, submitted version, current law).
-    annotations:
-      description_de: |
-        Art des Dokuments (z.B. Protokoll, eingereichte Fassung, geltendes Recht).
-      description_fr: |
-        Type de document (p. ex. procès-verbal, version déposée, droit en vigueur).
-    range: WorkTypesEnum
-
 
   # Renamed from the generic `language`/`title`/`description` so they do not
   # collide with same-named slots that consumer schemas (e.g. ech-0293) or
@@ -315,43 +302,6 @@ enums:
             Datum der letzten Revision.
           description_fr: |
             Date de la dernière révision.
-
-  WorkTypesEnum:
-    description: |
-      Type of a document (FRBR Work).
-    annotations:
-      description_de: |
-        Art eines Dokuments (FRBR Work).
-      description_fr: |
-        Type d'un document (FRBR Work).
-    permissible_values:
-      pv:
-        meaning: meta:vocabulary/work_types/PV
-        description: |
-          Minutes (Protokoll).
-        annotations:
-          description_de: |
-            Protokoll.
-          description_fr: |
-            Procès-verbal.
-      submitted_version:
-        meaning: meta:vocabulary/work_types/SubmittedVersion
-        description: |
-          Version as submitted.
-        annotations:
-          description_de: |
-            Eingereichte Fassung.
-          description_fr: |
-            Version telle que déposée.
-      current_law:
-        meaning: meta:vocabulary/work_types/CurrentLaw
-        description: |
-          Law currently in force.
-        annotations:
-          description_de: |
-            Geltendes Recht.
-          description_fr: |
-            Droit en vigueur.
 
   DocumentCategoryEnum:
     description: |
