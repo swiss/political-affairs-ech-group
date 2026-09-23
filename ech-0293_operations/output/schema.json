@@ -2,7 +2,7 @@
     "$defs": {
         "AgendaItem": {
             "additionalProperties": false,
-            "description": "An agenda item of a meeting as planned beforehand. It structures the agenda and connects the temporal organisation (Meeting) with the substantive affairs (eCH-0295). Agenda items represent the planning of a meeting and are no longer changed in the data once the meeting has started: deviations during the meeting \u2014 items brought forward, postponed or added \u2014 are recorded in the protocol (ProtocolItem) and feed into the agenda of the next meeting. For the same reason, planned and actual times are kept separately.",
+            "description": "An agenda item of a meeting as planned beforehand. It structures the agenda and connects the temporal organisation (Meeting) with the substantive affairs (eCH-0295). It is embedded in its meeting (Meeting.agenda_items) or directly in its session (Session.agenda_items). Agenda items represent the planning of a meeting and are no longer changed in the data once the meeting has started: deviations during the meeting \u2014 items brought forward, postponed or added \u2014 are recorded in the protocol (ProtocolItem) and feed into the agenda of the next meeting. For the same reason, planned and actual times are kept separately.",
             "properties": {
                 "affair_id": {
                     "description": "Identifier of the affair (eCH-0295) the record refers to. Administrative agenda items (e.g. approval of the minutes) have no affair. An affair usually runs through several agenda items \u2014 in legislation, for instance, the debate on entering into the matter, the detailed deliberation, the final vote and, where applicable, the procedure for resolving differences between the chambers.\n",
@@ -215,13 +215,6 @@
                         "null"
                     ]
                 },
-                "parent_meeting": {
-                    "description": "Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.\n",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "speaking_actor_id": {
                     "description": "The speaker or head of the department for the agenda item.\n",
                     "type": [
@@ -353,7 +346,7 @@
                     ]
                 },
                 "parent_meeting": {
-                    "description": "Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.\n",
+                    "description": "Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on a voting, election, speech, attendance list or protocol it names the meeting in which the record arose. Agenda items do not carry it: they are embedded in their meeting.\n",
                     "type": [
                         "string",
                         "null"
@@ -413,18 +406,8 @@
         },
         "Container": {
             "additionalProperties": false,
-            "description": "Container for the records of public council operations: legislatures, sessions, meetings, agenda items, protocols, votings, elections, attendances, speeches and resolutions.",
+            "description": "Container for the records of public council operations: legislatures, sessions, meetings, protocols, votings, elections, attendances, speeches and resolutions.",
             "properties": {
-                "agenda_items": {
-                    "description": "Collection of agenda item records.\n",
-                    "items": {
-                        "$ref": "#/$defs/AgendaItem"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "attendances": {
                     "description": "Collection of attendance records.\n",
                     "items": {
@@ -721,7 +704,7 @@
                     "description": "Type of majority required for the vote (absolute, two-thirds, etc.).\n"
                 },
                 "parent_meeting": {
-                    "description": "Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.\n",
+                    "description": "Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on a voting, election, speech, attendance list or protocol it names the meeting in which the record arose. Agenda items do not carry it: they are embedded in their meeting.\n",
                     "type": [
                         "string",
                         "null"
@@ -1364,13 +1347,6 @@
                         "null"
                     ]
                 },
-                "parent_meeting": {
-                    "description": "Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.\n",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "speaking_actor_id": {
                     "description": "The speaker or head of the department for the agenda item.\n",
                     "type": [
@@ -1950,7 +1926,7 @@
         },
         "Meeting": {
             "additionalProperties": false,
-            "description": "The individual sitting of a body \u2014 the level at which agenda items are deliberated, decisions taken and speeches recorded. The meeting is the node to which the other classes of this standard attach via `parent_meeting`: agenda items (AgendaItem), votings and elections (Voting, Election), speeches (Speech) and the attendance list (Attendance). At this level, scheduled and actual times regularly diverge \u2014 a sitting scheduled for 14:00 only begins at 14:25 because of delays and ends at 17:30 instead of 18:00 \u2014 which is why both the planned and the actual begin and end are recorded.",
+            "description": "The individual sitting of a body \u2014 the level at which agenda items are deliberated, decisions taken and speeches recorded. The meeting is the node to which the other classes of this standard attach: its agenda items (AgendaItem) are embedded in it (agenda_items), while votings and elections (Voting, Election), speeches (Speech) and the attendance list (Attendance) reference it via `parent_meeting`. At this level, scheduled and actual times regularly diverge \u2014 a sitting scheduled for 14:00 only begins at 14:25 because of delays and ends at 17:30 instead of 18:00 \u2014 which is why both the planned and the actual begin and end are recorded.",
             "properties": {
                 "actor_id": {
                     "anyOf": [
@@ -1974,6 +1950,16 @@
                     "description": "Administrative ID of the legislative body, such as a municipality, canton, or country.\n",
                     "type": [
                         "string",
+                        "null"
+                    ]
+                },
+                "agenda_items": {
+                    "description": "Agenda items planned for this meeting or session, embedded as a list. On a meeting they form the agenda of the sitting. On a session they hold agenda items planned directly at the level of the session \u2014 where a federal unit does not break the session down into individual meetings (e.g. a Landsgemeinde or a one-day sitting of a cantonal parliament), or for items not (yet) assigned to a specific meeting, as in a session programme. The counterpart after the sitting are the items recorded in the protocol (Protocol.protocol_items).\n",
+                    "items": {
+                        "$ref": "#/$defs/AgendaItem"
+                    },
+                    "type": [
+                        "array",
                         "null"
                     ]
                 },
@@ -2168,14 +2154,21 @@
                     ]
                 },
                 "number": {
-                    "description": "Sequential number, e.g. within the legislature, the session or the year.\n",
+                    "description": "Number of the session or meeting as designated by the body, e.g. within the legislature, the session or the year. As a string it also allows roman numerals. Numbering practices vary widely, which is why number, sequential_number, position and meeting_abbreviation are available side by side.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "parent_legislature": {
+                    "description": "Identifier of the legislature to which the session or meeting belongs. A meeting that belongs to a session is assigned to the legislature through the session (parent_session); a meeting without a session \u2014 for instance a committee sitting or a sitting in a federal unit without formal sessions \u2014 refers to the legislature directly.\n",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
                 "parent_meeting": {
-                    "description": "Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.\n",
+                    "description": "Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on a voting, election, speech, attendance list or protocol it names the meeting in which the record arose. Agenda items do not carry it: they are embedded in their meeting.\n",
                     "type": [
                         "string",
                         "null"
@@ -2189,14 +2182,14 @@
                     ]
                 },
                 "position": {
-                    "description": "Integer position within the superordinate sequence.\n",
+                    "description": "Integer position within the superordinate sequence, e.g. of a session within the legislature.\n",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
                 "sequential_number": {
-                    "description": "Sequential number of the meeting, used for ordering.\n",
+                    "description": "Sequential number of the session or meeting as an integer, used for ordering.\n",
                     "type": [
                         "integer",
                         "null"
@@ -2500,7 +2493,7 @@
                     ]
                 },
                 "parent_meeting": {
-                    "description": "Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.\n",
+                    "description": "Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on a voting, election, speech, attendance list or protocol it names the meeting in which the record arose. Agenda items do not carry it: they are embedded in their meeting.\n",
                     "type": [
                         "string",
                         "null"
@@ -2775,13 +2768,6 @@
                         "null"
                     ]
                 },
-                "parent_meeting": {
-                    "description": "Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.\n",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "speaking_actor_id": {
                     "description": "The speaker or head of the department for the agenda item.\n",
                     "type": [
@@ -2893,8 +2879,18 @@
         },
         "Session": {
             "additionalProperties": false,
-            "description": "A parliamentary session that groups multiple meetings and spans a specific time period.",
+            "description": "A session: a contiguous period of sittings within a legislature. It groups its meetings (meetings) and may also carry agenda items directly (agenda_items). The session is the only one of the three temporal levels that may be omitted: federal units without formal sessions leave it out and attach their meetings directly to the legislature (parent_legislature). Session and meeting may also coincide \u2014 a one-day sitting of a cantonal parliament or a Landsgemeinde is represented as a session with a single meeting, or as a session that carries its agenda items directly without any meeting.",
             "properties": {
+                "agenda_items": {
+                    "description": "Agenda items planned for this meeting or session, embedded as a list. On a meeting they form the agenda of the sitting. On a session they hold agenda items planned directly at the level of the session \u2014 where a federal unit does not break the session down into individual meetings (e.g. a Landsgemeinde or a one-day sitting of a cantonal parliament), or for items not (yet) assigned to a specific meeting, as in a session programme. The counterpart after the sitting are the items recorded in the protocol (Protocol.protocol_items).\n",
+                    "items": {
+                        "$ref": "#/$defs/AgendaItem"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "date_begin_actual": {
                     "description": "The actual start date of an event or occurrence with time duration.\n",
                     "format": "date",
@@ -3050,28 +3046,28 @@
                     ]
                 },
                 "number": {
-                    "description": "Sequential number, e.g. within the legislature, the session or the year.\n",
+                    "description": "Number of the session or meeting as designated by the body, e.g. within the legislature, the session or the year. As a string it also allows roman numerals. Numbering practices vary widely, which is why number, sequential_number, position and meeting_abbreviation are available side by side.\n",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
                 "parent_legislature": {
-                    "description": "Identifier of the legislature to which the session belongs.\n",
+                    "description": "Identifier of the legislature to which the session or meeting belongs. A meeting that belongs to a session is assigned to the legislature through the session (parent_session); a meeting without a session \u2014 for instance a committee sitting or a sitting in a federal unit without formal sessions \u2014 refers to the legislature directly.\n",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
                 "position": {
-                    "description": "Integer position within the superordinate sequence.\n",
+                    "description": "Integer position within the superordinate sequence, e.g. of a session within the legislature.\n",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
                 "sequential_number": {
-                    "description": "Sequential number of the meeting, used for ordering.\n",
+                    "description": "Sequential number of the session or meeting as an integer, used for ordering.\n",
                     "type": [
                         "integer",
                         "null"
@@ -3244,7 +3240,7 @@
                     ]
                 },
                 "parent_meeting": {
-                    "description": "Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.\n",
+                    "description": "Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on a voting, election, speech, attendance list or protocol it names the meeting in which the record arose. Agenda items do not carry it: they are embedded in their meeting.\n",
                     "type": [
                         "string",
                         "null"
@@ -3501,7 +3497,7 @@
                     ]
                 },
                 "parent_meeting": {
-                    "description": "Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.\n",
+                    "description": "Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on a voting, election, speech, attendance list or protocol it names the meeting in which the record arose. Agenda items do not carry it: they are embedded in their meeting.\n",
                     "type": [
                         "string",
                         "null"
@@ -3685,19 +3681,9 @@
     "$id": "https://ch.paf.link/schema/operations",
     "$schema": "https://json-schema.org/draft/2019-09/schema",
     "additionalProperties": true,
-    "description": "Container for the records of public council operations: legislatures, sessions, meetings, agenda items, protocols, votings, elections, attendances, speeches and resolutions.",
+    "description": "Container for the records of public council operations: legislatures, sessions, meetings, protocols, votings, elections, attendances, speeches and resolutions.",
     "metamodel_version": "1.11.0",
     "properties": {
-        "agenda_items": {
-            "description": "Collection of agenda item records.\n",
-            "items": {
-                "$ref": "#/$defs/AgendaItem"
-            },
-            "type": [
-                "array",
-                "null"
-            ]
-        },
         "attendances": {
             "description": "Collection of attendance records.\n",
             "items": {

@@ -75,7 +75,7 @@ L'objectif de cette famille de normes est de créer une structure utilisable en 
 
 ## Structure d'une livraison
 
-Une livraison est un `Container` : une enveloppe dotée de sa propre `global_uri` et d'une collection par classe — `legislatures`, `sessions`, `meetings`, `agenda_items`, `protocols`, `votings`, `elections`, `individual_votes`, `attendances`, `individual_attendances`, `speeches` et `resolutions`. Toutes les collections sont facultatives : qui ne publie que des séances ne livre que `meetings`.
+Une livraison est un `Container` : une enveloppe dotée de sa propre `global_uri` et d'une collection par classe — `legislatures`, `sessions`, `meetings`, `protocols`, `votings`, `elections`, `individual_votes`, `attendances`, `individual_attendances`, `speeches` et `resolutions`. Les points de l'ordre du jour n'ont pas de collection propre : ils sont livrés au sein de leur séance ou de leur session (`agenda_items`). Toutes les collections sont facultatives : qui ne publie que des séances ne livre que `meetings`.
 
 Les entités y sont placées côte à côte, à plat, et reliées par des références — `parent_meeting`, `parent_voting`, `parent_attendance`, et ainsi de suite — plutôt qu'imbriquées les unes dans les autres. Il est ainsi possible de livrer après coup une séance isolée sans réémettre toute la législature, et de référencer la même entité depuis plusieurs endroits. Là où l'imbrication rend mieux le lien, elle reste possible : la session reprend ses séances sous forme de liste, le procès-verbal ses points de l'ordre du jour, ses votes et ses interventions.
 
@@ -84,7 +84,7 @@ Les entités y sont placées côte à côte, à plat, et reliées par des réfé
 ### Classe: Container []{#Container}
 
 
-_Conteneur pour les données de l'activité publique des conseils : législatures, sessions, séances, points de l'ordre du jour, procès-verbaux, votes, élections, présences, interventions et décisions._
+_Conteneur pour les données de l'activité publique des conseils : législatures, sessions, séances, procès-verbaux, votes, élections, présences, interventions et décisions._
 
 
 
@@ -104,7 +104,6 @@ _Conteneur pour les données de l'activité publique des conseils : législature
 | legislatures | * <br/> [Legislature](#Legislature) | Ensemble des législatures.  |
 | sessions | * <br/> [Session](#Session) | Ensemble des sessions.  |
 | meetings | * <br/> [Meeting](#Meeting) | Ensemble des séances.  |
-| agenda_items | * <br/> [AgendaItem](#AgendaItem) | Ensemble des points de l'ordre du jour.  |
 | protocols | * <br/> [Protocol](#Protocol) | Ensemble des procès-verbaux.  |
 | votings | * <br/> [Voting](#Voting) | Ensemble des votes.  |
 | elections | * <br/> [Election](#Election) | Ensemble des élections.  |
@@ -131,151 +130,160 @@ _Conteneur pour les données de l'activité publique des conseils : législature
 
 
 #### Exemples
-##### Exemple Container : meeting complete
+##### Exemple Container : legislature
 
 ```yaml
-global_uri: ops:meeting_examples_2025
+global_uri: ops:legislature_examples
+legislatures:
 
-meetings:
-
-- global_uri: ops:meeting_sg_2025_03_15
-  spatial: "https://ld.admin.ch/canton/17"
+# Bund: abgeschlossene Legislaturperiode, vier Jahre, dreisprachige Bezeichnung.
+- global_uri: ops:legislature_51
+  wikidata_uri: http://www.wikidata.org/entity/Q71712404
+  spatial: "https://ld.admin.ch/country/CHE"
   name:
-    - text: "Kantonsratssitzung vom 15. März 2025"
+    - text: "51. Legislaturperiode"
       language: "de"
-  url:
-    - text: "https://www.ratsinfo.sg.ch/sessions/2025-03-15"
-      language: "de"
+    - text: "51e législature"
+      language: "fr"
+    - text: "51ª legislatura"
+      language: "it"
+  description: "Amtsdauer der am 20. Oktober 2019 gewählten Bundesversammlung; sie endete am Vortag der konstituierenden Sitzung der 52. Legislaturperiode vom 4. Dezember 2023."
+  landing_page: "https://www.parlament.ch/de/ratsbetrieb/sessionen"
   actor_id:
-    global_uri: "actors:kr_sg"
-    label: "Kantonsrat St. Gallen"
+    global_uri: "actors:bundesversammlung"
+    label: "Bundesversammlung"
     abbreviation:
-      - value: "KR"
+      - value: "BV"
         language: de
-  actor_name: "Kantonsrat St. Gallen"
-  datetime_begin_planned: "2025-03-15T08:00:00Z"
-  datetime_end_planned: "2025-03-15T18:00:00Z"
-  datetime_begin_actual: "2025-03-15T08:15:00Z"
-  datetime_end_actual: "2025-03-15T17:30:00Z"
-  state: "planned"
-  location: "Kantonsratssaal, Regierungsgebäude St. Gallen"
-  parent_session: ops:session_sg_2025_03
-  datetime_created: "2025-02-01T10:00:00Z"
-  datetime_modified: "2025-03-15T17:30:00Z"
+  date_begin_actual: "2019-12-02"
+  date_end_actual: "2023-12-03"
+  datetime_created: "2019-12-02T09:00:00+01:00"
+  datetime_modified: "2023-12-04T08:30:00+01:00"
 
-- global_uri: ops:meeting_be_committee_wak_2025_05_12
+# Kanton mit vierjähriger Amtsdauer; Beginn und Ende sind hier von Gesetzes
+# wegen auf den Tag festgelegt und deshalb schon bei der Planung bekannt.
+- global_uri: ops:legislature_be_2022_2026
+  local_id: "GR-BE-2022-2026"
   spatial: "https://ld.admin.ch/canton/2"
   name:
-    - text: "Sitzung Kommission für Wirtschaft und Abgaben"
+    - text: "Legislatur 2022–2026"
       language: "de"
-    - text: "Séance Commission de l'économie et des redevances"
+    - text: "Législature 2022-2026"
+      language: "fr"
+  landing_page: "https://www.gr.be.ch/de/start/grosser-rat.html"
+  actor_id:
+    global_uri: "actors:gr_be"
+    label: "Grosser Rat Bern"
+    abbreviation:
+      - value: "GR"
+        language: de
+  date_begin_planned: "2022-06-01"
+  date_end_planned: "2026-05-31"
+  date_begin_actual: "2022-06-01"
+  date_end_actual: "2026-05-31"
+  datetime_created: "2022-04-01T10:15:00+02:00"
+  datetime_modified: "2026-06-01T07:00:00+02:00"
+
+# Kanton mit fünfjähriger Amtsdauer: laufende Legislatur, deren Ende erst
+# geplant ist -- date_end_actual bleibt deshalb leer.
+- global_uri: ops:legislature_vd_2022_2027
+  wikidata_uri: http://www.wikidata.org/entity/Q131627357
+  spatial: "https://ld.admin.ch/canton/22"
+  name:
+    - text: "Législature 2022-2027"
+      language: "fr"
+  description: "Le Grand Conseil vaudois est élu pour cinq ans."
+  landing_page: "https://www.vd.ch/gc"
+  actor_id:
+    global_uri: "actors:gc_vd"
+    label: "Grand Conseil du canton de Vaud"
+    abbreviation:
+      - value: "GC"
+        language: fr
+  date_begin_actual: "2022-07-01"
+  date_end_planned: "2027-06-30"
+  datetime_created: "2022-05-10T14:00:00+02:00"
+  datetime_modified: "2025-01-08T11:20:00+01:00"
+
+```
+##### Exemple Container : session
+
+```yaml
+global_uri: ops:sessions_example_2025
+sessions:
+
+- global_uri: ops:session_5207
+  spatial: "https://ld.admin.ch/country/CHE"
+  name:
+    - text: "Frühjahrssession 2025"
+      language: "de"
+    - text: "Session de printemps 2025"
+      language: "fr"
+    - text: "Sessione primaverile 2025"
+      language: "it"
+  url:
+    - text: "https://www.parlament.ch/de/ratsbetrieb/sessionen/fruehjahr-2025"
+      language: "de"
+    - text: "https://www.parlament.ch/fr/ratsbetrieb/sessionen/fruehjahr-2025"
+      language: "fr"
+    - text: "https://www.parlament.ch/it/ratsbetrieb/sessionen/fruehjahr-2025"
+      language: "it"
+  date_begin_planned: "2025-03-03"
+  date_end_planned: "2025-03-21"
+  parent_legislature: ops:legislature_51
+  datetime_modified: "2025-04-24T00:19:37Z"
+  datetime_created: "2025-03-20T14:27:09Z"
+
+- global_uri: ops:session_be_summer_2025
+  spatial: "https://ld.admin.ch/canton/2"
+  name:
+    - text: "Sommersession 2025"
+      language: "de"
+    - text: "Session d'été 2025"
       language: "fr"
   url:
-    - text: "https://www.gr.be.ch/kommissionen/wak/2025-05-12"
+    - text: "https://www.gr.be.ch/de/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8"
       language: "de"
-  actor_id:
-    global_uri: "actors:committee_wak_be"
-    label: "Kommission für Wirtschaft und Abgaben (WAK)"
-    abbreviation:
-      - value: "WAK"
-        language: de
-  actor_name: "Kommission für Wirtschaft und Abgaben (WAK)"
-  datetime_begin_planned: "2025-05-12T14:00:00Z"
-  datetime_end_planned: "2025-05-12T17:00:00Z"
-  datetime_begin_actual: "2025-05-12T14:10:00Z"
-  datetime_end_actual: "2025-05-12T16:45:00Z"
-  state: "planned"
-  location: "Kommissionszimmer 301, Rathaus Bern"
-  datetime_created: "2025-04-15T09:00:00Z"
-  datetime_modified: "2025-05-12T16:45:00Z"
+    - text: "https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8"
+      language: "fr"
+  date_begin_planned: "2025-06-02"
+  date_end_planned: "2025-06-12"
+  datetime_modified: "2025-05-19T01:06:44Z"
+  datetime_created: "2025-04-25T11:10:24Z"
 
-- global_uri: ops:meeting_gl_landsgemeinde_2025
+- global_uri: ops:session_gl_landrat_2025_02_26
   spatial: "https://ld.admin.ch/canton/8"
   name:
-    - text: "Landsgemeinde 2025"
+    - text: "Sitzung des Landrates vom 26.02.2025"
       language: "de"
   url:
-    - text: "https://www.landsgemeinde.gl.ch/2025"
+    - text: "https://www.gl.ch/parlament/landrat/landratsprotokolle-ab-30-juni-2010.html/239"
       language: "de"
-  actor_id:
-    global_uri: "actors:landsgemeinde_gl"
-    label: "Landsgemeinde Glarus"
-    abbreviation:
-      - value: "LG"
-        language: de
-  actor_name: "Landsgemeinde Glarus"
-  datetime_begin_planned: "2025-05-04T09:30:00Z"
-  datetime_end_planned: "2025-05-04T14:00:00Z"
-  datetime_begin_actual: "2025-05-04T09:30:00Z"
-  datetime_end_actual: "2025-05-04T13:45:00Z"
-  state: "planned"
-  location: "Zaunplatz, Glarus"
-  parent_session: ops:session_gl_landsgemeinde_2025
-  datetime_created: "2025-01-10T12:00:00Z"
-  datetime_modified: "2025-05-04T13:45:00Z"
+  date_begin_planned: "2025-02-26"
+  date_end_planned: "2025-02-26"
+  datetime_modified: "2025-04-25T13:40:34Z"
+  datetime_created: "2025-04-23T22:58:39Z"
 
-agenda_items:
-
-- global_uri: ops:agenda_item_sg_2025_015
-  parent_meeting: ops:meeting_sg_2025_03_15
-  agenda_item_type: "item"
-  agenda_item_number: "15"
-  agenda_item_position: 15
-  agenda_item_title:
-    - text: "Energiegesetz - Schlussabstimmung"
+- global_uri: ops:session_gl_landsgemeinde_2025_05_04
+  spatial: "https://ld.admin.ch/canton/8"
+  name:
+    - text: "Landsgemeinde vom 04. Mai 2025"
       language: "de"
-  agenda_item_description:
-    - text: "Schlussabstimmung über das revidierte Energiegesetz des Kantons St. Gallen"
+  url:
+    - text: "https://www.landsgemeinde.gl.ch/landsgemeinde/2025-05-04"
       language: "de"
-  agenda_item_category: "Gesetzgebung"
-  state_id: "completed"
-  datetime_begin_planned: "2025-03-15T14:00:00Z"
-  datetime_begin_actual: "2025-03-15T14:30:00Z"
-  affair_id: "affairs:sg_2024_123_energiegesetz"
-  datetime_created: "2025-02-01T10:00:00Z"
-  datetime_modified: "2025-03-15T14:35:00Z"
-
-- global_uri: ops:agenda_item_be_2025_042
-  parent_meeting: ops:meeting_be_committee_wak_2025_05_12
-  agenda_item_type: "item"
-  agenda_item_number: "4.2"
-  agenda_item_position: 42
-  agenda_item_title:
-    - text: "Steuergesetz - Detailberatung Art. 5"
-      language: "de"
-    - text: "Loi fiscale - Délibération détaillée art. 5"
-      language: "fr"
-  agenda_item_description:
-    - text: "Beratung von Änderungsanträgen zu Artikel 5 des Steuergesetzes"
-      language: "de"
-    - text: "Délibération sur les propositions de modification de l'article 5 de la loi fiscale"
-      language: "fr"
-  agenda_item_category: "Gesetzgebung"
-  state_id: "completed"
-  datetime_begin_planned: "2025-05-12T15:00:00Z"
-  datetime_begin_actual: "2025-05-12T15:15:00Z"
-  affair_id: "affairs:be_2024_089_steuergesetz"
-  datetime_created: "2025-04-15T09:00:00Z"
-  datetime_modified: "2025-05-12T15:20:00Z"
-
-- global_uri: ops:agenda_item_zh_budget_2026
-  parent_meeting: ops:meeting_zh_2025_11_20
-  agenda_item_type: "item"
-  agenda_item_number: "8"
-  agenda_item_position: 8
-  agenda_item_title:
-    - text: "Budget 2026"
-      language: "de"
-  agenda_item_description:
-    - text: "Beratung und Beschlussfassung über das Kantonsbudget für das Jahr 2026"
-      language: "de"
-  agenda_item_category: "Budget und Finanzen"
-  state_id: "completed"
-  datetime_begin_planned: "2025-11-20T16:00:00Z"
-  datetime_begin_actual: "2025-11-20T16:45:00Z"
-  affair_id: "affairs:zh_2025_budget_2026"
-  datetime_created: "2025-10-01T08:00:00Z"
-  datetime_modified: "2025-11-20T16:50:00Z"
+  date_begin_planned: "2025-05-04"
+  date_end_planned: "2025-05-04"
+  agenda_items:
+    - global_uri: ops:agenda_item_gl_landsgemeinde_2025_01
+      agenda_item_type: "item"
+      agenda_item_number: "1"
+      agenda_item_position: 1
+      agenda_item_title:
+        - text: "Eröffnung der Landsgemeinde"
+          language: "de"
+  datetime_modified: "2025-04-25T13:40:34Z"
+  datetime_created: "2025-04-23T22:58:39Z"
 
 ```
 ##### Exemple Container : meeting sr winter25 Sitzung6
@@ -308,23 +316,21 @@ meetings:
     has_protocol: "ops:protokoll_sr_winter25_sitzung_6"
     datetime_created: "2026-01-12T00:00:00+01:00"
     datetime_modified: "2026-01-12T00:00:00+01:00"
-
-agenda_items:
-  - global_uri: ops:69905
-    parent_meeting: "parl:sr_winter25_sitzung_6"
-    agenda_item_type: "item"
-    datetime_begin_planned: "2025-12-19T09:15:00+01:00"
-    datetime_begin_actual: "2025-12-19T09:20:00+01:00"
-    agenda_item_number: "6"
-    agenda_item_position: 4
-    agenda_item_title:
-      - text: "Postulat Broulis Pascal. Bauprojekte im Mobilitätsbereich. Einen Vergleich durchführen, um die Verzögerungen zu verstehen"
-        language: "de"
-    affair_id: "affairs:24.4471"
-    landing_page: "https://www.parlament.ch/de/ratsbetrieb/amtliches-bulletin/amtliches-bulletin-die-verhandlungen?SubjectId=69905#votum3"
-    agenda_item_category: "agenda_item"
-    datetime_created: "2026-01-12T00:00:00+01:00"
-    datetime_modified: "2026-01-12T00:00:00+01:00"
+    agenda_items:
+      - global_uri: ops:69905
+        agenda_item_type: "item"
+        datetime_begin_planned: "2025-12-19T09:15:00+01:00"
+        datetime_begin_actual: "2025-12-19T09:20:00+01:00"
+        agenda_item_number: "6"
+        agenda_item_position: 4
+        agenda_item_title:
+          - text: "Postulat Broulis Pascal. Bauprojekte im Mobilitätsbereich. Einen Vergleich durchführen, um die Verzögerungen zu verstehen"
+            language: "de"
+        affair_id: "affairs:24.4471"
+        landing_page: "https://www.parlament.ch/de/ratsbetrieb/amtliches-bulletin/amtliches-bulletin-die-verhandlungen?SubjectId=69905#votum3"
+        agenda_item_category: "agenda_item"
+        datetime_created: "2026-01-12T00:00:00+01:00"
+        datetime_modified: "2026-01-12T00:00:00+01:00"
 
 speeches:
   - global_uri: ops:366631
@@ -358,7 +364,6 @@ protocols:
     parent_meeting: "parl:sr_winter25_sitzung_6"
     protocol_items:
       - global_uri: ops:protokollpunkt_69905
-        parent_meeting: "parl:sr_winter25_sitzung_6"
         agenda_item_type: "item"
         agenda_item_number: "6"
         agenda_item_position: 4
@@ -606,222 +611,150 @@ individual_votes:
   datetime_created: "2025-11-20T16:45:00Z"
 
 ```
-##### Exemple Container : meeting item
+##### Exemple Container : meeting complete
 
 ```yaml
-global_uri: ops:agenda_items_1
-agenda_items:
-  - global_uri: ops:cea750a5bd7b420fa4da1c914f801384
-    parent_meeting: ops:meeting_bern_2022_03_17
-    agenda_item_type: item
-    datetime_begin_planned: '2022-03-17T17:00:00Z'
-    agenda_item_position: 29
-    agenda_item_number: '8'
-    agenda_item_title:
-      - text: >-
-          Interpellation Fraktion GB/JA! (Katharina Gallizzi, GB): Welche
-          Konsequenzen haben die Klimaziele für das Gasnetz in Bern?
+global_uri: ops:meeting_examples_2025
+
+meetings:
+
+- global_uri: ops:meeting_sg_2025_03_15
+  spatial: "https://ld.admin.ch/canton/17"
+  name:
+    - text: "Kantonsratssitzung vom 15. März 2025"
+      language: "de"
+  url:
+    - text: "https://www.ratsinfo.sg.ch/sessions/2025-03-15"
+      language: "de"
+  actor_id:
+    global_uri: "actors:kr_sg"
+    label: "Kantonsrat St. Gallen"
+    abbreviation:
+      - value: "KR"
         language: de
-    affair_id: affairs:2020.SR.000007
-    url:
-      - text: >-
-          https://stadtrat.bern.ch/de/sitzungen/detail.php?gid=000d6cf5f0bc4d89a5171e0123cfbff5#cea750a5bd7b420fa4da1c914f801384
+  actor_name: "Kantonsrat St. Gallen"
+  datetime_begin_planned: "2025-03-15T08:00:00Z"
+  datetime_end_planned: "2025-03-15T18:00:00Z"
+  datetime_begin_actual: "2025-03-15T08:15:00Z"
+  datetime_end_actual: "2025-03-15T17:30:00Z"
+  state: "planned"
+  location: "Kantonsratssaal, Regierungsgebäude St. Gallen"
+  parent_session: ops:session_sg_2025_03
+  datetime_created: "2025-02-01T10:00:00Z"
+  datetime_modified: "2025-03-15T17:30:00Z"
+  agenda_items:
+    - global_uri: ops:agenda_item_sg_2025_015
+      agenda_item_type: "item"
+      agenda_item_number: "15"
+      agenda_item_position: 15
+      agenda_item_title:
+        - text: "Energiegesetz - Schlussabstimmung"
+          language: "de"
+      agenda_item_description:
+        - text: "Schlussabstimmung über das revidierte Energiegesetz des Kantons St. Gallen"
+          language: "de"
+      agenda_item_category: "Gesetzgebung"
+      state_id: "completed"
+      datetime_begin_planned: "2025-03-15T14:00:00Z"
+      datetime_begin_actual: "2025-03-15T14:30:00Z"
+      affair_id: "affairs:sg_2024_123_energiegesetz"
+      datetime_created: "2025-02-01T10:00:00Z"
+      datetime_modified: "2025-03-15T14:35:00Z"
+
+- global_uri: ops:meeting_be_committee_wak_2025_05_12
+  spatial: "https://ld.admin.ch/canton/2"
+  name:
+    - text: "Sitzung Kommission für Wirtschaft und Abgaben"
+      language: "de"
+    - text: "Séance Commission de l'économie et des redevances"
+      language: "fr"
+  url:
+    - text: "https://www.gr.be.ch/kommissionen/wak/2025-05-12"
+      language: "de"
+  actor_id:
+    global_uri: "actors:committee_wak_be"
+    label: "Kommission für Wirtschaft und Abgaben (WAK)"
+    abbreviation:
+      - value: "WAK"
         language: de
-    datetime_created: '2025-01-17T21:25:52Z'
-    datetime_modified: '2025-01-17T21:25:52Z'
-  - global_uri: ops:2023_10_03-52
-    parent_meeting: ops:meeting_lausanne_2023_10_03
-    agenda_item_type: item
-    datetime_begin_planned: '2023-10-03T00:00:00Z'
-    agenda_item_position: 52
-    agenda_item_number: '52'
-    agenda_item_title:
-      - text: >-
-          Postulat de Mme Franziska MEINHERZ : « Lausanne sans publicité
-          commerciale » (FIM)
-        language: fr
-    state_id: postponed
-    agenda_item_category: RAPPORTS
-    affair_id: affairs:POS22/029
-    url:
-      - text: >-
-          https://www.lausanne.ch/apps/agir/affaire/81/b7157ea2a4994086b65cf176768c6381.htm
-        language: fr
-    datetime_created: '2025-02-08T12:33:10Z'
-    datetime_modified: '2025-02-08T12:33:10Z'
-  - global_uri: ops:2025_05_20-23
-    parent_meeting: ops:meeting_lausanne_2025_05_20
-    agenda_item_type: item
-    datetime_begin_planned: '2025-05-20T00:00:00Z'
-    agenda_item_position: 23
-    agenda_item_number: '23'
-    agenda_item_title:
-      - text: >-
-          Interpellation urgente du 20 mai 2025 de M. Yusuf KULMIYE : «
-          Interpellation urgente de Kulmiye Yusuf et crts – Solidarité sans
-          frontières, Lausanne en faveur du respect du droit international et de
-          la protection des populations civiles à Gaza »
-        language: fr
-    state_id: not_treated
-    agenda_item_category: ANNONCES ET INTERPELLATIONS
-    affair_id: affairs:INT25/027
-    url:
-      - text: >-
-          https://www.lausanne.ch/apps/agir/affaire/6c/049b6c612fe2428f9be66ea39522ac6c.htm
-        language: fr
-    datetime_created: '2025-06-07T23:50:18Z'
-    datetime_modified: '2025-06-07T23:50:18Z'
-  - global_uri: ops:7b3545e4-57dc-3901-aaa8-4020da6ab0c6
-    parent_meeting: ops:meeting_vaud_2008_04_30
-    agenda_item_type: item
-    datetime_begin_planned: '2008-04-30T00:00:00Z'
-    agenda_item_position: 7
-    agenda_item_number: '7'
-    agenda_item_title:
-      - text: >-
-          Révision partielle de sept ordonnances fédérales relatives aux
-          produits chimiques
-        language: fr
-    agenda_item_description:
-      - text: >
-          Le Conseil d'Etat approuve le projet de révision partielle de sept
-          ordonnances fédérales relatives aux produits chimiques. Il salue la
-          volonté des autorités fédérales d'introduire dans la législation
-          fédérale les modifications nécessaires découlant des nouveaux
-          règlements européens, afin d'éliminer des entraves au commerce et
-          d'augmenter la sécurité d'évaluation des produits chimiques.
-        language: fr
-    url:
-      - text: >-
-          https://www.vd.ch/actualites/decisions-du-conseil-detat/seance-du-conseil-detat/seance/265632#7b3545e4-57dc-3901-aaa8-4020da6ab0c6
-        language: fr
-    datetime_created: '2024-12-06T10:50:04Z'
-    datetime_modified: '2024-12-06T10:50:04Z'
-  - global_uri: ops:06fb582b753c416d8fdb05fa13873545
-    parent_meeting: ops:meeting_2011_11_23
-    agenda_item_type: item
-    datetime_begin_planned: '2011-11-23T00:00:00Z'
-    agenda_item_position: 2
-    agenda_item_title:
-      - text: >-
-          Interpellation Peter Mark betr. elektronische Datenerfassung durch
-          Mitarbeiter im Werkhof – Versuchsphase
+  actor_name: "Kommission für Wirtschaft und Abgaben (WAK)"
+  datetime_begin_planned: "2025-05-12T14:00:00Z"
+  datetime_end_planned: "2025-05-12T17:00:00Z"
+  datetime_begin_actual: "2025-05-12T14:10:00Z"
+  datetime_end_actual: "2025-05-12T16:45:00Z"
+  state: "planned"
+  location: "Kommissionszimmer 301, Rathaus Bern"
+  parent_legislature: ops:legislature_be_2022_2026
+  datetime_created: "2025-04-15T09:00:00Z"
+  datetime_modified: "2025-05-12T16:45:00Z"
+  agenda_items:
+    - global_uri: ops:agenda_item_be_2025_042
+      agenda_item_type: "item"
+      agenda_item_number: "4.2"
+      agenda_item_position: 42
+      agenda_item_title:
+        - text: "Steuergesetz - Detailberatung Art. 5"
+          language: "de"
+        - text: "Loi fiscale - Délibération détaillée art. 5"
+          language: "fr"
+      agenda_item_description:
+        - text: "Beratung von Änderungsanträgen zu Artikel 5 des Steuergesetzes"
+          language: "de"
+        - text: "Délibération sur les propositions de modification de l'article 5 de la loi fiscale"
+          language: "fr"
+      agenda_item_category: "Gesetzgebung"
+      state_id: "completed"
+      datetime_begin_planned: "2025-05-12T15:00:00Z"
+      datetime_begin_actual: "2025-05-12T15:15:00Z"
+      affair_id: "affairs:be_2024_089_steuergesetz"
+      datetime_created: "2025-04-15T09:00:00Z"
+      datetime_modified: "2025-05-12T15:20:00Z"
+
+- global_uri: ops:meeting_gl_landsgemeinde_2025
+  spatial: "https://ld.admin.ch/canton/8"
+  name:
+    - text: "Landsgemeinde 2025"
+      language: "de"
+  url:
+    - text: "https://www.landsgemeinde.gl.ch/2025"
+      language: "de"
+  actor_id:
+    global_uri: "actors:landsgemeinde_gl"
+    label: "Landsgemeinde Glarus"
+    abbreviation:
+      - value: "LG"
         language: de
-    datetime_created: '2025-03-21T23:15:19Z'
-    datetime_modified: '2025-03-21T23:15:19Z'
-  - global_uri: ops:16155798_3
-    parent_meeting: ops:meeting_schaffhausen_2025_03_31
-    agenda_item_type: item
-    datetime_begin_planned: '2025-03-31T00:00:00Z'
-    agenda_item_position: 2
-    agenda_item_number: '2'
-    agenda_item_title:
-      - text: >-
-          Motion Nr. 2023/9 von Rainer Schmidig vom 18. Dezember 2023 betreffend
-          zeitgemässe Abzüge in den Art. 35 und 37 des Gesetzes über die
-          direkten Steuern
-        language: de
-    agenda_item_category: Traktanden
-    affair_id: affairs:MOT_2023_9
-    datetime_created: '2025-05-02T11:23:49Z'
-    datetime_modified: '2025-05-02T11:23:49Z'
-  - global_uri: ops:21c50b86d21b4b4baeb1a76738ff82a3_2025-04-02_1_de
-    parent_meeting: ops:meeting_bern_rr_2025_04_02
-    agenda_item_type: item
-    datetime_begin_planned: '2025-04-02T00:00:00Z'
-    agenda_item_title:
-      - text: >-
-          Petition «Gleichberechtigung für Tagesfamilien: Gleich hohe
-          Betreuungsgutscheine für alle Anbieter im Kanton Bern».
-          Regierungsrätliches Antwortschreiben
-        language: de
-    affair_id: affairs:2025.STA.622
-    url:
-      - text: >-
-          https://www.rr.be.ch/de/start/beschluesse/suche/geschaeftsdetail.html?guid=21c50b86d21b4b4baeb1a76738ff82a3
-        language: de
-    datetime_created: '2025-04-25T11:11:40Z'
-    datetime_modified: '2025-04-25T11:11:40Z'
-  - global_uri: ops:49_253
-    parent_meeting: ops:meeting_2025_03_31
-    agenda_item_type: item
-    datetime_begin_planned: '2025-03-31T00:00:00Z'
-    agenda_item_position: 2
-    agenda_item_number: '2'
-    agenda_item_title:
-      - text: Programmvereinbarungen 2024
-        language: de
-    datetime_created: '2025-03-29T01:07:14Z'
-    datetime_modified: '2025-03-29T01:07:14Z'
-  - global_uri: ops:16155798_4
-    parent_meeting: ops:meeting_schaffhausen_2025_03_31_b
-    agenda_item_type: item
-    datetime_begin_planned: '2025-03-31T00:00:00Z'
-    agenda_item_position: 3
-    agenda_item_number: '3'
-    agenda_item_title:
-      - text: >-
-          Volksmotion Nr. 2024/1 von Sandro Mamedow und Livia Schraff
-          (Erstunterzeichnende) sowie weitere 150 Mitunterzeichnende vom 22.
-          März 2024 mit dem Titel: «Für eine Stimme der Studierenden im
-          Hochschulrat der Pädagogischen Hochschule Schaffhausen (PHSH)»
-        language: de
-    agenda_item_category: Traktanden
-    affair_id: affairs:MOT_2024_1
-    datetime_created: '2025-05-02T11:23:49Z'
-    datetime_modified: '2025-05-02T11:23:49Z'
-  - global_uri: ops:87b69a72919445a493a061d9b0daeba3
-    parent_meeting: ops:meeting_be_2025_06_02
-    agenda_item_type: item
-    datetime_begin_planned: '2025-06-02T00:00:00Z'
-    agenda_item_title:
-      - text: Differenzierte Anpassung des Gehalts von Lehrpersonen ohne Lehrdiplom
-        language: de
-    affair_id: affairs:2025.GRPARL.81
-    datetime_created: '2025-04-25T11:10:35Z'
-    datetime_modified: '2025-04-25T11:10:35Z'
-  - global_uri: ops:0de4ecdb-23f1-49ab-95b8-1afc2e4feb1a
-    parent_meeting: ops:meeting_luzern_2025_01_28
-    agenda_item_type: item
-    datetime_begin_planned: '2025-01-28T00:00:00Z'
-    agenda_item_position: 29
-    agenda_item_number: '29'
-    agenda_item_title:
-      - text: >-
-          Postulat Widmer Reichlin Gisela und Mit. über Massnahmen zur Erfüllung
-          des Sonderschulkonkordats und zur gezielten Behebung des
-          Fachkräftemangels im Bereich schulische Heilpädagogik / Bildungs- und
-          Kulturdepartement
-        language: de
-    agenda_item_category: voting
-    url:
-      - text: >-
-          https://www.lu.ch/kr/Sessionen/sessionsdaten_2020/Abstimmungsresultate/Detail?TraktandumGuid=0de4ecdb-23f1-49ab-95b8-1afc2e4feb1a
-        language: de
-    affair_id: affairs:2024P_125
-    datetime_created: '2025-01-29T06:59:41Z'
-    datetime_modified: '2025-01-29T06:59:41Z'
-  - global_uri: ops:fa732e0e-7e5f-4d45-994a-fc74720c0781
-    parent_meeting: ops:meeting_luzern_2025_01_28_b
-    agenda_item_type: item
-    datetime_begin_planned: '2025-01-28T00:00:00Z'
-    agenda_item_position: 14
-    agenda_item_number: '14'
-    agenda_item_title:
-      - text: >-
-          Postulat Stadelmann Karin Andrea und Mit. über die Überprüfung und
-          Anpassung der Kriterien zum früheren Eintritt von Kindern in die
-          Basisstufe (den freiwilligen Kindergarten) / Bildungs- und
-          Kulturdepartement
-        language: de
-    agenda_item_category: voting
-    url:
-      - text: >-
-          https://www.lu.ch/kr/Sessionen/sessionsdaten_2020/Abstimmungsresultate/Detail?TraktandumGuid=fa732e0e-7e5f-4d45-994a-fc74720c0781
-        language: de
-    affair_id: affairs:2023P_102
-    datetime_created: '2025-01-29T06:59:41Z'
-    datetime_modified: '2025-01-29T06:59:41Z'
+  actor_name: "Landsgemeinde Glarus"
+  datetime_begin_planned: "2025-05-04T09:30:00Z"
+  datetime_end_planned: "2025-05-04T14:00:00Z"
+  datetime_begin_actual: "2025-05-04T09:30:00Z"
+  datetime_end_actual: "2025-05-04T13:45:00Z"
+  state: "planned"
+  location: "Zaunplatz, Glarus"
+  parent_session: ops:session_gl_landsgemeinde_2025
+  datetime_created: "2025-01-10T12:00:00Z"
+  datetime_modified: "2025-05-04T13:45:00Z"
+
+- global_uri: ops:meeting_zh_2025_11_20
+  date_begin_planned: "2025-11-20"
+  agenda_items:
+    - global_uri: ops:agenda_item_zh_budget_2026
+      agenda_item_type: "item"
+      agenda_item_number: "8"
+      agenda_item_position: 8
+      agenda_item_title:
+        - text: "Budget 2026"
+          language: "de"
+      agenda_item_description:
+        - text: "Beratung und Beschlussfassung über das Kantonsbudget für das Jahr 2026"
+          language: "de"
+      agenda_item_category: "Budget und Finanzen"
+      state_id: "completed"
+      datetime_begin_planned: "2025-11-20T16:00:00Z"
+      datetime_begin_actual: "2025-11-20T16:45:00Z"
+      affair_id: "affairs:zh_2025_budget_2026"
+      datetime_created: "2025-10-01T08:00:00Z"
+      datetime_modified: "2025-11-20T16:50:00Z"
 
 ```
 ##### Exemple Container : meeting
@@ -876,152 +809,258 @@ meetings:
     datetime_modified: "2025-05-19T01:06:45Z"
 
 ```
-##### Exemple Container : session
+##### Exemple Container : meeting item
 
 ```yaml
-global_uri: ops:sessions_example_2025
-sessions:
+global_uri: ops:agenda_items_1
 
-- global_uri: ops:session_5207
-  spatial: "https://ld.admin.ch/country/CHE"
-  name:
-    - text: "Frühjahrssession 2025"
-      language: "de"
-    - text: "Session de printemps 2025"
-      language: "fr"
-    - text: "Sessione primaverile 2025"
-      language: "it"
-  url:
-    - text: "https://www.parlament.ch/de/ratsbetrieb/sessionen/fruehjahr-2025"
-      language: "de"
-    - text: "https://www.parlament.ch/fr/ratsbetrieb/sessionen/fruehjahr-2025"
-      language: "fr"
-    - text: "https://www.parlament.ch/it/ratsbetrieb/sessionen/fruehjahr-2025"
-      language: "it"
-  date_begin_planned: "2025-03-03"
-  date_end_planned: "2025-03-21"
-  parent_legislature: ops:legislature_51
-  datetime_modified: "2025-04-24T00:19:37Z"
-  datetime_created: "2025-03-20T14:27:09Z"
+meetings:
+  - global_uri: ops:meeting_bern_2022_03_17
+    date_begin_planned: "2022-03-17"
+    agenda_items:
+      - global_uri: ops:cea750a5bd7b420fa4da1c914f801384
+        agenda_item_type: item
+        datetime_begin_planned: '2022-03-17T17:00:00Z'
+        agenda_item_position: 29
+        agenda_item_number: '8'
+        agenda_item_title:
+          - text: >-
+              Interpellation Fraktion GB/JA! (Katharina Gallizzi, GB): Welche
+              Konsequenzen haben die Klimaziele für das Gasnetz in Bern?
+            language: de
+        affair_id: affairs:2020.SR.000007
+        url:
+          - text: >-
+              https://stadtrat.bern.ch/de/sitzungen/detail.php?gid=000d6cf5f0bc4d89a5171e0123cfbff5#cea750a5bd7b420fa4da1c914f801384
+            language: de
+        datetime_created: '2025-01-17T21:25:52Z'
+        datetime_modified: '2025-01-17T21:25:52Z'
 
-- global_uri: ops:session_be_summer_2025
-  spatial: "https://ld.admin.ch/canton/2"
-  name:
-    - text: "Sommersession 2025"
-      language: "de"
-    - text: "Session d'été 2025"
-      language: "fr"
-  url:
-    - text: "https://www.gr.be.ch/de/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8"
-      language: "de"
-    - text: "https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8"
-      language: "fr"
-  date_begin_planned: "2025-06-02"
-  date_end_planned: "2025-06-12"
-  datetime_modified: "2025-05-19T01:06:44Z"
-  datetime_created: "2025-04-25T11:10:24Z"
+  - global_uri: ops:meeting_lausanne_2023_10_03
+    date_begin_planned: "2023-10-03"
+    agenda_items:
+      - global_uri: ops:2023_10_03-52
+        agenda_item_type: item
+        datetime_begin_planned: '2023-10-03T00:00:00Z'
+        agenda_item_position: 52
+        agenda_item_number: '52'
+        agenda_item_title:
+          - text: >-
+              Postulat de Mme Franziska MEINHERZ : « Lausanne sans publicité
+              commerciale » (FIM)
+            language: fr
+        state_id: postponed
+        agenda_item_category: RAPPORTS
+        affair_id: affairs:POS22/029
+        url:
+          - text: >-
+              https://www.lausanne.ch/apps/agir/affaire/81/b7157ea2a4994086b65cf176768c6381.htm
+            language: fr
+        datetime_created: '2025-02-08T12:33:10Z'
+        datetime_modified: '2025-02-08T12:33:10Z'
 
-- global_uri: ops:session_gl_landrat_2025_02_26
-  spatial: "https://ld.admin.ch/canton/8"
-  name:
-    - text: "Sitzung des Landrates vom 26.02.2025"
-      language: "de"
-  url:
-    - text: "https://www.gl.ch/parlament/landrat/landratsprotokolle-ab-30-juni-2010.html/239"
-      language: "de"
-  date_begin_planned: "2025-02-26"
-  date_end_planned: "2025-02-26"
-  datetime_modified: "2025-04-25T13:40:34Z"
-  datetime_created: "2025-04-23T22:58:39Z"
+  - global_uri: ops:meeting_lausanne_2025_05_20
+    date_begin_planned: "2025-05-20"
+    agenda_items:
+      - global_uri: ops:2025_05_20-23
+        agenda_item_type: item
+        datetime_begin_planned: '2025-05-20T00:00:00Z'
+        agenda_item_position: 23
+        agenda_item_number: '23'
+        agenda_item_title:
+          - text: >-
+              Interpellation urgente du 20 mai 2025 de M. Yusuf KULMIYE : «
+              Interpellation urgente de Kulmiye Yusuf et crts – Solidarité sans
+              frontières, Lausanne en faveur du respect du droit international et de
+              la protection des populations civiles à Gaza »
+            language: fr
+        state_id: not_treated
+        agenda_item_category: ANNONCES ET INTERPELLATIONS
+        affair_id: affairs:INT25/027
+        url:
+          - text: >-
+              https://www.lausanne.ch/apps/agir/affaire/6c/049b6c612fe2428f9be66ea39522ac6c.htm
+            language: fr
+        datetime_created: '2025-06-07T23:50:18Z'
+        datetime_modified: '2025-06-07T23:50:18Z'
 
-- global_uri: ops:session_gl_landsgemeinde_2025_05_04
-  spatial: "https://ld.admin.ch/canton/8"
-  name:
-    - text: "Landsgemeinde vom 04. Mai 2025"
-      language: "de"
-  url:
-    - text: "https://www.landsgemeinde.gl.ch/landsgemeinde/2025-05-04"
-      language: "de"
-  date_begin_planned: "2025-05-04"
-  date_end_planned: "2025-05-04"
-  datetime_modified: "2025-04-25T13:40:34Z"
-  datetime_created: "2025-04-23T22:58:39Z"
+  - global_uri: ops:meeting_vaud_2008_04_30
+    date_begin_planned: "2008-04-30"
+    agenda_items:
+      - global_uri: ops:7b3545e4-57dc-3901-aaa8-4020da6ab0c6
+        agenda_item_type: item
+        datetime_begin_planned: '2008-04-30T00:00:00Z'
+        agenda_item_position: 7
+        agenda_item_number: '7'
+        agenda_item_title:
+          - text: >-
+              Révision partielle de sept ordonnances fédérales relatives aux
+              produits chimiques
+            language: fr
+        agenda_item_description:
+          - text: >
+              Le Conseil d'Etat approuve le projet de révision partielle de sept
+              ordonnances fédérales relatives aux produits chimiques. Il salue la
+              volonté des autorités fédérales d'introduire dans la législation
+              fédérale les modifications nécessaires découlant des nouveaux
+              règlements européens, afin d'éliminer des entraves au commerce et
+              d'augmenter la sécurité d'évaluation des produits chimiques.
+            language: fr
+        url:
+          - text: >-
+              https://www.vd.ch/actualites/decisions-du-conseil-detat/seance-du-conseil-detat/seance/265632#7b3545e4-57dc-3901-aaa8-4020da6ab0c6
+            language: fr
+        datetime_created: '2024-12-06T10:50:04Z'
+        datetime_modified: '2024-12-06T10:50:04Z'
 
-```
-##### Exemple Container : legislature
+  - global_uri: ops:meeting_2011_11_23
+    date_begin_planned: "2011-11-23"
+    agenda_items:
+      - global_uri: ops:06fb582b753c416d8fdb05fa13873545
+        agenda_item_type: item
+        datetime_begin_planned: '2011-11-23T00:00:00Z'
+        agenda_item_position: 2
+        agenda_item_title:
+          - text: >-
+              Interpellation Peter Mark betr. elektronische Datenerfassung durch
+              Mitarbeiter im Werkhof – Versuchsphase
+            language: de
+        datetime_created: '2025-03-21T23:15:19Z'
+        datetime_modified: '2025-03-21T23:15:19Z'
 
-```yaml
-global_uri: ops:legislature_examples
-legislatures:
+  - global_uri: ops:meeting_schaffhausen_2025_03_31
+    date_begin_planned: "2025-03-31"
+    agenda_items:
+      - global_uri: ops:16155798_3
+        agenda_item_type: item
+        datetime_begin_planned: '2025-03-31T00:00:00Z'
+        agenda_item_position: 2
+        agenda_item_number: '2'
+        agenda_item_title:
+          - text: >-
+              Motion Nr. 2023/9 von Rainer Schmidig vom 18. Dezember 2023 betreffend
+              zeitgemässe Abzüge in den Art. 35 und 37 des Gesetzes über die
+              direkten Steuern
+            language: de
+        agenda_item_category: Traktanden
+        affair_id: affairs:MOT_2023_9
+        datetime_created: '2025-05-02T11:23:49Z'
+        datetime_modified: '2025-05-02T11:23:49Z'
 
-# Bund: abgeschlossene Legislaturperiode, vier Jahre, dreisprachige Bezeichnung.
-- global_uri: ops:legislature_51
-  wikidata_uri: http://www.wikidata.org/entity/Q71712404
-  spatial: "https://ld.admin.ch/country/CHE"
-  name:
-    - text: "51. Legislaturperiode"
-      language: "de"
-    - text: "51e législature"
-      language: "fr"
-    - text: "51ª legislatura"
-      language: "it"
-  description: "Amtsdauer der am 20. Oktober 2019 gewählten Bundesversammlung; sie endete am Vortag der konstituierenden Sitzung der 52. Legislaturperiode vom 4. Dezember 2023."
-  landing_page: "https://www.parlament.ch/de/ratsbetrieb/sessionen"
-  actor_id:
-    global_uri: "actors:bundesversammlung"
-    label: "Bundesversammlung"
-    abbreviation:
-      - value: "BV"
-        language: de
-  date_begin_actual: "2019-12-02"
-  date_end_actual: "2023-12-03"
-  datetime_created: "2019-12-02T09:00:00+01:00"
-  datetime_modified: "2023-12-04T08:30:00+01:00"
+  - global_uri: ops:meeting_bern_rr_2025_04_02
+    date_begin_planned: "2025-04-02"
+    agenda_items:
+      - global_uri: ops:21c50b86d21b4b4baeb1a76738ff82a3_2025-04-02_1_de
+        agenda_item_type: item
+        datetime_begin_planned: '2025-04-02T00:00:00Z'
+        agenda_item_title:
+          - text: >-
+              Petition «Gleichberechtigung für Tagesfamilien: Gleich hohe
+              Betreuungsgutscheine für alle Anbieter im Kanton Bern».
+              Regierungsrätliches Antwortschreiben
+            language: de
+        affair_id: affairs:2025.STA.622
+        url:
+          - text: >-
+              https://www.rr.be.ch/de/start/beschluesse/suche/geschaeftsdetail.html?guid=21c50b86d21b4b4baeb1a76738ff82a3
+            language: de
+        datetime_created: '2025-04-25T11:11:40Z'
+        datetime_modified: '2025-04-25T11:11:40Z'
 
-# Kanton mit vierjähriger Amtsdauer; Beginn und Ende sind hier von Gesetzes
-# wegen auf den Tag festgelegt und deshalb schon bei der Planung bekannt.
-- global_uri: ops:legislature_be_2022_2026
-  local_id: "GR-BE-2022-2026"
-  spatial: "https://ld.admin.ch/canton/2"
-  name:
-    - text: "Legislatur 2022–2026"
-      language: "de"
-    - text: "Législature 2022-2026"
-      language: "fr"
-  landing_page: "https://www.gr.be.ch/de/start/grosser-rat.html"
-  actor_id:
-    global_uri: "actors:gr_be"
-    label: "Grosser Rat Bern"
-    abbreviation:
-      - value: "GR"
-        language: de
-  date_begin_planned: "2022-06-01"
-  date_end_planned: "2026-05-31"
-  date_begin_actual: "2022-06-01"
-  date_end_actual: "2026-05-31"
-  datetime_created: "2022-04-01T10:15:00+02:00"
-  datetime_modified: "2026-06-01T07:00:00+02:00"
+  - global_uri: ops:meeting_2025_03_31
+    date_begin_planned: "2025-03-31"
+    agenda_items:
+      - global_uri: ops:49_253
+        agenda_item_type: item
+        datetime_begin_planned: '2025-03-31T00:00:00Z'
+        agenda_item_position: 2
+        agenda_item_number: '2'
+        agenda_item_title:
+          - text: Programmvereinbarungen 2024
+            language: de
+        datetime_created: '2025-03-29T01:07:14Z'
+        datetime_modified: '2025-03-29T01:07:14Z'
 
-# Kanton mit fünfjähriger Amtsdauer: laufende Legislatur, deren Ende erst
-# geplant ist -- date_end_actual bleibt deshalb leer.
-- global_uri: ops:legislature_vd_2022_2027
-  wikidata_uri: http://www.wikidata.org/entity/Q131627357
-  spatial: "https://ld.admin.ch/canton/22"
-  name:
-    - text: "Législature 2022-2027"
-      language: "fr"
-  description: "Le Grand Conseil vaudois est élu pour cinq ans."
-  landing_page: "https://www.vd.ch/gc"
-  actor_id:
-    global_uri: "actors:gc_vd"
-    label: "Grand Conseil du canton de Vaud"
-    abbreviation:
-      - value: "GC"
-        language: fr
-  date_begin_actual: "2022-07-01"
-  date_end_planned: "2027-06-30"
-  datetime_created: "2022-05-10T14:00:00+02:00"
-  datetime_modified: "2025-01-08T11:20:00+01:00"
+  - global_uri: ops:meeting_schaffhausen_2025_03_31_b
+    date_begin_planned: "2025-03-31"
+    agenda_items:
+      - global_uri: ops:16155798_4
+        agenda_item_type: item
+        datetime_begin_planned: '2025-03-31T00:00:00Z'
+        agenda_item_position: 3
+        agenda_item_number: '3'
+        agenda_item_title:
+          - text: >-
+              Volksmotion Nr. 2024/1 von Sandro Mamedow und Livia Schraff
+              (Erstunterzeichnende) sowie weitere 150 Mitunterzeichnende vom 22.
+              März 2024 mit dem Titel: «Für eine Stimme der Studierenden im
+              Hochschulrat der Pädagogischen Hochschule Schaffhausen (PHSH)»
+            language: de
+        agenda_item_category: Traktanden
+        affair_id: affairs:MOT_2024_1
+        datetime_created: '2025-05-02T11:23:49Z'
+        datetime_modified: '2025-05-02T11:23:49Z'
+
+  - global_uri: ops:meeting_be_2025_06_02
+    date_begin_planned: "2025-06-02"
+    agenda_items:
+      - global_uri: ops:87b69a72919445a493a061d9b0daeba3
+        agenda_item_type: item
+        datetime_begin_planned: '2025-06-02T00:00:00Z'
+        agenda_item_title:
+          - text: Differenzierte Anpassung des Gehalts von Lehrpersonen ohne Lehrdiplom
+            language: de
+        affair_id: affairs:2025.GRPARL.81
+        datetime_created: '2025-04-25T11:10:35Z'
+        datetime_modified: '2025-04-25T11:10:35Z'
+
+  - global_uri: ops:meeting_luzern_2025_01_28
+    date_begin_planned: "2025-01-28"
+    agenda_items:
+      - global_uri: ops:0de4ecdb-23f1-49ab-95b8-1afc2e4feb1a
+        agenda_item_type: item
+        datetime_begin_planned: '2025-01-28T00:00:00Z'
+        agenda_item_position: 29
+        agenda_item_number: '29'
+        agenda_item_title:
+          - text: >-
+              Postulat Widmer Reichlin Gisela und Mit. über Massnahmen zur Erfüllung
+              des Sonderschulkonkordats und zur gezielten Behebung des
+              Fachkräftemangels im Bereich schulische Heilpädagogik / Bildungs- und
+              Kulturdepartement
+            language: de
+        agenda_item_category: voting
+        url:
+          - text: >-
+              https://www.lu.ch/kr/Sessionen/sessionsdaten_2020/Abstimmungsresultate/Detail?TraktandumGuid=0de4ecdb-23f1-49ab-95b8-1afc2e4feb1a
+            language: de
+        affair_id: affairs:2024P_125
+        datetime_created: '2025-01-29T06:59:41Z'
+        datetime_modified: '2025-01-29T06:59:41Z'
+
+  - global_uri: ops:meeting_luzern_2025_01_28_b
+    date_begin_planned: "2025-01-28"
+    agenda_items:
+      - global_uri: ops:fa732e0e-7e5f-4d45-994a-fc74720c0781
+        agenda_item_type: item
+        datetime_begin_planned: '2025-01-28T00:00:00Z'
+        agenda_item_position: 14
+        agenda_item_number: '14'
+        agenda_item_title:
+          - text: >-
+              Postulat Stadelmann Karin Andrea und Mit. über die Überprüfung und
+              Anpassung der Kriterien zum früheren Eintritt von Kindern in die
+              Basisstufe (den freiwilligen Kindergarten) / Bildungs- und
+              Kulturdepartement
+            language: de
+        agenda_item_category: voting
+        url:
+          - text: >-
+              https://www.lu.ch/kr/Sessionen/sessionsdaten_2020/Abstimmungsresultate/Detail?TraktandumGuid=fa732e0e-7e5f-4d45-994a-fc74720c0781
+            language: de
+        affair_id: affairs:2023P_102
+        datetime_created: '2025-01-29T06:59:41Z'
+        datetime_modified: '2025-01-29T06:59:41Z'
 
 ```
 
@@ -1047,7 +1086,7 @@ Legislature (législature)
           └─ AgendaItem (point de l'ordre du jour)
 ```
 
-La législature constitue le cadre à long terme, la session structure le travail au sein d'une législature, le Meeting est la séance concrète au cours de laquelle les affaires sont délibérées, et le point de l'ordre du jour articule la séance individuelle. Les niveaux s'emboîtent de deux manières : la session reprend ses séances sous forme de liste (`meetings`), tandis que la séance et le point de l'ordre du jour renvoient vers le haut par des références (`parent_legislature`, `parent_session`, `parent_meeting`, `parent_agenda_item`) : la session renvoie à sa législature, la séance à sa session.
+La législature constitue le cadre à long terme, la session structure le travail au sein d'une législature, le Meeting est la séance concrète au cours de laquelle les affaires sont délibérées, et le point de l'ordre du jour articule la séance individuelle. Les niveaux s'emboîtent de deux manières : vers le bas, ils sont imbriqués — la session reprend ses séances (`meetings`), la séance et la session leurs points de l'ordre du jour (`agenda_items`) ; vers le haut, des références pointent — la session vers sa législature (`parent_legislature`), la séance vers sa session (`parent_session`) ou, en l'absence de session, directement vers la législature (`parent_legislature`). À l'intérieur de l'ordre du jour, `parent_agenda_item` représente la subdivision en sous-points.
 
 Les trois premières classes sont décrites ci-après, le point de l'ordre du jour dans le chapitre suivant.
 
@@ -1133,28 +1172,31 @@ _Durée du mandat d'un parlement en tant qu'assemblée législative. Elle est en
 
 
 #### Exemples
-##### Exemple Legislature : Législature cantonale en cours d'une durée de cinq ans
+##### Exemple Legislature : Législature cantonale d'une durée de quatre ans
 
 ```yaml
 legislatures:
-- global_uri: ops:legislature_vd_2022_2027
-  wikidata_uri: http://www.wikidata.org/entity/Q131627357
-  spatial: https://ld.admin.ch/canton/22
+- global_uri: ops:legislature_be_2022_2026
+  local_id: GR-BE-2022-2026
+  spatial: https://ld.admin.ch/canton/2
   name:
-  - text: Législature 2022-2027
+  - text: Legislatur 2022–2026
+    language: de
+  - text: Législature 2022-2026
     language: fr
-  description: Le Grand Conseil vaudois est élu pour cinq ans.
-  landing_page: https://www.vd.ch/gc
+  landing_page: https://www.gr.be.ch/de/start/grosser-rat.html
   actor_id:
-    global_uri: actors:gc_vd
-    label: Grand Conseil du canton de Vaud
+    global_uri: actors:gr_be
+    label: Grosser Rat Bern
     abbreviation:
-    - value: GC
-      language: fr
-  date_begin_actual: '2022-07-01'
-  date_end_planned: '2027-06-30'
-  datetime_created: '2022-05-10T14:00:00+02:00'
-  datetime_modified: '2025-01-08T11:20:00+01:00'
+    - value: GR
+      language: de
+  date_begin_planned: '2022-06-01'
+  date_end_planned: '2026-05-31'
+  date_begin_actual: '2022-06-01'
+  date_end_actual: '2026-05-31'
+  datetime_created: '2022-04-01T10:15:00+02:00'
+  datetime_modified: '2026-06-01T07:00:00+02:00'
 
 ```
 ##### Exemple Legislature : Completed federal legislature
@@ -1187,31 +1229,28 @@ legislatures:
   datetime_modified: '2023-12-04T08:30:00+01:00'
 
 ```
-##### Exemple Legislature : Cantonal legislature with a four-year term
+##### Exemple Legislature : Ongoing cantonal legislature with a five-year term
 
 ```yaml
 legislatures:
-- global_uri: ops:legislature_be_2022_2026
-  local_id: GR-BE-2022-2026
-  spatial: https://ld.admin.ch/canton/2
+- global_uri: ops:legislature_vd_2022_2027
+  wikidata_uri: http://www.wikidata.org/entity/Q131627357
+  spatial: https://ld.admin.ch/canton/22
   name:
-  - text: Legislatur 2022–2026
-    language: de
-  - text: Législature 2022-2026
+  - text: Législature 2022-2027
     language: fr
-  landing_page: https://www.gr.be.ch/de/start/grosser-rat.html
+  description: Le Grand Conseil vaudois est élu pour cinq ans.
+  landing_page: https://www.vd.ch/gc
   actor_id:
-    global_uri: actors:gr_be
-    label: Grosser Rat Bern
+    global_uri: actors:gc_vd
+    label: Grand Conseil du canton de Vaud
     abbreviation:
-    - value: GR
-      language: de
-  date_begin_planned: '2022-06-01'
-  date_end_planned: '2026-05-31'
-  date_begin_actual: '2022-06-01'
-  date_end_actual: '2026-05-31'
-  datetime_created: '2022-04-01T10:15:00+02:00'
-  datetime_modified: '2026-06-01T07:00:00+02:00'
+    - value: GC
+      language: fr
+  date_begin_actual: '2022-07-01'
+  date_end_planned: '2027-06-30'
+  datetime_created: '2022-05-10T14:00:00+02:00'
+  datetime_modified: '2025-01-08T11:20:00+01:00'
 
 ```
 
@@ -1226,20 +1265,12 @@ legislatures:
 
 Une session est une période de séance continue au cours de laquelle plusieurs séances ont lieu.
 
-### Niveau facultatif
-
-La session est le seul des trois niveaux auquel il est possible de renoncer : les entités fédérées sans sessions formelles s'en passent et gèrent directement leurs séances. Session et séance peuvent aussi coïncider — une séance d'un jour du Grand Conseil ou une Landsgemeinde est gérée comme une période de séance comportant une seule séance.
-
-### Numérotation
-
-La numérotation varie fortement d'une pratique à l'autre, raison pour laquelle quatre champs sont disponibles : `number` retient le numéro courant sous forme de nombre, `sequential_number` la même indication sous forme de chaîne de caractères (et donc aussi en chiffres romains), `position` la position au sein de la législature et `meeting_abbreviation` une désignation abrégée telle que « FS24 ». Le Meeting connaît les mêmes quatre champs.
-
 
 
 ### Classe: Session []{#Session}
 
 
-_Une session parlementaire qui regroupe plusieurs séances et s'étend sur une période déterminée._
+_Une session : une période de séances continue au sein d'une législature. Elle regroupe ses séances (meetings) et peut aussi porter directement des points de l'ordre du jour (agenda_items). La session est le seul des trois niveaux temporels auquel il est possible de renoncer : les unités fédérales sans sessions formelles l'omettent et rattachent leurs séances directement à la législature (parent_legislature). Session et séance peuvent aussi coïncider — une séance d'un jour d'un parlement cantonal ou une Landsgemeinde est représentée comme une session comprenant une seule séance, ou comme une session qui porte directement ses points de l'ordre du jour, sans séance._
 
 
 
@@ -1258,13 +1289,14 @@ _Une session parlementaire qui regroupe plusieurs séances et s'étend sur une p
 | wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | spatial | 0..1 <br/> String | Référence spatiale à une ressource LINDAS (numéro OFS de commune, numéro OFS de canton, district ou pays). Formats : commune : https://ld.admin.ch/municipality/1234, district : https://ld.admin.ch/district/2301, canton : https://ld.admin.ch/canton/23, pays : https://ld.admin.ch/country/CHE.  |
 | name | * <br/> [MultilingualString](#MultilingualString) | Désignation complète multilingue.  |
-| number | 0..1 <br/> String | Numéro courant, p. ex. au sein de la législature, de la session ou de l'année.  |
-| sequential_number | 0..1 <br/> Integer | Numéro séquentiel de la séance, utilisé pour le tri.  |
-| position | 0..1 <br/> String | Position (nombre entier) au sein de la séquence supérieure.  |
+| number | 0..1 <br/> String | Numéro de la session ou de la séance tel qu'attribué par l'organe, p. ex. au sein de la législature, de la session ou de l'année. En tant que chaîne de caractères, il admet aussi les chiffres romains. Les pratiques de numérotation variant fortement, number, sequential_number, position et meeting_abbreviation sont disponibles côte à côte.  |
+| sequential_number | 0..1 <br/> Integer | Numéro d'ordre de la session ou de la séance sous forme de nombre entier, utilisé pour le tri.  |
+| position | 0..1 <br/> String | Position entière au sein de la séquence supérieure, p. ex. d'une session au sein de la législature.  |
 | meeting_abbreviation | 0..1 <br/> String | Désignation abrégée de la session ou de la séance (p. ex. « FS24 » pour la session de printemps 2024).  |
 | url | * <br/> [MultilingualString](#MultilingualString) | Page d'accueil ou adresse web complémentaire, multilingue.  |
-| parent_legislature | 0..1 <br/> String | Identifiant de la législature à laquelle la session appartient.  |
+| parent_legislature | 0..1 <br/> String | Identifiant de la législature à laquelle la session ou la séance appartient. Une séance qui fait partie d'une session est rattachée à la législature par la session (parent_session) ; une séance sans session — par exemple une séance de commission ou une séance dans une unité fédérale sans sessions formelles — renvoie directement à la législature.  |
 | meetings | * <br/> [Meeting](#Meeting) | Ensemble des séances.  |
+| agenda_items | * <br/> [AgendaItem](#AgendaItem) | Points de l'ordre du jour planifiés pour cette séance ou cette session, imbriqués sous forme de liste. Pour une séance, ils forment son ordre du jour. Pour une session, ils contiennent les points planifiés directement au niveau de la session — lorsqu'une unité fédérale ne subdivise pas la session en séances (p. ex. une Landsgemeinde ou une séance d'un jour d'un parlement cantonal), ou pour des points qui ne sont pas (encore) attribués à une séance déterminée, comme dans un programme de session. Leur pendant après la séance sont les points consignés au procès-verbal (Protocol.protocol_items).  |
 | joint_debates | * <br/> [JointDebate](#JointDebate) | Délibérations communes rattachées à cet enregistrement : pour un point de l'ordre du jour, les délibérations dans lesquelles il est traité conjointement avec d'autres points ; pour une séance ou une session, les délibérations communes qui s'y tiennent.  |
 | documents | * <br/> Work | Liste des documents (FRBR Works) liés à l'entité.  |
 | date_begin_actual | 0..1 <br/> Date | La date de début effective d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
@@ -1304,7 +1336,51 @@ _Une session parlementaire qui regroupe plusieurs séances et s'étend sur une p
 
 
 #### Exemples
-##### Exemple Session : Session fédérale avec désignation trilingue
+##### Exemple Session : Période de séance d'un jour d'un Grand Conseil
+
+```yaml
+sessions:
+- global_uri: ops:session_gl_landrat_2025_02_26
+  spatial: https://ld.admin.ch/canton/8
+  name:
+  - text: Sitzung des Landrates vom 26.02.2025
+    language: de
+  url:
+  - text: https://www.gl.ch/parlament/landrat/landratsprotokolle-ab-30-juni-2010.html/239
+    language: de
+  date_begin_planned: '2025-02-26'
+  date_end_planned: '2025-02-26'
+  datetime_modified: '2025-04-25T13:40:34Z'
+  datetime_created: '2025-04-23T22:58:39Z'
+
+```
+##### Exemple Session : Landsgemeinde as a sitting period
+
+```yaml
+sessions:
+- global_uri: ops:session_gl_landsgemeinde_2025_05_04
+  spatial: https://ld.admin.ch/canton/8
+  name:
+  - text: Landsgemeinde vom 04. Mai 2025
+    language: de
+  url:
+  - text: https://www.landsgemeinde.gl.ch/landsgemeinde/2025-05-04
+    language: de
+  date_begin_planned: '2025-05-04'
+  date_end_planned: '2025-05-04'
+  agenda_items:
+  - global_uri: ops:agenda_item_gl_landsgemeinde_2025_01
+    agenda_item_type: item
+    agenda_item_number: '1'
+    agenda_item_position: 1
+    agenda_item_title:
+    - text: Eröffnung der Landsgemeinde
+      language: de
+  datetime_modified: '2025-04-25T13:40:34Z'
+  datetime_created: '2025-04-23T22:58:39Z'
+
+```
+##### Exemple Session : Federal session with a trilingual designation
 
 ```yaml
 sessions:
@@ -1331,24 +1407,6 @@ sessions:
   datetime_created: '2025-03-20T14:27:09Z'
 
 ```
-##### Exemple Session : One-day sitting period of a cantonal parliament
-
-```yaml
-sessions:
-- global_uri: ops:session_gl_landrat_2025_02_26
-  spatial: https://ld.admin.ch/canton/8
-  name:
-  - text: Sitzung des Landrates vom 26.02.2025
-    language: de
-  url:
-  - text: https://www.gl.ch/parlament/landrat/landratsprotokolle-ab-30-juni-2010.html/239
-    language: de
-  date_begin_planned: '2025-02-26'
-  date_end_planned: '2025-02-26'
-  datetime_modified: '2025-04-25T13:40:34Z'
-  datetime_created: '2025-04-23T22:58:39Z'
-
-```
 ##### Exemple Session : Cantonal session with a bilingual designation
 
 ```yaml
@@ -1373,24 +1431,6 @@ sessions:
   datetime_created: '2025-04-25T11:10:24Z'
 
 ```
-##### Exemple Session : Landsgemeinde as a sitting period
-
-```yaml
-sessions:
-- global_uri: ops:session_gl_landsgemeinde_2025_05_04
-  spatial: https://ld.admin.ch/canton/8
-  name:
-  - text: Landsgemeinde vom 04. Mai 2025
-    language: de
-  url:
-  - text: https://www.landsgemeinde.gl.ch/landsgemeinde/2025-05-04
-    language: de
-  date_begin_planned: '2025-05-04'
-  date_end_planned: '2025-05-04'
-  datetime_modified: '2025-04-25T13:40:34Z'
-  datetime_created: '2025-04-23T22:58:39Z'
-
-```
 
 
 
@@ -1408,7 +1448,7 @@ Un Meeting est la séance individuelle d'un organe — le niveau auquel les poin
 ### Classe: Meeting []{#Meeting}
 
 
-_La séance individuelle d'un organe — le niveau auquel les points de l'ordre du jour sont délibérés, les décisions prises et les interventions consignées. La séance est le nœud auquel les autres classes de la présente norme se rattachent via `parent_meeting` : les points de l'ordre du jour (AgendaItem), les votes et élections (Voting, Election), les interventions (Speech) ainsi que la liste de présence (Attendance). À ce niveau, les heures prévues et les heures effectives divergent régulièrement — une séance fixée à 14h00 ne commence, en raison de retards, qu'à 14h25 et se termine à 17h30 au lieu de 18h00 —, raison pour laquelle le début et la fin sont consignés tant prévus qu'effectifs._
+_La séance individuelle d'un organe — le niveau auquel les points de l'ordre du jour sont délibérés, les décisions prises et les interventions consignées. La séance est le nœud auquel se rattachent les autres classes de la présente norme : ses points de l'ordre du jour (AgendaItem) y sont imbriqués (agenda_items), tandis que les votes et élections (Voting, Election), les interventions (Speech) ainsi que la liste de présence (Attendance) y renvoient via `parent_meeting`. À ce niveau, les heures prévues et les heures effectives divergent régulièrement — une séance fixée à 14h00 ne commence, en raison de retards, qu'à 14h25 et se termine à 17h30 au lieu de 18h00 —, raison pour laquelle le début et la fin sont consignés tant prévus qu'effectifs._
 
 
 
@@ -1431,10 +1471,10 @@ _La séance individuelle d'un organe — le niveau auquel les points de l'ordre 
 | url | * <br/> [MultilingualString](#MultilingualString) | Page d'accueil ou adresse web complémentaire, multilingue.  |
 | group_name | 0..1 <br/> String | Nom du groupe ou de l'organe en clair, en complément de la référence `group_id`.  |
 | group_id | 0..1 <br/> [GroupReference](#GroupReference) | Référence au groupe ou à l'organe (instantané au moment de la mise en relation).  |
-| number | 0..1 <br/> String | Numéro courant, p. ex. au sein de la législature, de la session ou de l'année.  |
+| number | 0..1 <br/> String | Numéro de la session ou de la séance tel qu'attribué par l'organe, p. ex. au sein de la législature, de la session ou de l'année. En tant que chaîne de caractères, il admet aussi les chiffres romains. Les pratiques de numérotation variant fortement, number, sequential_number, position et meeting_abbreviation sont disponibles côte à côte.  |
 | landing_page | 0..1 <br/> String | URL fournissant des informations complémentaires.  |
-| sequential_number | 0..1 <br/> Integer | Numéro séquentiel de la séance, utilisé pour le tri.  |
-| position | 0..1 <br/> String | Position (nombre entier) au sein de la séquence supérieure.  |
+| sequential_number | 0..1 <br/> Integer | Numéro d'ordre de la session ou de la séance sous forme de nombre entier, utilisé pour le tri.  |
+| position | 0..1 <br/> String | Position entière au sein de la séquence supérieure, p. ex. d'une session au sein de la législature.  |
 | meeting_abbreviation | 0..1 <br/> String | Désignation abrégée de la session ou de la séance (p. ex. « FS24 » pour la session de printemps 2024).  |
 | actor_name | 0..1 <br/> String | Nom de l'organe politique en clair (p. ex. Conseil national), en complément de la référence `actor_id`.  |
 | actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Référence à l'organe agissant (instantané au moment de la mise en relation).  |
@@ -1442,9 +1482,11 @@ _La séance individuelle d'un organe — le niveau auquel les points de l'ordre 
 | state_name | 0..1 <br/> String | Désignation de statut divergente, en texte libre, de la séance, là où les valeurs de `state` ne suffisent pas.  |
 | description | 0..1 <br/> String | Texte descriptif de l'élément.  |
 | location | 0..1 <br/> String | Lieu où se tient la séance — la salle physique (« Palais fédéral, salle du Conseil national »), une visioconférence ou un format hybride.  |
-| parent_meeting | 0..1 <br/> String | Identifiant de la séance à laquelle cet enregistrement se rattache. Pour une séance, il désigne la séance supérieure ; pour un point de l'ordre du jour, un vote, une élection, une intervention ou un procès-verbal, la séance au cours de laquelle l'enregistrement est né.  |
+| parent_meeting | 0..1 <br/> String | Identifiant de la séance à laquelle cet enregistrement se rattache. Pour une séance, il désigne la séance supérieure ; pour un vote, une élection, une intervention, une liste de présence ou un procès-verbal, la séance au cours de laquelle l'enregistrement est né. Les points de l'ordre du jour ne le portent pas : ils sont imbriqués dans leur séance.  |
+| parent_legislature | 0..1 <br/> String | Identifiant de la législature à laquelle la session ou la séance appartient. Une séance qui fait partie d'une session est rattachée à la législature par la session (parent_session) ; une séance sans session — par exemple une séance de commission ou une séance dans une unité fédérale sans sessions formelles — renvoie directement à la législature.  |
 | parent_session | 0..1 <br/> String | Identifiant de la session à laquelle la séance appartient.  |
 | documents | * <br/> Work | Documents de séance tels que le bulletin (Tagblatt) ou les annexes, sous forme de FRBR Works. Le procès-verbal n'est pas lié ici, mais via `has_protocol`.  |
+| agenda_items | * <br/> [AgendaItem](#AgendaItem) | Points de l'ordre du jour planifiés pour cette séance ou cette session, imbriqués sous forme de liste. Pour une séance, ils forment son ordre du jour. Pour une session, ils contiennent les points planifiés directement au niveau de la session — lorsqu'une unité fédérale ne subdivise pas la session en séances (p. ex. une Landsgemeinde ou une séance d'un jour d'un parlement cantonal), ou pour des points qui ne sont pas (encore) attribués à une séance déterminée, comme dans un programme de session. Leur pendant après la séance sont les points consignés au procès-verbal (Protocol.protocol_items).  |
 | has_protocol | 0..1 <br/> [Protocol](#Protocol) | Référence au procès-verbal de cette séance, établi après celle-ci. Seul l'identifiant du procès-verbal est indiqué ; le procès-verbal lui-même est livré dans la liste `protocols` du conteneur. Il constitue une entité à part entière dotée de son propre identifiant et est en règle générale publié après la séance, raison pour laquelle il est référencé et non imbriqué.  |
 | joint_debates | * <br/> [JointDebate](#JointDebate) | Délibérations communes rattachées à cet enregistrement : pour un point de l'ordre du jour, les délibérations dans lesquelles il est traité conjointement avec d'autres points ; pour une séance ou une session, les délibérations communes qui s'y tiennent.  |
 | date_begin_actual | 0..1 <br/> Date | La date de début effective d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
@@ -1485,60 +1527,22 @@ _La séance individuelle d'un organe — le niveau auquel les points de l'ordre 
 
 
 #### Exemples
-##### Exemple Meeting : Séance du Conseil des États avec procès-verbal et interventions
+##### Exemple Meeting : meeting item meeting be 2025 06 02
 
 ```yaml
 meetings:
-- global_uri: parl:sr_winter25_sitzung_6
-  spatial: https://ld.admin.ch/country/CHE
-  name:
-  - text: Sechste Sitzung
-    language: de
-  - text: Sixième séance
-    language: fr
-  url:
-  - text: https://www.parlament.ch/de/ratsbetrieb/suche-Amtliches-bulletin
-    language: de
-  actor_id:
-    global_uri: actors:staenderat
-    label: Ständerat
-    abbreviation:
-    - value: SR
+- global_uri: ops:meeting_be_2025_06_02
+  date_begin_planned: '2025-06-02'
+  agenda_items:
+  - global_uri: ops:87b69a72919445a493a061d9b0daeba3
+    agenda_item_type: item
+    datetime_begin_planned: '2025-06-02T00:00:00Z'
+    agenda_item_title:
+    - text: Differenzierte Anpassung des Gehalts von Lehrpersonen ohne Lehrdiplom
       language: de
-  actor_name: Ständerat
-  datetime_begin_planned: '2025-12-19T08:15:00+01:00'
-  has_protocol: ops:protokoll_sr_winter25_sitzung_6
-  datetime_created: '2026-01-12T00:00:00+01:00'
-  datetime_modified: '2026-01-12T00:00:00+01:00'
-
-```
-##### Exemple Meeting : Half-day sitting within a session
-
-```yaml
-meetings:
-- spatial: https://ld.admin.ch/canton/2
-  global_uri: ops:e7c5d453-848a-430a-b024-1dd2f6873aa6
-  name:
-  - text: Donnerstag (Nachmittag)
-    language: de
-  url:
-  - text: >-
-      https://www.gr.be.ch/de/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8
-    language: de
-  - text: >-
-      https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8
-    language: fr
-  actor_id:
-    global_uri: actors:gr_be
-    label: Grosser Rat Bern
-    abbreviation:
-    - value: GR
-      language: de
-  actor_name: Grosser Rat Bern
-  date_begin_planned: '2025-06-05'
-  date_end_planned: '2025-06-05'
-  datetime_created: '2025-04-25T11:10:25Z'
-  datetime_modified: '2025-05-19T01:06:45Z'
+    affair_id: affairs:2025.GRPARL.81
+    datetime_created: '2025-04-25T11:10:35Z'
+    datetime_modified: '2025-04-25T11:10:35Z'
 
 ```
 ##### Exemple Meeting : Committee sitting with an attendance list
@@ -1568,8 +1572,91 @@ meetings:
   datetime_end_actual: '2025-05-12T16:45:00Z'
   state: planned
   location: Kommissionszimmer 301, Rathaus Bern
+  parent_legislature: ops:legislature_be_2022_2026
   datetime_created: '2025-04-15T09:00:00Z'
   datetime_modified: '2025-05-12T16:45:00Z'
+  agenda_items:
+  - global_uri: ops:agenda_item_be_2025_042
+    agenda_item_type: item
+    agenda_item_number: '4.2'
+    agenda_item_position: 42
+    agenda_item_title:
+    - text: Steuergesetz - Detailberatung Art. 5
+      language: de
+    - text: Loi fiscale - Délibération détaillée art. 5
+      language: fr
+    agenda_item_description:
+    - text: Beratung von Änderungsanträgen zu Artikel 5 des Steuergesetzes
+      language: de
+    - text: >-
+        Délibération sur les propositions de modification de l'article 5 de la loi
+        fiscale
+      language: fr
+    agenda_item_category: Gesetzgebung
+    state_id: completed
+    datetime_begin_planned: '2025-05-12T15:00:00Z'
+    datetime_begin_actual: '2025-05-12T15:15:00Z'
+    affair_id: affairs:be_2024_089_steuergesetz
+    datetime_created: '2025-04-15T09:00:00Z'
+    datetime_modified: '2025-05-12T15:20:00Z'
+
+```
+##### Exemple Meeting : meeting item meeting schaffhausen 2025 03 31 b
+
+```yaml
+meetings:
+- global_uri: ops:meeting_schaffhausen_2025_03_31_b
+  date_begin_planned: '2025-03-31'
+  agenda_items:
+  - global_uri: ops:16155798_4
+    agenda_item_type: item
+    datetime_begin_planned: '2025-03-31T00:00:00Z'
+    agenda_item_position: 3
+    agenda_item_number: '3'
+    agenda_item_title:
+    - text: >-
+        Volksmotion Nr. 2024/1 von Sandro Mamedow und Livia Schraff (Erstunterzeichnende)
+        sowie weitere 150 Mitunterzeichnende vom 22. März 2024 mit dem Titel: «Für
+        eine Stimme der Studierenden im Hochschulrat der Pädagogischen Hochschule
+        Schaffhausen (PHSH)»
+      language: de
+    agenda_item_category: Traktanden
+    affair_id: affairs:MOT_2024_1
+    datetime_created: '2025-05-02T11:23:49Z'
+    datetime_modified: '2025-05-02T11:23:49Z'
+
+```
+##### Exemple Meeting : meeting item meeting vaud 2008 04 30
+
+```yaml
+meetings:
+- global_uri: ops:meeting_vaud_2008_04_30
+  date_begin_planned: '2008-04-30'
+  agenda_items:
+  - global_uri: ops:7b3545e4-57dc-3901-aaa8-4020da6ab0c6
+    agenda_item_type: item
+    datetime_begin_planned: '2008-04-30T00:00:00Z'
+    agenda_item_position: 7
+    agenda_item_number: '7'
+    agenda_item_title:
+    - text: >-
+        Révision partielle de sept ordonnances fédérales relatives aux produits chimiques
+      language: fr
+    agenda_item_description:
+    - text: 'Le Conseil d''Etat approuve le projet de révision partielle de sept ordonnances
+        fédérales relatives aux produits chimiques. Il salue la volonté des autorités
+        fédérales d''introduire dans la législation fédérale les modifications nécessaires
+        découlant des nouveaux règlements européens, afin d''éliminer des entraves
+        au commerce et d''augmenter la sécurité d''évaluation des produits chimiques.
+
+        '
+      language: fr
+    url:
+    - text: >-
+        https://www.vd.ch/actualites/decisions-du-conseil-detat/seance-du-conseil-detat/seance/265632#7b3545e4-57dc-3901-aaa8-4020da6ab0c6
+      language: fr
+    datetime_created: '2024-12-06T10:50:04Z'
+    datetime_modified: '2024-12-06T10:50:04Z'
 
 ```
 ##### Exemple Meeting : Landsgemeinde as meeting type sitting
@@ -1600,6 +1687,77 @@ meetings:
   parent_session: ops:session_gl_landsgemeinde_2025
   datetime_created: '2025-01-10T12:00:00Z'
   datetime_modified: '2025-05-04T13:45:00Z'
+
+```
+##### Exemple Meeting : meeting item meeting bern 2022 03 17
+
+```yaml
+meetings:
+- global_uri: ops:meeting_bern_2022_03_17
+  date_begin_planned: '2022-03-17'
+  agenda_items:
+  - global_uri: ops:cea750a5bd7b420fa4da1c914f801384
+    agenda_item_type: item
+    datetime_begin_planned: '2022-03-17T17:00:00Z'
+    agenda_item_position: 29
+    agenda_item_number: '8'
+    agenda_item_title:
+    - text: >-
+        Interpellation Fraktion GB/JA! (Katharina Gallizzi, GB): Welche Konsequenzen
+        haben die Klimaziele für das Gasnetz in Bern?
+      language: de
+    affair_id: affairs:2020.SR.000007
+    url:
+    - text: >-
+        https://stadtrat.bern.ch/de/sitzungen/detail.php?gid=000d6cf5f0bc4d89a5171e0123cfbff5#cea750a5bd7b420fa4da1c914f801384
+      language: de
+    datetime_created: '2025-01-17T21:25:52Z'
+    datetime_modified: '2025-01-17T21:25:52Z'
+
+```
+##### Exemple Meeting : Council of States sitting with protocol and speeches
+
+```yaml
+meetings:
+- global_uri: parl:sr_winter25_sitzung_6
+  spatial: https://ld.admin.ch/country/CHE
+  name:
+  - text: Sechste Sitzung
+    language: de
+  - text: Sixième séance
+    language: fr
+  url:
+  - text: https://www.parlament.ch/de/ratsbetrieb/suche-Amtliches-bulletin
+    language: de
+  actor_id:
+    global_uri: actors:staenderat
+    label: Ständerat
+    abbreviation:
+    - value: SR
+      language: de
+  actor_name: Ständerat
+  datetime_begin_planned: '2025-12-19T08:15:00+01:00'
+  has_protocol: ops:protokoll_sr_winter25_sitzung_6
+  datetime_created: '2026-01-12T00:00:00+01:00'
+  datetime_modified: '2026-01-12T00:00:00+01:00'
+  agenda_items:
+  - global_uri: ops:69905
+    agenda_item_type: item
+    datetime_begin_planned: '2025-12-19T09:15:00+01:00'
+    datetime_begin_actual: '2025-12-19T09:20:00+01:00'
+    agenda_item_number: '6'
+    agenda_item_position: 4
+    agenda_item_title:
+    - text: >-
+        Postulat Broulis Pascal. Bauprojekte im Mobilitätsbereich. Einen Vergleich
+        durchführen, um die Verzögerungen zu verstehen
+      language: de
+    affair_id: affairs:24.4471
+    landing_page: >-
+      https://www.parlament.ch/de/ratsbetrieb/amtliches-bulletin/amtliches-bulletin-die-verhandlungen?SubjectId=69905#votum3
+    agenda_item_category: agenda_item
+    datetime_created: '2026-01-12T00:00:00+01:00'
+    datetime_modified: '2026-01-12T00:00:00+01:00'
 
 ```
 ##### Exemple Meeting : Government sitting with a bilingual designation
@@ -1661,6 +1819,279 @@ meetings:
   parent_session: ops:session_sg_2025_03
   datetime_created: '2025-02-01T10:00:00Z'
   datetime_modified: '2025-03-15T17:30:00Z'
+  agenda_items:
+  - global_uri: ops:agenda_item_sg_2025_015
+    agenda_item_type: item
+    agenda_item_number: '15'
+    agenda_item_position: 15
+    agenda_item_title:
+    - text: Energiegesetz - Schlussabstimmung
+      language: de
+    agenda_item_description:
+    - text: Schlussabstimmung über das revidierte Energiegesetz des Kantons St. Gallen
+      language: de
+    agenda_item_category: Gesetzgebung
+    state_id: completed
+    datetime_begin_planned: '2025-03-15T14:00:00Z'
+    datetime_begin_actual: '2025-03-15T14:30:00Z'
+    affair_id: affairs:sg_2024_123_energiegesetz
+    datetime_created: '2025-02-01T10:00:00Z'
+    datetime_modified: '2025-03-15T14:35:00Z'
+
+```
+##### Exemple Meeting : meeting item meeting 2011 11 23
+
+```yaml
+meetings:
+- global_uri: ops:meeting_2011_11_23
+  date_begin_planned: '2011-11-23'
+  agenda_items:
+  - global_uri: ops:06fb582b753c416d8fdb05fa13873545
+    agenda_item_type: item
+    datetime_begin_planned: '2011-11-23T00:00:00Z'
+    agenda_item_position: 2
+    agenda_item_title:
+    - text: >-
+        Interpellation Peter Mark betr. elektronische Datenerfassung durch Mitarbeiter
+        im Werkhof – Versuchsphase
+      language: de
+    datetime_created: '2025-03-21T23:15:19Z'
+    datetime_modified: '2025-03-21T23:15:19Z'
+
+```
+##### Exemple Meeting : meeting item meeting lausanne 2025 05 20
+
+```yaml
+meetings:
+- global_uri: ops:meeting_lausanne_2025_05_20
+  date_begin_planned: '2025-05-20'
+  agenda_items:
+  - global_uri: ops:2025_05_20-23
+    agenda_item_type: item
+    datetime_begin_planned: '2025-05-20T00:00:00Z'
+    agenda_item_position: 23
+    agenda_item_number: '23'
+    agenda_item_title:
+    - text: >-
+        Interpellation urgente du 20 mai 2025 de M. Yusuf KULMIYE : « Interpellation
+        urgente de Kulmiye Yusuf et crts – Solidarité sans frontières, Lausanne en
+        faveur du respect du droit international et de la protection des populations
+        civiles à Gaza »
+      language: fr
+    state_id: not_treated
+    agenda_item_category: ANNONCES ET INTERPELLATIONS
+    affair_id: affairs:INT25/027
+    url:
+    - text: >-
+        https://www.lausanne.ch/apps/agir/affaire/6c/049b6c612fe2428f9be66ea39522ac6c.htm
+      language: fr
+    datetime_created: '2025-06-07T23:50:18Z'
+    datetime_modified: '2025-06-07T23:50:18Z'
+
+```
+##### Exemple Meeting : meeting item meeting 2025 03 31
+
+```yaml
+meetings:
+- global_uri: ops:meeting_2025_03_31
+  date_begin_planned: '2025-03-31'
+  agenda_items:
+  - global_uri: ops:49_253
+    agenda_item_type: item
+    datetime_begin_planned: '2025-03-31T00:00:00Z'
+    agenda_item_position: 2
+    agenda_item_number: '2'
+    agenda_item_title:
+    - text: Programmvereinbarungen 2024
+      language: de
+    datetime_created: '2025-03-29T01:07:14Z'
+    datetime_modified: '2025-03-29T01:07:14Z'
+
+```
+##### Exemple Meeting : meeting item meeting schaffhausen 2025 03 31
+
+```yaml
+meetings:
+- global_uri: ops:meeting_schaffhausen_2025_03_31
+  date_begin_planned: '2025-03-31'
+  agenda_items:
+  - global_uri: ops:16155798_3
+    agenda_item_type: item
+    datetime_begin_planned: '2025-03-31T00:00:00Z'
+    agenda_item_position: 2
+    agenda_item_number: '2'
+    agenda_item_title:
+    - text: >-
+        Motion Nr. 2023/9 von Rainer Schmidig vom 18. Dezember 2023 betreffend zeitgemässe
+        Abzüge in den Art. 35 und 37 des Gesetzes über die direkten Steuern
+      language: de
+    agenda_item_category: Traktanden
+    affair_id: affairs:MOT_2023_9
+    datetime_created: '2025-05-02T11:23:49Z'
+    datetime_modified: '2025-05-02T11:23:49Z'
+
+```
+##### Exemple Meeting : meeting item meeting bern rr 2025 04 02
+
+```yaml
+meetings:
+- global_uri: ops:meeting_bern_rr_2025_04_02
+  date_begin_planned: '2025-04-02'
+  agenda_items:
+  - global_uri: ops:21c50b86d21b4b4baeb1a76738ff82a3_2025-04-02_1_de
+    agenda_item_type: item
+    datetime_begin_planned: '2025-04-02T00:00:00Z'
+    agenda_item_title:
+    - text: >-
+        Petition «Gleichberechtigung für Tagesfamilien: Gleich hohe Betreuungsgutscheine
+        für alle Anbieter im Kanton Bern». Regierungsrätliches Antwortschreiben
+      language: de
+    affair_id: affairs:2025.STA.622
+    url:
+    - text: >-
+        https://www.rr.be.ch/de/start/beschluesse/suche/geschaeftsdetail.html?guid=21c50b86d21b4b4baeb1a76738ff82a3
+      language: de
+    datetime_created: '2025-04-25T11:11:40Z'
+    datetime_modified: '2025-04-25T11:11:40Z'
+
+```
+##### Exemple Meeting : Half-day sitting within a session
+
+```yaml
+meetings:
+- spatial: https://ld.admin.ch/canton/2
+  global_uri: ops:e7c5d453-848a-430a-b024-1dd2f6873aa6
+  name:
+  - text: Donnerstag (Nachmittag)
+    language: de
+  url:
+  - text: >-
+      https://www.gr.be.ch/de/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8
+    language: de
+  - text: >-
+      https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8
+    language: fr
+  actor_id:
+    global_uri: actors:gr_be
+    label: Grosser Rat Bern
+    abbreviation:
+    - value: GR
+      language: de
+  actor_name: Grosser Rat Bern
+  date_begin_planned: '2025-06-05'
+  date_end_planned: '2025-06-05'
+  datetime_created: '2025-04-25T11:10:25Z'
+  datetime_modified: '2025-05-19T01:06:45Z'
+
+```
+##### Exemple Meeting : meeting item meeting lausanne 2023 10 03
+
+```yaml
+meetings:
+- global_uri: ops:meeting_lausanne_2023_10_03
+  date_begin_planned: '2023-10-03'
+  agenda_items:
+  - global_uri: ops:2023_10_03-52
+    agenda_item_type: item
+    datetime_begin_planned: '2023-10-03T00:00:00Z'
+    agenda_item_position: 52
+    agenda_item_number: '52'
+    agenda_item_title:
+    - text: >-
+        Postulat de Mme Franziska MEINHERZ : « Lausanne sans publicité commerciale
+        » (FIM)
+      language: fr
+    state_id: postponed
+    agenda_item_category: RAPPORTS
+    affair_id: affairs:POS22/029
+    url:
+    - text: >-
+        https://www.lausanne.ch/apps/agir/affaire/81/b7157ea2a4994086b65cf176768c6381.htm
+      language: fr
+    datetime_created: '2025-02-08T12:33:10Z'
+    datetime_modified: '2025-02-08T12:33:10Z'
+
+```
+##### Exemple Meeting : meeting complete meeting zh 2025 11 20
+
+```yaml
+meetings:
+- global_uri: ops:meeting_zh_2025_11_20
+  date_begin_planned: '2025-11-20'
+  agenda_items:
+  - global_uri: ops:agenda_item_zh_budget_2026
+    agenda_item_type: item
+    agenda_item_number: '8'
+    agenda_item_position: 8
+    agenda_item_title:
+    - text: Budget 2026
+      language: de
+    agenda_item_description:
+    - text: Beratung und Beschlussfassung über das Kantonsbudget für das Jahr 2026
+      language: de
+    agenda_item_category: Budget und Finanzen
+    state_id: completed
+    datetime_begin_planned: '2025-11-20T16:00:00Z'
+    datetime_begin_actual: '2025-11-20T16:45:00Z'
+    affair_id: affairs:zh_2025_budget_2026
+    datetime_created: '2025-10-01T08:00:00Z'
+    datetime_modified: '2025-11-20T16:50:00Z'
+
+```
+##### Exemple Meeting : meeting item meeting luzern 2025 01 28
+
+```yaml
+meetings:
+- global_uri: ops:meeting_luzern_2025_01_28
+  date_begin_planned: '2025-01-28'
+  agenda_items:
+  - global_uri: ops:0de4ecdb-23f1-49ab-95b8-1afc2e4feb1a
+    agenda_item_type: item
+    datetime_begin_planned: '2025-01-28T00:00:00Z'
+    agenda_item_position: 29
+    agenda_item_number: '29'
+    agenda_item_title:
+    - text: >-
+        Postulat Widmer Reichlin Gisela und Mit. über Massnahmen zur Erfüllung des
+        Sonderschulkonkordats und zur gezielten Behebung des Fachkräftemangels im
+        Bereich schulische Heilpädagogik / Bildungs- und Kulturdepartement
+      language: de
+    agenda_item_category: voting
+    url:
+    - text: >-
+        https://www.lu.ch/kr/Sessionen/sessionsdaten_2020/Abstimmungsresultate/Detail?TraktandumGuid=0de4ecdb-23f1-49ab-95b8-1afc2e4feb1a
+      language: de
+    affair_id: affairs:2024P_125
+    datetime_created: '2025-01-29T06:59:41Z'
+    datetime_modified: '2025-01-29T06:59:41Z'
+
+```
+##### Exemple Meeting : meeting item meeting luzern 2025 01 28 b
+
+```yaml
+meetings:
+- global_uri: ops:meeting_luzern_2025_01_28_b
+  date_begin_planned: '2025-01-28'
+  agenda_items:
+  - global_uri: ops:fa732e0e-7e5f-4d45-994a-fc74720c0781
+    agenda_item_type: item
+    datetime_begin_planned: '2025-01-28T00:00:00Z'
+    agenda_item_position: 14
+    agenda_item_number: '14'
+    agenda_item_title:
+    - text: >-
+        Postulat Stadelmann Karin Andrea und Mit. über die Überprüfung und Anpassung
+        der Kriterien zum früheren Eintritt von Kindern in die Basisstufe (den freiwilligen
+        Kindergarten) / Bildungs- und Kulturdepartement
+      language: de
+    agenda_item_category: voting
+    url:
+    - text: >-
+        https://www.lu.ch/kr/Sessionen/sessionsdaten_2020/Abstimmungsresultate/Detail?TraktandumGuid=fa732e0e-7e5f-4d45-994a-fc74720c0781
+      language: de
+    affair_id: affairs:2023P_102
+    datetime_created: '2025-01-29T06:59:41Z'
+    datetime_modified: '2025-01-29T06:59:41Z'
 
 ```
 
@@ -1718,7 +2149,7 @@ L'ordre du jour d'une séance est structuré par des points de l'ordre du jour ;
 ### Classe: AgendaItem []{#AgendaItem}
 
 
-_Un point de l'ordre du jour d'une séance, tel que planifié à l'avance. Il structure l'ordre du jour et relie l'organisation temporelle (Meeting) aux affaires matérielles (eCH-0295). Les points de l'ordre du jour représentent la planification d'une séance et ne sont plus modifiés dans les données une fois la séance ouverte : les écarts survenus durant la séance — points avancés, reportés ou ajoutés — sont consignés au procès-verbal (ProtocolItem) et se répercutent sur l'ordre du jour de la séance suivante. Pour la même raison, les heures prévues et effectives sont tenues séparément._
+_Un point de l'ordre du jour d'une séance, tel que planifié à l'avance. Il structure l'ordre du jour et relie l'organisation temporelle (Meeting) aux affaires matérielles (eCH-0295). Il est imbriqué dans sa séance (Meeting.agenda_items) ou directement dans sa session (Session.agenda_items). Les points de l'ordre du jour représentent la planification d'une séance et ne sont plus modifiés dans les données une fois la séance ouverte : les écarts survenus durant la séance — points avancés, reportés ou ajoutés — sont consignés au procès-verbal (ProtocolItem) et se répercutent sur l'ordre du jour de la séance suivante. Pour la même raison, les heures prévues et effectives sont tenues séparément._
 
 
 
@@ -1747,7 +2178,6 @@ _Un point de l'ordre du jour d'une séance, tel que planifié à l'avance. Il st
 | datetime_created | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
 | date_modified | 0..1 <br/> Date | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
 | datetime_modified | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
-| parent_meeting | 0..1 <br/> String | Identifiant de la séance à laquelle cet enregistrement se rattache. Pour une séance, il désigne la séance supérieure ; pour un point de l'ordre du jour, un vote, une élection, une intervention ou un procès-verbal, la séance au cours de laquelle l'enregistrement est né. <br/><br/>Héritage : IsAgendaItem |
 | agenda_item_type | 0..1 <br/> [AgendaItemTypeEnum](#AgendaItemTypeEnum) | Type de point de l'ordre du jour, distinguant les points isolés des groupes de points. <br/><br/>Héritage : IsAgendaItem |
 | agenda_item_number | 0..1 <br/> String | Numéro du point sur l'ordre du jour, p. ex. « 2.1 » ou « 3 » (chaîne de caractères, afin de permettre aussi les chiffres romains). <br/><br/>Héritage : IsAgendaItem |
 | agenda_item_position | 0..1 <br/> Integer | Position entière du point dans le déroulement de la séance, déterminante pour le tri et l'affichage. <br/><br/>Héritage : IsAgendaItem |
@@ -1775,7 +2205,8 @@ _Un point de l'ordre du jour d'une séance, tel que planifié à l'avance. Il st
 
 | Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
-| [Container](#Container) | agenda_items | range | [AgendaItem](#AgendaItem) |
+| [Session](#Session) | agenda_items | range | [AgendaItem](#AgendaItem) |
+| [Meeting](#Meeting) | agenda_items | range | [AgendaItem](#AgendaItem) |
 
 
 
@@ -1791,12 +2222,112 @@ _Un point de l'ordre du jour d'une séance, tel que planifié à l'avance. Il st
 
 
 #### Exemples
-##### Exemple AgendaItem : Point de l'ordre du jour avec vote final
+##### Exemple AgendaItem : Point de l'ordre du jour en français (postulat)
+
+```yaml
+agenda_items:
+- global_uri: ops:2023_10_03-52
+  agenda_item_type: item
+  datetime_begin_planned: '2023-10-03T00:00:00Z'
+  agenda_item_position: 52
+  agenda_item_number: '52'
+  agenda_item_title:
+  - text: >-
+      Postulat de Mme Franziska MEINHERZ : « Lausanne sans publicité commerciale »
+      (FIM)
+    language: fr
+  state_id: postponed
+  agenda_item_category: RAPPORTS
+  affair_id: affairs:POS22/029
+  url:
+  - text: >-
+      https://www.lausanne.ch/apps/agir/affaire/81/b7157ea2a4994086b65cf176768c6381.htm
+    language: fr
+  datetime_created: '2025-02-08T12:33:10Z'
+  datetime_modified: '2025-02-08T12:33:10Z'
+
+```
+##### Exemple AgendaItem : Postulate with a voting
+
+```yaml
+agenda_items:
+- global_uri: ops:fa732e0e-7e5f-4d45-994a-fc74720c0781
+  agenda_item_type: item
+  datetime_begin_planned: '2025-01-28T00:00:00Z'
+  agenda_item_position: 14
+  agenda_item_number: '14'
+  agenda_item_title:
+  - text: >-
+      Postulat Stadelmann Karin Andrea und Mit. über die Überprüfung und Anpassung
+      der Kriterien zum früheren Eintritt von Kindern in die Basisstufe (den freiwilligen
+      Kindergarten) / Bildungs- und Kulturdepartement
+    language: de
+  agenda_item_category: voting
+  url:
+  - text: >-
+      https://www.lu.ch/kr/Sessionen/sessionsdaten_2020/Abstimmungsresultate/Detail?TraktandumGuid=fa732e0e-7e5f-4d45-994a-fc74720c0781
+    language: de
+  affair_id: affairs:2023P_102
+  datetime_created: '2025-01-29T06:59:41Z'
+  datetime_modified: '2025-01-29T06:59:41Z'
+
+```
+##### Exemple AgendaItem : session session gl landsgemeinde 2025 05 04 agenda item gl landsgemeinde 2025 01
+
+```yaml
+agenda_items:
+- global_uri: ops:agenda_item_gl_landsgemeinde_2025_01
+  agenda_item_type: item
+  agenda_item_number: '1'
+  agenda_item_position: 1
+  agenda_item_title:
+  - text: Eröffnung der Landsgemeinde
+    language: de
+
+```
+##### Exemple AgendaItem : Popular motion within a group of agenda items
+
+```yaml
+agenda_items:
+- global_uri: ops:16155798_4
+  agenda_item_type: item
+  datetime_begin_planned: '2025-03-31T00:00:00Z'
+  agenda_item_position: 3
+  agenda_item_number: '3'
+  agenda_item_title:
+  - text: >-
+      Volksmotion Nr. 2024/1 von Sandro Mamedow und Livia Schraff (Erstunterzeichnende)
+      sowie weitere 150 Mitunterzeichnende vom 22. März 2024 mit dem Titel: «Für eine
+      Stimme der Studierenden im Hochschulrat der Pädagogischen Hochschule Schaffhausen
+      (PHSH)»
+    language: de
+  agenda_item_category: Traktanden
+  affair_id: affairs:MOT_2024_1
+  datetime_created: '2025-05-02T11:23:49Z'
+  datetime_modified: '2025-05-02T11:23:49Z'
+
+```
+##### Exemple AgendaItem : Substantive affair without an agenda category
+
+```yaml
+agenda_items:
+- global_uri: ops:49_253
+  agenda_item_type: item
+  datetime_begin_planned: '2025-03-31T00:00:00Z'
+  agenda_item_position: 2
+  agenda_item_number: '2'
+  agenda_item_title:
+  - text: Programmvereinbarungen 2024
+    language: de
+  datetime_created: '2025-03-29T01:07:14Z'
+  datetime_modified: '2025-03-29T01:07:14Z'
+
+```
+##### Exemple AgendaItem : Agenda item with a final vote
 
 ```yaml
 agenda_items:
 - global_uri: ops:agenda_item_sg_2025_015
-  parent_meeting: ops:meeting_sg_2025_03_15
   agenda_item_type: item
   agenda_item_number: '15'
   agenda_item_position: 15
@@ -1815,12 +2346,80 @@ agenda_items:
   datetime_modified: '2025-03-15T14:35:00Z'
 
 ```
+##### Exemple AgendaItem : Petition as an agenda item
+
+```yaml
+agenda_items:
+- global_uri: ops:21c50b86d21b4b4baeb1a76738ff82a3_2025-04-02_1_de
+  agenda_item_type: item
+  datetime_begin_planned: '2025-04-02T00:00:00Z'
+  agenda_item_title:
+  - text: >-
+      Petition «Gleichberechtigung für Tagesfamilien: Gleich hohe Betreuungsgutscheine
+      für alle Anbieter im Kanton Bern». Regierungsrätliches Antwortschreiben
+    language: de
+  affair_id: affairs:2025.STA.622
+  url:
+  - text: >-
+      https://www.rr.be.ch/de/start/beschluesse/suche/geschaeftsdetail.html?guid=21c50b86d21b4b4baeb1a76738ff82a3
+    language: de
+  datetime_created: '2025-04-25T11:11:40Z'
+  datetime_modified: '2025-04-25T11:11:40Z'
+
+```
+##### Exemple AgendaItem : Agenda item of a Council of States sitting
+
+```yaml
+agenda_items:
+- global_uri: ops:69905
+  agenda_item_type: item
+  datetime_begin_planned: '2025-12-19T09:15:00+01:00'
+  datetime_begin_actual: '2025-12-19T09:20:00+01:00'
+  agenda_item_number: '6'
+  agenda_item_position: 4
+  agenda_item_title:
+  - text: >-
+      Postulat Broulis Pascal. Bauprojekte im Mobilitätsbereich. Einen Vergleich durchführen,
+      um die Verzögerungen zu verstehen
+    language: de
+  affair_id: affairs:24.4471
+  landing_page: >-
+    https://www.parlament.ch/de/ratsbetrieb/amtliches-bulletin/amtliches-bulletin-die-verhandlungen?SubjectId=69905#votum3
+  agenda_item_category: agenda_item
+  datetime_created: '2026-01-12T00:00:00+01:00'
+  datetime_modified: '2026-01-12T00:00:00+01:00'
+
+```
+##### Exemple AgendaItem : Postulate category voting
+
+```yaml
+agenda_items:
+- global_uri: ops:0de4ecdb-23f1-49ab-95b8-1afc2e4feb1a
+  agenda_item_type: item
+  datetime_begin_planned: '2025-01-28T00:00:00Z'
+  agenda_item_position: 29
+  agenda_item_number: '29'
+  agenda_item_title:
+  - text: >-
+      Postulat Widmer Reichlin Gisela und Mit. über Massnahmen zur Erfüllung des Sonderschulkonkordats
+      und zur gezielten Behebung des Fachkräftemangels im Bereich schulische Heilpädagogik
+      / Bildungs- und Kulturdepartement
+    language: de
+  agenda_item_category: voting
+  url:
+  - text: >-
+      https://www.lu.ch/kr/Sessionen/sessionsdaten_2020/Abstimmungsresultate/Detail?TraktandumGuid=0de4ecdb-23f1-49ab-95b8-1afc2e4feb1a
+    language: de
+  affair_id: affairs:2024P_125
+  datetime_created: '2025-01-29T06:59:41Z'
+  datetime_modified: '2025-01-29T06:59:41Z'
+
+```
 ##### Exemple AgendaItem : Interpellation as an agenda item
 
 ```yaml
 agenda_items:
 - global_uri: ops:06fb582b753c416d8fdb05fa13873545
-  parent_meeting: ops:meeting_2011_11_23
   agenda_item_type: item
   datetime_begin_planned: '2011-11-23T00:00:00Z'
   agenda_item_position: 2
@@ -1838,7 +2437,6 @@ agenda_items:
 ```yaml
 agenda_items:
 - global_uri: ops:2025_05_20-23
-  parent_meeting: ops:meeting_lausanne_2025_05_20
   agenda_item_type: item
   datetime_begin_planned: '2025-05-20T00:00:00Z'
   agenda_item_position: 23
@@ -1861,28 +2459,62 @@ agenda_items:
   datetime_modified: '2025-06-07T23:50:18Z'
 
 ```
-##### Exemple AgendaItem : Interpellation of a parliamentary group
+##### Exemple AgendaItem : Motion within a group of agenda items
 
 ```yaml
 agenda_items:
-- global_uri: ops:cea750a5bd7b420fa4da1c914f801384
-  parent_meeting: ops:meeting_bern_2022_03_17
+- global_uri: ops:16155798_3
   agenda_item_type: item
-  datetime_begin_planned: '2022-03-17T17:00:00Z'
-  agenda_item_position: 29
-  agenda_item_number: '8'
+  datetime_begin_planned: '2025-03-31T00:00:00Z'
+  agenda_item_position: 2
+  agenda_item_number: '2'
   agenda_item_title:
   - text: >-
-      Interpellation Fraktion GB/JA! (Katharina Gallizzi, GB): Welche Konsequenzen
-      haben die Klimaziele für das Gasnetz in Bern?
+      Motion Nr. 2023/9 von Rainer Schmidig vom 18. Dezember 2023 betreffend zeitgemässe
+      Abzüge in den Art. 35 und 37 des Gesetzes über die direkten Steuern
     language: de
-  affair_id: affairs:2020.SR.000007
-  url:
-  - text: >-
-      https://stadtrat.bern.ch/de/sitzungen/detail.php?gid=000d6cf5f0bc4d89a5171e0123cfbff5#cea750a5bd7b420fa4da1c914f801384
+  agenda_item_category: Traktanden
+  affair_id: affairs:MOT_2023_9
+  datetime_created: '2025-05-02T11:23:49Z'
+  datetime_modified: '2025-05-02T11:23:49Z'
+
+```
+##### Exemple AgendaItem : Budget agenda item
+
+```yaml
+agenda_items:
+- global_uri: ops:agenda_item_zh_budget_2026
+  agenda_item_type: item
+  agenda_item_number: '8'
+  agenda_item_position: 8
+  agenda_item_title:
+  - text: Budget 2026
     language: de
-  datetime_created: '2025-01-17T21:25:52Z'
-  datetime_modified: '2025-01-17T21:25:52Z'
+  agenda_item_description:
+  - text: Beratung und Beschlussfassung über das Kantonsbudget für das Jahr 2026
+    language: de
+  agenda_item_category: Budget und Finanzen
+  state_id: completed
+  datetime_begin_planned: '2025-11-20T16:00:00Z'
+  datetime_begin_actual: '2025-11-20T16:45:00Z'
+  affair_id: affairs:zh_2025_budget_2026
+  datetime_created: '2025-10-01T08:00:00Z'
+  datetime_modified: '2025-11-20T16:50:00Z'
+
+```
+##### Exemple AgendaItem : Substantive affair from a cantonal parliamentary information system
+
+```yaml
+agenda_items:
+- global_uri: ops:87b69a72919445a493a061d9b0daeba3
+  agenda_item_type: item
+  datetime_begin_planned: '2025-06-02T00:00:00Z'
+  agenda_item_title:
+  - text: Differenzierte Anpassung des Gehalts von Lehrpersonen ohne Lehrdiplom
+    language: de
+  affair_id: affairs:2025.GRPARL.81
+  datetime_created: '2025-04-25T11:10:35Z'
+  datetime_modified: '2025-04-25T11:10:35Z'
 
 ```
 ##### Exemple AgendaItem : Detailed deliberation of an article of an act
@@ -1890,7 +2522,6 @@ agenda_items:
 ```yaml
 agenda_items:
 - global_uri: ops:agenda_item_be_2025_042
-  parent_meeting: ops:meeting_be_committee_wak_2025_05_12
   agenda_item_type: item
   agenda_item_number: '4.2'
   agenda_item_position: 42
@@ -1914,116 +2545,27 @@ agenda_items:
   datetime_modified: '2025-05-12T15:20:00Z'
 
 ```
-##### Exemple AgendaItem : Postulate with a voting
+##### Exemple AgendaItem : Interpellation of a parliamentary group
 
 ```yaml
 agenda_items:
-- global_uri: ops:fa732e0e-7e5f-4d45-994a-fc74720c0781
-  parent_meeting: ops:meeting_luzern_2025_01_28_b
+- global_uri: ops:cea750a5bd7b420fa4da1c914f801384
   agenda_item_type: item
-  datetime_begin_planned: '2025-01-28T00:00:00Z'
-  agenda_item_position: 14
-  agenda_item_number: '14'
-  agenda_item_title:
-  - text: >-
-      Postulat Stadelmann Karin Andrea und Mit. über die Überprüfung und Anpassung
-      der Kriterien zum früheren Eintritt von Kindern in die Basisstufe (den freiwilligen
-      Kindergarten) / Bildungs- und Kulturdepartement
-    language: de
-  agenda_item_category: voting
-  url:
-  - text: >-
-      https://www.lu.ch/kr/Sessionen/sessionsdaten_2020/Abstimmungsresultate/Detail?TraktandumGuid=fa732e0e-7e5f-4d45-994a-fc74720c0781
-    language: de
-  affair_id: affairs:2023P_102
-  datetime_created: '2025-01-29T06:59:41Z'
-  datetime_modified: '2025-01-29T06:59:41Z'
-
-```
-##### Exemple AgendaItem : Petition as an agenda item
-
-```yaml
-agenda_items:
-- global_uri: ops:21c50b86d21b4b4baeb1a76738ff82a3_2025-04-02_1_de
-  parent_meeting: ops:meeting_bern_rr_2025_04_02
-  agenda_item_type: item
-  datetime_begin_planned: '2025-04-02T00:00:00Z'
-  agenda_item_title:
-  - text: >-
-      Petition «Gleichberechtigung für Tagesfamilien: Gleich hohe Betreuungsgutscheine
-      für alle Anbieter im Kanton Bern». Regierungsrätliches Antwortschreiben
-    language: de
-  affair_id: affairs:2025.STA.622
-  url:
-  - text: >-
-      https://www.rr.be.ch/de/start/beschluesse/suche/geschaeftsdetail.html?guid=21c50b86d21b4b4baeb1a76738ff82a3
-    language: de
-  datetime_created: '2025-04-25T11:11:40Z'
-  datetime_modified: '2025-04-25T11:11:40Z'
-
-```
-##### Exemple AgendaItem : Popular motion within a group of agenda items
-
-```yaml
-agenda_items:
-- global_uri: ops:16155798_4
-  parent_meeting: ops:meeting_schaffhausen_2025_03_31_b
-  agenda_item_type: item
-  datetime_begin_planned: '2025-03-31T00:00:00Z'
-  agenda_item_position: 3
-  agenda_item_number: '3'
-  agenda_item_title:
-  - text: >-
-      Volksmotion Nr. 2024/1 von Sandro Mamedow und Livia Schraff (Erstunterzeichnende)
-      sowie weitere 150 Mitunterzeichnende vom 22. März 2024 mit dem Titel: «Für eine
-      Stimme der Studierenden im Hochschulrat der Pädagogischen Hochschule Schaffhausen
-      (PHSH)»
-    language: de
-  agenda_item_category: Traktanden
-  affair_id: affairs:MOT_2024_1
-  datetime_created: '2025-05-02T11:23:49Z'
-  datetime_modified: '2025-05-02T11:23:49Z'
-
-```
-##### Exemple AgendaItem : Budget agenda item
-
-```yaml
-agenda_items:
-- global_uri: ops:agenda_item_zh_budget_2026
-  parent_meeting: ops:meeting_zh_2025_11_20
-  agenda_item_type: item
+  datetime_begin_planned: '2022-03-17T17:00:00Z'
+  agenda_item_position: 29
   agenda_item_number: '8'
-  agenda_item_position: 8
   agenda_item_title:
-  - text: Budget 2026
+  - text: >-
+      Interpellation Fraktion GB/JA! (Katharina Gallizzi, GB): Welche Konsequenzen
+      haben die Klimaziele für das Gasnetz in Bern?
     language: de
-  agenda_item_description:
-  - text: Beratung und Beschlussfassung über das Kantonsbudget für das Jahr 2026
+  affair_id: affairs:2020.SR.000007
+  url:
+  - text: >-
+      https://stadtrat.bern.ch/de/sitzungen/detail.php?gid=000d6cf5f0bc4d89a5171e0123cfbff5#cea750a5bd7b420fa4da1c914f801384
     language: de
-  agenda_item_category: Budget und Finanzen
-  state_id: completed
-  datetime_begin_planned: '2025-11-20T16:00:00Z'
-  datetime_begin_actual: '2025-11-20T16:45:00Z'
-  affair_id: affairs:zh_2025_budget_2026
-  datetime_created: '2025-10-01T08:00:00Z'
-  datetime_modified: '2025-11-20T16:50:00Z'
-
-```
-##### Exemple AgendaItem : Substantive affair without an agenda category
-
-```yaml
-agenda_items:
-- global_uri: ops:49_253
-  parent_meeting: ops:meeting_2025_03_31
-  agenda_item_type: item
-  datetime_begin_planned: '2025-03-31T00:00:00Z'
-  agenda_item_position: 2
-  agenda_item_number: '2'
-  agenda_item_title:
-  - text: Programmvereinbarungen 2024
-    language: de
-  datetime_created: '2025-03-29T01:07:14Z'
-  datetime_modified: '2025-03-29T01:07:14Z'
+  datetime_created: '2025-01-17T21:25:52Z'
+  datetime_modified: '2025-01-17T21:25:52Z'
 
 ```
 ##### Exemple AgendaItem : Partial revision of several ordinances in French
@@ -2031,7 +2573,6 @@ agenda_items:
 ```yaml
 agenda_items:
 - global_uri: ops:7b3545e4-57dc-3901-aaa8-4020da6ab0c6
-  parent_meeting: ops:meeting_vaud_2008_04_30
   agenda_item_type: item
   datetime_begin_planned: '2008-04-30T00:00:00Z'
   agenda_item_position: 7
@@ -2055,119 +2596,6 @@ agenda_items:
     language: fr
   datetime_created: '2024-12-06T10:50:04Z'
   datetime_modified: '2024-12-06T10:50:04Z'
-
-```
-##### Exemple AgendaItem : Substantive affair from a cantonal parliamentary information system
-
-```yaml
-agenda_items:
-- global_uri: ops:87b69a72919445a493a061d9b0daeba3
-  parent_meeting: ops:meeting_be_2025_06_02
-  agenda_item_type: item
-  datetime_begin_planned: '2025-06-02T00:00:00Z'
-  agenda_item_title:
-  - text: Differenzierte Anpassung des Gehalts von Lehrpersonen ohne Lehrdiplom
-    language: de
-  affair_id: affairs:2025.GRPARL.81
-  datetime_created: '2025-04-25T11:10:35Z'
-  datetime_modified: '2025-04-25T11:10:35Z'
-
-```
-##### Exemple AgendaItem : Agenda item of a Council of States sitting
-
-```yaml
-agenda_items:
-- global_uri: ops:69905
-  parent_meeting: parl:sr_winter25_sitzung_6
-  agenda_item_type: item
-  datetime_begin_planned: '2025-12-19T09:15:00+01:00'
-  datetime_begin_actual: '2025-12-19T09:20:00+01:00'
-  agenda_item_number: '6'
-  agenda_item_position: 4
-  agenda_item_title:
-  - text: >-
-      Postulat Broulis Pascal. Bauprojekte im Mobilitätsbereich. Einen Vergleich durchführen,
-      um die Verzögerungen zu verstehen
-    language: de
-  affair_id: affairs:24.4471
-  landing_page: >-
-    https://www.parlament.ch/de/ratsbetrieb/amtliches-bulletin/amtliches-bulletin-die-verhandlungen?SubjectId=69905#votum3
-  agenda_item_category: agenda_item
-  datetime_created: '2026-01-12T00:00:00+01:00'
-  datetime_modified: '2026-01-12T00:00:00+01:00'
-
-```
-##### Exemple AgendaItem : French-language agenda item postulate
-
-```yaml
-agenda_items:
-- global_uri: ops:2023_10_03-52
-  parent_meeting: ops:meeting_lausanne_2023_10_03
-  agenda_item_type: item
-  datetime_begin_planned: '2023-10-03T00:00:00Z'
-  agenda_item_position: 52
-  agenda_item_number: '52'
-  agenda_item_title:
-  - text: >-
-      Postulat de Mme Franziska MEINHERZ : « Lausanne sans publicité commerciale »
-      (FIM)
-    language: fr
-  state_id: postponed
-  agenda_item_category: RAPPORTS
-  affair_id: affairs:POS22/029
-  url:
-  - text: >-
-      https://www.lausanne.ch/apps/agir/affaire/81/b7157ea2a4994086b65cf176768c6381.htm
-    language: fr
-  datetime_created: '2025-02-08T12:33:10Z'
-  datetime_modified: '2025-02-08T12:33:10Z'
-
-```
-##### Exemple AgendaItem : Motion within a group of agenda items
-
-```yaml
-agenda_items:
-- global_uri: ops:16155798_3
-  parent_meeting: ops:meeting_schaffhausen_2025_03_31
-  agenda_item_type: item
-  datetime_begin_planned: '2025-03-31T00:00:00Z'
-  agenda_item_position: 2
-  agenda_item_number: '2'
-  agenda_item_title:
-  - text: >-
-      Motion Nr. 2023/9 von Rainer Schmidig vom 18. Dezember 2023 betreffend zeitgemässe
-      Abzüge in den Art. 35 und 37 des Gesetzes über die direkten Steuern
-    language: de
-  agenda_item_category: Traktanden
-  affair_id: affairs:MOT_2023_9
-  datetime_created: '2025-05-02T11:23:49Z'
-  datetime_modified: '2025-05-02T11:23:49Z'
-
-```
-##### Exemple AgendaItem : Postulate category voting
-
-```yaml
-agenda_items:
-- global_uri: ops:0de4ecdb-23f1-49ab-95b8-1afc2e4feb1a
-  parent_meeting: ops:meeting_luzern_2025_01_28
-  agenda_item_type: item
-  datetime_begin_planned: '2025-01-28T00:00:00Z'
-  agenda_item_position: 29
-  agenda_item_number: '29'
-  agenda_item_title:
-  - text: >-
-      Postulat Widmer Reichlin Gisela und Mit. über Massnahmen zur Erfüllung des Sonderschulkonkordats
-      und zur gezielten Behebung des Fachkräftemangels im Bereich schulische Heilpädagogik
-      / Bildungs- und Kulturdepartement
-    language: de
-  agenda_item_category: voting
-  url:
-  - text: >-
-      https://www.lu.ch/kr/Sessionen/sessionsdaten_2020/Abstimmungsresultate/Detail?TraktandumGuid=0de4ecdb-23f1-49ab-95b8-1afc2e4feb1a
-    language: de
-  affair_id: affairs:2024P_125
-  datetime_created: '2025-01-29T06:59:41Z'
-  datetime_modified: '2025-01-29T06:59:41Z'
 
 ```
 
@@ -2215,8 +2643,8 @@ Le procès-verbal est **référencé et non imbriqué**. La règle appliquée de
 ```
 Container
   ├─ meetings       → Meeting
+  │                     ├─ agenda_items → AgendaItem  (avant : points planifiés)
   │                     └─ has_protocol → identifiant du procès-verbal
-  ├─ agenda_items   → AgendaItem  (avant : points planifiés, parent_meeting)
   └─ protocols      → Protocol    (après : consignation, parent_meeting)
                         ├─ protocol_items  → ProtocolItem (mêmes éléments qu'AgendaItem)
                         ├─ votings
@@ -2248,7 +2676,7 @@ _Le procès-verbal d'une séance, établi après celle-ci et tenu exactement une
 | local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
-| parent_meeting | 0..1 <br/> String | Identifiant de la séance à laquelle cet enregistrement se rattache. Pour une séance, il désigne la séance supérieure ; pour un point de l'ordre du jour, un vote, une élection, une intervention ou un procès-verbal, la séance au cours de laquelle l'enregistrement est né.  |
+| parent_meeting | 0..1 <br/> String | Identifiant de la séance à laquelle cet enregistrement se rattache. Pour une séance, il désigne la séance supérieure ; pour un vote, une élection, une intervention, une liste de présence ou un procès-verbal, la séance au cours de laquelle l'enregistrement est né. Les points de l'ordre du jour ne le portent pas : ils sont imbriqués dans leur séance.  |
 | protocol_items | * <br/> [ProtocolItem](#ProtocolItem) | Points de l'ordre du jour tels qu'ils ont effectivement été consignés au procès-verbal.  |
 | votings | * <br/> [Voting](#Voting) | Ensemble des votes.  |
 | elections | * <br/> [Election](#Election) | Ensemble des élections.  |
@@ -2295,7 +2723,6 @@ protocols:
   parent_meeting: parl:sr_winter25_sitzung_6
   protocol_items:
   - global_uri: ops:protokollpunkt_69905
-    parent_meeting: parl:sr_winter25_sitzung_6
     agenda_item_type: item
     agenda_item_number: '6'
     agenda_item_position: 4
@@ -2359,7 +2786,6 @@ _Un point de l'ordre du jour tel qu'il a effectivement été consigné au procè
 | datetime_created | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
 | date_modified | 0..1 <br/> Date | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
 | datetime_modified | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
-| parent_meeting | 0..1 <br/> String | Identifiant de la séance à laquelle cet enregistrement se rattache. Pour une séance, il désigne la séance supérieure ; pour un point de l'ordre du jour, un vote, une élection, une intervention ou un procès-verbal, la séance au cours de laquelle l'enregistrement est né. <br/><br/>Héritage : IsAgendaItem |
 | agenda_item_type | 0..1 <br/> [AgendaItemTypeEnum](#AgendaItemTypeEnum) | Type de point de l'ordre du jour, distinguant les points isolés des groupes de points. <br/><br/>Héritage : IsAgendaItem |
 | agenda_item_number | 0..1 <br/> String | Numéro du point sur l'ordre du jour, p. ex. « 2.1 » ou « 3 » (chaîne de caractères, afin de permettre aussi les chiffres romains). <br/><br/>Héritage : IsAgendaItem |
 | agenda_item_position | 0..1 <br/> Integer | Position entière du point dans le déroulement de la séance, déterminante pour le tri et l'affichage. <br/><br/>Héritage : IsAgendaItem |
@@ -2672,7 +3098,7 @@ _Un vote sur une question matérielle : l'objet du vote (la question), la procé
 | majority_type | 0..1 <br/> [MajorityTypeEnum](#MajorityTypeEnum) | Type de majorité requise pour le vote (absolue, deux tiers, etc.).  |
 | majority_count | 0..1 <br/> Integer | Nombre de voix requis pour atteindre le seuil de majorité déterminant.  |
 | result_text | 0..1 <br/> String | Texte libre décrivant le résultat, p. ex. « Adopté par 120 voix contre 75 et 5 abstentions ». Pour les votes, la décision catégorielle (adopté, rejeté, pris acte …) n'est pas retenue ici, mais dans la Resolution (resolution_type) du point de l'ordre du jour.  |
-| parent_meeting | 0..1 <br/> String | Identifiant de la séance à laquelle cet enregistrement se rattache. Pour une séance, il désigne la séance supérieure ; pour un point de l'ordre du jour, un vote, une élection, une intervention ou un procès-verbal, la séance au cours de laquelle l'enregistrement est né.  |
+| parent_meeting | 0..1 <br/> String | Identifiant de la séance à laquelle cet enregistrement se rattache. Pour une séance, il désigne la séance supérieure ; pour un vote, une élection, une intervention, une liste de présence ou un procès-verbal, la séance au cours de laquelle l'enregistrement est né. Les points de l'ordre du jour ne le portent pas : ils sont imbriqués dans leur séance.  |
 | parent_protocol | 0..1 <br/> [Protocol](#Protocol) | Le procès-verbal dans lequel le vote ou l'élection est consigné. Le vote a lieu au cours de la séance et se rattache donc au procès-verbal, et non à l'ordre du jour planifié à l'avance : ce qui a été mis à l'ordre du jour ne dit pas encore sur quoi il a effectivement été voté. Inversement, le procès-verbal reprend ses votes et élections sous forme de listes (votings, elections).  |
 | parent_protocol_item | 0..1 <br/> [ProtocolItem](#ProtocolItem) | Le point consigné au procès-verbal (ProtocolItem) sous lequel le vote ou l'élection a eu lieu. Absent lorsque le vote a eu lieu sans point de l'ordre du jour ; le rattachement à la séance découle alors uniquement de parent_protocol et parent_meeting.  |
 | affair_id | 0..1 <br/> String | Identifiant de l'affaire (eCH-0295) à laquelle se rapporte l'enregistrement. Les points administratifs (p. ex. approbation du procès-verbal) n'ont pas d'affaire. Une affaire passe en règle générale par plusieurs points de l'ordre du jour — dans la législation, par exemple, le débat d'entrée en matière, la discussion par article, le vote final et, le cas échéant, la procédure d'élimination des divergences entre les conseils.  |
@@ -3039,18 +3465,32 @@ _La voix exprimée par un membre lors d'un vote. Les voix individuelles ne sont 
 
 
 #### Exemples
-##### Exemple IndividualVote : Absent lors d'un choix multiple
+##### Exemple IndividualVote : Voix « non »
 
 ```yaml
 individual_votes:
-- global_uri: ops:vote_zh_gr_2024_2023_361_abs1
-  parent_voting: ops:voting_zh_gr_2024_2023_361
+- global_uri: ops:vote_sg_2025_001_person_456
+  parent_voting: ops:voting_sg_2025_001
   actor_id:
-    global_uri: actors:person_zh_stadt_4
-    label: Abwesendes Mitglied
-  seat_nr: '103'
-  individual_vote_type: not_voted
-  datetime_created: '2024-02-28T00:00:00Z'
+    global_uri: actors:person_andreas_eggenberger
+    label: Andreas Eggenberger
+  seat_nr: '2'
+  individual_vote_type: 'no'
+  datetime_created: '2025-03-15T14:30:00Z'
+
+```
+##### Exemple IndividualVote : No vote on the budget
+
+```yaml
+individual_votes:
+- global_uri: ops:vote_zh_budget_2026_person_102
+  parent_voting: ops:voting_zh_budget_2026
+  actor_id:
+    global_uri: actors:person_jean_daniel_strub
+    label: Jean-Daniel Strub
+  seat_nr: '2'
+  individual_vote_type: 'no'
+  datetime_created: '2025-11-20T16:45:00Z'
 
 ```
 ##### Exemple IndividualVote : Abstention
@@ -3081,60 +3521,19 @@ individual_votes:
   datetime_created: '2025-03-15T14:30:00Z'
 
 ```
-##### Exemple IndividualVote : Did not vote
+##### Exemple IndividualVote : Individual vote for selection option B
 
 ```yaml
 individual_votes:
-- global_uri: ops:vote_sg_2025_001_person_321
-  parent_voting: ops:voting_sg_2025_001
+- global_uri: ops:vote_zh_gr_2024_2023_361_b1
+  parent_voting: ops:voting_zh_gr_2024_2023_361
   actor_id:
-    global_uri: actors:person_ruedi_thomann
-    label: Ruedi Thomann
-  seat_nr: '4'
-  individual_vote_type: not_voted
-  datetime_created: '2025-03-15T14:30:00Z'
-
-```
-##### Exemple IndividualVote : No vote
-
-```yaml
-individual_votes:
-- global_uri: ops:vote_sg_2025_001_person_456
-  parent_voting: ops:voting_sg_2025_001
-  actor_id:
-    global_uri: actors:person_andreas_eggenberger
-    label: Andreas Eggenberger
-  seat_nr: '2'
-  individual_vote_type: 'no'
-  datetime_created: '2025-03-15T14:30:00Z'
-
-```
-##### Exemple IndividualVote : Yes vote on the budget
-
-```yaml
-individual_votes:
-- global_uri: ops:vote_zh_budget_2026_person_101
-  parent_voting: ops:voting_zh_budget_2026
-  actor_id:
-    global_uri: actors:person_thomas_wolf
-    label: Thomas Wolf
-  seat_nr: '1'
-  individual_vote_type: 'yes'
-  datetime_created: '2025-11-20T16:45:00Z'
-
-```
-##### Exemple IndividualVote : No vote on the budget
-
-```yaml
-individual_votes:
-- global_uri: ops:vote_zh_budget_2026_person_102
-  parent_voting: ops:voting_zh_budget_2026
-  actor_id:
-    global_uri: actors:person_jean_daniel_strub
-    label: Jean-Daniel Strub
-  seat_nr: '2'
-  individual_vote_type: 'no'
-  datetime_created: '2025-11-20T16:45:00Z'
+    global_uri: actors:person_zh_stadt_2
+    label: Mitglied Auswahl B
+  seat_nr: '47'
+  individual_vote_type: other
+  type_label: Auswahl B
+  datetime_created: '2024-02-28T00:00:00Z'
 
 ```
 ##### Exemple IndividualVote : Individual vote for selection option C
@@ -3152,19 +3551,32 @@ individual_votes:
   datetime_created: '2024-02-28T00:00:00Z'
 
 ```
-##### Exemple IndividualVote : Individual vote for selection option B
+##### Exemple IndividualVote : Did not vote
 
 ```yaml
 individual_votes:
-- global_uri: ops:vote_zh_gr_2024_2023_361_b1
-  parent_voting: ops:voting_zh_gr_2024_2023_361
+- global_uri: ops:vote_sg_2025_001_person_321
+  parent_voting: ops:voting_sg_2025_001
   actor_id:
-    global_uri: actors:person_zh_stadt_2
-    label: Mitglied Auswahl B
-  seat_nr: '47'
-  individual_vote_type: other
-  type_label: Auswahl B
-  datetime_created: '2024-02-28T00:00:00Z'
+    global_uri: actors:person_ruedi_thomann
+    label: Ruedi Thomann
+  seat_nr: '4'
+  individual_vote_type: not_voted
+  datetime_created: '2025-03-15T14:30:00Z'
+
+```
+##### Exemple IndividualVote : Yes vote on the budget
+
+```yaml
+individual_votes:
+- global_uri: ops:vote_zh_budget_2026_person_101
+  parent_voting: ops:voting_zh_budget_2026
+  actor_id:
+    global_uri: actors:person_thomas_wolf
+    label: Thomas Wolf
+  seat_nr: '1'
+  individual_vote_type: 'yes'
+  datetime_created: '2025-11-20T16:45:00Z'
 
 ```
 ##### Exemple IndividualVote : Individual vote for selection option A
@@ -3179,6 +3591,20 @@ individual_votes:
   seat_nr: '12'
   individual_vote_type: other
   type_label: Auswahl A
+  datetime_created: '2024-02-28T00:00:00Z'
+
+```
+##### Exemple IndividualVote : Absent in a multiple-choice voting
+
+```yaml
+individual_votes:
+- global_uri: ops:vote_zh_gr_2024_2023_361_abs1
+  parent_voting: ops:voting_zh_gr_2024_2023_361
+  actor_id:
+    global_uri: actors:person_zh_stadt_4
+    label: Abwesendes Mitglied
+  seat_nr: '103'
+  individual_vote_type: not_voted
   datetime_created: '2024-02-28T00:00:00Z'
 
 ```
@@ -3263,7 +3689,7 @@ _Une élection par laquelle un organe parlementaire désigne une ou plusieurs pe
 | majority_type | 0..1 <br/> [MajorityTypeEnum](#MajorityTypeEnum) | Type de majorité requise pour le vote (absolue, deux tiers, etc.).  |
 | majority_count | 0..1 <br/> Integer | Nombre de voix requis pour atteindre le seuil de majorité déterminant.  |
 | result_text | 0..1 <br/> String | Texte libre décrivant le résultat, p. ex. « Adopté par 120 voix contre 75 et 5 abstentions ». Pour les votes, la décision catégorielle (adopté, rejeté, pris acte …) n'est pas retenue ici, mais dans la Resolution (resolution_type) du point de l'ordre du jour.  |
-| parent_meeting | 0..1 <br/> String | Identifiant de la séance à laquelle cet enregistrement se rattache. Pour une séance, il désigne la séance supérieure ; pour un point de l'ordre du jour, un vote, une élection, une intervention ou un procès-verbal, la séance au cours de laquelle l'enregistrement est né.  |
+| parent_meeting | 0..1 <br/> String | Identifiant de la séance à laquelle cet enregistrement se rattache. Pour une séance, il désigne la séance supérieure ; pour un vote, une élection, une intervention, une liste de présence ou un procès-verbal, la séance au cours de laquelle l'enregistrement est né. Les points de l'ordre du jour ne le portent pas : ils sont imbriqués dans leur séance.  |
 | parent_protocol | 0..1 <br/> [Protocol](#Protocol) | Le procès-verbal dans lequel le vote ou l'élection est consigné. Le vote a lieu au cours de la séance et se rattache donc au procès-verbal, et non à l'ordre du jour planifié à l'avance : ce qui a été mis à l'ordre du jour ne dit pas encore sur quoi il a effectivement été voté. Inversement, le procès-verbal reprend ses votes et élections sous forme de listes (votings, elections).  |
 | parent_protocol_item | 0..1 <br/> [ProtocolItem](#ProtocolItem) | Le point consigné au procès-verbal (ProtocolItem) sous lequel le vote ou l'élection a eu lieu. Absent lorsque le vote a eu lieu sans point de l'ordre du jour ; le rattachement à la séance découle alors uniquement de parent_protocol et parent_meeting.  |
 | affair_id | 0..1 <br/> String | Identifiant de l'affaire (eCH-0295) à laquelle se rapporte l'enregistrement. Les points administratifs (p. ex. approbation du procès-verbal) n'ont pas d'affaire. Une affaire passe en règle générale par plusieurs points de l'ordre du jour — dans la législation, par exemple, le débat d'entrée en matière, la discussion par article, le vote final et, le cas échéant, la procédure d'élimination des divergences entre les conseils.  |
@@ -3467,7 +3893,7 @@ _Liste de présence agrégée pour une séance (nombre de membres présents, abs
 | local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
-| parent_meeting | 0..1 <br/> String | Identifiant de la séance à laquelle cet enregistrement se rattache. Pour une séance, il désigne la séance supérieure ; pour un point de l'ordre du jour, un vote, une élection, une intervention ou un procès-verbal, la séance au cours de laquelle l'enregistrement est né.  |
+| parent_meeting | 0..1 <br/> String | Identifiant de la séance à laquelle cet enregistrement se rattache. Pour une séance, il désigne la séance supérieure ; pour un vote, une élection, une intervention, une liste de présence ou un procès-verbal, la séance au cours de laquelle l'enregistrement est né. Les points de l'ordre du jour ne le portent pas : ils sont imbriqués dans leur séance.  |
 | datetime_begin | 0..1 <br/> Datetime | La date et l'heure auxquelles la séance ou le vote commence.  |
 | actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Référence à l'organe agissant (instantané au moment de la mise en relation).  |
 | total_count | 0..1 <br/> Integer | Nombre total de membres de l'organe (valeur de référence pour le calcul du quorum).  |
@@ -3782,7 +4208,7 @@ _Une intervention prononcée au cours d'une séance (également appelée prise d
 | local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
-| parent_meeting | 0..1 <br/> String | Identifiant de la séance à laquelle cet enregistrement se rattache. Pour une séance, il désigne la séance supérieure ; pour un point de l'ordre du jour, un vote, une élection, une intervention ou un procès-verbal, la séance au cours de laquelle l'enregistrement est né.  |
+| parent_meeting | 0..1 <br/> String | Identifiant de la séance à laquelle cet enregistrement se rattache. Pour une séance, il désigne la séance supérieure ; pour un vote, une élection, une intervention, une liste de présence ou un procès-verbal, la séance au cours de laquelle l'enregistrement est né. Les points de l'ordre du jour ne le portent pas : ils sont imbriqués dans leur séance.  |
 | parent_agenda_item | 0..1 <br/> String | Identifiant du point de l'ordre du jour auquel cet enregistrement se rattache. Pour un point de l'ordre du jour, il forme une hiérarchie de points — p. ex. un groupe « Délibérations législatives » avec les sous-points « Loi sur l'énergie (discussion par article) » et « Loi sur l'énergie (vote final) » ; pour une intervention, il désigne le point sous lequel elle a été faite.  |
 | language | 0..1 <br/> String | Code de langue au format ISO 639-1 (deux lettres minuscules, par ex. « de », « fr », « it », « en »).  |
 | start | 0..1 <br/> String | Indication de début ou position.  |

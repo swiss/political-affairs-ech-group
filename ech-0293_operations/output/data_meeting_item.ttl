@@ -3,18 +3,18 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 ops:agenda_items_1 a ops:Container ;
-    ops:agendaItem ops:06fb582b753c416d8fdb05fa13873545,
-        ops:0de4ecdb-23f1-49ab-95b8-1afc2e4feb1a,
-        ops:16155798_3,
-        ops:16155798_4,
-        ops:2023_10_03-52,
-        ops:2025_05_20-23,
-        ops:21c50b86d21b4b4baeb1a76738ff82a3_2025-04-02_1_de,
-        ops:49_253,
-        ops:7b3545e4-57dc-3901-aaa8-4020da6ab0c6,
-        ops:87b69a72919445a493a061d9b0daeba3,
-        ops:cea750a5bd7b420fa4da1c914f801384,
-        ops:fa732e0e-7e5f-4d45-994a-fc74720c0781 .
+    ops:meeting ops:meeting_2011_11_23,
+        ops:meeting_2025_03_31,
+        ops:meeting_be_2025_06_02,
+        ops:meeting_bern_2022_03_17,
+        ops:meeting_bern_rr_2025_04_02,
+        ops:meeting_lausanne_2023_10_03,
+        ops:meeting_lausanne_2025_05_20,
+        ops:meeting_luzern_2025_01_28,
+        ops:meeting_luzern_2025_01_28_b,
+        ops:meeting_schaffhausen_2025_03_31,
+        ops:meeting_schaffhausen_2025_03_31_b,
+        ops:meeting_vaud_2008_04_30 .
 
 ops:06fb582b753c416d8fdb05fa13873545 a ops:AgendaItem ;
     ops:agenda_item_position 2 ;
@@ -22,7 +22,6 @@ ops:06fb582b753c416d8fdb05fa13873545 a ops:AgendaItem ;
             ops:text "Interpellation Peter Mark betr. elektronische Datenerfassung durch Mitarbeiter im Werkhof – Versuchsphase" ;
             mcm:language "de" ] ;
     ops:agenda_item_type <https://ch.paf.link/schema/operations/enum/agenda_item_type/item> ;
-    ops:parent_meeting "ops:meeting_2011_11_23" ;
     mcm:datetimeBeginPlanned "2011-11-23T00:00:00+00:00"^^xsd:dateTime ;
     mcm:datetimeCreated "2025-03-21T23:15:19+00:00"^^xsd:dateTime ;
     mcm:datetimeModified "2025-03-21T23:15:19+00:00"^^xsd:dateTime .
@@ -36,7 +35,6 @@ ops:0de4ecdb-23f1-49ab-95b8-1afc2e4feb1a a ops:AgendaItem ;
             ops:text "Postulat Widmer Reichlin Gisela und Mit. über Massnahmen zur Erfüllung des Sonderschulkonkordats und zur gezielten Behebung des Fachkräftemangels im Bereich schulische Heilpädagogik / Bildungs- und Kulturdepartement" ;
             mcm:language "de" ] ;
     ops:agenda_item_type <https://ch.paf.link/schema/operations/enum/agenda_item_type/item> ;
-    ops:parent_meeting "ops:meeting_luzern_2025_01_28" ;
     ops:url [ a ops:MultilingualString ;
             ops:text "https://www.lu.ch/kr/Sessionen/sessionsdaten_2020/Abstimmungsresultate/Detail?TraktandumGuid=0de4ecdb-23f1-49ab-95b8-1afc2e4feb1a" ;
             mcm:language "de" ] ;
@@ -53,7 +51,6 @@ ops:16155798_3 a ops:AgendaItem ;
             ops:text "Motion Nr. 2023/9 von Rainer Schmidig vom 18. Dezember 2023 betreffend zeitgemässe Abzüge in den Art. 35 und 37 des Gesetzes über die direkten Steuern" ;
             mcm:language "de" ] ;
     ops:agenda_item_type <https://ch.paf.link/schema/operations/enum/agenda_item_type/item> ;
-    ops:parent_meeting "ops:meeting_schaffhausen_2025_03_31" ;
     mcm:datetimeBeginPlanned "2025-03-31T00:00:00+00:00"^^xsd:dateTime ;
     mcm:datetimeCreated "2025-05-02T11:23:49+00:00"^^xsd:dateTime ;
     mcm:datetimeModified "2025-05-02T11:23:49+00:00"^^xsd:dateTime .
@@ -67,7 +64,6 @@ ops:16155798_4 a ops:AgendaItem ;
             ops:text "Volksmotion Nr. 2024/1 von Sandro Mamedow und Livia Schraff (Erstunterzeichnende) sowie weitere 150 Mitunterzeichnende vom 22. März 2024 mit dem Titel: «Für eine Stimme der Studierenden im Hochschulrat der Pädagogischen Hochschule Schaffhausen (PHSH)»" ;
             mcm:language "de" ] ;
     ops:agenda_item_type <https://ch.paf.link/schema/operations/enum/agenda_item_type/item> ;
-    ops:parent_meeting "ops:meeting_schaffhausen_2025_03_31_b" ;
     mcm:datetimeBeginPlanned "2025-03-31T00:00:00+00:00"^^xsd:dateTime ;
     mcm:datetimeCreated "2025-05-02T11:23:49+00:00"^^xsd:dateTime ;
     mcm:datetimeModified "2025-05-02T11:23:49+00:00"^^xsd:dateTime .
@@ -81,7 +77,6 @@ ops:2023_10_03-52 a ops:AgendaItem ;
             ops:text "Postulat de Mme Franziska MEINHERZ : « Lausanne sans publicité commerciale » (FIM)" ;
             mcm:language "fr" ] ;
     ops:agenda_item_type <https://ch.paf.link/schema/operations/enum/agenda_item_type/item> ;
-    ops:parent_meeting "ops:meeting_lausanne_2023_10_03" ;
     ops:state_id "postponed" ;
     ops:url [ a ops:MultilingualString ;
             ops:text "https://www.lausanne.ch/apps/agir/affaire/81/b7157ea2a4994086b65cf176768c6381.htm" ;
@@ -99,7 +94,6 @@ ops:2025_05_20-23 a ops:AgendaItem ;
             ops:text "Interpellation urgente du 20 mai 2025 de M. Yusuf KULMIYE : « Interpellation urgente de Kulmiye Yusuf et crts – Solidarité sans frontières, Lausanne en faveur du respect du droit international et de la protection des populations civiles à Gaza »" ;
             mcm:language "fr" ] ;
     ops:agenda_item_type <https://ch.paf.link/schema/operations/enum/agenda_item_type/item> ;
-    ops:parent_meeting "ops:meeting_lausanne_2025_05_20" ;
     ops:state_id "not_treated" ;
     ops:url [ a ops:MultilingualString ;
             ops:text "https://www.lausanne.ch/apps/agir/affaire/6c/049b6c612fe2428f9be66ea39522ac6c.htm" ;
@@ -114,7 +108,6 @@ ops:21c50b86d21b4b4baeb1a76738ff82a3_2025-04-02_1_de a ops:AgendaItem ;
             ops:text "Petition «Gleichberechtigung für Tagesfamilien: Gleich hohe Betreuungsgutscheine für alle Anbieter im Kanton Bern». Regierungsrätliches Antwortschreiben" ;
             mcm:language "de" ] ;
     ops:agenda_item_type <https://ch.paf.link/schema/operations/enum/agenda_item_type/item> ;
-    ops:parent_meeting "ops:meeting_bern_rr_2025_04_02" ;
     ops:url [ a ops:MultilingualString ;
             ops:text "https://www.rr.be.ch/de/start/beschluesse/suche/geschaeftsdetail.html?guid=21c50b86d21b4b4baeb1a76738ff82a3" ;
             mcm:language "de" ] ;
@@ -129,7 +122,6 @@ ops:49_253 a ops:AgendaItem ;
             ops:text "Programmvereinbarungen 2024" ;
             mcm:language "de" ] ;
     ops:agenda_item_type <https://ch.paf.link/schema/operations/enum/agenda_item_type/item> ;
-    ops:parent_meeting "ops:meeting_2025_03_31" ;
     mcm:datetimeBeginPlanned "2025-03-31T00:00:00+00:00"^^xsd:dateTime ;
     mcm:datetimeCreated "2025-03-29T01:07:14+00:00"^^xsd:dateTime ;
     mcm:datetimeModified "2025-03-29T01:07:14+00:00"^^xsd:dateTime .
@@ -145,7 +137,6 @@ ops:7b3545e4-57dc-3901-aaa8-4020da6ab0c6 a ops:AgendaItem ;
             ops:text "Révision partielle de sept ordonnances fédérales relatives aux produits chimiques" ;
             mcm:language "fr" ] ;
     ops:agenda_item_type <https://ch.paf.link/schema/operations/enum/agenda_item_type/item> ;
-    ops:parent_meeting "ops:meeting_vaud_2008_04_30" ;
     ops:url [ a ops:MultilingualString ;
             ops:text "https://www.vd.ch/actualites/decisions-du-conseil-detat/seance-du-conseil-detat/seance/265632#7b3545e4-57dc-3901-aaa8-4020da6ab0c6" ;
             mcm:language "fr" ] ;
@@ -159,7 +150,6 @@ ops:87b69a72919445a493a061d9b0daeba3 a ops:AgendaItem ;
             ops:text "Differenzierte Anpassung des Gehalts von Lehrpersonen ohne Lehrdiplom" ;
             mcm:language "de" ] ;
     ops:agenda_item_type <https://ch.paf.link/schema/operations/enum/agenda_item_type/item> ;
-    ops:parent_meeting "ops:meeting_be_2025_06_02" ;
     mcm:datetimeBeginPlanned "2025-06-02T00:00:00+00:00"^^xsd:dateTime ;
     mcm:datetimeCreated "2025-04-25T11:10:35+00:00"^^xsd:dateTime ;
     mcm:datetimeModified "2025-04-25T11:10:35+00:00"^^xsd:dateTime .
@@ -172,7 +162,6 @@ ops:cea750a5bd7b420fa4da1c914f801384 a ops:AgendaItem ;
             ops:text "Interpellation Fraktion GB/JA! (Katharina Gallizzi, GB): Welche Konsequenzen haben die Klimaziele für das Gasnetz in Bern?" ;
             mcm:language "de" ] ;
     ops:agenda_item_type <https://ch.paf.link/schema/operations/enum/agenda_item_type/item> ;
-    ops:parent_meeting "ops:meeting_bern_2022_03_17" ;
     ops:url [ a ops:MultilingualString ;
             ops:text "https://stadtrat.bern.ch/de/sitzungen/detail.php?gid=000d6cf5f0bc4d89a5171e0123cfbff5#cea750a5bd7b420fa4da1c914f801384" ;
             mcm:language "de" ] ;
@@ -189,12 +178,59 @@ ops:fa732e0e-7e5f-4d45-994a-fc74720c0781 a ops:AgendaItem ;
             ops:text "Postulat Stadelmann Karin Andrea und Mit. über die Überprüfung und Anpassung der Kriterien zum früheren Eintritt von Kindern in die Basisstufe (den freiwilligen Kindergarten) / Bildungs- und Kulturdepartement" ;
             mcm:language "de" ] ;
     ops:agenda_item_type <https://ch.paf.link/schema/operations/enum/agenda_item_type/item> ;
-    ops:parent_meeting "ops:meeting_luzern_2025_01_28_b" ;
     ops:url [ a ops:MultilingualString ;
             ops:text "https://www.lu.ch/kr/Sessionen/sessionsdaten_2020/Abstimmungsresultate/Detail?TraktandumGuid=fa732e0e-7e5f-4d45-994a-fc74720c0781" ;
             mcm:language "de" ] ;
     mcm:datetimeBeginPlanned "2025-01-28T00:00:00+00:00"^^xsd:dateTime ;
     mcm:datetimeCreated "2025-01-29T06:59:41+00:00"^^xsd:dateTime ;
     mcm:datetimeModified "2025-01-29T06:59:41+00:00"^^xsd:dateTime .
+
+ops:meeting_2011_11_23 a ops:Meeting ;
+    ops:agendaItem ops:06fb582b753c416d8fdb05fa13873545 ;
+    mcm:dateBeginPlanned "2011-11-23"^^xsd:date .
+
+ops:meeting_2025_03_31 a ops:Meeting ;
+    ops:agendaItem ops:49_253 ;
+    mcm:dateBeginPlanned "2025-03-31"^^xsd:date .
+
+ops:meeting_be_2025_06_02 a ops:Meeting ;
+    ops:agendaItem ops:87b69a72919445a493a061d9b0daeba3 ;
+    mcm:dateBeginPlanned "2025-06-02"^^xsd:date .
+
+ops:meeting_bern_2022_03_17 a ops:Meeting ;
+    ops:agendaItem ops:cea750a5bd7b420fa4da1c914f801384 ;
+    mcm:dateBeginPlanned "2022-03-17"^^xsd:date .
+
+ops:meeting_bern_rr_2025_04_02 a ops:Meeting ;
+    ops:agendaItem ops:21c50b86d21b4b4baeb1a76738ff82a3_2025-04-02_1_de ;
+    mcm:dateBeginPlanned "2025-04-02"^^xsd:date .
+
+ops:meeting_lausanne_2023_10_03 a ops:Meeting ;
+    ops:agendaItem ops:2023_10_03-52 ;
+    mcm:dateBeginPlanned "2023-10-03"^^xsd:date .
+
+ops:meeting_lausanne_2025_05_20 a ops:Meeting ;
+    ops:agendaItem ops:2025_05_20-23 ;
+    mcm:dateBeginPlanned "2025-05-20"^^xsd:date .
+
+ops:meeting_luzern_2025_01_28 a ops:Meeting ;
+    ops:agendaItem ops:0de4ecdb-23f1-49ab-95b8-1afc2e4feb1a ;
+    mcm:dateBeginPlanned "2025-01-28"^^xsd:date .
+
+ops:meeting_luzern_2025_01_28_b a ops:Meeting ;
+    ops:agendaItem ops:fa732e0e-7e5f-4d45-994a-fc74720c0781 ;
+    mcm:dateBeginPlanned "2025-01-28"^^xsd:date .
+
+ops:meeting_schaffhausen_2025_03_31 a ops:Meeting ;
+    ops:agendaItem ops:16155798_3 ;
+    mcm:dateBeginPlanned "2025-03-31"^^xsd:date .
+
+ops:meeting_schaffhausen_2025_03_31_b a ops:Meeting ;
+    ops:agendaItem ops:16155798_4 ;
+    mcm:dateBeginPlanned "2025-03-31"^^xsd:date .
+
+ops:meeting_vaud_2008_04_30 a ops:Meeting ;
+    ops:agendaItem ops:7b3545e4-57dc-3901-aaa8-4020da6ab0c6 ;
+    mcm:dateBeginPlanned "2008-04-30"^^xsd:date .
 
 

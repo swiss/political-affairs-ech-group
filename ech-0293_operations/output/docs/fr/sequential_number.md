@@ -6,7 +6,7 @@ search:
 # Slot: sequential_number 
 
 
-_Numéro séquentiel de la séance, utilisé pour le tri._
+_Numéro d'ordre de la session ou de la séance sous forme de nombre entier, utilisé pour le tri._
 
 
 
@@ -26,7 +26,7 @@ URI: [ops:sequential_number](https://ch.paf.link/schema/operations/sequential_nu
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Session](Session.md) | Une session parlementaire qui regroupe plusieurs séances et s'étend sur une p... |  no  |
+| [Session](Session.md) | Une session : une période de séances continue au sein d'une législature |  no  |
 | [Meeting](Meeting.md) | La séance individuelle d'un organe — le niveau auquel les points de l'ordre d... |  no  |
 
 
@@ -67,15 +67,18 @@ name: sequential_number
 annotations:
   description_de:
     tag: description_de
-    value: 'Laufende Nummer der Sitzung, die zur Sortierung verwendet wird.
+    value: 'Laufende Nummer der Session oder Sitzung als Ganzzahl, die zur Sortierung
+      verwendet wird.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Numéro séquentiel de la séance, utilisé pour le tri.
+    value: 'Numéro d''ordre de la session ou de la séance sous forme de nombre entier,
+      utilisé pour le tri.
 
       '
-description: 'Numéro séquentiel de la séance, utilisé pour le tri.
+description: 'Numéro d''ordre de la session ou de la séance sous forme de nombre entier,
+  utilisé pour le tri.
 
   '
 from_schema: https://ch.paf.link/schema/operations

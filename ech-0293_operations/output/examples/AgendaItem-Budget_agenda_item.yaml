@@ -1,6 +1,5 @@
 agenda_items:
 - global_uri: ops:agenda_item_zh_budget_2026
-  parent_meeting: ops:meeting_zh_2025_11_20
   agenda_item_type: item
   agenda_item_number: '8'
   agenda_item_position: 8

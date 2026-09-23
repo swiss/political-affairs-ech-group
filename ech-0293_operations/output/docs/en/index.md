@@ -43,7 +43,7 @@ Name: operations
 | [Protocol](Protocol.md) | The minutes of a meeting, recorded after the meeting and kept exactly once pe... |
 | [ProtocolItem](ProtocolItem.md) | An agenda item as actually recorded in the protocol |
 | [Resolution](Resolution.md) | The formal decision taken on an agenda item, including the voting procedures ... |
-| [Session](Session.md) | A parliamentary session that groups multiple meetings and spans a specific ti... |
+| [Session](Session.md) | A session: a contiguous period of sittings within a legislature |
 | [Speech](Speech.md) | A speech or statement made during a meeting (also called Votum or speaker seg... |
 | [TextSegment](TextSegment.md) | A text segment such as cross-references or subtitles |
 | [TotalOther](TotalOther.md) | Vote count for one option of a multiple-choice voting |
@@ -70,7 +70,7 @@ Name: operations
 | [agenda_item_position](agenda_item_position.md) | Integer position of the agenda item in the meeting sequence, used for sorting... |
 | [agenda_item_title](agenda_item_title.md) | Title of the agenda item |
 | [agenda_item_type](agenda_item_type.md) | Type of agenda item, distinguishing individual items from groups |
-| [agenda_items](agenda_items.md) | Collection of agenda item records |
+| [agenda_items](agenda_items.md) | Agenda items planned for this meeting or session, embedded as a list |
 | [attendance_type](attendance_type.md) | Type of individual attendance |
 | [attendances](attendances.md) | Collection of attendance records |
 | [category](category.md) | Category of the element |
@@ -140,18 +140,18 @@ Name: operations
 | [meetings](meetings.md) | Collection of meeting records |
 | [multilingual_value](multilingual_value.md) | A multilingual value with language specification |
 | [name](name.md) | Multilingual full designation |
-| [number](number.md) | Sequential number, e |
+| [number](number.md) | Number of the session or meeting as designated by the body, e |
 | [optional](optional.md) | Indicates if the meeting or voting is optional |
 | [parent_agenda_item](parent_agenda_item.md) | Identifier of the agenda item this record belongs to |
 | [parent_attendance](parent_attendance.md) | The Attendance aggregate this individual attendance record belongs to |
-| [parent_legislature](parent_legislature.md) | Identifier of the legislature to which the session belongs |
+| [parent_legislature](parent_legislature.md) | Identifier of the legislature to which the session or meeting belongs |
 | [parent_meeting](parent_meeting.md) | Identifier of the meeting this record belongs to |
 | [parent_protocol](parent_protocol.md) | The protocol in which the voting or election is recorded |
 | [parent_protocol_item](parent_protocol_item.md) | The recorded agenda item (ProtocolItem) under which the voting or election to... |
 | [parent_session](parent_session.md) | Identifier of the session to which the meeting belongs |
 | [parent_type](parent_type.md) | Type of parent object (meeting, agenda, speech, affair) |
 | [parent_voting](parent_voting.md) | The ID of the voting associated with the individual vote |
-| [position](position.md) | Integer position within the superordinate sequence |
+| [position](position.md) | Integer position within the superordinate sequence, e |
 | [protocol_items](protocol_items.md) | Agenda items as actually recorded in the protocol |
 | [protocols](protocols.md) | Collection of protocol records |
 | [reason](reason.md) | Reason for absence, lateness or substitution (free-text, multilingual) |
@@ -162,7 +162,7 @@ Name: operations
 | [result_text](result_text.md) | Free text describing the outcome, e |
 | [role](role.md) | Role of the person (e |
 | [seat_nr](seat_nr.md) | The seat number of the individual vote, if applicable |
-| [sequential_number](sequential_number.md) | Sequential number of the meeting, used for ordering |
+| [sequential_number](sequential_number.md) | Sequential number of the session or meeting as an integer, used for ordering |
 | [sessions](sessions.md) | Collection of session records |
 | [spatial](spatial.md) | Spatial reference to a LINDAS resource (fos-municipality number, fos-canton n... |
 | [speaking_actor_id](speaking_actor_id.md) | The speaker or head of the department for the agenda item |

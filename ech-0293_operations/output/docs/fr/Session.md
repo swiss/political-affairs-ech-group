@@ -3,7 +3,7 @@
 ## Classe: Session 
 
 
-_Une session parlementaire qui regroupe plusieurs séances et s'étend sur une période déterminée._
+_Une session : une période de séances continue au sein d'une législature. Elle regroupe ses séances (meetings) et peut aussi porter directement des points de l'ordre du jour (agenda_items). La session est le seul des trois niveaux temporels auquel il est possible de renoncer : les unités fédérales sans sessions formelles l'omettent et rattachent leurs séances directement à la législature (parent_legislature). Session et séance peuvent aussi coïncider — une séance d'un jour d'un parlement cantonal ou une Landsgemeinde est représentée comme une session comprenant une seule séance, ou comme une session qui porte directement ses points de l'ordre du jour, sans séance._
 
 
 
@@ -22,13 +22,14 @@ _Une session parlementaire qui regroupe plusieurs séances et s'étend sur une p
 | wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](HasIdentification.md) |
 | spatial | 0..1 <br/> [String](String.md) | Référence spatiale à une ressource LINDAS (numéro OFS de commune, numéro OFS de canton, district ou pays). Formats : commune : https://ld.admin.ch/municipality/1234, district : https://ld.admin.ch/district/2301, canton : https://ld.admin.ch/canton/23, pays : https://ld.admin.ch/country/CHE.  |
 | name | * <br/> [MultilingualString](MultilingualString.md) | Désignation complète multilingue.  |
-| number | 0..1 <br/> [String](String.md) | Numéro courant, p. ex. au sein de la législature, de la session ou de l'année.  |
-| sequential_number | 0..1 <br/> [Integer](Integer.md) | Numéro séquentiel de la séance, utilisé pour le tri.  |
-| position | 0..1 <br/> [String](String.md) | Position (nombre entier) au sein de la séquence supérieure.  |
+| number | 0..1 <br/> [String](String.md) | Numéro de la session ou de la séance tel qu'attribué par l'organe, p. ex. au sein de la législature, de la session ou de l'année. En tant que chaîne de caractères, il admet aussi les chiffres romains. Les pratiques de numérotation variant fortement, number, sequential_number, position et meeting_abbreviation sont disponibles côte à côte.  |
+| sequential_number | 0..1 <br/> [Integer](Integer.md) | Numéro d'ordre de la session ou de la séance sous forme de nombre entier, utilisé pour le tri.  |
+| position | 0..1 <br/> [String](String.md) | Position entière au sein de la séquence supérieure, p. ex. d'une session au sein de la législature.  |
 | meeting_abbreviation | 0..1 <br/> [String](String.md) | Désignation abrégée de la session ou de la séance (p. ex. « FS24 » pour la session de printemps 2024).  |
 | url | * <br/> [MultilingualString](MultilingualString.md) | Page d'accueil ou adresse web complémentaire, multilingue.  |
-| parent_legislature | 0..1 <br/> [String](String.md) | Identifiant de la législature à laquelle la session appartient.  |
+| parent_legislature | 0..1 <br/> [String](String.md) | Identifiant de la législature à laquelle la session ou la séance appartient. Une séance qui fait partie d'une session est rattachée à la législature par la session (parent_session) ; une séance sans session — par exemple une séance de commission ou une séance dans une unité fédérale sans sessions formelles — renvoie directement à la législature.  |
 | meetings | * <br/> [Meeting](Meeting.md) | Ensemble des séances.  |
+| agenda_items | * <br/> [AgendaItem](AgendaItem.md) | Points de l'ordre du jour planifiés pour cette séance ou cette session, imbriqués sous forme de liste. Pour une séance, ils forment son ordre du jour. Pour une session, ils contiennent les points planifiés directement au niveau de la session — lorsqu'une unité fédérale ne subdivise pas la session en séances (p. ex. une Landsgemeinde ou une séance d'un jour d'un parlement cantonal), ou pour des points qui ne sont pas (encore) attribués à une séance déterminée, comme dans un programme de session. Leur pendant après la séance sont les points consignés au procès-verbal (Protocol.protocol_items).  |
 | joint_debates | * <br/> [JointDebate](JointDebate.md) | Délibérations communes rattachées à cet enregistrement : pour un point de l'ordre du jour, les délibérations dans lesquelles il est traité conjointement avec d'autres points ; pour une séance ou une session, les délibérations communes qui s'y tiennent.  |
 | documents | * <br/> [Work](Work.md) | Liste des documents (FRBR Works) liés à l'entité.  |
 | date_begin_actual | 0..1 <br/> [Date](Date.md) | La date de début effective d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](IsEventWithDuration.md) |
@@ -68,6 +69,50 @@ _Une session parlementaire qui regroupe plusieurs séances et s'étend sur une p
 
 
 ### Exemples
+#### Exemple Session : One-day sitting period of a cantonal parliament
+
+```yaml
+sessions:
+- global_uri: ops:session_gl_landrat_2025_02_26
+  spatial: https://ld.admin.ch/canton/8
+  name:
+  - text: Sitzung des Landrates vom 26.02.2025
+    language: de
+  url:
+  - text: https://www.gl.ch/parlament/landrat/landratsprotokolle-ab-30-juni-2010.html/239
+    language: de
+  date_begin_planned: '2025-02-26'
+  date_end_planned: '2025-02-26'
+  datetime_modified: '2025-04-25T13:40:34Z'
+  datetime_created: '2025-04-23T22:58:39Z'
+
+```
+#### Exemple Session : Landsgemeinde as a sitting period
+
+```yaml
+sessions:
+- global_uri: ops:session_gl_landsgemeinde_2025_05_04
+  spatial: https://ld.admin.ch/canton/8
+  name:
+  - text: Landsgemeinde vom 04. Mai 2025
+    language: de
+  url:
+  - text: https://www.landsgemeinde.gl.ch/landsgemeinde/2025-05-04
+    language: de
+  date_begin_planned: '2025-05-04'
+  date_end_planned: '2025-05-04'
+  agenda_items:
+  - global_uri: ops:agenda_item_gl_landsgemeinde_2025_01
+    agenda_item_type: item
+    agenda_item_number: '1'
+    agenda_item_position: 1
+    agenda_item_title:
+    - text: Eröffnung der Landsgemeinde
+      language: de
+  datetime_modified: '2025-04-25T13:40:34Z'
+  datetime_created: '2025-04-23T22:58:39Z'
+
+```
 #### Exemple Session : Federal session with a trilingual designation
 
 ```yaml
@@ -95,24 +140,6 @@ sessions:
   datetime_created: '2025-03-20T14:27:09Z'
 
 ```
-#### Exemple Session : One-day sitting period of a cantonal parliament
-
-```yaml
-sessions:
-- global_uri: ops:session_gl_landrat_2025_02_26
-  spatial: https://ld.admin.ch/canton/8
-  name:
-  - text: Sitzung des Landrates vom 26.02.2025
-    language: de
-  url:
-  - text: https://www.gl.ch/parlament/landrat/landratsprotokolle-ab-30-juni-2010.html/239
-    language: de
-  date_begin_planned: '2025-02-26'
-  date_end_planned: '2025-02-26'
-  datetime_modified: '2025-04-25T13:40:34Z'
-  datetime_created: '2025-04-23T22:58:39Z'
-
-```
 #### Exemple Session : Cantonal session with a bilingual designation
 
 ```yaml
@@ -135,24 +162,6 @@ sessions:
   date_end_planned: '2025-06-12'
   datetime_modified: '2025-05-19T01:06:44Z'
   datetime_created: '2025-04-25T11:10:24Z'
-
-```
-#### Exemple Session : Landsgemeinde as a sitting period
-
-```yaml
-sessions:
-- global_uri: ops:session_gl_landsgemeinde_2025_05_04
-  spatial: https://ld.admin.ch/canton/8
-  name:
-  - text: Landsgemeinde vom 04. Mai 2025
-    language: de
-  url:
-  - text: https://www.landsgemeinde.gl.ch/landsgemeinde/2025-05-04
-    language: de
-  date_begin_planned: '2025-05-04'
-  date_end_planned: '2025-05-04'
-  datetime_modified: '2025-04-25T13:40:34Z'
-  datetime_created: '2025-04-23T22:58:39Z'
 
 ```
 

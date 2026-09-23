@@ -30,7 +30,7 @@ URI: [mcm:wikidataUri](https://ld.ech.ch/schema/0292/meta-common/wikidataUri)
 | [IsProcessStep](IsProcessStep.md) | A mixin class for a single step in a multi-stage process (e |  no  |
 | [Container](Container.md) | Container for the records of public council operations: legislatures, session... |  no  |
 | [Legislature](Legislature.md) | Term of office of a parliament as a legislative assembly |  no  |
-| [Session](Session.md) | A parliamentary session that groups multiple meetings and spans a specific ti... |  no  |
+| [Session](Session.md) | A session: a contiguous period of sittings within a legislature |  no  |
 | [Meeting](Meeting.md) | The individual sitting of a body — the level at which agenda items are delibe... |  no  |
 | [AgendaItem](AgendaItem.md) | An agenda item of a meeting as planned beforehand |  no  |
 | [Protocol](Protocol.md) | The minutes of a meeting, recorded after the meeting and kept exactly once pe... |  no  |

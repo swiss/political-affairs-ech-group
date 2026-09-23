@@ -17,7 +17,6 @@ _Une classe mixin qui fournit les éléments d'un point de l'ordre du jour : dé
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| parent_meeting | 0..1 <br/> [String](String.md) | Identifiant de la séance à laquelle cet enregistrement se rattache. Pour une séance, il désigne la séance supérieure ; pour un point de l'ordre du jour, un vote, une élection, une intervention ou un procès-verbal, la séance au cours de laquelle l'enregistrement est né.  |
 | agenda_item_type | 0..1 <br/> [AgendaItemTypeEnum](AgendaItemTypeEnum.md) | Type de point de l'ordre du jour, distinguant les points isolés des groupes de points.  |
 | agenda_item_number | 0..1 <br/> [String](String.md) | Numéro du point sur l'ordre du jour, p. ex. « 2.1 » ou « 3 » (chaîne de caractères, afin de permettre aussi les chiffres romains).  |
 | agenda_item_position | 0..1 <br/> [Integer](Integer.md) | Position entière du point dans le déroulement de la séance, déterminante pour le tri et l'affichage.  |

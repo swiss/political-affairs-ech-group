@@ -20,7 +20,7 @@ _The minutes of a meeting, recorded after the meeting and kept exactly once per 
 | local_id | 0..1 <br/> [String](String.md) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
-| parent_meeting | 0..1 <br/> [String](String.md) | Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.  |
+| parent_meeting | 0..1 <br/> [String](String.md) | Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on a voting, election, speech, attendance list or protocol it names the meeting in which the record arose. Agenda items do not carry it: they are embedded in their meeting.  |
 | protocol_items | * <br/> [ProtocolItem](ProtocolItem.md) | Agenda items as actually recorded in the protocol.  |
 | votings | * <br/> [Voting](Voting.md) | Collection of voting records.  |
 | elections | * <br/> [Election](Election.md) | Collection of election records.  |
@@ -67,7 +67,6 @@ protocols:
   parent_meeting: parl:sr_winter25_sitzung_6
   protocol_items:
   - global_uri: ops:protokollpunkt_69905
-    parent_meeting: parl:sr_winter25_sitzung_6
     agenda_item_type: item
     agenda_item_number: '6'
     agenda_item_position: 4

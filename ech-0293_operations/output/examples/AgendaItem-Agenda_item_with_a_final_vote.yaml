@@ -1,6 +1,5 @@
 agenda_items:
 - global_uri: ops:agenda_item_sg_2025_015
-  parent_meeting: ops:meeting_sg_2025_03_15
   agenda_item_type: item
   agenda_item_number: '15'
   agenda_item_position: 15

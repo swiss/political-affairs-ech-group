@@ -6,7 +6,7 @@ search:
 # Slot: number 
 
 
-_Numéro courant, p. ex. au sein de la législature, de la session ou de l'année._
+_Numéro de la session ou de la séance tel qu'attribué par l'organe, p. ex. au sein de la législature, de la session ou de l'année. En tant que chaîne de caractères, il admet aussi les chiffres romains. Les pratiques de numérotation variant fortement, number, sequential_number, position et meeting_abbreviation sont disponibles côte à côte._
 
 
 
@@ -26,7 +26,7 @@ URI: [ops:number](https://ch.paf.link/schema/operations/number)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Session](Session.md) | Une session parlementaire qui regroupe plusieurs séances et s'étend sur une p... |  no  |
+| [Session](Session.md) | Une session : une période de séances continue au sein d'une législature |  no  |
 | [Meeting](Meeting.md) | La séance individuelle d'un organe — le niveau auquel les points de l'ordre d... |  no  |
 
 
@@ -67,17 +67,26 @@ name: number
 annotations:
   description_de:
     tag: description_de
-    value: 'Laufende Nummer, z.B. innerhalb der Legislatur, der Session oder des Jahres.
+    value: 'Nummer der Session oder Sitzung, wie sie das Organ vergibt, z.B. innerhalb
+      der Legislatur, der Session oder des Jahres. Als Zeichenkette erlaubt sie auch
+      römische Ziffern. Nummeriert wird sehr unterschiedlich, weshalb number, sequential_number,
+      position und meeting_abbreviation nebeneinander zur Verfügung stehen.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Numéro courant, p. ex. au sein de la législature, de la session ou de
-      l''année.
+    value: 'Numéro de la session ou de la séance tel qu''attribué par l''organe, p.
+      ex. au sein de la législature, de la session ou de l''année. En tant que chaîne
+      de caractères, il admet aussi les chiffres romains. Les pratiques de numérotation
+      variant fortement, number, sequential_number, position et meeting_abbreviation
+      sont disponibles côte à côte.
 
       '
-description: 'Numéro courant, p. ex. au sein de la législature, de la session ou de
-  l''année.
+description: 'Numéro de la session ou de la séance tel qu''attribué par l''organe,
+  p. ex. au sein de la législature, de la session ou de l''année. En tant que chaîne
+  de caractères, il admet aussi les chiffres romains. Les pratiques de numérotation
+  variant fortement, number, sequential_number, position et meeting_abbreviation sont
+  disponibles côte à côte.
 
   '
 from_schema: https://ch.paf.link/schema/operations

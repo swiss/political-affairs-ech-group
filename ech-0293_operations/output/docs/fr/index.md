@@ -43,7 +43,7 @@ Name: operations
 | [Protocol](Protocol.md) | Le procès-verbal d'une séance, établi après celle-ci et tenu exactement une f... |
 | [ProtocolItem](ProtocolItem.md) | Un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-... |
 | [Resolution](Resolution.md) | La décision formelle prise sur un point de l'ordre du jour, y compris les pro... |
-| [Session](Session.md) | Une session parlementaire qui regroupe plusieurs séances et s'étend sur une p... |
+| [Session](Session.md) | Une session : une période de séances continue au sein d'une législature |
 | [Speech](Speech.md) | Une intervention prononcée au cours d'une séance (également appelée prise de ... |
 | [TextSegment](TextSegment.md) | Un segment de texte tel qu'un renvoi ou un intertitre |
 | [TotalOther](TotalOther.md) | Nombre de voix pour une option d'un vote à choix multiple |
@@ -70,7 +70,7 @@ Name: operations
 | [agenda_item_position](agenda_item_position.md) | Position entière du point dans le déroulement de la séance, déterminante pour... |
 | [agenda_item_title](agenda_item_title.md) | Titre du point de l'ordre du jour |
 | [agenda_item_type](agenda_item_type.md) | Type de point de l'ordre du jour, distinguant les points isolés des groupes d... |
-| [agenda_items](agenda_items.md) | Ensemble des points de l'ordre du jour |
+| [agenda_items](agenda_items.md) | Points de l'ordre du jour planifiés pour cette séance ou cette session, imbri... |
 | [attendance_type](attendance_type.md) | Type de présence individuelle |
 | [attendances](attendances.md) | Ensemble des listes de présence |
 | [category](category.md) | Catégorie de l'élément |
@@ -140,18 +140,18 @@ Name: operations
 | [meetings](meetings.md) | Ensemble des séances |
 | [multilingual_value](multilingual_value.md) | Une valeur multilingue avec indication de la langue |
 | [name](name.md) | Désignation complète multilingue |
-| [number](number.md) | Numéro courant, p |
+| [number](number.md) | Numéro de la session ou de la séance tel qu'attribué par l'organe, p |
 | [optional](optional.md) | Indique si la séance ou le vote est facultatif |
 | [parent_agenda_item](parent_agenda_item.md) | Identifiant du point de l'ordre du jour auquel cet enregistrement se rattache |
 | [parent_attendance](parent_attendance.md) | L'agrégat Attendance auquel appartient cette constatation individuelle de pré... |
-| [parent_legislature](parent_legislature.md) | Identifiant de la législature à laquelle la session appartient |
+| [parent_legislature](parent_legislature.md) | Identifiant de la législature à laquelle la session ou la séance appartient |
 | [parent_meeting](parent_meeting.md) | Identifiant de la séance à laquelle cet enregistrement se rattache |
 | [parent_protocol](parent_protocol.md) | Le procès-verbal dans lequel le vote ou l'élection est consigné |
 | [parent_protocol_item](parent_protocol_item.md) | Le point consigné au procès-verbal (ProtocolItem) sous lequel le vote ou l'él... |
 | [parent_session](parent_session.md) | Identifiant de la session à laquelle la séance appartient |
 | [parent_type](parent_type.md) | Type de l'objet parent (séance, point de l'ordre du jour, intervention, affai... |
 | [parent_voting](parent_voting.md) | L'identifiant du vote auquel se rattache la voix individuelle |
-| [position](position.md) | Position (nombre entier) au sein de la séquence supérieure |
+| [position](position.md) | Position entière au sein de la séquence supérieure, p |
 | [protocol_items](protocol_items.md) | Points de l'ordre du jour tels qu'ils ont effectivement été consignés au proc... |
 | [protocols](protocols.md) | Ensemble des procès-verbaux |
 | [reason](reason.md) | Motif de l'absence, du retard ou de la suppléance (texte libre, multilingue) |
@@ -162,7 +162,7 @@ Name: operations
 | [result_text](result_text.md) | Texte libre décrivant le résultat, p |
 | [role](role.md) | Rôle de la personne (p |
 | [seat_nr](seat_nr.md) | Le numéro de siège correspondant à la voix individuelle, le cas échéant |
-| [sequential_number](sequential_number.md) | Numéro séquentiel de la séance, utilisé pour le tri |
+| [sequential_number](sequential_number.md) | Numéro d'ordre de la session ou de la séance sous forme de nombre entier, uti... |
 | [sessions](sessions.md) | Ensemble des sessions |
 | [spatial](spatial.md) | Référence spatiale à une ressource LINDAS (numéro OFS de commune, numéro OFS ... |
 | [speaking_actor_id](speaking_actor_id.md) | La ou le porte-parole ou la cheffe ou le chef du département pour le point de... |

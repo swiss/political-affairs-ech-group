@@ -17,7 +17,6 @@ _A mixin class that provides the elements of an agenda item: designation, type, 
 
 | Name | Cardinality and Range | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| parent_meeting | 0..1 <br/> [String](String.md) | Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.  |
 | agenda_item_type | 0..1 <br/> [AgendaItemTypeEnum](AgendaItemTypeEnum.md) | Type of agenda item, distinguishing individual items from groups.  |
 | agenda_item_number | 0..1 <br/> [String](String.md) | Number of the agenda item on the agenda, e.g. "2.1" or "3" (string type to also support roman numerals).  |
 | agenda_item_position | 0..1 <br/> [Integer](Integer.md) | Integer position of the agenda item in the meeting sequence, used for sorting and display.  |

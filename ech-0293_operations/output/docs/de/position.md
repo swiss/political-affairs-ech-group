@@ -6,7 +6,7 @@ search:
 # Slot: position 
 
 
-_Ganzzahlige Position innerhalb der übergeordneten Reihenfolge._
+_Ganzzahlige Position innerhalb der übergeordneten Reihenfolge, z.B. einer Session innerhalb der Legislaturperiode._
 
 
 
@@ -26,7 +26,7 @@ URI: [ops:position](https://ch.paf.link/schema/operations/position)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [Session](Session.md) | Eine Parlamentssession, die mehrere Sitzungen gruppiert und sich über einen b... |  no  |
+| [Session](Session.md) | Eine Session: eine zusammenhängende Sitzungsperiode innerhalb einer Legislatu... |  no  |
 | [Meeting](Meeting.md) | Die einzelne Sitzung eines Organs — die Ebene, auf der Traktanden beraten, Be... |  no  |
 
 
@@ -67,15 +67,18 @@ name: position
 annotations:
   description_de:
     tag: description_de
-    value: 'Ganzzahlige Position innerhalb der übergeordneten Reihenfolge.
+    value: 'Ganzzahlige Position innerhalb der übergeordneten Reihenfolge, z.B. einer
+      Session innerhalb der Legislaturperiode.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Position (nombre entier) au sein de la séquence supérieure.
+    value: 'Position entière au sein de la séquence supérieure, p. ex. d''une session
+      au sein de la législature.
 
       '
-description: 'Ganzzahlige Position innerhalb der übergeordneten Reihenfolge.
+description: 'Ganzzahlige Position innerhalb der übergeordneten Reihenfolge, z.B.
+  einer Session innerhalb der Legislaturperiode.
 
   '
 from_schema: https://ch.paf.link/schema/operations

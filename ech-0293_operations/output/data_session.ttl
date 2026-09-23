@@ -8,27 +8,35 @@ ops:sessions_example_2025 a ops:Container ;
         ops:session_gl_landrat_2025_02_26,
         ops:session_gl_landsgemeinde_2025_05_04 .
 
+ops:agenda_item_gl_landsgemeinde_2025_01 a ops:AgendaItem ;
+    ops:agenda_item_number "1" ;
+    ops:agenda_item_position 1 ;
+    ops:agenda_item_title [ a ops:MultilingualString ;
+            ops:text "Eröffnung der Landsgemeinde" ;
+            mcm:language "de" ] ;
+    ops:agenda_item_type <https://ch.paf.link/schema/operations/enum/agenda_item_type/item> .
+
 ops:session_5207 a ops:Session ;
     ops:name [ a ops:MultilingualString ;
-            ops:text "Sessione primaverile 2025" ;
-            mcm:language "it" ],
-        [ a ops:MultilingualString ;
             ops:text "Session de printemps 2025" ;
             mcm:language "fr" ],
+        [ a ops:MultilingualString ;
+            ops:text "Sessione primaverile 2025" ;
+            mcm:language "it" ],
         [ a ops:MultilingualString ;
             ops:text "Frühjahrssession 2025" ;
             mcm:language "de" ] ;
     ops:parent_legislature "ops:legislature_51" ;
     ops:spatial "https://ld.admin.ch/country/CHE" ;
     ops:url [ a ops:MultilingualString ;
+            ops:text "https://www.parlament.ch/de/ratsbetrieb/sessionen/fruehjahr-2025" ;
+            mcm:language "de" ],
+        [ a ops:MultilingualString ;
             ops:text "https://www.parlament.ch/fr/ratsbetrieb/sessionen/fruehjahr-2025" ;
             mcm:language "fr" ],
         [ a ops:MultilingualString ;
             ops:text "https://www.parlament.ch/it/ratsbetrieb/sessionen/fruehjahr-2025" ;
-            mcm:language "it" ],
-        [ a ops:MultilingualString ;
-            ops:text "https://www.parlament.ch/de/ratsbetrieb/sessionen/fruehjahr-2025" ;
-            mcm:language "de" ] ;
+            mcm:language "it" ] ;
     mcm:dateBeginPlanned "2025-03-03"^^xsd:date ;
     mcm:dateEndPlanned "2025-03-21"^^xsd:date ;
     mcm:datetimeCreated "2025-03-20T14:27:09+00:00"^^xsd:dateTime ;
@@ -36,18 +44,18 @@ ops:session_5207 a ops:Session ;
 
 ops:session_be_summer_2025 a ops:Session ;
     ops:name [ a ops:MultilingualString ;
-            ops:text "Session d'été 2025" ;
-            mcm:language "fr" ],
-        [ a ops:MultilingualString ;
             ops:text "Sommersession 2025" ;
-            mcm:language "de" ] ;
+            mcm:language "de" ],
+        [ a ops:MultilingualString ;
+            ops:text "Session d'été 2025" ;
+            mcm:language "fr" ] ;
     ops:spatial "https://ld.admin.ch/canton/2" ;
     ops:url [ a ops:MultilingualString ;
-            ops:text "https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8" ;
-            mcm:language "fr" ],
-        [ a ops:MultilingualString ;
             ops:text "https://www.gr.be.ch/de/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8" ;
-            mcm:language "de" ] ;
+            mcm:language "de" ],
+        [ a ops:MultilingualString ;
+            ops:text "https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8" ;
+            mcm:language "fr" ] ;
     mcm:dateBeginPlanned "2025-06-02"^^xsd:date ;
     mcm:dateEndPlanned "2025-06-12"^^xsd:date ;
     mcm:datetimeCreated "2025-04-25T11:10:24+00:00"^^xsd:dateTime ;
@@ -67,6 +75,7 @@ ops:session_gl_landrat_2025_02_26 a ops:Session ;
     mcm:datetimeModified "2025-04-25T13:40:34+00:00"^^xsd:dateTime .
 
 ops:session_gl_landsgemeinde_2025_05_04 a ops:Session ;
+    ops:agendaItem ops:agenda_item_gl_landsgemeinde_2025_01 ;
     ops:name [ a ops:MultilingualString ;
             ops:text "Landsgemeinde vom 04. Mai 2025" ;
             mcm:language "de" ] ;

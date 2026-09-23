@@ -101,6 +101,20 @@
           "language": "de"
         }
       ],
+      "agenda_items": [
+        {
+          "global_uri": "ops:agenda_item_gl_landsgemeinde_2025_01",
+          "agenda_item_type": "item",
+          "agenda_item_number": "1",
+          "agenda_item_position": 1,
+          "agenda_item_title": [
+            {
+              "text": "Eröffnung der Landsgemeinde",
+              "language": "de"
+            }
+          ]
+        }
+      ],
       "date_begin_planned": "2025-05-04",
       "date_end_planned": "2025-05-04",
       "datetime_created": "2025-04-23T22:58:39+00:00",

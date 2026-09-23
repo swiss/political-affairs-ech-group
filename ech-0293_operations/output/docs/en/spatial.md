@@ -27,7 +27,7 @@ URI: [ops:spatial](https://ch.paf.link/schema/operations/spatial)
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Legislature](Legislature.md) | Term of office of a parliament as a legislative assembly |  no  |
-| [Session](Session.md) | A parliamentary session that groups multiple meetings and spans a specific ti... |  no  |
+| [Session](Session.md) | A session: a contiguous period of sittings within a legislature |  no  |
 | [Meeting](Meeting.md) | The individual sitting of a body — the level at which agenda items are delibe... |  no  |
 
 

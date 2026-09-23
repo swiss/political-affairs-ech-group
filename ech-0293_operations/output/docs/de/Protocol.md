@@ -20,7 +20,7 @@ _Das Protokoll einer Sitzung, nach der Sitzung erstellt und pro Sitzung genau ei
 | local_id | 0..1 <br/> [String](String.md) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](HasIdentification.md) |
 | global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](HasIdentification.md) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](HasIdentification.md) |
-| parent_meeting | 0..1 <br/> [String](String.md) | Identifikator der Sitzung, zu der dieser Eintrag gehört. Bei einer Sitzung bezeichnet er die übergeordnete Sitzung, bei Traktandum, Abstimmung, Wahl, Wortmeldung oder Protokoll die Sitzung, in der der Eintrag entstanden ist.  |
+| parent_meeting | 0..1 <br/> [String](String.md) | Identifikator der Sitzung, zu der dieser Eintrag gehört. Bei einer Sitzung bezeichnet er die übergeordnete Sitzung, bei Abstimmung, Wahl, Wortmeldung, Anwesenheitsliste oder Protokoll die Sitzung, in der der Eintrag entstanden ist. Traktanden führen ihn nicht: Sie sind in ihre Sitzung eingebettet.  |
 | protocol_items | * <br/> [ProtocolItem](ProtocolItem.md) | Traktanden, wie sie im Protokoll tatsächlich festgehalten wurden.  |
 | votings | * <br/> [Voting](Voting.md) | Sammlung der Abstimmungen.  |
 | elections | * <br/> [Election](Election.md) | Sammlung der Wahlen.  |
@@ -67,7 +67,6 @@ protocols:
   parent_meeting: parl:sr_winter25_sitzung_6
   protocol_items:
   - global_uri: ops:protokollpunkt_69905
-    parent_meeting: parl:sr_winter25_sitzung_6
     agenda_item_type: item
     agenda_item_number: '6'
     agenda_item_position: 4

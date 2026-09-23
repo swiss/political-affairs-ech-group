@@ -43,7 +43,7 @@ Name: operations
 | [Protocol](Protocol.md) | Das Protokoll einer Sitzung, nach der Sitzung erstellt und pro Sitzung genau ... |
 | [ProtocolItem](ProtocolItem.md) | Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde |
 | [Resolution](Resolution.md) | Der formale Beschluss zu einem Traktandum, einschliesslich der angewandten Ab... |
-| [Session](Session.md) | Eine Parlamentssession, die mehrere Sitzungen gruppiert und sich über einen b... |
+| [Session](Session.md) | Eine Session: eine zusammenhängende Sitzungsperiode innerhalb einer Legislatu... |
 | [Speech](Speech.md) | Eine Wortmeldung während einer Sitzung (auch Votum oder Redebeitrag genannt) |
 | [TextSegment](TextSegment.md) | Ein Textsegment wie Querverweise oder Zwischentitel |
 | [TotalOther](TotalOther.md) | Stimmenzahl für eine Option einer Auswahlabstimmung |
@@ -70,7 +70,7 @@ Name: operations
 | [agenda_item_position](agenda_item_position.md) | Ganzzahlige Position des Traktandums im Sitzungsablauf, massgebend für Sortie... |
 | [agenda_item_title](agenda_item_title.md) | Titel des Traktandums |
 | [agenda_item_type](agenda_item_type.md) | Art des Traktandums, unterscheidet Einzeltraktanden von Traktandengruppen |
-| [agenda_items](agenda_items.md) | Sammlung der Traktanden |
+| [agenda_items](agenda_items.md) | Für diese Sitzung oder Session geplante Traktanden, eingebettet als Liste |
 | [attendance_type](attendance_type.md) | Art der individuellen Anwesenheit |
 | [attendances](attendances.md) | Sammlung der Anwesenheitslisten |
 | [category](category.md) | Kategorie des Elements |
@@ -140,18 +140,18 @@ Name: operations
 | [meetings](meetings.md) | Sammlung der Sitzungen |
 | [multilingual_value](multilingual_value.md) | Ein mehrsprachiger Wert mit Angabe der Sprache |
 | [name](name.md) | Mehrsprachige vollständige Bezeichnung |
-| [number](number.md) | Laufende Nummer, z |
+| [number](number.md) | Nummer der Session oder Sitzung, wie sie das Organ vergibt, z |
 | [optional](optional.md) | Gibt an, ob die Sitzung oder Abstimmung optional ist |
 | [parent_agenda_item](parent_agenda_item.md) | Identifikator des Traktandums, zu dem dieser Eintrag gehört |
 | [parent_attendance](parent_attendance.md) | Das Attendance-Aggregat, zu dem dieser einzelne Anwesenheits-Eintrag gehört |
-| [parent_legislature](parent_legislature.md) | Identifikator der Legislaturperiode, zu der die Session gehört |
+| [parent_legislature](parent_legislature.md) | Identifikator der Legislaturperiode, zu der die Session oder Sitzung gehört |
 | [parent_meeting](parent_meeting.md) | Identifikator der Sitzung, zu der dieser Eintrag gehört |
 | [parent_protocol](parent_protocol.md) | Das Protokoll, in dem die Abstimmung oder Wahl festgehalten ist |
 | [parent_protocol_item](parent_protocol_item.md) | Das protokollierte Traktandum (ProtocolItem), unter dem abgestimmt oder gewäh... |
 | [parent_session](parent_session.md) | Identifikator der Session, zu der die Sitzung gehört |
 | [parent_type](parent_type.md) | Typ des übergeordneten Objekts (Sitzung, Traktandum, Wortmeldung, Geschäft) |
 | [parent_voting](parent_voting.md) | Die ID der Abstimmung, die mit der Einzelstimme verbunden ist |
-| [position](position.md) | Ganzzahlige Position innerhalb der übergeordneten Reihenfolge |
+| [position](position.md) | Ganzzahlige Position innerhalb der übergeordneten Reihenfolge, z |
 | [protocol_items](protocol_items.md) | Traktanden, wie sie im Protokoll tatsächlich festgehalten wurden |
 | [protocols](protocols.md) | Sammlung der Protokolle |
 | [reason](reason.md) | Grund für Abwesenheit, Verspätung oder Vertretung (Freitext, mehrsprachig) |
@@ -162,7 +162,7 @@ Name: operations
 | [result_text](result_text.md) | Freitext, der das Ergebnis beschreibt, z |
 | [role](role.md) | Rolle der Person (z |
 | [seat_nr](seat_nr.md) | Die Sitznummer der Einzelstimme, falls zutreffend |
-| [sequential_number](sequential_number.md) | Laufende Nummer der Sitzung, die zur Sortierung verwendet wird |
+| [sequential_number](sequential_number.md) | Laufende Nummer der Session oder Sitzung als Ganzzahl, die zur Sortierung ver... |
 | [sessions](sessions.md) | Sammlung der Sessionen |
 | [spatial](spatial.md) | Räumliche Referenz auf eine LINDAS-Ressource (BFS-Gemeindenummer, BFS-Kantons... |
 | [speaking_actor_id](speaking_actor_id.md) | Der Sprecher oder die Sprecherin bzw |

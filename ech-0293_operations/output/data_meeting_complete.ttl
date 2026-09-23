@@ -4,22 +4,20 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 ops:meeting_examples_2025 a ops:Container ;
-    ops:agendaItem ops:agenda_item_be_2025_042,
-        ops:agenda_item_sg_2025_015,
-        ops:agenda_item_zh_budget_2026 ;
     ops:meeting ops:meeting_be_committee_wak_2025_05_12,
         ops:meeting_gl_landsgemeinde_2025,
-        ops:meeting_sg_2025_03_15 .
+        ops:meeting_sg_2025_03_15,
+        ops:meeting_zh_2025_11_20 .
 
 ops:agenda_item_be_2025_042 a ops:AgendaItem ;
     ops:affair_id "affairs:be_2024_089_steuergesetz" ;
     ops:agenda_item_category "Gesetzgebung" ;
     ops:agenda_item_description [ a ops:MultilingualString ;
-            ops:text "Délibération sur les propositions de modification de l'article 5 de la loi fiscale" ;
-            mcm:language "fr" ],
-        [ a ops:MultilingualString ;
             ops:text "Beratung von Änderungsanträgen zu Artikel 5 des Steuergesetzes" ;
-            mcm:language "de" ] ;
+            mcm:language "de" ],
+        [ a ops:MultilingualString ;
+            ops:text "Délibération sur les propositions de modification de l'article 5 de la loi fiscale" ;
+            mcm:language "fr" ] ;
     ops:agenda_item_number "4.2" ;
     ops:agenda_item_position 42 ;
     ops:agenda_item_title [ a ops:MultilingualString ;
@@ -29,7 +27,6 @@ ops:agenda_item_be_2025_042 a ops:AgendaItem ;
             ops:text "Loi fiscale - Délibération détaillée art. 5" ;
             mcm:language "fr" ] ;
     ops:agenda_item_type <https://ch.paf.link/schema/operations/enum/agenda_item_type/item> ;
-    ops:parent_meeting "ops:meeting_be_committee_wak_2025_05_12" ;
     ops:state_id "completed" ;
     mcm:datetimeBeginActual "2025-05-12T15:15:00+00:00"^^xsd:dateTime ;
     mcm:datetimeBeginPlanned "2025-05-12T15:00:00+00:00"^^xsd:dateTime ;
@@ -48,7 +45,6 @@ ops:agenda_item_sg_2025_015 a ops:AgendaItem ;
             ops:text "Energiegesetz - Schlussabstimmung" ;
             mcm:language "de" ] ;
     ops:agenda_item_type <https://ch.paf.link/schema/operations/enum/agenda_item_type/item> ;
-    ops:parent_meeting "ops:meeting_sg_2025_03_15" ;
     ops:state_id "completed" ;
     mcm:datetimeBeginActual "2025-03-15T14:30:00+00:00"^^xsd:dateTime ;
     mcm:datetimeBeginPlanned "2025-03-15T14:00:00+00:00"^^xsd:dateTime ;
@@ -67,7 +63,6 @@ ops:agenda_item_zh_budget_2026 a ops:AgendaItem ;
             ops:text "Budget 2026" ;
             mcm:language "de" ] ;
     ops:agenda_item_type <https://ch.paf.link/schema/operations/enum/agenda_item_type/item> ;
-    ops:parent_meeting "ops:meeting_zh_2025_11_20" ;
     ops:state_id "completed" ;
     mcm:datetimeBeginActual "2025-11-20T16:45:00+00:00"^^xsd:dateTime ;
     mcm:datetimeBeginPlanned "2025-11-20T16:00:00+00:00"^^xsd:dateTime ;
@@ -82,6 +77,7 @@ ops:meeting_be_committee_wak_2025_05_12 a ops:Meeting ;
             mcm:globalURI actors:committee_wak_be ;
             mcm:label "Kommission für Wirtschaft und Abgaben (WAK)" ] ;
     ops:actor_name "Kommission für Wirtschaft und Abgaben (WAK)" ;
+    ops:agendaItem ops:agenda_item_be_2025_042 ;
     ops:location "Kommissionszimmer 301, Rathaus Bern" ;
     ops:name [ a ops:MultilingualString ;
             ops:text "Séance Commission de l'économie et des redevances" ;
@@ -89,6 +85,7 @@ ops:meeting_be_committee_wak_2025_05_12 a ops:Meeting ;
         [ a ops:MultilingualString ;
             ops:text "Sitzung Kommission für Wirtschaft und Abgaben" ;
             mcm:language "de" ] ;
+    ops:parent_legislature "ops:legislature_be_2022_2026" ;
     ops:spatial "https://ld.admin.ch/canton/2" ;
     ops:state <https://ch.paf.link/schema/operations/enum/state/planned> ;
     ops:url [ a ops:MultilingualString ;
@@ -134,6 +131,7 @@ ops:meeting_sg_2025_03_15 a ops:Meeting ;
             mcm:globalURI actors:kr_sg ;
             mcm:label "Kantonsrat St. Gallen" ] ;
     ops:actor_name "Kantonsrat St. Gallen" ;
+    ops:agendaItem ops:agenda_item_sg_2025_015 ;
     ops:location "Kantonsratssaal, Regierungsgebäude St. Gallen" ;
     ops:name [ a ops:MultilingualString ;
             ops:text "Kantonsratssitzung vom 15. März 2025" ;
@@ -150,5 +148,9 @@ ops:meeting_sg_2025_03_15 a ops:Meeting ;
     mcm:datetimeEndActual "2025-03-15T17:30:00+00:00"^^xsd:dateTime ;
     mcm:datetimeEndPlanned "2025-03-15T18:00:00+00:00"^^xsd:dateTime ;
     mcm:datetimeModified "2025-03-15T17:30:00+00:00"^^xsd:dateTime .
+
+ops:meeting_zh_2025_11_20 a ops:Meeting ;
+    ops:agendaItem ops:agenda_item_zh_budget_2026 ;
+    mcm:dateBeginPlanned "2025-11-20"^^xsd:date .
 
 

@@ -27,7 +27,7 @@ URI: [ops:meeting](https://ch.paf.link/schema/operations/meeting)
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Container](Container.md) | Container for the records of public council operations: legislatures, session... |  no  |
-| [Session](Session.md) | A parliamentary session that groups multiple meetings and spans a specific ti... |  no  |
+| [Session](Session.md) | A session: a contiguous period of sittings within a legislature |  no  |
 
 
 

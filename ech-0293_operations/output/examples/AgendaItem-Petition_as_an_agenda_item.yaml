@@ -1,6 +1,5 @@
 agenda_items:
 - global_uri: ops:21c50b86d21b4b4baeb1a76738ff82a3_2025-04-02_1_de
-  parent_meeting: ops:meeting_bern_rr_2025_04_02
   agenda_item_type: item
   datetime_begin_planned: '2025-04-02T00:00:00Z'
   agenda_item_title:

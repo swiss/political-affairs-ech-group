@@ -1,6 +1,5 @@
 agenda_items:
 - global_uri: ops:06fb582b753c416d8fdb05fa13873545
-  parent_meeting: ops:meeting_2011_11_23
   agenda_item_type: item
   datetime_begin_planned: '2011-11-23T00:00:00Z'
   agenda_item_position: 2

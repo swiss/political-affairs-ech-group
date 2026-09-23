@@ -6,7 +6,7 @@ search:
 # Slot: position 
 
 
-_Integer position within the superordinate sequence._
+_Integer position within the superordinate sequence, e.g. of a session within the legislature._
 
 
 
@@ -26,7 +26,7 @@ URI: [ops:position](https://ch.paf.link/schema/operations/position)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Session](Session.md) | A parliamentary session that groups multiple meetings and spans a specific ti... |  no  |
+| [Session](Session.md) | A session: a contiguous period of sittings within a legislature |  no  |
 | [Meeting](Meeting.md) | The individual sitting of a body — the level at which agenda items are delibe... |  no  |
 
 
@@ -67,15 +67,18 @@ name: position
 annotations:
   description_de:
     tag: description_de
-    value: 'Ganzzahlige Position innerhalb der übergeordneten Reihenfolge.
+    value: 'Ganzzahlige Position innerhalb der übergeordneten Reihenfolge, z.B. einer
+      Session innerhalb der Legislaturperiode.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Position (nombre entier) au sein de la séquence supérieure.
+    value: 'Position entière au sein de la séquence supérieure, p. ex. d''une session
+      au sein de la législature.
 
       '
-description: 'Integer position within the superordinate sequence.
+description: 'Integer position within the superordinate sequence, e.g. of a session
+  within the legislature.
 
   '
 from_schema: https://ch.paf.link/schema/operations

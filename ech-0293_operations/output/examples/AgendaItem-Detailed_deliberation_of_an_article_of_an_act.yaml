@@ -1,6 +1,5 @@
 agenda_items:
 - global_uri: ops:agenda_item_be_2025_042
-  parent_meeting: ops:meeting_be_committee_wak_2025_05_12
   agenda_item_type: item
   agenda_item_number: '4.2'
   agenda_item_position: 42

@@ -3,7 +3,6 @@ protocols:
   parent_meeting: parl:sr_winter25_sitzung_6
   protocol_items:
   - global_uri: ops:protokollpunkt_69905
-    parent_meeting: parl:sr_winter25_sitzung_6
     agenda_item_type: item
     agenda_item_number: '6'
     agenda_item_position: 4

@@ -6,7 +6,7 @@ search:
 # Slot: parent_meeting 
 
 
-_Identifiant de la séance à laquelle cet enregistrement se rattache. Pour une séance, il désigne la séance supérieure ; pour un point de l'ordre du jour, un vote, une élection, une intervention ou un procès-verbal, la séance au cours de laquelle l'enregistrement est né._
+_Identifiant de la séance à laquelle cet enregistrement se rattache. Pour une séance, il désigne la séance supérieure ; pour un vote, une élection, une intervention, une liste de présence ou un procès-verbal, la séance au cours de laquelle l'enregistrement est né. Les points de l'ordre du jour ne le portent pas : ils sont imbriqués dans leur séance._
 
 
 
@@ -27,14 +27,11 @@ URI: [ops:parent_meeting](https://ch.paf.link/schema/operations/parent_meeting)
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
 | [Meeting](Meeting.md) | La séance individuelle d'un organe — le niveau auquel les points de l'ordre d... |  no  |
-| [IsAgendaItem](IsAgendaItem.md) | Une classe mixin qui fournit les éléments d'un point de l'ordre du jour : dés... |  no  |
 | [Protocol](Protocol.md) | Le procès-verbal d'une séance, établi après celle-ci et tenu exactement une f... |  no  |
 | [Voting](Voting.md) | Un vote sur une question matérielle : l'objet du vote (la question), la procé... |  no  |
 | [Election](Election.md) | Une élection par laquelle un organe parlementaire désigne une ou plusieurs pe... |  no  |
 | [Attendance](Attendance.md) | Liste de présence agrégée pour une séance (nombre de membres présents, absent... |  no  |
 | [Speech](Speech.md) | Une intervention prononcée au cours d'une séance (également appelée prise de ... |  no  |
-| [AgendaItem](AgendaItem.md) | Un point de l'ordre du jour d'une séance, tel que planifié à l'avance |  no  |
-| [ProtocolItem](ProtocolItem.md) | Un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-... |  no  |
 
 
 
@@ -48,7 +45,7 @@ URI: [ops:parent_meeting](https://ch.paf.link/schema/operations/parent_meeting)
 | Propriété | Valeur |
 | --- | --- |
 | Plage | [String](String.md) |
-| Domaine de | [Meeting](Meeting.md), [IsAgendaItem](IsAgendaItem.md), [Protocol](Protocol.md), [Voting](Voting.md), [Election](Election.md), [Attendance](Attendance.md), [Speech](Speech.md) |
+| Domaine de | [Meeting](Meeting.md), [Protocol](Protocol.md), [Voting](Voting.md), [Election](Election.md), [Attendance](Attendance.md), [Speech](Speech.md) |
 
 ### Cardinalité et exigences
 
@@ -75,29 +72,31 @@ annotations:
   description_de:
     tag: description_de
     value: 'Identifikator der Sitzung, zu der dieser Eintrag gehört. Bei einer Sitzung
-      bezeichnet er die übergeordnete Sitzung, bei Traktandum, Abstimmung, Wahl, Wortmeldung
-      oder Protokoll die Sitzung, in der der Eintrag entstanden ist.
+      bezeichnet er die übergeordnete Sitzung, bei Abstimmung, Wahl, Wortmeldung,
+      Anwesenheitsliste oder Protokoll die Sitzung, in der der Eintrag entstanden
+      ist. Traktanden führen ihn nicht: Sie sind in ihre Sitzung eingebettet.
 
       '
   description_fr:
     tag: description_fr
     value: 'Identifiant de la séance à laquelle cet enregistrement se rattache. Pour
-      une séance, il désigne la séance supérieure ; pour un point de l''ordre du jour,
-      un vote, une élection, une intervention ou un procès-verbal, la séance au cours
-      de laquelle l''enregistrement est né.
+      une séance, il désigne la séance supérieure ; pour un vote, une élection, une
+      intervention, une liste de présence ou un procès-verbal, la séance au cours
+      de laquelle l''enregistrement est né. Les points de l''ordre du jour ne le portent
+      pas : ils sont imbriqués dans leur séance.
 
       '
 description: 'Identifiant de la séance à laquelle cet enregistrement se rattache.
-  Pour une séance, il désigne la séance supérieure ; pour un point de l''ordre du
-  jour, un vote, une élection, une intervention ou un procès-verbal, la séance au
-  cours de laquelle l''enregistrement est né.
+  Pour une séance, il désigne la séance supérieure ; pour un vote, une élection, une
+  intervention, une liste de présence ou un procès-verbal, la séance au cours de laquelle
+  l''enregistrement est né. Les points de l''ordre du jour ne le portent pas : ils
+  sont imbriqués dans leur séance.
 
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 domain_of:
 - Meeting
-- IsAgendaItem
 - Protocol
 - Voting
 - Election

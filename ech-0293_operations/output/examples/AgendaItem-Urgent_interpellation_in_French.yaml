@@ -1,6 +1,5 @@
 agenda_items:
 - global_uri: ops:2025_05_20-23
-  parent_meeting: ops:meeting_lausanne_2025_05_20
   agenda_item_type: item
   datetime_begin_planned: '2025-05-20T00:00:00Z'
   agenda_item_position: 23

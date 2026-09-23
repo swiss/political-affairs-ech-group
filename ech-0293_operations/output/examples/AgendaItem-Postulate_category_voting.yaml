@@ -1,6 +1,5 @@
 agenda_items:
 - global_uri: ops:0de4ecdb-23f1-49ab-95b8-1afc2e4feb1a
-  parent_meeting: ops:meeting_luzern_2025_01_28
   agenda_item_type: item
   datetime_begin_planned: '2025-01-28T00:00:00Z'
   agenda_item_position: 29

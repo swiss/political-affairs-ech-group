@@ -6,7 +6,7 @@ search:
 # Slot: agenda_items 
 
 
-_Sammlung der Traktanden._
+_Für diese Sitzung oder Session geplante Traktanden, eingebettet als Liste. Bei einer Sitzung bilden sie deren Traktandenliste. Bei einer Session enthalten sie Traktanden, die direkt auf Ebene der Session geplant sind — wo eine Föderaleinheit die Session nicht in einzelne Sitzungen gliedert (z.B. eine Landsgemeinde oder eine eintägige Sitzung eines Kantonsparlaments) oder für Traktanden, die (noch) keiner bestimmten Sitzung zugeordnet sind, wie in einem Sessionsprogramm. Das Gegenstück nach der Sitzung sind die im Protokoll festgehaltenen Traktanden (Protocol.protocol_items)._
 
 
 
@@ -26,7 +26,8 @@ URI: [ops:agendaItem](https://ch.paf.link/schema/operations/agendaItem)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [Container](Container.md) | Container für die Daten des öffentlichen Ratsbetriebs: Legislaturperioden, Se... |  no  |
+| [Session](Session.md) | Eine Session: eine zusammenhängende Sitzungsperiode innerhalb einer Legislatu... |  no  |
+| [Meeting](Meeting.md) | Die einzelne Sitzung eines Organs — die Ebene, auf der Traktanden beraten, Be... |  no  |
 
 
 
@@ -40,7 +41,7 @@ URI: [ops:agendaItem](https://ch.paf.link/schema/operations/agendaItem)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [AgendaItem](AgendaItem.md) |
-| Domäne von | [Container](Container.md) |
+| Domäne von | [Session](Session.md), [Meeting](Meeting.md) |
 | Slot-URI | [ops:agendaItem](https://ch.paf.link/schema/operations/agendaItem) |
 
 ### Kardinalität und Anforderungen
@@ -68,22 +69,43 @@ name: agenda_items
 annotations:
   description_de:
     tag: description_de
-    value: 'Sammlung der Traktanden.
+    value: 'Für diese Sitzung oder Session geplante Traktanden, eingebettet als Liste.
+      Bei einer Sitzung bilden sie deren Traktandenliste. Bei einer Session enthalten
+      sie Traktanden, die direkt auf Ebene der Session geplant sind — wo eine Föderaleinheit
+      die Session nicht in einzelne Sitzungen gliedert (z.B. eine Landsgemeinde oder
+      eine eintägige Sitzung eines Kantonsparlaments) oder für Traktanden, die (noch)
+      keiner bestimmten Sitzung zugeordnet sind, wie in einem Sessionsprogramm. Das
+      Gegenstück nach der Sitzung sind die im Protokoll festgehaltenen Traktanden
+      (Protocol.protocol_items).
 
       '
   description_fr:
     tag: description_fr
-    value: 'Ensemble des points de l''ordre du jour.
+    value: 'Points de l''ordre du jour planifiés pour cette séance ou cette session,
+      imbriqués sous forme de liste. Pour une séance, ils forment son ordre du jour.
+      Pour une session, ils contiennent les points planifiés directement au niveau
+      de la session — lorsqu''une unité fédérale ne subdivise pas la session en séances
+      (p. ex. une Landsgemeinde ou une séance d''un jour d''un parlement cantonal),
+      ou pour des points qui ne sont pas (encore) attribués à une séance déterminée,
+      comme dans un programme de session. Leur pendant après la séance sont les points
+      consignés au procès-verbal (Protocol.protocol_items).
 
       '
-description: 'Sammlung der Traktanden.
+description: 'Für diese Sitzung oder Session geplante Traktanden, eingebettet als
+  Liste. Bei einer Sitzung bilden sie deren Traktandenliste. Bei einer Session enthalten
+  sie Traktanden, die direkt auf Ebene der Session geplant sind — wo eine Föderaleinheit
+  die Session nicht in einzelne Sitzungen gliedert (z.B. eine Landsgemeinde oder eine
+  eintägige Sitzung eines Kantonsparlaments) oder für Traktanden, die (noch) keiner
+  bestimmten Sitzung zugeordnet sind, wie in einem Sessionsprogramm. Das Gegenstück
+  nach der Sitzung sind die im Protokoll festgehaltenen Traktanden (Protocol.protocol_items).
 
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 slot_uri: ops:agendaItem
 domain_of:
-- Container
+- Session
+- Meeting
 range: AgendaItem
 multivalued: true
 inlined: true

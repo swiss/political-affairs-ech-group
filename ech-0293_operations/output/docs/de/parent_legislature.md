@@ -6,7 +6,7 @@ search:
 # Slot: parent_legislature 
 
 
-_Identifikator der Legislaturperiode, zu der die Session gehört._
+_Identifikator der Legislaturperiode, zu der die Session oder Sitzung gehört. Eine Sitzung, die zu einer Session gehört, ist über die Session (parent_session) der Legislaturperiode zugeordnet; eine Sitzung ohne Session — etwa eine Kommissionssitzung oder eine Sitzung in einer Föderaleinheit ohne formale Sessionen — verweist direkt auf die Legislaturperiode._
 
 
 
@@ -26,7 +26,8 @@ URI: [ops:parent_legislature](https://ch.paf.link/schema/operations/parent_legis
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [Session](Session.md) | Eine Parlamentssession, die mehrere Sitzungen gruppiert und sich über einen b... |  no  |
+| [Session](Session.md) | Eine Session: eine zusammenhängende Sitzungsperiode innerhalb einer Legislatu... |  no  |
+| [Meeting](Meeting.md) | Die einzelne Sitzung eines Organs — die Ebene, auf der Traktanden beraten, Be... |  no  |
 
 
 
@@ -40,7 +41,7 @@ URI: [ops:parent_legislature](https://ch.paf.link/schema/operations/parent_legis
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [String](String.md) |
-| Domäne von | [Session](Session.md) |
+| Domäne von | [Session](Session.md), [Meeting](Meeting.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -66,21 +67,34 @@ name: parent_legislature
 annotations:
   description_de:
     tag: description_de
-    value: 'Identifikator der Legislaturperiode, zu der die Session gehört.
+    value: 'Identifikator der Legislaturperiode, zu der die Session oder Sitzung gehört.
+      Eine Sitzung, die zu einer Session gehört, ist über die Session (parent_session)
+      der Legislaturperiode zugeordnet; eine Sitzung ohne Session — etwa eine Kommissionssitzung
+      oder eine Sitzung in einer Föderaleinheit ohne formale Sessionen — verweist
+      direkt auf die Legislaturperiode.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Identifiant de la législature à laquelle la session appartient.
+    value: 'Identifiant de la législature à laquelle la session ou la séance appartient.
+      Une séance qui fait partie d''une session est rattachée à la législature par
+      la session (parent_session) ; une séance sans session — par exemple une séance
+      de commission ou une séance dans une unité fédérale sans sessions formelles
+      — renvoie directement à la législature.
 
       '
-description: 'Identifikator der Legislaturperiode, zu der die Session gehört.
+description: 'Identifikator der Legislaturperiode, zu der die Session oder Sitzung
+  gehört. Eine Sitzung, die zu einer Session gehört, ist über die Session (parent_session)
+  der Legislaturperiode zugeordnet; eine Sitzung ohne Session — etwa eine Kommissionssitzung
+  oder eine Sitzung in einer Föderaleinheit ohne formale Sessionen — verweist direkt
+  auf die Legislaturperiode.
 
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 domain_of:
 - Session
+- Meeting
 range: string
 
 ```

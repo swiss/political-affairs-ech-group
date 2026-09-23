@@ -5,7 +5,6 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 ops:data_meeting_sr_winter25_Sitzung6 a ops:Container ;
-    ops:agendaItem ops:69905 ;
     ops:meeting parl:sr_winter25_sitzung_6 ;
     ops:protocol ops:protokoll_sr_winter25_sitzung_6 ;
     ops:speech ops:366631 .
@@ -40,7 +39,6 @@ ops:69905 a ops:AgendaItem ;
             mcm:language "de" ] ;
     ops:agenda_item_type <https://ch.paf.link/schema/operations/enum/agenda_item_type/item> ;
     ops:landingPage "https://www.parlament.ch/de/ratsbetrieb/amtliches-bulletin/amtliches-bulletin-die-verhandlungen?SubjectId=69905#votum3" ;
-    ops:parent_meeting "parl:sr_winter25_sitzung_6" ;
     mcm:datetimeBeginActual "2025-12-19T09:20:00+01:00"^^xsd:dateTime ;
     mcm:datetimeBeginPlanned "2025-12-19T09:15:00+01:00"^^xsd:dateTime ;
     mcm:datetimeCreated "2026-01-12T00:00:00+01:00"^^xsd:dateTime ;
@@ -56,7 +54,6 @@ ops:protokollpunkt_69905 a ops:ProtocolItem ;
             mcm:language "de" ] ;
     ops:agenda_item_type <https://ch.paf.link/schema/operations/enum/agenda_item_type/item> ;
     ops:landingPage "https://www.parlament.ch/de/ratsbetrieb/amtliches-bulletin/amtliches-bulletin-die-verhandlungen?SubjectId=69905#votum3" ;
-    ops:parent_meeting "parl:sr_winter25_sitzung_6" ;
     mcm:datetimeBeginActual "2025-12-19T09:20:00+01:00"^^xsd:dateTime ;
     mcm:datetimeCreated "2026-01-12T00:00:00+01:00"^^xsd:dateTime ;
     mcm:datetimeModified "2026-01-12T00:00:00+01:00"^^xsd:dateTime .
@@ -69,13 +66,14 @@ parl:sr_winter25_sitzung_6 a ops:Meeting ;
             mcm:globalURI actors:staenderat ;
             mcm:label "Ständerat" ] ;
     ops:actor_name "Ständerat" ;
+    ops:agendaItem ops:69905 ;
     ops:hasProtocol ops:protokoll_sr_winter25_sitzung_6 ;
     ops:name [ a ops:MultilingualString ;
-            ops:text "Sixième séance" ;
-            mcm:language "fr" ],
-        [ a ops:MultilingualString ;
             ops:text "Sechste Sitzung" ;
-            mcm:language "de" ] ;
+            mcm:language "de" ],
+        [ a ops:MultilingualString ;
+            ops:text "Sixième séance" ;
+            mcm:language "fr" ] ;
     ops:spatial "https://ld.admin.ch/country/CHE" ;
     ops:url [ a ops:MultilingualString ;
             ops:text "https://www.parlament.ch/de/ratsbetrieb/suche-Amtliches-bulletin" ;

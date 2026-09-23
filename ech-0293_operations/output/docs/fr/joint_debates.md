@@ -26,7 +26,7 @@ URI: [ops:jointDebate](https://ch.paf.link/schema/operations/jointDebate)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Session](Session.md) | Une session parlementaire qui regroupe plusieurs séances et s'étend sur une p... |  no  |
+| [Session](Session.md) | Une session : une période de séances continue au sein d'une législature |  no  |
 | [Meeting](Meeting.md) | La séance individuelle d'un organe — le niveau auquel les points de l'ordre d... |  no  |
 | [IsAgendaItem](IsAgendaItem.md) | Une classe mixin qui fournit les éléments d'un point de l'ordre du jour : dés... |  no  |
 | [AgendaItem](AgendaItem.md) | Un point de l'ordre du jour d'une séance, tel que planifié à l'avance |  no  |

@@ -1,6 +1,5 @@
 agenda_items:
 - global_uri: ops:7b3545e4-57dc-3901-aaa8-4020da6ab0c6
-  parent_meeting: ops:meeting_vaud_2008_04_30
   agenda_item_type: item
   datetime_begin_planned: '2008-04-30T00:00:00Z'
   agenda_item_position: 7

@@ -26,7 +26,7 @@ URI: [ops:meeting_abbreviation](https://ch.paf.link/schema/operations/meeting_ab
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Session](Session.md) | Une session parlementaire qui regroupe plusieurs séances et s'étend sur une p... |  no  |
+| [Session](Session.md) | Une session : une période de séances continue au sein d'une législature |  no  |
 | [Meeting](Meeting.md) | La séance individuelle d'un organe — le niveau auquel les points de l'ordre d... |  no  |
 
 

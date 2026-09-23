@@ -27,7 +27,7 @@ URI: [ops:meeting](https://ch.paf.link/schema/operations/meeting)
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
 | [Container](Container.md) | Conteneur pour les données de l'activité publique des conseils : législatures... |  no  |
-| [Session](Session.md) | Une session parlementaire qui regroupe plusieurs séances et s'étend sur une p... |  no  |
+| [Session](Session.md) | Une session : une période de séances continue au sein d'une législature |  no  |
 
 
 

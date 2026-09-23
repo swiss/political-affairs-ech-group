@@ -27,7 +27,7 @@ URI: [ops:meeting](https://ch.paf.link/schema/operations/meeting)
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
 | [Container](Container.md) | Container für die Daten des öffentlichen Ratsbetriebs: Legislaturperioden, Se... |  no  |
-| [Session](Session.md) | Eine Parlamentssession, die mehrere Sitzungen gruppiert und sich über einen b... |  no  |
+| [Session](Session.md) | Eine Session: eine zusammenhängende Sitzungsperiode innerhalb einer Legislatu... |  no  |
 
 
 
