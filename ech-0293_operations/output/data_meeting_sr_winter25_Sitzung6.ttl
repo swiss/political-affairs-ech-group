@@ -70,13 +70,12 @@ parl:sr_winter25_sitzung_6 a ops:Meeting ;
             mcm:label "Ständerat" ] ;
     ops:actor_name "Ständerat" ;
     ops:hasProtocol ops:protokoll_sr_winter25_sitzung_6 ;
-    ops:meetingType <https://ch.paf.link/schema/operations/enum/meeting_type/session> ;
     ops:name [ a ops:MultilingualString ;
-            ops:text "Sixième séance" ;
-            mcm:language "fr" ],
-        [ a ops:MultilingualString ;
             ops:text "Sechste Sitzung" ;
-            mcm:language "de" ] ;
+            mcm:language "de" ],
+        [ a ops:MultilingualString ;
+            ops:text "Sixième séance" ;
+            mcm:language "fr" ] ;
     ops:spatial "https://ld.admin.ch/country/CHE" ;
     ops:url [ a ops:MultilingualString ;
             ops:text "https://www.parlament.ch/de/ratsbetrieb/suche-Amtliches-bulletin" ;

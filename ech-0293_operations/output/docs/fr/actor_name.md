@@ -6,7 +6,7 @@ search:
 # Slot: actor_name 
 
 
-_Nom de l'organe politique (p. ex. Conseil national)._
+_Nom de l'organe politique en clair (p. ex. Conseil national), en complément de la référence `actor_id`._
 
 
 
@@ -26,7 +26,7 @@ URI: [ops:actor_name](https://ch.paf.link/schema/operations/actor_name)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Meeting](Meeting.md) | Une classe générale de séance utilisée pour les sessions, les séances de comm... |  no  |
+| [Meeting](Meeting.md) | La séance individuelle d'un organe — le niveau auquel les points de l'ordre d... |  no  |
 
 
 
@@ -66,15 +66,18 @@ name: actor_name
 annotations:
   description_de:
     tag: description_de
-    value: 'Name des politischen Organs (z.B. Nationalrat).
+    value: 'Name des politischen Organs im Klartext (z.B. Nationalrat), zusätzlich
+      zur Referenz `actor_id`.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Nom de l''organe politique (p. ex. Conseil national).
+    value: 'Nom de l''organe politique en clair (p. ex. Conseil national), en complément
+      de la référence `actor_id`.
 
       '
-description: 'Nom de l''organe politique (p. ex. Conseil national).
+description: 'Nom de l''organe politique en clair (p. ex. Conseil national), en complément
+  de la référence `actor_id`.
 
   '
 from_schema: https://ch.paf.link/schema/operations

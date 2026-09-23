@@ -6,7 +6,7 @@ search:
 # Slot: location 
 
 
-_Ort, an dem die Sitzung stattfindet (physischer Raum, Videokonferenz oder hybrides Format)._
+_Ort, an dem die Sitzung stattfindet — der physische Raum („Bundeshaus, Nationalratssaal“), eine Videokonferenz oder ein hybrides Format._
 
 
 
@@ -26,7 +26,7 @@ URI: [ops:location](https://ch.paf.link/schema/operations/location)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [Meeting](Meeting.md) | Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, Sess... |  no  |
+| [Meeting](Meeting.md) | Die einzelne Sitzung eines Organs — die Ebene, auf der Traktanden beraten, Be... |  no  |
 
 
 
@@ -75,18 +75,18 @@ name: location
 annotations:
   description_de:
     tag: description_de
-    value: 'Ort, an dem die Sitzung stattfindet (physischer Raum, Videokonferenz oder
-      hybrides Format).
+    value: 'Ort, an dem die Sitzung stattfindet — der physische Raum („Bundeshaus,
+      Nationalratssaal“), eine Videokonferenz oder ein hybrides Format.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Lieu où se tient la séance (salle physique, visioconférence ou format
-      hybride).
+    value: 'Lieu où se tient la séance — la salle physique (« Palais fédéral, salle
+      du Conseil national »), une visioconférence ou un format hybride.
 
       '
-description: 'Ort, an dem die Sitzung stattfindet (physischer Raum, Videokonferenz
-  oder hybrides Format).
+description: 'Ort, an dem die Sitzung stattfindet — der physische Raum („Bundeshaus,
+  Nationalratssaal“), eine Videokonferenz oder ein hybrides Format.
 
   '
 examples:

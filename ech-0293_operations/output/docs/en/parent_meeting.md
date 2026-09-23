@@ -26,7 +26,7 @@ URI: [ops:parent_meeting](https://ch.paf.link/schema/operations/parent_meeting)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Meeting](Meeting.md) | A general meeting class used for Sessions, Comittee Meetings, individual sess... |  no  |
+| [Meeting](Meeting.md) | The individual sitting of a body — the level at which agenda items are delibe... |  no  |
 | [IsAgendaItem](IsAgendaItem.md) | A mixin class that provides the elements of an agenda item: designation, type... |  no  |
 | [Protocol](Protocol.md) | The minutes of a meeting, recorded after the meeting |  no  |
 | [Voting](Voting.md) | A voting procedure with individual votes and results |  no  |

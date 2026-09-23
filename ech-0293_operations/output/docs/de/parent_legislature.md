@@ -6,7 +6,7 @@ search:
 # Slot: parent_legislature 
 
 
-_Der gesetzgebende Körper, auf dem die Sitzung basiert._
+_Identifikator der Legislaturperiode, zu der die Session gehört._
 
 
 
@@ -27,7 +27,6 @@ URI: [ops:parent_legislature](https://ch.paf.link/schema/operations/parent_legis
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
 | [Session](Session.md) | Eine Parlamentssession, die mehrere Sitzungen gruppiert und sich über einen b... |  no  |
-| [Meeting](Meeting.md) | Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, Sess... |  no  |
 
 
 
@@ -41,7 +40,7 @@ URI: [ops:parent_legislature](https://ch.paf.link/schema/operations/parent_legis
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [String](String.md) |
-| Domäne von | [Session](Session.md), [Meeting](Meeting.md) |
+| Domäne von | [Session](Session.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -67,22 +66,21 @@ name: parent_legislature
 annotations:
   description_de:
     tag: description_de
-    value: 'Der gesetzgebende Körper, auf dem die Sitzung basiert.
+    value: 'Identifikator der Legislaturperiode, zu der die Session gehört.
 
       '
   description_fr:
     tag: description_fr
-    value: 'La législature dans le cadre de laquelle la séance a lieu.
+    value: 'Identifiant de la législature à laquelle la session appartient.
 
       '
-description: 'Der gesetzgebende Körper, auf dem die Sitzung basiert.
+description: 'Identifikator der Legislaturperiode, zu der die Session gehört.
 
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 domain_of:
 - Session
-- Meeting
 range: string
 
 ```

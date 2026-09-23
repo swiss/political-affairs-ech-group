@@ -2,7 +2,6 @@ global_uri: ops:meetings_1
 meetings:
   - spatial: "https://ld.admin.ch/canton/2"
     global_uri: ops:340dcf932fb044dd8f8c5c943267fbcc
-    meeting_type: "session"
     name:
       - text: "Regierungssitzung vom 31. März 2021"
         language: "de"
@@ -27,7 +26,6 @@ meetings:
 
   - spatial: "https://ld.admin.ch/canton/2"
     global_uri: ops:e7c5d453-848a-430a-b024-1dd2f6873aa6
-    meeting_type: "session"
     name:
       - text: "Donnerstag (Nachmittag)"
         language: "de"

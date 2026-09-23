@@ -6,7 +6,7 @@ search:
 # Slot: parent_legislature 
 
 
-_La législature dans le cadre de laquelle la séance a lieu._
+_Identifiant de la législature à laquelle la session appartient._
 
 
 
@@ -27,7 +27,6 @@ URI: [ops:parent_legislature](https://ch.paf.link/schema/operations/parent_legis
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
 | [Session](Session.md) | Une session parlementaire qui regroupe plusieurs séances et s'étend sur une p... |  no  |
-| [Meeting](Meeting.md) | Une classe générale de séance utilisée pour les sessions, les séances de comm... |  no  |
 
 
 
@@ -41,7 +40,7 @@ URI: [ops:parent_legislature](https://ch.paf.link/schema/operations/parent_legis
 | Propriété | Valeur |
 | --- | --- |
 | Plage | [String](String.md) |
-| Domaine de | [Session](Session.md), [Meeting](Meeting.md) |
+| Domaine de | [Session](Session.md) |
 
 ### Cardinalité et exigences
 
@@ -67,22 +66,21 @@ name: parent_legislature
 annotations:
   description_de:
     tag: description_de
-    value: 'Der gesetzgebende Körper, auf dem die Sitzung basiert.
+    value: 'Identifikator der Legislaturperiode, zu der die Session gehört.
 
       '
   description_fr:
     tag: description_fr
-    value: 'La législature dans le cadre de laquelle la séance a lieu.
+    value: 'Identifiant de la législature à laquelle la session appartient.
 
       '
-description: 'La législature dans le cadre de laquelle la séance a lieu.
+description: 'Identifiant de la législature à laquelle la session appartient.
 
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 domain_of:
 - Session
-- Meeting
 range: string
 
 ```

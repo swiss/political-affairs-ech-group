@@ -27,7 +27,7 @@ _Eine Parlamentssession, die mehrere Sitzungen gruppiert und sich über einen be
 | position | 0..1 <br/> [String](String.md) | Ganzzahlige Position innerhalb der übergeordneten Reihenfolge.  |
 | meeting_abbreviation | 0..1 <br/> [String](String.md) | Kurzbezeichnung der Session oder Sitzung (z.B. „FS24“ für die Frühjahrssession 2024).  |
 | url | * <br/> [MultilingualString](MultilingualString.md) | Landing Page oder weiterführende Webadresse, mehrsprachig.  |
-| parent_legislature | 0..1 <br/> [String](String.md) | Der gesetzgebende Körper, auf dem die Sitzung basiert.  |
+| parent_legislature | 0..1 <br/> [String](String.md) | Identifikator der Legislaturperiode, zu der die Session gehört.  |
 | meetings | * <br/> [Meeting](Meeting.md) | Sammlung der Sitzungen.  |
 | documents | * <br/> [Work](Work.md) | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.  |
 | date_begin_actual | 0..1 <br/> [Date](Date.md) | Das tatsächliche Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](IsEventWithDuration.md) |

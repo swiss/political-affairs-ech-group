@@ -6,7 +6,7 @@ search:
 # Slot: group_name 
 
 
-_Name der Gruppe oder des Gremiums._
+_Name der Gruppe oder des Gremiums im Klartext, zusätzlich zur Referenz `group_id`._
 
 
 
@@ -26,7 +26,7 @@ URI: [ops:group_name](https://ch.paf.link/schema/operations/group_name)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [Meeting](Meeting.md) | Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, Sess... |  no  |
+| [Meeting](Meeting.md) | Die einzelne Sitzung eines Organs — die Ebene, auf der Traktanden beraten, Be... |  no  |
 
 
 
@@ -66,15 +66,18 @@ name: group_name
 annotations:
   description_de:
     tag: description_de
-    value: 'Name der Gruppe oder des Gremiums.
+    value: 'Name der Gruppe oder des Gremiums im Klartext, zusätzlich zur Referenz
+      `group_id`.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Nom du groupe ou de l''organe.
+    value: 'Nom du groupe ou de l''organe en clair, en complément de la référence
+      `group_id`.
 
       '
-description: 'Name der Gruppe oder des Gremiums.
+description: 'Name der Gruppe oder des Gremiums im Klartext, zusätzlich zur Referenz
+  `group_id`.
 
   '
 from_schema: https://ch.paf.link/schema/operations

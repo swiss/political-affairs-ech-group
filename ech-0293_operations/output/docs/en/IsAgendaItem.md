@@ -27,12 +27,13 @@ _A mixin class that provides the elements of an agenda item: designation, type, 
 | affair_id | 0..1 <br/> [String](String.md) | The connection to the affairs (business items) of the agenda item.  |
 | agenda_item_description | * <br/> [MultilingualString](MultilingualString.md) | Subtitle or detailed description of the agenda item.  |
 | state_id | 0..1 <br/> [String](String.md) | State identifier (reference to state enum or custom state).  |
-| state_name | 0..1 <br/> [String](String.md) | Custom state description for the meeting.  |
+| state_name | 0..1 <br/> [String](String.md) | Diverging, free-text status designation, where the status enumeration does not suffice.  |
 | landing_page | 0..1 <br/> [String](String.md) | URL providing further information.  |
 | url | * <br/> [MultilingualString](MultilingualString.md) | Landing page or further web address, multilingual.  |
 | agenda_item_category | 0..1 <br/> [String](String.md) | Category for grouped agenda items (e.g., introduction, by department, technical agenda items).  |
 | parent_agenda_item | 0..1 <br/> [String](String.md) | Identifier of the agenda item this record belongs to. On an agenda item it builds a hierarchy of agenda items; on a voting, election or speech it names the agenda item under which the record was handled.  |
 | has_resolution | 0..1 <br/> [Resolution](Resolution.md) | The resolution or decision taken on this agenda item.  |
+| joint_debates | * <br/> [JointDebate](JointDebate.md) | Joint debates in which this agenda item is deliberated together with other agenda items.  |
 | text_segments | * <br/> [TextSegment](TextSegment.md) | Collection of text segments (e.g. verbatim protocol).  |
 | documents | * <br/> [Work](Work.md) | List of documents (FRBR Works) linked to the entity.  |
 

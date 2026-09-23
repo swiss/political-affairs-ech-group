@@ -140,7 +140,6 @@ meetings:
 
 - global_uri: ops:meeting_sg_2025_03_15
   spatial: "https://ld.admin.ch/canton/17"
-  meeting_type: "session"
   name:
     - text: "Kantonsratssitzung vom 15. März 2025"
       language: "de"
@@ -160,13 +159,12 @@ meetings:
   datetime_end_actual: "2025-03-15T17:30:00Z"
   state: "planned"
   location: "Kantonsratssaal, Regierungsgebäude St. Gallen"
-  parent_legislature: ops:legislature_sg_2024_2028
+  parent_session: ops:session_sg_2025_03
   datetime_created: "2025-02-01T10:00:00Z"
   datetime_modified: "2025-03-15T17:30:00Z"
 
 - global_uri: ops:meeting_be_committee_wak_2025_05_12
   spatial: "https://ld.admin.ch/canton/2"
-  meeting_type: "committee"
   name:
     - text: "Sitzung Kommission für Wirtschaft und Abgaben"
       language: "de"
@@ -188,13 +186,11 @@ meetings:
   datetime_end_actual: "2025-05-12T16:45:00Z"
   state: "planned"
   location: "Kommissionszimmer 301, Rathaus Bern"
-  parent_legislature: ops:legislature_be_2022_2026
   datetime_created: "2025-04-15T09:00:00Z"
   datetime_modified: "2025-05-12T16:45:00Z"
 
 - global_uri: ops:meeting_gl_landsgemeinde_2025
   spatial: "https://ld.admin.ch/canton/8"
-  meeting_type: "sitting"
   name:
     - text: "Landsgemeinde 2025"
       language: "de"
@@ -214,7 +210,7 @@ meetings:
   datetime_end_actual: "2025-05-04T13:45:00Z"
   state: "planned"
   location: "Zaunplatz, Glarus"
-  parent_legislature: ops:legislature_gl_2024_2028
+  parent_session: ops:session_gl_landsgemeinde_2025
   datetime_created: "2025-01-10T12:00:00Z"
   datetime_modified: "2025-05-04T13:45:00Z"
 
@@ -290,7 +286,6 @@ global_uri: ops:data_meeting_sr_winter25_Sitzung6
 meetings:
   - global_uri: "parl:sr_winter25_sitzung_6"
     spatial: "https://ld.admin.ch/country/CHE"
-    meeting_type: "session"
     name:
       - text: "Sechste Sitzung"
         language: "de"
@@ -836,7 +831,6 @@ global_uri: ops:meetings_1
 meetings:
   - spatial: "https://ld.admin.ch/canton/2"
     global_uri: ops:340dcf932fb044dd8f8c5c943267fbcc
-    meeting_type: "session"
     name:
       - text: "Regierungssitzung vom 31. März 2021"
         language: "de"
@@ -861,7 +855,6 @@ meetings:
 
   - spatial: "https://ld.admin.ch/canton/2"
     global_uri: ops:e7c5d453-848a-430a-b024-1dd2f6873aa6
-    meeting_type: "session"
     name:
       - text: "Donnerstag (Nachmittag)"
         language: "de"
@@ -1054,7 +1047,7 @@ Legislature (législature)
           └─ AgendaItem (point de l'ordre du jour)
 ```
 
-La législature constitue le cadre à long terme, la session structure le travail au sein d'une législature, le Meeting est la séance concrète au cours de laquelle les affaires sont délibérées, et le point de l'ordre du jour articule la séance individuelle. Les niveaux s'emboîtent de deux manières : la session reprend ses séances sous forme de liste (`meetings`), tandis que la séance et le point de l'ordre du jour renvoient vers le haut par des références (`parent_legislature`, `parent_meeting`, `parent_agenda_item`). Qui ne tient pas de sessions livre ses séances isolément et les rattache à la législature au moyen de `parent_legislature`.
+La législature constitue le cadre à long terme, la session structure le travail au sein d'une législature, le Meeting est la séance concrète au cours de laquelle les affaires sont délibérées, et le point de l'ordre du jour articule la séance individuelle. Les niveaux s'emboîtent de deux manières : la session reprend ses séances sous forme de liste (`meetings`), tandis que la séance et le point de l'ordre du jour renvoient vers le haut par des références (`parent_legislature`, `parent_session`, `parent_meeting`, `parent_agenda_item`) : la session renvoie à sa législature, la séance à sa session.
 
 Les trois premières classes sont décrites ci-après, le point de l'ordre du jour dans le chapitre suivant.
 
@@ -1068,7 +1061,7 @@ Les trois classes sont délibérément construites de la même manière. Les cha
 
 **Espace et organe.** `spatial` renvoie à l'unité spatiale selon LINDAS — pays, canton, district ou commune, donc `https://ld.admin.ch/canton/2` et non « BE ». C'est le champ avec lequel eCH-0294 localise ses groupes, de sorte qu'un fonctionnement de conseil et les acteurs qui le portent renvoient à la même ressource. Qui siège au sein de cette unité spatiale est indiqué par `actor_id`, référence abrégée à l'organe selon eCH-0294.
 
-**Documents liés.** `documents` relie des documents en tant que FRBR-Works selon eCH-0292 — pour la législature p. ex. les listes des membres et les répertoires des affaires, pour la session le programme de session, pour la séance le procès-verbal.
+**Documents liés.** `documents` relie des documents en tant que FRBR-Works selon eCH-0292 — pour la législature p. ex. les listes des membres et les répertoires des affaires, pour la session le programme de session, pour la séance le bulletin et les annexes (le procès-verbal, en revanche, via `has_protocol`).
 
 ## Legislature (législature)
 
@@ -1270,7 +1263,7 @@ _Une session parlementaire qui regroupe plusieurs séances et s'étend sur une p
 | position | 0..1 <br/> String | Position (nombre entier) au sein de la séquence supérieure.  |
 | meeting_abbreviation | 0..1 <br/> String | Désignation abrégée de la session ou de la séance (p. ex. « FS24 » pour la session de printemps 2024).  |
 | url | * <br/> [MultilingualString](#MultilingualString) | Page d'accueil ou adresse web complémentaire, multilingue.  |
-| parent_legislature | 0..1 <br/> String | La législature dans le cadre de laquelle la séance a lieu.  |
+| parent_legislature | 0..1 <br/> String | Identifiant de la législature à laquelle la session appartient.  |
 | meetings | * <br/> [Meeting](#Meeting) | Ensemble des séances.  |
 | documents | * <br/> Work | Liste des documents (FRBR Works) liés à l'entité.  |
 | date_begin_actual | 0..1 <br/> Date | La date de début effective d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
@@ -1409,24 +1402,12 @@ sessions:
 
 Un Meeting est la séance individuelle d'un organe — le niveau auquel les points de l'ordre du jour sont délibérés, les décisions prises et les interventions consignées.
 
-### Types de séance
-
-`meeting_type` distingue quatre types : `session` pour les séances plénières d'un parlement ou d'une chambre, `committee` pour les séances de commission, `sitting` pour les assemblées telles que les Landsgemeinden, les assemblées communales et les assemblées de commune bourgeoise, et `various` comme valeur résiduelle. La valeur `sitting` procède d'un choix délibéré : les Landsgemeinden et les assemblées communales sont des assemblées des personnes ayant le droit de vote elles-mêmes, mais elles décident en tant qu'organe siégeant doté d'un ordre du jour et sont donc représentées comme une séance de conseil.
-
-### Planification et déroulement
-
-À ce niveau, les heures prévues et les heures effectives divergent régulièrement : une séance fixée à 14h00 ne commence, en raison de retards, qu'à 14h25 et se termine à 17h30 au lieu de 18h00. `state` retient si une séance a lieu comme prévu (`planned`, `canceled`, `postponed`) ; `state_name` reprend une désignation de statut divergente, en texte libre. `location` consigne le lieu de la séance — la salle physique (« Palais fédéral, salle du Conseil national »), une visioconférence ou un format hybride.
-
-### Points d'ancrage
-
-Le Meeting est le nœud auquel se rattachent les autres classes de la présente norme : les points de l'ordre du jour (`AgendaItem`), les votes et élections (`Voting`, `Election`), les interventions (`Speech`) ainsi que la liste de présence (`Attendance.parent_meeting`). `documents` relie les documents de séance tels que le bulletin ou les annexes, `has_protocol` le procès-verbal. `parent_meeting` représente les séances qui font partie d'une séance de rang supérieur ; `actor_name`, `group_name` et `group_id` retiennent en clair l'organe et le regroupement.
-
 
 
 ### Classe: Meeting []{#Meeting}
 
 
-_Une classe générale de séance utilisée pour les sessions, les séances de commission, les séances individuelles d'une session et d'autres réunions diverses._
+_La séance individuelle d'un organe — le niveau auquel les points de l'ordre du jour sont délibérés, les décisions prises et les interventions consignées. La séance est le nœud auquel les autres classes de la présente norme se rattachent via `parent_meeting` : les points de l'ordre du jour (AgendaItem), les votes et élections (Voting, Election), les interventions (Speech) ainsi que la liste de présence (Attendance). À ce niveau, les heures prévues et les heures effectives divergent régulièrement — une séance fixée à 14h00 ne commence, en raison de retards, qu'à 14h25 et se termine à 17h30 au lieu de 18h00 —, raison pour laquelle le début et la fin sont consignés tant prévus qu'effectifs._
 
 
 
@@ -1444,26 +1425,25 @@ _Une classe générale de séance utilisée pour les sessions, les séances de c
 | global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | spatial | 0..1 <br/> String | Référence spatiale à une ressource LINDAS (numéro OFS de commune, numéro OFS de canton, district ou pays). Formats : commune : https://ld.admin.ch/municipality/1234, district : https://ld.admin.ch/district/2301, canton : https://ld.admin.ch/canton/23, pays : https://ld.admin.ch/country/CHE.  |
-| meeting_type | 0..1 <br/> [MeetingTypeEnum](#MeetingTypeEnum) | Type de séance, p. ex. session, commission, séance de session, divers.  |
 | administrative_id | 0..1 <br/> String | Identifiant administratif du corps législatif, p. ex. commune, canton ou pays.  |
 | name | * <br/> [MultilingualString](#MultilingualString) | Désignation complète multilingue.  |
 | url | * <br/> [MultilingualString](#MultilingualString) | Page d'accueil ou adresse web complémentaire, multilingue.  |
-| group_name | 0..1 <br/> String | Nom du groupe ou de l'organe.  |
+| group_name | 0..1 <br/> String | Nom du groupe ou de l'organe en clair, en complément de la référence `group_id`.  |
 | group_id | 0..1 <br/> [GroupReference](#GroupReference) | Référence au groupe ou à l'organe (instantané au moment de la mise en relation).  |
 | number | 0..1 <br/> String | Numéro courant, p. ex. au sein de la législature, de la session ou de l'année.  |
 | landing_page | 0..1 <br/> String | URL fournissant des informations complémentaires.  |
 | sequential_number | 0..1 <br/> Integer | Numéro séquentiel de la séance, utilisé pour le tri.  |
 | position | 0..1 <br/> String | Position (nombre entier) au sein de la séquence supérieure.  |
 | meeting_abbreviation | 0..1 <br/> String | Désignation abrégée de la session ou de la séance (p. ex. « FS24 » pour la session de printemps 2024).  |
-| actor_name | 0..1 <br/> String | Nom de l'organe politique (p. ex. Conseil national).  |
+| actor_name | 0..1 <br/> String | Nom de l'organe politique en clair (p. ex. Conseil national), en complément de la référence `actor_id`.  |
 | actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Référence à l'organe agissant (instantané au moment de la mise en relation).  |
-| state | 0..1 <br/> [StateEnum](#StateEnum) | État actuel de la séance (planifiée, annulée, reportée).  |
-| state_name | 0..1 <br/> String | Description personnalisée de l'état de la séance.  |
+| state | 0..1 <br/> [StateEnum](#StateEnum) | Indique si la séance a lieu comme prévu (planifiée, annulée, reportée). Une désignation divergente, en texte libre, est reprise dans `state_name`.  |
+| state_name | 0..1 <br/> String | Désignation de statut divergente, en texte libre, de la séance, là où les valeurs de `state` ne suffisent pas.  |
 | description | 0..1 <br/> String | Texte descriptif de l'élément.  |
-| location | 0..1 <br/> String | Lieu où se tient la séance (salle physique, visioconférence ou format hybride).  |
+| location | 0..1 <br/> String | Lieu où se tient la séance — la salle physique (« Palais fédéral, salle du Conseil national »), une visioconférence ou un format hybride.  |
 | parent_meeting | 0..1 <br/> String | Identifiant de la séance à laquelle cet enregistrement se rattache. Pour une séance, il désigne la séance supérieure ; pour un point de l'ordre du jour, un vote, une élection, une intervention ou un procès-verbal, la séance au cours de laquelle l'enregistrement est né.  |
-| parent_legislature | 0..1 <br/> String | La législature dans le cadre de laquelle la séance a lieu.  |
-| documents | * <br/> Work | Liste des documents (FRBR Works) liés à l'entité.  |
+| parent_session | 0..1 <br/> String | Identifiant de la session à laquelle la séance appartient.  |
+| documents | * <br/> Work | Documents de séance tels que le bulletin (Tagblatt) ou les annexes, sous forme de FRBR Works. Le procès-verbal n'est pas lié ici, mais via `has_protocol`.  |
 | has_protocol | 0..1 <br/> [Protocol](#Protocol) | Référence au procès-verbal de cette séance, établi après celle-ci. Seul l'identifiant du procès-verbal est indiqué ; le procès-verbal lui-même est livré dans la liste `protocols` du conteneur. Il constitue une entité à part entière dotée de son propre identifiant et est en règle générale publié après la séance, raison pour laquelle il est référencé et non imbriqué.  |
 | date_begin_actual | 0..1 <br/> Date | La date de début effective d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
 | datetime_begin_actual | 0..1 <br/> Datetime | La date et l'heure de début effectives d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
@@ -1509,7 +1489,6 @@ _Une classe générale de séance utilisée pour les sessions, les séances de c
 meetings:
 - global_uri: parl:sr_winter25_sitzung_6
   spatial: https://ld.admin.ch/country/CHE
-  meeting_type: session
   name:
   - text: Sechste Sitzung
     language: de
@@ -1537,7 +1516,6 @@ meetings:
 meetings:
 - spatial: https://ld.admin.ch/canton/2
   global_uri: ops:e7c5d453-848a-430a-b024-1dd2f6873aa6
-  meeting_type: session
   name:
   - text: Donnerstag (Nachmittag)
     language: de
@@ -1567,7 +1545,6 @@ meetings:
 meetings:
 - global_uri: ops:meeting_be_committee_wak_2025_05_12
   spatial: https://ld.admin.ch/canton/2
-  meeting_type: committee
   name:
   - text: Sitzung Kommission für Wirtschaft und Abgaben
     language: de
@@ -1589,7 +1566,6 @@ meetings:
   datetime_end_actual: '2025-05-12T16:45:00Z'
   state: planned
   location: Kommissionszimmer 301, Rathaus Bern
-  parent_legislature: ops:legislature_be_2022_2026
   datetime_created: '2025-04-15T09:00:00Z'
   datetime_modified: '2025-05-12T16:45:00Z'
 
@@ -1600,7 +1576,6 @@ meetings:
 meetings:
 - global_uri: ops:meeting_gl_landsgemeinde_2025
   spatial: https://ld.admin.ch/canton/8
-  meeting_type: sitting
   name:
   - text: Landsgemeinde 2025
     language: de
@@ -1620,7 +1595,7 @@ meetings:
   datetime_end_actual: '2025-05-04T13:45:00Z'
   state: planned
   location: Zaunplatz, Glarus
-  parent_legislature: ops:legislature_gl_2024_2028
+  parent_session: ops:session_gl_landsgemeinde_2025
   datetime_created: '2025-01-10T12:00:00Z'
   datetime_modified: '2025-05-04T13:45:00Z'
 
@@ -1631,7 +1606,6 @@ meetings:
 meetings:
 - spatial: https://ld.admin.ch/canton/2
   global_uri: ops:340dcf932fb044dd8f8c5c943267fbcc
-  meeting_type: session
   name:
   - text: Regierungssitzung vom 31. März 2021
     language: de
@@ -1663,7 +1637,6 @@ meetings:
 meetings:
 - global_uri: ops:meeting_sg_2025_03_15
   spatial: https://ld.admin.ch/canton/17
-  meeting_type: session
   name:
   - text: Kantonsratssitzung vom 15. März 2025
     language: de
@@ -1683,45 +1656,11 @@ meetings:
   datetime_end_actual: '2025-03-15T17:30:00Z'
   state: planned
   location: Kantonsratssaal, Regierungsgebäude St. Gallen
-  parent_legislature: ops:legislature_sg_2024_2028
+  parent_session: ops:session_sg_2025_03
   datetime_created: '2025-02-01T10:00:00Z'
   datetime_modified: '2025-03-15T17:30:00Z'
 
 ```
-
-
-
-
-
-
-</div>
-
-### Enum: MeetingTypeEnum []{#MeetingTypeEnum}
-
-
-
-
-_Type de séance._
-
-
-
-
-<div data-search-exclude markdown="1">
-
-URI: [ops:MeetingTypeEnum](https://ch.paf.link/schema/operations/MeetingTypeEnum)
-
-#### Valeurs admissibles
-| Valeur | Description |
-|------------------------|----------------------------------------------------------------------------|
-| session |  Séance plénière de l'ensemble du parlement ou d'une chambre.  |
-| | [ops:enum/meeting_type/session](ops:enum/meeting_type/session) |
-| committee |  Séance d'une commission parlementaire.  |
-| | [ops:enum/meeting_type/committee](ops:enum/meeting_type/committee) |
-| sitting |  Formes particulières d'assemblée (p. ex. Landsgemeinde, assemblée communale).  |
-| | [ops:enum/meeting_type/sitting](ops:enum/meeting_type/sitting) |
-| various |  Autres formes de séance non couvertes par les catégories ci-dessus.  |
-| | [ops:enum/meeting_type/various](ops:enum/meeting_type/various) |
-
 
 
 
@@ -1961,12 +1900,13 @@ _Un point de l'ordre du jour d'une séance._
 | affair_id | 0..1 <br/> String | Le lien vers les affaires rattachées au point de l'ordre du jour. <br/><br/>Héritage : IsAgendaItem |
 | agenda_item_description | * <br/> [MultilingualString](#MultilingualString) | Sous-titre ou description détaillée du point de l'ordre du jour. <br/><br/>Héritage : IsAgendaItem |
 | state_id | 0..1 <br/> String | Identifiant d'état (renvoi à l'énumération des états ou à un état propre). <br/><br/>Héritage : IsAgendaItem |
-| state_name | 0..1 <br/> String | Description personnalisée de l'état de la séance. <br/><br/>Héritage : IsAgendaItem |
+| state_name | 0..1 <br/> String | Désignation de statut divergente, en texte libre, là où l'énumération des statuts ne suffit pas. <br/><br/>Héritage : IsAgendaItem |
 | landing_page | 0..1 <br/> String | URL fournissant des informations complémentaires. <br/><br/>Héritage : IsAgendaItem |
 | url | * <br/> [MultilingualString](#MultilingualString) | Page d'accueil ou adresse web complémentaire, multilingue. <br/><br/>Héritage : IsAgendaItem |
 | agenda_item_category | 0..1 <br/> String | Catégorie pour les points de l'ordre du jour regroupés (p. ex. introduction, par département, points techniques). <br/><br/>Héritage : IsAgendaItem |
 | parent_agenda_item | 0..1 <br/> String | Identifiant du point de l'ordre du jour auquel cet enregistrement se rattache. Pour un point de l'ordre du jour, il construit une hiérarchie de points ; pour un vote, une élection ou une intervention, il désigne le point sous lequel l'enregistrement a été traité. <br/><br/>Héritage : IsAgendaItem |
 | has_resolution | 0..1 <br/> [Resolution](#Resolution) | La décision prise sur ce point de l'ordre du jour. <br/><br/>Héritage : IsAgendaItem |
+| joint_debates | * <br/> [JointDebate](#JointDebate) | Délibérations communes dans lesquelles ce point de l'ordre du jour est traité conjointement avec d'autres points. <br/><br/>Héritage : IsAgendaItem |
 | text_segments | * <br/> [TextSegment](#TextSegment) | Ensemble de segments de texte (p. ex. procès-verbal in extenso). <br/><br/>Héritage : IsAgendaItem |
 | documents | * <br/> Work | Liste des documents (FRBR Works) liés à l'entité. <br/><br/>Héritage : IsAgendaItem |
 
@@ -1979,7 +1919,6 @@ _Un point de l'ordre du jour d'une séance._
 | Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | [Container](#Container) | agenda_items | range | [AgendaItem](#AgendaItem) |
-| [JointDebate](#JointDebate) | agenda_items | range | [AgendaItem](#AgendaItem) |
 
 
 
@@ -2580,12 +2519,13 @@ _Un point de l'ordre du jour tel qu'il a effectivement été consigné au procè
 | affair_id | 0..1 <br/> String | Le lien vers les affaires rattachées au point de l'ordre du jour. <br/><br/>Héritage : IsAgendaItem |
 | agenda_item_description | * <br/> [MultilingualString](#MultilingualString) | Sous-titre ou description détaillée du point de l'ordre du jour. <br/><br/>Héritage : IsAgendaItem |
 | state_id | 0..1 <br/> String | Identifiant d'état (renvoi à l'énumération des états ou à un état propre). <br/><br/>Héritage : IsAgendaItem |
-| state_name | 0..1 <br/> String | Description personnalisée de l'état de la séance. <br/><br/>Héritage : IsAgendaItem |
+| state_name | 0..1 <br/> String | Désignation de statut divergente, en texte libre, là où l'énumération des statuts ne suffit pas. <br/><br/>Héritage : IsAgendaItem |
 | landing_page | 0..1 <br/> String | URL fournissant des informations complémentaires. <br/><br/>Héritage : IsAgendaItem |
 | url | * <br/> [MultilingualString](#MultilingualString) | Page d'accueil ou adresse web complémentaire, multilingue. <br/><br/>Héritage : IsAgendaItem |
 | agenda_item_category | 0..1 <br/> String | Catégorie pour les points de l'ordre du jour regroupés (p. ex. introduction, par département, points techniques). <br/><br/>Héritage : IsAgendaItem |
 | parent_agenda_item | 0..1 <br/> String | Identifiant du point de l'ordre du jour auquel cet enregistrement se rattache. Pour un point de l'ordre du jour, il construit une hiérarchie de points ; pour un vote, une élection ou une intervention, il désigne le point sous lequel l'enregistrement a été traité. <br/><br/>Héritage : IsAgendaItem |
 | has_resolution | 0..1 <br/> [Resolution](#Resolution) | La décision prise sur ce point de l'ordre du jour. <br/><br/>Héritage : IsAgendaItem |
+| joint_debates | * <br/> [JointDebate](#JointDebate) | Délibérations communes dans lesquelles ce point de l'ordre du jour est traité conjointement avec d'autres points. <br/><br/>Héritage : IsAgendaItem |
 | text_segments | * <br/> [TextSegment](#TextSegment) | Ensemble de segments de texte (p. ex. procès-verbal in extenso). <br/><br/>Héritage : IsAgendaItem |
 | documents | * <br/> Work | Liste des documents (FRBR Works) liés à l'entité. <br/><br/>Héritage : IsAgendaItem |
 
@@ -2625,14 +2565,14 @@ _Un point de l'ordre du jour tel qu'il a effectivement été consigné au procè
 
 ### But de l'entité
 
-`JointDebate` regroupe plusieurs points de l'ordre du jour délibérés conjointement — par exemple des affaires connexes traitées dans un seul et même débat.
+`JointDebate` regroupe plusieurs points de l'ordre du jour délibérés conjointement — par exemple des affaires connexes traitées dans un seul et même débat. Elle est rattachée à un point de l'ordre du jour (AgendaItem) ou à un point du procès-verbal (ProtocolItem) via le slot `joint_debates` et renvoie aux points traités conjointement via `joint_agenda_item_ids`.
 
 
 
 ### Classe: JointDebate []{#JointDebate}
 
 
-_Points de l'ordre du jour traités conjointement._
+_Une délibération commune : plusieurs points de l'ordre du jour sont traités ensemble. La délibération commune est rattachée à un point de l'ordre du jour (AgendaItem) ou à un point du procès-verbal (ProtocolItem) et renvoie, par leurs identifiants, aux points traités conjointement._
 
 
 
@@ -2646,10 +2586,19 @@ _Points de l'ordre du jour traités conjointement._
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| agenda_items | * <br/> [AgendaItem](#AgendaItem) | Ensemble des points de l'ordre du jour.  |
+| joint_agenda_item_ids | * <br/> String | Identifiants des points de l'ordre du jour traités conjointement (AgendaItem ou ProtocolItem).  |
 
 
 
+
+
+#### Utilisations
+
+| Utilisé par | Dans le slot | Rôle | Élément |
+| ---  | --- | --- | --- |
+| IsAgendaItem | joint_debates | range | [JointDebate](#JointDebate) |
+| [AgendaItem](#AgendaItem) | joint_debates | range | [JointDebate](#JointDebate) |
+| [ProtocolItem](#ProtocolItem) | joint_debates | range | [JointDebate](#JointDebate) |
 
 
 

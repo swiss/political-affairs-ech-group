@@ -31,7 +31,7 @@ URI: [mcm:localId](https://ld.ech.ch/schema/0292/meta-common/localId)
 | [Container](Container.md) | Conteneur pour les données de l'activité publique des conseils : législatures... |  no  |
 | [Legislature](Legislature.md) | Durée du mandat d'un parlement en tant qu'assemblée législative |  no  |
 | [Session](Session.md) | Une session parlementaire qui regroupe plusieurs séances et s'étend sur une p... |  no  |
-| [Meeting](Meeting.md) | Une classe générale de séance utilisée pour les sessions, les séances de comm... |  no  |
+| [Meeting](Meeting.md) | La séance individuelle d'un organe — le niveau auquel les points de l'ordre d... |  no  |
 | [AgendaItem](AgendaItem.md) | Un point de l'ordre du jour d'une séance |  no  |
 | [Protocol](Protocol.md) | Le procès-verbal établi après la séance |  no  |
 | [ProtocolItem](ProtocolItem.md) | Un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-... |  no  |

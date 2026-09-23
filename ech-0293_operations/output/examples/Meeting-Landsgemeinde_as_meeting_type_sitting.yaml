@@ -1,7 +1,6 @@
 meetings:
 - global_uri: ops:meeting_gl_landsgemeinde_2025
   spatial: https://ld.admin.ch/canton/8
-  meeting_type: sitting
   name:
   - text: Landsgemeinde 2025
     language: de
@@ -21,6 +20,6 @@ meetings:
   datetime_end_actual: '2025-05-04T13:45:00Z'
   state: planned
   location: Zaunplatz, Glarus
-  parent_legislature: ops:legislature_gl_2024_2028
+  parent_session: ops:session_gl_landsgemeinde_2025
   datetime_created: '2025-01-10T12:00:00Z'
   datetime_modified: '2025-05-04T13:45:00Z'

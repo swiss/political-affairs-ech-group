@@ -27,7 +27,7 @@ URI: [ops:actor_id](https://ch.paf.link/schema/operations/actor_id)
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Legislature](Legislature.md) | Term of office of a parliament as a legislative assembly |  yes  |
-| [Meeting](Meeting.md) | A general meeting class used for Sessions, Comittee Meetings, individual sess... |  yes  |
+| [Meeting](Meeting.md) | The individual sitting of a body — the level at which agenda items are delibe... |  yes  |
 | [Voting](Voting.md) | A voting procedure with individual votes and results |  yes  |
 | [IndividualVote](IndividualVote.md) | An individual vote cast by a member during a voting procedure |  no  |
 | [Election](Election.md) | An election procedure for selecting persons to positions |  yes  |

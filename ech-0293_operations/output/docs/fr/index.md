@@ -30,11 +30,11 @@ Name: operations
 | [IsEventWithDuration](IsEventWithDuration.md) | Une classe mixin qui fournit des slots pour modéliser des événements ou occur... |
 | [IsInstantaneousEvent](IsInstantaneousEvent.md) | Une classe mixin qui fournit des slots pour modéliser des événements ou occur... |
 | [IsProcessStep](IsProcessStep.md) | Une classe mixin pour une étape unique dans un processus |
-| [JointDebate](JointDebate.md) | Points de l'ordre du jour traités conjointement |
+| [JointDebate](JointDebate.md) | Une délibération commune : plusieurs points de l'ordre du jour sont traités e... |
 | [Legislature](Legislature.md) | Durée du mandat d'un parlement en tant qu'assemblée législative |
 | [Manifestation](Manifestation.md) | FRBR Manifestation : une forme de fichier concrète d'une Expression, adressab... |
 | [Media](Media.md) | Fichiers médias ou documents (y compris les procès-verbaux en PDF/HTML/WORD o... |
-| [Meeting](Meeting.md) | Une classe générale de séance utilisée pour les sessions, les séances de comm... |
+| [Meeting](Meeting.md) | La séance individuelle d'un organe — le niveau auquel les points de l'ordre d... |
 | [Motion](Motion.md) | Une proposition formelle déposée au cours des délibérations |
 | [MultilingualString](MultilingualString.md) | Une chaîne de caractères pouvant contenir du texte en plusieurs langues |
 | [MultilingualUri](MultilingualUri.md) | Une URI accompagnée de la langue de la ressource vers laquelle elle renvoie |
@@ -60,7 +60,7 @@ Name: operations
 | [abbreviation](abbreviation.md) | Abréviation (peut être multilingue) |
 | [actor_fullname](actor_fullname.md) | Nom complet de l'actrice ou de l'acteur, respectivement de la personne |
 | [actor_id](actor_id.md) | Référence à la personne agissante (instantané au moment de la mise en relatio... |
-| [actor_name](actor_name.md) | Nom de l'organe politique (p |
+| [actor_name](actor_name.md) | Nom de l'organe politique en clair (p |
 | [administrative_id](administrative_id.md) | Identifiant administratif du corps législatif, p |
 | [affair_id](affair_id.md) | Le lien vers les affaires rattachées au point de l'ordre du jour |
 | [agenda_item_category](agenda_item_category.md) | Catégorie pour les points de l'ordre du jour regroupés (p |
@@ -108,7 +108,7 @@ Name: operations
 | [global_uri](global_uri.md) | Une URI unique et globalement valide pour l'entité |
 | [group_id](group_id.md) | Référence au groupe ou à l'organe (instantané au moment de la mise en relatio... |
 | [group_label](group_label.md) | Nom de l'organe/du groupe au moment de la liaison |
-| [group_name](group_name.md) | Nom du groupe ou de l'organe |
+| [group_name](group_name.md) | Nom du groupe ou de l'organe en clair, en complément de la référence `group_i... |
 | [has_protocol](has_protocol.md) | Référence au procès-verbal de cette séance, établi après celle-ci |
 | [has_resolution](has_resolution.md) | La décision prise sur ce point de l'ordre du jour |
 | [id](id.md) | Identifiant univoque de l'élément |
@@ -116,6 +116,8 @@ Name: operations
 | [individual_vote_type](individual_vote_type.md) | Type de voix exprimée (oui, non, abstention, n'a pas voté, etc |
 | [individual_votes](individual_votes.md) | Ensemble des voix individuelles |
 | [is_active](is_active.md) | Indique si l'information est actuellement valable |
+| [joint_agenda_item_ids](joint_agenda_item_ids.md) | Identifiants des points de l'ordre du jour traités conjointement (AgendaItem ... |
+| [joint_debates](joint_debates.md) | Délibérations communes dans lesquelles ce point de l'ordre du jour est traité... |
 | [label](label.md) | Attribuer un label à une information structurée (par ex |
 | [label_abstention](label_abstention.md) | Signification d'une abstention |
 | [label_long](label_long.md) | Attribuer un label étendu à une information structurée (par ex |
@@ -126,7 +128,7 @@ Name: operations
 | [leading_actor_id](leading_actor_id.md) | Le département responsable du point de l'ordre du jour |
 | [legislatures](legislatures.md) | Ensemble des législatures |
 | [local_id](local_id.md) | Identifiant local |
-| [location](location.md) | Lieu où se tient la séance (salle physique, visioconférence ou format hybride... |
+| [location](location.md) | Lieu où se tient la séance — la salle physique (« Palais fédéral, salle du Co... |
 | [majority_count](majority_count.md) | Nombre de voix requis pour atteindre le seuil de majorité déterminant |
 | [majority_type](majority_type.md) | Type de majorité requise pour le vote (absolue, deux tiers, etc |
 | [manifestation_url](manifestation_url.md) | URL sous laquelle la forme de fichier peut être consultée |
@@ -135,7 +137,6 @@ Name: operations
 | [media_type](media_type.md) | Type de média (audio, vidéo, document) |
 | [media_url](media_url.md) | URL du fichier média (audio/vidéo) |
 | [meeting_abbreviation](meeting_abbreviation.md) | Désignation abrégée de la session ou de la séance (p |
-| [meeting_type](meeting_type.md) | Type de séance, p |
 | [meetings](meetings.md) | Ensemble des séances |
 | [multilingual_value](multilingual_value.md) | Une valeur multilingue avec indication de la langue |
 | [name](name.md) | Désignation complète multilingue |
@@ -143,10 +144,11 @@ Name: operations
 | [optional](optional.md) | Indique si la séance ou le vote est facultatif |
 | [parent_agenda_item](parent_agenda_item.md) | Identifiant du point de l'ordre du jour auquel cet enregistrement se rattache |
 | [parent_attendance](parent_attendance.md) | L'agrégat Attendance auquel appartient cette constatation individuelle de pré... |
-| [parent_legislature](parent_legislature.md) | La législature dans le cadre de laquelle la séance a lieu |
+| [parent_legislature](parent_legislature.md) | Identifiant de la législature à laquelle la session appartient |
 | [parent_meeting](parent_meeting.md) | Identifiant de la séance à laquelle cet enregistrement se rattache |
 | [parent_protocol](parent_protocol.md) | Le procès-verbal dans lequel le vote ou l'élection est consigné |
 | [parent_protocol_item](parent_protocol_item.md) | Le point consigné au procès-verbal (ProtocolItem) sous lequel le vote ou l'él... |
+| [parent_session](parent_session.md) | Identifiant de la session à laquelle la séance appartient |
 | [parent_type](parent_type.md) | Type de l'objet parent (séance, point de l'ordre du jour, intervention, affai... |
 | [parent_voting](parent_voting.md) | L'identifiant du vote auquel se rattache la voix individuelle |
 | [position](position.md) | Position (nombre entier) au sein de la séquence supérieure |
@@ -166,9 +168,9 @@ Name: operations
 | [speaking_actor_id](speaking_actor_id.md) | La ou le porte-parole ou la cheffe ou le chef du département pour le point de... |
 | [speeches](speeches.md) | Ensemble des interventions |
 | [start](start.md) | Indication de début ou position |
-| [state](state.md) | État actuel de la séance (planifiée, annulée, reportée) |
+| [state](state.md) | Indique si la séance a lieu comme prévu (planifiée, annulée, reportée) |
 | [state_id](state_id.md) | Identifiant d'état (renvoi à l'énumération des états ou à un état propre) |
-| [state_name](state_name.md) | Description personnalisée de l'état de la séance |
+| [state_name](state_name.md) | Désignation de statut divergente, en texte libre, là où l'énumération des sta... |
 | [status](status.md) | Désignation libre de l'état, utilisée là où l'énumération des états ne s'appl... |
 | [text](text.md) | Contenu textuel de l'élément |
 | [text_format](text_format.md) | Format du texte (text, html, html_with_timestamps) |
@@ -213,7 +215,6 @@ Name: operations
 | [ElectionTypeEnum](ElectionTypeEnum.md) | Type de procédure d'élection |
 | [IndividualVoteTypeEnum](IndividualVoteTypeEnum.md) | Type de voix individuelle exprimée par un membre |
 | [MajorityTypeEnum](MajorityTypeEnum.md) | Type de majorité requise pour le vote |
-| [MeetingTypeEnum](MeetingTypeEnum.md) | Type de séance |
 | [ResolutionTypeEnum](ResolutionTypeEnum.md) | Type de décision prise sur un point de l'ordre du jour |
 | [StateEnum](StateEnum.md) | État de la séance |
 | [VotingTypeEnum](VotingTypeEnum.md) | Type de procédure de vote |

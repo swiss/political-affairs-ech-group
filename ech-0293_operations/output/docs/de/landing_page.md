@@ -27,7 +27,7 @@ URI: [ops:landingPage](https://ch.paf.link/schema/operations/landingPage)
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
 | [Legislature](Legislature.md) | Amtsdauer eines Parlaments als gesetzgebender Versammlung |  no  |
-| [Meeting](Meeting.md) | Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, Sess... |  no  |
+| [Meeting](Meeting.md) | Die einzelne Sitzung eines Organs — die Ebene, auf der Traktanden beraten, Be... |  no  |
 | [IsAgendaItem](IsAgendaItem.md) | Eine Mixin-Klasse, welche die Elemente eines Traktandums bereitstellt: Bezeic... |  no  |
 | [Voting](Voting.md) | Ein Abstimmungsverfahren mit Einzelstimmen und Ergebnissen |  no  |
 | [Election](Election.md) | Ein Wahlverfahren zur Wahl von Personen in Positionen |  no  |

@@ -6,7 +6,7 @@ search:
 # Slot: state 
 
 
-_Aktueller Status der Sitzung (geplant, abgesagt, verschoben)._
+_Ob die Sitzung überhaupt wie vorgesehen stattfindet (geplant, abgesagt, verschoben). Eine abweichende, freitextliche Bezeichnung nimmt `state_name` auf._
 
 
 
@@ -26,7 +26,7 @@ URI: [ops:state](https://ch.paf.link/schema/operations/state)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [Meeting](Meeting.md) | Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, Sess... |  no  |
+| [Meeting](Meeting.md) | Die einzelne Sitzung eines Organs — die Ebene, auf der Traktanden beraten, Be... |  no  |
 
 
 
@@ -73,15 +73,19 @@ name: state
 annotations:
   description_de:
     tag: description_de
-    value: 'Aktueller Status der Sitzung (geplant, abgesagt, verschoben).
+    value: 'Ob die Sitzung überhaupt wie vorgesehen stattfindet (geplant, abgesagt,
+      verschoben). Eine abweichende, freitextliche Bezeichnung nimmt `state_name`
+      auf.
 
       '
   description_fr:
     tag: description_fr
-    value: 'État actuel de la séance (planifiée, annulée, reportée).
+    value: 'Indique si la séance a lieu comme prévu (planifiée, annulée, reportée).
+      Une désignation divergente, en texte libre, est reprise dans `state_name`.
 
       '
-description: 'Aktueller Status der Sitzung (geplant, abgesagt, verschoben).
+description: 'Ob die Sitzung überhaupt wie vorgesehen stattfindet (geplant, abgesagt,
+  verschoben). Eine abweichende, freitextliche Bezeichnung nimmt `state_name` auf.
 
   '
 examples:

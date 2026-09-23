@@ -27,12 +27,13 @@ _Eine Mixin-Klasse, welche die Elemente eines Traktandums bereitstellt: Bezeichn
 | affair_id | 0..1 <br/> [String](String.md) | Die Verbindung zu den Geschäften des Traktandums.  |
 | agenda_item_description | * <br/> [MultilingualString](MultilingualString.md) | Untertitel oder ausführliche Beschreibung des Traktandums.  |
 | state_id | 0..1 <br/> [String](String.md) | Zustands-Identifikator (Verweis auf das Status-Enum oder auf einen eigenen Zustand).  |
-| state_name | 0..1 <br/> [String](String.md) | Benutzerdefinierte Zustandsbeschreibung für die Sitzung.  |
+| state_name | 0..1 <br/> [String](String.md) | Abweichende, freitextliche Statusbezeichnung, wo die Status-Aufzählung nicht genügt.  |
 | landing_page | 0..1 <br/> [String](String.md) | URL mit weiteren Informationen.  |
 | url | * <br/> [MultilingualString](MultilingualString.md) | Landing Page oder weiterführende Webadresse, mehrsprachig.  |
 | agenda_item_category | 0..1 <br/> [String](String.md) | Kategorie für gruppierte Traktanden (z.B. Einführung, nach Departement, technische Traktanden).  |
 | parent_agenda_item | 0..1 <br/> [String](String.md) | Identifikator des Traktandums, zu dem dieser Eintrag gehört. Bei einem Traktandum baut er eine Hierarchie von Traktanden auf, bei Abstimmung, Wahl oder Wortmeldung bezeichnet er das Traktandum, unter dem der Eintrag behandelt wurde.  |
 | has_resolution | 0..1 <br/> [Resolution](Resolution.md) | Die Resolution oder Entscheidung zu diesem Traktandum.  |
+| joint_debates | * <br/> [JointDebate](JointDebate.md) | Gemeinsame Beratungen, in denen dieses Traktandum zusammen mit anderen Traktanden behandelt wird.  |
 | text_segments | * <br/> [TextSegment](TextSegment.md) | Sammlung von Textsegmenten (z.B. Wortprotokoll).  |
 | documents | * <br/> [Work](Work.md) | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.  |
 

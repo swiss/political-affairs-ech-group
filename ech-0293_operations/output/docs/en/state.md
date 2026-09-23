@@ -6,7 +6,7 @@ search:
 # Slot: state 
 
 
-_Current state of the meeting (planned, canceled, postponed)._
+_Whether the meeting takes place as planned at all (planned, canceled, postponed). A diverging, free-text designation goes into `state_name`._
 
 
 
@@ -26,7 +26,7 @@ URI: [ops:state](https://ch.paf.link/schema/operations/state)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Meeting](Meeting.md) | A general meeting class used for Sessions, Comittee Meetings, individual sess... |  no  |
+| [Meeting](Meeting.md) | The individual sitting of a body — the level at which agenda items are delibe... |  no  |
 
 
 
@@ -73,15 +73,19 @@ name: state
 annotations:
   description_de:
     tag: description_de
-    value: 'Aktueller Status der Sitzung (geplant, abgesagt, verschoben).
+    value: 'Ob die Sitzung überhaupt wie vorgesehen stattfindet (geplant, abgesagt,
+      verschoben). Eine abweichende, freitextliche Bezeichnung nimmt `state_name`
+      auf.
 
       '
   description_fr:
     tag: description_fr
-    value: 'État actuel de la séance (planifiée, annulée, reportée).
+    value: 'Indique si la séance a lieu comme prévu (planifiée, annulée, reportée).
+      Une désignation divergente, en texte libre, est reprise dans `state_name`.
 
       '
-description: 'Current state of the meeting (planned, canceled, postponed).
+description: 'Whether the meeting takes place as planned at all (planned, canceled,
+  postponed). A diverging, free-text designation goes into `state_name`.
 
   '
 examples:

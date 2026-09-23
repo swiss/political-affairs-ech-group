@@ -177,6 +177,16 @@
                     ],
                     "description": "The resolution or decision taken on this agenda item.\n"
                 },
+                "joint_debates": {
+                    "description": "Joint debates in which this agenda item is deliberated together with other agenda items.\n",
+                    "items": {
+                        "$ref": "#/$defs/JointDebate"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "landing_page": {
                     "description": "URL providing further information.\n",
                     "type": [
@@ -227,7 +237,7 @@
                     ]
                 },
                 "state_name": {
-                    "description": "Custom state description for the meeting.\n",
+                    "description": "Diverging, free-text status designation, where the status enumeration does not suffice.\n",
                     "type": [
                         "string",
                         "null"
@@ -1323,6 +1333,16 @@
                     ],
                     "description": "The resolution or decision taken on this agenda item.\n"
                 },
+                "joint_debates": {
+                    "description": "Joint debates in which this agenda item is deliberated together with other agenda items.\n",
+                    "items": {
+                        "$ref": "#/$defs/JointDebate"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "landing_page": {
                     "description": "URL providing further information.\n",
                     "type": [
@@ -1366,7 +1386,7 @@
                     ]
                 },
                 "state_name": {
-                    "description": "Custom state description for the meeting.\n",
+                    "description": "Diverging, free-text status designation, where the status enumeration does not suffice.\n",
                     "type": [
                         "string",
                         "null"
@@ -1610,12 +1630,12 @@
         },
         "JointDebate": {
             "additionalProperties": false,
-            "description": "Agenda Items which are debated together.",
+            "description": "A joint debate: several agenda items are deliberated together. The joint debate hangs on an agenda item (AgendaItem) or a protocol item (ProtocolItem) and references the items debated jointly with it by their identifiers.",
             "properties": {
-                "agenda_items": {
-                    "description": "Collection of agenda item records.\n",
+                "joint_agenda_item_ids": {
+                    "description": "Identifiers of the agenda items (AgendaItem or ProtocolItem) debated jointly.\n",
                     "items": {
-                        "$ref": "#/$defs/AgendaItem"
+                        "type": "string"
                     },
                     "type": [
                         "array",
@@ -1930,7 +1950,7 @@
         },
         "Meeting": {
             "additionalProperties": false,
-            "description": "A general meeting class used for Sessions, Comittee Meetings, individual session Sittings and other various Meetings.",
+            "description": "The individual sitting of a body \u2014 the level at which agenda items are deliberated, decisions taken and speeches recorded. The meeting is the node to which the other classes of this standard attach via `parent_meeting`: agenda items (AgendaItem), votings and elections (Voting, Election), speeches (Speech) and the attendance list (Attendance). At this level, scheduled and actual times regularly diverge \u2014 a sitting scheduled for 14:00 only begins at 14:25 because of delays and ends at 17:30 instead of 18:00 \u2014 which is why both the planned and the actual begin and end are recorded.",
             "properties": {
                 "actor_id": {
                     "anyOf": [
@@ -1944,7 +1964,7 @@
                     "description": "Reference to the acting body/organ (lightweight snapshot at time of linking).\n"
                 },
                 "actor_name": {
-                    "description": "Name of the political body (e.g., Nationalrat).\n",
+                    "description": "Name of the political body in plain text (e.g., Nationalrat), in addition to the reference `actor_id`.\n",
                     "type": [
                         "string",
                         "null"
@@ -2061,7 +2081,7 @@
                     ]
                 },
                 "documents": {
-                    "description": "List of documents (FRBR Works) linked to the entity.\n",
+                    "description": "Sitting documents such as the bulletin (Tagblatt) or annexes, as FRBR Works. The protocol is not linked here but via `has_protocol`.\n",
                     "items": {
                         "$ref": "#/$defs/Work"
                     },
@@ -2086,7 +2106,7 @@
                     "description": "Reference to the group or body (lightweight snapshot at time of linking).\n"
                 },
                 "group_name": {
-                    "description": "Name of the group or body.\n",
+                    "description": "Name of the group or body in plain text, in addition to the reference `group_id`.\n",
                     "type": [
                         "string",
                         "null"
@@ -2114,7 +2134,7 @@
                     ]
                 },
                 "location": {
-                    "description": "Place where the meeting is held (physical room, video conference or hybrid format).\n",
+                    "description": "Place where the meeting is held \u2014 the physical room (\"Federal Palace, National Council chamber\"), a video conference or a hybrid format.\n",
                     "type": [
                         "string",
                         "null"
@@ -2126,10 +2146,6 @@
                         "string",
                         "null"
                     ]
-                },
-                "meeting_type": {
-                    "$ref": "#/$defs/MeetingTypeEnum",
-                    "description": "Type of the meeting, e.g. session, committee, sitting, various.\n"
                 },
                 "name": {
                     "description": "Multilingual full designation.\n",
@@ -2148,15 +2164,15 @@
                         "null"
                     ]
                 },
-                "parent_legislature": {
-                    "description": "The legislative body in which the meeting is based.\n",
+                "parent_meeting": {
+                    "description": "Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.\n",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "parent_meeting": {
-                    "description": "Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.\n",
+                "parent_session": {
+                    "description": "Identifier of the session to which the meeting belongs.\n",
                     "type": [
                         "string",
                         "null"
@@ -2186,10 +2202,10 @@
                 },
                 "state": {
                     "$ref": "#/$defs/StateEnum",
-                    "description": "Current state of the meeting (planned, canceled, postponed).\n"
+                    "description": "Whether the meeting takes place as planned at all (planned, canceled, postponed). A diverging, free-text designation goes into `state_name`.\n"
                 },
                 "state_name": {
-                    "description": "Custom state description for the meeting.\n",
+                    "description": "Diverging, free-text status designation of the meeting, where the values of `state` do not suffice.\n",
                     "type": [
                         "string",
                         "null"
@@ -2218,17 +2234,6 @@
             ],
             "title": "Meeting",
             "type": "object"
-        },
-        "MeetingTypeEnum": {
-            "description": "Type of the meeting.",
-            "enum": [
-                "session",
-                "committee",
-                "sitting",
-                "various"
-            ],
-            "title": "MeetingTypeEnum",
-            "type": "string"
         },
         "Motion": {
             "additionalProperties": false,
@@ -2722,6 +2727,16 @@
                     ],
                     "description": "The resolution or decision taken on this agenda item.\n"
                 },
+                "joint_debates": {
+                    "description": "Joint debates in which this agenda item is deliberated together with other agenda items.\n",
+                    "items": {
+                        "$ref": "#/$defs/JointDebate"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "landing_page": {
                     "description": "URL providing further information.\n",
                     "type": [
@@ -2772,7 +2787,7 @@
                     ]
                 },
                 "state_name": {
-                    "description": "Custom state description for the meeting.\n",
+                    "description": "Diverging, free-text status designation, where the status enumeration does not suffice.\n",
                     "type": [
                         "string",
                         "null"
@@ -3022,7 +3037,7 @@
                     ]
                 },
                 "parent_legislature": {
-                    "description": "The legislative body in which the meeting is based.\n",
+                    "description": "Identifier of the legislature to which the session belongs.\n",
                     "type": [
                         "string",
                         "null"

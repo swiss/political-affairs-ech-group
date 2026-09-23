@@ -3,7 +3,7 @@
 ## Klasse: Meeting 
 
 
-_Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, Sessionssitzung und andere verschiedene Versammlungen verwendet wird._
+_Die einzelne Sitzung eines Organs — die Ebene, auf der Traktanden beraten, Beschlüsse gefasst und Wortmeldungen festgehalten werden. Die Sitzung ist der Knoten, an dem die übrigen Klassen dieses Standards über `parent_meeting` hängen: Traktanden (AgendaItem), Abstimmungen und Wahlen (Voting, Election), Wortmeldungen (Speech) sowie die Anwesenheitsliste (Attendance). Auf dieser Ebene fallen geplante und tatsächliche Zeiten regelmässig auseinander — eine für 14:00 angesetzte Sitzung beginnt wegen Verzögerungen erst um 14:25 und endet statt um 18:00 bereits um 17:30 —, weshalb Beginn und Ende sowohl geplant als auch tatsächlich erfasst werden._
 
 
 
@@ -21,26 +21,25 @@ _Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, Sessi
 | global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](HasIdentification.md) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](HasIdentification.md) |
 | spatial | 0..1 <br/> [String](String.md) | Räumliche Referenz auf eine LINDAS-Ressource (BFS-Gemeindenummer, BFS-Kantonsnummer, Bezirk oder Land). Formate: Gemeinde: https://ld.admin.ch/municipality/1234, Bezirk: https://ld.admin.ch/district/2301, Kanton: https://ld.admin.ch/canton/23, Bund: https://ld.admin.ch/country/CHE.  |
-| meeting_type | 0..1 <br/> [MeetingTypeEnum](MeetingTypeEnum.md) | Art der Sitzung, z.B. Session, Kommission, Sessionssitzung, Verschiedenes.  |
 | administrative_id | 0..1 <br/> [String](String.md) | Verwaltungs-ID des gesetzgebenden Körpers, wie z.B. Gemeinde, Kanton oder Land.  |
 | name | * <br/> [MultilingualString](MultilingualString.md) | Mehrsprachige vollständige Bezeichnung.  |
 | url | * <br/> [MultilingualString](MultilingualString.md) | Landing Page oder weiterführende Webadresse, mehrsprachig.  |
-| group_name | 0..1 <br/> [String](String.md) | Name der Gruppe oder des Gremiums.  |
+| group_name | 0..1 <br/> [String](String.md) | Name der Gruppe oder des Gremiums im Klartext, zusätzlich zur Referenz `group_id`.  |
 | group_id | 0..1 <br/> [GroupReference](GroupReference.md) | Referenz auf die Gruppe oder das Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
 | number | 0..1 <br/> [String](String.md) | Laufende Nummer, z.B. innerhalb der Legislatur, der Session oder des Jahres.  |
 | landing_page | 0..1 <br/> [String](String.md) | URL mit weiteren Informationen.  |
 | sequential_number | 0..1 <br/> [Integer](Integer.md) | Laufende Nummer der Sitzung, die zur Sortierung verwendet wird.  |
 | position | 0..1 <br/> [String](String.md) | Ganzzahlige Position innerhalb der übergeordneten Reihenfolge.  |
 | meeting_abbreviation | 0..1 <br/> [String](String.md) | Kurzbezeichnung der Session oder Sitzung (z.B. „FS24“ für die Frühjahrssession 2024).  |
-| actor_name | 0..1 <br/> [String](String.md) | Name des politischen Organs (z.B. Nationalrat).  |
+| actor_name | 0..1 <br/> [String](String.md) | Name des politischen Organs im Klartext (z.B. Nationalrat), zusätzlich zur Referenz `actor_id`.  |
 | actor_id | 0..1 <br/> [GroupReference](GroupReference.md) | Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
-| state | 0..1 <br/> [StateEnum](StateEnum.md) | Aktueller Status der Sitzung (geplant, abgesagt, verschoben).  |
-| state_name | 0..1 <br/> [String](String.md) | Benutzerdefinierte Zustandsbeschreibung für die Sitzung.  |
+| state | 0..1 <br/> [StateEnum](StateEnum.md) | Ob die Sitzung überhaupt wie vorgesehen stattfindet (geplant, abgesagt, verschoben). Eine abweichende, freitextliche Bezeichnung nimmt `state_name` auf.  |
+| state_name | 0..1 <br/> [String](String.md) | Abweichende, freitextliche Statusbezeichnung der Sitzung, wo die Werte von `state` nicht genügen.  |
 | description | 0..1 <br/> [String](String.md) | Beschreibender Text zum Element.  |
-| location | 0..1 <br/> [String](String.md) | Ort, an dem die Sitzung stattfindet (physischer Raum, Videokonferenz oder hybrides Format).  |
+| location | 0..1 <br/> [String](String.md) | Ort, an dem die Sitzung stattfindet — der physische Raum („Bundeshaus, Nationalratssaal“), eine Videokonferenz oder ein hybrides Format.  |
 | parent_meeting | 0..1 <br/> [String](String.md) | Identifikator der Sitzung, zu der dieser Eintrag gehört. Bei einer Sitzung bezeichnet er die übergeordnete Sitzung, bei Traktandum, Abstimmung, Wahl, Wortmeldung oder Protokoll die Sitzung, in der der Eintrag entstanden ist.  |
-| parent_legislature | 0..1 <br/> [String](String.md) | Der gesetzgebende Körper, auf dem die Sitzung basiert.  |
-| documents | * <br/> [Work](Work.md) | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.  |
+| parent_session | 0..1 <br/> [String](String.md) | Identifikator der Session, zu der die Sitzung gehört.  |
+| documents | * <br/> [Work](Work.md) | Sitzungsunterlagen wie Tagblatt oder Beilagen, als FRBR-Works. Das Protokoll wird nicht hier, sondern über `has_protocol` verknüpft.  |
 | has_protocol | 0..1 <br/> [Protocol](Protocol.md) | Referenz auf das nach der Sitzung erstellte Protokoll dieser Sitzung. Angegeben wird nur der Identifikator des Protokolls; das Protokoll selbst wird in der Liste `protocols` des Containers geliefert. Es ist eine eigenständige Entität mit eigenem Identifikator und wird in der Regel später veröffentlicht als die Sitzung, weshalb es referenziert und nicht eingebettet wird.  |
 | date_begin_actual | 0..1 <br/> [Date](Date.md) | Das tatsächliche Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](IsEventWithDuration.md) |
 | datetime_begin_actual | 0..1 <br/> [Datetime](Datetime.md) | Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](IsEventWithDuration.md) |
@@ -86,7 +85,6 @@ _Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, Sessi
 meetings:
 - global_uri: parl:sr_winter25_sitzung_6
   spatial: https://ld.admin.ch/country/CHE
-  meeting_type: session
   name:
   - text: Sechste Sitzung
     language: de
@@ -114,7 +112,6 @@ meetings:
 meetings:
 - spatial: https://ld.admin.ch/canton/2
   global_uri: ops:e7c5d453-848a-430a-b024-1dd2f6873aa6
-  meeting_type: session
   name:
   - text: Donnerstag (Nachmittag)
     language: de
@@ -144,7 +141,6 @@ meetings:
 meetings:
 - global_uri: ops:meeting_be_committee_wak_2025_05_12
   spatial: https://ld.admin.ch/canton/2
-  meeting_type: committee
   name:
   - text: Sitzung Kommission für Wirtschaft und Abgaben
     language: de
@@ -166,7 +162,6 @@ meetings:
   datetime_end_actual: '2025-05-12T16:45:00Z'
   state: planned
   location: Kommissionszimmer 301, Rathaus Bern
-  parent_legislature: ops:legislature_be_2022_2026
   datetime_created: '2025-04-15T09:00:00Z'
   datetime_modified: '2025-05-12T16:45:00Z'
 
@@ -177,7 +172,6 @@ meetings:
 meetings:
 - global_uri: ops:meeting_gl_landsgemeinde_2025
   spatial: https://ld.admin.ch/canton/8
-  meeting_type: sitting
   name:
   - text: Landsgemeinde 2025
     language: de
@@ -197,7 +191,7 @@ meetings:
   datetime_end_actual: '2025-05-04T13:45:00Z'
   state: planned
   location: Zaunplatz, Glarus
-  parent_legislature: ops:legislature_gl_2024_2028
+  parent_session: ops:session_gl_landsgemeinde_2025
   datetime_created: '2025-01-10T12:00:00Z'
   datetime_modified: '2025-05-04T13:45:00Z'
 
@@ -208,7 +202,6 @@ meetings:
 meetings:
 - spatial: https://ld.admin.ch/canton/2
   global_uri: ops:340dcf932fb044dd8f8c5c943267fbcc
-  meeting_type: session
   name:
   - text: Regierungssitzung vom 31. März 2021
     language: de
@@ -240,7 +233,6 @@ meetings:
 meetings:
 - global_uri: ops:meeting_sg_2025_03_15
   spatial: https://ld.admin.ch/canton/17
-  meeting_type: session
   name:
   - text: Kantonsratssitzung vom 15. März 2025
     language: de
@@ -260,7 +252,7 @@ meetings:
   datetime_end_actual: '2025-03-15T17:30:00Z'
   state: planned
   location: Kantonsratssaal, Regierungsgebäude St. Gallen
-  parent_legislature: ops:legislature_sg_2024_2028
+  parent_session: ops:session_sg_2025_03
   datetime_created: '2025-02-01T10:00:00Z'
   datetime_modified: '2025-03-15T17:30:00Z'
 

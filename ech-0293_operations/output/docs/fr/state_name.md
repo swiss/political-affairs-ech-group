@@ -6,7 +6,7 @@ search:
 # Slot: state_name 
 
 
-_Description personnalisée de l'état de la séance._
+_Désignation de statut divergente, en texte libre, là où l'énumération des statuts ne suffit pas._
 
 
 
@@ -26,7 +26,7 @@ URI: [ops:state_name](https://ch.paf.link/schema/operations/state_name)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Meeting](Meeting.md) | Une classe générale de séance utilisée pour les sessions, les séances de comm... |  no  |
+| [Meeting](Meeting.md) | La séance individuelle d'un organe — le niveau auquel les points de l'ordre d... |  yes  |
 | [IsAgendaItem](IsAgendaItem.md) | Une classe mixin qui fournit les éléments d'un point de l'ordre du jour : dés... |  no  |
 | [AgendaItem](AgendaItem.md) | Un point de l'ordre du jour d'une séance |  no  |
 | [ProtocolItem](ProtocolItem.md) | Un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-... |  no  |
@@ -69,15 +69,18 @@ name: state_name
 annotations:
   description_de:
     tag: description_de
-    value: 'Benutzerdefinierte Zustandsbeschreibung für die Sitzung.
+    value: 'Abweichende, freitextliche Statusbezeichnung, wo die Status-Aufzählung
+      nicht genügt.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Description personnalisée de l''état de la séance.
+    value: 'Désignation de statut divergente, en texte libre, là où l''énumération
+      des statuts ne suffit pas.
 
       '
-description: 'Description personnalisée de l''état de la séance.
+description: 'Désignation de statut divergente, en texte libre, là où l''énumération
+  des statuts ne suffit pas.
 
   '
 from_schema: https://ch.paf.link/schema/operations

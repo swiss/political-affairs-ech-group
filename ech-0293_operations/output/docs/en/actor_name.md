@@ -6,7 +6,7 @@ search:
 # Slot: actor_name 
 
 
-_Name of the political body (e.g., Nationalrat)._
+_Name of the political body in plain text (e.g., Nationalrat), in addition to the reference `actor_id`._
 
 
 
@@ -26,7 +26,7 @@ URI: [ops:actor_name](https://ch.paf.link/schema/operations/actor_name)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Meeting](Meeting.md) | A general meeting class used for Sessions, Comittee Meetings, individual sess... |  no  |
+| [Meeting](Meeting.md) | The individual sitting of a body — the level at which agenda items are delibe... |  no  |
 
 
 
@@ -66,15 +66,18 @@ name: actor_name
 annotations:
   description_de:
     tag: description_de
-    value: 'Name des politischen Organs (z.B. Nationalrat).
+    value: 'Name des politischen Organs im Klartext (z.B. Nationalrat), zusätzlich
+      zur Referenz `actor_id`.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Nom de l''organe politique (p. ex. Conseil national).
+    value: 'Nom de l''organe politique en clair (p. ex. Conseil national), en complément
+      de la référence `actor_id`.
 
       '
-description: 'Name of the political body (e.g., Nationalrat).
+description: 'Name of the political body in plain text (e.g., Nationalrat), in addition
+  to the reference `actor_id`.
 
   '
 from_schema: https://ch.paf.link/schema/operations

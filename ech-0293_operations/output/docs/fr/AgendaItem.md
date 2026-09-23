@@ -42,12 +42,13 @@ _Un point de l'ordre du jour d'une séance._
 | affair_id | 0..1 <br/> [String](String.md) | Le lien vers les affaires rattachées au point de l'ordre du jour. <br/><br/>Héritage : [IsAgendaItem](IsAgendaItem.md) |
 | agenda_item_description | * <br/> [MultilingualString](MultilingualString.md) | Sous-titre ou description détaillée du point de l'ordre du jour. <br/><br/>Héritage : [IsAgendaItem](IsAgendaItem.md) |
 | state_id | 0..1 <br/> [String](String.md) | Identifiant d'état (renvoi à l'énumération des états ou à un état propre). <br/><br/>Héritage : [IsAgendaItem](IsAgendaItem.md) |
-| state_name | 0..1 <br/> [String](String.md) | Description personnalisée de l'état de la séance. <br/><br/>Héritage : [IsAgendaItem](IsAgendaItem.md) |
+| state_name | 0..1 <br/> [String](String.md) | Désignation de statut divergente, en texte libre, là où l'énumération des statuts ne suffit pas. <br/><br/>Héritage : [IsAgendaItem](IsAgendaItem.md) |
 | landing_page | 0..1 <br/> [String](String.md) | URL fournissant des informations complémentaires. <br/><br/>Héritage : [IsAgendaItem](IsAgendaItem.md) |
 | url | * <br/> [MultilingualString](MultilingualString.md) | Page d'accueil ou adresse web complémentaire, multilingue. <br/><br/>Héritage : [IsAgendaItem](IsAgendaItem.md) |
 | agenda_item_category | 0..1 <br/> [String](String.md) | Catégorie pour les points de l'ordre du jour regroupés (p. ex. introduction, par département, points techniques). <br/><br/>Héritage : [IsAgendaItem](IsAgendaItem.md) |
 | parent_agenda_item | 0..1 <br/> [String](String.md) | Identifiant du point de l'ordre du jour auquel cet enregistrement se rattache. Pour un point de l'ordre du jour, il construit une hiérarchie de points ; pour un vote, une élection ou une intervention, il désigne le point sous lequel l'enregistrement a été traité. <br/><br/>Héritage : [IsAgendaItem](IsAgendaItem.md) |
 | has_resolution | 0..1 <br/> [Resolution](Resolution.md) | La décision prise sur ce point de l'ordre du jour. <br/><br/>Héritage : [IsAgendaItem](IsAgendaItem.md) |
+| joint_debates | * <br/> [JointDebate](JointDebate.md) | Délibérations communes dans lesquelles ce point de l'ordre du jour est traité conjointement avec d'autres points. <br/><br/>Héritage : [IsAgendaItem](IsAgendaItem.md) |
 | text_segments | * <br/> [TextSegment](TextSegment.md) | Ensemble de segments de texte (p. ex. procès-verbal in extenso). <br/><br/>Héritage : [IsAgendaItem](IsAgendaItem.md) |
 | documents | * <br/> [Work](Work.md) | Liste des documents (FRBR Works) liés à l'entité. <br/><br/>Héritage : [IsAgendaItem](IsAgendaItem.md) |
 
@@ -60,7 +61,6 @@ _Un point de l'ordre du jour d'une séance._
 | Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [agenda_items](agenda_items.md) | range | [AgendaItem](AgendaItem.md) |
-| [JointDebate](JointDebate.md) | [agenda_items](agenda_items.md) | range | [AgendaItem](AgendaItem.md) |
 
 
 

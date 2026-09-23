@@ -27,7 +27,6 @@ URI: [ops:agendaItem](https://ch.paf.link/schema/operations/agendaItem)
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Container](Container.md) | Container for the records of public council operations: legislatures, session... |  no  |
-| [JointDebate](JointDebate.md) | Agenda Items which are debated together |  no  |
 
 
 
@@ -41,7 +40,7 @@ URI: [ops:agendaItem](https://ch.paf.link/schema/operations/agendaItem)
 | Property | Value |
 | --- | --- |
 | Range | [AgendaItem](AgendaItem.md) |
-| Domain Of | [Container](Container.md), [JointDebate](JointDebate.md) |
+| Domain Of | [Container](Container.md) |
 | Slot URI | [ops:agendaItem](https://ch.paf.link/schema/operations/agendaItem) |
 
 ### Cardinality and Requirements
@@ -85,7 +84,6 @@ rank: 1000
 slot_uri: ops:agendaItem
 domain_of:
 - Container
-- JointDebate
 range: AgendaItem
 multivalued: true
 inlined: true

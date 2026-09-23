@@ -28,7 +28,7 @@ URI: [meta:documents](https://ch.paf.link/schema/meta/documents)
 | --- | --- | --- |
 | [Legislature](Legislature.md) | Term of office of a parliament as a legislative assembly |  no  |
 | [Session](Session.md) | A parliamentary session that groups multiple meetings and spans a specific ti... |  no  |
-| [Meeting](Meeting.md) | A general meeting class used for Sessions, Comittee Meetings, individual sess... |  no  |
+| [Meeting](Meeting.md) | The individual sitting of a body — the level at which agenda items are delibe... |  yes  |
 | [IsAgendaItem](IsAgendaItem.md) | A mixin class that provides the elements of an agenda item: designation, type... |  no  |
 | [Protocol](Protocol.md) | The minutes of a meeting, recorded after the meeting |  no  |
 | [Resolution](Resolution.md) | A resolution or decision taken on an agenda item, including voting procedures |  no  |

@@ -27,7 +27,6 @@ URI: [ops:agendaItem](https://ch.paf.link/schema/operations/agendaItem)
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
 | [Container](Container.md) | Container für die Daten des öffentlichen Ratsbetriebs: Legislaturperioden, Se... |  no  |
-| [JointDebate](JointDebate.md) | Traktanden die gemeinsam behandelt werden |  no  |
 
 
 
@@ -41,7 +40,7 @@ URI: [ops:agendaItem](https://ch.paf.link/schema/operations/agendaItem)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [AgendaItem](AgendaItem.md) |
-| Domäne von | [Container](Container.md), [JointDebate](JointDebate.md) |
+| Domäne von | [Container](Container.md) |
 | Slot-URI | [ops:agendaItem](https://ch.paf.link/schema/operations/agendaItem) |
 
 ### Kardinalität und Anforderungen
@@ -85,7 +84,6 @@ rank: 1000
 slot_uri: ops:agendaItem
 domain_of:
 - Container
-- JointDebate
 range: AgendaItem
 multivalued: true
 inlined: true

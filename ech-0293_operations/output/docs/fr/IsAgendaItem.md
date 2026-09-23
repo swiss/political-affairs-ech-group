@@ -27,12 +27,13 @@ _Une classe mixin qui fournit les éléments d'un point de l'ordre du jour : dé
 | affair_id | 0..1 <br/> [String](String.md) | Le lien vers les affaires rattachées au point de l'ordre du jour.  |
 | agenda_item_description | * <br/> [MultilingualString](MultilingualString.md) | Sous-titre ou description détaillée du point de l'ordre du jour.  |
 | state_id | 0..1 <br/> [String](String.md) | Identifiant d'état (renvoi à l'énumération des états ou à un état propre).  |
-| state_name | 0..1 <br/> [String](String.md) | Description personnalisée de l'état de la séance.  |
+| state_name | 0..1 <br/> [String](String.md) | Désignation de statut divergente, en texte libre, là où l'énumération des statuts ne suffit pas.  |
 | landing_page | 0..1 <br/> [String](String.md) | URL fournissant des informations complémentaires.  |
 | url | * <br/> [MultilingualString](MultilingualString.md) | Page d'accueil ou adresse web complémentaire, multilingue.  |
 | agenda_item_category | 0..1 <br/> [String](String.md) | Catégorie pour les points de l'ordre du jour regroupés (p. ex. introduction, par département, points techniques).  |
 | parent_agenda_item | 0..1 <br/> [String](String.md) | Identifiant du point de l'ordre du jour auquel cet enregistrement se rattache. Pour un point de l'ordre du jour, il construit une hiérarchie de points ; pour un vote, une élection ou une intervention, il désigne le point sous lequel l'enregistrement a été traité.  |
 | has_resolution | 0..1 <br/> [Resolution](Resolution.md) | La décision prise sur ce point de l'ordre du jour.  |
+| joint_debates | * <br/> [JointDebate](JointDebate.md) | Délibérations communes dans lesquelles ce point de l'ordre du jour est traité conjointement avec d'autres points.  |
 | text_segments | * <br/> [TextSegment](TextSegment.md) | Ensemble de segments de texte (p. ex. procès-verbal in extenso).  |
 | documents | * <br/> [Work](Work.md) | Liste des documents (FRBR Works) liés à l'entité.  |
 

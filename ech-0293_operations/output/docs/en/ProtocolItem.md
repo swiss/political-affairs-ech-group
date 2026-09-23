@@ -42,12 +42,13 @@ _An agenda item as actually recorded in the protocol. It carries the same elemen
 | affair_id | 0..1 <br/> [String](String.md) | The connection to the affairs (business items) of the agenda item. <br/><br/>Inheritance: [IsAgendaItem](IsAgendaItem.md) |
 | agenda_item_description | * <br/> [MultilingualString](MultilingualString.md) | Subtitle or detailed description of the agenda item. <br/><br/>Inheritance: [IsAgendaItem](IsAgendaItem.md) |
 | state_id | 0..1 <br/> [String](String.md) | State identifier (reference to state enum or custom state). <br/><br/>Inheritance: [IsAgendaItem](IsAgendaItem.md) |
-| state_name | 0..1 <br/> [String](String.md) | Custom state description for the meeting. <br/><br/>Inheritance: [IsAgendaItem](IsAgendaItem.md) |
+| state_name | 0..1 <br/> [String](String.md) | Diverging, free-text status designation, where the status enumeration does not suffice. <br/><br/>Inheritance: [IsAgendaItem](IsAgendaItem.md) |
 | landing_page | 0..1 <br/> [String](String.md) | URL providing further information. <br/><br/>Inheritance: [IsAgendaItem](IsAgendaItem.md) |
 | url | * <br/> [MultilingualString](MultilingualString.md) | Landing page or further web address, multilingual. <br/><br/>Inheritance: [IsAgendaItem](IsAgendaItem.md) |
 | agenda_item_category | 0..1 <br/> [String](String.md) | Category for grouped agenda items (e.g., introduction, by department, technical agenda items). <br/><br/>Inheritance: [IsAgendaItem](IsAgendaItem.md) |
 | parent_agenda_item | 0..1 <br/> [String](String.md) | Identifier of the agenda item this record belongs to. On an agenda item it builds a hierarchy of agenda items; on a voting, election or speech it names the agenda item under which the record was handled. <br/><br/>Inheritance: [IsAgendaItem](IsAgendaItem.md) |
 | has_resolution | 0..1 <br/> [Resolution](Resolution.md) | The resolution or decision taken on this agenda item. <br/><br/>Inheritance: [IsAgendaItem](IsAgendaItem.md) |
+| joint_debates | * <br/> [JointDebate](JointDebate.md) | Joint debates in which this agenda item is deliberated together with other agenda items. <br/><br/>Inheritance: [IsAgendaItem](IsAgendaItem.md) |
 | text_segments | * <br/> [TextSegment](TextSegment.md) | Collection of text segments (e.g. verbatim protocol). <br/><br/>Inheritance: [IsAgendaItem](IsAgendaItem.md) |
 | documents | * <br/> [Work](Work.md) | List of documents (FRBR Works) linked to the entity. <br/><br/>Inheritance: [IsAgendaItem](IsAgendaItem.md) |
 

@@ -6,7 +6,7 @@ search:
 # Slot: state 
 
 
-_État actuel de la séance (planifiée, annulée, reportée)._
+_Indique si la séance a lieu comme prévu (planifiée, annulée, reportée). Une désignation divergente, en texte libre, est reprise dans `state_name`._
 
 
 
@@ -26,7 +26,7 @@ URI: [ops:state](https://ch.paf.link/schema/operations/state)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Meeting](Meeting.md) | Une classe générale de séance utilisée pour les sessions, les séances de comm... |  no  |
+| [Meeting](Meeting.md) | La séance individuelle d'un organe — le niveau auquel les points de l'ordre d... |  no  |
 
 
 
@@ -73,15 +73,19 @@ name: state
 annotations:
   description_de:
     tag: description_de
-    value: 'Aktueller Status der Sitzung (geplant, abgesagt, verschoben).
+    value: 'Ob die Sitzung überhaupt wie vorgesehen stattfindet (geplant, abgesagt,
+      verschoben). Eine abweichende, freitextliche Bezeichnung nimmt `state_name`
+      auf.
 
       '
   description_fr:
     tag: description_fr
-    value: 'État actuel de la séance (planifiée, annulée, reportée).
+    value: 'Indique si la séance a lieu comme prévu (planifiée, annulée, reportée).
+      Une désignation divergente, en texte libre, est reprise dans `state_name`.
 
       '
-description: 'État actuel de la séance (planifiée, annulée, reportée).
+description: 'Indique si la séance a lieu comme prévu (planifiée, annulée, reportée).
+  Une désignation divergente, en texte libre, est reprise dans `state_name`.
 
   '
 examples:

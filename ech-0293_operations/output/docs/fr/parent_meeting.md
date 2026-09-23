@@ -26,7 +26,7 @@ URI: [ops:parent_meeting](https://ch.paf.link/schema/operations/parent_meeting)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Meeting](Meeting.md) | Une classe générale de séance utilisée pour les sessions, les séances de comm... |  no  |
+| [Meeting](Meeting.md) | La séance individuelle d'un organe — le niveau auquel les points de l'ordre d... |  no  |
 | [IsAgendaItem](IsAgendaItem.md) | Une classe mixin qui fournit les éléments d'un point de l'ordre du jour : dés... |  no  |
 | [Protocol](Protocol.md) | Le procès-verbal établi après la séance |  no  |
 | [Voting](Voting.md) | Une procédure de vote avec les voix individuelles et les résultats |  no  |

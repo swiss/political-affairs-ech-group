@@ -27,7 +27,7 @@ _A parliamentary session that groups multiple meetings and spans a specific time
 | position | 0..1 <br/> [String](String.md) | Integer position within the superordinate sequence.  |
 | meeting_abbreviation | 0..1 <br/> [String](String.md) | Short designation of the session or meeting (e.g. "FS24" for the 2024 spring session).  |
 | url | * <br/> [MultilingualString](MultilingualString.md) | Landing page or further web address, multilingual.  |
-| parent_legislature | 0..1 <br/> [String](String.md) | The legislative body in which the meeting is based.  |
+| parent_legislature | 0..1 <br/> [String](String.md) | Identifier of the legislature to which the session belongs.  |
 | meetings | * <br/> [Meeting](Meeting.md) | Collection of meeting records.  |
 | documents | * <br/> [Work](Work.md) | List of documents (FRBR Works) linked to the entity.  |
 | date_begin_actual | 0..1 <br/> [Date](Date.md) | The actual start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |

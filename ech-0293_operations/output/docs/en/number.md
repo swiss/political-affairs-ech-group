@@ -27,7 +27,7 @@ URI: [ops:number](https://ch.paf.link/schema/operations/number)
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Session](Session.md) | A parliamentary session that groups multiple meetings and spans a specific ti... |  no  |
-| [Meeting](Meeting.md) | A general meeting class used for Sessions, Comittee Meetings, individual sess... |  no  |
+| [Meeting](Meeting.md) | The individual sitting of a body — the level at which agenda items are delibe... |  no  |
 
 
 

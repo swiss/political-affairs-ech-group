@@ -3,7 +3,7 @@
 ## Class: Meeting 
 
 
-_A general meeting class used for Sessions, Comittee Meetings, individual session Sittings and other various Meetings._
+_The individual sitting of a body — the level at which agenda items are deliberated, decisions taken and speeches recorded. The meeting is the node to which the other classes of this standard attach via `parent_meeting`: agenda items (AgendaItem), votings and elections (Voting, Election), speeches (Speech) and the attendance list (Attendance). At this level, scheduled and actual times regularly diverge — a sitting scheduled for 14:00 only begins at 14:25 because of delays and ends at 17:30 instead of 18:00 — which is why both the planned and the actual begin and end are recorded._
 
 
 
@@ -21,26 +21,25 @@ _A general meeting class used for Sessions, Comittee Meetings, individual sessio
 | global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | spatial | 0..1 <br/> [String](String.md) | Spatial reference to a LINDAS resource (fos-municipality number, fos-canton number, district, or country). Formats: municipality: https://ld.admin.ch/municipality/1234, district: https://ld.admin.ch/district/2301, canton: https://ld.admin.ch/canton/23, country: https://ld.admin.ch/country/CHE.  |
-| meeting_type | 0..1 <br/> [MeetingTypeEnum](MeetingTypeEnum.md) | Type of the meeting, e.g. session, committee, sitting, various.  |
 | administrative_id | 0..1 <br/> [String](String.md) | Administrative ID of the legislative body, such as a municipality, canton, or country.  |
 | name | * <br/> [MultilingualString](MultilingualString.md) | Multilingual full designation.  |
 | url | * <br/> [MultilingualString](MultilingualString.md) | Landing page or further web address, multilingual.  |
-| group_name | 0..1 <br/> [String](String.md) | Name of the group or body.  |
+| group_name | 0..1 <br/> [String](String.md) | Name of the group or body in plain text, in addition to the reference `group_id`.  |
 | group_id | 0..1 <br/> [GroupReference](GroupReference.md) | Reference to the group or body (lightweight snapshot at time of linking).  |
 | number | 0..1 <br/> [String](String.md) | Sequential number, e.g. within the legislature, the session or the year.  |
 | landing_page | 0..1 <br/> [String](String.md) | URL providing further information.  |
 | sequential_number | 0..1 <br/> [Integer](Integer.md) | Sequential number of the meeting, used for ordering.  |
 | position | 0..1 <br/> [String](String.md) | Integer position within the superordinate sequence.  |
 | meeting_abbreviation | 0..1 <br/> [String](String.md) | Short designation of the session or meeting (e.g. "FS24" for the 2024 spring session).  |
-| actor_name | 0..1 <br/> [String](String.md) | Name of the political body (e.g., Nationalrat).  |
+| actor_name | 0..1 <br/> [String](String.md) | Name of the political body in plain text (e.g., Nationalrat), in addition to the reference `actor_id`.  |
 | actor_id | 0..1 <br/> [GroupReference](GroupReference.md) | Reference to the acting body/organ (lightweight snapshot at time of linking).  |
-| state | 0..1 <br/> [StateEnum](StateEnum.md) | Current state of the meeting (planned, canceled, postponed).  |
-| state_name | 0..1 <br/> [String](String.md) | Custom state description for the meeting.  |
+| state | 0..1 <br/> [StateEnum](StateEnum.md) | Whether the meeting takes place as planned at all (planned, canceled, postponed). A diverging, free-text designation goes into `state_name`.  |
+| state_name | 0..1 <br/> [String](String.md) | Diverging, free-text status designation of the meeting, where the values of `state` do not suffice.  |
 | description | 0..1 <br/> [String](String.md) | Descriptive text of the element.  |
-| location | 0..1 <br/> [String](String.md) | Place where the meeting is held (physical room, video conference or hybrid format).  |
+| location | 0..1 <br/> [String](String.md) | Place where the meeting is held — the physical room ("Federal Palace, National Council chamber"), a video conference or a hybrid format.  |
 | parent_meeting | 0..1 <br/> [String](String.md) | Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.  |
-| parent_legislature | 0..1 <br/> [String](String.md) | The legislative body in which the meeting is based.  |
-| documents | * <br/> [Work](Work.md) | List of documents (FRBR Works) linked to the entity.  |
+| parent_session | 0..1 <br/> [String](String.md) | Identifier of the session to which the meeting belongs.  |
+| documents | * <br/> [Work](Work.md) | Sitting documents such as the bulletin (Tagblatt) or annexes, as FRBR Works. The protocol is not linked here but via `has_protocol`.  |
 | has_protocol | 0..1 <br/> [Protocol](Protocol.md) | Reference to the protocol (minutes) of this meeting, recorded after the meeting. Only the identifier of the protocol is given; the protocol itself is delivered in the container's `protocols` list. It is an entity in its own right with its own identifier and is usually published later than the meeting, so it is referenced rather than embedded.  |
 | date_begin_actual | 0..1 <br/> [Date](Date.md) | The actual start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
 | datetime_begin_actual | 0..1 <br/> [Datetime](Datetime.md) | The actual start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
@@ -86,7 +85,6 @@ _A general meeting class used for Sessions, Comittee Meetings, individual sessio
 meetings:
 - global_uri: parl:sr_winter25_sitzung_6
   spatial: https://ld.admin.ch/country/CHE
-  meeting_type: session
   name:
   - text: Sechste Sitzung
     language: de
@@ -114,7 +112,6 @@ meetings:
 meetings:
 - spatial: https://ld.admin.ch/canton/2
   global_uri: ops:e7c5d453-848a-430a-b024-1dd2f6873aa6
-  meeting_type: session
   name:
   - text: Donnerstag (Nachmittag)
     language: de
@@ -144,7 +141,6 @@ meetings:
 meetings:
 - global_uri: ops:meeting_be_committee_wak_2025_05_12
   spatial: https://ld.admin.ch/canton/2
-  meeting_type: committee
   name:
   - text: Sitzung Kommission für Wirtschaft und Abgaben
     language: de
@@ -166,7 +162,6 @@ meetings:
   datetime_end_actual: '2025-05-12T16:45:00Z'
   state: planned
   location: Kommissionszimmer 301, Rathaus Bern
-  parent_legislature: ops:legislature_be_2022_2026
   datetime_created: '2025-04-15T09:00:00Z'
   datetime_modified: '2025-05-12T16:45:00Z'
 
@@ -177,7 +172,6 @@ meetings:
 meetings:
 - global_uri: ops:meeting_gl_landsgemeinde_2025
   spatial: https://ld.admin.ch/canton/8
-  meeting_type: sitting
   name:
   - text: Landsgemeinde 2025
     language: de
@@ -197,7 +191,7 @@ meetings:
   datetime_end_actual: '2025-05-04T13:45:00Z'
   state: planned
   location: Zaunplatz, Glarus
-  parent_legislature: ops:legislature_gl_2024_2028
+  parent_session: ops:session_gl_landsgemeinde_2025
   datetime_created: '2025-01-10T12:00:00Z'
   datetime_modified: '2025-05-04T13:45:00Z'
 
@@ -208,7 +202,6 @@ meetings:
 meetings:
 - spatial: https://ld.admin.ch/canton/2
   global_uri: ops:340dcf932fb044dd8f8c5c943267fbcc
-  meeting_type: session
   name:
   - text: Regierungssitzung vom 31. März 2021
     language: de
@@ -240,7 +233,6 @@ meetings:
 meetings:
 - global_uri: ops:meeting_sg_2025_03_15
   spatial: https://ld.admin.ch/canton/17
-  meeting_type: session
   name:
   - text: Kantonsratssitzung vom 15. März 2025
     language: de
@@ -260,7 +252,7 @@ meetings:
   datetime_end_actual: '2025-03-15T17:30:00Z'
   state: planned
   location: Kantonsratssaal, Regierungsgebäude St. Gallen
-  parent_legislature: ops:legislature_sg_2024_2028
+  parent_session: ops:session_sg_2025_03
   datetime_created: '2025-02-01T10:00:00Z'
   datetime_modified: '2025-03-15T17:30:00Z'
 

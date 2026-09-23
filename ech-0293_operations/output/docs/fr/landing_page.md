@@ -27,7 +27,7 @@ URI: [ops:landingPage](https://ch.paf.link/schema/operations/landingPage)
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
 | [Legislature](Legislature.md) | Durée du mandat d'un parlement en tant qu'assemblée législative |  no  |
-| [Meeting](Meeting.md) | Une classe générale de séance utilisée pour les sessions, les séances de comm... |  no  |
+| [Meeting](Meeting.md) | La séance individuelle d'un organe — le niveau auquel les points de l'ordre d... |  no  |
 | [IsAgendaItem](IsAgendaItem.md) | Une classe mixin qui fournit les éléments d'un point de l'ordre du jour : dés... |  no  |
 | [Voting](Voting.md) | Une procédure de vote avec les voix individuelles et les résultats |  no  |
 | [Election](Election.md) | Une procédure d'élection visant à pourvoir des fonctions par des personnes |  no  |

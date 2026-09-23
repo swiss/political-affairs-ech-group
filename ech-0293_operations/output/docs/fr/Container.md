@@ -59,7 +59,6 @@ meetings:
 
 - global_uri: ops:meeting_sg_2025_03_15
   spatial: "https://ld.admin.ch/canton/17"
-  meeting_type: "session"
   name:
     - text: "Kantonsratssitzung vom 15. März 2025"
       language: "de"
@@ -79,13 +78,12 @@ meetings:
   datetime_end_actual: "2025-03-15T17:30:00Z"
   state: "planned"
   location: "Kantonsratssaal, Regierungsgebäude St. Gallen"
-  parent_legislature: ops:legislature_sg_2024_2028
+  parent_session: ops:session_sg_2025_03
   datetime_created: "2025-02-01T10:00:00Z"
   datetime_modified: "2025-03-15T17:30:00Z"
 
 - global_uri: ops:meeting_be_committee_wak_2025_05_12
   spatial: "https://ld.admin.ch/canton/2"
-  meeting_type: "committee"
   name:
     - text: "Sitzung Kommission für Wirtschaft und Abgaben"
       language: "de"
@@ -107,13 +105,11 @@ meetings:
   datetime_end_actual: "2025-05-12T16:45:00Z"
   state: "planned"
   location: "Kommissionszimmer 301, Rathaus Bern"
-  parent_legislature: ops:legislature_be_2022_2026
   datetime_created: "2025-04-15T09:00:00Z"
   datetime_modified: "2025-05-12T16:45:00Z"
 
 - global_uri: ops:meeting_gl_landsgemeinde_2025
   spatial: "https://ld.admin.ch/canton/8"
-  meeting_type: "sitting"
   name:
     - text: "Landsgemeinde 2025"
       language: "de"
@@ -133,7 +129,7 @@ meetings:
   datetime_end_actual: "2025-05-04T13:45:00Z"
   state: "planned"
   location: "Zaunplatz, Glarus"
-  parent_legislature: ops:legislature_gl_2024_2028
+  parent_session: ops:session_gl_landsgemeinde_2025
   datetime_created: "2025-01-10T12:00:00Z"
   datetime_modified: "2025-05-04T13:45:00Z"
 
@@ -209,7 +205,6 @@ global_uri: ops:data_meeting_sr_winter25_Sitzung6
 meetings:
   - global_uri: "parl:sr_winter25_sitzung_6"
     spatial: "https://ld.admin.ch/country/CHE"
-    meeting_type: "session"
     name:
       - text: "Sechste Sitzung"
         language: "de"
@@ -755,7 +750,6 @@ global_uri: ops:meetings_1
 meetings:
   - spatial: "https://ld.admin.ch/canton/2"
     global_uri: ops:340dcf932fb044dd8f8c5c943267fbcc
-    meeting_type: "session"
     name:
       - text: "Regierungssitzung vom 31. März 2021"
         language: "de"
@@ -780,7 +774,6 @@ meetings:
 
   - spatial: "https://ld.admin.ch/canton/2"
     global_uri: ops:e7c5d453-848a-430a-b024-1dd2f6873aa6
-    meeting_type: "session"
     name:
       - text: "Donnerstag (Nachmittag)"
         language: "de"

@@ -1,7 +1,6 @@
 meetings:
 - global_uri: ops:meeting_sg_2025_03_15
   spatial: https://ld.admin.ch/canton/17
-  meeting_type: session
   name:
   - text: Kantonsratssitzung vom 15. März 2025
     language: de
@@ -21,6 +20,6 @@ meetings:
   datetime_end_actual: '2025-03-15T17:30:00Z'
   state: planned
   location: Kantonsratssaal, Regierungsgebäude St. Gallen
-  parent_legislature: ops:legislature_sg_2024_2028
+  parent_session: ops:session_sg_2025_03
   datetime_created: '2025-02-01T10:00:00Z'
   datetime_modified: '2025-03-15T17:30:00Z'

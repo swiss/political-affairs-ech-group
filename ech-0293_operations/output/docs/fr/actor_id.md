@@ -27,7 +27,7 @@ URI: [ops:actor_id](https://ch.paf.link/schema/operations/actor_id)
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
 | [Legislature](Legislature.md) | Durée du mandat d'un parlement en tant qu'assemblée législative |  yes  |
-| [Meeting](Meeting.md) | Une classe générale de séance utilisée pour les sessions, les séances de comm... |  yes  |
+| [Meeting](Meeting.md) | La séance individuelle d'un organe — le niveau auquel les points de l'ordre d... |  yes  |
 | [Voting](Voting.md) | Une procédure de vote avec les voix individuelles et les résultats |  yes  |
 | [IndividualVote](IndividualVote.md) | Une voix individuelle exprimée par un membre lors d'une procédure de vote |  no  |
 | [Election](Election.md) | Une procédure d'élection visant à pourvoir des fonctions par des personnes |  yes  |

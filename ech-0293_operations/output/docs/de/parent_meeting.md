@@ -26,7 +26,7 @@ URI: [ops:parent_meeting](https://ch.paf.link/schema/operations/parent_meeting)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [Meeting](Meeting.md) | Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, Sess... |  no  |
+| [Meeting](Meeting.md) | Die einzelne Sitzung eines Organs — die Ebene, auf der Traktanden beraten, Be... |  no  |
 | [IsAgendaItem](IsAgendaItem.md) | Eine Mixin-Klasse, welche die Elemente eines Traktandums bereitstellt: Bezeic... |  no  |
 | [Protocol](Protocol.md) | Das nach der Sitzung erstellte Protokoll |  no  |
 | [Voting](Voting.md) | Ein Abstimmungsverfahren mit Einzelstimmen und Ergebnissen |  no  |

@@ -6,7 +6,7 @@ search:
 # Slot: location 
 
 
-_Place where the meeting is held (physical room, video conference or hybrid format)._
+_Place where the meeting is held — the physical room ("Federal Palace, National Council chamber"), a video conference or a hybrid format._
 
 
 
@@ -26,7 +26,7 @@ URI: [ops:location](https://ch.paf.link/schema/operations/location)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Meeting](Meeting.md) | A general meeting class used for Sessions, Comittee Meetings, individual sess... |  no  |
+| [Meeting](Meeting.md) | The individual sitting of a body — the level at which agenda items are delibe... |  no  |
 
 
 
@@ -75,18 +75,18 @@ name: location
 annotations:
   description_de:
     tag: description_de
-    value: 'Ort, an dem die Sitzung stattfindet (physischer Raum, Videokonferenz oder
-      hybrides Format).
+    value: 'Ort, an dem die Sitzung stattfindet — der physische Raum („Bundeshaus,
+      Nationalratssaal“), eine Videokonferenz oder ein hybrides Format.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Lieu où se tient la séance (salle physique, visioconférence ou format
-      hybride).
+    value: 'Lieu où se tient la séance — la salle physique (« Palais fédéral, salle
+      du Conseil national »), une visioconférence ou un format hybride.
 
       '
-description: 'Place where the meeting is held (physical room, video conference or
-  hybrid format).
+description: 'Place where the meeting is held — the physical room ("Federal Palace,
+  National Council chamber"), a video conference or a hybrid format.
 
   '
 examples:

@@ -27,7 +27,6 @@ URI: [ops:agendaItem](https://ch.paf.link/schema/operations/agendaItem)
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
 | [Container](Container.md) | Conteneur pour les données de l'activité publique des conseils : législatures... |  no  |
-| [JointDebate](JointDebate.md) | Points de l'ordre du jour traités conjointement |  no  |
 
 
 
@@ -41,7 +40,7 @@ URI: [ops:agendaItem](https://ch.paf.link/schema/operations/agendaItem)
 | Propriété | Valeur |
 | --- | --- |
 | Plage | [AgendaItem](AgendaItem.md) |
-| Domaine de | [Container](Container.md), [JointDebate](JointDebate.md) |
+| Domaine de | [Container](Container.md) |
 | URI du slot | [ops:agendaItem](https://ch.paf.link/schema/operations/agendaItem) |
 
 ### Cardinalité et exigences
@@ -85,7 +84,6 @@ rank: 1000
 slot_uri: ops:agendaItem
 domain_of:
 - Container
-- JointDebate
 range: AgendaItem
 multivalued: true
 inlined: true

@@ -15,13 +15,12 @@ ops:340dcf932fb044dd8f8c5c943267fbcc a ops:Meeting ;
             mcm:globalURI actors:rr_be ;
             mcm:label "Regierungsrat Bern" ] ;
     ops:actor_name "Regierungsrat Bern" ;
-    ops:meetingType <https://ch.paf.link/schema/operations/enum/meeting_type/session> ;
     ops:name [ a ops:MultilingualString ;
-            ops:text "Séance du gouvernement du 31 mars 2021" ;
-            mcm:language "fr" ],
-        [ a ops:MultilingualString ;
             ops:text "Regierungssitzung vom 31. März 2021" ;
-            mcm:language "de" ] ;
+            mcm:language "de" ],
+        [ a ops:MultilingualString ;
+            ops:text "Séance du gouvernement du 31 mars 2021" ;
+            mcm:language "fr" ] ;
     ops:spatial "https://ld.admin.ch/canton/2" ;
     ops:url [ a ops:MultilingualString ;
             ops:text "https://www.rr.be.ch/fr/start/beschluesse/beschluesse-unterlagen-nach-sitzungen/sitzungs-detail?guid=340dcf932fb044dd8f8c5c943267fbcc" ;
@@ -42,7 +41,6 @@ ops:e7c5d453-848a-430a-b024-1dd2f6873aa6 a ops:Meeting ;
             mcm:globalURI actors:gr_be ;
             mcm:label "Grosser Rat Bern" ] ;
     ops:actor_name "Grosser Rat Bern" ;
-    ops:meetingType <https://ch.paf.link/schema/operations/enum/meeting_type/session> ;
     ops:name [ a ops:MultilingualString ;
             ops:text "Donnerstag (Nachmittag)" ;
             mcm:language "de" ] ;

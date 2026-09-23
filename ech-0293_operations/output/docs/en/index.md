@@ -30,11 +30,11 @@ Name: operations
 | [IsEventWithDuration](IsEventWithDuration.md) | A mixin class that provides slots for modeling events or occurrences with tim... |
 | [IsInstantaneousEvent](IsInstantaneousEvent.md) | A mixin class that provides slots for modeling instantaneous events or occurr... |
 | [IsProcessStep](IsProcessStep.md) | A mixin class for a single step in a multi-stage process (e |
-| [JointDebate](JointDebate.md) | Agenda Items which are debated together |
+| [JointDebate](JointDebate.md) | A joint debate: several agenda items are deliberated together |
 | [Legislature](Legislature.md) | Term of office of a parliament as a legislative assembly |
 | [Manifestation](Manifestation.md) | FRBR Manifestation: a concrete file format of an Expression, addressable via ... |
 | [Media](Media.md) | Media files or documents (including protocols in PDF/HTML/WORD or links to au... |
-| [Meeting](Meeting.md) | A general meeting class used for Sessions, Comittee Meetings, individual sess... |
+| [Meeting](Meeting.md) | The individual sitting of a body — the level at which agenda items are delibe... |
 | [Motion](Motion.md) | A formal proposal or motion submitted during proceedings |
 | [MultilingualString](MultilingualString.md) | A string that can contain text in multiple languages |
 | [MultilingualUri](MultilingualUri.md) | A URI together with the language of the resource it points to |
@@ -60,7 +60,7 @@ Name: operations
 | [abbreviation](abbreviation.md) | Abbreviation (can be multilingual) |
 | [actor_fullname](actor_fullname.md) | Full name of the actor/person |
 | [actor_id](actor_id.md) | Reference to the acting person (lightweight snapshot at time of linking) |
-| [actor_name](actor_name.md) | Name of the political body (e |
+| [actor_name](actor_name.md) | Name of the political body in plain text (e |
 | [administrative_id](administrative_id.md) | Administrative ID of the legislative body, such as a municipality, canton, or... |
 | [affair_id](affair_id.md) | The connection to the affairs (business items) of the agenda item |
 | [agenda_item_category](agenda_item_category.md) | Category for grouped agenda items (e |
@@ -108,7 +108,7 @@ Name: operations
 | [global_uri](global_uri.md) | A unique, globally valid URI for the entity |
 | [group_id](group_id.md) | Reference to the group or body (lightweight snapshot at time of linking) |
 | [group_label](group_label.md) | Name of the body/group at time of linking |
-| [group_name](group_name.md) | Name of the group or body |
+| [group_name](group_name.md) | Name of the group or body in plain text, in addition to the reference `group_... |
 | [has_protocol](has_protocol.md) | Reference to the protocol (minutes) of this meeting, recorded after the meeti... |
 | [has_resolution](has_resolution.md) | The resolution or decision taken on this agenda item |
 | [id](id.md) | Unique identifier of the element |
@@ -116,6 +116,8 @@ Name: operations
 | [individual_vote_type](individual_vote_type.md) | Type of vote cast (yes, no, abstention, no vote, etc |
 | [individual_votes](individual_votes.md) | Collection of individual vote records |
 | [is_active](is_active.md) | Indicates whether the information is currently valid |
+| [joint_agenda_item_ids](joint_agenda_item_ids.md) | Identifiers of the agenda items (AgendaItem or ProtocolItem) debated jointly |
+| [joint_debates](joint_debates.md) | Joint debates in which this agenda item is deliberated together with other ag... |
 | [label](label.md) | Assign a label to a structured piece of information (e |
 | [label_abstention](label_abstention.md) | Meaning of an 'abstention' vote |
 | [label_long](label_long.md) | Assign an extended label to a structured piece of information (e |
@@ -126,7 +128,7 @@ Name: operations
 | [leading_actor_id](leading_actor_id.md) | The leading department for the agenda item |
 | [legislatures](legislatures.md) | Collection of legislature records |
 | [local_id](local_id.md) | Local identifier |
-| [location](location.md) | Place where the meeting is held (physical room, video conference or hybrid fo... |
+| [location](location.md) | Place where the meeting is held — the physical room ("Federal Palace, Nationa... |
 | [majority_count](majority_count.md) | Number of votes required for the relevant majority threshold |
 | [majority_type](majority_type.md) | Type of majority required for the vote (absolute, two-thirds, etc |
 | [manifestation_url](manifestation_url.md) | URL under which the file form can be retrieved |
@@ -135,7 +137,6 @@ Name: operations
 | [media_type](media_type.md) | Type of media (audio, video, document) |
 | [media_url](media_url.md) | URL to media file (audio/video) |
 | [meeting_abbreviation](meeting_abbreviation.md) | Short designation of the session or meeting (e |
-| [meeting_type](meeting_type.md) | Type of the meeting, e |
 | [meetings](meetings.md) | Collection of meeting records |
 | [multilingual_value](multilingual_value.md) | A multilingual value with language specification |
 | [name](name.md) | Multilingual full designation |
@@ -143,10 +144,11 @@ Name: operations
 | [optional](optional.md) | Indicates if the meeting or voting is optional |
 | [parent_agenda_item](parent_agenda_item.md) | Identifier of the agenda item this record belongs to |
 | [parent_attendance](parent_attendance.md) | The Attendance aggregate this individual attendance record belongs to |
-| [parent_legislature](parent_legislature.md) | The legislative body in which the meeting is based |
+| [parent_legislature](parent_legislature.md) | Identifier of the legislature to which the session belongs |
 | [parent_meeting](parent_meeting.md) | Identifier of the meeting this record belongs to |
 | [parent_protocol](parent_protocol.md) | The protocol in which the voting or election is recorded |
 | [parent_protocol_item](parent_protocol_item.md) | The recorded agenda item (ProtocolItem) under which the voting or election to... |
+| [parent_session](parent_session.md) | Identifier of the session to which the meeting belongs |
 | [parent_type](parent_type.md) | Type of parent object (meeting, agenda, speech, affair) |
 | [parent_voting](parent_voting.md) | The ID of the voting associated with the individual vote |
 | [position](position.md) | Integer position within the superordinate sequence |
@@ -166,9 +168,9 @@ Name: operations
 | [speaking_actor_id](speaking_actor_id.md) | The speaker or head of the department for the agenda item |
 | [speeches](speeches.md) | Collection of speech records |
 | [start](start.md) | Start indicator or position |
-| [state](state.md) | Current state of the meeting (planned, canceled, postponed) |
+| [state](state.md) | Whether the meeting takes place as planned at all (planned, canceled, postpon... |
 | [state_id](state_id.md) | State identifier (reference to state enum or custom state) |
-| [state_name](state_name.md) | Custom state description for the meeting |
+| [state_name](state_name.md) | Diverging, free-text status designation, where the status enumeration does no... |
 | [status](status.md) | Free status designation, used where the state enumeration does not apply |
 | [text](text.md) | Text content of the element |
 | [text_format](text_format.md) | Format of text (text, html, html_with_timestamps) |
@@ -213,7 +215,6 @@ Name: operations
 | [ElectionTypeEnum](ElectionTypeEnum.md) | Type of election procedure |
 | [IndividualVoteTypeEnum](IndividualVoteTypeEnum.md) | Type of individual vote cast by a member |
 | [MajorityTypeEnum](MajorityTypeEnum.md) | Type of majority required for the vote |
-| [MeetingTypeEnum](MeetingTypeEnum.md) | Type of the meeting |
 | [ResolutionTypeEnum](ResolutionTypeEnum.md) | Type of resolution taken on an agenda item |
 | [StateEnum](StateEnum.md) | State of the meeting |
 | [VotingTypeEnum](VotingTypeEnum.md) | Type of voting procedure |

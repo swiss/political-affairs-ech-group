@@ -30,11 +30,11 @@ Name: operations
 | [IsEventWithDuration](IsEventWithDuration.md) | Eine Mixin-Klasse, die Slots für die Modellierung von Ereignissen oder Vorkom... |
 | [IsInstantaneousEvent](IsInstantaneousEvent.md) | Eine Mixin-Klasse, die Slots für die Modellierung von instantanen Ereignissen... |
 | [IsProcessStep](IsProcessStep.md) | Eine Mixin-Klasse für einen einzelnen Schritt in einem |
-| [JointDebate](JointDebate.md) | Traktanden die gemeinsam behandelt werden |
+| [JointDebate](JointDebate.md) | Eine gemeinsame Beratung: Mehrere Traktanden werden zusammen behandelt |
 | [Legislature](Legislature.md) | Amtsdauer eines Parlaments als gesetzgebender Versammlung |
 | [Manifestation](Manifestation.md) | FRBR Manifestation: eine konkrete Dateiform einer Expression, über eine URL a... |
 | [Media](Media.md) | Mediendateien oder Dokumente (einschliesslich Protokolle in PDF/HTML/WORD ode... |
-| [Meeting](Meeting.md) | Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, Sess... |
+| [Meeting](Meeting.md) | Die einzelne Sitzung eines Organs — die Ebene, auf der Traktanden beraten, Be... |
 | [Motion](Motion.md) | Ein formeller Antrag, der während der Verhandlungen eingereicht wird |
 | [MultilingualString](MultilingualString.md) | Ein String, der Text in mehreren Sprachen enthalten kann |
 | [MultilingualUri](MultilingualUri.md) | Eine URI zusammen mit der Sprache der Ressource, auf die sie verweist |
@@ -60,7 +60,7 @@ Name: operations
 | [abbreviation](abbreviation.md) | Abkürzung (kann mehrsprachig sein) |
 | [actor_fullname](actor_fullname.md) | Vollständiger Name der Akteurin oder des Akteurs bzw |
 | [actor_id](actor_id.md) | Referenz auf die handelnde Person (Momentaufnahme zum Zeitpunkt der Verknüpfu... |
-| [actor_name](actor_name.md) | Name des politischen Organs (z |
+| [actor_name](actor_name.md) | Name des politischen Organs im Klartext (z |
 | [administrative_id](administrative_id.md) | Verwaltungs-ID des gesetzgebenden Körpers, wie z |
 | [affair_id](affair_id.md) | Die Verbindung zu den Geschäften des Traktandums |
 | [agenda_item_category](agenda_item_category.md) | Kategorie für gruppierte Traktanden (z |
@@ -108,7 +108,7 @@ Name: operations
 | [global_uri](global_uri.md) | Eine eindeutige, global gültige URI für die Entität |
 | [group_id](group_id.md) | Referenz auf die Gruppe oder das Gremium (Momentaufnahme zum Zeitpunkt der Ve... |
 | [group_label](group_label.md) | Name des Gremiums zum Zeitpunkt der Verknüpfung |
-| [group_name](group_name.md) | Name der Gruppe oder des Gremiums |
+| [group_name](group_name.md) | Name der Gruppe oder des Gremiums im Klartext, zusätzlich zur Referenz `group... |
 | [has_protocol](has_protocol.md) | Referenz auf das nach der Sitzung erstellte Protokoll dieser Sitzung |
 | [has_resolution](has_resolution.md) | Die Resolution oder Entscheidung zu diesem Traktandum |
 | [id](id.md) | Eindeutiger Identifikator des Elements |
@@ -116,6 +116,8 @@ Name: operations
 | [individual_vote_type](individual_vote_type.md) | Art der abgegebenen Stimme (Ja, Nein, Enthaltung, nicht abgestimmt, etc |
 | [individual_votes](individual_votes.md) | Sammlung der Einzelstimmen |
 | [is_active](is_active.md) | Gibt an, ob die Information aktuell gültig ist |
+| [joint_agenda_item_ids](joint_agenda_item_ids.md) | Identifikatoren der gemeinsam behandelten Traktanden (AgendaItem oder Protoco... |
+| [joint_debates](joint_debates.md) | Gemeinsame Beratungen, in denen dieses Traktandum zusammen mit anderen Trakta... |
 | [label](label.md) | Möglichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw |
 | [label_abstention](label_abstention.md) | Bedeutung einer Enthaltungsstimme |
 | [label_long](label_long.md) | Möglichkeit bei einer strukturierten Information, ein erweitertesLabel zu ver... |
@@ -126,7 +128,7 @@ Name: operations
 | [leading_actor_id](leading_actor_id.md) | Das federführende Departement für das Traktandum |
 | [legislatures](legislatures.md) | Sammlung der Legislaturperioden |
 | [local_id](local_id.md) | Lokaler Identifikator |
-| [location](location.md) | Ort, an dem die Sitzung stattfindet (physischer Raum, Videokonferenz oder hyb... |
+| [location](location.md) | Ort, an dem die Sitzung stattfindet — der physische Raum („Bundeshaus, Nation... |
 | [majority_count](majority_count.md) | Anzahl der Stimmen, die für die relevante Mehrheitsschwelle erforderlich sind |
 | [majority_type](majority_type.md) | Art der für die Abstimmung erforderlichen Mehrheit (absolut, Zweidrittel usw |
 | [manifestation_url](manifestation_url.md) | URL, unter der die Dateiform abgerufen werden kann |
@@ -135,7 +137,6 @@ Name: operations
 | [media_type](media_type.md) | Art des Mediums (Audio, Video, Dokument) |
 | [media_url](media_url.md) | URL zur Mediendatei (Audio/Video) |
 | [meeting_abbreviation](meeting_abbreviation.md) | Kurzbezeichnung der Session oder Sitzung (z |
-| [meeting_type](meeting_type.md) | Art der Sitzung, z |
 | [meetings](meetings.md) | Sammlung der Sitzungen |
 | [multilingual_value](multilingual_value.md) | Ein mehrsprachiger Wert mit Angabe der Sprache |
 | [name](name.md) | Mehrsprachige vollständige Bezeichnung |
@@ -143,10 +144,11 @@ Name: operations
 | [optional](optional.md) | Gibt an, ob die Sitzung oder Abstimmung optional ist |
 | [parent_agenda_item](parent_agenda_item.md) | Identifikator des Traktandums, zu dem dieser Eintrag gehört |
 | [parent_attendance](parent_attendance.md) | Das Attendance-Aggregat, zu dem dieser einzelne Anwesenheits-Eintrag gehört |
-| [parent_legislature](parent_legislature.md) | Der gesetzgebende Körper, auf dem die Sitzung basiert |
+| [parent_legislature](parent_legislature.md) | Identifikator der Legislaturperiode, zu der die Session gehört |
 | [parent_meeting](parent_meeting.md) | Identifikator der Sitzung, zu der dieser Eintrag gehört |
 | [parent_protocol](parent_protocol.md) | Das Protokoll, in dem die Abstimmung oder Wahl festgehalten ist |
 | [parent_protocol_item](parent_protocol_item.md) | Das protokollierte Traktandum (ProtocolItem), unter dem abgestimmt oder gewäh... |
+| [parent_session](parent_session.md) | Identifikator der Session, zu der die Sitzung gehört |
 | [parent_type](parent_type.md) | Typ des übergeordneten Objekts (Sitzung, Traktandum, Wortmeldung, Geschäft) |
 | [parent_voting](parent_voting.md) | Die ID der Abstimmung, die mit der Einzelstimme verbunden ist |
 | [position](position.md) | Ganzzahlige Position innerhalb der übergeordneten Reihenfolge |
@@ -166,9 +168,9 @@ Name: operations
 | [speaking_actor_id](speaking_actor_id.md) | Der Sprecher oder die Sprecherin bzw |
 | [speeches](speeches.md) | Sammlung der Wortmeldungen |
 | [start](start.md) | Startangabe oder Position |
-| [state](state.md) | Aktueller Status der Sitzung (geplant, abgesagt, verschoben) |
+| [state](state.md) | Ob die Sitzung überhaupt wie vorgesehen stattfindet (geplant, abgesagt, versc... |
 | [state_id](state_id.md) | Zustands-Identifikator (Verweis auf das Status-Enum oder auf einen eigenen Zu... |
-| [state_name](state_name.md) | Benutzerdefinierte Zustandsbeschreibung für die Sitzung |
+| [state_name](state_name.md) | Abweichende, freitextliche Statusbezeichnung, wo die Status-Aufzählung nicht ... |
 | [status](status.md) | Freie Statusbezeichnung, dort verwendet, wo das Status-Enum nicht zutrifft |
 | [text](text.md) | Textinhalt des Elements |
 | [text_format](text_format.md) | Format des Textes (text, html, html_with_timestamps) |
@@ -213,7 +215,6 @@ Name: operations
 | [ElectionTypeEnum](ElectionTypeEnum.md) | Art des Wahlverfahrens |
 | [IndividualVoteTypeEnum](IndividualVoteTypeEnum.md) | Art der Einzelstimme eines Mitglieds |
 | [MajorityTypeEnum](MajorityTypeEnum.md) | Art der für die Abstimmung erforderlichen Mehrheit |
-| [MeetingTypeEnum](MeetingTypeEnum.md) | Art der Sitzung |
 | [ResolutionTypeEnum](ResolutionTypeEnum.md) | Art der Resolution zu einem Traktandum |
 | [StateEnum](StateEnum.md) | Status der Sitzung |
 | [VotingTypeEnum](VotingTypeEnum.md) | Art des Abstimmungsverfahrens |

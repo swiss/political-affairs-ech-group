@@ -6,7 +6,7 @@ search:
 # Slot: state_name 
 
 
-_Custom state description for the meeting._
+_Diverging, free-text status designation, where the status enumeration does not suffice._
 
 
 
@@ -26,7 +26,7 @@ URI: [ops:state_name](https://ch.paf.link/schema/operations/state_name)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Meeting](Meeting.md) | A general meeting class used for Sessions, Comittee Meetings, individual sess... |  no  |
+| [Meeting](Meeting.md) | The individual sitting of a body — the level at which agenda items are delibe... |  yes  |
 | [IsAgendaItem](IsAgendaItem.md) | A mixin class that provides the elements of an agenda item: designation, type... |  no  |
 | [AgendaItem](AgendaItem.md) | An agenda item of a meeting |  no  |
 | [ProtocolItem](ProtocolItem.md) | An agenda item as actually recorded in the protocol |  no  |
@@ -69,15 +69,18 @@ name: state_name
 annotations:
   description_de:
     tag: description_de
-    value: 'Benutzerdefinierte Zustandsbeschreibung für die Sitzung.
+    value: 'Abweichende, freitextliche Statusbezeichnung, wo die Status-Aufzählung
+      nicht genügt.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Description personnalisée de l''état de la séance.
+    value: 'Désignation de statut divergente, en texte libre, là où l''énumération
+      des statuts ne suffit pas.
 
       '
-description: 'Custom state description for the meeting.
+description: 'Diverging, free-text status designation, where the status enumeration
+  does not suffice.
 
   '
 from_schema: https://ch.paf.link/schema/operations

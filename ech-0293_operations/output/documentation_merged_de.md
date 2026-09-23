@@ -134,7 +134,6 @@ meetings:
 
 - global_uri: ops:meeting_sg_2025_03_15
   spatial: "https://ld.admin.ch/canton/17"
-  meeting_type: "session"
   name:
     - text: "Kantonsratssitzung vom 15. März 2025"
       language: "de"
@@ -154,13 +153,12 @@ meetings:
   datetime_end_actual: "2025-03-15T17:30:00Z"
   state: "planned"
   location: "Kantonsratssaal, Regierungsgebäude St. Gallen"
-  parent_legislature: ops:legislature_sg_2024_2028
+  parent_session: ops:session_sg_2025_03
   datetime_created: "2025-02-01T10:00:00Z"
   datetime_modified: "2025-03-15T17:30:00Z"
 
 - global_uri: ops:meeting_be_committee_wak_2025_05_12
   spatial: "https://ld.admin.ch/canton/2"
-  meeting_type: "committee"
   name:
     - text: "Sitzung Kommission für Wirtschaft und Abgaben"
       language: "de"
@@ -182,13 +180,11 @@ meetings:
   datetime_end_actual: "2025-05-12T16:45:00Z"
   state: "planned"
   location: "Kommissionszimmer 301, Rathaus Bern"
-  parent_legislature: ops:legislature_be_2022_2026
   datetime_created: "2025-04-15T09:00:00Z"
   datetime_modified: "2025-05-12T16:45:00Z"
 
 - global_uri: ops:meeting_gl_landsgemeinde_2025
   spatial: "https://ld.admin.ch/canton/8"
-  meeting_type: "sitting"
   name:
     - text: "Landsgemeinde 2025"
       language: "de"
@@ -208,7 +204,7 @@ meetings:
   datetime_end_actual: "2025-05-04T13:45:00Z"
   state: "planned"
   location: "Zaunplatz, Glarus"
-  parent_legislature: ops:legislature_gl_2024_2028
+  parent_session: ops:session_gl_landsgemeinde_2025
   datetime_created: "2025-01-10T12:00:00Z"
   datetime_modified: "2025-05-04T13:45:00Z"
 
@@ -284,7 +280,6 @@ global_uri: ops:data_meeting_sr_winter25_Sitzung6
 meetings:
   - global_uri: "parl:sr_winter25_sitzung_6"
     spatial: "https://ld.admin.ch/country/CHE"
-    meeting_type: "session"
     name:
       - text: "Sechste Sitzung"
         language: "de"
@@ -830,7 +825,6 @@ global_uri: ops:meetings_1
 meetings:
   - spatial: "https://ld.admin.ch/canton/2"
     global_uri: ops:340dcf932fb044dd8f8c5c943267fbcc
-    meeting_type: "session"
     name:
       - text: "Regierungssitzung vom 31. März 2021"
         language: "de"
@@ -855,7 +849,6 @@ meetings:
 
   - spatial: "https://ld.admin.ch/canton/2"
     global_uri: ops:e7c5d453-848a-430a-b024-1dd2f6873aa6
-    meeting_type: "session"
     name:
       - text: "Donnerstag (Nachmittag)"
         language: "de"
@@ -1048,7 +1041,7 @@ Legislature (Legislaturperiode)
           └─ AgendaItem (Traktandum)
 ```
 
-Die Legislaturperiode bildet den langfristigen Rahmen, die Session strukturiert die Arbeit innerhalb einer Legislaturperiode, das Meeting ist die konkrete Sitzung, in der Geschäfte beraten werden, und das Traktandum gliedert die einzelne Sitzung. Die Ebenen greifen auf zwei Arten ineinander: Die Session nimmt ihre Sitzungen als Liste auf (`meetings`), während Sitzung und Traktandum über Referenzen nach oben zeigen (`parent_legislature`, `parent_meeting`, `parent_agenda_item`). Wer keine Sessionen führt, liefert seine Sitzungen einzeln und hängt sie über `parent_legislature` an die Legislaturperiode.
+Die Legislaturperiode bildet den langfristigen Rahmen, die Session strukturiert die Arbeit innerhalb einer Legislaturperiode, das Meeting ist die konkrete Sitzung, in der Geschäfte beraten werden, und das Traktandum gliedert die einzelne Sitzung. Die Ebenen greifen auf zwei Arten ineinander: Die Session nimmt ihre Sitzungen als Liste auf (`meetings`), während Sitzung und Traktandum über Referenzen nach oben zeigen (`parent_legislature`, `parent_session`, `parent_meeting`, `parent_agenda_item`): Die Session verweist auf ihre Legislaturperiode, die Sitzung auf ihre Session.
 
 Die ersten drei Klassen sind nachfolgend beschrieben, das Traktandum im nächsten Kapitel.
 
@@ -1062,7 +1055,7 @@ Die drei Klassen sind bewusst gleich gebaut. Die folgenden Felder haben auf alle
 
 **Raum und Organ.** `spatial` verweist auf die Raumeinheit gemäss LINDAS — Land, Kanton, Bezirk oder Gemeinde, also `https://ld.admin.ch/canton/2` statt „BE". Es ist dasselbe Feld, mit dem eCH-0294 seine Gruppen verortet, sodass ein Ratsbetrieb und die Akteure, die ihn tragen, auf dieselbe Ressource zeigen. Wer innerhalb dieser Raumeinheit tagt, sagt `actor_id` als Kurzreferenz auf das Organ gemäss eCH-0294.
 
-**Verlinkte Dokumente.** `documents` verknüpft Dokumente als FRBR-Works gemäss eCH-0292 — bei der Legislaturperiode etwa Mitglieder- und Geschäftsverzeichnisse, bei der Session das Sessionsprogramm, beim Meeting das Protokoll.
+**Verlinkte Dokumente.** `documents` verknüpft Dokumente als FRBR-Works gemäss eCH-0292 — bei der Legislaturperiode etwa Mitglieder- und Geschäftsverzeichnisse, bei der Session das Sessionsprogramm, beim Meeting Tagblatt und Beilagen (das Protokoll hingegen über `has_protocol`).
 
 ## Legislature (Legislaturperiode)
 
@@ -1264,7 +1257,7 @@ _Eine Parlamentssession, die mehrere Sitzungen gruppiert und sich über einen be
 | position | 0..1 <br/> String | Ganzzahlige Position innerhalb der übergeordneten Reihenfolge.  |
 | meeting_abbreviation | 0..1 <br/> String | Kurzbezeichnung der Session oder Sitzung (z.B. „FS24“ für die Frühjahrssession 2024).  |
 | url | * <br/> [MultilingualString](#MultilingualString) | Landing Page oder weiterführende Webadresse, mehrsprachig.  |
-| parent_legislature | 0..1 <br/> String | Der gesetzgebende Körper, auf dem die Sitzung basiert.  |
+| parent_legislature | 0..1 <br/> String | Identifikator der Legislaturperiode, zu der die Session gehört.  |
 | meetings | * <br/> [Meeting](#Meeting) | Sammlung der Sitzungen.  |
 | documents | * <br/> Work | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.  |
 | date_begin_actual | 0..1 <br/> Date | Das tatsächliche Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](#IsEventWithDuration) |
@@ -1403,24 +1396,12 @@ sessions:
 
 Ein Meeting ist die einzelne Sitzung eines Organs — die Ebene, auf der Traktanden beraten, Beschlüsse gefasst und Wortmeldungen festgehalten werden.
 
-### Sitzungstypen
-
-`meeting_type` unterscheidet vier Typen: `session` für Plenarsitzungen eines Parlaments oder einer Kammer, `committee` für Kommissionssitzungen, `sitting` für Versammlungen wie Landsgemeinden, Gemeinde- und Bürgergemeindeversammlungen und `various` als Auffangwert. Der Wert `sitting` ist eine bewusste Setzung: Landsgemeinden und Gemeindeversammlungen sind Versammlungen der Stimmberechtigten selbst, entscheiden aber als tagendes Organ mit Traktandenliste und werden deshalb wie eine Ratssitzung abgebildet.
-
-### Planung und Verlauf
-
-Auf dieser Ebene fallen die geplanten und die tatsächlichen Zeiten regelmässig auseinander: Eine für 14:00 angesetzte Sitzung beginnt wegen Verzögerungen erst um 14:25 und endet statt um 18:00 bereits um 17:30. Ob eine Sitzung überhaupt wie vorgesehen stattfindet, hält `state` fest (`planned`, `canceled`, `postponed`); `state_name` nimmt eine abweichende, freitextliche Statusbezeichnung auf. `location` erfasst den Sitzungsort — den physischen Raum („Bundeshaus, Nationalratssaal“), eine Videokonferenz oder ein hybrides Format.
-
-### Anknüpfungspunkte
-
-Das Meeting ist der Knoten, an dem die übrigen Klassen dieses Standards hängen: Traktanden (`AgendaItem`), Abstimmungen und Wahlen (`Voting`, `Election`), Wortmeldungen (`Speech`) sowie die Anwesenheitsliste (`Attendance.parent_meeting`). `documents` verknüpft Sitzungsunterlagen wie Tagblatt oder Beilagen, `has_protocol` das Protokoll. `parent_meeting` bildet Sitzungen ab, die Teil einer übergeordneten Sitzung sind; `actor_name`, `group_name` und `group_id` halten Organ und Gruppierung zusätzlich im Klartext fest.
-
 
 
 ### Klasse: Meeting []{#Meeting}
 
 
-_Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, Sessionssitzung und andere verschiedene Versammlungen verwendet wird._
+_Die einzelne Sitzung eines Organs — die Ebene, auf der Traktanden beraten, Beschlüsse gefasst und Wortmeldungen festgehalten werden. Die Sitzung ist der Knoten, an dem die übrigen Klassen dieses Standards über `parent_meeting` hängen: Traktanden (AgendaItem), Abstimmungen und Wahlen (Voting, Election), Wortmeldungen (Speech) sowie die Anwesenheitsliste (Attendance). Auf dieser Ebene fallen geplante und tatsächliche Zeiten regelmässig auseinander — eine für 14:00 angesetzte Sitzung beginnt wegen Verzögerungen erst um 14:25 und endet statt um 18:00 bereits um 17:30 —, weshalb Beginn und Ende sowohl geplant als auch tatsächlich erfasst werden._
 
 
 
@@ -1438,26 +1419,25 @@ _Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, Sessi
 | global_uri | 1 <br/> Uriorcurie | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> Uriorcurie | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | spatial | 0..1 <br/> String | Räumliche Referenz auf eine LINDAS-Ressource (BFS-Gemeindenummer, BFS-Kantonsnummer, Bezirk oder Land). Formate: Gemeinde: https://ld.admin.ch/municipality/1234, Bezirk: https://ld.admin.ch/district/2301, Kanton: https://ld.admin.ch/canton/23, Bund: https://ld.admin.ch/country/CHE.  |
-| meeting_type | 0..1 <br/> [MeetingTypeEnum](#MeetingTypeEnum) | Art der Sitzung, z.B. Session, Kommission, Sessionssitzung, Verschiedenes.  |
 | administrative_id | 0..1 <br/> String | Verwaltungs-ID des gesetzgebenden Körpers, wie z.B. Gemeinde, Kanton oder Land.  |
 | name | * <br/> [MultilingualString](#MultilingualString) | Mehrsprachige vollständige Bezeichnung.  |
 | url | * <br/> [MultilingualString](#MultilingualString) | Landing Page oder weiterführende Webadresse, mehrsprachig.  |
-| group_name | 0..1 <br/> String | Name der Gruppe oder des Gremiums.  |
+| group_name | 0..1 <br/> String | Name der Gruppe oder des Gremiums im Klartext, zusätzlich zur Referenz `group_id`.  |
 | group_id | 0..1 <br/> [GroupReference](#GroupReference) | Referenz auf die Gruppe oder das Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
 | number | 0..1 <br/> String | Laufende Nummer, z.B. innerhalb der Legislatur, der Session oder des Jahres.  |
 | landing_page | 0..1 <br/> String | URL mit weiteren Informationen.  |
 | sequential_number | 0..1 <br/> Integer | Laufende Nummer der Sitzung, die zur Sortierung verwendet wird.  |
 | position | 0..1 <br/> String | Ganzzahlige Position innerhalb der übergeordneten Reihenfolge.  |
 | meeting_abbreviation | 0..1 <br/> String | Kurzbezeichnung der Session oder Sitzung (z.B. „FS24“ für die Frühjahrssession 2024).  |
-| actor_name | 0..1 <br/> String | Name des politischen Organs (z.B. Nationalrat).  |
+| actor_name | 0..1 <br/> String | Name des politischen Organs im Klartext (z.B. Nationalrat), zusätzlich zur Referenz `actor_id`.  |
 | actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
-| state | 0..1 <br/> [StateEnum](#StateEnum) | Aktueller Status der Sitzung (geplant, abgesagt, verschoben).  |
-| state_name | 0..1 <br/> String | Benutzerdefinierte Zustandsbeschreibung für die Sitzung.  |
+| state | 0..1 <br/> [StateEnum](#StateEnum) | Ob die Sitzung überhaupt wie vorgesehen stattfindet (geplant, abgesagt, verschoben). Eine abweichende, freitextliche Bezeichnung nimmt `state_name` auf.  |
+| state_name | 0..1 <br/> String | Abweichende, freitextliche Statusbezeichnung der Sitzung, wo die Werte von `state` nicht genügen.  |
 | description | 0..1 <br/> String | Beschreibender Text zum Element.  |
-| location | 0..1 <br/> String | Ort, an dem die Sitzung stattfindet (physischer Raum, Videokonferenz oder hybrides Format).  |
+| location | 0..1 <br/> String | Ort, an dem die Sitzung stattfindet — der physische Raum („Bundeshaus, Nationalratssaal“), eine Videokonferenz oder ein hybrides Format.  |
 | parent_meeting | 0..1 <br/> String | Identifikator der Sitzung, zu der dieser Eintrag gehört. Bei einer Sitzung bezeichnet er die übergeordnete Sitzung, bei Traktandum, Abstimmung, Wahl, Wortmeldung oder Protokoll die Sitzung, in der der Eintrag entstanden ist.  |
-| parent_legislature | 0..1 <br/> String | Der gesetzgebende Körper, auf dem die Sitzung basiert.  |
-| documents | * <br/> Work | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.  |
+| parent_session | 0..1 <br/> String | Identifikator der Session, zu der die Sitzung gehört.  |
+| documents | * <br/> Work | Sitzungsunterlagen wie Tagblatt oder Beilagen, als FRBR-Works. Das Protokoll wird nicht hier, sondern über `has_protocol` verknüpft.  |
 | has_protocol | 0..1 <br/> [Protocol](#Protocol) | Referenz auf das nach der Sitzung erstellte Protokoll dieser Sitzung. Angegeben wird nur der Identifikator des Protokolls; das Protokoll selbst wird in der Liste `protocols` des Containers geliefert. Es ist eine eigenständige Entität mit eigenem Identifikator und wird in der Regel später veröffentlicht als die Sitzung, weshalb es referenziert und nicht eingebettet wird.  |
 | date_begin_actual | 0..1 <br/> Date | Das tatsächliche Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](#IsEventWithDuration) |
 | datetime_begin_actual | 0..1 <br/> Datetime | Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](#IsEventWithDuration) |
@@ -1503,7 +1483,6 @@ _Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, Sessi
 meetings:
 - global_uri: parl:sr_winter25_sitzung_6
   spatial: https://ld.admin.ch/country/CHE
-  meeting_type: session
   name:
   - text: Sechste Sitzung
     language: de
@@ -1531,7 +1510,6 @@ meetings:
 meetings:
 - spatial: https://ld.admin.ch/canton/2
   global_uri: ops:e7c5d453-848a-430a-b024-1dd2f6873aa6
-  meeting_type: session
   name:
   - text: Donnerstag (Nachmittag)
     language: de
@@ -1561,7 +1539,6 @@ meetings:
 meetings:
 - global_uri: ops:meeting_be_committee_wak_2025_05_12
   spatial: https://ld.admin.ch/canton/2
-  meeting_type: committee
   name:
   - text: Sitzung Kommission für Wirtschaft und Abgaben
     language: de
@@ -1583,7 +1560,6 @@ meetings:
   datetime_end_actual: '2025-05-12T16:45:00Z'
   state: planned
   location: Kommissionszimmer 301, Rathaus Bern
-  parent_legislature: ops:legislature_be_2022_2026
   datetime_created: '2025-04-15T09:00:00Z'
   datetime_modified: '2025-05-12T16:45:00Z'
 
@@ -1594,7 +1570,6 @@ meetings:
 meetings:
 - global_uri: ops:meeting_gl_landsgemeinde_2025
   spatial: https://ld.admin.ch/canton/8
-  meeting_type: sitting
   name:
   - text: Landsgemeinde 2025
     language: de
@@ -1614,7 +1589,7 @@ meetings:
   datetime_end_actual: '2025-05-04T13:45:00Z'
   state: planned
   location: Zaunplatz, Glarus
-  parent_legislature: ops:legislature_gl_2024_2028
+  parent_session: ops:session_gl_landsgemeinde_2025
   datetime_created: '2025-01-10T12:00:00Z'
   datetime_modified: '2025-05-04T13:45:00Z'
 
@@ -1625,7 +1600,6 @@ meetings:
 meetings:
 - spatial: https://ld.admin.ch/canton/2
   global_uri: ops:340dcf932fb044dd8f8c5c943267fbcc
-  meeting_type: session
   name:
   - text: Regierungssitzung vom 31. März 2021
     language: de
@@ -1657,7 +1631,6 @@ meetings:
 meetings:
 - global_uri: ops:meeting_sg_2025_03_15
   spatial: https://ld.admin.ch/canton/17
-  meeting_type: session
   name:
   - text: Kantonsratssitzung vom 15. März 2025
     language: de
@@ -1677,45 +1650,11 @@ meetings:
   datetime_end_actual: '2025-03-15T17:30:00Z'
   state: planned
   location: Kantonsratssaal, Regierungsgebäude St. Gallen
-  parent_legislature: ops:legislature_sg_2024_2028
+  parent_session: ops:session_sg_2025_03
   datetime_created: '2025-02-01T10:00:00Z'
   datetime_modified: '2025-03-15T17:30:00Z'
 
 ```
-
-
-
-
-
-
-</div>
-
-### Enum: MeetingTypeEnum []{#MeetingTypeEnum}
-
-
-
-
-_Art der Sitzung._
-
-
-
-
-<div data-search-exclude markdown="1">
-
-URI: [ops:MeetingTypeEnum](https://ch.paf.link/schema/operations/MeetingTypeEnum)
-
-#### Zulässige Werte
-| Wert | Beschreibung |
-|------------------------|----------------------------------------------------------------------------|
-| session |  Plenarsitzung des gesamten Parlaments oder einer Kammer.  |
-| | [ops:enum/meeting_type/session](ops:enum/meeting_type/session) |
-| committee |  Sitzung einer parlamentarischen Kommission.  |
-| | [ops:enum/meeting_type/committee](ops:enum/meeting_type/committee) |
-| sitting |  Besondere Versammlungsformen (z.B. Landsgemeinde, Gemeindeversammlung).  |
-| | [ops:enum/meeting_type/sitting](ops:enum/meeting_type/sitting) |
-| various |  Andere Sitzungsformen, die nicht in die obigen Kategorien fallen.  |
-| | [ops:enum/meeting_type/various](ops:enum/meeting_type/various) |
-
 
 
 
@@ -1955,12 +1894,13 @@ _Ein Traktandum einer Sitzung._
 | affair_id | 0..1 <br/> String | Die Verbindung zu den Geschäften des Traktandums. <br/><br/>Vererbung: IsAgendaItem |
 | agenda_item_description | * <br/> [MultilingualString](#MultilingualString) | Untertitel oder ausführliche Beschreibung des Traktandums. <br/><br/>Vererbung: IsAgendaItem |
 | state_id | 0..1 <br/> String | Zustands-Identifikator (Verweis auf das Status-Enum oder auf einen eigenen Zustand). <br/><br/>Vererbung: IsAgendaItem |
-| state_name | 0..1 <br/> String | Benutzerdefinierte Zustandsbeschreibung für die Sitzung. <br/><br/>Vererbung: IsAgendaItem |
+| state_name | 0..1 <br/> String | Abweichende, freitextliche Statusbezeichnung, wo die Status-Aufzählung nicht genügt. <br/><br/>Vererbung: IsAgendaItem |
 | landing_page | 0..1 <br/> String | URL mit weiteren Informationen. <br/><br/>Vererbung: IsAgendaItem |
 | url | * <br/> [MultilingualString](#MultilingualString) | Landing Page oder weiterführende Webadresse, mehrsprachig. <br/><br/>Vererbung: IsAgendaItem |
 | agenda_item_category | 0..1 <br/> String | Kategorie für gruppierte Traktanden (z.B. Einführung, nach Departement, technische Traktanden). <br/><br/>Vererbung: IsAgendaItem |
 | parent_agenda_item | 0..1 <br/> String | Identifikator des Traktandums, zu dem dieser Eintrag gehört. Bei einem Traktandum baut er eine Hierarchie von Traktanden auf, bei Abstimmung, Wahl oder Wortmeldung bezeichnet er das Traktandum, unter dem der Eintrag behandelt wurde. <br/><br/>Vererbung: IsAgendaItem |
 | has_resolution | 0..1 <br/> [Resolution](#Resolution) | Die Resolution oder Entscheidung zu diesem Traktandum. <br/><br/>Vererbung: IsAgendaItem |
+| joint_debates | * <br/> [JointDebate](#JointDebate) | Gemeinsame Beratungen, in denen dieses Traktandum zusammen mit anderen Traktanden behandelt wird. <br/><br/>Vererbung: IsAgendaItem |
 | text_segments | * <br/> [TextSegment](#TextSegment) | Sammlung von Textsegmenten (z.B. Wortprotokoll). <br/><br/>Vererbung: IsAgendaItem |
 | documents | * <br/> Work | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind. <br/><br/>Vererbung: IsAgendaItem |
 
@@ -1973,7 +1913,6 @@ _Ein Traktandum einer Sitzung._
 | Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
 | [Container](#Container) | agenda_items | range | [AgendaItem](#AgendaItem) |
-| [JointDebate](#JointDebate) | agenda_items | range | [AgendaItem](#AgendaItem) |
 
 
 
@@ -2574,12 +2513,13 @@ _Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde. Es führt 
 | affair_id | 0..1 <br/> String | Die Verbindung zu den Geschäften des Traktandums. <br/><br/>Vererbung: IsAgendaItem |
 | agenda_item_description | * <br/> [MultilingualString](#MultilingualString) | Untertitel oder ausführliche Beschreibung des Traktandums. <br/><br/>Vererbung: IsAgendaItem |
 | state_id | 0..1 <br/> String | Zustands-Identifikator (Verweis auf das Status-Enum oder auf einen eigenen Zustand). <br/><br/>Vererbung: IsAgendaItem |
-| state_name | 0..1 <br/> String | Benutzerdefinierte Zustandsbeschreibung für die Sitzung. <br/><br/>Vererbung: IsAgendaItem |
+| state_name | 0..1 <br/> String | Abweichende, freitextliche Statusbezeichnung, wo die Status-Aufzählung nicht genügt. <br/><br/>Vererbung: IsAgendaItem |
 | landing_page | 0..1 <br/> String | URL mit weiteren Informationen. <br/><br/>Vererbung: IsAgendaItem |
 | url | * <br/> [MultilingualString](#MultilingualString) | Landing Page oder weiterführende Webadresse, mehrsprachig. <br/><br/>Vererbung: IsAgendaItem |
 | agenda_item_category | 0..1 <br/> String | Kategorie für gruppierte Traktanden (z.B. Einführung, nach Departement, technische Traktanden). <br/><br/>Vererbung: IsAgendaItem |
 | parent_agenda_item | 0..1 <br/> String | Identifikator des Traktandums, zu dem dieser Eintrag gehört. Bei einem Traktandum baut er eine Hierarchie von Traktanden auf, bei Abstimmung, Wahl oder Wortmeldung bezeichnet er das Traktandum, unter dem der Eintrag behandelt wurde. <br/><br/>Vererbung: IsAgendaItem |
 | has_resolution | 0..1 <br/> [Resolution](#Resolution) | Die Resolution oder Entscheidung zu diesem Traktandum. <br/><br/>Vererbung: IsAgendaItem |
+| joint_debates | * <br/> [JointDebate](#JointDebate) | Gemeinsame Beratungen, in denen dieses Traktandum zusammen mit anderen Traktanden behandelt wird. <br/><br/>Vererbung: IsAgendaItem |
 | text_segments | * <br/> [TextSegment](#TextSegment) | Sammlung von Textsegmenten (z.B. Wortprotokoll). <br/><br/>Vererbung: IsAgendaItem |
 | documents | * <br/> Work | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind. <br/><br/>Vererbung: IsAgendaItem |
 
@@ -2619,14 +2559,14 @@ _Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde. Es führt 
 
 ### Zweck der Entität
 
-`JointDebate` fasst mehrere Traktanden zusammen, die gemeinsam beraten werden – etwa inhaltlich zusammenhängende Geschäfte, die in einer einzigen Debatte behandelt werden.
+`JointDebate` fasst mehrere Traktanden zusammen, die gemeinsam beraten werden – etwa inhaltlich zusammenhängende Geschäfte, die in einer einzigen Debatte behandelt werden. Sie hängt über den Slot `joint_debates` an einem Traktandum (AgendaItem) oder einem Protokoll-Traktandum (ProtocolItem) und verweist über `joint_agenda_item_ids` auf die mitberatenen Traktanden.
 
 
 
 ### Klasse: JointDebate []{#JointDebate}
 
 
-_Traktanden die gemeinsam behandelt werden._
+_Eine gemeinsame Beratung: Mehrere Traktanden werden zusammen behandelt. Die gemeinsame Beratung hängt an einem Traktandum (AgendaItem) oder einem Protokoll-Traktandum (ProtocolItem) und verweist über deren Identifikatoren auf die gemeinsam behandelten Traktanden._
 
 
 
@@ -2640,10 +2580,19 @@ _Traktanden die gemeinsam behandelt werden._
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
-| agenda_items | * <br/> [AgendaItem](#AgendaItem) | Sammlung der Traktanden.  |
+| joint_agenda_item_ids | * <br/> String | Identifikatoren der gemeinsam behandelten Traktanden (AgendaItem oder ProtocolItem).  |
 
 
 
+
+
+#### Verwendungen
+
+| Verwendet von | Im Slot | Rolle | Element |
+| ---  | --- | --- | --- |
+| IsAgendaItem | joint_debates | range | [JointDebate](#JointDebate) |
+| [AgendaItem](#AgendaItem) | joint_debates | range | [JointDebate](#JointDebate) |
+| [ProtocolItem](#ProtocolItem) | joint_debates | range | [JointDebate](#JointDebate) |
 
 
 

@@ -6,7 +6,7 @@ search:
 # Slot: state_name 
 
 
-_Benutzerdefinierte Zustandsbeschreibung für die Sitzung._
+_Abweichende, freitextliche Statusbezeichnung, wo die Status-Aufzählung nicht genügt._
 
 
 
@@ -26,7 +26,7 @@ URI: [ops:state_name](https://ch.paf.link/schema/operations/state_name)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [Meeting](Meeting.md) | Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, Sess... |  no  |
+| [Meeting](Meeting.md) | Die einzelne Sitzung eines Organs — die Ebene, auf der Traktanden beraten, Be... |  yes  |
 | [IsAgendaItem](IsAgendaItem.md) | Eine Mixin-Klasse, welche die Elemente eines Traktandums bereitstellt: Bezeic... |  no  |
 | [AgendaItem](AgendaItem.md) | Ein Traktandum einer Sitzung |  no  |
 | [ProtocolItem](ProtocolItem.md) | Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde |  no  |
@@ -69,15 +69,18 @@ name: state_name
 annotations:
   description_de:
     tag: description_de
-    value: 'Benutzerdefinierte Zustandsbeschreibung für die Sitzung.
+    value: 'Abweichende, freitextliche Statusbezeichnung, wo die Status-Aufzählung
+      nicht genügt.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Description personnalisée de l''état de la séance.
+    value: 'Désignation de statut divergente, en texte libre, là où l''énumération
+      des statuts ne suffit pas.
 
       '
-description: 'Benutzerdefinierte Zustandsbeschreibung für die Sitzung.
+description: 'Abweichende, freitextliche Statusbezeichnung, wo die Status-Aufzählung
+  nicht genügt.
 
   '
 from_schema: https://ch.paf.link/schema/operations

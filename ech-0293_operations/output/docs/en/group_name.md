@@ -6,7 +6,7 @@ search:
 # Slot: group_name 
 
 
-_Name of the group or body._
+_Name of the group or body in plain text, in addition to the reference `group_id`._
 
 
 
@@ -26,7 +26,7 @@ URI: [ops:group_name](https://ch.paf.link/schema/operations/group_name)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Meeting](Meeting.md) | A general meeting class used for Sessions, Comittee Meetings, individual sess... |  no  |
+| [Meeting](Meeting.md) | The individual sitting of a body — the level at which agenda items are delibe... |  no  |
 
 
 
@@ -66,15 +66,18 @@ name: group_name
 annotations:
   description_de:
     tag: description_de
-    value: 'Name der Gruppe oder des Gremiums.
+    value: 'Name der Gruppe oder des Gremiums im Klartext, zusätzlich zur Referenz
+      `group_id`.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Nom du groupe ou de l''organe.
+    value: 'Nom du groupe ou de l''organe en clair, en complément de la référence
+      `group_id`.
 
       '
-description: 'Name of the group or body.
+description: 'Name of the group or body in plain text, in addition to the reference
+  `group_id`.
 
   '
 from_schema: https://ch.paf.link/schema/operations

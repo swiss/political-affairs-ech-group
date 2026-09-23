@@ -27,7 +27,7 @@ URI: [ops:actor_id](https://ch.paf.link/schema/operations/actor_id)
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
 | [Legislature](Legislature.md) | Amtsdauer eines Parlaments als gesetzgebender Versammlung |  yes  |
-| [Meeting](Meeting.md) | Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, Sess... |  yes  |
+| [Meeting](Meeting.md) | Die einzelne Sitzung eines Organs — die Ebene, auf der Traktanden beraten, Be... |  yes  |
 | [Voting](Voting.md) | Ein Abstimmungsverfahren mit Einzelstimmen und Ergebnissen |  yes  |
 | [IndividualVote](IndividualVote.md) | Eine Einzelstimme eines Mitglieds während eines Abstimmungsverfahrens |  no  |
 | [Election](Election.md) | Ein Wahlverfahren zur Wahl von Personen in Positionen |  yes  |

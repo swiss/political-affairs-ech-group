@@ -27,7 +27,7 @@ URI: [ops:description](https://ch.paf.link/schema/operations/description)
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
 | [Legislature](Legislature.md) | Durée du mandat d'un parlement en tant qu'assemblée législative |  no  |
-| [Meeting](Meeting.md) | Une classe générale de séance utilisée pour les sessions, les séances de comm... |  no  |
+| [Meeting](Meeting.md) | La séance individuelle d'un organe — le niveau auquel les points de l'ordre d... |  no  |
 | [Motion](Motion.md) | Une proposition formelle déposée au cours des délibérations |  no  |
 
 
