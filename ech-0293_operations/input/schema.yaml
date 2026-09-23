@@ -114,6 +114,7 @@ classes:
       - url
       - parent_legislature
       - meetings
+      - joint_debates
       - documents
 
   Meeting:
@@ -150,6 +151,7 @@ classes:
       - parent_session
       - documents
       - has_protocol
+      - joint_debates
     slot_usage:
       actor_id:
         range: GroupReference
@@ -258,12 +260,12 @@ classes:
 
   JointDebate:
     description: |
-      A joint debate: several agenda items are deliberated together. The joint debate hangs on an agenda item (AgendaItem) or a protocol item (ProtocolItem) and references the items debated jointly with it by their identifiers.
+      A joint debate: several agenda items are deliberated together, for instance substantively related affairs dealt with in a single debate. The joint debate hangs on an agenda item (AgendaItem), a protocol item (ProtocolItem), a meeting (Meeting) or a session (Session) and references the items debated jointly by their identifiers. Attached to a meeting or a session, it can also bring together agenda items that are distributed over several agenda positions or meetings.
     annotations:
       description_de: |
-        Eine gemeinsame Beratung: Mehrere Traktanden werden zusammen behandelt. Die gemeinsame Beratung hängt an einem Traktandum (AgendaItem) oder einem Protokoll-Traktandum (ProtocolItem) und verweist über deren Identifikatoren auf die gemeinsam behandelten Traktanden.
+        Eine gemeinsame Beratung: Mehrere Traktanden werden zusammen behandelt, etwa inhaltlich zusammenhängende Geschäfte, die in einer einzigen Debatte beraten werden. Die gemeinsame Beratung hängt an einem Traktandum (AgendaItem), einem Protokoll-Traktandum (ProtocolItem), einer Sitzung (Meeting) oder einer Session (Session) und verweist über deren Identifikatoren auf die gemeinsam behandelten Traktanden. An einer Sitzung oder Session angehängt, kann sie auch Traktanden zusammenfassen, die auf mehrere Traktandenpositionen oder Sitzungen verteilt sind.
       description_fr: |
-        Une délibération commune : plusieurs points de l'ordre du jour sont traités ensemble. La délibération commune est rattachée à un point de l'ordre du jour (AgendaItem) ou à un point du procès-verbal (ProtocolItem) et renvoie, par leurs identifiants, aux points traités conjointement.
+        Une délibération commune : plusieurs points de l'ordre du jour sont traités ensemble, par exemple des affaires connexes délibérées dans un seul et même débat. La délibération commune est rattachée à un point de l'ordre du jour (AgendaItem), à un point du procès-verbal (ProtocolItem), à une séance (Meeting) ou à une session (Session) et renvoie, par leurs identifiants, aux points traités conjointement. Rattachée à une séance ou à une session, elle peut aussi réunir des points répartis sur plusieurs positions de l'ordre du jour ou sur plusieurs séances.
     slots:
       - joint_agenda_item_ids
 
@@ -955,12 +957,12 @@ slots:
   joint_debates:
     slot_uri: ops:jointDebate
     description: |
-      Joint debates in which this agenda item is deliberated together with other agenda items.
+      Joint debates attached to this record: on an agenda item, the debates in which it is deliberated together with other agenda items; on a meeting or a session, the joint debates held within it.
     annotations:
       description_de: |
-        Gemeinsame Beratungen, in denen dieses Traktandum zusammen mit anderen Traktanden behandelt wird.
+        An diesem Eintrag angehängte gemeinsame Beratungen: bei einem Traktandum die Beratungen, in denen es zusammen mit anderen Traktanden behandelt wird; bei einer Sitzung oder Session die darin geführten gemeinsamen Beratungen.
       description_fr: |
-        Délibérations communes dans lesquelles ce point de l'ordre du jour est traité conjointement avec d'autres points.
+        Délibérations communes rattachées à cet enregistrement : pour un point de l'ordre du jour, les délibérations dans lesquelles il est traité conjointement avec d'autres points ; pour une séance ou une session, les délibérations communes qui s'y tiennent.
     range: JointDebate
     multivalued: true
     inlined_as_list: true
