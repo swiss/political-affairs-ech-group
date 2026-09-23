@@ -24,10 +24,10 @@ _FRBR Expression: eine konkrete Sprachfassung eines Works._
 | expression_title | 1 <br/> [String](String.md) | Titel der Sprachfassung.  |
 | expression_description | 0..1 <br/> [String](String.md) | Beschreibender Text zur Sprachfassung.  |
 | manifestations | * <br/> [Manifestation](Manifestation.md) | Die Dateiformen (Manifestations) einer Expression.  |
-| date_created | 0..1 <br/> [Date](Date.md) | Das Datum, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](HasCreationModificationDates.md) |
-| datetime_created | 0..1 <br/> [Datetime](Datetime.md) | Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](HasCreationModificationDates.md) |
-| date_modified | 0..1 <br/> [Date](Date.md) | Das Datum, an dem eine Entität zuletzt geändert wurde. <br/><br/>Vererbung: [HasCreationModificationDates](HasCreationModificationDates.md) |
-| datetime_modified | 0..1 <br/> [Datetime](Datetime.md) | Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde. <br/><br/>Vererbung: [HasCreationModificationDates](HasCreationModificationDates.md) |
+| date_created | 0..1 <br/> [Date](Date.md) | Datum der Erstpublikation der Sprachfassung. <br/><br/>Vererbung: [HasCreationModificationDates](HasCreationModificationDates.md) |
+| datetime_created | 0..1 <br/> [Datetime](Datetime.md) | Datum und Uhrzeit der Erstpublikation der Sprachfassung. <br/><br/>Vererbung: [HasCreationModificationDates](HasCreationModificationDates.md) |
+| date_modified | 0..1 <br/> [Date](Date.md) | Datum der letzten Revision der Sprachfassung. <br/><br/>Vererbung: [HasCreationModificationDates](HasCreationModificationDates.md) |
+| datetime_modified | 0..1 <br/> [Datetime](Datetime.md) | Datum und Uhrzeit der letzten Revision der Sprachfassung. <br/><br/>Vererbung: [HasCreationModificationDates](HasCreationModificationDates.md) |
 
 
 

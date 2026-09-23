@@ -27,8 +27,8 @@ URI: [mcm:dateModified](https://ld.ech.ch/schema/0292/meta-common/dateModified)
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
 | [HasCreationModificationDates](HasCreationModificationDates.md) | Eine Mixin-Klasse, die Slots für die Modellierung von Erstellungs- und Änderu... |  no  |
-| [Expression](Expression.md) | FRBR Expression: eine konkrete Sprachfassung eines Works |  no  |
-| [Manifestation](Manifestation.md) | FRBR Manifestation: eine konkrete Dateiform einer Expression, über eine URL a... |  no  |
+| [Expression](Expression.md) | FRBR Expression: eine konkrete Sprachfassung eines Works |  yes  |
+| [Manifestation](Manifestation.md) | FRBR Manifestation: eine konkrete Dateiform einer Expression, über eine URL a... |  yes  |
 
 
 

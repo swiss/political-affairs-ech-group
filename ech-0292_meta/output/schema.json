@@ -25,7 +25,7 @@
             "description": "FRBR Expression: a concrete language version of a Work.",
             "properties": {
                 "date_created": {
-                    "description": "The date when an entity was created.\n",
+                    "description": "Date of first publication of the language version.\n",
                     "format": "date",
                     "type": [
                         "string",
@@ -33,7 +33,7 @@
                     ]
                 },
                 "date_modified": {
-                    "description": "The date when an entity was last modified.\n",
+                    "description": "Date of the last revision of the language version.\n",
                     "format": "date",
                     "type": [
                         "string",
@@ -41,7 +41,7 @@
                     ]
                 },
                 "datetime_created": {
-                    "description": "The date and time when an entity was created.\n",
+                    "description": "Date and time of first publication of the language version.\n",
                     "format": "date-time",
                     "type": [
                         "string",
@@ -49,7 +49,7 @@
                     ]
                 },
                 "datetime_modified": {
-                    "description": "The date and time when an entity was last modified.\n",
+                    "description": "Date and time of the last revision of the language version.\n",
                     "format": "date-time",
                     "type": [
                         "string",
@@ -519,7 +519,7 @@
             "description": "FRBR Manifestation: a concrete file format of an Expression, addressable via a URL.",
             "properties": {
                 "date_created": {
-                    "description": "The date when an entity was created.\n",
+                    "description": "Date of first publication of the file form.\n",
                     "format": "date",
                     "type": [
                         "string",
@@ -527,7 +527,7 @@
                     ]
                 },
                 "date_modified": {
-                    "description": "The date when an entity was last modified.\n",
+                    "description": "Date of the last revision of the file form.\n",
                     "format": "date",
                     "type": [
                         "string",
@@ -535,7 +535,7 @@
                     ]
                 },
                 "datetime_created": {
-                    "description": "The date and time when an entity was created.\n",
+                    "description": "Date and time of first publication of the file form.\n",
                     "format": "date-time",
                     "type": [
                         "string",
@@ -543,7 +543,7 @@
                     ]
                 },
                 "datetime_modified": {
-                    "description": "The date and time when an entity was last modified.\n",
+                    "description": "Date and time of the last revision of the file form.\n",
                     "format": "date-time",
                     "type": [
                         "string",

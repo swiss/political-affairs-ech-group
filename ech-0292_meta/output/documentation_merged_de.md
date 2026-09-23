@@ -361,10 +361,10 @@ _FRBR Expression: eine konkrete Sprachfassung eines Works._
 | expression_title | 1 <br/> String | Titel der Sprachfassung.  |
 | expression_description | 0..1 <br/> String | Beschreibender Text zur Sprachfassung.  |
 | manifestations | * <br/> [Manifestation](#Manifestation) | Die Dateiformen (Manifestations) einer Expression.  |
-| date_created | 0..1 <br/> Date | Das Datum, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_created | 0..1 <br/> Datetime | Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
-| date_modified | 0..1 <br/> Date | Das Datum, an dem eine Entität zuletzt geändert wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_modified | 0..1 <br/> Datetime | Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
+| date_created | 0..1 <br/> Date | Datum der Erstpublikation der Sprachfassung. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_created | 0..1 <br/> Datetime | Datum und Uhrzeit der Erstpublikation der Sprachfassung. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
+| date_modified | 0..1 <br/> Date | Datum der letzten Revision der Sprachfassung. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_modified | 0..1 <br/> Datetime | Datum und Uhrzeit der letzten Revision der Sprachfassung. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
 
 
 
@@ -429,10 +429,10 @@ _FRBR Manifestation: eine konkrete Dateiform einer Expression, über eine URL ad
 | wikidata_uri | 0..1 <br/> Uriorcurie | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | format | 0..1 <br/> String | Das Dateiformat der Manifestation (z.B. pdf, html).  |
 | manifestation_url | 0..1 <br/> Uri | URL, unter der die Dateiform abgerufen werden kann.  |
-| date_created | 0..1 <br/> Date | Das Datum, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_created | 0..1 <br/> Datetime | Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
-| date_modified | 0..1 <br/> Date | Das Datum, an dem eine Entität zuletzt geändert wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_modified | 0..1 <br/> Datetime | Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
+| date_created | 0..1 <br/> Date | Datum der Erstpublikation der Dateiform. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_created | 0..1 <br/> Datetime | Datum und Uhrzeit der Erstpublikation der Dateiform. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
+| date_modified | 0..1 <br/> Date | Datum der letzten Revision der Dateiform. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_modified | 0..1 <br/> Datetime | Datum und Uhrzeit der letzten Revision der Dateiform. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
 
 
 
