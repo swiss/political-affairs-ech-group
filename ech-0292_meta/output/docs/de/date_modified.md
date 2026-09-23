@@ -3,10 +3,10 @@ search:
   boost: 5.0
 ---
 
-# Slot: dates 
+# Slot: date_modified 
 
 
-_Datumsangaben zum Element, jeweils mit Typangabe._
+_Das Datum, an dem eine Entität zuletzt geändert wurde._
 
 
 
@@ -15,7 +15,7 @@ _Datumsangaben zum Element, jeweils mit Typangabe._
 
 
 
-URI: [meta:dates](https://ch.paf.link/schema/meta/dates)
+URI: [mcm:dateModified](https://ld.ech.ch/schema/0292/meta-common/dateModified)
 <!-- no inheritance hierarchy -->
 
 
@@ -26,6 +26,7 @@ URI: [meta:dates](https://ch.paf.link/schema/meta/dates)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
+| [HasCreationModificationDates](HasCreationModificationDates.md) | Eine Mixin-Klasse, die Slots für die Modellierung von Erstellungs- und Änderu... |  no  |
 | [Expression](Expression.md) | FRBR Expression: eine konkrete Sprachfassung eines Works |  no  |
 | [Manifestation](Manifestation.md) | FRBR Manifestation: eine konkrete Dateiform einer Expression, über eine URL a... |  no  |
 
@@ -41,14 +42,13 @@ URI: [meta:dates](https://ch.paf.link/schema/meta/dates)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [Date](Date.md) |
-| Domäne von | [Expression](Expression.md), [Manifestation](Manifestation.md) |
-| Slot-URI | [meta:dates](https://ch.paf.link/schema/meta/dates) |
+| Domäne von | [HasCreationModificationDates](HasCreationModificationDates.md) |
+| Slot-URI | [mcm:dateModified](https://ld.ech.ch/schema/0292/meta-common/dateModified) |
 
 ### Kardinalität und Anforderungen
 
 | Eigenschaft | Wert |
 | --- | --- |
-| Mehrwertig | Yes |
 
 
 
@@ -65,31 +65,27 @@ URI: [meta:dates](https://ch.paf.link/schema/meta/dates)
 
 <details>
 ```yaml
-name: dates
+name: date_modified
 annotations:
   description_de:
     tag: description_de
-    value: 'Datumsangaben zum Element, jeweils mit Typangabe.
+    value: 'Das Datum, an dem eine Entität zuletzt geändert wurde.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Dates relatives à l''élément, chacune assortie d''une indication de type.
+    value: 'La date à laquelle une entité a été modifiée pour la dernière fois.
 
       '
-description: 'Datumsangaben zum Element, jeweils mit Typangabe.
+description: 'Das Datum, an dem eine Entität zuletzt geändert wurde.
 
   '
 from_schema: https://ch.paf.link/schema/meta
 rank: 1000
-slot_uri: meta:dates
+slot_uri: mcm:dateModified
 domain_of:
-- Expression
-- Manifestation
-range: Date
-multivalued: true
-inlined: true
-inlined_as_list: true
+- HasCreationModificationDates
+range: date
 
 ```
 </details></div>

@@ -249,7 +249,9 @@ _FRBR Work: das abstrakte Dokument als solches, unabhängig von einer konkreten 
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
-| id | 1 <br/> String | Eindeutiger Identifikator des Elements.  |
+| local_id | 0..1 <br/> String | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> Uriorcurie | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> Uriorcurie | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | document_category | 0..1 <br/> [DocumentCategoryEnum](#DocumentCategoryEnum) | Kategorie des Dokuments. Wenn nicht gesetzt, wird automatisch 'other' verwendet.  |
 | expressions | * <br/> [Expression](#Expression) | Die Sprachfassungen (Expressions) eines Works.  |
 
@@ -352,12 +354,17 @@ _FRBR Expression: eine konkrete Sprachfassung eines Works._
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
-| id | 1 <br/> String | Eindeutiger Identifikator des Elements.  |
-| dates | * <br/> Date | Datumsangaben zum Element, jeweils mit Typangabe.  |
+| local_id | 0..1 <br/> String | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> Uriorcurie | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> Uriorcurie | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | expression_language | 1 <br/> String | Sprachcode im ISO 639-1-Format.  |
 | expression_title | 1 <br/> String | Titel der Sprachfassung.  |
 | expression_description | 0..1 <br/> String | Beschreibender Text zur Sprachfassung.  |
 | manifestations | * <br/> [Manifestation](#Manifestation) | Die Dateiformen (Manifestations) einer Expression.  |
+| date_created | 0..1 <br/> Date | Das Datum, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_created | 0..1 <br/> Datetime | Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
+| date_modified | 0..1 <br/> Date | Das Datum, an dem eine Entität zuletzt geändert wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_modified | 0..1 <br/> Datetime | Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
 
 
 
@@ -395,7 +402,7 @@ Abstract: A manifestation is "the physical embodiment of an expression of a work
 
 With the manifestion the final URL to the actual document is added. There can be one more more manifestations, which are differing in the differnt formats (e.g. PDF, DOCX, HTML) of the document provided.
 
-Both the Expression and the Manifestation provide dates of publication.
+Both the Expression and the Manifestation carry creation and modification dates via the common mixin `HasCreationModificationDates`. All FRBR entities are identified via the common mixin `HasIdentification`.
 
 
 
@@ -417,10 +424,15 @@ _FRBR Manifestation: eine konkrete Dateiform einer Expression, über eine URL ad
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
-| id | 1 <br/> String | Eindeutiger Identifikator des Elements.  |
-| dates | * <br/> Date | Datumsangaben zum Element, jeweils mit Typangabe.  |
+| local_id | 0..1 <br/> String | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> Uriorcurie | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> Uriorcurie | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | format | 0..1 <br/> String | Das Dateiformat der Manifestation (z.B. pdf, html).  |
 | manifestation_url | 0..1 <br/> Uri | URL, unter der die Dateiform abgerufen werden kann.  |
+| date_created | 0..1 <br/> Date | Das Datum, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_created | 0..1 <br/> Datetime | Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
+| date_modified | 0..1 <br/> Date | Das Datum, an dem eine Entität zuletzt geändert wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_modified | 0..1 <br/> Datetime | Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
 
 
 
@@ -451,27 +463,99 @@ _FRBR Manifestation: eine konkrete Dateiform einer Expression, über eine URL ad
 
 
 </div>
-### Enum: DateTypesEnum []{#DateTypesEnum}
 
 
+### Klasse: HasIdentification []{#HasIdentification}
 
 
-_Bedeutung einer Datumsangabe._
+_Eine Mixin-Klasse, die Slots für die Identifikation einer Entität zur Verfügung stellt. Sie wird für Entitäten verwendet, die aus sich heraus identifiziert sind; deren `global_uri` ist der Identifikator und daher obligatorisch._
 
 
 
 
 <div data-search-exclude markdown="1">
 
-URI: [meta:DateTypesEnum](https://ch.paf.link/schema/meta/DateTypesEnum)
 
-#### Zulässige Werte
-| Wert | Beschreibung |
-|------------------------|----------------------------------------------------------------------------|
-| first_publication |  Datum der Erstpublikation.  |
-| | [meta:vocabulary/date_types/FirstPublication](meta:vocabulary/date_types/FirstPublication) |
-| last_revision |  Datum der letzten Revision.  |
-| | [meta:vocabulary/date_types/LastRevision](meta:vocabulary/date_types/LastRevision) |
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| local_id | 0..1 <br/> String | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.  |
+| global_uri | 1 <br/> Uriorcurie | Eine eindeutige, global gültige URI für die Entität.  |
+| wikidata_uri | 0..1 <br/> Uriorcurie | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans.  |
+
+
+
+#### Mixin-Verwendung
+
+[Work](#Work), [Expression](#Expression), [Manifestation](#Manifestation), WorkContainer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+### Klasse: HasCreationModificationDates []{#HasCreationModificationDates}
+
+
+_Eine Mixin-Klasse, die Slots für die Modellierung von Erstellungs- und Änderungsdaten einer Entität zur Verfügung stellt._
+
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| date_created | 0..1 <br/> Date | Das Datum, an dem eine Entität erstellt wurde.  |
+| datetime_created | 0..1 <br/> Datetime | Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.  |
+| date_modified | 0..1 <br/> Date | Das Datum, an dem eine Entität zuletzt geändert wurde.  |
+| datetime_modified | 0..1 <br/> Datetime | Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.  |
+
+
+
+#### Mixin-Verwendung
+
+[Expression](#Expression), [Manifestation](#Manifestation)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

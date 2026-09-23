@@ -1,35 +1,5 @@
 {
     "$defs": {
-        "Date": {
-            "additionalProperties": false,
-            "description": "A date with a type indication (e.g. first publication, last revision).",
-            "properties": {
-                "date_type": {
-                    "$ref": "#/$defs/DateTypesEnum",
-                    "description": "Meaning of the date (e.g. first publication, last revision).\n"
-                },
-                "xdate": {
-                    "description": "The date value itself.\n",
-                    "format": "date",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "xdate",
-                "date_type"
-            ],
-            "title": "Date",
-            "type": "object"
-        },
-        "DateTypesEnum": {
-            "description": "Meaning of a date entry.",
-            "enum": [
-                "first_publication",
-                "last_revision"
-            ],
-            "title": "DateTypesEnum",
-            "type": "string"
-        },
         "DocumentCategoryEnum": {
             "description": "Categories for classifying documents referenced in eCH standards 0292-0297. Multilingual labels (DE/FR/IT/RM/EN) are encoded via `annotations` (convention `label_xx`); first proposals for FR/IT/RM are pending plenum review.",
             "enum": [
@@ -54,13 +24,35 @@
             "additionalProperties": false,
             "description": "FRBR Expression: a concrete language version of a Work.",
             "properties": {
-                "dates": {
-                    "description": "Dates relating to the element, each with a type indication.\n",
-                    "items": {
-                        "$ref": "#/$defs/Date"
-                    },
+                "date_created": {
+                    "description": "The date when an entity was created.\n",
+                    "format": "date",
                     "type": [
-                        "array",
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_modified": {
+                    "description": "The date when an entity was last modified.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_created": {
+                    "description": "The date and time when an entity was created.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_modified": {
+                    "description": "The date and time when an entity was last modified.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -80,9 +72,16 @@
                     "description": "Title of the language version.\n",
                     "type": "string"
                 },
-                "id": {
-                    "description": "Unique identifier of the element.\n",
+                "global_uri": {
+                    "description": "A unique, globally valid URI for the entity.\n",
                     "type": "string"
+                },
+                "local_id": {
+                    "description": "Local identifier. For example, a UUID from the council information system.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "manifestations": {
                     "description": "The file forms (Manifestations) of an Expression.\n",
@@ -93,27 +92,461 @@
                         "array",
                         "null"
                     ]
+                },
+                "wikidata_uri": {
+                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
-                "id",
                 "expression_language",
-                "expression_title"
+                "expression_title",
+                "global_uri"
             ],
             "title": "Expression",
+            "type": "object"
+        },
+        "GroupReference": {
+            "additionalProperties": false,
+            "anyOf": [
+                {
+                    "properties": {
+                        "local_id": {}
+                    },
+                    "required": [
+                        "local_id"
+                    ]
+                },
+                {
+                    "properties": {
+                        "global_uri": {}
+                    },
+                    "required": [
+                        "global_uri"
+                    ]
+                }
+            ],
+            "description": "Lightweight reference to a group with key identification data at time of linking. The referenced group is identified by `local_id` or `global_uri`; at least one of the two is required. A `local_id` is resolved within the same delivery, a `global_uri` also beyond it.",
+            "properties": {
+                "abbreviation": {
+                    "description": "Abbreviation (can be multilingual).\n",
+                    "items": {
+                        "$ref": "#/$defs/MultilingualValue"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "global_uri": {
+                    "description": "The unique, globally valid URI of the referenced entity. Unlike a local_id it also resolves beyond the delivery.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "label": {
+                    "description": "Assign a label to a structured piece of information (e.g., display name, position, etc.).\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "local_id": {
+                    "description": "Local identifier of the referenced entity. It is resolved within the same delivery.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "wikidata_uri": {
+                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "GroupReference",
+            "type": "object"
+        },
+        "HasCreationModificationDates": {
+            "additionalProperties": false,
+            "description": "A mixin class that provides slots for modeling creation and modification dates of an entity.",
+            "properties": {
+                "date_created": {
+                    "description": "The date when an entity was created.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_modified": {
+                    "description": "The date when an entity was last modified.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_created": {
+                    "description": "The date and time when an entity was created.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_modified": {
+                    "description": "The date and time when an entity was last modified.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "HasCreationModificationDates",
+            "type": "object"
+        },
+        "HasIdentification": {
+            "additionalProperties": false,
+            "description": "A mixin class that provides slots for the identification of an entity. It is used for entities that are identified in their own right; their `global_uri` is the identifier and therefore mandatory.",
+            "properties": {
+                "global_uri": {
+                    "description": "A unique, globally valid URI for the entity.\n",
+                    "type": "string"
+                },
+                "local_id": {
+                    "description": "Local identifier. For example, a UUID from the council information system.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "wikidata_uri": {
+                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "global_uri"
+            ],
+            "title": "HasIdentification",
+            "type": "object"
+        },
+        "HasReferenceIdentification": {
+            "additionalProperties": false,
+            "description": "A mixin class that provides the slots with which a reference names the entity it points at. Unlike `HasIdentification` it does not identify the referencing object itself, which is why `global_uri` is neither an identifier here nor mandatory: a system that only holds the local id of the referenced entity states that id instead. A reference class using this mixin should require at least one of the two.",
+            "properties": {
+                "global_uri": {
+                    "description": "The unique, globally valid URI of the referenced entity. Unlike a local_id it also resolves beyond the delivery.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "local_id": {
+                    "description": "Local identifier of the referenced entity. It is resolved within the same delivery.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "wikidata_uri": {
+                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "HasReferenceIdentification",
+            "type": "object"
+        },
+        "HasTemporalValidity": {
+            "additionalProperties": false,
+            "description": "A mixin class that provides slots for modeling a temporal validity of information (not of an event).",
+            "properties": {
+                "is_active": {
+                    "description": "Indicates whether the information is currently valid. Can be useful when this information is explicitly available.\n",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "valid_from": {
+                    "description": "The date from which the information is valid.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "valid_through": {
+                    "description": "The date until which the information is valid, inclusive.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "HasTemporalValidity",
+            "type": "object"
+        },
+        "IsEventWithDuration": {
+            "additionalProperties": false,
+            "description": "A mixin class that provides slots for modeling events or occurrences with time duration.",
+            "properties": {
+                "date_begin_actual": {
+                    "description": "The actual start date of an event or occurrence with time duration.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_begin_planned": {
+                    "description": "The planned start date of an event or occurrence with time duration.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_end_actual": {
+                    "description": "The actual end date of an event or occurrence with time duration.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_end_planned": {
+                    "description": "The planned end date of an event or occurrence with time duration.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_begin_actual": {
+                    "description": "The actual start date and time of an event or occurrence with time duration.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_begin_planned": {
+                    "description": "The planned start date and time of an event or occurrence with time duration.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_end_actual": {
+                    "description": "The actual end date and time of an event or occurrence with time duration.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_end_planned": {
+                    "description": "The planned end date and time of an event or occurrence with time duration.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "IsEventWithDuration",
+            "type": "object"
+        },
+        "IsInstantaneousEvent": {
+            "additionalProperties": false,
+            "description": "A mixin class that provides slots for modeling instantaneous events or occurrences (without time duration).",
+            "properties": {
+                "date_actual": {
+                    "description": "The actual date of an instantaneous event or occurrence (without time duration).\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_planned": {
+                    "description": "The planned date of an instantaneous event or occurrence (without time duration).\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_actual": {
+                    "description": "The actual date and time of an instantaneous event or occurrence (without time duration).\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_planned": {
+                    "description": "The planned date and time of an instantaneous event or occurrence (without time duration).\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "IsInstantaneousEvent",
+            "type": "object"
+        },
+        "IsProcessStep": {
+            "additionalProperties": false,
+            "description": "A mixin class for a single step in a multi-stage process (e.g.,\na deliberation step of an affair or a phase step of a consultation).\nCombines identification and event-duration slots and adds a free-text\nremark slot. Concrete step classes add their own type-specific slots.",
+            "properties": {
+                "date_begin_actual": {
+                    "description": "The actual start date of an event or occurrence with time duration.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_begin_planned": {
+                    "description": "The planned start date of an event or occurrence with time duration.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_end_actual": {
+                    "description": "The actual end date of an event or occurrence with time duration.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_end_planned": {
+                    "description": "The planned end date of an event or occurrence with time duration.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_begin_actual": {
+                    "description": "The actual start date and time of an event or occurrence with time duration.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_begin_planned": {
+                    "description": "The planned start date and time of an event or occurrence with time duration.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_end_actual": {
+                    "description": "The actual end date and time of an event or occurrence with time duration.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_end_planned": {
+                    "description": "The planned end date and time of an event or occurrence with time duration.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "global_uri": {
+                    "description": "A unique, globally valid URI for the entity.\n",
+                    "type": "string"
+                },
+                "local_id": {
+                    "description": "Local identifier. For example, a UUID from the council information system.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "remark": {
+                    "description": "Free-text remark or note for edge cases or additional context on a process step or an entity.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "wikidata_uri": {
+                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "global_uri"
+            ],
+            "title": "IsProcessStep",
             "type": "object"
         },
         "Manifestation": {
             "additionalProperties": false,
             "description": "FRBR Manifestation: a concrete file format of an Expression, addressable via a URL.",
             "properties": {
-                "dates": {
-                    "description": "Dates relating to the element, each with a type indication.\n",
-                    "items": {
-                        "$ref": "#/$defs/Date"
-                    },
+                "date_created": {
+                    "description": "The date when an entity was created.\n",
+                    "format": "date",
                     "type": [
-                        "array",
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_modified": {
+                    "description": "The date when an entity was last modified.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_created": {
+                    "description": "The date and time when an entity was created.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_modified": {
+                    "description": "The date and time when an entity was last modified.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -124,9 +557,16 @@
                         "null"
                     ]
                 },
-                "id": {
-                    "description": "Unique identifier of the element.\n",
+                "global_uri": {
+                    "description": "A unique, globally valid URI for the entity.\n",
                     "type": "string"
+                },
+                "local_id": {
+                    "description": "Local identifier. For example, a UUID from the council information system.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "manifestation_url": {
                     "description": "URL under which the file form can be retrieved.\n",
@@ -135,12 +575,132 @@
                         "string",
                         "null"
                     ]
+                },
+                "wikidata_uri": {
+                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
-                "id"
+                "global_uri"
             ],
             "title": "Manifestation",
+            "type": "object"
+        },
+        "MultilingualUri": {
+            "additionalProperties": false,
+            "description": "A URI together with the language of the resource it points to. Same structure as MultilingualValue, but the value is a URI: it is used where the same content is published under a separate address per language.",
+            "properties": {
+                "language": {
+                    "description": "Language code in ISO 639-1 format (two lowercase letters, e.g. \"de\", \"fr\", \"it\", \"en\").\n",
+                    "pattern": "^[a-z]{2}$",
+                    "type": "string"
+                },
+                "value": {
+                    "description": "The value of an information besides other attributes such as type, language, etc.\n",
+                    "format": "uri",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "value",
+                "language"
+            ],
+            "title": "MultilingualUri",
+            "type": "object"
+        },
+        "MultilingualValue": {
+            "additionalProperties": false,
+            "description": "A multilingual string with language specification.",
+            "properties": {
+                "language": {
+                    "description": "Language code in ISO 639-1 format (two lowercase letters, e.g. \"de\", \"fr\", \"it\", \"en\").\n",
+                    "pattern": "^[a-z]{2}$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "value": {
+                    "description": "The value of an information besides other attributes such as type, language, etc.\n",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "value"
+            ],
+            "title": "MultilingualValue",
+            "type": "object"
+        },
+        "PersonReference": {
+            "additionalProperties": false,
+            "anyOf": [
+                {
+                    "properties": {
+                        "local_id": {}
+                    },
+                    "required": [
+                        "local_id"
+                    ]
+                },
+                {
+                    "properties": {
+                        "global_uri": {}
+                    },
+                    "required": [
+                        "global_uri"
+                    ]
+                }
+            ],
+            "description": "Lightweight reference to a person with key identification data at time of linking. Preserves historical accuracy even if the person changes later. The referenced person is identified by `local_id` or `global_uri`; at least one of the two is required.",
+            "properties": {
+                "global_uri": {
+                    "description": "The unique, globally valid URI of the referenced entity. Unlike a local_id it also resolves beyond the delivery.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "group_label": {
+                    "description": "Name of the body/group at time of linking.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "label": {
+                    "description": "Mandatory short display name to identify the person within the organisation (e.g. with added birth year to distinguish persons with the same name).\n",
+                    "type": "string"
+                },
+                "label_long": {
+                    "description": "Optional long display name including academic titles and full official name (e.g. \"Dr. Maria Muster-Beispiel\").\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "local_id": {
+                    "description": "Local identifier of the referenced entity. It is resolved within the same delivery.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "wikidata_uri": {
+                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "label"
+            ],
+            "title": "PersonReference",
             "type": "object"
         },
         "Work": {
@@ -161,13 +721,27 @@
                         "null"
                     ]
                 },
-                "id": {
-                    "description": "Unique identifier of the element.\n",
+                "global_uri": {
+                    "description": "A unique, globally valid URI for the entity.\n",
                     "type": "string"
+                },
+                "local_id": {
+                    "description": "Local identifier. For example, a UUID from the council information system.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "wikidata_uri": {
+                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
-                "id"
+                "global_uri"
             ],
             "title": "Work",
             "type": "object"
@@ -176,9 +750,23 @@
             "additionalProperties": false,
             "description": "Container for the documents (FRBR Works) of this schema. Deliberately not a tree_root, because the consuming schemas define their own Container.",
             "properties": {
-                "id": {
-                    "description": "Unique identifier of the element.\n",
+                "global_uri": {
+                    "description": "A unique, globally valid URI for the entity.\n",
                     "type": "string"
+                },
+                "local_id": {
+                    "description": "Local identifier. For example, a UUID from the council information system.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "wikidata_uri": {
+                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "works": {
                     "description": "The documents (FRBR Works) contained in the container.\n",
@@ -192,7 +780,7 @@
                 }
             },
             "required": [
-                "id"
+                "global_uri"
             ],
             "title": "WorkContainer",
             "type": "object"

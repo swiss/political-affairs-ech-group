@@ -3,10 +3,10 @@ search:
   boost: 5.0
 ---
 
-# Slot: xdate 
+# Slot: valid_from 
 
 
-_Der Datumswert selbst._
+_Das Datum, ab dem die Information gültig ist._
 
 
 
@@ -15,7 +15,7 @@ _Der Datumswert selbst._
 
 
 
-URI: [dcterms:date](http://purl.org/dc/terms/date)
+URI: [schema:validFrom](http://schema.org/validFrom)
 <!-- no inheritance hierarchy -->
 
 
@@ -26,7 +26,7 @@ URI: [dcterms:date](http://purl.org/dc/terms/date)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [Date](Date.md) | Ein Datum mit Typangabe (z |  no  |
+| [HasTemporalValidity](HasTemporalValidity.md) | Eine Mixin-Klasse, die Slots für die Modellierung einer zeitlichen Gültigkeit... |  no  |
 
 
 
@@ -40,14 +40,13 @@ URI: [dcterms:date](http://purl.org/dc/terms/date)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [Date](Date.md) |
-| Domäne von | [Date](Date.md) |
-| Slot-URI | [dcterms:date](http://purl.org/dc/terms/date) |
+| Domäne von | [HasTemporalValidity](HasTemporalValidity.md) |
+| Slot-URI | [schema:validFrom](http://schema.org/validFrom) |
 
 ### Kardinalität und Anforderungen
 
 | Eigenschaft | Wert |
 | --- | --- |
-| Erforderlich | Yes |
 
 
 
@@ -64,28 +63,27 @@ URI: [dcterms:date](http://purl.org/dc/terms/date)
 
 <details>
 ```yaml
-name: xdate
+name: valid_from
 annotations:
   description_de:
     tag: description_de
-    value: 'Der Datumswert selbst.
+    value: 'Das Datum, ab dem die Information gültig ist.
 
       '
   description_fr:
     tag: description_fr
-    value: 'La valeur de date elle-même.
+    value: 'La date à partir de laquelle l''information est valable.
 
       '
-description: 'Der Datumswert selbst.
+description: 'Das Datum, ab dem die Information gültig ist.
 
   '
 from_schema: https://ch.paf.link/schema/meta
 rank: 1000
-slot_uri: dcterms:date
+slot_uri: schema:validFrom
 domain_of:
-- Date
+- HasTemporalValidity
 range: date
-required: true
 
 ```
 </details></div>
