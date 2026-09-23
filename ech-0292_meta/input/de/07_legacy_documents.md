@@ -1,3 +1,5 @@
+\newpage
+
 # Documents as a last-resort fallback
 
 The schemas of this eCH expert group are designed to publish information as structured data whenever possible.
@@ -24,9 +26,11 @@ It holds the unique identifier for this work and a document category for a high-
 
 Attached to the Work is one or multiple expressions as described below.
 
+{{include:ech-0292_meta/output/docs/Work.md}}
+
 ### Dokumentenkategorien (document_category)
 
-<Modell> 
+{{include:ech-0292_meta/output/docs/DocumentCategoryEnum.md}}
 
 
 ## Expression
@@ -37,6 +41,8 @@ Typically per language on distinct expression is created. An expression holds ad
 
 Attached to the Expression is one or multiple Manifestation as decribed below.
 
+{{include:ech-0292_meta/output/docs/Expression.md}}
+
 ## Manifestation
 
 Abstract: A manifestation is "the physical embodiment of an expression of a work. As an entity, manifestation represents all the physical objects that bear the same characteristics, in respect to both intellectual content and physical form." The recordings of the 1996 performance released on vinyl are one manifestation. The same performance released on CD is another manifestation.
@@ -46,14 +52,5 @@ With the manifestion the final URL to the actual document is added. There can be
 Both the Expression and the Manifestation provide dates of publication.
 
 
-<TBD modell>
-
-
-
-
-
-
-
-
-
-
+{{include:ech-0292_meta/output/docs/Manifestation.md}}
+{{include:ech-0292_meta/output/docs/DateTypesEnum.md}}

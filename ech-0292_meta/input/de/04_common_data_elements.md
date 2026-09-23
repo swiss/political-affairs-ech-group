@@ -1,3 +1,5 @@
+\newpage
+
 # Common Data Elements
 
 One of the outputs of the eCH-0292 subgroup is a set of **common data elements** that can be used across all the standards developed by the eCH Specialist Group Political Affairs without duplication.
