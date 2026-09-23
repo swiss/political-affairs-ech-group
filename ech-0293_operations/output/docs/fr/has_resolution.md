@@ -6,7 +6,7 @@ search:
 # Slot: has_resolution 
 
 
-_La décision prise sur ce point de l'ordre du jour._
+_La décision formelle prise sur ce point de l'ordre du jour, p. ex. l'adoption de la loi sur l'énergie. Le vote sous-jacent avec son rapport de voix est saisi séparément comme Voting._
 
 
 
@@ -27,7 +27,7 @@ URI: [ops:has_resolution](https://ch.paf.link/schema/operations/has_resolution)
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
 | [IsAgendaItem](IsAgendaItem.md) | Une classe mixin qui fournit les éléments d'un point de l'ordre du jour : dés... |  no  |
-| [AgendaItem](AgendaItem.md) | Un point de l'ordre du jour d'une séance |  no  |
+| [AgendaItem](AgendaItem.md) | Un point de l'ordre du jour d'une séance, tel que planifié à l'avance |  no  |
 | [ProtocolItem](ProtocolItem.md) | Un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-... |  no  |
 
 
@@ -68,15 +68,21 @@ name: has_resolution
 annotations:
   description_de:
     tag: description_de
-    value: 'Die Resolution oder Entscheidung zu diesem Traktandum.
+    value: 'Der formale Beschluss zu diesem Traktandum, z.B. die Annahme des Energiegesetzes.
+      Die zugrunde liegende Abstimmung mit dem Stimmenverhältnis wird separat als
+      Voting erfasst.
 
       '
   description_fr:
     tag: description_fr
-    value: 'La décision prise sur ce point de l''ordre du jour.
+    value: 'La décision formelle prise sur ce point de l''ordre du jour, p. ex. l''adoption
+      de la loi sur l''énergie. Le vote sous-jacent avec son rapport de voix est saisi
+      séparément comme Voting.
 
       '
-description: 'La décision prise sur ce point de l''ordre du jour.
+description: 'La décision formelle prise sur ce point de l''ordre du jour, p. ex.
+  l''adoption de la loi sur l''énergie. Le vote sous-jacent avec son rapport de voix
+  est saisi séparément comme Voting.
 
   '
 from_schema: https://ch.paf.link/schema/operations

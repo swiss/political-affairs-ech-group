@@ -3,7 +3,7 @@
 ## Class: JointDebate 
 
 
-_A joint debate: several agenda items are deliberated together. The joint debate hangs on an agenda item (AgendaItem) or a protocol item (ProtocolItem) and references the items debated jointly with it by their identifiers._
+_A joint debate: several agenda items are deliberated together, for instance substantively related affairs dealt with in a single debate. The joint debate hangs on an agenda item (AgendaItem), a protocol item (ProtocolItem), a meeting (Meeting) or a session (Session) and references the items debated jointly by their identifiers. Attached to a meeting or a session, it can also bring together agenda items that are distributed over several agenda positions or meetings._
 
 
 
@@ -27,6 +27,8 @@ _A joint debate: several agenda items are deliberated together. The joint debate
 
 | Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
+| [Session](Session.md) | [joint_debates](joint_debates.md) | range | [JointDebate](JointDebate.md) |
+| [Meeting](Meeting.md) | [joint_debates](joint_debates.md) | range | [JointDebate](JointDebate.md) |
 | [IsAgendaItem](IsAgendaItem.md) | [joint_debates](joint_debates.md) | range | [JointDebate](JointDebate.md) |
 | [AgendaItem](AgendaItem.md) | [joint_debates](joint_debates.md) | range | [JointDebate](JointDebate.md) |
 | [ProtocolItem](ProtocolItem.md) | [joint_debates](joint_debates.md) | range | [JointDebate](JointDebate.md) |

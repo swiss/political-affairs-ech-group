@@ -26,7 +26,7 @@ URI: [ops:jointAgendaItem](https://ch.paf.link/schema/operations/jointAgendaItem
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [JointDebate](JointDebate.md) | A joint debate: several agenda items are deliberated together |  no  |
+| [JointDebate](JointDebate.md) | A joint debate: several agenda items are deliberated together, for instance s... |  no  |
 
 
 

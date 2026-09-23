@@ -28,9 +28,9 @@ URI: [ops:actor_id](https://ch.paf.link/schema/operations/actor_id)
 | --- | --- | --- |
 | [Legislature](Legislature.md) | Durée du mandat d'un parlement en tant qu'assemblée législative |  yes  |
 | [Meeting](Meeting.md) | La séance individuelle d'un organe — le niveau auquel les points de l'ordre d... |  yes  |
-| [Voting](Voting.md) | Une procédure de vote avec les voix individuelles et les résultats |  yes  |
-| [IndividualVote](IndividualVote.md) | Une voix individuelle exprimée par un membre lors d'une procédure de vote |  no  |
-| [Election](Election.md) | Une procédure d'élection visant à pourvoir des fonctions par des personnes |  yes  |
+| [Voting](Voting.md) | Un vote sur une question matérielle : l'objet du vote (la question), la procé... |  yes  |
+| [IndividualVote](IndividualVote.md) | La voix exprimée par un membre lors d'un vote |  yes  |
+| [Election](Election.md) | Une élection par laquelle un organe parlementaire désigne une ou plusieurs pe... |  yes  |
 | [Attendance](Attendance.md) | Liste de présence agrégée pour une séance (nombre de membres présents, absent... |  yes  |
 | [IndividualAttendance](IndividualAttendance.md) | Constatation individuelle de la présence d'une personne à une séance (rattach... |  no  |
 | [Speech](Speech.md) | Une intervention prononcée au cours d'une séance (également appelée prise de ... |  no  |

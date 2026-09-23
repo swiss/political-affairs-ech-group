@@ -6,7 +6,7 @@ search:
 # Slot: has_resolution 
 
 
-_The resolution or decision taken on this agenda item._
+_The formal decision taken on this agenda item, e.g. the adoption of the energy law. The underlying voting with its vote ratio is recorded separately as a Voting._
 
 
 
@@ -27,7 +27,7 @@ URI: [ops:has_resolution](https://ch.paf.link/schema/operations/has_resolution)
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [IsAgendaItem](IsAgendaItem.md) | A mixin class that provides the elements of an agenda item: designation, type... |  no  |
-| [AgendaItem](AgendaItem.md) | An agenda item of a meeting |  no  |
+| [AgendaItem](AgendaItem.md) | An agenda item of a meeting as planned beforehand |  no  |
 | [ProtocolItem](ProtocolItem.md) | An agenda item as actually recorded in the protocol |  no  |
 
 
@@ -68,15 +68,21 @@ name: has_resolution
 annotations:
   description_de:
     tag: description_de
-    value: 'Die Resolution oder Entscheidung zu diesem Traktandum.
+    value: 'Der formale Beschluss zu diesem Traktandum, z.B. die Annahme des Energiegesetzes.
+      Die zugrunde liegende Abstimmung mit dem Stimmenverhältnis wird separat als
+      Voting erfasst.
 
       '
   description_fr:
     tag: description_fr
-    value: 'La décision prise sur ce point de l''ordre du jour.
+    value: 'La décision formelle prise sur ce point de l''ordre du jour, p. ex. l''adoption
+      de la loi sur l''énergie. Le vote sous-jacent avec son rapport de voix est saisi
+      séparément comme Voting.
 
       '
-description: 'The resolution or decision taken on this agenda item.
+description: 'The formal decision taken on this agenda item, e.g. the adoption of
+  the energy law. The underlying voting with its vote ratio is recorded separately
+  as a Voting.
 
   '
 from_schema: https://ch.paf.link/schema/operations

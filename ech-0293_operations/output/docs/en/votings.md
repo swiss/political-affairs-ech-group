@@ -27,7 +27,7 @@ URI: [ops:voting](https://ch.paf.link/schema/operations/voting)
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Container](Container.md) | Container for the records of public council operations: legislatures, session... |  no  |
-| [Protocol](Protocol.md) | The minutes of a meeting, recorded after the meeting |  no  |
+| [Protocol](Protocol.md) | The minutes of a meeting, recorded after the meeting and kept exactly once pe... |  no  |
 
 
 

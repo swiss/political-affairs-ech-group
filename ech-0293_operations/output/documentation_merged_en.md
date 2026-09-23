@@ -1265,6 +1265,7 @@ _A parliamentary session that groups multiple meetings and spans a specific time
 | url | * <br/> [MultilingualString](#MultilingualString) | Landing page or further web address, multilingual.  |
 | parent_legislature | 0..1 <br/> String | Identifier of the legislature to which the session belongs.  |
 | meetings | * <br/> [Meeting](#Meeting) | Collection of meeting records.  |
+| joint_debates | * <br/> [JointDebate](#JointDebate) | Joint debates attached to this record: on an agenda item, the debates in which it is deliberated together with other agenda items; on a meeting or a session, the joint debates held within it.  |
 | documents | * <br/> Work | List of documents (FRBR Works) linked to the entity.  |
 | date_begin_actual | 0..1 <br/> Date | The actual start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
 | datetime_begin_actual | 0..1 <br/> Datetime | The actual start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
@@ -1445,6 +1446,7 @@ _The individual sitting of a body — the level at which agenda items are delibe
 | parent_session | 0..1 <br/> String | Identifier of the session to which the meeting belongs.  |
 | documents | * <br/> Work | Sitting documents such as the bulletin (Tagblatt) or annexes, as FRBR Works. The protocol is not linked here but via `has_protocol`.  |
 | has_protocol | 0..1 <br/> [Protocol](#Protocol) | Reference to the protocol (minutes) of this meeting, recorded after the meeting. Only the identifier of the protocol is given; the protocol itself is delivered in the container's `protocols` list. It is an entity in its own right with its own identifier and is usually published later than the meeting, so it is referenced rather than embedded.  |
+| joint_debates | * <br/> [JointDebate](#JointDebate) | Joint debates attached to this record: on an agenda item, the debates in which it is deliberated together with other agenda items; on a meeting or a session, the joint debates held within it.  |
 | date_begin_actual | 0..1 <br/> Date | The actual start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
 | datetime_begin_actual | 0..1 <br/> Datetime | The actual start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
 | date_begin_planned | 0..1 <br/> Date | The planned start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
@@ -1707,161 +1709,16 @@ URI: [ops:StateEnum](https://ch.paf.link/schema/operations/StateEnum)
 
 # Agenda, protocol and decisions
 
-The agenda of a sitting is structured by agenda items. The agenda items count as the planning of a sitting and are no longer changed in the data once the sitting has started. The same data elements are then used to record the protocol and the decisions it contains.
-
-If the agenda changes during a sitting, these changes are recorded in the protocol, and the agenda of the next sitting is adjusted accordingly.
+The agenda of a sitting is structured by agenda items; what was actually dealt with and decided is recorded in the protocol.
 
 ## AgendaItem
-
-### Purpose of the entity
-
-AgendaItem structures the agenda of a sitting and connects the temporal organisation (Meeting) with the substantive affairs (Affairs from eCH-0295). It is the central entity for representing the course of a sitting.
-
-### Hierarchy and structure
-
-Agenda items can be organised hierarchically in order to represent the structure of complex agendas:
-
-```
-Meeting (sitting of 4 March 2024)
-  ├─ AgendaItem 1: announcements and welcome
-  ├─ AgendaItem 2: legislative deliberations
-  │   ├─ AgendaItem 2.1: energy act (detailed deliberation)
-  │   ├─ AgendaItem 2.2: energy act (final vote)
-  │   └─ AgendaItem 2.3: health act (entry debate)
-  └─ AgendaItem 3: miscellaneous
-```
-
-The hierarchy is represented via the field **parent_agenda_item**, which references the superordinate agenda item.
-
-### Identification and numbering
-
-- **id**: unique identifier
-- **number**: agenda item number on the agenda (e.g. "2.1", "3")
-- **position**: sort order (for the presentation)
-- **title**: title of the agenda item
-
-### Types of agenda items
-
-The field **agenda_item_type** distinguishes different kinds:
-
-- **item**: a regular agenda item with deliberation and, where applicable, a voting
-- **item_group**: a group of agenda items (e.g. "legislative deliberations")
-- **note**: informative entries without a voting (e.g. "announcements")
-
-### Relation to parliamentary affairs
-
-The field **affairs** references the corresponding parliamentary affairs according to eCH-0295. An agenda item can relate to several affairs:
-
-- **Single affair**: an agenda item deals with a specific bill
-- **Several affairs**: an agenda item combines related affairs
-- **No affair**: administrative agenda items (e.g. "approval of the protocol")
-
-**Example:** the agenda item "Energy act — final vote" references the affair "23.XXX Energy Act" in eCH-0295.
-
-### Temporal planning
-
-- **date_time**: planned point in time of the treatment
-- **date_time_actual**: actual point in time of the treatment
-
-This distinction is important because:
-- the agenda is fixed in advance
-- the actual course can deviate from it
-- agenda items can be brought forward, postponed or adjourned
-
-### Status and result
-
-#### Status
-The field **status** shows the processing state:
-- "pending": not yet dealt with
-- "in_progress": currently under deliberation
-- "completed": treatment finished
-- "postponed": adjourned to a later sitting
-- "withdrawn": withdrawn
-
-#### Result
-The field **result** records the result of the treatment:
-- "accepted": accepted
-- "rejected": rejected
-- "referred": referred back (e.g. to a committee)
-- "noted": noted
-- "no_decision": no decision taken
-
-### Categorisation
-
-The field **category** allows grouping according to substantive criteria:
-- "Legislation"
-- "Budget and finance"
-- "Interpellations and questions"
-- "Elections"
-- "Miscellaneous"
-
-This categorisation is not standardised and can vary from one federal unit to another.
-
-### Resolutions on agenda items
-
-The field **resolution** references the resolution(s) taken on this agenda item. A resolution documents the formal decision:
-
-```
-AgendaItem: "Energy act — final vote"
-  └─ Resolution: "Acceptance of the energy act with 120 to 75 votes and 5 abstentions"
-      └─ Voting: details of the voting
-```
-
-### Description and URL
-
-- **description**: detailed description of the agenda item
-- **url**: array of multilingual URLs to meeting documents:
-  - dispatches and reports
-  - motions
-  - amendments
-  - voting results
-
-### Particularities of the various procedures
-
-#### Legislative procedure
-An affair passes through several agenda items:
-1. Entry debate
-2. Detailed deliberation
-3. Final vote
-4. Where applicable, elimination of differences between the chambers
-
-#### Interpellations and questions
-- Submission as an agenda item
-- Answer of the government
-- Where applicable, discussion
-
-#### Elections
-- Nomination as an agenda item
-- Conduct of the election
-- Announcement of the result
-
-### Link to other entities
-
-An AgendaItem is the central link between:
-
-- **Meeting**: the sitting in which it is dealt with
-- **Affairs** (eCH-0295): the substantive affairs
-- **Resolution**: the formal decision
-- **Voting**: the voting(s) on the agenda item
-- **Speech**: statements and speeches on the agenda item
-
-### Application examples
-
-...
-
-### Purposes of use
-
-1. Structuring the course of the sitting and the agenda
-2. Link between meetings and affairs (eCH-0295)
-3. Documentation of status and result per agenda item
-4. Basis for sitting protocols and publications
 
 
 
 ### Class: AgendaItem []{#AgendaItem}
 
 
-_An agenda item of a meeting._
+_An agenda item of a meeting as planned beforehand. It structures the agenda and connects the temporal organisation (Meeting) with the substantive affairs (eCH-0295). Agenda items represent the planning of a meeting and are no longer changed in the data once the meeting has started: deviations during the meeting — items brought forward, postponed or added — are recorded in the protocol (ProtocolItem) and feed into the agenda of the next meeting. For the same reason, planned and actual times are kept separately._
 
 
 
@@ -1892,23 +1749,23 @@ _An agenda item of a meeting._
 | datetime_modified | 0..1 <br/> Datetime | The date and time when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
 | parent_meeting | 0..1 <br/> String | Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose. <br/><br/>Inheritance: IsAgendaItem |
 | agenda_item_type | 0..1 <br/> [AgendaItemTypeEnum](#AgendaItemTypeEnum) | Type of agenda item, distinguishing individual items from groups. <br/><br/>Inheritance: IsAgendaItem |
-| agenda_item_number | 0..1 <br/> String | Sequential number of the agenda item (string type to support roman numerals). <br/><br/>Inheritance: IsAgendaItem |
-| agenda_item_position | 0..1 <br/> Integer | Integer position of the agenda item in the meeting sequence. <br/><br/>Inheritance: IsAgendaItem |
+| agenda_item_number | 0..1 <br/> String | Number of the agenda item on the agenda, e.g. "2.1" or "3" (string type to also support roman numerals). <br/><br/>Inheritance: IsAgendaItem |
+| agenda_item_position | 0..1 <br/> Integer | Integer position of the agenda item in the meeting sequence, used for sorting and display. <br/><br/>Inheritance: IsAgendaItem |
 | leading_actor_id | 0..1 <br/> String | The leading department for the agenda item. <br/><br/>Inheritance: IsAgendaItem |
 | speaking_actor_id | 0..1 <br/> String | The speaker or head of the department for the agenda item. <br/><br/>Inheritance: IsAgendaItem |
 | agenda_item_title | * <br/> [MultilingualString](#MultilingualString) | Title of the agenda item. <br/><br/>Inheritance: IsAgendaItem |
-| affair_id | 0..1 <br/> String | The connection to the affairs (business items) of the agenda item. <br/><br/>Inheritance: IsAgendaItem |
+| affair_id | 0..1 <br/> String | Identifier of the affair (eCH-0295) the record refers to. Administrative agenda items (e.g. approval of the minutes) have no affair. An affair usually runs through several agenda items — in legislation, for instance, the debate on entering into the matter, the detailed deliberation, the final vote and, where applicable, the procedure for resolving differences between the chambers. <br/><br/>Inheritance: IsAgendaItem |
 | agenda_item_description | * <br/> [MultilingualString](#MultilingualString) | Subtitle or detailed description of the agenda item. <br/><br/>Inheritance: IsAgendaItem |
-| state_id | 0..1 <br/> String | State identifier (reference to state enum or custom state). <br/><br/>Inheritance: IsAgendaItem |
+| state_id | 0..1 <br/> String | State identifier of the agenda item (reference to a state enumeration or a custom state), e.g. pending (not yet dealt with), in_progress, completed, postponed (to a later meeting) or withdrawn. <br/><br/>Inheritance: IsAgendaItem |
 | state_name | 0..1 <br/> String | Diverging, free-text status designation, where the status enumeration does not suffice. <br/><br/>Inheritance: IsAgendaItem |
 | landing_page | 0..1 <br/> String | URL providing further information. <br/><br/>Inheritance: IsAgendaItem |
 | url | * <br/> [MultilingualString](#MultilingualString) | Landing page or further web address, multilingual. <br/><br/>Inheritance: IsAgendaItem |
-| agenda_item_category | 0..1 <br/> String | Category for grouped agenda items (e.g., introduction, by department, technical agenda items). <br/><br/>Inheritance: IsAgendaItem |
-| parent_agenda_item | 0..1 <br/> String | Identifier of the agenda item this record belongs to. On an agenda item it builds a hierarchy of agenda items; on a voting, election or speech it names the agenda item under which the record was handled. <br/><br/>Inheritance: IsAgendaItem |
-| has_resolution | 0..1 <br/> [Resolution](#Resolution) | The resolution or decision taken on this agenda item. <br/><br/>Inheritance: IsAgendaItem |
-| joint_debates | * <br/> [JointDebate](#JointDebate) | Joint debates in which this agenda item is deliberated together with other agenda items. <br/><br/>Inheritance: IsAgendaItem |
+| agenda_item_category | 0..1 <br/> String | Free categorisation of the agenda item by content or grouping, e.g. "Gesetzgebung", "Budget und Finanzen", "Interpellationen und Anfragen", "Wahlen", by department, or introductory and technical items. The categorisation is not standardised and may vary between federal units. <br/><br/>Inheritance: IsAgendaItem |
+| parent_agenda_item | 0..1 <br/> String | Identifier of the agenda item this record belongs to. On an agenda item it builds a hierarchy of agenda items — e.g. an item group "Gesetzesberatungen" with the sub-items "Energiegesetz (Detailberatung)" and "Energiegesetz (Schlussabstimmung)"; on a speech it names the agenda item under which the speech was given. <br/><br/>Inheritance: IsAgendaItem |
+| has_resolution | 0..1 <br/> [Resolution](#Resolution) | The formal decision taken on this agenda item, e.g. the adoption of the energy law. The underlying voting with its vote ratio is recorded separately as a Voting. <br/><br/>Inheritance: IsAgendaItem |
+| joint_debates | * <br/> [JointDebate](#JointDebate) | Joint debates attached to this record: on an agenda item, the debates in which it is deliberated together with other agenda items; on a meeting or a session, the joint debates held within it. <br/><br/>Inheritance: IsAgendaItem |
 | text_segments | * <br/> [TextSegment](#TextSegment) | Collection of text segments (e.g. verbatim protocol). <br/><br/>Inheritance: IsAgendaItem |
-| documents | * <br/> Work | List of documents (FRBR Works) linked to the entity. <br/><br/>Inheritance: IsAgendaItem |
+| documents | * <br/> Work | Documents on the agenda item as FRBR Works, e.g. dispatches and reports, motions and amendments. <br/><br/>Inheritance: IsAgendaItem |
 
 
 
@@ -2338,9 +2195,9 @@ URI: [ops:AgendaItemTypeEnum](https://ch.paf.link/schema/operations/AgendaItemTy
 #### Permissible Values
 | Value | Description |
 |------------------------|----------------------------------------------------------------------------|
-| item |  Individual agenda item (Traktandum)  |
+| item |  Individual agenda item (Traktandum) with deliberation and, where applicable, a vote.  |
 | | [ops:enum/agenda_item_type/item](ops:enum/agenda_item_type/item) |
-| group |  Group of agenda items (Traktandengruppe)  |
+| group |  Group of agenda items (Traktandengruppe) under which sub-items are arranged via parent_agenda_item, e.g. "Gesetzesberatungen".  |
 | | [ops:enum/agenda_item_type/group](ops:enum/agenda_item_type/group) |
 
 
@@ -2353,13 +2210,7 @@ URI: [ops:AgendaItemTypeEnum](https://ch.paf.link/schema/operations/AgendaItemTy
 
 ## Protocol
 
-### Purpose of the entity
-
-While the agenda items represent the **planning** of a sitting, the protocol records the **actual course** after the sitting. `Protocol` is a wrapper container kept exactly once per sitting (`Meeting`) that bundles the agenda items actually dealt with (`protocol_items`), votings, speeches as well as verbatim text segments and documents.
-
-The protocol is **referenced, not embedded**: `Meeting.has_protocol` holds the identifier alone, the protocol itself is an entry of its own in `Container.protocols`. The rule this standard applies throughout therefore holds here as well — what has no identity of its own is embedded (`PersonReference` or `GroupReference`, say), what has one is referenced. The protocol carries its own `global_uri` and can be cited independently; the Official Bulletin, for instance, is available at an address of its own. Above all it comes into being after the sitting: embedded, the entire sitting would have to be delivered again once the protocol exists; referenced, delivering the protocol alone is enough.
-
-Within the protocol the collections stay embedded, because they arise and are delivered together with it. Anyone publishing votings or speeches independently of the protocol delivers them flat in `Container.votings` or `Container.speeches` instead and links them through `parent_meeting` and `parent_agenda_item`.
+The protocol is **referenced, not embedded**. The rule this standard applies throughout therefore holds here as well — what has no identity of its own is embedded (`PersonReference` or `GroupReference`, say), what has one is referenced.
 
 ```
 Container
@@ -2369,6 +2220,7 @@ Container
   └─ protocols      → Protocol    (after: the record, parent_meeting)
                         ├─ protocol_items  → ProtocolItem (same elements as AgendaItem)
                         ├─ votings
+                        ├─ elections
                         ├─ speeches
                         ├─ text_segments
                         └─ documents
@@ -2379,7 +2231,7 @@ Container
 ### Class: Protocol []{#Protocol}
 
 
-_The minutes of a meeting, recorded after the meeting. A wrapper container bundling the actually handled agenda items (protocol_items), votings, speeches, verbatim text segments and linked documents._
+_The minutes of a meeting, recorded after the meeting and kept exactly once per meeting. A wrapper container bundling the agenda items actually dealt with (protocol_items), votings, elections, speeches, verbatim text segments and linked documents. The protocol has its own identifier, can be cited on its own and is usually published later than the meeting; the meeting therefore only references it (Meeting.has_protocol), and the protocol itself is delivered in Container.protocols, so that it can be delivered later without delivering the meeting again. Within the protocol the collections are embedded, because they arise and are delivered together with it. Whoever publishes votings or speeches independently of the protocol delivers them flat in Container.votings or Container.speeches and links them via parent_meeting and the respective agenda item reference._
 
 
 
@@ -2473,14 +2325,12 @@ protocols:
 
 ### ProtocolItem (agenda item as recorded)
 
-`ProtocolItem` represents an agenda item as it was actually recorded in the protocol. It carries the same elements as `AgendaItem` without being derived from it: both classes take the agenda item fields from the `IsAgendaItem` mixin. The record is not a special case of the plan — it arises independently and may contain items that were never put on the agenda, just as the agenda may contain items that were never dealt with.
-
 
 
 ### Class: ProtocolItem []{#ProtocolItem}
 
 
-_An agenda item as actually recorded in the protocol. It carries the same elements as AgendaItem through the IsAgendaItem mixin, but is a class in its own right: the record is not a special case of the plan._
+_An agenda item as actually recorded in the protocol. It carries the same elements as AgendaItem through the IsAgendaItem mixin, but is a class in its own right: the record is not a special case of the plan. It arises independently and may contain items that were never put on the agenda, just as the agenda may contain items that were never dealt with._
 
 
 
@@ -2511,23 +2361,23 @@ _An agenda item as actually recorded in the protocol. It carries the same elemen
 | datetime_modified | 0..1 <br/> Datetime | The date and time when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
 | parent_meeting | 0..1 <br/> String | Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose. <br/><br/>Inheritance: IsAgendaItem |
 | agenda_item_type | 0..1 <br/> [AgendaItemTypeEnum](#AgendaItemTypeEnum) | Type of agenda item, distinguishing individual items from groups. <br/><br/>Inheritance: IsAgendaItem |
-| agenda_item_number | 0..1 <br/> String | Sequential number of the agenda item (string type to support roman numerals). <br/><br/>Inheritance: IsAgendaItem |
-| agenda_item_position | 0..1 <br/> Integer | Integer position of the agenda item in the meeting sequence. <br/><br/>Inheritance: IsAgendaItem |
+| agenda_item_number | 0..1 <br/> String | Number of the agenda item on the agenda, e.g. "2.1" or "3" (string type to also support roman numerals). <br/><br/>Inheritance: IsAgendaItem |
+| agenda_item_position | 0..1 <br/> Integer | Integer position of the agenda item in the meeting sequence, used for sorting and display. <br/><br/>Inheritance: IsAgendaItem |
 | leading_actor_id | 0..1 <br/> String | The leading department for the agenda item. <br/><br/>Inheritance: IsAgendaItem |
 | speaking_actor_id | 0..1 <br/> String | The speaker or head of the department for the agenda item. <br/><br/>Inheritance: IsAgendaItem |
 | agenda_item_title | * <br/> [MultilingualString](#MultilingualString) | Title of the agenda item. <br/><br/>Inheritance: IsAgendaItem |
-| affair_id | 0..1 <br/> String | The connection to the affairs (business items) of the agenda item. <br/><br/>Inheritance: IsAgendaItem |
+| affair_id | 0..1 <br/> String | Identifier of the affair (eCH-0295) the record refers to. Administrative agenda items (e.g. approval of the minutes) have no affair. An affair usually runs through several agenda items — in legislation, for instance, the debate on entering into the matter, the detailed deliberation, the final vote and, where applicable, the procedure for resolving differences between the chambers. <br/><br/>Inheritance: IsAgendaItem |
 | agenda_item_description | * <br/> [MultilingualString](#MultilingualString) | Subtitle or detailed description of the agenda item. <br/><br/>Inheritance: IsAgendaItem |
-| state_id | 0..1 <br/> String | State identifier (reference to state enum or custom state). <br/><br/>Inheritance: IsAgendaItem |
+| state_id | 0..1 <br/> String | State identifier of the agenda item (reference to a state enumeration or a custom state), e.g. pending (not yet dealt with), in_progress, completed, postponed (to a later meeting) or withdrawn. <br/><br/>Inheritance: IsAgendaItem |
 | state_name | 0..1 <br/> String | Diverging, free-text status designation, where the status enumeration does not suffice. <br/><br/>Inheritance: IsAgendaItem |
 | landing_page | 0..1 <br/> String | URL providing further information. <br/><br/>Inheritance: IsAgendaItem |
 | url | * <br/> [MultilingualString](#MultilingualString) | Landing page or further web address, multilingual. <br/><br/>Inheritance: IsAgendaItem |
-| agenda_item_category | 0..1 <br/> String | Category for grouped agenda items (e.g., introduction, by department, technical agenda items). <br/><br/>Inheritance: IsAgendaItem |
-| parent_agenda_item | 0..1 <br/> String | Identifier of the agenda item this record belongs to. On an agenda item it builds a hierarchy of agenda items; on a voting, election or speech it names the agenda item under which the record was handled. <br/><br/>Inheritance: IsAgendaItem |
-| has_resolution | 0..1 <br/> [Resolution](#Resolution) | The resolution or decision taken on this agenda item. <br/><br/>Inheritance: IsAgendaItem |
-| joint_debates | * <br/> [JointDebate](#JointDebate) | Joint debates in which this agenda item is deliberated together with other agenda items. <br/><br/>Inheritance: IsAgendaItem |
+| agenda_item_category | 0..1 <br/> String | Free categorisation of the agenda item by content or grouping, e.g. "Gesetzgebung", "Budget und Finanzen", "Interpellationen und Anfragen", "Wahlen", by department, or introductory and technical items. The categorisation is not standardised and may vary between federal units. <br/><br/>Inheritance: IsAgendaItem |
+| parent_agenda_item | 0..1 <br/> String | Identifier of the agenda item this record belongs to. On an agenda item it builds a hierarchy of agenda items — e.g. an item group "Gesetzesberatungen" with the sub-items "Energiegesetz (Detailberatung)" and "Energiegesetz (Schlussabstimmung)"; on a speech it names the agenda item under which the speech was given. <br/><br/>Inheritance: IsAgendaItem |
+| has_resolution | 0..1 <br/> [Resolution](#Resolution) | The formal decision taken on this agenda item, e.g. the adoption of the energy law. The underlying voting with its vote ratio is recorded separately as a Voting. <br/><br/>Inheritance: IsAgendaItem |
+| joint_debates | * <br/> [JointDebate](#JointDebate) | Joint debates attached to this record: on an agenda item, the debates in which it is deliberated together with other agenda items; on a meeting or a session, the joint debates held within it. <br/><br/>Inheritance: IsAgendaItem |
 | text_segments | * <br/> [TextSegment](#TextSegment) | Collection of text segments (e.g. verbatim protocol). <br/><br/>Inheritance: IsAgendaItem |
-| documents | * <br/> Work | List of documents (FRBR Works) linked to the entity. <br/><br/>Inheritance: IsAgendaItem |
+| documents | * <br/> Work | Documents on the agenda item as FRBR Works, e.g. dispatches and reports, motions and amendments. <br/><br/>Inheritance: IsAgendaItem |
 
 
 
@@ -2563,16 +2413,12 @@ _An agenda item as actually recorded in the protocol. It carries the same elemen
 
 ## Joint debate (JointDebate)
 
-### Purpose of the entity
-
-`JointDebate` combines several agenda items that are deliberated together — for instance substantively related affairs dealt with in a single debate. It hangs on an agenda item (AgendaItem) or a protocol item (ProtocolItem) via the slot `joint_debates` and references the jointly debated items via `joint_agenda_item_ids`.
-
 
 
 ### Class: JointDebate []{#JointDebate}
 
 
-_A joint debate: several agenda items are deliberated together. The joint debate hangs on an agenda item (AgendaItem) or a protocol item (ProtocolItem) and references the items debated jointly with it by their identifiers._
+_A joint debate: several agenda items are deliberated together, for instance substantively related affairs dealt with in a single debate. The joint debate hangs on an agenda item (AgendaItem), a protocol item (ProtocolItem), a meeting (Meeting) or a session (Session) and references the items debated jointly by their identifiers. Attached to a meeting or a session, it can also bring together agenda items that are distributed over several agenda positions or meetings._
 
 
 
@@ -2596,6 +2442,8 @@ _A joint debate: several agenda items are deliberated together. The joint debate
 
 | Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
+| [Session](#Session) | joint_debates | range | [JointDebate](#JointDebate) |
+| [Meeting](#Meeting) | joint_debates | range | [JointDebate](#JointDebate) |
 | IsAgendaItem | joint_debates | range | [JointDebate](#JointDebate) |
 | [AgendaItem](#AgendaItem) | joint_debates | range | [JointDebate](#JointDebate) |
 | [ProtocolItem](#ProtocolItem) | joint_debates | range | [JointDebate](#JointDebate) |
@@ -2622,179 +2470,12 @@ _A joint debate: several agenda items are deliberated together. The joint debate
 
 ## Resolution
 
-### Purpose of the entity
-
-The Resolution entity records the formal decision on an agenda item. It documents **what** was decided, while Voting documents **how** (with which procedure and which ratio of votes) the decision was taken.
-
-### Relation to AgendaItem and Voting
-
-```
-AgendaItem (Energy act — final vote)
-  ├─ Resolution (acceptance of the energy act)
-  └─ Voting (120 yes, 75 no, 5 abstentions)
-```
-
-An AgendaItem can have several Resolutions (e.g. in case of several votings on the same agenda item). Each Resolution typically references a Voting containing the voting details.
-
-### Types of resolutions
-
-The **resolution_type** field uses a controlled vocabulary:
-
-#### accepted
-The agenda item was accepted
-
-**Application:**
-- Bills were accepted
-- Motions were approved
-- Decisions were taken
-
-#### rejected
-The agenda item was rejected
-
-**Application:**
-- Bills were rejected
-- Motions were dismissed
-- Rejection decisions
-
-#### referred_back
-Referral back to another body
-
-**Application:**
-- Referral back to a committee for revision
-- Referral back to the government
-- Back to the other chamber (in bicameral systems)
-
-#### noted
-Noted
-
-**Application:**
-- Reports without a voting
-- Announcements
-- Informative agenda items
-
-#### postponed
-Adjourned
-
-**Application:**
-- Deferral of the treatment
-- Not yet ready for a decision
-- Further clarifications needed
-
-#### withdrawn
-Withdrawn
-
-**Application:**
-- The proposer withdraws the bill
-- The affair is not pursued further
-
-#### amended
-Accepted with amendments
-
-**Application:**
-- Act accepted with amendments
-- Modified version adopted
-- Compromise solution
-
-#### no_decision
-No decision taken
-
-**Application:**
-- No majority for any motion
-- Tie without a casting vote
-- Not able to take decisions
-
-### Design decision: why a separate Resolution entity?
-
-**The alternative would have been:** storing the resolution type directly in AgendaItem.
-
-**Reasons for a separate entity:**
-
-1. **Several decisions per agenda item**: an agenda item can have several decisions (e.g. first an amendment, then the overall vote)
-
-2. **Structured link to votings**: clear 1:1 relation between Resolution and Voting
-
-3. **Multilingual decision texts**: a Resolution can contain detailed decision texts in several languages
-
-4. **Temporal flexibility**: a Resolution can be recorded separately in time from the AgendaItem
-
-### Decision text
-
-- **title**: short summary of the decision
-- **description**: detailed decision text
-
-**Example:**
-- title: "Acceptance of the energy act"
-- description: "The National Council accepts the Federal Act on the Energy Transition in the version of the committee with 120 to 75 votes and 5 abstentions."
-
-### Link to the voting
-
-The field **voting_id** references the corresponding Voting containing the voting details:
-
-- Ratio of votes
-- Voting procedure
-- Individual votes (in roll-call votings)
-
-**Not all resolutions have a voting:**
-- "Noted" often occurs without a formal voting
-- Tacit acceptances
-- Administrative decisions
-
-### Timestamps
-
-- **datetime_created**: point in time of the decision
-- **datetime_modified**: last change (e.g. in case of corrections)
-
-### URLs and documentation
-
-The field **url** can reference further documents:
-- Detailed decision texts
-- Reasons
-- Legal bases
-
-### Use cases in different contexts
-
-#### Legislative procedure
-Several resolutions for different phases:
-1. Resolution "entry" (accepted/rejected)
-2. Resolution on article 1 (accepted/amended)
-3. Resolution on article 2 (accepted)
-4. Resolution overall vote (accepted/rejected)
-
-#### Elimination of differences (bicameral system)
-- Resolution "adherence to the version of the first chamber"
-- Resolution "maintaining its own version"
-- Resolution "acceptance of the compromise proposal"
-
-#### Committee work
-- Resolution "referral back to the committee with an additional mandate"
-- Resolution "adoption of the committee report"
-
-### Technical considerations
-
-#### Granularity
-The granularity of resolution recording varies:
-- **Detailed**: every individual voting gets its own resolution
-- **Aggregated**: only the final decision is recorded
-
-The standard permits both approaches.
-
-#### Multilingualism
-In multilingual parliaments (CH, BE, etc.) decision texts have to be recorded in all official languages. This is done via MultilingualString arrays in title and description.
-
-### Purposes of use
-
-1. **Official documentation**: what was decided?
-2. **Legal force**: formal proof of the decision
-3. **Public information**: comprehensible summary of complex votings
-4. **Affairs management**: tracking of decisions and their implementation
-5. **Statistical evaluation**: acceptance and rejection rates
-
 
 
 ### Class: Resolution []{#Resolution}
 
 
-_A resolution or decision taken on an agenda item, including voting procedures._
+_The formal decision taken on an agenda item, including the voting procedures applied. It records what was decided, whereas Voting records how it was decided (procedure and vote ratio). Not every decision rests on a formal vote: noting a report, tacit acceptance or administrative decisions come about without one._
 
 
 
@@ -2810,7 +2491,7 @@ _A resolution or decision taken on an agenda item, including voting procedures._
 |------------------------|----------------------|------------------------------------------------------|
 | resolution_type | 0..1 <br/> [ResolutionTypeEnum](#ResolutionTypeEnum) | Type of resolution taken on the agenda item.  |
 | type_label | 0..1 <br/> String | Custom type label when standard type values don't apply.  |
-| vote_procedures | * <br/> String | Procedures for voting, such as secret ballot or open vote.  |
+| vote_procedures | * <br/> String | Procedures by which the vote was taken. Open procedures: show of hands, standing, electronic voting, roll call, and in crisis situations remote voting (votes communicated to the presidency beforehand and recorded together with the vote in the chamber), circulation procedure or voting in virtual sittings. Secret procedures: secret ballot with ballot papers, electronic secret voting. The procedure determines whether individual votes can be recorded.  |
 | documents | * <br/> Work | List of documents (FRBR Works) linked to the entity.  |
 
 
@@ -2863,11 +2544,11 @@ URI: [ops:ResolutionTypeEnum](https://ch.paf.link/schema/operations/ResolutionTy
 #### Permissible Values
 | Value | Description |
 |------------------------|----------------------------------------------------------------------------|
-| accepted |  Accepted (Annahme)  |
+| accepted |  Accepted (Annahme): e.g. a bill adopted, a motion approved, a decision taken.  |
 | | [ops:enum/resolution_type/accepted](ops:enum/resolution_type/accepted) |
-| rejected |  Rejected (Ablehnung)  |
+| rejected |  Rejected (Ablehnung): e.g. a bill rejected, a motion dismissed.  |
 | | [ops:enum/resolution_type/rejected](ops:enum/resolution_type/rejected) |
-| noted |  Noted (Kenntnisnahme)  |
+| noted |  Noted (Kenntnisnahme): e.g. reports without a vote, communications, informative agenda items.  |
 | | [ops:enum/resolution_type/noted](ops:enum/resolution_type/noted) |
 | accepted_point_by_point |  Accepted point by point (Punktweise Annahme)  |
 | | [ops:enum/resolution_type/accepted_point_by_point](ops:enum/resolution_type/accepted_point_by_point) |
@@ -2890,50 +2571,12 @@ URI: [ops:ResolutionTypeEnum](https://ch.paf.link/schema/operations/ResolutionTy
 
 ## Motion
 
-### Purpose
-
-Records motions submitted during the sitting (amendments, procedural motions, etc.).
-
-### Structure
-
-- **motion_type**: type of the motion
-  - **amendment**: amendment to a legal text
-  - **procedural**: procedural motion (e.g. closing the debate)
-  - **referral**: referral motion
-  - **other**: other motions
-- **title**: short title of the motion
-- **description**: full text of the motion
-- **proposer_person_id**: the person submitting the motion
-- **seconder_person_id**: seconders (where required)
-- **result**: result (accepted, rejected, withdrawn)
-
-### Design decision
-
-**Why a separate entity instead of just in AgendaItem?**
-- An agenda item can contain several motions
-- Motions have their own life cycle (submitted, seconded, voted on)
-- Structured recording of proposer and supporters
-- Separate votings per motion are possible
-
-### Application
-
-Linked with AgendaItem and optionally with Voting:
-
-```
-AgendaItem (Energy act — art. 15)
-  ├─ Motion (amendment person A)
-  │   └─ Voting (voting on the amendment)
-  ├─ Motion (amendment person B)
-  │   └─ Voting (voting on the amendment)
-  └─ Voting (voting on the article as a whole)
-```
-
 
 
 ### Class: Motion []{#Motion}
 
 
-_A formal proposal or motion submitted during proceedings._
+_A formal proposal submitted during the proceedings, such as an amendment to a legal text, a procedural motion (e.g. closure of the debate) or a motion to refer back. It is an entity in its own right because an agenda item may contain several motions, each with its own course (submitted, supported, voted on) and possibly a vote of its own._
 
 
 
@@ -2950,8 +2593,8 @@ _A formal proposal or motion submitted during proceedings._
 | local_id | 0..1 <br/> String | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> Uriorcurie | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> Uriorcurie | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| title | 0..1 <br/> String | Title of the element.  |
-| description | 0..1 <br/> String | Descriptive text of the element.  |
+| title | 0..1 <br/> String | Short title of the motion.  |
+| description | 0..1 <br/> String | Full text of the motion.  |
 | documents | * <br/> Work | List of documents (FRBR Works) linked to the entity.  |
 
 
@@ -2983,240 +2626,16 @@ _A formal proposal or motion submitted during proceedings._
 
 # Votings and elections
 
-Parliamentary decisions are taken either by votings on substantive questions or by elections of persons. The standard clearly distinguishes these two mechanisms and additionally records, in open procedures, the individual voting behaviour of every member of parliament. Presidents of parliament generally do not take part in votings; they only vote in elections. In votings with a tie they cast the deciding vote.
+Parliamentary decisions are taken either by votings on substantive questions or by elections of persons. The standard clearly distinguishes these two mechanisms and additionally records, in open procedures, the individual voting behaviour of every member of parliament.
 
 ## Voting
-
-### Purpose of the entity
-
-"Voting" records the voting process and the result of a formal decision in parliament. The entity documents the subject of the voting (the question), the procedure (how the vote was taken) and the result (with which ratio of votes).
-
-### Anchoring in the minutes
-
-Votings and elections take place during the sitting. `Voting` and `Election` are therefore anchored in the minutes via `parent_protocol` and not in the agenda published beforehand: what was put on the agenda does not yet say what was actually voted on. Where the vote was taken under an agenda item, `parent_protocol_item` additionally points to the recorded agenda item (`ProtocolItem`); without an agenda item this field stays empty and the assignment follows from `parent_protocol` and `parent_meeting`. Conversely, `Protocol` takes up the votings and elections as lists (`votings`, `elections`).
-
-### Types of votings
-
-The standard distinguishes different voting types via the field **voting_type**:
-
-#### intermediate
-Intermediate votings during the deliberation.
-
-**Examples:**
-- Voting on entering into an affair
-- Voting on a motion
-- Opposing two motions that exclude each other or that refer to the same passage of text
-- Contingent voting when more than two motions relate to the same subject
-- Voting on a single article of an act
-- Overall vote after the first reading of an enactment deliberated in two readings
-
-#### final
-The concluding voting on the entire bill
-
-**Examples:**
-- Final vote after the last reading of an enactment
-- Overall vote on a decree
-- Acceptance or rejection of a bill as a whole
-- Point-by-point voting on a parliamentary initiative
-
-#### casting
-Deciding vote of the chair in case of a tie. The chair does not take part in votings but has the deciding vote in case of a tie. In a secret voting, in case of a tie the motion of the preliminarily deliberating council body counts as accepted.
-
-#### secret
-Secret casting of votes in votings and elections
-
-**Application:**
-- Election of persons
-- Voting on a particularly sensitive substantive affair such as a pardon request or the lifting of immunity
-- Voting after a confidential deliberation
-- Secret voting upon request
-
-### Structure of a voting
-
-A voting is always assigned to a sitting phase and/or a sitting, an agenda item and an affair with an affair title and an affair number. It comprises the voting type, the subject of the voting (the question), the result and — in a non-secret voting — the individual votes of the members.
-It can either:
-
-```
-AgendaItem (15) affair (Energy act — art. 15)
-  └─ Voting (intermediate voting on art. 15)
-      ├─ IndividualVote (person A: yes)
-      ├─ IndividualVote (person B: no)
-      └─ IndividualVote (person C: yes)
-```
-
-
-Example selection:
-3 options: https://www.gemeinderat-zuerich.ch/abstimmungen/detail.php?aid=aa10c137274f424fa4eda877e7644a89
-5 options: https://www.gemeinderat-zuerich.ch/abstimmungen/detail.php?aid=23f01ba9b3f3410cb9cfb85f32f3dfe0
-
-### Voting procedures
-
-The field **procedure** describes how the vote is conducted:
-
-#### Open procedures
-- **show_of_hands**: show of hands (traditional)
-- **standing**: standing up (rarer)
-- **electronic**: electronic voting (frequent at federal and cantonal level)
-- **roll_call**: roll-call voting with calling of names
-- **remote_voting**: external casting of votes during crises (individual council members communicate their vote to the parliamentary presidency ahead of the sitting day. The externally cast votes are recorded simultaneously with the voting running in the council.)
-- **circulation_voting**: circulation procedure during crises (the parliamentary presidency conducts the voting by circulation and informs about the result)
-- **virtual_voting**: casting of votes at virtual sittings during crises.
-
-#### Secret procedures
-- **secret_ballot**: secret ballot with voting slips
-- **electronic_secret**: electronic secret voting
-
-The choice of procedure determines whether individual votes can be recorded:
-- Open procedures: individual votes can be documented
-- Secret procedures: only the overall result is available
-
-
-### Voting result
-
-The result is recorded in two ways:
-
-#### Detailed figures
-- **total_count_yes**: number of yes votes
-- **total_count_no**: number of no votes
-- **total_count_abstention**: number of abstentions
-- **total_other**: numbers of votes for additional options where not only yes/no/abstention are available (see the section "Multiple options")
-- **total_absent**: number of absent members (who could not vote)
-- **total**: total number of voting members (without absentees and the presidency's vote)
-- **majority_count**: number of votes required for the necessary majority
-
-#### Overall result
-The result is described as free text in the field **result_text** (e.g. "Accepted with 120 to 75 votes and 5 abstentions"). The categorical decision (accepted / rejected / noted etc.) is not recorded on the voting itself but via the class **Resolution** (slot **resolution_type**) on the agenda item. In case of a tie, a possible deciding vote of the presidency is modelled via a separate voting (`voting_type: tie_breaker_president`) respectively a new voting.
-
-**Example** (final vote, simple yes/no voting):
-- total_count_yes: 120
-- total_count_no: 75
-- total_count_abstention: 5
-- total_absent: 0
-- total: 200
-- result_text: "Accepted with 120 to 75 votes and 5 abstentions"
-- Resolution.resolution_type: accepted
-
-<!-- TODO: weitere komplexere Beispiele ergänzen — Ordnungsantrag, Wiederholung einer Abstimmung. (Cup-/Mehrfachabstimmung und Stichentscheid sind abgedeckt.) -->
-
-#### Multiple options (selection votings / "motions in the same direction")
-
-Not every voting knows only yes, no and abstention. If several motions in the same direction relate to the same substantive question, the members vote on more than two variants simultaneously (in Zurich colloquially "cup voting", technically via several voting buttons). The prevailing variant is the one with the most votes.
-
-Such procedures are represented as follows:
-
-- **voting_type** = `other`, complemented by a meaningful **type_label** (e.g. "Motions in the same direction (multiple choice)").
-- The standard fields **total_count_yes / total_count_no / total_count_abstention** remain empty, because the options do not correspond to yes/no/abstention.
-- Instead, every selection option gets an entry in **total_other** (list of `TotalOther` with **count** and **label**). This allows any number of options with their respective vote counts to be recorded.
-- At the level of the individual vote, **individual_vote_type** is set to `other` and the chosen option is recorded via **type_label** (e.g. "Selection A"); absent members get `not_voted`.
-- As **majority_type**, `other` is used, because it is not a fixed threshold but the relative majority among the options that decides.
-
-**Example** (City of Zurich communal council, 86th sitting of 28.02.2024, affair 2023/361 "Residential building Magnusstrasse 27, net additional credit") — motions in the same direction with four selection options:
-
-| Option | Votes |
-|--------|-------|
-| Selection A (prevailing) | 75 |
-| Selection B | 25 |
-| Selection C | 12 |
-| Selection D | 0 |
-| Absent | 13 |
-
-- Total cast: 112 (of 125 members)
-- Result: selection A accepted (relative majority)
-
-The complete modelling of this case can be found in `data_voting.yaml` (`ops:voting_zh_gr_2024_2023_361`).
-
-### Majority types
-
-The field **majority_type** defines the required majority:
-
-#### simple
-Simple majority (more yes than no)
-
-**Application:**
-- Standard case for most decisions
-- Abstentions do not count
-
-**Example:** 100 yes, 80 no, 20 abstentions → accepted
-
-#### absolute
-Absolute majority (more than half of all members)
-
-**Application:**
-- Elections
-- Constitutional amendments in some cantons
-- Particularly important decisions
-
-**Example:** with 200 members at least 101 yes votes are required
-
-#### two_thirds
-Two-thirds majority
-
-**Application:**
-- Urgency clauses at federal level
-- Constitutional amendments in some cantons
-- Lifting of immunity
-
-**Example:** with 200 members at least 134 yes votes are required
-
-#### qualified
-Qualified majority (other thresholds)
-
-**Application:**
-- Special requirements in individual cantons or communes
-- The concrete quorum is indicated in **majority_threshold**
-
-### Threshold
-
-For qualified majorities, the field **majority_threshold** indicates the exact threshold (e.g. 0.6 for 60%).
-
-### Quorum
-
-The field **quorum** defines the minimum number of members present for the capacity to take decisions:
-
-**Example:** a parliament with 200 members can take decisions if at least 100 members are present (quorum: 100).
-
-### Roll-call votings
-The field **named_vote** indicates whether the voting is a roll-call voting:
-
-- **true**: the individual votes are recorded and published
-- **false**: only the overall result is recorded
-
-Roll-call votings are important for:
-- transparency of voting behaviour
-- analysis of voting patterns
-- accountability towards the electorate
-
-### Relation to individual votes
-
-In roll-call votings the Voting entity references the individual IndividualVote entities:
-
-```
-Voting
-  ├─ IndividualVote (person A)
-  ├─ IndividualVote (person B)
-  └─ ...
-```
-
-**Example:** name list in an accordion https://www.tagblatt.gr.be.ch/shareparl?agendaItemUid=e65d81c90d1d43deb19ef078f7e363f3&segmentType=vote&unitName=default&scroll=true&autoplay=false
-
-
-### Description and documentation
-
-- **description**: description of what was voted on (subject of the voting, voting question)
-- **url**: multilingual URLs to voting details
-
-### Timestamps
-
-- **datetime_created**: point in time of conducting the voting
-- **datetime_modified**: last update (e.g. in case of corrections to the voting protocol)
-
 
 
 
 ### Class: Voting []{#Voting}
 
 
-_A voting procedure with individual votes and results._
+_A voting on a substantive question: the subject (question), the procedure, the result with its vote ratio and — for open votings — the individual votes of the members. A voting is held in the course of the sitting and is therefore anchored in the protocol (parent_protocol, parent_protocol_item); it is also linked to the meeting (parent_meeting) and to the affair (affair_id). The presiding member does not take part in votings but casts the deciding vote in case of a tie (tie_breaker). The categorical decision (accepted, rejected, noted …) is not held on the voting but in the Resolution of the agenda item._
 
 
 
@@ -3243,20 +2662,20 @@ _A voting procedure with individual votes and results._
 | label_yes | 0..1 <br/> String | Meaning of a 'yes' vote.  |
 | label_no | 0..1 <br/> String | Meaning of a 'no' vote.  |
 | label_abstention | 0..1 <br/> String | Meaning of an 'abstention' vote.  |
-| tie_breaker | 0..1 <br/> Boolean | Indicates if a tie-breaker was used in the voting.  |
+| tie_breaker | 0..1 <br/> Boolean | Indicates whether the result was decided by the casting vote of the presiding member in case of a tie.  |
 | total_count_yes | 0..1 <br/> Integer | Total number of 'yes' votes.  |
 | total_count_no | 0..1 <br/> Integer | Total number of 'no' votes.  |
 | total_count_abstention | 0..1 <br/> Integer | Total number of abstentions.  |
-| total_other | * <br/> [TotalOther](#TotalOther) | Used when multiple options are presented for voting (e.g., 5 buttons in Zurich).  |
-| total_absent | 0..1 <br/> Integer | Total number of absent members. Distinction between absent/excused absent - presence is tracked on attendance list.  |
+| total_other | * <br/> [TotalOther](#TotalOther) | Vote counts for the options of a multiple-choice voting, one entry per option; used instead of total_count_yes, total_count_no and total_count_abstention (see TotalOther).  |
+| total_absent | 0..1 <br/> Integer | Number of absent members who could not take part. Whether an absence was excused is tracked on the attendance list (Attendance).  |
 | total | 0..1 <br/> Integer | Total number of votes, excluding absent and president's vote.  |
 | majority_type | 0..1 <br/> [MajorityTypeEnum](#MajorityTypeEnum) | Type of majority required for the vote (absolute, two-thirds, etc.).  |
 | majority_count | 0..1 <br/> Integer | Number of votes required for the relevant majority threshold.  |
-| result_text | 0..1 <br/> String | Free text describing the outcome of the vote, e.g., "Accepted with 78 votes".  |
+| result_text | 0..1 <br/> String | Free text describing the outcome, e.g. "Accepted with 120 to 75 votes with 5 abstentions". For votings, the categorical decision (accepted, rejected, noted …) is not recorded here but in the Resolution (resolution_type) of the agenda item.  |
 | parent_meeting | 0..1 <br/> String | Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.  |
-| parent_protocol | 0..1 <br/> [Protocol](#Protocol) | The protocol in which the voting or election is recorded. A vote is held during the sitting and is therefore anchored in the minutes, not in the agenda planned beforehand.  |
+| parent_protocol | 0..1 <br/> [Protocol](#Protocol) | The protocol in which the voting or election is recorded. A vote is held during the sitting and is therefore anchored in the minutes, not in the agenda planned beforehand: what was put on the agenda does not yet say what was actually voted on. Conversely, the protocol lists its votings and elections (votings, elections).  |
 | parent_protocol_item | 0..1 <br/> [ProtocolItem](#ProtocolItem) | The recorded agenda item (ProtocolItem) under which the voting or election took place. Omitted when the vote was taken without an agenda item; the link to the sitting is then given by parent_protocol and parent_meeting alone.  |
-| affair_id | 0..1 <br/> String | The connection to the affairs (business items) of the agenda item.  |
+| affair_id | 0..1 <br/> String | Identifier of the affair (eCH-0295) the record refers to. Administrative agenda items (e.g. approval of the minutes) have no affair. An affair usually runs through several agenda items — in legislation, for instance, the debate on entering into the matter, the detailed deliberation, the final vote and, where applicable, the procedure for resolving differences between the chambers.  |
 | actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Reference to the acting body/organ (lightweight snapshot at time of linking).  |
 | documents | * <br/> Work | List of documents (FRBR Works) linked to the entity.  |
 | date_created | 0..1 <br/> Date | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
@@ -3458,15 +2877,15 @@ URI: [ops:VotingTypeEnum](https://ch.paf.link/schema/operations/VotingTypeEnum)
 #### Permissible Values
 | Value | Description |
 |------------------------|----------------------------------------------------------------------------|
-| preliminary_vote |  Preliminary vote (Zwischenabstimmung)  |
+| preliminary_vote |  Preliminary vote (Zwischenabstimmung) during the deliberation, e.g. on entering into an affair, on a motion, opposing two motions that exclude each other or refer to the same passage, a contingent vote (Eventualabstimmung) when more than two motions exist on one subject, on a single article of a law, or the overall vote after the first reading of an act deliberated in two readings.  |
 | | [ops:enum/voting_type/preliminary_vote](ops:enum/voting_type/preliminary_vote) |
-| final_vote |  Final vote (Schlussabstimmung)  |
+| final_vote |  Final vote (Schlussabstimmung) on the proposal as a whole, e.g. after the last reading of an act, the overall vote on a decree, the adoption or rejection of a proposal in its entirety, or the point-by-point vote on a parliamentary proposal.  |
 | | [ops:enum/voting_type/final_vote](ops:enum/voting_type/final_vote) |
-| tie_breaker_president |  President's tie-breaking vote (Stichentscheid Präsidium)  |
+| tie_breaker_president |  Casting vote of the presiding member in case of a tie (Stichentscheid Präsidium). The presiding member does not take part in votings but decides in case of a tie. In a secret vote ending in a tie, the proposal of the preparatory body is deemed accepted instead.  |
 | | [ops:enum/voting_type/tie_breaker_president](ops:enum/voting_type/tie_breaker_president) |
-| secret_vote |  Secret ballot (Geheime Wahl/Abstimmung)  |
+| secret_vote |  Secret ballot (Geheime Abstimmung), e.g. on particularly sensitive matters such as a request for pardon or the lifting of immunity, after a secret deliberation, or on request. Only the overall result is published.  |
 | | [ops:enum/voting_type/secret_vote](ops:enum/voting_type/secret_vote) |
-| other |  Other voting type  |
+| other |  Other voting type, specified in type_label — e.g. a multiple-choice voting on several proposals pointing in the same direction (see TotalOther).  |
 | | [ops:enum/voting_type/other](ops:enum/voting_type/other) |
 
 
@@ -3494,11 +2913,11 @@ URI: [ops:MajorityTypeEnum](https://ch.paf.link/schema/operations/MajorityTypeEn
 #### Permissible Values
 | Value | Description |
 |------------------------|----------------------------------------------------------------------------|
-| absolute |  Absolute majority.  |
+| absolute |  Absolute majority: more than half of the reference base (members or votes cast, depending on the applicable rules), e.g. at least 101 of 200. Standard case for elections of persons such as the election of the Federal Council or of committee chairs, and required for constitutional amendments in some cantons. If nobody reaches it in the first ballot of an election, a second ballot usually follows in which the relative majority suffices.  |
 | | [ops:enum/majority_type/absolute](ops:enum/majority_type/absolute) |
-| two_thirds |  Two-thirds majority.  |
+| two_thirds |  Two-thirds majority, e.g. at least 134 of 200; required in some cantons for constitutional amendments.  |
 | | [ops:enum/majority_type/two_thirds](ops:enum/majority_type/two_thirds) |
-| other |  Other majority threshold not covered by the standard categories.  |
+| other |  Other majority threshold not covered by the standard categories, e.g. the relative majority among several options in a multiple-choice voting.  |
 | | [ops:enum/majority_type/other](ops:enum/majority_type/other) |
 
 
@@ -3514,7 +2933,7 @@ URI: [ops:MajorityTypeEnum](https://ch.paf.link/schema/operations/MajorityTypeEn
 ### Class: TotalOther []{#TotalOther}
 
 
-_Additional vote counts when multiple options are presented (e.g., Zurich uses 5 buttons)._
+_Vote count for one option of a multiple-choice voting. If several proposals pointing in the same direction are put to the vote at the same time, the members vote on more than two variants and the variant with most votes prevails (in Zurich colloquially a „Cup-Abstimmung“, cast via several voting buttons). Such a voting is represented with voting_type other and a descriptive type_label; total_count_yes, total_count_no and total_count_abstention remain empty, and each option receives an entry with count and label. Example: Gemeinderat of the City of Zurich, sitting of 28 February 2024, affair 2023/361, four options with 75, 25, 12 and 0 votes._
 
 
 
@@ -3563,122 +2982,12 @@ _Additional vote counts when multiple options are presented (e.g., Zurich uses 5
 
 ## Individual Vote
 
-### Purpose of the entity
-
-IndividualVote records the voting behaviour of individual members of parliament in roll-call votings. The entity is only created if a voting is not conducted secretly (Voting.is_nominal = true).
-
-### Relation to the voting
-
-Every individual vote is part of a superordinate voting:
-
-```
-Voting (final vote energy act)
-  ├─ IndividualVote (National Councillor Anna Müller: yes)
-  ├─ IndividualVote (National Councillor Beat Schweizer: no)
-  ├─ IndividualVote (National Councillor Carla Rossi: abstention)
-  └─ ...
-```
-
-### Identification of the person
-
-The voting person is referenced via the field **person_id**. This ID corresponds to a person according to the eCH-0294 Actors standard.
-
-Additional identification data can be recorded as well:
-- **person_name**: name of the person (for quick access)
-- **person_number**: internal number (e.g. mandate number)
-- **person_political_group**: parliamentary group affiliation
-- **person_party**: party affiliation
-
-### Types of votes
-
-Besides `yes`, `no` and `abstention`, the field knows three further values: `not_voted` for members who were present but did not vote, `tie_breaker` for the presiding officer's casting vote, and `other` for everything that cannot be put on that axis. `other` is the individual counterpart of `total_other`: in a selection voting the person did vote, but neither yes nor no — which option they chose is held by `type_label` ("Auswahl A"). The individual vote thus stays analysable without the standard having to carry every cantonal selection mechanism as an enum value of its own.
-
-The field **vote** records the type of the vote cast:
-
-#### yes
-Yes vote (approval)
-
-**Meaning:** the person approves the bill / the motion.
-
-#### no
-No vote (rejection)
-
-**Meaning:** the person rejects the bill / the motion.
-
-#### abstention
-Abstention
-
-**Meaning:** the person takes part in the voting but abstains. When voting electronically, they press the "abstention" button.
-
-### Vote weight
-
-The field **weight** records the weight of the vote:
-
-- **Standard case**: 1.0 (one vote)
-- **Special cases**: other values possible
-
-#### Use cases for a divergent vote weight
-
-1. **Substitution**: in some systems a person can vote on behalf of an absent person (weight: 2.0)
-3. **Communal assemblies**: in special cases legal entities can hold several votes
-4. **Historical systems**: in some cantons different groups of persons formerly had different vote weights
-
-### Group affiliation
-
-The field **group_id** records the parliamentary group affiliation at the time of the voting:
-
-**Benefit:**
-- Analysis of voting behaviour by group
-- Determination of party discipline
-- Identification of coalitions
-
-**Example:** in a voting on the energy act 90% of the SP group vote yes, 80% of the SVP group vote no.
-
-### Position and order
-
-The field **position** defines the grouping and sort order in the presentation:
-
-**Application:**
-- Alphabetical sorting by surname
-- Sorting by parliamentary group
-- Sorting by vote cast (first yes, then no, then abstentions)
-- Grouping by parliamentary group, within the group by yes, no, abstentions and within the subgroup alphabetically
-
-### Description and context
-
-The field **description** can record additional information:
-
-**Examples:**
-- "Abstention due to a conflict of interest (board member of an energy company)"
-- "Absent due to illness"
-
-### Timestamps
-
-- **datetime_created**: first publication
-- **datetime_modified**: last update (e.g. in case of corrections to the publication)
-
-### Attendance vs. casting a vote
-
-Important difference:
-
-- **Attendance** (another entity): records the general presence at a sitting
-- **IndividualVote**: records the specific vote cast in a voting
-
-A person can be present at a sitting (Attendance) but be recorded as "absent" or "did_not_vote" in individual votings (e.g. when briefly leaving the room).
-
-### Roll-call vs. secret votings
-
-IndividualVote entities are only recorded in roll-call (open) votings:
-
-- **Roll-call voting**: every vote is recorded and is public
-- **Secret voting**: only the overall result is recorded, no IndividualVotes
-
 
 
 ### Class: IndividualVote []{#IndividualVote}
 
 
-_An individual vote cast by a member during a voting procedure._
+_The vote cast by an individual member in a voting. Individual votes are only recorded for open votings; for secret votings only the overall result is published. An individual vote concerns one specific voting and differs from attendance (Attendance), which records presence at the meeting as a whole: a member present at the meeting may be recorded as not_voted in a single voting, for instance because they briefly left the room._
 
 
 
@@ -3696,9 +3005,9 @@ _An individual vote cast by a member during a voting procedure._
 | global_uri | 1 <br/> Uriorcurie | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> Uriorcurie | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | parent_voting | 0..1 <br/> [Voting](#Voting) | The ID of the voting associated with the individual vote.  |
-| actor_id | 0..1 <br/> [PersonReference](#PersonReference) | Reference to the acting person (lightweight snapshot at time of linking).  |
+| actor_id | 0..1 <br/> [PersonReference](#PersonReference) | The member who cast the vote, as a reference to a person according to eCH-0294.  |
 | seat_nr | 0..1 <br/> String | The seat number of the individual vote, if applicable.  |
-| weight | 0..1 <br/> Integer | The number of votes held by the individual, if applicable (e.g., in cases where a person has multiple votes).  |
+| weight | 0..1 <br/> Integer | Voting weight of the member; normally 1. Other values arise, for instance, where a member also votes for an absent member (proxy, weight 2), in communal assemblies where legal entities hold several votes, or in historical systems in which different groups of persons had different voting weights.  |
 | individual_vote_type | 0..1 <br/> [IndividualVoteTypeEnum](#IndividualVoteTypeEnum) | Type of vote cast (yes, no, abstention, no vote, etc.).  |
 | type_label | 0..1 <br/> String | Custom type label when standard type values don't apply.  |
 | date_created | 0..1 <br/> Date | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
@@ -3898,17 +3207,17 @@ URI: [ops:IndividualVoteTypeEnum](https://ch.paf.link/schema/operations/Individu
 #### Permissible Values
 | Value | Description |
 |------------------------|----------------------------------------------------------------------------|
-| yes |  Vote in favor (yes)  |
+| yes |  Yes vote: the member approves the proposal or motion.  |
 | | [ops:enum/individual_vote_type/yes](ops:enum/individual_vote_type/yes) |
-| no |  Vote against (no)  |
+| no |  No vote: the member rejects the proposal or motion.  |
 | | [ops:enum/individual_vote_type/no](ops:enum/individual_vote_type/no) |
-| abstention |  Abstention  |
+| abstention |  Abstention: the member takes part in the voting but abstains; with electronic voting, by pressing the "abstention" button.  |
 | | [ops:enum/individual_vote_type/abstention](ops:enum/individual_vote_type/abstention) |
-| not_voted |  Not Voted  |
+| not_voted |  Not voted: the member did not cast a vote, for instance because they were present but did not vote or were absent.  |
 | | [ops:enum/individual_vote_type/not_voted](ops:enum/individual_vote_type/not_voted) |
-| tie_breaker |  Tie-breaking vote, usually cast by the presiding officer  |
+| tie_breaker |  Tie-breaking vote, cast by the presiding member in case of a tie (see voting_type tie_breaker_president).  |
 | | [ops:enum/individual_vote_type/tie_breaker](ops:enum/individual_vote_type/tie_breaker) |
-| other |  Other vote type  |
+| other |  Vote that cannot be placed on the yes/no axis — for instance in a multiple-choice voting, where the member voted but neither yes nor no; the chosen option is held in type_label (e.g. "Auswahl A"). Counterpart of total_other on the voting, which keeps the individual vote evaluable without a separate enumeration value for every cantonal selection mechanism.  |
 | | [ops:enum/individual_vote_type/other](ops:enum/individual_vote_type/other) |
 
 
@@ -3921,227 +3230,12 @@ URI: [ops:IndividualVoteTypeEnum](https://ch.paf.link/schema/operations/Individu
 
 ## Election
 
-### Term and meaning
-
-An election denotes the designation of one or more persons to an office or a function by a parliamentary body. In contrast to votings, in which substantive questions are decided, elections concern decisions about persons.
-
-### Difference: election vs. voting
-
-| Criterion | Election | Voting |
-|-----------|----------|--------|
-| Subject | Persons | Substantive questions, bills |
-| Result | Elected person(s) | Accepted / rejected |
-| Procedure | Often secret | Often open |
-| Majority | Mostly absolute | Mostly simple |
-
-### Types of elections
-
-The standard distinguishes different election types via the field **election_type**:
-
-#### open
-Open election
-
-**Characteristic:**
-- The casting of votes is publicly visible
-- Every member casts their vote openly
-- It is traceable who elected whom
-
-**Application:**
-- Where transparency is desired
-- In uncontested elections
-- In smaller bodies
-
-#### secret
-Secret election
-
-**Characteristic:**
-- The casting of votes is anonymous
-- Voting slips or an electronic secret voting system
-- It is not traceable who elected whom
-
-**Application:**
-- Elections of persons (standard)
-- Where a free, uninfluenced decision is to be guaranteed
-- Often prescribed by law
-
-**Examples at federal level:**
-- Election of the Federal Council
-- Election of the federal judges
-- Election of the committee presidencies
-
-**Examples at cantonal level:**
-- Election of the president of the parliament
-- Election of the president of the government
-- Election of the presidents of the highest cantonal courts
-- Election of the judges
-- Election of the state chancellor
-- Election of the committee presidencies
-
-#### tacit
-Tacit election
-
-**Characteristic:**
-- No formal voting required
-- The election takes place by acclamation or consensus
-- Only if no opposing votes are raised
-
-**Application:**
-- In case of unanimity
-- Uncontested elections
-- Re-elections without an opposing candidate
-
-**Example:** re-election of a committee president without an opposing candidacy
-
-### Assignment to agenda items
-
-Every election is assigned to an agenda item:
-
-```
-AgendaItem (election of the Federal Council)
-  └─ Election (election for department XY)
-      ├─ Candidate A: 120 votes
-      ├─ Candidate B: 75 votes
-      └─ Blank ballots: 5
-```
-
-### Description and title
-
-- **title**: title of the election (e.g. "Election of the WAK committee presidency")
-- **description**: detailed description, context, special circumstances
-
-### Election result
-
-The field **result** records the result:
-
-- **elected**: person(s) elected
-- **not_elected**: no person elected (e.g. absolute majority not reached)
-- **deferred**: election postponed
-- **withdrawn**: election withdrawn
-
-### Elected person(s)
-
-The field **elected_person_id** contains the ID(s) of the elected person(s) according to eCH-0294 Actors.
-
-In case of multiple elections (e.g. election of several committee members at once) several IDs can be recorded.
-
-### Distribution of votes
-
-In open elections or after publication of the results:
-
-- **total_votes**: total number of votes cast
-- **valid_votes**: valid votes
-- **invalid_votes**: invalid votes
-- **blank_votes**: blank ballots
-
-Additionally details per candidate (via separate entities or as structured data).
-
-### Election procedure
-
-The field **procedure** describes the concrete procedure:
-
-- **written_ballot**: written election with voting slips
-- **electronic**: electronic election
-- **show_of_hands**: show of hands (in open elections)
-- **acclamation**: acclamation (in tacit elections)
-
-### Majority requirements
-
-The field **majority_type** defines the required majority:
-
-#### absolute
-Absolute majority (more than half of those voting)
-
-**Application:**
-- Federal Council election
-- Election of committee presidencies
-- Standard case for elections of persons
-
-**Example:** with 200 votes cast at least 101 votes are required
-
-**Particularity:** if nobody reaches the absolute majority in the first round, a second round usually follows in which a simple majority suffices.
-
-#### simple
-Simple majority (more votes than the other candidates)
-
-**Application:**
-- Second round after an unsuccessful first round
-- Some committee elections
-
-#### qualified
-Qualified majority
-
-**Application:**
-- Rarer in elections
-- Special functions with increased requirements
-
-### Rounds of voting
-
-In elections requiring an absolute majority in the first round:
-
-```
-1st round (absolute majority required)
-   └─ No candidate reaches the absolute majority
-
-2nd round (simple majority suffices)
-   └─ Candidate A elected
-```
-
-Every round is recorded as a separate Election entity, connected via the common agenda item.
-
-### Timestamps
-
-- **datetime_created**: point in time of conducting the election
-- **datetime_modified**: last update
-
-### URL and documentation
-
-- **url**: multilingual URLs to election documents:
-  - candidate profiles
-  - election results
-  - protocols
-
-### Particularities of the various elections
-
-#### Federal Council election
-- Secret election
-- Absolute majority required (in the 1st round)
-- By the United Federal Assembly
-
-#### Federal judge election
-- Secret election
-- Proportional principle (consideration of parties, regions, genders)
-
-#### Committee presidencies
-- Election by the respective parliament
-- Often less public
-
-#### Cantonal and communal level
-- Great variety of election procedures
-- Partly popular election instead of parliamentary election
-- Differing majority requirements
-
-### Transparency and confidentiality
-
-Field of tension:
-- **Secrecy of the ballot**: protection of the individual electoral decision
-- **Transparency**: public interest in the election result
-
-In secret elections:
-- Only the overall result is published
-- No IndividualVote entities
-- Protection of the freedom of choice
-
-In open elections:
-- Individual votes cast can be recorded
-- Higher transparency
-- Potential social pressure effects
-
 
 
 ### Class: Election []{#Election}
 
 
-_An election procedure for selecting persons to positions._
+_An election in which a parliamentary body appoints one or several persons to an office or function. Unlike a voting (Voting), which decides substantive questions, an election is a decision on persons: it is often held by secret ballot and usually requires an absolute majority, whereas votings are mostly open. The presiding member, who does not take part in votings, does vote in elections. Each ballot is recorded as a separate election; the ballots of one election are linked through the common agenda item — for instance a first ballot requiring an absolute majority that remains without result, followed by a second ballot in which the relative majority suffices._
 
 
 
@@ -4162,17 +3256,17 @@ _An election procedure for selecting persons to positions._
 | datetime_end | 0..1 <br/> Datetime | The date and time when the meeting or voting ends.  |
 | election_type | 0..1 <br/> [ElectionTypeEnum](#ElectionTypeEnum) | Type of election procedure.  |
 | type_label | 0..1 <br/> String | Custom type label when standard type values don't apply.  |
-| title | 0..1 <br/> String | Title of the element.  |
+| title | 0..1 <br/> String | Title of the election, e.g. "Wahl Kommissionspräsidium WAK".  |
 | landing_page | 0..1 <br/> String | URL providing further information.  |
-| total_absent | 0..1 <br/> Integer | Total number of absent members. Distinction between absent/excused absent - presence is tracked on attendance list.  |
+| total_absent | 0..1 <br/> Integer | Number of absent members who could not take part. Whether an absence was excused is tracked on the attendance list (Attendance).  |
 | total | 0..1 <br/> Integer | Total number of votes, excluding absent and president's vote.  |
 | majority_type | 0..1 <br/> [MajorityTypeEnum](#MajorityTypeEnum) | Type of majority required for the vote (absolute, two-thirds, etc.).  |
 | majority_count | 0..1 <br/> Integer | Number of votes required for the relevant majority threshold.  |
-| result_text | 0..1 <br/> String | Free text describing the outcome of the vote, e.g., "Accepted with 78 votes".  |
+| result_text | 0..1 <br/> String | Free text describing the outcome, e.g. "Accepted with 120 to 75 votes with 5 abstentions". For votings, the categorical decision (accepted, rejected, noted …) is not recorded here but in the Resolution (resolution_type) of the agenda item.  |
 | parent_meeting | 0..1 <br/> String | Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.  |
-| parent_protocol | 0..1 <br/> [Protocol](#Protocol) | The protocol in which the voting or election is recorded. A vote is held during the sitting and is therefore anchored in the minutes, not in the agenda planned beforehand.  |
+| parent_protocol | 0..1 <br/> [Protocol](#Protocol) | The protocol in which the voting or election is recorded. A vote is held during the sitting and is therefore anchored in the minutes, not in the agenda planned beforehand: what was put on the agenda does not yet say what was actually voted on. Conversely, the protocol lists its votings and elections (votings, elections).  |
 | parent_protocol_item | 0..1 <br/> [ProtocolItem](#ProtocolItem) | The recorded agenda item (ProtocolItem) under which the voting or election took place. Omitted when the vote was taken without an agenda item; the link to the sitting is then given by parent_protocol and parent_meeting alone.  |
-| affair_id | 0..1 <br/> String | The connection to the affairs (business items) of the agenda item.  |
+| affair_id | 0..1 <br/> String | Identifier of the affair (eCH-0295) the record refers to. Administrative agenda items (e.g. approval of the minutes) have no affair. An affair usually runs through several agenda items — in legislation, for instance, the debate on entering into the matter, the detailed deliberation, the final vote and, where applicable, the procedure for resolving differences between the chambers.  |
 | actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Reference to the acting body/organ (lightweight snapshot at time of linking).  |
 | documents | * <br/> Work | List of documents (FRBR Works) linked to the entity.  |
 | date_created | 0..1 <br/> Date | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
@@ -4228,11 +3322,11 @@ URI: [ops:ElectionTypeEnum](https://ch.paf.link/schema/operations/ElectionTypeEn
 #### Permissible Values
 | Value | Description |
 |------------------------|----------------------------------------------------------------------------|
-| secret |  Secret election (Geheime Wahl)  |
+| secret |  Secret election (Geheime Wahl): votes are cast anonymously, by ballot paper or an electronic secret system, so it cannot be traced who elected whom. Standard for elections of persons and often required by law — at federal level e.g. the Federal Council (elected by the United Federal Assembly with an absolute majority in the first ballots), federal judges and committee chairs; at cantonal level e.g. the president of parliament, the president of the government, the presidents of the highest courts, judges, the state chancellor and committee chairs. Only the overall result is published, no individual votes.  |
 | | [ops:enum/election_type/secret](ops:enum/election_type/secret) |
-| open |  Open election (Offene Wahl)  |
+| open |  Open election (Offene Wahl): votes are cast openly and it is traceable who elected whom, so individual votes can be recorded. Used where transparency is desired, for uncontested elections or in smaller bodies.  |
 | | [ops:enum/election_type/open](ops:enum/election_type/open) |
-| silent |  Silent election without opponent (Stille Wahl ohne Gegenkandidat)  |
+| silent |  Silent election (Stille Wahl) without formal vote, by acclamation or consensus; possible only when no objection is raised, e.g. the re-election of a committee chair without a rival candidate.  |
 | | [ops:enum/election_type/silent](ops:enum/election_type/silent) |
 
 
@@ -4378,7 +3472,7 @@ _Aggregated attendance record for a meeting (number of members present, absent, 
 | actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Reference to the acting body/organ (lightweight snapshot at time of linking).  |
 | total_count | 0..1 <br/> Integer | Total number of members of the body (reference value for quorum calculations).  |
 | total_present | 0..1 <br/> Integer | Total number of members present.  |
-| total_absent | 0..1 <br/> Integer | Total number of absent members. Distinction between absent/excused absent - presence is tracked on attendance list.  |
+| total_absent | 0..1 <br/> Integer | Number of absent members who could not take part. Whether an absence was excused is tracked on the attendance list (Attendance).  |
 | total_excused | 0..1 <br/> Integer | Total number of excused absences.  |
 | date_created | 0..1 <br/> Date | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
 | datetime_created | 0..1 <br/> Datetime | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
@@ -4689,7 +3783,7 @@ _A speech or statement made during a meeting (also called Votum or speaker segme
 | global_uri | 1 <br/> Uriorcurie | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> Uriorcurie | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | parent_meeting | 0..1 <br/> String | Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.  |
-| parent_agenda_item | 0..1 <br/> String | Identifier of the agenda item this record belongs to. On an agenda item it builds a hierarchy of agenda items; on a voting, election or speech it names the agenda item under which the record was handled.  |
+| parent_agenda_item | 0..1 <br/> String | Identifier of the agenda item this record belongs to. On an agenda item it builds a hierarchy of agenda items — e.g. an item group "Gesetzesberatungen" with the sub-items "Energiegesetz (Detailberatung)" and "Energiegesetz (Schlussabstimmung)"; on a speech it names the agenda item under which the speech was given.  |
 | language | 0..1 <br/> String | Language code in ISO 639-1 format (two lowercase letters, e.g. "de", "fr", "it", "en").  |
 | start | 0..1 <br/> String | Start indicator or position.  |
 | datetime_begin | 0..1 <br/> Datetime | The date and time when the meeting or voting begins.  |

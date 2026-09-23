@@ -28,7 +28,7 @@ URI: [ops:state_name](https://ch.paf.link/schema/operations/state_name)
 | --- | --- | --- |
 | [Meeting](Meeting.md) | The individual sitting of a body — the level at which agenda items are delibe... |  yes  |
 | [IsAgendaItem](IsAgendaItem.md) | A mixin class that provides the elements of an agenda item: designation, type... |  no  |
-| [AgendaItem](AgendaItem.md) | An agenda item of a meeting |  no  |
+| [AgendaItem](AgendaItem.md) | An agenda item of a meeting as planned beforehand |  no  |
 | [ProtocolItem](ProtocolItem.md) | An agenda item as actually recorded in the protocol |  no  |
 
 

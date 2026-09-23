@@ -27,7 +27,7 @@ URI: [ops:agenda_item_title](https://ch.paf.link/schema/operations/agenda_item_t
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
 | [IsAgendaItem](IsAgendaItem.md) | Eine Mixin-Klasse, welche die Elemente eines Traktandums bereitstellt: Bezeic... |  no  |
-| [AgendaItem](AgendaItem.md) | Ein Traktandum einer Sitzung |  no  |
+| [AgendaItem](AgendaItem.md) | Ein vorgängig geplantes Traktandum einer Sitzung |  no  |
 | [ProtocolItem](ProtocolItem.md) | Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde |  no  |
 
 

@@ -6,7 +6,7 @@ search:
 # Slot: parent_protocol 
 
 
-_Das Protokoll, in dem die Abstimmung oder Wahl festgehalten ist. Abgestimmt wird im Verlauf der Sitzung; die Abstimmung hängt deshalb am Protokoll und nicht an der vorgängig geplanten Traktandenliste._
+_Das Protokoll, in dem die Abstimmung oder Wahl festgehalten ist. Abgestimmt wird im Verlauf der Sitzung, weshalb die Abstimmung im Protokoll und nicht in der vorgängig geplanten Traktandenliste verankert ist: Was traktandiert wurde, sagt noch nicht, worüber tatsächlich abgestimmt wurde. Umgekehrt führt das Protokoll seine Abstimmungen und Wahlen als Listen (votings, elections)._
 
 
 
@@ -26,8 +26,8 @@ URI: [ops:parentProtocol](https://ch.paf.link/schema/operations/parentProtocol)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [Voting](Voting.md) | Ein Abstimmungsverfahren mit Einzelstimmen und Ergebnissen |  no  |
-| [Election](Election.md) | Ein Wahlverfahren zur Wahl von Personen in Positionen |  no  |
+| [Voting](Voting.md) | Eine Abstimmung über eine Sachfrage: der Abstimmungsgegenstand (Frage), das V... |  no  |
+| [Election](Election.md) | Eine Wahl, mit der ein parlamentarisches Organ eine oder mehrere Personen für... |  no  |
 
 
 
@@ -69,20 +69,26 @@ annotations:
   description_de:
     tag: description_de
     value: 'Das Protokoll, in dem die Abstimmung oder Wahl festgehalten ist. Abgestimmt
-      wird im Verlauf der Sitzung; die Abstimmung hängt deshalb am Protokoll und nicht
-      an der vorgängig geplanten Traktandenliste.
+      wird im Verlauf der Sitzung, weshalb die Abstimmung im Protokoll und nicht in
+      der vorgängig geplanten Traktandenliste verankert ist: Was traktandiert wurde,
+      sagt noch nicht, worüber tatsächlich abgestimmt wurde. Umgekehrt führt das Protokoll
+      seine Abstimmungen und Wahlen als Listen (votings, elections).
 
       '
   description_fr:
     tag: description_fr
-    value: 'Le procès-verbal dans lequel le vote ou l''élection est consigné. Un vote
-      a lieu au cours de la séance et se rattache donc au procès-verbal et non à l''ordre
-      du jour planifié à l''avance.
+    value: 'Le procès-verbal dans lequel le vote ou l''élection est consigné. Le vote
+      a lieu au cours de la séance et se rattache donc au procès-verbal, et non à
+      l''ordre du jour planifié à l''avance : ce qui a été mis à l''ordre du jour
+      ne dit pas encore sur quoi il a effectivement été voté. Inversement, le procès-verbal
+      reprend ses votes et élections sous forme de listes (votings, elections).
 
       '
 description: 'Das Protokoll, in dem die Abstimmung oder Wahl festgehalten ist. Abgestimmt
-  wird im Verlauf der Sitzung; die Abstimmung hängt deshalb am Protokoll und nicht
-  an der vorgängig geplanten Traktandenliste.
+  wird im Verlauf der Sitzung, weshalb die Abstimmung im Protokoll und nicht in der
+  vorgängig geplanten Traktandenliste verankert ist: Was traktandiert wurde, sagt
+  noch nicht, worüber tatsächlich abgestimmt wurde. Umgekehrt führt das Protokoll
+  seine Abstimmungen und Wahlen als Listen (votings, elections).
 
   '
 from_schema: https://ch.paf.link/schema/operations

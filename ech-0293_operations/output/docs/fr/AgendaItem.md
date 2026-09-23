@@ -3,7 +3,7 @@
 ## Classe: AgendaItem 
 
 
-_Un point de l'ordre du jour d'une séance._
+_Un point de l'ordre du jour d'une séance, tel que planifié à l'avance. Il structure l'ordre du jour et relie l'organisation temporelle (Meeting) aux affaires matérielles (eCH-0295). Les points de l'ordre du jour représentent la planification d'une séance et ne sont plus modifiés dans les données une fois la séance ouverte : les écarts survenus durant la séance — points avancés, reportés ou ajoutés — sont consignés au procès-verbal (ProtocolItem) et se répercutent sur l'ordre du jour de la séance suivante. Pour la même raison, les heures prévues et effectives sont tenues séparément._
 
 
 
@@ -34,23 +34,23 @@ _Un point de l'ordre du jour d'une séance._
 | datetime_modified | 0..1 <br/> [Datetime](Datetime.md) | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](HasCreationModificationDates.md) |
 | parent_meeting | 0..1 <br/> [String](String.md) | Identifiant de la séance à laquelle cet enregistrement se rattache. Pour une séance, il désigne la séance supérieure ; pour un point de l'ordre du jour, un vote, une élection, une intervention ou un procès-verbal, la séance au cours de laquelle l'enregistrement est né. <br/><br/>Héritage : [IsAgendaItem](IsAgendaItem.md) |
 | agenda_item_type | 0..1 <br/> [AgendaItemTypeEnum](AgendaItemTypeEnum.md) | Type de point de l'ordre du jour, distinguant les points isolés des groupes de points. <br/><br/>Héritage : [IsAgendaItem](IsAgendaItem.md) |
-| agenda_item_number | 0..1 <br/> [String](String.md) | Numéro d'ordre du point de l'ordre du jour (type chaîne, afin de permettre les chiffres romains). <br/><br/>Héritage : [IsAgendaItem](IsAgendaItem.md) |
-| agenda_item_position | 0..1 <br/> [Integer](Integer.md) | Position (nombre entier) du point de l'ordre du jour dans le déroulement de la séance. <br/><br/>Héritage : [IsAgendaItem](IsAgendaItem.md) |
+| agenda_item_number | 0..1 <br/> [String](String.md) | Numéro du point sur l'ordre du jour, p. ex. « 2.1 » ou « 3 » (chaîne de caractères, afin de permettre aussi les chiffres romains). <br/><br/>Héritage : [IsAgendaItem](IsAgendaItem.md) |
+| agenda_item_position | 0..1 <br/> [Integer](Integer.md) | Position entière du point dans le déroulement de la séance, déterminante pour le tri et l'affichage. <br/><br/>Héritage : [IsAgendaItem](IsAgendaItem.md) |
 | leading_actor_id | 0..1 <br/> [String](String.md) | Le département responsable du point de l'ordre du jour. <br/><br/>Héritage : [IsAgendaItem](IsAgendaItem.md) |
 | speaking_actor_id | 0..1 <br/> [String](String.md) | La ou le porte-parole ou la cheffe ou le chef du département pour le point de l'ordre du jour. <br/><br/>Héritage : [IsAgendaItem](IsAgendaItem.md) |
 | agenda_item_title | * <br/> [MultilingualString](MultilingualString.md) | Titre du point de l'ordre du jour. <br/><br/>Héritage : [IsAgendaItem](IsAgendaItem.md) |
-| affair_id | 0..1 <br/> [String](String.md) | Le lien vers les affaires rattachées au point de l'ordre du jour. <br/><br/>Héritage : [IsAgendaItem](IsAgendaItem.md) |
+| affair_id | 0..1 <br/> [String](String.md) | Identifiant de l'affaire (eCH-0295) à laquelle se rapporte l'enregistrement. Les points administratifs (p. ex. approbation du procès-verbal) n'ont pas d'affaire. Une affaire passe en règle générale par plusieurs points de l'ordre du jour — dans la législation, par exemple, le débat d'entrée en matière, la discussion par article, le vote final et, le cas échéant, la procédure d'élimination des divergences entre les conseils. <br/><br/>Héritage : [IsAgendaItem](IsAgendaItem.md) |
 | agenda_item_description | * <br/> [MultilingualString](MultilingualString.md) | Sous-titre ou description détaillée du point de l'ordre du jour. <br/><br/>Héritage : [IsAgendaItem](IsAgendaItem.md) |
-| state_id | 0..1 <br/> [String](String.md) | Identifiant d'état (renvoi à l'énumération des états ou à un état propre). <br/><br/>Héritage : [IsAgendaItem](IsAgendaItem.md) |
+| state_id | 0..1 <br/> [String](String.md) | Identifiant d'état du point (renvoi à une énumération des états ou à un état propre), p. ex. pending (pas encore traité), in_progress (en délibération), completed (traité), postponed (renvoyé à une séance ultérieure) ou withdrawn (retiré). <br/><br/>Héritage : [IsAgendaItem](IsAgendaItem.md) |
 | state_name | 0..1 <br/> [String](String.md) | Désignation de statut divergente, en texte libre, là où l'énumération des statuts ne suffit pas. <br/><br/>Héritage : [IsAgendaItem](IsAgendaItem.md) |
 | landing_page | 0..1 <br/> [String](String.md) | URL fournissant des informations complémentaires. <br/><br/>Héritage : [IsAgendaItem](IsAgendaItem.md) |
 | url | * <br/> [MultilingualString](MultilingualString.md) | Page d'accueil ou adresse web complémentaire, multilingue. <br/><br/>Héritage : [IsAgendaItem](IsAgendaItem.md) |
-| agenda_item_category | 0..1 <br/> [String](String.md) | Catégorie pour les points de l'ordre du jour regroupés (p. ex. introduction, par département, points techniques). <br/><br/>Héritage : [IsAgendaItem](IsAgendaItem.md) |
-| parent_agenda_item | 0..1 <br/> [String](String.md) | Identifiant du point de l'ordre du jour auquel cet enregistrement se rattache. Pour un point de l'ordre du jour, il construit une hiérarchie de points ; pour un vote, une élection ou une intervention, il désigne le point sous lequel l'enregistrement a été traité. <br/><br/>Héritage : [IsAgendaItem](IsAgendaItem.md) |
-| has_resolution | 0..1 <br/> [Resolution](Resolution.md) | La décision prise sur ce point de l'ordre du jour. <br/><br/>Héritage : [IsAgendaItem](IsAgendaItem.md) |
-| joint_debates | * <br/> [JointDebate](JointDebate.md) | Délibérations communes dans lesquelles ce point de l'ordre du jour est traité conjointement avec d'autres points. <br/><br/>Héritage : [IsAgendaItem](IsAgendaItem.md) |
+| agenda_item_category | 0..1 <br/> [String](String.md) | Catégorisation libre du point selon son contenu ou son regroupement, p. ex. « Législation », « Budget et finances », « Interpellations et questions », « Élections », par département, ou points introductifs et techniques. La catégorisation n'est pas standardisée et peut varier selon l'unité fédérale. <br/><br/>Héritage : [IsAgendaItem](IsAgendaItem.md) |
+| parent_agenda_item | 0..1 <br/> [String](String.md) | Identifiant du point de l'ordre du jour auquel cet enregistrement se rattache. Pour un point de l'ordre du jour, il forme une hiérarchie de points — p. ex. un groupe « Délibérations législatives » avec les sous-points « Loi sur l'énergie (discussion par article) » et « Loi sur l'énergie (vote final) » ; pour une intervention, il désigne le point sous lequel elle a été faite. <br/><br/>Héritage : [IsAgendaItem](IsAgendaItem.md) |
+| has_resolution | 0..1 <br/> [Resolution](Resolution.md) | La décision formelle prise sur ce point de l'ordre du jour, p. ex. l'adoption de la loi sur l'énergie. Le vote sous-jacent avec son rapport de voix est saisi séparément comme Voting. <br/><br/>Héritage : [IsAgendaItem](IsAgendaItem.md) |
+| joint_debates | * <br/> [JointDebate](JointDebate.md) | Délibérations communes rattachées à cet enregistrement : pour un point de l'ordre du jour, les délibérations dans lesquelles il est traité conjointement avec d'autres points ; pour une séance ou une session, les délibérations communes qui s'y tiennent. <br/><br/>Héritage : [IsAgendaItem](IsAgendaItem.md) |
 | text_segments | * <br/> [TextSegment](TextSegment.md) | Ensemble de segments de texte (p. ex. procès-verbal in extenso). <br/><br/>Héritage : [IsAgendaItem](IsAgendaItem.md) |
-| documents | * <br/> [Work](Work.md) | Liste des documents (FRBR Works) liés à l'entité. <br/><br/>Héritage : [IsAgendaItem](IsAgendaItem.md) |
+| documents | * <br/> [Work](Work.md) | Documents relatifs au point de l'ordre du jour, sous forme de FRBR Works, p. ex. messages et rapports, propositions et propositions d'amendement. <br/><br/>Héritage : [IsAgendaItem](IsAgendaItem.md) |
 
 
 

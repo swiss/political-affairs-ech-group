@@ -3,7 +3,7 @@
 ## Classe: IndividualVote 
 
 
-_Une voix individuelle exprimée par un membre lors d'une procédure de vote._
+_La voix exprimée par un membre lors d'un vote. Les voix individuelles ne sont saisies que pour les votes ouverts ; pour les votes secrets, seul le résultat global est publié. Une voix individuelle concerne un vote déterminé et se distingue de la présence (Attendance), qui retient la présence à la séance dans son ensemble : un membre présent à la séance peut être saisi avec not_voted lors d'un vote particulier, par exemple parce qu'il a brièvement quitté la salle._
 
 
 
@@ -21,9 +21,9 @@ _Une voix individuelle exprimée par un membre lors d'une procédure de vote._
 | global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](HasIdentification.md) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](HasIdentification.md) |
 | parent_voting | 0..1 <br/> [Voting](Voting.md) | L'identifiant du vote auquel se rattache la voix individuelle.  |
-| actor_id | 0..1 <br/> [PersonReference](PersonReference.md) | Référence à la personne agissante (instantané au moment de la mise en relation).  |
+| actor_id | 0..1 <br/> [PersonReference](PersonReference.md) | Le membre qui a exprimé la voix, sous forme de référence à une personne selon eCH-0294.  |
 | seat_nr | 0..1 <br/> [String](String.md) | Le numéro de siège correspondant à la voix individuelle, le cas échéant.  |
-| weight | 0..1 <br/> [Integer](Integer.md) | Le nombre de voix dont dispose la personne, le cas échéant (p. ex. lorsqu'une personne détient plusieurs voix).  |
+| weight | 0..1 <br/> [Integer](Integer.md) | Poids de la voix du membre ; normalement 1. D'autres valeurs se présentent par exemple lorsqu'un membre vote aussi pour un membre absent (représentation, poids 2), dans les assemblées communales où des personnes morales disposent de plusieurs voix, ou dans des systèmes historiques où différents groupes de personnes avaient un poids de voix différent.  |
 | individual_vote_type | 0..1 <br/> [IndividualVoteTypeEnum](IndividualVoteTypeEnum.md) | Type de voix exprimée (oui, non, abstention, n'a pas voté, etc.).  |
 | type_label | 0..1 <br/> [String](String.md) | Libellé de type personnalisé lorsque les valeurs de type standard ne s'appliquent pas.  |
 | date_created | 0..1 <br/> [Date](Date.md) | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](HasCreationModificationDates.md) |

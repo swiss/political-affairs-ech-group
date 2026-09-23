@@ -28,7 +28,7 @@ URI: [ops:description](https://ch.paf.link/schema/operations/description)
 | --- | --- | --- |
 | [Legislature](Legislature.md) | Term of office of a parliament as a legislative assembly |  no  |
 | [Meeting](Meeting.md) | The individual sitting of a body — the level at which agenda items are delibe... |  no  |
-| [Motion](Motion.md) | A formal proposal or motion submitted during proceedings |  no  |
+| [Motion](Motion.md) | A formal proposal submitted during the proceedings, such as an amendment to a... |  yes  |
 
 
 

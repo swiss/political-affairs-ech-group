@@ -13,11 +13,11 @@ Name: operations
 
 | Classe | Description |
 | --- | --- |
-| [AgendaItem](AgendaItem.md) | Un point de l'ordre du jour d'une séance |
+| [AgendaItem](AgendaItem.md) | Un point de l'ordre du jour d'une séance, tel que planifié à l'avance |
 | [Attendance](Attendance.md) | Liste de présence agrégée pour une séance (nombre de membres présents, absent... |
 | [Container](Container.md) | Conteneur pour les données de l'activité publique des conseils : législatures... |
 | [Date](Date.md) | Une date assortie d'une indication de type (p |
-| [Election](Election.md) | Une procédure d'élection visant à pourvoir des fonctions par des personnes |
+| [Election](Election.md) | Une élection par laquelle un organe parlementaire désigne une ou plusieurs pe... |
 | [Expression](Expression.md) | FRBR Expression : une version linguistique concrète d'un Work |
 | [GroupReference](GroupReference.md) | Référence abrégée à un groupe avec les principales données d'identification a... |
 | [HasCreationModificationDates](HasCreationModificationDates.md) | Une classe mixin qui fournit des slots pour modéliser les dates de création e... |
@@ -25,7 +25,7 @@ Name: operations
 | [HasReferenceIdentification](HasReferenceIdentification.md) | Une classe mixin qui fournit les slots par lesquels une référence désigne l'e... |
 | [HasTemporalValidity](HasTemporalValidity.md) | Une classe mixin qui fournit des slots pour modéliser la validité temporelle ... |
 | [IndividualAttendance](IndividualAttendance.md) | Constatation individuelle de la présence d'une personne à une séance (rattach... |
-| [IndividualVote](IndividualVote.md) | Une voix individuelle exprimée par un membre lors d'une procédure de vote |
+| [IndividualVote](IndividualVote.md) | La voix exprimée par un membre lors d'un vote |
 | [IsAgendaItem](IsAgendaItem.md) | Une classe mixin qui fournit les éléments d'un point de l'ordre du jour : dés... |
 | [IsEventWithDuration](IsEventWithDuration.md) | Une classe mixin qui fournit des slots pour modéliser des événements ou occur... |
 | [IsInstantaneousEvent](IsInstantaneousEvent.md) | Une classe mixin qui fournit des slots pour modéliser des événements ou occur... |
@@ -35,19 +35,19 @@ Name: operations
 | [Manifestation](Manifestation.md) | FRBR Manifestation : une forme de fichier concrète d'une Expression, adressab... |
 | [Media](Media.md) | Fichiers médias ou documents (y compris les procès-verbaux en PDF/HTML/WORD o... |
 | [Meeting](Meeting.md) | La séance individuelle d'un organe — le niveau auquel les points de l'ordre d... |
-| [Motion](Motion.md) | Une proposition formelle déposée au cours des délibérations |
+| [Motion](Motion.md) | Une proposition formelle déposée au cours des délibérations, par exemple une ... |
 | [MultilingualString](MultilingualString.md) | Une chaîne de caractères pouvant contenir du texte en plusieurs langues |
 | [MultilingualUri](MultilingualUri.md) | Une URI accompagnée de la langue de la ressource vers laquelle elle renvoie |
 | [MultilingualValue](MultilingualValue.md) | Une chaîne de caractères multilingue avec indication de la langue |
 | [PersonReference](PersonReference.md) | Référence abrégée à une personne avec les principales données d'identificatio... |
-| [Protocol](Protocol.md) | Le procès-verbal établi après la séance |
+| [Protocol](Protocol.md) | Le procès-verbal d'une séance, établi après celle-ci et tenu exactement une f... |
 | [ProtocolItem](ProtocolItem.md) | Un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-... |
-| [Resolution](Resolution.md) | Une décision prise sur un point de l'ordre du jour, y compris les procédures ... |
+| [Resolution](Resolution.md) | La décision formelle prise sur un point de l'ordre du jour, y compris les pro... |
 | [Session](Session.md) | Une session parlementaire qui regroupe plusieurs séances et s'étend sur une p... |
 | [Speech](Speech.md) | Une intervention prononcée au cours d'une séance (également appelée prise de ... |
 | [TextSegment](TextSegment.md) | Un segment de texte tel qu'un renvoi ou un intertitre |
-| [TotalOther](TotalOther.md) | Décomptes de voix supplémentaires lorsque plusieurs options sont soumises au ... |
-| [Voting](Voting.md) | Une procédure de vote avec les voix individuelles et les résultats |
+| [TotalOther](TotalOther.md) | Nombre de voix pour une option d'un vote à choix multiple |
+| [Voting](Voting.md) | Un vote sur une question matérielle : l'objet du vote (la question), la procé... |
 | [Work](Work.md) | FRBR Work : le document abstrait en tant que tel, indépendamment d'une versio... |
 | [WorkContainer](WorkContainer.md) | Conteneur pour les documents (FRBR Works) de ce schéma |
 
@@ -62,12 +62,12 @@ Name: operations
 | [actor_id](actor_id.md) | Référence à la personne agissante (instantané au moment de la mise en relatio... |
 | [actor_name](actor_name.md) | Nom de l'organe politique en clair (p |
 | [administrative_id](administrative_id.md) | Identifiant administratif du corps législatif, p |
-| [affair_id](affair_id.md) | Le lien vers les affaires rattachées au point de l'ordre du jour |
-| [agenda_item_category](agenda_item_category.md) | Catégorie pour les points de l'ordre du jour regroupés (p |
+| [affair_id](affair_id.md) | Identifiant de l'affaire (eCH-0295) à laquelle se rapporte l'enregistrement |
+| [agenda_item_category](agenda_item_category.md) | Catégorisation libre du point selon son contenu ou son regroupement, p |
 | [agenda_item_description](agenda_item_description.md) | Sous-titre ou description détaillée du point de l'ordre du jour |
 | [agenda_item_ids](agenda_item_ids.md) | Les points de l'ordre du jour associés au vote |
-| [agenda_item_number](agenda_item_number.md) | Numéro d'ordre du point de l'ordre du jour (type chaîne, afin de permettre le... |
-| [agenda_item_position](agenda_item_position.md) | Position (nombre entier) du point de l'ordre du jour dans le déroulement de l... |
+| [agenda_item_number](agenda_item_number.md) | Numéro du point sur l'ordre du jour, p |
+| [agenda_item_position](agenda_item_position.md) | Position entière du point dans le déroulement de la séance, déterminante pour... |
 | [agenda_item_title](agenda_item_title.md) | Titre du point de l'ordre du jour |
 | [agenda_item_type](agenda_item_type.md) | Type de point de l'ordre du jour, distinguant les points isolés des groupes d... |
 | [agenda_items](agenda_items.md) | Ensemble des points de l'ordre du jour |
@@ -110,14 +110,14 @@ Name: operations
 | [group_label](group_label.md) | Nom de l'organe/du groupe au moment de la liaison |
 | [group_name](group_name.md) | Nom du groupe ou de l'organe en clair, en complément de la référence `group_i... |
 | [has_protocol](has_protocol.md) | Référence au procès-verbal de cette séance, établi après celle-ci |
-| [has_resolution](has_resolution.md) | La décision prise sur ce point de l'ordre du jour |
+| [has_resolution](has_resolution.md) | La décision formelle prise sur ce point de l'ordre du jour, p |
 | [id](id.md) | Identifiant univoque de l'élément |
 | [individual_attendances](individual_attendances.md) | Ensemble des constatations individuelles de présence |
 | [individual_vote_type](individual_vote_type.md) | Type de voix exprimée (oui, non, abstention, n'a pas voté, etc |
 | [individual_votes](individual_votes.md) | Ensemble des voix individuelles |
 | [is_active](is_active.md) | Indique si l'information est actuellement valable |
 | [joint_agenda_item_ids](joint_agenda_item_ids.md) | Identifiants des points de l'ordre du jour traités conjointement (AgendaItem ... |
-| [joint_debates](joint_debates.md) | Délibérations communes dans lesquelles ce point de l'ordre du jour est traité... |
+| [joint_debates](joint_debates.md) | Délibérations communes rattachées à cet enregistrement : pour un point de l'o... |
 | [label](label.md) | Attribuer un label à une information structurée (par ex |
 | [label_abstention](label_abstention.md) | Signification d'une abstention |
 | [label_long](label_long.md) | Attribuer un label étendu à une information structurée (par ex |
@@ -159,7 +159,7 @@ Name: operations
 | [resolution_type](resolution_type.md) | Type de décision prise sur le point de l'ordre du jour |
 | [resolutions](resolutions.md) | Ensemble des décisions |
 | [result](result.md) | Résultat de la procédure |
-| [result_text](result_text.md) | Texte libre décrivant le résultat du vote, p |
+| [result_text](result_text.md) | Texte libre décrivant le résultat, p |
 | [role](role.md) | Rôle de la personne (p |
 | [seat_nr](seat_nr.md) | Le numéro de siège correspondant à la voix individuelle, le cas échéant |
 | [sequential_number](sequential_number.md) | Numéro séquentiel de la séance, utilisé pour le tri |
@@ -169,23 +169,23 @@ Name: operations
 | [speeches](speeches.md) | Ensemble des interventions |
 | [start](start.md) | Indication de début ou position |
 | [state](state.md) | Indique si la séance a lieu comme prévu (planifiée, annulée, reportée) |
-| [state_id](state_id.md) | Identifiant d'état (renvoi à l'énumération des états ou à un état propre) |
+| [state_id](state_id.md) | Identifiant d'état du point (renvoi à une énumération des états ou à un état ... |
 | [state_name](state_name.md) | Désignation de statut divergente, en texte libre, là où l'énumération des sta... |
 | [status](status.md) | Désignation libre de l'état, utilisée là où l'énumération des états ne s'appl... |
 | [text](text.md) | Contenu textuel de l'élément |
 | [text_format](text_format.md) | Format du texte (text, html, html_with_timestamps) |
 | [text_segments](text_segments.md) | Ensemble de segments de texte (p |
 | [text_type](text_type.md) | Type de texte (version brute, version éditée) |
-| [tie_breaker](tie_breaker.md) | Indique si une voix prépondérante a été utilisée lors du vote |
+| [tie_breaker](tie_breaker.md) | Indique si le résultat a été obtenu, en cas d'égalité des voix, par la voix p... |
 | [title](title.md) | Titre de l'élément |
 | [total](total.md) | Nombre total de voix, sans les absents ni la voix de la présidence |
-| [total_absent](total_absent.md) | Nombre total de membres absents |
+| [total_absent](total_absent.md) | Nombre de membres absents qui n'ont pas pu participer |
 | [total_count](total_count.md) | Nombre total de membres de l'organe (valeur de référence pour le calcul du qu... |
 | [total_count_abstention](total_count_abstention.md) | Nombre total d'abstentions |
 | [total_count_no](total_count_no.md) | Nombre total de voix « non » |
 | [total_count_yes](total_count_yes.md) | Nombre total de voix « oui » |
 | [total_excused](total_excused.md) | Nombre total d'absences excusées |
-| [total_other](total_other.md) | Utilisé lorsque plusieurs options sont soumises au vote (p |
+| [total_other](total_other.md) | Nombres de voix pour les options d'un vote à choix multiple, une entrée par o... |
 | [total_present](total_present.md) | Nombre total de membres présents |
 | [type](type.md) | Désignation générique du type |
 | [type_label](type_label.md) | Libellé de type personnalisé lorsque les valeurs de type standard ne s'appliq... |
@@ -194,11 +194,11 @@ Name: operations
 | [valid_through](valid_through.md) | La date jusqu'à laquelle l'information est valable, incluse |
 | [value](value.md) | La valeur proprement dite d'une information, en plus d'autres attributs tels ... |
 | [version](version.md) | Numéro ou identifiant de version |
-| [vote_procedures](vote_procedures.md) | Modalités du vote, p |
+| [vote_procedures](vote_procedures.md) | Procédures selon lesquelles le vote a eu lieu |
 | [voting_title](voting_title.md) | Titre du vote, objet ou question soumise au vote |
 | [voting_type](voting_type.md) | Type de procédure de vote (vote intermédiaire, vote final, vote secret, etc |
 | [votings](votings.md) | Ensemble des votes |
-| [weight](weight.md) | Le nombre de voix dont dispose la personne, le cas échéant (p |
+| [weight](weight.md) | Poids de la voix du membre ; normalement 1 |
 | [wikidata_uri](wikidata_uri.md) | Une URI qui renvoie à une entité Wikidata, par ex |
 | [works](works.md) | Les documents (FRBR Works) contenus dans le conteneur |
 | [xdate](xdate.md) | La valeur de date elle-même |

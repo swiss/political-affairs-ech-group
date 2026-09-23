@@ -26,7 +26,7 @@ URI: [ops:jointAgendaItem](https://ch.paf.link/schema/operations/jointAgendaItem
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [JointDebate](JointDebate.md) | Eine gemeinsame Beratung: Mehrere Traktanden werden zusammen behandelt |  no  |
+| [JointDebate](JointDebate.md) | Eine gemeinsame Beratung: Mehrere Traktanden werden zusammen behandelt, etwa ... |  no  |
 
 
 

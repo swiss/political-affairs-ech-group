@@ -6,7 +6,7 @@ search:
 # Slot: joint_debates 
 
 
-_Délibérations communes dans lesquelles ce point de l'ordre du jour est traité conjointement avec d'autres points._
+_Délibérations communes rattachées à cet enregistrement : pour un point de l'ordre du jour, les délibérations dans lesquelles il est traité conjointement avec d'autres points ; pour une séance ou une session, les délibérations communes qui s'y tiennent._
 
 
 
@@ -26,8 +26,10 @@ URI: [ops:jointDebate](https://ch.paf.link/schema/operations/jointDebate)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
+| [Session](Session.md) | Une session parlementaire qui regroupe plusieurs séances et s'étend sur une p... |  no  |
+| [Meeting](Meeting.md) | La séance individuelle d'un organe — le niveau auquel les points de l'ordre d... |  no  |
 | [IsAgendaItem](IsAgendaItem.md) | Une classe mixin qui fournit les éléments d'un point de l'ordre du jour : dés... |  no  |
-| [AgendaItem](AgendaItem.md) | Un point de l'ordre du jour d'une séance |  no  |
+| [AgendaItem](AgendaItem.md) | Un point de l'ordre du jour d'une séance, tel que planifié à l'avance |  no  |
 | [ProtocolItem](ProtocolItem.md) | Un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-... |  no  |
 
 
@@ -42,7 +44,7 @@ URI: [ops:jointDebate](https://ch.paf.link/schema/operations/jointDebate)
 | Propriété | Valeur |
 | --- | --- |
 | Plage | [JointDebate](JointDebate.md) |
-| Domaine de | [IsAgendaItem](IsAgendaItem.md) |
+| Domaine de | [Session](Session.md), [Meeting](Meeting.md), [IsAgendaItem](IsAgendaItem.md) |
 | URI du slot | [ops:jointDebate](https://ch.paf.link/schema/operations/jointDebate) |
 
 ### Cardinalité et exigences
@@ -70,24 +72,31 @@ name: joint_debates
 annotations:
   description_de:
     tag: description_de
-    value: 'Gemeinsame Beratungen, in denen dieses Traktandum zusammen mit anderen
-      Traktanden behandelt wird.
+    value: 'An diesem Eintrag angehängte gemeinsame Beratungen: bei einem Traktandum
+      die Beratungen, in denen es zusammen mit anderen Traktanden behandelt wird;
+      bei einer Sitzung oder Session die darin geführten gemeinsamen Beratungen.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Délibérations communes dans lesquelles ce point de l''ordre du jour est
-      traité conjointement avec d''autres points.
+    value: 'Délibérations communes rattachées à cet enregistrement : pour un point
+      de l''ordre du jour, les délibérations dans lesquelles il est traité conjointement
+      avec d''autres points ; pour une séance ou une session, les délibérations communes
+      qui s''y tiennent.
 
       '
-description: 'Délibérations communes dans lesquelles ce point de l''ordre du jour
-  est traité conjointement avec d''autres points.
+description: 'Délibérations communes rattachées à cet enregistrement : pour un point
+  de l''ordre du jour, les délibérations dans lesquelles il est traité conjointement
+  avec d''autres points ; pour une séance ou une session, les délibérations communes
+  qui s''y tiennent.
 
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 slot_uri: ops:jointDebate
 domain_of:
+- Session
+- Meeting
 - IsAgendaItem
 range: JointDebate
 multivalued: true

@@ -6,7 +6,7 @@ search:
 # Slot: vote_procedures 
 
 
-_Modalités du vote, p. ex. vote secret ou vote ouvert._
+_Procédures selon lesquelles le vote a eu lieu. Procédures ouvertes : main levée, assis-debout, vote électronique, appel nominal et, en situation de crise, vote à distance (voix communiquées à l'avance à la présidence et saisies en même temps que le vote au conseil), procédure par voie de circulation ou vote lors de séances virtuelles. Procédures secrètes : bulletin de vote, vote électronique secret. La procédure détermine si les voix individuelles peuvent être saisies._
 
 
 
@@ -26,7 +26,7 @@ URI: [ops:vote_procedures](https://ch.paf.link/schema/operations/vote_procedures
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Resolution](Resolution.md) | Une décision prise sur un point de l'ordre du jour, y compris les procédures ... |  no  |
+| [Resolution](Resolution.md) | La décision formelle prise sur un point de l'ordre du jour, y compris les pro... |  no  |
 
 
 
@@ -67,15 +67,30 @@ name: vote_procedures
 annotations:
   description_de:
     tag: description_de
-    value: 'Verfahren für die Abstimmung, wie geheime Abstimmung oder offene Abstimmung.
+    value: 'Verfahren, in denen abgestimmt wurde. Offene Verfahren: Handzeichen, Aufstehen,
+      elektronische Abstimmung, Namensaufruf, in Krisenlagen zudem externe Stimmabgabe
+      (vorgängig dem Präsidium mitgeteilte Stimmen, die zusammen mit der Abstimmung
+      im Rat erfasst werden), Zirkulationsverfahren oder Stimmabgabe an virtuellen
+      Sitzungen. Geheime Verfahren: Stimmzettel, elektronische geheime Abstimmung.
+      Das Verfahren bestimmt, ob Einzelstimmen erfasst werden können.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Modalités du vote, p. ex. vote secret ou vote ouvert.
+    value: 'Procédures selon lesquelles le vote a eu lieu. Procédures ouvertes : main
+      levée, assis-debout, vote électronique, appel nominal et, en situation de crise,
+      vote à distance (voix communiquées à l''avance à la présidence et saisies en
+      même temps que le vote au conseil), procédure par voie de circulation ou vote
+      lors de séances virtuelles. Procédures secrètes : bulletin de vote, vote électronique
+      secret. La procédure détermine si les voix individuelles peuvent être saisies.
 
       '
-description: 'Modalités du vote, p. ex. vote secret ou vote ouvert.
+description: 'Procédures selon lesquelles le vote a eu lieu. Procédures ouvertes :
+  main levée, assis-debout, vote électronique, appel nominal et, en situation de crise,
+  vote à distance (voix communiquées à l''avance à la présidence et saisies en même
+  temps que le vote au conseil), procédure par voie de circulation ou vote lors de
+  séances virtuelles. Procédures secrètes : bulletin de vote, vote électronique secret.
+  La procédure détermine si les voix individuelles peuvent être saisies.
 
   '
 from_schema: https://ch.paf.link/schema/operations

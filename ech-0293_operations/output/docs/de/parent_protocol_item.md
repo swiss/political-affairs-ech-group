@@ -26,8 +26,8 @@ URI: [ops:parentProtocolItem](https://ch.paf.link/schema/operations/parentProtoc
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [Voting](Voting.md) | Ein Abstimmungsverfahren mit Einzelstimmen und Ergebnissen |  no  |
-| [Election](Election.md) | Ein Wahlverfahren zur Wahl von Personen in Positionen |  no  |
+| [Voting](Voting.md) | Eine Abstimmung über eine Sachfrage: der Abstimmungsgegenstand (Frage), das V... |  no  |
+| [Election](Election.md) | Eine Wahl, mit der ein parlamentarisches Organ eine oder mehrere Personen für... |  no  |
 
 
 

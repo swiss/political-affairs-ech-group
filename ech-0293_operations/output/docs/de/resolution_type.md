@@ -26,7 +26,7 @@ URI: [ops:resolution_type](https://ch.paf.link/schema/operations/resolution_type
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [Resolution](Resolution.md) | Eine Resolution oder Entscheidung zu einem Traktandum, einschliesslich Abstim... |  no  |
+| [Resolution](Resolution.md) | Der formale Beschluss zu einem Traktandum, einschliesslich der angewandten Ab... |  no  |
 
 
 

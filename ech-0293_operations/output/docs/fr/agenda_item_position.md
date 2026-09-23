@@ -6,7 +6,7 @@ search:
 # Slot: agenda_item_position 
 
 
-_Position (nombre entier) du point de l'ordre du jour dans le déroulement de la séance._
+_Position entière du point dans le déroulement de la séance, déterminante pour le tri et l'affichage._
 
 
 
@@ -27,7 +27,7 @@ URI: [ops:agenda_item_position](https://ch.paf.link/schema/operations/agenda_ite
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
 | [IsAgendaItem](IsAgendaItem.md) | Une classe mixin qui fournit les éléments d'un point de l'ordre du jour : dés... |  no  |
-| [AgendaItem](AgendaItem.md) | Un point de l'ordre du jour d'une séance |  no  |
+| [AgendaItem](AgendaItem.md) | Un point de l'ordre du jour d'une séance, tel que planifié à l'avance |  no  |
 | [ProtocolItem](ProtocolItem.md) | Un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-... |  no  |
 
 
@@ -68,17 +68,18 @@ name: agenda_item_position
 annotations:
   description_de:
     tag: description_de
-    value: 'Ganzzahlige Position des Traktandums in der Sitzungsreihenfolge.
+    value: 'Ganzzahlige Position des Traktandums im Sitzungsablauf, massgebend für
+      Sortierung und Darstellung.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Position (nombre entier) du point de l''ordre du jour dans le déroulement
-      de la séance.
+    value: 'Position entière du point dans le déroulement de la séance, déterminante
+      pour le tri et l''affichage.
 
       '
-description: 'Position (nombre entier) du point de l''ordre du jour dans le déroulement
-  de la séance.
+description: 'Position entière du point dans le déroulement de la séance, déterminante
+  pour le tri et l''affichage.
 
   '
 from_schema: https://ch.paf.link/schema/operations

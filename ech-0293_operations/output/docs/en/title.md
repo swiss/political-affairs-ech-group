@@ -26,8 +26,8 @@ URI: [ops:title](https://ch.paf.link/schema/operations/title)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Election](Election.md) | An election procedure for selecting persons to positions |  no  |
-| [Motion](Motion.md) | A formal proposal or motion submitted during proceedings |  no  |
+| [Election](Election.md) | An election in which a parliamentary body appoints one or several persons to ... |  yes  |
+| [Motion](Motion.md) | A formal proposal submitted during the proceedings, such as an amendment to a... |  yes  |
 | [Media](Media.md) | Media files or documents (including protocols in PDF/HTML/WORD or links to au... |  no  |
 
 

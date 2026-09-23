@@ -26,7 +26,7 @@ URI: [ops:seat_nr](https://ch.paf.link/schema/operations/seat_nr)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [IndividualVote](IndividualVote.md) | Eine Einzelstimme eines Mitglieds während eines Abstimmungsverfahrens |  no  |
+| [IndividualVote](IndividualVote.md) | Die Stimme, die ein einzelnes Mitglied in einer Abstimmung abgibt |  no  |
 
 
 

@@ -26,7 +26,7 @@ URI: [ops:count](https://ch.paf.link/schema/operations/count)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [TotalOther](TotalOther.md) | Zusätzliche Stimmzahlen, wenn mehrere Optionen zur Abstimmung gestellt werden... |  no  |
+| [TotalOther](TotalOther.md) | Stimmenzahl für eine Option einer Auswahlabstimmung |  no  |
 
 
 

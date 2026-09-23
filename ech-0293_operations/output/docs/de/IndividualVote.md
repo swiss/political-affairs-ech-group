@@ -3,7 +3,7 @@
 ## Klasse: IndividualVote 
 
 
-_Eine Einzelstimme eines Mitglieds während eines Abstimmungsverfahrens._
+_Die Stimme, die ein einzelnes Mitglied in einer Abstimmung abgibt. Einzelstimmen werden nur bei offenen Abstimmungen erfasst; bei geheimen Abstimmungen wird nur das Gesamtergebnis publiziert. Eine Einzelstimme betrifft eine bestimmte Abstimmung und unterscheidet sich von der Anwesenheit (Attendance), welche die Präsenz an der Sitzung als Ganzes festhält: Ein an der Sitzung anwesendes Mitglied kann bei einer einzelnen Abstimmung mit not_voted erfasst werden, etwa weil es kurz den Saal verlassen hat._
 
 
 
@@ -21,9 +21,9 @@ _Eine Einzelstimme eines Mitglieds während eines Abstimmungsverfahrens._
 | global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](HasIdentification.md) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](HasIdentification.md) |
 | parent_voting | 0..1 <br/> [Voting](Voting.md) | Die ID der Abstimmung, die mit der Einzelstimme verbunden ist.  |
-| actor_id | 0..1 <br/> [PersonReference](PersonReference.md) | Referenz auf die handelnde Person (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
+| actor_id | 0..1 <br/> [PersonReference](PersonReference.md) | Das Mitglied, das die Stimme abgegeben hat, als Referenz auf eine Person gemäss eCH-0294.  |
 | seat_nr | 0..1 <br/> [String](String.md) | Die Sitznummer der Einzelstimme, falls zutreffend.  |
-| weight | 0..1 <br/> [Integer](Integer.md) | Die Anzahl der Stimmen, die die Einzelperson hat, falls zutreffend (z.B. in Fällen, in denen eine Person mehrere Stimmen hat).  |
+| weight | 0..1 <br/> [Integer](Integer.md) | Stimmgewicht des Mitglieds; im Normalfall 1. Andere Werte kommen etwa vor, wo ein Mitglied für ein abwesendes Mitglied mitstimmt (Stellvertretung, Gewicht 2), an Gemeindeversammlungen, an denen juristische Personen mehrere Stimmen haben, oder in historischen Systemen, in denen verschiedene Personengruppen unterschiedliches Stimmgewicht hatten.  |
 | individual_vote_type | 0..1 <br/> [IndividualVoteTypeEnum](IndividualVoteTypeEnum.md) | Art der abgegebenen Stimme (Ja, Nein, Enthaltung, nicht abgestimmt, etc.).  |
 | type_label | 0..1 <br/> [String](String.md) | Benutzerdefinierte Typbezeichnung, wenn Standardtypwerte nicht zutreffen.  |
 | date_created | 0..1 <br/> [Date](Date.md) | Das Datum, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](HasCreationModificationDates.md) |

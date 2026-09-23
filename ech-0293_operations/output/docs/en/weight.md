@@ -6,7 +6,7 @@ search:
 # Slot: weight 
 
 
-_The number of votes held by the individual, if applicable (e.g., in cases where a person has multiple votes)._
+_Voting weight of the member; normally 1. Other values arise, for instance, where a member also votes for an absent member (proxy, weight 2), in communal assemblies where legal entities hold several votes, or in historical systems in which different groups of persons had different voting weights._
 
 
 
@@ -26,7 +26,7 @@ URI: [ops:weight](https://ch.paf.link/schema/operations/weight)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [IndividualVote](IndividualVote.md) | An individual vote cast by a member during a voting procedure |  no  |
+| [IndividualVote](IndividualVote.md) | The vote cast by an individual member in a voting |  no  |
 
 
 
@@ -66,18 +66,26 @@ name: weight
 annotations:
   description_de:
     tag: description_de
-    value: 'Die Anzahl der Stimmen, die die Einzelperson hat, falls zutreffend (z.B.
-      in Fällen, in denen eine Person mehrere Stimmen hat).
+    value: 'Stimmgewicht des Mitglieds; im Normalfall 1. Andere Werte kommen etwa
+      vor, wo ein Mitglied für ein abwesendes Mitglied mitstimmt (Stellvertretung,
+      Gewicht 2), an Gemeindeversammlungen, an denen juristische Personen mehrere
+      Stimmen haben, oder in historischen Systemen, in denen verschiedene Personengruppen
+      unterschiedliches Stimmgewicht hatten.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Le nombre de voix dont dispose la personne, le cas échéant (p. ex. lorsqu''une
-      personne détient plusieurs voix).
+    value: 'Poids de la voix du membre ; normalement 1. D''autres valeurs se présentent
+      par exemple lorsqu''un membre vote aussi pour un membre absent (représentation,
+      poids 2), dans les assemblées communales où des personnes morales disposent
+      de plusieurs voix, ou dans des systèmes historiques où différents groupes de
+      personnes avaient un poids de voix différent.
 
       '
-description: 'The number of votes held by the individual, if applicable (e.g., in
-  cases where a person has multiple votes).
+description: 'Voting weight of the member; normally 1. Other values arise, for instance,
+  where a member also votes for an absent member (proxy, weight 2), in communal assemblies
+  where legal entities hold several votes, or in historical systems in which different
+  groups of persons had different voting weights.
 
   '
 from_schema: https://ch.paf.link/schema/operations

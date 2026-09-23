@@ -27,8 +27,8 @@ URI: [ops:textSegment](https://ch.paf.link/schema/operations/textSegment)
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
 | [IsAgendaItem](IsAgendaItem.md) | Eine Mixin-Klasse, welche die Elemente eines Traktandums bereitstellt: Bezeic... |  no  |
-| [Protocol](Protocol.md) | Das nach der Sitzung erstellte Protokoll |  no  |
-| [AgendaItem](AgendaItem.md) | Ein Traktandum einer Sitzung |  no  |
+| [Protocol](Protocol.md) | Das Protokoll einer Sitzung, nach der Sitzung erstellt und pro Sitzung genau ... |  no  |
+| [AgendaItem](AgendaItem.md) | Ein vorgängig geplantes Traktandum einer Sitzung |  no  |
 | [ProtocolItem](ProtocolItem.md) | Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde |  no  |
 
 

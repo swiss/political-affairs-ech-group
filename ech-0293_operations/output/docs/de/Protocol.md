@@ -3,7 +3,7 @@
 ## Klasse: Protocol 
 
 
-_Das nach der Sitzung erstellte Protokoll. Ein Wrapper-Container, der die tatsächlich behandelten Traktanden (protocol_items), Abstimmungen, Wortmeldungen, Wortlaut-Textsegmente und verknüpfte Dokumente bündelt._
+_Das Protokoll einer Sitzung, nach der Sitzung erstellt und pro Sitzung genau einmal geführt. Ein Wrapper-Container, der die effektiv behandelten Traktanden (protocol_items), Abstimmungen, Wahlen, Wortmeldungen, Wortlaut-Textsegmente und verknüpfte Dokumente bündelt. Das Protokoll hat einen eigenen Identifikator, ist eigenständig zitierbar und wird in der Regel später veröffentlicht als die Sitzung; die Sitzung referenziert es deshalb nur (Meeting.has_protocol), und das Protokoll selbst wird in Container.protocols geliefert, sodass es nachgeliefert werden kann, ohne die Sitzung erneut zu liefern. Innerhalb des Protokolls sind die Sammlungen eingebettet, weil sie zusammen mit ihm entstehen und geliefert werden. Wer Abstimmungen oder Wortmeldungen unabhängig vom Protokoll publiziert, liefert sie flach in Container.votings bzw. Container.speeches und verknüpft sie über parent_meeting und die jeweilige Traktandenreferenz._
 
 
 

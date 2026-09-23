@@ -3,7 +3,7 @@
 ## Classe: Motion 
 
 
-_Une proposition formelle déposée au cours des délibérations._
+_Une proposition formelle déposée au cours des délibérations, par exemple une proposition d'amendement à un texte légal, une motion d'ordre (p. ex. clôture du débat) ou une proposition de renvoi. Elle constitue une entité propre, car un point de l'ordre du jour peut comprendre plusieurs propositions, chacune ayant son propre déroulement (déposée, soutenue, mise aux voix) et, le cas échéant, son propre vote._
 
 
 
@@ -20,8 +20,8 @@ _Une proposition formelle déposée au cours des délibérations._
 | local_id | 0..1 <br/> [String](String.md) | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](HasIdentification.md) |
 | global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](HasIdentification.md) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](HasIdentification.md) |
-| title | 0..1 <br/> [String](String.md) | Titre de l'élément.  |
-| description | 0..1 <br/> [String](String.md) | Texte descriptif de l'élément.  |
+| title | 0..1 <br/> [String](String.md) | Titre abrégé de la proposition.  |
+| description | 0..1 <br/> [String](String.md) | Texte intégral de la proposition.  |
 | documents | * <br/> [Work](Work.md) | Liste des documents (FRBR Works) liés à l'entité.  |
 
 

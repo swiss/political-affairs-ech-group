@@ -26,10 +26,10 @@ URI: [ops:type_label](https://ch.paf.link/schema/operations/type_label)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Resolution](Resolution.md) | A resolution or decision taken on an agenda item, including voting procedures |  no  |
-| [Voting](Voting.md) | A voting procedure with individual votes and results |  no  |
-| [IndividualVote](IndividualVote.md) | An individual vote cast by a member during a voting procedure |  no  |
-| [Election](Election.md) | An election procedure for selecting persons to positions |  no  |
+| [Resolution](Resolution.md) | The formal decision taken on an agenda item, including the voting procedures ... |  no  |
+| [Voting](Voting.md) | A voting on a substantive question: the subject (question), the procedure, th... |  no  |
+| [IndividualVote](IndividualVote.md) | The vote cast by an individual member in a voting |  no  |
+| [Election](Election.md) | An election in which a parliamentary body appoints one or several persons to ... |  no  |
 
 
 

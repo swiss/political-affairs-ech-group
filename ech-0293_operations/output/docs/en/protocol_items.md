@@ -26,7 +26,7 @@ URI: [ops:protocolItem](https://ch.paf.link/schema/operations/protocolItem)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Protocol](Protocol.md) | The minutes of a meeting, recorded after the meeting |  no  |
+| [Protocol](Protocol.md) | The minutes of a meeting, recorded after the meeting and kept exactly once pe... |  no  |
 
 
 

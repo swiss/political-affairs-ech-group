@@ -27,7 +27,7 @@ URI: [ops:voting](https://ch.paf.link/schema/operations/voting)
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
 | [Container](Container.md) | Conteneur pour les données de l'activité publique des conseils : législatures... |  no  |
-| [Protocol](Protocol.md) | Le procès-verbal établi après la séance |  no  |
+| [Protocol](Protocol.md) | Le procès-verbal d'une séance, établi après celle-ci et tenu exactement une f... |  no  |
 
 
 

@@ -27,7 +27,7 @@ URI: [ops:voting](https://ch.paf.link/schema/operations/voting)
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
 | [Container](Container.md) | Container für die Daten des öffentlichen Ratsbetriebs: Legislaturperioden, Se... |  no  |
-| [Protocol](Protocol.md) | Das nach der Sitzung erstellte Protokoll |  no  |
+| [Protocol](Protocol.md) | Das Protokoll einer Sitzung, nach der Sitzung erstellt und pro Sitzung genau ... |  no  |
 
 
 

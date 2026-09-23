@@ -30,7 +30,7 @@ URI: [ops:url](https://ch.paf.link/schema/operations/url)
 | [Meeting](Meeting.md) | The individual sitting of a body — the level at which agenda items are delibe... |  no  |
 | [IsAgendaItem](IsAgendaItem.md) | A mixin class that provides the elements of an agenda item: designation, type... |  no  |
 | [Media](Media.md) | Media files or documents (including protocols in PDF/HTML/WORD or links to au... |  no  |
-| [AgendaItem](AgendaItem.md) | An agenda item of a meeting |  no  |
+| [AgendaItem](AgendaItem.md) | An agenda item of a meeting as planned beforehand |  no  |
 | [ProtocolItem](ProtocolItem.md) | An agenda item as actually recorded in the protocol |  no  |
 
 

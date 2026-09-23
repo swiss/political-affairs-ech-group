@@ -26,7 +26,7 @@ URI: [ops:total_count_abstention](https://ch.paf.link/schema/operations/total_co
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Voting](Voting.md) | A voting procedure with individual votes and results |  no  |
+| [Voting](Voting.md) | A voting on a substantive question: the subject (question), the procedure, th... |  no  |
 
 
 

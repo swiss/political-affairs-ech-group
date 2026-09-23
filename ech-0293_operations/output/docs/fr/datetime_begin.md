@@ -26,8 +26,8 @@ URI: [ops:datetime_begin](https://ch.paf.link/schema/operations/datetime_begin)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Voting](Voting.md) | Une procédure de vote avec les voix individuelles et les résultats |  no  |
-| [Election](Election.md) | Une procédure d'élection visant à pourvoir des fonctions par des personnes |  no  |
+| [Voting](Voting.md) | Un vote sur une question matérielle : l'objet du vote (la question), la procé... |  no  |
+| [Election](Election.md) | Une élection par laquelle un organe parlementaire désigne une ou plusieurs pe... |  no  |
 | [Attendance](Attendance.md) | Liste de présence agrégée pour une séance (nombre de membres présents, absent... |  no  |
 | [Speech](Speech.md) | Une intervention prononcée au cours d'une séance (également appelée prise de ... |  no  |
 

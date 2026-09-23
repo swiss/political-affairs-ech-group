@@ -26,7 +26,7 @@ URI: [ops:election_type](https://ch.paf.link/schema/operations/election_type)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Election](Election.md) | An election procedure for selecting persons to positions |  no  |
+| [Election](Election.md) | An election in which a parliamentary body appoints one or several persons to ... |  no  |
 
 
 

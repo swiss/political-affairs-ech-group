@@ -27,7 +27,7 @@ URI: [ops:agenda_item_type](https://ch.paf.link/schema/operations/agenda_item_ty
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [IsAgendaItem](IsAgendaItem.md) | A mixin class that provides the elements of an agenda item: designation, type... |  no  |
-| [AgendaItem](AgendaItem.md) | An agenda item of a meeting |  no  |
+| [AgendaItem](AgendaItem.md) | An agenda item of a meeting as planned beforehand |  no  |
 | [ProtocolItem](ProtocolItem.md) | An agenda item as actually recorded in the protocol |  no  |
 
 

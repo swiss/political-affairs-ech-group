@@ -25,7 +25,7 @@ _Aggregierte Anwesenheitsliste für eine Sitzung (Anzahl Anwesende, Abwesende, E
 | actor_id | 0..1 <br/> [GroupReference](GroupReference.md) | Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
 | total_count | 0..1 <br/> [Integer](Integer.md) | Gesamtzahl aller Mitglieder des Gremiums (Bezugsgrösse für Quorum-Berechnungen).  |
 | total_present | 0..1 <br/> [Integer](Integer.md) | Gesamtzahl der anwesenden Mitglieder.  |
-| total_absent | 0..1 <br/> [Integer](Integer.md) | Gesamtzahl abwesender Mitglieder. Unterscheidung zwischen abwesend/entschuldigt abwesend - Anwesenheit wird auf Anwesenheitsliste verfolgt.  |
+| total_absent | 0..1 <br/> [Integer](Integer.md) | Anzahl abwesender Mitglieder, die nicht teilnehmen konnten. Ob eine Abwesenheit entschuldigt war, hält die Anwesenheitsliste (Attendance) fest.  |
 | total_excused | 0..1 <br/> [Integer](Integer.md) | Gesamtzahl der entschuldigten Abwesenheiten.  |
 | date_created | 0..1 <br/> [Date](Date.md) | Das Datum, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](HasCreationModificationDates.md) |
 | datetime_created | 0..1 <br/> [Datetime](Datetime.md) | Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](HasCreationModificationDates.md) |

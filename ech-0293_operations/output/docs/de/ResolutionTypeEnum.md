@@ -15,11 +15,11 @@ URI: [ops:ResolutionTypeEnum](https://ch.paf.link/schema/operations/ResolutionTy
 ### Zulässige Werte
 | Wert | Beschreibung |
 |------------------------|----------------------------------------------------------------------------|
-| accepted |  Annahme  |
+| accepted |  Annahme: z.B. eine Gesetzesvorlage angenommen, ein Antrag gutgeheissen, ein Beschluss gefasst.  |
 | | [ops:enum/resolution_type/accepted](ops:enum/resolution_type/accepted) |
-| rejected |  Ablehnung  |
+| rejected |  Ablehnung: z.B. eine Gesetzesvorlage abgelehnt, ein Antrag abgewiesen.  |
 | | [ops:enum/resolution_type/rejected](ops:enum/resolution_type/rejected) |
-| noted |  Kenntnisnahme  |
+| noted |  Kenntnisnahme: z.B. Berichte ohne Abstimmung, Mitteilungen, informative Traktanden.  |
 | | [ops:enum/resolution_type/noted](ops:enum/resolution_type/noted) |
 | accepted_point_by_point |  Punktweise Annahme  |
 | | [ops:enum/resolution_type/accepted_point_by_point](ops:enum/resolution_type/accepted_point_by_point) |

@@ -26,7 +26,7 @@ URI: [ops:seat_nr](https://ch.paf.link/schema/operations/seat_nr)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [IndividualVote](IndividualVote.md) | Une voix individuelle exprimée par un membre lors d'une procédure de vote |  no  |
+| [IndividualVote](IndividualVote.md) | La voix exprimée par un membre lors d'un vote |  no  |
 
 
 

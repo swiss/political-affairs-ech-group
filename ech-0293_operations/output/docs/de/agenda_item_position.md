@@ -6,7 +6,7 @@ search:
 # Slot: agenda_item_position 
 
 
-_Ganzzahlige Position des Traktandums in der Sitzungsreihenfolge._
+_Ganzzahlige Position des Traktandums im Sitzungsablauf, massgebend für Sortierung und Darstellung._
 
 
 
@@ -27,7 +27,7 @@ URI: [ops:agenda_item_position](https://ch.paf.link/schema/operations/agenda_ite
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
 | [IsAgendaItem](IsAgendaItem.md) | Eine Mixin-Klasse, welche die Elemente eines Traktandums bereitstellt: Bezeic... |  no  |
-| [AgendaItem](AgendaItem.md) | Ein Traktandum einer Sitzung |  no  |
+| [AgendaItem](AgendaItem.md) | Ein vorgängig geplantes Traktandum einer Sitzung |  no  |
 | [ProtocolItem](ProtocolItem.md) | Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde |  no  |
 
 
@@ -68,16 +68,18 @@ name: agenda_item_position
 annotations:
   description_de:
     tag: description_de
-    value: 'Ganzzahlige Position des Traktandums in der Sitzungsreihenfolge.
+    value: 'Ganzzahlige Position des Traktandums im Sitzungsablauf, massgebend für
+      Sortierung und Darstellung.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Position (nombre entier) du point de l''ordre du jour dans le déroulement
-      de la séance.
+    value: 'Position entière du point dans le déroulement de la séance, déterminante
+      pour le tri et l''affichage.
 
       '
-description: 'Ganzzahlige Position des Traktandums in der Sitzungsreihenfolge.
+description: 'Ganzzahlige Position des Traktandums im Sitzungsablauf, massgebend für
+  Sortierung und Darstellung.
 
   '
 from_schema: https://ch.paf.link/schema/operations

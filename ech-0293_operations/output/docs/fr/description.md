@@ -28,7 +28,7 @@ URI: [ops:description](https://ch.paf.link/schema/operations/description)
 | --- | --- | --- |
 | [Legislature](Legislature.md) | Durée du mandat d'un parlement en tant qu'assemblée législative |  no  |
 | [Meeting](Meeting.md) | La séance individuelle d'un organe — le niveau auquel les points de l'ordre d... |  no  |
-| [Motion](Motion.md) | Une proposition formelle déposée au cours des délibérations |  no  |
+| [Motion](Motion.md) | Une proposition formelle déposée au cours des délibérations, par exemple une ... |  yes  |
 
 
 

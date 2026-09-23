@@ -6,7 +6,7 @@ search:
 # Slot: has_resolution 
 
 
-_Die Resolution oder Entscheidung zu diesem Traktandum._
+_Der formale Beschluss zu diesem Traktandum, z.B. die Annahme des Energiegesetzes. Die zugrunde liegende Abstimmung mit dem Stimmenverhältnis wird separat als Voting erfasst._
 
 
 
@@ -27,7 +27,7 @@ URI: [ops:has_resolution](https://ch.paf.link/schema/operations/has_resolution)
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
 | [IsAgendaItem](IsAgendaItem.md) | Eine Mixin-Klasse, welche die Elemente eines Traktandums bereitstellt: Bezeic... |  no  |
-| [AgendaItem](AgendaItem.md) | Ein Traktandum einer Sitzung |  no  |
+| [AgendaItem](AgendaItem.md) | Ein vorgängig geplantes Traktandum einer Sitzung |  no  |
 | [ProtocolItem](ProtocolItem.md) | Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde |  no  |
 
 
@@ -68,15 +68,21 @@ name: has_resolution
 annotations:
   description_de:
     tag: description_de
-    value: 'Die Resolution oder Entscheidung zu diesem Traktandum.
+    value: 'Der formale Beschluss zu diesem Traktandum, z.B. die Annahme des Energiegesetzes.
+      Die zugrunde liegende Abstimmung mit dem Stimmenverhältnis wird separat als
+      Voting erfasst.
 
       '
   description_fr:
     tag: description_fr
-    value: 'La décision prise sur ce point de l''ordre du jour.
+    value: 'La décision formelle prise sur ce point de l''ordre du jour, p. ex. l''adoption
+      de la loi sur l''énergie. Le vote sous-jacent avec son rapport de voix est saisi
+      séparément comme Voting.
 
       '
-description: 'Die Resolution oder Entscheidung zu diesem Traktandum.
+description: 'Der formale Beschluss zu diesem Traktandum, z.B. die Annahme des Energiegesetzes.
+  Die zugrunde liegende Abstimmung mit dem Stimmenverhältnis wird separat als Voting
+  erfasst.
 
   '
 from_schema: https://ch.paf.link/schema/operations

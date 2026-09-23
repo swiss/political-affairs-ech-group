@@ -26,7 +26,7 @@ URI: [ops:label_yes](https://ch.paf.link/schema/operations/label_yes)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Voting](Voting.md) | A voting procedure with individual votes and results |  no  |
+| [Voting](Voting.md) | A voting on a substantive question: the subject (question), the procedure, th... |  no  |
 
 
 

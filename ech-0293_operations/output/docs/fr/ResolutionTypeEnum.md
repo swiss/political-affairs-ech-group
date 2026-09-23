@@ -15,11 +15,11 @@ URI: [ops:ResolutionTypeEnum](https://ch.paf.link/schema/operations/ResolutionTy
 ### Valeurs admissibles
 | Valeur | Description |
 |------------------------|----------------------------------------------------------------------------|
-| accepted |  Acceptation  |
+| accepted |  Adoption : p. ex. un projet de loi adopté, une proposition approuvée, une décision prise.  |
 | | [ops:enum/resolution_type/accepted](ops:enum/resolution_type/accepted) |
-| rejected |  Rejet  |
+| rejected |  Rejet : p. ex. un projet de loi rejeté, une proposition repoussée.  |
 | | [ops:enum/resolution_type/rejected](ops:enum/resolution_type/rejected) |
-| noted |  Prise d'acte  |
+| noted |  Prise d'acte : p. ex. rapports sans vote, communications, points informatifs.  |
 | | [ops:enum/resolution_type/noted](ops:enum/resolution_type/noted) |
 | accepted_point_by_point |  Acceptation point par point  |
 | | [ops:enum/resolution_type/accepted_point_by_point](ops:enum/resolution_type/accepted_point_by_point) |

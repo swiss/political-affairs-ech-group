@@ -26,8 +26,8 @@ URI: [ops:title](https://ch.paf.link/schema/operations/title)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [Election](Election.md) | Ein Wahlverfahren zur Wahl von Personen in Positionen |  no  |
-| [Motion](Motion.md) | Ein formeller Antrag, der während der Verhandlungen eingereicht wird |  no  |
+| [Election](Election.md) | Eine Wahl, mit der ein parlamentarisches Organ eine oder mehrere Personen für... |  yes  |
+| [Motion](Motion.md) | Ein formaler Antrag, der während der Beratung gestellt wird, etwa ein Änderun... |  yes  |
 | [Media](Media.md) | Mediendateien oder Dokumente (einschliesslich Protokolle in PDF/HTML/WORD ode... |  no  |
 
 

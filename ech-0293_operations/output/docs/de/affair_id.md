@@ -6,7 +6,7 @@ search:
 # Slot: affair_id 
 
 
-_Die Verbindung zu den Geschäften des Traktandums._
+_Identifikator des Geschäfts (eCH-0295), auf das sich der Eintrag bezieht. Administrative Traktanden (z.B. Genehmigung des Protokolls) haben kein Geschäft. Ein Geschäft durchläuft in der Regel mehrere Traktanden — in der Gesetzgebung etwa Eintretensdebatte, Detailberatung, Schlussabstimmung und gegebenenfalls die Differenzbereinigung zwischen den Räten._
 
 
 
@@ -27,9 +27,9 @@ URI: [ops:affair_id](https://ch.paf.link/schema/operations/affair_id)
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
 | [IsAgendaItem](IsAgendaItem.md) | Eine Mixin-Klasse, welche die Elemente eines Traktandums bereitstellt: Bezeic... |  no  |
-| [Voting](Voting.md) | Ein Abstimmungsverfahren mit Einzelstimmen und Ergebnissen |  no  |
-| [Election](Election.md) | Ein Wahlverfahren zur Wahl von Personen in Positionen |  no  |
-| [AgendaItem](AgendaItem.md) | Ein Traktandum einer Sitzung |  no  |
+| [Voting](Voting.md) | Eine Abstimmung über eine Sachfrage: der Abstimmungsgegenstand (Frage), das V... |  no  |
+| [Election](Election.md) | Eine Wahl, mit der ein parlamentarisches Organ eine oder mehrere Personen für... |  no  |
+| [AgendaItem](AgendaItem.md) | Ein vorgängig geplantes Traktandum einer Sitzung |  no  |
 | [ProtocolItem](ProtocolItem.md) | Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde |  no  |
 
 
@@ -70,15 +70,28 @@ name: affair_id
 annotations:
   description_de:
     tag: description_de
-    value: 'Die Verbindung zu den Geschäften des Traktandums.
+    value: 'Identifikator des Geschäfts (eCH-0295), auf das sich der Eintrag bezieht.
+      Administrative Traktanden (z.B. Genehmigung des Protokolls) haben kein Geschäft.
+      Ein Geschäft durchläuft in der Regel mehrere Traktanden — in der Gesetzgebung
+      etwa Eintretensdebatte, Detailberatung, Schlussabstimmung und gegebenenfalls
+      die Differenzbereinigung zwischen den Räten.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Le lien vers les affaires rattachées au point de l''ordre du jour.
+    value: 'Identifiant de l''affaire (eCH-0295) à laquelle se rapporte l''enregistrement.
+      Les points administratifs (p. ex. approbation du procès-verbal) n''ont pas d''affaire.
+      Une affaire passe en règle générale par plusieurs points de l''ordre du jour
+      — dans la législation, par exemple, le débat d''entrée en matière, la discussion
+      par article, le vote final et, le cas échéant, la procédure d''élimination des
+      divergences entre les conseils.
 
       '
-description: 'Die Verbindung zu den Geschäften des Traktandums.
+description: 'Identifikator des Geschäfts (eCH-0295), auf das sich der Eintrag bezieht.
+  Administrative Traktanden (z.B. Genehmigung des Protokolls) haben kein Geschäft.
+  Ein Geschäft durchläuft in der Regel mehrere Traktanden — in der Gesetzgebung etwa
+  Eintretensdebatte, Detailberatung, Schlussabstimmung und gegebenenfalls die Differenzbereinigung
+  zwischen den Räten.
 
   '
 from_schema: https://ch.paf.link/schema/operations

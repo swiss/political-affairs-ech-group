@@ -3,7 +3,7 @@
 ## Class: Voting 
 
 
-_A voting procedure with individual votes and results._
+_A voting on a substantive question: the subject (question), the procedure, the result with its vote ratio and — for open votings — the individual votes of the members. A voting is held in the course of the sitting and is therefore anchored in the protocol (parent_protocol, parent_protocol_item); it is also linked to the meeting (parent_meeting) and to the affair (affair_id). The presiding member does not take part in votings but casts the deciding vote in case of a tie (tie_breaker). The categorical decision (accepted, rejected, noted …) is not held on the voting but in the Resolution of the agenda item._
 
 
 
@@ -30,20 +30,20 @@ _A voting procedure with individual votes and results._
 | label_yes | 0..1 <br/> [String](String.md) | Meaning of a 'yes' vote.  |
 | label_no | 0..1 <br/> [String](String.md) | Meaning of a 'no' vote.  |
 | label_abstention | 0..1 <br/> [String](String.md) | Meaning of an 'abstention' vote.  |
-| tie_breaker | 0..1 <br/> [Boolean](Boolean.md) | Indicates if a tie-breaker was used in the voting.  |
+| tie_breaker | 0..1 <br/> [Boolean](Boolean.md) | Indicates whether the result was decided by the casting vote of the presiding member in case of a tie.  |
 | total_count_yes | 0..1 <br/> [Integer](Integer.md) | Total number of 'yes' votes.  |
 | total_count_no | 0..1 <br/> [Integer](Integer.md) | Total number of 'no' votes.  |
 | total_count_abstention | 0..1 <br/> [Integer](Integer.md) | Total number of abstentions.  |
-| total_other | * <br/> [TotalOther](TotalOther.md) | Used when multiple options are presented for voting (e.g., 5 buttons in Zurich).  |
-| total_absent | 0..1 <br/> [Integer](Integer.md) | Total number of absent members. Distinction between absent/excused absent - presence is tracked on attendance list.  |
+| total_other | * <br/> [TotalOther](TotalOther.md) | Vote counts for the options of a multiple-choice voting, one entry per option; used instead of total_count_yes, total_count_no and total_count_abstention (see TotalOther).  |
+| total_absent | 0..1 <br/> [Integer](Integer.md) | Number of absent members who could not take part. Whether an absence was excused is tracked on the attendance list (Attendance).  |
 | total | 0..1 <br/> [Integer](Integer.md) | Total number of votes, excluding absent and president's vote.  |
 | majority_type | 0..1 <br/> [MajorityTypeEnum](MajorityTypeEnum.md) | Type of majority required for the vote (absolute, two-thirds, etc.).  |
 | majority_count | 0..1 <br/> [Integer](Integer.md) | Number of votes required for the relevant majority threshold.  |
-| result_text | 0..1 <br/> [String](String.md) | Free text describing the outcome of the vote, e.g., "Accepted with 78 votes".  |
+| result_text | 0..1 <br/> [String](String.md) | Free text describing the outcome, e.g. "Accepted with 120 to 75 votes with 5 abstentions". For votings, the categorical decision (accepted, rejected, noted …) is not recorded here but in the Resolution (resolution_type) of the agenda item.  |
 | parent_meeting | 0..1 <br/> [String](String.md) | Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.  |
-| parent_protocol | 0..1 <br/> [Protocol](Protocol.md) | The protocol in which the voting or election is recorded. A vote is held during the sitting and is therefore anchored in the minutes, not in the agenda planned beforehand.  |
+| parent_protocol | 0..1 <br/> [Protocol](Protocol.md) | The protocol in which the voting or election is recorded. A vote is held during the sitting and is therefore anchored in the minutes, not in the agenda planned beforehand: what was put on the agenda does not yet say what was actually voted on. Conversely, the protocol lists its votings and elections (votings, elections).  |
 | parent_protocol_item | 0..1 <br/> [ProtocolItem](ProtocolItem.md) | The recorded agenda item (ProtocolItem) under which the voting or election took place. Omitted when the vote was taken without an agenda item; the link to the sitting is then given by parent_protocol and parent_meeting alone.  |
-| affair_id | 0..1 <br/> [String](String.md) | The connection to the affairs (business items) of the agenda item.  |
+| affair_id | 0..1 <br/> [String](String.md) | Identifier of the affair (eCH-0295) the record refers to. Administrative agenda items (e.g. approval of the minutes) have no affair. An affair usually runs through several agenda items — in legislation, for instance, the debate on entering into the matter, the detailed deliberation, the final vote and, where applicable, the procedure for resolving differences between the chambers.  |
 | actor_id | 0..1 <br/> [GroupReference](GroupReference.md) | Reference to the acting body/organ (lightweight snapshot at time of linking).  |
 | documents | * <br/> [Work](Work.md) | List of documents (FRBR Works) linked to the entity.  |
 | date_created | 0..1 <br/> [Date](Date.md) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |

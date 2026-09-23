@@ -26,8 +26,8 @@ URI: [ops:datetime_end](https://ch.paf.link/schema/operations/datetime_end)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Voting](Voting.md) | A voting procedure with individual votes and results |  no  |
-| [Election](Election.md) | An election procedure for selecting persons to positions |  no  |
+| [Voting](Voting.md) | A voting on a substantive question: the subject (question), the procedure, th... |  no  |
+| [Election](Election.md) | An election in which a parliamentary body appoints one or several persons to ... |  no  |
 | [Speech](Speech.md) | A speech or statement made during a meeting (also called Votum or speaker seg... |  no  |
 
 

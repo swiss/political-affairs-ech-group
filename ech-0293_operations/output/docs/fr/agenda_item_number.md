@@ -6,7 +6,7 @@ search:
 # Slot: agenda_item_number 
 
 
-_Numéro d'ordre du point de l'ordre du jour (type chaîne, afin de permettre les chiffres romains)._
+_Numéro du point sur l'ordre du jour, p. ex. « 2.1 » ou « 3 » (chaîne de caractères, afin de permettre aussi les chiffres romains)._
 
 
 
@@ -27,7 +27,7 @@ URI: [ops:agenda_item_number](https://ch.paf.link/schema/operations/agenda_item_
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
 | [IsAgendaItem](IsAgendaItem.md) | Une classe mixin qui fournit les éléments d'un point de l'ordre du jour : dés... |  no  |
-| [AgendaItem](AgendaItem.md) | Un point de l'ordre du jour d'une séance |  no  |
+| [AgendaItem](AgendaItem.md) | Un point de l'ordre du jour d'une séance, tel que planifié à l'avance |  no  |
 | [ProtocolItem](ProtocolItem.md) | Un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-... |  no  |
 
 
@@ -68,17 +68,18 @@ name: agenda_item_number
 annotations:
   description_de:
     tag: description_de
-    value: 'Laufnummer des Traktandums (String-Typ zur Unterstützung römischer Ziffern).
+    value: 'Nummer des Traktandums auf der Traktandenliste, z.B. „2.1“ oder „3“ (Zeichenkette,
+      damit auch römische Ziffern möglich sind).
 
       '
   description_fr:
     tag: description_fr
-    value: 'Numéro d''ordre du point de l''ordre du jour (type chaîne, afin de permettre
-      les chiffres romains).
+    value: 'Numéro du point sur l''ordre du jour, p. ex. « 2.1 » ou « 3 » (chaîne
+      de caractères, afin de permettre aussi les chiffres romains).
 
       '
-description: 'Numéro d''ordre du point de l''ordre du jour (type chaîne, afin de permettre
-  les chiffres romains).
+description: 'Numéro du point sur l''ordre du jour, p. ex. « 2.1 » ou « 3 » (chaîne
+  de caractères, afin de permettre aussi les chiffres romains).
 
   '
 from_schema: https://ch.paf.link/schema/operations

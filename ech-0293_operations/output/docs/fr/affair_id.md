@@ -6,7 +6,7 @@ search:
 # Slot: affair_id 
 
 
-_Le lien vers les affaires rattachées au point de l'ordre du jour._
+_Identifiant de l'affaire (eCH-0295) à laquelle se rapporte l'enregistrement. Les points administratifs (p. ex. approbation du procès-verbal) n'ont pas d'affaire. Une affaire passe en règle générale par plusieurs points de l'ordre du jour — dans la législation, par exemple, le débat d'entrée en matière, la discussion par article, le vote final et, le cas échéant, la procédure d'élimination des divergences entre les conseils._
 
 
 
@@ -27,9 +27,9 @@ URI: [ops:affair_id](https://ch.paf.link/schema/operations/affair_id)
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
 | [IsAgendaItem](IsAgendaItem.md) | Une classe mixin qui fournit les éléments d'un point de l'ordre du jour : dés... |  no  |
-| [Voting](Voting.md) | Une procédure de vote avec les voix individuelles et les résultats |  no  |
-| [Election](Election.md) | Une procédure d'élection visant à pourvoir des fonctions par des personnes |  no  |
-| [AgendaItem](AgendaItem.md) | Un point de l'ordre du jour d'une séance |  no  |
+| [Voting](Voting.md) | Un vote sur une question matérielle : l'objet du vote (la question), la procé... |  no  |
+| [Election](Election.md) | Une élection par laquelle un organe parlementaire désigne une ou plusieurs pe... |  no  |
+| [AgendaItem](AgendaItem.md) | Un point de l'ordre du jour d'une séance, tel que planifié à l'avance |  no  |
 | [ProtocolItem](ProtocolItem.md) | Un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-... |  no  |
 
 
@@ -70,15 +70,29 @@ name: affair_id
 annotations:
   description_de:
     tag: description_de
-    value: 'Die Verbindung zu den Geschäften des Traktandums.
+    value: 'Identifikator des Geschäfts (eCH-0295), auf das sich der Eintrag bezieht.
+      Administrative Traktanden (z.B. Genehmigung des Protokolls) haben kein Geschäft.
+      Ein Geschäft durchläuft in der Regel mehrere Traktanden — in der Gesetzgebung
+      etwa Eintretensdebatte, Detailberatung, Schlussabstimmung und gegebenenfalls
+      die Differenzbereinigung zwischen den Räten.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Le lien vers les affaires rattachées au point de l''ordre du jour.
+    value: 'Identifiant de l''affaire (eCH-0295) à laquelle se rapporte l''enregistrement.
+      Les points administratifs (p. ex. approbation du procès-verbal) n''ont pas d''affaire.
+      Une affaire passe en règle générale par plusieurs points de l''ordre du jour
+      — dans la législation, par exemple, le débat d''entrée en matière, la discussion
+      par article, le vote final et, le cas échéant, la procédure d''élimination des
+      divergences entre les conseils.
 
       '
-description: 'Le lien vers les affaires rattachées au point de l''ordre du jour.
+description: 'Identifiant de l''affaire (eCH-0295) à laquelle se rapporte l''enregistrement.
+  Les points administratifs (p. ex. approbation du procès-verbal) n''ont pas d''affaire.
+  Une affaire passe en règle générale par plusieurs points de l''ordre du jour — dans
+  la législation, par exemple, le débat d''entrée en matière, la discussion par article,
+  le vote final et, le cas échéant, la procédure d''élimination des divergences entre
+  les conseils.
 
   '
 from_schema: https://ch.paf.link/schema/operations

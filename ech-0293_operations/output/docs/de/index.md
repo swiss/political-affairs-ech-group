@@ -13,11 +13,11 @@ Name: operations
 
 | Klasse | Beschreibung |
 | --- | --- |
-| [AgendaItem](AgendaItem.md) | Ein Traktandum einer Sitzung |
+| [AgendaItem](AgendaItem.md) | Ein vorgängig geplantes Traktandum einer Sitzung |
 | [Attendance](Attendance.md) | Aggregierte Anwesenheitsliste für eine Sitzung (Anzahl Anwesende, Abwesende, ... |
 | [Container](Container.md) | Container für die Daten des öffentlichen Ratsbetriebs: Legislaturperioden, Se... |
 | [Date](Date.md) | Ein Datum mit Typangabe (z |
-| [Election](Election.md) | Ein Wahlverfahren zur Wahl von Personen in Positionen |
+| [Election](Election.md) | Eine Wahl, mit der ein parlamentarisches Organ eine oder mehrere Personen für... |
 | [Expression](Expression.md) | FRBR Expression: eine konkrete Sprachfassung eines Works |
 | [GroupReference](GroupReference.md) | Kurzreferenz auf eine Gruppe mit den wichtigsten Identifikationsmerkmalen zum... |
 | [HasCreationModificationDates](HasCreationModificationDates.md) | Eine Mixin-Klasse, die Slots für die Modellierung von Erstellungs- und Änderu... |
@@ -25,29 +25,29 @@ Name: operations
 | [HasReferenceIdentification](HasReferenceIdentification.md) | Eine Mixin-Klasse, welche die Slots bereitstellt, mit denen eine Referenz die... |
 | [HasTemporalValidity](HasTemporalValidity.md) | Eine Mixin-Klasse, die Slots für die Modellierung einer zeitlichen Gültigkeit... |
 | [IndividualAttendance](IndividualAttendance.md) | Einzelne Anwesenheitsfeststellung einer Person an einer Sitzung (verknüpft üb... |
-| [IndividualVote](IndividualVote.md) | Eine Einzelstimme eines Mitglieds während eines Abstimmungsverfahrens |
+| [IndividualVote](IndividualVote.md) | Die Stimme, die ein einzelnes Mitglied in einer Abstimmung abgibt |
 | [IsAgendaItem](IsAgendaItem.md) | Eine Mixin-Klasse, welche die Elemente eines Traktandums bereitstellt: Bezeic... |
 | [IsEventWithDuration](IsEventWithDuration.md) | Eine Mixin-Klasse, die Slots für die Modellierung von Ereignissen oder Vorkom... |
 | [IsInstantaneousEvent](IsInstantaneousEvent.md) | Eine Mixin-Klasse, die Slots für die Modellierung von instantanen Ereignissen... |
 | [IsProcessStep](IsProcessStep.md) | Eine Mixin-Klasse für einen einzelnen Schritt in einem |
-| [JointDebate](JointDebate.md) | Eine gemeinsame Beratung: Mehrere Traktanden werden zusammen behandelt |
+| [JointDebate](JointDebate.md) | Eine gemeinsame Beratung: Mehrere Traktanden werden zusammen behandelt, etwa ... |
 | [Legislature](Legislature.md) | Amtsdauer eines Parlaments als gesetzgebender Versammlung |
 | [Manifestation](Manifestation.md) | FRBR Manifestation: eine konkrete Dateiform einer Expression, über eine URL a... |
 | [Media](Media.md) | Mediendateien oder Dokumente (einschliesslich Protokolle in PDF/HTML/WORD ode... |
 | [Meeting](Meeting.md) | Die einzelne Sitzung eines Organs — die Ebene, auf der Traktanden beraten, Be... |
-| [Motion](Motion.md) | Ein formeller Antrag, der während der Verhandlungen eingereicht wird |
+| [Motion](Motion.md) | Ein formaler Antrag, der während der Beratung gestellt wird, etwa ein Änderun... |
 | [MultilingualString](MultilingualString.md) | Ein String, der Text in mehreren Sprachen enthalten kann |
 | [MultilingualUri](MultilingualUri.md) | Eine URI zusammen mit der Sprache der Ressource, auf die sie verweist |
 | [MultilingualValue](MultilingualValue.md) | Ein mehrsprachiger String mit Angabe der Sprache |
 | [PersonReference](PersonReference.md) | Kurzreferenz auf eine Person mit den wichtigsten Identifikationsmerkmalen zum... |
-| [Protocol](Protocol.md) | Das nach der Sitzung erstellte Protokoll |
+| [Protocol](Protocol.md) | Das Protokoll einer Sitzung, nach der Sitzung erstellt und pro Sitzung genau ... |
 | [ProtocolItem](ProtocolItem.md) | Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde |
-| [Resolution](Resolution.md) | Eine Resolution oder Entscheidung zu einem Traktandum, einschliesslich Abstim... |
+| [Resolution](Resolution.md) | Der formale Beschluss zu einem Traktandum, einschliesslich der angewandten Ab... |
 | [Session](Session.md) | Eine Parlamentssession, die mehrere Sitzungen gruppiert und sich über einen b... |
 | [Speech](Speech.md) | Eine Wortmeldung während einer Sitzung (auch Votum oder Redebeitrag genannt) |
 | [TextSegment](TextSegment.md) | Ein Textsegment wie Querverweise oder Zwischentitel |
-| [TotalOther](TotalOther.md) | Zusätzliche Stimmzahlen, wenn mehrere Optionen zur Abstimmung gestellt werden... |
-| [Voting](Voting.md) | Ein Abstimmungsverfahren mit Einzelstimmen und Ergebnissen |
+| [TotalOther](TotalOther.md) | Stimmenzahl für eine Option einer Auswahlabstimmung |
+| [Voting](Voting.md) | Eine Abstimmung über eine Sachfrage: der Abstimmungsgegenstand (Frage), das V... |
 | [Work](Work.md) | FRBR Work: das abstrakte Dokument als solches, unabhängig von einer konkreten... |
 | [WorkContainer](WorkContainer.md) | Container für die Dokumente (FRBR Works) dieses Schemas |
 
@@ -62,12 +62,12 @@ Name: operations
 | [actor_id](actor_id.md) | Referenz auf die handelnde Person (Momentaufnahme zum Zeitpunkt der Verknüpfu... |
 | [actor_name](actor_name.md) | Name des politischen Organs im Klartext (z |
 | [administrative_id](administrative_id.md) | Verwaltungs-ID des gesetzgebenden Körpers, wie z |
-| [affair_id](affair_id.md) | Die Verbindung zu den Geschäften des Traktandums |
-| [agenda_item_category](agenda_item_category.md) | Kategorie für gruppierte Traktanden (z |
+| [affair_id](affair_id.md) | Identifikator des Geschäfts (eCH-0295), auf das sich der Eintrag bezieht |
+| [agenda_item_category](agenda_item_category.md) | Freie Kategorisierung des Traktandums nach Inhalt oder Gruppierung, z |
 | [agenda_item_description](agenda_item_description.md) | Untertitel oder ausführliche Beschreibung des Traktandums |
 | [agenda_item_ids](agenda_item_ids.md) | Die Traktanden, die mit der Abstimmung verbunden sind |
-| [agenda_item_number](agenda_item_number.md) | Laufnummer des Traktandums (String-Typ zur Unterstützung römischer Ziffern) |
-| [agenda_item_position](agenda_item_position.md) | Ganzzahlige Position des Traktandums in der Sitzungsreihenfolge |
+| [agenda_item_number](agenda_item_number.md) | Nummer des Traktandums auf der Traktandenliste, z |
+| [agenda_item_position](agenda_item_position.md) | Ganzzahlige Position des Traktandums im Sitzungsablauf, massgebend für Sortie... |
 | [agenda_item_title](agenda_item_title.md) | Titel des Traktandums |
 | [agenda_item_type](agenda_item_type.md) | Art des Traktandums, unterscheidet Einzeltraktanden von Traktandengruppen |
 | [agenda_items](agenda_items.md) | Sammlung der Traktanden |
@@ -110,14 +110,14 @@ Name: operations
 | [group_label](group_label.md) | Name des Gremiums zum Zeitpunkt der Verknüpfung |
 | [group_name](group_name.md) | Name der Gruppe oder des Gremiums im Klartext, zusätzlich zur Referenz `group... |
 | [has_protocol](has_protocol.md) | Referenz auf das nach der Sitzung erstellte Protokoll dieser Sitzung |
-| [has_resolution](has_resolution.md) | Die Resolution oder Entscheidung zu diesem Traktandum |
+| [has_resolution](has_resolution.md) | Der formale Beschluss zu diesem Traktandum, z |
 | [id](id.md) | Eindeutiger Identifikator des Elements |
 | [individual_attendances](individual_attendances.md) | Sammlung der einzelnen Anwesenheitsfeststellungen |
 | [individual_vote_type](individual_vote_type.md) | Art der abgegebenen Stimme (Ja, Nein, Enthaltung, nicht abgestimmt, etc |
 | [individual_votes](individual_votes.md) | Sammlung der Einzelstimmen |
 | [is_active](is_active.md) | Gibt an, ob die Information aktuell gültig ist |
 | [joint_agenda_item_ids](joint_agenda_item_ids.md) | Identifikatoren der gemeinsam behandelten Traktanden (AgendaItem oder Protoco... |
-| [joint_debates](joint_debates.md) | Gemeinsame Beratungen, in denen dieses Traktandum zusammen mit anderen Trakta... |
+| [joint_debates](joint_debates.md) | An diesem Eintrag angehängte gemeinsame Beratungen: bei einem Traktandum die ... |
 | [label](label.md) | Möglichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw |
 | [label_abstention](label_abstention.md) | Bedeutung einer Enthaltungsstimme |
 | [label_long](label_long.md) | Möglichkeit bei einer strukturierten Information, ein erweitertesLabel zu ver... |
@@ -159,7 +159,7 @@ Name: operations
 | [resolution_type](resolution_type.md) | Art der Resolution zum Traktandum |
 | [resolutions](resolutions.md) | Sammlung der Resolutionen |
 | [result](result.md) | Ergebnis des Verfahrens |
-| [result_text](result_text.md) | Freitext zur Beschreibung des Ergebnisses der Abstimmung, z |
+| [result_text](result_text.md) | Freitext, der das Ergebnis beschreibt, z |
 | [role](role.md) | Rolle der Person (z |
 | [seat_nr](seat_nr.md) | Die Sitznummer der Einzelstimme, falls zutreffend |
 | [sequential_number](sequential_number.md) | Laufende Nummer der Sitzung, die zur Sortierung verwendet wird |
@@ -169,23 +169,23 @@ Name: operations
 | [speeches](speeches.md) | Sammlung der Wortmeldungen |
 | [start](start.md) | Startangabe oder Position |
 | [state](state.md) | Ob die Sitzung überhaupt wie vorgesehen stattfindet (geplant, abgesagt, versc... |
-| [state_id](state_id.md) | Zustands-Identifikator (Verweis auf das Status-Enum oder auf einen eigenen Zu... |
+| [state_id](state_id.md) | Zustands-Identifikator des Traktandums (Verweis auf ein Status-Enum oder auf ... |
 | [state_name](state_name.md) | Abweichende, freitextliche Statusbezeichnung, wo die Status-Aufzählung nicht ... |
 | [status](status.md) | Freie Statusbezeichnung, dort verwendet, wo das Status-Enum nicht zutrifft |
 | [text](text.md) | Textinhalt des Elements |
 | [text_format](text_format.md) | Format des Textes (text, html, html_with_timestamps) |
 | [text_segments](text_segments.md) | Sammlung von Textsegmenten (z |
 | [text_type](text_type.md) | Typ des Textes (Rohfassung, bearbeitete Fassung) |
-| [tie_breaker](tie_breaker.md) | Gibt an, ob ein Stichentscheid bei der Abstimmung verwendet wurde |
+| [tie_breaker](tie_breaker.md) | Gibt an, ob das Ergebnis bei Stimmengleichheit durch den Stichentscheid der P... |
 | [title](title.md) | Titel des Elements |
 | [total](total.md) | Gesamtzahl der Stimmen, ohne abwesende und Präsidiumsstimmen |
-| [total_absent](total_absent.md) | Gesamtzahl abwesender Mitglieder |
+| [total_absent](total_absent.md) | Anzahl abwesender Mitglieder, die nicht teilnehmen konnten |
 | [total_count](total_count.md) | Gesamtzahl aller Mitglieder des Gremiums (Bezugsgrösse für Quorum-Berechnunge... |
 | [total_count_abstention](total_count_abstention.md) | Gesamtzahl der Enthaltungen |
 | [total_count_no](total_count_no.md) | Gesamtzahl der „Nein“-Stimmen |
 | [total_count_yes](total_count_yes.md) | Gesamtzahl der „Ja“-Stimmen |
 | [total_excused](total_excused.md) | Gesamtzahl der entschuldigten Abwesenheiten |
-| [total_other](total_other.md) | Wird verwendet, wenn mehrere Optionen zur Abstimmung gestellt werden (z |
+| [total_other](total_other.md) | Stimmenzahlen für die Optionen einer Auswahlabstimmung, ein Eintrag pro Optio... |
 | [total_present](total_present.md) | Gesamtzahl der anwesenden Mitglieder |
 | [type](type.md) | Generische Typbezeichnung |
 | [type_label](type_label.md) | Benutzerdefinierte Typbezeichnung, wenn Standardtypwerte nicht zutreffen |
@@ -194,11 +194,11 @@ Name: operations
 | [valid_through](valid_through.md) | Das Datum, bis und mit dem die Information gültig ist |
 | [value](value.md) | Der eigentliche Wert einer Information neben weiteren attributen wie Typ, Spr... |
 | [version](version.md) | Versionsnummer oder Versionskennung |
-| [vote_procedures](vote_procedures.md) | Verfahren für die Abstimmung, wie geheime Abstimmung oder offene Abstimmung |
+| [vote_procedures](vote_procedures.md) | Verfahren, in denen abgestimmt wurde |
 | [voting_title](voting_title.md) | Abstimmungstitel bzw |
 | [voting_type](voting_type.md) | Art des Abstimmungsverfahrens (Zwischen-, Schlussabstimmung, geheim, etc |
 | [votings](votings.md) | Sammlung der Abstimmungen |
-| [weight](weight.md) | Die Anzahl der Stimmen, die die Einzelperson hat, falls zutreffend (z |
+| [weight](weight.md) | Stimmgewicht des Mitglieds; im Normalfall 1 |
 | [wikidata_uri](wikidata_uri.md) | Eine URI, die auf eine Wikidata-Entität verweist, z |
 | [works](works.md) | Die im Container enthaltenen Dokumente (FRBR Works) |
 | [xdate](xdate.md) | Der Datumswert selbst |

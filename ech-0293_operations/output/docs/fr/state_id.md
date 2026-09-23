@@ -6,7 +6,7 @@ search:
 # Slot: state_id 
 
 
-_Identifiant d'état (renvoi à l'énumération des états ou à un état propre)._
+_Identifiant d'état du point (renvoi à une énumération des états ou à un état propre), p. ex. pending (pas encore traité), in_progress (en délibération), completed (traité), postponed (renvoyé à une séance ultérieure) ou withdrawn (retiré)._
 
 
 
@@ -27,7 +27,7 @@ URI: [ops:state_id](https://ch.paf.link/schema/operations/state_id)
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
 | [IsAgendaItem](IsAgendaItem.md) | Une classe mixin qui fournit les éléments d'un point de l'ordre du jour : dés... |  no  |
-| [AgendaItem](AgendaItem.md) | Un point de l'ordre du jour d'une séance |  no  |
+| [AgendaItem](AgendaItem.md) | Un point de l'ordre du jour d'une séance, tel que planifié à l'avance |  no  |
 | [ProtocolItem](ProtocolItem.md) | Un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-... |  no  |
 
 
@@ -68,17 +68,23 @@ name: state_id
 annotations:
   description_de:
     tag: description_de
-    value: 'Zustands-Identifikator (Verweis auf das Status-Enum oder auf einen eigenen
-      Zustand).
+    value: 'Zustands-Identifikator des Traktandums (Verweis auf ein Status-Enum oder
+      auf einen eigenen Zustand), z.B. pending (noch nicht behandelt), in_progress
+      (in Beratung), completed (abgeschlossen), postponed (auf eine spätere Sitzung
+      vertagt) oder withdrawn (zurückgezogen).
 
       '
   description_fr:
     tag: description_fr
-    value: 'Identifiant d''état (renvoi à l''énumération des états ou à un état propre).
+    value: 'Identifiant d''état du point (renvoi à une énumération des états ou à
+      un état propre), p. ex. pending (pas encore traité), in_progress (en délibération),
+      completed (traité), postponed (renvoyé à une séance ultérieure) ou withdrawn
+      (retiré).
 
       '
-description: 'Identifiant d''état (renvoi à l''énumération des états ou à un état
-  propre).
+description: 'Identifiant d''état du point (renvoi à une énumération des états ou
+  à un état propre), p. ex. pending (pas encore traité), in_progress (en délibération),
+  completed (traité), postponed (renvoyé à une séance ultérieure) ou withdrawn (retiré).
 
   '
 from_schema: https://ch.paf.link/schema/operations

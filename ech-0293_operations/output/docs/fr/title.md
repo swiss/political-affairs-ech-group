@@ -26,8 +26,8 @@ URI: [ops:title](https://ch.paf.link/schema/operations/title)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Election](Election.md) | Une procédure d'élection visant à pourvoir des fonctions par des personnes |  no  |
-| [Motion](Motion.md) | Une proposition formelle déposée au cours des délibérations |  no  |
+| [Election](Election.md) | Une élection par laquelle un organe parlementaire désigne une ou plusieurs pe... |  yes  |
+| [Motion](Motion.md) | Une proposition formelle déposée au cours des délibérations, par exemple une ... |  yes  |
 | [Media](Media.md) | Fichiers médias ou documents (y compris les procès-verbaux en PDF/HTML/WORD o... |  no  |
 
 

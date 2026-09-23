@@ -6,7 +6,7 @@ search:
 # Slot: result_text 
 
 
-_Free text describing the outcome of the vote, e.g., "Accepted with 78 votes"._
+_Free text describing the outcome, e.g. "Accepted with 120 to 75 votes with 5 abstentions". For votings, the categorical decision (accepted, rejected, noted …) is not recorded here but in the Resolution (resolution_type) of the agenda item._
 
 
 
@@ -26,8 +26,8 @@ URI: [ops:result_text](https://ch.paf.link/schema/operations/result_text)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Voting](Voting.md) | A voting procedure with individual votes and results |  no  |
-| [Election](Election.md) | An election procedure for selecting persons to positions |  no  |
+| [Voting](Voting.md) | A voting on a substantive question: the subject (question), the procedure, th... |  no  |
+| [Election](Election.md) | An election in which a parliamentary body appoints one or several persons to ... |  no  |
 
 
 
@@ -76,18 +76,24 @@ name: result_text
 annotations:
   description_de:
     tag: description_de
-    value: 'Freitext zur Beschreibung des Ergebnisses der Abstimmung, z.B. „Mit 78
-      Stimmen angenommen“.
+    value: 'Freitext, der das Ergebnis beschreibt, z.B. „Mit 120 zu 75 Stimmen bei
+      5 Enthaltungen angenommen“. Bei Abstimmungen wird der kategorische Entscheid
+      (angenommen, abgelehnt, Kenntnisnahme …) nicht hier, sondern in der Resolution
+      (resolution_type) des Traktandums festgehalten.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Texte libre décrivant le résultat du vote, p. ex. « Accepté par 78 voix
-      ».
+    value: 'Texte libre décrivant le résultat, p. ex. « Adopté par 120 voix contre
+      75 et 5 abstentions ». Pour les votes, la décision catégorielle (adopté, rejeté,
+      pris acte …) n''est pas retenue ici, mais dans la Resolution (resolution_type)
+      du point de l''ordre du jour.
 
       '
-description: 'Free text describing the outcome of the vote, e.g., "Accepted with 78
-  votes".
+description: 'Free text describing the outcome, e.g. "Accepted with 120 to 75 votes
+  with 5 abstentions". For votings, the categorical decision (accepted, rejected,
+  noted …) is not recorded here but in the Resolution (resolution_type) of the agenda
+  item.
 
   '
 examples:

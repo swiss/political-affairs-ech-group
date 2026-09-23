@@ -25,7 +25,7 @@ _Liste de présence agrégée pour une séance (nombre de membres présents, abs
 | actor_id | 0..1 <br/> [GroupReference](GroupReference.md) | Référence à l'organe agissant (instantané au moment de la mise en relation).  |
 | total_count | 0..1 <br/> [Integer](Integer.md) | Nombre total de membres de l'organe (valeur de référence pour le calcul du quorum).  |
 | total_present | 0..1 <br/> [Integer](Integer.md) | Nombre total de membres présents.  |
-| total_absent | 0..1 <br/> [Integer](Integer.md) | Nombre total de membres absents. La distinction entre absent et absent excusé se fait dans la liste de présence.  |
+| total_absent | 0..1 <br/> [Integer](Integer.md) | Nombre de membres absents qui n'ont pas pu participer. La liste de présence (Attendance) indique si une absence était excusée.  |
 | total_excused | 0..1 <br/> [Integer](Integer.md) | Nombre total d'absences excusées.  |
 | date_created | 0..1 <br/> [Date](Date.md) | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](HasCreationModificationDates.md) |
 | datetime_created | 0..1 <br/> [Datetime](Datetime.md) | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](HasCreationModificationDates.md) |

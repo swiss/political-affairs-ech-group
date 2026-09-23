@@ -26,7 +26,7 @@ URI: [ops:count](https://ch.paf.link/schema/operations/count)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [TotalOther](TotalOther.md) | Additional vote counts when multiple options are presented (e |  no  |
+| [TotalOther](TotalOther.md) | Vote count for one option of a multiple-choice voting |  no  |
 
 
 

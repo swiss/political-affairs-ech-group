@@ -3,7 +3,7 @@
 ## Class: Protocol 
 
 
-_The minutes of a meeting, recorded after the meeting. A wrapper container bundling the actually handled agenda items (protocol_items), votings, speeches, verbatim text segments and linked documents._
+_The minutes of a meeting, recorded after the meeting and kept exactly once per meeting. A wrapper container bundling the agenda items actually dealt with (protocol_items), votings, elections, speeches, verbatim text segments and linked documents. The protocol has its own identifier, can be cited on its own and is usually published later than the meeting; the meeting therefore only references it (Meeting.has_protocol), and the protocol itself is delivered in Container.protocols, so that it can be delivered later without delivering the meeting again. Within the protocol the collections are embedded, because they arise and are delivered together with it. Whoever publishes votings or speeches independently of the protocol delivers them flat in Container.votings or Container.speeches and links them via parent_meeting and the respective agenda item reference._
 
 
 

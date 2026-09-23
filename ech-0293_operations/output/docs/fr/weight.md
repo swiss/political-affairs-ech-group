@@ -6,7 +6,7 @@ search:
 # Slot: weight 
 
 
-_Le nombre de voix dont dispose la personne, le cas échéant (p. ex. lorsqu'une personne détient plusieurs voix)._
+_Poids de la voix du membre ; normalement 1. D'autres valeurs se présentent par exemple lorsqu'un membre vote aussi pour un membre absent (représentation, poids 2), dans les assemblées communales où des personnes morales disposent de plusieurs voix, ou dans des systèmes historiques où différents groupes de personnes avaient un poids de voix différent._
 
 
 
@@ -26,7 +26,7 @@ URI: [ops:weight](https://ch.paf.link/schema/operations/weight)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [IndividualVote](IndividualVote.md) | Une voix individuelle exprimée par un membre lors d'une procédure de vote |  no  |
+| [IndividualVote](IndividualVote.md) | La voix exprimée par un membre lors d'un vote |  no  |
 
 
 
@@ -66,18 +66,27 @@ name: weight
 annotations:
   description_de:
     tag: description_de
-    value: 'Die Anzahl der Stimmen, die die Einzelperson hat, falls zutreffend (z.B.
-      in Fällen, in denen eine Person mehrere Stimmen hat).
+    value: 'Stimmgewicht des Mitglieds; im Normalfall 1. Andere Werte kommen etwa
+      vor, wo ein Mitglied für ein abwesendes Mitglied mitstimmt (Stellvertretung,
+      Gewicht 2), an Gemeindeversammlungen, an denen juristische Personen mehrere
+      Stimmen haben, oder in historischen Systemen, in denen verschiedene Personengruppen
+      unterschiedliches Stimmgewicht hatten.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Le nombre de voix dont dispose la personne, le cas échéant (p. ex. lorsqu''une
-      personne détient plusieurs voix).
+    value: 'Poids de la voix du membre ; normalement 1. D''autres valeurs se présentent
+      par exemple lorsqu''un membre vote aussi pour un membre absent (représentation,
+      poids 2), dans les assemblées communales où des personnes morales disposent
+      de plusieurs voix, ou dans des systèmes historiques où différents groupes de
+      personnes avaient un poids de voix différent.
 
       '
-description: 'Le nombre de voix dont dispose la personne, le cas échéant (p. ex. lorsqu''une
-  personne détient plusieurs voix).
+description: 'Poids de la voix du membre ; normalement 1. D''autres valeurs se présentent
+  par exemple lorsqu''un membre vote aussi pour un membre absent (représentation,
+  poids 2), dans les assemblées communales où des personnes morales disposent de plusieurs
+  voix, ou dans des systèmes historiques où différents groupes de personnes avaient
+  un poids de voix différent.
 
   '
 from_schema: https://ch.paf.link/schema/operations

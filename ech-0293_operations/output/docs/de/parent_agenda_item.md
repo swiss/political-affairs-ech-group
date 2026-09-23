@@ -6,7 +6,7 @@ search:
 # Slot: parent_agenda_item 
 
 
-_Identifikator des Traktandums, zu dem dieser Eintrag gehört. Bei einem Traktandum baut er eine Hierarchie von Traktanden auf, bei Abstimmung, Wahl oder Wortmeldung bezeichnet er das Traktandum, unter dem der Eintrag behandelt wurde._
+_Identifikator des Traktandums, zu dem dieser Eintrag gehört. Bei einem Traktandum bildet er eine Hierarchie von Traktanden — z.B. eine Traktandengruppe „Gesetzesberatungen“ mit den Untertraktanden „Energiegesetz (Detailberatung)“ und „Energiegesetz (Schlussabstimmung)“; bei einer Wortmeldung bezeichnet er das Traktandum, unter dem sie erfolgte._
 
 
 
@@ -28,7 +28,7 @@ URI: [ops:parent_agenda_item](https://ch.paf.link/schema/operations/parent_agend
 | --- | --- | --- |
 | [IsAgendaItem](IsAgendaItem.md) | Eine Mixin-Klasse, welche die Elemente eines Traktandums bereitstellt: Bezeic... |  no  |
 | [Speech](Speech.md) | Eine Wortmeldung während einer Sitzung (auch Votum oder Redebeitrag genannt) |  no  |
-| [AgendaItem](AgendaItem.md) | Ein Traktandum einer Sitzung |  no  |
+| [AgendaItem](AgendaItem.md) | Ein vorgängig geplantes Traktandum einer Sitzung |  no  |
 | [ProtocolItem](ProtocolItem.md) | Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde |  no  |
 
 
@@ -70,22 +70,26 @@ annotations:
   description_de:
     tag: description_de
     value: 'Identifikator des Traktandums, zu dem dieser Eintrag gehört. Bei einem
-      Traktandum baut er eine Hierarchie von Traktanden auf, bei Abstimmung, Wahl
-      oder Wortmeldung bezeichnet er das Traktandum, unter dem der Eintrag behandelt
-      wurde.
+      Traktandum bildet er eine Hierarchie von Traktanden — z.B. eine Traktandengruppe
+      „Gesetzesberatungen“ mit den Untertraktanden „Energiegesetz (Detailberatung)“
+      und „Energiegesetz (Schlussabstimmung)“; bei einer Wortmeldung bezeichnet er
+      das Traktandum, unter dem sie erfolgte.
 
       '
   description_fr:
     tag: description_fr
     value: 'Identifiant du point de l''ordre du jour auquel cet enregistrement se
-      rattache. Pour un point de l''ordre du jour, il construit une hiérarchie de
-      points ; pour un vote, une élection ou une intervention, il désigne le point
-      sous lequel l''enregistrement a été traité.
+      rattache. Pour un point de l''ordre du jour, il forme une hiérarchie de points
+      — p. ex. un groupe « Délibérations législatives » avec les sous-points « Loi
+      sur l''énergie (discussion par article) » et « Loi sur l''énergie (vote final)
+      » ; pour une intervention, il désigne le point sous lequel elle a été faite.
 
       '
 description: 'Identifikator des Traktandums, zu dem dieser Eintrag gehört. Bei einem
-  Traktandum baut er eine Hierarchie von Traktanden auf, bei Abstimmung, Wahl oder
-  Wortmeldung bezeichnet er das Traktandum, unter dem der Eintrag behandelt wurde.
+  Traktandum bildet er eine Hierarchie von Traktanden — z.B. eine Traktandengruppe
+  „Gesetzesberatungen“ mit den Untertraktanden „Energiegesetz (Detailberatung)“ und
+  „Energiegesetz (Schlussabstimmung)“; bei einer Wortmeldung bezeichnet er das Traktandum,
+  unter dem sie erfolgte.
 
   '
 from_schema: https://ch.paf.link/schema/operations

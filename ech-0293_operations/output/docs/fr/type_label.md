@@ -26,10 +26,10 @@ URI: [ops:type_label](https://ch.paf.link/schema/operations/type_label)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Resolution](Resolution.md) | Une décision prise sur un point de l'ordre du jour, y compris les procédures ... |  no  |
-| [Voting](Voting.md) | Une procédure de vote avec les voix individuelles et les résultats |  no  |
-| [IndividualVote](IndividualVote.md) | Une voix individuelle exprimée par un membre lors d'une procédure de vote |  no  |
-| [Election](Election.md) | Une procédure d'élection visant à pourvoir des fonctions par des personnes |  no  |
+| [Resolution](Resolution.md) | La décision formelle prise sur un point de l'ordre du jour, y compris les pro... |  no  |
+| [Voting](Voting.md) | Un vote sur une question matérielle : l'objet du vote (la question), la procé... |  no  |
+| [IndividualVote](IndividualVote.md) | La voix exprimée par un membre lors d'un vote |  no  |
+| [Election](Election.md) | Une élection par laquelle un organe parlementaire désigne une ou plusieurs pe... |  no  |
 
 
 

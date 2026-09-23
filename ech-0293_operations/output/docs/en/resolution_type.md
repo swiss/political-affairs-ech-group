@@ -26,7 +26,7 @@ URI: [ops:resolution_type](https://ch.paf.link/schema/operations/resolution_type
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Resolution](Resolution.md) | A resolution or decision taken on an agenda item, including voting procedures |  no  |
+| [Resolution](Resolution.md) | The formal decision taken on an agenda item, including the voting procedures ... |  no  |
 
 
 

@@ -26,7 +26,7 @@ URI: [ops:resolution_type](https://ch.paf.link/schema/operations/resolution_type
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Resolution](Resolution.md) | Une décision prise sur un point de l'ordre du jour, y compris les procédures ... |  no  |
+| [Resolution](Resolution.md) | La décision formelle prise sur un point de l'ordre du jour, y compris les pro... |  no  |
 
 
 

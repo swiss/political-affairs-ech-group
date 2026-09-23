@@ -26,7 +26,7 @@ URI: [ops:count](https://ch.paf.link/schema/operations/count)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [TotalOther](TotalOther.md) | Décomptes de voix supplémentaires lorsque plusieurs options sont soumises au ... |  no  |
+| [TotalOther](TotalOther.md) | Nombre de voix pour une option d'un vote à choix multiple |  no  |
 
 
 

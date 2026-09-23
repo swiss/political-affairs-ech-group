@@ -30,12 +30,12 @@ URI: [mcm:datetimeModified](https://ld.ech.ch/schema/0292/meta-common/datetimeMo
 | [Legislature](Legislature.md) | Term of office of a parliament as a legislative assembly |  no  |
 | [Session](Session.md) | A parliamentary session that groups multiple meetings and spans a specific ti... |  no  |
 | [Meeting](Meeting.md) | The individual sitting of a body — the level at which agenda items are delibe... |  no  |
-| [AgendaItem](AgendaItem.md) | An agenda item of a meeting |  no  |
-| [Protocol](Protocol.md) | The minutes of a meeting, recorded after the meeting |  no  |
+| [AgendaItem](AgendaItem.md) | An agenda item of a meeting as planned beforehand |  no  |
+| [Protocol](Protocol.md) | The minutes of a meeting, recorded after the meeting and kept exactly once pe... |  no  |
 | [ProtocolItem](ProtocolItem.md) | An agenda item as actually recorded in the protocol |  no  |
-| [Voting](Voting.md) | A voting procedure with individual votes and results |  no  |
-| [IndividualVote](IndividualVote.md) | An individual vote cast by a member during a voting procedure |  no  |
-| [Election](Election.md) | An election procedure for selecting persons to positions |  no  |
+| [Voting](Voting.md) | A voting on a substantive question: the subject (question), the procedure, th... |  no  |
+| [IndividualVote](IndividualVote.md) | The vote cast by an individual member in a voting |  no  |
+| [Election](Election.md) | An election in which a parliamentary body appoints one or several persons to ... |  no  |
 | [Attendance](Attendance.md) | Aggregated attendance record for a meeting (number of members present, absent... |  no  |
 | [IndividualAttendance](IndividualAttendance.md) | Individual attendance record for a specific person at a meeting (linked via t... |  no  |
 | [Speech](Speech.md) | A speech or statement made during a meeting (also called Votum or speaker seg... |  no  |

@@ -26,7 +26,7 @@ URI: [mcm:label](https://ld.ech.ch/schema/0292/meta-common/label)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [TotalOther](TotalOther.md) | Zusätzliche Stimmzahlen, wenn mehrere Optionen zur Abstimmung gestellt werden... |  no  |
+| [TotalOther](TotalOther.md) | Stimmenzahl für eine Option einer Auswahlabstimmung |  no  |
 | [PersonReference](PersonReference.md) | Kurzreferenz auf eine Person mit den wichtigsten Identifikationsmerkmalen zum... |  yes  |
 | [GroupReference](GroupReference.md) | Kurzreferenz auf eine Gruppe mit den wichtigsten Identifikationsmerkmalen zum... |  no  |
 

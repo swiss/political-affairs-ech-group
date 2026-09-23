@@ -29,6 +29,7 @@ _A parliamentary session that groups multiple meetings and spans a specific time
 | url | * <br/> [MultilingualString](MultilingualString.md) | Landing page or further web address, multilingual.  |
 | parent_legislature | 0..1 <br/> [String](String.md) | Identifier of the legislature to which the session belongs.  |
 | meetings | * <br/> [Meeting](Meeting.md) | Collection of meeting records.  |
+| joint_debates | * <br/> [JointDebate](JointDebate.md) | Joint debates attached to this record: on an agenda item, the debates in which it is deliberated together with other agenda items; on a meeting or a session, the joint debates held within it.  |
 | documents | * <br/> [Work](Work.md) | List of documents (FRBR Works) linked to the entity.  |
 | date_begin_actual | 0..1 <br/> [Date](Date.md) | The actual start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
 | datetime_begin_actual | 0..1 <br/> [Datetime](Datetime.md) | The actual start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |

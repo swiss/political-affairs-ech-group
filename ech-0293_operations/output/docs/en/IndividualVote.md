@@ -3,7 +3,7 @@
 ## Class: IndividualVote 
 
 
-_An individual vote cast by a member during a voting procedure._
+_The vote cast by an individual member in a voting. Individual votes are only recorded for open votings; for secret votings only the overall result is published. An individual vote concerns one specific voting and differs from attendance (Attendance), which records presence at the meeting as a whole: a member present at the meeting may be recorded as not_voted in a single voting, for instance because they briefly left the room._
 
 
 
@@ -21,9 +21,9 @@ _An individual vote cast by a member during a voting procedure._
 | global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | parent_voting | 0..1 <br/> [Voting](Voting.md) | The ID of the voting associated with the individual vote.  |
-| actor_id | 0..1 <br/> [PersonReference](PersonReference.md) | Reference to the acting person (lightweight snapshot at time of linking).  |
+| actor_id | 0..1 <br/> [PersonReference](PersonReference.md) | The member who cast the vote, as a reference to a person according to eCH-0294.  |
 | seat_nr | 0..1 <br/> [String](String.md) | The seat number of the individual vote, if applicable.  |
-| weight | 0..1 <br/> [Integer](Integer.md) | The number of votes held by the individual, if applicable (e.g., in cases where a person has multiple votes).  |
+| weight | 0..1 <br/> [Integer](Integer.md) | Voting weight of the member; normally 1. Other values arise, for instance, where a member also votes for an absent member (proxy, weight 2), in communal assemblies where legal entities hold several votes, or in historical systems in which different groups of persons had different voting weights.  |
 | individual_vote_type | 0..1 <br/> [IndividualVoteTypeEnum](IndividualVoteTypeEnum.md) | Type of vote cast (yes, no, abstention, no vote, etc.).  |
 | type_label | 0..1 <br/> [String](String.md) | Custom type label when standard type values don't apply.  |
 | date_created | 0..1 <br/> [Date](Date.md) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |

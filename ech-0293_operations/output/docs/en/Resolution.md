@@ -3,7 +3,7 @@
 ## Class: Resolution 
 
 
-_A resolution or decision taken on an agenda item, including voting procedures._
+_The formal decision taken on an agenda item, including the voting procedures applied. It records what was decided, whereas Voting records how it was decided (procedure and vote ratio). Not every decision rests on a formal vote: noting a report, tacit acceptance or administrative decisions come about without one._
 
 
 
@@ -19,7 +19,7 @@ _A resolution or decision taken on an agenda item, including voting procedures._
 |------------------------|----------------------|------------------------------------------------------|
 | resolution_type | 0..1 <br/> [ResolutionTypeEnum](ResolutionTypeEnum.md) | Type of resolution taken on the agenda item.  |
 | type_label | 0..1 <br/> [String](String.md) | Custom type label when standard type values don't apply.  |
-| vote_procedures | * <br/> [String](String.md) | Procedures for voting, such as secret ballot or open vote.  |
+| vote_procedures | * <br/> [String](String.md) | Procedures by which the vote was taken. Open procedures: show of hands, standing, electronic voting, roll call, and in crisis situations remote voting (votes communicated to the presidency beforehand and recorded together with the vote in the chamber), circulation procedure or voting in virtual sittings. Secret procedures: secret ballot with ballot papers, electronic secret voting. The procedure determines whether individual votes can be recorded.  |
 | documents | * <br/> [Work](Work.md) | List of documents (FRBR Works) linked to the entity.  |
 
 

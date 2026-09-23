@@ -13,11 +13,11 @@ Name: operations
 
 | Class | Description |
 | --- | --- |
-| [AgendaItem](AgendaItem.md) | An agenda item of a meeting |
+| [AgendaItem](AgendaItem.md) | An agenda item of a meeting as planned beforehand |
 | [Attendance](Attendance.md) | Aggregated attendance record for a meeting (number of members present, absent... |
 | [Container](Container.md) | Container for the records of public council operations: legislatures, session... |
 | [Date](Date.md) | A date with a type indication (e |
-| [Election](Election.md) | An election procedure for selecting persons to positions |
+| [Election](Election.md) | An election in which a parliamentary body appoints one or several persons to ... |
 | [Expression](Expression.md) | FRBR Expression: a concrete language version of a Work |
 | [GroupReference](GroupReference.md) | Lightweight reference to a group with key identification data at time of link... |
 | [HasCreationModificationDates](HasCreationModificationDates.md) | A mixin class that provides slots for modeling creation and modification date... |
@@ -25,29 +25,29 @@ Name: operations
 | [HasReferenceIdentification](HasReferenceIdentification.md) | A mixin class that provides the slots with which a reference names the entity... |
 | [HasTemporalValidity](HasTemporalValidity.md) | A mixin class that provides slots for modeling a temporal validity of informa... |
 | [IndividualAttendance](IndividualAttendance.md) | Individual attendance record for a specific person at a meeting (linked via t... |
-| [IndividualVote](IndividualVote.md) | An individual vote cast by a member during a voting procedure |
+| [IndividualVote](IndividualVote.md) | The vote cast by an individual member in a voting |
 | [IsAgendaItem](IsAgendaItem.md) | A mixin class that provides the elements of an agenda item: designation, type... |
 | [IsEventWithDuration](IsEventWithDuration.md) | A mixin class that provides slots for modeling events or occurrences with tim... |
 | [IsInstantaneousEvent](IsInstantaneousEvent.md) | A mixin class that provides slots for modeling instantaneous events or occurr... |
 | [IsProcessStep](IsProcessStep.md) | A mixin class for a single step in a multi-stage process (e |
-| [JointDebate](JointDebate.md) | A joint debate: several agenda items are deliberated together |
+| [JointDebate](JointDebate.md) | A joint debate: several agenda items are deliberated together, for instance s... |
 | [Legislature](Legislature.md) | Term of office of a parliament as a legislative assembly |
 | [Manifestation](Manifestation.md) | FRBR Manifestation: a concrete file format of an Expression, addressable via ... |
 | [Media](Media.md) | Media files or documents (including protocols in PDF/HTML/WORD or links to au... |
 | [Meeting](Meeting.md) | The individual sitting of a body — the level at which agenda items are delibe... |
-| [Motion](Motion.md) | A formal proposal or motion submitted during proceedings |
+| [Motion](Motion.md) | A formal proposal submitted during the proceedings, such as an amendment to a... |
 | [MultilingualString](MultilingualString.md) | A string that can contain text in multiple languages |
 | [MultilingualUri](MultilingualUri.md) | A URI together with the language of the resource it points to |
 | [MultilingualValue](MultilingualValue.md) | A multilingual string with language specification |
 | [PersonReference](PersonReference.md) | Lightweight reference to a person with key identification data at time of lin... |
-| [Protocol](Protocol.md) | The minutes of a meeting, recorded after the meeting |
+| [Protocol](Protocol.md) | The minutes of a meeting, recorded after the meeting and kept exactly once pe... |
 | [ProtocolItem](ProtocolItem.md) | An agenda item as actually recorded in the protocol |
-| [Resolution](Resolution.md) | A resolution or decision taken on an agenda item, including voting procedures |
+| [Resolution](Resolution.md) | The formal decision taken on an agenda item, including the voting procedures ... |
 | [Session](Session.md) | A parliamentary session that groups multiple meetings and spans a specific ti... |
 | [Speech](Speech.md) | A speech or statement made during a meeting (also called Votum or speaker seg... |
 | [TextSegment](TextSegment.md) | A text segment such as cross-references or subtitles |
-| [TotalOther](TotalOther.md) | Additional vote counts when multiple options are presented (e |
-| [Voting](Voting.md) | A voting procedure with individual votes and results |
+| [TotalOther](TotalOther.md) | Vote count for one option of a multiple-choice voting |
+| [Voting](Voting.md) | A voting on a substantive question: the subject (question), the procedure, th... |
 | [Work](Work.md) | FRBR Work: the abstract document as such, independent of a concrete language ... |
 | [WorkContainer](WorkContainer.md) | Container for the documents (FRBR Works) of this schema |
 
@@ -62,12 +62,12 @@ Name: operations
 | [actor_id](actor_id.md) | Reference to the acting person (lightweight snapshot at time of linking) |
 | [actor_name](actor_name.md) | Name of the political body in plain text (e |
 | [administrative_id](administrative_id.md) | Administrative ID of the legislative body, such as a municipality, canton, or... |
-| [affair_id](affair_id.md) | The connection to the affairs (business items) of the agenda item |
-| [agenda_item_category](agenda_item_category.md) | Category for grouped agenda items (e |
+| [affair_id](affair_id.md) | Identifier of the affair (eCH-0295) the record refers to |
+| [agenda_item_category](agenda_item_category.md) | Free categorisation of the agenda item by content or grouping, e |
 | [agenda_item_description](agenda_item_description.md) | Subtitle or detailed description of the agenda item |
 | [agenda_item_ids](agenda_item_ids.md) | The agenda items associated with the voting |
-| [agenda_item_number](agenda_item_number.md) | Sequential number of the agenda item (string type to support roman numerals) |
-| [agenda_item_position](agenda_item_position.md) | Integer position of the agenda item in the meeting sequence |
+| [agenda_item_number](agenda_item_number.md) | Number of the agenda item on the agenda, e |
+| [agenda_item_position](agenda_item_position.md) | Integer position of the agenda item in the meeting sequence, used for sorting... |
 | [agenda_item_title](agenda_item_title.md) | Title of the agenda item |
 | [agenda_item_type](agenda_item_type.md) | Type of agenda item, distinguishing individual items from groups |
 | [agenda_items](agenda_items.md) | Collection of agenda item records |
@@ -110,14 +110,14 @@ Name: operations
 | [group_label](group_label.md) | Name of the body/group at time of linking |
 | [group_name](group_name.md) | Name of the group or body in plain text, in addition to the reference `group_... |
 | [has_protocol](has_protocol.md) | Reference to the protocol (minutes) of this meeting, recorded after the meeti... |
-| [has_resolution](has_resolution.md) | The resolution or decision taken on this agenda item |
+| [has_resolution](has_resolution.md) | The formal decision taken on this agenda item, e |
 | [id](id.md) | Unique identifier of the element |
 | [individual_attendances](individual_attendances.md) | Collection of individual attendance records |
 | [individual_vote_type](individual_vote_type.md) | Type of vote cast (yes, no, abstention, no vote, etc |
 | [individual_votes](individual_votes.md) | Collection of individual vote records |
 | [is_active](is_active.md) | Indicates whether the information is currently valid |
 | [joint_agenda_item_ids](joint_agenda_item_ids.md) | Identifiers of the agenda items (AgendaItem or ProtocolItem) debated jointly |
-| [joint_debates](joint_debates.md) | Joint debates in which this agenda item is deliberated together with other ag... |
+| [joint_debates](joint_debates.md) | Joint debates attached to this record: on an agenda item, the debates in whic... |
 | [label](label.md) | Assign a label to a structured piece of information (e |
 | [label_abstention](label_abstention.md) | Meaning of an 'abstention' vote |
 | [label_long](label_long.md) | Assign an extended label to a structured piece of information (e |
@@ -159,7 +159,7 @@ Name: operations
 | [resolution_type](resolution_type.md) | Type of resolution taken on the agenda item |
 | [resolutions](resolutions.md) | Collection of resolution records |
 | [result](result.md) | Result of the procedure |
-| [result_text](result_text.md) | Free text describing the outcome of the vote, e |
+| [result_text](result_text.md) | Free text describing the outcome, e |
 | [role](role.md) | Role of the person (e |
 | [seat_nr](seat_nr.md) | The seat number of the individual vote, if applicable |
 | [sequential_number](sequential_number.md) | Sequential number of the meeting, used for ordering |
@@ -169,23 +169,23 @@ Name: operations
 | [speeches](speeches.md) | Collection of speech records |
 | [start](start.md) | Start indicator or position |
 | [state](state.md) | Whether the meeting takes place as planned at all (planned, canceled, postpon... |
-| [state_id](state_id.md) | State identifier (reference to state enum or custom state) |
+| [state_id](state_id.md) | State identifier of the agenda item (reference to a state enumeration or a cu... |
 | [state_name](state_name.md) | Diverging, free-text status designation, where the status enumeration does no... |
 | [status](status.md) | Free status designation, used where the state enumeration does not apply |
 | [text](text.md) | Text content of the element |
 | [text_format](text_format.md) | Format of text (text, html, html_with_timestamps) |
 | [text_segments](text_segments.md) | Collection of text segments (e |
 | [text_type](text_type.md) | Type of text (raw draft, edited version) |
-| [tie_breaker](tie_breaker.md) | Indicates if a tie-breaker was used in the voting |
+| [tie_breaker](tie_breaker.md) | Indicates whether the result was decided by the casting vote of the presiding... |
 | [title](title.md) | Title of the element |
 | [total](total.md) | Total number of votes, excluding absent and president's vote |
-| [total_absent](total_absent.md) | Total number of absent members |
+| [total_absent](total_absent.md) | Number of absent members who could not take part |
 | [total_count](total_count.md) | Total number of members of the body (reference value for quorum calculations) |
 | [total_count_abstention](total_count_abstention.md) | Total number of abstentions |
 | [total_count_no](total_count_no.md) | Total number of 'no' votes |
 | [total_count_yes](total_count_yes.md) | Total number of 'yes' votes |
 | [total_excused](total_excused.md) | Total number of excused absences |
-| [total_other](total_other.md) | Used when multiple options are presented for voting (e |
+| [total_other](total_other.md) | Vote counts for the options of a multiple-choice voting, one entry per option... |
 | [total_present](total_present.md) | Total number of members present |
 | [type](type.md) | Generic type designation |
 | [type_label](type_label.md) | Custom type label when standard type values don't apply |
@@ -194,11 +194,11 @@ Name: operations
 | [valid_through](valid_through.md) | The date until which the information is valid, inclusive |
 | [value](value.md) | The value of an information besides other attributes such as type, language, ... |
 | [version](version.md) | Version number or identifier |
-| [vote_procedures](vote_procedures.md) | Procedures for voting, such as secret ballot or open vote |
+| [vote_procedures](vote_procedures.md) | Procedures by which the vote was taken |
 | [voting_title](voting_title.md) | Title or question being voted on |
 | [voting_type](voting_type.md) | Type of voting procedure (preliminary, final, secret, etc |
 | [votings](votings.md) | Collection of voting records |
-| [weight](weight.md) | The number of votes held by the individual, if applicable (e |
+| [weight](weight.md) | Voting weight of the member; normally 1 |
 | [wikidata_uri](wikidata_uri.md) | A URI that refers to a Wikidata entity, e |
 | [works](works.md) | The documents (FRBR Works) contained in the container |
 | [xdate](xdate.md) | The date value itself |

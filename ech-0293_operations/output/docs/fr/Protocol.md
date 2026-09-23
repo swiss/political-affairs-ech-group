@@ -3,7 +3,7 @@
 ## Classe: Protocol 
 
 
-_Le procès-verbal établi après la séance. Un conteneur qui regroupe les points effectivement traités (protocol_items), les votes, les interventions, les segments de texte in extenso et les documents liés._
+_Le procès-verbal d'une séance, établi après celle-ci et tenu exactement une fois par séance. Un conteneur qui regroupe les points effectivement traités (protocol_items), les votes, les élections, les interventions, les segments de texte in extenso et les documents liés. Le procès-verbal possède son propre identifiant, peut être cité de manière autonome et est en règle générale publié après la séance ; la séance ne fait donc que le référencer (Meeting.has_protocol), et le procès-verbal lui-même est livré dans Container.protocols, de sorte qu'il puisse être livré ultérieurement sans relivrer la séance. À l'intérieur du procès-verbal, les collections sont imbriquées, car elles naissent et sont livrées avec lui. Qui publie des votes ou des interventions indépendamment du procès-verbal les livre à plat dans Container.votings ou Container.speeches et les relie par parent_meeting et la référence au point de l'ordre du jour correspondante._
 
 
 

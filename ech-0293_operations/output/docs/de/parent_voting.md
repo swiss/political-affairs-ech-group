@@ -26,7 +26,7 @@ URI: [ops:parentVoting](https://ch.paf.link/schema/operations/parentVoting)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [IndividualVote](IndividualVote.md) | Eine Einzelstimme eines Mitglieds während eines Abstimmungsverfahrens |  no  |
+| [IndividualVote](IndividualVote.md) | Die Stimme, die ein einzelnes Mitglied in einer Abstimmung abgibt |  no  |
 
 
 

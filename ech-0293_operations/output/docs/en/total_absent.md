@@ -6,7 +6,7 @@ search:
 # Slot: total_absent 
 
 
-_Total number of absent members. Distinction between absent/excused absent - presence is tracked on attendance list._
+_Number of absent members who could not take part. Whether an absence was excused is tracked on the attendance list (Attendance)._
 
 
 
@@ -26,8 +26,8 @@ URI: [ops:total_absent](https://ch.paf.link/schema/operations/total_absent)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Voting](Voting.md) | A voting procedure with individual votes and results |  no  |
-| [Election](Election.md) | An election procedure for selecting persons to positions |  no  |
+| [Voting](Voting.md) | A voting on a substantive question: the subject (question), the procedure, th... |  no  |
+| [Election](Election.md) | An election in which a parliamentary body appoints one or several persons to ... |  no  |
 | [Attendance](Attendance.md) | Aggregated attendance record for a meeting (number of members present, absent... |  no  |
 
 
@@ -68,18 +68,18 @@ name: total_absent
 annotations:
   description_de:
     tag: description_de
-    value: 'Gesamtzahl abwesender Mitglieder. Unterscheidung zwischen abwesend/entschuldigt
-      abwesend - Anwesenheit wird auf Anwesenheitsliste verfolgt.
+    value: 'Anzahl abwesender Mitglieder, die nicht teilnehmen konnten. Ob eine Abwesenheit
+      entschuldigt war, hält die Anwesenheitsliste (Attendance) fest.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Nombre total de membres absents. La distinction entre absent et absent
-      excusé se fait dans la liste de présence.
+    value: 'Nombre de membres absents qui n''ont pas pu participer. La liste de présence
+      (Attendance) indique si une absence était excusée.
 
       '
-description: 'Total number of absent members. Distinction between absent/excused absent
-  - presence is tracked on attendance list.
+description: 'Number of absent members who could not take part. Whether an absence
+  was excused is tracked on the attendance list (Attendance).
 
   '
 from_schema: https://ch.paf.link/schema/operations

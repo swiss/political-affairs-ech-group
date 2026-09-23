@@ -26,7 +26,7 @@ URI: [ops:protocolItem](https://ch.paf.link/schema/operations/protocolItem)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Protocol](Protocol.md) | Le procès-verbal établi après la séance |  no  |
+| [Protocol](Protocol.md) | Le procès-verbal d'une séance, établi après celle-ci et tenu exactement une f... |  no  |
 
 
 

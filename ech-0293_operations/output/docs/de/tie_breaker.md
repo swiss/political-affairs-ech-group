@@ -6,7 +6,7 @@ search:
 # Slot: tie_breaker 
 
 
-_Gibt an, ob ein Stichentscheid bei der Abstimmung verwendet wurde._
+_Gibt an, ob das Ergebnis bei Stimmengleichheit durch den Stichentscheid der Präsidentin oder des Präsidenten zustande kam._
 
 
 
@@ -26,7 +26,7 @@ URI: [ops:tie_breaker](https://ch.paf.link/schema/operations/tie_breaker)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [Voting](Voting.md) | Ein Abstimmungsverfahren mit Einzelstimmen und Ergebnissen |  no  |
+| [Voting](Voting.md) | Eine Abstimmung über eine Sachfrage: der Abstimmungsgegenstand (Frage), das V... |  no  |
 
 
 
@@ -66,15 +66,18 @@ name: tie_breaker
 annotations:
   description_de:
     tag: description_de
-    value: 'Gibt an, ob ein Stichentscheid bei der Abstimmung verwendet wurde.
+    value: 'Gibt an, ob das Ergebnis bei Stimmengleichheit durch den Stichentscheid
+      der Präsidentin oder des Präsidenten zustande kam.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Indique si une voix prépondérante a été utilisée lors du vote.
+    value: 'Indique si le résultat a été obtenu, en cas d''égalité des voix, par la
+      voix prépondérante de la présidente ou du président.
 
       '
-description: 'Gibt an, ob ein Stichentscheid bei der Abstimmung verwendet wurde.
+description: 'Gibt an, ob das Ergebnis bei Stimmengleichheit durch den Stichentscheid
+  der Präsidentin oder des Präsidenten zustande kam.
 
   '
 from_schema: https://ch.paf.link/schema/operations

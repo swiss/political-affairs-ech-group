@@ -26,7 +26,7 @@ URI: [ops:total_count_abstention](https://ch.paf.link/schema/operations/total_co
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [Voting](Voting.md) | Ein Abstimmungsverfahren mit Einzelstimmen und Ergebnissen |  no  |
+| [Voting](Voting.md) | Eine Abstimmung über eine Sachfrage: der Abstimmungsgegenstand (Frage), das V... |  no  |
 
 
 

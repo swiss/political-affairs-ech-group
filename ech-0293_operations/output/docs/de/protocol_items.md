@@ -26,7 +26,7 @@ URI: [ops:protocolItem](https://ch.paf.link/schema/operations/protocolItem)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [Protocol](Protocol.md) | Das nach der Sitzung erstellte Protokoll |  no  |
+| [Protocol](Protocol.md) | Das Protokoll einer Sitzung, nach der Sitzung erstellt und pro Sitzung genau ... |  no  |
 
 
 

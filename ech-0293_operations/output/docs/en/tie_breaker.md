@@ -6,7 +6,7 @@ search:
 # Slot: tie_breaker 
 
 
-_Indicates if a tie-breaker was used in the voting._
+_Indicates whether the result was decided by the casting vote of the presiding member in case of a tie._
 
 
 
@@ -26,7 +26,7 @@ URI: [ops:tie_breaker](https://ch.paf.link/schema/operations/tie_breaker)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Voting](Voting.md) | A voting procedure with individual votes and results |  no  |
+| [Voting](Voting.md) | A voting on a substantive question: the subject (question), the procedure, th... |  no  |
 
 
 
@@ -66,15 +66,18 @@ name: tie_breaker
 annotations:
   description_de:
     tag: description_de
-    value: 'Gibt an, ob ein Stichentscheid bei der Abstimmung verwendet wurde.
+    value: 'Gibt an, ob das Ergebnis bei Stimmengleichheit durch den Stichentscheid
+      der Präsidentin oder des Präsidenten zustande kam.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Indique si une voix prépondérante a été utilisée lors du vote.
+    value: 'Indique si le résultat a été obtenu, en cas d''égalité des voix, par la
+      voix prépondérante de la présidente ou du président.
 
       '
-description: 'Indicates if a tie-breaker was used in the voting.
+description: 'Indicates whether the result was decided by the casting vote of the
+  presiding member in case of a tie.
 
   '
 from_schema: https://ch.paf.link/schema/operations

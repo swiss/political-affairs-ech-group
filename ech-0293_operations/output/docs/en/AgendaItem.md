@@ -3,7 +3,7 @@
 ## Class: AgendaItem 
 
 
-_An agenda item of a meeting._
+_An agenda item of a meeting as planned beforehand. It structures the agenda and connects the temporal organisation (Meeting) with the substantive affairs (eCH-0295). Agenda items represent the planning of a meeting and are no longer changed in the data once the meeting has started: deviations during the meeting — items brought forward, postponed or added — are recorded in the protocol (ProtocolItem) and feed into the agenda of the next meeting. For the same reason, planned and actual times are kept separately._
 
 
 
@@ -34,23 +34,23 @@ _An agenda item of a meeting._
 | datetime_modified | 0..1 <br/> [Datetime](Datetime.md) | The date and time when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |
 | parent_meeting | 0..1 <br/> [String](String.md) | Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose. <br/><br/>Inheritance: [IsAgendaItem](IsAgendaItem.md) |
 | agenda_item_type | 0..1 <br/> [AgendaItemTypeEnum](AgendaItemTypeEnum.md) | Type of agenda item, distinguishing individual items from groups. <br/><br/>Inheritance: [IsAgendaItem](IsAgendaItem.md) |
-| agenda_item_number | 0..1 <br/> [String](String.md) | Sequential number of the agenda item (string type to support roman numerals). <br/><br/>Inheritance: [IsAgendaItem](IsAgendaItem.md) |
-| agenda_item_position | 0..1 <br/> [Integer](Integer.md) | Integer position of the agenda item in the meeting sequence. <br/><br/>Inheritance: [IsAgendaItem](IsAgendaItem.md) |
+| agenda_item_number | 0..1 <br/> [String](String.md) | Number of the agenda item on the agenda, e.g. "2.1" or "3" (string type to also support roman numerals). <br/><br/>Inheritance: [IsAgendaItem](IsAgendaItem.md) |
+| agenda_item_position | 0..1 <br/> [Integer](Integer.md) | Integer position of the agenda item in the meeting sequence, used for sorting and display. <br/><br/>Inheritance: [IsAgendaItem](IsAgendaItem.md) |
 | leading_actor_id | 0..1 <br/> [String](String.md) | The leading department for the agenda item. <br/><br/>Inheritance: [IsAgendaItem](IsAgendaItem.md) |
 | speaking_actor_id | 0..1 <br/> [String](String.md) | The speaker or head of the department for the agenda item. <br/><br/>Inheritance: [IsAgendaItem](IsAgendaItem.md) |
 | agenda_item_title | * <br/> [MultilingualString](MultilingualString.md) | Title of the agenda item. <br/><br/>Inheritance: [IsAgendaItem](IsAgendaItem.md) |
-| affair_id | 0..1 <br/> [String](String.md) | The connection to the affairs (business items) of the agenda item. <br/><br/>Inheritance: [IsAgendaItem](IsAgendaItem.md) |
+| affair_id | 0..1 <br/> [String](String.md) | Identifier of the affair (eCH-0295) the record refers to. Administrative agenda items (e.g. approval of the minutes) have no affair. An affair usually runs through several agenda items — in legislation, for instance, the debate on entering into the matter, the detailed deliberation, the final vote and, where applicable, the procedure for resolving differences between the chambers. <br/><br/>Inheritance: [IsAgendaItem](IsAgendaItem.md) |
 | agenda_item_description | * <br/> [MultilingualString](MultilingualString.md) | Subtitle or detailed description of the agenda item. <br/><br/>Inheritance: [IsAgendaItem](IsAgendaItem.md) |
-| state_id | 0..1 <br/> [String](String.md) | State identifier (reference to state enum or custom state). <br/><br/>Inheritance: [IsAgendaItem](IsAgendaItem.md) |
+| state_id | 0..1 <br/> [String](String.md) | State identifier of the agenda item (reference to a state enumeration or a custom state), e.g. pending (not yet dealt with), in_progress, completed, postponed (to a later meeting) or withdrawn. <br/><br/>Inheritance: [IsAgendaItem](IsAgendaItem.md) |
 | state_name | 0..1 <br/> [String](String.md) | Diverging, free-text status designation, where the status enumeration does not suffice. <br/><br/>Inheritance: [IsAgendaItem](IsAgendaItem.md) |
 | landing_page | 0..1 <br/> [String](String.md) | URL providing further information. <br/><br/>Inheritance: [IsAgendaItem](IsAgendaItem.md) |
 | url | * <br/> [MultilingualString](MultilingualString.md) | Landing page or further web address, multilingual. <br/><br/>Inheritance: [IsAgendaItem](IsAgendaItem.md) |
-| agenda_item_category | 0..1 <br/> [String](String.md) | Category for grouped agenda items (e.g., introduction, by department, technical agenda items). <br/><br/>Inheritance: [IsAgendaItem](IsAgendaItem.md) |
-| parent_agenda_item | 0..1 <br/> [String](String.md) | Identifier of the agenda item this record belongs to. On an agenda item it builds a hierarchy of agenda items; on a voting, election or speech it names the agenda item under which the record was handled. <br/><br/>Inheritance: [IsAgendaItem](IsAgendaItem.md) |
-| has_resolution | 0..1 <br/> [Resolution](Resolution.md) | The resolution or decision taken on this agenda item. <br/><br/>Inheritance: [IsAgendaItem](IsAgendaItem.md) |
-| joint_debates | * <br/> [JointDebate](JointDebate.md) | Joint debates in which this agenda item is deliberated together with other agenda items. <br/><br/>Inheritance: [IsAgendaItem](IsAgendaItem.md) |
+| agenda_item_category | 0..1 <br/> [String](String.md) | Free categorisation of the agenda item by content or grouping, e.g. "Gesetzgebung", "Budget und Finanzen", "Interpellationen und Anfragen", "Wahlen", by department, or introductory and technical items. The categorisation is not standardised and may vary between federal units. <br/><br/>Inheritance: [IsAgendaItem](IsAgendaItem.md) |
+| parent_agenda_item | 0..1 <br/> [String](String.md) | Identifier of the agenda item this record belongs to. On an agenda item it builds a hierarchy of agenda items — e.g. an item group "Gesetzesberatungen" with the sub-items "Energiegesetz (Detailberatung)" and "Energiegesetz (Schlussabstimmung)"; on a speech it names the agenda item under which the speech was given. <br/><br/>Inheritance: [IsAgendaItem](IsAgendaItem.md) |
+| has_resolution | 0..1 <br/> [Resolution](Resolution.md) | The formal decision taken on this agenda item, e.g. the adoption of the energy law. The underlying voting with its vote ratio is recorded separately as a Voting. <br/><br/>Inheritance: [IsAgendaItem](IsAgendaItem.md) |
+| joint_debates | * <br/> [JointDebate](JointDebate.md) | Joint debates attached to this record: on an agenda item, the debates in which it is deliberated together with other agenda items; on a meeting or a session, the joint debates held within it. <br/><br/>Inheritance: [IsAgendaItem](IsAgendaItem.md) |
 | text_segments | * <br/> [TextSegment](TextSegment.md) | Collection of text segments (e.g. verbatim protocol). <br/><br/>Inheritance: [IsAgendaItem](IsAgendaItem.md) |
-| documents | * <br/> [Work](Work.md) | List of documents (FRBR Works) linked to the entity. <br/><br/>Inheritance: [IsAgendaItem](IsAgendaItem.md) |
+| documents | * <br/> [Work](Work.md) | Documents on the agenda item as FRBR Works, e.g. dispatches and reports, motions and amendments. <br/><br/>Inheritance: [IsAgendaItem](IsAgendaItem.md) |
 
 
 

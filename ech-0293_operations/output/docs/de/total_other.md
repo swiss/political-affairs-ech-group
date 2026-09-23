@@ -6,7 +6,7 @@ search:
 # Slot: total_other 
 
 
-_Wird verwendet, wenn mehrere Optionen zur Abstimmung gestellt werden (z.B. 5 Knöpfe in Zürich)._
+_Stimmenzahlen für die Optionen einer Auswahlabstimmung, ein Eintrag pro Option; tritt an die Stelle von total_count_yes, total_count_no und total_count_abstention (siehe TotalOther)._
 
 
 
@@ -26,7 +26,7 @@ URI: [ops:total_other](https://ch.paf.link/schema/operations/total_other)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [Voting](Voting.md) | Ein Abstimmungsverfahren mit Einzelstimmen und Ergebnissen |  no  |
+| [Voting](Voting.md) | Eine Abstimmung über eine Sachfrage: der Abstimmungsgegenstand (Frage), das V... |  no  |
 
 
 
@@ -67,18 +67,21 @@ name: total_other
 annotations:
   description_de:
     tag: description_de
-    value: 'Wird verwendet, wenn mehrere Optionen zur Abstimmung gestellt werden (z.B.
-      5 Knöpfe in Zürich).
+    value: 'Stimmenzahlen für die Optionen einer Auswahlabstimmung, ein Eintrag pro
+      Option; tritt an die Stelle von total_count_yes, total_count_no und total_count_abstention
+      (siehe TotalOther).
 
       '
   description_fr:
     tag: description_fr
-    value: 'Utilisé lorsque plusieurs options sont soumises au vote (p. ex. 5 boutons
-      à Zurich).
+    value: 'Nombres de voix pour les options d''un vote à choix multiple, une entrée
+      par option ; remplace total_count_yes, total_count_no et total_count_abstention
+      (voir TotalOther).
 
       '
-description: 'Wird verwendet, wenn mehrere Optionen zur Abstimmung gestellt werden
-  (z.B. 5 Knöpfe in Zürich).
+description: 'Stimmenzahlen für die Optionen einer Auswahlabstimmung, ein Eintrag
+  pro Option; tritt an die Stelle von total_count_yes, total_count_no und total_count_abstention
+  (siehe TotalOther).
 
   '
 from_schema: https://ch.paf.link/schema/operations

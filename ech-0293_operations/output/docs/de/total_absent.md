@@ -6,7 +6,7 @@ search:
 # Slot: total_absent 
 
 
-_Gesamtzahl abwesender Mitglieder. Unterscheidung zwischen abwesend/entschuldigt abwesend - Anwesenheit wird auf Anwesenheitsliste verfolgt._
+_Anzahl abwesender Mitglieder, die nicht teilnehmen konnten. Ob eine Abwesenheit entschuldigt war, hält die Anwesenheitsliste (Attendance) fest._
 
 
 
@@ -26,8 +26,8 @@ URI: [ops:total_absent](https://ch.paf.link/schema/operations/total_absent)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [Voting](Voting.md) | Ein Abstimmungsverfahren mit Einzelstimmen und Ergebnissen |  no  |
-| [Election](Election.md) | Ein Wahlverfahren zur Wahl von Personen in Positionen |  no  |
+| [Voting](Voting.md) | Eine Abstimmung über eine Sachfrage: der Abstimmungsgegenstand (Frage), das V... |  no  |
+| [Election](Election.md) | Eine Wahl, mit der ein parlamentarisches Organ eine oder mehrere Personen für... |  no  |
 | [Attendance](Attendance.md) | Aggregierte Anwesenheitsliste für eine Sitzung (Anzahl Anwesende, Abwesende, ... |  no  |
 
 
@@ -68,18 +68,18 @@ name: total_absent
 annotations:
   description_de:
     tag: description_de
-    value: 'Gesamtzahl abwesender Mitglieder. Unterscheidung zwischen abwesend/entschuldigt
-      abwesend - Anwesenheit wird auf Anwesenheitsliste verfolgt.
+    value: 'Anzahl abwesender Mitglieder, die nicht teilnehmen konnten. Ob eine Abwesenheit
+      entschuldigt war, hält die Anwesenheitsliste (Attendance) fest.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Nombre total de membres absents. La distinction entre absent et absent
-      excusé se fait dans la liste de présence.
+    value: 'Nombre de membres absents qui n''ont pas pu participer. La liste de présence
+      (Attendance) indique si une absence était excusée.
 
       '
-description: 'Gesamtzahl abwesender Mitglieder. Unterscheidung zwischen abwesend/entschuldigt
-  abwesend - Anwesenheit wird auf Anwesenheitsliste verfolgt.
+description: 'Anzahl abwesender Mitglieder, die nicht teilnehmen konnten. Ob eine
+  Abwesenheit entschuldigt war, hält die Anwesenheitsliste (Attendance) fest.
 
   '
 from_schema: https://ch.paf.link/schema/operations

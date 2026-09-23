@@ -26,7 +26,7 @@ URI: [mcm:label](https://ld.ech.ch/schema/0292/meta-common/label)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [TotalOther](TotalOther.md) | Additional vote counts when multiple options are presented (e |  no  |
+| [TotalOther](TotalOther.md) | Vote count for one option of a multiple-choice voting |  no  |
 | [PersonReference](PersonReference.md) | Lightweight reference to a person with key identification data at time of lin... |  yes  |
 | [GroupReference](GroupReference.md) | Lightweight reference to a group with key identification data at time of link... |  no  |
 

@@ -6,7 +6,7 @@ search:
 # Slot: agenda_item_number 
 
 
-_Laufnummer des Traktandums (String-Typ zur Unterstützung römischer Ziffern)._
+_Nummer des Traktandums auf der Traktandenliste, z.B. „2.1“ oder „3“ (Zeichenkette, damit auch römische Ziffern möglich sind)._
 
 
 
@@ -27,7 +27,7 @@ URI: [ops:agenda_item_number](https://ch.paf.link/schema/operations/agenda_item_
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
 | [IsAgendaItem](IsAgendaItem.md) | Eine Mixin-Klasse, welche die Elemente eines Traktandums bereitstellt: Bezeic... |  no  |
-| [AgendaItem](AgendaItem.md) | Ein Traktandum einer Sitzung |  no  |
+| [AgendaItem](AgendaItem.md) | Ein vorgängig geplantes Traktandum einer Sitzung |  no  |
 | [ProtocolItem](ProtocolItem.md) | Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde |  no  |
 
 
@@ -68,16 +68,18 @@ name: agenda_item_number
 annotations:
   description_de:
     tag: description_de
-    value: 'Laufnummer des Traktandums (String-Typ zur Unterstützung römischer Ziffern).
+    value: 'Nummer des Traktandums auf der Traktandenliste, z.B. „2.1“ oder „3“ (Zeichenkette,
+      damit auch römische Ziffern möglich sind).
 
       '
   description_fr:
     tag: description_fr
-    value: 'Numéro d''ordre du point de l''ordre du jour (type chaîne, afin de permettre
-      les chiffres romains).
+    value: 'Numéro du point sur l''ordre du jour, p. ex. « 2.1 » ou « 3 » (chaîne
+      de caractères, afin de permettre aussi les chiffres romains).
 
       '
-description: 'Laufnummer des Traktandums (String-Typ zur Unterstützung römischer Ziffern).
+description: 'Nummer des Traktandums auf der Traktandenliste, z.B. „2.1“ oder „3“
+  (Zeichenkette, damit auch römische Ziffern möglich sind).
 
   '
 from_schema: https://ch.paf.link/schema/operations

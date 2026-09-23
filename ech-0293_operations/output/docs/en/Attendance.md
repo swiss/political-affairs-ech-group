@@ -25,7 +25,7 @@ _Aggregated attendance record for a meeting (number of members present, absent, 
 | actor_id | 0..1 <br/> [GroupReference](GroupReference.md) | Reference to the acting body/organ (lightweight snapshot at time of linking).  |
 | total_count | 0..1 <br/> [Integer](Integer.md) | Total number of members of the body (reference value for quorum calculations).  |
 | total_present | 0..1 <br/> [Integer](Integer.md) | Total number of members present.  |
-| total_absent | 0..1 <br/> [Integer](Integer.md) | Total number of absent members. Distinction between absent/excused absent - presence is tracked on attendance list.  |
+| total_absent | 0..1 <br/> [Integer](Integer.md) | Number of absent members who could not take part. Whether an absence was excused is tracked on the attendance list (Attendance).  |
 | total_excused | 0..1 <br/> [Integer](Integer.md) | Total number of excused absences.  |
 | date_created | 0..1 <br/> [Date](Date.md) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |
 | datetime_created | 0..1 <br/> [Datetime](Datetime.md) | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |

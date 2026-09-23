@@ -26,7 +26,7 @@ URI: [mcm:label](https://ld.ech.ch/schema/0292/meta-common/label)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [TotalOther](TotalOther.md) | Décomptes de voix supplémentaires lorsque plusieurs options sont soumises au ... |  no  |
+| [TotalOther](TotalOther.md) | Nombre de voix pour une option d'un vote à choix multiple |  no  |
 | [PersonReference](PersonReference.md) | Référence abrégée à une personne avec les principales données d'identificatio... |  yes  |
 | [GroupReference](GroupReference.md) | Référence abrégée à un groupe avec les principales données d'identification a... |  no  |
 

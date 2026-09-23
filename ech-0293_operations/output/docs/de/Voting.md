@@ -3,7 +3,7 @@
 ## Klasse: Voting 
 
 
-_Ein Abstimmungsverfahren mit Einzelstimmen und Ergebnissen._
+_Eine Abstimmung über eine Sachfrage: der Abstimmungsgegenstand (Frage), das Verfahren, das Ergebnis mit dem Stimmenverhältnis und — bei offenen Abstimmungen — die Einzelstimmen der Mitglieder. Abgestimmt wird im Verlauf der Sitzung, weshalb die Abstimmung im Protokoll verankert ist (parent_protocol, parent_protocol_item); zudem ist sie mit der Sitzung (parent_meeting) und dem Geschäft (affair_id) verknüpft. Die Präsidentin oder der Präsident nimmt an Abstimmungen nicht teil, fällt bei Stimmengleichheit aber den Stichentscheid (tie_breaker). Der kategorische Entscheid (angenommen, abgelehnt, Kenntnisnahme …) wird nicht auf der Abstimmung, sondern in der Resolution des Traktandums festgehalten._
 
 
 
@@ -30,20 +30,20 @@ _Ein Abstimmungsverfahren mit Einzelstimmen und Ergebnissen._
 | label_yes | 0..1 <br/> [String](String.md) | Bedeutung einer „Ja“-Stimme.  |
 | label_no | 0..1 <br/> [String](String.md) | Bedeutung einer „Nein“-Stimme.  |
 | label_abstention | 0..1 <br/> [String](String.md) | Bedeutung einer Enthaltungsstimme.  |
-| tie_breaker | 0..1 <br/> [Boolean](Boolean.md) | Gibt an, ob ein Stichentscheid bei der Abstimmung verwendet wurde.  |
+| tie_breaker | 0..1 <br/> [Boolean](Boolean.md) | Gibt an, ob das Ergebnis bei Stimmengleichheit durch den Stichentscheid der Präsidentin oder des Präsidenten zustande kam.  |
 | total_count_yes | 0..1 <br/> [Integer](Integer.md) | Gesamtzahl der „Ja“-Stimmen.  |
 | total_count_no | 0..1 <br/> [Integer](Integer.md) | Gesamtzahl der „Nein“-Stimmen.  |
 | total_count_abstention | 0..1 <br/> [Integer](Integer.md) | Gesamtzahl der Enthaltungen.  |
-| total_other | * <br/> [TotalOther](TotalOther.md) | Wird verwendet, wenn mehrere Optionen zur Abstimmung gestellt werden (z.B. 5 Knöpfe in Zürich).  |
-| total_absent | 0..1 <br/> [Integer](Integer.md) | Gesamtzahl abwesender Mitglieder. Unterscheidung zwischen abwesend/entschuldigt abwesend - Anwesenheit wird auf Anwesenheitsliste verfolgt.  |
+| total_other | * <br/> [TotalOther](TotalOther.md) | Stimmenzahlen für die Optionen einer Auswahlabstimmung, ein Eintrag pro Option; tritt an die Stelle von total_count_yes, total_count_no und total_count_abstention (siehe TotalOther).  |
+| total_absent | 0..1 <br/> [Integer](Integer.md) | Anzahl abwesender Mitglieder, die nicht teilnehmen konnten. Ob eine Abwesenheit entschuldigt war, hält die Anwesenheitsliste (Attendance) fest.  |
 | total | 0..1 <br/> [Integer](Integer.md) | Gesamtzahl der Stimmen, ohne abwesende und Präsidiumsstimmen.  |
 | majority_type | 0..1 <br/> [MajorityTypeEnum](MajorityTypeEnum.md) | Art der für die Abstimmung erforderlichen Mehrheit (absolut, Zweidrittel usw.).  |
 | majority_count | 0..1 <br/> [Integer](Integer.md) | Anzahl der Stimmen, die für die relevante Mehrheitsschwelle erforderlich sind.  |
-| result_text | 0..1 <br/> [String](String.md) | Freitext zur Beschreibung des Ergebnisses der Abstimmung, z.B. „Mit 78 Stimmen angenommen“.  |
+| result_text | 0..1 <br/> [String](String.md) | Freitext, der das Ergebnis beschreibt, z.B. „Mit 120 zu 75 Stimmen bei 5 Enthaltungen angenommen“. Bei Abstimmungen wird der kategorische Entscheid (angenommen, abgelehnt, Kenntnisnahme …) nicht hier, sondern in der Resolution (resolution_type) des Traktandums festgehalten.  |
 | parent_meeting | 0..1 <br/> [String](String.md) | Identifikator der Sitzung, zu der dieser Eintrag gehört. Bei einer Sitzung bezeichnet er die übergeordnete Sitzung, bei Traktandum, Abstimmung, Wahl, Wortmeldung oder Protokoll die Sitzung, in der der Eintrag entstanden ist.  |
-| parent_protocol | 0..1 <br/> [Protocol](Protocol.md) | Das Protokoll, in dem die Abstimmung oder Wahl festgehalten ist. Abgestimmt wird im Verlauf der Sitzung; die Abstimmung hängt deshalb am Protokoll und nicht an der vorgängig geplanten Traktandenliste.  |
+| parent_protocol | 0..1 <br/> [Protocol](Protocol.md) | Das Protokoll, in dem die Abstimmung oder Wahl festgehalten ist. Abgestimmt wird im Verlauf der Sitzung, weshalb die Abstimmung im Protokoll und nicht in der vorgängig geplanten Traktandenliste verankert ist: Was traktandiert wurde, sagt noch nicht, worüber tatsächlich abgestimmt wurde. Umgekehrt führt das Protokoll seine Abstimmungen und Wahlen als Listen (votings, elections).  |
 | parent_protocol_item | 0..1 <br/> [ProtocolItem](ProtocolItem.md) | Das protokollierte Traktandum (ProtocolItem), unter dem abgestimmt oder gewählt wurde. Entfällt, wenn ohne Traktandierung abgestimmt wurde; die Zuordnung zur Sitzung ergibt sich dann allein aus parent_protocol und parent_meeting.  |
-| affair_id | 0..1 <br/> [String](String.md) | Die Verbindung zu den Geschäften des Traktandums.  |
+| affair_id | 0..1 <br/> [String](String.md) | Identifikator des Geschäfts (eCH-0295), auf das sich der Eintrag bezieht. Administrative Traktanden (z.B. Genehmigung des Protokolls) haben kein Geschäft. Ein Geschäft durchläuft in der Regel mehrere Traktanden — in der Gesetzgebung etwa Eintretensdebatte, Detailberatung, Schlussabstimmung und gegebenenfalls die Differenzbereinigung zwischen den Räten.  |
 | actor_id | 0..1 <br/> [GroupReference](GroupReference.md) | Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
 | documents | * <br/> [Work](Work.md) | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.  |
 | date_created | 0..1 <br/> [Date](Date.md) | Das Datum, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](HasCreationModificationDates.md) |

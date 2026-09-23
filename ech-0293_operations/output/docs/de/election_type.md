@@ -26,7 +26,7 @@ URI: [ops:election_type](https://ch.paf.link/schema/operations/election_type)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [Election](Election.md) | Ein Wahlverfahren zur Wahl von Personen in Positionen |  no  |
+| [Election](Election.md) | Eine Wahl, mit der ein parlamentarisches Organ eine oder mehrere Personen für... |  no  |
 
 
 

@@ -29,10 +29,10 @@ URI: [ops:landingPage](https://ch.paf.link/schema/operations/landingPage)
 | [Legislature](Legislature.md) | Term of office of a parliament as a legislative assembly |  no  |
 | [Meeting](Meeting.md) | The individual sitting of a body — the level at which agenda items are delibe... |  no  |
 | [IsAgendaItem](IsAgendaItem.md) | A mixin class that provides the elements of an agenda item: designation, type... |  no  |
-| [Voting](Voting.md) | A voting procedure with individual votes and results |  no  |
-| [Election](Election.md) | An election procedure for selecting persons to positions |  no  |
+| [Voting](Voting.md) | A voting on a substantive question: the subject (question), the procedure, th... |  no  |
+| [Election](Election.md) | An election in which a parliamentary body appoints one or several persons to ... |  no  |
 | [Speech](Speech.md) | A speech or statement made during a meeting (also called Votum or speaker seg... |  no  |
-| [AgendaItem](AgendaItem.md) | An agenda item of a meeting |  no  |
+| [AgendaItem](AgendaItem.md) | An agenda item of a meeting as planned beforehand |  no  |
 | [ProtocolItem](ProtocolItem.md) | An agenda item as actually recorded in the protocol |  no  |
 
 

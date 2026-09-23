@@ -6,7 +6,7 @@ search:
 # Slot: result_text 
 
 
-_Texte libre décrivant le résultat du vote, p. ex. « Accepté par 78 voix »._
+_Texte libre décrivant le résultat, p. ex. « Adopté par 120 voix contre 75 et 5 abstentions ». Pour les votes, la décision catégorielle (adopté, rejeté, pris acte …) n'est pas retenue ici, mais dans la Resolution (resolution_type) du point de l'ordre du jour._
 
 
 
@@ -26,8 +26,8 @@ URI: [ops:result_text](https://ch.paf.link/schema/operations/result_text)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Voting](Voting.md) | Une procédure de vote avec les voix individuelles et les résultats |  no  |
-| [Election](Election.md) | Une procédure d'élection visant à pourvoir des fonctions par des personnes |  no  |
+| [Voting](Voting.md) | Un vote sur une question matérielle : l'objet du vote (la question), la procé... |  no  |
+| [Election](Election.md) | Une élection par laquelle un organe parlementaire désigne une ou plusieurs pe... |  no  |
 
 
 
@@ -76,18 +76,24 @@ name: result_text
 annotations:
   description_de:
     tag: description_de
-    value: 'Freitext zur Beschreibung des Ergebnisses der Abstimmung, z.B. „Mit 78
-      Stimmen angenommen“.
+    value: 'Freitext, der das Ergebnis beschreibt, z.B. „Mit 120 zu 75 Stimmen bei
+      5 Enthaltungen angenommen“. Bei Abstimmungen wird der kategorische Entscheid
+      (angenommen, abgelehnt, Kenntnisnahme …) nicht hier, sondern in der Resolution
+      (resolution_type) des Traktandums festgehalten.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Texte libre décrivant le résultat du vote, p. ex. « Accepté par 78 voix
-      ».
+    value: 'Texte libre décrivant le résultat, p. ex. « Adopté par 120 voix contre
+      75 et 5 abstentions ». Pour les votes, la décision catégorielle (adopté, rejeté,
+      pris acte …) n''est pas retenue ici, mais dans la Resolution (resolution_type)
+      du point de l''ordre du jour.
 
       '
-description: 'Texte libre décrivant le résultat du vote, p. ex. « Accepté par 78 voix
-  ».
+description: 'Texte libre décrivant le résultat, p. ex. « Adopté par 120 voix contre
+  75 et 5 abstentions ». Pour les votes, la décision catégorielle (adopté, rejeté,
+  pris acte …) n''est pas retenue ici, mais dans la Resolution (resolution_type) du
+  point de l''ordre du jour.
 
   '
 examples:

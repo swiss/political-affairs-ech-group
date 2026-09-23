@@ -1259,6 +1259,7 @@ _Eine Parlamentssession, die mehrere Sitzungen gruppiert und sich über einen be
 | url | * <br/> [MultilingualString](#MultilingualString) | Landing Page oder weiterführende Webadresse, mehrsprachig.  |
 | parent_legislature | 0..1 <br/> String | Identifikator der Legislaturperiode, zu der die Session gehört.  |
 | meetings | * <br/> [Meeting](#Meeting) | Sammlung der Sitzungen.  |
+| joint_debates | * <br/> [JointDebate](#JointDebate) | An diesem Eintrag angehängte gemeinsame Beratungen: bei einem Traktandum die Beratungen, in denen es zusammen mit anderen Traktanden behandelt wird; bei einer Sitzung oder Session die darin geführten gemeinsamen Beratungen.  |
 | documents | * <br/> Work | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.  |
 | date_begin_actual | 0..1 <br/> Date | Das tatsächliche Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](#IsEventWithDuration) |
 | datetime_begin_actual | 0..1 <br/> Datetime | Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](#IsEventWithDuration) |
@@ -1439,6 +1440,7 @@ _Die einzelne Sitzung eines Organs — die Ebene, auf der Traktanden beraten, Be
 | parent_session | 0..1 <br/> String | Identifikator der Session, zu der die Sitzung gehört.  |
 | documents | * <br/> Work | Sitzungsunterlagen wie Tagblatt oder Beilagen, als FRBR-Works. Das Protokoll wird nicht hier, sondern über `has_protocol` verknüpft.  |
 | has_protocol | 0..1 <br/> [Protocol](#Protocol) | Referenz auf das nach der Sitzung erstellte Protokoll dieser Sitzung. Angegeben wird nur der Identifikator des Protokolls; das Protokoll selbst wird in der Liste `protocols` des Containers geliefert. Es ist eine eigenständige Entität mit eigenem Identifikator und wird in der Regel später veröffentlicht als die Sitzung, weshalb es referenziert und nicht eingebettet wird.  |
+| joint_debates | * <br/> [JointDebate](#JointDebate) | An diesem Eintrag angehängte gemeinsame Beratungen: bei einem Traktandum die Beratungen, in denen es zusammen mit anderen Traktanden behandelt wird; bei einer Sitzung oder Session die darin geführten gemeinsamen Beratungen.  |
 | date_begin_actual | 0..1 <br/> Date | Das tatsächliche Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](#IsEventWithDuration) |
 | datetime_begin_actual | 0..1 <br/> Datetime | Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](#IsEventWithDuration) |
 | date_begin_planned | 0..1 <br/> Date | Das geplante Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](#IsEventWithDuration) |
@@ -1701,161 +1703,16 @@ URI: [ops:StateEnum](https://ch.paf.link/schema/operations/StateEnum)
 
 # Tagesordnung (Traktandenliste), Protokoll und Beschlüsse
 
-Die Tagesordnung einer Sitzung wird durch Traktanden strukturiert. Die Traktanden gelten als Planung einer Sitzung und bleiben nach Beginn der Sitzung in den Daten nicht mehr geändert. Anschliessend werden die gleichen Datenelemente genutzt um das Protkoll und die enthaltenen Beschlüsse fest zu halten. 
-
-Im Falle dass es Änderungen der Traktanden während einer Sitzung gibt, werden diese im Protokoll erfasst, und damit die Traktandenliste der nächsten Sitzung angepasst.
+Die Tagesordnung einer Sitzung wird durch Traktanden strukturiert; was tatsächlich behandelt und beschlossen wurde, hält das Protokoll fest.
 
 ## AgendaItem (Traktandum)
-
-### Zweck der Entität
-
-AgendaItem strukturiert die Tagesordnung einer Sitzung und verbindet die zeitliche Organisation (Meeting) mit den inhaltlichen Geschäften (Affairs aus eCH-0295). Es ist die zentrale Entität zur Abbildung des Sitzungsablaufs.
-
-### Hierarchie und Struktur
-
-Agenda Items können hierarchisch organisiert sein, um die Struktur komplexer Tagesordnungen abzubilden:
-
-```
-Meeting (Sitzung vom 4. März 2024)
-  ├─ AgendaItem 1: Mitteilungen und Begrüssung
-  ├─ AgendaItem 2: Gesetzesberatungen
-  │   ├─ AgendaItem 2.1: Energiegesetz (Detailberatung)
-  │   ├─ AgendaItem 2.2: Energiegesetz (Schlussabstimmung)
-  │   └─ AgendaItem 2.3: Gesundheitsgesetz (Eintretensdebatte)
-  └─ AgendaItem 3: Verschiedenes
-```
-
-Die Hierarchie wird über das Feld **parent_agenda_item** abgebildet, das auf das übergeordnete Traktandum verweist.
-
-### Identifikation und Nummerierung
-
-- **id**: Eindeutiger Identifikator
-- **number**: Traktandennummer auf der Tagesordnung (z.B. "2.1", "3")
-- **position**: Sortierreihenfolge (für die Darstellung)
-- **title**: Titel des Traktandums
-
-### Typen von Agenda Items
-
-Das Feld **agenda_item_type** unterscheidet verschiedene Arten:
-
-- **item**: Ein reguläres Traktandum mit Beratung und ggf. Abstimmung
-- **item_group**: Eine Gruppe von Traktanden (z.B. "Gesetzesberatungen")
-- **note**: Informative Einträge ohne Abstimmung (z.B. "Mitteilungen")
-
-### Beziehung zu parlamentarischen Geschäften
-
-Das Feld **affairs** verweist auf die zugehörigen parlamentarischen Geschäfte gemäss eCH-0295. Ein Traktandum kann sich auf mehrere Geschäfte beziehen:
-
-- **Einzelnes Geschäft**: Ein Traktandum behandelt eine spezifische Vorlage
-- **Mehrere Geschäfte**: Ein Traktandum fasst zusammenhängende Geschäfte zusammen
-- **Kein Geschäft**: Administrative Traktanden (z.B. "Genehmigung des Protokolls")
-
-**Beispiel:** Das Traktandum "Energiegesetz - Schlussabstimmung" verweist auf das Geschäft "23.XXX Energiegesetz" in eCH-0295.
-
-### Zeitliche Planung
-
-- **date_time**: Geplanter Zeitpunkt der Behandlung
-- **date_time_actual**: Tatsächlicher Zeitpunkt der Behandlung
-
-Diese Unterscheidung ist wichtig, da:
-- Die Tagesordnung im Voraus festgelegt wird
-- Der tatsächliche Ablauf davon abweichen kann
-- Traktanden vorgezogen, verschoben oder vertagt werden können
-
-### Status und Ergebnis
-
-#### Status
-Das Feld **status** zeigt den Bearbeitungsstand:
-- "pending": Noch nicht behandelt
-- "in_progress": Aktuell in Beratung
-- "completed": Behandlung abgeschlossen
-- "postponed": Vertagt auf eine spätere Sitzung
-- "withdrawn": Zurückgezogen
-
-#### Ergebnis
-Das Feld **result** erfasst das Ergebnis der Behandlung:
-- "accepted": Angenommen
-- "rejected": Abgelehnt
-- "referred": Zurückgewiesen (z.B. an Kommission)
-- "noted": Zur Kenntnis genommen
-- "no_decision": Keine Beschlussfassung
-
-### Kategorisierung
-
-Das Feld **category** erlaubt die Gruppierung nach inhaltlichen Kriterien:
-- "Gesetzgebung"
-- "Budget und Finanzen"
-- "Interpellationen und Anfragen"
-- "Wahlen"
-- "Diverses"
-
-Diese Kategorisierung ist nicht standardisiert und kann je nach Föderaleinheit variieren.
-
-### Resolutionen zu Traktanden
-
-Das Feld **resolution** verweist auf die Resolution(en), die zu diesem Traktandum gefasst wurde(n). Eine Resolution dokumentiert den formalen Beschluss:
-
-```
-AgendaItem: "Energiegesetz - Schlussabstimmung"
-  └─ Resolution: "Annahme des Energiegesetzes mit 120 zu 75 Stimmen bei 5 Enthaltungen"
-      └─ Voting: Details der Abstimmung
-```
-
-### Beschreibung und URL
-
-- **description**: Ausführliche Beschreibung des Traktandums
-- **url**: Array von mehrsprachigen URLs zu Sitzungsunterlagen:
-  - Botschaften und Berichte
-  - Anträge
-  - Änderungsanträge
-  - Abstimmungsergebnisse
-
-### Besonderheiten verschiedener Verfahren
-
-#### Gesetzgebungsverfahren
-Ein Geschäft durchläuft mehrere Traktanden:
-1. Eintretensdebatte
-2. Detailberatung
-3. Schlussabstimmung
-4. Ggf. Differenzbereinigung zwischen den Räten
-
-#### Interpellationen und Anfragen
-- Einreichung als Traktandum
-- Antwort der Regierung
-- Ggf. Diskussion
-
-#### Wahlen
-- Wahlvorschlag als Traktandum
-- Durchführung der Wahl
-- Verkündung des Ergebnisses
-
-### Verknüpfung mit anderen Entitäten
-
-Ein AgendaItem ist das zentrale Bindeglied zwischen:
-
-- **Meeting**: Die Sitzung, in der es behandelt wird
-- **Affairs** (eCH-0295): Die inhaltlichen Geschäfte
-- **Resolution**: Der formale Beschluss
-- **Voting**: Die Abstimmung(en) zum Traktandum
-- **Speech**: Voten und Wortmeldungen zum Traktandum
-
-### Anwendungsbeispiele
-
-...
-
-### Verwendungszwecke
-
-1. Strukturierung des Sitzungsablaufs und Tagesordnung
-2. Verknüpfung zwischen Meetings und Affairs (eCH-0295)
-3. Dokumentation von Status und Ergebnis pro Traktandum
-4. Grundlage für Sitzungsprotokolle und Publikationen
 
 
 
 ### Klasse: AgendaItem []{#AgendaItem}
 
 
-_Ein Traktandum einer Sitzung._
+_Ein vorgängig geplantes Traktandum einer Sitzung. Es gliedert die Tagesordnung und verbindet die zeitliche Organisation (Meeting) mit den inhaltlichen Geschäften (eCH-0295). Traktanden bilden die Planung einer Sitzung ab und werden nach Sitzungsbeginn in den Daten nicht mehr geändert: Abweichungen während der Sitzung — vorgezogene, verschobene oder zusätzliche Traktanden — werden im Protokoll (ProtocolItem) erfasst und fliessen in die Traktandenliste der nächsten Sitzung ein. Aus demselben Grund werden geplante und tatsächliche Zeiten getrennt geführt._
 
 
 
@@ -1886,23 +1743,23 @@ _Ein Traktandum einer Sitzung._
 | datetime_modified | 0..1 <br/> Datetime | Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
 | parent_meeting | 0..1 <br/> String | Identifikator der Sitzung, zu der dieser Eintrag gehört. Bei einer Sitzung bezeichnet er die übergeordnete Sitzung, bei Traktandum, Abstimmung, Wahl, Wortmeldung oder Protokoll die Sitzung, in der der Eintrag entstanden ist. <br/><br/>Vererbung: IsAgendaItem |
 | agenda_item_type | 0..1 <br/> [AgendaItemTypeEnum](#AgendaItemTypeEnum) | Art des Traktandums, unterscheidet Einzeltraktanden von Traktandengruppen. <br/><br/>Vererbung: IsAgendaItem |
-| agenda_item_number | 0..1 <br/> String | Laufnummer des Traktandums (String-Typ zur Unterstützung römischer Ziffern). <br/><br/>Vererbung: IsAgendaItem |
-| agenda_item_position | 0..1 <br/> Integer | Ganzzahlige Position des Traktandums in der Sitzungsreihenfolge. <br/><br/>Vererbung: IsAgendaItem |
+| agenda_item_number | 0..1 <br/> String | Nummer des Traktandums auf der Traktandenliste, z.B. „2.1“ oder „3“ (Zeichenkette, damit auch römische Ziffern möglich sind). <br/><br/>Vererbung: IsAgendaItem |
+| agenda_item_position | 0..1 <br/> Integer | Ganzzahlige Position des Traktandums im Sitzungsablauf, massgebend für Sortierung und Darstellung. <br/><br/>Vererbung: IsAgendaItem |
 | leading_actor_id | 0..1 <br/> String | Das federführende Departement für das Traktandum. <br/><br/>Vererbung: IsAgendaItem |
 | speaking_actor_id | 0..1 <br/> String | Der Sprecher oder die Sprecherin bzw. die Departementsvorsteherin oder der Departementsvorsteher für das Traktandum. <br/><br/>Vererbung: IsAgendaItem |
 | agenda_item_title | * <br/> [MultilingualString](#MultilingualString) | Titel des Traktandums. <br/><br/>Vererbung: IsAgendaItem |
-| affair_id | 0..1 <br/> String | Die Verbindung zu den Geschäften des Traktandums. <br/><br/>Vererbung: IsAgendaItem |
+| affair_id | 0..1 <br/> String | Identifikator des Geschäfts (eCH-0295), auf das sich der Eintrag bezieht. Administrative Traktanden (z.B. Genehmigung des Protokolls) haben kein Geschäft. Ein Geschäft durchläuft in der Regel mehrere Traktanden — in der Gesetzgebung etwa Eintretensdebatte, Detailberatung, Schlussabstimmung und gegebenenfalls die Differenzbereinigung zwischen den Räten. <br/><br/>Vererbung: IsAgendaItem |
 | agenda_item_description | * <br/> [MultilingualString](#MultilingualString) | Untertitel oder ausführliche Beschreibung des Traktandums. <br/><br/>Vererbung: IsAgendaItem |
-| state_id | 0..1 <br/> String | Zustands-Identifikator (Verweis auf das Status-Enum oder auf einen eigenen Zustand). <br/><br/>Vererbung: IsAgendaItem |
+| state_id | 0..1 <br/> String | Zustands-Identifikator des Traktandums (Verweis auf ein Status-Enum oder auf einen eigenen Zustand), z.B. pending (noch nicht behandelt), in_progress (in Beratung), completed (abgeschlossen), postponed (auf eine spätere Sitzung vertagt) oder withdrawn (zurückgezogen). <br/><br/>Vererbung: IsAgendaItem |
 | state_name | 0..1 <br/> String | Abweichende, freitextliche Statusbezeichnung, wo die Status-Aufzählung nicht genügt. <br/><br/>Vererbung: IsAgendaItem |
 | landing_page | 0..1 <br/> String | URL mit weiteren Informationen. <br/><br/>Vererbung: IsAgendaItem |
 | url | * <br/> [MultilingualString](#MultilingualString) | Landing Page oder weiterführende Webadresse, mehrsprachig. <br/><br/>Vererbung: IsAgendaItem |
-| agenda_item_category | 0..1 <br/> String | Kategorie für gruppierte Traktanden (z.B. Einführung, nach Departement, technische Traktanden). <br/><br/>Vererbung: IsAgendaItem |
-| parent_agenda_item | 0..1 <br/> String | Identifikator des Traktandums, zu dem dieser Eintrag gehört. Bei einem Traktandum baut er eine Hierarchie von Traktanden auf, bei Abstimmung, Wahl oder Wortmeldung bezeichnet er das Traktandum, unter dem der Eintrag behandelt wurde. <br/><br/>Vererbung: IsAgendaItem |
-| has_resolution | 0..1 <br/> [Resolution](#Resolution) | Die Resolution oder Entscheidung zu diesem Traktandum. <br/><br/>Vererbung: IsAgendaItem |
-| joint_debates | * <br/> [JointDebate](#JointDebate) | Gemeinsame Beratungen, in denen dieses Traktandum zusammen mit anderen Traktanden behandelt wird. <br/><br/>Vererbung: IsAgendaItem |
+| agenda_item_category | 0..1 <br/> String | Freie Kategorisierung des Traktandums nach Inhalt oder Gruppierung, z.B. „Gesetzgebung“, „Budget und Finanzen“, „Interpellationen und Anfragen“, „Wahlen“, nach Departement oder einleitende und technische Traktanden. Die Kategorisierung ist nicht standardisiert und kann je nach Föderaleinheit variieren. <br/><br/>Vererbung: IsAgendaItem |
+| parent_agenda_item | 0..1 <br/> String | Identifikator des Traktandums, zu dem dieser Eintrag gehört. Bei einem Traktandum bildet er eine Hierarchie von Traktanden — z.B. eine Traktandengruppe „Gesetzesberatungen“ mit den Untertraktanden „Energiegesetz (Detailberatung)“ und „Energiegesetz (Schlussabstimmung)“; bei einer Wortmeldung bezeichnet er das Traktandum, unter dem sie erfolgte. <br/><br/>Vererbung: IsAgendaItem |
+| has_resolution | 0..1 <br/> [Resolution](#Resolution) | Der formale Beschluss zu diesem Traktandum, z.B. die Annahme des Energiegesetzes. Die zugrunde liegende Abstimmung mit dem Stimmenverhältnis wird separat als Voting erfasst. <br/><br/>Vererbung: IsAgendaItem |
+| joint_debates | * <br/> [JointDebate](#JointDebate) | An diesem Eintrag angehängte gemeinsame Beratungen: bei einem Traktandum die Beratungen, in denen es zusammen mit anderen Traktanden behandelt wird; bei einer Sitzung oder Session die darin geführten gemeinsamen Beratungen. <br/><br/>Vererbung: IsAgendaItem |
 | text_segments | * <br/> [TextSegment](#TextSegment) | Sammlung von Textsegmenten (z.B. Wortprotokoll). <br/><br/>Vererbung: IsAgendaItem |
-| documents | * <br/> Work | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind. <br/><br/>Vererbung: IsAgendaItem |
+| documents | * <br/> Work | Unterlagen zum Traktandum als FRBR-Works, z.B. Botschaften und Berichte, Anträge und Änderungsanträge. <br/><br/>Vererbung: IsAgendaItem |
 
 
 
@@ -2332,9 +2189,9 @@ URI: [ops:AgendaItemTypeEnum](https://ch.paf.link/schema/operations/AgendaItemTy
 #### Zulässige Werte
 | Wert | Beschreibung |
 |------------------------|----------------------------------------------------------------------------|
-| item |  Einzelnes Traktandum  |
+| item |  Einzelnes Traktandum mit Beratung und gegebenenfalls Abstimmung.  |
 | | [ops:enum/agenda_item_type/item](ops:enum/agenda_item_type/item) |
-| group |  Traktandengruppe  |
+| group |  Gruppe von Traktanden (Traktandengruppe), unter der Untertraktanden über parent_agenda_item eingeordnet werden, z.B. „Gesetzesberatungen“.  |
 | | [ops:enum/agenda_item_type/group](ops:enum/agenda_item_type/group) |
 
 
@@ -2347,13 +2204,7 @@ URI: [ops:AgendaItemTypeEnum](https://ch.paf.link/schema/operations/AgendaItemTy
 
 ## Protokoll (Protocol)
 
-### Zweck der Entität
-
-Während die Traktanden die **Planung** einer Sitzung abbilden, hält das Protokoll den **tatsächlichen Verlauf** nach der Sitzung fest. `Protocol` ist ein Wrapper-Container, der pro Sitzung (`Meeting`) genau einmal geführt wird und die effektiv behandelten Traktanden (`protocol_items`), Abstimmungen, Wortmeldungen sowie Wortlaut-Textsegmente und Dokumente bündelt.
-
-Das Protokoll wird **referenziert, nicht eingebettet**: `Meeting.has_protocol` enthält allein den Identifikator, das Protokoll selbst steht als eigener Eintrag in `Container.protocols`. Damit gilt auch hier die Regel, die dieser Standard durchgehend anwendet — eingebettet wird, was keine eigene Identität besitzt (etwa `PersonReference` oder `GroupReference`), referenziert wird, was eine besitzt. Das Protokoll hat eine eigene `global_uri` und ist eigenständig zitierbar; das Amtliche Bulletin etwa ist unter einer eigenen Adresse abrufbar. Vor allem aber entsteht es später als die Sitzung: Eingebettet müsste die gesamte Sitzung erneut geliefert werden, sobald das Protokoll vorliegt, referenziert genügt die Nachlieferung des Protokolls allein.
-
-Innerhalb des Protokolls bleiben die Sammlungen eingebettet, weil sie zusammen mit ihm entstehen und geliefert werden. Wer Abstimmungen oder Wortmeldungen unabhängig vom Protokoll publiziert, liefert sie stattdessen flach in `Container.votings` bzw. `Container.speeches` und verknüpft sie über `parent_meeting` und `parent_agenda_item`.
+Das Protokoll wird **referenziert, nicht eingebettet**. Damit gilt auch hier die Regel, die dieser Standard durchgehend anwendet — eingebettet wird, was keine eigene Identität besitzt (etwa `PersonReference` oder `GroupReference`), referenziert wird, was eine besitzt.
 
 ```
 Container
@@ -2363,6 +2214,7 @@ Container
   └─ protocols      → Protocol    (nachher: Niederschrift, parent_meeting)
                         ├─ protocol_items  → ProtocolItem (gleiche Elemente wie AgendaItem)
                         ├─ votings
+                        ├─ elections
                         ├─ speeches
                         ├─ text_segments
                         └─ documents
@@ -2373,7 +2225,7 @@ Container
 ### Klasse: Protocol []{#Protocol}
 
 
-_Das nach der Sitzung erstellte Protokoll. Ein Wrapper-Container, der die tatsächlich behandelten Traktanden (protocol_items), Abstimmungen, Wortmeldungen, Wortlaut-Textsegmente und verknüpfte Dokumente bündelt._
+_Das Protokoll einer Sitzung, nach der Sitzung erstellt und pro Sitzung genau einmal geführt. Ein Wrapper-Container, der die effektiv behandelten Traktanden (protocol_items), Abstimmungen, Wahlen, Wortmeldungen, Wortlaut-Textsegmente und verknüpfte Dokumente bündelt. Das Protokoll hat einen eigenen Identifikator, ist eigenständig zitierbar und wird in der Regel später veröffentlicht als die Sitzung; die Sitzung referenziert es deshalb nur (Meeting.has_protocol), und das Protokoll selbst wird in Container.protocols geliefert, sodass es nachgeliefert werden kann, ohne die Sitzung erneut zu liefern. Innerhalb des Protokolls sind die Sammlungen eingebettet, weil sie zusammen mit ihm entstehen und geliefert werden. Wer Abstimmungen oder Wortmeldungen unabhängig vom Protokoll publiziert, liefert sie flach in Container.votings bzw. Container.speeches und verknüpft sie über parent_meeting und die jeweilige Traktandenreferenz._
 
 
 
@@ -2467,14 +2319,12 @@ protocols:
 
 ### ProtocolItem (protokolliertes Traktandum)
 
-`ProtocolItem` bildet ein Traktandum so ab, wie es im Protokoll tatsächlich festgehalten wurde. Es führt dieselben Elemente wie `AgendaItem`, ist aber keine Ableitung davon: Beide Klassen beziehen die Traktandumsfelder aus dem Mixin `IsAgendaItem`. Das Protokollierte ist kein Sonderfall des Geplanten — es entsteht unabhängig und kann Traktanden enthalten, die nie traktandiert waren, so wie die Traktandenliste Punkte enthalten kann, die nie behandelt wurden.
-
 
 
 ### Klasse: ProtocolItem []{#ProtocolItem}
 
 
-_Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde. Es führt über den Mixin IsAgendaItem dieselben Elemente wie AgendaItem, ist aber eine eigenständige Klasse: Das Protokollierte ist kein Sonderfall des Geplanten._
+_Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde. Es führt über das Mixin IsAgendaItem dieselben Elemente wie AgendaItem, ist aber eine eigenständige Klasse: Das Protokollierte ist kein Sonderfall des Geplanten. Es entsteht unabhängig und kann Traktanden enthalten, die nie traktandiert waren, so wie die Traktandenliste Punkte enthalten kann, die nie behandelt wurden._
 
 
 
@@ -2505,23 +2355,23 @@ _Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde. Es führt 
 | datetime_modified | 0..1 <br/> Datetime | Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
 | parent_meeting | 0..1 <br/> String | Identifikator der Sitzung, zu der dieser Eintrag gehört. Bei einer Sitzung bezeichnet er die übergeordnete Sitzung, bei Traktandum, Abstimmung, Wahl, Wortmeldung oder Protokoll die Sitzung, in der der Eintrag entstanden ist. <br/><br/>Vererbung: IsAgendaItem |
 | agenda_item_type | 0..1 <br/> [AgendaItemTypeEnum](#AgendaItemTypeEnum) | Art des Traktandums, unterscheidet Einzeltraktanden von Traktandengruppen. <br/><br/>Vererbung: IsAgendaItem |
-| agenda_item_number | 0..1 <br/> String | Laufnummer des Traktandums (String-Typ zur Unterstützung römischer Ziffern). <br/><br/>Vererbung: IsAgendaItem |
-| agenda_item_position | 0..1 <br/> Integer | Ganzzahlige Position des Traktandums in der Sitzungsreihenfolge. <br/><br/>Vererbung: IsAgendaItem |
+| agenda_item_number | 0..1 <br/> String | Nummer des Traktandums auf der Traktandenliste, z.B. „2.1“ oder „3“ (Zeichenkette, damit auch römische Ziffern möglich sind). <br/><br/>Vererbung: IsAgendaItem |
+| agenda_item_position | 0..1 <br/> Integer | Ganzzahlige Position des Traktandums im Sitzungsablauf, massgebend für Sortierung und Darstellung. <br/><br/>Vererbung: IsAgendaItem |
 | leading_actor_id | 0..1 <br/> String | Das federführende Departement für das Traktandum. <br/><br/>Vererbung: IsAgendaItem |
 | speaking_actor_id | 0..1 <br/> String | Der Sprecher oder die Sprecherin bzw. die Departementsvorsteherin oder der Departementsvorsteher für das Traktandum. <br/><br/>Vererbung: IsAgendaItem |
 | agenda_item_title | * <br/> [MultilingualString](#MultilingualString) | Titel des Traktandums. <br/><br/>Vererbung: IsAgendaItem |
-| affair_id | 0..1 <br/> String | Die Verbindung zu den Geschäften des Traktandums. <br/><br/>Vererbung: IsAgendaItem |
+| affair_id | 0..1 <br/> String | Identifikator des Geschäfts (eCH-0295), auf das sich der Eintrag bezieht. Administrative Traktanden (z.B. Genehmigung des Protokolls) haben kein Geschäft. Ein Geschäft durchläuft in der Regel mehrere Traktanden — in der Gesetzgebung etwa Eintretensdebatte, Detailberatung, Schlussabstimmung und gegebenenfalls die Differenzbereinigung zwischen den Räten. <br/><br/>Vererbung: IsAgendaItem |
 | agenda_item_description | * <br/> [MultilingualString](#MultilingualString) | Untertitel oder ausführliche Beschreibung des Traktandums. <br/><br/>Vererbung: IsAgendaItem |
-| state_id | 0..1 <br/> String | Zustands-Identifikator (Verweis auf das Status-Enum oder auf einen eigenen Zustand). <br/><br/>Vererbung: IsAgendaItem |
+| state_id | 0..1 <br/> String | Zustands-Identifikator des Traktandums (Verweis auf ein Status-Enum oder auf einen eigenen Zustand), z.B. pending (noch nicht behandelt), in_progress (in Beratung), completed (abgeschlossen), postponed (auf eine spätere Sitzung vertagt) oder withdrawn (zurückgezogen). <br/><br/>Vererbung: IsAgendaItem |
 | state_name | 0..1 <br/> String | Abweichende, freitextliche Statusbezeichnung, wo die Status-Aufzählung nicht genügt. <br/><br/>Vererbung: IsAgendaItem |
 | landing_page | 0..1 <br/> String | URL mit weiteren Informationen. <br/><br/>Vererbung: IsAgendaItem |
 | url | * <br/> [MultilingualString](#MultilingualString) | Landing Page oder weiterführende Webadresse, mehrsprachig. <br/><br/>Vererbung: IsAgendaItem |
-| agenda_item_category | 0..1 <br/> String | Kategorie für gruppierte Traktanden (z.B. Einführung, nach Departement, technische Traktanden). <br/><br/>Vererbung: IsAgendaItem |
-| parent_agenda_item | 0..1 <br/> String | Identifikator des Traktandums, zu dem dieser Eintrag gehört. Bei einem Traktandum baut er eine Hierarchie von Traktanden auf, bei Abstimmung, Wahl oder Wortmeldung bezeichnet er das Traktandum, unter dem der Eintrag behandelt wurde. <br/><br/>Vererbung: IsAgendaItem |
-| has_resolution | 0..1 <br/> [Resolution](#Resolution) | Die Resolution oder Entscheidung zu diesem Traktandum. <br/><br/>Vererbung: IsAgendaItem |
-| joint_debates | * <br/> [JointDebate](#JointDebate) | Gemeinsame Beratungen, in denen dieses Traktandum zusammen mit anderen Traktanden behandelt wird. <br/><br/>Vererbung: IsAgendaItem |
+| agenda_item_category | 0..1 <br/> String | Freie Kategorisierung des Traktandums nach Inhalt oder Gruppierung, z.B. „Gesetzgebung“, „Budget und Finanzen“, „Interpellationen und Anfragen“, „Wahlen“, nach Departement oder einleitende und technische Traktanden. Die Kategorisierung ist nicht standardisiert und kann je nach Föderaleinheit variieren. <br/><br/>Vererbung: IsAgendaItem |
+| parent_agenda_item | 0..1 <br/> String | Identifikator des Traktandums, zu dem dieser Eintrag gehört. Bei einem Traktandum bildet er eine Hierarchie von Traktanden — z.B. eine Traktandengruppe „Gesetzesberatungen“ mit den Untertraktanden „Energiegesetz (Detailberatung)“ und „Energiegesetz (Schlussabstimmung)“; bei einer Wortmeldung bezeichnet er das Traktandum, unter dem sie erfolgte. <br/><br/>Vererbung: IsAgendaItem |
+| has_resolution | 0..1 <br/> [Resolution](#Resolution) | Der formale Beschluss zu diesem Traktandum, z.B. die Annahme des Energiegesetzes. Die zugrunde liegende Abstimmung mit dem Stimmenverhältnis wird separat als Voting erfasst. <br/><br/>Vererbung: IsAgendaItem |
+| joint_debates | * <br/> [JointDebate](#JointDebate) | An diesem Eintrag angehängte gemeinsame Beratungen: bei einem Traktandum die Beratungen, in denen es zusammen mit anderen Traktanden behandelt wird; bei einer Sitzung oder Session die darin geführten gemeinsamen Beratungen. <br/><br/>Vererbung: IsAgendaItem |
 | text_segments | * <br/> [TextSegment](#TextSegment) | Sammlung von Textsegmenten (z.B. Wortprotokoll). <br/><br/>Vererbung: IsAgendaItem |
-| documents | * <br/> Work | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind. <br/><br/>Vererbung: IsAgendaItem |
+| documents | * <br/> Work | Unterlagen zum Traktandum als FRBR-Works, z.B. Botschaften und Berichte, Anträge und Änderungsanträge. <br/><br/>Vererbung: IsAgendaItem |
 
 
 
@@ -2557,16 +2407,12 @@ _Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde. Es führt 
 
 ## Gemeinsame Beratung (JointDebate)
 
-### Zweck der Entität
-
-`JointDebate` fasst mehrere Traktanden zusammen, die gemeinsam beraten werden – etwa inhaltlich zusammenhängende Geschäfte, die in einer einzigen Debatte behandelt werden. Sie hängt über den Slot `joint_debates` an einem Traktandum (AgendaItem) oder einem Protokoll-Traktandum (ProtocolItem) und verweist über `joint_agenda_item_ids` auf die mitberatenen Traktanden.
-
 
 
 ### Klasse: JointDebate []{#JointDebate}
 
 
-_Eine gemeinsame Beratung: Mehrere Traktanden werden zusammen behandelt. Die gemeinsame Beratung hängt an einem Traktandum (AgendaItem) oder einem Protokoll-Traktandum (ProtocolItem) und verweist über deren Identifikatoren auf die gemeinsam behandelten Traktanden._
+_Eine gemeinsame Beratung: Mehrere Traktanden werden zusammen behandelt, etwa inhaltlich zusammenhängende Geschäfte, die in einer einzigen Debatte beraten werden. Die gemeinsame Beratung hängt an einem Traktandum (AgendaItem), einem Protokoll-Traktandum (ProtocolItem), einer Sitzung (Meeting) oder einer Session (Session) und verweist über deren Identifikatoren auf die gemeinsam behandelten Traktanden. An einer Sitzung oder Session angehängt, kann sie auch Traktanden zusammenfassen, die auf mehrere Traktandenpositionen oder Sitzungen verteilt sind._
 
 
 
@@ -2590,6 +2436,8 @@ _Eine gemeinsame Beratung: Mehrere Traktanden werden zusammen behandelt. Die gem
 
 | Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
+| [Session](#Session) | joint_debates | range | [JointDebate](#JointDebate) |
+| [Meeting](#Meeting) | joint_debates | range | [JointDebate](#JointDebate) |
 | IsAgendaItem | joint_debates | range | [JointDebate](#JointDebate) |
 | [AgendaItem](#AgendaItem) | joint_debates | range | [JointDebate](#JointDebate) |
 | [ProtocolItem](#ProtocolItem) | joint_debates | range | [JointDebate](#JointDebate) |
@@ -2616,179 +2464,12 @@ _Eine gemeinsame Beratung: Mehrere Traktanden werden zusammen behandelt. Die gem
 
 ## Resolution (Beschluss)
 
-### Zweck der Entität
-
-Die Resolution-Entität erfasst den formalen Beschluss zu einem Traktandum. Sie dokumentiert **was** entschieden wurde, während Voting dokumentiert **wie** (mit welchem Verfahren und Stimmenverhältnis) entschieden wurde.
-
-### Beziehung zu AgendaItem und Voting
-
-```
-AgendaItem (Energiegesetz - Schlussabstimmung)
-  ├─ Resolution (Annahme des Energiegesetzes)
-  └─ Voting (120 Ja, 75 Nein, 5 Enthaltungen)
-```
-
-Ein AgendaItem kann mehrere Resolutions haben (z.B. bei mehreren Abstimmungen zum selben Traktandum). Jede Resolution referenziert typischerweise ein Voting, das die Abstimmungsdetails enthält.
-
-### Typen von Resolutionen
-
-Das **resolution_type**-Feld verwendet ein kontrolliertes Vokabular:
-
-#### accepted
-Das Traktandum wurde angenommen
-
-**Anwendung:**
-- Gesetzesvorlagen wurden angenommen
-- Anträge wurden gutgeheissen
-- Beschlüsse wurden gefasst
-
-#### rejected
-Das Traktandum wurde abgelehnt
-
-**Anwendung:**
-- Gesetzesvorlagen wurden abgelehnt
-- Anträge wurden abgewiesen
-- Ablehnungsbeschlüsse
-
-#### referred_back
-Rückweisung an ein anderes Gremium
-
-**Anwendung:**
-- Rückweisung an Kommission zur Überarbeitung
-- Rückweisung an Regierung
-- Zurück an andere Kammer (in Zweikammersystemen)
-
-#### noted
-Zur Kenntnis genommen
-
-**Anwendung:**
-- Berichte ohne Abstimmung
-- Mitteilungen
-- Informative Traktanden
-
-#### postponed
-Vertagt auf später
-
-**Anwendung:**
-- Aufschub der Behandlung
-- Noch nicht entscheidungsreif
-- Weitere Abklärungen nötig
-
-#### withdrawn
-Zurückgezogen
-
-**Anwendung:**
-- Antragsteller zieht Vorlage zurück
-- Geschäft wird nicht weiterverfolgt
-
-#### amended
-Mit Änderungen angenommen
-
-**Anwendung:**
-- Gesetz mit Amendments angenommen
-- Modifizierte Fassung beschlossen
-- Kompromisslösung
-
-#### no_decision
-Kein Beschluss gefasst
-
-**Anwendung:**
-- Keine Mehrheit für irgendeinen Antrag
-- Patt-Situation ohne Stichentscheid
-- Nicht beschlussfähig
-
-### Designentscheid: Warum separate Resolution-Entität?
-
-**Alternative wäre gewesen:** Resolution-Typ direkt im AgendaItem speichern.
-
-**Gründe für separate Entität:**
-
-1. **Mehrere Beschlüsse pro Traktandum**: Ein Traktandum kann mehrere Beschlüsse haben (z.B. erst Änderungsantrag, dann Gesamtabstimmung)
-
-2. **Strukturierte Verknüpfung zu Votings**: Klare 1:1-Beziehung zwischen Resolution und Voting
-
-3. **Mehrsprachige Beschlusstexte**: Resolution kann ausführliche Beschlusstexte in mehreren Sprachen enthalten
-
-4. **Zeitliche Flexibilität**: Resolution kann zeitlich vom AgendaItem getrennt erfasst werden
-
-### Beschlusstext
-
-- **title**: Kurze Zusammenfassung des Beschlusses
-- **description**: Ausführlicher Beschlusstext
-
-**Beispiel:**
-- title: "Annahme Energiegesetz"
-- description: "Der Nationalrat nimmt das Bundesgesetz über die Energiewende in der Fassung der Kommission mit 120 zu 75 Stimmen bei 5 Enthaltungen an."
-
-### Verknüpfung zur Abstimmung
-
-Das Feld **voting_id** verweist auf das zugehörige Voting, das die Abstimmungsdetails enthält:
-
-- Stimmenverhältnis
-- Abstimmungsverfahren
-- Einzelstimmen (bei namentlichen Abstimmungen)
-
-**Nicht alle Resolutions haben ein Voting:**
-- "Zur Kenntnis genommen" erfolgt oft ohne formale Abstimmung
-- Stille Annahmen
-- Administrativbeschlüsse
-
-### Zeitstempel
-
-- **datetime_created**: Zeitpunkt des Beschlusses
-- **datetime_modified**: Letzte Änderung (z.B. bei Korrekturen)
-
-### URLs und Dokumentation
-
-Das Feld **url** kann auf weiterführende Dokumente verweisen:
-- Detaillierte Beschlusstexte
-- Begründungen
-- Rechtliche Grundlagen
-
-### Anwendungsfälle in verschiedenen Kontexten
-
-#### Gesetzgebungsverfahren
-Mehrere Resolutions zu verschiedenen Phasen:
-1. Resolution "Eintreten" (accepted/rejected)
-2. Resolution zu Artikel 1 (accepted/amended)
-3. Resolution zu Artikel 2 (accepted)
-4. Resolution Gesamtabstimmung (accepted/rejected)
-
-#### Differenzbereinigung (Zweikammersystem)
-- Resolution "Zustimmung zur Fassung des Erstrats"
-- Resolution "Festhalten an eigener Fassung"
-- Resolution "Annahme Kompromissvorschlag"
-
-#### Kommissionsarbeit
-- Resolution "Rückweisung an Kommission mit Zusatzauftrag"
-- Resolution "Annahme Kommissionsbericht"
-
-### Technische Überlegungen
-
-#### Granularität
-Die Granularität der Resolution-Erfassung variiert:
-- **Detailliert**: Jede Einzelabstimmung erhält eigene Resolution
-- **Aggregiert**: Nur finaler Beschluss wird erfasst
-
-Der Standard erlaubt beide Ansätze.
-
-#### Mehrsprachigkeit
-Bei mehrsprachigen Parlamenten (CH, BE, etc.) müssen Beschlusstexte in allen Amtssprachen erfasst werden. Dies erfolgt über MultilingualString-Arrays in title und description.
-
-### Verwendungszwecke
-
-1. **Offizielle Dokumentation**: Was wurde entschieden?
-2. **Rechtliche Verbindlichkeit**: Formaler Beschlussnachweis
-3. **Öffentliche Information**: Verständliche Zusammenfassung komplexer Abstimmungen
-4. **Geschäftsführung**: Nachverfolgung von Beschlüssen und deren Umsetzung
-5. **Statistische Auswertung**: Annahme-/Ablehnungsquoten
-
 
 
 ### Klasse: Resolution []{#Resolution}
 
 
-_Eine Resolution oder Entscheidung zu einem Traktandum, einschliesslich Abstimmungsverfahren._
+_Der formale Beschluss zu einem Traktandum, einschliesslich der angewandten Abstimmungsverfahren. Er hält fest, was entschieden wurde, während Voting festhält, wie entschieden wurde (Verfahren und Stimmenverhältnis). Nicht jeder Beschluss beruht auf einer formalen Abstimmung: Kenntnisnahmen, stille Annahmen oder Administrativbeschlüsse kommen ohne eine solche zustande._
 
 
 
@@ -2804,7 +2485,7 @@ _Eine Resolution oder Entscheidung zu einem Traktandum, einschliesslich Abstimmu
 |------------------------|----------------------|------------------------------------------------------|
 | resolution_type | 0..1 <br/> [ResolutionTypeEnum](#ResolutionTypeEnum) | Art der Resolution zum Traktandum.  |
 | type_label | 0..1 <br/> String | Benutzerdefinierte Typbezeichnung, wenn Standardtypwerte nicht zutreffen.  |
-| vote_procedures | * <br/> String | Verfahren für die Abstimmung, wie geheime Abstimmung oder offene Abstimmung.  |
+| vote_procedures | * <br/> String | Verfahren, in denen abgestimmt wurde. Offene Verfahren: Handzeichen, Aufstehen, elektronische Abstimmung, Namensaufruf, in Krisenlagen zudem externe Stimmabgabe (vorgängig dem Präsidium mitgeteilte Stimmen, die zusammen mit der Abstimmung im Rat erfasst werden), Zirkulationsverfahren oder Stimmabgabe an virtuellen Sitzungen. Geheime Verfahren: Stimmzettel, elektronische geheime Abstimmung. Das Verfahren bestimmt, ob Einzelstimmen erfasst werden können.  |
 | documents | * <br/> Work | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.  |
 
 
@@ -2857,11 +2538,11 @@ URI: [ops:ResolutionTypeEnum](https://ch.paf.link/schema/operations/ResolutionTy
 #### Zulässige Werte
 | Wert | Beschreibung |
 |------------------------|----------------------------------------------------------------------------|
-| accepted |  Annahme  |
+| accepted |  Annahme: z.B. eine Gesetzesvorlage angenommen, ein Antrag gutgeheissen, ein Beschluss gefasst.  |
 | | [ops:enum/resolution_type/accepted](ops:enum/resolution_type/accepted) |
-| rejected |  Ablehnung  |
+| rejected |  Ablehnung: z.B. eine Gesetzesvorlage abgelehnt, ein Antrag abgewiesen.  |
 | | [ops:enum/resolution_type/rejected](ops:enum/resolution_type/rejected) |
-| noted |  Kenntnisnahme  |
+| noted |  Kenntnisnahme: z.B. Berichte ohne Abstimmung, Mitteilungen, informative Traktanden.  |
 | | [ops:enum/resolution_type/noted](ops:enum/resolution_type/noted) |
 | accepted_point_by_point |  Punktweise Annahme  |
 | | [ops:enum/resolution_type/accepted_point_by_point](ops:enum/resolution_type/accepted_point_by_point) |
@@ -2884,50 +2565,12 @@ URI: [ops:ResolutionTypeEnum](https://ch.paf.link/schema/operations/ResolutionTy
 
 ## Motion (Anträge)
 
-### Zweck
-
-Erfasst Anträge, die während der Sitzung gestellt werden (Änderungsanträge, Verfahrensanträge, etc.).
-
-### Struktur
-
-- **motion_type**: Art des Antrags
-  - **amendment**: Änderungsantrag zu Gesetzestext
-  - **procedural**: Verfahrensantrag (z.B. Schluss der Debatte)
-  - **referral**: Rückweisungsantrag
-  - **other**: Sonstige Anträge
-- **title**: Kurztitel des Antrags
-- **description**: Vollständiger Antragstext
-- **proposer_person_id**: Antragsteller/in
-- **seconder_person_id**: Mitstimmende (falls erforderlich)
-- **result**: Ergebnis (accepted, rejected, withdrawn)
-
-### Designentscheid
-
-**Warum eigene Entität statt nur in AgendaItem?**
-- Ein Traktandum kann mehrere Anträge enthalten
-- Anträge haben eigene Lifecycle (gestellt, unterstützt, abgestimmt)
-- Strukturierte Erfassung von Antragsteller und Unterstützern
-- Separate Abstimmungen pro Antrag möglich
-
-### Anwendung
-
-Verknüpft mit AgendaItem und optional mit Voting:
-
-```
-AgendaItem (Energiegesetz - Art. 15)
-  ├─ Motion (Änderungsantrag Person A)
-  │   └─ Voting (Abstimmung über Änderungsantrag)
-  ├─ Motion (Änderungsantrag Person B)
-  │   └─ Voting (Abstimmung über Änderungsantrag)
-  └─ Voting (Abstimmung über Artikel in Gesamtheit)
-```
-
 
 
 ### Klasse: Motion []{#Motion}
 
 
-_Ein formeller Antrag, der während der Verhandlungen eingereicht wird._
+_Ein formaler Antrag, der während der Beratung gestellt wird, etwa ein Änderungsantrag zu einem Gesetzestext, ein Ordnungsantrag (z.B. Schluss der Debatte) oder ein Rückweisungsantrag. Er ist eine eigene Entität, weil ein Traktandum mehrere Anträge enthalten kann, die je einen eigenen Verlauf haben (gestellt, unterstützt, abgestimmt) und gegebenenfalls einzeln abgestimmt werden._
 
 
 
@@ -2944,8 +2587,8 @@ _Ein formeller Antrag, der während der Verhandlungen eingereicht wird._
 | local_id | 0..1 <br/> String | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> Uriorcurie | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> Uriorcurie | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| title | 0..1 <br/> String | Titel des Elements.  |
-| description | 0..1 <br/> String | Beschreibender Text zum Element.  |
+| title | 0..1 <br/> String | Kurztitel des Antrags.  |
+| description | 0..1 <br/> String | Vollständiger Antragstext.  |
 | documents | * <br/> Work | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.  |
 
 
@@ -2977,240 +2620,16 @@ _Ein formeller Antrag, der während der Verhandlungen eingereicht wird._
 
 # Abstimmungen und Wahlen
 
-Parlamentarische Beschlussfassungen erfolgen entweder durch Abstimmungen über Sachfragen oder durch Wahlen von Personen. Der Standard unterscheidet diese beiden Mechanismen klar und erfasst bei offenen Verfahren zudem das individuelle Stimm- und Wahlverhalten jedes Parlamentsmitglieds. Parlamentspräsidentinnen oder Parlamentspräsidenten nehmen an Abstimmungen grundsätzlich nicht teil; sie stimmen nur bei Wahlen mit. Bei Abstimmungen mit Stimmengleichstand fällen sie den Stichentscheid. 
+Parlamentarische Beschlussfassungen erfolgen entweder durch Abstimmungen über Sachfragen oder durch Wahlen von Personen. Der Standard unterscheidet diese beiden Mechanismen klar und erfasst bei offenen Verfahren zudem das individuelle Stimm- und Wahlverhalten jedes Parlamentsmitglieds.
 
 ## Voting (Abstimmung)
-
-### Zweck der Entität
-
-"Voting" erfasst den Abstimmungsprozess und das Ergebnis einer formalen Entscheidung im Parlament. Die Entität dokumentiert sowohl den Abstimmungsgegenstand (Frage), als auch das Verfahren (wie wurde abgestimmt) und das Resultat (mit welchem Stimmenverhältnis).
-
-### Verankerung im Protokoll
-
-Abgestimmt und gewählt wird im Verlauf der Sitzung. `Voting` und `Election` hängen deshalb über `parent_protocol` am Protokoll und nicht an der vorgängig publizierten Traktandenliste: Was traktandiert wurde, sagt noch nicht, worüber tatsächlich abgestimmt wurde. Wurde unter einem Traktandum abgestimmt, verweist zusätzlich `parent_protocol_item` auf das protokollierte Traktandum (`ProtocolItem`); ohne Traktandierung bleibt dieses Feld leer, und die Zuordnung ergibt sich aus `parent_protocol` und `parent_meeting`. Umgekehrt nimmt `Protocol` die Abstimmungen und Wahlen als Listen auf (`votings`, `elections`).
-
-### Arten von Abstimmungen
-
-Der Standard unterscheidet verschiedene Abstimmungstypen über das Feld **voting_type**:
-
-#### intermediate
-Zwischenabstimmungen während der Beratung.
-
-**Beispiele:**
-- Abstimmung über Eintreten auf ein Geschäft
-- Abstimmung über einen Antrag
-- Gegenüberstellung von zwei Anträgen, die sich gegenseitig ausschliessen oder sich auf denselben Textabschnitt beziehen
-- Eventualabstimmung wenn zu einem Abstimmungsgegenstand mehr als zwei Anträge vorliegen
-- Abstimmung über einen einzelnen Artikel eines Gesetzes
-- Gesamtabstimmung nach der ersten Lesung eines Erlasses, der in zwei Lesungen beraten wird
-
-#### final
-Die abschliessende Abstimmung über die gesamte Vorlage
-
-**Beispiele:**
-- Schlussabstimmung nach der letzten Lesung eines Erlasses
-- Gesamtabstimmung über einen Beschluss
-- Annahme oder Ablehnung einer Vorlage in ihrer Gesamtheit
-- Punktweise Abstimmung über einen Vorstoss
-
-#### casting
-Stichentscheid des/der Vorsitzenden bei Stimmengleichheit. Vorsitzende nehmen an Abstimmungen nicht teil, haben bei Stimmengleichheit jedoch den Stichentscheid. Bei geheimer Abstimmung gilt bei Stimmengleichheit der Antrag des vorberatenden Ratsorgans als angenommen. 
-
-#### secret
-Geheime Stimmabgabe bei Abstimmungen und Wahlen
-
-**Anwendung:**
-- Wahl von Personen
-- Abstimmung über besonders heikles Sachgeschäft wie Gnadengesuch oder Aufhebung der Immunität
-- Abstimmung nach geheimer Beratung
-- Geheime Abstimmung auf Antrag 
-
-### Struktur einer Abstimmung
-
-Eine Abstimmung ist immer einer Sitzungsphase und/oder einer Sitzung, einem Traktandum (Agenda-Item) und einem Geschäft mit Geschäftstitel und mit Geschäftsnummer zugeordnet. Sie umfasst den Abstimmungstyp, den Abstimmungsgegenstand (Frage), das Ergebnis und – bei nicht geheimer Abstimmung – die Einzelstimmen der Mitglieder. 
-Sie kann entweder:
-
-```
-AgendaItem (15) Geschäft (Energiegesetz - Art. 15)
-  └─ Voting (Zwischenabstimmung über Art. 15)
-      ├─ IndividualVote (Person A: Ja)
-      ├─ IndividualVote (Person B: Nein)
-      └─ IndividualVote (Person C: Ja)
-```
-
-
-Beispiel Auswahl:
-3 Optionen: https://www.gemeinderat-zuerich.ch/abstimmungen/detail.php?aid=aa10c137274f424fa4eda877e7644a89
-5 Optionen: https://www.gemeinderat-zuerich.ch/abstimmungen/detail.php?aid=23f01ba9b3f3410cb9cfb85f32f3dfe0
-
-### Abstimmungsverfahren
-
-Das Feld **procedure** beschreibt die Art der Durchführung:
-
-#### Open procedures (Offene Abstimmungen)
-- **show_of_hands**: Handzeichen (traditionell)
-- **standing**: Aufstehen (seltener)
-- **electronic**: Elektronische Abstimmung (häufig auf Bundesebene und Kantonsebene)
-- **roll_call**: Namentliche Abstimmung mit Namensaufruf
-- **remote_voting**: Externe Stimmabgabe bei Krisen (Einzelne Ratsmitglieder geben ihre Stimme dem Parlamentspräsidium im Vorfeld des Sitzungstags bekannt. Die extern abgegebenen Stimmen werden gleichzeitig mit der im Rat laufenden Abstimmung erfasst.
-- **circulation_voting**: Zirkulationsverfahren bei Krisen (Das Parlamentspräsidium führt die Abstimmung im Zirkulationsverfahren durch und informiert über das Ergebnis)
-- **virtual_voting**: Stimmabgabe an virtuellen Sitzungen in Krisenfällen.
-
-#### Secret procedures (Geheime Abstimmungen)
-- **secret_ballot**: Geheime Wahl mit Stimmzetteln
-- **electronic_secret**: Elektronische geheime Abstimmung
-
-Die Wahl des Verfahrens beeinflusst, ob Einzelstimmen erfasst werden können:
-- Offene Verfahren: Einzelstimmen dokumentierbar
-- Geheime Verfahren: Nur Gesamtergebnis verfügbar
-
-
-### Abstimmungsergebnis
-
-Das Ergebnis wird auf zwei Arten erfasst:
-
-#### Detaillierte Zahlen
-- **total_count_yes**: Anzahl Ja-Stimmen
-- **total_count_no**: Anzahl Nein-Stimmen
-- **total_count_abstention**: Anzahl Enthaltungen
-- **total_other**: Stimmenzahlen für zusätzliche Optionen, wenn nicht nur Ja/Nein/Enthaltung zur Auswahl stehen (siehe Abschnitt "Mehrfachoptionen")
-- **total_absent**: Anzahl Abwesende (die nicht abstimmen konnten)
-- **total**: Gesamtzahl der abstimmenden Mitglieder (ohne Abwesende und Präsidiumsstimme)
-- **majority_count**: Anzahl Stimmen, die für die erforderliche Mehrheit nötig waren
-
-#### Gesamtergebnis
-Das Ergebnis wird als Freitext im Feld **result_text** beschrieben (z.B. "Mit 120 zu 75 Stimmen bei 5 Enthaltungen angenommen"). Die kategorische Entscheidung (angenommen / abgelehnt / Kenntnisnahme usw.) wird nicht auf der Abstimmung selbst, sondern über die Klasse **Resolution** (Slot **resolution_type**) zum Traktandum festgehalten. Bei Stimmengleichheit wird ein allfälliger Stichentscheid des Präsidiums über eine eigene Abstimmung (`voting_type: tie_breaker_president`) bzw. eine neue Abstimmung modelliert.
-
-**Beispiel** (Schlussabstimmung, einfache Ja/Nein-Abstimmung):
-- total_count_yes: 120
-- total_count_no: 75
-- total_count_abstention: 5
-- total_absent: 0
-- total: 200
-- result_text: "Mit 120 zu 75 Stimmen bei 5 Enthaltungen angenommen"
-- Resolution.resolution_type: accepted
-
-<!-- TODO: weitere komplexere Beispiele ergänzen — Ordnungsantrag, Wiederholung einer Abstimmung. (Cup-/Mehrfachabstimmung und Stichentscheid sind abgedeckt.) -->
-
-#### Mehrfachoptionen (Auswahlabstimmungen / "gleichgerichtete Anträge")
-
-Nicht jede Abstimmung kennt nur Ja, Nein und Enthaltung. Liegen zu derselben Sachfrage mehrere gleichgerichtete Anträge vor, stimmen die Mitglieder über mehr als zwei Varianten gleichzeitig ab (in Zürich umgangssprachlich "Cup-Abstimmung", technisch über mehrere Abstimmungsknöpfe). Die obsiegende Variante ist diejenige mit den meisten Stimmen.
-
-Solche Verfahren werden wie folgt abgebildet:
-
-- **voting_type** = `other`, ergänzt durch ein sprechendes **type_label** (z.B. "Gleichgerichtete Anträge (Mehrfachauswahl)").
-- Die Standardfelder **total_count_yes / total_count_no / total_count_abstention** bleiben leer, da die Optionen nicht Ja/Nein/Enthaltung entsprechen.
-- Jede Auswahloption erhält stattdessen einen Eintrag in **total_other** (Liste von `TotalOther` mit **count** und **label**). So lassen sich beliebig viele Optionen mit ihrer jeweiligen Stimmenzahl erfassen.
-- Auf Ebene der Einzelstimme wird **individual_vote_type** = `other` gesetzt und die gewählte Option über **type_label** (z.B. "Auswahl A") festgehalten; abwesende Mitglieder erhalten `not_voted`.
-- Als **majority_type** wird `other` verwendet, da nicht eine fixe Schwelle, sondern die relative Mehrheit unter den Optionen entscheidet.
-
-**Beispiel** (Gemeinderat der Stadt Zürich, 86. Sitzung vom 28.02.2024, Geschäft 2023/361 "Wohnhaus Magnusstrasse 27, Netto-Zusatzkredit") — gleichgerichtete Anträge mit vier Auswahloptionen:
-
-| Option | Stimmen |
-|--------|---------|
-| Auswahl A (obsiegend) | 75 |
-| Auswahl B | 25 |
-| Auswahl C | 12 |
-| Auswahl D | 0 |
-| Abwesend | 13 |
-
-- Total abgegeben: 112 (von 125 Mitgliedern)
-- Ergebnis: Auswahl A angenommen (relative Mehrheit)
-
-Die vollständige Modellierung dieses Falls findet sich in `data_voting.yaml` (`ops:voting_zh_gr_2024_2023_361`).
-
-### Mehrheitstypen
-
-Das Feld **majority_type** definiert die erforderliche Mehrheit:
-
-#### simple
-Einfache Mehrheit (mehr Ja als Nein)
-
-**Anwendung:**
-- Standardfall für die meisten Beschlüsse
-- Enthaltungen zählen nicht mit
-
-**Beispiel:** 100 Ja, 80 Nein, 20 Enthaltungen → Angenommen
-
-#### absolute
-Absolute Mehrheit (mehr als die Hälfte aller Mitglieder)
-
-**Anwendung:**
-- Wahlen
-- Verfassungsänderungen in einigen Kantonen
-- Besonders wichtige Beschlüsse
-
-**Beispiel:** Bei 200 Mitgliedern sind mindestens 101 Ja-Stimmen erforderlich
-
-#### two_thirds
-Zweidrittelmehrheit
-
-**Anwendung:**
-- Dringlichkeitsklauseln auf Bundesebene
-- Verfassungsänderungen in einigen Kantonen
-- Aufhebung der Immunität
-
-**Beispiel:** Bei 200 Mitgliedern sind mindestens 134 Ja-Stimmen erforderlich
-
-#### qualified
-Qualifizierte Mehrheit (andere Schwellenwerte)
-
-**Anwendung:**
-- Spezielle Anforderungen in einzelnen Kantonen oder Gemeinden
-- Das konkrete Quorum wird in **majority_threshold** angegeben
-
-### Schwellenwert
-
-Das Feld **majority_threshold** gibt bei qualifizierten Mehrheiten den genauen Schwellenwert an (z.B. 0.6 für 60%).
-
-### Quorum
-
-Das Feld **quorum** definiert die Mindestanzahl anwesender Mitglieder für die Beschlussfähigkeit:
-
-**Beispiel:** Ein Parlament mit 200 Mitgliedern ist beschlussfähig, wenn mindestens 100 Mitglieder anwesend sind (quorum: 100).
-
-### Namentliche Abstimmungen
-Das Feld **named_vote** zeigt an, ob es sich um eine namentliche Abstimmung handelt: 
-
-- **true**: Die Einzelstimmen werden erfasst und publiziert
-- **false**: Nur das Gesamtergebnis wird erfasst
-
-Namentliche Abstimmungen sind wichtig für:
-- Transparenz des Abstimmungsverhaltens
-- Analyse von Abstimmungsmustern
-- Rechenschaftspflicht gegenüber Wählerinnen
-
-### Beziehung zu Einzelstimmen
-
-Bei namentlichen Abstimmungen verweist die Voting-Entität auf die einzelnen IndividualVote-Entitäten:
-
-```
-Voting
-  ├─ IndividualVote (Person A)
-  ├─ IndividualVote (Person B)
-  └─ ...
-```
-
-**Beispiel:** Namensliste in Akkordeon https://www.tagblatt.gr.be.ch/shareparl?agendaItemUid=e65d81c90d1d43deb19ef078f7e363f3&segmentType=vote&unitName=default&scroll=true&autoplay=false 
-
-
-### Beschreibung und Dokumentation
-
-- **description**: Beschreibung worüber abgestimmt wurde (Abstimmungsgegenstand, Abstimmungsfrage)
-- **url**: Mehrsprachige URLs zu Abstimmungsdetails
-
-### Zeitstempel
-
-- **datetime_created**: Zeitpunkt der Durchführung der Abstimmung
-- **datetime_modified**: Letzte Aktualisierung (z.B. bei Korrekturen des Abstimmungsprotkolls)
-
 
 
 
 ### Klasse: Voting []{#Voting}
 
 
-_Ein Abstimmungsverfahren mit Einzelstimmen und Ergebnissen._
+_Eine Abstimmung über eine Sachfrage: der Abstimmungsgegenstand (Frage), das Verfahren, das Ergebnis mit dem Stimmenverhältnis und — bei offenen Abstimmungen — die Einzelstimmen der Mitglieder. Abgestimmt wird im Verlauf der Sitzung, weshalb die Abstimmung im Protokoll verankert ist (parent_protocol, parent_protocol_item); zudem ist sie mit der Sitzung (parent_meeting) und dem Geschäft (affair_id) verknüpft. Die Präsidentin oder der Präsident nimmt an Abstimmungen nicht teil, fällt bei Stimmengleichheit aber den Stichentscheid (tie_breaker). Der kategorische Entscheid (angenommen, abgelehnt, Kenntnisnahme …) wird nicht auf der Abstimmung, sondern in der Resolution des Traktandums festgehalten._
 
 
 
@@ -3237,20 +2656,20 @@ _Ein Abstimmungsverfahren mit Einzelstimmen und Ergebnissen._
 | label_yes | 0..1 <br/> String | Bedeutung einer „Ja“-Stimme.  |
 | label_no | 0..1 <br/> String | Bedeutung einer „Nein“-Stimme.  |
 | label_abstention | 0..1 <br/> String | Bedeutung einer Enthaltungsstimme.  |
-| tie_breaker | 0..1 <br/> Boolean | Gibt an, ob ein Stichentscheid bei der Abstimmung verwendet wurde.  |
+| tie_breaker | 0..1 <br/> Boolean | Gibt an, ob das Ergebnis bei Stimmengleichheit durch den Stichentscheid der Präsidentin oder des Präsidenten zustande kam.  |
 | total_count_yes | 0..1 <br/> Integer | Gesamtzahl der „Ja“-Stimmen.  |
 | total_count_no | 0..1 <br/> Integer | Gesamtzahl der „Nein“-Stimmen.  |
 | total_count_abstention | 0..1 <br/> Integer | Gesamtzahl der Enthaltungen.  |
-| total_other | * <br/> [TotalOther](#TotalOther) | Wird verwendet, wenn mehrere Optionen zur Abstimmung gestellt werden (z.B. 5 Knöpfe in Zürich).  |
-| total_absent | 0..1 <br/> Integer | Gesamtzahl abwesender Mitglieder. Unterscheidung zwischen abwesend/entschuldigt abwesend - Anwesenheit wird auf Anwesenheitsliste verfolgt.  |
+| total_other | * <br/> [TotalOther](#TotalOther) | Stimmenzahlen für die Optionen einer Auswahlabstimmung, ein Eintrag pro Option; tritt an die Stelle von total_count_yes, total_count_no und total_count_abstention (siehe TotalOther).  |
+| total_absent | 0..1 <br/> Integer | Anzahl abwesender Mitglieder, die nicht teilnehmen konnten. Ob eine Abwesenheit entschuldigt war, hält die Anwesenheitsliste (Attendance) fest.  |
 | total | 0..1 <br/> Integer | Gesamtzahl der Stimmen, ohne abwesende und Präsidiumsstimmen.  |
 | majority_type | 0..1 <br/> [MajorityTypeEnum](#MajorityTypeEnum) | Art der für die Abstimmung erforderlichen Mehrheit (absolut, Zweidrittel usw.).  |
 | majority_count | 0..1 <br/> Integer | Anzahl der Stimmen, die für die relevante Mehrheitsschwelle erforderlich sind.  |
-| result_text | 0..1 <br/> String | Freitext zur Beschreibung des Ergebnisses der Abstimmung, z.B. „Mit 78 Stimmen angenommen“.  |
+| result_text | 0..1 <br/> String | Freitext, der das Ergebnis beschreibt, z.B. „Mit 120 zu 75 Stimmen bei 5 Enthaltungen angenommen“. Bei Abstimmungen wird der kategorische Entscheid (angenommen, abgelehnt, Kenntnisnahme …) nicht hier, sondern in der Resolution (resolution_type) des Traktandums festgehalten.  |
 | parent_meeting | 0..1 <br/> String | Identifikator der Sitzung, zu der dieser Eintrag gehört. Bei einer Sitzung bezeichnet er die übergeordnete Sitzung, bei Traktandum, Abstimmung, Wahl, Wortmeldung oder Protokoll die Sitzung, in der der Eintrag entstanden ist.  |
-| parent_protocol | 0..1 <br/> [Protocol](#Protocol) | Das Protokoll, in dem die Abstimmung oder Wahl festgehalten ist. Abgestimmt wird im Verlauf der Sitzung; die Abstimmung hängt deshalb am Protokoll und nicht an der vorgängig geplanten Traktandenliste.  |
+| parent_protocol | 0..1 <br/> [Protocol](#Protocol) | Das Protokoll, in dem die Abstimmung oder Wahl festgehalten ist. Abgestimmt wird im Verlauf der Sitzung, weshalb die Abstimmung im Protokoll und nicht in der vorgängig geplanten Traktandenliste verankert ist: Was traktandiert wurde, sagt noch nicht, worüber tatsächlich abgestimmt wurde. Umgekehrt führt das Protokoll seine Abstimmungen und Wahlen als Listen (votings, elections).  |
 | parent_protocol_item | 0..1 <br/> [ProtocolItem](#ProtocolItem) | Das protokollierte Traktandum (ProtocolItem), unter dem abgestimmt oder gewählt wurde. Entfällt, wenn ohne Traktandierung abgestimmt wurde; die Zuordnung zur Sitzung ergibt sich dann allein aus parent_protocol und parent_meeting.  |
-| affair_id | 0..1 <br/> String | Die Verbindung zu den Geschäften des Traktandums.  |
+| affair_id | 0..1 <br/> String | Identifikator des Geschäfts (eCH-0295), auf das sich der Eintrag bezieht. Administrative Traktanden (z.B. Genehmigung des Protokolls) haben kein Geschäft. Ein Geschäft durchläuft in der Regel mehrere Traktanden — in der Gesetzgebung etwa Eintretensdebatte, Detailberatung, Schlussabstimmung und gegebenenfalls die Differenzbereinigung zwischen den Räten.  |
 | actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
 | documents | * <br/> Work | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.  |
 | date_created | 0..1 <br/> Date | Das Datum, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
@@ -3452,15 +2871,15 @@ URI: [ops:VotingTypeEnum](https://ch.paf.link/schema/operations/VotingTypeEnum)
 #### Zulässige Werte
 | Wert | Beschreibung |
 |------------------------|----------------------------------------------------------------------------|
-| preliminary_vote |  Zwischenabstimmung  |
+| preliminary_vote |  Zwischenabstimmung während der Beratung, z.B. über Eintreten auf ein Geschäft, über einen Antrag, Gegenüberstellung zweier Anträge, die sich gegenseitig ausschliessen oder sich auf denselben Textabschnitt beziehen, Eventualabstimmung, wenn zu einem Abstimmungsgegenstand mehr als zwei Anträge vorliegen, über einen einzelnen Artikel eines Gesetzes oder Gesamtabstimmung nach der ersten Lesung eines Erlasses, der in zwei Lesungen beraten wird.  |
 | | [ops:enum/voting_type/preliminary_vote](ops:enum/voting_type/preliminary_vote) |
-| final_vote |  Schlussabstimmung  |
+| final_vote |  Schlussabstimmung über die Vorlage als Ganzes, z.B. nach der letzten Lesung eines Erlasses, Gesamtabstimmung über einen Beschluss, Annahme oder Ablehnung einer Vorlage in ihrer Gesamtheit oder punktweise Abstimmung über einen Vorstoss.  |
 | | [ops:enum/voting_type/final_vote](ops:enum/voting_type/final_vote) |
-| tie_breaker_president |  Stichentscheid Präsidium  |
+| tie_breaker_president |  Stichentscheid der Präsidentin oder des Präsidenten bei Stimmengleichheit. Die Präsidentin oder der Präsident nimmt an Abstimmungen nicht teil, entscheidet aber bei Stimmengleichheit. Endet eine geheime Abstimmung mit Stimmengleichheit, gilt stattdessen der Antrag des vorberatenden Ratsorgans als angenommen.  |
 | | [ops:enum/voting_type/tie_breaker_president](ops:enum/voting_type/tie_breaker_president) |
-| secret_vote |  Geheime Wahl/Abstimmung  |
+| secret_vote |  Geheime Abstimmung, z.B. über besonders heikle Sachgeschäfte wie ein Gnadengesuch oder die Aufhebung der Immunität, nach geheimer Beratung oder auf Antrag. Publiziert wird nur das Gesamtergebnis.  |
 | | [ops:enum/voting_type/secret_vote](ops:enum/voting_type/secret_vote) |
-| other |  Andere Abstimmungsart  |
+| other |  Anderer Abstimmungstyp, näher bezeichnet in type_label — z.B. eine Auswahlabstimmung über mehrere gleichgerichtete Anträge (siehe TotalOther).  |
 | | [ops:enum/voting_type/other](ops:enum/voting_type/other) |
 
 
@@ -3488,11 +2907,11 @@ URI: [ops:MajorityTypeEnum](https://ch.paf.link/schema/operations/MajorityTypeEn
 #### Zulässige Werte
 | Wert | Beschreibung |
 |------------------------|----------------------------------------------------------------------------|
-| absolute |  Absolutes Mehr.  |
+| absolute |  Absolutes Mehr: mehr als die Hälfte der Bezugsgrösse (Mitglieder oder abgegebene Stimmen, je nach massgebender Regelung), z.B. mindestens 101 von 200. Standardfall bei Personenwahlen wie der Wahl des Bundesrats oder der Kommissionspräsidien und in einigen Kantonen für Verfassungsänderungen erforderlich. Erreicht bei einer Wahl im ersten Wahlgang niemand das absolute Mehr, folgt meist ein zweiter Wahlgang, in dem das relative Mehr genügt.  |
 | | [ops:enum/majority_type/absolute](ops:enum/majority_type/absolute) |
-| two_thirds |  Zweidrittelmehr.  |
+| two_thirds |  Zweidrittelmehrheit, z.B. mindestens 134 von 200; in einigen Kantonen für Verfassungsänderungen erforderlich.  |
 | | [ops:enum/majority_type/two_thirds](ops:enum/majority_type/two_thirds) |
-| other |  Andere Mehrheitsschwelle, nicht durch die Standardkategorien abgedeckt.  |
+| other |  Anderes Mehrheitserfordernis, das nicht von den Standardkategorien abgedeckt ist, z.B. das relative Mehr unter mehreren Optionen einer Auswahlabstimmung.  |
 | | [ops:enum/majority_type/other](ops:enum/majority_type/other) |
 
 
@@ -3508,7 +2927,7 @@ URI: [ops:MajorityTypeEnum](https://ch.paf.link/schema/operations/MajorityTypeEn
 ### Klasse: TotalOther []{#TotalOther}
 
 
-_Zusätzliche Stimmzahlen, wenn mehrere Optionen zur Abstimmung gestellt werden (z.B. Zürich verwendet 5 Knöpfe)._
+_Stimmenzahl für eine Option einer Auswahlabstimmung. Liegen zu derselben Sachfrage mehrere gleichgerichtete Anträge vor, stimmen die Mitglieder über mehr als zwei Varianten gleichzeitig ab, und es obsiegt die Variante mit den meisten Stimmen (in Zürich umgangssprachlich „Cup-Abstimmung“, technisch über mehrere Abstimmungsknöpfe). Eine solche Abstimmung wird mit voting_type other und einem sprechenden type_label abgebildet; total_count_yes, total_count_no und total_count_abstention bleiben leer, und jede Option erhält einen Eintrag mit count und label. Beispiel: Gemeinderat der Stadt Zürich, Sitzung vom 28. Februar 2024, Geschäft 2023/361, vier Optionen mit 75, 25, 12 und 0 Stimmen._
 
 
 
@@ -3557,122 +2976,12 @@ _Zusätzliche Stimmzahlen, wenn mehrere Optionen zur Abstimmung gestellt werden 
 
 ## Individual Vote (Einzelstimme)
 
-### Zweck der Entität
-
-IndividualVote erfasst das Stimmverhalten einzelner Parlamentsmitglieder bei namentlichen Abstimmungen. Die Entität wird nur erstellt, wenn eine Abstimmung nicht geheim durchgeführt wird (Voting.is_nominal = true).
-
-### Beziehung zur Abstimmung
-
-Jede Individual Vote ist Teil eines übergeordneten Votings (Abstimmung):
-
-```
-Voting (Schlussabstimmung Energiegesetz)
-  ├─ IndividualVote (Nationalrätin Anna Müller: Ja)
-  ├─ IndividualVote (Nationalrat Beat Schweizer: Nein)
-  ├─ IndividualVote (Nationalrätin Carla Rossi: Enthaltung)
-  └─ ...
-```
-
-### Identifikation der Person
-
-Die stimmende Person wird über das Feld **person_id** referenziert. Diese ID entspricht einer Person gemäss eCH-0294 Actors Standard.
-
-Zusätzlich können weitere Identifikationsdaten erfasst werden:
-- **person_name**: Name der Person (für schnellen Zugriff)
-- **person_number**: Interne Nummer (z.B. Mandatsnummer)
-- **person_political_group**: Fraktionszugehörigkeit
-- **person_party**: Parteizugehörigkeit
-
-### Arten von Stimmen
-
-Neben `yes`, `no` und `abstention` kennt das Feld drei weitere Werte: `not_voted` für Mitglieder, die anwesend waren, aber nicht gestimmt haben, `tie_breaker` für den Stichentscheid des Präsidiums und `other` für alles, was sich nicht auf diese Achse bringen lässt. `other` ist das individuelle Gegenstück zu `total_other`: Bei einer Auswahlabstimmung hat die Person gestimmt, aber weder Ja noch Nein — welche Option sie gewählt hat, hält `type_label` fest („Auswahl A“). So bleibt die Einzelstimme auswertbar, ohne dass der Standard jede kantonale Auswahlmechanik als eigenen Enum-Wert führen muss.
-
-Das Feld **vote** erfasst die Art der Stimmabgabe:
-
-#### yes
-Ja-Stimme (Zustimmung)
-
-**Bedeutung:** Die Person stimmt der Vorlage/dem Antrag zu.
-
-#### no
-Nein-Stimme (Ablehnung)
-
-**Bedeutung:** Die Person lehnt die Vorlage/den Antrag ab.
-
-#### abstention
-Enthaltung
-
-**Bedeutung:** Die Person nimmt an der Abstimmung teil, enthält sich aber der Stimme. Bei elektronischer Stimmabgabe drückt sie den Knopf "Enthaltung".
-
-### Stimmgewicht
-
-Das Feld **weight** erfasst das Stimmgewicht:
-
-- **Standardfall**: 1.0 (eine Stimme)
-- **Spezialfälle**: Andere Werte möglich
-
-#### Anwendungsfälle für abweichendes Stimmgewicht
-
-1. **Stellvertretung**: In einigen Systemen kann eine Person für eine abwesende Person mitstimmen (weight: 2.0)
-3. **Gemeindeversammlungen**: In speziellen Fällen können juristische Personen mehrere Stimmen haben
-4. **Historische Systeme**: Früher hatten in einigen Kantonen verschiedene Personengruppen unterschiedliches Stimmgewicht
-
-### Gruppenzugehörigkeit
-
-Das Feld **group_id** erfasst die Fraktionszugehörigkeit zum Zeitpunkt der Abstimmung:
-
-**Nutzen:**
-- Analyse des Abstimmungsverhaltens nach Fraktionen
-- Ermittlung der Parteidisziplin
-- Identifikation von Koalitionen
-
-**Beispiel:** Bei einer Abstimmung über das Energiegesetz stimmen 90% der SP-Fraktion mit Ja, 80% der SVP-Fraktion mit Nein.
-
-### Position und Reihenfolge
-
-Das Feld **position** definiert die Gruppierung und Sortierreihenfolge bei der Darstellung:
-
-**Anwendung:**
-- Alphabetische Sortierung nach Nachname
-- Sortierung nach Fraktion
-- Sortierung nach Stimmabgabe (erst Ja, dann Nein, dann Enthaltungen)
-- Gruppierung nach Fraktion, innerhalb der Fraktion nach Ja, Nein, Enthaltungen und innerhalb der Untergruppe alphabetisch sortiert
-
-### Beschreibung und Kontext
-
-Das Feld **description** kann zusätzliche Informationen erfassen:
-
-**Beispiele:**
-- "Enthaltung wegen Interessenkonflikt (Verwaltungsrat Energieunternehmen)"
-- "Abwesend wegen Krankheit"
-
-### Zeitstempel
-
-- **datetime_created**: Erste Publikation
-- **datetime_modified**: Letzte Aktualisierung (z.B. bei Korrekturen der Publikation)
-
-### Anwesenheit vs. Stimmabgabe
-
-Wichtiger Unterschied:
-
-- **Attendance** (andere Entität): Erfasst die generelle Anwesenheit bei einer Sitzung
-- **IndividualVote**: Erfasst die spezifische Stimmabgabe bei einer Abstimmung
-
-Eine Person kann bei einer Sitzung anwesend sein (Attendance), aber bei einzelnen Abstimmungen mit "absent" oder "did_not_vote" erfasst werden (z.B. wenn sie kurz den Raum verlässt).
-
-### Namentliche vs. geheime Abstimmungen
-
-IndividualVote-Entitäten werden nur bei namentlichen (offenen) Abstimmungen erfasst:
-
-- **Namentliche Abstimmung**: Jede Stimme wird erfasst und ist öffentlich
-- **Geheime Abstimmung**: Nur das Gesamtergebnis wird erfasst, keine IndividualVotes
-
 
 
 ### Klasse: IndividualVote []{#IndividualVote}
 
 
-_Eine Einzelstimme eines Mitglieds während eines Abstimmungsverfahrens._
+_Die Stimme, die ein einzelnes Mitglied in einer Abstimmung abgibt. Einzelstimmen werden nur bei offenen Abstimmungen erfasst; bei geheimen Abstimmungen wird nur das Gesamtergebnis publiziert. Eine Einzelstimme betrifft eine bestimmte Abstimmung und unterscheidet sich von der Anwesenheit (Attendance), welche die Präsenz an der Sitzung als Ganzes festhält: Ein an der Sitzung anwesendes Mitglied kann bei einer einzelnen Abstimmung mit not_voted erfasst werden, etwa weil es kurz den Saal verlassen hat._
 
 
 
@@ -3690,9 +2999,9 @@ _Eine Einzelstimme eines Mitglieds während eines Abstimmungsverfahrens._
 | global_uri | 1 <br/> Uriorcurie | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> Uriorcurie | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | parent_voting | 0..1 <br/> [Voting](#Voting) | Die ID der Abstimmung, die mit der Einzelstimme verbunden ist.  |
-| actor_id | 0..1 <br/> [PersonReference](#PersonReference) | Referenz auf die handelnde Person (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
+| actor_id | 0..1 <br/> [PersonReference](#PersonReference) | Das Mitglied, das die Stimme abgegeben hat, als Referenz auf eine Person gemäss eCH-0294.  |
 | seat_nr | 0..1 <br/> String | Die Sitznummer der Einzelstimme, falls zutreffend.  |
-| weight | 0..1 <br/> Integer | Die Anzahl der Stimmen, die die Einzelperson hat, falls zutreffend (z.B. in Fällen, in denen eine Person mehrere Stimmen hat).  |
+| weight | 0..1 <br/> Integer | Stimmgewicht des Mitglieds; im Normalfall 1. Andere Werte kommen etwa vor, wo ein Mitglied für ein abwesendes Mitglied mitstimmt (Stellvertretung, Gewicht 2), an Gemeindeversammlungen, an denen juristische Personen mehrere Stimmen haben, oder in historischen Systemen, in denen verschiedene Personengruppen unterschiedliches Stimmgewicht hatten.  |
 | individual_vote_type | 0..1 <br/> [IndividualVoteTypeEnum](#IndividualVoteTypeEnum) | Art der abgegebenen Stimme (Ja, Nein, Enthaltung, nicht abgestimmt, etc.).  |
 | type_label | 0..1 <br/> String | Benutzerdefinierte Typbezeichnung, wenn Standardtypwerte nicht zutreffen.  |
 | date_created | 0..1 <br/> Date | Das Datum, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
@@ -3892,17 +3201,17 @@ URI: [ops:IndividualVoteTypeEnum](https://ch.paf.link/schema/operations/Individu
 #### Zulässige Werte
 | Wert | Beschreibung |
 |------------------------|----------------------------------------------------------------------------|
-| yes |  Ja-Stimme  |
+| yes |  Ja-Stimme: Das Mitglied stimmt der Vorlage oder dem Antrag zu.  |
 | | [ops:enum/individual_vote_type/yes](ops:enum/individual_vote_type/yes) |
-| no |  Nein-Stimme  |
+| no |  Nein-Stimme: Das Mitglied lehnt die Vorlage oder den Antrag ab.  |
 | | [ops:enum/individual_vote_type/no](ops:enum/individual_vote_type/no) |
-| abstention |  Enthaltung  |
+| abstention |  Enthaltung: Das Mitglied nimmt an der Abstimmung teil, enthält sich aber der Stimme; bei elektronischer Stimmabgabe drückt es den Knopf „Enthaltung“.  |
 | | [ops:enum/individual_vote_type/abstention](ops:enum/individual_vote_type/abstention) |
-| not_voted |  Nicht abgestimmt  |
+| not_voted |  Nicht gestimmt: Das Mitglied hat keine Stimme abgegeben, etwa weil es anwesend war, aber nicht gestimmt hat, oder abwesend war.  |
 | | [ops:enum/individual_vote_type/not_voted](ops:enum/individual_vote_type/not_voted) |
-| tie_breaker |  Stichentscheid, meist durch Präsidium  |
+| tie_breaker |  Stichentscheid, den die Präsidentin oder der Präsident bei Stimmengleichheit fällt (siehe voting_type tie_breaker_president).  |
 | | [ops:enum/individual_vote_type/tie_breaker](ops:enum/individual_vote_type/tie_breaker) |
-| other |  Andere Stimmabgabe  |
+| other |  Stimme, die sich nicht auf die Ja/Nein-Achse bringen lässt — etwa bei einer Auswahlabstimmung, bei der das Mitglied gestimmt hat, aber weder Ja noch Nein; welche Option es gewählt hat, hält type_label fest (z.B. „Auswahl A“). Gegenstück zu total_other auf der Abstimmung; so bleibt die Einzelstimme auswertbar, ohne dass jede kantonale Auswahlmechanik einen eigenen Enum-Wert braucht.  |
 | | [ops:enum/individual_vote_type/other](ops:enum/individual_vote_type/other) |
 
 
@@ -3915,229 +3224,12 @@ URI: [ops:IndividualVoteTypeEnum](https://ch.paf.link/schema/operations/Individu
 
 ## Election (Wahl)
 
-### Begriff und Bedeutung
-
-Eine Election (Wahl) bezeichnet die Bestimmung einer oder mehrerer Personen für ein Amt oder eine Funktion durch ein parlamentarisches Organ. Im Gegensatz zu Abstimmungen (Votings), bei denen über Sachfragen entschieden wird, geht es bei Wahlen um Personenentscheidungen.
-
-### Unterschied: Wahl vs. Abstimmung
-
-| Kriterium | Election (Wahl) | Voting (Abstimmung) |
-|-----------|-----------------|---------------------|
-| Gegenstand | Personen | Sachfragen, Vorlagen |
-| Ergebnis | Gewählte Person(en) | Angenommen/Abgelehnt |
-| Verfahren | Oft geheim | Oft offen |
-| Mehrheit | Meist absolut | Meist einfach |
-
-### Arten von Wahlen
-
-Der Standard unterscheidet verschiedene Wahltypen über das Feld **election_type**:
-
-#### open
-Offene Wahl
-
-**Charakteristik:**
-- Stimmabgabe ist öffentlich sichtbar
-- Jedes Mitglied gibt seine Stimme offen ab
-- Nachvollziehbar, wer wen gewählt hat
-
-**Anwendung:**
-- Wenn Transparenz gewünscht ist
-- Bei unumstrittenen Wahlen
-- In kleineren Gremien
-
-#### secret
-Geheime Wahl
-
-**Charakteristik:**
-- Stimmabgabe ist anonym
-- Wahlzettel oder elektronisches Geheimwahlsystem
-- Nicht nachvollziehbar, wer wen gewählt hat
-
-**Anwendung:**
-- Personenwahlen (Standard)
-- Wenn freie, unbeeinflusste Entscheidung gewährleistet werden soll
-- Gesetzlich oft vorgeschrieben
-
-**Beispiele auf Bundesebene:**
-- Wahl des Bundesrats
-- Wahl der Bundesrichter
-- Wahl der Kommissionspräsidien
-
-**Beispiele auf Kantonsebene:**
-- Wahl der Parlamentspräsidentin oder des Parlamentspräsidenten
-- Wahl der Regierungspräsidentin oder des Regierungspräsidenten
-- Wahl der Präsidentinnen und Präsidenten der obersten kantonalen Gerichte
-- Wahl der Richterinnen und Richter
-- Wahl er Staatsschreiberin oder des Staatsschreibers
-- Wahl der Kommissionspräsidentinnen oder der Kommissionspräsidenten
-- Wahl idien
-- Wahl der Kommissions
-
-#### tacit
-Stille Wahl
-
-**Charakteristik:**
-- Keine formale Abstimmung erforderlich
-- Wahl erfolgt durch Akklamation oder Konsens
-- Nur wenn keine Gegenstimmen erhoben werden
-
-**Anwendung:**
-- Bei Einstimmigkeit
-- Unumstrittene Wahlen
-- Wiederwahlen ohne Gegenkandidaten
-
-**Beispiel:** Wiederwahl eines Kommissionspräsidenten ohne Gegenkandidatur
-
-### Zuordnung zu Traktanden
-
-Jede Wahl ist einem AgendaItem zugeordnet:
-
-```
-AgendaItem (Wahl des Bundesrats)
-  └─ Election (Wahl für Departement XY)
-      ├─ Kandidat A: 120 Stimmen
-      ├─ Kandidat B: 75 Stimmen
-      └─ Leere Stimmzettel: 5
-```
-
-### Beschreibung und Titel
-
-- **title**: Titel der Wahl (z.B. "Wahl Kommissionspräsidium WAK")
-- **description**: Ausführliche Beschreibung, Kontext, besondere Umstände
-
-### Wahlergebnis
-
-Das Feld **result** erfasst das Ergebnis:
-
-- **elected**: Person(en) gewählt
-- **not_elected**: Keine Person gewählt (z.B. bei absoluter Mehrheit nicht erreicht)
-- **deferred**: Wahl verschoben
-- **withdrawn**: Wahl zurückgezogen
-
-### Gewählte Person(en)
-
-Das Feld **elected_person_id** enthält die ID(s) der gewählten Person(en) gemäss eCH-0294 Actors.
-
-Bei Mehrfachwahlen (z.B. Wahl mehrerer Kommissionsmitglieder gleichzeitig) können mehrere IDs erfasst werden.
-
-### Stimmenverteilung
-
-Bei offenen Wahlen oder nach Publikation der Ergebnisse:
-
-- **total_votes**: Gesamtzahl abgegebener Stimmen
-- **valid_votes**: Gültige Stimmen
-- **invalid_votes**: Ungültige Stimmen
-- **blank_votes**: Leere Stimmzettel
-
-Zusätzlich Details pro Kandidat (über separate Entitäten oder als strukturierte Daten).
-
-### Wahlverfahren
-
-Das Feld **procedure** beschreibt das konkrete Verfahren:
-
-- **written_ballot**: Schriftliche Wahl mit Stimmzetteln
-- **electronic**: Elektronische Wahl
-- **show_of_hands**: Handzeichen (bei offenen Wahlen)
-- **acclamation**: Akklamation (bei stillen Wahlen)
-
-### Mehrheitsverhältnisse
-
-Das Feld **majority_type** definiert die erforderliche Mehrheit:
-
-#### absolute
-Absolute Mehrheit (mehr als die Hälfte der Stimmenden)
-
-**Anwendung:**
-- Bundesratswahl
-- Wahl von Kommissionspräsidien
-- Standardfall bei Personenwahlen
-
-**Beispiel:** Bei 200 abgegebenen Stimmen sind mindestens 101 Stimmen erforderlich
-
-**Besonderheit:** Wenn im ersten Wahlgang niemand die absolute Mehrheit erreicht, folgt meist ein zweiter Wahlgang, in dem die einfache Mehrheit genügt.
-
-#### simple
-Einfache Mehrheit (mehr Stimmen als andere Kandidaten)
-
-**Anwendung:**
-- Zweiter Wahlgang nach erfolglosem ersten Wahlgang
-- Einige Kommissionswahlen
-
-#### qualified
-Qualifizierte Mehrheit
-
-**Anwendung:**
-- Seltener bei Wahlen
-- Spezielle Funktionen mit erhöhten Anforderungen
-
-### Wahlgänge
-
-Bei Wahlen mit absoluter Mehrheit im ersten Wahlgang:
-
-```
-1. Wahlgang (absolute Mehrheit erforderlich)
-   └─ Kein Kandidat erreicht absolute Mehrheit
-
-2. Wahlgang (einfache Mehrheit genügt)
-   └─ Kandidat A gewählt
-```
-
-Jeder Wahlgang wird als separate Election-Entität erfasst, verbunden über das gemeinsame AgendaItem.
-
-### Zeitstempel
-
-- **datetime_created**: Zeitpunkt der Durchführung
-- **datetime_modified**: Letzte Aktualisierung
-
-### URL und Dokumentation
-
-- **url**: Mehrsprachige URLs zu Wahlunterlagen:
-  - Kandidatenprofile
-  - Wahlresultate
-  - Protokolle
-
-### Besonderheiten verschiedener Wahlen
-
-#### Bundesratswahl
-- Geheime Wahl
-- Absolute Mehrheit erforderlich (im 1. Wahlgang)
-- Durch die Vereinigte Bundesversammlung
-
-#### Bundesrichterwahl
-- Geheime Wahl
-- Proporzprinzip (Berücksichtigung von Parteien, Landesteilen, Geschlechtern)
-
-#### Kommissionspräsidien
-- Wahl durch das jeweilige Parlament
-- Oft weniger öffentlich
-
-#### Kantons- und Gemeindeebene
-- Grosse Vielfalt an Wahlverfahren
-- Teilweise Volkswahl statt parlamentarische Wahl
-- Unterschiedliche Mehrheitserfordernisse
-
-### Transparenz und Geheimhaltung
-
-Spannungsfeld:
-- **Wahlgeheimnis**: Schutz der individuellen Wahlentscheidung
-- **Transparenz**: Öffentliches Interesse am Wahlergebnis
-
-Bei geheimen Wahlen:
-- Nur Gesamtergebnis wird publiziert
-- Keine IndividualVote-Entitäten
-- Schutz der Wahlfreiheit
-
-Bei offenen Wahlen:
-- Individuelle Stimmabgaben können erfasst werden
-- Höhere Transparenz
-- Potenzielle soziale Druckeffekte
-
 
 
 ### Klasse: Election []{#Election}
 
 
-_Ein Wahlverfahren zur Wahl von Personen in Positionen._
+_Eine Wahl, mit der ein parlamentarisches Organ eine oder mehrere Personen für ein Amt oder eine Funktion bestimmt. Im Unterschied zur Abstimmung (Voting), die über Sachfragen entscheidet, ist die Wahl ein Personenentscheid: Sie erfolgt oft geheim und erfordert meist das absolute Mehr, während Abstimmungen meist offen sind. Die Präsidentin oder der Präsident, die an Abstimmungen nicht teilnehmen, stimmen bei Wahlen mit. Jeder Wahlgang wird als eigene Wahl erfasst; die Wahlgänge einer Wahl sind über das gemeinsame Traktandum verbunden — etwa ein erster Wahlgang mit absolutem Mehr, der ohne Ergebnis bleibt, und ein zweiter Wahlgang, in dem das relative Mehr genügt._
 
 
 
@@ -4158,17 +3250,17 @@ _Ein Wahlverfahren zur Wahl von Personen in Positionen._
 | datetime_end | 0..1 <br/> Datetime | Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung endet.  |
 | election_type | 0..1 <br/> [ElectionTypeEnum](#ElectionTypeEnum) | Art des Wahlverfahrens.  |
 | type_label | 0..1 <br/> String | Benutzerdefinierte Typbezeichnung, wenn Standardtypwerte nicht zutreffen.  |
-| title | 0..1 <br/> String | Titel des Elements.  |
+| title | 0..1 <br/> String | Titel der Wahl, z.B. „Wahl Kommissionspräsidium WAK“.  |
 | landing_page | 0..1 <br/> String | URL mit weiteren Informationen.  |
-| total_absent | 0..1 <br/> Integer | Gesamtzahl abwesender Mitglieder. Unterscheidung zwischen abwesend/entschuldigt abwesend - Anwesenheit wird auf Anwesenheitsliste verfolgt.  |
+| total_absent | 0..1 <br/> Integer | Anzahl abwesender Mitglieder, die nicht teilnehmen konnten. Ob eine Abwesenheit entschuldigt war, hält die Anwesenheitsliste (Attendance) fest.  |
 | total | 0..1 <br/> Integer | Gesamtzahl der Stimmen, ohne abwesende und Präsidiumsstimmen.  |
 | majority_type | 0..1 <br/> [MajorityTypeEnum](#MajorityTypeEnum) | Art der für die Abstimmung erforderlichen Mehrheit (absolut, Zweidrittel usw.).  |
 | majority_count | 0..1 <br/> Integer | Anzahl der Stimmen, die für die relevante Mehrheitsschwelle erforderlich sind.  |
-| result_text | 0..1 <br/> String | Freitext zur Beschreibung des Ergebnisses der Abstimmung, z.B. „Mit 78 Stimmen angenommen“.  |
+| result_text | 0..1 <br/> String | Freitext, der das Ergebnis beschreibt, z.B. „Mit 120 zu 75 Stimmen bei 5 Enthaltungen angenommen“. Bei Abstimmungen wird der kategorische Entscheid (angenommen, abgelehnt, Kenntnisnahme …) nicht hier, sondern in der Resolution (resolution_type) des Traktandums festgehalten.  |
 | parent_meeting | 0..1 <br/> String | Identifikator der Sitzung, zu der dieser Eintrag gehört. Bei einer Sitzung bezeichnet er die übergeordnete Sitzung, bei Traktandum, Abstimmung, Wahl, Wortmeldung oder Protokoll die Sitzung, in der der Eintrag entstanden ist.  |
-| parent_protocol | 0..1 <br/> [Protocol](#Protocol) | Das Protokoll, in dem die Abstimmung oder Wahl festgehalten ist. Abgestimmt wird im Verlauf der Sitzung; die Abstimmung hängt deshalb am Protokoll und nicht an der vorgängig geplanten Traktandenliste.  |
+| parent_protocol | 0..1 <br/> [Protocol](#Protocol) | Das Protokoll, in dem die Abstimmung oder Wahl festgehalten ist. Abgestimmt wird im Verlauf der Sitzung, weshalb die Abstimmung im Protokoll und nicht in der vorgängig geplanten Traktandenliste verankert ist: Was traktandiert wurde, sagt noch nicht, worüber tatsächlich abgestimmt wurde. Umgekehrt führt das Protokoll seine Abstimmungen und Wahlen als Listen (votings, elections).  |
 | parent_protocol_item | 0..1 <br/> [ProtocolItem](#ProtocolItem) | Das protokollierte Traktandum (ProtocolItem), unter dem abgestimmt oder gewählt wurde. Entfällt, wenn ohne Traktandierung abgestimmt wurde; die Zuordnung zur Sitzung ergibt sich dann allein aus parent_protocol und parent_meeting.  |
-| affair_id | 0..1 <br/> String | Die Verbindung zu den Geschäften des Traktandums.  |
+| affair_id | 0..1 <br/> String | Identifikator des Geschäfts (eCH-0295), auf das sich der Eintrag bezieht. Administrative Traktanden (z.B. Genehmigung des Protokolls) haben kein Geschäft. Ein Geschäft durchläuft in der Regel mehrere Traktanden — in der Gesetzgebung etwa Eintretensdebatte, Detailberatung, Schlussabstimmung und gegebenenfalls die Differenzbereinigung zwischen den Räten.  |
 | actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
 | documents | * <br/> Work | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.  |
 | date_created | 0..1 <br/> Date | Das Datum, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
@@ -4224,11 +3316,11 @@ URI: [ops:ElectionTypeEnum](https://ch.paf.link/schema/operations/ElectionTypeEn
 #### Zulässige Werte
 | Wert | Beschreibung |
 |------------------------|----------------------------------------------------------------------------|
-| secret |  Geheime Wahl  |
+| secret |  Geheime Wahl: Die Stimmen werden anonym abgegeben, mit Wahlzettel oder elektronischem Geheimwahlsystem, sodass nicht nachvollziehbar ist, wer wen gewählt hat. Standard bei Personenwahlen und oft gesetzlich vorgeschrieben — auf Bundesebene z.B. Bundesrat (durch die Vereinigte Bundesversammlung, in den ersten Wahlgängen mit absolutem Mehr), Bundesrichterinnen und Bundesrichter sowie Kommissionspräsidien; auf Kantonsebene z.B. Parlamentspräsidentin oder Parlamentspräsident, Regierungspräsidentin oder Regierungspräsident, Präsidentinnen und Präsidenten der obersten Gerichte, Richterinnen und Richter, Staatsschreiberin oder Staatsschreiber sowie Kommissionspräsidien. Publiziert wird nur das Gesamtergebnis, keine Einzelstimmen.  |
 | | [ops:enum/election_type/secret](ops:enum/election_type/secret) |
-| open |  Offene Wahl  |
+| open |  Offene Wahl: Die Stimmen werden offen abgegeben, und es ist nachvollziehbar, wer wen gewählt hat; Einzelstimmen können daher erfasst werden. Üblich, wo Transparenz gewünscht ist, bei unumstrittenen Wahlen oder in kleineren Gremien.  |
 | | [ops:enum/election_type/open](ops:enum/election_type/open) |
-| silent |  Stille Wahl ohne Gegenkandidatur  |
+| silent |  Stille Wahl ohne formale Abstimmung, durch Akklamation oder Konsens; nur möglich, wenn keine Gegenstimmen erhoben werden, z.B. die Wiederwahl einer Kommissionspräsidentin oder eines Kommissionspräsidenten ohne Gegenkandidatur.  |
 | | [ops:enum/election_type/silent](ops:enum/election_type/silent) |
 
 
@@ -4374,7 +3466,7 @@ _Aggregierte Anwesenheitsliste für eine Sitzung (Anzahl Anwesende, Abwesende, E
 | actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
 | total_count | 0..1 <br/> Integer | Gesamtzahl aller Mitglieder des Gremiums (Bezugsgrösse für Quorum-Berechnungen).  |
 | total_present | 0..1 <br/> Integer | Gesamtzahl der anwesenden Mitglieder.  |
-| total_absent | 0..1 <br/> Integer | Gesamtzahl abwesender Mitglieder. Unterscheidung zwischen abwesend/entschuldigt abwesend - Anwesenheit wird auf Anwesenheitsliste verfolgt.  |
+| total_absent | 0..1 <br/> Integer | Anzahl abwesender Mitglieder, die nicht teilnehmen konnten. Ob eine Abwesenheit entschuldigt war, hält die Anwesenheitsliste (Attendance) fest.  |
 | total_excused | 0..1 <br/> Integer | Gesamtzahl der entschuldigten Abwesenheiten.  |
 | date_created | 0..1 <br/> Date | Das Datum, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
 | datetime_created | 0..1 <br/> Datetime | Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
@@ -4685,7 +3777,7 @@ _Eine Wortmeldung während einer Sitzung (auch Votum oder Redebeitrag genannt)._
 | global_uri | 1 <br/> Uriorcurie | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> Uriorcurie | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | parent_meeting | 0..1 <br/> String | Identifikator der Sitzung, zu der dieser Eintrag gehört. Bei einer Sitzung bezeichnet er die übergeordnete Sitzung, bei Traktandum, Abstimmung, Wahl, Wortmeldung oder Protokoll die Sitzung, in der der Eintrag entstanden ist.  |
-| parent_agenda_item | 0..1 <br/> String | Identifikator des Traktandums, zu dem dieser Eintrag gehört. Bei einem Traktandum baut er eine Hierarchie von Traktanden auf, bei Abstimmung, Wahl oder Wortmeldung bezeichnet er das Traktandum, unter dem der Eintrag behandelt wurde.  |
+| parent_agenda_item | 0..1 <br/> String | Identifikator des Traktandums, zu dem dieser Eintrag gehört. Bei einem Traktandum bildet er eine Hierarchie von Traktanden — z.B. eine Traktandengruppe „Gesetzesberatungen“ mit den Untertraktanden „Energiegesetz (Detailberatung)“ und „Energiegesetz (Schlussabstimmung)“; bei einer Wortmeldung bezeichnet er das Traktandum, unter dem sie erfolgte.  |
 | language | 0..1 <br/> String | Sprachcode im ISO 639-1 Format (zwei Kleinbuchstaben, z.B. "de", "fr", "it", "en").  |
 | start | 0..1 <br/> String | Startangabe oder Position.  |
 | datetime_begin | 0..1 <br/> Datetime | Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung beginnt.  |

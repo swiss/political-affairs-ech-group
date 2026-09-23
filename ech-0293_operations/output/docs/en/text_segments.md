@@ -27,8 +27,8 @@ URI: [ops:textSegment](https://ch.paf.link/schema/operations/textSegment)
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [IsAgendaItem](IsAgendaItem.md) | A mixin class that provides the elements of an agenda item: designation, type... |  no  |
-| [Protocol](Protocol.md) | The minutes of a meeting, recorded after the meeting |  no  |
-| [AgendaItem](AgendaItem.md) | An agenda item of a meeting |  no  |
+| [Protocol](Protocol.md) | The minutes of a meeting, recorded after the meeting and kept exactly once pe... |  no  |
+| [AgendaItem](AgendaItem.md) | An agenda item of a meeting as planned beforehand |  no  |
 | [ProtocolItem](ProtocolItem.md) | An agenda item as actually recorded in the protocol |  no  |
 
 

@@ -15,11 +15,11 @@ URI: [ops:ResolutionTypeEnum](https://ch.paf.link/schema/operations/ResolutionTy
 ### Permissible Values
 | Value | Description |
 |------------------------|----------------------------------------------------------------------------|
-| accepted |  Accepted (Annahme)  |
+| accepted |  Accepted (Annahme): e.g. a bill adopted, a motion approved, a decision taken.  |
 | | [ops:enum/resolution_type/accepted](ops:enum/resolution_type/accepted) |
-| rejected |  Rejected (Ablehnung)  |
+| rejected |  Rejected (Ablehnung): e.g. a bill rejected, a motion dismissed.  |
 | | [ops:enum/resolution_type/rejected](ops:enum/resolution_type/rejected) |
-| noted |  Noted (Kenntnisnahme)  |
+| noted |  Noted (Kenntnisnahme): e.g. reports without a vote, communications, informative agenda items.  |
 | | [ops:enum/resolution_type/noted](ops:enum/resolution_type/noted) |
 | accepted_point_by_point |  Accepted point by point (Punktweise Annahme)  |
 | | [ops:enum/resolution_type/accepted_point_by_point](ops:enum/resolution_type/accepted_point_by_point) |

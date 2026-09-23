@@ -3,7 +3,7 @@
 ## Classe: Voting 
 
 
-_Une procédure de vote avec les voix individuelles et les résultats._
+_Un vote sur une question matérielle : l'objet du vote (la question), la procédure, le résultat avec le rapport de voix et — pour les votes ouverts — les voix individuelles des membres. Le vote a lieu au cours de la séance et est donc rattaché au procès-verbal (parent_protocol, parent_protocol_item) ; il est en outre lié à la séance (parent_meeting) et à l'affaire (affair_id). La présidente ou le président ne participe pas aux votes, mais départage en cas d'égalité des voix (tie_breaker). La décision catégorielle (adopté, rejeté, pris acte …) n'est pas retenue sur le vote, mais dans la Resolution du point de l'ordre du jour._
 
 
 
@@ -30,20 +30,20 @@ _Une procédure de vote avec les voix individuelles et les résultats._
 | label_yes | 0..1 <br/> [String](String.md) | Signification d'une voix « oui ».  |
 | label_no | 0..1 <br/> [String](String.md) | Signification d'une voix « non ».  |
 | label_abstention | 0..1 <br/> [String](String.md) | Signification d'une abstention.  |
-| tie_breaker | 0..1 <br/> [Boolean](Boolean.md) | Indique si une voix prépondérante a été utilisée lors du vote.  |
+| tie_breaker | 0..1 <br/> [Boolean](Boolean.md) | Indique si le résultat a été obtenu, en cas d'égalité des voix, par la voix prépondérante de la présidente ou du président.  |
 | total_count_yes | 0..1 <br/> [Integer](Integer.md) | Nombre total de voix « oui ».  |
 | total_count_no | 0..1 <br/> [Integer](Integer.md) | Nombre total de voix « non ».  |
 | total_count_abstention | 0..1 <br/> [Integer](Integer.md) | Nombre total d'abstentions.  |
-| total_other | * <br/> [TotalOther](TotalOther.md) | Utilisé lorsque plusieurs options sont soumises au vote (p. ex. 5 boutons à Zurich).  |
-| total_absent | 0..1 <br/> [Integer](Integer.md) | Nombre total de membres absents. La distinction entre absent et absent excusé se fait dans la liste de présence.  |
+| total_other | * <br/> [TotalOther](TotalOther.md) | Nombres de voix pour les options d'un vote à choix multiple, une entrée par option ; remplace total_count_yes, total_count_no et total_count_abstention (voir TotalOther).  |
+| total_absent | 0..1 <br/> [Integer](Integer.md) | Nombre de membres absents qui n'ont pas pu participer. La liste de présence (Attendance) indique si une absence était excusée.  |
 | total | 0..1 <br/> [Integer](Integer.md) | Nombre total de voix, sans les absents ni la voix de la présidence.  |
 | majority_type | 0..1 <br/> [MajorityTypeEnum](MajorityTypeEnum.md) | Type de majorité requise pour le vote (absolue, deux tiers, etc.).  |
 | majority_count | 0..1 <br/> [Integer](Integer.md) | Nombre de voix requis pour atteindre le seuil de majorité déterminant.  |
-| result_text | 0..1 <br/> [String](String.md) | Texte libre décrivant le résultat du vote, p. ex. « Accepté par 78 voix ».  |
+| result_text | 0..1 <br/> [String](String.md) | Texte libre décrivant le résultat, p. ex. « Adopté par 120 voix contre 75 et 5 abstentions ». Pour les votes, la décision catégorielle (adopté, rejeté, pris acte …) n'est pas retenue ici, mais dans la Resolution (resolution_type) du point de l'ordre du jour.  |
 | parent_meeting | 0..1 <br/> [String](String.md) | Identifiant de la séance à laquelle cet enregistrement se rattache. Pour une séance, il désigne la séance supérieure ; pour un point de l'ordre du jour, un vote, une élection, une intervention ou un procès-verbal, la séance au cours de laquelle l'enregistrement est né.  |
-| parent_protocol | 0..1 <br/> [Protocol](Protocol.md) | Le procès-verbal dans lequel le vote ou l'élection est consigné. Un vote a lieu au cours de la séance et se rattache donc au procès-verbal et non à l'ordre du jour planifié à l'avance.  |
+| parent_protocol | 0..1 <br/> [Protocol](Protocol.md) | Le procès-verbal dans lequel le vote ou l'élection est consigné. Le vote a lieu au cours de la séance et se rattache donc au procès-verbal, et non à l'ordre du jour planifié à l'avance : ce qui a été mis à l'ordre du jour ne dit pas encore sur quoi il a effectivement été voté. Inversement, le procès-verbal reprend ses votes et élections sous forme de listes (votings, elections).  |
 | parent_protocol_item | 0..1 <br/> [ProtocolItem](ProtocolItem.md) | Le point consigné au procès-verbal (ProtocolItem) sous lequel le vote ou l'élection a eu lieu. Absent lorsque le vote a eu lieu sans point de l'ordre du jour ; le rattachement à la séance découle alors uniquement de parent_protocol et parent_meeting.  |
-| affair_id | 0..1 <br/> [String](String.md) | Le lien vers les affaires rattachées au point de l'ordre du jour.  |
+| affair_id | 0..1 <br/> [String](String.md) | Identifiant de l'affaire (eCH-0295) à laquelle se rapporte l'enregistrement. Les points administratifs (p. ex. approbation du procès-verbal) n'ont pas d'affaire. Une affaire passe en règle générale par plusieurs points de l'ordre du jour — dans la législation, par exemple, le débat d'entrée en matière, la discussion par article, le vote final et, le cas échéant, la procédure d'élimination des divergences entre les conseils.  |
 | actor_id | 0..1 <br/> [GroupReference](GroupReference.md) | Référence à l'organe agissant (instantané au moment de la mise en relation).  |
 | documents | * <br/> [Work](Work.md) | Liste des documents (FRBR Works) liés à l'entité.  |
 | date_created | 0..1 <br/> [Date](Date.md) | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](HasCreationModificationDates.md) |

@@ -26,7 +26,7 @@ URI: [ops:individual_vote_type](https://ch.paf.link/schema/operations/individual
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [IndividualVote](IndividualVote.md) | An individual vote cast by a member during a voting procedure |  no  |
+| [IndividualVote](IndividualVote.md) | The vote cast by an individual member in a voting |  no  |
 
 
 

@@ -6,7 +6,7 @@ search:
 # Slot: agenda_item_category 
 
 
-_Catégorie pour les points de l'ordre du jour regroupés (p. ex. introduction, par département, points techniques)._
+_Catégorisation libre du point selon son contenu ou son regroupement, p. ex. « Législation », « Budget et finances », « Interpellations et questions », « Élections », par département, ou points introductifs et techniques. La catégorisation n'est pas standardisée et peut varier selon l'unité fédérale._
 
 
 
@@ -27,7 +27,7 @@ URI: [ops:agenda_item_category](https://ch.paf.link/schema/operations/agenda_ite
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
 | [IsAgendaItem](IsAgendaItem.md) | Une classe mixin qui fournit les éléments d'un point de l'ordre du jour : dés... |  no  |
-| [AgendaItem](AgendaItem.md) | Un point de l'ordre du jour d'une séance |  no  |
+| [AgendaItem](AgendaItem.md) | Un point de l'ordre du jour d'une séance, tel que planifié à l'avance |  no  |
 | [ProtocolItem](ProtocolItem.md) | Un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-... |  no  |
 
 
@@ -77,18 +77,24 @@ name: agenda_item_category
 annotations:
   description_de:
     tag: description_de
-    value: 'Kategorie für gruppierte Traktanden (z.B. Einführung, nach Departement,
-      technische Traktanden).
+    value: 'Freie Kategorisierung des Traktandums nach Inhalt oder Gruppierung, z.B.
+      „Gesetzgebung“, „Budget und Finanzen“, „Interpellationen und Anfragen“, „Wahlen“,
+      nach Departement oder einleitende und technische Traktanden. Die Kategorisierung
+      ist nicht standardisiert und kann je nach Föderaleinheit variieren.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Catégorie pour les points de l''ordre du jour regroupés (p. ex. introduction,
-      par département, points techniques).
+    value: 'Catégorisation libre du point selon son contenu ou son regroupement, p.
+      ex. « Législation », « Budget et finances », « Interpellations et questions
+      », « Élections », par département, ou points introductifs et techniques. La
+      catégorisation n''est pas standardisée et peut varier selon l''unité fédérale.
 
       '
-description: 'Catégorie pour les points de l''ordre du jour regroupés (p. ex. introduction,
-  par département, points techniques).
+description: 'Catégorisation libre du point selon son contenu ou son regroupement,
+  p. ex. « Législation », « Budget et finances », « Interpellations et questions »,
+  « Élections », par département, ou points introductifs et techniques. La catégorisation
+  n''est pas standardisée et peut varier selon l''unité fédérale.
 
   '
 examples:

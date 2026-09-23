@@ -1265,6 +1265,7 @@ _Une session parlementaire qui regroupe plusieurs séances et s'étend sur une p
 | url | * <br/> [MultilingualString](#MultilingualString) | Page d'accueil ou adresse web complémentaire, multilingue.  |
 | parent_legislature | 0..1 <br/> String | Identifiant de la législature à laquelle la session appartient.  |
 | meetings | * <br/> [Meeting](#Meeting) | Ensemble des séances.  |
+| joint_debates | * <br/> [JointDebate](#JointDebate) | Délibérations communes rattachées à cet enregistrement : pour un point de l'ordre du jour, les délibérations dans lesquelles il est traité conjointement avec d'autres points ; pour une séance ou une session, les délibérations communes qui s'y tiennent.  |
 | documents | * <br/> Work | Liste des documents (FRBR Works) liés à l'entité.  |
 | date_begin_actual | 0..1 <br/> Date | La date de début effective d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
 | datetime_begin_actual | 0..1 <br/> Datetime | La date et l'heure de début effectives d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
@@ -1445,6 +1446,7 @@ _La séance individuelle d'un organe — le niveau auquel les points de l'ordre 
 | parent_session | 0..1 <br/> String | Identifiant de la session à laquelle la séance appartient.  |
 | documents | * <br/> Work | Documents de séance tels que le bulletin (Tagblatt) ou les annexes, sous forme de FRBR Works. Le procès-verbal n'est pas lié ici, mais via `has_protocol`.  |
 | has_protocol | 0..1 <br/> [Protocol](#Protocol) | Référence au procès-verbal de cette séance, établi après celle-ci. Seul l'identifiant du procès-verbal est indiqué ; le procès-verbal lui-même est livré dans la liste `protocols` du conteneur. Il constitue une entité à part entière dotée de son propre identifiant et est en règle générale publié après la séance, raison pour laquelle il est référencé et non imbriqué.  |
+| joint_debates | * <br/> [JointDebate](#JointDebate) | Délibérations communes rattachées à cet enregistrement : pour un point de l'ordre du jour, les délibérations dans lesquelles il est traité conjointement avec d'autres points ; pour une séance ou une session, les délibérations communes qui s'y tiennent.  |
 | date_begin_actual | 0..1 <br/> Date | La date de début effective d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
 | datetime_begin_actual | 0..1 <br/> Datetime | La date et l'heure de début effectives d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
 | date_begin_planned | 0..1 <br/> Date | La date de début planifiée d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
@@ -1707,161 +1709,16 @@ URI: [ops:StateEnum](https://ch.paf.link/schema/operations/StateEnum)
 
 # Ordre du jour, procès-verbal et décisions
 
-L'ordre du jour d'une séance est structuré par des points de l'ordre du jour. Ces points valent comme planification d'une séance et ne sont plus modifiés dans les données une fois la séance ouverte. Les mêmes éléments de données sont ensuite utilisés pour consigner le procès-verbal et les décisions qu'il contient.
-
-Si des modifications de l'ordre du jour interviennent durant une séance, elles sont consignées au procès-verbal, et l'ordre du jour de la séance suivante est adapté en conséquence.
+L'ordre du jour d'une séance est structuré par des points de l'ordre du jour ; ce qui a effectivement été traité et décidé est consigné au procès-verbal.
 
 ## AgendaItem (point de l'ordre du jour)
-
-### But de l'entité
-
-AgendaItem structure l'ordre du jour d'une séance et relie l'organisation temporelle (Meeting) aux affaires de fond (Affairs selon eCH-0295). C'est l'entité centrale pour représenter le déroulement d'une séance.
-
-### Hiérarchie et structure
-
-Les Agenda Items peuvent être organisés hiérarchiquement afin de représenter la structure d'ordres du jour complexes :
-
-```
-Meeting (séance du 4 mars 2024)
-  ├─ AgendaItem 1 : communications et salutations
-  ├─ AgendaItem 2 : délibérations législatives
-  │   ├─ AgendaItem 2.1 : loi sur l'énergie (discussion par article)
-  │   ├─ AgendaItem 2.2 : loi sur l'énergie (vote final)
-  │   └─ AgendaItem 2.3 : loi sur la santé (débat d'entrée en matière)
-  └─ AgendaItem 3 : divers
-```
-
-La hiérarchie est représentée au moyen du champ **parent_agenda_item**, qui renvoie au point de l'ordre du jour de rang supérieur.
-
-### Identification et numérotation
-
-- **id** : identifiant univoque
-- **number** : numéro du point à l'ordre du jour (p. ex. « 2.1 », « 3 »)
-- **position** : ordre de tri (pour l'affichage)
-- **title** : titre du point de l'ordre du jour
-
-### Types d'Agenda Items
-
-Le champ **agenda_item_type** distingue différents types :
-
-- **item** : un point ordinaire avec délibération et, le cas échéant, vote
-- **item_group** : un groupe de points (p. ex. « délibérations législatives »)
-- **note** : entrées informatives sans vote (p. ex. « communications »)
-
-### Relation avec les affaires parlementaires
-
-Le champ **affairs** renvoie aux affaires parlementaires correspondantes selon eCH-0295. Un point de l'ordre du jour peut se rapporter à plusieurs affaires :
-
-- **Affaire unique** : un point traite d'un projet déterminé
-- **Plusieurs affaires** : un point regroupe des affaires connexes
-- **Aucune affaire** : points administratifs (p. ex. « approbation du procès-verbal »)
-
-**Exemple :** le point « Loi sur l'énergie — vote final » renvoie à l'affaire « 23.XXX Loi sur l'énergie » dans eCH-0295.
-
-### Planification temporelle
-
-- **date_time** : moment planifié du traitement
-- **date_time_actual** : moment effectif du traitement
-
-Cette distinction est importante, car :
-- l'ordre du jour est fixé à l'avance
-- le déroulement effectif peut s'en écarter
-- des points peuvent être avancés, reportés ou ajournés
-
-### Statut et résultat
-
-#### Statut
-Le champ **status** indique l'état d'avancement :
-- « pending » : pas encore traité
-- « in_progress » : actuellement en délibération
-- « completed » : traitement achevé
-- « postponed » : ajourné à une séance ultérieure
-- « withdrawn » : retiré
-
-#### Résultat
-Le champ **result** saisit le résultat du traitement :
-- « accepted » : accepté
-- « rejected » : rejeté
-- « referred » : renvoyé (p. ex. à la commission)
-- « noted » : pris acte
-- « no_decision » : aucune décision prise
-
-### Catégorisation
-
-Le champ **category** permet un regroupement selon des critères de fond :
-- « Législation »
-- « Budget et finances »
-- « Interpellations et questions »
-- « Élections »
-- « Divers »
-
-Cette catégorisation n'est pas normalisée et peut varier d'une entité fédérée à l'autre.
-
-### Décisions relatives aux points de l'ordre du jour
-
-Le champ **resolution** renvoie à la ou aux décisions prises sur ce point. Une décision documente le prononcé formel :
-
-```
-AgendaItem : « Loi sur l'énergie — vote final »
-  └─ Resolution : « Acceptation de la loi sur l'énergie par 120 voix contre 75 et 5 abstentions »
-      └─ Voting : détails du vote
-```
-
-### Description et URL
-
-- **description** : description détaillée du point de l'ordre du jour
-- **url** : tableau d'URL multilingues vers les documents de séance :
-  - messages et rapports
-  - propositions
-  - propositions de modification
-  - résultats des votes
-
-### Particularités des différentes procédures
-
-#### Procédure législative
-Une affaire passe par plusieurs points de l'ordre du jour :
-1. Débat d'entrée en matière
-2. Discussion par article
-3. Vote final
-4. Le cas échéant, élimination des divergences entre les conseils
-
-#### Interpellations et questions
-- Dépôt comme point de l'ordre du jour
-- Réponse du gouvernement
-- Le cas échéant, discussion
-
-#### Élections
-- Proposition de candidature comme point de l'ordre du jour
-- Déroulement de l'élection
-- Proclamation du résultat
-
-### Lien avec d'autres entités
-
-Un AgendaItem est le maillon central entre :
-
-- **Meeting** : la séance au cours de laquelle il est traité
-- **Affairs** (eCH-0295) : les affaires de fond
-- **Resolution** : la décision formelle
-- **Voting** : le ou les votes relatifs au point
-- **Speech** : les prises de parole et interventions relatives au point
-
-### Exemples d'application
-
-...
-
-### Utilisations
-
-1. Structuration du déroulement de la séance et de l'ordre du jour
-2. Lien entre les Meetings et les Affairs (eCH-0295)
-3. Documentation du statut et du résultat par point de l'ordre du jour
-4. Base pour les procès-verbaux de séance et les publications
 
 
 
 ### Classe: AgendaItem []{#AgendaItem}
 
 
-_Un point de l'ordre du jour d'une séance._
+_Un point de l'ordre du jour d'une séance, tel que planifié à l'avance. Il structure l'ordre du jour et relie l'organisation temporelle (Meeting) aux affaires matérielles (eCH-0295). Les points de l'ordre du jour représentent la planification d'une séance et ne sont plus modifiés dans les données une fois la séance ouverte : les écarts survenus durant la séance — points avancés, reportés ou ajoutés — sont consignés au procès-verbal (ProtocolItem) et se répercutent sur l'ordre du jour de la séance suivante. Pour la même raison, les heures prévues et effectives sont tenues séparément._
 
 
 
@@ -1892,23 +1749,23 @@ _Un point de l'ordre du jour d'une séance._
 | datetime_modified | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
 | parent_meeting | 0..1 <br/> String | Identifiant de la séance à laquelle cet enregistrement se rattache. Pour une séance, il désigne la séance supérieure ; pour un point de l'ordre du jour, un vote, une élection, une intervention ou un procès-verbal, la séance au cours de laquelle l'enregistrement est né. <br/><br/>Héritage : IsAgendaItem |
 | agenda_item_type | 0..1 <br/> [AgendaItemTypeEnum](#AgendaItemTypeEnum) | Type de point de l'ordre du jour, distinguant les points isolés des groupes de points. <br/><br/>Héritage : IsAgendaItem |
-| agenda_item_number | 0..1 <br/> String | Numéro d'ordre du point de l'ordre du jour (type chaîne, afin de permettre les chiffres romains). <br/><br/>Héritage : IsAgendaItem |
-| agenda_item_position | 0..1 <br/> Integer | Position (nombre entier) du point de l'ordre du jour dans le déroulement de la séance. <br/><br/>Héritage : IsAgendaItem |
+| agenda_item_number | 0..1 <br/> String | Numéro du point sur l'ordre du jour, p. ex. « 2.1 » ou « 3 » (chaîne de caractères, afin de permettre aussi les chiffres romains). <br/><br/>Héritage : IsAgendaItem |
+| agenda_item_position | 0..1 <br/> Integer | Position entière du point dans le déroulement de la séance, déterminante pour le tri et l'affichage. <br/><br/>Héritage : IsAgendaItem |
 | leading_actor_id | 0..1 <br/> String | Le département responsable du point de l'ordre du jour. <br/><br/>Héritage : IsAgendaItem |
 | speaking_actor_id | 0..1 <br/> String | La ou le porte-parole ou la cheffe ou le chef du département pour le point de l'ordre du jour. <br/><br/>Héritage : IsAgendaItem |
 | agenda_item_title | * <br/> [MultilingualString](#MultilingualString) | Titre du point de l'ordre du jour. <br/><br/>Héritage : IsAgendaItem |
-| affair_id | 0..1 <br/> String | Le lien vers les affaires rattachées au point de l'ordre du jour. <br/><br/>Héritage : IsAgendaItem |
+| affair_id | 0..1 <br/> String | Identifiant de l'affaire (eCH-0295) à laquelle se rapporte l'enregistrement. Les points administratifs (p. ex. approbation du procès-verbal) n'ont pas d'affaire. Une affaire passe en règle générale par plusieurs points de l'ordre du jour — dans la législation, par exemple, le débat d'entrée en matière, la discussion par article, le vote final et, le cas échéant, la procédure d'élimination des divergences entre les conseils. <br/><br/>Héritage : IsAgendaItem |
 | agenda_item_description | * <br/> [MultilingualString](#MultilingualString) | Sous-titre ou description détaillée du point de l'ordre du jour. <br/><br/>Héritage : IsAgendaItem |
-| state_id | 0..1 <br/> String | Identifiant d'état (renvoi à l'énumération des états ou à un état propre). <br/><br/>Héritage : IsAgendaItem |
+| state_id | 0..1 <br/> String | Identifiant d'état du point (renvoi à une énumération des états ou à un état propre), p. ex. pending (pas encore traité), in_progress (en délibération), completed (traité), postponed (renvoyé à une séance ultérieure) ou withdrawn (retiré). <br/><br/>Héritage : IsAgendaItem |
 | state_name | 0..1 <br/> String | Désignation de statut divergente, en texte libre, là où l'énumération des statuts ne suffit pas. <br/><br/>Héritage : IsAgendaItem |
 | landing_page | 0..1 <br/> String | URL fournissant des informations complémentaires. <br/><br/>Héritage : IsAgendaItem |
 | url | * <br/> [MultilingualString](#MultilingualString) | Page d'accueil ou adresse web complémentaire, multilingue. <br/><br/>Héritage : IsAgendaItem |
-| agenda_item_category | 0..1 <br/> String | Catégorie pour les points de l'ordre du jour regroupés (p. ex. introduction, par département, points techniques). <br/><br/>Héritage : IsAgendaItem |
-| parent_agenda_item | 0..1 <br/> String | Identifiant du point de l'ordre du jour auquel cet enregistrement se rattache. Pour un point de l'ordre du jour, il construit une hiérarchie de points ; pour un vote, une élection ou une intervention, il désigne le point sous lequel l'enregistrement a été traité. <br/><br/>Héritage : IsAgendaItem |
-| has_resolution | 0..1 <br/> [Resolution](#Resolution) | La décision prise sur ce point de l'ordre du jour. <br/><br/>Héritage : IsAgendaItem |
-| joint_debates | * <br/> [JointDebate](#JointDebate) | Délibérations communes dans lesquelles ce point de l'ordre du jour est traité conjointement avec d'autres points. <br/><br/>Héritage : IsAgendaItem |
+| agenda_item_category | 0..1 <br/> String | Catégorisation libre du point selon son contenu ou son regroupement, p. ex. « Législation », « Budget et finances », « Interpellations et questions », « Élections », par département, ou points introductifs et techniques. La catégorisation n'est pas standardisée et peut varier selon l'unité fédérale. <br/><br/>Héritage : IsAgendaItem |
+| parent_agenda_item | 0..1 <br/> String | Identifiant du point de l'ordre du jour auquel cet enregistrement se rattache. Pour un point de l'ordre du jour, il forme une hiérarchie de points — p. ex. un groupe « Délibérations législatives » avec les sous-points « Loi sur l'énergie (discussion par article) » et « Loi sur l'énergie (vote final) » ; pour une intervention, il désigne le point sous lequel elle a été faite. <br/><br/>Héritage : IsAgendaItem |
+| has_resolution | 0..1 <br/> [Resolution](#Resolution) | La décision formelle prise sur ce point de l'ordre du jour, p. ex. l'adoption de la loi sur l'énergie. Le vote sous-jacent avec son rapport de voix est saisi séparément comme Voting. <br/><br/>Héritage : IsAgendaItem |
+| joint_debates | * <br/> [JointDebate](#JointDebate) | Délibérations communes rattachées à cet enregistrement : pour un point de l'ordre du jour, les délibérations dans lesquelles il est traité conjointement avec d'autres points ; pour une séance ou une session, les délibérations communes qui s'y tiennent. <br/><br/>Héritage : IsAgendaItem |
 | text_segments | * <br/> [TextSegment](#TextSegment) | Ensemble de segments de texte (p. ex. procès-verbal in extenso). <br/><br/>Héritage : IsAgendaItem |
-| documents | * <br/> Work | Liste des documents (FRBR Works) liés à l'entité. <br/><br/>Héritage : IsAgendaItem |
+| documents | * <br/> Work | Documents relatifs au point de l'ordre du jour, sous forme de FRBR Works, p. ex. messages et rapports, propositions et propositions d'amendement. <br/><br/>Héritage : IsAgendaItem |
 
 
 
@@ -2338,9 +2195,9 @@ URI: [ops:AgendaItemTypeEnum](https://ch.paf.link/schema/operations/AgendaItemTy
 #### Valeurs admissibles
 | Valeur | Description |
 |------------------------|----------------------------------------------------------------------------|
-| item |  Point isolé de l'ordre du jour  |
+| item |  Point individuel de l'ordre du jour, avec délibération et, le cas échéant, vote.  |
 | | [ops:enum/agenda_item_type/item](ops:enum/agenda_item_type/item) |
-| group |  Groupe de points de l'ordre du jour  |
+| group |  Groupe de points (groupe de points de l'ordre du jour) sous lequel des sous-points sont rangés au moyen de parent_agenda_item, p. ex. « Délibérations législatives ».  |
 | | [ops:enum/agenda_item_type/group](ops:enum/agenda_item_type/group) |
 
 
@@ -2353,13 +2210,7 @@ URI: [ops:AgendaItemTypeEnum](https://ch.paf.link/schema/operations/AgendaItemTy
 
 ## Procès-verbal (Protocol)
 
-### But de l'entité
-
-Alors que les points de l'ordre du jour représentent la **planification** d'une séance, le procès-verbal consigne le **déroulement effectif** après la séance. `Protocol` est un conteneur tenu exactement une fois par séance (`Meeting`) et qui regroupe les points effectivement traités (`protocol_items`), les votes, les interventions ainsi que les segments de texte in extenso et les documents.
-
-Le procès-verbal est **référencé et non imbriqué** : `Meeting.has_protocol` ne contient que l'identifiant, le procès-verbal lui-même figure comme entrée propre dans `Container.protocols`. La règle appliquée de bout en bout par la présente norme vaut donc ici aussi : est imbriqué ce qui ne possède pas d'identité propre (par exemple `PersonReference` ou `GroupReference`), est référencé ce qui en possède une. Le procès-verbal dispose de sa propre `global_uri` et peut être cité de manière autonome ; le Bulletin officiel, par exemple, est accessible à une adresse qui lui est propre. Surtout, il est établi après la séance : imbriqué, il faudrait relivrer la séance entière dès que le procès-verbal existe ; référencé, la livraison ultérieure du seul procès-verbal suffit.
-
-À l'intérieur du procès-verbal, les collections restent imbriquées, car elles naissent et sont livrées avec lui. Qui publie des votes ou des interventions indépendamment du procès-verbal les livre à plat dans `Container.votings` ou `Container.speeches` et les relie par `parent_meeting` et `parent_agenda_item`.
+Le procès-verbal est **référencé et non imbriqué**. La règle appliquée de bout en bout par la présente norme vaut donc ici aussi : est imbriqué ce qui ne possède pas d'identité propre (par exemple `PersonReference` ou `GroupReference`), est référencé ce qui en possède une.
 
 ```
 Container
@@ -2369,6 +2220,7 @@ Container
   └─ protocols      → Protocol    (après : consignation, parent_meeting)
                         ├─ protocol_items  → ProtocolItem (mêmes éléments qu'AgendaItem)
                         ├─ votings
+                        ├─ elections
                         ├─ speeches
                         ├─ text_segments
                         └─ documents
@@ -2379,7 +2231,7 @@ Container
 ### Classe: Protocol []{#Protocol}
 
 
-_Le procès-verbal établi après la séance. Un conteneur qui regroupe les points effectivement traités (protocol_items), les votes, les interventions, les segments de texte in extenso et les documents liés._
+_Le procès-verbal d'une séance, établi après celle-ci et tenu exactement une fois par séance. Un conteneur qui regroupe les points effectivement traités (protocol_items), les votes, les élections, les interventions, les segments de texte in extenso et les documents liés. Le procès-verbal possède son propre identifiant, peut être cité de manière autonome et est en règle générale publié après la séance ; la séance ne fait donc que le référencer (Meeting.has_protocol), et le procès-verbal lui-même est livré dans Container.protocols, de sorte qu'il puisse être livré ultérieurement sans relivrer la séance. À l'intérieur du procès-verbal, les collections sont imbriquées, car elles naissent et sont livrées avec lui. Qui publie des votes ou des interventions indépendamment du procès-verbal les livre à plat dans Container.votings ou Container.speeches et les relie par parent_meeting et la référence au point de l'ordre du jour correspondante._
 
 
 
@@ -2473,14 +2325,12 @@ protocols:
 
 ### ProtocolItem (point consigné au procès-verbal)
 
-`ProtocolItem` représente un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-verbal. Il porte les mêmes éléments qu'`AgendaItem`, sans en être une dérivation : les deux classes tirent les champs du point de l'ordre du jour du mixin `IsAgendaItem`. Le point consigné n'est pas un cas particulier du point planifié — il naît indépendamment et peut comprendre des points jamais mis à l'ordre du jour, de même que l'ordre du jour peut comprendre des points jamais traités.
-
 
 
 ### Classe: ProtocolItem []{#ProtocolItem}
 
 
-_Un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-verbal. Il porte, via le mixin IsAgendaItem, les mêmes éléments qu'AgendaItem, tout en restant une classe à part entière : le point consigné n'est pas un cas particulier du point planifié._
+_Un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-verbal. Il porte les mêmes éléments qu'AgendaItem par le mixin IsAgendaItem, mais constitue une classe à part entière : le point consigné n'est pas un cas particulier du point planifié. Il naît indépendamment et peut comprendre des points jamais mis à l'ordre du jour, de même que l'ordre du jour peut comprendre des points jamais traités._
 
 
 
@@ -2511,23 +2361,23 @@ _Un point de l'ordre du jour tel qu'il a effectivement été consigné au procè
 | datetime_modified | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
 | parent_meeting | 0..1 <br/> String | Identifiant de la séance à laquelle cet enregistrement se rattache. Pour une séance, il désigne la séance supérieure ; pour un point de l'ordre du jour, un vote, une élection, une intervention ou un procès-verbal, la séance au cours de laquelle l'enregistrement est né. <br/><br/>Héritage : IsAgendaItem |
 | agenda_item_type | 0..1 <br/> [AgendaItemTypeEnum](#AgendaItemTypeEnum) | Type de point de l'ordre du jour, distinguant les points isolés des groupes de points. <br/><br/>Héritage : IsAgendaItem |
-| agenda_item_number | 0..1 <br/> String | Numéro d'ordre du point de l'ordre du jour (type chaîne, afin de permettre les chiffres romains). <br/><br/>Héritage : IsAgendaItem |
-| agenda_item_position | 0..1 <br/> Integer | Position (nombre entier) du point de l'ordre du jour dans le déroulement de la séance. <br/><br/>Héritage : IsAgendaItem |
+| agenda_item_number | 0..1 <br/> String | Numéro du point sur l'ordre du jour, p. ex. « 2.1 » ou « 3 » (chaîne de caractères, afin de permettre aussi les chiffres romains). <br/><br/>Héritage : IsAgendaItem |
+| agenda_item_position | 0..1 <br/> Integer | Position entière du point dans le déroulement de la séance, déterminante pour le tri et l'affichage. <br/><br/>Héritage : IsAgendaItem |
 | leading_actor_id | 0..1 <br/> String | Le département responsable du point de l'ordre du jour. <br/><br/>Héritage : IsAgendaItem |
 | speaking_actor_id | 0..1 <br/> String | La ou le porte-parole ou la cheffe ou le chef du département pour le point de l'ordre du jour. <br/><br/>Héritage : IsAgendaItem |
 | agenda_item_title | * <br/> [MultilingualString](#MultilingualString) | Titre du point de l'ordre du jour. <br/><br/>Héritage : IsAgendaItem |
-| affair_id | 0..1 <br/> String | Le lien vers les affaires rattachées au point de l'ordre du jour. <br/><br/>Héritage : IsAgendaItem |
+| affair_id | 0..1 <br/> String | Identifiant de l'affaire (eCH-0295) à laquelle se rapporte l'enregistrement. Les points administratifs (p. ex. approbation du procès-verbal) n'ont pas d'affaire. Une affaire passe en règle générale par plusieurs points de l'ordre du jour — dans la législation, par exemple, le débat d'entrée en matière, la discussion par article, le vote final et, le cas échéant, la procédure d'élimination des divergences entre les conseils. <br/><br/>Héritage : IsAgendaItem |
 | agenda_item_description | * <br/> [MultilingualString](#MultilingualString) | Sous-titre ou description détaillée du point de l'ordre du jour. <br/><br/>Héritage : IsAgendaItem |
-| state_id | 0..1 <br/> String | Identifiant d'état (renvoi à l'énumération des états ou à un état propre). <br/><br/>Héritage : IsAgendaItem |
+| state_id | 0..1 <br/> String | Identifiant d'état du point (renvoi à une énumération des états ou à un état propre), p. ex. pending (pas encore traité), in_progress (en délibération), completed (traité), postponed (renvoyé à une séance ultérieure) ou withdrawn (retiré). <br/><br/>Héritage : IsAgendaItem |
 | state_name | 0..1 <br/> String | Désignation de statut divergente, en texte libre, là où l'énumération des statuts ne suffit pas. <br/><br/>Héritage : IsAgendaItem |
 | landing_page | 0..1 <br/> String | URL fournissant des informations complémentaires. <br/><br/>Héritage : IsAgendaItem |
 | url | * <br/> [MultilingualString](#MultilingualString) | Page d'accueil ou adresse web complémentaire, multilingue. <br/><br/>Héritage : IsAgendaItem |
-| agenda_item_category | 0..1 <br/> String | Catégorie pour les points de l'ordre du jour regroupés (p. ex. introduction, par département, points techniques). <br/><br/>Héritage : IsAgendaItem |
-| parent_agenda_item | 0..1 <br/> String | Identifiant du point de l'ordre du jour auquel cet enregistrement se rattache. Pour un point de l'ordre du jour, il construit une hiérarchie de points ; pour un vote, une élection ou une intervention, il désigne le point sous lequel l'enregistrement a été traité. <br/><br/>Héritage : IsAgendaItem |
-| has_resolution | 0..1 <br/> [Resolution](#Resolution) | La décision prise sur ce point de l'ordre du jour. <br/><br/>Héritage : IsAgendaItem |
-| joint_debates | * <br/> [JointDebate](#JointDebate) | Délibérations communes dans lesquelles ce point de l'ordre du jour est traité conjointement avec d'autres points. <br/><br/>Héritage : IsAgendaItem |
+| agenda_item_category | 0..1 <br/> String | Catégorisation libre du point selon son contenu ou son regroupement, p. ex. « Législation », « Budget et finances », « Interpellations et questions », « Élections », par département, ou points introductifs et techniques. La catégorisation n'est pas standardisée et peut varier selon l'unité fédérale. <br/><br/>Héritage : IsAgendaItem |
+| parent_agenda_item | 0..1 <br/> String | Identifiant du point de l'ordre du jour auquel cet enregistrement se rattache. Pour un point de l'ordre du jour, il forme une hiérarchie de points — p. ex. un groupe « Délibérations législatives » avec les sous-points « Loi sur l'énergie (discussion par article) » et « Loi sur l'énergie (vote final) » ; pour une intervention, il désigne le point sous lequel elle a été faite. <br/><br/>Héritage : IsAgendaItem |
+| has_resolution | 0..1 <br/> [Resolution](#Resolution) | La décision formelle prise sur ce point de l'ordre du jour, p. ex. l'adoption de la loi sur l'énergie. Le vote sous-jacent avec son rapport de voix est saisi séparément comme Voting. <br/><br/>Héritage : IsAgendaItem |
+| joint_debates | * <br/> [JointDebate](#JointDebate) | Délibérations communes rattachées à cet enregistrement : pour un point de l'ordre du jour, les délibérations dans lesquelles il est traité conjointement avec d'autres points ; pour une séance ou une session, les délibérations communes qui s'y tiennent. <br/><br/>Héritage : IsAgendaItem |
 | text_segments | * <br/> [TextSegment](#TextSegment) | Ensemble de segments de texte (p. ex. procès-verbal in extenso). <br/><br/>Héritage : IsAgendaItem |
-| documents | * <br/> Work | Liste des documents (FRBR Works) liés à l'entité. <br/><br/>Héritage : IsAgendaItem |
+| documents | * <br/> Work | Documents relatifs au point de l'ordre du jour, sous forme de FRBR Works, p. ex. messages et rapports, propositions et propositions d'amendement. <br/><br/>Héritage : IsAgendaItem |
 
 
 
@@ -2563,16 +2413,12 @@ _Un point de l'ordre du jour tel qu'il a effectivement été consigné au procè
 
 ## Délibération commune (JointDebate)
 
-### But de l'entité
-
-`JointDebate` regroupe plusieurs points de l'ordre du jour délibérés conjointement — par exemple des affaires connexes traitées dans un seul et même débat. Elle est rattachée à un point de l'ordre du jour (AgendaItem) ou à un point du procès-verbal (ProtocolItem) via le slot `joint_debates` et renvoie aux points traités conjointement via `joint_agenda_item_ids`.
-
 
 
 ### Classe: JointDebate []{#JointDebate}
 
 
-_Une délibération commune : plusieurs points de l'ordre du jour sont traités ensemble. La délibération commune est rattachée à un point de l'ordre du jour (AgendaItem) ou à un point du procès-verbal (ProtocolItem) et renvoie, par leurs identifiants, aux points traités conjointement._
+_Une délibération commune : plusieurs points de l'ordre du jour sont traités ensemble, par exemple des affaires connexes délibérées dans un seul et même débat. La délibération commune est rattachée à un point de l'ordre du jour (AgendaItem), à un point du procès-verbal (ProtocolItem), à une séance (Meeting) ou à une session (Session) et renvoie, par leurs identifiants, aux points traités conjointement. Rattachée à une séance ou à une session, elle peut aussi réunir des points répartis sur plusieurs positions de l'ordre du jour ou sur plusieurs séances._
 
 
 
@@ -2596,6 +2442,8 @@ _Une délibération commune : plusieurs points de l'ordre du jour sont traités 
 
 | Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
+| [Session](#Session) | joint_debates | range | [JointDebate](#JointDebate) |
+| [Meeting](#Meeting) | joint_debates | range | [JointDebate](#JointDebate) |
 | IsAgendaItem | joint_debates | range | [JointDebate](#JointDebate) |
 | [AgendaItem](#AgendaItem) | joint_debates | range | [JointDebate](#JointDebate) |
 | [ProtocolItem](#ProtocolItem) | joint_debates | range | [JointDebate](#JointDebate) |
@@ -2622,179 +2470,12 @@ _Une délibération commune : plusieurs points de l'ordre du jour sont traités 
 
 ## Resolution (décision)
 
-### But de l'entité
-
-L'entité Resolution saisit la décision formelle relative à un point de l'ordre du jour. Elle documente **ce qui** a été décidé, tandis que Voting documente **comment** (selon quelle procédure et avec quel rapport de voix) la décision a été prise.
-
-### Relation avec AgendaItem et Voting
-
-```
-AgendaItem (Loi sur l'énergie — vote final)
-  ├─ Resolution (acceptation de la loi sur l'énergie)
-  └─ Voting (120 oui, 75 non, 5 abstentions)
-```
-
-Un AgendaItem peut comporter plusieurs Resolutions (p. ex. en cas de plusieurs votes sur le même point). Chaque Resolution référence typiquement un Voting qui contient les détails du vote.
-
-### Types de décisions
-
-Le champ **resolution_type** utilise un vocabulaire contrôlé :
-
-#### accepted
-Le point de l'ordre du jour a été accepté
-
-**Application :**
-- Projets de loi acceptés
-- Propositions approuvées
-- Décisions prises
-
-#### rejected
-Le point de l'ordre du jour a été rejeté
-
-**Application :**
-- Projets de loi rejetés
-- Propositions écartées
-- Décisions de rejet
-
-#### referred_back
-Renvoi à un autre organe
-
-**Application :**
-- Renvoi à la commission pour remaniement
-- Renvoi au gouvernement
-- Retour à l'autre chambre (dans les systèmes bicaméraux)
-
-#### noted
-Pris acte
-
-**Application :**
-- Rapports sans vote
-- Communications
-- Points informatifs
-
-#### postponed
-Ajourné
-
-**Application :**
-- Report du traitement
-- Pas encore mûr pour la décision
-- Clarifications supplémentaires nécessaires
-
-#### withdrawn
-Retiré
-
-**Application :**
-- L'auteure ou l'auteur retire le projet
-- L'affaire n'est pas poursuivie
-
-#### amended
-Accepté avec modifications
-
-**Application :**
-- Loi acceptée avec des amendements
-- Version modifiée adoptée
-- Solution de compromis
-
-#### no_decision
-Aucune décision prise
-
-**Application :**
-- Aucune majorité pour l'une ou l'autre proposition
-- Situation d'égalité sans voix prépondérante
-- Quorum non atteint
-
-### Décision de conception : pourquoi une entité Resolution distincte ?
-
-**L'alternative aurait été :** enregistrer le type de décision directement dans AgendaItem.
-
-**Motifs en faveur d'une entité distincte :**
-
-1. **Plusieurs décisions par point** : un point de l'ordre du jour peut donner lieu à plusieurs décisions (p. ex. d'abord une proposition de modification, puis le vote sur l'ensemble)
-
-2. **Lien structuré avec les votes** : relation 1:1 claire entre Resolution et Voting
-
-3. **Textes de décision multilingues** : une Resolution peut contenir des textes de décision détaillés en plusieurs langues
-
-4. **Souplesse temporelle** : une Resolution peut être saisie séparément de l'AgendaItem dans le temps
-
-### Texte de la décision
-
-- **title** : résumé succinct de la décision
-- **description** : texte détaillé de la décision
-
-**Exemple :**
-- title : « Acceptation de la loi sur l'énergie »
-- description : « Le Conseil national accepte la loi fédérale sur le tournant énergétique dans la version de la commission par 120 voix contre 75 et 5 abstentions. »
-
-### Lien avec le vote
-
-Le champ **voting_id** renvoie au Voting correspondant, qui contient les détails du vote :
-
-- Rapport de voix
-- Procédure de vote
-- Voix individuelles (en cas de vote nominatif)
-
-**Toutes les Resolutions n'ont pas de Voting :**
-- La « prise d'acte » intervient souvent sans vote formel
-- Acceptations tacites
-- Décisions administratives
-
-### Horodatage
-
-- **datetime_created** : moment de la décision
-- **datetime_modified** : dernière modification (p. ex. en cas de corrections)
-
-### URL et documentation
-
-Le champ **url** peut renvoyer à des documents complémentaires :
-- Textes de décision détaillés
-- Motivations
-- Bases légales
-
-### Cas d'application dans différents contextes
-
-#### Procédure législative
-Plusieurs Resolutions correspondant à différentes phases :
-1. Resolution « entrée en matière » (accepted/rejected)
-2. Resolution sur l'article 1 (accepted/amended)
-3. Resolution sur l'article 2 (accepted)
-4. Resolution vote sur l'ensemble (accepted/rejected)
-
-#### Élimination des divergences (système bicaméral)
-- Resolution « adhésion à la version du premier conseil »
-- Resolution « maintien de sa propre version »
-- Resolution « acceptation de la proposition de compromis »
-
-#### Travail en commission
-- Resolution « renvoi à la commission avec mandat complémentaire »
-- Resolution « adoption du rapport de commission »
-
-### Considérations techniques
-
-#### Granularité
-La granularité de la saisie des Resolutions varie :
-- **Détaillée** : chaque vote individuel donne lieu à sa propre Resolution
-- **Agrégée** : seule la décision finale est saisie
-
-La norme admet les deux approches.
-
-#### Multilinguisme
-Dans les parlements multilingues (CH, BE, etc.), les textes de décision doivent être saisis dans toutes les langues officielles. Cela se fait au moyen de tableaux MultilingualString dans title et description.
-
-### Utilisations
-
-1. **Documentation officielle** : qu'a-t-on décidé ?
-2. **Force juridique** : preuve formelle de la décision
-3. **Information du public** : résumé compréhensible de votes complexes
-4. **Gestion des affaires** : suivi des décisions et de leur mise en œuvre
-5. **Évaluation statistique** : taux d'acceptation et de rejet
-
 
 
 ### Classe: Resolution []{#Resolution}
 
 
-_Une décision prise sur un point de l'ordre du jour, y compris les procédures de vote._
+_La décision formelle prise sur un point de l'ordre du jour, y compris les procédures de vote appliquées. Elle retient ce qui a été décidé, tandis que Voting retient comment il a été décidé (procédure et rapport de voix). Toute décision ne repose pas sur un vote formel : les prises de connaissance, les adoptions tacites ou les décisions administratives interviennent sans vote._
 
 
 
@@ -2810,7 +2491,7 @@ _Une décision prise sur un point de l'ordre du jour, y compris les procédures 
 |------------------------|----------------------|------------------------------------------------------|
 | resolution_type | 0..1 <br/> [ResolutionTypeEnum](#ResolutionTypeEnum) | Type de décision prise sur le point de l'ordre du jour.  |
 | type_label | 0..1 <br/> String | Libellé de type personnalisé lorsque les valeurs de type standard ne s'appliquent pas.  |
-| vote_procedures | * <br/> String | Modalités du vote, p. ex. vote secret ou vote ouvert.  |
+| vote_procedures | * <br/> String | Procédures selon lesquelles le vote a eu lieu. Procédures ouvertes : main levée, assis-debout, vote électronique, appel nominal et, en situation de crise, vote à distance (voix communiquées à l'avance à la présidence et saisies en même temps que le vote au conseil), procédure par voie de circulation ou vote lors de séances virtuelles. Procédures secrètes : bulletin de vote, vote électronique secret. La procédure détermine si les voix individuelles peuvent être saisies.  |
 | documents | * <br/> Work | Liste des documents (FRBR Works) liés à l'entité.  |
 
 
@@ -2863,11 +2544,11 @@ URI: [ops:ResolutionTypeEnum](https://ch.paf.link/schema/operations/ResolutionTy
 #### Valeurs admissibles
 | Valeur | Description |
 |------------------------|----------------------------------------------------------------------------|
-| accepted |  Acceptation  |
+| accepted |  Adoption : p. ex. un projet de loi adopté, une proposition approuvée, une décision prise.  |
 | | [ops:enum/resolution_type/accepted](ops:enum/resolution_type/accepted) |
-| rejected |  Rejet  |
+| rejected |  Rejet : p. ex. un projet de loi rejeté, une proposition repoussée.  |
 | | [ops:enum/resolution_type/rejected](ops:enum/resolution_type/rejected) |
-| noted |  Prise d'acte  |
+| noted |  Prise d'acte : p. ex. rapports sans vote, communications, points informatifs.  |
 | | [ops:enum/resolution_type/noted](ops:enum/resolution_type/noted) |
 | accepted_point_by_point |  Acceptation point par point  |
 | | [ops:enum/resolution_type/accepted_point_by_point](ops:enum/resolution_type/accepted_point_by_point) |
@@ -2890,50 +2571,12 @@ URI: [ops:ResolutionTypeEnum](https://ch.paf.link/schema/operations/ResolutionTy
 
 ## Motion (propositions)
 
-### But
-
-Saisit les propositions déposées durant la séance (propositions de modification, propositions d'ordre, etc.).
-
-### Structure
-
-- **motion_type** : type de la proposition
-  - **amendment** : proposition de modification d'un texte de loi
-  - **procedural** : proposition d'ordre (p. ex. clôture du débat)
-  - **referral** : proposition de renvoi
-  - **other** : autres propositions
-- **title** : titre court de la proposition
-- **description** : texte complet de la proposition
-- **proposer_person_id** : auteure ou auteur de la proposition
-- **seconder_person_id** : cosignataires (si requis)
-- **result** : résultat (accepted, rejected, withdrawn)
-
-### Décision de conception
-
-**Pourquoi une entité propre plutôt qu'une intégration dans AgendaItem ?**
-- Un point de l'ordre du jour peut contenir plusieurs propositions
-- Les propositions ont leur propre cycle de vie (déposée, soutenue, mise aux voix)
-- Saisie structurée de l'auteure ou de l'auteur et des soutiens
-- Votes distincts possibles pour chaque proposition
-
-### Application
-
-Liée à AgendaItem et, en option, à Voting :
-
-```
-AgendaItem (Loi sur l'énergie — art. 15)
-  ├─ Motion (proposition de modification personne A)
-  │   └─ Voting (vote sur la proposition de modification)
-  ├─ Motion (proposition de modification personne B)
-  │   └─ Voting (vote sur la proposition de modification)
-  └─ Voting (vote sur l'article dans son ensemble)
-```
-
 
 
 ### Classe: Motion []{#Motion}
 
 
-_Une proposition formelle déposée au cours des délibérations._
+_Une proposition formelle déposée au cours des délibérations, par exemple une proposition d'amendement à un texte légal, une motion d'ordre (p. ex. clôture du débat) ou une proposition de renvoi. Elle constitue une entité propre, car un point de l'ordre du jour peut comprendre plusieurs propositions, chacune ayant son propre déroulement (déposée, soutenue, mise aux voix) et, le cas échéant, son propre vote._
 
 
 
@@ -2950,8 +2593,8 @@ _Une proposition formelle déposée au cours des délibérations._
 | local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
-| title | 0..1 <br/> String | Titre de l'élément.  |
-| description | 0..1 <br/> String | Texte descriptif de l'élément.  |
+| title | 0..1 <br/> String | Titre abrégé de la proposition.  |
+| description | 0..1 <br/> String | Texte intégral de la proposition.  |
 | documents | * <br/> Work | Liste des documents (FRBR Works) liés à l'entité.  |
 
 
@@ -2983,240 +2626,16 @@ _Une proposition formelle déposée au cours des délibérations._
 
 # Votes et élections
 
-Les décisions parlementaires sont prises soit par des votes sur des questions matérielles, soit par des élections de personnes. La norme distingue clairement ces deux mécanismes et saisit en outre, dans les procédures ouvertes, le comportement de vote individuel de chaque membre du parlement. Les présidentes et présidents de parlement ne participent en principe pas aux votes ; ils ne votent que lors des élections. En cas d'égalité des voix lors d'un vote, ils départagent.
+Les décisions parlementaires sont prises soit par des votes sur des questions matérielles, soit par des élections de personnes. La norme distingue clairement ces deux mécanismes et saisit en outre, dans les procédures ouvertes, le comportement de vote individuel de chaque membre du parlement.
 
 ## Voting (vote)
-
-### But de l'entité
-
-« Voting » saisit le processus de vote et le résultat d'une décision formelle au parlement. L'entité documente aussi bien l'objet du vote (la question) que la procédure (comment il a été voté) et le résultat (avec quel rapport de voix).
-
-### Rattachement au procès-verbal
-
-Les votes et les élections ont lieu au cours de la séance. `Voting` et `Election` se rattachent donc au procès-verbal par `parent_protocol` et non à l'ordre du jour publié à l'avance : ce qui a été mis à l'ordre du jour ne dit pas encore sur quoi il a effectivement été voté. Lorsque le vote a eu lieu sous un point de l'ordre du jour, `parent_protocol_item` renvoie en outre au point consigné (`ProtocolItem`) ; sans point de l'ordre du jour, ce champ reste vide et le rattachement découle de `parent_protocol` et `parent_meeting`. Inversement, `Protocol` reprend les votes et les élections sous forme de listes (`votings`, `elections`).
-
-### Types de votes
-
-La norme distingue différents types de votes au moyen du champ **voting_type** :
-
-#### intermediate
-Votes intermédiaires en cours de délibération.
-
-**Exemples :**
-- Vote sur l'entrée en matière relative à une affaire
-- Vote sur une proposition
-- Opposition de deux propositions qui s'excluent mutuellement ou qui portent sur le même passage de texte
-- Vote éventuel lorsque plus de deux propositions portent sur le même objet
-- Vote sur un article isolé d'une loi
-- Vote sur l'ensemble après la première lecture d'un acte délibéré en deux lectures
-
-#### final
-Le vote final portant sur l'ensemble du projet
-
-**Exemples :**
-- Vote final après la dernière lecture d'un acte
-- Vote sur l'ensemble d'un arrêté
-- Acceptation ou rejet d'un projet dans son ensemble
-- Vote point par point sur une intervention
-
-#### casting
-Voix prépondérante de la présidence en cas d'égalité des voix. La présidence ne participe pas aux votes, mais départage en cas d'égalité. En cas de vote secret, la proposition de l'organe qui a procédé à l'examen préalable est réputée acceptée en cas d'égalité des voix.
-
-#### secret
-Expression secrète de la voix lors de votes et d'élections
-
-**Application :**
-- Élection de personnes
-- Vote sur une affaire particulièrement délicate, telle qu'un recours en grâce ou la levée de l'immunité
-- Vote après délibération à huis clos
-- Vote secret sur proposition
-
-### Structure d'un vote
-
-Un vote est toujours rattaché à une phase de séance et/ou à une séance, à un point de l'ordre du jour (Agenda Item) et à une affaire avec son titre et son numéro. Il comprend le type de vote, l'objet du vote (la question), le résultat et — en cas de vote non secret — les voix individuelles des membres.
-Il peut soit :
-
-```
-AgendaItem (15) affaire (Loi sur l'énergie — art. 15)
-  └─ Voting (vote intermédiaire sur l'art. 15)
-      ├─ IndividualVote (personne A : oui)
-      ├─ IndividualVote (personne B : non)
-      └─ IndividualVote (personne C : oui)
-```
-
-
-Exemple de sélection :
-3 options : https://www.gemeinderat-zuerich.ch/abstimmungen/detail.php?aid=aa10c137274f424fa4eda877e7644a89
-5 options : https://www.gemeinderat-zuerich.ch/abstimmungen/detail.php?aid=23f01ba9b3f3410cb9cfb85f32f3dfe0
-
-### Procédures de vote
-
-Le champ **procedure** décrit le mode de déroulement :
-
-#### Open procedures (votes ouverts)
-- **show_of_hands** : à main levée (traditionnel)
-- **standing** : par assis et levé (plus rare)
-- **electronic** : vote électronique (fréquent aux niveaux fédéral et cantonal)
-- **roll_call** : vote nominatif avec appel des noms
-- **remote_voting** : expression de la voix à distance en situation de crise (des membres du conseil communiquent leur voix à la présidence du parlement avant le jour de séance. Les voix exprimées à distance sont saisies simultanément avec le vote en cours au conseil.)
-- **circulation_voting** : procédure par voie de circulation en situation de crise (la présidence du parlement organise le vote par voie de circulation et informe du résultat)
-- **virtual_voting** : expression de la voix lors de séances virtuelles en situation de crise.
-
-#### Secret procedures (votes secrets)
-- **secret_ballot** : vote secret avec bulletins
-- **electronic_secret** : vote secret électronique
-
-Le choix de la procédure détermine si les voix individuelles peuvent être saisies :
-- Procédures ouvertes : voix individuelles documentables
-- Procédures secrètes : seul le résultat global est disponible
-
-
-### Résultat du vote
-
-Le résultat est saisi de deux manières :
-
-#### Chiffres détaillés
-- **total_count_yes** : nombre de voix « oui »
-- **total_count_no** : nombre de voix « non »
-- **total_count_abstention** : nombre d'abstentions
-- **total_other** : nombre de voix pour des options supplémentaires, lorsque le choix ne se limite pas à oui/non/abstention (voir la section « Options multiples »)
-- **total_absent** : nombre de personnes absentes (qui n'ont pas pu voter)
-- **total** : nombre total de membres votants (sans les absents ni la voix de la présidence)
-- **majority_count** : nombre de voix nécessaires pour atteindre la majorité requise
-
-#### Résultat global
-Le résultat est décrit en texte libre dans le champ **result_text** (p. ex. « Accepté par 120 voix contre 75 et 5 abstentions »). La décision catégorielle (accepté / rejeté / pris acte, etc.) n'est pas consignée sur le vote lui-même, mais au moyen de la classe **Resolution** (slot **resolution_type**) rattachée au point de l'ordre du jour. En cas d'égalité des voix, une éventuelle voix prépondérante de la présidence est modélisée au moyen d'un vote distinct (`voting_type: tie_breaker_president`), respectivement d'un nouveau vote.
-
-**Exemple** (vote final, vote simple oui/non) :
-- total_count_yes : 120
-- total_count_no : 75
-- total_count_abstention : 5
-- total_absent : 0
-- total : 200
-- result_text : « Accepté par 120 voix contre 75 et 5 abstentions »
-- Resolution.resolution_type : accepted
-
-<!-- TODO: weitere komplexere Beispiele ergänzen — Ordnungsantrag, Wiederholung einer Abstimmung. (Cup-/Mehrfachabstimmung und Stichentscheid sind abgedeckt.) -->
-
-#### Options multiples (votes de sélection / « propositions de même sens »)
-
-Tout vote ne se limite pas à oui, non et abstention. Lorsque plusieurs propositions de même sens portent sur la même question matérielle, les membres votent simultanément sur plus de deux variantes (à Zurich, familièrement « vote en coupe », techniquement au moyen de plusieurs boutons de vote). La variante qui l'emporte est celle qui obtient le plus de voix.
-
-De telles procédures sont représentées comme suit :
-
-- **voting_type** = `other`, complété par un **type_label** parlant (p. ex. « Propositions de même sens (choix multiple) »).
-- Les champs standard **total_count_yes / total_count_no / total_count_abstention** restent vides, car les options ne correspondent pas à oui/non/abstention.
-- Chaque option de sélection reçoit à la place une entrée dans **total_other** (liste de `TotalOther` avec **count** et **label**). Il est ainsi possible de saisir un nombre quelconque d'options avec leur nombre de voix respectif.
-- Au niveau de la voix individuelle, **individual_vote_type** est mis à `other` et l'option choisie est consignée au moyen de **type_label** (p. ex. « Sélection A ») ; les membres absents reçoivent `not_voted`.
-- Comme **majority_type**, on utilise `other`, puisque ce n'est pas un seuil fixe mais la majorité relative entre les options qui est déterminante.
-
-**Exemple** (Conseil communal de la ville de Zurich, 86e séance du 28.02.2024, affaire 2023/361 « Immeuble d'habitation Magnusstrasse 27, crédit supplémentaire net ») — propositions de même sens avec quatre options :
-
-| Option | Voix |
-|--------|------|
-| Sélection A (l'emporte) | 75 |
-| Sélection B | 25 |
-| Sélection C | 12 |
-| Sélection D | 0 |
-| Absents | 13 |
-
-- Total des voix exprimées : 112 (sur 125 membres)
-- Résultat : sélection A acceptée (majorité relative)
-
-La modélisation complète de ce cas figure dans `data_voting.yaml` (`ops:voting_zh_gr_2024_2023_361`).
-
-### Types de majorité
-
-Le champ **majority_type** définit la majorité requise :
-
-#### simple
-Majorité simple (plus de oui que de non)
-
-**Application :**
-- Cas standard pour la plupart des décisions
-- Les abstentions ne comptent pas
-
-**Exemple :** 100 oui, 80 non, 20 abstentions → accepté
-
-#### absolute
-Majorité absolue (plus de la moitié de tous les membres)
-
-**Application :**
-- Élections
-- Modifications constitutionnelles dans certains cantons
-- Décisions particulièrement importantes
-
-**Exemple :** avec 200 membres, au moins 101 voix « oui » sont nécessaires
-
-#### two_thirds
-Majorité des deux tiers
-
-**Application :**
-- Clauses d'urgence au niveau fédéral
-- Modifications constitutionnelles dans certains cantons
-- Levée de l'immunité
-
-**Exemple :** avec 200 membres, au moins 134 voix « oui » sont nécessaires
-
-#### qualified
-Majorité qualifiée (autres seuils)
-
-**Application :**
-- Exigences particulières dans certains cantons ou certaines communes
-- Le quorum concret est indiqué dans **majority_threshold**
-
-### Seuil
-
-Le champ **majority_threshold** indique, pour les majorités qualifiées, le seuil exact (p. ex. 0,6 pour 60 %).
-
-### Quorum
-
-Le champ **quorum** définit le nombre minimal de membres présents pour que l'organe puisse valablement décider :
-
-**Exemple :** un parlement de 200 membres peut valablement décider lorsque 100 membres au moins sont présents (quorum : 100).
-
-### Votes nominatifs
-Le champ **named_vote** indique s'il s'agit d'un vote nominatif :
-
-- **true** : les voix individuelles sont saisies et publiées
-- **false** : seul le résultat global est saisi
-
-Les votes nominatifs sont importants pour :
-- la transparence du comportement de vote
-- l'analyse des schémas de vote
-- la reddition de comptes envers l'électorat
-
-### Relation avec les voix individuelles
-
-Lors des votes nominatifs, l'entité Voting renvoie aux différentes entités IndividualVote :
-
-```
-Voting
-  ├─ IndividualVote (personne A)
-  ├─ IndividualVote (personne B)
-  └─ ...
-```
-
-**Exemple :** liste nominative en accordéon https://www.tagblatt.gr.be.ch/shareparl?agendaItemUid=e65d81c90d1d43deb19ef078f7e363f3&segmentType=vote&unitName=default&scroll=true&autoplay=false
-
-
-### Description et documentation
-
-- **description** : description de l'objet du vote (objet, question soumise au vote)
-- **url** : URL multilingues vers les détails du vote
-
-### Horodatage
-
-- **datetime_created** : moment du déroulement du vote
-- **datetime_modified** : dernière actualisation (p. ex. en cas de corrections du procès-verbal de vote)
-
 
 
 
 ### Classe: Voting []{#Voting}
 
 
-_Une procédure de vote avec les voix individuelles et les résultats._
+_Un vote sur une question matérielle : l'objet du vote (la question), la procédure, le résultat avec le rapport de voix et — pour les votes ouverts — les voix individuelles des membres. Le vote a lieu au cours de la séance et est donc rattaché au procès-verbal (parent_protocol, parent_protocol_item) ; il est en outre lié à la séance (parent_meeting) et à l'affaire (affair_id). La présidente ou le président ne participe pas aux votes, mais départage en cas d'égalité des voix (tie_breaker). La décision catégorielle (adopté, rejeté, pris acte …) n'est pas retenue sur le vote, mais dans la Resolution du point de l'ordre du jour._
 
 
 
@@ -3243,20 +2662,20 @@ _Une procédure de vote avec les voix individuelles et les résultats._
 | label_yes | 0..1 <br/> String | Signification d'une voix « oui ».  |
 | label_no | 0..1 <br/> String | Signification d'une voix « non ».  |
 | label_abstention | 0..1 <br/> String | Signification d'une abstention.  |
-| tie_breaker | 0..1 <br/> Boolean | Indique si une voix prépondérante a été utilisée lors du vote.  |
+| tie_breaker | 0..1 <br/> Boolean | Indique si le résultat a été obtenu, en cas d'égalité des voix, par la voix prépondérante de la présidente ou du président.  |
 | total_count_yes | 0..1 <br/> Integer | Nombre total de voix « oui ».  |
 | total_count_no | 0..1 <br/> Integer | Nombre total de voix « non ».  |
 | total_count_abstention | 0..1 <br/> Integer | Nombre total d'abstentions.  |
-| total_other | * <br/> [TotalOther](#TotalOther) | Utilisé lorsque plusieurs options sont soumises au vote (p. ex. 5 boutons à Zurich).  |
-| total_absent | 0..1 <br/> Integer | Nombre total de membres absents. La distinction entre absent et absent excusé se fait dans la liste de présence.  |
+| total_other | * <br/> [TotalOther](#TotalOther) | Nombres de voix pour les options d'un vote à choix multiple, une entrée par option ; remplace total_count_yes, total_count_no et total_count_abstention (voir TotalOther).  |
+| total_absent | 0..1 <br/> Integer | Nombre de membres absents qui n'ont pas pu participer. La liste de présence (Attendance) indique si une absence était excusée.  |
 | total | 0..1 <br/> Integer | Nombre total de voix, sans les absents ni la voix de la présidence.  |
 | majority_type | 0..1 <br/> [MajorityTypeEnum](#MajorityTypeEnum) | Type de majorité requise pour le vote (absolue, deux tiers, etc.).  |
 | majority_count | 0..1 <br/> Integer | Nombre de voix requis pour atteindre le seuil de majorité déterminant.  |
-| result_text | 0..1 <br/> String | Texte libre décrivant le résultat du vote, p. ex. « Accepté par 78 voix ».  |
+| result_text | 0..1 <br/> String | Texte libre décrivant le résultat, p. ex. « Adopté par 120 voix contre 75 et 5 abstentions ». Pour les votes, la décision catégorielle (adopté, rejeté, pris acte …) n'est pas retenue ici, mais dans la Resolution (resolution_type) du point de l'ordre du jour.  |
 | parent_meeting | 0..1 <br/> String | Identifiant de la séance à laquelle cet enregistrement se rattache. Pour une séance, il désigne la séance supérieure ; pour un point de l'ordre du jour, un vote, une élection, une intervention ou un procès-verbal, la séance au cours de laquelle l'enregistrement est né.  |
-| parent_protocol | 0..1 <br/> [Protocol](#Protocol) | Le procès-verbal dans lequel le vote ou l'élection est consigné. Un vote a lieu au cours de la séance et se rattache donc au procès-verbal et non à l'ordre du jour planifié à l'avance.  |
+| parent_protocol | 0..1 <br/> [Protocol](#Protocol) | Le procès-verbal dans lequel le vote ou l'élection est consigné. Le vote a lieu au cours de la séance et se rattache donc au procès-verbal, et non à l'ordre du jour planifié à l'avance : ce qui a été mis à l'ordre du jour ne dit pas encore sur quoi il a effectivement été voté. Inversement, le procès-verbal reprend ses votes et élections sous forme de listes (votings, elections).  |
 | parent_protocol_item | 0..1 <br/> [ProtocolItem](#ProtocolItem) | Le point consigné au procès-verbal (ProtocolItem) sous lequel le vote ou l'élection a eu lieu. Absent lorsque le vote a eu lieu sans point de l'ordre du jour ; le rattachement à la séance découle alors uniquement de parent_protocol et parent_meeting.  |
-| affair_id | 0..1 <br/> String | Le lien vers les affaires rattachées au point de l'ordre du jour.  |
+| affair_id | 0..1 <br/> String | Identifiant de l'affaire (eCH-0295) à laquelle se rapporte l'enregistrement. Les points administratifs (p. ex. approbation du procès-verbal) n'ont pas d'affaire. Une affaire passe en règle générale par plusieurs points de l'ordre du jour — dans la législation, par exemple, le débat d'entrée en matière, la discussion par article, le vote final et, le cas échéant, la procédure d'élimination des divergences entre les conseils.  |
 | actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Référence à l'organe agissant (instantané au moment de la mise en relation).  |
 | documents | * <br/> Work | Liste des documents (FRBR Works) liés à l'entité.  |
 | date_created | 0..1 <br/> Date | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
@@ -3458,15 +2877,15 @@ URI: [ops:VotingTypeEnum](https://ch.paf.link/schema/operations/VotingTypeEnum)
 #### Valeurs admissibles
 | Valeur | Description |
 |------------------------|----------------------------------------------------------------------------|
-| preliminary_vote |  Vote intermédiaire  |
+| preliminary_vote |  Vote intermédiaire au cours de la délibération, p. ex. sur l'entrée en matière, sur une proposition, opposition de deux propositions qui s'excluent mutuellement ou portent sur le même passage, vote éventuel lorsque plus de deux propositions portent sur un même objet, sur un article isolé d'une loi, ou vote sur l'ensemble après la première lecture d'un acte délibéré en deux lectures.  |
 | | [ops:enum/voting_type/preliminary_vote](ops:enum/voting_type/preliminary_vote) |
-| final_vote |  Vote final  |
+| final_vote |  Vote final sur l'objet dans son ensemble, p. ex. après la dernière lecture d'un acte, vote sur l'ensemble d'un arrêté, adoption ou rejet d'un objet dans sa totalité, ou vote point par point sur une intervention parlementaire.  |
 | | [ops:enum/voting_type/final_vote](ops:enum/voting_type/final_vote) |
-| tie_breaker_president |  Voix prépondérante de la présidence  |
+| tie_breaker_president |  Voix prépondérante de la présidente ou du président en cas d'égalité des voix. La présidente ou le président ne participe pas aux votes, mais tranche en cas d'égalité. Si un vote secret aboutit à une égalité, c'est la proposition de l'organe préparatoire qui est réputée adoptée.  |
 | | [ops:enum/voting_type/tie_breaker_president](ops:enum/voting_type/tie_breaker_president) |
-| secret_vote |  Vote ou élection à bulletin secret  |
+| secret_vote |  Vote secret, p. ex. sur des objets particulièrement sensibles tels qu'un recours en grâce ou la levée de l'immunité, après une délibération secrète ou sur demande. Seul le résultat global est publié.  |
 | | [ops:enum/voting_type/secret_vote](ops:enum/voting_type/secret_vote) |
-| other |  Autre type de vote  |
+| other |  Autre type de vote, précisé dans type_label — p. ex. un vote à choix multiple sur plusieurs propositions de même sens (voir TotalOther).  |
 | | [ops:enum/voting_type/other](ops:enum/voting_type/other) |
 
 
@@ -3494,11 +2913,11 @@ URI: [ops:MajorityTypeEnum](https://ch.paf.link/schema/operations/MajorityTypeEn
 #### Valeurs admissibles
 | Valeur | Description |
 |------------------------|----------------------------------------------------------------------------|
-| absolute |  Majorité absolue.  |
+| absolute |  Majorité absolue : plus de la moitié de la base de référence (membres ou voix exprimées, selon la réglementation applicable), p. ex. au moins 101 sur 200. Cas standard pour les élections de personnes telles que l'élection du Conseil fédéral ou des présidences de commission, et requise dans certains cantons pour les modifications constitutionnelles. Si personne ne l'atteint au premier tour d'une élection, un second tour suit généralement, où la majorité relative suffit.  |
 | | [ops:enum/majority_type/absolute](ops:enum/majority_type/absolute) |
-| two_thirds |  Majorité des deux tiers.  |
+| two_thirds |  Majorité des deux tiers, p. ex. au moins 134 sur 200 ; requise dans certains cantons pour les modifications constitutionnelles.  |
 | | [ops:enum/majority_type/two_thirds](ops:enum/majority_type/two_thirds) |
-| other |  Autre seuil de majorité, non couvert par les catégories standard.  |
+| other |  Autre seuil de majorité non couvert par les catégories standard, p. ex. la majorité relative entre plusieurs options d'un vote à choix multiple.  |
 | | [ops:enum/majority_type/other](ops:enum/majority_type/other) |
 
 
@@ -3514,7 +2933,7 @@ URI: [ops:MajorityTypeEnum](https://ch.paf.link/schema/operations/MajorityTypeEn
 ### Classe: TotalOther []{#TotalOther}
 
 
-_Décomptes de voix supplémentaires lorsque plusieurs options sont soumises au vote (p. ex. Zurich utilise 5 boutons)._
+_Nombre de voix pour une option d'un vote à choix multiple. Lorsque plusieurs propositions de même sens portent sur la même question, les membres votent simultanément sur plus de deux variantes, et la variante qui obtient le plus de voix l'emporte (à Zurich, familièrement « Cup-Abstimmung », au moyen de plusieurs boutons de vote). Un tel vote est représenté avec voting_type other et un type_label explicite ; total_count_yes, total_count_no et total_count_abstention restent vides, et chaque option reçoit une entrée avec count et label. Exemple : Gemeinderat de la Ville de Zurich, séance du 28 février 2024, affaire 2023/361, quatre options avec 75, 25, 12 et 0 voix._
 
 
 
@@ -3563,122 +2982,12 @@ _Décomptes de voix supplémentaires lorsque plusieurs options sont soumises au 
 
 ## Individual Vote (voix individuelle)
 
-### But de l'entité
-
-IndividualVote saisit le comportement de vote de chaque membre du parlement lors des votes nominatifs. L'entité n'est créée que lorsqu'un vote n'a pas lieu à bulletin secret (Voting.is_nominal = true).
-
-### Relation avec le vote
-
-Chaque Individual Vote fait partie d'un Voting de rang supérieur :
-
-```
-Voting (vote final loi sur l'énergie)
-  ├─ IndividualVote (conseillère nationale Anna Müller : oui)
-  ├─ IndividualVote (conseiller national Beat Schweizer : non)
-  ├─ IndividualVote (conseillère nationale Carla Rossi : abstention)
-  └─ ...
-```
-
-### Identification de la personne
-
-La personne votante est référencée au moyen du champ **person_id**. Cet identifiant correspond à une personne selon la norme eCH-0294 Actors.
-
-D'autres données d'identification peuvent en outre être saisies :
-- **person_name** : nom de la personne (pour un accès rapide)
-- **person_number** : numéro interne (p. ex. numéro de mandat)
-- **person_political_group** : appartenance à un groupe parlementaire
-- **person_party** : appartenance à un parti
-
-### Types de voix
-
-Outre `yes`, `no` et `abstention`, le champ connaît trois autres valeurs : `not_voted` pour les membres présents qui n'ont pas voté, `tie_breaker` pour la voix prépondérante de la présidence et `other` pour tout ce qui ne se laisse pas ramener à cet axe. `other` est le pendant individuel de `total_other` : lors d'un vote sélectif, la personne a voté, mais ni oui ni non — l'option qu'elle a choisie est retenue par `type_label` (« Auswahl A »). La voix individuelle reste ainsi exploitable sans que la norme doive tenir chaque mécanique de sélection cantonale comme valeur d'énumération propre.
-
-Le champ **vote** saisit le type d'expression de la voix :
-
-#### yes
-Voix « oui » (approbation)
-
-**Signification :** la personne approuve le projet ou la proposition.
-
-#### no
-Voix « non » (rejet)
-
-**Signification :** la personne rejette le projet ou la proposition.
-
-#### abstention
-Abstention
-
-**Signification :** la personne participe au vote, mais s'abstient. En cas de vote électronique, elle appuie sur le bouton « abstention ».
-
-### Poids de la voix
-
-Le champ **weight** saisit le poids de la voix :
-
-- **Cas standard** : 1.0 (une voix)
-- **Cas particuliers** : d'autres valeurs sont possibles
-
-#### Cas d'application d'un poids de voix divergent
-
-1. **Suppléance** : dans certains systèmes, une personne peut voter pour une personne absente (weight : 2.0)
-3. **Assemblées communales** : dans des cas particuliers, des personnes morales peuvent disposer de plusieurs voix
-4. **Systèmes historiques** : autrefois, dans certains cantons, différents groupes de personnes disposaient d'un poids de voix différent
-
-### Appartenance à un groupe
-
-Le champ **group_id** saisit l'appartenance au groupe parlementaire au moment du vote :
-
-**Utilité :**
-- Analyse du comportement de vote par groupe
-- Détermination de la discipline de parti
-- Identification de coalitions
-
-**Exemple :** lors d'un vote sur la loi sur l'énergie, 90 % du groupe PS votent oui et 80 % du groupe UDC votent non.
-
-### Position et ordre
-
-Le champ **position** définit le regroupement et l'ordre de tri à l'affichage :
-
-**Application :**
-- Tri alphabétique par nom de famille
-- Tri par groupe parlementaire
-- Tri par expression de la voix (d'abord les oui, puis les non, puis les abstentions)
-- Regroupement par groupe parlementaire, à l'intérieur du groupe par oui, non, abstentions et, à l'intérieur du sous-groupe, par ordre alphabétique
-
-### Description et contexte
-
-Le champ **description** peut saisir des informations supplémentaires :
-
-**Exemples :**
-- « Abstention en raison d'un conflit d'intérêts (membre du conseil d'administration d'une entreprise énergétique) »
-- « Absent pour cause de maladie »
-
-### Horodatage
-
-- **datetime_created** : première publication
-- **datetime_modified** : dernière actualisation (p. ex. en cas de corrections de la publication)
-
-### Présence et expression de la voix
-
-Différence importante :
-
-- **Attendance** (autre entité) : saisit la présence générale à une séance
-- **IndividualVote** : saisit l'expression concrète de la voix lors d'un vote
-
-Une personne peut être présente à une séance (Attendance), mais être enregistrée comme « absent » ou « did_not_vote » lors de votes isolés (p. ex. lorsqu'elle quitte brièvement la salle).
-
-### Votes nominatifs et votes secrets
-
-Les entités IndividualVote ne sont saisies que lors des votes nominatifs (ouverts) :
-
-- **Vote nominatif** : chaque voix est saisie et est publique
-- **Vote secret** : seul le résultat global est saisi, pas d'IndividualVotes
-
 
 
 ### Classe: IndividualVote []{#IndividualVote}
 
 
-_Une voix individuelle exprimée par un membre lors d'une procédure de vote._
+_La voix exprimée par un membre lors d'un vote. Les voix individuelles ne sont saisies que pour les votes ouverts ; pour les votes secrets, seul le résultat global est publié. Une voix individuelle concerne un vote déterminé et se distingue de la présence (Attendance), qui retient la présence à la séance dans son ensemble : un membre présent à la séance peut être saisi avec not_voted lors d'un vote particulier, par exemple parce qu'il a brièvement quitté la salle._
 
 
 
@@ -3696,9 +3005,9 @@ _Une voix individuelle exprimée par un membre lors d'une procédure de vote._
 | global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | parent_voting | 0..1 <br/> [Voting](#Voting) | L'identifiant du vote auquel se rattache la voix individuelle.  |
-| actor_id | 0..1 <br/> [PersonReference](#PersonReference) | Référence à la personne agissante (instantané au moment de la mise en relation).  |
+| actor_id | 0..1 <br/> [PersonReference](#PersonReference) | Le membre qui a exprimé la voix, sous forme de référence à une personne selon eCH-0294.  |
 | seat_nr | 0..1 <br/> String | Le numéro de siège correspondant à la voix individuelle, le cas échéant.  |
-| weight | 0..1 <br/> Integer | Le nombre de voix dont dispose la personne, le cas échéant (p. ex. lorsqu'une personne détient plusieurs voix).  |
+| weight | 0..1 <br/> Integer | Poids de la voix du membre ; normalement 1. D'autres valeurs se présentent par exemple lorsqu'un membre vote aussi pour un membre absent (représentation, poids 2), dans les assemblées communales où des personnes morales disposent de plusieurs voix, ou dans des systèmes historiques où différents groupes de personnes avaient un poids de voix différent.  |
 | individual_vote_type | 0..1 <br/> [IndividualVoteTypeEnum](#IndividualVoteTypeEnum) | Type de voix exprimée (oui, non, abstention, n'a pas voté, etc.).  |
 | type_label | 0..1 <br/> String | Libellé de type personnalisé lorsque les valeurs de type standard ne s'appliquent pas.  |
 | date_created | 0..1 <br/> Date | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
@@ -3898,17 +3207,17 @@ URI: [ops:IndividualVoteTypeEnum](https://ch.paf.link/schema/operations/Individu
 #### Valeurs admissibles
 | Valeur | Description |
 |------------------------|----------------------------------------------------------------------------|
-| yes |  Voix favorable (oui)  |
+| yes |  Oui : le membre approuve l'objet ou la proposition.  |
 | | [ops:enum/individual_vote_type/yes](ops:enum/individual_vote_type/yes) |
-| no |  Voix défavorable (non)  |
+| no |  Non : le membre rejette l'objet ou la proposition.  |
 | | [ops:enum/individual_vote_type/no](ops:enum/individual_vote_type/no) |
-| abstention |  Abstention  |
+| abstention |  Abstention : le membre participe au vote mais s'abstient ; en cas de vote électronique, il presse le bouton « abstention ».  |
 | | [ops:enum/individual_vote_type/abstention](ops:enum/individual_vote_type/abstention) |
-| not_voted |  N'a pas voté  |
+| not_voted |  N'a pas voté : le membre n'a pas exprimé de voix, par exemple parce qu'il était présent sans voter ou absent.  |
 | | [ops:enum/individual_vote_type/not_voted](ops:enum/individual_vote_type/not_voted) |
-| tie_breaker |  Voix prépondérante, généralement exprimée par la présidence  |
+| tie_breaker |  Voix prépondérante, exprimée par la présidente ou le président en cas d'égalité des voix (voir voting_type tie_breaker_president).  |
 | | [ops:enum/individual_vote_type/tie_breaker](ops:enum/individual_vote_type/tie_breaker) |
-| other |  Autre forme de vote  |
+| other |  Voix qui ne peut être placée sur l'axe oui/non — par exemple lors d'un vote à choix multiple, où le membre a voté, mais ni oui ni non ; l'option choisie est retenue dans type_label (p. ex. « Choix A »). Pendant de total_other sur le vote ; la voix individuelle reste ainsi exploitable sans qu'il faille une valeur d'énumération propre pour chaque mécanisme de choix cantonal.  |
 | | [ops:enum/individual_vote_type/other](ops:enum/individual_vote_type/other) |
 
 
@@ -3921,227 +3230,12 @@ URI: [ops:IndividualVoteTypeEnum](https://ch.paf.link/schema/operations/Individu
 
 ## Election (élection)
 
-### Notion et signification
-
-Une Election (élection) désigne la désignation d'une ou de plusieurs personnes à une fonction par un organe parlementaire. Contrairement aux votes (Votings), qui portent sur des questions matérielles, les élections portent sur des décisions relatives à des personnes.
-
-### Différence : élection et vote
-
-| Critère | Election (élection) | Voting (vote) |
-|---------|---------------------|---------------|
-| Objet | Personnes | Questions matérielles, projets |
-| Résultat | Personne(s) élue(s) | Accepté / rejeté |
-| Procédure | Souvent secrète | Souvent ouverte |
-| Majorité | Le plus souvent absolue | Le plus souvent simple |
-
-### Types d'élections
-
-La norme distingue différents types d'élections au moyen du champ **election_type** :
-
-#### open
-Élection ouverte
-
-**Caractéristique :**
-- L'expression de la voix est visible publiquement
-- Chaque membre exprime sa voix ouvertement
-- On peut savoir qui a élu qui
-
-**Application :**
-- Lorsque la transparence est souhaitée
-- Lors d'élections non contestées
-- Dans les organes de petite taille
-
-#### secret
-Élection à bulletin secret
-
-**Caractéristique :**
-- L'expression de la voix est anonyme
-- Bulletins de vote ou système électronique de vote secret
-- On ne peut pas savoir qui a élu qui
-
-**Application :**
-- Élections de personnes (standard)
-- Lorsqu'une décision libre et non influencée doit être garantie
-- Souvent prescrite par la loi
-
-**Exemples au niveau fédéral :**
-- Élection du Conseil fédéral
-- Élection des juges fédéraux
-- Élection des présidences de commission
-
-**Exemples au niveau cantonal :**
-- Élection de la présidente ou du président du parlement
-- Élection de la présidente ou du président du gouvernement
-- Élection des présidentes et présidents des tribunaux cantonaux supérieurs
-- Élection des juges
-- Élection de la chancelière ou du chancelier d'État
-- Élection des présidentes ou des présidents de commission
-
-#### tacit
-Élection tacite
-
-**Caractéristique :**
-- Aucun vote formel nécessaire
-- L'élection intervient par acclamation ou par consensus
-- Uniquement si aucune opposition n'est soulevée
-
-**Application :**
-- En cas d'unanimité
-- Élections non contestées
-- Réélections sans candidature adverse
-
-**Exemple :** réélection d'une présidence de commission sans candidature adverse
-
-### Rattachement aux points de l'ordre du jour
-
-Chaque élection est rattachée à un AgendaItem :
-
-```
-AgendaItem (élection du Conseil fédéral)
-  └─ Election (élection pour le département XY)
-      ├─ Candidat A : 120 voix
-      ├─ Candidat B : 75 voix
-      └─ Bulletins blancs : 5
-```
-
-### Description et titre
-
-- **title** : titre de l'élection (p. ex. « Élection de la présidence de la CER »)
-- **description** : description détaillée, contexte, circonstances particulières
-
-### Résultat de l'élection
-
-Le champ **result** saisit le résultat :
-
-- **elected** : personne(s) élue(s)
-- **not_elected** : aucune personne élue (p. ex. majorité absolue non atteinte)
-- **deferred** : élection reportée
-- **withdrawn** : élection retirée
-
-### Personne(s) élue(s)
-
-Le champ **elected_person_id** contient le ou les identifiants des personnes élues selon eCH-0294 Actors.
-
-En cas d'élections multiples (p. ex. élection simultanée de plusieurs membres d'une commission), plusieurs identifiants peuvent être saisis.
-
-### Répartition des voix
-
-Lors d'élections ouvertes ou après la publication des résultats :
-
-- **total_votes** : nombre total de voix exprimées
-- **valid_votes** : voix valables
-- **invalid_votes** : voix nulles
-- **blank_votes** : bulletins blancs
-
-En complément, des détails par candidature (au moyen d'entités distinctes ou de données structurées).
-
-### Procédure d'élection
-
-Le champ **procedure** décrit la procédure concrète :
-
-- **written_ballot** : élection écrite avec bulletins
-- **electronic** : élection électronique
-- **show_of_hands** : à main levée (lors d'élections ouvertes)
-- **acclamation** : par acclamation (lors d'élections tacites)
-
-### Rapports de majorité
-
-Le champ **majority_type** définit la majorité requise :
-
-#### absolute
-Majorité absolue (plus de la moitié des votants)
-
-**Application :**
-- Élection du Conseil fédéral
-- Élection des présidences de commission
-- Cas standard pour les élections de personnes
-
-**Exemple :** avec 200 voix exprimées, au moins 101 voix sont nécessaires
-
-**Particularité :** si personne n'atteint la majorité absolue au premier tour, un second tour suit généralement, au cours duquel la majorité simple suffit.
-
-#### simple
-Majorité simple (plus de voix que les autres candidatures)
-
-**Application :**
-- Second tour après un premier tour infructueux
-- Certaines élections de commission
-
-#### qualified
-Majorité qualifiée
-
-**Application :**
-- Plus rare lors d'élections
-- Fonctions particulières soumises à des exigences accrues
-
-### Tours de scrutin
-
-Lors d'élections requérant la majorité absolue au premier tour :
-
-```
-1er tour (majorité absolue requise)
-   └─ Aucune candidature n'atteint la majorité absolue
-
-2e tour (la majorité simple suffit)
-   └─ Candidat A élu
-```
-
-Chaque tour de scrutin est saisi comme une entité Election distincte, reliée par l'AgendaItem commun.
-
-### Horodatage
-
-- **datetime_created** : moment du déroulement
-- **datetime_modified** : dernière actualisation
-
-### URL et documentation
-
-- **url** : URL multilingues vers les documents électoraux :
-  - profils des candidatures
-  - résultats de l'élection
-  - procès-verbaux
-
-### Particularités des différentes élections
-
-#### Élection du Conseil fédéral
-- Élection à bulletin secret
-- Majorité absolue requise (au 1er tour)
-- Par l'Assemblée fédérale (Chambres réunies)
-
-#### Élection des juges fédéraux
-- Élection à bulletin secret
-- Principe proportionnel (prise en compte des partis, des régions linguistiques, des genres)
-
-#### Présidences de commission
-- Élection par le parlement concerné
-- Souvent moins publique
-
-#### Niveaux cantonal et communal
-- Grande diversité de procédures électorales
-- En partie élection populaire au lieu d'une élection parlementaire
-- Exigences de majorité différentes
-
-### Transparence et confidentialité
-
-Champ de tension :
-- **Secret du vote** : protection de la décision électorale individuelle
-- **Transparence** : intérêt public au résultat de l'élection
-
-En cas d'élections secrètes :
-- Seul le résultat global est publié
-- Pas d'entités IndividualVote
-- Protection de la liberté de vote
-
-En cas d'élections ouvertes :
-- Les voix individuelles peuvent être saisies
-- Transparence accrue
-- Effets potentiels de pression sociale
-
 
 
 ### Classe: Election []{#Election}
 
 
-_Une procédure d'élection visant à pourvoir des fonctions par des personnes._
+_Une élection par laquelle un organe parlementaire désigne une ou plusieurs personnes à une charge ou à une fonction. Contrairement au vote (Voting), qui tranche des questions matérielles, l'élection est une décision portant sur des personnes : elle a souvent lieu au scrutin secret et requiert en général la majorité absolue, alors que les votes sont le plus souvent ouverts. La présidente ou le président, qui ne participe pas aux votes, prend part aux élections. Chaque tour de scrutin est saisi comme une élection distincte ; les tours d'une même élection sont reliés par le point de l'ordre du jour commun — par exemple un premier tour à la majorité absolue resté sans résultat, suivi d'un second tour où la majorité relative suffit._
 
 
 
@@ -4162,17 +3256,17 @@ _Une procédure d'élection visant à pourvoir des fonctions par des personnes._
 | datetime_end | 0..1 <br/> Datetime | La date et l'heure auxquelles la séance ou le vote se termine.  |
 | election_type | 0..1 <br/> [ElectionTypeEnum](#ElectionTypeEnum) | Type de procédure d'élection.  |
 | type_label | 0..1 <br/> String | Libellé de type personnalisé lorsque les valeurs de type standard ne s'appliquent pas.  |
-| title | 0..1 <br/> String | Titre de l'élément.  |
+| title | 0..1 <br/> String | Titre de l'élection, p. ex. « Élection à la présidence de la CER ».  |
 | landing_page | 0..1 <br/> String | URL fournissant des informations complémentaires.  |
-| total_absent | 0..1 <br/> Integer | Nombre total de membres absents. La distinction entre absent et absent excusé se fait dans la liste de présence.  |
+| total_absent | 0..1 <br/> Integer | Nombre de membres absents qui n'ont pas pu participer. La liste de présence (Attendance) indique si une absence était excusée.  |
 | total | 0..1 <br/> Integer | Nombre total de voix, sans les absents ni la voix de la présidence.  |
 | majority_type | 0..1 <br/> [MajorityTypeEnum](#MajorityTypeEnum) | Type de majorité requise pour le vote (absolue, deux tiers, etc.).  |
 | majority_count | 0..1 <br/> Integer | Nombre de voix requis pour atteindre le seuil de majorité déterminant.  |
-| result_text | 0..1 <br/> String | Texte libre décrivant le résultat du vote, p. ex. « Accepté par 78 voix ».  |
+| result_text | 0..1 <br/> String | Texte libre décrivant le résultat, p. ex. « Adopté par 120 voix contre 75 et 5 abstentions ». Pour les votes, la décision catégorielle (adopté, rejeté, pris acte …) n'est pas retenue ici, mais dans la Resolution (resolution_type) du point de l'ordre du jour.  |
 | parent_meeting | 0..1 <br/> String | Identifiant de la séance à laquelle cet enregistrement se rattache. Pour une séance, il désigne la séance supérieure ; pour un point de l'ordre du jour, un vote, une élection, une intervention ou un procès-verbal, la séance au cours de laquelle l'enregistrement est né.  |
-| parent_protocol | 0..1 <br/> [Protocol](#Protocol) | Le procès-verbal dans lequel le vote ou l'élection est consigné. Un vote a lieu au cours de la séance et se rattache donc au procès-verbal et non à l'ordre du jour planifié à l'avance.  |
+| parent_protocol | 0..1 <br/> [Protocol](#Protocol) | Le procès-verbal dans lequel le vote ou l'élection est consigné. Le vote a lieu au cours de la séance et se rattache donc au procès-verbal, et non à l'ordre du jour planifié à l'avance : ce qui a été mis à l'ordre du jour ne dit pas encore sur quoi il a effectivement été voté. Inversement, le procès-verbal reprend ses votes et élections sous forme de listes (votings, elections).  |
 | parent_protocol_item | 0..1 <br/> [ProtocolItem](#ProtocolItem) | Le point consigné au procès-verbal (ProtocolItem) sous lequel le vote ou l'élection a eu lieu. Absent lorsque le vote a eu lieu sans point de l'ordre du jour ; le rattachement à la séance découle alors uniquement de parent_protocol et parent_meeting.  |
-| affair_id | 0..1 <br/> String | Le lien vers les affaires rattachées au point de l'ordre du jour.  |
+| affair_id | 0..1 <br/> String | Identifiant de l'affaire (eCH-0295) à laquelle se rapporte l'enregistrement. Les points administratifs (p. ex. approbation du procès-verbal) n'ont pas d'affaire. Une affaire passe en règle générale par plusieurs points de l'ordre du jour — dans la législation, par exemple, le débat d'entrée en matière, la discussion par article, le vote final et, le cas échéant, la procédure d'élimination des divergences entre les conseils.  |
 | actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Référence à l'organe agissant (instantané au moment de la mise en relation).  |
 | documents | * <br/> Work | Liste des documents (FRBR Works) liés à l'entité.  |
 | date_created | 0..1 <br/> Date | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
@@ -4228,11 +3322,11 @@ URI: [ops:ElectionTypeEnum](https://ch.paf.link/schema/operations/ElectionTypeEn
 #### Valeurs admissibles
 | Valeur | Description |
 |------------------------|----------------------------------------------------------------------------|
-| secret |  Élection à bulletin secret  |
+| secret |  Élection secrète : les voix sont exprimées anonymement, au moyen d'un bulletin ou d'un système électronique de vote secret, de sorte qu'on ne peut savoir qui a élu qui. Standard pour les élections de personnes et souvent prescrite par la loi — au niveau fédéral p. ex. le Conseil fédéral (par l'Assemblée fédérale Chambres réunies, à la majorité absolue lors des premiers tours), les juges fédérales et juges fédéraux et les présidences de commission ; au niveau cantonal p. ex. la présidence du parlement, la présidence du gouvernement, les présidences des tribunaux suprêmes, les juges, la chancelière ou le chancelier d'État et les présidences de commission. Seul le résultat global est publié, sans voix individuelles.  |
 | | [ops:enum/election_type/secret](ops:enum/election_type/secret) |
-| open |  Élection à main levée  |
+| open |  Élection ouverte : les voix sont exprimées ouvertement et l'on peut savoir qui a élu qui ; les voix individuelles peuvent donc être saisies. Usuelle lorsque la transparence est souhaitée, pour les élections non disputées ou dans les organes de petite taille.  |
 | | [ops:enum/election_type/open](ops:enum/election_type/open) |
-| silent |  Élection tacite sans candidature adverse  |
+| silent |  Élection tacite sans vote formel, par acclamation ou consensus ; possible uniquement si aucune opposition n'est formulée, p. ex. la réélection d'une présidente ou d'un président de commission sans candidature concurrente.  |
 | | [ops:enum/election_type/silent](ops:enum/election_type/silent) |
 
 
@@ -4378,7 +3472,7 @@ _Liste de présence agrégée pour une séance (nombre de membres présents, abs
 | actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Référence à l'organe agissant (instantané au moment de la mise en relation).  |
 | total_count | 0..1 <br/> Integer | Nombre total de membres de l'organe (valeur de référence pour le calcul du quorum).  |
 | total_present | 0..1 <br/> Integer | Nombre total de membres présents.  |
-| total_absent | 0..1 <br/> Integer | Nombre total de membres absents. La distinction entre absent et absent excusé se fait dans la liste de présence.  |
+| total_absent | 0..1 <br/> Integer | Nombre de membres absents qui n'ont pas pu participer. La liste de présence (Attendance) indique si une absence était excusée.  |
 | total_excused | 0..1 <br/> Integer | Nombre total d'absences excusées.  |
 | date_created | 0..1 <br/> Date | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
 | datetime_created | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
@@ -4689,7 +3783,7 @@ _Une intervention prononcée au cours d'une séance (également appelée prise d
 | global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | parent_meeting | 0..1 <br/> String | Identifiant de la séance à laquelle cet enregistrement se rattache. Pour une séance, il désigne la séance supérieure ; pour un point de l'ordre du jour, un vote, une élection, une intervention ou un procès-verbal, la séance au cours de laquelle l'enregistrement est né.  |
-| parent_agenda_item | 0..1 <br/> String | Identifiant du point de l'ordre du jour auquel cet enregistrement se rattache. Pour un point de l'ordre du jour, il construit une hiérarchie de points ; pour un vote, une élection ou une intervention, il désigne le point sous lequel l'enregistrement a été traité.  |
+| parent_agenda_item | 0..1 <br/> String | Identifiant du point de l'ordre du jour auquel cet enregistrement se rattache. Pour un point de l'ordre du jour, il forme une hiérarchie de points — p. ex. un groupe « Délibérations législatives » avec les sous-points « Loi sur l'énergie (discussion par article) » et « Loi sur l'énergie (vote final) » ; pour une intervention, il désigne le point sous lequel elle a été faite.  |
 | language | 0..1 <br/> String | Code de langue au format ISO 639-1 (deux lettres minuscules, par ex. « de », « fr », « it », « en »).  |
 | start | 0..1 <br/> String | Indication de début ou position.  |
 | datetime_begin | 0..1 <br/> Datetime | La date et l'heure auxquelles la séance ou le vote commence.  |

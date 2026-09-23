@@ -6,7 +6,7 @@ search:
 # Slot: agenda_item_category 
 
 
-_Kategorie für gruppierte Traktanden (z.B. Einführung, nach Departement, technische Traktanden)._
+_Freie Kategorisierung des Traktandums nach Inhalt oder Gruppierung, z.B. „Gesetzgebung“, „Budget und Finanzen“, „Interpellationen und Anfragen“, „Wahlen“, nach Departement oder einleitende und technische Traktanden. Die Kategorisierung ist nicht standardisiert und kann je nach Föderaleinheit variieren._
 
 
 
@@ -27,7 +27,7 @@ URI: [ops:agenda_item_category](https://ch.paf.link/schema/operations/agenda_ite
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
 | [IsAgendaItem](IsAgendaItem.md) | Eine Mixin-Klasse, welche die Elemente eines Traktandums bereitstellt: Bezeic... |  no  |
-| [AgendaItem](AgendaItem.md) | Ein Traktandum einer Sitzung |  no  |
+| [AgendaItem](AgendaItem.md) | Ein vorgängig geplantes Traktandum einer Sitzung |  no  |
 | [ProtocolItem](ProtocolItem.md) | Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde |  no  |
 
 
@@ -77,18 +77,24 @@ name: agenda_item_category
 annotations:
   description_de:
     tag: description_de
-    value: 'Kategorie für gruppierte Traktanden (z.B. Einführung, nach Departement,
-      technische Traktanden).
+    value: 'Freie Kategorisierung des Traktandums nach Inhalt oder Gruppierung, z.B.
+      „Gesetzgebung“, „Budget und Finanzen“, „Interpellationen und Anfragen“, „Wahlen“,
+      nach Departement oder einleitende und technische Traktanden. Die Kategorisierung
+      ist nicht standardisiert und kann je nach Föderaleinheit variieren.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Catégorie pour les points de l''ordre du jour regroupés (p. ex. introduction,
-      par département, points techniques).
+    value: 'Catégorisation libre du point selon son contenu ou son regroupement, p.
+      ex. « Législation », « Budget et finances », « Interpellations et questions
+      », « Élections », par département, ou points introductifs et techniques. La
+      catégorisation n''est pas standardisée et peut varier selon l''unité fédérale.
 
       '
-description: 'Kategorie für gruppierte Traktanden (z.B. Einführung, nach Departement,
-  technische Traktanden).
+description: 'Freie Kategorisierung des Traktandums nach Inhalt oder Gruppierung,
+  z.B. „Gesetzgebung“, „Budget und Finanzen“, „Interpellationen und Anfragen“, „Wahlen“,
+  nach Departement oder einleitende und technische Traktanden. Die Kategorisierung
+  ist nicht standardisiert und kann je nach Föderaleinheit variieren.
 
   '
 examples:
