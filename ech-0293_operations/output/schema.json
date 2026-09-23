@@ -576,10 +576,13 @@
         "DocumentCategoryEnum": {
             "description": "Categories for classifying documents referenced in eCH standards 0292-0297. Multilingual labels (DE/FR/IT/RM/EN) are encoded via `annotations` (convention `label_xx`); first proposals for FR/IT/RM are pending plenum review.",
             "enum": [
+                "meeting_planning",
+                "meeting_documents",
                 "protocol",
                 "voting_result",
-                "meeting_documents",
-                "meeting_planning",
+                "legislative_documents",
+                "consultation_documents",
+                "consultation_results",
                 "media_release",
                 "group_documents",
                 "member_directory",
