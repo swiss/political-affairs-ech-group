@@ -192,7 +192,7 @@ Container
 
 ### Zweck der Entität
 
-`JointDebate` fasst mehrere Traktanden zusammen, die gemeinsam beraten werden – etwa inhaltlich zusammenhängende Geschäfte, die in einer einzigen Debatte behandelt werden.
+`JointDebate` fasst mehrere Traktanden zusammen, die gemeinsam beraten werden – etwa inhaltlich zusammenhängende Geschäfte, die in einer einzigen Debatte behandelt werden. Sie hängt über den Slot `joint_debates` an einem Traktandum (AgendaItem) oder einem Protokoll-Traktandum (ProtocolItem) und verweist über `joint_agenda_item_ids` auf die mitberatenen Traktanden.
 
 {{include:ech-0293_operations/output/docs/JointDebate.md}}
 

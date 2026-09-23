@@ -192,7 +192,7 @@ Container
 
 ### But de l'entité
 
-`JointDebate` regroupe plusieurs points de l'ordre du jour délibérés conjointement — par exemple des affaires connexes traitées dans un seul et même débat.
+`JointDebate` regroupe plusieurs points de l'ordre du jour délibérés conjointement — par exemple des affaires connexes traitées dans un seul et même débat. Elle est rattachée à un point de l'ordre du jour (AgendaItem) ou à un point du procès-verbal (ProtocolItem) via le slot `joint_debates` et renvoie aux points traités conjointement via `joint_agenda_item_ids`.
 
 {{include:ech-0293_operations/output/docs/JointDebate.md}}
 

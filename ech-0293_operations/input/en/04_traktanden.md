@@ -192,7 +192,7 @@ Container
 
 ### Purpose of the entity
 
-`JointDebate` combines several agenda items that are deliberated together — for instance substantively related affairs dealt with in a single debate.
+`JointDebate` combines several agenda items that are deliberated together — for instance substantively related affairs dealt with in a single debate. It hangs on an agenda item (AgendaItem) or a protocol item (ProtocolItem) via the slot `joint_debates` and references the jointly debated items via `joint_agenda_item_ids`.
 
 {{include:ech-0293_operations/output/docs/JointDebate.md}}
 

@@ -189,6 +189,7 @@ classes:
       - agenda_item_category
       - parent_agenda_item
       - has_resolution
+      - joint_debates
       - text_segments
       - documents
 
@@ -242,14 +243,14 @@ classes:
 
   JointDebate:
     description: |
-      Agenda Items which are debated together.
+      A joint debate: several agenda items are deliberated together. The joint debate hangs on an agenda item (AgendaItem) or a protocol item (ProtocolItem) and references the items debated jointly with it by their identifiers.
     annotations:
       description_de: |
-        Traktanden die gemeinsam behandelt werden.
+        Eine gemeinsame Beratung: Mehrere Traktanden werden zusammen behandelt. Die gemeinsame Beratung hängt an einem Traktandum (AgendaItem) oder einem Protokoll-Traktandum (ProtocolItem) und verweist über deren Identifikatoren auf die gemeinsam behandelten Traktanden.
       description_fr: |
-        Points de l'ordre du jour traités conjointement.
+        Une délibération commune : plusieurs points de l'ordre du jour sont traités ensemble. La délibération commune est rattachée à un point de l'ordre du jour (AgendaItem) ou à un point du procès-verbal (ProtocolItem) et renvoie, par leurs identifiants, aux points traités conjointement.
     slots:
-      - agenda_items
+      - joint_agenda_item_ids
 
   Resolution:
     description: |
@@ -925,6 +926,31 @@ slots:
       description_fr: |
         La décision prise sur ce point de l'ordre du jour.
     range: Resolution
+
+  joint_debates:
+    slot_uri: ops:jointDebate
+    description: |
+      Joint debates in which this agenda item is deliberated together with other agenda items.
+    annotations:
+      description_de: |
+        Gemeinsame Beratungen, in denen dieses Traktandum zusammen mit anderen Traktanden behandelt wird.
+      description_fr: |
+        Délibérations communes dans lesquelles ce point de l'ordre du jour est traité conjointement avec d'autres points.
+    range: JointDebate
+    multivalued: true
+    inlined_as_list: true
+
+  joint_agenda_item_ids:
+    slot_uri: ops:jointAgendaItem
+    description: |
+      Identifiers of the agenda items (AgendaItem or ProtocolItem) debated jointly.
+    annotations:
+      description_de: |
+        Identifikatoren der gemeinsam behandelten Traktanden (AgendaItem oder ProtocolItem).
+      description_fr: |
+        Identifiants des points de l'ordre du jour traités conjointement (AgendaItem ou ProtocolItem).
+    range: string
+    multivalued: true
 
   url:
     description: |
