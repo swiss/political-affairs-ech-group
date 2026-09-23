@@ -24,7 +24,7 @@ meetings:
   datetime_end_actual: "2025-03-15T17:30:00Z"
   state: "planned"
   location: "Kantonsratssaal, Regierungsgebäude St. Gallen"
-  parent_legislature: ops:legislature_sg_2024_2028
+  parent_session: ops:session_sg_2025_03
   datetime_created: "2025-02-01T10:00:00Z"
   datetime_modified: "2025-03-15T17:30:00Z"
 
@@ -52,7 +52,6 @@ meetings:
   datetime_end_actual: "2025-05-12T16:45:00Z"
   state: "planned"
   location: "Kommissionszimmer 301, Rathaus Bern"
-  parent_legislature: ops:legislature_be_2022_2026
   datetime_created: "2025-04-15T09:00:00Z"
   datetime_modified: "2025-05-12T16:45:00Z"
 
@@ -78,7 +77,7 @@ meetings:
   datetime_end_actual: "2025-05-04T13:45:00Z"
   state: "planned"
   location: "Zaunplatz, Glarus"
-  parent_legislature: ops:legislature_gl_2024_2028
+  parent_session: ops:session_gl_landsgemeinde_2025
   datetime_created: "2025-01-10T12:00:00Z"
   datetime_modified: "2025-05-04T13:45:00Z"
 
