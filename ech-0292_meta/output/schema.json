@@ -1,0 +1,209 @@
+{
+    "$defs": {
+        "Date": {
+            "additionalProperties": false,
+            "description": "A date with a type indication (e.g. first publication, last revision).",
+            "properties": {
+                "date_type": {
+                    "$ref": "#/$defs/DateTypesEnum",
+                    "description": "Meaning of the date (e.g. first publication, last revision).\n"
+                },
+                "xdate": {
+                    "description": "The date value itself.\n",
+                    "format": "date",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "xdate",
+                "date_type"
+            ],
+            "title": "Date",
+            "type": "object"
+        },
+        "DateTypesEnum": {
+            "description": "Meaning of a date entry.",
+            "enum": [
+                "first_publication",
+                "last_revision"
+            ],
+            "title": "DateTypesEnum",
+            "type": "string"
+        },
+        "DocumentCategoryEnum": {
+            "description": "Categories for classifying documents referenced in eCH standards 0292-0297. Multilingual labels (DE/FR/IT/RM/EN) are encoded via `annotations` (convention `label_xx`); first proposals for FR/IT/RM are pending plenum review.",
+            "enum": [
+                "meeting_planning",
+                "meeting_documents",
+                "protocol",
+                "voting_result",
+                "legislative_documents",
+                "consultation_documents",
+                "consultation_results",
+                "media_release",
+                "group_documents",
+                "member_directory",
+                "person_documents",
+                "interest_disclosure",
+                "other"
+            ],
+            "title": "DocumentCategoryEnum",
+            "type": "string"
+        },
+        "Expression": {
+            "additionalProperties": false,
+            "description": "FRBR Expression: a concrete language version of a Work.",
+            "properties": {
+                "dates": {
+                    "description": "Dates relating to the element, each with a type indication.\n",
+                    "items": {
+                        "$ref": "#/$defs/Date"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "expression_description": {
+                    "description": "Descriptive text of the language version.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "expression_language": {
+                    "description": "Language code in ISO 639-1 format.\n",
+                    "pattern": "^[a-z]{2}$",
+                    "type": "string"
+                },
+                "expression_title": {
+                    "description": "Title of the language version.\n",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "Unique identifier of the element.\n",
+                    "type": "string"
+                },
+                "manifestations": {
+                    "description": "The file forms (Manifestations) of an Expression.\n",
+                    "items": {
+                        "$ref": "#/$defs/Manifestation"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id",
+                "expression_language",
+                "expression_title"
+            ],
+            "title": "Expression",
+            "type": "object"
+        },
+        "Manifestation": {
+            "additionalProperties": false,
+            "description": "FRBR Manifestation: a concrete file format of an Expression, addressable via a URL.",
+            "properties": {
+                "dates": {
+                    "description": "Dates relating to the element, each with a type indication.\n",
+                    "items": {
+                        "$ref": "#/$defs/Date"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "format": {
+                    "description": "The file format of the manifestation (e.g., pdf, html).\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "description": "Unique identifier of the element.\n",
+                    "type": "string"
+                },
+                "manifestation_url": {
+                    "description": "URL under which the file form can be retrieved.\n",
+                    "format": "uri",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "Manifestation",
+            "type": "object"
+        },
+        "Work": {
+            "additionalProperties": false,
+            "description": "FRBR Work: the abstract document as such, independent of a concrete language version or file format.",
+            "properties": {
+                "document_category": {
+                    "$ref": "#/$defs/DocumentCategoryEnum",
+                    "description": "Category of the document. If not set, 'other' is automatically used.\n"
+                },
+                "expressions": {
+                    "description": "The language versions (Expressions) of a Work.\n",
+                    "items": {
+                        "$ref": "#/$defs/Expression"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "description": "Unique identifier of the element.\n",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "Work",
+            "type": "object"
+        },
+        "WorkContainer": {
+            "additionalProperties": false,
+            "description": "Container for the documents (FRBR Works) of this schema. Deliberately not a tree_root, because the consuming schemas define their own Container.",
+            "properties": {
+                "id": {
+                    "description": "Unique identifier of the element.\n",
+                    "type": "string"
+                },
+                "works": {
+                    "description": "The documents (FRBR Works) contained in the container.\n",
+                    "items": {
+                        "$ref": "#/$defs/Work"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "WorkContainer",
+            "type": "object"
+        }
+    },
+    "$id": "https://ch.paf.link/schema/meta",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "additionalProperties": true,
+    "metamodel_version": "1.11.0",
+    "title": "meta",
+    "type": "object",
+    "version": null
+}
+

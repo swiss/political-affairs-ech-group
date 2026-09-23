@@ -1,0 +1,631 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix linkml: <https://w3id.org/linkml/> .
+@prefix meta: <https://ch.paf.link/schema/meta/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://ch.paf.link/schema/meta.owl.ttl> a owl:Ontology ;
+    rdfs:label "meta" ;
+    skos:definition """This schema models meta topics for the eCH standards 0293-0297. In a first step, FRBR entities are modelled in order to manage documents and their translations.
+""" ;
+    meta:description_de """Dieses Schema modelliert Meta-Themen für die eCH Standards 0293-0297. In einem ersten Schritt werden FRBR-Entitäten modelliert, um die Verwaltung von Dokumenten und deren Übersetzungen zu ermöglichen.
+""" ;
+    meta:description_fr """Ce schéma modélise les thèmes transversaux des normes eCH 0293-0297. Dans un premier temps, des entités FRBR sont modélisées afin de permettre la gestion des documents et de leurs traductions.
+""" .
+
+meta:WorkContainer a owl:Class ;
+    rdfs:label "WorkContainer" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty meta:works ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty meta:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:Work ;
+            owl:onProperty meta:works ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty meta:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty meta:id ] ;
+    skos:definition """Container for the documents (FRBR Works) of this schema. Deliberately not a tree_root, because the consuming schemas define their own Container.
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/meta> ;
+    meta:description_de """Container für die Dokumente (FRBR Works) dieses Schemas. Bewusst kein tree_root, weil die konsumierenden Schemata ihren eigenen Container definieren.
+""" ;
+    meta:description_fr """Conteneur pour les documents (FRBR Works) de ce schéma. Volontairement pas un tree_root, car les schémas consommateurs définissent leur propre Container.
+""" .
+
+meta:documents a owl:ObjectProperty ;
+    rdfs:label "documents" ;
+    rdfs:range meta:Work ;
+    skos:definition """List of documents (FRBR Works) linked to the entity.
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/meta> ;
+    meta:description_de """Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.
+""" ;
+    meta:description_fr """Liste des documents (FRBR Works) liés à l'entité.
+""" .
+
+meta:Expression a owl:Class ;
+    rdfs:label "Expression" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty meta:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom [ a rdfs:Datatype ;
+                    owl:intersectionOf ( xsd:string [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:string ;
+                                owl:withRestrictions ( [ xsd:pattern "^[a-z]{2}$" ] ) ] ) ] ;
+            owl:onProperty dcterms:language ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty meta:dates ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:Date ;
+            owl:onProperty meta:dates ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcterms:language ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty meta:title ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty <http://schema.org/description> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty meta:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty meta:title ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty meta:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty meta:manifestations ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty dcterms:language ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:Manifestation ;
+            owl:onProperty meta:manifestations ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <http://schema.org/description> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <http://schema.org/description> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty meta:title ] ;
+    skos:definition """FRBR Expression: a concrete language version of a Work.
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/meta> ;
+    meta:description_de """FRBR Expression: eine konkrete Sprachfassung eines Works.
+""" ;
+    meta:description_fr """FRBR Expression : une version linguistique concrète d'un Work.
+""" .
+
+meta:Manifestation a owl:Class ;
+    rdfs:label "Manifestation" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty meta:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty meta:url ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty meta:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty meta:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty meta:url ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty meta:format ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty meta:url ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty meta:format ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:Date ;
+            owl:onProperty meta:dates ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty meta:format ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty meta:dates ] ;
+    skos:definition """FRBR Manifestation: a concrete file format of an Expression, addressable via a URL.
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/meta> ;
+    meta:description_de """FRBR Manifestation: eine konkrete Dateiform einer Expression, über eine URL adressierbar.
+""" ;
+    meta:description_fr """FRBR Manifestation : une forme de fichier concrète d'une Expression, adressable au moyen d'une URL.
+""" .
+
+meta:expressions a owl:ObjectProperty ;
+    rdfs:label "expressions" ;
+    rdfs:range meta:Expression ;
+    skos:definition """The language versions (Expressions) of a Work.
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/meta> ;
+    meta:description_de """Die Sprachfassungen (Expressions) eines Works.
+""" ;
+    meta:description_fr """Les versions linguistiques (Expressions) d'un Work.
+""" .
+
+meta:manifestations a owl:ObjectProperty ;
+    rdfs:label "manifestations" ;
+    rdfs:range meta:Manifestation ;
+    skos:definition """The file forms (Manifestations) of an Expression.
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/meta> ;
+    meta:description_de """Die Dateiformen (Manifestations) einer Expression.
+""" ;
+    meta:description_fr """Les formes de fichier (Manifestations) d'une Expression.
+""" .
+
+<https://ch.paf.link/schema/meta/vocabulary/date_types/FirstPublication> a owl:Class ;
+    rdfs:label "first_publication" ;
+    rdfs:subClassOf meta:DateTypesEnum ;
+    skos:definition """Date of first publication.
+""" ;
+    meta:description_de """Datum der Erstpublikation.
+""" ;
+    meta:description_fr """Date de la première publication.
+""" .
+
+<https://ch.paf.link/schema/meta/vocabulary/date_types/LastRevision> a owl:Class ;
+    rdfs:label "last_revision" ;
+    rdfs:subClassOf meta:DateTypesEnum ;
+    skos:definition """Date of the last revision.
+""" ;
+    meta:description_de """Datum der letzten Revision.
+""" ;
+    meta:description_fr """Date de la dernière révision.
+""" .
+
+<https://ch.paf.link/schema/meta/vocabulary/document_category/ConsultationDocuments> a owl:Class ;
+    rdfs:label "consultation_documents" ;
+    dcterms:title "Consultation documents" ;
+    rdfs:subClassOf meta:DocumentCategoryEnum ;
+    skos:definition """Documents opening a consultation. Examples: invitation, list of addressees, questionnaire, synoptic table.
+""" ;
+    meta:description_de """Unterlagen zur Eröffnung einer Vernehmlassung. Beispiele: Einladung, Adressatenliste, Fragebogen, synoptische Darstellung (Fahne).
+""" ;
+    meta:description_fr """Documents d'ouverture d'une consultation. Exemples : invitation, liste des destinataires, questionnaire, tableau synoptique.
+""" ;
+    meta:label_de "Vernehmlassungsdokumente" ;
+    meta:label_en "Consultation documents" ;
+    meta:label_fr "Documents de consultation" ;
+    meta:label_it "Documenti di consultazione" ;
+    meta:label_rm "Documents da consultaziun" .
+
+<https://ch.paf.link/schema/meta/vocabulary/document_category/ConsultationResults> a owl:Class ;
+    rdfs:label "consultation_results" ;
+    dcterms:title "Consultation results" ;
+    rdfs:subClassOf meta:DocumentCategoryEnum ;
+    skos:definition """Results of a consultation. Examples: statement of an organisation or person, report on the results.
+""" ;
+    meta:description_de """Ergebnisse einer Vernehmlassung. Beispiele: Stellungnahme einer Organisation oder Person, Ergebnisbericht.
+""" ;
+    meta:description_fr """Résultats d'une consultation. Exemples : prise de position d'une organisation ou d'une personne, rapport sur les résultats.
+""" ;
+    meta:label_de "Vernehmlassungsresultate" ;
+    meta:label_en "Consultation results" ;
+    meta:label_fr "Résultats de la consultation" ;
+    meta:label_it "Risultati della consultazione" ;
+    meta:label_rm "Resultats da la consultaziun" .
+
+<https://ch.paf.link/schema/meta/vocabulary/document_category/GroupDocuments> a owl:Class ;
+    rdfs:label "group_documents" ;
+    dcterms:title "Group documents" ;
+    rdfs:subClassOf meta:DocumentCategoryEnum ;
+    skos:definition """Documents of a group such as a committee or party. Examples: statutes, annual report, committee allocation.
+""" ;
+    meta:description_de """Unterlagen einer Gruppe wie Kommission oder Partei. Beispiele: Statuten, Jahresbericht, Kommissionszuteilung.
+""" ;
+    meta:description_fr """Documents d'un groupe tel qu'une commission ou un parti. Exemples : statuts, rapport annuel, répartition dans les commissions.
+""" ;
+    meta:label_de "Gruppenunterlagen" ;
+    meta:label_en "Group documents" ;
+    meta:label_fr "Documents de groupe" ;
+    meta:label_it "Documenti di gruppo" ;
+    meta:label_rm "Documents da gruppa" .
+
+<https://ch.paf.link/schema/meta/vocabulary/document_category/InterestDisclosure> a owl:Class ;
+    rdfs:label "interest_disclosure" ;
+    dcterms:title "Interest disclosure" ;
+    rdfs:subClassOf meta:DocumentCategoryEnum ;
+    skos:definition """Registers of the interests of council members. Example: register of interests of the National Council.
+""" ;
+    meta:description_de """Register der Interessenbindungen von Ratsmitgliedern. Beispiel: Register der Interessenbindungen des Nationalrats.
+""" ;
+    meta:description_fr """Registres des liens d'intérêts des membres des conseils. Exemple : registre des liens d'intérêts du Conseil national.
+""" ;
+    meta:label_de "Interessenbindungen" ;
+    meta:label_en "Interest disclosures" ;
+    meta:label_fr "Liens d'intérêts" ;
+    meta:label_it "Relazioni d'interesse" ;
+    meta:label_rm "Colliaziuns d'interess" .
+
+<https://ch.paf.link/schema/meta/vocabulary/document_category/LegislativeDocuments> a owl:Class ;
+    rdfs:label "legislative_documents" ;
+    dcterms:title "Legislative documents" ;
+    rdfs:subClassOf meta:DocumentCategoryEnum ;
+    skos:definition """Documents of the legislative process. Examples: draft act, explanatory report, adopted act, consolidated version.
+""" ;
+    meta:description_de """Dokumente des Gesetzgebungsverfahrens. Beispiele: Erlassentwurf, erläuternder Bericht, beschlossener Erlass, konsolidierte Fassung.
+""" ;
+    meta:description_fr """Documents de la procédure législative. Exemples : projet d'acte, rapport explicatif, acte adopté, version consolidée.
+""" ;
+    meta:label_de "Gesetzgebungsdokumente" ;
+    meta:label_en "Legislative documents" ;
+    meta:label_fr "Documents législatifs" ;
+    meta:label_it "Documenti legislativi" ;
+    meta:label_rm "Documents legislativs" .
+
+<https://ch.paf.link/schema/meta/vocabulary/document_category/MediaRelease> a owl:Class ;
+    rdfs:label "media_release" ;
+    dcterms:title "Media release" ;
+    rdfs:subClassOf meta:DocumentCategoryEnum ;
+    skos:definition """Press releases.
+""" ;
+    meta:description_de """Medienmitteilungen.
+""" ;
+    meta:description_fr """Communiqués de presse.
+""" ;
+    meta:label_de "Medienmitteilung" ;
+    meta:label_en "Media release" ;
+    meta:label_fr "Communiqué de presse" ;
+    meta:label_it "Comunicato stampa" ;
+    meta:label_rm "Communicaziun da medias" .
+
+<https://ch.paf.link/schema/meta/vocabulary/document_category/MeetingDocuments> a owl:Class ;
+    rdfs:label "meeting_documents" ;
+    dcterms:title "Meeting documents" ;
+    rdfs:subClassOf meta:DocumentCategoryEnum ;
+    skos:definition """Documents on the affairs of a meeting. Examples: agenda, session programme, list of parliamentary interventions.
+""" ;
+    meta:description_de """Unterlagen zu den Geschäften einer Sitzung. Beispiele: Traktandenliste, Sessionsprogramm, Vorstossliste.
+""" ;
+    meta:description_fr """Documents relatifs aux affaires d'une séance. Exemples : ordre du jour, programme de session, liste des interventions.
+""" ;
+    meta:label_de "Sitzungsunterlagen" ;
+    meta:label_en "Meeting documents" ;
+    meta:label_fr "Documents de séance" ;
+    meta:label_it "Documenti di seduta" ;
+    meta:label_rm "Documents da sesida" .
+
+<https://ch.paf.link/schema/meta/vocabulary/document_category/MeetingPlanning> a owl:Class ;
+    rdfs:label "meeting_planning" ;
+    dcterms:title "Meeting planning" ;
+    rdfs:subClassOf meta:DocumentCategoryEnum ;
+    skos:definition """Planning of meetings and sessions. Examples: invitation, seating plan, time budget, deadlines for motions.
+""" ;
+    meta:description_de """Planung von Sitzungen und Sessionen. Beispiele: Einladung, Sitzplan, Zeitbudget, Fristen für Einzelanträge.
+""" ;
+    meta:description_fr """Planification des séances et des sessions. Exemples : convocation, plan de salle, budget-temps, délais pour les propositions individuelles.
+""" ;
+    meta:label_de "Sitzungsplanung" ;
+    meta:label_en "Meeting planning" ;
+    meta:label_fr "Planification de séance" ;
+    meta:label_it "Pianificazione della seduta" ;
+    meta:label_rm "Planisaziun da sesida" .
+
+<https://ch.paf.link/schema/meta/vocabulary/document_category/MemberDirectory> a owl:Class ;
+    rdfs:label "member_directory" ;
+    dcterms:title "Member directory" ;
+    rdfs:subClassOf meta:DocumentCategoryEnum ;
+    skos:definition """Lists of members. Examples: members of the councils, committee members, members of friendship groups.
+""" ;
+    meta:description_de """Mitgliederlisten. Beispiele: Mitglieder der Räte, Kommissionsmitglieder, Mitglieder von Freundschaftsgruppen.
+""" ;
+    meta:description_fr """Listes des membres. Exemples : membres des conseils, membres des commissions, membres des groupes d'amitié.
+""" ;
+    meta:label_de "Mitgliederverzeichnis" ;
+    meta:label_en "Member directory" ;
+    meta:label_fr "Liste des membres" ;
+    meta:label_it "Elenco dei membri" ;
+    meta:label_rm "Glista dals commembers" .
+
+<https://ch.paf.link/schema/meta/vocabulary/document_category/Other> a owl:Class ;
+    rdfs:label "other" ;
+    dcterms:title "Other" ;
+    rdfs:subClassOf meta:DocumentCategoryEnum ;
+    skos:definition """Document that fits none of the categories, or whose category is unknown. Default if `document_category` is not set.
+""" ;
+    meta:description_de """Dokument, das keiner Kategorie zugeordnet werden kann oder dessen Kategorie unbekannt ist. Default, wenn `document_category` nicht gesetzt ist.
+""" ;
+    meta:description_fr """Document ne relevant d'aucune catégorie ou dont la catégorie est inconnue. Valeur par défaut si `document_category` n'est pas renseigné.
+""" ;
+    meta:label_de "Andere" ;
+    meta:label_en "Other" ;
+    meta:label_fr "Autre" ;
+    meta:label_it "Altro" ;
+    meta:label_rm "Auter" .
+
+<https://ch.paf.link/schema/meta/vocabulary/document_category/PersonDocuments> a owl:Class ;
+    rdfs:label "person_documents" ;
+    dcterms:title "Person documents" ;
+    rdfs:subClassOf meta:DocumentCategoryEnum ;
+    skos:definition """Documents on individual persons. Examples: portrait of a council member, list of personal staff.
+""" ;
+    meta:description_de """Unterlagen zu einzelnen Personen. Beispiele: Porträt eines Ratsmitglieds, Liste der persönlichen Mitarbeitenden.
+""" ;
+    meta:description_fr """Documents relatifs à des personnes. Exemples : portrait d'un membre du conseil, liste des collaboratrices et collaborateurs personnels.
+""" ;
+    meta:label_de "Personenunterlagen" ;
+    meta:label_en "Person documents" ;
+    meta:label_fr "Documents personnels" ;
+    meta:label_it "Documenti personali" ;
+    meta:label_rm "Documents da persuna" .
+
+<https://ch.paf.link/schema/meta/vocabulary/document_category/Protocol> a owl:Class ;
+    rdfs:label "protocol" ;
+    dcterms:title "Protocol" ;
+    rdfs:subClassOf meta:DocumentCategoryEnum ;
+    skos:definition """Record of the proceedings of a meeting. Examples: verbatim record, decision minutes, speaker list, video recording.
+""" ;
+    meta:description_de """Aufzeichnung des Verlaufs einer Sitzung. Beispiele: Wortprotokoll, Beschlussprotokoll, Rednerliste, Videoaufzeichnung.
+""" ;
+    meta:description_fr """Enregistrement du déroulement d'une séance. Exemples : procès-verbal in extenso, procès-verbal des décisions, liste des orateurs, enregistrement vidéo.
+""" ;
+    meta:label_de "Protokoll" ;
+    meta:label_en "Minutes" ;
+    meta:label_fr "Procès-verbal" ;
+    meta:label_it "Verbale" ;
+    meta:label_rm "Protocol" .
+
+<https://ch.paf.link/schema/meta/vocabulary/document_category/VotingResult> a owl:Class ;
+    rdfs:label "voting_result" ;
+    dcterms:title "Voting result" ;
+    rdfs:subClassOf meta:DocumentCategoryEnum ;
+    skos:definition """Results of votes and elections. Examples: voting record, election record.
+""" ;
+    meta:description_de """Ergebnisse von Abstimmungen und Wahlen. Beispiele: Abstimmungsprotokoll, Wahlprotokoll.
+""" ;
+    meta:description_fr """Résultats des votes et des élections. Exemples : procès-verbal de vote, procès-verbal d'élection.
+""" ;
+    meta:label_de "Abstimmungsergebnis" ;
+    meta:label_en "Voting result" ;
+    meta:label_fr "Résultat du vote" ;
+    meta:label_it "Risultato della votazione" ;
+    meta:label_rm "Resultat da votaziun" .
+
+meta:works a owl:ObjectProperty ;
+    rdfs:label "works" ;
+    rdfs:range meta:Work ;
+    skos:definition """The documents (FRBR Works) contained in the container.
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/meta> ;
+    meta:description_de """Die im Container enthaltenen Dokumente (FRBR Works).
+""" ;
+    meta:description_fr """Les documents (FRBR Works) contenus dans le conteneur.
+""" .
+
+dcterms:date a owl:DatatypeProperty ;
+    rdfs:label "xdate" ;
+    rdfs:range xsd:date ;
+    skos:definition """The date value itself.
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/meta> ;
+    meta:description_de """Der Datumswert selbst.
+""" ;
+    meta:description_fr """La valeur de date elle-même.
+""" .
+
+dcterms:language a owl:DatatypeProperty ;
+    rdfs:label "expression_language" ;
+    rdfs:range [ a rdfs:Datatype ;
+            owl:intersectionOf ( xsd:string [ a rdfs:Datatype ;
+                        owl:onDatatype xsd:string ;
+                        owl:withRestrictions ( [ xsd:pattern "^[a-z]{2}$" ] ) ] ) ] ;
+    skos:definition """Language code in ISO 639-1 format.
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/meta> ;
+    meta:description_de """Sprachcode im ISO 639-1-Format.
+""" ;
+    meta:description_fr """Code de langue au format ISO 639-1.
+""" .
+
+<http://schema.org/description> a owl:DatatypeProperty ;
+    rdfs:label "expression_description" ;
+    rdfs:range xsd:string ;
+    skos:definition """Descriptive text of the language version.
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/meta> ;
+    meta:description_de """Beschreibender Text zur Sprachfassung.
+""" ;
+    meta:description_fr """Texte descriptif de la version linguistique.
+""" .
+
+meta:Date a owl:Class ;
+    rdfs:label "Date" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty meta:dateType ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcterms:date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty meta:dateType ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty dcterms:date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:DateTypesEnum ;
+            owl:onProperty meta:dateType ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty dcterms:date ] ;
+    skos:definition """A date with a type indication (e.g. first publication, last revision).
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/meta> ;
+    meta:description_de """Ein Datum mit Typangabe (z.B. Erstpublikation, letzte Revision).
+""" ;
+    meta:description_fr """Une date assortie d'une indication de type (p. ex. première publication, dernière révision).
+""" .
+
+meta:Work a owl:Class ;
+    rdfs:label "Work" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty meta:documentCategory ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty meta:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:Expression ;
+            owl:onProperty meta:expressions ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty meta:expressions ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty meta:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty meta:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:DocumentCategoryEnum ;
+            owl:onProperty meta:documentCategory ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty meta:documentCategory ] ;
+    skos:definition """FRBR Work: the abstract document as such, independent of a concrete language version or file format.
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/meta> ;
+    meta:description_de """FRBR Work: das abstrakte Dokument als solches, unabhängig von einer konkreten Sprachfassung oder einem Dateiformat.
+""" ;
+    meta:description_fr """FRBR Work : le document abstrait en tant que tel, indépendamment d'une version linguistique ou d'un format de fichier concrets.
+""" .
+
+meta:dateType a owl:ObjectProperty ;
+    rdfs:label "date_type" ;
+    rdfs:range meta:DateTypesEnum ;
+    skos:definition """Meaning of the date (e.g. first publication, last revision).
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/meta> ;
+    meta:description_de """Bedeutung des Datums (z.B. Erstpublikation, letzte Revision).
+""" ;
+    meta:description_fr """Signification de la date (p. ex. première publication, dernière révision).
+""" .
+
+meta:documentCategory a owl:ObjectProperty ;
+    rdfs:label "document_category" ;
+    rdfs:range meta:DocumentCategoryEnum ;
+    skos:definition """Category of the document. If not set, 'other' is automatically used.
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/meta> ;
+    meta:description_de """Kategorie des Dokuments. Wenn nicht gesetzt, wird automatisch 'other' verwendet.
+""" ;
+    meta:description_fr """Catégorie du document. Si elle n'est pas renseignée, la valeur 'other' est utilisée automatiquement.
+""" .
+
+meta:format a owl:DatatypeProperty ;
+    rdfs:label "format" ;
+    rdfs:range xsd:string ;
+    skos:definition """The file format of the manifestation (e.g., pdf, html).
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/meta> ;
+    meta:description_de """Das Dateiformat der Manifestation (z.B. pdf, html).
+""" ;
+    meta:description_fr """Le format de fichier de la manifestation (p. ex. pdf, html).
+""" .
+
+meta:title a owl:DatatypeProperty ;
+    rdfs:label "expression_title" ;
+    rdfs:range xsd:string ;
+    skos:definition """Title of the language version.
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/meta> ;
+    meta:description_de """Titel der Sprachfassung.
+""" ;
+    meta:description_fr """Titre de la version linguistique.
+""" .
+
+meta:url a owl:DatatypeProperty ;
+    rdfs:label "manifestation_url" ;
+    rdfs:range xsd:anyURI ;
+    skos:definition """URL under which the file form can be retrieved.
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/meta> ;
+    meta:description_de """URL, unter der die Dateiform abgerufen werden kann.
+""" ;
+    meta:description_fr """URL sous laquelle la forme de fichier peut être consultée.
+""" .
+
+meta:DateTypesEnum a owl:Class ;
+    rdfs:label "DateTypesEnum" ;
+    owl:unionOf ( <https://ch.paf.link/schema/meta/vocabulary/date_types/FirstPublication> <https://ch.paf.link/schema/meta/vocabulary/date_types/LastRevision> ) ;
+    skos:definition """Meaning of a date entry.
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/meta> ;
+    meta:description_de """Bedeutung einer Datumsangabe.
+""" ;
+    meta:description_fr """Signification d'une indication de date.
+""" ;
+    linkml:permissible_values <https://ch.paf.link/schema/meta/vocabulary/date_types/FirstPublication>,
+        <https://ch.paf.link/schema/meta/vocabulary/date_types/LastRevision> .
+
+meta:dates a owl:ObjectProperty ;
+    rdfs:label "dates" ;
+    rdfs:range meta:Date ;
+    skos:definition """Dates relating to the element, each with a type indication.
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/meta> ;
+    meta:description_de """Datumsangaben zum Element, jeweils mit Typangabe.
+""" ;
+    meta:description_fr """Dates relatives à l'élément, chacune assortie d'une indication de type.
+""" .
+
+meta:id a owl:DatatypeProperty ;
+    rdfs:label "id" ;
+    skos:definition """Unique identifier of the element.
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/meta> ;
+    meta:description_de """Eindeutiger Identifikator des Elements.
+""" ;
+    meta:description_fr """Identifiant univoque de l'élément.
+""" .
+
+meta:DocumentCategoryEnum a owl:Class ;
+    rdfs:label "DocumentCategoryEnum" ;
+    owl:unionOf ( <https://ch.paf.link/schema/meta/vocabulary/document_category/MeetingPlanning> <https://ch.paf.link/schema/meta/vocabulary/document_category/MeetingDocuments> <https://ch.paf.link/schema/meta/vocabulary/document_category/Protocol> <https://ch.paf.link/schema/meta/vocabulary/document_category/VotingResult> <https://ch.paf.link/schema/meta/vocabulary/document_category/LegislativeDocuments> <https://ch.paf.link/schema/meta/vocabulary/document_category/ConsultationDocuments> <https://ch.paf.link/schema/meta/vocabulary/document_category/ConsultationResults> <https://ch.paf.link/schema/meta/vocabulary/document_category/MediaRelease> <https://ch.paf.link/schema/meta/vocabulary/document_category/GroupDocuments> <https://ch.paf.link/schema/meta/vocabulary/document_category/MemberDirectory> <https://ch.paf.link/schema/meta/vocabulary/document_category/PersonDocuments> <https://ch.paf.link/schema/meta/vocabulary/document_category/InterestDisclosure> <https://ch.paf.link/schema/meta/vocabulary/document_category/Other> ) ;
+    skos:definition """Categories for classifying documents referenced in eCH standards 0292-0297. Multilingual labels (DE/FR/IT/RM/EN) are encoded via `annotations` (convention `label_xx`); first proposals for FR/IT/RM are pending plenum review.
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/meta> ;
+    meta:description_de """Kategorien zur Klassifikation von Dokumenten, die in den eCH Standards 0292-0297 referenziert werden. Mehrsprachige Labels (DE/FR/IT/RM/EN) sind über `annotations` (Konvention `label_xx`) abgebildet; Erstvorschläge für FR/IT/RM stehen unter Plenum-Review.
+""" ;
+    meta:description_fr """Catégories de classification des documents référencés dans les normes eCH 0292-0297. Les libellés multilingues (DE/FR/IT/RM/EN) sont représentés au moyen d'`annotations` (convention `label_xx`) ; les premières propositions pour FR/IT/RM sont en cours de revue par le plénum.
+""" ;
+    linkml:permissible_values <https://ch.paf.link/schema/meta/vocabulary/document_category/ConsultationDocuments>,
+        <https://ch.paf.link/schema/meta/vocabulary/document_category/ConsultationResults>,
+        <https://ch.paf.link/schema/meta/vocabulary/document_category/GroupDocuments>,
+        <https://ch.paf.link/schema/meta/vocabulary/document_category/InterestDisclosure>,
+        <https://ch.paf.link/schema/meta/vocabulary/document_category/LegislativeDocuments>,
+        <https://ch.paf.link/schema/meta/vocabulary/document_category/MediaRelease>,
+        <https://ch.paf.link/schema/meta/vocabulary/document_category/MeetingDocuments>,
+        <https://ch.paf.link/schema/meta/vocabulary/document_category/MeetingPlanning>,
+        <https://ch.paf.link/schema/meta/vocabulary/document_category/MemberDirectory>,
+        <https://ch.paf.link/schema/meta/vocabulary/document_category/Other>,
+        <https://ch.paf.link/schema/meta/vocabulary/document_category/PersonDocuments>,
+        <https://ch.paf.link/schema/meta/vocabulary/document_category/Protocol>,
+        <https://ch.paf.link/schema/meta/vocabulary/document_category/VotingResult> .
+
+
