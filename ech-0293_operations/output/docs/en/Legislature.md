@@ -64,31 +64,28 @@ _Term of office of a parliament as a legislative assembly. Usually lasts four ye
 
 
 ### Examples
-#### Example Legislature: Cantonal legislature with a four-year term
+#### Example Legislature: Ongoing cantonal legislature with a five-year term
 
 ```yaml
 legislatures:
-- global_uri: ops:legislature_be_2022_2026
-  local_id: GR-BE-2022-2026
-  spatial: https://ld.admin.ch/canton/2
+- global_uri: ops:legislature_vd_2022_2027
+  wikidata_uri: http://www.wikidata.org/entity/Q131627357
+  spatial: https://ld.admin.ch/canton/22
   name:
-  - text: Legislatur 2022–2026
-    language: de
-  - text: Législature 2022-2026
+  - text: Législature 2022-2027
     language: fr
-  landing_page: https://www.gr.be.ch/de/start/grosser-rat.html
+  description: Le Grand Conseil vaudois est élu pour cinq ans.
+  landing_page: https://www.vd.ch/gc
   actor_id:
-    global_uri: actors:gr_be
-    label: Grosser Rat Bern
+    global_uri: actors:gc_vd
+    label: Grand Conseil du canton de Vaud
     abbreviation:
-    - value: GR
-      language: de
-  date_begin_planned: '2022-06-01'
-  date_end_planned: '2026-05-31'
-  date_begin_actual: '2022-06-01'
-  date_end_actual: '2026-05-31'
-  datetime_created: '2022-04-01T10:15:00+02:00'
-  datetime_modified: '2026-06-01T07:00:00+02:00'
+    - value: GC
+      language: fr
+  date_begin_actual: '2022-07-01'
+  date_end_planned: '2027-06-30'
+  datetime_created: '2022-05-10T14:00:00+02:00'
+  datetime_modified: '2025-01-08T11:20:00+01:00'
 
 ```
 #### Example Legislature: Completed federal legislature
@@ -121,28 +118,31 @@ legislatures:
   datetime_modified: '2023-12-04T08:30:00+01:00'
 
 ```
-#### Example Legislature: Ongoing cantonal legislature with a five-year term
+#### Example Legislature: Cantonal legislature with a four-year term
 
 ```yaml
 legislatures:
-- global_uri: ops:legislature_vd_2022_2027
-  wikidata_uri: http://www.wikidata.org/entity/Q131627357
-  spatial: https://ld.admin.ch/canton/22
+- global_uri: ops:legislature_be_2022_2026
+  local_id: GR-BE-2022-2026
+  spatial: https://ld.admin.ch/canton/2
   name:
-  - text: Législature 2022-2027
+  - text: Legislatur 2022–2026
+    language: de
+  - text: Législature 2022-2026
     language: fr
-  description: Le Grand Conseil vaudois est élu pour cinq ans.
-  landing_page: https://www.vd.ch/gc
+  landing_page: https://www.gr.be.ch/de/start/grosser-rat.html
   actor_id:
-    global_uri: actors:gc_vd
-    label: Grand Conseil du canton de Vaud
+    global_uri: actors:gr_be
+    label: Grosser Rat Bern
     abbreviation:
-    - value: GC
-      language: fr
-  date_begin_actual: '2022-07-01'
-  date_end_planned: '2027-06-30'
-  datetime_created: '2022-05-10T14:00:00+02:00'
-  datetime_modified: '2025-01-08T11:20:00+01:00'
+    - value: GR
+      language: de
+  date_begin_planned: '2022-06-01'
+  date_end_planned: '2026-05-31'
+  date_begin_actual: '2022-06-01'
+  date_end_actual: '2026-05-31'
+  datetime_created: '2022-04-01T10:15:00+02:00'
+  datetime_modified: '2026-06-01T07:00:00+02:00'
 
 ```
 

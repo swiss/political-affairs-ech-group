@@ -17,7 +17,7 @@ _A mixin class that provides the elements of an agenda item: designation, type, 
 
 | Name | Cardinality and Range | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| parent_meeting | 0..1 <br/> [String](String.md) | The linked meeting ID that groups the current meeting.  |
+| parent_meeting | 0..1 <br/> [String](String.md) | Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.  |
 | agenda_item_type | 0..1 <br/> [AgendaItemTypeEnum](AgendaItemTypeEnum.md) | Type of agenda item, distinguishing individual items from groups.  |
 | agenda_item_number | 0..1 <br/> [String](String.md) | Sequential number of the agenda item (string type to support roman numerals).  |
 | agenda_item_position | 0..1 <br/> [Integer](Integer.md) | Integer position of the agenda item in the meeting sequence.  |
@@ -31,7 +31,7 @@ _A mixin class that provides the elements of an agenda item: designation, type, 
 | landing_page | 0..1 <br/> [String](String.md) | URL providing further information.  |
 | url | * <br/> [MultilingualString](MultilingualString.md) | Landing page or further web address, multilingual.  |
 | agenda_item_category | 0..1 <br/> [String](String.md) | Category for grouped agenda items (e.g., introduction, by department, technical agenda items).  |
-| parent_agenda_item | 0..1 <br/> [String](String.md) | If needed, this slot builds a hierarchy of agenda items.  |
+| parent_agenda_item | 0..1 <br/> [String](String.md) | Identifier of the agenda item this record belongs to. On an agenda item it builds a hierarchy of agenda items; on a voting, election or speech it names the agenda item under which the record was handled.  |
 | has_resolution | 0..1 <br/> [Resolution](Resolution.md) | The resolution or decision taken on this agenda item.  |
 | text_segments | * <br/> [TextSegment](TextSegment.md) | Collection of text segments (e.g. verbatim protocol).  |
 | documents | * <br/> [Work](Work.md) | List of documents (FRBR Works) linked to the entity.  |

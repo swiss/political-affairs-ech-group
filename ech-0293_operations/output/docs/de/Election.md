@@ -32,7 +32,8 @@ _Ein Wahlverfahren zur Wahl von Personen in Positionen._
 | majority_count | 0..1 <br/> [Integer](Integer.md) | Anzahl der Stimmen, die für die relevante Mehrheitsschwelle erforderlich sind.  |
 | result_text | 0..1 <br/> [String](String.md) | Freitext zur Beschreibung des Ergebnisses der Abstimmung, z.B. „Mit 78 Stimmen angenommen“.  |
 | parent_meeting | 0..1 <br/> [String](String.md) | Identifikator der Sitzung, zu der dieser Eintrag gehört. Bei einer Sitzung bezeichnet er die übergeordnete Sitzung, bei Traktandum, Abstimmung, Wahl, Wortmeldung oder Protokoll die Sitzung, in der der Eintrag entstanden ist.  |
-| parent_agenda_item | 0..1 <br/> [String](String.md) | Identifikator des Traktandums, zu dem dieser Eintrag gehört. Bei einem Traktandum baut er eine Hierarchie von Traktanden auf, bei Abstimmung, Wahl oder Wortmeldung bezeichnet er das Traktandum, unter dem der Eintrag behandelt wurde.  |
+| parent_protocol | 0..1 <br/> [Protocol](Protocol.md) | Das Protokoll, in dem die Abstimmung oder Wahl festgehalten ist. Abgestimmt wird im Verlauf der Sitzung; die Abstimmung hängt deshalb am Protokoll und nicht an der vorgängig geplanten Traktandenliste.  |
+| parent_protocol_item | 0..1 <br/> [ProtocolItem](ProtocolItem.md) | Das protokollierte Traktandum (ProtocolItem), unter dem abgestimmt oder gewählt wurde. Entfällt, wenn ohne Traktandierung abgestimmt wurde; die Zuordnung zur Sitzung ergibt sich dann allein aus parent_protocol und parent_meeting.  |
 | affair_id | 0..1 <br/> [String](String.md) | Die Verbindung zu den Geschäften des Traktandums.  |
 | actor_id | 0..1 <br/> [GroupReference](GroupReference.md) | Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
 | documents | * <br/> [Work](Work.md) | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.  |
@@ -50,6 +51,7 @@ _Ein Wahlverfahren zur Wahl von Personen in Positionen._
 | Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [elections](elections.md) | range | [Election](Election.md) |
+| [Protocol](Protocol.md) | [elections](elections.md) | range | [Election](Election.md) |
 
 
 

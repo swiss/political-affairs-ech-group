@@ -26,10 +26,9 @@ URI: [ops:parent_agenda_item](https://ch.paf.link/schema/operations/parent_agend
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [AgendaItem](AgendaItem.md) | Ein Traktandum einer Sitzung |  no  |
-| [Voting](Voting.md) | Ein Abstimmungsverfahren mit Einzelstimmen und Ergebnissen |  no  |
-| [Election](Election.md) | Ein Wahlverfahren zur Wahl von Personen in Positionen |  no  |
+| [IsAgendaItem](IsAgendaItem.md) | Eine Mixin-Klasse, welche die Elemente eines Traktandums bereitstellt: Bezeic... |  no  |
 | [Speech](Speech.md) | Eine Wortmeldung während einer Sitzung (auch Votum oder Redebeitrag genannt) |  no  |
+| [AgendaItem](AgendaItem.md) | Ein Traktandum einer Sitzung |  no  |
 | [ProtocolItem](ProtocolItem.md) | Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde |  no  |
 
 
@@ -44,7 +43,7 @@ URI: [ops:parent_agenda_item](https://ch.paf.link/schema/operations/parent_agend
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [String](String.md) |
-| Domäne von | [AgendaItem](AgendaItem.md), [Voting](Voting.md), [Election](Election.md), [Speech](Speech.md) |
+| Domäne von | [IsAgendaItem](IsAgendaItem.md), [Speech](Speech.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -92,9 +91,7 @@ description: 'Identifikator des Traktandums, zu dem dieser Eintrag gehört. Bei 
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 domain_of:
-- AgendaItem
-- Voting
-- Election
+- IsAgendaItem
 - Speech
 range: string
 

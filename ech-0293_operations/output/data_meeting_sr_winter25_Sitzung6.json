@@ -67,6 +67,9 @@
       "protocol_items": [
         {
           "global_uri": "ops:protokollpunkt_69905",
+          "datetime_begin_actual": "2025-12-19T09:20:00+01:00",
+          "datetime_created": "2026-01-12T00:00:00+01:00",
+          "datetime_modified": "2026-01-12T00:00:00+01:00",
           "parent_meeting": "parl:sr_winter25_sitzung_6",
           "agenda_item_type": "item",
           "agenda_item_number": "6",
@@ -79,10 +82,7 @@
           ],
           "affair_id": "affairs:24.4471",
           "landing_page": "https://www.parlament.ch/de/ratsbetrieb/amtliches-bulletin/amtliches-bulletin-die-verhandlungen?SubjectId=69905#votum3",
-          "agenda_item_category": "agenda_item",
-          "datetime_begin_actual": "2025-12-19T09:20:00+01:00",
-          "datetime_created": "2026-01-12T00:00:00+01:00",
-          "datetime_modified": "2026-01-12T00:00:00+01:00"
+          "agenda_item_category": "agenda_item"
         }
       ],
       "datetime_created": "2026-01-12T00:00:00+01:00",

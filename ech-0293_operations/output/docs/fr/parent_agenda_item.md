@@ -26,10 +26,9 @@ URI: [ops:parent_agenda_item](https://ch.paf.link/schema/operations/parent_agend
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [AgendaItem](AgendaItem.md) | Un point de l'ordre du jour d'une séance |  no  |
-| [Voting](Voting.md) | Une procédure de vote avec les voix individuelles et les résultats |  no  |
-| [Election](Election.md) | Une procédure d'élection visant à pourvoir des fonctions par des personnes |  no  |
+| [IsAgendaItem](IsAgendaItem.md) | Une classe mixin qui fournit les éléments d'un point de l'ordre du jour : dés... |  no  |
 | [Speech](Speech.md) | Une intervention prononcée au cours d'une séance (également appelée prise de ... |  no  |
+| [AgendaItem](AgendaItem.md) | Un point de l'ordre du jour d'une séance |  no  |
 | [ProtocolItem](ProtocolItem.md) | Un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-... |  no  |
 
 
@@ -44,7 +43,7 @@ URI: [ops:parent_agenda_item](https://ch.paf.link/schema/operations/parent_agend
 | Propriété | Valeur |
 | --- | --- |
 | Plage | [String](String.md) |
-| Domaine de | [AgendaItem](AgendaItem.md), [Voting](Voting.md), [Election](Election.md), [Speech](Speech.md) |
+| Domaine de | [IsAgendaItem](IsAgendaItem.md), [Speech](Speech.md) |
 
 ### Cardinalité et exigences
 
@@ -93,9 +92,7 @@ description: 'Identifiant du point de l''ordre du jour auquel cet enregistrement
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 domain_of:
-- AgendaItem
-- Voting
-- Election
+- IsAgendaItem
 - Speech
 range: string
 

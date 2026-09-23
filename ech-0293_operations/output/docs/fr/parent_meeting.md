@@ -27,12 +27,13 @@ URI: [ops:parent_meeting](https://ch.paf.link/schema/operations/parent_meeting)
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
 | [Meeting](Meeting.md) | Une classe générale de séance utilisée pour les sessions, les séances de comm... |  no  |
-| [AgendaItem](AgendaItem.md) | Un point de l'ordre du jour d'une séance |  no  |
+| [IsAgendaItem](IsAgendaItem.md) | Une classe mixin qui fournit les éléments d'un point de l'ordre du jour : dés... |  no  |
 | [Protocol](Protocol.md) | Le procès-verbal établi après la séance |  no  |
 | [Voting](Voting.md) | Une procédure de vote avec les voix individuelles et les résultats |  no  |
 | [Election](Election.md) | Une procédure d'élection visant à pourvoir des fonctions par des personnes |  no  |
 | [Attendance](Attendance.md) | Liste de présence agrégée pour une séance (nombre de membres présents, absent... |  no  |
 | [Speech](Speech.md) | Une intervention prononcée au cours d'une séance (également appelée prise de ... |  no  |
+| [AgendaItem](AgendaItem.md) | Un point de l'ordre du jour d'une séance |  no  |
 | [ProtocolItem](ProtocolItem.md) | Un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-... |  no  |
 
 
@@ -47,7 +48,7 @@ URI: [ops:parent_meeting](https://ch.paf.link/schema/operations/parent_meeting)
 | Propriété | Valeur |
 | --- | --- |
 | Plage | [String](String.md) |
-| Domaine de | [Meeting](Meeting.md), [AgendaItem](AgendaItem.md), [Protocol](Protocol.md), [Voting](Voting.md), [Election](Election.md), [Attendance](Attendance.md), [Speech](Speech.md) |
+| Domaine de | [Meeting](Meeting.md), [IsAgendaItem](IsAgendaItem.md), [Protocol](Protocol.md), [Voting](Voting.md), [Election](Election.md), [Attendance](Attendance.md), [Speech](Speech.md) |
 
 ### Cardinalité et exigences
 
@@ -96,7 +97,7 @@ from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 domain_of:
 - Meeting
-- AgendaItem
+- IsAgendaItem
 - Protocol
 - Voting
 - Election

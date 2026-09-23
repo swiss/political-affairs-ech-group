@@ -23,6 +23,7 @@ _Das nach der Sitzung erstellte Protokoll. Ein Wrapper-Container, der die tatsä
 | parent_meeting | 0..1 <br/> [String](String.md) | Identifikator der Sitzung, zu der dieser Eintrag gehört. Bei einer Sitzung bezeichnet er die übergeordnete Sitzung, bei Traktandum, Abstimmung, Wahl, Wortmeldung oder Protokoll die Sitzung, in der der Eintrag entstanden ist.  |
 | protocol_items | * <br/> [ProtocolItem](ProtocolItem.md) | Traktanden, wie sie im Protokoll tatsächlich festgehalten wurden.  |
 | votings | * <br/> [Voting](Voting.md) | Sammlung der Abstimmungen.  |
+| elections | * <br/> [Election](Election.md) | Sammlung der Wahlen.  |
 | speeches | * <br/> [Speech](Speech.md) | Sammlung der Wortmeldungen.  |
 | text_segments | * <br/> [TextSegment](TextSegment.md) | Sammlung von Textsegmenten (z.B. Wortprotokoll).  |
 | documents | * <br/> [Work](Work.md) | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.  |
@@ -41,6 +42,8 @@ _Das nach der Sitzung erstellte Protokoll. Ein Wrapper-Container, der die tatsä
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [protocols](protocols.md) | range | [Protocol](Protocol.md) |
 | [Meeting](Meeting.md) | [has_protocol](has_protocol.md) | range | [Protocol](Protocol.md) |
+| [Voting](Voting.md) | [parent_protocol](parent_protocol.md) | range | [Protocol](Protocol.md) |
+| [Election](Election.md) | [parent_protocol](parent_protocol.md) | range | [Protocol](Protocol.md) |
 
 
 
