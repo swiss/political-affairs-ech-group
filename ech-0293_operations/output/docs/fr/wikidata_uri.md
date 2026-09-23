@@ -47,6 +47,10 @@ URI: [mcm:wikidataUri](https://ld.ech.ch/schema/0292/meta-common/wikidataUri)
 | [HasReferenceIdentification](HasReferenceIdentification.md) | Une classe mixin qui fournit les slots par lesquels une référence désigne l'e... |  no  |
 | [PersonReference](PersonReference.md) | Référence abrégée à une personne avec les principales données d'identificatio... |  no  |
 | [GroupReference](GroupReference.md) | Référence abrégée à un groupe avec les principales données d'identification a... |  no  |
+| [Work](Work.md) | FRBR Work : le document abstrait en tant que tel, indépendamment d'une versio... |  no  |
+| [Expression](Expression.md) | FRBR Expression : une version linguistique concrète d'un Work |  no  |
+| [Manifestation](Manifestation.md) | FRBR Manifestation : une forme de fichier concrète d'une Expression, adressab... |  no  |
+| [WorkContainer](WorkContainer.md) | Conteneur pour les documents (FRBR Works) de ce schéma |  no  |
 
 
 

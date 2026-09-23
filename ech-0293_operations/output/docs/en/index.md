@@ -16,7 +16,6 @@ Name: operations
 | [AgendaItem](AgendaItem.md) | An agenda item of a meeting as planned beforehand |
 | [Attendance](Attendance.md) | Aggregated attendance record for a meeting (number of members present, absent... |
 | [Container](Container.md) | Container for the records of public council operations: legislatures, session... |
-| [Date](Date.md) | A date with a type indication (e |
 | [Election](Election.md) | An election in which a parliamentary body appoints one or several persons to ... |
 | [Expression](Expression.md) | FRBR Expression: a concrete language version of a Work |
 | [GroupReference](GroupReference.md) | Lightweight reference to a group with key identification data at time of link... |
@@ -83,8 +82,6 @@ Name: operations
 | [date_end_planned](date_end_planned.md) | The planned end date of an event or occurrence with time duration |
 | [date_modified](date_modified.md) | The date when an entity was last modified |
 | [date_planned](date_planned.md) | The planned date of an instantaneous event or occurrence (without time durati... |
-| [date_type](date_type.md) | Meaning of the date (e |
-| [dates](dates.md) | Dates relating to the element, each with a type indication |
 | [datetime_actual](datetime_actual.md) | The actual date and time of an instantaneous event or occurrence (without tim... |
 | [datetime_begin](datetime_begin.md) | The date and time when the meeting or voting begins |
 | [datetime_begin_actual](datetime_begin_actual.md) | The actual start date and time of an event or occurrence with time duration |
@@ -111,7 +108,6 @@ Name: operations
 | [group_name](group_name.md) | Name of the group or body in plain text, in addition to the reference `group_... |
 | [has_protocol](has_protocol.md) | Reference to the protocol (minutes) of this meeting, recorded after the meeti... |
 | [has_resolution](has_resolution.md) | The formal decision taken on this agenda item, e |
-| [id](id.md) | Unique identifier of the element |
 | [individual_attendances](individual_attendances.md) | Collection of individual attendance records |
 | [individual_vote_type](individual_vote_type.md) | Type of vote cast (yes, no, abstention, no vote, etc |
 | [individual_votes](individual_votes.md) | Collection of individual vote records |
@@ -201,7 +197,6 @@ Name: operations
 | [weight](weight.md) | Voting weight of the member; normally 1 |
 | [wikidata_uri](wikidata_uri.md) | A URI that refers to a Wikidata entity, e |
 | [works](works.md) | The documents (FRBR Works) contained in the container |
-| [xdate](xdate.md) | The date value itself |
 
 
 ## Enumerations
@@ -210,7 +205,6 @@ Name: operations
 | --- | --- |
 | [AgendaItemTypeEnum](AgendaItemTypeEnum.md) | Type of agenda item, distinguishing individual items from grouped items |
 | [AttendanceTypeEnum](AttendanceTypeEnum.md) | Type of individual attendance |
-| [DateTypesEnum](DateTypesEnum.md) | Meaning of a date entry |
 | [DocumentCategoryEnum](DocumentCategoryEnum.md) | Categories for classifying documents referenced in eCH standards 0292-0297 |
 | [ElectionTypeEnum](ElectionTypeEnum.md) | Type of election procedure |
 | [IndividualVoteTypeEnum](IndividualVoteTypeEnum.md) | Type of individual vote cast by a member |

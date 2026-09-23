@@ -47,6 +47,10 @@ URI: [mcm:localId](https://ld.ech.ch/schema/0292/meta-common/localId)
 | [HasReferenceIdentification](HasReferenceIdentification.md) | A mixin class that provides the slots with which a reference names the entity... |  no  |
 | [PersonReference](PersonReference.md) | Lightweight reference to a person with key identification data at time of lin... |  no  |
 | [GroupReference](GroupReference.md) | Lightweight reference to a group with key identification data at time of link... |  no  |
+| [Work](Work.md) | FRBR Work: the abstract document as such, independent of a concrete language ... |  no  |
+| [Expression](Expression.md) | FRBR Expression: a concrete language version of a Work |  no  |
+| [Manifestation](Manifestation.md) | FRBR Manifestation: a concrete file format of an Expression, addressable via ... |  no  |
+| [WorkContainer](WorkContainer.md) | Container for the documents (FRBR Works) of this schema |  no  |
 
 
 

@@ -16,7 +16,6 @@ Name: operations
 | [AgendaItem](AgendaItem.md) | Ein vorgängig geplantes Traktandum einer Sitzung |
 | [Attendance](Attendance.md) | Aggregierte Anwesenheitsliste für eine Sitzung (Anzahl Anwesende, Abwesende, ... |
 | [Container](Container.md) | Container für die Daten des öffentlichen Ratsbetriebs: Legislaturperioden, Se... |
-| [Date](Date.md) | Ein Datum mit Typangabe (z |
 | [Election](Election.md) | Eine Wahl, mit der ein parlamentarisches Organ eine oder mehrere Personen für... |
 | [Expression](Expression.md) | FRBR Expression: eine konkrete Sprachfassung eines Works |
 | [GroupReference](GroupReference.md) | Kurzreferenz auf eine Gruppe mit den wichtigsten Identifikationsmerkmalen zum... |
@@ -83,8 +82,6 @@ Name: operations
 | [date_end_planned](date_end_planned.md) | Das geplante Enddatum eines Ereignisses oder Vorkommnissen mit Zeitdauer |
 | [date_modified](date_modified.md) | Das Datum, an dem eine Entität zuletzt geändert wurde |
 | [date_planned](date_planned.md) | Das geplante Datum eines instantanen Ereignisses oder Vorkommnissen (ohne Zei... |
-| [date_type](date_type.md) | Bedeutung des Datums (z |
-| [dates](dates.md) | Datumsangaben zum Element, jeweils mit Typangabe |
 | [datetime_actual](datetime_actual.md) | Das tatsächliche Datum und die Uhrzeit eines instantanen Ereignisses oder Vor... |
 | [datetime_begin](datetime_begin.md) | Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung beginnt |
 | [datetime_begin_actual](datetime_begin_actual.md) | Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorkommnis... |
@@ -111,7 +108,6 @@ Name: operations
 | [group_name](group_name.md) | Name der Gruppe oder des Gremiums im Klartext, zusätzlich zur Referenz `group... |
 | [has_protocol](has_protocol.md) | Referenz auf das nach der Sitzung erstellte Protokoll dieser Sitzung |
 | [has_resolution](has_resolution.md) | Der formale Beschluss zu diesem Traktandum, z |
-| [id](id.md) | Eindeutiger Identifikator des Elements |
 | [individual_attendances](individual_attendances.md) | Sammlung der einzelnen Anwesenheitsfeststellungen |
 | [individual_vote_type](individual_vote_type.md) | Art der abgegebenen Stimme (Ja, Nein, Enthaltung, nicht abgestimmt, etc |
 | [individual_votes](individual_votes.md) | Sammlung der Einzelstimmen |
@@ -201,7 +197,6 @@ Name: operations
 | [weight](weight.md) | Stimmgewicht des Mitglieds; im Normalfall 1 |
 | [wikidata_uri](wikidata_uri.md) | Eine URI, die auf eine Wikidata-Entität verweist, z |
 | [works](works.md) | Die im Container enthaltenen Dokumente (FRBR Works) |
-| [xdate](xdate.md) | Der Datumswert selbst |
 
 
 ## Enums
@@ -210,7 +205,6 @@ Name: operations
 | --- | --- |
 | [AgendaItemTypeEnum](AgendaItemTypeEnum.md) | Art des Traktandums, unterscheidet einzelne von gruppierten Traktanden |
 | [AttendanceTypeEnum](AttendanceTypeEnum.md) | Art der individuellen Anwesenheit |
-| [DateTypesEnum](DateTypesEnum.md) | Bedeutung einer Datumsangabe |
 | [DocumentCategoryEnum](DocumentCategoryEnum.md) | Kategorien zur Klassifikation von Dokumenten, die in den eCH Standards 0292-0... |
 | [ElectionTypeEnum](ElectionTypeEnum.md) | Art des Wahlverfahrens |
 | [IndividualVoteTypeEnum](IndividualVoteTypeEnum.md) | Art der Einzelstimme eines Mitglieds |

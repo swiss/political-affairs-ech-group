@@ -543,36 +543,6 @@
             "title": "Container",
             "type": "object"
         },
-        "Date": {
-            "additionalProperties": false,
-            "description": "A date with a type indication (e.g. first publication, last revision).",
-            "properties": {
-                "date_type": {
-                    "$ref": "#/$defs/DateTypesEnum",
-                    "description": "Meaning of the date (e.g. first publication, last revision).\n"
-                },
-                "xdate": {
-                    "description": "The date value itself.\n",
-                    "format": "date",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "xdate",
-                "date_type"
-            ],
-            "title": "Date",
-            "type": "object"
-        },
-        "DateTypesEnum": {
-            "description": "Meaning of a date entry.",
-            "enum": [
-                "first_publication",
-                "last_revision"
-            ],
-            "title": "DateTypesEnum",
-            "type": "string"
-        },
         "DocumentCategoryEnum": {
             "description": "Categories for classifying documents referenced in eCH standards 0292-0297. Multilingual labels (DE/FR/IT/RM/EN) are encoded via `annotations` (convention `label_xx`); first proposals for FR/IT/RM are pending plenum review.",
             "enum": [
@@ -790,13 +760,35 @@
             "additionalProperties": false,
             "description": "FRBR Expression: a concrete language version of a Work.",
             "properties": {
-                "dates": {
-                    "description": "Dates relating to the element, each with a type indication.\n",
-                    "items": {
-                        "$ref": "#/$defs/Date"
-                    },
+                "date_created": {
+                    "description": "Date of first publication of the language version.\n",
+                    "format": "date",
                     "type": [
-                        "array",
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_modified": {
+                    "description": "Date of the last revision of the language version.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_created": {
+                    "description": "Date and time of first publication of the language version.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_modified": {
+                    "description": "Date and time of the last revision of the language version.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -816,9 +808,16 @@
                     "description": "Title of the language version.\n",
                     "type": "string"
                 },
-                "id": {
-                    "description": "Unique identifier of the element.\n",
+                "global_uri": {
+                    "description": "A unique, globally valid URI for the entity.\n",
                     "type": "string"
+                },
+                "local_id": {
+                    "description": "Local identifier. For example, a UUID from the council information system.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "manifestations": {
                     "description": "The file forms (Manifestations) of an Expression.\n",
@@ -829,12 +828,19 @@
                         "array",
                         "null"
                     ]
+                },
+                "wikidata_uri": {
+                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
-                "id",
                 "expression_language",
-                "expression_title"
+                "expression_title",
+                "global_uri"
             ],
             "title": "Expression",
             "type": "object"
@@ -1824,13 +1830,35 @@
             "additionalProperties": false,
             "description": "FRBR Manifestation: a concrete file format of an Expression, addressable via a URL.",
             "properties": {
-                "dates": {
-                    "description": "Dates relating to the element, each with a type indication.\n",
-                    "items": {
-                        "$ref": "#/$defs/Date"
-                    },
+                "date_created": {
+                    "description": "Date of first publication of the file form.\n",
+                    "format": "date",
                     "type": [
-                        "array",
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_modified": {
+                    "description": "Date of the last revision of the file form.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_created": {
+                    "description": "Date and time of first publication of the file form.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_modified": {
+                    "description": "Date and time of the last revision of the file form.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -1841,9 +1869,16 @@
                         "null"
                     ]
                 },
-                "id": {
-                    "description": "Unique identifier of the element.\n",
+                "global_uri": {
+                    "description": "A unique, globally valid URI for the entity.\n",
                     "type": "string"
+                },
+                "local_id": {
+                    "description": "Local identifier. For example, a UUID from the council information system.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "manifestation_url": {
                     "description": "URL under which the file form can be retrieved.\n",
@@ -1852,10 +1887,17 @@
                         "string",
                         "null"
                     ]
+                },
+                "wikidata_uri": {
+                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
-                "id"
+                "global_uri"
             ],
             "title": "Manifestation",
             "type": "object"
@@ -3644,13 +3686,27 @@
                         "null"
                     ]
                 },
-                "id": {
-                    "description": "Unique identifier of the element.\n",
+                "global_uri": {
+                    "description": "A unique, globally valid URI for the entity.\n",
                     "type": "string"
+                },
+                "local_id": {
+                    "description": "Local identifier. For example, a UUID from the council information system.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "wikidata_uri": {
+                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
-                "id"
+                "global_uri"
             ],
             "title": "Work",
             "type": "object"
@@ -3659,9 +3715,23 @@
             "additionalProperties": false,
             "description": "Container for the documents (FRBR Works) of this schema. Deliberately not a tree_root, because the consuming schemas define their own Container.",
             "properties": {
-                "id": {
-                    "description": "Unique identifier of the element.\n",
+                "global_uri": {
+                    "description": "A unique, globally valid URI for the entity.\n",
                     "type": "string"
+                },
+                "local_id": {
+                    "description": "Local identifier. For example, a UUID from the council information system.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "wikidata_uri": {
+                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "works": {
                     "description": "The documents (FRBR Works) contained in the container.\n",
@@ -3675,7 +3745,7 @@
                 }
             },
             "required": [
-                "id"
+                "global_uri"
             ],
             "title": "WorkContainer",
             "type": "object"

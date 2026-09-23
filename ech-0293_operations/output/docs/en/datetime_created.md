@@ -39,6 +39,8 @@ URI: [mcm:datetimeCreated](https://ld.ech.ch/schema/0292/meta-common/datetimeCre
 | [Attendance](Attendance.md) | Aggregated attendance record for a meeting (number of members present, absent... |  no  |
 | [IndividualAttendance](IndividualAttendance.md) | Individual attendance record for a specific person at a meeting (linked via t... |  no  |
 | [Speech](Speech.md) | A speech or statement made during a meeting (also called Votum or speaker seg... |  no  |
+| [Expression](Expression.md) | FRBR Expression: a concrete language version of a Work |  yes  |
+| [Manifestation](Manifestation.md) | FRBR Manifestation: a concrete file format of an Expression, addressable via ... |  yes  |
 
 
 

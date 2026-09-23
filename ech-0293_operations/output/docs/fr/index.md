@@ -16,7 +16,6 @@ Name: operations
 | [AgendaItem](AgendaItem.md) | Un point de l'ordre du jour d'une séance, tel que planifié à l'avance |
 | [Attendance](Attendance.md) | Liste de présence agrégée pour une séance (nombre de membres présents, absent... |
 | [Container](Container.md) | Conteneur pour les données de l'activité publique des conseils : législatures... |
-| [Date](Date.md) | Une date assortie d'une indication de type (p |
 | [Election](Election.md) | Une élection par laquelle un organe parlementaire désigne une ou plusieurs pe... |
 | [Expression](Expression.md) | FRBR Expression : une version linguistique concrète d'un Work |
 | [GroupReference](GroupReference.md) | Référence abrégée à un groupe avec les principales données d'identification a... |
@@ -83,8 +82,6 @@ Name: operations
 | [date_end_planned](date_end_planned.md) | La date de fin planifiée d'un événement ou d'une occurrence avec durée |
 | [date_modified](date_modified.md) | La date à laquelle une entité a été modifiée pour la dernière fois |
 | [date_planned](date_planned.md) | La date planifiée d'un événement ou d'une occurrence instantané (sans durée) |
-| [date_type](date_type.md) | Signification de la date (p |
-| [dates](dates.md) | Dates relatives à l'élément, chacune assortie d'une indication de type |
 | [datetime_actual](datetime_actual.md) | La date et l'heure effectives d'un événement ou d'une occurrence instantané (... |
 | [datetime_begin](datetime_begin.md) | La date et l'heure auxquelles la séance ou le vote commence |
 | [datetime_begin_actual](datetime_begin_actual.md) | La date et l'heure de début effectives d'un événement ou d'une occurrence ave... |
@@ -111,7 +108,6 @@ Name: operations
 | [group_name](group_name.md) | Nom du groupe ou de l'organe en clair, en complément de la référence `group_i... |
 | [has_protocol](has_protocol.md) | Référence au procès-verbal de cette séance, établi après celle-ci |
 | [has_resolution](has_resolution.md) | La décision formelle prise sur ce point de l'ordre du jour, p |
-| [id](id.md) | Identifiant univoque de l'élément |
 | [individual_attendances](individual_attendances.md) | Ensemble des constatations individuelles de présence |
 | [individual_vote_type](individual_vote_type.md) | Type de voix exprimée (oui, non, abstention, n'a pas voté, etc |
 | [individual_votes](individual_votes.md) | Ensemble des voix individuelles |
@@ -201,7 +197,6 @@ Name: operations
 | [weight](weight.md) | Poids de la voix du membre ; normalement 1 |
 | [wikidata_uri](wikidata_uri.md) | Une URI qui renvoie à une entité Wikidata, par ex |
 | [works](works.md) | Les documents (FRBR Works) contenus dans le conteneur |
-| [xdate](xdate.md) | La valeur de date elle-même |
 
 
 ## Énumérations
@@ -210,7 +205,6 @@ Name: operations
 | --- | --- |
 | [AgendaItemTypeEnum](AgendaItemTypeEnum.md) | Type de point de l'ordre du jour, distinguant les points isolés des points re... |
 | [AttendanceTypeEnum](AttendanceTypeEnum.md) | Type de présence individuelle |
-| [DateTypesEnum](DateTypesEnum.md) | Signification d'une indication de date |
 | [DocumentCategoryEnum](DocumentCategoryEnum.md) | Catégories de classification des documents référencés dans les normes eCH 029... |
 | [ElectionTypeEnum](ElectionTypeEnum.md) | Type de procédure d'élection |
 | [IndividualVoteTypeEnum](IndividualVoteTypeEnum.md) | Type de voix individuelle exprimée par un membre |

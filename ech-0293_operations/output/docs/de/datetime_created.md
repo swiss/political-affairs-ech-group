@@ -39,6 +39,8 @@ URI: [mcm:datetimeCreated](https://ld.ech.ch/schema/0292/meta-common/datetimeCre
 | [Attendance](Attendance.md) | Aggregierte Anwesenheitsliste für eine Sitzung (Anzahl Anwesende, Abwesende, ... |  no  |
 | [IndividualAttendance](IndividualAttendance.md) | Einzelne Anwesenheitsfeststellung einer Person an einer Sitzung (verknüpft üb... |  no  |
 | [Speech](Speech.md) | Eine Wortmeldung während einer Sitzung (auch Votum oder Redebeitrag genannt) |  no  |
+| [Expression](Expression.md) | FRBR Expression: eine konkrete Sprachfassung eines Works |  yes  |
+| [Manifestation](Manifestation.md) | FRBR Manifestation: eine konkrete Dateiform einer Expression, über eine URL a... |  yes  |
 
 
 

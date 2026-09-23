@@ -39,6 +39,8 @@ URI: [mcm:datetimeModified](https://ld.ech.ch/schema/0292/meta-common/datetimeMo
 | [Attendance](Attendance.md) | Liste de présence agrégée pour une séance (nombre de membres présents, absent... |  no  |
 | [IndividualAttendance](IndividualAttendance.md) | Constatation individuelle de la présence d'une personne à une séance (rattach... |  no  |
 | [Speech](Speech.md) | Une intervention prononcée au cours d'une séance (également appelée prise de ... |  no  |
+| [Expression](Expression.md) | FRBR Expression : une version linguistique concrète d'un Work |  yes  |
+| [Manifestation](Manifestation.md) | FRBR Manifestation : une forme de fichier concrète d'une Expression, adressab... |  yes  |
 
 
 
