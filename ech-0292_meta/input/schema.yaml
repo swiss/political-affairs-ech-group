@@ -15,6 +15,7 @@ prefixes:
   meta: https://ch.paf.link/schema/meta/
 imports:
   - linkml:types
+  - schema_common
 default_prefix: meta
 default_range: string
   
@@ -28,8 +29,9 @@ classes:
         FRBR Work: das abstrakte Dokument als solches, unabhängig von einer konkreten Sprachfassung oder einem Dateiformat.
       description_fr: |
         FRBR Work : le document abstrait en tant que tel, indépendamment d'une version linguistique ou d'un format de fichier concrets.
+    mixins:
+      - HasIdentification
     slots:
-      - id
       - document_category
       - expressions
     
@@ -41,9 +43,10 @@ classes:
         FRBR Expression: eine konkrete Sprachfassung eines Works.
       description_fr: |
         FRBR Expression : une version linguistique concrète d'un Work.
+    mixins:
+      - HasIdentification
+      - HasCreationModificationDates
     slots:
-      - id
-      - dates
       - expression_language
       - expression_title
       - expression_description
@@ -57,9 +60,10 @@ classes:
         FRBR Manifestation: eine konkrete Dateiform einer Expression, über eine URL adressierbar.
       description_fr: |
         FRBR Manifestation : une forme de fichier concrète d'une Expression, adressable au moyen d'une URL.
+    mixins:
+      - HasIdentification
+      - HasCreationModificationDates
     slots:
-      - id
-      - dates
       - format
       - manifestation_url
 
@@ -79,21 +83,10 @@ classes:
         Container für die Dokumente (FRBR Works) dieses Schemas. Bewusst kein tree_root, weil die konsumierenden Schemata ihren eigenen Container definieren.
       description_fr: |
         Conteneur pour les documents (FRBR Works) de ce schéma. Volontairement pas un tree_root, car les schémas consommateurs définissent leur propre Container.
+    mixins:
+      - HasIdentification
     slots:
-      - id
       - works
-
-  Date:
-    description: |
-      A date with a type indication (e.g. first publication, last revision).
-    annotations:
-      description_de: |
-        Ein Datum mit Typangabe (z.B. Erstpublikation, letzte Revision).
-      description_fr: |
-        Une date assortie d'une indication de type (p. ex. première publication, dernière révision).
-    slots:
-      - xdate
-      - date_type
 
 slots:
   
@@ -136,16 +129,6 @@ slots:
     multivalued: true
     inlined_as_list: true
   
-  id:
-    identifier: true
-    description: |
-      Unique identifier of the element.
-    annotations:
-      description_de: |
-        Eindeutiger Identifikator des Elements.
-      description_fr: |
-        Identifiant univoque de l'élément.
-    required: true
 
   # Renamed from the generic `language`/`title`/`description` so they do not
   # collide with same-named slots that consumer schemas (e.g. ech-0293) or
@@ -211,43 +194,6 @@ slots:
         URL sous laquelle la forme de fichier peut être consultée.
     range: uri
 
-  dates:
-    slot_uri: meta:dates
-    description: |
-      Dates relating to the element, each with a type indication.
-    annotations:
-      description_de: |
-        Datumsangaben zum Element, jeweils mit Typangabe.
-      description_fr: |
-        Dates relatives à l'élément, chacune assortie d'une indication de type.
-    range: Date
-    multivalued: true
-    inlined_as_list: true
-
-  xdate:
-    slot_uri: dcterms:date
-    description: |
-      The date value itself.
-    annotations:
-      description_de: |
-        Der Datumswert selbst.
-      description_fr: |
-        La valeur de date elle-même.
-    range: date
-    required: true
-
-  date_type:
-    slot_uri: meta:dateType
-    description: |
-      Meaning of the date (e.g. first publication, last revision).
-    annotations:
-      description_de: |
-        Bedeutung des Datums (z.B. Erstpublikation, letzte Revision).
-      description_fr: |
-        Signification de la date (p. ex. première publication, dernière révision).
-    range: DateTypesEnum
-    required: true
-
   document_category:
     slot_uri: meta:documentCategory
     description: |
@@ -274,34 +220,6 @@ slots:
     inlined_as_list: true
 
 enums:
-
-  DateTypesEnum:
-    description: |
-      Meaning of a date entry.
-    annotations:
-      description_de: |
-        Bedeutung einer Datumsangabe.
-      description_fr: |
-        Signification d'une indication de date.
-    permissible_values:
-      first_publication:
-        meaning: meta:vocabulary/date_types/FirstPublication
-        description: |
-          Date of first publication.
-        annotations:
-          description_de: |
-            Datum der Erstpublikation.
-          description_fr: |
-            Date de la première publication.
-      last_revision:
-        meaning: meta:vocabulary/date_types/LastRevision
-        description: |
-          Date of the last revision.
-        annotations:
-          description_de: |
-            Datum der letzten Revision.
-          description_fr: |
-            Date de la dernière révision.
 
   DocumentCategoryEnum:
     description: |

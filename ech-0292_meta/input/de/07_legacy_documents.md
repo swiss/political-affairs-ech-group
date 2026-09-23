@@ -49,8 +49,9 @@ Abstract: A manifestation is "the physical embodiment of an expression of a work
 
 With the manifestion the final URL to the actual document is added. There can be one more more manifestations, which are differing in the differnt formats (e.g. PDF, DOCX, HTML) of the document provided.
 
-Both the Expression and the Manifestation provide dates of publication.
+Both the Expression and the Manifestation carry creation and modification dates via the common mixin `HasCreationModificationDates`. All FRBR entities are identified via the common mixin `HasIdentification`.
 
 
 {{include:ech-0292_meta/output/docs/Manifestation.md}}
-{{include:ech-0292_meta/output/docs/DateTypesEnum.md}}
+{{include:ech-0292_meta/output/docs/HasIdentification.md}}
+{{include:ech-0292_meta/output/docs/HasCreationModificationDates.md}}
