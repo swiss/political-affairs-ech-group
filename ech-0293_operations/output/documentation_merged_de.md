@@ -73,12 +73,6 @@ Die Familie umfasst:
 
 Ziel dieser Standardfamilie ist es, eine gemeinsam nutzbare Struktur für politische Daten zu schaffen und Organisationen, die Informationen zu politischen Geschäften veröffentlichen, ein tragfähiges Datenmodell an die Hand zu geben.
 
-## Aufbau einer Lieferung
-
-Eine Lieferung ist ein `Container`: ein Umschlag mit einer eigenen `global_uri` und je einer Sammlung pro Klasse — `legislatures`, `sessions`, `meetings`, `agenda_items`, `protocols`, `votings`, `elections`, `individual_votes`, `attendances`, `individual_attendances`, `speeches` und `resolutions`. Alle Sammlungen sind optional: Wer nur Sitzungen veröffentlicht, liefert nur `meetings`.
-
-Die Entitäten liegen darin flach nebeneinander und sind über Referenzen verbunden — `parent_meeting`, `parent_voting`, `parent_attendance` und so fort —, statt ineinander verschachtelt zu sein. So lässt sich eine einzelne Sitzung nachliefern, ohne die ganze Legislaturperiode erneut zu senden, und dieselbe Entität von mehreren Stellen referenzieren. Wo die Verschachtelung den Zusammenhang besser abbildet, ist sie zusätzlich möglich: Die Session nimmt ihre Sitzungen als Liste auf, das Protokoll seine Traktanden, Abstimmungen und Wortmeldungen.
-
 
 
 ### Klasse: Container []{#Container}
@@ -304,6 +298,10 @@ meetings:
           language: de
     actor_name: "Ständerat"
     datetime_begin_planned: "2025-12-19T08:15:00+01:00"
+    # Referenz auf das Protokoll: nur der Identifikator. Das Protokoll selbst
+    # steht unten unter `protocols` und wird in der Regel spaeter geliefert als
+    # die Sitzung.
+    has_protocol: "ops:protokoll_sr_winter25_sitzung_6"
     datetime_created: "2026-01-12T00:00:00+01:00"
     datetime_modified: "2026-01-12T00:00:00+01:00"
 
@@ -326,6 +324,8 @@ agenda_items:
 
 speeches:
   - global_uri: ops:366631
+    parent_meeting: "parl:sr_winter25_sitzung_6"
+    parent_agenda_item: "ops:69905"
     language: "fr"
     datetime_begin: "2025-12-19T09:20:00+01:00"
     datetime_end: "2025-12-19T09:25:00+01:00"
@@ -348,6 +348,27 @@ speeches:
     media_url: "https://par-pcache.simplex.tv/content?externalid=366631"
     media_type: "video"
     media_format: "video/mp4"
+
+protocols:
+  - global_uri: ops:protokoll_sr_winter25_sitzung_6
+    parent_meeting: "parl:sr_winter25_sitzung_6"
+    protocol_items:
+      - global_uri: ops:protokollpunkt_69905
+        parent_meeting: "parl:sr_winter25_sitzung_6"
+        agenda_item_type: "item"
+        agenda_item_number: "6"
+        agenda_item_position: 4
+        agenda_item_title:
+          - text: "Postulat Broulis Pascal. Bauprojekte im Mobilitätsbereich. Einen Vergleich durchführen, um die Verzögerungen zu verstehen"
+            language: "de"
+        affair_id: "affairs:24.4471"
+        datetime_begin_actual: "2025-12-19T09:20:00+01:00"
+        landing_page: "https://www.parlament.ch/de/ratsbetrieb/amtliches-bulletin/amtliches-bulletin-die-verhandlungen?SubjectId=69905#votum3"
+        agenda_item_category: "agenda_item"
+        datetime_created: "2026-01-12T00:00:00+01:00"
+        datetime_modified: "2026-01-12T00:00:00+01:00"
+    datetime_created: "2026-01-12T00:00:00+01:00"
+    datetime_modified: "2026-01-12T00:00:00+01:00"
 
 ```
 ##### Beispiel Container: voting
@@ -372,8 +393,7 @@ votings:
   majority_type: "absolute"
   majority_count: 65
   result_text: "Mit 78 zu 42 Stimmen bei 5 Enthaltungen angenommen"
-  parent_protocol: ops:protocol_sg_2025_03_15
-  parent_protocol_item: ops:protocol_item_sg_2025_015
+  parent_agenda_item: ops:agenda_item_sg_2025_015
   parent_meeting: ops:meeting_sg_2025_03_15
   actor_id:
     global_uri: "actors:kr_sg"
@@ -401,8 +421,7 @@ votings:
   majority_type: "absolute"
   majority_count: 76
   result_text: "Mit 45 zu 87 Stimmen bei 8 Enthaltungen abgelehnt"
-  parent_protocol: ops:protocol_be_2025_06_05
-  parent_protocol_item: ops:protocol_item_be_2025_042
+  parent_agenda_item: ops:agenda_item_be_2025_042
   parent_meeting: ops:meeting_be_2025_06_05
   actor_id:
     global_uri: "actors:gr_be"
@@ -428,8 +447,7 @@ votings:
   majority_type: "absolute"
   majority_count: 91
   result_text: "Mit 105 zu 70 Stimmen bei 5 Enthaltungen angenommen"
-  parent_protocol: ops:protocol_zh_2025_11_20
-  parent_protocol_item: ops:protocol_item_zh_budget_2026
+  parent_agenda_item: ops:agenda_item_zh_budget_2026
   parent_meeting: ops:meeting_zh_2025_11_20
   actor_id:
     global_uri: "actors:kr_zh"
@@ -469,8 +487,7 @@ votings:
   total: 112
   majority_type: "other"
   result_text: "Auswahl A mit 75 von 112 abgegebenen Stimmen angenommen (Auswahl B: 25, Auswahl C: 12, Auswahl D: 0; 13 abwesend von 125 Mitgliedern)."
-  parent_protocol: ops:protocol_zh_gr_2024_02_28
-  parent_protocol_item: ops:protocol_item_zh_gr_2024_2023_361
+  parent_agenda_item: ops:agenda_item_zh_gr_2024_2023_361
   parent_meeting: ops:meeting_zh_gr_2024_02_28
   affair_id: "2023/361"
   actor_id:
@@ -1392,7 +1409,7 @@ Auf dieser Ebene fallen die geplanten und die tatsächlichen Zeiten regelmässig
 
 ### Anknüpfungspunkte
 
-Das Meeting ist der Knoten, an dem die übrigen Klassen dieses Standards hängen: Traktanden (`AgendaItem`), Abstimmungen und Wahlen (`Voting`, `Election`), Wortmeldungen (`Speech`) sowie die Anwesenheitsliste (`Attendance.parent_meeting`). `documents` verknüpft Sitzungsunterlagen wie Tagblatt oder Beilagen, `protocol_ref` das Protokoll. `parent_meeting` bildet Sitzungen ab, die Teil einer übergeordneten Sitzung sind; `actor_name`, `group_name` und `group_id` halten Organ und Gruppierung zusätzlich im Klartext fest.
+Das Meeting ist der Knoten, an dem die übrigen Klassen dieses Standards hängen: Traktanden (`AgendaItem`), Abstimmungen und Wahlen (`Voting`, `Election`), Wortmeldungen (`Speech`) sowie die Anwesenheitsliste (`Attendance.parent_meeting`). `documents` verknüpft Sitzungsunterlagen wie Tagblatt oder Beilagen, `has_protocol` das Protokoll. `parent_meeting` bildet Sitzungen ab, die Teil einer übergeordneten Sitzung sind; `actor_name`, `group_name` und `group_id` halten Organ und Gruppierung zusätzlich im Klartext fest.
 
 
 
@@ -1434,10 +1451,10 @@ _Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, Sessi
 | state_name | 0..1 <br/> String | Benutzerdefinierte Zustandsbeschreibung für die Sitzung.  |
 | description | 0..1 <br/> String | Beschreibender Text zum Element.  |
 | location | 0..1 <br/> String | Ort, an dem die Sitzung stattfindet (physischer Raum, Videokonferenz oder hybrides Format).  |
-| parent_meeting | 0..1 <br/> String | Die verknüpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert.  |
+| parent_meeting | 0..1 <br/> String | Identifikator der Sitzung, zu der dieser Eintrag gehört. Bei einer Sitzung bezeichnet er die übergeordnete Sitzung, bei Traktandum, Abstimmung, Wahl, Wortmeldung oder Protokoll die Sitzung, in der der Eintrag entstanden ist.  |
 | parent_legislature | 0..1 <br/> String | Der gesetzgebende Körper, auf dem die Sitzung basiert.  |
 | documents | * <br/> Work | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.  |
-| protocol_ref | 0..1 <br/> [Protocol](#Protocol) | Das nach der Sitzung erstellte Protokoll dieser Sitzung.  |
+| has_protocol | 0..1 <br/> [Protocol](#Protocol) | Referenz auf das nach der Sitzung erstellte Protokoll dieser Sitzung. Angegeben wird nur der Identifikator des Protokolls; das Protokoll selbst wird in der Liste `protocols` des Containers geliefert. Es ist eine eigenständige Entität mit eigenem Identifikator und wird in der Regel später veröffentlicht als die Sitzung, weshalb es referenziert und nicht eingebettet wird.  |
 | date_begin_actual | 0..1 <br/> Date | Das tatsächliche Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](#IsEventWithDuration) |
 | datetime_begin_actual | 0..1 <br/> Datetime | Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](#IsEventWithDuration) |
 | date_begin_planned | 0..1 <br/> Date | Das geplante Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](#IsEventWithDuration) |
@@ -1563,6 +1580,7 @@ meetings:
       language: de
   actor_name: Ständerat
   datetime_begin_planned: '2025-12-19T08:15:00+01:00'
+  has_protocol: ops:protokoll_sr_winter25_sitzung_6
   datetime_created: '2026-01-12T00:00:00+01:00'
   datetime_modified: '2026-01-12T00:00:00+01:00'
 
@@ -1911,6 +1929,23 @@ _Ein Traktandum einer Sitzung._
 | local_id | 0..1 <br/> String | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> Uriorcurie | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> Uriorcurie | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| parent_meeting | 0..1 <br/> String | Identifikator der Sitzung, zu der dieser Eintrag gehört. Bei einer Sitzung bezeichnet er die übergeordnete Sitzung, bei Traktandum, Abstimmung, Wahl, Wortmeldung oder Protokoll die Sitzung, in der der Eintrag entstanden ist.  |
+| agenda_item_type | 0..1 <br/> [AgendaItemTypeEnum](#AgendaItemTypeEnum) | Art des Traktandums, unterscheidet Einzeltraktanden von Traktandengruppen.  |
+| agenda_item_number | 0..1 <br/> String | Laufnummer des Traktandums (String-Typ zur Unterstützung römischer Ziffern).  |
+| agenda_item_position | 0..1 <br/> Integer | Ganzzahlige Position des Traktandums in der Sitzungsreihenfolge.  |
+| leading_actor_id | 0..1 <br/> String | Das federführende Departement für das Traktandum.  |
+| speaking_actor_id | 0..1 <br/> String | Der Sprecher oder die Sprecherin bzw. die Departementsvorsteherin oder der Departementsvorsteher für das Traktandum.  |
+| agenda_item_title | * <br/> [MultilingualString](#MultilingualString) | Titel des Traktandums.  |
+| affair_id | 0..1 <br/> String | Die Verbindung zu den Geschäften des Traktandums.  |
+| agenda_item_description | * <br/> [MultilingualString](#MultilingualString) | Untertitel oder ausführliche Beschreibung des Traktandums.  |
+| state_id | 0..1 <br/> String | Zustands-Identifikator (Verweis auf das Status-Enum oder auf einen eigenen Zustand).  |
+| state_name | 0..1 <br/> String | Benutzerdefinierte Zustandsbeschreibung für die Sitzung.  |
+| landing_page | 0..1 <br/> String | URL mit weiteren Informationen.  |
+| url | * <br/> [MultilingualString](#MultilingualString) | Landing Page oder weiterführende Webadresse, mehrsprachig.  |
+| agenda_item_category | 0..1 <br/> String | Kategorie für gruppierte Traktanden (z.B. Einführung, nach Departement, technische Traktanden).  |
+| parent_agenda_item | 0..1 <br/> String | Identifikator des Traktandums, zu dem dieser Eintrag gehört. Bei einem Traktandum baut er eine Hierarchie von Traktanden auf, bei Abstimmung, Wahl oder Wortmeldung bezeichnet er das Traktandum, unter dem der Eintrag behandelt wurde.  |
+| has_resolution | 0..1 <br/> [Resolution](#Resolution) | Die Resolution oder Entscheidung zu diesem Traktandum.  |
+| documents | * <br/> Work | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.  |
 | date_begin_actual | 0..1 <br/> Date | Das tatsächliche Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](#IsEventWithDuration) |
 | datetime_begin_actual | 0..1 <br/> Datetime | Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](#IsEventWithDuration) |
 | date_begin_planned | 0..1 <br/> Date | Das geplante Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](#IsEventWithDuration) |
@@ -1923,24 +1958,6 @@ _Ein Traktandum einer Sitzung._
 | datetime_created | 0..1 <br/> Datetime | Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
 | date_modified | 0..1 <br/> Date | Das Datum, an dem eine Entität zuletzt geändert wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
 | datetime_modified | 0..1 <br/> Datetime | Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
-| parent_meeting | 0..1 <br/> String | Die verknüpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert. <br/><br/>Vererbung: IsAgendaItem |
-| agenda_item_type | 0..1 <br/> [AgendaItemTypeEnum](#AgendaItemTypeEnum) | Art des Traktandums, unterscheidet Einzeltraktanden von Traktandengruppen. <br/><br/>Vererbung: IsAgendaItem |
-| agenda_item_number | 0..1 <br/> String | Laufnummer des Traktandums (String-Typ zur Unterstützung römischer Ziffern). <br/><br/>Vererbung: IsAgendaItem |
-| agenda_item_position | 0..1 <br/> Integer | Ganzzahlige Position des Traktandums in der Sitzungsreihenfolge. <br/><br/>Vererbung: IsAgendaItem |
-| leading_actor_id | 0..1 <br/> String | Das federführende Departement für das Traktandum. <br/><br/>Vererbung: IsAgendaItem |
-| speaking_actor_id | 0..1 <br/> String | Der Sprecher oder die Sprecherin bzw. die Departementsvorsteherin oder der Departementsvorsteher für das Traktandum. <br/><br/>Vererbung: IsAgendaItem |
-| agenda_item_title | * <br/> [MultilingualString](#MultilingualString) | Titel des Traktandums. <br/><br/>Vererbung: IsAgendaItem |
-| affair_id | 0..1 <br/> String | Die Verbindung zu den Geschäften des Traktandums. <br/><br/>Vererbung: IsAgendaItem |
-| agenda_item_description | * <br/> [MultilingualString](#MultilingualString) | Untertitel oder ausführliche Beschreibung des Traktandums. <br/><br/>Vererbung: IsAgendaItem |
-| state_id | 0..1 <br/> String | Zustands-Identifikator (Verweis auf das Status-Enum oder auf einen eigenen Zustand). <br/><br/>Vererbung: IsAgendaItem |
-| state_name | 0..1 <br/> String | Benutzerdefinierte Zustandsbeschreibung für die Sitzung. <br/><br/>Vererbung: IsAgendaItem |
-| landing_page | 0..1 <br/> String | URL mit weiteren Informationen. <br/><br/>Vererbung: IsAgendaItem |
-| url | * <br/> [MultilingualString](#MultilingualString) | Landing Page oder weiterführende Webadresse, mehrsprachig. <br/><br/>Vererbung: IsAgendaItem |
-| agenda_item_category | 0..1 <br/> String | Kategorie für gruppierte Traktanden (z.B. Einführung, nach Departement, technische Traktanden). <br/><br/>Vererbung: IsAgendaItem |
-| parent_agenda_item | 0..1 <br/> String | Wenn erforderlich, baut dieser Slot eine Hierarchie von Traktanden auf. <br/><br/>Vererbung: IsAgendaItem |
-| has_resolution | 0..1 <br/> [Resolution](#Resolution) | Die Resolution oder Entscheidung zu diesem Traktandum. <br/><br/>Vererbung: IsAgendaItem |
-| text_segments | * <br/> [TextSegment](#TextSegment) | Sammlung von Textsegmenten (z.B. Wortprotokoll). <br/><br/>Vererbung: IsAgendaItem |
-| documents | * <br/> Work | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind. <br/><br/>Vererbung: IsAgendaItem |
 
 
 
@@ -2390,15 +2407,21 @@ URI: [ops:AgendaItemTypeEnum](https://ch.paf.link/schema/operations/AgendaItemTy
 
 Während die Traktanden die **Planung** einer Sitzung abbilden, hält das Protokoll den **tatsächlichen Verlauf** nach der Sitzung fest. `Protocol` ist ein Wrapper-Container, der pro Sitzung (`Meeting`) genau einmal geführt wird und die effektiv behandelten Traktanden (`protocol_items`), Abstimmungen, Wortmeldungen sowie Wortlaut-Textsegmente und Dokumente bündelt.
 
+Das Protokoll wird **referenziert, nicht eingebettet**: `Meeting.has_protocol` enthält allein den Identifikator, das Protokoll selbst steht als eigener Eintrag in `Container.protocols`. Damit gilt auch hier die Regel, die dieser Standard durchgehend anwendet — eingebettet wird, was keine eigene Identität besitzt (etwa `PersonReference` oder `GroupReference`), referenziert wird, was eine besitzt. Das Protokoll hat eine eigene `global_uri` und ist eigenständig zitierbar; das Amtliche Bulletin etwa ist unter einer eigenen Adresse abrufbar. Vor allem aber entsteht es später als die Sitzung: Eingebettet müsste die gesamte Sitzung erneut geliefert werden, sobald das Protokoll vorliegt, referenziert genügt die Nachlieferung des Protokolls allein.
+
+Innerhalb des Protokolls bleiben die Sammlungen eingebettet, weil sie zusammen mit ihm entstehen und geliefert werden. Wer Abstimmungen oder Wortmeldungen unabhängig vom Protokoll publiziert, liefert sie stattdessen flach in `Container.votings` bzw. `Container.speeches` und verknüpft sie über `parent_meeting` und `parent_agenda_item`.
+
 ```
-Meeting
-  ├─ agenda_items   (vorher: geplante Traktanden)
-  └─ protocol_ref   (nachher: Niederschrift)
-        ├─ protocol_items  → ProtocolItem (gleiche Elemente wie AgendaItem)
-        ├─ votings
-        ├─ speeches
-        ├─ text_segments
-        └─ documents
+Container
+  ├─ meetings       → Meeting
+  │                     └─ has_protocol → Identifikator des Protokolls
+  ├─ agenda_items   → AgendaItem  (vorher: geplante Traktanden, parent_meeting)
+  └─ protocols      → Protocol    (nachher: Niederschrift, parent_meeting)
+                        ├─ protocol_items  → ProtocolItem (wie AgendaItem)
+                        ├─ votings
+                        ├─ speeches
+                        ├─ text_segments
+                        └─ documents
 ```
 
 
@@ -2423,10 +2446,9 @@ _Das nach der Sitzung erstellte Protokoll. Ein Wrapper-Container, der die tatsä
 | local_id | 0..1 <br/> String | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> Uriorcurie | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> Uriorcurie | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| parent_meeting | 0..1 <br/> String | Die verknüpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert.  |
+| parent_meeting | 0..1 <br/> String | Identifikator der Sitzung, zu der dieser Eintrag gehört. Bei einer Sitzung bezeichnet er die übergeordnete Sitzung, bei Traktandum, Abstimmung, Wahl, Wortmeldung oder Protokoll die Sitzung, in der der Eintrag entstanden ist.  |
 | protocol_items | * <br/> [ProtocolItem](#ProtocolItem) | Traktanden, wie sie im Protokoll tatsächlich festgehalten wurden.  |
 | votings | * <br/> [Voting](#Voting) | Sammlung der Abstimmungen.  |
-| elections | * <br/> [Election](#Election) | Sammlung der Wahlen.  |
 | speeches | * <br/> [Speech](#Speech) | Sammlung der Wortmeldungen.  |
 | text_segments | * <br/> [TextSegment](#TextSegment) | Sammlung von Textsegmenten (z.B. Wortprotokoll).  |
 | documents | * <br/> Work | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.  |
@@ -2444,9 +2466,7 @@ _Das nach der Sitzung erstellte Protokoll. Ein Wrapper-Container, der die tatsä
 | Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
 | [Container](#Container) | protocols | range | [Protocol](#Protocol) |
-| [Meeting](#Meeting) | protocol_ref | range | [Protocol](#Protocol) |
-| [Voting](#Voting) | parent_protocol | range | [Protocol](#Protocol) |
-| [Election](#Election) | parent_protocol | range | [Protocol](#Protocol) |
+| [Meeting](#Meeting) | has_protocol | range | [Protocol](#Protocol) |
 
 
 
@@ -2460,6 +2480,36 @@ _Das nach der Sitzung erstellte Protokoll. Ein Wrapper-Container, der die tatsä
 
 
 
+
+#### Beispiele
+##### Beispiel Protocol: Protokoll als eigenständige Entität, referenziert von der Sitzung
+
+```yaml
+protocols:
+- global_uri: ops:protokoll_sr_winter25_sitzung_6
+  parent_meeting: parl:sr_winter25_sitzung_6
+  protocol_items:
+  - global_uri: ops:protokollpunkt_69905
+    parent_meeting: parl:sr_winter25_sitzung_6
+    agenda_item_type: item
+    agenda_item_number: '6'
+    agenda_item_position: 4
+    agenda_item_title:
+    - text: >-
+        Postulat Broulis Pascal. Bauprojekte im Mobilitätsbereich. Einen Vergleich
+        durchführen, um die Verzögerungen zu verstehen
+      language: de
+    affair_id: affairs:24.4471
+    datetime_begin_actual: '2025-12-19T09:20:00+01:00'
+    landing_page: >-
+      https://www.parlament.ch/de/ratsbetrieb/amtliches-bulletin/amtliches-bulletin-die-verhandlungen?SubjectId=69905#votum3
+    agenda_item_category: agenda_item
+    datetime_created: '2026-01-12T00:00:00+01:00'
+    datetime_modified: '2026-01-12T00:00:00+01:00'
+  datetime_created: '2026-01-12T00:00:00+01:00'
+  datetime_modified: '2026-01-12T00:00:00+01:00'
+
+```
 
 
 
@@ -2470,14 +2520,14 @@ _Das nach der Sitzung erstellte Protokoll. Ein Wrapper-Container, der die tatsä
 
 ### ProtocolItem (protokolliertes Traktandum)
 
-`ProtocolItem` bildet ein Traktandum so ab, wie es im Protokoll tatsächlich festgehalten wurde. Es führt dieselben Elemente wie `AgendaItem`, ist aber keine Ableitung davon: Beide Klassen beziehen die Traktandumsfelder aus dem Mixin `IsAgendaItem`. Das Protokollierte ist kein Sonderfall des Geplanten — es entsteht unabhängig und kann Traktanden enthalten, die nie traktandiert waren, so wie die Traktandenliste Punkte enthalten kann, die nie behandelt wurden.
+`ProtocolItem` erbt sämtliche Felder von `AgendaItem` (`is_a: AgendaItem`) und bildet ein Traktandum so ab, wie es im Protokoll tatsächlich festgehalten wurde.
 
 
 
 ### Klasse: ProtocolItem []{#ProtocolItem}
 
 
-_Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde. Es führt über den Mixin IsAgendaItem dieselben Elemente wie AgendaItem, ist aber eine eigenständige Klasse: Das Protokollierte ist kein Sonderfall des Geplanten._
+_Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde._
 
 
 
@@ -2494,6 +2544,23 @@ _Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde. Es führt 
 | local_id | 0..1 <br/> String | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> Uriorcurie | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> Uriorcurie | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| parent_meeting | 0..1 <br/> String | Identifikator der Sitzung, zu der dieser Eintrag gehört. Bei einer Sitzung bezeichnet er die übergeordnete Sitzung, bei Traktandum, Abstimmung, Wahl, Wortmeldung oder Protokoll die Sitzung, in der der Eintrag entstanden ist. <br/><br/>Vererbung: [AgendaItem](#AgendaItem) |
+| agenda_item_type | 0..1 <br/> [AgendaItemTypeEnum](#AgendaItemTypeEnum) | Art des Traktandums, unterscheidet Einzeltraktanden von Traktandengruppen. <br/><br/>Vererbung: [AgendaItem](#AgendaItem) |
+| agenda_item_number | 0..1 <br/> String | Laufnummer des Traktandums (String-Typ zur Unterstützung römischer Ziffern). <br/><br/>Vererbung: [AgendaItem](#AgendaItem) |
+| agenda_item_position | 0..1 <br/> Integer | Ganzzahlige Position des Traktandums in der Sitzungsreihenfolge. <br/><br/>Vererbung: [AgendaItem](#AgendaItem) |
+| leading_actor_id | 0..1 <br/> String | Das federführende Departement für das Traktandum. <br/><br/>Vererbung: [AgendaItem](#AgendaItem) |
+| speaking_actor_id | 0..1 <br/> String | Der Sprecher oder die Sprecherin bzw. die Departementsvorsteherin oder der Departementsvorsteher für das Traktandum. <br/><br/>Vererbung: [AgendaItem](#AgendaItem) |
+| agenda_item_title | * <br/> [MultilingualString](#MultilingualString) | Titel des Traktandums. <br/><br/>Vererbung: [AgendaItem](#AgendaItem) |
+| affair_id | 0..1 <br/> String | Die Verbindung zu den Geschäften des Traktandums. <br/><br/>Vererbung: [AgendaItem](#AgendaItem) |
+| agenda_item_description | * <br/> [MultilingualString](#MultilingualString) | Untertitel oder ausführliche Beschreibung des Traktandums. <br/><br/>Vererbung: [AgendaItem](#AgendaItem) |
+| state_id | 0..1 <br/> String | Zustands-Identifikator (Verweis auf das Status-Enum oder auf einen eigenen Zustand). <br/><br/>Vererbung: [AgendaItem](#AgendaItem) |
+| state_name | 0..1 <br/> String | Benutzerdefinierte Zustandsbeschreibung für die Sitzung. <br/><br/>Vererbung: [AgendaItem](#AgendaItem) |
+| landing_page | 0..1 <br/> String | URL mit weiteren Informationen. <br/><br/>Vererbung: [AgendaItem](#AgendaItem) |
+| url | * <br/> [MultilingualString](#MultilingualString) | Landing Page oder weiterführende Webadresse, mehrsprachig. <br/><br/>Vererbung: [AgendaItem](#AgendaItem) |
+| agenda_item_category | 0..1 <br/> String | Kategorie für gruppierte Traktanden (z.B. Einführung, nach Departement, technische Traktanden). <br/><br/>Vererbung: [AgendaItem](#AgendaItem) |
+| parent_agenda_item | 0..1 <br/> String | Identifikator des Traktandums, zu dem dieser Eintrag gehört. Bei einem Traktandum baut er eine Hierarchie von Traktanden auf, bei Abstimmung, Wahl oder Wortmeldung bezeichnet er das Traktandum, unter dem der Eintrag behandelt wurde. <br/><br/>Vererbung: [AgendaItem](#AgendaItem) |
+| has_resolution | 0..1 <br/> [Resolution](#Resolution) | Die Resolution oder Entscheidung zu diesem Traktandum. <br/><br/>Vererbung: [AgendaItem](#AgendaItem) |
+| documents | * <br/> Work | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind. <br/><br/>Vererbung: [AgendaItem](#AgendaItem) |
 | date_begin_actual | 0..1 <br/> Date | Das tatsächliche Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](#IsEventWithDuration) |
 | datetime_begin_actual | 0..1 <br/> Datetime | Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](#IsEventWithDuration) |
 | date_begin_planned | 0..1 <br/> Date | Das geplante Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](#IsEventWithDuration) |
@@ -2506,24 +2573,6 @@ _Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde. Es führt 
 | datetime_created | 0..1 <br/> Datetime | Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
 | date_modified | 0..1 <br/> Date | Das Datum, an dem eine Entität zuletzt geändert wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
 | datetime_modified | 0..1 <br/> Datetime | Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
-| parent_meeting | 0..1 <br/> String | Die verknüpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert. <br/><br/>Vererbung: IsAgendaItem |
-| agenda_item_type | 0..1 <br/> [AgendaItemTypeEnum](#AgendaItemTypeEnum) | Art des Traktandums, unterscheidet Einzeltraktanden von Traktandengruppen. <br/><br/>Vererbung: IsAgendaItem |
-| agenda_item_number | 0..1 <br/> String | Laufnummer des Traktandums (String-Typ zur Unterstützung römischer Ziffern). <br/><br/>Vererbung: IsAgendaItem |
-| agenda_item_position | 0..1 <br/> Integer | Ganzzahlige Position des Traktandums in der Sitzungsreihenfolge. <br/><br/>Vererbung: IsAgendaItem |
-| leading_actor_id | 0..1 <br/> String | Das federführende Departement für das Traktandum. <br/><br/>Vererbung: IsAgendaItem |
-| speaking_actor_id | 0..1 <br/> String | Der Sprecher oder die Sprecherin bzw. die Departementsvorsteherin oder der Departementsvorsteher für das Traktandum. <br/><br/>Vererbung: IsAgendaItem |
-| agenda_item_title | * <br/> [MultilingualString](#MultilingualString) | Titel des Traktandums. <br/><br/>Vererbung: IsAgendaItem |
-| affair_id | 0..1 <br/> String | Die Verbindung zu den Geschäften des Traktandums. <br/><br/>Vererbung: IsAgendaItem |
-| agenda_item_description | * <br/> [MultilingualString](#MultilingualString) | Untertitel oder ausführliche Beschreibung des Traktandums. <br/><br/>Vererbung: IsAgendaItem |
-| state_id | 0..1 <br/> String | Zustands-Identifikator (Verweis auf das Status-Enum oder auf einen eigenen Zustand). <br/><br/>Vererbung: IsAgendaItem |
-| state_name | 0..1 <br/> String | Benutzerdefinierte Zustandsbeschreibung für die Sitzung. <br/><br/>Vererbung: IsAgendaItem |
-| landing_page | 0..1 <br/> String | URL mit weiteren Informationen. <br/><br/>Vererbung: IsAgendaItem |
-| url | * <br/> [MultilingualString](#MultilingualString) | Landing Page oder weiterführende Webadresse, mehrsprachig. <br/><br/>Vererbung: IsAgendaItem |
-| agenda_item_category | 0..1 <br/> String | Kategorie für gruppierte Traktanden (z.B. Einführung, nach Departement, technische Traktanden). <br/><br/>Vererbung: IsAgendaItem |
-| parent_agenda_item | 0..1 <br/> String | Wenn erforderlich, baut dieser Slot eine Hierarchie von Traktanden auf. <br/><br/>Vererbung: IsAgendaItem |
-| has_resolution | 0..1 <br/> [Resolution](#Resolution) | Die Resolution oder Entscheidung zu diesem Traktandum. <br/><br/>Vererbung: IsAgendaItem |
-| text_segments | * <br/> [TextSegment](#TextSegment) | Sammlung von Textsegmenten (z.B. Wortprotokoll). <br/><br/>Vererbung: IsAgendaItem |
-| documents | * <br/> Work | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind. <br/><br/>Vererbung: IsAgendaItem |
 
 
 
@@ -2534,8 +2583,6 @@ _Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde. Es führt 
 | Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
 | [Protocol](#Protocol) | protocol_items | range | [ProtocolItem](#ProtocolItem) |
-| [Voting](#Voting) | parent_protocol_item | range | [ProtocolItem](#ProtocolItem) |
-| [Election](#Election) | parent_protocol_item | range | [ProtocolItem](#ProtocolItem) |
 
 
 
@@ -2809,7 +2856,6 @@ _Eine Resolution oder Entscheidung zu einem Traktandum, einschliesslich Abstimmu
 | Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
 | [Container](#Container) | resolutions | range | [Resolution](#Resolution) |
-| IsAgendaItem | has_resolution | range | [Resolution](#Resolution) |
 | [AgendaItem](#AgendaItem) | has_resolution | range | [Resolution](#Resolution) |
 | [ProtocolItem](#ProtocolItem) | has_resolution | range | [Resolution](#Resolution) |
 
@@ -2977,10 +3023,6 @@ Parlamentarische Beschlussfassungen erfolgen entweder durch Abstimmungen über S
 ### Zweck der Entität
 
 "Voting" erfasst den Abstimmungsprozess und das Ergebnis einer formalen Entscheidung im Parlament. Die Entität dokumentiert sowohl den Abstimmungsgegenstand (Frage), als auch das Verfahren (wie wurde abgestimmt) und das Resultat (mit welchem Stimmenverhältnis).
-
-### Verankerung im Protokoll
-
-Abgestimmt und gewählt wird im Verlauf der Sitzung. `Voting` und `Election` hängen deshalb über `parent_protocol` am Protokoll und nicht an der vorgängig publizierten Traktandenliste: Was traktandiert wurde, sagt noch nicht, worüber tatsächlich abgestimmt wurde. Wurde unter einem Traktandum abgestimmt, verweist zusätzlich `parent_protocol_item` auf das protokollierte Traktandum (`ProtocolItem`); ohne Traktandierung bleibt dieses Feld leer, und die Zuordnung ergibt sich aus `parent_protocol` und `parent_meeting`. Umgekehrt nimmt `Protocol` die Abstimmungen und Wahlen als Listen auf (`votings`, `elections`).
 
 ### Arten von Abstimmungen
 
@@ -3240,9 +3282,8 @@ _Ein Abstimmungsverfahren mit Einzelstimmen und Ergebnissen._
 | majority_type | 0..1 <br/> [MajorityTypeEnum](#MajorityTypeEnum) | Art der für die Abstimmung erforderlichen Mehrheit (absolut, Zweidrittel usw.).  |
 | majority_count | 0..1 <br/> Integer | Anzahl der Stimmen, die für die relevante Mehrheitsschwelle erforderlich sind.  |
 | result_text | 0..1 <br/> String | Freitext zur Beschreibung des Ergebnisses der Abstimmung, z.B. „Mit 78 Stimmen angenommen“.  |
-| parent_meeting | 0..1 <br/> String | Die verknüpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert.  |
-| parent_protocol | 0..1 <br/> [Protocol](#Protocol) | Das Protokoll, in dem die Abstimmung oder Wahl festgehalten ist. Abgestimmt wird im Verlauf der Sitzung; die Abstimmung hängt deshalb am Protokoll und nicht an der vorgängig geplanten Traktandenliste.  |
-| parent_protocol_item | 0..1 <br/> [ProtocolItem](#ProtocolItem) | Das protokollierte Traktandum (ProtocolItem), unter dem abgestimmt oder gewählt wurde. Entfällt, wenn ohne Traktandierung abgestimmt wurde; die Zuordnung zur Sitzung ergibt sich dann allein aus parent_protocol und parent_meeting.  |
+| parent_meeting | 0..1 <br/> String | Identifikator der Sitzung, zu der dieser Eintrag gehört. Bei einer Sitzung bezeichnet er die übergeordnete Sitzung, bei Traktandum, Abstimmung, Wahl, Wortmeldung oder Protokoll die Sitzung, in der der Eintrag entstanden ist.  |
+| parent_agenda_item | 0..1 <br/> String | Identifikator des Traktandums, zu dem dieser Eintrag gehört. Bei einem Traktandum baut er eine Hierarchie von Traktanden auf, bei Abstimmung, Wahl oder Wortmeldung bezeichnet er das Traktandum, unter dem der Eintrag behandelt wurde.  |
 | affair_id | 0..1 <br/> String | Die Verbindung zu den Geschäften des Traktandums.  |
 | actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
 | documents | * <br/> Work | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.  |
@@ -3296,8 +3337,7 @@ votings:
   majority_type: absolute
   majority_count: 91
   result_text: Mit 105 zu 70 Stimmen bei 5 Enthaltungen angenommen
-  parent_protocol: ops:protocol_zh_2025_11_20
-  parent_protocol_item: ops:protocol_item_zh_budget_2026
+  parent_agenda_item: ops:agenda_item_zh_budget_2026
   parent_meeting: ops:meeting_zh_2025_11_20
   actor_id:
     global_uri: actors:kr_zh
@@ -3340,8 +3380,7 @@ votings:
   result_text: >-
     Auswahl A mit 75 von 112 abgegebenen Stimmen angenommen (Auswahl B: 25, Auswahl
     C: 12, Auswahl D: 0; 13 abwesend von 125 Mitgliedern).
-  parent_protocol: ops:protocol_zh_gr_2024_02_28
-  parent_protocol_item: ops:protocol_item_zh_gr_2024_2023_361
+  parent_agenda_item: ops:agenda_item_zh_gr_2024_2023_361
   parent_meeting: ops:meeting_zh_gr_2024_02_28
   affair_id: 2023/361
   actor_id:
@@ -3373,8 +3412,7 @@ votings:
   majority_type: absolute
   majority_count: 65
   result_text: Mit 78 zu 42 Stimmen bei 5 Enthaltungen angenommen
-  parent_protocol: ops:protocol_sg_2025_03_15
-  parent_protocol_item: ops:protocol_item_sg_2025_015
+  parent_agenda_item: ops:agenda_item_sg_2025_015
   parent_meeting: ops:meeting_sg_2025_03_15
   actor_id:
     global_uri: actors:kr_sg
@@ -3407,8 +3445,7 @@ votings:
   majority_type: absolute
   majority_count: 76
   result_text: Mit 45 zu 87 Stimmen bei 8 Enthaltungen abgelehnt
-  parent_protocol: ops:protocol_be_2025_06_05
-  parent_protocol_item: ops:protocol_item_be_2025_042
+  parent_agenda_item: ops:agenda_item_be_2025_042
   parent_meeting: ops:meeting_be_2025_06_05
   actor_id:
     global_uri: actors:gr_be
@@ -4158,9 +4195,8 @@ _Ein Wahlverfahren zur Wahl von Personen in Positionen._
 | majority_type | 0..1 <br/> [MajorityTypeEnum](#MajorityTypeEnum) | Art der für die Abstimmung erforderlichen Mehrheit (absolut, Zweidrittel usw.).  |
 | majority_count | 0..1 <br/> Integer | Anzahl der Stimmen, die für die relevante Mehrheitsschwelle erforderlich sind.  |
 | result_text | 0..1 <br/> String | Freitext zur Beschreibung des Ergebnisses der Abstimmung, z.B. „Mit 78 Stimmen angenommen“.  |
-| parent_meeting | 0..1 <br/> String | Die verknüpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert.  |
-| parent_protocol | 0..1 <br/> [Protocol](#Protocol) | Das Protokoll, in dem die Abstimmung oder Wahl festgehalten ist. Abgestimmt wird im Verlauf der Sitzung; die Abstimmung hängt deshalb am Protokoll und nicht an der vorgängig geplanten Traktandenliste.  |
-| parent_protocol_item | 0..1 <br/> [ProtocolItem](#ProtocolItem) | Das protokollierte Traktandum (ProtocolItem), unter dem abgestimmt oder gewählt wurde. Entfällt, wenn ohne Traktandierung abgestimmt wurde; die Zuordnung zur Sitzung ergibt sich dann allein aus parent_protocol und parent_meeting.  |
+| parent_meeting | 0..1 <br/> String | Identifikator der Sitzung, zu der dieser Eintrag gehört. Bei einer Sitzung bezeichnet er die übergeordnete Sitzung, bei Traktandum, Abstimmung, Wahl, Wortmeldung oder Protokoll die Sitzung, in der der Eintrag entstanden ist.  |
+| parent_agenda_item | 0..1 <br/> String | Identifikator des Traktandums, zu dem dieser Eintrag gehört. Bei einem Traktandum baut er eine Hierarchie von Traktanden auf, bei Abstimmung, Wahl oder Wortmeldung bezeichnet er das Traktandum, unter dem der Eintrag behandelt wurde.  |
 | affair_id | 0..1 <br/> String | Die Verbindung zu den Geschäften des Traktandums.  |
 | actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
 | documents | * <br/> Work | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.  |
@@ -4178,7 +4214,6 @@ _Ein Wahlverfahren zur Wahl von Personen in Positionen._
 | Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
 | [Container](#Container) | elections | range | [Election](#Election) |
-| [Protocol](#Protocol) | elections | range | [Election](#Election) |
 
 
 
@@ -4362,7 +4397,7 @@ _Aggregierte Anwesenheitsliste für eine Sitzung (Anzahl Anwesende, Abwesende, E
 | local_id | 0..1 <br/> String | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> Uriorcurie | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> Uriorcurie | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| parent_meeting | 0..1 <br/> String | Die verknüpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert.  |
+| parent_meeting | 0..1 <br/> String | Identifikator der Sitzung, zu der dieser Eintrag gehört. Bei einer Sitzung bezeichnet er die übergeordnete Sitzung, bei Traktandum, Abstimmung, Wahl, Wortmeldung oder Protokoll die Sitzung, in der der Eintrag entstanden ist.  |
 | datetime_begin | 0..1 <br/> Datetime | Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung beginnt.  |
 | actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
 | total_count | 0..1 <br/> Integer | Gesamtzahl aller Mitglieder des Gremiums (Bezugsgrösse für Quorum-Berechnungen).  |
@@ -4651,6 +4686,10 @@ Das Feld **speech_type** kann verschiedene Arten unterscheiden:
 - **procedural**: Verfahrensantrag
 - **declaration**: Erklärung
 
+### Einordnung in die Sitzung
+
+`parent_meeting` und `parent_agenda_item` halten fest, in welcher Sitzung und unter welchem Traktandum eine Wortmeldung gefallen ist. Beide sind nötig, weil eine Wortmeldung auf zwei Wegen geliefert werden kann: eingebettet im Protokoll, wo sich die Sitzung aus dem umgebenden `Protocol` ergibt, das Traktandum aber nicht — oder flach in `Container.speeches`, wo ohne diese Referenzen jeder Bezug fehlte. Sie tragen dieselben Werte wie bei `Voting` und `Election` und machen die Wortmeldung damit unabhängig davon auswertbar, aus welcher Lieferform sie stammt.
+
 
 
 ### Klasse: Speech []{#Speech}
@@ -4673,6 +4712,8 @@ _Eine Wortmeldung während einer Sitzung (auch Votum oder Redebeitrag genannt)._
 | local_id | 0..1 <br/> String | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> Uriorcurie | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> Uriorcurie | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| parent_meeting | 0..1 <br/> String | Identifikator der Sitzung, zu der dieser Eintrag gehört. Bei einer Sitzung bezeichnet er die übergeordnete Sitzung, bei Traktandum, Abstimmung, Wahl, Wortmeldung oder Protokoll die Sitzung, in der der Eintrag entstanden ist.  |
+| parent_agenda_item | 0..1 <br/> String | Identifikator des Traktandums, zu dem dieser Eintrag gehört. Bei einem Traktandum baut er eine Hierarchie von Traktanden auf, bei Abstimmung, Wahl oder Wortmeldung bezeichnet er das Traktandum, unter dem der Eintrag behandelt wurde.  |
 | language | 0..1 <br/> String | Sprachcode im ISO 639-1 Format (zwei Kleinbuchstaben, z.B. "de", "fr", "it", "en").  |
 | start | 0..1 <br/> String | Startangabe oder Position.  |
 | datetime_begin | 0..1 <br/> Datetime | Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung beginnt.  |
@@ -4723,6 +4764,8 @@ _Eine Wortmeldung während einer Sitzung (auch Votum oder Redebeitrag genannt)._
 ```yaml
 speeches:
 - global_uri: ops:366631
+  parent_meeting: parl:sr_winter25_sitzung_6
+  parent_agenda_item: ops:69905
   language: fr
   datetime_begin: '2025-12-19T09:20:00+01:00'
   datetime_end: '2025-12-19T09:25:00+01:00'
@@ -4794,10 +4837,6 @@ Speech
   └─ TextSegment (Zusammenfassung, de)
 ```
 
-### Träger eines TextSegments
-
-Textsegmente hängen nicht nur am Wortprotokoll: `Protocol` führt sie für den Wortlaut der ganzen Sitzung, `AgendaItem` beziehungsweise das protokollierte `ProtocolItem` für Text, der sich auf ein einzelnes Traktandum bezieht — etwa Zwischentitel, Querverweise oder eine Begründung, die bereits mit der Traktandierung publiziert wird. Weil beide Klassen den Mixin `IsAgendaItem` führen, steht `text_segments` auf der geplanten wie auf der protokollierten Seite zur Verfügung. Die einzelne Wortmeldung dagegen trägt ihren Wortlaut direkt in `text`, `text_format` und `text_type`.
-
 ## Media
 
 ### Zweck
@@ -4846,7 +4885,7 @@ Meeting
 ### Klasse: TextSegment []{#TextSegment}
 
 
-_Ein Textsegment wie Querverweise oder Zwischentitel. Textsegmente werden am Protokoll, an einer Wortmeldung oder an einem Traktandum geführt (geplantes AgendaItem oder protokolliertes ProtocolItem)._
+_Ein Textsegment wie Querverweise oder Zwischentitel in Sitzungsprotokollen._
 
 
 
@@ -4873,10 +4912,7 @@ _Ein Textsegment wie Querverweise oder Zwischentitel. Textsegmente werden am Pro
 
 | Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
-| IsAgendaItem | text_segments | range | [TextSegment](#TextSegment) |
-| [AgendaItem](#AgendaItem) | text_segments | range | [TextSegment](#TextSegment) |
 | [Protocol](#Protocol) | text_segments | range | [TextSegment](#TextSegment) |
-| [ProtocolItem](#ProtocolItem) | text_segments | range | [TextSegment](#TextSegment) |
 
 
 
@@ -5148,9 +5184,6 @@ _Ein String, der Text in mehreren Sprachen enthalten kann._
 | [Session](#Session) | url | range | [MultilingualString](#MultilingualString) |
 | [Meeting](#Meeting) | name | range | [MultilingualString](#MultilingualString) |
 | [Meeting](#Meeting) | url | range | [MultilingualString](#MultilingualString) |
-| IsAgendaItem | agenda_item_title | range | [MultilingualString](#MultilingualString) |
-| IsAgendaItem | agenda_item_description | range | [MultilingualString](#MultilingualString) |
-| IsAgendaItem | url | range | [MultilingualString](#MultilingualString) |
 | [AgendaItem](#AgendaItem) | agenda_item_title | range | [MultilingualString](#MultilingualString) |
 | [AgendaItem](#AgendaItem) | agenda_item_description | range | [MultilingualString](#MultilingualString) |
 | [AgendaItem](#AgendaItem) | url | range | [MultilingualString](#MultilingualString) |
@@ -5214,7 +5247,7 @@ _Eine Mixin-Klasse, die Slots für die Identifikation einer Entität zur Verfüg
 
 #### Mixin-Verwendung
 
-[Container](#Container), [Legislature](#Legislature), [Session](#Session), [Meeting](#Meeting), [AgendaItem](#AgendaItem), [Protocol](#Protocol), [ProtocolItem](#ProtocolItem), [Voting](#Voting), [IndividualVote](#IndividualVote), [Election](#Election), [Attendance](#Attendance), [IndividualAttendance](#IndividualAttendance), [Speech](#Speech), [TextSegment](#TextSegment), [Motion](#Motion), [Media](#Media)
+[Container](#Container), [Legislature](#Legislature), [Session](#Session), [Meeting](#Meeting), [AgendaItem](#AgendaItem), [Protocol](#Protocol), [Voting](#Voting), [IndividualVote](#IndividualVote), [Election](#Election), [Attendance](#Attendance), [IndividualAttendance](#IndividualAttendance), [Speech](#Speech), [TextSegment](#TextSegment), [Motion](#Motion), [Media](#Media)
 
 
 
@@ -5266,7 +5299,7 @@ _Eine Mixin-Klasse, die Slots für die Modellierung von Erstellungs- und Änderu
 
 #### Mixin-Verwendung
 
-[Legislature](#Legislature), [Session](#Session), [Meeting](#Meeting), [AgendaItem](#AgendaItem), [Protocol](#Protocol), [ProtocolItem](#ProtocolItem), [Voting](#Voting), [IndividualVote](#IndividualVote), [Election](#Election), [Attendance](#Attendance), [IndividualAttendance](#IndividualAttendance), [Speech](#Speech)
+[Legislature](#Legislature), [Session](#Session), [Meeting](#Meeting), [AgendaItem](#AgendaItem), [Protocol](#Protocol), [Voting](#Voting), [IndividualVote](#IndividualVote), [Election](#Election), [Attendance](#Attendance), [IndividualAttendance](#IndividualAttendance), [Speech](#Speech)
 
 
 
@@ -5322,7 +5355,7 @@ _Eine Mixin-Klasse, die Slots für die Modellierung von Ereignissen oder Vorkomm
 
 #### Mixin-Verwendung
 
-[Legislature](#Legislature), [Session](#Session), [Meeting](#Meeting), [AgendaItem](#AgendaItem), [ProtocolItem](#ProtocolItem)
+[Legislature](#Legislature), [Session](#Session), [Meeting](#Meeting), [AgendaItem](#AgendaItem)
 
 
 

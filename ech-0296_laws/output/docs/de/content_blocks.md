@@ -36,6 +36,7 @@ URI: [laws:content_blocks](https://ld.ech.ch/schema/0296/laws/content_blocks)
 | [Note](Note.md) | Eine einzelne Anmerkung |  no  |
 | [Formula](Formula.md) | Eine Eingangs- oder Schlussformel des Vorspruchs (akn:formula) |  no  |
 | [Citation](Citation.md) | Eine einzelne Erwägung |  no  |
+| [TableHeaderCell](TableHeaderCell.md) | Eine Kopfzelle einer Tabellenzeile (akn:th) |  no  |
 
 
 
@@ -49,7 +50,7 @@ URI: [laws:content_blocks](https://ld.ech.ch/schema/0296/laws/content_blocks)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [BlockElement](BlockElement.md) |
-| Domäne von | [Preamble](Preamble.md), [Content](Content.md), [BlockListItem](BlockListItem.md), [TableCell](TableCell.md), [AuthorialNote](AuthorialNote.md), [MainBody](MainBody.md), [Conclusions](Conclusions.md), [Note](Note.md), [Formula](Formula.md), [Citation](Citation.md) |
+| Domäne von | [Preamble](Preamble.md), [Content](Content.md), [BlockListItem](BlockListItem.md), [TableCell](TableCell.md), [AuthorialNote](AuthorialNote.md), [MainBody](MainBody.md), [Conclusions](Conclusions.md), [Note](Note.md), [Formula](Formula.md), [Citation](Citation.md), [TableHeaderCell](TableHeaderCell.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -97,6 +98,7 @@ domain_of:
 - Note
 - Formula
 - Citation
+- TableHeaderCell
 range: BlockElement
 multivalued: true
 inlined: true

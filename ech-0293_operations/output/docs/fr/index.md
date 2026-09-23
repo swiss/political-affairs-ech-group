@@ -14,6 +14,7 @@ Name: operations
 | Classe | Description |
 | --- | --- |
 | [AgendaItem](AgendaItem.md) | Un point de l'ordre du jour d'une séance |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ProtocolItem](ProtocolItem.md) | Un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-... |
 | [Attendance](Attendance.md) | Liste de présence agrégée pour une séance (nombre de membres présents, absent... |
 | [Container](Container.md) | Conteneur pour les données de l'activité publique des conseils : législatures... |
 | [Date](Date.md) | Une date assortie d'une indication de type (p |
@@ -26,7 +27,6 @@ Name: operations
 | [HasTemporalValidity](HasTemporalValidity.md) | Une classe mixin qui fournit des slots pour modéliser la validité temporelle ... |
 | [IndividualAttendance](IndividualAttendance.md) | Constatation individuelle de la présence d'une personne à une séance (rattach... |
 | [IndividualVote](IndividualVote.md) | Une voix individuelle exprimée par un membre lors d'une procédure de vote |
-| [IsAgendaItem](IsAgendaItem.md) | Une classe mixin qui fournit les éléments d'un point de l'ordre du jour : dés... |
 | [IsEventWithDuration](IsEventWithDuration.md) | Une classe mixin qui fournit des slots pour modéliser des événements ou occur... |
 | [IsInstantaneousEvent](IsInstantaneousEvent.md) | Une classe mixin qui fournit des slots pour modéliser des événements ou occur... |
 | [IsProcessStep](IsProcessStep.md) | Une classe mixin pour une étape unique dans un processus |
@@ -41,11 +41,10 @@ Name: operations
 | [MultilingualValue](MultilingualValue.md) | Une chaîne de caractères multilingue avec indication de la langue |
 | [PersonReference](PersonReference.md) | Référence abrégée à une personne avec les principales données d'identificatio... |
 | [Protocol](Protocol.md) | Le procès-verbal établi après la séance |
-| [ProtocolItem](ProtocolItem.md) | Un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-... |
 | [Resolution](Resolution.md) | Une décision prise sur un point de l'ordre du jour, y compris les procédures ... |
 | [Session](Session.md) | Une session parlementaire qui regroupe plusieurs séances et s'étend sur une p... |
 | [Speech](Speech.md) | Une intervention prononcée au cours d'une séance (également appelée prise de ... |
-| [TextSegment](TextSegment.md) | Un segment de texte tel qu'un renvoi ou un intertitre |
+| [TextSegment](TextSegment.md) | Un segment de texte tel qu'un renvoi ou un intertitre dans un procès-verbal d... |
 | [TotalOther](TotalOther.md) | Décomptes de voix supplémentaires lorsque plusieurs options sont soumises au ... |
 | [Voting](Voting.md) | Une procédure de vote avec les voix individuelles et les résultats |
 | [Work](Work.md) | FRBR Work : le document abstrait en tant que tel, indépendamment d'une versio... |
@@ -109,6 +108,7 @@ Name: operations
 | [group_id](group_id.md) | Référence au groupe ou à l'organe (instantané au moment de la mise en relatio... |
 | [group_label](group_label.md) | Nom de l'organe/du groupe au moment de la liaison |
 | [group_name](group_name.md) | Nom du groupe ou de l'organe |
+| [has_protocol](has_protocol.md) | Référence au procès-verbal de cette séance, établi après celle-ci |
 | [has_resolution](has_resolution.md) | La décision prise sur ce point de l'ordre du jour |
 | [id](id.md) | Identifiant univoque de l'élément |
 | [individual_attendances](individual_attendances.md) | Ensemble des constatations individuelles de présence |
@@ -140,17 +140,14 @@ Name: operations
 | [name](name.md) | Désignation complète multilingue |
 | [number](number.md) | Numéro courant, p |
 | [optional](optional.md) | Indique si la séance ou le vote est facultatif |
-| [parent_agenda_item](parent_agenda_item.md) | Au besoin, ce slot permet de construire une hiérarchie de points de l'ordre d... |
+| [parent_agenda_item](parent_agenda_item.md) | Identifiant du point de l'ordre du jour auquel cet enregistrement se rattache |
 | [parent_attendance](parent_attendance.md) | L'agrégat Attendance auquel appartient cette constatation individuelle de pré... |
 | [parent_legislature](parent_legislature.md) | La législature dans le cadre de laquelle la séance a lieu |
-| [parent_meeting](parent_meeting.md) | Identifiant de la séance liée qui regroupe la séance courante |
-| [parent_protocol](parent_protocol.md) | Le procès-verbal dans lequel le vote ou l'élection est consigné |
-| [parent_protocol_item](parent_protocol_item.md) | Le point consigné au procès-verbal (ProtocolItem) sous lequel le vote ou l'él... |
+| [parent_meeting](parent_meeting.md) | Identifiant de la séance à laquelle cet enregistrement se rattache |
 | [parent_type](parent_type.md) | Type de l'objet parent (séance, point de l'ordre du jour, intervention, affai... |
 | [parent_voting](parent_voting.md) | L'identifiant du vote auquel se rattache la voix individuelle |
 | [position](position.md) | Position (nombre entier) au sein de la séquence supérieure |
 | [protocol_items](protocol_items.md) | Points de l'ordre du jour tels qu'ils ont effectivement été consignés au proc... |
-| [protocol_ref](protocol_ref.md) | Le procès-verbal de cette séance, établi après celle-ci |
 | [protocols](protocols.md) | Ensemble des procès-verbaux |
 | [reason](reason.md) | Motif de l'absence ou du retard (texte libre, multilingue) |
 | [remark](remark.md) | Remarque ou note en texte libre pour les cas particuliers ou pour un contexte... |
@@ -198,7 +195,6 @@ Name: operations
 | [votings](votings.md) | Ensemble des votes |
 | [weight](weight.md) | Le nombre de voix dont dispose la personne, le cas échéant (p |
 | [wikidata_uri](wikidata_uri.md) | Une URI qui renvoie à une entité Wikidata, par ex |
-| [work_type](work_type.md) | Type de document (p |
 | [works](works.md) | Les documents (FRBR Works) contenus dans le conteneur |
 | [xdate](xdate.md) | La valeur de date elle-même |
 
@@ -218,7 +214,6 @@ Name: operations
 | [ResolutionTypeEnum](ResolutionTypeEnum.md) | Type de décision prise sur un point de l'ordre du jour |
 | [StateEnum](StateEnum.md) | État de la séance |
 | [VotingTypeEnum](VotingTypeEnum.md) | Type de procédure de vote |
-| [WorkTypesEnum](WorkTypesEnum.md) | Type d'un document (FRBR Work) |
 
 
 ## Types

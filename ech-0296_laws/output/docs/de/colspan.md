@@ -26,6 +26,7 @@ URI: [laws:colspan](https://ld.ech.ch/schema/0296/laws/colspan)
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
 | [TableCell](TableCell.md) | Eine Zelle in einer Tabellenzeile (akn:td) |  no  |
+| [TableHeaderCell](TableHeaderCell.md) | Eine Kopfzelle einer Tabellenzeile (akn:th) |  no  |
 
 
 
@@ -39,7 +40,7 @@ URI: [laws:colspan](https://ld.ech.ch/schema/0296/laws/colspan)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [String](String.md) |
-| Domäne von | [TableCell](TableCell.md) |
+| Domäne von | [TableCell](TableCell.md), [TableHeaderCell](TableHeaderCell.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -74,6 +75,7 @@ from_schema: https://ld.ech.ch/schema/0296/laws
 rank: 1000
 domain_of:
 - TableCell
+- TableHeaderCell
 range: string
 
 ```

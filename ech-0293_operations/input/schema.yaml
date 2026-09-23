@@ -150,7 +150,7 @@ classes:
       - parent_meeting
       - parent_legislature
       - documents
-      - protocol_ref
+      - has_protocol
     slot_usage:
       actor_id:
         range: GroupReference
@@ -438,6 +438,8 @@ classes:
       - HasIdentification
       - HasCreationModificationDates
     slots:
+      - parent_meeting
+      - parent_agenda_item
       - language
       - start
       - datetime_begin
@@ -708,12 +710,12 @@ slots:
 
   parent_meeting:
     description: |
-      The linked meeting ID that groups the current meeting.
+      Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.
     annotations:
       description_de: |
-        Die verknüpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert.
+        Identifikator der Sitzung, zu der dieser Eintrag gehört. Bei einer Sitzung bezeichnet er die übergeordnete Sitzung, bei Traktandum, Abstimmung, Wahl, Wortmeldung oder Protokoll die Sitzung, in der der Eintrag entstanden ist.
       description_fr: |
-        Identifiant de la séance liée qui regroupe la séance courante.
+        Identifiant de la séance à laquelle cet enregistrement se rattache. Pour une séance, il désigne la séance supérieure ; pour un point de l'ordre du jour, un vote, une élection, une intervention ou un procès-verbal, la séance au cours de laquelle l'enregistrement est né.
     range: string
 
   parent_legislature:
@@ -884,12 +886,12 @@ slots:
 
   parent_agenda_item:
     description: |
-      If needed, this slot builds a hierarchy of agenda items.
+      Identifier of the agenda item this record belongs to. On an agenda item it builds a hierarchy of agenda items; on a voting, election or speech it names the agenda item under which the record was handled.
     annotations:
       description_de: |
-        Wenn erforderlich, baut dieser Slot eine Hierarchie von Traktanden auf.
+        Identifikator des Traktandums, zu dem dieser Eintrag gehört. Bei einem Traktandum baut er eine Hierarchie von Traktanden auf, bei Abstimmung, Wahl oder Wortmeldung bezeichnet er das Traktandum, unter dem der Eintrag behandelt wurde.
       description_fr: |
-        Au besoin, ce slot permet de construire une hiérarchie de points de l'ordre du jour.
+        Identifiant du point de l'ordre du jour auquel cet enregistrement se rattache. Pour un point de l'ordre du jour, il construit une hiérarchie de points ; pour un vote, une élection ou une intervention, il désigne le point sous lequel l'enregistrement a été traité.
     range: string
 
   parent_protocol:
@@ -1275,17 +1277,16 @@ slots:
     multivalued: true
     inlined_as_list: true
 
-  protocol_ref:
-    slot_uri: ops:protocolRef
+  has_protocol:
+    slot_uri: ops:hasProtocol
     description: |
-      The protocol (minutes) of this meeting, recorded after the meeting.
+      Reference to the protocol (minutes) of this meeting, recorded after the meeting. Only the identifier of the protocol is given; the protocol itself is delivered in the container's `protocols` list. It is an entity in its own right with its own identifier and is usually published later than the meeting, so it is referenced rather than embedded.
     annotations:
       description_de: |
-        Das nach der Sitzung erstellte Protokoll dieser Sitzung.
+        Referenz auf das nach der Sitzung erstellte Protokoll dieser Sitzung. Angegeben wird nur der Identifikator des Protokolls; das Protokoll selbst wird in der Liste `protocols` des Containers geliefert. Es ist eine eigenständige Entität mit eigenem Identifikator und wird in der Regel später veröffentlicht als die Sitzung, weshalb es referenziert und nicht eingebettet wird.
       description_fr: |
-        Le procès-verbal de cette séance, établi après celle-ci.
+        Référence au procès-verbal de cette séance, établi après celle-ci. Seul l'identifiant du procès-verbal est indiqué ; le procès-verbal lui-même est livré dans la liste `protocols` du conteneur. Il constitue une entité à part entière dotée de son propre identifiant et est en règle générale publié après la séance, raison pour laquelle il est référencé et non imbriqué.
     range: Protocol
-    inlined: true
 
   protocol_items:
     slot_uri: ops:protocolItem

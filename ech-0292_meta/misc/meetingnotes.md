@@ -4,10 +4,27 @@ _Internal note: update the next subgroup meeting in the [README](https://github.
 
 **Meeting Link:** https://teams.microsoft.com/meet/3879512933733?p=rTdaRaFWPi0JWENkuE
 
-## Next meeting: 24 August (15-16.00) – 4th MO of every month
+## Next meeting: 28 September (15-16.00) – 4th MO of every month
 
-- 06_richtext_definition.md
-- ...
+- Glossar: https://docs.google.com/spreadsheets/d/1taUeu5BWyzboI01Hmde-G_TbGklVjgDgaKvjBqixMjs/edit?gid=0#gid=0
+    - Begrifflichkeiten: Sicht Gruppe und extern
+- 
+
+## 24 August
+
+- **To do: Entwurf der Kapitel 03 bis 07 bis 1 Woche vor nächster Sitzung: 21. September**
+    - 01_head.md: Michael und Christian
+    - 02_introduction.md: Michael und Christian
+    - 03_design_principles.md: Benedikt
+    - 04_common_data_elements.md: Benedikt
+    - 05_data_publishing.md: Christian (tbc by Michael)
+    - 06_richtext_definition.md: Michael
+    - 07_legacy_documents.md: Michel und Michael
+    - Versand Aufgaben inkl. wer ist noch dabei?: Florin
+ - Vorabinfo: GitHub als Tool von eCH, Fachgruppe als "Versuchskaninchen", Koordination/Austausch läuft künftig über Meta-Gruppe
+ - 06_richtext_definition.md
+     - basierend auf BK/Parlamentsdienste Bund
+     - Florin: Daniela, Nicole und Simon fragen, wie sie Texte handhaben
 
 ## 22 June
 - Themenklassifikation: vgl. https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0297_consultations/misc/2026-06-19-session.md
@@ -18,6 +35,22 @@ _Internal note: update the next subgroup meeting in the [README](https://github.
         - Mögliche Kategorisierungen/Listen: siehe https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0297_consultations/misc/2026-06-19-session.md
 - 05_data_publishing.md
     - https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0292_meta/input/05_data_publishing.md
+
+## 02 June (Plenum)
+
+[Excerpt Slides](https://docs.google.com/presentation/d/1ODF9bV3lhlJ2uzAC1uN6x3bm3OCrFlQHE8kHiVsPIEU/edit?slide=id.g3e5e7c861c9_0_0#slide=id.g3e5e7c861c9_0_0):
+
+### Ready for (internal) consultation end of summer.
+- 03_design_principles.md
+- 04_common_data_elements.md
+- 05_data_publishing.md
+- 06_richtext_definition.md
+- 07_legacy_documents.md
+  - FRBR
+  - Dokumentkategorien
+### Next Steps
+- Permanente URL/URI/DOI
+- Chronologie/”Lifecycle” Geschäft
 
 
 ## 1 June 2026

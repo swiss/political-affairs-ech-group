@@ -163,15 +163,21 @@ An AgendaItem is the central link between:
 
 While the agenda items represent the **planning** of a sitting, the protocol records the **actual course** after the sitting. `Protocol` is a wrapper container kept exactly once per sitting (`Meeting`) that bundles the agenda items actually dealt with (`protocol_items`), votings, speeches as well as verbatim text segments and documents.
 
+The protocol is **referenced, not embedded**: `Meeting.has_protocol` holds the identifier alone, the protocol itself is an entry of its own in `Container.protocols`. The rule this standard applies throughout therefore holds here as well — what has no identity of its own is embedded (`PersonReference` or `GroupReference`, say), what has one is referenced. The protocol carries its own `global_uri` and can be cited independently; the Official Bulletin, for instance, is available at an address of its own. Above all it comes into being after the sitting: embedded, the entire sitting would have to be delivered again once the protocol exists; referenced, delivering the protocol alone is enough.
+
+Within the protocol the collections stay embedded, because they arise and are delivered together with it. Anyone publishing votings or speeches independently of the protocol delivers them flat in `Container.votings` or `Container.speeches` instead and links them through `parent_meeting` and `parent_agenda_item`.
+
 ```
-Meeting
-  ├─ agenda_items   (before: planned agenda items)
-  └─ protocol_ref   (after: the record)
-        ├─ protocol_items  → ProtocolItem (same elements as AgendaItem)
-        ├─ votings
-        ├─ speeches
-        ├─ text_segments
-        └─ documents
+Container
+  ├─ meetings       → Meeting
+  │                     └─ has_protocol → identifier of the protocol
+  ├─ agenda_items   → AgendaItem  (before: planned agenda items, parent_meeting)
+  └─ protocols      → Protocol    (after: the record, parent_meeting)
+                        ├─ protocol_items  → ProtocolItem (same elements as AgendaItem)
+                        ├─ votings
+                        ├─ speeches
+                        ├─ text_segments
+                        └─ documents
 ```
 
 {{include:ech-0293_operations/output/docs/Protocol.md}}

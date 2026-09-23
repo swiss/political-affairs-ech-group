@@ -30,6 +30,9 @@ Name: ech-0296-laws-schema
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Table](Table.md) | Ein Tabellen-Element innerhalb von Content (akn:table) |
 | [BlockListItem](BlockListItem.md) | Ein einzelner Punkt in einer Auflistung (akn:item) |
 | [Book](Book.md) | Buch-Ebene eines Erlasses (akn:book) |
+| [Cell](Cell.md) | Abstrakte Basis für eine Zelle einer Tabellenzeile: eine Datenzelle (akn:td) ... |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TableCell](TableCell.md) | Eine Zelle in einer Tabellenzeile (akn:td) |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TableHeaderCell](TableHeaderCell.md) | Eine Kopfzelle einer Tabellenzeile (akn:th) |
 | [Chapter](Chapter.md) | Kapitel-Ebene eines Erlasses (akn:chapter) |
 | [Citation](Citation.md) | Eine einzelne Erwägung |
 | [Component](Component.md) | Ein einzelnes beiliegendes Dokument (akn:component) |
@@ -99,7 +102,6 @@ Name: ech-0296-laws-schema
 | [Subchapter](Subchapter.md) | Unterkapitel-Ebene (akn:subchapter) |
 | [Subdivision](Subdivision.md) | Ein Unterabschnitt in einem Artikel, der zusammengehörige Absätze gruppiert (... |
 | [Subsection](Subsection.md) | Unterabschnitt-Ebene (akn:subsection) |
-| [TableCell](TableCell.md) | Eine Zelle in einer Tabellenzeile (akn:td) |
 | [TableRow](TableRow.md) | Eine Zeile in einer AkomaNtoso-Tabelle (akn:tr) |
 | [TemporalData](TemporalData.md) | Die Zeitgruppen, auf die sich eine Änderung bezieht |
 | [TemporalGroup](TemporalGroup.md) | Ein benannter Zeitraum, auf den sich eine Änderung über @period bezieht |
@@ -220,7 +222,7 @@ Name: ech-0296-laws-schema
 | [subdivisions](subdivisions.md) | Unterabschnitt-Kindelemente (akn:subdivision) innerhalb eines Artikels |
 | [subheading](subheading.md) | Unterüberschrift für ein Strukturelement (akn:subheading) |
 | [subsections](subsections.md) | Unterabschnitt-Kindelemente (akn:subsection) |
-| [table_cells](table_cells.md) | Zellen in einer Tabellenzeile (akn:td) |
+| [table_cells](table_cells.md) | Zellen einer Tabellenzeile in Lesereihenfolge: Datenzellen und Kopfzellen (ak... |
 | [table_rows](table_rows.md) | Zeilen in einer Tabelle (akn:tr) |
 | [tables](tables.md) | Tabellen-Elemente (akn:table) innerhalb von Content |
 | [temporal_data_ref](temporal_data_ref.md) | Die Zeitangaben der Metadaten (akn:temporalData) |

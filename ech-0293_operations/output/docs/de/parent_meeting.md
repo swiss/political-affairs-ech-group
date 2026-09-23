@@ -6,7 +6,7 @@ search:
 # Slot: parent_meeting 
 
 
-_Die verknüpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert._
+_Identifikator der Sitzung, zu der dieser Eintrag gehört. Bei einer Sitzung bezeichnet er die übergeordnete Sitzung, bei Traktandum, Abstimmung, Wahl, Wortmeldung oder Protokoll die Sitzung, in der der Eintrag entstanden ist._
 
 
 
@@ -27,12 +27,12 @@ URI: [ops:parent_meeting](https://ch.paf.link/schema/operations/parent_meeting)
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
 | [Meeting](Meeting.md) | Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, Sess... |  no  |
-| [IsAgendaItem](IsAgendaItem.md) | Eine Mixin-Klasse, welche die Elemente eines Traktandums bereitstellt: Bezeic... |  no  |
+| [AgendaItem](AgendaItem.md) | Ein Traktandum einer Sitzung |  no  |
 | [Protocol](Protocol.md) | Das nach der Sitzung erstellte Protokoll |  no  |
 | [Voting](Voting.md) | Ein Abstimmungsverfahren mit Einzelstimmen und Ergebnissen |  no  |
 | [Election](Election.md) | Ein Wahlverfahren zur Wahl von Personen in Positionen |  no  |
 | [Attendance](Attendance.md) | Aggregierte Anwesenheitsliste für eine Sitzung (Anzahl Anwesende, Abwesende, ... |  no  |
-| [AgendaItem](AgendaItem.md) | Ein Traktandum einer Sitzung |  no  |
+| [Speech](Speech.md) | Eine Wortmeldung während einer Sitzung (auch Votum oder Redebeitrag genannt) |  no  |
 | [ProtocolItem](ProtocolItem.md) | Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde |  no  |
 
 
@@ -47,7 +47,7 @@ URI: [ops:parent_meeting](https://ch.paf.link/schema/operations/parent_meeting)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [String](String.md) |
-| Domäne von | [Meeting](Meeting.md), [IsAgendaItem](IsAgendaItem.md), [Protocol](Protocol.md), [Voting](Voting.md), [Election](Election.md), [Attendance](Attendance.md) |
+| Domäne von | [Meeting](Meeting.md), [AgendaItem](AgendaItem.md), [Protocol](Protocol.md), [Voting](Voting.md), [Election](Election.md), [Attendance](Attendance.md), [Speech](Speech.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -73,26 +73,34 @@ name: parent_meeting
 annotations:
   description_de:
     tag: description_de
-    value: 'Die verknüpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert.
+    value: 'Identifikator der Sitzung, zu der dieser Eintrag gehört. Bei einer Sitzung
+      bezeichnet er die übergeordnete Sitzung, bei Traktandum, Abstimmung, Wahl, Wortmeldung
+      oder Protokoll die Sitzung, in der der Eintrag entstanden ist.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Identifiant de la séance liée qui regroupe la séance courante.
+    value: 'Identifiant de la séance à laquelle cet enregistrement se rattache. Pour
+      une séance, il désigne la séance supérieure ; pour un point de l''ordre du jour,
+      un vote, une élection, une intervention ou un procès-verbal, la séance au cours
+      de laquelle l''enregistrement est né.
 
       '
-description: 'Die verknüpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert.
+description: 'Identifikator der Sitzung, zu der dieser Eintrag gehört. Bei einer Sitzung
+  bezeichnet er die übergeordnete Sitzung, bei Traktandum, Abstimmung, Wahl, Wortmeldung
+  oder Protokoll die Sitzung, in der der Eintrag entstanden ist.
 
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 domain_of:
 - Meeting
-- IsAgendaItem
+- AgendaItem
 - Protocol
 - Voting
 - Election
 - Attendance
+- Speech
 range: string
 
 ```

@@ -42,11 +42,11 @@ ops:legislature_be_2022_2026 a ops:Legislature ;
             mcm:label "Grosser Rat Bern" ] ;
     ops:landingPage "https://www.gr.be.ch/de/start/grosser-rat.html" ;
     ops:name [ a ops:MultilingualString ;
-            ops:text "Legislatur 2022–2026" ;
-            mcm:language "de" ],
-        [ a ops:MultilingualString ;
             ops:text "Législature 2022-2026" ;
-            mcm:language "fr" ] ;
+            mcm:language "fr" ],
+        [ a ops:MultilingualString ;
+            ops:text "Legislatur 2022–2026" ;
+            mcm:language "de" ] ;
     ops:spatial "https://ld.admin.ch/canton/2" ;
     mcm:dateBeginActual "2022-06-01"^^xsd:date ;
     mcm:dateBeginPlanned "2022-06-01"^^xsd:date ;

@@ -32,6 +32,7 @@ _Einfacher Halter mit einem einzelnen @value-Attribut (AKN valueType). Wiederver
 | [FRBRWork](FRBRWork.md) | [frbr_subtype](frbr_subtype.md) | range | [ValueType](ValueType.md) |
 | [FRBRWork](FRBRWork.md) | [frbr_number](frbr_number.md) | range | [ValueType](ValueType.md) |
 | [FRBRWork](FRBRWork.md) | [frbr_authoritative](frbr_authoritative.md) | range | [ValueType](ValueType.md) |
+| [FRBRExpression](FRBRExpression.md) | [frbr_authoritative](frbr_authoritative.md) | range | [ValueType](ValueType.md) |
 
 
 

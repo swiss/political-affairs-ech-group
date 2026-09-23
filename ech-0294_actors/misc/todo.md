@@ -1,5 +1,6 @@
-## Arbeiten ab 2026
+## Letzte Arbeiten nach ersten Feedback Fachreferenten
 
-* Ziel Ende April Review innerhalb der Fachgruppe (Reviewer aktivieren)
-  * Workshop mit der Öffentlichkeit (Abklärung zu Akzeptanz)
-* Ziel Ende Juni Reviewprozess eCH
+* Kapitel Sicherheitsüberlegungen ausführen 08_outro.md
+* Anhänge komplettieren C Glossar, F Tabellenverzeichniss
+* Workshop mit der Öffentlichkeit (Abklärung zu Akzeptanz)
+

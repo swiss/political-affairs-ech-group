@@ -304,6 +304,10 @@ meetings:
           language: de
     actor_name: "Ständerat"
     datetime_begin_planned: "2025-12-19T08:15:00+01:00"
+    # Referenz auf das Protokoll: nur der Identifikator. Das Protokoll selbst
+    # steht unten unter `protocols` und wird in der Regel spaeter geliefert als
+    # die Sitzung.
+    has_protocol: "ops:protokoll_sr_winter25_sitzung_6"
     datetime_created: "2026-01-12T00:00:00+01:00"
     datetime_modified: "2026-01-12T00:00:00+01:00"
 
@@ -326,6 +330,8 @@ agenda_items:
 
 speeches:
   - global_uri: ops:366631
+    parent_meeting: "parl:sr_winter25_sitzung_6"
+    parent_agenda_item: "ops:69905"
     language: "fr"
     datetime_begin: "2025-12-19T09:20:00+01:00"
     datetime_end: "2025-12-19T09:25:00+01:00"
@@ -348,6 +354,27 @@ speeches:
     media_url: "https://par-pcache.simplex.tv/content?externalid=366631"
     media_type: "video"
     media_format: "video/mp4"
+
+protocols:
+  - global_uri: ops:protokoll_sr_winter25_sitzung_6
+    parent_meeting: "parl:sr_winter25_sitzung_6"
+    protocol_items:
+      - global_uri: ops:protokollpunkt_69905
+        parent_meeting: "parl:sr_winter25_sitzung_6"
+        agenda_item_type: "item"
+        agenda_item_number: "6"
+        agenda_item_position: 4
+        agenda_item_title:
+          - text: "Postulat Broulis Pascal. Bauprojekte im Mobilitätsbereich. Einen Vergleich durchführen, um die Verzögerungen zu verstehen"
+            language: "de"
+        affair_id: "affairs:24.4471"
+        datetime_begin_actual: "2025-12-19T09:20:00+01:00"
+        landing_page: "https://www.parlament.ch/de/ratsbetrieb/amtliches-bulletin/amtliches-bulletin-die-verhandlungen?SubjectId=69905#votum3"
+        agenda_item_category: "agenda_item"
+        datetime_created: "2026-01-12T00:00:00+01:00"
+        datetime_modified: "2026-01-12T00:00:00+01:00"
+    datetime_created: "2026-01-12T00:00:00+01:00"
+    datetime_modified: "2026-01-12T00:00:00+01:00"
 
 ```
 ##### Example Container: voting
@@ -372,8 +399,7 @@ votings:
   majority_type: "absolute"
   majority_count: 65
   result_text: "Mit 78 zu 42 Stimmen bei 5 Enthaltungen angenommen"
-  parent_protocol: ops:protocol_sg_2025_03_15
-  parent_protocol_item: ops:protocol_item_sg_2025_015
+  parent_agenda_item: ops:agenda_item_sg_2025_015
   parent_meeting: ops:meeting_sg_2025_03_15
   actor_id:
     global_uri: "actors:kr_sg"
@@ -401,8 +427,7 @@ votings:
   majority_type: "absolute"
   majority_count: 76
   result_text: "Mit 45 zu 87 Stimmen bei 8 Enthaltungen abgelehnt"
-  parent_protocol: ops:protocol_be_2025_06_05
-  parent_protocol_item: ops:protocol_item_be_2025_042
+  parent_agenda_item: ops:agenda_item_be_2025_042
   parent_meeting: ops:meeting_be_2025_06_05
   actor_id:
     global_uri: "actors:gr_be"
@@ -428,8 +453,7 @@ votings:
   majority_type: "absolute"
   majority_count: 91
   result_text: "Mit 105 zu 70 Stimmen bei 5 Enthaltungen angenommen"
-  parent_protocol: ops:protocol_zh_2025_11_20
-  parent_protocol_item: ops:protocol_item_zh_budget_2026
+  parent_agenda_item: ops:agenda_item_zh_budget_2026
   parent_meeting: ops:meeting_zh_2025_11_20
   actor_id:
     global_uri: "actors:kr_zh"
@@ -469,8 +493,7 @@ votings:
   total: 112
   majority_type: "other"
   result_text: "Auswahl A mit 75 von 112 abgegebenen Stimmen angenommen (Auswahl B: 25, Auswahl C: 12, Auswahl D: 0; 13 abwesend von 125 Mitgliedern)."
-  parent_protocol: ops:protocol_zh_gr_2024_02_28
-  parent_protocol_item: ops:protocol_item_zh_gr_2024_2023_361
+  parent_agenda_item: ops:agenda_item_zh_gr_2024_2023_361
   parent_meeting: ops:meeting_zh_gr_2024_02_28
   affair_id: "2023/361"
   actor_id:
@@ -1392,7 +1415,7 @@ At this level, scheduled and actual times regularly diverge: a sitting scheduled
 
 ### Anchor points
 
-The meeting is the node to which the remaining classes of this standard attach: agenda items (`AgendaItem`), votings and elections (`Voting`, `Election`), speeches (`Speech`) as well as the attendance list (`Attendance.parent_meeting`). `documents` links sitting documents such as the bulletin or annexes, `protocol_ref` the protocol. `parent_meeting` represents sittings that are part of a superordinate sitting; `actor_name`, `group_name` and `group_id` additionally hold body and grouping in plain text.
+The meeting is the node to which the remaining classes of this standard attach: agenda items (`AgendaItem`), votings and elections (`Voting`, `Election`), speeches (`Speech`) as well as the attendance list (`Attendance.parent_meeting`). `documents` links sitting documents such as the bulletin or annexes, `has_protocol` the protocol. `parent_meeting` represents sittings that are part of a superordinate sitting; `actor_name`, `group_name` and `group_id` additionally hold body and grouping in plain text.
 
 
 
@@ -1434,10 +1457,10 @@ _A general meeting class used for Sessions, Comittee Meetings, individual sessio
 | state_name | 0..1 <br/> String | Custom state description for the meeting.  |
 | description | 0..1 <br/> String | Descriptive text of the element.  |
 | location | 0..1 <br/> String | Place where the meeting is held (physical room, video conference or hybrid format).  |
-| parent_meeting | 0..1 <br/> String | The linked meeting ID that groups the current meeting.  |
+| parent_meeting | 0..1 <br/> String | Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.  |
 | parent_legislature | 0..1 <br/> String | The legislative body in which the meeting is based.  |
 | documents | * <br/> Work | List of documents (FRBR Works) linked to the entity.  |
-| protocol_ref | 0..1 <br/> [Protocol](#Protocol) | The protocol (minutes) of this meeting, recorded after the meeting.  |
+| has_protocol | 0..1 <br/> [Protocol](#Protocol) | Reference to the protocol (minutes) of this meeting, recorded after the meeting. Only the identifier of the protocol is given; the protocol itself is delivered in the container's `protocols` list. It is an entity in its own right with its own identifier and is usually published later than the meeting, so it is referenced rather than embedded.  |
 | date_begin_actual | 0..1 <br/> Date | The actual start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
 | datetime_begin_actual | 0..1 <br/> Datetime | The actual start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
 | date_begin_planned | 0..1 <br/> Date | The planned start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
@@ -1563,6 +1586,7 @@ meetings:
       language: de
   actor_name: Ständerat
   datetime_begin_planned: '2025-12-19T08:15:00+01:00'
+  has_protocol: ops:protokoll_sr_winter25_sitzung_6
   datetime_created: '2026-01-12T00:00:00+01:00'
   datetime_modified: '2026-01-12T00:00:00+01:00'
 
@@ -1911,6 +1935,23 @@ _An agenda item of a meeting._
 | local_id | 0..1 <br/> String | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> Uriorcurie | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> Uriorcurie | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| parent_meeting | 0..1 <br/> String | Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.  |
+| agenda_item_type | 0..1 <br/> [AgendaItemTypeEnum](#AgendaItemTypeEnum) | Type of agenda item, distinguishing individual items from groups.  |
+| agenda_item_number | 0..1 <br/> String | Sequential number of the agenda item (string type to support roman numerals).  |
+| agenda_item_position | 0..1 <br/> Integer | Integer position of the agenda item in the meeting sequence.  |
+| leading_actor_id | 0..1 <br/> String | The leading department for the agenda item.  |
+| speaking_actor_id | 0..1 <br/> String | The speaker or head of the department for the agenda item.  |
+| agenda_item_title | * <br/> [MultilingualString](#MultilingualString) | Title of the agenda item.  |
+| affair_id | 0..1 <br/> String | The connection to the affairs (business items) of the agenda item.  |
+| agenda_item_description | * <br/> [MultilingualString](#MultilingualString) | Subtitle or detailed description of the agenda item.  |
+| state_id | 0..1 <br/> String | State identifier (reference to state enum or custom state).  |
+| state_name | 0..1 <br/> String | Custom state description for the meeting.  |
+| landing_page | 0..1 <br/> String | URL providing further information.  |
+| url | * <br/> [MultilingualString](#MultilingualString) | Landing page or further web address, multilingual.  |
+| agenda_item_category | 0..1 <br/> String | Category for grouped agenda items (e.g., introduction, by department, technical agenda items).  |
+| parent_agenda_item | 0..1 <br/> String | Identifier of the agenda item this record belongs to. On an agenda item it builds a hierarchy of agenda items; on a voting, election or speech it names the agenda item under which the record was handled.  |
+| has_resolution | 0..1 <br/> [Resolution](#Resolution) | The resolution or decision taken on this agenda item.  |
+| documents | * <br/> Work | List of documents (FRBR Works) linked to the entity.  |
 | date_begin_actual | 0..1 <br/> Date | The actual start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
 | datetime_begin_actual | 0..1 <br/> Datetime | The actual start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
 | date_begin_planned | 0..1 <br/> Date | The planned start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
@@ -1923,24 +1964,6 @@ _An agenda item of a meeting._
 | datetime_created | 0..1 <br/> Datetime | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
 | date_modified | 0..1 <br/> Date | The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
 | datetime_modified | 0..1 <br/> Datetime | The date and time when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| parent_meeting | 0..1 <br/> String | The linked meeting ID that groups the current meeting. <br/><br/>Inheritance: IsAgendaItem |
-| agenda_item_type | 0..1 <br/> [AgendaItemTypeEnum](#AgendaItemTypeEnum) | Type of agenda item, distinguishing individual items from groups. <br/><br/>Inheritance: IsAgendaItem |
-| agenda_item_number | 0..1 <br/> String | Sequential number of the agenda item (string type to support roman numerals). <br/><br/>Inheritance: IsAgendaItem |
-| agenda_item_position | 0..1 <br/> Integer | Integer position of the agenda item in the meeting sequence. <br/><br/>Inheritance: IsAgendaItem |
-| leading_actor_id | 0..1 <br/> String | The leading department for the agenda item. <br/><br/>Inheritance: IsAgendaItem |
-| speaking_actor_id | 0..1 <br/> String | The speaker or head of the department for the agenda item. <br/><br/>Inheritance: IsAgendaItem |
-| agenda_item_title | * <br/> [MultilingualString](#MultilingualString) | Title of the agenda item. <br/><br/>Inheritance: IsAgendaItem |
-| affair_id | 0..1 <br/> String | The connection to the affairs (business items) of the agenda item. <br/><br/>Inheritance: IsAgendaItem |
-| agenda_item_description | * <br/> [MultilingualString](#MultilingualString) | Subtitle or detailed description of the agenda item. <br/><br/>Inheritance: IsAgendaItem |
-| state_id | 0..1 <br/> String | State identifier (reference to state enum or custom state). <br/><br/>Inheritance: IsAgendaItem |
-| state_name | 0..1 <br/> String | Custom state description for the meeting. <br/><br/>Inheritance: IsAgendaItem |
-| landing_page | 0..1 <br/> String | URL providing further information. <br/><br/>Inheritance: IsAgendaItem |
-| url | * <br/> [MultilingualString](#MultilingualString) | Landing page or further web address, multilingual. <br/><br/>Inheritance: IsAgendaItem |
-| agenda_item_category | 0..1 <br/> String | Category for grouped agenda items (e.g., introduction, by department, technical agenda items). <br/><br/>Inheritance: IsAgendaItem |
-| parent_agenda_item | 0..1 <br/> String | If needed, this slot builds a hierarchy of agenda items. <br/><br/>Inheritance: IsAgendaItem |
-| has_resolution | 0..1 <br/> [Resolution](#Resolution) | The resolution or decision taken on this agenda item. <br/><br/>Inheritance: IsAgendaItem |
-| text_segments | * <br/> [TextSegment](#TextSegment) | Collection of text segments (e.g. verbatim protocol). <br/><br/>Inheritance: IsAgendaItem |
-| documents | * <br/> Work | List of documents (FRBR Works) linked to the entity. <br/><br/>Inheritance: IsAgendaItem |
 
 
 
@@ -2390,15 +2413,21 @@ URI: [ops:AgendaItemTypeEnum](https://ch.paf.link/schema/operations/AgendaItemTy
 
 While the agenda items represent the **planning** of a sitting, the protocol records the **actual course** after the sitting. `Protocol` is a wrapper container kept exactly once per sitting (`Meeting`) that bundles the agenda items actually dealt with (`protocol_items`), votings, speeches as well as verbatim text segments and documents.
 
+The protocol is **referenced, not embedded**: `Meeting.has_protocol` holds the identifier alone, the protocol itself is an entry of its own in `Container.protocols`. The rule this standard applies throughout therefore holds here as well — what has no identity of its own is embedded (`PersonReference` or `GroupReference`, say), what has one is referenced. The protocol carries its own `global_uri` and can be cited independently; the Official Bulletin, for instance, is available at an address of its own. Above all it comes into being after the sitting: embedded, the entire sitting would have to be delivered again once the protocol exists; referenced, delivering the protocol alone is enough.
+
+Within the protocol the collections stay embedded, because they arise and are delivered together with it. Anyone publishing votings or speeches independently of the protocol delivers them flat in `Container.votings` or `Container.speeches` instead and links them through `parent_meeting` and `parent_agenda_item`.
+
 ```
-Meeting
-  ├─ agenda_items   (before: planned agenda items)
-  └─ protocol_ref   (after: the record)
-        ├─ protocol_items  → ProtocolItem (same elements as AgendaItem)
-        ├─ votings
-        ├─ speeches
-        ├─ text_segments
-        └─ documents
+Container
+  ├─ meetings       → Meeting
+  │                     └─ has_protocol → identifier of the protocol
+  ├─ agenda_items   → AgendaItem  (before: planned agenda items, parent_meeting)
+  └─ protocols      → Protocol    (after: the record, parent_meeting)
+                        ├─ protocol_items  → ProtocolItem (like AgendaItem)
+                        ├─ votings
+                        ├─ speeches
+                        ├─ text_segments
+                        └─ documents
 ```
 
 
@@ -2423,10 +2452,9 @@ _The minutes of a meeting, recorded after the meeting. A wrapper container bundl
 | local_id | 0..1 <br/> String | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> Uriorcurie | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> Uriorcurie | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| parent_meeting | 0..1 <br/> String | The linked meeting ID that groups the current meeting.  |
+| parent_meeting | 0..1 <br/> String | Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.  |
 | protocol_items | * <br/> [ProtocolItem](#ProtocolItem) | Agenda items as actually recorded in the protocol.  |
 | votings | * <br/> [Voting](#Voting) | Collection of voting records.  |
-| elections | * <br/> [Election](#Election) | Collection of election records.  |
 | speeches | * <br/> [Speech](#Speech) | Collection of speech records.  |
 | text_segments | * <br/> [TextSegment](#TextSegment) | Collection of text segments (e.g. verbatim protocol).  |
 | documents | * <br/> Work | List of documents (FRBR Works) linked to the entity.  |
@@ -2444,9 +2472,7 @@ _The minutes of a meeting, recorded after the meeting. A wrapper container bundl
 | Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Container](#Container) | protocols | range | [Protocol](#Protocol) |
-| [Meeting](#Meeting) | protocol_ref | range | [Protocol](#Protocol) |
-| [Voting](#Voting) | parent_protocol | range | [Protocol](#Protocol) |
-| [Election](#Election) | parent_protocol | range | [Protocol](#Protocol) |
+| [Meeting](#Meeting) | has_protocol | range | [Protocol](#Protocol) |
 
 
 
@@ -2460,6 +2486,36 @@ _The minutes of a meeting, recorded after the meeting. A wrapper container bundl
 
 
 
+
+#### Examples
+##### Example Protocol: Protocol as an entity in its own right referenced by the meeting
+
+```yaml
+protocols:
+- global_uri: ops:protokoll_sr_winter25_sitzung_6
+  parent_meeting: parl:sr_winter25_sitzung_6
+  protocol_items:
+  - global_uri: ops:protokollpunkt_69905
+    parent_meeting: parl:sr_winter25_sitzung_6
+    agenda_item_type: item
+    agenda_item_number: '6'
+    agenda_item_position: 4
+    agenda_item_title:
+    - text: >-
+        Postulat Broulis Pascal. Bauprojekte im Mobilitätsbereich. Einen Vergleich
+        durchführen, um die Verzögerungen zu verstehen
+      language: de
+    affair_id: affairs:24.4471
+    datetime_begin_actual: '2025-12-19T09:20:00+01:00'
+    landing_page: >-
+      https://www.parlament.ch/de/ratsbetrieb/amtliches-bulletin/amtliches-bulletin-die-verhandlungen?SubjectId=69905#votum3
+    agenda_item_category: agenda_item
+    datetime_created: '2026-01-12T00:00:00+01:00'
+    datetime_modified: '2026-01-12T00:00:00+01:00'
+  datetime_created: '2026-01-12T00:00:00+01:00'
+  datetime_modified: '2026-01-12T00:00:00+01:00'
+
+```
 
 
 
@@ -2470,14 +2526,14 @@ _The minutes of a meeting, recorded after the meeting. A wrapper container bundl
 
 ### ProtocolItem (agenda item as recorded)
 
-`ProtocolItem` represents an agenda item as it was actually recorded in the protocol. It carries the same elements as `AgendaItem` without being derived from it: both classes take the agenda item fields from the `IsAgendaItem` mixin. The record is not a special case of the plan — it arises independently and may contain items that were never put on the agenda, just as the agenda may contain items that were never dealt with.
+`ProtocolItem` inherits all fields of `AgendaItem` (`is_a: AgendaItem`) and represents an agenda item as it was actually recorded in the protocol.
 
 
 
 ### Class: ProtocolItem []{#ProtocolItem}
 
 
-_An agenda item as actually recorded in the protocol. It carries the same elements as AgendaItem through the IsAgendaItem mixin, but is a class in its own right: the record is not a special case of the plan._
+_An agenda item as actually recorded in the protocol._
 
 
 
@@ -2494,6 +2550,23 @@ _An agenda item as actually recorded in the protocol. It carries the same elemen
 | local_id | 0..1 <br/> String | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> Uriorcurie | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> Uriorcurie | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| parent_meeting | 0..1 <br/> String | Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
+| agenda_item_type | 0..1 <br/> [AgendaItemTypeEnum](#AgendaItemTypeEnum) | Type of agenda item, distinguishing individual items from groups. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
+| agenda_item_number | 0..1 <br/> String | Sequential number of the agenda item (string type to support roman numerals). <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
+| agenda_item_position | 0..1 <br/> Integer | Integer position of the agenda item in the meeting sequence. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
+| leading_actor_id | 0..1 <br/> String | The leading department for the agenda item. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
+| speaking_actor_id | 0..1 <br/> String | The speaker or head of the department for the agenda item. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
+| agenda_item_title | * <br/> [MultilingualString](#MultilingualString) | Title of the agenda item. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
+| affair_id | 0..1 <br/> String | The connection to the affairs (business items) of the agenda item. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
+| agenda_item_description | * <br/> [MultilingualString](#MultilingualString) | Subtitle or detailed description of the agenda item. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
+| state_id | 0..1 <br/> String | State identifier (reference to state enum or custom state). <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
+| state_name | 0..1 <br/> String | Custom state description for the meeting. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
+| landing_page | 0..1 <br/> String | URL providing further information. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
+| url | * <br/> [MultilingualString](#MultilingualString) | Landing page or further web address, multilingual. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
+| agenda_item_category | 0..1 <br/> String | Category for grouped agenda items (e.g., introduction, by department, technical agenda items). <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
+| parent_agenda_item | 0..1 <br/> String | Identifier of the agenda item this record belongs to. On an agenda item it builds a hierarchy of agenda items; on a voting, election or speech it names the agenda item under which the record was handled. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
+| has_resolution | 0..1 <br/> [Resolution](#Resolution) | The resolution or decision taken on this agenda item. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
+| documents | * <br/> Work | List of documents (FRBR Works) linked to the entity. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
 | date_begin_actual | 0..1 <br/> Date | The actual start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
 | datetime_begin_actual | 0..1 <br/> Datetime | The actual start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
 | date_begin_planned | 0..1 <br/> Date | The planned start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
@@ -2506,24 +2579,6 @@ _An agenda item as actually recorded in the protocol. It carries the same elemen
 | datetime_created | 0..1 <br/> Datetime | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
 | date_modified | 0..1 <br/> Date | The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
 | datetime_modified | 0..1 <br/> Datetime | The date and time when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| parent_meeting | 0..1 <br/> String | The linked meeting ID that groups the current meeting. <br/><br/>Inheritance: IsAgendaItem |
-| agenda_item_type | 0..1 <br/> [AgendaItemTypeEnum](#AgendaItemTypeEnum) | Type of agenda item, distinguishing individual items from groups. <br/><br/>Inheritance: IsAgendaItem |
-| agenda_item_number | 0..1 <br/> String | Sequential number of the agenda item (string type to support roman numerals). <br/><br/>Inheritance: IsAgendaItem |
-| agenda_item_position | 0..1 <br/> Integer | Integer position of the agenda item in the meeting sequence. <br/><br/>Inheritance: IsAgendaItem |
-| leading_actor_id | 0..1 <br/> String | The leading department for the agenda item. <br/><br/>Inheritance: IsAgendaItem |
-| speaking_actor_id | 0..1 <br/> String | The speaker or head of the department for the agenda item. <br/><br/>Inheritance: IsAgendaItem |
-| agenda_item_title | * <br/> [MultilingualString](#MultilingualString) | Title of the agenda item. <br/><br/>Inheritance: IsAgendaItem |
-| affair_id | 0..1 <br/> String | The connection to the affairs (business items) of the agenda item. <br/><br/>Inheritance: IsAgendaItem |
-| agenda_item_description | * <br/> [MultilingualString](#MultilingualString) | Subtitle or detailed description of the agenda item. <br/><br/>Inheritance: IsAgendaItem |
-| state_id | 0..1 <br/> String | State identifier (reference to state enum or custom state). <br/><br/>Inheritance: IsAgendaItem |
-| state_name | 0..1 <br/> String | Custom state description for the meeting. <br/><br/>Inheritance: IsAgendaItem |
-| landing_page | 0..1 <br/> String | URL providing further information. <br/><br/>Inheritance: IsAgendaItem |
-| url | * <br/> [MultilingualString](#MultilingualString) | Landing page or further web address, multilingual. <br/><br/>Inheritance: IsAgendaItem |
-| agenda_item_category | 0..1 <br/> String | Category for grouped agenda items (e.g., introduction, by department, technical agenda items). <br/><br/>Inheritance: IsAgendaItem |
-| parent_agenda_item | 0..1 <br/> String | If needed, this slot builds a hierarchy of agenda items. <br/><br/>Inheritance: IsAgendaItem |
-| has_resolution | 0..1 <br/> [Resolution](#Resolution) | The resolution or decision taken on this agenda item. <br/><br/>Inheritance: IsAgendaItem |
-| text_segments | * <br/> [TextSegment](#TextSegment) | Collection of text segments (e.g. verbatim protocol). <br/><br/>Inheritance: IsAgendaItem |
-| documents | * <br/> Work | List of documents (FRBR Works) linked to the entity. <br/><br/>Inheritance: IsAgendaItem |
 
 
 
@@ -2534,8 +2589,6 @@ _An agenda item as actually recorded in the protocol. It carries the same elemen
 | Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Protocol](#Protocol) | protocol_items | range | [ProtocolItem](#ProtocolItem) |
-| [Voting](#Voting) | parent_protocol_item | range | [ProtocolItem](#ProtocolItem) |
-| [Election](#Election) | parent_protocol_item | range | [ProtocolItem](#ProtocolItem) |
 
 
 
@@ -2809,7 +2862,6 @@ _A resolution or decision taken on an agenda item, including voting procedures._
 | Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Container](#Container) | resolutions | range | [Resolution](#Resolution) |
-| IsAgendaItem | has_resolution | range | [Resolution](#Resolution) |
 | [AgendaItem](#AgendaItem) | has_resolution | range | [Resolution](#Resolution) |
 | [ProtocolItem](#ProtocolItem) | has_resolution | range | [Resolution](#Resolution) |
 
@@ -2977,10 +3029,6 @@ Parliamentary decisions are taken either by votings on substantive questions or 
 ### Purpose of the entity
 
 "Voting" records the voting process and the result of a formal decision in parliament. The entity documents the subject of the voting (the question), the procedure (how the vote was taken) and the result (with which ratio of votes).
-
-### Anchoring in the minutes
-
-Votings and elections take place during the sitting. `Voting` and `Election` are therefore anchored in the minutes via `parent_protocol` and not in the agenda published beforehand: what was put on the agenda does not yet say what was actually voted on. Where the vote was taken under an agenda item, `parent_protocol_item` additionally points to the recorded agenda item (`ProtocolItem`); without an agenda item this field stays empty and the assignment follows from `parent_protocol` and `parent_meeting`. Conversely, `Protocol` takes up the votings and elections as lists (`votings`, `elections`).
 
 ### Types of votings
 
@@ -3240,9 +3288,8 @@ _A voting procedure with individual votes and results._
 | majority_type | 0..1 <br/> [MajorityTypeEnum](#MajorityTypeEnum) | Type of majority required for the vote (absolute, two-thirds, etc.).  |
 | majority_count | 0..1 <br/> Integer | Number of votes required for the relevant majority threshold.  |
 | result_text | 0..1 <br/> String | Free text describing the outcome of the vote, e.g., "Accepted with 78 votes".  |
-| parent_meeting | 0..1 <br/> String | The linked meeting ID that groups the current meeting.  |
-| parent_protocol | 0..1 <br/> [Protocol](#Protocol) | The protocol in which the voting or election is recorded. A vote is held during the sitting and is therefore anchored in the minutes, not in the agenda planned beforehand.  |
-| parent_protocol_item | 0..1 <br/> [ProtocolItem](#ProtocolItem) | The recorded agenda item (ProtocolItem) under which the voting or election took place. Omitted when the vote was taken without an agenda item; the link to the sitting is then given by parent_protocol and parent_meeting alone.  |
+| parent_meeting | 0..1 <br/> String | Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.  |
+| parent_agenda_item | 0..1 <br/> String | Identifier of the agenda item this record belongs to. On an agenda item it builds a hierarchy of agenda items; on a voting, election or speech it names the agenda item under which the record was handled.  |
 | affair_id | 0..1 <br/> String | The connection to the affairs (business items) of the agenda item.  |
 | actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Reference to the acting body/organ (lightweight snapshot at time of linking).  |
 | documents | * <br/> Work | List of documents (FRBR Works) linked to the entity.  |
@@ -3296,8 +3343,7 @@ votings:
   majority_type: absolute
   majority_count: 91
   result_text: Mit 105 zu 70 Stimmen bei 5 Enthaltungen angenommen
-  parent_protocol: ops:protocol_zh_2025_11_20
-  parent_protocol_item: ops:protocol_item_zh_budget_2026
+  parent_agenda_item: ops:agenda_item_zh_budget_2026
   parent_meeting: ops:meeting_zh_2025_11_20
   actor_id:
     global_uri: actors:kr_zh
@@ -3340,8 +3386,7 @@ votings:
   result_text: >-
     Auswahl A mit 75 von 112 abgegebenen Stimmen angenommen (Auswahl B: 25, Auswahl
     C: 12, Auswahl D: 0; 13 abwesend von 125 Mitgliedern).
-  parent_protocol: ops:protocol_zh_gr_2024_02_28
-  parent_protocol_item: ops:protocol_item_zh_gr_2024_2023_361
+  parent_agenda_item: ops:agenda_item_zh_gr_2024_2023_361
   parent_meeting: ops:meeting_zh_gr_2024_02_28
   affair_id: 2023/361
   actor_id:
@@ -3373,8 +3418,7 @@ votings:
   majority_type: absolute
   majority_count: 65
   result_text: Mit 78 zu 42 Stimmen bei 5 Enthaltungen angenommen
-  parent_protocol: ops:protocol_sg_2025_03_15
-  parent_protocol_item: ops:protocol_item_sg_2025_015
+  parent_agenda_item: ops:agenda_item_sg_2025_015
   parent_meeting: ops:meeting_sg_2025_03_15
   actor_id:
     global_uri: actors:kr_sg
@@ -3407,8 +3451,7 @@ votings:
   majority_type: absolute
   majority_count: 76
   result_text: Mit 45 zu 87 Stimmen bei 8 Enthaltungen abgelehnt
-  parent_protocol: ops:protocol_be_2025_06_05
-  parent_protocol_item: ops:protocol_item_be_2025_042
+  parent_agenda_item: ops:agenda_item_be_2025_042
   parent_meeting: ops:meeting_be_2025_06_05
   actor_id:
     global_uri: actors:gr_be
@@ -4156,9 +4199,8 @@ _An election procedure for selecting persons to positions._
 | majority_type | 0..1 <br/> [MajorityTypeEnum](#MajorityTypeEnum) | Type of majority required for the vote (absolute, two-thirds, etc.).  |
 | majority_count | 0..1 <br/> Integer | Number of votes required for the relevant majority threshold.  |
 | result_text | 0..1 <br/> String | Free text describing the outcome of the vote, e.g., "Accepted with 78 votes".  |
-| parent_meeting | 0..1 <br/> String | The linked meeting ID that groups the current meeting.  |
-| parent_protocol | 0..1 <br/> [Protocol](#Protocol) | The protocol in which the voting or election is recorded. A vote is held during the sitting and is therefore anchored in the minutes, not in the agenda planned beforehand.  |
-| parent_protocol_item | 0..1 <br/> [ProtocolItem](#ProtocolItem) | The recorded agenda item (ProtocolItem) under which the voting or election took place. Omitted when the vote was taken without an agenda item; the link to the sitting is then given by parent_protocol and parent_meeting alone.  |
+| parent_meeting | 0..1 <br/> String | Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.  |
+| parent_agenda_item | 0..1 <br/> String | Identifier of the agenda item this record belongs to. On an agenda item it builds a hierarchy of agenda items; on a voting, election or speech it names the agenda item under which the record was handled.  |
 | affair_id | 0..1 <br/> String | The connection to the affairs (business items) of the agenda item.  |
 | actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Reference to the acting body/organ (lightweight snapshot at time of linking).  |
 | documents | * <br/> Work | List of documents (FRBR Works) linked to the entity.  |
@@ -4176,7 +4218,6 @@ _An election procedure for selecting persons to positions._
 | Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Container](#Container) | elections | range | [Election](#Election) |
-| [Protocol](#Protocol) | elections | range | [Election](#Election) |
 
 
 
@@ -4360,7 +4401,7 @@ _Aggregated attendance record for a meeting (number of members present, absent, 
 | local_id | 0..1 <br/> String | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> Uriorcurie | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> Uriorcurie | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| parent_meeting | 0..1 <br/> String | The linked meeting ID that groups the current meeting.  |
+| parent_meeting | 0..1 <br/> String | Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.  |
 | datetime_begin | 0..1 <br/> Datetime | The date and time when the meeting or voting begins.  |
 | actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Reference to the acting body/organ (lightweight snapshot at time of linking).  |
 | total_count | 0..1 <br/> Integer | Total number of members of the body (reference value for quorum calculations).  |
@@ -4649,6 +4690,10 @@ The field **speech_type** can distinguish various kinds:
 - **procedural**: procedural motion
 - **declaration**: declaration
 
+### Placing a speech within the sitting
+
+`parent_meeting` and `parent_agenda_item` record in which sitting and under which agenda item a speech was given. Both are needed because a speech can be delivered in two ways: embedded in the protocol, where the sitting follows from the surrounding `Protocol` but the agenda item does not — or flat in `Container.speeches`, where without these references any link would be missing. They carry the same values as on `Voting` and `Election` and thus make the speech evaluable regardless of the delivery form it came in.
+
 
 
 ### Class: Speech []{#Speech}
@@ -4671,6 +4716,8 @@ _A speech or statement made during a meeting (also called Votum or speaker segme
 | local_id | 0..1 <br/> String | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> Uriorcurie | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> Uriorcurie | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| parent_meeting | 0..1 <br/> String | Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.  |
+| parent_agenda_item | 0..1 <br/> String | Identifier of the agenda item this record belongs to. On an agenda item it builds a hierarchy of agenda items; on a voting, election or speech it names the agenda item under which the record was handled.  |
 | language | 0..1 <br/> String | Language code in ISO 639-1 format (two lowercase letters, e.g. "de", "fr", "it", "en").  |
 | start | 0..1 <br/> String | Start indicator or position.  |
 | datetime_begin | 0..1 <br/> Datetime | The date and time when the meeting or voting begins.  |
@@ -4721,6 +4768,8 @@ _A speech or statement made during a meeting (also called Votum or speaker segme
 ```yaml
 speeches:
 - global_uri: ops:366631
+  parent_meeting: parl:sr_winter25_sitzung_6
+  parent_agenda_item: ops:69905
   language: fr
   datetime_begin: '2025-12-19T09:20:00+01:00'
   datetime_end: '2025-12-19T09:25:00+01:00'
@@ -4792,10 +4841,6 @@ Speech
   └─ TextSegment (summary, de)
 ```
 
-### Carriers of a text segment
-
-Text segments are not tied to the verbatim record alone: `Protocol` carries them for the wording of the whole sitting, and `AgendaItem` — respectively the recorded `ProtocolItem` — for text belonging to one agenda item, such as a subtitle, a cross-reference or a reasoning already published with the agenda. Because both classes carry the `IsAgendaItem` mixin, `text_segments` is available on the planned as well as on the recorded side. A single contribution, by contrast, carries its wording directly in `text`, `text_format` and `text_type`.
-
 ## Media
 
 ### Purpose
@@ -4844,7 +4889,7 @@ Meeting
 ### Class: TextSegment []{#TextSegment}
 
 
-_A text segment such as cross-references or subtitles. Text segments are carried by the protocol, by a speech or by an agenda item (planned AgendaItem or recorded ProtocolItem)._
+_A text segment such as cross-references or subtitles in meeting protocols._
 
 
 
@@ -4871,10 +4916,7 @@ _A text segment such as cross-references or subtitles. Text segments are carried
 
 | Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
-| IsAgendaItem | text_segments | range | [TextSegment](#TextSegment) |
-| [AgendaItem](#AgendaItem) | text_segments | range | [TextSegment](#TextSegment) |
 | [Protocol](#Protocol) | text_segments | range | [TextSegment](#TextSegment) |
-| [ProtocolItem](#ProtocolItem) | text_segments | range | [TextSegment](#TextSegment) |
 
 
 
@@ -5146,9 +5188,6 @@ _A string that can contain text in multiple languages._
 | [Session](#Session) | url | range | [MultilingualString](#MultilingualString) |
 | [Meeting](#Meeting) | name | range | [MultilingualString](#MultilingualString) |
 | [Meeting](#Meeting) | url | range | [MultilingualString](#MultilingualString) |
-| IsAgendaItem | agenda_item_title | range | [MultilingualString](#MultilingualString) |
-| IsAgendaItem | agenda_item_description | range | [MultilingualString](#MultilingualString) |
-| IsAgendaItem | url | range | [MultilingualString](#MultilingualString) |
 | [AgendaItem](#AgendaItem) | agenda_item_title | range | [MultilingualString](#MultilingualString) |
 | [AgendaItem](#AgendaItem) | agenda_item_description | range | [MultilingualString](#MultilingualString) |
 | [AgendaItem](#AgendaItem) | url | range | [MultilingualString](#MultilingualString) |
@@ -5212,7 +5251,7 @@ _A mixin class that provides slots for the identification of an entity. It is us
 
 #### Mixin Usage
 
-[Container](#Container), [Legislature](#Legislature), [Session](#Session), [Meeting](#Meeting), [AgendaItem](#AgendaItem), [Protocol](#Protocol), [ProtocolItem](#ProtocolItem), [Voting](#Voting), [IndividualVote](#IndividualVote), [Election](#Election), [Attendance](#Attendance), [IndividualAttendance](#IndividualAttendance), [Speech](#Speech), [TextSegment](#TextSegment), [Motion](#Motion), [Media](#Media)
+[Container](#Container), [Legislature](#Legislature), [Session](#Session), [Meeting](#Meeting), [AgendaItem](#AgendaItem), [Protocol](#Protocol), [Voting](#Voting), [IndividualVote](#IndividualVote), [Election](#Election), [Attendance](#Attendance), [IndividualAttendance](#IndividualAttendance), [Speech](#Speech), [TextSegment](#TextSegment), [Motion](#Motion), [Media](#Media)
 
 
 
@@ -5264,7 +5303,7 @@ _A mixin class that provides slots for modeling creation and modification dates 
 
 #### Mixin Usage
 
-[Legislature](#Legislature), [Session](#Session), [Meeting](#Meeting), [AgendaItem](#AgendaItem), [Protocol](#Protocol), [ProtocolItem](#ProtocolItem), [Voting](#Voting), [IndividualVote](#IndividualVote), [Election](#Election), [Attendance](#Attendance), [IndividualAttendance](#IndividualAttendance), [Speech](#Speech)
+[Legislature](#Legislature), [Session](#Session), [Meeting](#Meeting), [AgendaItem](#AgendaItem), [Protocol](#Protocol), [Voting](#Voting), [IndividualVote](#IndividualVote), [Election](#Election), [Attendance](#Attendance), [IndividualAttendance](#IndividualAttendance), [Speech](#Speech)
 
 
 
@@ -5320,7 +5359,7 @@ _A mixin class that provides slots for modeling events or occurrences with time 
 
 #### Mixin Usage
 
-[Legislature](#Legislature), [Session](#Session), [Meeting](#Meeting), [AgendaItem](#AgendaItem), [ProtocolItem](#ProtocolItem)
+[Legislature](#Legislature), [Session](#Session), [Meeting](#Meeting), [AgendaItem](#AgendaItem)
 
 
 

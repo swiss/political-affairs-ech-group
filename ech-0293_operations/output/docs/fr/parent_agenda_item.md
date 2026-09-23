@@ -6,7 +6,7 @@ search:
 # Slot: parent_agenda_item 
 
 
-_Au besoin, ce slot permet de construire une hiérarchie de points de l'ordre du jour._
+_Identifiant du point de l'ordre du jour auquel cet enregistrement se rattache. Pour un point de l'ordre du jour, il construit une hiérarchie de points ; pour un vote, une élection ou une intervention, il désigne le point sous lequel l'enregistrement a été traité._
 
 
 
@@ -26,8 +26,10 @@ URI: [ops:parent_agenda_item](https://ch.paf.link/schema/operations/parent_agend
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [IsAgendaItem](IsAgendaItem.md) | Une classe mixin qui fournit les éléments d'un point de l'ordre du jour : dés... |  no  |
 | [AgendaItem](AgendaItem.md) | Un point de l'ordre du jour d'une séance |  no  |
+| [Voting](Voting.md) | Une procédure de vote avec les voix individuelles et les résultats |  no  |
+| [Election](Election.md) | Une procédure d'élection visant à pourvoir des fonctions par des personnes |  no  |
+| [Speech](Speech.md) | Une intervention prononcée au cours d'une séance (également appelée prise de ... |  no  |
 | [ProtocolItem](ProtocolItem.md) | Un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-... |  no  |
 
 
@@ -42,7 +44,7 @@ URI: [ops:parent_agenda_item](https://ch.paf.link/schema/operations/parent_agend
 | Propriété | Valeur |
 | --- | --- |
 | Plage | [String](String.md) |
-| Domaine de | [IsAgendaItem](IsAgendaItem.md) |
+| Domaine de | [AgendaItem](AgendaItem.md), [Voting](Voting.md), [Election](Election.md), [Speech](Speech.md) |
 
 ### Cardinalité et exigences
 
@@ -68,23 +70,33 @@ name: parent_agenda_item
 annotations:
   description_de:
     tag: description_de
-    value: 'Wenn erforderlich, baut dieser Slot eine Hierarchie von Traktanden auf.
+    value: 'Identifikator des Traktandums, zu dem dieser Eintrag gehört. Bei einem
+      Traktandum baut er eine Hierarchie von Traktanden auf, bei Abstimmung, Wahl
+      oder Wortmeldung bezeichnet er das Traktandum, unter dem der Eintrag behandelt
+      wurde.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Au besoin, ce slot permet de construire une hiérarchie de points de l''ordre
-      du jour.
+    value: 'Identifiant du point de l''ordre du jour auquel cet enregistrement se
+      rattache. Pour un point de l''ordre du jour, il construit une hiérarchie de
+      points ; pour un vote, une élection ou une intervention, il désigne le point
+      sous lequel l''enregistrement a été traité.
 
       '
-description: 'Au besoin, ce slot permet de construire une hiérarchie de points de
-  l''ordre du jour.
+description: 'Identifiant du point de l''ordre du jour auquel cet enregistrement se
+  rattache. Pour un point de l''ordre du jour, il construit une hiérarchie de points
+  ; pour un vote, une élection ou une intervention, il désigne le point sous lequel
+  l''enregistrement a été traité.
 
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 domain_of:
-- IsAgendaItem
+- AgendaItem
+- Voting
+- Election
+- Speech
 range: string
 
 ```

@@ -37,6 +37,7 @@ _Abstrakte Basis für ein Element auf Blockebene: die Absätze, Aufzählungen un
 | [Note](Note.md) | [content_blocks](content_blocks.md) | range | [BlockElement](BlockElement.md) |
 | [Formula](Formula.md) | [content_blocks](content_blocks.md) | range | [BlockElement](BlockElement.md) |
 | [Citation](Citation.md) | [content_blocks](content_blocks.md) | range | [BlockElement](BlockElement.md) |
+| [TableHeaderCell](TableHeaderCell.md) | [content_blocks](content_blocks.md) | range | [BlockElement](BlockElement.md) |
 
 
 

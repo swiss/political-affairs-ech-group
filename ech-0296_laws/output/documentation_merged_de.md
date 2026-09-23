@@ -718,6 +718,7 @@ _FRBR-Expression-Ebene (akn:FRBRExpression): eine sprachspezifische Version des 
 | frbr_uri | 0..1 <br/> [UriValueType](#UriValueType) | Basis-ELI-URI dieser FRBR-Entität (akn:FRBRuri/@value). |
 | frbr_dates | * <br/> [FRBRDate](#FRBRDate) | Datumseinträge dieser FRBR-Entität (akn:FRBRdate). Mehrere Einträge für verschiedene Ereignistypen.  |
 | frbr_authors | * <br/> [FRBRAuthor](#FRBRAuthor) | Autoren-/Rechteinhaber-Einträge dieser FRBR-Entität (akn:FRBRauthor). |
+| frbr_authoritative | 0..1 <br/> [ValueType](#ValueType) | Ob dies die massgebliche Version ist (akn:FRBRauthoritative/@value). |
 | frbr_language | 0..1 <br/> [LanguageType](#LanguageType) | Sprachcode dieser Expression (akn:FRBRlanguage/@language). |
 
 
@@ -6655,6 +6656,7 @@ _Abstrakte Basis für ein Element auf Blockebene: die Absätze, Aufzählungen un
 | [Note](#Note) | content_blocks | range | [BlockElement](#BlockElement) |
 | [Formula](#Formula) | content_blocks | range | [BlockElement](#BlockElement) |
 | [Citation](#Citation) | content_blocks | range | [BlockElement](#BlockElement) |
+| [TableHeaderCell](#TableHeaderCell) | content_blocks | range | [BlockElement](#BlockElement) |
 
 
 
@@ -7080,7 +7082,7 @@ _Eine Zeile in einer AkomaNtoso-Tabelle (akn:tr)._
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
-| table_cells | * <br/> [TableCell](#TableCell) | Zellen in einer Tabellenzeile (akn:td). |
+| table_cells | * <br/> [Cell](#Cell) | Zellen einer Tabellenzeile in Lesereihenfolge: Datenzellen und Kopfzellen (akn:td, akn:th).  |
 
 
 
@@ -7091,6 +7093,59 @@ _Eine Zeile in einer AkomaNtoso-Tabelle (akn:tr)._
 | Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
 | [Table](#Table) | table_rows | range | [TableRow](#TableRow) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+Eine Zeile kann Kopf- und Datenzellen mischen; beide stehen deshalb in einer geordneten Folge, wie schon der Blockinhalt.
+
+
+
+### Klasse: Cell []{#Cell}
+
+
+_Abstrakte Basis für eine Zelle einer Tabellenzeile: eine Datenzelle (akn:td) oder eine Kopfzelle (akn:th)._
+
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement.  |
+
+
+
+
+
+#### Verwendungen
+
+| Verwendet von | Im Slot | Rolle | Element |
+| ---  | --- | --- | --- |
+| [TableRow](#TableRow) | table_cells | range | [Cell](#Cell) |
 
 
 
@@ -7133,16 +7188,55 @@ _Eine Zelle in einer Tabellenzeile (akn:td). Enthält Block-Inhalt: Fliesstext-A
 |------------------------|----------------------|------------------------------------------------------|
 | colspan | 0..1 <br/> String | Das @colspan-Attribut auf akn:td (HTML-artige Darstellung). |
 | content_blocks | * <br/> [BlockElement](#BlockElement) | Blockinhalt in Lesereihenfolge: Absätze, Aufzählungen und Tabellen, wie sie im Dokument aufeinanderfolgen.  |
+| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement. <br/><br/>Vererbung: [Cell](#Cell) |
 
 
 
 
 
-#### Verwendungen
 
-| Verwendet von | Im Slot | Rolle | Element |
-| ---  | --- | --- | --- |
-| [TableRow](#TableRow) | table_cells | range | [TableCell](#TableCell) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+### Klasse: TableHeaderCell []{#TableHeaderCell}
+
+
+_Eine Kopfzelle einer Tabellenzeile (akn:th)._
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+#### Attribute
+
+| Name | Kardinalität und Wertebereich | Beschreibung |
+|------------------------|----------------------|------------------------------------------------------|
+| colspan | 0..1 <br/> String | Das @colspan-Attribut auf akn:td (HTML-artige Darstellung). |
+| content_blocks | * <br/> [BlockElement](#BlockElement) | Blockinhalt in Lesereihenfolge: Absätze, Aufzählungen und Tabellen, wie sie im Dokument aufeinanderfolgen.  |
+| element_type | 0..1 <br/> String | Typ-Diskriminator für die konkrete Unterklasse einer abstrakten Basis: InlineElement oder BlockElement. <br/><br/>Vererbung: [Cell](#Cell) |
+
+
+
 
 
 
@@ -10065,6 +10159,7 @@ _Einfacher Halter mit einem einzelnen @value-Attribut (AKN valueType). Wiederver
 | [FRBRWork](#FRBRWork) | frbr_subtype | range | [ValueType](#ValueType) |
 | [FRBRWork](#FRBRWork) | frbr_number | range | [ValueType](#ValueType) |
 | [FRBRWork](#FRBRWork) | frbr_authoritative | range | [ValueType](#ValueType) |
+| [FRBRExpression](#FRBRExpression) | frbr_authoritative | range | [ValueType](#ValueType) |
 
 
 
@@ -11424,6 +11519,7 @@ Eine dritte Art von Zuordnung hängt weder an der Klasse noch am Slot, sondern a
 | `TemporalData` | Klasse | exactMatch | `akn:temporalData` |
 | `TemporalGroup` | Klasse | exactMatch | `akn:temporalGroup` |
 | `TimeInterval` | Klasse | exactMatch | `akn:timeInterval` |
+| `TableHeaderCell` | Klasse | exactMatch | `akn:th` |
 | `preface_paragraphs` | Slot | exactMatch | `akn:p` |
 | `frbr_this` | Slot | exactMatch | `akn:FRBRthis` |
 | `frbr_uri` | Slot | exactMatch | `akn:FRBRuri` |

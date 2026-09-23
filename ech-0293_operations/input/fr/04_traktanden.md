@@ -163,15 +163,21 @@ Un AgendaItem est le maillon central entre :
 
 Alors que les points de l'ordre du jour représentent la **planification** d'une séance, le procès-verbal consigne le **déroulement effectif** après la séance. `Protocol` est un conteneur tenu exactement une fois par séance (`Meeting`) et qui regroupe les points effectivement traités (`protocol_items`), les votes, les interventions ainsi que les segments de texte in extenso et les documents.
 
+Le procès-verbal est **référencé et non imbriqué** : `Meeting.has_protocol` ne contient que l'identifiant, le procès-verbal lui-même figure comme entrée propre dans `Container.protocols`. La règle appliquée de bout en bout par la présente norme vaut donc ici aussi : est imbriqué ce qui ne possède pas d'identité propre (par exemple `PersonReference` ou `GroupReference`), est référencé ce qui en possède une. Le procès-verbal dispose de sa propre `global_uri` et peut être cité de manière autonome ; le Bulletin officiel, par exemple, est accessible à une adresse qui lui est propre. Surtout, il est établi après la séance : imbriqué, il faudrait relivrer la séance entière dès que le procès-verbal existe ; référencé, la livraison ultérieure du seul procès-verbal suffit.
+
+À l'intérieur du procès-verbal, les collections restent imbriquées, car elles naissent et sont livrées avec lui. Qui publie des votes ou des interventions indépendamment du procès-verbal les livre à plat dans `Container.votings` ou `Container.speeches` et les relie par `parent_meeting` et `parent_agenda_item`.
+
 ```
-Meeting
-  ├─ agenda_items   (avant : points planifiés)
-  └─ protocol_ref   (après : consignation)
-        ├─ protocol_items  → ProtocolItem (mêmes éléments qu'AgendaItem)
-        ├─ votings
-        ├─ speeches
-        ├─ text_segments
-        └─ documents
+Container
+  ├─ meetings       → Meeting
+  │                     └─ has_protocol → identifiant du procès-verbal
+  ├─ agenda_items   → AgendaItem  (avant : points planifiés, parent_meeting)
+  └─ protocols      → Protocol    (après : consignation, parent_meeting)
+                        ├─ protocol_items  → ProtocolItem (mêmes éléments qu'AgendaItem)
+                        ├─ votings
+                        ├─ speeches
+                        ├─ text_segments
+                        └─ documents
 ```
 
 {{include:ech-0293_operations/output/docs/Protocol.md}}

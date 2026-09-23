@@ -26,6 +26,7 @@ URI: [laws:frbr_authoritative](https://ld.ech.ch/schema/0296/laws/frbr_authorita
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
 | [FRBRWork](FRBRWork.md) | FRBR-Work-Ebene (akn:FRBRWork): der abstrakte Erlass unabhängig von Sprache u... |  no  |
+| [FRBRExpression](FRBRExpression.md) | FRBR-Expression-Ebene (akn:FRBRExpression): eine sprachspezifische Version de... |  no  |
 
 
 
@@ -39,7 +40,7 @@ URI: [laws:frbr_authoritative](https://ld.ech.ch/schema/0296/laws/frbr_authorita
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [ValueType](ValueType.md) |
-| Domäne von | [FRBRWork](FRBRWork.md) |
+| Domäne von | [FRBRWork](FRBRWork.md), [FRBRExpression](FRBRExpression.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -78,6 +79,7 @@ close_mappings:
 rank: 1000
 domain_of:
 - FRBRWork
+- FRBRExpression
 range: ValueType
 
 ```

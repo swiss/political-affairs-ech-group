@@ -14,6 +14,7 @@ Name: operations
 | Klasse | Beschreibung |
 | --- | --- |
 | [AgendaItem](AgendaItem.md) | Ein Traktandum einer Sitzung |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ProtocolItem](ProtocolItem.md) | Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde |
 | [Attendance](Attendance.md) | Aggregierte Anwesenheitsliste für eine Sitzung (Anzahl Anwesende, Abwesende, ... |
 | [Container](Container.md) | Container für die Daten des öffentlichen Ratsbetriebs: Legislaturperioden, Se... |
 | [Date](Date.md) | Ein Datum mit Typangabe (z |
@@ -26,7 +27,6 @@ Name: operations
 | [HasTemporalValidity](HasTemporalValidity.md) | Eine Mixin-Klasse, die Slots für die Modellierung einer zeitlichen Gültigkeit... |
 | [IndividualAttendance](IndividualAttendance.md) | Einzelne Anwesenheitsfeststellung einer Person an einer Sitzung (verknüpft üb... |
 | [IndividualVote](IndividualVote.md) | Eine Einzelstimme eines Mitglieds während eines Abstimmungsverfahrens |
-| [IsAgendaItem](IsAgendaItem.md) | Eine Mixin-Klasse, welche die Elemente eines Traktandums bereitstellt: Bezeic... |
 | [IsEventWithDuration](IsEventWithDuration.md) | Eine Mixin-Klasse, die Slots für die Modellierung von Ereignissen oder Vorkom... |
 | [IsInstantaneousEvent](IsInstantaneousEvent.md) | Eine Mixin-Klasse, die Slots für die Modellierung von instantanen Ereignissen... |
 | [IsProcessStep](IsProcessStep.md) | Eine Mixin-Klasse für einen einzelnen Schritt in einem |
@@ -41,11 +41,10 @@ Name: operations
 | [MultilingualValue](MultilingualValue.md) | Ein mehrsprachiger String mit Angabe der Sprache |
 | [PersonReference](PersonReference.md) | Kurzreferenz auf eine Person mit den wichtigsten Identifikationsmerkmalen zum... |
 | [Protocol](Protocol.md) | Das nach der Sitzung erstellte Protokoll |
-| [ProtocolItem](ProtocolItem.md) | Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde |
 | [Resolution](Resolution.md) | Eine Resolution oder Entscheidung zu einem Traktandum, einschliesslich Abstim... |
 | [Session](Session.md) | Eine Parlamentssession, die mehrere Sitzungen gruppiert und sich über einen b... |
 | [Speech](Speech.md) | Eine Wortmeldung während einer Sitzung (auch Votum oder Redebeitrag genannt) |
-| [TextSegment](TextSegment.md) | Ein Textsegment wie Querverweise oder Zwischentitel |
+| [TextSegment](TextSegment.md) | Ein Textsegment wie Querverweise oder Zwischentitel in Sitzungsprotokollen |
 | [TotalOther](TotalOther.md) | Zusätzliche Stimmzahlen, wenn mehrere Optionen zur Abstimmung gestellt werden... |
 | [Voting](Voting.md) | Ein Abstimmungsverfahren mit Einzelstimmen und Ergebnissen |
 | [Work](Work.md) | FRBR Work: das abstrakte Dokument als solches, unabhängig von einer konkreten... |
@@ -109,6 +108,7 @@ Name: operations
 | [group_id](group_id.md) | Referenz auf die Gruppe oder das Gremium (Momentaufnahme zum Zeitpunkt der Ve... |
 | [group_label](group_label.md) | Name des Gremiums zum Zeitpunkt der Verknüpfung |
 | [group_name](group_name.md) | Name der Gruppe oder des Gremiums |
+| [has_protocol](has_protocol.md) | Referenz auf das nach der Sitzung erstellte Protokoll dieser Sitzung |
 | [has_resolution](has_resolution.md) | Die Resolution oder Entscheidung zu diesem Traktandum |
 | [id](id.md) | Eindeutiger Identifikator des Elements |
 | [individual_attendances](individual_attendances.md) | Sammlung der einzelnen Anwesenheitsfeststellungen |
@@ -140,17 +140,14 @@ Name: operations
 | [name](name.md) | Mehrsprachige vollständige Bezeichnung |
 | [number](number.md) | Laufende Nummer, z |
 | [optional](optional.md) | Gibt an, ob die Sitzung oder Abstimmung optional ist |
-| [parent_agenda_item](parent_agenda_item.md) | Wenn erforderlich, baut dieser Slot eine Hierarchie von Traktanden auf |
+| [parent_agenda_item](parent_agenda_item.md) | Identifikator des Traktandums, zu dem dieser Eintrag gehört |
 | [parent_attendance](parent_attendance.md) | Das Attendance-Aggregat, zu dem dieser einzelne Anwesenheits-Eintrag gehört |
 | [parent_legislature](parent_legislature.md) | Der gesetzgebende Körper, auf dem die Sitzung basiert |
-| [parent_meeting](parent_meeting.md) | Die verknüpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert |
-| [parent_protocol](parent_protocol.md) | Das Protokoll, in dem die Abstimmung oder Wahl festgehalten ist |
-| [parent_protocol_item](parent_protocol_item.md) | Das protokollierte Traktandum (ProtocolItem), unter dem abgestimmt oder gewäh... |
+| [parent_meeting](parent_meeting.md) | Identifikator der Sitzung, zu der dieser Eintrag gehört |
 | [parent_type](parent_type.md) | Typ des übergeordneten Objekts (Sitzung, Traktandum, Wortmeldung, Geschäft) |
 | [parent_voting](parent_voting.md) | Die ID der Abstimmung, die mit der Einzelstimme verbunden ist |
 | [position](position.md) | Ganzzahlige Position innerhalb der übergeordneten Reihenfolge |
 | [protocol_items](protocol_items.md) | Traktanden, wie sie im Protokoll tatsächlich festgehalten wurden |
-| [protocol_ref](protocol_ref.md) | Das nach der Sitzung erstellte Protokoll dieser Sitzung |
 | [protocols](protocols.md) | Sammlung der Protokolle |
 | [reason](reason.md) | Grund für Abwesenheit oder Verspätung (Freitext, mehrsprachig) |
 | [remark](remark.md) | Freitext-Bemerkung oder Notiz für Sonderfälle oder zusätzlichen Kontext zu ei... |
@@ -198,7 +195,6 @@ Name: operations
 | [votings](votings.md) | Sammlung der Abstimmungen |
 | [weight](weight.md) | Die Anzahl der Stimmen, die die Einzelperson hat, falls zutreffend (z |
 | [wikidata_uri](wikidata_uri.md) | Eine URI, die auf eine Wikidata-Entität verweist, z |
-| [work_type](work_type.md) | Art des Dokuments (z |
 | [works](works.md) | Die im Container enthaltenen Dokumente (FRBR Works) |
 | [xdate](xdate.md) | Der Datumswert selbst |
 
@@ -218,7 +214,6 @@ Name: operations
 | [ResolutionTypeEnum](ResolutionTypeEnum.md) | Art der Resolution zu einem Traktandum |
 | [StateEnum](StateEnum.md) | Status der Sitzung |
 | [VotingTypeEnum](VotingTypeEnum.md) | Art des Abstimmungsverfahrens |
-| [WorkTypesEnum](WorkTypesEnum.md) | Art eines Dokuments (FRBR Work) |
 
 
 ## Typen

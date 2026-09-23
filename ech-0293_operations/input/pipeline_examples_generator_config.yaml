@@ -23,6 +23,7 @@ classes:
   - Attendance
   - IndividualAttendance
   - Speech
+  - Protocol
   - Media
 
 slots:
@@ -245,3 +246,9 @@ example_titles:
     de: Wortmeldung mit Wortlauttext und Videoaufzeichnung
     fr: Intervention avec texte in extenso et enregistrement vidéo
     en: Speech with verbatim text and video recording
+
+  # --- Protocol -----------------------------------------------------------
+  "ops:protokoll_sr_winter25_sitzung_6":
+    de: Protokoll als eigenständige Entität, referenziert von der Sitzung
+    fr: Procès-verbal comme entité à part entière, référencé par la séance
+    en: Protocol as an entity in its own right, referenced by the meeting

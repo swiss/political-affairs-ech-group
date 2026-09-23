@@ -304,6 +304,10 @@ meetings:
           language: de
     actor_name: "Ständerat"
     datetime_begin_planned: "2025-12-19T08:15:00+01:00"
+    # Referenz auf das Protokoll: nur der Identifikator. Das Protokoll selbst
+    # steht unten unter `protocols` und wird in der Regel spaeter geliefert als
+    # die Sitzung.
+    has_protocol: "ops:protokoll_sr_winter25_sitzung_6"
     datetime_created: "2026-01-12T00:00:00+01:00"
     datetime_modified: "2026-01-12T00:00:00+01:00"
 
@@ -326,6 +330,8 @@ agenda_items:
 
 speeches:
   - global_uri: ops:366631
+    parent_meeting: "parl:sr_winter25_sitzung_6"
+    parent_agenda_item: "ops:69905"
     language: "fr"
     datetime_begin: "2025-12-19T09:20:00+01:00"
     datetime_end: "2025-12-19T09:25:00+01:00"
@@ -348,6 +354,27 @@ speeches:
     media_url: "https://par-pcache.simplex.tv/content?externalid=366631"
     media_type: "video"
     media_format: "video/mp4"
+
+protocols:
+  - global_uri: ops:protokoll_sr_winter25_sitzung_6
+    parent_meeting: "parl:sr_winter25_sitzung_6"
+    protocol_items:
+      - global_uri: ops:protokollpunkt_69905
+        parent_meeting: "parl:sr_winter25_sitzung_6"
+        agenda_item_type: "item"
+        agenda_item_number: "6"
+        agenda_item_position: 4
+        agenda_item_title:
+          - text: "Postulat Broulis Pascal. Bauprojekte im Mobilitätsbereich. Einen Vergleich durchführen, um die Verzögerungen zu verstehen"
+            language: "de"
+        affair_id: "affairs:24.4471"
+        datetime_begin_actual: "2025-12-19T09:20:00+01:00"
+        landing_page: "https://www.parlament.ch/de/ratsbetrieb/amtliches-bulletin/amtliches-bulletin-die-verhandlungen?SubjectId=69905#votum3"
+        agenda_item_category: "agenda_item"
+        datetime_created: "2026-01-12T00:00:00+01:00"
+        datetime_modified: "2026-01-12T00:00:00+01:00"
+    datetime_created: "2026-01-12T00:00:00+01:00"
+    datetime_modified: "2026-01-12T00:00:00+01:00"
 
 ```
 ##### Exemple Container : voting
@@ -372,8 +399,7 @@ votings:
   majority_type: "absolute"
   majority_count: 65
   result_text: "Mit 78 zu 42 Stimmen bei 5 Enthaltungen angenommen"
-  parent_protocol: ops:protocol_sg_2025_03_15
-  parent_protocol_item: ops:protocol_item_sg_2025_015
+  parent_agenda_item: ops:agenda_item_sg_2025_015
   parent_meeting: ops:meeting_sg_2025_03_15
   actor_id:
     global_uri: "actors:kr_sg"
@@ -401,8 +427,7 @@ votings:
   majority_type: "absolute"
   majority_count: 76
   result_text: "Mit 45 zu 87 Stimmen bei 8 Enthaltungen abgelehnt"
-  parent_protocol: ops:protocol_be_2025_06_05
-  parent_protocol_item: ops:protocol_item_be_2025_042
+  parent_agenda_item: ops:agenda_item_be_2025_042
   parent_meeting: ops:meeting_be_2025_06_05
   actor_id:
     global_uri: "actors:gr_be"
@@ -428,8 +453,7 @@ votings:
   majority_type: "absolute"
   majority_count: 91
   result_text: "Mit 105 zu 70 Stimmen bei 5 Enthaltungen angenommen"
-  parent_protocol: ops:protocol_zh_2025_11_20
-  parent_protocol_item: ops:protocol_item_zh_budget_2026
+  parent_agenda_item: ops:agenda_item_zh_budget_2026
   parent_meeting: ops:meeting_zh_2025_11_20
   actor_id:
     global_uri: "actors:kr_zh"
@@ -469,8 +493,7 @@ votings:
   total: 112
   majority_type: "other"
   result_text: "Auswahl A mit 75 von 112 abgegebenen Stimmen angenommen (Auswahl B: 25, Auswahl C: 12, Auswahl D: 0; 13 abwesend von 125 Mitgliedern)."
-  parent_protocol: ops:protocol_zh_gr_2024_02_28
-  parent_protocol_item: ops:protocol_item_zh_gr_2024_2023_361
+  parent_agenda_item: ops:agenda_item_zh_gr_2024_2023_361
   parent_meeting: ops:meeting_zh_gr_2024_02_28
   affair_id: "2023/361"
   actor_id:
@@ -1392,7 +1415,7 @@ Un Meeting est la séance individuelle d'un organe — le niveau auquel les poin
 
 ### Points d'ancrage
 
-Le Meeting est le nœud auquel se rattachent les autres classes de la présente norme : les points de l'ordre du jour (`AgendaItem`), les votes et élections (`Voting`, `Election`), les interventions (`Speech`) ainsi que la liste de présence (`Attendance.parent_meeting`). `documents` relie les documents de séance tels que le bulletin ou les annexes, `protocol_ref` le procès-verbal. `parent_meeting` représente les séances qui font partie d'une séance de rang supérieur ; `actor_name`, `group_name` et `group_id` retiennent en clair l'organe et le regroupement.
+Le Meeting est le nœud auquel se rattachent les autres classes de la présente norme : les points de l'ordre du jour (`AgendaItem`), les votes et élections (`Voting`, `Election`), les interventions (`Speech`) ainsi que la liste de présence (`Attendance.parent_meeting`). `documents` relie les documents de séance tels que le bulletin ou les annexes, `has_protocol` le procès-verbal. `parent_meeting` représente les séances qui font partie d'une séance de rang supérieur ; `actor_name`, `group_name` et `group_id` retiennent en clair l'organe et le regroupement.
 
 
 
@@ -1434,10 +1457,10 @@ _Une classe générale de séance utilisée pour les sessions, les séances de c
 | state_name | 0..1 <br/> String | Description personnalisée de l'état de la séance.  |
 | description | 0..1 <br/> String | Texte descriptif de l'élément.  |
 | location | 0..1 <br/> String | Lieu où se tient la séance (salle physique, visioconférence ou format hybride).  |
-| parent_meeting | 0..1 <br/> String | Identifiant de la séance liée qui regroupe la séance courante.  |
+| parent_meeting | 0..1 <br/> String | Identifiant de la séance à laquelle cet enregistrement se rattache. Pour une séance, il désigne la séance supérieure ; pour un point de l'ordre du jour, un vote, une élection, une intervention ou un procès-verbal, la séance au cours de laquelle l'enregistrement est né.  |
 | parent_legislature | 0..1 <br/> String | La législature dans le cadre de laquelle la séance a lieu.  |
 | documents | * <br/> Work | Liste des documents (FRBR Works) liés à l'entité.  |
-| protocol_ref | 0..1 <br/> [Protocol](#Protocol) | Le procès-verbal de cette séance, établi après celle-ci.  |
+| has_protocol | 0..1 <br/> [Protocol](#Protocol) | Référence au procès-verbal de cette séance, établi après celle-ci. Seul l'identifiant du procès-verbal est indiqué ; le procès-verbal lui-même est livré dans la liste `protocols` du conteneur. Il constitue une entité à part entière dotée de son propre identifiant et est en règle générale publié après la séance, raison pour laquelle il est référencé et non imbriqué.  |
 | date_begin_actual | 0..1 <br/> Date | La date de début effective d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
 | datetime_begin_actual | 0..1 <br/> Datetime | La date et l'heure de début effectives d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
 | date_begin_planned | 0..1 <br/> Date | La date de début planifiée d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
@@ -1563,6 +1586,7 @@ meetings:
       language: de
   actor_name: Ständerat
   datetime_begin_planned: '2025-12-19T08:15:00+01:00'
+  has_protocol: ops:protokoll_sr_winter25_sitzung_6
   datetime_created: '2026-01-12T00:00:00+01:00'
   datetime_modified: '2026-01-12T00:00:00+01:00'
 
@@ -1911,6 +1935,23 @@ _Un point de l'ordre du jour d'une séance._
 | local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| parent_meeting | 0..1 <br/> String | Identifiant de la séance à laquelle cet enregistrement se rattache. Pour une séance, il désigne la séance supérieure ; pour un point de l'ordre du jour, un vote, une élection, une intervention ou un procès-verbal, la séance au cours de laquelle l'enregistrement est né.  |
+| agenda_item_type | 0..1 <br/> [AgendaItemTypeEnum](#AgendaItemTypeEnum) | Type de point de l'ordre du jour, distinguant les points isolés des groupes de points.  |
+| agenda_item_number | 0..1 <br/> String | Numéro d'ordre du point de l'ordre du jour (type chaîne, afin de permettre les chiffres romains).  |
+| agenda_item_position | 0..1 <br/> Integer | Position (nombre entier) du point de l'ordre du jour dans le déroulement de la séance.  |
+| leading_actor_id | 0..1 <br/> String | Le département responsable du point de l'ordre du jour.  |
+| speaking_actor_id | 0..1 <br/> String | La ou le porte-parole ou la cheffe ou le chef du département pour le point de l'ordre du jour.  |
+| agenda_item_title | * <br/> [MultilingualString](#MultilingualString) | Titre du point de l'ordre du jour.  |
+| affair_id | 0..1 <br/> String | Le lien vers les affaires rattachées au point de l'ordre du jour.  |
+| agenda_item_description | * <br/> [MultilingualString](#MultilingualString) | Sous-titre ou description détaillée du point de l'ordre du jour.  |
+| state_id | 0..1 <br/> String | Identifiant d'état (renvoi à l'énumération des états ou à un état propre).  |
+| state_name | 0..1 <br/> String | Description personnalisée de l'état de la séance.  |
+| landing_page | 0..1 <br/> String | URL fournissant des informations complémentaires.  |
+| url | * <br/> [MultilingualString](#MultilingualString) | Page d'accueil ou adresse web complémentaire, multilingue.  |
+| agenda_item_category | 0..1 <br/> String | Catégorie pour les points de l'ordre du jour regroupés (p. ex. introduction, par département, points techniques).  |
+| parent_agenda_item | 0..1 <br/> String | Identifiant du point de l'ordre du jour auquel cet enregistrement se rattache. Pour un point de l'ordre du jour, il construit une hiérarchie de points ; pour un vote, une élection ou une intervention, il désigne le point sous lequel l'enregistrement a été traité.  |
+| has_resolution | 0..1 <br/> [Resolution](#Resolution) | La décision prise sur ce point de l'ordre du jour.  |
+| documents | * <br/> Work | Liste des documents (FRBR Works) liés à l'entité.  |
 | date_begin_actual | 0..1 <br/> Date | La date de début effective d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
 | datetime_begin_actual | 0..1 <br/> Datetime | La date et l'heure de début effectives d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
 | date_begin_planned | 0..1 <br/> Date | La date de début planifiée d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
@@ -1923,24 +1964,6 @@ _Un point de l'ordre du jour d'une séance._
 | datetime_created | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
 | date_modified | 0..1 <br/> Date | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
 | datetime_modified | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
-| parent_meeting | 0..1 <br/> String | Identifiant de la séance liée qui regroupe la séance courante. <br/><br/>Héritage : IsAgendaItem |
-| agenda_item_type | 0..1 <br/> [AgendaItemTypeEnum](#AgendaItemTypeEnum) | Type de point de l'ordre du jour, distinguant les points isolés des groupes de points. <br/><br/>Héritage : IsAgendaItem |
-| agenda_item_number | 0..1 <br/> String | Numéro d'ordre du point de l'ordre du jour (type chaîne, afin de permettre les chiffres romains). <br/><br/>Héritage : IsAgendaItem |
-| agenda_item_position | 0..1 <br/> Integer | Position (nombre entier) du point de l'ordre du jour dans le déroulement de la séance. <br/><br/>Héritage : IsAgendaItem |
-| leading_actor_id | 0..1 <br/> String | Le département responsable du point de l'ordre du jour. <br/><br/>Héritage : IsAgendaItem |
-| speaking_actor_id | 0..1 <br/> String | La ou le porte-parole ou la cheffe ou le chef du département pour le point de l'ordre du jour. <br/><br/>Héritage : IsAgendaItem |
-| agenda_item_title | * <br/> [MultilingualString](#MultilingualString) | Titre du point de l'ordre du jour. <br/><br/>Héritage : IsAgendaItem |
-| affair_id | 0..1 <br/> String | Le lien vers les affaires rattachées au point de l'ordre du jour. <br/><br/>Héritage : IsAgendaItem |
-| agenda_item_description | * <br/> [MultilingualString](#MultilingualString) | Sous-titre ou description détaillée du point de l'ordre du jour. <br/><br/>Héritage : IsAgendaItem |
-| state_id | 0..1 <br/> String | Identifiant d'état (renvoi à l'énumération des états ou à un état propre). <br/><br/>Héritage : IsAgendaItem |
-| state_name | 0..1 <br/> String | Description personnalisée de l'état de la séance. <br/><br/>Héritage : IsAgendaItem |
-| landing_page | 0..1 <br/> String | URL fournissant des informations complémentaires. <br/><br/>Héritage : IsAgendaItem |
-| url | * <br/> [MultilingualString](#MultilingualString) | Page d'accueil ou adresse web complémentaire, multilingue. <br/><br/>Héritage : IsAgendaItem |
-| agenda_item_category | 0..1 <br/> String | Catégorie pour les points de l'ordre du jour regroupés (p. ex. introduction, par département, points techniques). <br/><br/>Héritage : IsAgendaItem |
-| parent_agenda_item | 0..1 <br/> String | Au besoin, ce slot permet de construire une hiérarchie de points de l'ordre du jour. <br/><br/>Héritage : IsAgendaItem |
-| has_resolution | 0..1 <br/> [Resolution](#Resolution) | La décision prise sur ce point de l'ordre du jour. <br/><br/>Héritage : IsAgendaItem |
-| text_segments | * <br/> [TextSegment](#TextSegment) | Ensemble de segments de texte (p. ex. procès-verbal in extenso). <br/><br/>Héritage : IsAgendaItem |
-| documents | * <br/> Work | Liste des documents (FRBR Works) liés à l'entité. <br/><br/>Héritage : IsAgendaItem |
 
 
 
@@ -2390,15 +2413,21 @@ URI: [ops:AgendaItemTypeEnum](https://ch.paf.link/schema/operations/AgendaItemTy
 
 Alors que les points de l'ordre du jour représentent la **planification** d'une séance, le procès-verbal consigne le **déroulement effectif** après la séance. `Protocol` est un conteneur tenu exactement une fois par séance (`Meeting`) et qui regroupe les points effectivement traités (`protocol_items`), les votes, les interventions ainsi que les segments de texte in extenso et les documents.
 
+Le procès-verbal est **référencé et non imbriqué** : `Meeting.has_protocol` ne contient que l'identifiant, le procès-verbal lui-même figure comme entrée propre dans `Container.protocols`. La règle appliquée de bout en bout par la présente norme vaut donc ici aussi : est imbriqué ce qui ne possède pas d'identité propre (par exemple `PersonReference` ou `GroupReference`), est référencé ce qui en possède une. Le procès-verbal dispose de sa propre `global_uri` et peut être cité de manière autonome ; le Bulletin officiel, par exemple, est accessible à une adresse qui lui est propre. Surtout, il est établi après la séance : imbriqué, il faudrait relivrer la séance entière dès que le procès-verbal existe ; référencé, la livraison ultérieure du seul procès-verbal suffit.
+
+À l'intérieur du procès-verbal, les collections restent imbriquées, car elles naissent et sont livrées avec lui. Qui publie des votes ou des interventions indépendamment du procès-verbal les livre à plat dans `Container.votings` ou `Container.speeches` et les relie par `parent_meeting` et `parent_agenda_item`.
+
 ```
-Meeting
-  ├─ agenda_items   (avant : points planifiés)
-  └─ protocol_ref   (après : consignation)
-        ├─ protocol_items  → ProtocolItem (mêmes éléments qu'AgendaItem)
-        ├─ votings
-        ├─ speeches
-        ├─ text_segments
-        └─ documents
+Container
+  ├─ meetings       → Meeting
+  │                     └─ has_protocol → identifiant du procès-verbal
+  ├─ agenda_items   → AgendaItem  (avant : points planifiés, parent_meeting)
+  └─ protocols      → Protocol    (après : consignation, parent_meeting)
+                        ├─ protocol_items  → ProtocolItem (comme AgendaItem)
+                        ├─ votings
+                        ├─ speeches
+                        ├─ text_segments
+                        └─ documents
 ```
 
 
@@ -2423,10 +2452,9 @@ _Le procès-verbal établi après la séance. Un conteneur qui regroupe les poin
 | local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
-| parent_meeting | 0..1 <br/> String | Identifiant de la séance liée qui regroupe la séance courante.  |
+| parent_meeting | 0..1 <br/> String | Identifiant de la séance à laquelle cet enregistrement se rattache. Pour une séance, il désigne la séance supérieure ; pour un point de l'ordre du jour, un vote, une élection, une intervention ou un procès-verbal, la séance au cours de laquelle l'enregistrement est né.  |
 | protocol_items | * <br/> [ProtocolItem](#ProtocolItem) | Points de l'ordre du jour tels qu'ils ont effectivement été consignés au procès-verbal.  |
 | votings | * <br/> [Voting](#Voting) | Ensemble des votes.  |
-| elections | * <br/> [Election](#Election) | Ensemble des élections.  |
 | speeches | * <br/> [Speech](#Speech) | Ensemble des interventions.  |
 | text_segments | * <br/> [TextSegment](#TextSegment) | Ensemble de segments de texte (p. ex. procès-verbal in extenso).  |
 | documents | * <br/> Work | Liste des documents (FRBR Works) liés à l'entité.  |
@@ -2444,9 +2472,7 @@ _Le procès-verbal établi après la séance. Un conteneur qui regroupe les poin
 | Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | [Container](#Container) | protocols | range | [Protocol](#Protocol) |
-| [Meeting](#Meeting) | protocol_ref | range | [Protocol](#Protocol) |
-| [Voting](#Voting) | parent_protocol | range | [Protocol](#Protocol) |
-| [Election](#Election) | parent_protocol | range | [Protocol](#Protocol) |
+| [Meeting](#Meeting) | has_protocol | range | [Protocol](#Protocol) |
 
 
 
@@ -2460,6 +2486,36 @@ _Le procès-verbal établi après la séance. Un conteneur qui regroupe les poin
 
 
 
+
+#### Exemples
+##### Exemple Protocol : Procès-verbal comme entité à part entière, référencé par la séance
+
+```yaml
+protocols:
+- global_uri: ops:protokoll_sr_winter25_sitzung_6
+  parent_meeting: parl:sr_winter25_sitzung_6
+  protocol_items:
+  - global_uri: ops:protokollpunkt_69905
+    parent_meeting: parl:sr_winter25_sitzung_6
+    agenda_item_type: item
+    agenda_item_number: '6'
+    agenda_item_position: 4
+    agenda_item_title:
+    - text: >-
+        Postulat Broulis Pascal. Bauprojekte im Mobilitätsbereich. Einen Vergleich
+        durchführen, um die Verzögerungen zu verstehen
+      language: de
+    affair_id: affairs:24.4471
+    datetime_begin_actual: '2025-12-19T09:20:00+01:00'
+    landing_page: >-
+      https://www.parlament.ch/de/ratsbetrieb/amtliches-bulletin/amtliches-bulletin-die-verhandlungen?SubjectId=69905#votum3
+    agenda_item_category: agenda_item
+    datetime_created: '2026-01-12T00:00:00+01:00'
+    datetime_modified: '2026-01-12T00:00:00+01:00'
+  datetime_created: '2026-01-12T00:00:00+01:00'
+  datetime_modified: '2026-01-12T00:00:00+01:00'
+
+```
 
 
 
@@ -2470,14 +2526,14 @@ _Le procès-verbal établi après la séance. Un conteneur qui regroupe les poin
 
 ### ProtocolItem (point consigné au procès-verbal)
 
-`ProtocolItem` représente un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-verbal. Il porte les mêmes éléments qu'`AgendaItem`, sans en être une dérivation : les deux classes tirent les champs du point de l'ordre du jour du mixin `IsAgendaItem`. Le point consigné n'est pas un cas particulier du point planifié — il naît indépendamment et peut comprendre des points jamais mis à l'ordre du jour, de même que l'ordre du jour peut comprendre des points jamais traités.
+`ProtocolItem` hérite de tous les champs d'`AgendaItem` (`is_a: AgendaItem`) et représente un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-verbal.
 
 
 
 ### Classe: ProtocolItem []{#ProtocolItem}
 
 
-_Un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-verbal. Il porte, via le mixin IsAgendaItem, les mêmes éléments qu'AgendaItem, tout en restant une classe à part entière : le point consigné n'est pas un cas particulier du point planifié._
+_Un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-verbal._
 
 
 
@@ -2494,6 +2550,23 @@ _Un point de l'ordre du jour tel qu'il a effectivement été consigné au procè
 | local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| parent_meeting | 0..1 <br/> String | Identifiant de la séance à laquelle cet enregistrement se rattache. Pour une séance, il désigne la séance supérieure ; pour un point de l'ordre du jour, un vote, une élection, une intervention ou un procès-verbal, la séance au cours de laquelle l'enregistrement est né. <br/><br/>Héritage : [AgendaItem](#AgendaItem) |
+| agenda_item_type | 0..1 <br/> [AgendaItemTypeEnum](#AgendaItemTypeEnum) | Type de point de l'ordre du jour, distinguant les points isolés des groupes de points. <br/><br/>Héritage : [AgendaItem](#AgendaItem) |
+| agenda_item_number | 0..1 <br/> String | Numéro d'ordre du point de l'ordre du jour (type chaîne, afin de permettre les chiffres romains). <br/><br/>Héritage : [AgendaItem](#AgendaItem) |
+| agenda_item_position | 0..1 <br/> Integer | Position (nombre entier) du point de l'ordre du jour dans le déroulement de la séance. <br/><br/>Héritage : [AgendaItem](#AgendaItem) |
+| leading_actor_id | 0..1 <br/> String | Le département responsable du point de l'ordre du jour. <br/><br/>Héritage : [AgendaItem](#AgendaItem) |
+| speaking_actor_id | 0..1 <br/> String | La ou le porte-parole ou la cheffe ou le chef du département pour le point de l'ordre du jour. <br/><br/>Héritage : [AgendaItem](#AgendaItem) |
+| agenda_item_title | * <br/> [MultilingualString](#MultilingualString) | Titre du point de l'ordre du jour. <br/><br/>Héritage : [AgendaItem](#AgendaItem) |
+| affair_id | 0..1 <br/> String | Le lien vers les affaires rattachées au point de l'ordre du jour. <br/><br/>Héritage : [AgendaItem](#AgendaItem) |
+| agenda_item_description | * <br/> [MultilingualString](#MultilingualString) | Sous-titre ou description détaillée du point de l'ordre du jour. <br/><br/>Héritage : [AgendaItem](#AgendaItem) |
+| state_id | 0..1 <br/> String | Identifiant d'état (renvoi à l'énumération des états ou à un état propre). <br/><br/>Héritage : [AgendaItem](#AgendaItem) |
+| state_name | 0..1 <br/> String | Description personnalisée de l'état de la séance. <br/><br/>Héritage : [AgendaItem](#AgendaItem) |
+| landing_page | 0..1 <br/> String | URL fournissant des informations complémentaires. <br/><br/>Héritage : [AgendaItem](#AgendaItem) |
+| url | * <br/> [MultilingualString](#MultilingualString) | Page d'accueil ou adresse web complémentaire, multilingue. <br/><br/>Héritage : [AgendaItem](#AgendaItem) |
+| agenda_item_category | 0..1 <br/> String | Catégorie pour les points de l'ordre du jour regroupés (p. ex. introduction, par département, points techniques). <br/><br/>Héritage : [AgendaItem](#AgendaItem) |
+| parent_agenda_item | 0..1 <br/> String | Identifiant du point de l'ordre du jour auquel cet enregistrement se rattache. Pour un point de l'ordre du jour, il construit une hiérarchie de points ; pour un vote, une élection ou une intervention, il désigne le point sous lequel l'enregistrement a été traité. <br/><br/>Héritage : [AgendaItem](#AgendaItem) |
+| has_resolution | 0..1 <br/> [Resolution](#Resolution) | La décision prise sur ce point de l'ordre du jour. <br/><br/>Héritage : [AgendaItem](#AgendaItem) |
+| documents | * <br/> Work | Liste des documents (FRBR Works) liés à l'entité. <br/><br/>Héritage : [AgendaItem](#AgendaItem) |
 | date_begin_actual | 0..1 <br/> Date | La date de début effective d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
 | datetime_begin_actual | 0..1 <br/> Datetime | La date et l'heure de début effectives d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
 | date_begin_planned | 0..1 <br/> Date | La date de début planifiée d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
@@ -2506,24 +2579,6 @@ _Un point de l'ordre du jour tel qu'il a effectivement été consigné au procè
 | datetime_created | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
 | date_modified | 0..1 <br/> Date | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
 | datetime_modified | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
-| parent_meeting | 0..1 <br/> String | Identifiant de la séance liée qui regroupe la séance courante. <br/><br/>Héritage : IsAgendaItem |
-| agenda_item_type | 0..1 <br/> [AgendaItemTypeEnum](#AgendaItemTypeEnum) | Type de point de l'ordre du jour, distinguant les points isolés des groupes de points. <br/><br/>Héritage : IsAgendaItem |
-| agenda_item_number | 0..1 <br/> String | Numéro d'ordre du point de l'ordre du jour (type chaîne, afin de permettre les chiffres romains). <br/><br/>Héritage : IsAgendaItem |
-| agenda_item_position | 0..1 <br/> Integer | Position (nombre entier) du point de l'ordre du jour dans le déroulement de la séance. <br/><br/>Héritage : IsAgendaItem |
-| leading_actor_id | 0..1 <br/> String | Le département responsable du point de l'ordre du jour. <br/><br/>Héritage : IsAgendaItem |
-| speaking_actor_id | 0..1 <br/> String | La ou le porte-parole ou la cheffe ou le chef du département pour le point de l'ordre du jour. <br/><br/>Héritage : IsAgendaItem |
-| agenda_item_title | * <br/> [MultilingualString](#MultilingualString) | Titre du point de l'ordre du jour. <br/><br/>Héritage : IsAgendaItem |
-| affair_id | 0..1 <br/> String | Le lien vers les affaires rattachées au point de l'ordre du jour. <br/><br/>Héritage : IsAgendaItem |
-| agenda_item_description | * <br/> [MultilingualString](#MultilingualString) | Sous-titre ou description détaillée du point de l'ordre du jour. <br/><br/>Héritage : IsAgendaItem |
-| state_id | 0..1 <br/> String | Identifiant d'état (renvoi à l'énumération des états ou à un état propre). <br/><br/>Héritage : IsAgendaItem |
-| state_name | 0..1 <br/> String | Description personnalisée de l'état de la séance. <br/><br/>Héritage : IsAgendaItem |
-| landing_page | 0..1 <br/> String | URL fournissant des informations complémentaires. <br/><br/>Héritage : IsAgendaItem |
-| url | * <br/> [MultilingualString](#MultilingualString) | Page d'accueil ou adresse web complémentaire, multilingue. <br/><br/>Héritage : IsAgendaItem |
-| agenda_item_category | 0..1 <br/> String | Catégorie pour les points de l'ordre du jour regroupés (p. ex. introduction, par département, points techniques). <br/><br/>Héritage : IsAgendaItem |
-| parent_agenda_item | 0..1 <br/> String | Au besoin, ce slot permet de construire une hiérarchie de points de l'ordre du jour. <br/><br/>Héritage : IsAgendaItem |
-| has_resolution | 0..1 <br/> [Resolution](#Resolution) | La décision prise sur ce point de l'ordre du jour. <br/><br/>Héritage : IsAgendaItem |
-| text_segments | * <br/> [TextSegment](#TextSegment) | Ensemble de segments de texte (p. ex. procès-verbal in extenso). <br/><br/>Héritage : IsAgendaItem |
-| documents | * <br/> Work | Liste des documents (FRBR Works) liés à l'entité. <br/><br/>Héritage : IsAgendaItem |
 
 
 
@@ -2534,8 +2589,6 @@ _Un point de l'ordre du jour tel qu'il a effectivement été consigné au procè
 | Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | [Protocol](#Protocol) | protocol_items | range | [ProtocolItem](#ProtocolItem) |
-| [Voting](#Voting) | parent_protocol_item | range | [ProtocolItem](#ProtocolItem) |
-| [Election](#Election) | parent_protocol_item | range | [ProtocolItem](#ProtocolItem) |
 
 
 
@@ -2809,7 +2862,6 @@ _Une décision prise sur un point de l'ordre du jour, y compris les procédures 
 | Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | [Container](#Container) | resolutions | range | [Resolution](#Resolution) |
-| IsAgendaItem | has_resolution | range | [Resolution](#Resolution) |
 | [AgendaItem](#AgendaItem) | has_resolution | range | [Resolution](#Resolution) |
 | [ProtocolItem](#ProtocolItem) | has_resolution | range | [Resolution](#Resolution) |
 
@@ -2977,10 +3029,6 @@ Les décisions parlementaires sont prises soit par des votes sur des questions m
 ### But de l'entité
 
 « Voting » saisit le processus de vote et le résultat d'une décision formelle au parlement. L'entité documente aussi bien l'objet du vote (la question) que la procédure (comment il a été voté) et le résultat (avec quel rapport de voix).
-
-### Rattachement au procès-verbal
-
-Les votes et les élections ont lieu au cours de la séance. `Voting` et `Election` se rattachent donc au procès-verbal par `parent_protocol` et non à l'ordre du jour publié à l'avance : ce qui a été mis à l'ordre du jour ne dit pas encore sur quoi il a effectivement été voté. Lorsque le vote a eu lieu sous un point de l'ordre du jour, `parent_protocol_item` renvoie en outre au point consigné (`ProtocolItem`) ; sans point de l'ordre du jour, ce champ reste vide et le rattachement découle de `parent_protocol` et `parent_meeting`. Inversement, `Protocol` reprend les votes et les élections sous forme de listes (`votings`, `elections`).
 
 ### Types de votes
 
@@ -3240,9 +3288,8 @@ _Une procédure de vote avec les voix individuelles et les résultats._
 | majority_type | 0..1 <br/> [MajorityTypeEnum](#MajorityTypeEnum) | Type de majorité requise pour le vote (absolue, deux tiers, etc.).  |
 | majority_count | 0..1 <br/> Integer | Nombre de voix requis pour atteindre le seuil de majorité déterminant.  |
 | result_text | 0..1 <br/> String | Texte libre décrivant le résultat du vote, p. ex. « Accepté par 78 voix ».  |
-| parent_meeting | 0..1 <br/> String | Identifiant de la séance liée qui regroupe la séance courante.  |
-| parent_protocol | 0..1 <br/> [Protocol](#Protocol) | Le procès-verbal dans lequel le vote ou l'élection est consigné. Un vote a lieu au cours de la séance et se rattache donc au procès-verbal et non à l'ordre du jour planifié à l'avance.  |
-| parent_protocol_item | 0..1 <br/> [ProtocolItem](#ProtocolItem) | Le point consigné au procès-verbal (ProtocolItem) sous lequel le vote ou l'élection a eu lieu. Absent lorsque le vote a eu lieu sans point de l'ordre du jour ; le rattachement à la séance découle alors uniquement de parent_protocol et parent_meeting.  |
+| parent_meeting | 0..1 <br/> String | Identifiant de la séance à laquelle cet enregistrement se rattache. Pour une séance, il désigne la séance supérieure ; pour un point de l'ordre du jour, un vote, une élection, une intervention ou un procès-verbal, la séance au cours de laquelle l'enregistrement est né.  |
+| parent_agenda_item | 0..1 <br/> String | Identifiant du point de l'ordre du jour auquel cet enregistrement se rattache. Pour un point de l'ordre du jour, il construit une hiérarchie de points ; pour un vote, une élection ou une intervention, il désigne le point sous lequel l'enregistrement a été traité.  |
 | affair_id | 0..1 <br/> String | Le lien vers les affaires rattachées au point de l'ordre du jour.  |
 | actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Référence à l'organe agissant (instantané au moment de la mise en relation).  |
 | documents | * <br/> Work | Liste des documents (FRBR Works) liés à l'entité.  |
@@ -3296,8 +3343,7 @@ votings:
   majority_type: absolute
   majority_count: 91
   result_text: Mit 105 zu 70 Stimmen bei 5 Enthaltungen angenommen
-  parent_protocol: ops:protocol_zh_2025_11_20
-  parent_protocol_item: ops:protocol_item_zh_budget_2026
+  parent_agenda_item: ops:agenda_item_zh_budget_2026
   parent_meeting: ops:meeting_zh_2025_11_20
   actor_id:
     global_uri: actors:kr_zh
@@ -3340,8 +3386,7 @@ votings:
   result_text: >-
     Auswahl A mit 75 von 112 abgegebenen Stimmen angenommen (Auswahl B: 25, Auswahl
     C: 12, Auswahl D: 0; 13 abwesend von 125 Mitgliedern).
-  parent_protocol: ops:protocol_zh_gr_2024_02_28
-  parent_protocol_item: ops:protocol_item_zh_gr_2024_2023_361
+  parent_agenda_item: ops:agenda_item_zh_gr_2024_2023_361
   parent_meeting: ops:meeting_zh_gr_2024_02_28
   affair_id: 2023/361
   actor_id:
@@ -3373,8 +3418,7 @@ votings:
   majority_type: absolute
   majority_count: 65
   result_text: Mit 78 zu 42 Stimmen bei 5 Enthaltungen angenommen
-  parent_protocol: ops:protocol_sg_2025_03_15
-  parent_protocol_item: ops:protocol_item_sg_2025_015
+  parent_agenda_item: ops:agenda_item_sg_2025_015
   parent_meeting: ops:meeting_sg_2025_03_15
   actor_id:
     global_uri: actors:kr_sg
@@ -3407,8 +3451,7 @@ votings:
   majority_type: absolute
   majority_count: 76
   result_text: Mit 45 zu 87 Stimmen bei 8 Enthaltungen abgelehnt
-  parent_protocol: ops:protocol_be_2025_06_05
-  parent_protocol_item: ops:protocol_item_be_2025_042
+  parent_agenda_item: ops:agenda_item_be_2025_042
   parent_meeting: ops:meeting_be_2025_06_05
   actor_id:
     global_uri: actors:gr_be
@@ -4156,9 +4199,8 @@ _Une procédure d'élection visant à pourvoir des fonctions par des personnes._
 | majority_type | 0..1 <br/> [MajorityTypeEnum](#MajorityTypeEnum) | Type de majorité requise pour le vote (absolue, deux tiers, etc.).  |
 | majority_count | 0..1 <br/> Integer | Nombre de voix requis pour atteindre le seuil de majorité déterminant.  |
 | result_text | 0..1 <br/> String | Texte libre décrivant le résultat du vote, p. ex. « Accepté par 78 voix ».  |
-| parent_meeting | 0..1 <br/> String | Identifiant de la séance liée qui regroupe la séance courante.  |
-| parent_protocol | 0..1 <br/> [Protocol](#Protocol) | Le procès-verbal dans lequel le vote ou l'élection est consigné. Un vote a lieu au cours de la séance et se rattache donc au procès-verbal et non à l'ordre du jour planifié à l'avance.  |
-| parent_protocol_item | 0..1 <br/> [ProtocolItem](#ProtocolItem) | Le point consigné au procès-verbal (ProtocolItem) sous lequel le vote ou l'élection a eu lieu. Absent lorsque le vote a eu lieu sans point de l'ordre du jour ; le rattachement à la séance découle alors uniquement de parent_protocol et parent_meeting.  |
+| parent_meeting | 0..1 <br/> String | Identifiant de la séance à laquelle cet enregistrement se rattache. Pour une séance, il désigne la séance supérieure ; pour un point de l'ordre du jour, un vote, une élection, une intervention ou un procès-verbal, la séance au cours de laquelle l'enregistrement est né.  |
+| parent_agenda_item | 0..1 <br/> String | Identifiant du point de l'ordre du jour auquel cet enregistrement se rattache. Pour un point de l'ordre du jour, il construit une hiérarchie de points ; pour un vote, une élection ou une intervention, il désigne le point sous lequel l'enregistrement a été traité.  |
 | affair_id | 0..1 <br/> String | Le lien vers les affaires rattachées au point de l'ordre du jour.  |
 | actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Référence à l'organe agissant (instantané au moment de la mise en relation).  |
 | documents | * <br/> Work | Liste des documents (FRBR Works) liés à l'entité.  |
@@ -4176,7 +4218,6 @@ _Une procédure d'élection visant à pourvoir des fonctions par des personnes._
 | Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | [Container](#Container) | elections | range | [Election](#Election) |
-| [Protocol](#Protocol) | elections | range | [Election](#Election) |
 
 
 
@@ -4360,7 +4401,7 @@ _Liste de présence agrégée pour une séance (nombre de membres présents, abs
 | local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
-| parent_meeting | 0..1 <br/> String | Identifiant de la séance liée qui regroupe la séance courante.  |
+| parent_meeting | 0..1 <br/> String | Identifiant de la séance à laquelle cet enregistrement se rattache. Pour une séance, il désigne la séance supérieure ; pour un point de l'ordre du jour, un vote, une élection, une intervention ou un procès-verbal, la séance au cours de laquelle l'enregistrement est né.  |
 | datetime_begin | 0..1 <br/> Datetime | La date et l'heure auxquelles la séance ou le vote commence.  |
 | actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Référence à l'organe agissant (instantané au moment de la mise en relation).  |
 | total_count | 0..1 <br/> Integer | Nombre total de membres de l'organe (valeur de référence pour le calcul du quorum).  |
@@ -4649,6 +4690,10 @@ Le champ **speech_type** permet de distinguer différents types :
 - **procedural** : proposition d'ordre
 - **declaration** : déclaration
 
+### Rattachement à la séance
+
+`parent_meeting` et `parent_agenda_item` indiquent au cours de quelle séance et sous quel point de l'ordre du jour une intervention a été prononcée. Les deux sont nécessaires, car une intervention peut être livrée de deux manières : imbriquée dans le procès-verbal, où la séance ressort du `Protocol` environnant mais non le point de l'ordre du jour — ou à plat dans `Container.speeches`, où tout rattachement ferait défaut sans ces références. Elles portent les mêmes valeurs que pour `Voting` et `Election` et rendent ainsi l'intervention exploitable indépendamment de sa forme de livraison.
+
 
 
 ### Classe: Speech []{#Speech}
@@ -4671,6 +4716,8 @@ _Une intervention prononcée au cours d'une séance (également appelée prise d
 | local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| parent_meeting | 0..1 <br/> String | Identifiant de la séance à laquelle cet enregistrement se rattache. Pour une séance, il désigne la séance supérieure ; pour un point de l'ordre du jour, un vote, une élection, une intervention ou un procès-verbal, la séance au cours de laquelle l'enregistrement est né.  |
+| parent_agenda_item | 0..1 <br/> String | Identifiant du point de l'ordre du jour auquel cet enregistrement se rattache. Pour un point de l'ordre du jour, il construit une hiérarchie de points ; pour un vote, une élection ou une intervention, il désigne le point sous lequel l'enregistrement a été traité.  |
 | language | 0..1 <br/> String | Code de langue au format ISO 639-1 (deux lettres minuscules, par ex. « de », « fr », « it », « en »).  |
 | start | 0..1 <br/> String | Indication de début ou position.  |
 | datetime_begin | 0..1 <br/> Datetime | La date et l'heure auxquelles la séance ou le vote commence.  |
@@ -4721,6 +4768,8 @@ _Une intervention prononcée au cours d'une séance (également appelée prise d
 ```yaml
 speeches:
 - global_uri: ops:366631
+  parent_meeting: parl:sr_winter25_sitzung_6
+  parent_agenda_item: ops:69905
   language: fr
   datetime_begin: '2025-12-19T09:20:00+01:00'
   datetime_end: '2025-12-19T09:25:00+01:00'
@@ -4792,10 +4841,6 @@ Speech
   └─ TextSegment (résumé, de)
 ```
 
-### Porteurs d'un segment de texte
-
-Les segments de texte ne se rattachent pas uniquement au procès-verbal in extenso : `Protocol` les porte pour le texte intégral de toute la séance, et `AgendaItem` — respectivement le `ProtocolItem` consigné — pour un texte se rapportant à un seul point de l'ordre du jour, par exemple un intertitre, un renvoi ou une motivation publiée déjà avec l'ordre du jour. Comme les deux classes portent le mixin `IsAgendaItem`, `text_segments` est disponible aussi bien du côté planifié que du côté consigné. L'intervention isolée, en revanche, porte son texte directement dans `text`, `text_format` et `text_type`.
-
 ## Media
 
 ### But
@@ -4844,7 +4889,7 @@ Meeting
 ### Classe: TextSegment []{#TextSegment}
 
 
-_Un segment de texte tel qu'un renvoi ou un intertitre. Les segments de texte sont portés par le procès-verbal, par une intervention ou par un point de l'ordre du jour (AgendaItem planifié ou ProtocolItem consigné)._
+_Un segment de texte tel qu'un renvoi ou un intertitre dans un procès-verbal de séance._
 
 
 
@@ -4871,10 +4916,7 @@ _Un segment de texte tel qu'un renvoi ou un intertitre. Les segments de texte so
 
 | Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
-| IsAgendaItem | text_segments | range | [TextSegment](#TextSegment) |
-| [AgendaItem](#AgendaItem) | text_segments | range | [TextSegment](#TextSegment) |
 | [Protocol](#Protocol) | text_segments | range | [TextSegment](#TextSegment) |
-| [ProtocolItem](#ProtocolItem) | text_segments | range | [TextSegment](#TextSegment) |
 
 
 
@@ -5146,9 +5188,6 @@ _Une chaîne de caractères pouvant contenir du texte en plusieurs langues._
 | [Session](#Session) | url | range | [MultilingualString](#MultilingualString) |
 | [Meeting](#Meeting) | name | range | [MultilingualString](#MultilingualString) |
 | [Meeting](#Meeting) | url | range | [MultilingualString](#MultilingualString) |
-| IsAgendaItem | agenda_item_title | range | [MultilingualString](#MultilingualString) |
-| IsAgendaItem | agenda_item_description | range | [MultilingualString](#MultilingualString) |
-| IsAgendaItem | url | range | [MultilingualString](#MultilingualString) |
 | [AgendaItem](#AgendaItem) | agenda_item_title | range | [MultilingualString](#MultilingualString) |
 | [AgendaItem](#AgendaItem) | agenda_item_description | range | [MultilingualString](#MultilingualString) |
 | [AgendaItem](#AgendaItem) | url | range | [MultilingualString](#MultilingualString) |
@@ -5212,7 +5251,7 @@ _Une classe mixin qui fournit des slots pour l'identification d'une entité. Ell
 
 #### Utilisation de mixin
 
-[Container](#Container), [Legislature](#Legislature), [Session](#Session), [Meeting](#Meeting), [AgendaItem](#AgendaItem), [Protocol](#Protocol), [ProtocolItem](#ProtocolItem), [Voting](#Voting), [IndividualVote](#IndividualVote), [Election](#Election), [Attendance](#Attendance), [IndividualAttendance](#IndividualAttendance), [Speech](#Speech), [TextSegment](#TextSegment), [Motion](#Motion), [Media](#Media)
+[Container](#Container), [Legislature](#Legislature), [Session](#Session), [Meeting](#Meeting), [AgendaItem](#AgendaItem), [Protocol](#Protocol), [Voting](#Voting), [IndividualVote](#IndividualVote), [Election](#Election), [Attendance](#Attendance), [IndividualAttendance](#IndividualAttendance), [Speech](#Speech), [TextSegment](#TextSegment), [Motion](#Motion), [Media](#Media)
 
 
 
@@ -5264,7 +5303,7 @@ _Une classe mixin qui fournit des slots pour modéliser les dates de création e
 
 #### Utilisation de mixin
 
-[Legislature](#Legislature), [Session](#Session), [Meeting](#Meeting), [AgendaItem](#AgendaItem), [Protocol](#Protocol), [ProtocolItem](#ProtocolItem), [Voting](#Voting), [IndividualVote](#IndividualVote), [Election](#Election), [Attendance](#Attendance), [IndividualAttendance](#IndividualAttendance), [Speech](#Speech)
+[Legislature](#Legislature), [Session](#Session), [Meeting](#Meeting), [AgendaItem](#AgendaItem), [Protocol](#Protocol), [Voting](#Voting), [IndividualVote](#IndividualVote), [Election](#Election), [Attendance](#Attendance), [IndividualAttendance](#IndividualAttendance), [Speech](#Speech)
 
 
 
@@ -5320,7 +5359,7 @@ _Une classe mixin qui fournit des slots pour modéliser des événements ou occu
 
 #### Utilisation de mixin
 
-[Legislature](#Legislature), [Session](#Session), [Meeting](#Meeting), [AgendaItem](#AgendaItem), [ProtocolItem](#ProtocolItem)
+[Legislature](#Legislature), [Session](#Session), [Meeting](#Meeting), [AgendaItem](#AgendaItem)
 
 
 

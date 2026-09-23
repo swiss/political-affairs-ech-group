@@ -199,14 +199,14 @@
                     ]
                 },
                 "parent_agenda_item": {
-                    "description": "If needed, this slot builds a hierarchy of agenda items.\n",
+                    "description": "Identifier of the agenda item this record belongs to. On an agenda item it builds a hierarchy of agenda items; on a voting, election or speech it names the agenda item under which the record was handled.\n",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
                 "parent_meeting": {
-                    "description": "The linked meeting ID that groups the current meeting.\n",
+                    "description": "Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.\n",
                     "type": [
                         "string",
                         "null"
@@ -230,16 +230,6 @@
                     "description": "Custom state description for the meeting.\n",
                     "type": [
                         "string",
-                        "null"
-                    ]
-                },
-                "text_segments": {
-                    "description": "Collection of text segments (e.g. verbatim protocol).\n",
-                    "items": {
-                        "$ref": "#/$defs/TextSegment"
-                    },
-                    "type": [
-                        "array",
                         "null"
                     ]
                 },
@@ -343,7 +333,7 @@
                     ]
                 },
                 "parent_meeting": {
-                    "description": "The linked meeting ID that groups the current meeting.\n",
+                    "description": "Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.\n",
                     "type": [
                         "string",
                         "null"
@@ -710,22 +700,15 @@
                     "$ref": "#/$defs/MajorityTypeEnum",
                     "description": "Type of majority required for the vote (absolute, two-thirds, etc.).\n"
                 },
+                "parent_agenda_item": {
+                    "description": "Identifier of the agenda item this record belongs to. On an agenda item it builds a hierarchy of agenda items; on a voting, election or speech it names the agenda item under which the record was handled.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "parent_meeting": {
-                    "description": "The linked meeting ID that groups the current meeting.\n",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "parent_protocol": {
-                    "description": "The protocol in which the voting or election is recorded. A vote is held during the sitting and is therefore anchored in the minutes, not in the agenda planned beforehand.\n",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "parent_protocol_item": {
-                    "description": "The recorded agenda item (ProtocolItem) under which the voting or election took place. Omitted when the vote was taken without an agenda item; the link to the sitting is then given by parent_protocol and parent_meeting alone.\n",
+                    "description": "Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.\n",
                     "type": [
                         "string",
                         "null"
@@ -1245,156 +1228,6 @@
             ],
             "title": "IndividualVoteTypeEnum",
             "type": "string"
-        },
-        "IsAgendaItem": {
-            "additionalProperties": false,
-            "description": "A mixin class that provides the elements of an agenda item: designation, type, actors, the link to the affair, state, resolution and attached texts and documents. It is used by the planned agenda item (AgendaItem) and by the recorded one (ProtocolItem), so that both carry the same elements without one depending on the other.",
-            "properties": {
-                "affair_id": {
-                    "description": "The connection to the affairs (business items) of the agenda item.\n",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "agenda_item_category": {
-                    "description": "Category for grouped agenda items (e.g., introduction, by department, technical agenda items).\n",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "agenda_item_description": {
-                    "description": "Subtitle or detailed description of the agenda item.\n",
-                    "items": {
-                        "$ref": "#/$defs/MultilingualString"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "agenda_item_number": {
-                    "description": "Sequential number of the agenda item (string type to support roman numerals).\n",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "agenda_item_position": {
-                    "description": "Integer position of the agenda item in the meeting sequence.\n",
-                    "type": [
-                        "integer",
-                        "null"
-                    ]
-                },
-                "agenda_item_title": {
-                    "description": "Title of the agenda item.\n",
-                    "items": {
-                        "$ref": "#/$defs/MultilingualString"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "agenda_item_type": {
-                    "$ref": "#/$defs/AgendaItemTypeEnum",
-                    "description": "Type of agenda item, distinguishing individual items from groups.\n"
-                },
-                "documents": {
-                    "description": "List of documents (FRBR Works) linked to the entity.\n",
-                    "items": {
-                        "$ref": "#/$defs/Work"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "has_resolution": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/$defs/Resolution"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "The resolution or decision taken on this agenda item.\n"
-                },
-                "landing_page": {
-                    "description": "URL providing further information.\n",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "leading_actor_id": {
-                    "description": "The leading department for the agenda item.\n",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "parent_agenda_item": {
-                    "description": "If needed, this slot builds a hierarchy of agenda items.\n",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "parent_meeting": {
-                    "description": "The linked meeting ID that groups the current meeting.\n",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "speaking_actor_id": {
-                    "description": "The speaker or head of the department for the agenda item.\n",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "state_id": {
-                    "description": "State identifier (reference to state enum or custom state).\n",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "state_name": {
-                    "description": "Custom state description for the meeting.\n",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "text_segments": {
-                    "description": "Collection of text segments (e.g. verbatim protocol).\n",
-                    "items": {
-                        "$ref": "#/$defs/TextSegment"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "url": {
-                    "description": "Landing page or further web address, multilingual.\n",
-                    "items": {
-                        "$ref": "#/$defs/MultilingualString"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                }
-            },
-            "title": "IsAgendaItem",
-            "type": "object"
         },
         "IsEventWithDuration": {
             "additionalProperties": false,
@@ -2092,6 +1925,13 @@
                         "null"
                     ]
                 },
+                "has_protocol": {
+                    "description": "Reference to the protocol (minutes) of this meeting, recorded after the meeting. Only the identifier of the protocol is given; the protocol itself is delivered in the container's `protocols` list. It is an entity in its own right with its own identifier and is usually published later than the meeting, so it is referenced rather than embedded.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "landing_page": {
                     "description": "URL providing further information.\n",
                     "type": [
@@ -2149,7 +1989,7 @@
                     ]
                 },
                 "parent_meeting": {
-                    "description": "The linked meeting ID that groups the current meeting.\n",
+                    "description": "Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.\n",
                     "type": [
                         "string",
                         "null"
@@ -2161,17 +2001,6 @@
                         "string",
                         "null"
                     ]
-                },
-                "protocol_ref": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/$defs/Protocol"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "The protocol (minutes) of this meeting, recorded after the meeting.\n"
                 },
                 "sequential_number": {
                     "description": "Sequential number of the meeting, used for ordering.\n",
@@ -2467,16 +2296,6 @@
                         "null"
                     ]
                 },
-                "elections": {
-                    "description": "Collection of election records.\n",
-                    "items": {
-                        "$ref": "#/$defs/Election"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "global_uri": {
                     "description": "A unique, globally valid URI for the entity.\n",
                     "type": "string"
@@ -2489,7 +2308,7 @@
                     ]
                 },
                 "parent_meeting": {
-                    "description": "The linked meeting ID that groups the current meeting.\n",
+                    "description": "Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.\n",
                     "type": [
                         "string",
                         "null"
@@ -2551,7 +2370,7 @@
         },
         "ProtocolItem": {
             "additionalProperties": false,
-            "description": "An agenda item as actually recorded in the protocol. It carries the same elements as AgendaItem through the IsAgendaItem mixin, but is a class in its own right: the record is not a special case of the plan.",
+            "description": "An agenda item as actually recorded in the protocol.",
             "properties": {
                 "affair_id": {
                     "description": "The connection to the affairs (business items) of the agenda item.\n",
@@ -2748,14 +2567,14 @@
                     ]
                 },
                 "parent_agenda_item": {
-                    "description": "If needed, this slot builds a hierarchy of agenda items.\n",
+                    "description": "Identifier of the agenda item this record belongs to. On an agenda item it builds a hierarchy of agenda items; on a voting, election or speech it names the agenda item under which the record was handled.\n",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
                 "parent_meeting": {
-                    "description": "The linked meeting ID that groups the current meeting.\n",
+                    "description": "Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.\n",
                     "type": [
                         "string",
                         "null"
@@ -2779,16 +2598,6 @@
                     "description": "Custom state description for the meeting.\n",
                     "type": [
                         "string",
-                        "null"
-                    ]
-                },
-                "text_segments": {
-                    "description": "Collection of text segments (e.g. verbatim protocol).\n",
-                    "items": {
-                        "$ref": "#/$defs/TextSegment"
-                    },
-                    "type": [
-                        "array",
                         "null"
                     ]
                 },
@@ -3205,6 +3014,20 @@
                         "null"
                     ]
                 },
+                "parent_agenda_item": {
+                    "description": "Identifier of the agenda item this record belongs to. On an agenda item it builds a hierarchy of agenda items; on a voting, election or speech it names the agenda item under which the record was handled.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "parent_meeting": {
+                    "description": "Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "role": {
                     "description": "Role of the person (e.g., commission speaker).\n",
                     "type": [
@@ -3264,7 +3087,7 @@
         },
         "TextSegment": {
             "additionalProperties": false,
-            "description": "A text segment such as cross-references or subtitles. Text segments are carried by the protocol, by a speech or by an agenda item (planned AgendaItem or recorded ProtocolItem).",
+            "description": "A text segment such as cross-references or subtitles in meeting protocols.",
             "properties": {
                 "global_uri": {
                     "description": "A unique, globally valid URI for the entity.\n",
@@ -3455,22 +3278,15 @@
                         "null"
                     ]
                 },
+                "parent_agenda_item": {
+                    "description": "Identifier of the agenda item this record belongs to. On an agenda item it builds a hierarchy of agenda items; on a voting, election or speech it names the agenda item under which the record was handled.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "parent_meeting": {
-                    "description": "The linked meeting ID that groups the current meeting.\n",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "parent_protocol": {
-                    "description": "The protocol in which the voting or election is recorded. A vote is held during the sitting and is therefore anchored in the minutes, not in the agenda planned beforehand.\n",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "parent_protocol_item": {
-                    "description": "The recorded agenda item (ProtocolItem) under which the voting or election took place. Omitted when the vote was taken without an agenda item; the link to the sitting is then given by parent_protocol and parent_meeting alone.\n",
+                    "description": "Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.\n",
                     "type": [
                         "string",
                         "null"
@@ -3603,10 +3419,6 @@
                 "id": {
                     "description": "Unique identifier of the element.\n",
                     "type": "string"
-                },
-                "work_type": {
-                    "$ref": "#/$defs/WorkTypesEnum",
-                    "description": "Type of the document (e.g. minutes, submitted version, current law).\n"
                 }
             },
             "required": [
@@ -3639,16 +3451,6 @@
             ],
             "title": "WorkContainer",
             "type": "object"
-        },
-        "WorkTypesEnum": {
-            "description": "Type of a document (FRBR Work).",
-            "enum": [
-                "pv",
-                "submitted_version",
-                "current_law"
-            ],
-            "title": "WorkTypesEnum",
-            "type": "string"
         }
     },
     "$id": "https://ch.paf.link/schema/operations",
