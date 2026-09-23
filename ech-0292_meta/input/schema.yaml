@@ -51,6 +51,39 @@ classes:
       - expression_title
       - expression_description
       - manifestations
+    slot_usage:
+      date_created:
+        description: |
+          Date of first publication of the language version.
+        annotations:
+          description_de: |
+            Datum der Erstpublikation der Sprachfassung.
+          description_fr: |
+            Date de la première publication de la version linguistique.
+      datetime_created:
+        description: |
+          Date and time of first publication of the language version.
+        annotations:
+          description_de: |
+            Datum und Uhrzeit der Erstpublikation der Sprachfassung.
+          description_fr: |
+            Date et heure de la première publication de la version linguistique.
+      date_modified:
+        description: |
+          Date of the last revision of the language version.
+        annotations:
+          description_de: |
+            Datum der letzten Revision der Sprachfassung.
+          description_fr: |
+            Date de la dernière révision de la version linguistique.
+      datetime_modified:
+        description: |
+          Date and time of the last revision of the language version.
+        annotations:
+          description_de: |
+            Datum und Uhrzeit der letzten Revision der Sprachfassung.
+          description_fr: |
+            Date et heure de la dernière révision de la version linguistique.
 
   Manifestation:
     description: |
@@ -66,6 +99,39 @@ classes:
     slots:
       - format
       - manifestation_url
+    slot_usage:
+      date_created:
+        description: |
+          Date of first publication of the file form.
+        annotations:
+          description_de: |
+            Datum der Erstpublikation der Dateiform.
+          description_fr: |
+            Date de la première publication de la forme de fichier.
+      datetime_created:
+        description: |
+          Date and time of first publication of the file form.
+        annotations:
+          description_de: |
+            Datum und Uhrzeit der Erstpublikation der Dateiform.
+          description_fr: |
+            Date et heure de la première publication de la forme de fichier.
+      date_modified:
+        description: |
+          Date of the last revision of the file form.
+        annotations:
+          description_de: |
+            Datum der letzten Revision der Dateiform.
+          description_fr: |
+            Date de la dernière révision de la forme de fichier.
+      datetime_modified:
+        description: |
+          Date and time of the last revision of the file form.
+        annotations:
+          description_de: |
+            Datum und Uhrzeit der letzten Revision der Dateiform.
+          description_fr: |
+            Date et heure de la dernière révision de la forme de fichier.
 
   # Renamed from the generic `Container` so it does not collide with the
   # `Container` tree_root that every consuming schema defines (e.g. ech-0293
