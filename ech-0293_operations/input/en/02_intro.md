@@ -19,7 +19,7 @@ The aim of this standard family is to create a commonly usable structure for pol
 
 ## Structure of a delivery
 
-A delivery is a `Container`: an envelope with a `global_uri` of its own and one collection per class — `legislatures`, `sessions`, `meetings`, `agenda_items`, `protocols`, `votings`, `elections`, `individual_votes`, `attendances`, `individual_attendances`, `speeches` and `resolutions`. All collections are optional: those who only publish sittings deliver only `meetings`.
+A delivery is a `Container`: an envelope with a `global_uri` of its own and one collection per class — `legislatures`, `sessions`, `meetings`, `protocols`, `votings`, `elections`, `individual_votes`, `attendances`, `individual_attendances`, `speeches` and `resolutions`. Agenda items have no collection of their own: they are delivered within their meeting or session (`agenda_items`). All collections are optional: those who only publish sittings deliver only `meetings`.
 
 The entities sit side by side in a flat structure and are connected by references — `parent_meeting`, `parent_voting`, `parent_attendance` and so on — rather than nested inside one another. A single sitting can thus be delivered later without resending the entire legislature, and the same entity can be referenced from several places. Where nesting renders the connection better, it remains possible: the session takes its sittings as a list, the protocol its agenda items, votings and speeches.
 

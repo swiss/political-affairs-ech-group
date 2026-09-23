@@ -13,7 +13,7 @@ Legislature (legislature)
           └─ AgendaItem (agenda item)
 ```
 
-The legislature forms the long-term frame, the session structures the work within a legislature, the meeting is the concrete sitting in which affairs are deliberated, and the agenda item structures the individual sitting. The levels interlock in two ways: the session takes its sittings as a list (`meetings`), while sitting and agenda item point upwards by reference (`parent_legislature`, `parent_session`, `parent_meeting`, `parent_agenda_item`): the session refers to its legislature, the sitting to its session.
+The legislature forms the long-term frame, the session structures the work within a legislature, the meeting is the concrete sitting in which affairs are deliberated, and the agenda item structures the individual sitting. The levels interlock in two ways: downwards they are embedded — the session takes up its sittings (`meetings`), sitting and session their agenda items (`agenda_items`); upwards, references point — the session to its legislature (`parent_legislature`), the sitting to its session (`parent_session`) or, where there is no session, directly to the legislature (`parent_legislature`). Within the agenda, `parent_agenda_item` represents the division into sub-items.
 
 The first three classes are described below, the agenda item in the next chapter.
 
@@ -38,14 +38,6 @@ A legislature denotes the period for which a parliament is elected and acts in i
 ## Session (sitting period)
 
 A session is a continuous sitting period in which several meetings take place.
-
-### Optional level
-
-The session is the only one of the three levels that may be dispensed with: federal entities without formal sessions leave it out and record their sittings directly. Session and meeting may also coincide — a one-day sitting of a cantonal parliament or a Landsgemeinde is recorded as a sitting period with a single meeting.
-
-### Numbering
-
-Numbering practice differs widely, which is why four fields are available: `number` holds the running number as a figure, `sequential_number` the same information as a string (and therefore also Roman numerals), `position` the position within the legislature and `meeting_abbreviation` a short designation such as "FS24". The meeting has the same four fields.
 
 {{include:ech-0293_operations/output/docs/Session.md}}
 

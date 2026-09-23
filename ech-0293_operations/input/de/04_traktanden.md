@@ -19,8 +19,8 @@ Das Protokoll wird **referenziert, nicht eingebettet**. Damit gilt auch hier die
 ```
 Container
   ├─ meetings       → Meeting
+  │                     ├─ agenda_items → AgendaItem  (vorher: geplante Traktanden)
   │                     └─ has_protocol → Identifikator des Protokolls
-  ├─ agenda_items   → AgendaItem  (vorher: geplante Traktanden, parent_meeting)
   └─ protocols      → Protocol    (nachher: Niederschrift, parent_meeting)
                         ├─ protocol_items  → ProtocolItem (gleiche Elemente wie AgendaItem)
                         ├─ votings

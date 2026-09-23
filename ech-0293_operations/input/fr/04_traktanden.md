@@ -19,8 +19,8 @@ Le procès-verbal est **référencé et non imbriqué**. La règle appliquée de
 ```
 Container
   ├─ meetings       → Meeting
+  │                     ├─ agenda_items → AgendaItem  (avant : points planifiés)
   │                     └─ has_protocol → identifiant du procès-verbal
-  ├─ agenda_items   → AgendaItem  (avant : points planifiés, parent_meeting)
   └─ protocols      → Protocol    (après : consignation, parent_meeting)
                         ├─ protocol_items  → ProtocolItem (mêmes éléments qu'AgendaItem)
                         ├─ votings

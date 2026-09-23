@@ -13,7 +13,7 @@ Legislature (législature)
           └─ AgendaItem (point de l'ordre du jour)
 ```
 
-La législature constitue le cadre à long terme, la session structure le travail au sein d'une législature, le Meeting est la séance concrète au cours de laquelle les affaires sont délibérées, et le point de l'ordre du jour articule la séance individuelle. Les niveaux s'emboîtent de deux manières : la session reprend ses séances sous forme de liste (`meetings`), tandis que la séance et le point de l'ordre du jour renvoient vers le haut par des références (`parent_legislature`, `parent_session`, `parent_meeting`, `parent_agenda_item`) : la session renvoie à sa législature, la séance à sa session.
+La législature constitue le cadre à long terme, la session structure le travail au sein d'une législature, le Meeting est la séance concrète au cours de laquelle les affaires sont délibérées, et le point de l'ordre du jour articule la séance individuelle. Les niveaux s'emboîtent de deux manières : vers le bas, ils sont imbriqués — la session reprend ses séances (`meetings`), la séance et la session leurs points de l'ordre du jour (`agenda_items`) ; vers le haut, des références pointent — la session vers sa législature (`parent_legislature`), la séance vers sa session (`parent_session`) ou, en l'absence de session, directement vers la législature (`parent_legislature`). À l'intérieur de l'ordre du jour, `parent_agenda_item` représente la subdivision en sous-points.
 
 Les trois premières classes sont décrites ci-après, le point de l'ordre du jour dans le chapitre suivant.
 
@@ -38,14 +38,6 @@ Une législature désigne la période pour laquelle un parlement est élu et dur
 ## Session (période de séance)
 
 Une session est une période de séance continue au cours de laquelle plusieurs séances ont lieu.
-
-### Niveau facultatif
-
-La session est le seul des trois niveaux auquel il est possible de renoncer : les entités fédérées sans sessions formelles s'en passent et gèrent directement leurs séances. Session et séance peuvent aussi coïncider — une séance d'un jour du Grand Conseil ou une Landsgemeinde est gérée comme une période de séance comportant une seule séance.
-
-### Numérotation
-
-La numérotation varie fortement d'une pratique à l'autre, raison pour laquelle quatre champs sont disponibles : `number` retient le numéro courant sous forme de nombre, `sequential_number` la même indication sous forme de chaîne de caractères (et donc aussi en chiffres romains), `position` la position au sein de la législature et `meeting_abbreviation` une désignation abrégée telle que « FS24 ». Le Meeting connaît les mêmes quatre champs.
 
 {{include:ech-0293_operations/output/docs/Session.md}}
 

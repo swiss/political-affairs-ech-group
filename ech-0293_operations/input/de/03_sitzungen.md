@@ -13,7 +13,7 @@ Legislature (Legislaturperiode)
           └─ AgendaItem (Traktandum)
 ```
 
-Die Legislaturperiode bildet den langfristigen Rahmen, die Session strukturiert die Arbeit innerhalb einer Legislaturperiode, das Meeting ist die konkrete Sitzung, in der Geschäfte beraten werden, und das Traktandum gliedert die einzelne Sitzung. Die Ebenen greifen auf zwei Arten ineinander: Die Session nimmt ihre Sitzungen als Liste auf (`meetings`), während Sitzung und Traktandum über Referenzen nach oben zeigen (`parent_legislature`, `parent_session`, `parent_meeting`, `parent_agenda_item`): Die Session verweist auf ihre Legislaturperiode, die Sitzung auf ihre Session.
+Die Legislaturperiode bildet den langfristigen Rahmen, die Session strukturiert die Arbeit innerhalb einer Legislaturperiode, das Meeting ist die konkrete Sitzung, in der Geschäfte beraten werden, und das Traktandum gliedert die einzelne Sitzung. Die Ebenen greifen auf zwei Arten ineinander: Nach unten sind sie eingebettet — die Session nimmt ihre Sitzungen auf (`meetings`), Sitzung und Session ihre Traktanden (`agenda_items`); nach oben zeigen Referenzen — die Session verweist auf ihre Legislaturperiode (`parent_legislature`), die Sitzung auf ihre Session (`parent_session`) oder, wo es keine Session gibt, direkt auf die Legislaturperiode (`parent_legislature`). Innerhalb der Traktandenliste bildet `parent_agenda_item` die Gliederung in Untertraktanden ab.
 
 Die ersten drei Klassen sind nachfolgend beschrieben, das Traktandum im nächsten Kapitel.
 
@@ -38,14 +38,6 @@ Eine Legislaturperiode bezeichnet den Zeitraum, für den ein Parlament gewählt 
 ## Session (Sitzungsperiode)
 
 Eine Session ist eine zusammenhängende Sitzungsperiode, in der mehrere Meetings stattfinden.
-
-### Optionale Ebene
-
-Die Session ist die einzige der drei Ebenen, auf die verzichtet werden kann: Föderaleinheiten ohne formale Sessionen lassen sie weg und führen ihre Sitzungen direkt. Session und Meeting können auch zusammenfallen — eine eintägige Sitzung des Landrats oder eine Landsgemeinde wird als Sitzungsperiode mit einer einzigen Sitzung geführt.
-
-### Nummerierung
-
-Nummeriert wird sehr unterschiedlich, weshalb vier Felder zur Verfügung stehen: `number` hält die laufende Nummer als Zahl fest, `sequential_number` dieselbe Angabe als Zeichenkette (und damit auch römische Ziffern), `position` die Position innerhalb der Legislaturperiode und `meeting_abbreviation` eine Kurzbezeichnung wie „FS24“. Das Meeting kennt dieselben vier Felder.
 
 {{include:ech-0293_operations/output/docs/Session.md}}
 

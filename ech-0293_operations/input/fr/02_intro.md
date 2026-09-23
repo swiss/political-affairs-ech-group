@@ -19,7 +19,7 @@ L'objectif de cette famille de normes est de créer une structure utilisable en 
 
 ## Structure d'une livraison
 
-Une livraison est un `Container` : une enveloppe dotée de sa propre `global_uri` et d'une collection par classe — `legislatures`, `sessions`, `meetings`, `agenda_items`, `protocols`, `votings`, `elections`, `individual_votes`, `attendances`, `individual_attendances`, `speeches` et `resolutions`. Toutes les collections sont facultatives : qui ne publie que des séances ne livre que `meetings`.
+Une livraison est un `Container` : une enveloppe dotée de sa propre `global_uri` et d'une collection par classe — `legislatures`, `sessions`, `meetings`, `protocols`, `votings`, `elections`, `individual_votes`, `attendances`, `individual_attendances`, `speeches` et `resolutions`. Les points de l'ordre du jour n'ont pas de collection propre : ils sont livrés au sein de leur séance ou de leur session (`agenda_items`). Toutes les collections sont facultatives : qui ne publie que des séances ne livre que `meetings`.
 
 Les entités y sont placées côte à côte, à plat, et reliées par des références — `parent_meeting`, `parent_voting`, `parent_attendance`, et ainsi de suite — plutôt qu'imbriquées les unes dans les autres. Il est ainsi possible de livrer après coup une séance isolée sans réémettre toute la législature, et de référencer la même entité depuis plusieurs endroits. Là où l'imbrication rend mieux le lien, elle reste possible : la session reprend ses séances sous forme de liste, le procès-verbal ses points de l'ordre du jour, ses votes et ses interventions.
 

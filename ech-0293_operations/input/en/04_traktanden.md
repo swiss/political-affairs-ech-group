@@ -19,8 +19,8 @@ The protocol is **referenced, not embedded**. The rule this standard applies thr
 ```
 Container
   ├─ meetings       → Meeting
+  │                     ├─ agenda_items → AgendaItem  (before: planned agenda items)
   │                     └─ has_protocol → identifier of the protocol
-  ├─ agenda_items   → AgendaItem  (before: planned agenda items, parent_meeting)
   └─ protocols      → Protocol    (after: the record, parent_meeting)
                         ├─ protocol_items  → ProtocolItem (same elements as AgendaItem)
                         ├─ votings
