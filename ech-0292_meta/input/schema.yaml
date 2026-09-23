@@ -15,7 +15,7 @@ prefixes:
   meta: https://ch.paf.link/schema/meta/
 imports:
   - linkml:types
-  - schema_common
+  - ../../ech-0292_meta/input/schema_common
 default_prefix: meta
 default_range: string
   
