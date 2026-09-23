@@ -19,9 +19,27 @@ The meeting dates and Teams links of the subgroups are given here: [meeting date
 
 The eCH Specialist Group Political Affairs uses a data-centric approach to develop its data schemata. This means that the **data schemata are the primary artifacts**. [LinkML](https://linkml.io/linkml/) is used to describe the data schema which in turn is also used to auto-generate parts of the documentation.
 
+## Common Data Elements
+
+Elements that several standards need – e.g. the mixins `HasIdentification`, `HasTemporalValidity` and `HasCreationModificationDates` or the class `MultilingualValue` – are defined once in [`ech-0292_meta/input/schema_common.yaml`](ech-0292_meta/input/schema_common.yaml). They are not part of the eCH-0292 standard itself: each standard imports the file and documents the elements it uses in its own document.
+
+```yaml
+imports:
+  - linkml:types
+  - ../../ech-0292_meta/input/schema_common
+
+classes:
+  Person:
+    mixins:
+      - HasIdentification
+      - HasCreationModificationDates
+```
+
+Import it with exactly this path, also from within `ech-0292_meta`: some LinkML tools resolve imports relative to the importing standard, and a shorter path breaks there.
+
 ## Important Documents
 
-- [Design Principles](ech-0292_meta/input/03_design_principles.md): A high level overview of the design principles followed by the eCH Specialist Group Political Affairs.
+- [Design Principles](ech-0292_meta/input/de/03_design_principles.md): A high level overview of the design principles followed by the eCH Specialist Group Political Affairs.
 - [LinkML Guidelines](docs/common/linkml_guidelines.md): A set of guidelines and best practices for using LinkML in the context of the eCH Specialist Group Political Affairs.
 - [Naming Conventions and URI Concept](docs/common/naming.md): A document describing the naming conventions and URI concept used in the data schemata.
 - [Documentation Workflow](docs/common/workflow.md): A document describing the workflow for generating documentation from the LinkML data schemata.
