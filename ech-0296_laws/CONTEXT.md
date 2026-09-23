@@ -38,3 +38,7 @@ The abstract base for a modeled inline markup element: `Ref, B, I, Sup, Span, Au
 
 **TextRun**:
 An `InlineElement` subclass carrying a plain run of text, so that a run of characters and a markup element can sit as ordered siblings in one `inline_content` list.
+
+## References
+
+- Marius Roth: [Aktuelle Anforderungen an amtliche Sammlungen](https://leges.weblaw.ch/legesissues/2013/1/2013133-62.html). LeGes 24 (2013) 1, pp. 33–62. Background on the systematic (consolidated) and chronological collections of federal and cantonal law and on what electronic publication and consolidation require of them.
