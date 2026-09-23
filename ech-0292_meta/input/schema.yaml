@@ -313,16 +313,48 @@ enums:
         Catégories de classification des documents référencés dans les normes eCH 0292-0297. Les libellés multilingues (DE/FR/IT/RM/EN) sont représentés au moyen d'`annotations` (convention `label_xx`) ; les premières propositions pour FR/IT/RM sont en cours de revue par le plénum.
     permissible_values:
 
+      meeting_planning:
+        title: Meeting planning
+        description: |
+          Planning of meetings and sessions. Examples: invitation, seating plan, time budget, deadlines for motions.
+        meaning: meta:vocabulary/document_category/MeetingPlanning
+        annotations:
+          description_de: |
+            Planung von Sitzungen und Sessionen. Beispiele: Einladung, Sitzplan, Zeitbudget, Fristen für Einzelanträge.
+          description_fr: |
+            Planification des séances et des sessions. Exemples : convocation, plan de salle, budget-temps, délais pour les propositions individuelles.
+          label_de: Sitzungsplanung
+          label_fr: Planification de séance
+          label_it: Pianificazione della seduta
+          label_rm: Planisaziun da sesida
+          label_en: Meeting planning
+
+      meeting_documents:
+        title: Meeting documents
+        description: |
+          Documents on the affairs of a meeting. Examples: agenda, session programme, list of parliamentary interventions.
+        meaning: meta:vocabulary/document_category/MeetingDocuments
+        annotations:
+          description_de: |
+            Unterlagen zu den Geschäften einer Sitzung. Beispiele: Traktandenliste, Sessionsprogramm, Vorstossliste.
+          description_fr: |
+            Documents relatifs aux affaires d'une séance. Exemples : ordre du jour, programme de session, liste des interventions.
+          label_de: Sitzungsunterlagen
+          label_fr: Documents de séance
+          label_it: Documenti di seduta
+          label_rm: Documents da sesida
+          label_en: Meeting documents
+
       protocol:
         title: Protocol
         description: |
-          Protocols of any kind. Examples: decision protocol, verbatim protocol, short protocol, daily journal (Tagblatt), opening speech, speaker list, audio and video recordings.
+          Record of the proceedings of a meeting. Examples: verbatim record, decision minutes, speaker list, video recording.
         meaning: meta:vocabulary/document_category/Protocol
         annotations:
           description_de: |
-            Protokolle aller Art. Beispiele: Entscheidungsprotokoll, Wortprotokoll, Kurzprotokoll, Tagblatt, Wortlautdokument, Eröffnungsrede, Sprecherliste, Audio- und Videoaufnahmen.
+            Aufzeichnung des Verlaufs einer Sitzung. Beispiele: Wortprotokoll, Beschlussprotokoll, Rednerliste, Videoaufzeichnung.
           description_fr: |
-            Procès-verbaux de tout type. Exemples : procès-verbal de décision, procès-verbal in extenso, procès-verbal succinct, bulletin officiel, discours d'ouverture, liste des orateurs, enregistrements audio et vidéo.
+            Enregistrement du déroulement d'une séance. Exemples : procès-verbal in extenso, procès-verbal des décisions, liste des orateurs, enregistrement vidéo.
           label_de: Protokoll
           label_fr: Procès-verbal
           label_it: Verbale
@@ -332,50 +364,66 @@ enums:
       voting_result:
         title: Voting result
         description: |
-          Voting and election results. Examples: voting protocol, election protocol, roll-call voting protocols.
+          Results of votes and elections. Examples: voting record, election record.
         meaning: meta:vocabulary/document_category/VotingResult
         annotations:
           description_de: |
-            Abstimmungs- und Wahlergebnisse. Beispiele: Abstimmungsprotokoll, Wahlprotokoll, Protokolle namentlicher Abstimmungen.
+            Ergebnisse von Abstimmungen und Wahlen. Beispiele: Abstimmungsprotokoll, Wahlprotokoll.
           description_fr: |
-            Résultats des votes et des élections. Exemples : procès-verbal de vote, procès-verbal d'élection, procès-verbaux des votes nominatifs.
+            Résultats des votes et des élections. Exemples : procès-verbal de vote, procès-verbal d'élection.
           label_de: Abstimmungsergebnis
           label_fr: Résultat du vote
           label_it: Risultato della votazione
           label_rm: Resultat da votaziun
           label_en: Voting result
 
-      meeting_documents:
-        title: Meeting documents
+      legislative_documents:
+        title: Legislative documents
         description: |
-          Meeting documents available at the start of a meeting concerning the affairs. Examples: agenda list, daily agenda, session programme, session preview, agendaed petitions, motion list, oath ceremony, daily journal supplements, affairs directory.
-        meaning: meta:vocabulary/document_category/MeetingDocuments
+          Documents of the legislative process. Examples: draft act, explanatory report, adopted act, consolidated version.
+        meaning: meta:vocabulary/document_category/LegislativeDocuments
         annotations:
           description_de: |
-            Sitzungsunterlagen, die zu Beginn einer Sitzung zu den Geschäften vorliegen. Beispiele: Traktandenliste, Tagesordnung, Sessionsprogramm, Sessionsvorschau, traktandierte Petitionen, Vorstossliste, Vereidigung/Gelübdenahme, Tagblattbeilagen, Geschäftsverzeichnis, Vorschau, Traktandenvorschau, Vorstoss Dringlichkeit.
+            Dokumente des Gesetzgebungsverfahrens. Beispiele: Erlassentwurf, erläuternder Bericht, beschlossener Erlass, konsolidierte Fassung.
           description_fr: |
-            Documents de séance disponibles au début d'une séance et relatifs aux affaires. Exemples : ordre du jour, programme de session, aperçu de la session, pétitions inscrites à l'ordre du jour, liste des interventions, prestation de serment, annexes du bulletin officiel, répertoire des affaires.
-          label_de: Sitzungsunterlagen
-          label_fr: Documents de séance
-          label_it: Documenti di seduta
-          label_rm: Documents da sesida
-          label_en: Meeting documents
+            Documents de la procédure législative. Exemples : projet d'acte, rapport explicatif, acte adopté, version consolidée.
+          label_de: Gesetzgebungsdokumente
+          label_fr: Documents législatifs
+          label_it: Documenti legislativi
+          label_rm: Documents legislativs
+          label_en: Legislative documents
 
-      meeting_planning:
-        title: Meeting planning
+      consultation_documents:
+        title: Consultation documents
         description: |
-          Planning documents for meetings and sessions. Examples: invitation, seating plan, work schedule, time budget, affairs planning, friday list, amendment deadlines, access authorization list, session events.
-        meaning: meta:vocabulary/document_category/MeetingPlanning
+          Documents opening a consultation. Examples: invitation, list of addressees, questionnaire, synoptic table.
+        meaning: meta:vocabulary/document_category/ConsultationDocuments
         annotations:
           description_de: |
-            Planungsdokumente für Sitzungen und Sessionen. Beispiele: Einladung, Sitzplan, Arbeitsplanung, Zeitbudget, Geschäftsplanung, Freitagsliste, Fristen für Einzelanträge, Liste der Zutrittsberechtigten, Veranstaltungen während der Session.
+            Unterlagen zur Eröffnung einer Vernehmlassung. Beispiele: Einladung, Adressatenliste, Fragebogen, synoptische Darstellung (Fahne).
           description_fr: |
-            Documents de planification des séances et des sessions. Exemples : convocation, plan de salle, planification des travaux, budget-temps, planification des affaires, liste du vendredi, délais pour les propositions individuelles, liste des personnes autorisées à accéder, manifestations durant la session.
-          label_de: Sitzungsplanung
-          label_fr: Planification de séance
-          label_it: Pianificazione della seduta
-          label_rm: Planisaziun da sesida
-          label_en: Meeting planning
+            Documents d'ouverture d'une consultation. Exemples : invitation, liste des destinataires, questionnaire, tableau synoptique.
+          label_de: Vernehmlassungsdokumente
+          label_fr: Documents de consultation
+          label_it: Documenti di consultazione
+          label_rm: Documents da consultaziun
+          label_en: Consultation documents
+
+      consultation_results:
+        title: Consultation results
+        description: |
+          Results of a consultation. Examples: statement of an organisation or person, report on the results.
+        meaning: meta:vocabulary/document_category/ConsultationResults
+        annotations:
+          description_de: |
+            Ergebnisse einer Vernehmlassung. Beispiele: Stellungnahme einer Organisation oder Person, Ergebnisbericht.
+          description_fr: |
+            Résultats d'une consultation. Exemples : prise de position d'une organisation ou d'une personne, rapport sur les résultats.
+          label_de: Vernehmlassungsresultate
+          label_fr: Résultats de la consultation
+          label_it: Risultati della consultazione
+          label_rm: Resultats da la consultaziun
+          label_en: Consultation results
 
       media_release:
         title: Media release
@@ -396,13 +444,13 @@ enums:
       group_documents:
         title: Group documents
         description: |
-          Documents belonging to a group (committee, party, delegation, etc.). Examples: statutes, establishment decrees, committee allocations, annual reports, reports on international activities.
+          Documents of a group such as a committee or party. Examples: statutes, annual report, committee allocation.
         meaning: meta:vocabulary/document_category/GroupDocuments
         annotations:
           description_de: |
-            Unterlagen, die zu einer Gruppe (Kommission, Partei, Delegation etc.) gehören. Beispiele: Statuten, Einsetzungsverfügungen, Kommissionszuweisungen, Jahresberichte, Berichte zu internationalen Aktivitäten.
+            Unterlagen einer Gruppe wie Kommission oder Partei. Beispiele: Statuten, Jahresbericht, Kommissionszuteilung.
           description_fr: |
-            Documents relatifs à un groupe (commission, parti, délégation, etc.). Exemples : statuts, décisions d'institution, attributions aux commissions, rapports annuels, rapports sur les activités internationales.
+            Documents d'un groupe tel qu'une commission ou un parti. Exemples : statuts, rapport annuel, répartition dans les commissions.
           label_de: Gruppenunterlagen
           label_fr: Documents de groupe
           label_it: Documenti di gruppo
@@ -412,13 +460,13 @@ enums:
       member_directory:
         title: Member directory
         description: |
-          Member directories. Examples: members of the federal councils, member directories of committees, groups and friendship groups, list of all Federal Councillors.
+          Lists of members. Examples: members of the councils, committee members, members of friendship groups.
         meaning: meta:vocabulary/document_category/MemberDirectory
         annotations:
           description_de: |
-            Mitgliederverzeichnisse. Beispiele: Mitglieder der eidgenössischen Räte, Mitgliederverzeichnisse von Kommissionen, Gruppen und Freundschaftsgruppen, Liste aller Bundesrätinnen und Bundesräte.
+            Mitgliederlisten. Beispiele: Mitglieder der Räte, Kommissionsmitglieder, Mitglieder von Freundschaftsgruppen.
           description_fr: |
-            Listes des membres. Exemples : membres des Chambres fédérales, listes des membres des commissions, des groupes et des groupes d'amitié, liste de toutes les conseillères et de tous les conseillers fédéraux.
+            Listes des membres. Exemples : membres des conseils, membres des commissions, membres des groupes d'amitié.
           label_de: Mitgliederverzeichnis
           label_fr: Liste des membres
           label_it: Elenco dei membri
@@ -428,13 +476,13 @@ enums:
       person_documents:
         title: Person documents
         description: |
-          Person-related documents. Examples: portraits of council members, photos, lists of personal staff.
+          Documents on individual persons. Examples: portrait of a council member, list of personal staff.
         meaning: meta:vocabulary/document_category/PersonDocuments
         annotations:
           description_de: |
-            Personenbezogene Unterlagen. Beispiele: Portraits der Ratsmitglieder, Fotos, Listen der persönlichen Mitarbeitenden.
+            Unterlagen zu einzelnen Personen. Beispiele: Porträt eines Ratsmitglieds, Liste der persönlichen Mitarbeitenden.
           description_fr: |
-            Documents relatifs aux personnes. Exemples : portraits des membres du conseil, photos, listes des collaboratrices et collaborateurs personnels.
+            Documents relatifs à des personnes. Exemples : portrait d'un membre du conseil, liste des collaboratrices et collaborateurs personnels.
           label_de: Personenunterlagen
           label_fr: Documents personnels
           label_it: Documenti personali
@@ -444,13 +492,13 @@ enums:
       interest_disclosure:
         title: Interest disclosure
         description: |
-          Registers of interest disclosures of council members. Examples: register of interest disclosures National Council, register of interest disclosures Council of States.
+          Registers of the interests of council members. Example: register of interests of the National Council.
         meaning: meta:vocabulary/document_category/InterestDisclosure
         annotations:
           description_de: |
-            Register der Interessenbindungen von Ratsmitgliedern. Beispiele: Register der Interessenbindungen Nationalrat, Register der Interessenbindungen Ständerat.
+            Register der Interessenbindungen von Ratsmitgliedern. Beispiel: Register der Interessenbindungen des Nationalrats.
           description_fr: |
-            Registres des liens d'intérêts des membres du conseil. Exemples : registre des liens d'intérêts du Conseil national, registre des liens d'intérêts du Conseil des États.
+            Registres des liens d'intérêts des membres des conseils. Exemple : registre des liens d'intérêts du Conseil national.
           label_de: Interessenbindungen
           label_fr: Liens d'intérêts
           label_it: Relazioni d'interesse
@@ -460,13 +508,13 @@ enums:
       other:
         title: Other
         description: |
-          Document type that cannot be assigned to any of the defined categories or where the category is unknown. Default value if `document_category` is not set explicitly.
+          Document that fits none of the categories, or whose category is unknown. Default if `document_category` is not set.
         meaning: meta:vocabulary/document_category/Other
         annotations:
           description_de: |
-            Dokumenttyp, der keiner der definierten Kategorien zugeordnet werden kann oder bei dem die Kategorie nicht bekannt ist. Default-Wert wenn `document_category` nicht explizit gesetzt wird.
+            Dokument, das keiner Kategorie zugeordnet werden kann oder dessen Kategorie unbekannt ist. Default, wenn `document_category` nicht gesetzt ist.
           description_fr: |
-            Type de document ne pouvant être rattaché à aucune des catégories définies ou dont la catégorie est inconnue. Valeur par défaut si `document_category` n'est pas explicitement renseigné.
+            Document ne relevant d'aucune catégorie ou dont la catégorie est inconnue. Valeur par défaut si `document_category` n'est pas renseigné.
           label_de: Andere
           label_fr: Autre
           label_it: Altro
