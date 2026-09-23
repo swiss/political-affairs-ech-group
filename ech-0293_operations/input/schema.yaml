@@ -209,15 +209,24 @@ classes:
       - joint_debates
       - text_segments
       - documents
+    slot_usage:
+      documents:
+        description: |
+          Documents on the agenda item as FRBR Works, e.g. dispatches and reports, motions and amendments.
+        annotations:
+          description_de: |
+            Unterlagen zum Traktandum als FRBR-Works, z.B. Botschaften und Berichte, Anträge und Änderungsanträge.
+          description_fr: |
+            Documents relatifs au point de l'ordre du jour, sous forme de FRBR Works, p. ex. messages et rapports, propositions et propositions d'amendement.
 
   AgendaItem:
     description: |
-      An agenda item of a meeting.
+      An agenda item of a meeting as planned beforehand. It structures the agenda and connects the temporal organisation (Meeting) with the substantive affairs (eCH-0295). Agenda items represent the planning of a meeting and are no longer changed in the data once the meeting has started: deviations during the meeting — items brought forward, postponed or added — are recorded in the protocol (ProtocolItem) and feed into the agenda of the next meeting. For the same reason, planned and actual times are kept separately.
     annotations:
       description_de: |
-        Ein Traktandum einer Sitzung.
+        Ein vorgängig geplantes Traktandum einer Sitzung. Es gliedert die Tagesordnung und verbindet die zeitliche Organisation (Meeting) mit den inhaltlichen Geschäften (eCH-0295). Traktanden bilden die Planung einer Sitzung ab und werden nach Sitzungsbeginn in den Daten nicht mehr geändert: Abweichungen während der Sitzung — vorgezogene, verschobene oder zusätzliche Traktanden — werden im Protokoll (ProtocolItem) erfasst und fliessen in die Traktandenliste der nächsten Sitzung ein. Aus demselben Grund werden geplante und tatsächliche Zeiten getrennt geführt.
       description_fr: |
-        Un point de l'ordre du jour d'une séance.
+        Un point de l'ordre du jour d'une séance, tel que planifié à l'avance. Il structure l'ordre du jour et relie l'organisation temporelle (Meeting) aux affaires matérielles (eCH-0295). Les points de l'ordre du jour représentent la planification d'une séance et ne sont plus modifiés dans les données une fois la séance ouverte : les écarts survenus durant la séance — points avancés, reportés ou ajoutés — sont consignés au procès-verbal (ProtocolItem) et se répercutent sur l'ordre du jour de la séance suivante. Pour la même raison, les heures prévues et effectives sont tenues séparément.
     mixins:
       - HasIdentification
       - IsEventWithDuration
@@ -226,12 +235,12 @@ classes:
 
   Protocol:
     description: |
-      The minutes of a meeting, recorded after the meeting. A wrapper container bundling the actually handled agenda items (protocol_items), votings, speeches, verbatim text segments and linked documents.
+      The minutes of a meeting, recorded after the meeting and kept exactly once per meeting. A wrapper container bundling the agenda items actually dealt with (protocol_items), votings, elections, speeches, verbatim text segments and linked documents. The protocol has its own identifier, can be cited on its own and is usually published later than the meeting; the meeting therefore only references it (Meeting.has_protocol), and the protocol itself is delivered in Container.protocols, so that it can be delivered later without delivering the meeting again. Within the protocol the collections are embedded, because they arise and are delivered together with it. Whoever publishes votings or speeches independently of the protocol delivers them flat in Container.votings or Container.speeches and links them via parent_meeting and the respective agenda item reference.
     annotations:
       description_de: |
-        Das nach der Sitzung erstellte Protokoll. Ein Wrapper-Container, der die tatsächlich behandelten Traktanden (protocol_items), Abstimmungen, Wortmeldungen, Wortlaut-Textsegmente und verknüpfte Dokumente bündelt.
+        Das Protokoll einer Sitzung, nach der Sitzung erstellt und pro Sitzung genau einmal geführt. Ein Wrapper-Container, der die effektiv behandelten Traktanden (protocol_items), Abstimmungen, Wahlen, Wortmeldungen, Wortlaut-Textsegmente und verknüpfte Dokumente bündelt. Das Protokoll hat einen eigenen Identifikator, ist eigenständig zitierbar und wird in der Regel später veröffentlicht als die Sitzung; die Sitzung referenziert es deshalb nur (Meeting.has_protocol), und das Protokoll selbst wird in Container.protocols geliefert, sodass es nachgeliefert werden kann, ohne die Sitzung erneut zu liefern. Innerhalb des Protokolls sind die Sammlungen eingebettet, weil sie zusammen mit ihm entstehen und geliefert werden. Wer Abstimmungen oder Wortmeldungen unabhängig vom Protokoll publiziert, liefert sie flach in Container.votings bzw. Container.speeches und verknüpft sie über parent_meeting und die jeweilige Traktandenreferenz.
       description_fr: |
-        Le procès-verbal établi après la séance. Un conteneur qui regroupe les points effectivement traités (protocol_items), les votes, les interventions, les segments de texte in extenso et les documents liés.
+        Le procès-verbal d'une séance, établi après celle-ci et tenu exactement une fois par séance. Un conteneur qui regroupe les points effectivement traités (protocol_items), les votes, les élections, les interventions, les segments de texte in extenso et les documents liés. Le procès-verbal possède son propre identifiant, peut être cité de manière autonome et est en règle générale publié après la séance ; la séance ne fait donc que le référencer (Meeting.has_protocol), et le procès-verbal lui-même est livré dans Container.protocols, de sorte qu'il puisse être livré ultérieurement sans relivrer la séance. À l'intérieur du procès-verbal, les collections sont imbriquées, car elles naissent et sont livrées avec lui. Qui publie des votes ou des interventions indépendamment du procès-verbal les livre à plat dans Container.votings ou Container.speeches et les relie par parent_meeting et la référence au point de l'ordre du jour correspondante.
     mixins:
       - HasIdentification
       - HasCreationModificationDates
@@ -246,12 +255,12 @@ classes:
 
   ProtocolItem:
     description: |
-      An agenda item as actually recorded in the protocol. It carries the same elements as AgendaItem through the IsAgendaItem mixin, but is a class in its own right: the record is not a special case of the plan.
+      An agenda item as actually recorded in the protocol. It carries the same elements as AgendaItem through the IsAgendaItem mixin, but is a class in its own right: the record is not a special case of the plan. It arises independently and may contain items that were never put on the agenda, just as the agenda may contain items that were never dealt with.
     annotations:
       description_de: |
-        Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde. Es führt über den Mixin IsAgendaItem dieselben Elemente wie AgendaItem, ist aber eine eigenständige Klasse: Das Protokollierte ist kein Sonderfall des Geplanten.
+        Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde. Es führt über das Mixin IsAgendaItem dieselben Elemente wie AgendaItem, ist aber eine eigenständige Klasse: Das Protokollierte ist kein Sonderfall des Geplanten. Es entsteht unabhängig und kann Traktanden enthalten, die nie traktandiert waren, so wie die Traktandenliste Punkte enthalten kann, die nie behandelt wurden.
       description_fr: |
-        Un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-verbal. Il porte, via le mixin IsAgendaItem, les mêmes éléments qu'AgendaItem, tout en restant une classe à part entière : le point consigné n'est pas un cas particulier du point planifié.
+        Un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-verbal. Il porte les mêmes éléments qu'AgendaItem par le mixin IsAgendaItem, mais constitue une classe à part entière : le point consigné n'est pas un cas particulier du point planifié. Il naît indépendamment et peut comprendre des points jamais mis à l'ordre du jour, de même que l'ordre du jour peut comprendre des points jamais traités.
     mixins:
       - HasIdentification
       - IsEventWithDuration
@@ -271,12 +280,12 @@ classes:
 
   Resolution:
     description: |
-      A resolution or decision taken on an agenda item, including voting procedures.
+      The formal decision taken on an agenda item, including the voting procedures applied. It records what was decided, whereas Voting records how it was decided (procedure and vote ratio). Not every decision rests on a formal vote: noting a report, tacit acceptance or administrative decisions come about without one.
     annotations:
       description_de: |
-        Eine Resolution oder Entscheidung zu einem Traktandum, einschliesslich Abstimmungsverfahren.
+        Der formale Beschluss zu einem Traktandum, einschliesslich der angewandten Abstimmungsverfahren. Er hält fest, was entschieden wurde, während Voting festhält, wie entschieden wurde (Verfahren und Stimmenverhältnis). Nicht jeder Beschluss beruht auf einer formalen Abstimmung: Kenntnisnahmen, stille Annahmen oder Administrativbeschlüsse kommen ohne eine solche zustande.
       description_fr: |
-        Une décision prise sur un point de l'ordre du jour, y compris les procédures de vote.
+        La décision formelle prise sur un point de l'ordre du jour, y compris les procédures de vote appliquées. Elle retient ce qui a été décidé, tandis que Voting retient comment il a été décidé (procédure et rapport de voix). Toute décision ne repose pas sur un vote formel : les prises de connaissance, les adoptions tacites ou les décisions administratives interviennent sans vote.
     slots:
       - resolution_type
       - type_label
@@ -285,12 +294,12 @@ classes:
 
   Voting: # Abstimmung
     description: |
-      A voting procedure with individual votes and results.
+      A voting on a substantive question: the subject (question), the procedure, the result with its vote ratio and — for open votings — the individual votes of the members. A voting is held in the course of the sitting and is therefore anchored in the protocol (parent_protocol, parent_protocol_item); it is also linked to the meeting (parent_meeting) and to the affair (affair_id). The presiding member does not take part in votings but casts the deciding vote in case of a tie (tie_breaker). The categorical decision (accepted, rejected, noted …) is not held on the voting but in the Resolution of the agenda item.
     annotations:
       description_de: |
-        Ein Abstimmungsverfahren mit Einzelstimmen und Ergebnissen.
+        Eine Abstimmung über eine Sachfrage: der Abstimmungsgegenstand (Frage), das Verfahren, das Ergebnis mit dem Stimmenverhältnis und — bei offenen Abstimmungen — die Einzelstimmen der Mitglieder. Abgestimmt wird im Verlauf der Sitzung, weshalb die Abstimmung im Protokoll verankert ist (parent_protocol, parent_protocol_item); zudem ist sie mit der Sitzung (parent_meeting) und dem Geschäft (affair_id) verknüpft. Die Präsidentin oder der Präsident nimmt an Abstimmungen nicht teil, fällt bei Stimmengleichheit aber den Stichentscheid (tie_breaker). Der kategorische Entscheid (angenommen, abgelehnt, Kenntnisnahme …) wird nicht auf der Abstimmung, sondern in der Resolution des Traktandums festgehalten.
       description_fr: |
-        Une procédure de vote avec les voix individuelles et les résultats.
+        Un vote sur une question matérielle : l'objet du vote (la question), la procédure, le résultat avec le rapport de voix et — pour les votes ouverts — les voix individuelles des membres. Le vote a lieu au cours de la séance et est donc rattaché au procès-verbal (parent_protocol, parent_protocol_item) ; il est en outre lié à la séance (parent_meeting) et à l'affaire (affair_id). La présidente ou le président ne participe pas aux votes, mais départage en cas d'égalité des voix (tie_breaker). La décision catégorielle (adopté, rejeté, pris acte …) n'est pas retenue sur le vote, mais dans la Resolution du point de l'ordre du jour.
     mixins:
       - HasIdentification
       - HasCreationModificationDates
@@ -338,12 +347,12 @@ classes:
 
   IndividualVote: # Einzelstimme  / vote individuel
     description: |
-      An individual vote cast by a member during a voting procedure.
+      The vote cast by an individual member in a voting. Individual votes are only recorded for open votings; for secret votings only the overall result is published. An individual vote concerns one specific voting and differs from attendance (Attendance), which records presence at the meeting as a whole: a member present at the meeting may be recorded as not_voted in a single voting, for instance because they briefly left the room.
     annotations:
       description_de: |
-        Eine Einzelstimme eines Mitglieds während eines Abstimmungsverfahrens.
+        Die Stimme, die ein einzelnes Mitglied in einer Abstimmung abgibt. Einzelstimmen werden nur bei offenen Abstimmungen erfasst; bei geheimen Abstimmungen wird nur das Gesamtergebnis publiziert. Eine Einzelstimme betrifft eine bestimmte Abstimmung und unterscheidet sich von der Anwesenheit (Attendance), welche die Präsenz an der Sitzung als Ganzes festhält: Ein an der Sitzung anwesendes Mitglied kann bei einer einzelnen Abstimmung mit not_voted erfasst werden, etwa weil es kurz den Saal verlassen hat.
       description_fr: |
-        Une voix individuelle exprimée par un membre lors d'une procédure de vote.
+        La voix exprimée par un membre lors d'un vote. Les voix individuelles ne sont saisies que pour les votes ouverts ; pour les votes secrets, seul le résultat global est publié. Une voix individuelle concerne un vote déterminé et se distingue de la présence (Attendance), qui retient la présence à la séance dans son ensemble : un membre présent à la séance peut être saisi avec not_voted lors d'un vote particulier, par exemple parce qu'il a brièvement quitté la salle.
     mixins:
       - HasIdentification
       - HasCreationModificationDates
@@ -354,15 +363,24 @@ classes:
       - weight
       - individual_vote_type
       - type_label
+    slot_usage:
+      actor_id:
+        description: |
+          The member who cast the vote, as a reference to a person according to eCH-0294.
+        annotations:
+          description_de: |
+            Das Mitglied, das die Stimme abgegeben hat, als Referenz auf eine Person gemäss eCH-0294.
+          description_fr: |
+            Le membre qui a exprimé la voix, sous forme de référence à une personne selon eCH-0294.
 
   Election: # Wahl
     description: |
-      An election procedure for selecting persons to positions.
+      An election in which a parliamentary body appoints one or several persons to an office or function. Unlike a voting (Voting), which decides substantive questions, an election is a decision on persons: it is often held by secret ballot and usually requires an absolute majority, whereas votings are mostly open. The presiding member, who does not take part in votings, does vote in elections. Each ballot is recorded as a separate election; the ballots of one election are linked through the common agenda item — for instance a first ballot requiring an absolute majority that remains without result, followed by a second ballot in which the relative majority suffices.
     annotations:
       description_de: |
-        Ein Wahlverfahren zur Wahl von Personen in Positionen.
+        Eine Wahl, mit der ein parlamentarisches Organ eine oder mehrere Personen für ein Amt oder eine Funktion bestimmt. Im Unterschied zur Abstimmung (Voting), die über Sachfragen entscheidet, ist die Wahl ein Personenentscheid: Sie erfolgt oft geheim und erfordert meist das absolute Mehr, während Abstimmungen meist offen sind. Die Präsidentin oder der Präsident, die an Abstimmungen nicht teilnehmen, stimmen bei Wahlen mit. Jeder Wahlgang wird als eigene Wahl erfasst; die Wahlgänge einer Wahl sind über das gemeinsame Traktandum verbunden — etwa ein erster Wahlgang mit absolutem Mehr, der ohne Ergebnis bleibt, und ein zweiter Wahlgang, in dem das relative Mehr genügt.
       description_fr: |
-        Une procédure d'élection visant à pourvoir des fonctions par des personnes.
+        Une élection par laquelle un organe parlementaire désigne une ou plusieurs personnes à une charge ou à une fonction. Contrairement au vote (Voting), qui tranche des questions matérielles, l'élection est une décision portant sur des personnes : elle a souvent lieu au scrutin secret et requiert en général la majorité absolue, alors que les votes sont le plus souvent ouverts. La présidente ou le président, qui ne participe pas aux votes, prend part aux élections. Chaque tour de scrutin est saisi comme une élection distincte ; les tours d'une même élection sont reliés par le point de l'ordre du jour commun — par exemple un premier tour à la majorité absolue resté sans résultat, suivi d'un second tour où la majorité relative suffit.
     mixins:
       - HasIdentification
       - HasCreationModificationDates
@@ -395,6 +413,14 @@ classes:
             Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).
           description_fr: |
             Référence à l'organe agissant (instantané au moment de la mise en relation).
+      title:
+        description: |
+          Title of the election, e.g. "Wahl Kommissionspräsidium WAK".
+        annotations:
+          description_de: |
+            Titel der Wahl, z.B. „Wahl Kommissionspräsidium WAK“.
+          description_fr: |
+            Titre de l'élection, p. ex. « Élection à la présidence de la CER ».
 
   Attendance:
     description: |
@@ -489,18 +515,35 @@ classes:
 
   Motion:
     description: |
-      A formal proposal or motion submitted during proceedings.
+      A formal proposal submitted during the proceedings, such as an amendment to a legal text, a procedural motion (e.g. closure of the debate) or a motion to refer back. It is an entity in its own right because an agenda item may contain several motions, each with its own course (submitted, supported, voted on) and possibly a vote of its own.
     annotations:
       description_de: |
-        Ein formeller Antrag, der während der Verhandlungen eingereicht wird.
+        Ein formaler Antrag, der während der Beratung gestellt wird, etwa ein Änderungsantrag zu einem Gesetzestext, ein Ordnungsantrag (z.B. Schluss der Debatte) oder ein Rückweisungsantrag. Er ist eine eigene Entität, weil ein Traktandum mehrere Anträge enthalten kann, die je einen eigenen Verlauf haben (gestellt, unterstützt, abgestimmt) und gegebenenfalls einzeln abgestimmt werden.
       description_fr: |
-        Une proposition formelle déposée au cours des délibérations.
+        Une proposition formelle déposée au cours des délibérations, par exemple une proposition d'amendement à un texte légal, une motion d'ordre (p. ex. clôture du débat) ou une proposition de renvoi. Elle constitue une entité propre, car un point de l'ordre du jour peut comprendre plusieurs propositions, chacune ayant son propre déroulement (déposée, soutenue, mise aux voix) et, le cas échéant, son propre vote.
     mixins:
       - HasIdentification
     slots:
       - title
       - description
       - documents
+    slot_usage:
+      title:
+        description: |
+          Short title of the motion.
+        annotations:
+          description_de: |
+            Kurztitel des Antrags.
+          description_fr: |
+            Titre abrégé de la proposition.
+      description:
+        description: |
+          Full text of the motion.
+        annotations:
+          description_de: |
+            Vollständiger Antragstext.
+          description_fr: |
+            Texte intégral de la proposition.
 
   Media:
     description: |
@@ -521,12 +564,12 @@ classes:
 
   TotalOther:
     description: |
-      Additional vote counts when multiple options are presented (e.g., Zurich uses 5 buttons).
+      Vote count for one option of a multiple-choice voting. If several proposals pointing in the same direction are put to the vote at the same time, the members vote on more than two variants and the variant with most votes prevails (in Zurich colloquially a „Cup-Abstimmung“, cast via several voting buttons). Such a voting is represented with voting_type other and a descriptive type_label; total_count_yes, total_count_no and total_count_abstention remain empty, and each option receives an entry with count and label. Example: Gemeinderat of the City of Zurich, sitting of 28 February 2024, affair 2023/361, four options with 75, 25, 12 and 0 votes.
     annotations:
       description_de: |
-        Zusätzliche Stimmzahlen, wenn mehrere Optionen zur Abstimmung gestellt werden (z.B. Zürich verwendet 5 Knöpfe).
+        Stimmenzahl für eine Option einer Auswahlabstimmung. Liegen zu derselben Sachfrage mehrere gleichgerichtete Anträge vor, stimmen die Mitglieder über mehr als zwei Varianten gleichzeitig ab, und es obsiegt die Variante mit den meisten Stimmen (in Zürich umgangssprachlich „Cup-Abstimmung“, technisch über mehrere Abstimmungsknöpfe). Eine solche Abstimmung wird mit voting_type other und einem sprechenden type_label abgebildet; total_count_yes, total_count_no und total_count_abstention bleiben leer, und jede Option erhält einen Eintrag mit count und label. Beispiel: Gemeinderat der Stadt Zürich, Sitzung vom 28. Februar 2024, Geschäft 2023/361, vier Optionen mit 75, 25, 12 und 0 Stimmen.
       description_fr: |
-        Décomptes de voix supplémentaires lorsque plusieurs options sont soumises au vote (p. ex. Zurich utilise 5 boutons).
+        Nombre de voix pour une option d'un vote à choix multiple. Lorsque plusieurs propositions de même sens portent sur la même question, les membres votent simultanément sur plus de deux variantes, et la variante qui obtient le plus de voix l'emporte (à Zurich, familièrement « Cup-Abstimmung », au moyen de plusieurs boutons de vote). Un tel vote est représenté avec voting_type other et un type_label explicite ; total_count_yes, total_count_no et total_count_abstention restent vides, et chaque option reçoit une entrée avec count et label. Exemple : Gemeinderat de la Ville de Zurich, séance du 28 février 2024, affaire 2023/361, quatre options avec 75, 25, 12 et 0 voix.
     slots:
       - count
       - label
@@ -644,22 +687,22 @@ slots:
 
   agenda_item_number:
     description: |
-      Sequential number of the agenda item (string type to support roman numerals).
+      Number of the agenda item on the agenda, e.g. "2.1" or "3" (string type to also support roman numerals).
     annotations:
       description_de: |
-        Laufnummer des Traktandums (String-Typ zur Unterstützung römischer Ziffern).
+        Nummer des Traktandums auf der Traktandenliste, z.B. „2.1“ oder „3“ (Zeichenkette, damit auch römische Ziffern möglich sind).
       description_fr: |
-        Numéro d'ordre du point de l'ordre du jour (type chaîne, afin de permettre les chiffres romains).
+        Numéro du point sur l'ordre du jour, p. ex. « 2.1 » ou « 3 » (chaîne de caractères, afin de permettre aussi les chiffres romains).
     range: string
 
   agenda_item_position:
     description: |
-      Integer position of the agenda item in the meeting sequence.
+      Integer position of the agenda item in the meeting sequence, used for sorting and display.
     annotations:
       description_de: |
-        Ganzzahlige Position des Traktandums in der Sitzungsreihenfolge.
+        Ganzzahlige Position des Traktandums im Sitzungsablauf, massgebend für Sortierung und Darstellung.
       description_fr: |
-        Position (nombre entier) du point de l'ordre du jour dans le déroulement de la séance.
+        Position entière du point dans le déroulement de la séance, déterminante pour le tri et l'affichage.
     range: integer
 
   agenda_item_title:
@@ -688,12 +731,12 @@ slots:
 
   agenda_item_category:
     description: |
-      Category for grouped agenda items (e.g., introduction, by department, technical agenda items).
+      Free categorisation of the agenda item by content or grouping, e.g. "Gesetzgebung", "Budget und Finanzen", "Interpellationen und Anfragen", "Wahlen", by department, or introductory and technical items. The categorisation is not standardised and may vary between federal units.
     annotations:
       description_de: |
-        Kategorie für gruppierte Traktanden (z.B. Einführung, nach Departement, technische Traktanden).
+        Freie Kategorisierung des Traktandums nach Inhalt oder Gruppierung, z.B. „Gesetzgebung“, „Budget und Finanzen“, „Interpellationen und Anfragen“, „Wahlen“, nach Departement oder einleitende und technische Traktanden. Die Kategorisierung ist nicht standardisiert und kann je nach Föderaleinheit variieren.
       description_fr: |
-        Catégorie pour les points de l'ordre du jour regroupés (p. ex. introduction, par département, points techniques).
+        Catégorisation libre du point selon son contenu ou son regroupement, p. ex. « Législation », « Budget et finances », « Interpellations et questions », « Élections », par département, ou points introductifs et techniques. La catégorisation n'est pas standardisée et peut varier selon l'unité fédérale.
     range: string
 
   sequential_number:
@@ -788,34 +831,34 @@ slots:
 
   vote_procedures:
     description: |
-      Procedures for voting, such as secret ballot or open vote.
+      Procedures by which the vote was taken. Open procedures: show of hands, standing, electronic voting, roll call, and in crisis situations remote voting (votes communicated to the presidency beforehand and recorded together with the vote in the chamber), circulation procedure or voting in virtual sittings. Secret procedures: secret ballot with ballot papers, electronic secret voting. The procedure determines whether individual votes can be recorded.
     annotations:
       description_de: |
-        Verfahren für die Abstimmung, wie geheime Abstimmung oder offene Abstimmung.
+        Verfahren, in denen abgestimmt wurde. Offene Verfahren: Handzeichen, Aufstehen, elektronische Abstimmung, Namensaufruf, in Krisenlagen zudem externe Stimmabgabe (vorgängig dem Präsidium mitgeteilte Stimmen, die zusammen mit der Abstimmung im Rat erfasst werden), Zirkulationsverfahren oder Stimmabgabe an virtuellen Sitzungen. Geheime Verfahren: Stimmzettel, elektronische geheime Abstimmung. Das Verfahren bestimmt, ob Einzelstimmen erfasst werden können.
       description_fr: |
-        Modalités du vote, p. ex. vote secret ou vote ouvert.
+        Procédures selon lesquelles le vote a eu lieu. Procédures ouvertes : main levée, assis-debout, vote électronique, appel nominal et, en situation de crise, vote à distance (voix communiquées à l'avance à la présidence et saisies en même temps que le vote au conseil), procédure par voie de circulation ou vote lors de séances virtuelles. Procédures secrètes : bulletin de vote, vote électronique secret. La procédure détermine si les voix individuelles peuvent être saisies.
     range: string
     multivalued: true
     inlined_as_list: true
 
   affair_id:
     description: |
-      The connection to the affairs (business items) of the agenda item.
+      Identifier of the affair (eCH-0295) the record refers to. Administrative agenda items (e.g. approval of the minutes) have no affair. An affair usually runs through several agenda items — in legislation, for instance, the debate on entering into the matter, the detailed deliberation, the final vote and, where applicable, the procedure for resolving differences between the chambers.
     annotations:
       description_de: |
-        Die Verbindung zu den Geschäften des Traktandums.
+        Identifikator des Geschäfts (eCH-0295), auf das sich der Eintrag bezieht. Administrative Traktanden (z.B. Genehmigung des Protokolls) haben kein Geschäft. Ein Geschäft durchläuft in der Regel mehrere Traktanden — in der Gesetzgebung etwa Eintretensdebatte, Detailberatung, Schlussabstimmung und gegebenenfalls die Differenzbereinigung zwischen den Räten.
       description_fr: |
-        Le lien vers les affaires rattachées au point de l'ordre du jour.
+        Identifiant de l'affaire (eCH-0295) à laquelle se rapporte l'enregistrement. Les points administratifs (p. ex. approbation du procès-verbal) n'ont pas d'affaire. Une affaire passe en règle générale par plusieurs points de l'ordre du jour — dans la législation, par exemple, le débat d'entrée en matière, la discussion par article, le vote final et, le cas échéant, la procédure d'élimination des divergences entre les conseils.
     range: string
 
   state_id:
     description: |
-      State identifier (reference to state enum or custom state).
+      State identifier of the agenda item (reference to a state enumeration or a custom state), e.g. pending (not yet dealt with), in_progress, completed, postponed (to a later meeting) or withdrawn.
     annotations:
       description_de: |
-        Zustands-Identifikator (Verweis auf das Status-Enum oder auf einen eigenen Zustand).
+        Zustands-Identifikator des Traktandums (Verweis auf ein Status-Enum oder auf einen eigenen Zustand), z.B. pending (noch nicht behandelt), in_progress (in Beratung), completed (abgeschlossen), postponed (auf eine spätere Sitzung vertagt) oder withdrawn (zurückgezogen).
       description_fr: |
-        Identifiant d'état (renvoi à l'énumération des états ou à un état propre).
+        Identifiant d'état du point (renvoi à une énumération des états ou à un état propre), p. ex. pending (pas encore traité), in_progress (en délibération), completed (traité), postponed (renvoyé à une séance ultérieure) ou withdrawn (retiré).
     range: string
 
   datetime_begin:
@@ -872,12 +915,12 @@ slots:
 
   weight:
     description: |
-      The number of votes held by the individual, if applicable (e.g., in cases where a person has multiple votes).
+      Voting weight of the member; normally 1. Other values arise, for instance, where a member also votes for an absent member (proxy, weight 2), in communal assemblies where legal entities hold several votes, or in historical systems in which different groups of persons had different voting weights.
     annotations:
       description_de: |
-        Die Anzahl der Stimmen, die die Einzelperson hat, falls zutreffend (z.B. in Fällen, in denen eine Person mehrere Stimmen hat).
+        Stimmgewicht des Mitglieds; im Normalfall 1. Andere Werte kommen etwa vor, wo ein Mitglied für ein abwesendes Mitglied mitstimmt (Stellvertretung, Gewicht 2), an Gemeindeversammlungen, an denen juristische Personen mehrere Stimmen haben, oder in historischen Systemen, in denen verschiedene Personengruppen unterschiedliches Stimmgewicht hatten.
       description_fr: |
-        Le nombre de voix dont dispose la personne, le cas échéant (p. ex. lorsqu'une personne détient plusieurs voix).
+        Poids de la voix du membre ; normalement 1. D'autres valeurs se présentent par exemple lorsqu'un membre vote aussi pour un membre absent (représentation, poids 2), dans les assemblées communales où des personnes morales disposent de plusieurs voix, ou dans des systèmes historiques où différents groupes de personnes avaient un poids de voix différent.
     range: integer
 
   count:
@@ -914,23 +957,23 @@ slots:
 
   parent_agenda_item:
     description: |
-      Identifier of the agenda item this record belongs to. On an agenda item it builds a hierarchy of agenda items; on a voting, election or speech it names the agenda item under which the record was handled.
+      Identifier of the agenda item this record belongs to. On an agenda item it builds a hierarchy of agenda items — e.g. an item group "Gesetzesberatungen" with the sub-items "Energiegesetz (Detailberatung)" and "Energiegesetz (Schlussabstimmung)"; on a speech it names the agenda item under which the speech was given.
     annotations:
       description_de: |
-        Identifikator des Traktandums, zu dem dieser Eintrag gehört. Bei einem Traktandum baut er eine Hierarchie von Traktanden auf, bei Abstimmung, Wahl oder Wortmeldung bezeichnet er das Traktandum, unter dem der Eintrag behandelt wurde.
+        Identifikator des Traktandums, zu dem dieser Eintrag gehört. Bei einem Traktandum bildet er eine Hierarchie von Traktanden — z.B. eine Traktandengruppe „Gesetzesberatungen“ mit den Untertraktanden „Energiegesetz (Detailberatung)“ und „Energiegesetz (Schlussabstimmung)“; bei einer Wortmeldung bezeichnet er das Traktandum, unter dem sie erfolgte.
       description_fr: |
-        Identifiant du point de l'ordre du jour auquel cet enregistrement se rattache. Pour un point de l'ordre du jour, il construit une hiérarchie de points ; pour un vote, une élection ou une intervention, il désigne le point sous lequel l'enregistrement a été traité.
+        Identifiant du point de l'ordre du jour auquel cet enregistrement se rattache. Pour un point de l'ordre du jour, il forme une hiérarchie de points — p. ex. un groupe « Délibérations législatives » avec les sous-points « Loi sur l'énergie (discussion par article) » et « Loi sur l'énergie (vote final) » ; pour une intervention, il désigne le point sous lequel elle a été faite.
     range: string
 
   parent_protocol:
     slot_uri: ops:parentProtocol
     description: |
-      The protocol in which the voting or election is recorded. A vote is held during the sitting and is therefore anchored in the minutes, not in the agenda planned beforehand.
+      The protocol in which the voting or election is recorded. A vote is held during the sitting and is therefore anchored in the minutes, not in the agenda planned beforehand: what was put on the agenda does not yet say what was actually voted on. Conversely, the protocol lists its votings and elections (votings, elections).
     annotations:
       description_de: |
-        Das Protokoll, in dem die Abstimmung oder Wahl festgehalten ist. Abgestimmt wird im Verlauf der Sitzung; die Abstimmung hängt deshalb am Protokoll und nicht an der vorgängig geplanten Traktandenliste.
+        Das Protokoll, in dem die Abstimmung oder Wahl festgehalten ist. Abgestimmt wird im Verlauf der Sitzung, weshalb die Abstimmung im Protokoll und nicht in der vorgängig geplanten Traktandenliste verankert ist: Was traktandiert wurde, sagt noch nicht, worüber tatsächlich abgestimmt wurde. Umgekehrt führt das Protokoll seine Abstimmungen und Wahlen als Listen (votings, elections).
       description_fr: |
-        Le procès-verbal dans lequel le vote ou l'élection est consigné. Un vote a lieu au cours de la séance et se rattache donc au procès-verbal et non à l'ordre du jour planifié à l'avance.
+        Le procès-verbal dans lequel le vote ou l'élection est consigné. Le vote a lieu au cours de la séance et se rattache donc au procès-verbal, et non à l'ordre du jour planifié à l'avance : ce qui a été mis à l'ordre du jour ne dit pas encore sur quoi il a effectivement été voté. Inversement, le procès-verbal reprend ses votes et élections sous forme de listes (votings, elections).
     range: Protocol
 
   parent_protocol_item:
@@ -946,12 +989,12 @@ slots:
 
   has_resolution:
     description: |
-      The resolution or decision taken on this agenda item.
+      The formal decision taken on this agenda item, e.g. the adoption of the energy law. The underlying voting with its vote ratio is recorded separately as a Voting.
     annotations:
       description_de: |
-        Die Resolution oder Entscheidung zu diesem Traktandum.
+        Der formale Beschluss zu diesem Traktandum, z.B. die Annahme des Energiegesetzes. Die zugrunde liegende Abstimmung mit dem Stimmenverhältnis wird separat als Voting erfasst.
       description_fr: |
-        La décision prise sur ce point de l'ordre du jour.
+        La décision formelle prise sur ce point de l'ordre du jour, p. ex. l'adoption de la loi sur l'énergie. Le vote sous-jacent avec son rapport de voix est saisi séparément comme Voting.
     range: Resolution
 
   joint_debates:
@@ -1043,12 +1086,12 @@ slots:
   tie_breaker:
     range: boolean
     description: |
-      Indicates if a tie-breaker was used in the voting.
+      Indicates whether the result was decided by the casting vote of the presiding member in case of a tie.
     annotations:
       description_de: |
-        Gibt an, ob ein Stichentscheid bei der Abstimmung verwendet wurde.
+        Gibt an, ob das Ergebnis bei Stimmengleichheit durch den Stichentscheid der Präsidentin oder des Präsidenten zustande kam.
       description_fr: |
-        Indique si une voix prépondérante a été utilisée lors du vote.
+        Indique si le résultat a été obtenu, en cas d'égalité des voix, par la voix prépondérante de la présidente ou du président.
 
   label_yes:
     range: string
@@ -1115,22 +1158,22 @@ slots:
     multivalued: true
     inlined_as_list: true
     description: |
-      Used when multiple options are presented for voting (e.g., 5 buttons in Zurich).
+      Vote counts for the options of a multiple-choice voting, one entry per option; used instead of total_count_yes, total_count_no and total_count_abstention (see TotalOther).
     annotations:
       description_de: |
-        Wird verwendet, wenn mehrere Optionen zur Abstimmung gestellt werden (z.B. 5 Knöpfe in Zürich).
+        Stimmenzahlen für die Optionen einer Auswahlabstimmung, ein Eintrag pro Option; tritt an die Stelle von total_count_yes, total_count_no und total_count_abstention (siehe TotalOther).
       description_fr: |
-        Utilisé lorsque plusieurs options sont soumises au vote (p. ex. 5 boutons à Zurich).
+        Nombres de voix pour les options d'un vote à choix multiple, une entrée par option ; remplace total_count_yes, total_count_no et total_count_abstention (voir TotalOther).
 
   total_absent:
     range: integer
     description: |
-      Total number of absent members. Distinction between absent/excused absent - presence is tracked on attendance list.
+      Number of absent members who could not take part. Whether an absence was excused is tracked on the attendance list (Attendance).
     annotations:
       description_de: |
-        Gesamtzahl abwesender Mitglieder. Unterscheidung zwischen abwesend/entschuldigt abwesend - Anwesenheit wird auf Anwesenheitsliste verfolgt.
+        Anzahl abwesender Mitglieder, die nicht teilnehmen konnten. Ob eine Abwesenheit entschuldigt war, hält die Anwesenheitsliste (Attendance) fest.
       description_fr: |
-        Nombre total de membres absents. La distinction entre absent et absent excusé se fait dans la liste de présence.
+        Nombre de membres absents qui n'ont pas pu participer. La liste de présence (Attendance) indique si une absence était excusée.
 
   total:
     range: integer
@@ -1165,12 +1208,12 @@ slots:
   result_text:
     range: string
     description: |
-      Free text describing the outcome of the vote, e.g., "Accepted with 78 votes".
+      Free text describing the outcome, e.g. "Accepted with 120 to 75 votes with 5 abstentions". For votings, the categorical decision (accepted, rejected, noted …) is not recorded here but in the Resolution (resolution_type) of the agenda item.
     annotations:
       description_de: |
-        Freitext zur Beschreibung des Ergebnisses der Abstimmung, z.B. „Mit 78 Stimmen angenommen“.
+        Freitext, der das Ergebnis beschreibt, z.B. „Mit 120 zu 75 Stimmen bei 5 Enthaltungen angenommen“. Bei Abstimmungen wird der kategorische Entscheid (angenommen, abgelehnt, Kenntnisnahme …) nicht hier, sondern in der Resolution (resolution_type) des Traktandums festgehalten.
       description_fr: |
-        Texte libre décrivant le résultat du vote, p. ex. « Accepté par 78 voix ».
+        Texte libre décrivant le résultat, p. ex. « Adopté par 120 voix contre 75 et 5 abstentions ». Pour les votes, la décision catégorielle (adopté, rejeté, pris acte …) n'est pas retenue ici, mais dans la Resolution (resolution_type) du point de l'ordre du jour.
 
 
   state:
@@ -1662,30 +1705,30 @@ enums:
       "absolute":
         meaning: ops:enum/majority_type/absolute
         description: |
-          Absolute majority.
+          Absolute majority: more than half of the reference base (members or votes cast, depending on the applicable rules), e.g. at least 101 of 200. Standard case for elections of persons such as the election of the Federal Council or of committee chairs, and required for constitutional amendments in some cantons. If nobody reaches it in the first ballot of an election, a second ballot usually follows in which the relative majority suffices.
         annotations:
           description_de: |
-            Absolutes Mehr.
+            Absolutes Mehr: mehr als die Hälfte der Bezugsgrösse (Mitglieder oder abgegebene Stimmen, je nach massgebender Regelung), z.B. mindestens 101 von 200. Standardfall bei Personenwahlen wie der Wahl des Bundesrats oder der Kommissionspräsidien und in einigen Kantonen für Verfassungsänderungen erforderlich. Erreicht bei einer Wahl im ersten Wahlgang niemand das absolute Mehr, folgt meist ein zweiter Wahlgang, in dem das relative Mehr genügt.
           description_fr: |
-            Majorité absolue.
+            Majorité absolue : plus de la moitié de la base de référence (membres ou voix exprimées, selon la réglementation applicable), p. ex. au moins 101 sur 200. Cas standard pour les élections de personnes telles que l'élection du Conseil fédéral ou des présidences de commission, et requise dans certains cantons pour les modifications constitutionnelles. Si personne ne l'atteint au premier tour d'une élection, un second tour suit généralement, où la majorité relative suffit.
       "two_thirds":
         meaning: ops:enum/majority_type/two_thirds
         description: |
-          Two-thirds majority.
+          Two-thirds majority, e.g. at least 134 of 200; required in some cantons for constitutional amendments.
         annotations:
           description_de: |
-            Zweidrittelmehr.
+            Zweidrittelmehrheit, z.B. mindestens 134 von 200; in einigen Kantonen für Verfassungsänderungen erforderlich.
           description_fr: |
-            Majorité des deux tiers.
+            Majorité des deux tiers, p. ex. au moins 134 sur 200 ; requise dans certains cantons pour les modifications constitutionnelles.
       "other":
         meaning: ops:enum/majority_type/other
         description: |
-          Other majority threshold not covered by the standard categories.
+          Other majority threshold not covered by the standard categories, e.g. the relative majority among several options in a multiple-choice voting.
         annotations:
           description_de: |
-            Andere Mehrheitsschwelle, nicht durch die Standardkategorien abgedeckt.
+            Anderes Mehrheitserfordernis, das nicht von den Standardkategorien abgedeckt ist, z.B. das relative Mehr unter mehreren Optionen einer Auswahlabstimmung.
           description_fr: |
-            Autre seuil de majorité, non couvert par les catégories standard.
+            Autre seuil de majorité non couvert par les catégories standard, p. ex. la majorité relative entre plusieurs options d'un vote à choix multiple.
 
   ResolutionTypeEnum:
     description: |
@@ -1699,30 +1742,30 @@ enums:
       "accepted":
         meaning: ops:enum/resolution_type/accepted
         description: |
-          Accepted (Annahme)
+          Accepted (Annahme): e.g. a bill adopted, a motion approved, a decision taken.
         annotations:
           description_de: |
-            Annahme
+            Annahme: z.B. eine Gesetzesvorlage angenommen, ein Antrag gutgeheissen, ein Beschluss gefasst.
           description_fr: |
-            Acceptation
+            Adoption : p. ex. un projet de loi adopté, une proposition approuvée, une décision prise.
       "rejected":
         meaning: ops:enum/resolution_type/rejected
         description: |
-          Rejected (Ablehnung)
+          Rejected (Ablehnung): e.g. a bill rejected, a motion dismissed.
         annotations:
           description_de: |
-            Ablehnung
+            Ablehnung: z.B. eine Gesetzesvorlage abgelehnt, ein Antrag abgewiesen.
           description_fr: |
-            Rejet
+            Rejet : p. ex. un projet de loi rejeté, une proposition repoussée.
       "noted":
         meaning: ops:enum/resolution_type/noted
         description: |
-          Noted (Kenntnisnahme)
+          Noted (Kenntnisnahme): e.g. reports without a vote, communications, informative agenda items.
         annotations:
           description_de: |
-            Kenntnisnahme
+            Kenntnisnahme: z.B. Berichte ohne Abstimmung, Mitteilungen, informative Traktanden.
           description_fr: |
-            Prise d'acte
+            Prise d'acte : p. ex. rapports sans vote, communications, points informatifs.
       "accepted_point_by_point":
         meaning: ops:enum/resolution_type/accepted_point_by_point
         description: |
@@ -1781,48 +1824,48 @@ enums:
       "preliminary_vote":
         meaning: ops:enum/voting_type/preliminary_vote
         description: |
-          Preliminary vote (Zwischenabstimmung)
+          Preliminary vote (Zwischenabstimmung) during the deliberation, e.g. on entering into an affair, on a motion, opposing two motions that exclude each other or refer to the same passage, a contingent vote (Eventualabstimmung) when more than two motions exist on one subject, on a single article of a law, or the overall vote after the first reading of an act deliberated in two readings.
         annotations:
           description_de: |
-            Zwischenabstimmung
+            Zwischenabstimmung während der Beratung, z.B. über Eintreten auf ein Geschäft, über einen Antrag, Gegenüberstellung zweier Anträge, die sich gegenseitig ausschliessen oder sich auf denselben Textabschnitt beziehen, Eventualabstimmung, wenn zu einem Abstimmungsgegenstand mehr als zwei Anträge vorliegen, über einen einzelnen Artikel eines Gesetzes oder Gesamtabstimmung nach der ersten Lesung eines Erlasses, der in zwei Lesungen beraten wird.
           description_fr: |
-            Vote intermédiaire
+            Vote intermédiaire au cours de la délibération, p. ex. sur l'entrée en matière, sur une proposition, opposition de deux propositions qui s'excluent mutuellement ou portent sur le même passage, vote éventuel lorsque plus de deux propositions portent sur un même objet, sur un article isolé d'une loi, ou vote sur l'ensemble après la première lecture d'un acte délibéré en deux lectures.
       "final_vote":
         meaning: ops:enum/voting_type/final_vote
         description: |
-          Final vote (Schlussabstimmung)
+          Final vote (Schlussabstimmung) on the proposal as a whole, e.g. after the last reading of an act, the overall vote on a decree, the adoption or rejection of a proposal in its entirety, or the point-by-point vote on a parliamentary proposal.
         annotations:
           description_de: |
-            Schlussabstimmung
+            Schlussabstimmung über die Vorlage als Ganzes, z.B. nach der letzten Lesung eines Erlasses, Gesamtabstimmung über einen Beschluss, Annahme oder Ablehnung einer Vorlage in ihrer Gesamtheit oder punktweise Abstimmung über einen Vorstoss.
           description_fr: |
-            Vote final
+            Vote final sur l'objet dans son ensemble, p. ex. après la dernière lecture d'un acte, vote sur l'ensemble d'un arrêté, adoption ou rejet d'un objet dans sa totalité, ou vote point par point sur une intervention parlementaire.
       "tie_breaker_president":
         meaning: ops:enum/voting_type/tie_breaker_president
         description: |
-          President's tie-breaking vote (Stichentscheid Präsidium)
+          Casting vote of the presiding member in case of a tie (Stichentscheid Präsidium). The presiding member does not take part in votings but decides in case of a tie. In a secret vote ending in a tie, the proposal of the preparatory body is deemed accepted instead.
         annotations:
           description_de: |
-            Stichentscheid Präsidium
+            Stichentscheid der Präsidentin oder des Präsidenten bei Stimmengleichheit. Die Präsidentin oder der Präsident nimmt an Abstimmungen nicht teil, entscheidet aber bei Stimmengleichheit. Endet eine geheime Abstimmung mit Stimmengleichheit, gilt stattdessen der Antrag des vorberatenden Ratsorgans als angenommen.
           description_fr: |
-            Voix prépondérante de la présidence
+            Voix prépondérante de la présidente ou du président en cas d'égalité des voix. La présidente ou le président ne participe pas aux votes, mais tranche en cas d'égalité. Si un vote secret aboutit à une égalité, c'est la proposition de l'organe préparatoire qui est réputée adoptée.
       "secret_vote":
         meaning: ops:enum/voting_type/secret_vote
         description: |
-          Secret ballot (Geheime Wahl/Abstimmung)
+          Secret ballot (Geheime Abstimmung), e.g. on particularly sensitive matters such as a request for pardon or the lifting of immunity, after a secret deliberation, or on request. Only the overall result is published.
         annotations:
           description_de: |
-            Geheime Wahl/Abstimmung
+            Geheime Abstimmung, z.B. über besonders heikle Sachgeschäfte wie ein Gnadengesuch oder die Aufhebung der Immunität, nach geheimer Beratung oder auf Antrag. Publiziert wird nur das Gesamtergebnis.
           description_fr: |
-            Vote ou élection à bulletin secret
+            Vote secret, p. ex. sur des objets particulièrement sensibles tels qu'un recours en grâce ou la levée de l'immunité, après une délibération secrète ou sur demande. Seul le résultat global est publié.
       "other":
         meaning: ops:enum/voting_type/other
         description: |
-          Other voting type
+          Other voting type, specified in type_label — e.g. a multiple-choice voting on several proposals pointing in the same direction (see TotalOther).
         annotations:
           description_de: |
-            Andere Abstimmungsart
+            Anderer Abstimmungstyp, näher bezeichnet in type_label — z.B. eine Auswahlabstimmung über mehrere gleichgerichtete Anträge (siehe TotalOther).
           description_fr: |
-            Autre type de vote
+            Autre type de vote, précisé dans type_label — p. ex. un vote à choix multiple sur plusieurs propositions de même sens (voir TotalOther).
 
   IndividualVoteTypeEnum:
     description: |
@@ -1836,57 +1879,57 @@ enums:
       "yes":
         meaning: ops:enum/individual_vote_type/yes
         description: |
-          Vote in favor (yes)
+          Yes vote: the member approves the proposal or motion.
         annotations:
           description_de: |
-            Ja-Stimme
+            Ja-Stimme: Das Mitglied stimmt der Vorlage oder dem Antrag zu.
           description_fr: |
-            Voix favorable (oui)
+            Oui : le membre approuve l'objet ou la proposition.
       "no":
         meaning: ops:enum/individual_vote_type/no
         description: |
-          Vote against (no)
+          No vote: the member rejects the proposal or motion.
         annotations:
           description_de: |
-            Nein-Stimme
+            Nein-Stimme: Das Mitglied lehnt die Vorlage oder den Antrag ab.
           description_fr: |
-            Voix défavorable (non)
+            Non : le membre rejette l'objet ou la proposition.
       "abstention":
         meaning: ops:enum/individual_vote_type/abstention
         description: |
-          Abstention
+          Abstention: the member takes part in the voting but abstains; with electronic voting, by pressing the "abstention" button.
         annotations:
           description_de: |
-            Enthaltung
+            Enthaltung: Das Mitglied nimmt an der Abstimmung teil, enthält sich aber der Stimme; bei elektronischer Stimmabgabe drückt es den Knopf „Enthaltung“.
           description_fr: |
-            Abstention
+            Abstention : le membre participe au vote mais s'abstient ; en cas de vote électronique, il presse le bouton « abstention ».
       "not_voted":
         meaning: ops:enum/individual_vote_type/not_voted
         description: |
-          Not Voted
+          Not voted: the member did not cast a vote, for instance because they were present but did not vote or were absent.
         annotations:
           description_de: |
-            Nicht abgestimmt
+            Nicht gestimmt: Das Mitglied hat keine Stimme abgegeben, etwa weil es anwesend war, aber nicht gestimmt hat, oder abwesend war.
           description_fr: |
-            N'a pas voté
+            N'a pas voté : le membre n'a pas exprimé de voix, par exemple parce qu'il était présent sans voter ou absent.
       "tie_breaker":
         meaning: ops:enum/individual_vote_type/tie_breaker
         description: |
-          Tie-breaking vote, usually cast by the presiding officer
+          Tie-breaking vote, cast by the presiding member in case of a tie (see voting_type tie_breaker_president).
         annotations:
           description_de: |
-            Stichentscheid, meist durch Präsidium
+            Stichentscheid, den die Präsidentin oder der Präsident bei Stimmengleichheit fällt (siehe voting_type tie_breaker_president).
           description_fr: |
-            Voix prépondérante, généralement exprimée par la présidence
+            Voix prépondérante, exprimée par la présidente ou le président en cas d'égalité des voix (voir voting_type tie_breaker_president).
       "other":
         meaning: ops:enum/individual_vote_type/other
         description: |
-          Other vote type
+          Vote that cannot be placed on the yes/no axis — for instance in a multiple-choice voting, where the member voted but neither yes nor no; the chosen option is held in type_label (e.g. "Auswahl A"). Counterpart of total_other on the voting, which keeps the individual vote evaluable without a separate enumeration value for every cantonal selection mechanism.
         annotations:
           description_de: |
-            Andere Stimmabgabe
+            Stimme, die sich nicht auf die Ja/Nein-Achse bringen lässt — etwa bei einer Auswahlabstimmung, bei der das Mitglied gestimmt hat, aber weder Ja noch Nein; welche Option es gewählt hat, hält type_label fest (z.B. „Auswahl A“). Gegenstück zu total_other auf der Abstimmung; so bleibt die Einzelstimme auswertbar, ohne dass jede kantonale Auswahlmechanik einen eigenen Enum-Wert braucht.
           description_fr: |
-            Autre forme de vote
+            Voix qui ne peut être placée sur l'axe oui/non — par exemple lors d'un vote à choix multiple, où le membre a voté, mais ni oui ni non ; l'option choisie est retenue dans type_label (p. ex. « Choix A »). Pendant de total_other sur le vote ; la voix individuelle reste ainsi exploitable sans qu'il faille une valeur d'énumération propre pour chaque mécanisme de choix cantonal.
 
   AgendaItemTypeEnum:
     description: |
@@ -1900,21 +1943,21 @@ enums:
       "item":
         meaning: ops:enum/agenda_item_type/item
         description: |
-          Individual agenda item (Traktandum)
+          Individual agenda item (Traktandum) with deliberation and, where applicable, a vote.
         annotations:
           description_de: |
-            Einzelnes Traktandum
+            Einzelnes Traktandum mit Beratung und gegebenenfalls Abstimmung.
           description_fr: |
-            Point isolé de l'ordre du jour
+            Point individuel de l'ordre du jour, avec délibération et, le cas échéant, vote.
       "group":
         meaning: ops:enum/agenda_item_type/group
         description: |
-          Group of agenda items (Traktandengruppe)
+          Group of agenda items (Traktandengruppe) under which sub-items are arranged via parent_agenda_item, e.g. "Gesetzesberatungen".
         annotations:
           description_de: |
-            Traktandengruppe
+            Gruppe von Traktanden (Traktandengruppe), unter der Untertraktanden über parent_agenda_item eingeordnet werden, z.B. „Gesetzesberatungen“.
           description_fr: |
-            Groupe de points de l'ordre du jour
+            Groupe de points (groupe de points de l'ordre du jour) sous lequel des sous-points sont rangés au moyen de parent_agenda_item, p. ex. « Délibérations législatives ».
 
   ElectionTypeEnum:
     description: |
@@ -1928,30 +1971,30 @@ enums:
       "secret":
         meaning: ops:enum/election_type/secret
         description: |
-          Secret election (Geheime Wahl)
+          Secret election (Geheime Wahl): votes are cast anonymously, by ballot paper or an electronic secret system, so it cannot be traced who elected whom. Standard for elections of persons and often required by law — at federal level e.g. the Federal Council (elected by the United Federal Assembly with an absolute majority in the first ballots), federal judges and committee chairs; at cantonal level e.g. the president of parliament, the president of the government, the presidents of the highest courts, judges, the state chancellor and committee chairs. Only the overall result is published, no individual votes.
         annotations:
           description_de: |
-            Geheime Wahl
+            Geheime Wahl: Die Stimmen werden anonym abgegeben, mit Wahlzettel oder elektronischem Geheimwahlsystem, sodass nicht nachvollziehbar ist, wer wen gewählt hat. Standard bei Personenwahlen und oft gesetzlich vorgeschrieben — auf Bundesebene z.B. Bundesrat (durch die Vereinigte Bundesversammlung, in den ersten Wahlgängen mit absolutem Mehr), Bundesrichterinnen und Bundesrichter sowie Kommissionspräsidien; auf Kantonsebene z.B. Parlamentspräsidentin oder Parlamentspräsident, Regierungspräsidentin oder Regierungspräsident, Präsidentinnen und Präsidenten der obersten Gerichte, Richterinnen und Richter, Staatsschreiberin oder Staatsschreiber sowie Kommissionspräsidien. Publiziert wird nur das Gesamtergebnis, keine Einzelstimmen.
           description_fr: |
-            Élection à bulletin secret
+            Élection secrète : les voix sont exprimées anonymement, au moyen d'un bulletin ou d'un système électronique de vote secret, de sorte qu'on ne peut savoir qui a élu qui. Standard pour les élections de personnes et souvent prescrite par la loi — au niveau fédéral p. ex. le Conseil fédéral (par l'Assemblée fédérale Chambres réunies, à la majorité absolue lors des premiers tours), les juges fédérales et juges fédéraux et les présidences de commission ; au niveau cantonal p. ex. la présidence du parlement, la présidence du gouvernement, les présidences des tribunaux suprêmes, les juges, la chancelière ou le chancelier d'État et les présidences de commission. Seul le résultat global est publié, sans voix individuelles.
       "open":
         meaning: ops:enum/election_type/open
         description: |
-          Open election (Offene Wahl)
+          Open election (Offene Wahl): votes are cast openly and it is traceable who elected whom, so individual votes can be recorded. Used where transparency is desired, for uncontested elections or in smaller bodies.
         annotations:
           description_de: |
-            Offene Wahl
+            Offene Wahl: Die Stimmen werden offen abgegeben, und es ist nachvollziehbar, wer wen gewählt hat; Einzelstimmen können daher erfasst werden. Üblich, wo Transparenz gewünscht ist, bei unumstrittenen Wahlen oder in kleineren Gremien.
           description_fr: |
-            Élection à main levée
+            Élection ouverte : les voix sont exprimées ouvertement et l'on peut savoir qui a élu qui ; les voix individuelles peuvent donc être saisies. Usuelle lorsque la transparence est souhaitée, pour les élections non disputées ou dans les organes de petite taille.
       "silent":
         meaning: ops:enum/election_type/silent
         description: |
-          Silent election without opponent (Stille Wahl ohne Gegenkandidat)
+          Silent election (Stille Wahl) without formal vote, by acclamation or consensus; possible only when no objection is raised, e.g. the re-election of a committee chair without a rival candidate.
         annotations:
           description_de: |
-            Stille Wahl ohne Gegenkandidatur
+            Stille Wahl ohne formale Abstimmung, durch Akklamation oder Konsens; nur möglich, wenn keine Gegenstimmen erhoben werden, z.B. die Wiederwahl einer Kommissionspräsidentin oder eines Kommissionspräsidenten ohne Gegenkandidatur.
           description_fr: |
-            Élection tacite sans candidature adverse
+            Élection tacite sans vote formel, par acclamation ou consensus ; possible uniquement si aucune opposition n'est formulée, p. ex. la réélection d'une présidente ou d'un président de commission sans candidature concurrente.
 
   AttendanceTypeEnum:
     description: |
