@@ -4,7 +4,6 @@ meetings:
 
 - global_uri: ops:meeting_sg_2025_03_15
   spatial: "https://ld.admin.ch/canton/17"
-  meeting_type: "session"
   name:
     - text: "Kantonsratssitzung vom 15. März 2025"
       language: "de"
@@ -30,7 +29,6 @@ meetings:
 
 - global_uri: ops:meeting_be_committee_wak_2025_05_12
   spatial: "https://ld.admin.ch/canton/2"
-  meeting_type: "committee"
   name:
     - text: "Sitzung Kommission für Wirtschaft und Abgaben"
       language: "de"
@@ -57,7 +55,6 @@ meetings:
 
 - global_uri: ops:meeting_gl_landsgemeinde_2025
   spatial: "https://ld.admin.ch/canton/8"
-  meeting_type: "sitting"
   name:
     - text: "Landsgemeinde 2025"
       language: "de"

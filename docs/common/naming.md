@@ -27,7 +27,7 @@ Examples: `id`, `body_key`, `meeting_items`
 - suffix `Enum` (visually distinguishes enums from classes in `range:` references and matches the LinkML default `standard_naming` linter rule)
 - English
 
-Examples: `DocumentCategoryEnum`, `MeetingTypeEnum`, `VotingTypeEnum`
+Examples: `DocumentCategoryEnum`, `StateEnum`, `VotingTypeEnum`
 
 ### Permissible Values
 

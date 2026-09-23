@@ -55,6 +55,4 @@ A meeting is the individual sitting of a body — the level at which agenda item
 
 {{include:ech-0293_operations/output/docs/Meeting.md}}
 
-{{include:ech-0293_operations/output/docs/MeetingTypeEnum.md}}
-
 {{include:ech-0293_operations/output/docs/StateEnum.md}}

@@ -130,7 +130,6 @@ classes:
       - HasCreationModificationDates
     slots:
       - spatial
-      - meeting_type
       - administrative_id
       - name
       - url
@@ -1171,16 +1170,6 @@ slots:
       description_fr: |
         Texte libre décrivant le résultat du vote, p. ex. « Accepté par 78 voix ».
 
-  meeting_type:
-    slot_uri: ops:meetingType
-    description: |
-      Type of the meeting, e.g. session, committee, sitting, various.
-    annotations:
-      description_de: |
-        Art der Sitzung, z.B. Session, Kommission, Sessionssitzung, Verschiedenes.
-      description_fr: |
-        Type de séance, p. ex. session, commission, séance de session, divers.
-    range: MeetingTypeEnum
 
   state:
     description: |
@@ -1658,51 +1647,6 @@ enums:
           description_fr: |
             La séance a été reportée.
 
-  MeetingTypeEnum:
-    description: |
-      Type of the meeting.
-    annotations:
-      description_de: |
-        Art der Sitzung.
-      description_fr: |
-        Type de séance.
-    permissible_values:
-      "session":
-        meaning: ops:enum/meeting_type/session
-        description: |
-          Plenary sitting of the whole parliament or of one chamber.
-        annotations:
-          description_de: |
-            Plenarsitzung des gesamten Parlaments oder einer Kammer.
-          description_fr: |
-            Séance plénière de l'ensemble du parlement ou d'une chambre.
-      "committee":
-        meaning: ops:enum/meeting_type/committee
-        description: |
-          Meeting of a parliamentary committee.
-        annotations:
-          description_de: |
-            Sitzung einer parlamentarischen Kommission.
-          description_fr: |
-            Séance d'une commission parlementaire.
-      "sitting":
-        meaning: ops:enum/meeting_type/sitting
-        description: |
-          Special forms of assembly (e.g. Landsgemeinde, communal assembly).
-        annotations:
-          description_de: |
-            Besondere Versammlungsformen (z.B. Landsgemeinde, Gemeindeversammlung).
-          description_fr: |
-            Formes particulières d'assemblée (p. ex. Landsgemeinde, assemblée communale).
-      "various":
-        meaning: ops:enum/meeting_type/various
-        description: |
-          Other forms of meeting not covered by the categories above.
-        annotations:
-          description_de: |
-            Andere Sitzungsformen, die nicht in die obigen Kategorien fallen.
-          description_fr: |
-            Autres formes de séance non couvertes par les catégories ci-dessus.
 
   MajorityTypeEnum:
     description: |

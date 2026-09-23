@@ -55,6 +55,4 @@ Un Meeting est la séance individuelle d'un organe — le niveau auquel les poin
 
 {{include:ech-0293_operations/output/docs/Meeting.md}}
 
-{{include:ech-0293_operations/output/docs/MeetingTypeEnum.md}}
-
 {{include:ech-0293_operations/output/docs/StateEnum.md}}
