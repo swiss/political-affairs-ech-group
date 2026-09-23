@@ -81,7 +81,7 @@ The field **attendance_type** (enum `AttendanceTypeEnum`) records the type of at
 
 #### Reason
 
-The field **reason** (multilingual) can record the reason for absence or lateness as free text.
+The field **reason** (multilingual) can record the reason for absence, lateness or substitution as free text.
 
 ### Difference: Attendance vs. IndividualVote
 

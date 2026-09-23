@@ -81,7 +81,7 @@ Das Feld **attendance_type** (Enum `AttendanceTypeEnum`) erfasst die Art der Anw
 
 #### Grund
 
-Das Feld **reason** (mehrsprachig) kann den Grund für Abwesenheit oder Verspätung als Freitext erfassen.
+Das Feld **reason** (mehrsprachig) kann den Grund für Abwesenheit, Verspätung oder Vertretung als Freitext erfassen.
 
 ### Unterschied: Attendance vs. IndividualVote
 

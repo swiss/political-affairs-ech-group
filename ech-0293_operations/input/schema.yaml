@@ -1427,12 +1427,12 @@ slots:
 
   reason:
     description: |
-      Reason for absence or lateness (free-text, multilingual).
+      Reason for absence, lateness or substitution (free-text, multilingual).
     annotations:
       description_de: |
-        Grund für Abwesenheit oder Verspätung (Freitext, mehrsprachig).
+        Grund für Abwesenheit, Verspätung oder Vertretung (Freitext, mehrsprachig).
       description_fr: |
-        Motif de l'absence ou du retard (texte libre, multilingue).
+        Motif de l'absence, du retard ou de la suppléance (texte libre, multilingue).
     range: MultilingualString
     multivalued: true
     inlined_as_list: true

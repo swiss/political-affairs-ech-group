@@ -81,7 +81,7 @@ Le champ **attendance_type** (énumération `AttendanceTypeEnum`) saisit le type
 
 #### Motif
 
-Le champ **reason** (multilingue) permet de saisir en texte libre le motif d'une absence ou d'un retard.
+Le champ **reason** (multilingue) permet de saisir en texte libre le motif d'une absence, d'un retard ou d'une suppléance.
 
 ### Différence : Attendance et IndividualVote
 
