@@ -65,19 +65,90 @@ _Un groupe, une organisation ou une collectivité politique (p. ex. parti, commi
 
 
 ### Exemples
-#### Exemple Group : Council bureau referencing its parliament
+#### Exemple Group : Extra-parliamentary commission with decision-making powers
 
 ```yaml
 groups:
-- local_id: 50
-  global_uri: https://grosserrat.bs.ch/gremien/praesidium-und-buero
+- global_uri: https://www.weko.admin.ch/
   label:
-  - value: Büro des Grossen Rates
+  - value: Wettbewerbskommission
+    language: de
+  - value: Commission de la concurrence
+    language: fr
+  - value: Commissione della concorrenza
+    language: it
+  abbreviation:
+  - value: WEKO
+    language: de
+  - value: COMCO
+    language: fr
+  - value: COMCO
+    language: it
+  landing_page:
+  - value: https://www.weko.admin.ch/de
+    language: de
+  - value: https://www.weko.admin.ch/fr
+    language: fr
+  - value: https://www.weko.admin.ch/it
+    language: it
+  group_type:
+    group_type_enum: committee_extraparliamentary
+    label:
+    - value: Ausserparlamentarische Kommission
+      language: de
+  spatial: https://ld.admin.ch/country/CHE
+
+```
+#### Exemple Group : Committee referencing its cantonal council
+
+```yaml
+groups:
+- local_id: 3
+  global_uri: >-
+    https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/geschaeftspruefungskommission/
+  label:
+  - value: Geschäftsprüfungskommission
+    language: de
+  abbreviation:
+  - value: GPK
     language: de
   group_type:
-    group_type_enum: council_bureau
+    group_type_enum: committee
     label:
-    - value: Ratsbüro
+    - value: Kommission
+      language: de
+  spatial: https://ld.admin.ch/canton/15
+  parent_groups:
+  - local_id: 34
+    global_uri: https://www.ar.ch/kantonsrat/
+    label: Kantonsrat Appenzell Ausserrhoden
+
+- local_id: 34
+  global_uri: https://www.ar.ch/kantonsrat/
+  label:
+  - value: Kantonsrat Appenzell Ausserrhoden
+    language: de
+  group_type:
+    group_type_enum: council_legislative
+    label:
+    - value: Parlament (Legislativrat)
+      language: de
+  spatial: https://ld.admin.ch/canton/15
+
+```
+#### Exemple Group : Parliamentary group referencing the parliament it belongs to
+
+```yaml
+groups:
+- local_id: 1266
+  global_uri: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen/mitte-evp
+  label:
+  - value: Die Mitte / Evangelische Volkspartei
+    language: de
+  group_type:
+    group_type_enum: parliamentary_group
+    label:
+    - value: Fraktion
       language: de
   spatial: https://ld.admin.ch/canton/12
   parent_groups:
@@ -85,17 +156,44 @@ groups:
     global_uri: https://www.grosserrat.bs.ch/
     label: Grosser Rat Basel-Stadt
 
-- local_id: 33
-  global_uri: https://www.grosserrat.bs.ch/
+```
+#### Exemple Group : Association with UID and legal form from the commercial register
+
+```yaml
+groups:
+- global_uri: https://www.frc.ch/
+  organization_uid: CHE106063525
+  legal_form: '0109'
   label:
-  - value: Grosser Rat Basel-Stadt
+  - value: Fédération romande des consommateurs
+    language: fr
+  abbreviation:
+  - value: FRC
+    language: fr
+  group_type:
+    group_type_enum: association
+    label:
+    - value: Verein
+      language: de
+  spatial: https://ld.admin.ch/canton/22
+
+```
+#### Exemple Group : Municipal parliament with spatial reference
+
+```yaml
+groups:
+- local_id: 700
+  global_uri: >-
+    https://www.stadt.sg.ch/home/verwaltung-politik/demokratie-politik/stadtparlament.html
+  label:
+  - value: Stadtparlament St. Gallen
     language: de
   group_type:
     group_type_enum: council_legislative
     label:
     - value: Parlament (Legislativrat)
       language: de
-  spatial: https://ld.admin.ch/canton/12
+  spatial: https://ld.admin.ch/municipality/3203
 
 ```
 #### Exemple Group : Cantonal party referencing its national party
@@ -174,48 +272,6 @@ groups:
   valid_from: 2012-01-01
 
 ```
-#### Exemple Group : Parliamentary group referencing the parliament it belongs to
-
-```yaml
-groups:
-- local_id: 1266
-  global_uri: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen/mitte-evp
-  label:
-  - value: Die Mitte / Evangelische Volkspartei
-    language: de
-  group_type:
-    group_type_enum: parliamentary_group
-    label:
-    - value: Fraktion
-      language: de
-  spatial: https://ld.admin.ch/canton/12
-  parent_groups:
-  - local_id: 33
-    global_uri: https://www.grosserrat.bs.ch/
-    label: Grosser Rat Basel-Stadt
-
-```
-#### Exemple Group : Association with UID and legal form from the commercial register
-
-```yaml
-groups:
-- global_uri: https://www.frc.ch/
-  organization_uid: CHE106063525
-  legal_form: '0109'
-  label:
-  - value: Fédération romande des consommateurs
-    language: fr
-  abbreviation:
-  - value: FRC
-    language: fr
-  group_type:
-    group_type_enum: association
-    label:
-    - value: Verein
-      language: de
-  spatial: https://ld.admin.ch/canton/22
-
-```
 #### Exemple Group : State chancellery referencing its government
 
 ```yaml
@@ -247,61 +303,6 @@ groups:
     - value: Regierung (Exekutivrat)
       language: de
   spatial: https://ld.admin.ch/canton/12
-
-```
-#### Exemple Group : Municipal parliament with spatial reference
-
-```yaml
-groups:
-- local_id: 700
-  global_uri: >-
-    https://www.stadt.sg.ch/home/verwaltung-politik/demokratie-politik/stadtparlament.html
-  label:
-  - value: Stadtparlament St. Gallen
-    language: de
-  group_type:
-    group_type_enum: council_legislative
-    label:
-    - value: Parlament (Legislativrat)
-      language: de
-  spatial: https://ld.admin.ch/municipality/3203
-
-```
-#### Exemple Group : Committee referencing its cantonal council
-
-```yaml
-groups:
-- local_id: 3
-  global_uri: >-
-    https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/geschaeftspruefungskommission/
-  label:
-  - value: Geschäftsprüfungskommission
-    language: de
-  abbreviation:
-  - value: GPK
-    language: de
-  group_type:
-    group_type_enum: committee
-    label:
-    - value: Kommission
-      language: de
-  spatial: https://ld.admin.ch/canton/15
-  parent_groups:
-  - local_id: 34
-    global_uri: https://www.ar.ch/kantonsrat/
-    label: Kantonsrat Appenzell Ausserrhoden
-
-- local_id: 34
-  global_uri: https://www.ar.ch/kantonsrat/
-  label:
-  - value: Kantonsrat Appenzell Ausserrhoden
-    language: de
-  group_type:
-    group_type_enum: council_legislative
-    label:
-    - value: Parlament (Legislativrat)
-      language: de
-  spatial: https://ld.admin.ch/canton/15
 
 ```
 #### Exemple Group : Bilingual delegation to an intercantonal body
@@ -347,38 +348,37 @@ groups:
   valid_from: 2007-12-12
 
 ```
-#### Exemple Group : Extra-parliamentary commission with decision-making powers
+#### Exemple Group : Council bureau referencing its parliament
 
 ```yaml
 groups:
-- global_uri: https://www.weko.admin.ch/
+- local_id: 50
+  global_uri: https://grosserrat.bs.ch/gremien/praesidium-und-buero
   label:
-  - value: Wettbewerbskommission
+  - value: Büro des Grossen Rates
     language: de
-  - value: Commission de la concurrence
-    language: fr
-  - value: Commissione della concorrenza
-    language: it
-  abbreviation:
-  - value: WEKO
-    language: de
-  - value: COMCO
-    language: fr
-  - value: COMCO
-    language: it
-  landing_page:
-  - value: https://www.weko.admin.ch/de
-    language: de
-  - value: https://www.weko.admin.ch/fr
-    language: fr
-  - value: https://www.weko.admin.ch/it
-    language: it
   group_type:
-    group_type_enum: committee_extraparliamentary
+    group_type_enum: council_bureau
     label:
-    - value: Ausserparlamentarische Kommission
+    - value: Ratsbüro
       language: de
-  spatial: https://ld.admin.ch/country/CHE
+  spatial: https://ld.admin.ch/canton/12
+  parent_groups:
+  - local_id: 33
+    global_uri: https://www.grosserrat.bs.ch/
+    label: Grosser Rat Basel-Stadt
+
+- local_id: 33
+  global_uri: https://www.grosserrat.bs.ch/
+  label:
+  - value: Grosser Rat Basel-Stadt
+    language: de
+  group_type:
+    group_type_enum: council_legislative
+    label:
+    - value: Parlament (Legislativrat)
+      language: de
+  spatial: https://ld.admin.ch/canton/12
 
 ```
 

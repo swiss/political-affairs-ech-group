@@ -57,25 +57,121 @@ _A membership relationship between a person and a group, representing formal aff
 
 
 ### Examples
-#### Example Membership: Role outside the vocabulary named in the role label
+#### Example Membership: The same person at another level with another electoral district
 
 ```yaml
 memberships:
-- global_uri: act:ms_jans_ejpd
+- global_uri: act:ms_jans_nationalrat
   person_reference:
     local_id: 4032
     global_uri: https://www.admin.ch/de/beat-jans
     label: Beat Jans
   group_reference:
-    global_uri: https://www.ejpd.admin.ch/
-    label: Eidgenössisches Justiz- und Polizeidepartement
-  role_type:
-    role_type_enum: other
-    role_label:
-    - value: Departementsvorsteher
+    global_uri: https://www.parlament.ch/de/organe/nationalrat
+    label: Nationalrat
+  electoral_district:
+    global_uri: https://ld.admin.ch/canton/12
+    label:
+    - value: Basel-Stadt
       language: de
-  valid_from: 2024-01-01
+  role_type:
+    role_type_enum: member
+    role_label:
+    - value: Mitglied
+      language: de
+    - value: Membro
+      language: it
+  authorized_to_vote: true
+  valid_from: 2010-05-31
+  valid_through: 2011-12-04
+  is_active: false
+
+```
+#### Example Membership: Party membership without temporal information
+
+```yaml
+memberships:
+- global_uri: act:ms_jans_partei_sp
+  person_reference:
+    local_id: 4032
+    global_uri: https://www.admin.ch/de/beat-jans
+    label: Beat Jans
+  group_reference:
+    global_uri: https://www.sp-ps.ch/
+    label: Sozialdemokratische Partei der Schweiz
+  role_type:
+    role_type_enum: member
   is_active: true
+
+```
+#### Example Membership: Person and group from the same delivery with electoral district
+
+```yaml
+memberships:
+- global_uri: act:ms_jans_grossrat_bs
+  person_reference:
+    local_id: 4032
+    global_uri: https://www.admin.ch/de/beat-jans
+    label: Beat Jans
+  group_reference:
+    local_id: 33
+    global_uri: https://www.grosserrat.bs.ch/
+    label: Grosser Rat Basel-Stadt
+  electoral_district:
+    global_uri: https://grosserrat.bs.ch/wahlkreise/kleinbasel
+    label:
+    - value: Kleinbasel
+      language: de
+  role_type:
+    role_type_enum: member
+  authorized_to_vote: true
+  valid_from: 2001-02-07
+  valid_through: 2011-04-30
+  is_active: false
+
+```
+#### Example Membership: Committee membership with a duration of its own
+
+```yaml
+memberships:
+- global_uri: act:ms_jans_wak_bs
+  person_reference:
+    local_id: 4032
+    global_uri: https://www.admin.ch/de/beat-jans
+    label: Beat Jans
+  group_reference:
+    global_uri: https://grosserrat.bs.ch/gremien/sachkommissionen/wirtschaft-abgaben
+    label: Wirtschafts- und Abgabekommission (WAK)
+  role_type:
+    role_type_enum: member
+  authorized_to_vote: true
+  valid_from: 2003-02-12
+  valid_through: 2011-04-30
+  is_active: false
+
+```
+#### Example Membership: Executive mandate with a presiding role
+
+```yaml
+memberships:
+- global_uri: act:ms_jans_regierungsrat_bs
+  person_reference:
+    local_id: 4032
+    global_uri: https://www.admin.ch/de/beat-jans
+    label: Beat Jans
+  group_reference:
+    local_id: 1300
+    global_uri: https://www.regierungsrat.bs.ch/
+    label: Regierungsrat Basel-Stadt
+  role_type:
+    role_type_enum: president
+    role_label:
+    - value: Regierungspräsident
+      language: de
+  authorized_to_vote: true
+  valid_from: 2021-02-03
+  valid_through: 2023-12-31
+  is_active: false
 
 ```
 #### Example Membership: Ongoing mandate without an end date
@@ -117,120 +213,24 @@ memberships:
   is_active: false
 
 ```
-#### Example Membership: Committee membership with a duration of its own
+#### Example Membership: Role outside the vocabulary named in the role label
 
 ```yaml
 memberships:
-- global_uri: act:ms_jans_wak_bs
+- global_uri: act:ms_jans_ejpd
   person_reference:
     local_id: 4032
     global_uri: https://www.admin.ch/de/beat-jans
     label: Beat Jans
   group_reference:
-    global_uri: https://grosserrat.bs.ch/gremien/sachkommissionen/wirtschaft-abgaben
-    label: Wirtschafts- und Abgabekommission (WAK)
+    global_uri: https://www.ejpd.admin.ch/
+    label: Eidgenössisches Justiz- und Polizeidepartement
   role_type:
-    role_type_enum: member
-  authorized_to_vote: true
-  valid_from: 2003-02-12
-  valid_through: 2011-04-30
-  is_active: false
-
-```
-#### Example Membership: The same person at another level with another electoral district
-
-```yaml
-memberships:
-- global_uri: act:ms_jans_nationalrat
-  person_reference:
-    local_id: 4032
-    global_uri: https://www.admin.ch/de/beat-jans
-    label: Beat Jans
-  group_reference:
-    global_uri: https://www.parlament.ch/de/organe/nationalrat
-    label: Nationalrat
-  electoral_district:
-    global_uri: https://ld.admin.ch/canton/12
-    label:
-    - value: Basel-Stadt
-      language: de
-  role_type:
-    role_type_enum: member
+    role_type_enum: other
     role_label:
-    - value: Mitglied
+    - value: Departementsvorsteher
       language: de
-    - value: Membro
-      language: it
-  authorized_to_vote: true
-  valid_from: 2010-05-31
-  valid_through: 2011-12-04
-  is_active: false
-
-```
-#### Example Membership: Executive mandate with a presiding role
-
-```yaml
-memberships:
-- global_uri: act:ms_jans_regierungsrat_bs
-  person_reference:
-    local_id: 4032
-    global_uri: https://www.admin.ch/de/beat-jans
-    label: Beat Jans
-  group_reference:
-    local_id: 1300
-    global_uri: https://www.regierungsrat.bs.ch/
-    label: Regierungsrat Basel-Stadt
-  role_type:
-    role_type_enum: president
-    role_label:
-    - value: Regierungspräsident
-      language: de
-  authorized_to_vote: true
-  valid_from: 2021-02-03
-  valid_through: 2023-12-31
-  is_active: false
-
-```
-#### Example Membership: Person and group from the same delivery with electoral district
-
-```yaml
-memberships:
-- global_uri: act:ms_jans_grossrat_bs
-  person_reference:
-    local_id: 4032
-    global_uri: https://www.admin.ch/de/beat-jans
-    label: Beat Jans
-  group_reference:
-    local_id: 33
-    global_uri: https://www.grosserrat.bs.ch/
-    label: Grosser Rat Basel-Stadt
-  electoral_district:
-    global_uri: https://grosserrat.bs.ch/wahlkreise/kleinbasel
-    label:
-    - value: Kleinbasel
-      language: de
-  role_type:
-    role_type_enum: member
-  authorized_to_vote: true
-  valid_from: 2001-02-07
-  valid_through: 2011-04-30
-  is_active: false
-
-```
-#### Example Membership: Party membership without temporal information
-
-```yaml
-memberships:
-- global_uri: act:ms_jans_partei_sp
-  person_reference:
-    local_id: 4032
-    global_uri: https://www.admin.ch/de/beat-jans
-    label: Beat Jans
-  group_reference:
-    global_uri: https://www.sp-ps.ch/
-    label: Sozialdemokratische Partei der Schweiz
-  role_type:
-    role_type_enum: member
+  valid_from: 2024-01-01
   is_active: true
 
 ```

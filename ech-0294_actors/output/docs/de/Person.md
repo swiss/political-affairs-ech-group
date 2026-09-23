@@ -64,21 +64,6 @@ _Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften und Ber
 
 
 ### Beispiele
-#### Beispiel Person: Telling apart persons with identical names via the label
-
-```yaml
-persons:
-- local_id: 6447
-  global_uri: https://www.ur.ch/behoerdenmitglieder/6447
-  label: Alois Arnold (1981)
-  birth_year: 1981
-  names:
-  - name_type: PersonFirstName
-    value: Alois
-  - name_type: PersonOfficialName
-    value: Arnold
-
-```
 #### Beispiel Person: Non-binary gender entry with occupation and training
 
 ```yaml
@@ -104,14 +89,14 @@ persons:
     value: MLaw
 
 ```
-#### Beispiel Person: Telling apart persons with identical names via the label second person
+#### Beispiel Person: Telling apart persons with identical names via the label
 
 ```yaml
 persons:
-- local_id: 6370
-  global_uri: https://www.ur.ch/behoerdenmitglieder/6370
-  label: Alois Arnold (1965)
-  birth_year: 1965
+- local_id: 6447
+  global_uri: https://www.ur.ch/behoerdenmitglieder/6447
+  label: Alois Arnold (1981)
+  birth_year: 1981
   names:
   - name_type: PersonFirstName
     value: Alois
@@ -150,6 +135,21 @@ persons:
     value: Bozzi-Brunel
   - name_type: PersonOriginalName
     value: Brunel
+
+```
+#### Beispiel Person: Telling apart persons with identical names via the label second person
+
+```yaml
+persons:
+- local_id: 6370
+  global_uri: https://www.ur.ch/behoerdenmitglieder/6370
+  label: Alois Arnold (1965)
+  birth_year: 1965
+  names:
+  - name_type: PersonFirstName
+    value: Alois
+  - name_type: PersonOfficialName
+    value: Arnold
 
 ```
 #### Beispiel Person: Fully recorded person
