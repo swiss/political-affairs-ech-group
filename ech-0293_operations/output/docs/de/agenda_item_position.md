@@ -26,6 +26,7 @@ URI: [ops:agenda_item_position](https://ch.paf.link/schema/operations/agenda_ite
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
+| [IsAgendaItem](IsAgendaItem.md) | Eine Mixin-Klasse, welche die Elemente eines Traktandums bereitstellt: Bezeic... |  no  |
 | [AgendaItem](AgendaItem.md) | Ein Traktandum einer Sitzung |  no  |
 | [ProtocolItem](ProtocolItem.md) | Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde |  no  |
 
@@ -41,7 +42,7 @@ URI: [ops:agenda_item_position](https://ch.paf.link/schema/operations/agenda_ite
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [Integer](Integer.md) |
-| Domäne von | [AgendaItem](AgendaItem.md) |
+| Domäne von | [IsAgendaItem](IsAgendaItem.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -82,7 +83,7 @@ description: 'Ganzzahlige Position des Traktandums in der Sitzungsreihenfolge.
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 domain_of:
-- AgendaItem
+- IsAgendaItem
 range: integer
 
 ```

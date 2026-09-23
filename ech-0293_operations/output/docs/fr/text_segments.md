@@ -26,7 +26,10 @@ URI: [ops:textSegment](https://ch.paf.link/schema/operations/textSegment)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
+| [IsAgendaItem](IsAgendaItem.md) | Une classe mixin qui fournit les éléments d'un point de l'ordre du jour : dés... |  no  |
 | [Protocol](Protocol.md) | Le procès-verbal établi après la séance |  no  |
+| [AgendaItem](AgendaItem.md) | Un point de l'ordre du jour d'une séance |  no  |
+| [ProtocolItem](ProtocolItem.md) | Un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-... |  no  |
 
 
 
@@ -40,7 +43,7 @@ URI: [ops:textSegment](https://ch.paf.link/schema/operations/textSegment)
 | Propriété | Valeur |
 | --- | --- |
 | Plage | [TextSegment](TextSegment.md) |
-| Domaine de | [Protocol](Protocol.md) |
+| Domaine de | [IsAgendaItem](IsAgendaItem.md), [Protocol](Protocol.md) |
 | URI du slot | [ops:textSegment](https://ch.paf.link/schema/operations/textSegment) |
 
 ### Cardinalité et exigences
@@ -83,6 +86,7 @@ from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 slot_uri: ops:textSegment
 domain_of:
+- IsAgendaItem
 - Protocol
 range: TextSegment
 multivalued: true

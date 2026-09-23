@@ -23,6 +23,7 @@ _Le procès-verbal établi après la séance. Un conteneur qui regroupe les poin
 | parent_meeting | 0..1 <br/> [String](String.md) | Identifiant de la séance liée qui regroupe la séance courante.  |
 | protocol_items | * <br/> [ProtocolItem](ProtocolItem.md) | Points de l'ordre du jour tels qu'ils ont effectivement été consignés au procès-verbal.  |
 | votings | * <br/> [Voting](Voting.md) | Ensemble des votes.  |
+| elections | * <br/> [Election](Election.md) | Ensemble des élections.  |
 | speeches | * <br/> [Speech](Speech.md) | Ensemble des interventions.  |
 | text_segments | * <br/> [TextSegment](TextSegment.md) | Ensemble de segments de texte (p. ex. procès-verbal in extenso).  |
 | documents | * <br/> [Work](Work.md) | Liste des documents (FRBR Works) liés à l'entité.  |
@@ -41,6 +42,8 @@ _Le procès-verbal établi après la séance. Un conteneur qui regroupe les poin
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [protocols](protocols.md) | range | [Protocol](Protocol.md) |
 | [Meeting](Meeting.md) | [protocol_ref](protocol_ref.md) | range | [Protocol](Protocol.md) |
+| [Voting](Voting.md) | [parent_protocol](parent_protocol.md) | range | [Protocol](Protocol.md) |
+| [Election](Election.md) | [parent_protocol](parent_protocol.md) | range | [Protocol](Protocol.md) |
 
 
 

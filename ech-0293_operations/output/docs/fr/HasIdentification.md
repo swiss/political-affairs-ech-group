@@ -25,7 +25,7 @@ _Une classe mixin qui fournit des slots pour l'identification d'une entité. Ell
 
 ### Utilisation de mixin
 
-[Container](Container.md), [Legislature](Legislature.md), [Session](Session.md), [Meeting](Meeting.md), [AgendaItem](AgendaItem.md), [Protocol](Protocol.md), [Voting](Voting.md), [IndividualVote](IndividualVote.md), [Election](Election.md), [Attendance](Attendance.md), [IndividualAttendance](IndividualAttendance.md), [Speech](Speech.md), [TextSegment](TextSegment.md), [Motion](Motion.md), [Media](Media.md)
+[Container](Container.md), [Legislature](Legislature.md), [Session](Session.md), [Meeting](Meeting.md), [AgendaItem](AgendaItem.md), [Protocol](Protocol.md), [ProtocolItem](ProtocolItem.md), [Voting](Voting.md), [IndividualVote](IndividualVote.md), [Election](Election.md), [Attendance](Attendance.md), [IndividualAttendance](IndividualAttendance.md), [Speech](Speech.md), [TextSegment](TextSegment.md), [Motion](Motion.md), [Media](Media.md)
 
 
 

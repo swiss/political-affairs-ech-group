@@ -27,6 +27,7 @@ URI: [ops:state_name](https://ch.paf.link/schema/operations/state_name)
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
 | [Meeting](Meeting.md) | Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, Sess... |  no  |
+| [IsAgendaItem](IsAgendaItem.md) | Eine Mixin-Klasse, welche die Elemente eines Traktandums bereitstellt: Bezeic... |  no  |
 | [AgendaItem](AgendaItem.md) | Ein Traktandum einer Sitzung |  no  |
 | [ProtocolItem](ProtocolItem.md) | Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde |  no  |
 
@@ -42,7 +43,7 @@ URI: [ops:state_name](https://ch.paf.link/schema/operations/state_name)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [String](String.md) |
-| Domäne von | [Meeting](Meeting.md), [AgendaItem](AgendaItem.md) |
+| Domäne von | [Meeting](Meeting.md), [IsAgendaItem](IsAgendaItem.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -83,7 +84,7 @@ from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 domain_of:
 - Meeting
-- AgendaItem
+- IsAgendaItem
 range: string
 
 ```

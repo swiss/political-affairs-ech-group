@@ -26,7 +26,10 @@ URI: [ops:textSegment](https://ch.paf.link/schema/operations/textSegment)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [IsAgendaItem](IsAgendaItem.md) | A mixin class that provides the elements of an agenda item: designation, type... |  no  |
 | [Protocol](Protocol.md) | The minutes of a meeting, recorded after the meeting |  no  |
+| [AgendaItem](AgendaItem.md) | An agenda item of a meeting |  no  |
+| [ProtocolItem](ProtocolItem.md) | An agenda item as actually recorded in the protocol |  no  |
 
 
 
@@ -40,7 +43,7 @@ URI: [ops:textSegment](https://ch.paf.link/schema/operations/textSegment)
 | Property | Value |
 | --- | --- |
 | Range | [TextSegment](TextSegment.md) |
-| Domain Of | [Protocol](Protocol.md) |
+| Domain Of | [IsAgendaItem](IsAgendaItem.md), [Protocol](Protocol.md) |
 | Slot URI | [ops:textSegment](https://ch.paf.link/schema/operations/textSegment) |
 
 ### Cardinality and Requirements
@@ -83,6 +86,7 @@ from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 slot_uri: ops:textSegment
 domain_of:
+- IsAgendaItem
 - Protocol
 range: TextSegment
 multivalued: true

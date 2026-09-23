@@ -27,6 +27,7 @@ URI: [ops:state_name](https://ch.paf.link/schema/operations/state_name)
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
 | [Meeting](Meeting.md) | Une classe générale de séance utilisée pour les sessions, les séances de comm... |  no  |
+| [IsAgendaItem](IsAgendaItem.md) | Une classe mixin qui fournit les éléments d'un point de l'ordre du jour : dés... |  no  |
 | [AgendaItem](AgendaItem.md) | Un point de l'ordre du jour d'une séance |  no  |
 | [ProtocolItem](ProtocolItem.md) | Un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-... |  no  |
 
@@ -42,7 +43,7 @@ URI: [ops:state_name](https://ch.paf.link/schema/operations/state_name)
 | Propriété | Valeur |
 | --- | --- |
 | Plage | [String](String.md) |
-| Domaine de | [Meeting](Meeting.md), [AgendaItem](AgendaItem.md) |
+| Domaine de | [Meeting](Meeting.md), [IsAgendaItem](IsAgendaItem.md) |
 
 ### Cardinalité et exigences
 
@@ -83,7 +84,7 @@ from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 domain_of:
 - Meeting
-- AgendaItem
+- IsAgendaItem
 range: string
 
 ```

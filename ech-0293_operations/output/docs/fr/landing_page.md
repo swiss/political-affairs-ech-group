@@ -28,10 +28,11 @@ URI: [ops:landingPage](https://ch.paf.link/schema/operations/landingPage)
 | --- | --- | --- |
 | [Legislature](Legislature.md) | Durée du mandat d'un parlement en tant qu'assemblée législative |  no  |
 | [Meeting](Meeting.md) | Une classe générale de séance utilisée pour les sessions, les séances de comm... |  no  |
-| [AgendaItem](AgendaItem.md) | Un point de l'ordre du jour d'une séance |  no  |
+| [IsAgendaItem](IsAgendaItem.md) | Une classe mixin qui fournit les éléments d'un point de l'ordre du jour : dés... |  no  |
 | [Voting](Voting.md) | Une procédure de vote avec les voix individuelles et les résultats |  no  |
 | [Election](Election.md) | Une procédure d'élection visant à pourvoir des fonctions par des personnes |  no  |
 | [Speech](Speech.md) | Une intervention prononcée au cours d'une séance (également appelée prise de ... |  no  |
+| [AgendaItem](AgendaItem.md) | Un point de l'ordre du jour d'une séance |  no  |
 | [ProtocolItem](ProtocolItem.md) | Un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-... |  no  |
 
 
@@ -46,7 +47,7 @@ URI: [ops:landingPage](https://ch.paf.link/schema/operations/landingPage)
 | Propriété | Valeur |
 | --- | --- |
 | Plage | [String](String.md) |
-| Domaine de | [Legislature](Legislature.md), [Meeting](Meeting.md), [AgendaItem](AgendaItem.md), [Voting](Voting.md), [Election](Election.md), [Speech](Speech.md) |
+| Domaine de | [Legislature](Legislature.md), [Meeting](Meeting.md), [IsAgendaItem](IsAgendaItem.md), [Voting](Voting.md), [Election](Election.md), [Speech](Speech.md) |
 | URI du slot | [ops:landingPage](https://ch.paf.link/schema/operations/landingPage) |
 
 ### Cardinalité et exigences
@@ -90,7 +91,7 @@ slot_uri: ops:landingPage
 domain_of:
 - Legislature
 - Meeting
-- AgendaItem
+- IsAgendaItem
 - Voting
 - Election
 - Speech

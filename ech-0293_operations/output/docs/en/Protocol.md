@@ -23,6 +23,7 @@ _The minutes of a meeting, recorded after the meeting. A wrapper container bundl
 | parent_meeting | 0..1 <br/> [String](String.md) | The linked meeting ID that groups the current meeting.  |
 | protocol_items | * <br/> [ProtocolItem](ProtocolItem.md) | Agenda items as actually recorded in the protocol.  |
 | votings | * <br/> [Voting](Voting.md) | Collection of voting records.  |
+| elections | * <br/> [Election](Election.md) | Collection of election records.  |
 | speeches | * <br/> [Speech](Speech.md) | Collection of speech records.  |
 | text_segments | * <br/> [TextSegment](TextSegment.md) | Collection of text segments (e.g. verbatim protocol).  |
 | documents | * <br/> [Work](Work.md) | List of documents (FRBR Works) linked to the entity.  |
@@ -41,6 +42,8 @@ _The minutes of a meeting, recorded after the meeting. A wrapper container bundl
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [protocols](protocols.md) | range | [Protocol](Protocol.md) |
 | [Meeting](Meeting.md) | [protocol_ref](protocol_ref.md) | range | [Protocol](Protocol.md) |
+| [Voting](Voting.md) | [parent_protocol](parent_protocol.md) | range | [Protocol](Protocol.md) |
+| [Election](Election.md) | [parent_protocol](parent_protocol.md) | range | [Protocol](Protocol.md) |
 
 
 

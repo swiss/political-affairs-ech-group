@@ -27,6 +27,7 @@ URI: [ops:election](https://ch.paf.link/schema/operations/election)
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
 | [Container](Container.md) | Container für die Daten des öffentlichen Ratsbetriebs: Legislaturperioden, Se... |  no  |
+| [Protocol](Protocol.md) | Das nach der Sitzung erstellte Protokoll |  no  |
 
 
 
@@ -40,7 +41,7 @@ URI: [ops:election](https://ch.paf.link/schema/operations/election)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [Election](Election.md) |
-| Domäne von | [Container](Container.md) |
+| Domäne von | [Container](Container.md), [Protocol](Protocol.md) |
 | Slot-URI | [ops:election](https://ch.paf.link/schema/operations/election) |
 
 ### Kardinalität und Anforderungen
@@ -84,6 +85,7 @@ rank: 1000
 slot_uri: ops:election
 domain_of:
 - Container
+- Protocol
 range: Election
 multivalued: true
 inlined: true

@@ -31,6 +31,7 @@ _Eine Resolution oder Entscheidung zu einem Traktandum, einschliesslich Abstimmu
 | Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [resolutions](resolutions.md) | range | [Resolution](Resolution.md) |
+| [IsAgendaItem](IsAgendaItem.md) | [has_resolution](has_resolution.md) | range | [Resolution](Resolution.md) |
 | [AgendaItem](AgendaItem.md) | [has_resolution](has_resolution.md) | range | [Resolution](Resolution.md) |
 | [ProtocolItem](ProtocolItem.md) | [has_resolution](has_resolution.md) | range | [Resolution](Resolution.md) |
 

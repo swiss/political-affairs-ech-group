@@ -26,9 +26,10 @@ URI: [ops:affair_id](https://ch.paf.link/schema/operations/affair_id)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [AgendaItem](AgendaItem.md) | Un point de l'ordre du jour d'une séance |  no  |
+| [IsAgendaItem](IsAgendaItem.md) | Une classe mixin qui fournit les éléments d'un point de l'ordre du jour : dés... |  no  |
 | [Voting](Voting.md) | Une procédure de vote avec les voix individuelles et les résultats |  no  |
 | [Election](Election.md) | Une procédure d'élection visant à pourvoir des fonctions par des personnes |  no  |
+| [AgendaItem](AgendaItem.md) | Un point de l'ordre du jour d'une séance |  no  |
 | [ProtocolItem](ProtocolItem.md) | Un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-... |  no  |
 
 
@@ -43,7 +44,7 @@ URI: [ops:affair_id](https://ch.paf.link/schema/operations/affair_id)
 | Propriété | Valeur |
 | --- | --- |
 | Plage | [String](String.md) |
-| Domaine de | [AgendaItem](AgendaItem.md), [Voting](Voting.md), [Election](Election.md) |
+| Domaine de | [IsAgendaItem](IsAgendaItem.md), [Voting](Voting.md), [Election](Election.md) |
 
 ### Cardinalité et exigences
 
@@ -83,7 +84,7 @@ description: 'Le lien vers les affaires rattachées au point de l''ordre du jour
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 domain_of:
-- AgendaItem
+- IsAgendaItem
 - Voting
 - Election
 range: string

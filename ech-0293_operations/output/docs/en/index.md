@@ -14,7 +14,6 @@ Name: operations
 | Class | Description |
 | --- | --- |
 | [AgendaItem](AgendaItem.md) | An agenda item of a meeting |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ProtocolItem](ProtocolItem.md) | An agenda item as actually recorded in the protocol |
 | [Attendance](Attendance.md) | Aggregated attendance record for a meeting (number of members present, absent... |
 | [Container](Container.md) | Container for the records of public council operations: legislatures, session... |
 | [Date](Date.md) | A date with a type indication (e |
@@ -27,6 +26,7 @@ Name: operations
 | [HasTemporalValidity](HasTemporalValidity.md) | A mixin class that provides slots for modeling a temporal validity of informa... |
 | [IndividualAttendance](IndividualAttendance.md) | Individual attendance record for a specific person at a meeting (linked via t... |
 | [IndividualVote](IndividualVote.md) | An individual vote cast by a member during a voting procedure |
+| [IsAgendaItem](IsAgendaItem.md) | A mixin class that provides the elements of an agenda item: designation, type... |
 | [IsEventWithDuration](IsEventWithDuration.md) | A mixin class that provides slots for modeling events or occurrences with tim... |
 | [IsInstantaneousEvent](IsInstantaneousEvent.md) | A mixin class that provides slots for modeling instantaneous events or occurr... |
 | [IsProcessStep](IsProcessStep.md) | A mixin class for a single step in a multi-stage process (e |
@@ -41,10 +41,11 @@ Name: operations
 | [MultilingualValue](MultilingualValue.md) | A multilingual string with language specification |
 | [PersonReference](PersonReference.md) | Lightweight reference to a person with key identification data at time of lin... |
 | [Protocol](Protocol.md) | The minutes of a meeting, recorded after the meeting |
+| [ProtocolItem](ProtocolItem.md) | An agenda item as actually recorded in the protocol |
 | [Resolution](Resolution.md) | A resolution or decision taken on an agenda item, including voting procedures |
 | [Session](Session.md) | A parliamentary session that groups multiple meetings and spans a specific ti... |
 | [Speech](Speech.md) | A speech or statement made during a meeting (also called Votum or speaker seg... |
-| [TextSegment](TextSegment.md) | A text segment such as cross-references or subtitles in meeting protocols |
+| [TextSegment](TextSegment.md) | A text segment such as cross-references or subtitles |
 | [TotalOther](TotalOther.md) | Additional vote counts when multiple options are presented (e |
 | [Voting](Voting.md) | A voting procedure with individual votes and results |
 | [Work](Work.md) | FRBR Work: the abstract document as such, independent of a concrete language ... |
@@ -143,6 +144,8 @@ Name: operations
 | [parent_attendance](parent_attendance.md) | The Attendance aggregate this individual attendance record belongs to |
 | [parent_legislature](parent_legislature.md) | The legislative body in which the meeting is based |
 | [parent_meeting](parent_meeting.md) | The linked meeting ID that groups the current meeting |
+| [parent_protocol](parent_protocol.md) | The protocol in which the voting or election is recorded |
+| [parent_protocol_item](parent_protocol_item.md) | The recorded agenda item (ProtocolItem) under which the voting or election to... |
 | [parent_type](parent_type.md) | Type of parent object (meeting, agenda, speech, affair) |
 | [parent_voting](parent_voting.md) | The ID of the voting associated with the individual vote |
 | [position](position.md) | Integer position within the superordinate sequence |

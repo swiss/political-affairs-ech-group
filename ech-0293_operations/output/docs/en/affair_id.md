@@ -26,9 +26,10 @@ URI: [ops:affair_id](https://ch.paf.link/schema/operations/affair_id)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [AgendaItem](AgendaItem.md) | An agenda item of a meeting |  no  |
+| [IsAgendaItem](IsAgendaItem.md) | A mixin class that provides the elements of an agenda item: designation, type... |  no  |
 | [Voting](Voting.md) | A voting procedure with individual votes and results |  no  |
 | [Election](Election.md) | An election procedure for selecting persons to positions |  no  |
+| [AgendaItem](AgendaItem.md) | An agenda item of a meeting |  no  |
 | [ProtocolItem](ProtocolItem.md) | An agenda item as actually recorded in the protocol |  no  |
 
 
@@ -43,7 +44,7 @@ URI: [ops:affair_id](https://ch.paf.link/schema/operations/affair_id)
 | Property | Value |
 | --- | --- |
 | Range | [String](String.md) |
-| Domain Of | [AgendaItem](AgendaItem.md), [Voting](Voting.md), [Election](Election.md) |
+| Domain Of | [IsAgendaItem](IsAgendaItem.md), [Voting](Voting.md), [Election](Election.md) |
 
 ### Cardinality and Requirements
 
@@ -83,7 +84,7 @@ description: 'The connection to the affairs (business items) of the agenda item.
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 domain_of:
-- AgendaItem
+- IsAgendaItem
 - Voting
 - Election
 range: string

@@ -27,6 +27,7 @@ URI: [ops:election](https://ch.paf.link/schema/operations/election)
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
 | [Container](Container.md) | Conteneur pour les données de l'activité publique des conseils : législatures... |  no  |
+| [Protocol](Protocol.md) | Le procès-verbal établi après la séance |  no  |
 
 
 
@@ -40,7 +41,7 @@ URI: [ops:election](https://ch.paf.link/schema/operations/election)
 | Propriété | Valeur |
 | --- | --- |
 | Plage | [Election](Election.md) |
-| Domaine de | [Container](Container.md) |
+| Domaine de | [Container](Container.md), [Protocol](Protocol.md) |
 | URI du slot | [ops:election](https://ch.paf.link/schema/operations/election) |
 
 ### Cardinalité et exigences
@@ -84,6 +85,7 @@ rank: 1000
 slot_uri: ops:election
 domain_of:
 - Container
+- Protocol
 range: Election
 multivalued: true
 inlined: true

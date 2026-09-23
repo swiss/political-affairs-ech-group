@@ -3,7 +3,7 @@
 ## Classe: TextSegment 
 
 
-_Un segment de texte tel qu'un renvoi ou un intertitre dans un procès-verbal de séance._
+_Un segment de texte tel qu'un renvoi ou un intertitre. Les segments de texte sont portés par le procès-verbal, par une intervention ou par un point de l'ordre du jour (AgendaItem planifié ou ProtocolItem consigné)._
 
 
 
@@ -30,7 +30,10 @@ _Un segment de texte tel qu'un renvoi ou un intertitre dans un procès-verbal de
 
 | Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
+| [IsAgendaItem](IsAgendaItem.md) | [text_segments](text_segments.md) | range | [TextSegment](TextSegment.md) |
+| [AgendaItem](AgendaItem.md) | [text_segments](text_segments.md) | range | [TextSegment](TextSegment.md) |
 | [Protocol](Protocol.md) | [text_segments](text_segments.md) | range | [TextSegment](TextSegment.md) |
+| [ProtocolItem](ProtocolItem.md) | [text_segments](text_segments.md) | range | [TextSegment](TextSegment.md) |
 
 
 

@@ -26,6 +26,7 @@ URI: [ops:has_resolution](https://ch.paf.link/schema/operations/has_resolution)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [IsAgendaItem](IsAgendaItem.md) | A mixin class that provides the elements of an agenda item: designation, type... |  no  |
 | [AgendaItem](AgendaItem.md) | An agenda item of a meeting |  no  |
 | [ProtocolItem](ProtocolItem.md) | An agenda item as actually recorded in the protocol |  no  |
 
@@ -41,7 +42,7 @@ URI: [ops:has_resolution](https://ch.paf.link/schema/operations/has_resolution)
 | Property | Value |
 | --- | --- |
 | Range | [Resolution](Resolution.md) |
-| Domain Of | [AgendaItem](AgendaItem.md) |
+| Domain Of | [IsAgendaItem](IsAgendaItem.md) |
 
 ### Cardinality and Requirements
 
@@ -81,7 +82,7 @@ description: 'The resolution or decision taken on this agenda item.
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 domain_of:
-- AgendaItem
+- IsAgendaItem
 range: Resolution
 
 ```

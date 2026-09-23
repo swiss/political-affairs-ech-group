@@ -26,6 +26,7 @@ URI: [ops:speaking_actor_id](https://ch.paf.link/schema/operations/speaking_acto
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
+| [IsAgendaItem](IsAgendaItem.md) | Une classe mixin qui fournit les éléments d'un point de l'ordre du jour : dés... |  no  |
 | [AgendaItem](AgendaItem.md) | Un point de l'ordre du jour d'une séance |  no  |
 | [ProtocolItem](ProtocolItem.md) | Un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-... |  no  |
 
@@ -41,7 +42,7 @@ URI: [ops:speaking_actor_id](https://ch.paf.link/schema/operations/speaking_acto
 | Propriété | Valeur |
 | --- | --- |
 | Plage | [String](String.md) |
-| Domaine de | [AgendaItem](AgendaItem.md) |
+| Domaine de | [IsAgendaItem](IsAgendaItem.md) |
 
 ### Cardinalité et exigences
 
@@ -84,7 +85,7 @@ description: 'La ou le porte-parole ou la cheffe ou le chef du département pour
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 domain_of:
-- AgendaItem
+- IsAgendaItem
 range: string
 
 ```

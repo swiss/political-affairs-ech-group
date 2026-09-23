@@ -41,7 +41,7 @@ URI: [mcm:localId](https://ld.ech.ch/schema/0292/meta-common/localId)
 | [Attendance](Attendance.md) | Liste de présence agrégée pour une séance (nombre de membres présents, absent... |  no  |
 | [IndividualAttendance](IndividualAttendance.md) | Constatation individuelle de la présence d'une personne à une séance (rattach... |  no  |
 | [Speech](Speech.md) | Une intervention prononcée au cours d'une séance (également appelée prise de ... |  no  |
-| [TextSegment](TextSegment.md) | Un segment de texte tel qu'un renvoi ou un intertitre dans un procès-verbal d... |  no  |
+| [TextSegment](TextSegment.md) | Un segment de texte tel qu'un renvoi ou un intertitre |  no  |
 | [Motion](Motion.md) | Une proposition formelle déposée au cours des délibérations |  no  |
 | [Media](Media.md) | Fichiers médias ou documents (y compris les procès-verbaux en PDF/HTML/WORD o... |  no  |
 | [HasReferenceIdentification](HasReferenceIdentification.md) | Une classe mixin qui fournit les slots par lesquels une référence désigne l'e... |  no  |

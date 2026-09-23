@@ -27,6 +27,7 @@ URI: [ops:state_name](https://ch.paf.link/schema/operations/state_name)
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Meeting](Meeting.md) | A general meeting class used for Sessions, Comittee Meetings, individual sess... |  no  |
+| [IsAgendaItem](IsAgendaItem.md) | A mixin class that provides the elements of an agenda item: designation, type... |  no  |
 | [AgendaItem](AgendaItem.md) | An agenda item of a meeting |  no  |
 | [ProtocolItem](ProtocolItem.md) | An agenda item as actually recorded in the protocol |  no  |
 
@@ -42,7 +43,7 @@ URI: [ops:state_name](https://ch.paf.link/schema/operations/state_name)
 | Property | Value |
 | --- | --- |
 | Range | [String](String.md) |
-| Domain Of | [Meeting](Meeting.md), [AgendaItem](AgendaItem.md) |
+| Domain Of | [Meeting](Meeting.md), [IsAgendaItem](IsAgendaItem.md) |
 
 ### Cardinality and Requirements
 
@@ -83,7 +84,7 @@ from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 domain_of:
 - Meeting
-- AgendaItem
+- IsAgendaItem
 range: string
 
 ```

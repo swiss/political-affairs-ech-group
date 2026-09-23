@@ -28,8 +28,9 @@ URI: [ops:url](https://ch.paf.link/schema/operations/url)
 | --- | --- | --- |
 | [Session](Session.md) | Eine Parlamentssession, die mehrere Sitzungen gruppiert und sich über einen b... |  no  |
 | [Meeting](Meeting.md) | Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, Sess... |  no  |
-| [AgendaItem](AgendaItem.md) | Ein Traktandum einer Sitzung |  no  |
+| [IsAgendaItem](IsAgendaItem.md) | Eine Mixin-Klasse, welche die Elemente eines Traktandums bereitstellt: Bezeic... |  no  |
 | [Media](Media.md) | Mediendateien oder Dokumente (einschliesslich Protokolle in PDF/HTML/WORD ode... |  no  |
+| [AgendaItem](AgendaItem.md) | Ein Traktandum einer Sitzung |  no  |
 | [ProtocolItem](ProtocolItem.md) | Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde |  no  |
 
 
@@ -44,7 +45,7 @@ URI: [ops:url](https://ch.paf.link/schema/operations/url)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [MultilingualString](MultilingualString.md) |
-| Domäne von | [Session](Session.md), [Meeting](Meeting.md), [AgendaItem](AgendaItem.md), [Media](Media.md) |
+| Domäne von | [Session](Session.md), [Meeting](Meeting.md), [IsAgendaItem](IsAgendaItem.md), [Media](Media.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -87,7 +88,7 @@ rank: 1000
 domain_of:
 - Session
 - Meeting
-- AgendaItem
+- IsAgendaItem
 - Media
 range: MultilingualString
 multivalued: true

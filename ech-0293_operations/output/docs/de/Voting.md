@@ -41,7 +41,8 @@ _Ein Abstimmungsverfahren mit Einzelstimmen und Ergebnissen._
 | majority_count | 0..1 <br/> [Integer](Integer.md) | Anzahl der Stimmen, die für die relevante Mehrheitsschwelle erforderlich sind.  |
 | result_text | 0..1 <br/> [String](String.md) | Freitext zur Beschreibung des Ergebnisses der Abstimmung, z.B. „Mit 78 Stimmen angenommen“.  |
 | parent_meeting | 0..1 <br/> [String](String.md) | Die verknüpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert.  |
-| parent_agenda_item | 0..1 <br/> [String](String.md) | Wenn erforderlich, baut dieser Slot eine Hierarchie von Traktanden auf.  |
+| parent_protocol | 0..1 <br/> [Protocol](Protocol.md) | Das Protokoll, in dem die Abstimmung oder Wahl festgehalten ist. Abgestimmt wird im Verlauf der Sitzung; die Abstimmung hängt deshalb am Protokoll und nicht an der vorgängig geplanten Traktandenliste.  |
+| parent_protocol_item | 0..1 <br/> [ProtocolItem](ProtocolItem.md) | Das protokollierte Traktandum (ProtocolItem), unter dem abgestimmt oder gewählt wurde. Entfällt, wenn ohne Traktandierung abgestimmt wurde; die Zuordnung zur Sitzung ergibt sich dann allein aus parent_protocol und parent_meeting.  |
 | affair_id | 0..1 <br/> [String](String.md) | Die Verbindung zu den Geschäften des Traktandums.  |
 | actor_id | 0..1 <br/> [GroupReference](GroupReference.md) | Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
 | documents | * <br/> [Work](Work.md) | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.  |
@@ -76,68 +77,36 @@ _Ein Abstimmungsverfahren mit Einzelstimmen und Ergebnissen._
 
 
 ### Beispiele
-#### Beispiel Voting: Intermediate voting on an amendment
+#### Beispiel Voting: Final vote on the budget
 
 ```yaml
 votings:
-- global_uri: ops:voting_be_2025_042
+- global_uri: ops:voting_zh_budget_2026
   voting_title:
-  - text: Änderungsantrag Art. 5 Abs. 2
-    language: de
-  - text: Proposition de modification art. 5 al. 2
-    language: fr
-  voting_type: preliminary_vote
-  datetime_begin: '2025-06-05T10:15:00Z'
-  datetime_end: '2025-06-05T10:17:00Z'
-  total_count_yes: 45
-  total_count_no: 87
-  total_count_abstention: 8
-  total_absent: 10
-  total: 150
-  majority_type: absolute
-  majority_count: 76
-  result_text: Mit 45 zu 87 Stimmen bei 8 Enthaltungen abgelehnt
-  parent_agenda_item: ops:agenda_item_be_2025_042
-  parent_meeting: ops:meeting_be_2025_06_05
-  actor_id:
-    global_uri: actors:gr_be
-    label: Grosser Rat Bern
-    abbreviation:
-    - value: GR
-      language: de
-  datetime_created: '2025-06-05T10:15:00Z'
-  datetime_modified: '2025-06-05T10:15:00Z'
-
-```
-#### Beispiel Voting: Final vote with individual votes
-
-```yaml
-votings:
-- global_uri: ops:voting_sg_2025_001
-  voting_title:
-  - text: Schlussabstimmung Energiegesetz
+  - text: Budgetbeschluss 2026
     language: de
   voting_type: final_vote
-  datetime_begin: '2025-03-15T14:30:00Z'
-  datetime_end: '2025-03-15T14:35:00Z'
-  total_count_yes: 78
-  total_count_no: 42
+  datetime_begin: '2025-11-20T16:45:00Z'
+  datetime_end: '2025-11-20T16:50:00Z'
+  total_count_yes: 105
+  total_count_no: 70
   total_count_abstention: 5
-  total_absent: 3
-  total: 128
+  total_absent: 0
+  total: 180
   majority_type: absolute
-  majority_count: 65
-  result_text: Mit 78 zu 42 Stimmen bei 5 Enthaltungen angenommen
-  parent_agenda_item: ops:agenda_item_sg_2025_015
-  parent_meeting: ops:meeting_sg_2025_03_15
+  majority_count: 91
+  result_text: Mit 105 zu 70 Stimmen bei 5 Enthaltungen angenommen
+  parent_protocol: ops:protocol_zh_2025_11_20
+  parent_protocol_item: ops:protocol_item_zh_budget_2026
+  parent_meeting: ops:meeting_zh_2025_11_20
   actor_id:
-    global_uri: actors:kr_sg
-    label: Kantonsrat St. Gallen
+    global_uri: actors:kr_zh
+    label: Kantonsrat Zürich
     abbreviation:
     - value: KR
       language: de
-  datetime_created: '2025-03-15T14:30:00Z'
-  datetime_modified: '2025-03-15T14:35:00Z'
+  datetime_created: '2025-11-20T16:45:00Z'
+  datetime_modified: '2025-11-20T16:50:00Z'
 
 ```
 #### Beispiel Voting: Motions in the same direction with multiple choice
@@ -171,7 +140,8 @@ votings:
   result_text: >-
     Auswahl A mit 75 von 112 abgegebenen Stimmen angenommen (Auswahl B: 25, Auswahl
     C: 12, Auswahl D: 0; 13 abwesend von 125 Mitgliedern).
-  parent_agenda_item: ops:agenda_item_zh_gr_2024_2023_361
+  parent_protocol: ops:protocol_zh_gr_2024_02_28
+  parent_protocol_item: ops:protocol_item_zh_gr_2024_2023_361
   parent_meeting: ops:meeting_zh_gr_2024_02_28
   affair_id: 2023/361
   actor_id:
@@ -184,35 +154,70 @@ votings:
   datetime_modified: '2024-02-28T00:00:00Z'
 
 ```
-#### Beispiel Voting: Final vote on the budget
+#### Beispiel Voting: Final vote with individual votes
 
 ```yaml
 votings:
-- global_uri: ops:voting_zh_budget_2026
+- global_uri: ops:voting_sg_2025_001
   voting_title:
-  - text: Budgetbeschluss 2026
+  - text: Schlussabstimmung Energiegesetz
     language: de
   voting_type: final_vote
-  datetime_begin: '2025-11-20T16:45:00Z'
-  datetime_end: '2025-11-20T16:50:00Z'
-  total_count_yes: 105
-  total_count_no: 70
+  datetime_begin: '2025-03-15T14:30:00Z'
+  datetime_end: '2025-03-15T14:35:00Z'
+  total_count_yes: 78
+  total_count_no: 42
   total_count_abstention: 5
-  total_absent: 0
-  total: 180
+  total_absent: 3
+  total: 128
   majority_type: absolute
-  majority_count: 91
-  result_text: Mit 105 zu 70 Stimmen bei 5 Enthaltungen angenommen
-  parent_agenda_item: ops:agenda_item_zh_budget_2026
-  parent_meeting: ops:meeting_zh_2025_11_20
+  majority_count: 65
+  result_text: Mit 78 zu 42 Stimmen bei 5 Enthaltungen angenommen
+  parent_protocol: ops:protocol_sg_2025_03_15
+  parent_protocol_item: ops:protocol_item_sg_2025_015
+  parent_meeting: ops:meeting_sg_2025_03_15
   actor_id:
-    global_uri: actors:kr_zh
-    label: Kantonsrat Zürich
+    global_uri: actors:kr_sg
+    label: Kantonsrat St. Gallen
     abbreviation:
     - value: KR
       language: de
-  datetime_created: '2025-11-20T16:45:00Z'
-  datetime_modified: '2025-11-20T16:50:00Z'
+  datetime_created: '2025-03-15T14:30:00Z'
+  datetime_modified: '2025-03-15T14:35:00Z'
+
+```
+#### Beispiel Voting: Intermediate voting on an amendment
+
+```yaml
+votings:
+- global_uri: ops:voting_be_2025_042
+  voting_title:
+  - text: Änderungsantrag Art. 5 Abs. 2
+    language: de
+  - text: Proposition de modification art. 5 al. 2
+    language: fr
+  voting_type: preliminary_vote
+  datetime_begin: '2025-06-05T10:15:00Z'
+  datetime_end: '2025-06-05T10:17:00Z'
+  total_count_yes: 45
+  total_count_no: 87
+  total_count_abstention: 8
+  total_absent: 10
+  total: 150
+  majority_type: absolute
+  majority_count: 76
+  result_text: Mit 45 zu 87 Stimmen bei 8 Enthaltungen abgelehnt
+  parent_protocol: ops:protocol_be_2025_06_05
+  parent_protocol_item: ops:protocol_item_be_2025_042
+  parent_meeting: ops:meeting_be_2025_06_05
+  actor_id:
+    global_uri: actors:gr_be
+    label: Grosser Rat Bern
+    abbreviation:
+    - value: GR
+      language: de
+  datetime_created: '2025-06-05T10:15:00Z'
+  datetime_modified: '2025-06-05T10:15:00Z'
 
 ```
 

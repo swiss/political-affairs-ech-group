@@ -26,6 +26,7 @@ URI: [ops:agenda_item_title](https://ch.paf.link/schema/operations/agenda_item_t
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [IsAgendaItem](IsAgendaItem.md) | A mixin class that provides the elements of an agenda item: designation, type... |  no  |
 | [AgendaItem](AgendaItem.md) | An agenda item of a meeting |  no  |
 | [ProtocolItem](ProtocolItem.md) | An agenda item as actually recorded in the protocol |  no  |
 
@@ -41,7 +42,7 @@ URI: [ops:agenda_item_title](https://ch.paf.link/schema/operations/agenda_item_t
 | Property | Value |
 | --- | --- |
 | Range | [MultilingualString](MultilingualString.md) |
-| Domain Of | [AgendaItem](AgendaItem.md) |
+| Domain Of | [IsAgendaItem](IsAgendaItem.md) |
 
 ### Cardinality and Requirements
 
@@ -82,7 +83,7 @@ description: 'Title of the agenda item.
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 domain_of:
-- AgendaItem
+- IsAgendaItem
 range: MultilingualString
 multivalued: true
 inlined: true

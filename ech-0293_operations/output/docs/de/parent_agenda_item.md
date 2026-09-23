@@ -26,9 +26,8 @@ URI: [ops:parent_agenda_item](https://ch.paf.link/schema/operations/parent_agend
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
+| [IsAgendaItem](IsAgendaItem.md) | Eine Mixin-Klasse, welche die Elemente eines Traktandums bereitstellt: Bezeic... |  no  |
 | [AgendaItem](AgendaItem.md) | Ein Traktandum einer Sitzung |  no  |
-| [Voting](Voting.md) | Ein Abstimmungsverfahren mit Einzelstimmen und Ergebnissen |  no  |
-| [Election](Election.md) | Ein Wahlverfahren zur Wahl von Personen in Positionen |  no  |
 | [ProtocolItem](ProtocolItem.md) | Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde |  no  |
 
 
@@ -43,7 +42,7 @@ URI: [ops:parent_agenda_item](https://ch.paf.link/schema/operations/parent_agend
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [String](String.md) |
-| Domäne von | [AgendaItem](AgendaItem.md), [Voting](Voting.md), [Election](Election.md) |
+| Domäne von | [IsAgendaItem](IsAgendaItem.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -84,9 +83,7 @@ description: 'Wenn erforderlich, baut dieser Slot eine Hierarchie von Traktanden
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 domain_of:
-- AgendaItem
-- Voting
-- Election
+- IsAgendaItem
 range: string
 
 ```

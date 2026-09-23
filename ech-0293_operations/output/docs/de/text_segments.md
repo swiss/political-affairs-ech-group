@@ -26,7 +26,10 @@ URI: [ops:textSegment](https://ch.paf.link/schema/operations/textSegment)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
+| [IsAgendaItem](IsAgendaItem.md) | Eine Mixin-Klasse, welche die Elemente eines Traktandums bereitstellt: Bezeic... |  no  |
 | [Protocol](Protocol.md) | Das nach der Sitzung erstellte Protokoll |  no  |
+| [AgendaItem](AgendaItem.md) | Ein Traktandum einer Sitzung |  no  |
+| [ProtocolItem](ProtocolItem.md) | Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde |  no  |
 
 
 
@@ -40,7 +43,7 @@ URI: [ops:textSegment](https://ch.paf.link/schema/operations/textSegment)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [TextSegment](TextSegment.md) |
-| Domäne von | [Protocol](Protocol.md) |
+| Domäne von | [IsAgendaItem](IsAgendaItem.md), [Protocol](Protocol.md) |
 | Slot-URI | [ops:textSegment](https://ch.paf.link/schema/operations/textSegment) |
 
 ### Kardinalität und Anforderungen
@@ -83,6 +86,7 @@ from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 slot_uri: ops:textSegment
 domain_of:
+- IsAgendaItem
 - Protocol
 range: TextSegment
 multivalued: true
