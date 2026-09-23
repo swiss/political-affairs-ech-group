@@ -23,7 +23,7 @@ _Constatation individuelle de la présence d'une personne à une séance (rattac
 | parent_attendance | 0..1 <br/> [Attendance](Attendance.md) | L'agrégat Attendance auquel appartient cette constatation individuelle de présence.  |
 | actor_id | 0..1 <br/> [PersonReference](PersonReference.md) | Référence à la personne agissante (instantané au moment de la mise en relation).  |
 | attendance_type | 0..1 <br/> [AttendanceTypeEnum](AttendanceTypeEnum.md) | Type de présence individuelle.  |
-| reason | * <br/> [MultilingualString](MultilingualString.md) | Motif de l'absence ou du retard (texte libre, multilingue).  |
+| reason | * <br/> [MultilingualString](MultilingualString.md) | Motif de l'absence, du retard ou de la suppléance (texte libre, multilingue).  |
 | date_created | 0..1 <br/> [Date](Date.md) | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](HasCreationModificationDates.md) |
 | datetime_created | 0..1 <br/> [Datetime](Datetime.md) | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](HasCreationModificationDates.md) |
 | date_modified | 0..1 <br/> [Date](Date.md) | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](HasCreationModificationDates.md) |

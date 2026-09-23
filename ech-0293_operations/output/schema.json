@@ -1106,7 +1106,7 @@
                     ]
                 },
                 "reason": {
-                    "description": "Reason for absence or lateness (free-text, multilingual).\n",
+                    "description": "Reason for absence, lateness or substitution (free-text, multilingual).\n",
                     "items": {
                         "$ref": "#/$defs/MultilingualString"
                     },

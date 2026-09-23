@@ -152,7 +152,7 @@ Name: operations
 | [position](position.md) | Integer position within the superordinate sequence |
 | [protocol_items](protocol_items.md) | Agenda items as actually recorded in the protocol |
 | [protocols](protocols.md) | Collection of protocol records |
-| [reason](reason.md) | Reason for absence or lateness (free-text, multilingual) |
+| [reason](reason.md) | Reason for absence, lateness or substitution (free-text, multilingual) |
 | [remark](remark.md) | Free-text remark or note for edge cases or additional context on a process st... |
 | [resolution_type](resolution_type.md) | Type of resolution taken on the agenda item |
 | [resolutions](resolutions.md) | Collection of resolution records |

@@ -23,7 +23,7 @@ _Individual attendance record for a specific person at a meeting (linked via the
 | parent_attendance | 0..1 <br/> [Attendance](Attendance.md) | The Attendance aggregate this individual attendance record belongs to.  |
 | actor_id | 0..1 <br/> [PersonReference](PersonReference.md) | Reference to the acting person (lightweight snapshot at time of linking).  |
 | attendance_type | 0..1 <br/> [AttendanceTypeEnum](AttendanceTypeEnum.md) | Type of individual attendance.  |
-| reason | * <br/> [MultilingualString](MultilingualString.md) | Reason for absence or lateness (free-text, multilingual).  |
+| reason | * <br/> [MultilingualString](MultilingualString.md) | Reason for absence, lateness or substitution (free-text, multilingual).  |
 | date_created | 0..1 <br/> [Date](Date.md) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |
 | datetime_created | 0..1 <br/> [Datetime](Datetime.md) | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |
 | date_modified | 0..1 <br/> [Date](Date.md) | The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |

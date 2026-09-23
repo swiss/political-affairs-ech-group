@@ -4377,7 +4377,7 @@ The field **attendance_type** (enum `AttendanceTypeEnum`) records the type of at
 
 #### Reason
 
-The field **reason** (multilingual) can record the reason for absence or lateness as free text.
+The field **reason** (multilingual) can record the reason for absence, lateness or substitution as free text.
 
 ### Difference: Attendance vs. IndividualVote
 
@@ -4492,7 +4492,7 @@ _Individual attendance record for a specific person at a meeting (linked via the
 | parent_attendance | 0..1 <br/> [Attendance](#Attendance) | The Attendance aggregate this individual attendance record belongs to.  |
 | actor_id | 0..1 <br/> [PersonReference](#PersonReference) | Reference to the acting person (lightweight snapshot at time of linking).  |
 | attendance_type | 0..1 <br/> [AttendanceTypeEnum](#AttendanceTypeEnum) | Type of individual attendance.  |
-| reason | * <br/> [MultilingualString](#MultilingualString) | Reason for absence or lateness (free-text, multilingual).  |
+| reason | * <br/> [MultilingualString](#MultilingualString) | Reason for absence, lateness or substitution (free-text, multilingual).  |
 | date_created | 0..1 <br/> Date | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
 | datetime_created | 0..1 <br/> Datetime | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
 | date_modified | 0..1 <br/> Date | The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |

@@ -6,7 +6,7 @@ search:
 # Slot: reason 
 
 
-_Grund für Abwesenheit oder Verspätung (Freitext, mehrsprachig)._
+_Grund für Abwesenheit, Verspätung oder Vertretung (Freitext, mehrsprachig)._
 
 
 
@@ -67,15 +67,15 @@ name: reason
 annotations:
   description_de:
     tag: description_de
-    value: 'Grund für Abwesenheit oder Verspätung (Freitext, mehrsprachig).
+    value: 'Grund für Abwesenheit, Verspätung oder Vertretung (Freitext, mehrsprachig).
 
       '
   description_fr:
     tag: description_fr
-    value: 'Motif de l''absence ou du retard (texte libre, multilingue).
+    value: 'Motif de l''absence, du retard ou de la suppléance (texte libre, multilingue).
 
       '
-description: 'Grund für Abwesenheit oder Verspätung (Freitext, mehrsprachig).
+description: 'Grund für Abwesenheit, Verspätung oder Vertretung (Freitext, mehrsprachig).
 
   '
 from_schema: https://ch.paf.link/schema/operations

@@ -152,7 +152,7 @@ Name: operations
 | [position](position.md) | Ganzzahlige Position innerhalb der übergeordneten Reihenfolge |
 | [protocol_items](protocol_items.md) | Traktanden, wie sie im Protokoll tatsächlich festgehalten wurden |
 | [protocols](protocols.md) | Sammlung der Protokolle |
-| [reason](reason.md) | Grund für Abwesenheit oder Verspätung (Freitext, mehrsprachig) |
+| [reason](reason.md) | Grund für Abwesenheit, Verspätung oder Vertretung (Freitext, mehrsprachig) |
 | [remark](remark.md) | Freitext-Bemerkung oder Notiz für Sonderfälle oder zusätzlichen Kontext zu ei... |
 | [resolution_type](resolution_type.md) | Art der Resolution zum Traktandum |
 | [resolutions](resolutions.md) | Sammlung der Resolutionen |

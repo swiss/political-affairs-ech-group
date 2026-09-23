@@ -4377,7 +4377,7 @@ Le champ **attendance_type** (énumération `AttendanceTypeEnum`) saisit le type
 
 #### Motif
 
-Le champ **reason** (multilingue) permet de saisir en texte libre le motif d'une absence ou d'un retard.
+Le champ **reason** (multilingue) permet de saisir en texte libre le motif d'une absence, d'un retard ou d'une suppléance.
 
 ### Différence : Attendance et IndividualVote
 
@@ -4492,7 +4492,7 @@ _Constatation individuelle de la présence d'une personne à une séance (rattac
 | parent_attendance | 0..1 <br/> [Attendance](#Attendance) | L'agrégat Attendance auquel appartient cette constatation individuelle de présence.  |
 | actor_id | 0..1 <br/> [PersonReference](#PersonReference) | Référence à la personne agissante (instantané au moment de la mise en relation).  |
 | attendance_type | 0..1 <br/> [AttendanceTypeEnum](#AttendanceTypeEnum) | Type de présence individuelle.  |
-| reason | * <br/> [MultilingualString](#MultilingualString) | Motif de l'absence ou du retard (texte libre, multilingue).  |
+| reason | * <br/> [MultilingualString](#MultilingualString) | Motif de l'absence, du retard ou de la suppléance (texte libre, multilingue).  |
 | date_created | 0..1 <br/> Date | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
 | datetime_created | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
 | date_modified | 0..1 <br/> Date | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |

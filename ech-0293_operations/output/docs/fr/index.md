@@ -152,7 +152,7 @@ Name: operations
 | [position](position.md) | Position (nombre entier) au sein de la séquence supérieure |
 | [protocol_items](protocol_items.md) | Points de l'ordre du jour tels qu'ils ont effectivement été consignés au proc... |
 | [protocols](protocols.md) | Ensemble des procès-verbaux |
-| [reason](reason.md) | Motif de l'absence ou du retard (texte libre, multilingue) |
+| [reason](reason.md) | Motif de l'absence, du retard ou de la suppléance (texte libre, multilingue) |
 | [remark](remark.md) | Remarque ou note en texte libre pour les cas particuliers ou pour un contexte... |
 | [resolution_type](resolution_type.md) | Type de décision prise sur le point de l'ordre du jour |
 | [resolutions](resolutions.md) | Ensemble des décisions |
