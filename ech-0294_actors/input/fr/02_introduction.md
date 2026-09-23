@@ -2,6 +2,19 @@
 
 # Introduction
 
+## Statut
+
+Proposition
+
+## Champ d’application
+
+La norme règle la publication de données sur les actrices et acteurs politiques par les services qui les tiennent déjà aujourd’hui : services parlementaires, chancelleries d’État et administrations communales de tous les niveaux étatiques. Elle couvre en particulier les cas d’utilisation suivants :
+
+- publication des membres des parlements, gouvernements et commissions avec leurs affiliations, fonctions et durées de mandat
+- publication des registres des liens d’intérêts des membres des parlements
+- référencement des personnes, groupes et organes depuis les autres normes de la famille « Affaires politiques », par exemple pour les interventions et les votes dans le fonctionnement des conseils (eCH-0293) ou pour les auteurs des objets parlementaires (eCH-0295)
+- réutilisation de ces données par les médias, la recherche et le public, de manière comparable entre les niveaux étatiques
+
 ## La famille de normes « Affaires politiques »
 
 La vie politique de la Suisse se déroule aux niveaux fédéral, cantonal et communal – dans les parlements et les assemblées communales, dans les exécutifs et les administrations, dans les procédures de consultation et les consultations publiques, ainsi qu'à travers la participation démocratique directe des personnes ayant le droit de vote. Le groupe spécialisé « Affaires politiques » de l'association eCH développe à cet effet une famille de normes coordonnées entre elles, qui structurent ces données par-delà les niveaux fédéraux. Les normes utilisent des éléments de données communs (eCH-0292) et se référencent mutuellement au moyen d'identifiants univoques.

@@ -17,12 +17,12 @@ toc: false
 |**Voraussetzungen**||
 |**Beilagen**|-|
 |**Sprachen**|Deutsch (Original) - English (Datamodel)|
-|**Autoren**|Fachgruppe Politische Geschäfte: Julie Silberstein, Laurence Brandenberger, Daniela Koller, Thomas Roth, Stefan Oderbolz, Fabian Davolio, Orhan Saeedi, Christian Gutknecht, Michael Luggen|
-|**Herausgeber / Vertrieb**|Verein eCH, [Affolternstrasse 52, 8050 Zürich](https://geo.ld.admin.ch/location/address/101218624)|
+|**Fachgruppe**|Politische Geschäfte: Julie Silberstein, Laurence Brandenberger, Daniela Koller, Thomas Roth, Stefan Oderbolz, Fabian Davolio, Orhan Saeedi, Christian Gutknecht, Michael Luggen|
+|**Herausgeber / Vertrieb**|Verein eCH, [Affolternstrasse 52, 8050 Zürich](https://geo.ld.admin.ch/location/address/101218624)`<w:r><w:br/></w:r>`{=openxml}T 044 388 74 64 / info@ech.ch / www.ech.ch|
 
 \newpage
 
-# Zusammenfassung
+# Zusammenfassung {.unnumbered .unlisted}
 
 Der Standard eCH-0294 „Politische Akteure: Personen, Gruppen und Organe“ definiert ein einheitliches Datenmodell zur strukturierten Publikation politischer Akteure in der Schweiz. Er umfasst natürliche Personen, politische Gruppen und Organe, Mitgliedschaften zwischen Personen und Gruppen sowie Interessenbindungen. Ziel ist es, föderal übergreifend vergleichbare, maschinenlesbare und nachnutzbare Informationen bereitzustellen, um Transparenz, Nachvollziehbarkeit und Analysefähigkeit politischer Prozesse zu verbessern.
 
@@ -30,7 +30,7 @@ Der Standard richtet sich an öffentliche Stellen aller Staatsebenen, politische
 
 \newpage
 
-# Inhaltsverzeichnis
+# Inhaltsverzeichnis {.unnumbered .unlisted}
 
 ```{=openxml}
 <w:p>
@@ -52,3 +52,6 @@ Der Standard richtet sich an öffentliche Stellen aller Staatsebenen, politische
 </w:p>
 ```
 
+# Hinweis {.unnumbered .unlisted}
+
+Im vorliegenden Dokument wird bei der Bezeichnung von Personen eine geschlechtsneutrale Formulierung verwendet. Basis bildet der Leitfaden der Bundeskanzlei. Je nach Situation kommen Paarformen (Bürgerinnen und Bürger), geschlechtsabstrakte Formen (versicherte Person), geschlechtsneutrale Formen (Versicherte) oder Umschreibungen ohne Personenbezug zum Einsatz. Das generische Maskulin (Bürger) ist nicht zulässig. Vollformen werden in fortlaufenden Texten verwendet, also in Texten, die aus ausformulierten Sätzen bestehen. In verknappten Textpassagen, namentlich in Tabellen, können Kurzformen verwendet werden. Dabei wird die Kurzform mit Schrägstrich, aber ohne Auslassungsstrich verwendet (Referent/in). Genderstern und ähnliche Schreibweisen werden nicht verwendet.

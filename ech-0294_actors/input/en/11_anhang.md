@@ -1,10 +1,10 @@
 \newpage
 
-# Annex A – References & Bibliography
+# Annex A – References & Bibliography {.unnumbered}
 
 Where a version is stated, it is the one this standard was developed against.
 
-## Standards of the "Political Affairs" specialist group
+## Standards of the "Political Affairs" specialist group {.unnumbered}
 
 The standards of the specialist group are developed jointly and reference one another. All of them currently carry the status "In Arbeit" (in progress; as of 10 August 2026); no version is therefore stated.
 
@@ -16,14 +16,14 @@ The standards of the specialist group are developed jointly and reference one an
 |eCH-0296|eCH-0296: Legal acts and legislative texts: [https://www.ech.ch/de/ech/ech-0296](https://www.ech.ch/de/ech/ech-0296)|
 |eCH-0297|eCH-0297: Public consultations: [https://www.ech.ch/de/ech/ech-0297](https://www.ech.ch/de/ech/ech-0297)|
 
-## Further eCH standards
+## Further eCH standards {.unnumbered}
 
 | | |
 |------------------|----------------------------------------------------------------------------------|
 |eCH-0011|eCH-0011: Datenstandard Personendaten, version 9.0.0 (approved, 27.07.2023). Basis of the name types in `NameTypeEnum` (`personNameData`): [https://www.ech.ch/de/ech/ech-0011/9.0.0](https://www.ech.ch/de/ech/ech-0011/9.0.0)|
 |eCH-0108|eCH-0108: Datenstandard: Unternehmensstammdaten und Unternehmensregister, version 6.0.0 (approved, 04.04.2024). Defines the exchange format of the UID (`organization_uid`) and is the standard the legal form code list in `LegalFormEnum` conforms to: [https://www.ech.ch/de/ech/ech-0108/6.0.0](https://www.ech.ch/de/ech/ech-0108/6.0.0)|
 
-## Code lists and further sources
+## Code lists and further sources {.unnumbered}
 
 | | |
 |------------------|----------------------------------------------------------------------------------|
@@ -37,7 +37,7 @@ The standards of the specialist group are developed jointly and reference one an
 
 \newpage
 
-# Annex B – Cooperation & Verification
+# Annex B – Cooperation & Verification {.unnumbered}
 
 Specialist group "Political Affairs", subgroup "Political Actors":
 
@@ -59,7 +59,7 @@ Specialist group "Political Affairs", subgroup "Political Actors":
 |---|---|---|---|
 | 1.0.0 | 2026-08-10 | Specialist group "Political Affairs" | Submitted as proposal |
 
-# Annex C – Abbreviations and Glossary
+# Annex C – Abbreviations and Glossary {.unnumbered}
 
 | | |
 |---|---|
@@ -75,13 +75,17 @@ Specialist group "Political Affairs", subgroup "Political Actors":
 |URI|Uniform Resource Identifier. Unique identifier of a resource.|
 |XSD|XML Schema Definition. W3C recommendation for defining structures of XML documents.|
 
-# Annex D – Changes in comparison to the previous version
+# Annex D – Changes in comparison to the previous version {.unnumbered}
 
 This is the first version.
 
 \newpage
 
-# Annex E – Table of Figures
+# Annex E – Table of Figures {.unnumbered}
+
+None
+
+# Annex F – Table of Tables {.unnumbered}
 
 ```{=openxml}
 <w:p>
@@ -89,29 +93,7 @@ This is the first version.
     <w:fldChar w:fldCharType="begin" w:dirty="true"/>
   </w:r>
   <w:r>
-    <w:instrText xml:space="preserve"> TOC \h \z \c "Abbildung" </w:instrText>
-  </w:r>
-  <w:r>
-    <w:fldChar w:fldCharType="separate"/>
-  </w:r>
-  <w:r>
-    <w:t>Right-click &gt; "Update field" to generate the table of figures.</w:t>
-  </w:r>
-  <w:r>
-    <w:fldChar w:fldCharType="end"/>
-  </w:r>
-</w:p>
-```
-
-# Annex F – Table of Tables
-
-```{=openxml}
-<w:p>
-  <w:r>
-    <w:fldChar w:fldCharType="begin" w:dirty="true"/>
-  </w:r>
-  <w:r>
-    <w:instrText xml:space="preserve"> TOC \h \z \c "Tabelle" </w:instrText>
+    <w:instrText xml:space="preserve"> TOC \h \z \c "Table" </w:instrText>
   </w:r>
   <w:r>
     <w:fldChar w:fldCharType="separate"/>

@@ -1,10 +1,10 @@
 \newpage
 
-# Anhang A – Referenzen & Bibliographie
+# Anhang A – Referenzen & Bibliographie {.unnumbered}
 
 Wo eine Version genannt ist, ist es diejenige, gegen die dieser Standard erarbeitet wurde.
 
-## Standards der Fachgruppe „Politische Geschäfte"
+## Standards der Fachgruppe „Politische Geschäfte" {.unnumbered}
 
 Die Standards der Fachgruppe entstehen gemeinsam und verweisen aufeinander. Sie stehen zurzeit alle im Status „In Arbeit" (Stand: 10. August 2026); eine Version ist deshalb nicht angegeben.
 
@@ -16,14 +16,14 @@ Die Standards der Fachgruppe entstehen gemeinsam und verweisen aufeinander. Sie 
 |eCH-0296|eCH-0296: Erlasse und Gesetzestexte: [https://www.ech.ch/de/ech/ech-0296](https://www.ech.ch/de/ech/ech-0296)|
 |eCH-0297|eCH-0297: Öffentliche Konsultationen: [https://www.ech.ch/de/ech/ech-0297](https://www.ech.ch/de/ech/ech-0297)|
 
-## Weitere eCH-Standards
+## Weitere eCH-Standards {.unnumbered}
 
 | | |
 |------------------|----------------------------------------------------------------------------------|
 |eCH-0011|eCH-0011: Datenstandard Personendaten, Version 9.0.0 (Genehmigt, 27.07.2023). Grundlage der Namenstypen in `NameTypeEnum` (`personNameData`): [https://www.ech.ch/de/ech/ech-0011/9.0.0](https://www.ech.ch/de/ech/ech-0011/9.0.0)|
 |eCH-0108|eCH-0108: Datenstandard: Unternehmensstammdaten und Unternehmensregister, Version 6.0.0 (Genehmigt, 04.04.2024). Definiert das Austauschformat der UID (`organization_uid`) und ist der Standard, zu dem die Rechtsform-Codeliste in `LegalFormEnum` konform ist: [https://www.ech.ch/de/ech/ech-0108/6.0.0](https://www.ech.ch/de/ech/ech-0108/6.0.0)|
 
-## Codelisten und weitere Quellen
+## Codelisten und weitere Quellen {.unnumbered}
 
 | | |
 |------------------|----------------------------------------------------------------------------------|
@@ -37,7 +37,7 @@ Die Standards der Fachgruppe entstehen gemeinsam und verweisen aufeinander. Sie 
 
 \newpage
 
-# Anhang B – Mitarbeit & Überprüfung
+# Anhang B – Mitarbeit & Überprüfung {.unnumbered}
 
 Fachgruppe Politische Geschäfte, Subgruppe Politische Akteure:
 
@@ -60,7 +60,7 @@ Fachgruppe Politische Geschäfte, Subgruppe Politische Akteure:
 |---|---|---|---|
 | 1.0.0 | 2026-08-10 | Fachgruppe Politische Geschäfte | Einreichung als Vorschlag |
 
-# Anhang C – Abkürzungen und Glossar
+# Anhang C – Abkürzungen und Glossar {.unnumbered}
 
 | | |
 |---|---|
@@ -76,35 +76,17 @@ Fachgruppe Politische Geschäfte, Subgruppe Politische Akteure:
 |URI|Uniform Resource Identifier. Eindeutiger Bezeichner einer Ressource.|
 |XSD|XML Schema Definition. Empfehlung des W3C zum Definieren von Strukturen für XML-Dokumente.|
 
-# Anhang D – Änderungen gegenüber Vorversion
+# Anhang D – Änderungen gegenüber Vorversion {.unnumbered}
 
 Dies ist die erste Version.
 
 \newpage
 
-# Anhang E – Abbildungsverzeichnis
+# Anhang E – Abbildungsverzeichnis {.unnumbered}
 
-```{=openxml}
-<w:p>
-  <w:r>
-    <w:fldChar w:fldCharType="begin" w:dirty="true"/>
-  </w:r>
-  <w:r>
-    <w:instrText xml:space="preserve"> TOC \h \z \c "Abbildung" </w:instrText>
-  </w:r>
-  <w:r>
-    <w:fldChar w:fldCharType="separate"/>
-  </w:r>
-  <w:r>
-    <w:t>Rechtsklick &gt; „Felder aktualisieren“, um das Abbildungsverzeichnis zu erzeugen.</w:t>
-  </w:r>
-  <w:r>
-    <w:fldChar w:fldCharType="end"/>
-  </w:r>
-</w:p>
-```
+Keine
 
-# Anhang F – Tabellenverzeichnis
+# Anhang F – Tabellenverzeichnis {.unnumbered}
 
 ```{=openxml}
 <w:p>

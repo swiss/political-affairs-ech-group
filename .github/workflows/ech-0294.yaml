@@ -129,7 +129,9 @@ jobs:
             pandoc "ech-0294_actors/output/documentation_merged_${lang}.md" \
               -o "ech-0294_actors/output/ech-0294_actors_${lang}.docx" \
               --reference-doc=ech-0294_actors/input/template.docx \
-              --lua-filter=pagebreak.lua
+              --lua-filter=pagebreak.lua \
+              --lua-filter=.github/workflows/scripts/table_captions.lua \
+              --lua-filter=.github/workflows/scripts/unnumbered_headings.lua
             python .github/workflows/scripts/set_docx_updatefields.py "ech-0294_actors/output/ech-0294_actors_${lang}.docx"
             python .github/workflows/scripts/shade_alternate_rows.py "ech-0294_actors/output/ech-0294_actors_${lang}.docx"
             python .github/workflows/scripts/set_docx_footer.py "ech-0294_actors/output/ech-0294_actors_${lang}.docx" "$footer"
