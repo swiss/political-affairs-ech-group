@@ -26,9 +26,10 @@ URI: [ops:affair_id](https://ch.paf.link/schema/operations/affair_id)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [AgendaItem](AgendaItem.md) | Ein Traktandum einer Sitzung |  no  |
+| [IsAgendaItem](IsAgendaItem.md) | Eine Mixin-Klasse, welche die Elemente eines Traktandums bereitstellt: Bezeic... |  no  |
 | [Voting](Voting.md) | Ein Abstimmungsverfahren mit Einzelstimmen und Ergebnissen |  no  |
 | [Election](Election.md) | Ein Wahlverfahren zur Wahl von Personen in Positionen |  no  |
+| [AgendaItem](AgendaItem.md) | Ein Traktandum einer Sitzung |  no  |
 | [ProtocolItem](ProtocolItem.md) | Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde |  no  |
 
 
@@ -43,7 +44,7 @@ URI: [ops:affair_id](https://ch.paf.link/schema/operations/affair_id)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [String](String.md) |
-| Domäne von | [AgendaItem](AgendaItem.md), [Voting](Voting.md), [Election](Election.md) |
+| Domäne von | [IsAgendaItem](IsAgendaItem.md), [Voting](Voting.md), [Election](Election.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -83,7 +84,7 @@ description: 'Die Verbindung zu den Geschäften des Traktandums.
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 domain_of:
-- AgendaItem
+- IsAgendaItem
 - Voting
 - Election
 range: string

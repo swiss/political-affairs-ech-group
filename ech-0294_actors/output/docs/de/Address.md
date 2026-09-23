@@ -62,14 +62,6 @@ Mindestens eines der folgenden Felder muss gesetzt sein:
 
 
 ### Beispiele
-#### Beispiel Address: swiss politicians Beat Jans 1
-
-```yaml
-addresses:
-- address_type: businessAddress
-  postal_locality: Basel-Stadt
-
-```
 #### Beispiel Address: groups Konsumenteninformation und -schutz 1
 
 ```yaml
@@ -81,6 +73,14 @@ addresses:
   postal_code: '1001'
   postal_locality: Lausanne
   country: CH
+
+```
+#### Beispiel Address: swiss politicians Beat Jans 1
+
+```yaml
+addresses:
+- address_type: businessAddress
+  postal_locality: Basel-Stadt
 
 ```
 

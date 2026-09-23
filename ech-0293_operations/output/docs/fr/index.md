@@ -14,7 +14,6 @@ Name: operations
 | Classe | Description |
 | --- | --- |
 | [AgendaItem](AgendaItem.md) | Un point de l'ordre du jour d'une séance |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ProtocolItem](ProtocolItem.md) | Un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-... |
 | [Attendance](Attendance.md) | Liste de présence agrégée pour une séance (nombre de membres présents, absent... |
 | [Container](Container.md) | Conteneur pour les données de l'activité publique des conseils : législatures... |
 | [Date](Date.md) | Une date assortie d'une indication de type (p |
@@ -27,6 +26,7 @@ Name: operations
 | [HasTemporalValidity](HasTemporalValidity.md) | Une classe mixin qui fournit des slots pour modéliser la validité temporelle ... |
 | [IndividualAttendance](IndividualAttendance.md) | Constatation individuelle de la présence d'une personne à une séance (rattach... |
 | [IndividualVote](IndividualVote.md) | Une voix individuelle exprimée par un membre lors d'une procédure de vote |
+| [IsAgendaItem](IsAgendaItem.md) | Une classe mixin qui fournit les éléments d'un point de l'ordre du jour : dés... |
 | [IsEventWithDuration](IsEventWithDuration.md) | Une classe mixin qui fournit des slots pour modéliser des événements ou occur... |
 | [IsInstantaneousEvent](IsInstantaneousEvent.md) | Une classe mixin qui fournit des slots pour modéliser des événements ou occur... |
 | [IsProcessStep](IsProcessStep.md) | Une classe mixin pour une étape unique dans un processus |
@@ -41,10 +41,11 @@ Name: operations
 | [MultilingualValue](MultilingualValue.md) | Une chaîne de caractères multilingue avec indication de la langue |
 | [PersonReference](PersonReference.md) | Référence abrégée à une personne avec les principales données d'identificatio... |
 | [Protocol](Protocol.md) | Le procès-verbal établi après la séance |
+| [ProtocolItem](ProtocolItem.md) | Un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-... |
 | [Resolution](Resolution.md) | Une décision prise sur un point de l'ordre du jour, y compris les procédures ... |
 | [Session](Session.md) | Une session parlementaire qui regroupe plusieurs séances et s'étend sur une p... |
 | [Speech](Speech.md) | Une intervention prononcée au cours d'une séance (également appelée prise de ... |
-| [TextSegment](TextSegment.md) | Un segment de texte tel qu'un renvoi ou un intertitre dans un procès-verbal d... |
+| [TextSegment](TextSegment.md) | Un segment de texte tel qu'un renvoi ou un intertitre |
 | [TotalOther](TotalOther.md) | Décomptes de voix supplémentaires lorsque plusieurs options sont soumises au ... |
 | [Voting](Voting.md) | Une procédure de vote avec les voix individuelles et les résultats |
 | [Work](Work.md) | FRBR Work : le document abstrait en tant que tel, indépendamment d'une versio... |
@@ -144,6 +145,8 @@ Name: operations
 | [parent_attendance](parent_attendance.md) | L'agrégat Attendance auquel appartient cette constatation individuelle de pré... |
 | [parent_legislature](parent_legislature.md) | La législature dans le cadre de laquelle la séance a lieu |
 | [parent_meeting](parent_meeting.md) | Identifiant de la séance à laquelle cet enregistrement se rattache |
+| [parent_protocol](parent_protocol.md) | Le procès-verbal dans lequel le vote ou l'élection est consigné |
+| [parent_protocol_item](parent_protocol_item.md) | Le point consigné au procès-verbal (ProtocolItem) sous lequel le vote ou l'él... |
 | [parent_type](parent_type.md) | Type de l'objet parent (séance, point de l'ordre du jour, intervention, affai... |
 | [parent_voting](parent_voting.md) | L'identifiant du vote auquel se rattache la voix individuelle |
 | [position](position.md) | Position (nombre entier) au sein de la séquence supérieure |

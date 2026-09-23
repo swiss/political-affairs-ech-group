@@ -30,7 +30,7 @@ _Eine Mixin-Klasse, die Slots für die Modellierung von Ereignissen oder Vorkomm
 
 ### Mixin-Verwendung
 
-[Legislature](Legislature.md), [Session](Session.md), [Meeting](Meeting.md), [AgendaItem](AgendaItem.md)
+[Legislature](Legislature.md), [Session](Session.md), [Meeting](Meeting.md), [AgendaItem](AgendaItem.md), [ProtocolItem](ProtocolItem.md)
 
 
 

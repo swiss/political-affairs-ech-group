@@ -41,7 +41,8 @@ _A voting procedure with individual votes and results._
 | majority_count | 0..1 <br/> [Integer](Integer.md) | Number of votes required for the relevant majority threshold.  |
 | result_text | 0..1 <br/> [String](String.md) | Free text describing the outcome of the vote, e.g., "Accepted with 78 votes".  |
 | parent_meeting | 0..1 <br/> [String](String.md) | Identifier of the meeting this record belongs to. On a meeting it names the superordinate meeting; on an agenda item, voting, election, speech or protocol it names the meeting in which the record arose.  |
-| parent_agenda_item | 0..1 <br/> [String](String.md) | Identifier of the agenda item this record belongs to. On an agenda item it builds a hierarchy of agenda items; on a voting, election or speech it names the agenda item under which the record was handled.  |
+| parent_protocol | 0..1 <br/> [Protocol](Protocol.md) | The protocol in which the voting or election is recorded. A vote is held during the sitting and is therefore anchored in the minutes, not in the agenda planned beforehand.  |
+| parent_protocol_item | 0..1 <br/> [ProtocolItem](ProtocolItem.md) | The recorded agenda item (ProtocolItem) under which the voting or election took place. Omitted when the vote was taken without an agenda item; the link to the sitting is then given by parent_protocol and parent_meeting alone.  |
 | affair_id | 0..1 <br/> [String](String.md) | The connection to the affairs (business items) of the agenda item.  |
 | actor_id | 0..1 <br/> [GroupReference](GroupReference.md) | Reference to the acting body/organ (lightweight snapshot at time of linking).  |
 | documents | * <br/> [Work](Work.md) | List of documents (FRBR Works) linked to the entity.  |
@@ -95,7 +96,8 @@ votings:
   majority_type: absolute
   majority_count: 91
   result_text: Mit 105 zu 70 Stimmen bei 5 Enthaltungen angenommen
-  parent_agenda_item: ops:agenda_item_zh_budget_2026
+  parent_protocol: ops:protocol_zh_2025_11_20
+  parent_protocol_item: ops:protocol_item_zh_budget_2026
   parent_meeting: ops:meeting_zh_2025_11_20
   actor_id:
     global_uri: actors:kr_zh
@@ -138,7 +140,8 @@ votings:
   result_text: >-
     Auswahl A mit 75 von 112 abgegebenen Stimmen angenommen (Auswahl B: 25, Auswahl
     C: 12, Auswahl D: 0; 13 abwesend von 125 Mitgliedern).
-  parent_agenda_item: ops:agenda_item_zh_gr_2024_2023_361
+  parent_protocol: ops:protocol_zh_gr_2024_02_28
+  parent_protocol_item: ops:protocol_item_zh_gr_2024_2023_361
   parent_meeting: ops:meeting_zh_gr_2024_02_28
   affair_id: 2023/361
   actor_id:
@@ -170,7 +173,8 @@ votings:
   majority_type: absolute
   majority_count: 65
   result_text: Mit 78 zu 42 Stimmen bei 5 Enthaltungen angenommen
-  parent_agenda_item: ops:agenda_item_sg_2025_015
+  parent_protocol: ops:protocol_sg_2025_03_15
+  parent_protocol_item: ops:protocol_item_sg_2025_015
   parent_meeting: ops:meeting_sg_2025_03_15
   actor_id:
     global_uri: actors:kr_sg
@@ -203,7 +207,8 @@ votings:
   majority_type: absolute
   majority_count: 76
   result_text: Mit 45 zu 87 Stimmen bei 8 Enthaltungen abgelehnt
-  parent_agenda_item: ops:agenda_item_be_2025_042
+  parent_protocol: ops:protocol_be_2025_06_05
+  parent_protocol_item: ops:protocol_item_be_2025_042
   parent_meeting: ops:meeting_be_2025_06_05
   actor_id:
     global_uri: actors:gr_be

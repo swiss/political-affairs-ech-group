@@ -32,6 +32,7 @@ _FRBR Work: the abstract document as such, independent of a concrete language ve
 | [Legislature](Legislature.md) | [documents](documents.md) | range | [Work](Work.md) |
 | [Session](Session.md) | [documents](documents.md) | range | [Work](Work.md) |
 | [Meeting](Meeting.md) | [documents](documents.md) | range | [Work](Work.md) |
+| [IsAgendaItem](IsAgendaItem.md) | [documents](documents.md) | range | [Work](Work.md) |
 | [AgendaItem](AgendaItem.md) | [documents](documents.md) | range | [Work](Work.md) |
 | [Protocol](Protocol.md) | [documents](documents.md) | range | [Work](Work.md) |
 | [ProtocolItem](ProtocolItem.md) | [documents](documents.md) | range | [Work](Work.md) |

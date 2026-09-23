@@ -29,13 +29,14 @@ URI: [meta:documents](https://ch.paf.link/schema/meta/documents)
 | [Legislature](Legislature.md) | Term of office of a parliament as a legislative assembly |  no  |
 | [Session](Session.md) | A parliamentary session that groups multiple meetings and spans a specific ti... |  no  |
 | [Meeting](Meeting.md) | A general meeting class used for Sessions, Comittee Meetings, individual sess... |  no  |
-| [AgendaItem](AgendaItem.md) | An agenda item of a meeting |  no  |
+| [IsAgendaItem](IsAgendaItem.md) | A mixin class that provides the elements of an agenda item: designation, type... |  no  |
 | [Protocol](Protocol.md) | The minutes of a meeting, recorded after the meeting |  no  |
 | [Resolution](Resolution.md) | A resolution or decision taken on an agenda item, including voting procedures |  no  |
 | [Voting](Voting.md) | A voting procedure with individual votes and results |  no  |
 | [Election](Election.md) | An election procedure for selecting persons to positions |  no  |
 | [Speech](Speech.md) | A speech or statement made during a meeting (also called Votum or speaker seg... |  no  |
 | [Motion](Motion.md) | A formal proposal or motion submitted during proceedings |  no  |
+| [AgendaItem](AgendaItem.md) | An agenda item of a meeting |  no  |
 | [ProtocolItem](ProtocolItem.md) | An agenda item as actually recorded in the protocol |  no  |
 
 
@@ -50,7 +51,7 @@ URI: [meta:documents](https://ch.paf.link/schema/meta/documents)
 | Property | Value |
 | --- | --- |
 | Range | [Work](Work.md) |
-| Domain Of | [Legislature](Legislature.md), [Session](Session.md), [Meeting](Meeting.md), [AgendaItem](AgendaItem.md), [Protocol](Protocol.md), [Resolution](Resolution.md), [Voting](Voting.md), [Election](Election.md), [Speech](Speech.md), [Motion](Motion.md) |
+| Domain Of | [Legislature](Legislature.md), [Session](Session.md), [Meeting](Meeting.md), [IsAgendaItem](IsAgendaItem.md), [Protocol](Protocol.md), [Resolution](Resolution.md), [Voting](Voting.md), [Election](Election.md), [Speech](Speech.md), [Motion](Motion.md) |
 | Slot URI | [meta:documents](https://ch.paf.link/schema/meta/documents) |
 
 ### Cardinality and Requirements
@@ -96,7 +97,7 @@ domain_of:
 - Legislature
 - Session
 - Meeting
-- AgendaItem
+- IsAgendaItem
 - Protocol
 - Resolution
 - Voting

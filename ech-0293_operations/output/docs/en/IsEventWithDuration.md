@@ -30,7 +30,7 @@ _A mixin class that provides slots for modeling events or occurrences with time 
 
 ### Mixin Usage
 
-[Legislature](Legislature.md), [Session](Session.md), [Meeting](Meeting.md), [AgendaItem](AgendaItem.md)
+[Legislature](Legislature.md), [Session](Session.md), [Meeting](Meeting.md), [AgendaItem](AgendaItem.md), [ProtocolItem](ProtocolItem.md)
 
 
 

@@ -41,7 +41,7 @@ URI: [mcm:globalURI](https://ld.ech.ch/schema/0292/meta-common/globalURI)
 | [Attendance](Attendance.md) | Aggregated attendance record for a meeting (number of members present, absent... |  no  |
 | [IndividualAttendance](IndividualAttendance.md) | Individual attendance record for a specific person at a meeting (linked via t... |  no  |
 | [Speech](Speech.md) | A speech or statement made during a meeting (also called Votum or speaker seg... |  no  |
-| [TextSegment](TextSegment.md) | A text segment such as cross-references or subtitles in meeting protocols |  no  |
+| [TextSegment](TextSegment.md) | A text segment such as cross-references or subtitles |  no  |
 | [Motion](Motion.md) | A formal proposal or motion submitted during proceedings |  no  |
 | [Media](Media.md) | Media files or documents (including protocols in PDF/HTML/WORD or links to au... |  no  |
 | [HasReferenceIdentification](HasReferenceIdentification.md) | A mixin class that provides the slots with which a reference names the entity... |  no  |

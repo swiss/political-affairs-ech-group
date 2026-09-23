@@ -33,6 +33,9 @@ _A string that can contain text in multiple languages._
 | [Session](Session.md) | [url](url.md) | range | [MultilingualString](MultilingualString.md) |
 | [Meeting](Meeting.md) | [name](name.md) | range | [MultilingualString](MultilingualString.md) |
 | [Meeting](Meeting.md) | [url](url.md) | range | [MultilingualString](MultilingualString.md) |
+| [IsAgendaItem](IsAgendaItem.md) | [agenda_item_title](agenda_item_title.md) | range | [MultilingualString](MultilingualString.md) |
+| [IsAgendaItem](IsAgendaItem.md) | [agenda_item_description](agenda_item_description.md) | range | [MultilingualString](MultilingualString.md) |
+| [IsAgendaItem](IsAgendaItem.md) | [url](url.md) | range | [MultilingualString](MultilingualString.md) |
 | [AgendaItem](AgendaItem.md) | [agenda_item_title](agenda_item_title.md) | range | [MultilingualString](MultilingualString.md) |
 | [AgendaItem](AgendaItem.md) | [agenda_item_description](agenda_item_description.md) | range | [MultilingualString](MultilingualString.md) |
 | [AgendaItem](AgendaItem.md) | [url](url.md) | range | [MultilingualString](MultilingualString.md) |

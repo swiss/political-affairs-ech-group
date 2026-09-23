@@ -35,6 +35,10 @@ Speech
   └─ TextSegment (Zusammenfassung, de)
 ```
 
+### Träger eines TextSegments
+
+Textsegmente hängen nicht nur am Wortprotokoll: `Protocol` führt sie für den Wortlaut der ganzen Sitzung, `AgendaItem` beziehungsweise das protokollierte `ProtocolItem` für Text, der sich auf ein einzelnes Traktandum bezieht — etwa Zwischentitel, Querverweise oder eine Begründung, die bereits mit der Traktandierung publiziert wird. Weil beide Klassen den Mixin `IsAgendaItem` führen, steht `text_segments` auf der geplanten wie auf der protokollierten Seite zur Verfügung. Die einzelne Wortmeldung dagegen trägt ihren Wortlaut direkt in `text`, `text_format` und `text_type`.
+
 ## Media
 
 ### Zweck

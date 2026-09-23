@@ -31,6 +31,7 @@ _Une décision prise sur un point de l'ordre du jour, y compris les procédures 
 | Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [resolutions](resolutions.md) | range | [Resolution](Resolution.md) |
+| [IsAgendaItem](IsAgendaItem.md) | [has_resolution](has_resolution.md) | range | [Resolution](Resolution.md) |
 | [AgendaItem](AgendaItem.md) | [has_resolution](has_resolution.md) | range | [Resolution](Resolution.md) |
 | [ProtocolItem](ProtocolItem.md) | [has_resolution](has_resolution.md) | range | [Resolution](Resolution.md) |
 

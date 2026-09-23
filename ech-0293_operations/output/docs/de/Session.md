@@ -67,42 +67,6 @@ _Eine Parlamentssession, die mehrere Sitzungen gruppiert und sich über einen be
 
 
 ### Beispiele
-#### Beispiel Session: One-day sitting period of a cantonal parliament
-
-```yaml
-sessions:
-- global_uri: ops:session_gl_landrat_2025_02_26
-  spatial: https://ld.admin.ch/canton/8
-  name:
-  - text: Sitzung des Landrates vom 26.02.2025
-    language: de
-  url:
-  - text: https://www.gl.ch/parlament/landrat/landratsprotokolle-ab-30-juni-2010.html/239
-    language: de
-  date_begin_planned: '2025-02-26'
-  date_end_planned: '2025-02-26'
-  datetime_modified: '2025-04-25T13:40:34Z'
-  datetime_created: '2025-04-23T22:58:39Z'
-
-```
-#### Beispiel Session: Landsgemeinde as a sitting period
-
-```yaml
-sessions:
-- global_uri: ops:session_gl_landsgemeinde_2025_05_04
-  spatial: https://ld.admin.ch/canton/8
-  name:
-  - text: Landsgemeinde vom 04. Mai 2025
-    language: de
-  url:
-  - text: https://www.landsgemeinde.gl.ch/landsgemeinde/2025-05-04
-    language: de
-  date_begin_planned: '2025-05-04'
-  date_end_planned: '2025-05-04'
-  datetime_modified: '2025-04-25T13:40:34Z'
-  datetime_created: '2025-04-23T22:58:39Z'
-
-```
 #### Beispiel Session: Federal session with a trilingual designation
 
 ```yaml
@@ -130,6 +94,24 @@ sessions:
   datetime_created: '2025-03-20T14:27:09Z'
 
 ```
+#### Beispiel Session: One-day sitting period of a cantonal parliament
+
+```yaml
+sessions:
+- global_uri: ops:session_gl_landrat_2025_02_26
+  spatial: https://ld.admin.ch/canton/8
+  name:
+  - text: Sitzung des Landrates vom 26.02.2025
+    language: de
+  url:
+  - text: https://www.gl.ch/parlament/landrat/landratsprotokolle-ab-30-juni-2010.html/239
+    language: de
+  date_begin_planned: '2025-02-26'
+  date_end_planned: '2025-02-26'
+  datetime_modified: '2025-04-25T13:40:34Z'
+  datetime_created: '2025-04-23T22:58:39Z'
+
+```
 #### Beispiel Session: Cantonal session with a bilingual designation
 
 ```yaml
@@ -152,6 +134,24 @@ sessions:
   date_end_planned: '2025-06-12'
   datetime_modified: '2025-05-19T01:06:44Z'
   datetime_created: '2025-04-25T11:10:24Z'
+
+```
+#### Beispiel Session: Landsgemeinde as a sitting period
+
+```yaml
+sessions:
+- global_uri: ops:session_gl_landsgemeinde_2025_05_04
+  spatial: https://ld.admin.ch/canton/8
+  name:
+  - text: Landsgemeinde vom 04. Mai 2025
+    language: de
+  url:
+  - text: https://www.landsgemeinde.gl.ch/landsgemeinde/2025-05-04
+    language: de
+  date_begin_planned: '2025-05-04'
+  date_end_planned: '2025-05-04'
+  datetime_modified: '2025-04-25T13:40:34Z'
+  datetime_created: '2025-04-23T22:58:39Z'
 
 ```
 

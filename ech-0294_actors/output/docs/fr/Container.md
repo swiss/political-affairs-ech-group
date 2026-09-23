@@ -257,329 +257,6 @@ memberships:
     is_active: true
 
 ```
-#### Exemple Container : groups
-
-```yaml
-# Beispiele für Gruppen und Organe unterschiedlicher Typen. Alle Einträge sind
-# echte Fälle. `global_uri` ist der Identifikator und muss die einzelne Gruppe
-# eindeutig bezeichnen; verwendet wird durchwegs die gruppenspezifische Adresse
-# der publizierenden Stelle. Eine Übersichtsseite über alle Fraktionen oder
-# Kommissionen taugt dafür nicht, weil sie mehrere Gruppen bezeichnet.
-# `local_id` ist die Kennung von openparldata.ch.
-#
-# `group_type` zeigt das Zusammenspiel von kontrolliertem Vokabular
-# (`group_type_enum`) und der herkunftsspezifischen Bezeichnung (`label`):
-# Der Enum-Wert macht Gruppen über Kantone und Ebenen hinweg vergleichbar,
-# das Label bewahrt die Benennung der publizierenden Stelle.
-global_uri: act:groups_example
-groups:
-  # Interessengruppe (parlamentarische Gruppe) der Bundesversammlung. Der Name
-  # ist dreisprachig geführt, die Beschreibung nur auf Französisch — beides
-  # bildet `MultilingualValue` mit je einem Eintrag pro vorhandener Sprache ab.
-  # `global_uri` ist hier fiktiv: Die Bundesversammlung publiziert ihre
-  # parlamentarischen Gruppen nur gesammelt in einem PDF und vergibt je Gruppe
-  # keine eigene Adresse. So saehe ein eindeutiger Identifikator in ihrem
-  # Namensraum aus; das Sammel-PDF steht als `landing_page`.
-  - local_id: 6627
-    global_uri: https://www.parlament.ch/de/organe/gruppen/konsumenteninformation-und-schutz
-    label:
-      - value: Konsumenteninformation und -schutz
-        language: de
-      - value: Information et défense des consommateurs
-        language: fr
-      - value: Informazione e tutela dei consumatori
-        language: it
-    description:
-      - value: >-
-          L'intergroupe parlementaire « Information et défense des consommateurs » réunit toutes
-          les sensibilités politiques. Cet intergroupe a pour mission d'informer et de
-          sensibiliser les élu·e·s aux questions relatives à la défense des consommateur·rice·s
-          en Suisse.
-        language: fr
-    landing_page:
-      - value: https://www.parlament.ch/centers/documents/de/gruppen-der-bundesversammlung.pdf
-        language: de
-    contacts:
-      - contact_type: email
-        value: l.altwegg@frc.ch
-        label: Sekretariat
-      - contact_type: phone
-        value: +41 21 331 00 95
-        label: Sekretariat
-    addresses:
-      - address_type: businessAddress
-        address_uri: https://geo.ld.admin.ch/location/address/101009806
-        street_address: Fédération romande des consommateurs, Rue de Genève 17, case postale 585
-        postal_code: "1001"
-        postal_locality: Lausanne
-        country: CH
-    group_type:
-      group_type_enum: interest_group
-      label:
-        - value: Interessengruppe
-          language: de
-        - value: Groupe d'intérêt
-          language: fr
-        - value: Gruppo d'interesse
-          language: it
-    spatial: https://ld.admin.ch/country/CHE
-    valid_from: 2012-01-01
-
-  # Zivilgesellschaftliche Organisation — sie führt das Sekretariat der
-  # vorangehenden parlamentarischen Gruppe. Anders als parlamentarische Organe
-  # ist sie eine im Handelsregister eingetragene juristische Person und trägt
-  # deshalb eine `organization_uid`. Diese ist der stabilere Identifikator als
-  # die Webadresse, die sich bei jedem Relaunch ändern kann.
-  - global_uri: https://www.frc.ch/
-    organization_uid: CHE106063525
-    legal_form: "0109"  # Verein
-    label:
-      - value: Fédération romande des consommateurs
-        language: fr
-    abbreviation:
-      - value: FRC
-        language: fr
-    group_type:
-      group_type_enum: association
-      label:
-        - value: Verein
-          language: de
-    spatial: https://ld.admin.ch/canton/22
-
-  # Gemeindeparlament — `spatial` verweist auf die BFS-Gemeindenummer
-  - local_id: 700
-    global_uri: https://www.stadt.sg.ch/home/verwaltung-politik/demokratie-politik/stadtparlament.html
-    label:
-      - value: Stadtparlament St. Gallen
-        language: de
-    group_type:
-      group_type_enum: council_legislative
-      label:
-        - value: Parlament (Legislativrat)
-          language: de
-    spatial: https://ld.admin.ch/municipality/3203
-
-  # Ausserparlamentarische Kommission des Bundes: Ihre Mitglieder sind externe
-  # Fachleute, nicht Ratsmitglieder, und sie stützt sich auf das
-  # Organisationsrecht von Regierung und Verwaltung. Sie gehört zu den wenigen
-  # Kommissionen mit eigener Entscheidbefugnis; der Regelfall ist die blosse
-  # Beratung der Verwaltung.
-  - global_uri: https://www.weko.admin.ch/
-    label:
-      - value: Wettbewerbskommission
-        language: de
-      - value: Commission de la concurrence
-        language: fr
-      - value: Commissione della concorrenza
-        language: it
-    abbreviation:
-      - value: WEKO
-        language: de
-      - value: COMCO
-        language: fr
-      - value: COMCO
-        language: it
-    landing_page:
-      - value: https://www.weko.admin.ch/de
-        language: de
-      - value: https://www.weko.admin.ch/fr
-        language: fr
-      - value: https://www.weko.admin.ch/it
-        language: it
-    group_type:
-      group_type_enum: committee_extraparliamentary
-      label:
-        - value: Ausserparlamentarische Kommission
-          language: de
-    spatial: https://ld.admin.ch/country/CHE
-
-  # Kantonsparlament — dient den beiden folgenden Einträgen als übergeordnete
-  # Gruppe (`parent_groups`).
-  - local_id: 33
-    global_uri: https://www.grosserrat.bs.ch/
-    label:
-      - value: Grosser Rat Basel-Stadt
-        language: de
-    group_type:
-      group_type_enum: council_legislative
-      label:
-        - value: Parlament (Legislativrat)
-          language: de
-    spatial: https://ld.admin.ch/canton/12
-
-  # Exekutivrat desselben Kantons, mit der Staatskanzlei als nachgeordneter
-  # Stabsstelle. Das Paar zeigt, dass `council_secretariat` nicht auf das
-  # Parlament beschränkt ist: Die Staatskanzlei bedient die Exekutive, die
-  # Parlamentsdienste die Legislative — derselbe Typ, verschiedene Räte.
-  - local_id: 1300
-    global_uri: https://www.regierungsrat.bs.ch/
-    label:
-      - value: Regierungsrat Basel-Stadt
-        language: de
-    group_type:
-      group_type_enum: council_executive
-      label:
-        - value: Regierung (Exekutivrat)
-          language: de
-    spatial: https://ld.admin.ch/canton/12
-
-  - local_id: 7172
-    global_uri: https://www.bs.ch/regierungsrat/staatskanzlei
-    label:
-      - value: Staatskanzlei Basel-Stadt
-        language: de
-    group_type:
-      group_type_enum: council_secretariat
-      label:
-        - value: Staatskanzlei
-          language: de
-    spatial: https://ld.admin.ch/canton/12
-    parent_groups:
-      - local_id: 1300
-        global_uri: https://www.regierungsrat.bs.ch/
-        label: Regierungsrat Basel-Stadt
-
-  # Eine der beiden Kantonalparteien, deren Namen die weiter unten stehende
-  # Fraktion trägt. Ihr Verweis geht auf die Bundespartei — jede föderale Ebene
-  # ist eine eigene Gruppe, und hier liegt eine echte Über-/Unterordnung vor.
-  # Die Bundespartei ist nicht mitgeliefert: Weil sie ausserhalb der Lieferung
-  # liegt, wird sie über `global_uri` benannt und nicht über eine `local_id`,
-  # die nur innerhalb der Lieferung auflösbar wäre.
-  - global_uri: https://www.evp-bs.ch/
-    label:
-      - value: Evangelische Volkspartei Basel-Stadt
-        language: de
-    abbreviation:
-      - value: EVP BS
-        language: de
-    group_type:
-      group_type_enum: party
-      label:
-        - value: Partei
-          language: de
-    spatial: https://ld.admin.ch/canton/12
-    parent_groups:
-      - global_uri: https://www.evppev.ch/
-        label: Evangelische Volkspartei der Schweiz
-        abbreviation:
-          - value: EVP
-            language: de
-
-  # Fraktion im Grossen Rat Basel-Stadt. Sie zeigt den typenübergreifenden
-  # Verweis über `parent_groups`: Eine Fraktion (`parliamentary_group`) gehört
-  # zum Parlament (`council_legislative`), also zu einem anderen `group_type`.
-  # Dass die Fraktion von zwei Parteien getragen wird, ist demgegenüber keine
-  # Über-/Unterordnung und darum kein `parent_groups`-Verweis. Diese Beziehung
-  # bildet der Standard bewusst nicht ab; hier benennt sie einzig der Name der
-  # Fraktion.
-  - local_id: 1266
-    global_uri: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen/mitte-evp
-    label:
-      - value: Die Mitte / Evangelische Volkspartei
-        language: de
-    group_type:
-      group_type_enum: parliamentary_group
-      label:
-        - value: Fraktion
-          language: de
-    spatial: https://ld.admin.ch/canton/12
-    parent_groups:
-      - local_id: 33
-        global_uri: https://www.grosserrat.bs.ch/
-        label: Grosser Rat Basel-Stadt
-
-  # Kantonsparlament — übergeordnete Gruppe der folgenden Kommission
-  - local_id: 34
-    global_uri: https://www.ar.ch/kantonsrat/
-    label:
-      - value: Kantonsrat Appenzell Ausserrhoden
-        language: de
-    group_type:
-      group_type_enum: council_legislative
-      label:
-        - value: Parlament (Legislativrat)
-          language: de
-    spatial: https://ld.admin.ch/canton/15
-
-  # Ständige Kommission mit gebräuchlicher Abkürzung. Erst der Verweis auf den
-  # Kantonsrat macht sichtbar, welchem Rat sie zugehört — der Typ allein sagt
-  # das nicht.
-  - local_id: 3
-    global_uri: https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/geschaeftspruefungskommission/
-    label:
-      - value: Geschäftsprüfungskommission
-        language: de
-    abbreviation:
-      - value: GPK
-        language: de
-    group_type:
-      group_type_enum: committee
-      label:
-        - value: Kommission
-          language: de
-    spatial: https://ld.admin.ch/canton/15
-    parent_groups:
-      - local_id: 34
-        global_uri: https://www.ar.ch/kantonsrat/
-        label: Kantonsrat Appenzell Ausserrhoden
-
-  # Ratsbüro
-  - local_id: 50
-    global_uri: https://grosserrat.bs.ch/gremien/praesidium-und-buero
-    label:
-      - value: Büro des Grossen Rates
-        language: de
-    group_type:
-      group_type_enum: council_bureau
-      label:
-        - value: Ratsbüro
-          language: de
-    spatial: https://ld.admin.ch/canton/12
-    parent_groups:
-      - local_id: 33
-        global_uri: https://www.grosserrat.bs.ch/
-        label: Grosser Rat Basel-Stadt
-
-  # Delegation in ein interkantonales Gremium
-  - local_id: 5000
-    global_uri: https://www.fr.ch/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5
-    label:
-      - value: Freiburger Delegation IPK strafrechtliche Einschliessung
-        language: de
-      - value: Délégation FR à la CIP détention pénale
-        language: fr
-    abbreviation:
-      - value: Del-StRFE
-        language: de
-      - value: Del-DetPen
-        language: fr
-    description:
-      - value: >-
-          Die Interparlamentarische Aufsichtskommission strafrechtliche Einschliessung besteht
-          aus 18 Grossrätinnen und Grossräten aus den sechs Vertragskantonen Freiburg, Genf,
-          Jura, Neuenburg, Waadt und Wallis.
-        language: de
-      - value: >-
-          La Commission interparlementaire de contrôle détention pénale est composée de 18
-          députés issus des six cantons partenaires : Fribourg, Genève, Jura, Neuchâtel, Vaud et
-          Valais.
-        language: fr
-    landing_page:
-      - value: https://www.fr.ch/de/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5
-        language: de
-      - value: https://www.fr.ch/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5
-        language: fr
-    group_type:
-      group_type_enum: delegation
-      label:
-        - value: Delegation
-          language: de
-        - value: Délégation
-          language: fr
-    spatial: https://ld.admin.ch/canton/10
-    valid_from: 2007-12-12
-
-```
 #### Exemple Container : swiss politicians
 
 ```yaml
@@ -915,6 +592,329 @@ interest_links:
         language: fr
       - value: Präsident
         language: de
+
+```
+#### Exemple Container : groups
+
+```yaml
+# Beispiele für Gruppen und Organe unterschiedlicher Typen. Alle Einträge sind
+# echte Fälle. `global_uri` ist der Identifikator und muss die einzelne Gruppe
+# eindeutig bezeichnen; verwendet wird durchwegs die gruppenspezifische Adresse
+# der publizierenden Stelle. Eine Übersichtsseite über alle Fraktionen oder
+# Kommissionen taugt dafür nicht, weil sie mehrere Gruppen bezeichnet.
+# `local_id` ist die Kennung von openparldata.ch.
+#
+# `group_type` zeigt das Zusammenspiel von kontrolliertem Vokabular
+# (`group_type_enum`) und der herkunftsspezifischen Bezeichnung (`label`):
+# Der Enum-Wert macht Gruppen über Kantone und Ebenen hinweg vergleichbar,
+# das Label bewahrt die Benennung der publizierenden Stelle.
+global_uri: act:groups_example
+groups:
+  # Interessengruppe (parlamentarische Gruppe) der Bundesversammlung. Der Name
+  # ist dreisprachig geführt, die Beschreibung nur auf Französisch — beides
+  # bildet `MultilingualValue` mit je einem Eintrag pro vorhandener Sprache ab.
+  # `global_uri` ist hier fiktiv: Die Bundesversammlung publiziert ihre
+  # parlamentarischen Gruppen nur gesammelt in einem PDF und vergibt je Gruppe
+  # keine eigene Adresse. So saehe ein eindeutiger Identifikator in ihrem
+  # Namensraum aus; das Sammel-PDF steht als `landing_page`.
+  - local_id: 6627
+    global_uri: https://www.parlament.ch/de/organe/gruppen/konsumenteninformation-und-schutz
+    label:
+      - value: Konsumenteninformation und -schutz
+        language: de
+      - value: Information et défense des consommateurs
+        language: fr
+      - value: Informazione e tutela dei consumatori
+        language: it
+    description:
+      - value: >-
+          L'intergroupe parlementaire « Information et défense des consommateurs » réunit toutes
+          les sensibilités politiques. Cet intergroupe a pour mission d'informer et de
+          sensibiliser les élu·e·s aux questions relatives à la défense des consommateur·rice·s
+          en Suisse.
+        language: fr
+    landing_page:
+      - value: https://www.parlament.ch/centers/documents/de/gruppen-der-bundesversammlung.pdf
+        language: de
+    contacts:
+      - contact_type: email
+        value: l.altwegg@frc.ch
+        label: Sekretariat
+      - contact_type: phone
+        value: +41 21 331 00 95
+        label: Sekretariat
+    addresses:
+      - address_type: businessAddress
+        address_uri: https://geo.ld.admin.ch/location/address/101009806
+        street_address: Fédération romande des consommateurs, Rue de Genève 17, case postale 585
+        postal_code: "1001"
+        postal_locality: Lausanne
+        country: CH
+    group_type:
+      group_type_enum: interest_group
+      label:
+        - value: Interessengruppe
+          language: de
+        - value: Groupe d'intérêt
+          language: fr
+        - value: Gruppo d'interesse
+          language: it
+    spatial: https://ld.admin.ch/country/CHE
+    valid_from: 2012-01-01
+
+  # Zivilgesellschaftliche Organisation — sie führt das Sekretariat der
+  # vorangehenden parlamentarischen Gruppe. Anders als parlamentarische Organe
+  # ist sie eine im Handelsregister eingetragene juristische Person und trägt
+  # deshalb eine `organization_uid`. Diese ist der stabilere Identifikator als
+  # die Webadresse, die sich bei jedem Relaunch ändern kann.
+  - global_uri: https://www.frc.ch/
+    organization_uid: CHE106063525
+    legal_form: "0109"  # Verein
+    label:
+      - value: Fédération romande des consommateurs
+        language: fr
+    abbreviation:
+      - value: FRC
+        language: fr
+    group_type:
+      group_type_enum: association
+      label:
+        - value: Verein
+          language: de
+    spatial: https://ld.admin.ch/canton/22
+
+  # Gemeindeparlament — `spatial` verweist auf die BFS-Gemeindenummer
+  - local_id: 700
+    global_uri: https://www.stadt.sg.ch/home/verwaltung-politik/demokratie-politik/stadtparlament.html
+    label:
+      - value: Stadtparlament St. Gallen
+        language: de
+    group_type:
+      group_type_enum: council_legislative
+      label:
+        - value: Parlament (Legislativrat)
+          language: de
+    spatial: https://ld.admin.ch/municipality/3203
+
+  # Ausserparlamentarische Kommission des Bundes: Ihre Mitglieder sind externe
+  # Fachleute, nicht Ratsmitglieder, und sie stützt sich auf das
+  # Organisationsrecht von Regierung und Verwaltung. Sie gehört zu den wenigen
+  # Kommissionen mit eigener Entscheidbefugnis; der Regelfall ist die blosse
+  # Beratung der Verwaltung.
+  - global_uri: https://www.weko.admin.ch/
+    label:
+      - value: Wettbewerbskommission
+        language: de
+      - value: Commission de la concurrence
+        language: fr
+      - value: Commissione della concorrenza
+        language: it
+    abbreviation:
+      - value: WEKO
+        language: de
+      - value: COMCO
+        language: fr
+      - value: COMCO
+        language: it
+    landing_page:
+      - value: https://www.weko.admin.ch/de
+        language: de
+      - value: https://www.weko.admin.ch/fr
+        language: fr
+      - value: https://www.weko.admin.ch/it
+        language: it
+    group_type:
+      group_type_enum: committee_extraparliamentary
+      label:
+        - value: Ausserparlamentarische Kommission
+          language: de
+    spatial: https://ld.admin.ch/country/CHE
+
+  # Kantonsparlament — dient den beiden folgenden Einträgen als übergeordnete
+  # Gruppe (`parent_groups`).
+  - local_id: 33
+    global_uri: https://www.grosserrat.bs.ch/
+    label:
+      - value: Grosser Rat Basel-Stadt
+        language: de
+    group_type:
+      group_type_enum: council_legislative
+      label:
+        - value: Parlament (Legislativrat)
+          language: de
+    spatial: https://ld.admin.ch/canton/12
+
+  # Exekutivrat desselben Kantons, mit der Staatskanzlei als nachgeordneter
+  # Stabsstelle. Das Paar zeigt, dass `council_secretariat` nicht auf das
+  # Parlament beschränkt ist: Die Staatskanzlei bedient die Exekutive, die
+  # Parlamentsdienste die Legislative — derselbe Typ, verschiedene Räte.
+  - local_id: 1300
+    global_uri: https://www.regierungsrat.bs.ch/
+    label:
+      - value: Regierungsrat Basel-Stadt
+        language: de
+    group_type:
+      group_type_enum: council_executive
+      label:
+        - value: Regierung (Exekutivrat)
+          language: de
+    spatial: https://ld.admin.ch/canton/12
+
+  - local_id: 7172
+    global_uri: https://www.bs.ch/regierungsrat/staatskanzlei
+    label:
+      - value: Staatskanzlei Basel-Stadt
+        language: de
+    group_type:
+      group_type_enum: council_secretariat
+      label:
+        - value: Staatskanzlei
+          language: de
+    spatial: https://ld.admin.ch/canton/12
+    parent_groups:
+      - local_id: 1300
+        global_uri: https://www.regierungsrat.bs.ch/
+        label: Regierungsrat Basel-Stadt
+
+  # Eine der beiden Kantonalparteien, deren Namen die weiter unten stehende
+  # Fraktion trägt. Ihr Verweis geht auf die Bundespartei — jede föderale Ebene
+  # ist eine eigene Gruppe, und hier liegt eine echte Über-/Unterordnung vor.
+  # Die Bundespartei ist nicht mitgeliefert: Weil sie ausserhalb der Lieferung
+  # liegt, wird sie über `global_uri` benannt und nicht über eine `local_id`,
+  # die nur innerhalb der Lieferung auflösbar wäre.
+  - global_uri: https://www.evp-bs.ch/
+    label:
+      - value: Evangelische Volkspartei Basel-Stadt
+        language: de
+    abbreviation:
+      - value: EVP BS
+        language: de
+    group_type:
+      group_type_enum: party
+      label:
+        - value: Partei
+          language: de
+    spatial: https://ld.admin.ch/canton/12
+    parent_groups:
+      - global_uri: https://www.evppev.ch/
+        label: Evangelische Volkspartei der Schweiz
+        abbreviation:
+          - value: EVP
+            language: de
+
+  # Fraktion im Grossen Rat Basel-Stadt. Sie zeigt den typenübergreifenden
+  # Verweis über `parent_groups`: Eine Fraktion (`parliamentary_group`) gehört
+  # zum Parlament (`council_legislative`), also zu einem anderen `group_type`.
+  # Dass die Fraktion von zwei Parteien getragen wird, ist demgegenüber keine
+  # Über-/Unterordnung und darum kein `parent_groups`-Verweis. Diese Beziehung
+  # bildet der Standard bewusst nicht ab; hier benennt sie einzig der Name der
+  # Fraktion.
+  - local_id: 1266
+    global_uri: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen/mitte-evp
+    label:
+      - value: Die Mitte / Evangelische Volkspartei
+        language: de
+    group_type:
+      group_type_enum: parliamentary_group
+      label:
+        - value: Fraktion
+          language: de
+    spatial: https://ld.admin.ch/canton/12
+    parent_groups:
+      - local_id: 33
+        global_uri: https://www.grosserrat.bs.ch/
+        label: Grosser Rat Basel-Stadt
+
+  # Kantonsparlament — übergeordnete Gruppe der folgenden Kommission
+  - local_id: 34
+    global_uri: https://www.ar.ch/kantonsrat/
+    label:
+      - value: Kantonsrat Appenzell Ausserrhoden
+        language: de
+    group_type:
+      group_type_enum: council_legislative
+      label:
+        - value: Parlament (Legislativrat)
+          language: de
+    spatial: https://ld.admin.ch/canton/15
+
+  # Ständige Kommission mit gebräuchlicher Abkürzung. Erst der Verweis auf den
+  # Kantonsrat macht sichtbar, welchem Rat sie zugehört — der Typ allein sagt
+  # das nicht.
+  - local_id: 3
+    global_uri: https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/geschaeftspruefungskommission/
+    label:
+      - value: Geschäftsprüfungskommission
+        language: de
+    abbreviation:
+      - value: GPK
+        language: de
+    group_type:
+      group_type_enum: committee
+      label:
+        - value: Kommission
+          language: de
+    spatial: https://ld.admin.ch/canton/15
+    parent_groups:
+      - local_id: 34
+        global_uri: https://www.ar.ch/kantonsrat/
+        label: Kantonsrat Appenzell Ausserrhoden
+
+  # Ratsbüro
+  - local_id: 50
+    global_uri: https://grosserrat.bs.ch/gremien/praesidium-und-buero
+    label:
+      - value: Büro des Grossen Rates
+        language: de
+    group_type:
+      group_type_enum: council_bureau
+      label:
+        - value: Ratsbüro
+          language: de
+    spatial: https://ld.admin.ch/canton/12
+    parent_groups:
+      - local_id: 33
+        global_uri: https://www.grosserrat.bs.ch/
+        label: Grosser Rat Basel-Stadt
+
+  # Delegation in ein interkantonales Gremium
+  - local_id: 5000
+    global_uri: https://www.fr.ch/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5
+    label:
+      - value: Freiburger Delegation IPK strafrechtliche Einschliessung
+        language: de
+      - value: Délégation FR à la CIP détention pénale
+        language: fr
+    abbreviation:
+      - value: Del-StRFE
+        language: de
+      - value: Del-DetPen
+        language: fr
+    description:
+      - value: >-
+          Die Interparlamentarische Aufsichtskommission strafrechtliche Einschliessung besteht
+          aus 18 Grossrätinnen und Grossräten aus den sechs Vertragskantonen Freiburg, Genf,
+          Jura, Neuenburg, Waadt und Wallis.
+        language: de
+      - value: >-
+          La Commission interparlementaire de contrôle détention pénale est composée de 18
+          députés issus des six cantons partenaires : Fribourg, Genève, Jura, Neuchâtel, Vaud et
+          Valais.
+        language: fr
+    landing_page:
+      - value: https://www.fr.ch/de/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5
+        language: de
+      - value: https://www.fr.ch/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5
+        language: fr
+    group_type:
+      group_type_enum: delegation
+      label:
+        - value: Delegation
+          language: de
+        - value: Délégation
+          language: fr
+    spatial: https://ld.admin.ch/canton/10
+    valid_from: 2007-12-12
 
 ```
 

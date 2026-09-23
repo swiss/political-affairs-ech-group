@@ -26,6 +26,7 @@ URI: [ops:speaking_actor_id](https://ch.paf.link/schema/operations/speaking_acto
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
+| [IsAgendaItem](IsAgendaItem.md) | Eine Mixin-Klasse, welche die Elemente eines Traktandums bereitstellt: Bezeic... |  no  |
 | [AgendaItem](AgendaItem.md) | Ein Traktandum einer Sitzung |  no  |
 | [ProtocolItem](ProtocolItem.md) | Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde |  no  |
 
@@ -41,7 +42,7 @@ URI: [ops:speaking_actor_id](https://ch.paf.link/schema/operations/speaking_acto
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [String](String.md) |
-| Domäne von | [AgendaItem](AgendaItem.md) |
+| Domäne von | [IsAgendaItem](IsAgendaItem.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -84,7 +85,7 @@ description: 'Der Sprecher oder die Sprecherin bzw. die Departementsvorsteherin 
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 domain_of:
-- AgendaItem
+- IsAgendaItem
 range: string
 
 ```

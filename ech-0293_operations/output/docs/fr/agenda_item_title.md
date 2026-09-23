@@ -26,6 +26,7 @@ URI: [ops:agenda_item_title](https://ch.paf.link/schema/operations/agenda_item_t
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
+| [IsAgendaItem](IsAgendaItem.md) | Une classe mixin qui fournit les éléments d'un point de l'ordre du jour : dés... |  no  |
 | [AgendaItem](AgendaItem.md) | Un point de l'ordre du jour d'une séance |  no  |
 | [ProtocolItem](ProtocolItem.md) | Un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-... |  no  |
 
@@ -41,7 +42,7 @@ URI: [ops:agenda_item_title](https://ch.paf.link/schema/operations/agenda_item_t
 | Propriété | Valeur |
 | --- | --- |
 | Plage | [MultilingualString](MultilingualString.md) |
-| Domaine de | [AgendaItem](AgendaItem.md) |
+| Domaine de | [IsAgendaItem](IsAgendaItem.md) |
 
 ### Cardinalité et exigences
 
@@ -82,7 +83,7 @@ description: 'Titre du point de l''ordre du jour.
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 domain_of:
-- AgendaItem
+- IsAgendaItem
 range: MultilingualString
 multivalued: true
 inlined: true

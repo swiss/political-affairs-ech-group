@@ -31,6 +31,7 @@ _A resolution or decision taken on an agenda item, including voting procedures._
 | Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [resolutions](resolutions.md) | range | [Resolution](Resolution.md) |
+| [IsAgendaItem](IsAgendaItem.md) | [has_resolution](has_resolution.md) | range | [Resolution](Resolution.md) |
 | [AgendaItem](AgendaItem.md) | [has_resolution](has_resolution.md) | range | [Resolution](Resolution.md) |
 | [ProtocolItem](ProtocolItem.md) | [has_resolution](has_resolution.md) | range | [Resolution](Resolution.md) |
 

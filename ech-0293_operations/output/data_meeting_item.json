@@ -3,6 +3,9 @@
   "agenda_items": [
     {
       "global_uri": "ops:cea750a5bd7b420fa4da1c914f801384",
+      "datetime_begin_planned": "2022-03-17T17:00:00+00:00",
+      "datetime_created": "2025-01-17T21:25:52+00:00",
+      "datetime_modified": "2025-01-17T21:25:52+00:00",
       "parent_meeting": "ops:meeting_bern_2022_03_17",
       "agenda_item_type": "item",
       "agenda_item_number": "8",
@@ -19,13 +22,13 @@
           "text": "https://stadtrat.bern.ch/de/sitzungen/detail.php?gid=000d6cf5f0bc4d89a5171e0123cfbff5#cea750a5bd7b420fa4da1c914f801384",
           "language": "de"
         }
-      ],
-      "datetime_begin_planned": "2022-03-17T17:00:00+00:00",
-      "datetime_created": "2025-01-17T21:25:52+00:00",
-      "datetime_modified": "2025-01-17T21:25:52+00:00"
+      ]
     },
     {
       "global_uri": "ops:2023_10_03-52",
+      "datetime_begin_planned": "2023-10-03T00:00:00+00:00",
+      "datetime_created": "2025-02-08T12:33:10+00:00",
+      "datetime_modified": "2025-02-08T12:33:10+00:00",
       "parent_meeting": "ops:meeting_lausanne_2023_10_03",
       "agenda_item_type": "item",
       "agenda_item_number": "52",
@@ -44,13 +47,13 @@
           "language": "fr"
         }
       ],
-      "agenda_item_category": "RAPPORTS",
-      "datetime_begin_planned": "2023-10-03T00:00:00+00:00",
-      "datetime_created": "2025-02-08T12:33:10+00:00",
-      "datetime_modified": "2025-02-08T12:33:10+00:00"
+      "agenda_item_category": "RAPPORTS"
     },
     {
       "global_uri": "ops:2025_05_20-23",
+      "datetime_begin_planned": "2025-05-20T00:00:00+00:00",
+      "datetime_created": "2025-06-07T23:50:18+00:00",
+      "datetime_modified": "2025-06-07T23:50:18+00:00",
       "parent_meeting": "ops:meeting_lausanne_2025_05_20",
       "agenda_item_type": "item",
       "agenda_item_number": "23",
@@ -69,13 +72,13 @@
           "language": "fr"
         }
       ],
-      "agenda_item_category": "ANNONCES ET INTERPELLATIONS",
-      "datetime_begin_planned": "2025-05-20T00:00:00+00:00",
-      "datetime_created": "2025-06-07T23:50:18+00:00",
-      "datetime_modified": "2025-06-07T23:50:18+00:00"
+      "agenda_item_category": "ANNONCES ET INTERPELLATIONS"
     },
     {
       "global_uri": "ops:7b3545e4-57dc-3901-aaa8-4020da6ab0c6",
+      "datetime_begin_planned": "2008-04-30T00:00:00+00:00",
+      "datetime_created": "2024-12-06T10:50:04+00:00",
+      "datetime_modified": "2024-12-06T10:50:04+00:00",
       "parent_meeting": "ops:meeting_vaud_2008_04_30",
       "agenda_item_type": "item",
       "agenda_item_number": "7",
@@ -97,13 +100,13 @@
           "text": "https://www.vd.ch/actualites/decisions-du-conseil-detat/seance-du-conseil-detat/seance/265632#7b3545e4-57dc-3901-aaa8-4020da6ab0c6",
           "language": "fr"
         }
-      ],
-      "datetime_begin_planned": "2008-04-30T00:00:00+00:00",
-      "datetime_created": "2024-12-06T10:50:04+00:00",
-      "datetime_modified": "2024-12-06T10:50:04+00:00"
+      ]
     },
     {
       "global_uri": "ops:06fb582b753c416d8fdb05fa13873545",
+      "datetime_begin_planned": "2011-11-23T00:00:00+00:00",
+      "datetime_created": "2025-03-21T23:15:19+00:00",
+      "datetime_modified": "2025-03-21T23:15:19+00:00",
       "parent_meeting": "ops:meeting_2011_11_23",
       "agenda_item_type": "item",
       "agenda_item_position": 2,
@@ -112,13 +115,13 @@
           "text": "Interpellation Peter Mark betr. elektronische Datenerfassung durch Mitarbeiter im Werkhof – Versuchsphase",
           "language": "de"
         }
-      ],
-      "datetime_begin_planned": "2011-11-23T00:00:00+00:00",
-      "datetime_created": "2025-03-21T23:15:19+00:00",
-      "datetime_modified": "2025-03-21T23:15:19+00:00"
+      ]
     },
     {
       "global_uri": "ops:16155798_3",
+      "datetime_begin_planned": "2025-03-31T00:00:00+00:00",
+      "datetime_created": "2025-05-02T11:23:49+00:00",
+      "datetime_modified": "2025-05-02T11:23:49+00:00",
       "parent_meeting": "ops:meeting_schaffhausen_2025_03_31",
       "agenda_item_type": "item",
       "agenda_item_number": "2",
@@ -130,13 +133,13 @@
         }
       ],
       "affair_id": "affairs:MOT_2023_9",
-      "agenda_item_category": "Traktanden",
-      "datetime_begin_planned": "2025-03-31T00:00:00+00:00",
-      "datetime_created": "2025-05-02T11:23:49+00:00",
-      "datetime_modified": "2025-05-02T11:23:49+00:00"
+      "agenda_item_category": "Traktanden"
     },
     {
       "global_uri": "ops:21c50b86d21b4b4baeb1a76738ff82a3_2025-04-02_1_de",
+      "datetime_begin_planned": "2025-04-02T00:00:00+00:00",
+      "datetime_created": "2025-04-25T11:11:40+00:00",
+      "datetime_modified": "2025-04-25T11:11:40+00:00",
       "parent_meeting": "ops:meeting_bern_rr_2025_04_02",
       "agenda_item_type": "item",
       "agenda_item_title": [
@@ -151,13 +154,13 @@
           "text": "https://www.rr.be.ch/de/start/beschluesse/suche/geschaeftsdetail.html?guid=21c50b86d21b4b4baeb1a76738ff82a3",
           "language": "de"
         }
-      ],
-      "datetime_begin_planned": "2025-04-02T00:00:00+00:00",
-      "datetime_created": "2025-04-25T11:11:40+00:00",
-      "datetime_modified": "2025-04-25T11:11:40+00:00"
+      ]
     },
     {
       "global_uri": "ops:49_253",
+      "datetime_begin_planned": "2025-03-31T00:00:00+00:00",
+      "datetime_created": "2025-03-29T01:07:14+00:00",
+      "datetime_modified": "2025-03-29T01:07:14+00:00",
       "parent_meeting": "ops:meeting_2025_03_31",
       "agenda_item_type": "item",
       "agenda_item_number": "2",
@@ -167,13 +170,13 @@
           "text": "Programmvereinbarungen 2024",
           "language": "de"
         }
-      ],
-      "datetime_begin_planned": "2025-03-31T00:00:00+00:00",
-      "datetime_created": "2025-03-29T01:07:14+00:00",
-      "datetime_modified": "2025-03-29T01:07:14+00:00"
+      ]
     },
     {
       "global_uri": "ops:16155798_4",
+      "datetime_begin_planned": "2025-03-31T00:00:00+00:00",
+      "datetime_created": "2025-05-02T11:23:49+00:00",
+      "datetime_modified": "2025-05-02T11:23:49+00:00",
       "parent_meeting": "ops:meeting_schaffhausen_2025_03_31_b",
       "agenda_item_type": "item",
       "agenda_item_number": "3",
@@ -185,13 +188,13 @@
         }
       ],
       "affair_id": "affairs:MOT_2024_1",
-      "agenda_item_category": "Traktanden",
-      "datetime_begin_planned": "2025-03-31T00:00:00+00:00",
-      "datetime_created": "2025-05-02T11:23:49+00:00",
-      "datetime_modified": "2025-05-02T11:23:49+00:00"
+      "agenda_item_category": "Traktanden"
     },
     {
       "global_uri": "ops:87b69a72919445a493a061d9b0daeba3",
+      "datetime_begin_planned": "2025-06-02T00:00:00+00:00",
+      "datetime_created": "2025-04-25T11:10:35+00:00",
+      "datetime_modified": "2025-04-25T11:10:35+00:00",
       "parent_meeting": "ops:meeting_be_2025_06_02",
       "agenda_item_type": "item",
       "agenda_item_title": [
@@ -200,13 +203,13 @@
           "language": "de"
         }
       ],
-      "affair_id": "affairs:2025.GRPARL.81",
-      "datetime_begin_planned": "2025-06-02T00:00:00+00:00",
-      "datetime_created": "2025-04-25T11:10:35+00:00",
-      "datetime_modified": "2025-04-25T11:10:35+00:00"
+      "affair_id": "affairs:2025.GRPARL.81"
     },
     {
       "global_uri": "ops:0de4ecdb-23f1-49ab-95b8-1afc2e4feb1a",
+      "datetime_begin_planned": "2025-01-28T00:00:00+00:00",
+      "datetime_created": "2025-01-29T06:59:41+00:00",
+      "datetime_modified": "2025-01-29T06:59:41+00:00",
       "parent_meeting": "ops:meeting_luzern_2025_01_28",
       "agenda_item_type": "item",
       "agenda_item_number": "29",
@@ -224,13 +227,13 @@
           "language": "de"
         }
       ],
-      "agenda_item_category": "voting",
-      "datetime_begin_planned": "2025-01-28T00:00:00+00:00",
-      "datetime_created": "2025-01-29T06:59:41+00:00",
-      "datetime_modified": "2025-01-29T06:59:41+00:00"
+      "agenda_item_category": "voting"
     },
     {
       "global_uri": "ops:fa732e0e-7e5f-4d45-994a-fc74720c0781",
+      "datetime_begin_planned": "2025-01-28T00:00:00+00:00",
+      "datetime_created": "2025-01-29T06:59:41+00:00",
+      "datetime_modified": "2025-01-29T06:59:41+00:00",
       "parent_meeting": "ops:meeting_luzern_2025_01_28_b",
       "agenda_item_type": "item",
       "agenda_item_number": "14",
@@ -248,10 +251,7 @@
           "language": "de"
         }
       ],
-      "agenda_item_category": "voting",
-      "datetime_begin_planned": "2025-01-28T00:00:00+00:00",
-      "datetime_created": "2025-01-29T06:59:41+00:00",
-      "datetime_modified": "2025-01-29T06:59:41+00:00"
+      "agenda_item_category": "voting"
     }
   ],
   "@type": "Container"

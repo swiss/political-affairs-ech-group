@@ -173,7 +173,7 @@ Container
   │                     └─ has_protocol → identifiant du procès-verbal
   ├─ agenda_items   → AgendaItem  (avant : points planifiés, parent_meeting)
   └─ protocols      → Protocol    (après : consignation, parent_meeting)
-                        ├─ protocol_items  → ProtocolItem (comme AgendaItem)
+                        ├─ protocol_items  → ProtocolItem (mêmes éléments qu'AgendaItem)
                         ├─ votings
                         ├─ speeches
                         ├─ text_segments
@@ -184,7 +184,7 @@ Container
 
 ### ProtocolItem (point consigné au procès-verbal)
 
-`ProtocolItem` hérite de tous les champs d'`AgendaItem` (`is_a: AgendaItem`) et représente un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-verbal.
+`ProtocolItem` représente un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-verbal. Il porte les mêmes éléments qu'`AgendaItem`, sans en être une dérivation : les deux classes tirent les champs du point de l'ordre du jour du mixin `IsAgendaItem`. Le point consigné n'est pas un cas particulier du point planifié — il naît indépendamment et peut comprendre des points jamais mis à l'ordre du jour, de même que l'ordre du jour peut comprendre des points jamais traités.
 
 {{include:ech-0293_operations/output/docs/ProtocolItem.md}}
 

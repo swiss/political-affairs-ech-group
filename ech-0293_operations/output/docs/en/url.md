@@ -28,8 +28,9 @@ URI: [ops:url](https://ch.paf.link/schema/operations/url)
 | --- | --- | --- |
 | [Session](Session.md) | A parliamentary session that groups multiple meetings and spans a specific ti... |  no  |
 | [Meeting](Meeting.md) | A general meeting class used for Sessions, Comittee Meetings, individual sess... |  no  |
-| [AgendaItem](AgendaItem.md) | An agenda item of a meeting |  no  |
+| [IsAgendaItem](IsAgendaItem.md) | A mixin class that provides the elements of an agenda item: designation, type... |  no  |
 | [Media](Media.md) | Media files or documents (including protocols in PDF/HTML/WORD or links to au... |  no  |
+| [AgendaItem](AgendaItem.md) | An agenda item of a meeting |  no  |
 | [ProtocolItem](ProtocolItem.md) | An agenda item as actually recorded in the protocol |  no  |
 
 
@@ -44,7 +45,7 @@ URI: [ops:url](https://ch.paf.link/schema/operations/url)
 | Property | Value |
 | --- | --- |
 | Range | [MultilingualString](MultilingualString.md) |
-| Domain Of | [Session](Session.md), [Meeting](Meeting.md), [AgendaItem](AgendaItem.md), [Media](Media.md) |
+| Domain Of | [Session](Session.md), [Meeting](Meeting.md), [IsAgendaItem](IsAgendaItem.md), [Media](Media.md) |
 
 ### Cardinality and Requirements
 
@@ -87,7 +88,7 @@ rank: 1000
 domain_of:
 - Session
 - Meeting
-- AgendaItem
+- IsAgendaItem
 - Media
 range: MultilingualString
 multivalued: true

@@ -3,7 +3,7 @@
 ## Class: TextSegment 
 
 
-_A text segment such as cross-references or subtitles in meeting protocols._
+_A text segment such as cross-references or subtitles. Text segments are carried by the protocol, by a speech or by an agenda item (planned AgendaItem or recorded ProtocolItem)._
 
 
 
@@ -30,7 +30,10 @@ _A text segment such as cross-references or subtitles in meeting protocols._
 
 | Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
+| [IsAgendaItem](IsAgendaItem.md) | [text_segments](text_segments.md) | range | [TextSegment](TextSegment.md) |
+| [AgendaItem](AgendaItem.md) | [text_segments](text_segments.md) | range | [TextSegment](TextSegment.md) |
 | [Protocol](Protocol.md) | [text_segments](text_segments.md) | range | [TextSegment](TextSegment.md) |
+| [ProtocolItem](ProtocolItem.md) | [text_segments](text_segments.md) | range | [TextSegment](TextSegment.md) |
 
 
 

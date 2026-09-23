@@ -173,7 +173,7 @@ Container
   │                     └─ has_protocol → Identifikator des Protokolls
   ├─ agenda_items   → AgendaItem  (vorher: geplante Traktanden, parent_meeting)
   └─ protocols      → Protocol    (nachher: Niederschrift, parent_meeting)
-                        ├─ protocol_items  → ProtocolItem (wie AgendaItem)
+                        ├─ protocol_items  → ProtocolItem (gleiche Elemente wie AgendaItem)
                         ├─ votings
                         ├─ speeches
                         ├─ text_segments
@@ -184,7 +184,7 @@ Container
 
 ### ProtocolItem (protokolliertes Traktandum)
 
-`ProtocolItem` erbt sämtliche Felder von `AgendaItem` (`is_a: AgendaItem`) und bildet ein Traktandum so ab, wie es im Protokoll tatsächlich festgehalten wurde.
+`ProtocolItem` bildet ein Traktandum so ab, wie es im Protokoll tatsächlich festgehalten wurde. Es führt dieselben Elemente wie `AgendaItem`, ist aber keine Ableitung davon: Beide Klassen beziehen die Traktandumsfelder aus dem Mixin `IsAgendaItem`. Das Protokollierte ist kein Sonderfall des Geplanten — es entsteht unabhängig und kann Traktanden enthalten, die nie traktandiert waren, so wie die Traktandenliste Punkte enthalten kann, die nie behandelt wurden.
 
 {{include:ech-0293_operations/output/docs/ProtocolItem.md}}
 

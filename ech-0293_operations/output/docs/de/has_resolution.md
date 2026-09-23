@@ -26,6 +26,7 @@ URI: [ops:has_resolution](https://ch.paf.link/schema/operations/has_resolution)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
+| [IsAgendaItem](IsAgendaItem.md) | Eine Mixin-Klasse, welche die Elemente eines Traktandums bereitstellt: Bezeic... |  no  |
 | [AgendaItem](AgendaItem.md) | Ein Traktandum einer Sitzung |  no  |
 | [ProtocolItem](ProtocolItem.md) | Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde |  no  |
 
@@ -41,7 +42,7 @@ URI: [ops:has_resolution](https://ch.paf.link/schema/operations/has_resolution)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [Resolution](Resolution.md) |
-| Domäne von | [AgendaItem](AgendaItem.md) |
+| Domäne von | [IsAgendaItem](IsAgendaItem.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -81,7 +82,7 @@ description: 'Die Resolution oder Entscheidung zu diesem Traktandum.
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 domain_of:
-- AgendaItem
+- IsAgendaItem
 range: Resolution
 
 ```

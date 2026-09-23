@@ -28,8 +28,9 @@ URI: [ops:url](https://ch.paf.link/schema/operations/url)
 | --- | --- | --- |
 | [Session](Session.md) | Une session parlementaire qui regroupe plusieurs séances et s'étend sur une p... |  no  |
 | [Meeting](Meeting.md) | Une classe générale de séance utilisée pour les sessions, les séances de comm... |  no  |
-| [AgendaItem](AgendaItem.md) | Un point de l'ordre du jour d'une séance |  no  |
+| [IsAgendaItem](IsAgendaItem.md) | Une classe mixin qui fournit les éléments d'un point de l'ordre du jour : dés... |  no  |
 | [Media](Media.md) | Fichiers médias ou documents (y compris les procès-verbaux en PDF/HTML/WORD o... |  no  |
+| [AgendaItem](AgendaItem.md) | Un point de l'ordre du jour d'une séance |  no  |
 | [ProtocolItem](ProtocolItem.md) | Un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-... |  no  |
 
 
@@ -44,7 +45,7 @@ URI: [ops:url](https://ch.paf.link/schema/operations/url)
 | Propriété | Valeur |
 | --- | --- |
 | Plage | [MultilingualString](MultilingualString.md) |
-| Domaine de | [Session](Session.md), [Meeting](Meeting.md), [AgendaItem](AgendaItem.md), [Media](Media.md) |
+| Domaine de | [Session](Session.md), [Meeting](Meeting.md), [IsAgendaItem](IsAgendaItem.md), [Media](Media.md) |
 
 ### Cardinalité et exigences
 
@@ -87,7 +88,7 @@ rank: 1000
 domain_of:
 - Session
 - Meeting
-- AgendaItem
+- IsAgendaItem
 - Media
 range: MultilingualString
 multivalued: true

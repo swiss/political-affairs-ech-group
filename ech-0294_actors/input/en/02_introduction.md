@@ -2,6 +2,19 @@
 
 # Introduction
 
+## Status
+
+Proposal
+
+## Scope of application
+
+The standard governs the publication of data on political actors by the bodies that already keep this data today: parliamentary services, state chancelleries and municipal administrations at all levels of government. It covers in particular the following use cases:
+
+- publication of the members of parliaments, governments and committees with their memberships, functions and terms of office
+- publication of the registers of interests of members of parliament
+- referencing persons, groups and bodies from the other standards of the "Political Affairs" family, for instance for speeches and votes in parliamentary operations (eCH-0293) or for the authorship of parliamentary affairs (eCH-0295)
+- reuse of this data by the media, research and the public, comparable across levels of government
+
 ## The "Political Affairs" standard family
 
 Political activity in Switzerland takes place at federal, cantonal and communal level – in parliaments and communal assemblies, in executives and administrations, in consultations and hearings, as well as through the direct-democratic participation of eligible voters. To this end, the "Political Affairs" specialist group of the eCH Association is developing a family of coordinated standards that structure this data across all federal levels. The standards use common data elements (eCH-0292) and reference one another via unique identifiers.

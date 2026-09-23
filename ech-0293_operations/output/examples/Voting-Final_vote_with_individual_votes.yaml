@@ -14,7 +14,8 @@ votings:
   majority_type: absolute
   majority_count: 65
   result_text: Mit 78 zu 42 Stimmen bei 5 Enthaltungen angenommen
-  parent_agenda_item: ops:agenda_item_sg_2025_015
+  parent_protocol: ops:protocol_sg_2025_03_15
+  parent_protocol_item: ops:protocol_item_sg_2025_015
   parent_meeting: ops:meeting_sg_2025_03_15
   actor_id:
     global_uri: actors:kr_sg

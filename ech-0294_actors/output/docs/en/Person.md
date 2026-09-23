@@ -64,6 +64,94 @@ _A person with identifiers, names, addresses, citizenships, and occupations._
 
 
 ### Examples
+#### Example Person: Non-binary gender entry with occupation and training
+
+```yaml
+persons:
+- local_id: 72c7232be92944e3876f3b6723824ff9
+  global_uri: >-
+    https://stadtrat.bern.ch/de/mitglieder/detail.php?gid=72c7232be92944e3876f3b6723824ff9
+  label: Sofia Fisch
+  birth_year: 1996
+  names:
+  - name_type: PersonFirstName
+    value: Sofia
+  - name_type: PersonOfficialName
+    value: Fisch
+  genders:
+  - gender_code: non_binary
+    label: divers
+  occupations:
+  - label: Jurist*in
+    is_active: true
+  trainings:
+  - training_type: '3223'
+    value: MLaw
+
+```
+#### Example Person: Telling apart persons with identical names via the label
+
+```yaml
+persons:
+- local_id: 6447
+  global_uri: https://www.ur.ch/behoerdenmitglieder/6447
+  label: Alois Arnold (1981)
+  birth_year: 1981
+  names:
+  - name_type: PersonFirstName
+    value: Alois
+  - name_type: PersonOfficialName
+    value: Arnold
+
+```
+#### Example Person: Call name differing from the official first name
+
+```yaml
+persons:
+- local_id: 1269
+  global_uri: >-
+    https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269
+  label: Gerri Beretta-Piccoli
+  names:
+  - name_type: PersonFirstName
+    value: Fausto
+  - name_type: PersonCallFirstName
+    value: Gerri
+  - name_type: PersonOfficialName
+    value: Beretta-Piccoli
+
+```
+#### Example Person: Name variant alongside the official double name
+
+```yaml
+persons:
+- local_id: 280958
+  global_uri: https://parlament.winterthur.ch/behoerdenmitglieder/280958
+  label: Cristina Bozzi-Brunel
+  names:
+  - name_type: PersonFirstName
+    value: Cristina
+  - name_type: PersonOfficialName
+    value: Bozzi-Brunel
+  - name_type: PersonOriginalName
+    value: Brunel
+
+```
+#### Example Person: Telling apart persons with identical names via the label second person
+
+```yaml
+persons:
+- local_id: 6370
+  global_uri: https://www.ur.ch/behoerdenmitglieder/6370
+  label: Alois Arnold (1965)
+  birth_year: 1965
+  names:
+  - name_type: PersonFirstName
+    value: Alois
+  - name_type: PersonOfficialName
+    value: Arnold
+
+```
 #### Example Person: Fully recorded person
 
 ```yaml
@@ -107,94 +195,6 @@ persons:
     value: beat.jans@admin.ch
   - contact_type: contact_website
     value: http://www.beat-jans.ch
-
-```
-#### Example Person: Non-binary gender entry with occupation and training
-
-```yaml
-persons:
-- local_id: 72c7232be92944e3876f3b6723824ff9
-  global_uri: >-
-    https://stadtrat.bern.ch/de/mitglieder/detail.php?gid=72c7232be92944e3876f3b6723824ff9
-  label: Sofia Fisch
-  birth_year: 1996
-  names:
-  - name_type: PersonFirstName
-    value: Sofia
-  - name_type: PersonOfficialName
-    value: Fisch
-  genders:
-  - gender_code: non_binary
-    label: divers
-  occupations:
-  - label: Jurist*in
-    is_active: true
-  trainings:
-  - training_type: '3223'
-    value: MLaw
-
-```
-#### Example Person: Call name differing from the official first name
-
-```yaml
-persons:
-- local_id: 1269
-  global_uri: >-
-    https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269
-  label: Gerri Beretta-Piccoli
-  names:
-  - name_type: PersonFirstName
-    value: Fausto
-  - name_type: PersonCallFirstName
-    value: Gerri
-  - name_type: PersonOfficialName
-    value: Beretta-Piccoli
-
-```
-#### Example Person: Telling apart persons with identical names via the label
-
-```yaml
-persons:
-- local_id: 6447
-  global_uri: https://www.ur.ch/behoerdenmitglieder/6447
-  label: Alois Arnold (1981)
-  birth_year: 1981
-  names:
-  - name_type: PersonFirstName
-    value: Alois
-  - name_type: PersonOfficialName
-    value: Arnold
-
-```
-#### Example Person: Telling apart persons with identical names via the label second person
-
-```yaml
-persons:
-- local_id: 6370
-  global_uri: https://www.ur.ch/behoerdenmitglieder/6370
-  label: Alois Arnold (1965)
-  birth_year: 1965
-  names:
-  - name_type: PersonFirstName
-    value: Alois
-  - name_type: PersonOfficialName
-    value: Arnold
-
-```
-#### Example Person: Name variant alongside the official double name
-
-```yaml
-persons:
-- local_id: 280958
-  global_uri: https://parlament.winterthur.ch/behoerdenmitglieder/280958
-  label: Cristina Bozzi-Brunel
-  names:
-  - name_type: PersonFirstName
-    value: Cristina
-  - name_type: PersonOfficialName
-    value: Bozzi-Brunel
-  - name_type: PersonOriginalName
-    value: Brunel
 
 ```
 

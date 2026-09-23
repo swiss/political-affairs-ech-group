@@ -16,7 +16,8 @@ votings:
   majority_type: absolute
   majority_count: 76
   result_text: Mit 45 zu 87 Stimmen bei 8 Enthaltungen abgelehnt
-  parent_agenda_item: ops:agenda_item_be_2025_042
+  parent_protocol: ops:protocol_be_2025_06_05
+  parent_protocol_item: ops:protocol_item_be_2025_042
   parent_meeting: ops:meeting_be_2025_06_05
   actor_id:
     global_uri: actors:gr_be

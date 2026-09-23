@@ -137,6 +137,8 @@ For each of `de`, `fr`, `en`:
 ### DOCX specifics
 
 - **Table of contents**: `01_head.md` contains a raw Word TOC field (`{=openxml}` block, depth `\o "1-2"`). `set_docx_updatefields.py` sets `updateFields=true` so Word fills the TOC on open.
+- **Table captions (eCH-0294 only)**: `table_captions.lua` (pandoc filter) adds a caption below every schema table that sits directly under a level-3 heading (Attribute, Verwendungen, Zulässige Werte): paragraph style `caption`, text `Tabelle N: <Klasse> – <Abschnitt>` with a Word `SEQ` field (`Tabelle`/`Tableau`/`Table` per language, as in the eCH-0003 template). The table of tables in Anhang F is a `TOC \c "<label>"` field over these captions; the label must match.
+- **Unnumbered headings (eCH-0294 only)**: as in the eCH-0003 template, only Einleitung … Urheberrechte are numbered. Headings marked `{.unnumbered .unlisted}` (Zusammenfassung, Inhaltsverzeichnis, Hinweis) or `{.unnumbered}` (Anhänge and their subsections) are mapped by `unnumbered_headings.lua` to the styles `Nebentitel` (not in the TOC), `Anhang Überschrift` and `Anhang Überschrift 2` from `input/template.docx`, which switch off the heading numbering.
 - **Zebra tables**: `shade_alternate_rows.py` bakes an alternating light-grey fill into every other table row directly into the DOCX (Word renders style-based row banding unreliably, so the shading is explicit).
 - **Fonts / cover / logo**: styled via `input/template.docx` (`--reference-doc`).
 - **Footer**: the template footer holds only a placeholder; `set_docx_footer.py` overwrites it with the value derived from `01_head.md` (same string the PDF uses), so version/status in the Word footer never drift.

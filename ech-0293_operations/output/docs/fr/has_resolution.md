@@ -26,6 +26,7 @@ URI: [ops:has_resolution](https://ch.paf.link/schema/operations/has_resolution)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
+| [IsAgendaItem](IsAgendaItem.md) | Une classe mixin qui fournit les éléments d'un point de l'ordre du jour : dés... |  no  |
 | [AgendaItem](AgendaItem.md) | Un point de l'ordre du jour d'une séance |  no  |
 | [ProtocolItem](ProtocolItem.md) | Un point de l'ordre du jour tel qu'il a effectivement été consigné au procès-... |  no  |
 
@@ -41,7 +42,7 @@ URI: [ops:has_resolution](https://ch.paf.link/schema/operations/has_resolution)
 | Propriété | Valeur |
 | --- | --- |
 | Plage | [Resolution](Resolution.md) |
-| Domaine de | [AgendaItem](AgendaItem.md) |
+| Domaine de | [IsAgendaItem](IsAgendaItem.md) |
 
 ### Cardinalité et exigences
 
@@ -81,7 +82,7 @@ description: 'La décision prise sur ce point de l''ordre du jour.
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 domain_of:
-- AgendaItem
+- IsAgendaItem
 range: Resolution
 
 ```

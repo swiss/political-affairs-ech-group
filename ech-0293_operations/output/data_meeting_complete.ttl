@@ -15,19 +15,19 @@ ops:agenda_item_be_2025_042 a ops:AgendaItem ;
     ops:affair_id "affairs:be_2024_089_steuergesetz" ;
     ops:agenda_item_category "Gesetzgebung" ;
     ops:agenda_item_description [ a ops:MultilingualString ;
-            ops:text "Délibération sur les propositions de modification de l'article 5 de la loi fiscale" ;
-            mcm:language "fr" ],
-        [ a ops:MultilingualString ;
             ops:text "Beratung von Änderungsanträgen zu Artikel 5 des Steuergesetzes" ;
-            mcm:language "de" ] ;
+            mcm:language "de" ],
+        [ a ops:MultilingualString ;
+            ops:text "Délibération sur les propositions de modification de l'article 5 de la loi fiscale" ;
+            mcm:language "fr" ] ;
     ops:agenda_item_number "4.2" ;
     ops:agenda_item_position 42 ;
     ops:agenda_item_title [ a ops:MultilingualString ;
-            ops:text "Loi fiscale - Délibération détaillée art. 5" ;
-            mcm:language "fr" ],
-        [ a ops:MultilingualString ;
             ops:text "Steuergesetz - Detailberatung Art. 5" ;
-            mcm:language "de" ] ;
+            mcm:language "de" ],
+        [ a ops:MultilingualString ;
+            ops:text "Loi fiscale - Délibération détaillée art. 5" ;
+            mcm:language "fr" ] ;
     ops:agenda_item_type <https://ch.paf.link/schema/operations/enum/agenda_item_type/item> ;
     ops:parent_meeting "ops:meeting_be_committee_wak_2025_05_12" ;
     ops:state_id "completed" ;

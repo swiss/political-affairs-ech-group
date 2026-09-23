@@ -3,7 +3,7 @@
 ## Klasse: TextSegment 
 
 
-_Ein Textsegment wie Querverweise oder Zwischentitel in Sitzungsprotokollen._
+_Ein Textsegment wie Querverweise oder Zwischentitel. Textsegmente werden am Protokoll, an einer Wortmeldung oder an einem Traktandum geführt (geplantes AgendaItem oder protokolliertes ProtocolItem)._
 
 
 
@@ -30,7 +30,10 @@ _Ein Textsegment wie Querverweise oder Zwischentitel in Sitzungsprotokollen._
 
 | Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
+| [IsAgendaItem](IsAgendaItem.md) | [text_segments](text_segments.md) | range | [TextSegment](TextSegment.md) |
+| [AgendaItem](AgendaItem.md) | [text_segments](text_segments.md) | range | [TextSegment](TextSegment.md) |
 | [Protocol](Protocol.md) | [text_segments](text_segments.md) | range | [TextSegment](TextSegment.md) |
+| [ProtocolItem](ProtocolItem.md) | [text_segments](text_segments.md) | range | [TextSegment](TextSegment.md) |
 
 
 

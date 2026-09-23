@@ -27,7 +27,7 @@ URI: [ops:text](https://ch.paf.link/schema/operations/text)
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Speech](Speech.md) | A speech or statement made during a meeting (also called Votum or speaker seg... |  no  |
-| [TextSegment](TextSegment.md) | A text segment such as cross-references or subtitles in meeting protocols |  no  |
+| [TextSegment](TextSegment.md) | A text segment such as cross-references or subtitles |  no  |
 | [MultilingualString](MultilingualString.md) | A string that can contain text in multiple languages |  no  |
 
 

@@ -35,6 +35,10 @@ Speech
   └─ TextSegment (résumé, de)
 ```
 
+### Porteurs d'un segment de texte
+
+Les segments de texte ne se rattachent pas uniquement au procès-verbal in extenso : `Protocol` les porte pour le texte intégral de toute la séance, et `AgendaItem` — respectivement le `ProtocolItem` consigné — pour un texte se rapportant à un seul point de l'ordre du jour, par exemple un intertitre, un renvoi ou une motivation publiée déjà avec l'ordre du jour. Comme les deux classes portent le mixin `IsAgendaItem`, `text_segments` est disponible aussi bien du côté planifié que du côté consigné. L'intervention isolée, en revanche, porte son texte directement dans `text`, `text_format` et `text_type`.
+
 ## Media
 
 ### But

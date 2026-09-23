@@ -27,6 +27,7 @@ URI: [ops:election](https://ch.paf.link/schema/operations/election)
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Container](Container.md) | Container for the records of public council operations: legislatures, session... |  no  |
+| [Protocol](Protocol.md) | The minutes of a meeting, recorded after the meeting |  no  |
 
 
 
@@ -40,7 +41,7 @@ URI: [ops:election](https://ch.paf.link/schema/operations/election)
 | Property | Value |
 | --- | --- |
 | Range | [Election](Election.md) |
-| Domain Of | [Container](Container.md) |
+| Domain Of | [Container](Container.md), [Protocol](Protocol.md) |
 | Slot URI | [ops:election](https://ch.paf.link/schema/operations/election) |
 
 ### Cardinality and Requirements
@@ -84,6 +85,7 @@ rank: 1000
 slot_uri: ops:election
 domain_of:
 - Container
+- Protocol
 range: Election
 multivalued: true
 inlined: true

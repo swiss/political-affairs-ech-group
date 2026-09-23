@@ -2,6 +2,19 @@
 
 # Einleitung
 
+## Status
+
+Vorschlag
+
+## Anwendungsgebiet
+
+Der Standard regelt die Publikation von Daten über politische Akteurinnen und Akteure durch die Stellen, die sie heute schon führen: Parlamentsdienste, Staatskanzleien und Gemeindeverwaltungen aller Staatsebenen. Er deckt insbesondere folgende Anwendungsfälle ab:
+
+- Publikation der Mitglieder von Parlamenten, Regierungen und Kommissionen mit ihren Mitgliedschaften, Funktionen und Amtsdauern
+- Publikation der Register der Interessenbindungen von Parlamentsmitgliedern
+- Referenzierung von Personen, Gruppen und Organen aus den übrigen Standards der Familie „Politische Geschäfte", etwa für Wortmeldungen und Abstimmungen im Ratsbetrieb (eCH-0293) oder für die Urheberschaft parlamentarischer Geschäfte (eCH-0295)
+- Nachnutzung dieser Daten durch Medien, Forschung und Öffentlichkeit, über Staatsebenen hinweg vergleichbar
+
 ## Die Standardfamilie „Politische Geschäfte"
 
 Das politische Geschehen der Schweiz findet auf Bundes-, Kantons- und Gemeindeebene statt – in Parlamenten und Gemeindeversammlungen, in Exekutiven und Verwaltungen, in Vernehmlassungen und Konsultationen sowie über die direktdemokratische Mitwirkung der Stimmberechtigten. Die Fachgruppe „Politische Geschäfte" des Vereins eCH entwickelt dafür eine Familie aufeinander abgestimmter Standards, welche diese Daten föderal übergreifend strukturieren. Die Standards nutzen gemeinsame Datenelemente (eCH-0292) und referenzieren sich gegenseitig über eindeutige Identifikatoren.

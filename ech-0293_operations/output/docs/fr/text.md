@@ -27,7 +27,7 @@ URI: [ops:text](https://ch.paf.link/schema/operations/text)
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
 | [Speech](Speech.md) | Une intervention prononcée au cours d'une séance (également appelée prise de ... |  no  |
-| [TextSegment](TextSegment.md) | Un segment de texte tel qu'un renvoi ou un intertitre dans un procès-verbal d... |  no  |
+| [TextSegment](TextSegment.md) | Un segment de texte tel qu'un renvoi ou un intertitre |  no  |
 | [MultilingualString](MultilingualString.md) | Une chaîne de caractères pouvant contenir du texte en plusieurs langues |  no  |
 
 

@@ -12,6 +12,10 @@ Les décisions parlementaires sont prises soit par des votes sur des questions m
 
 « Voting » saisit le processus de vote et le résultat d'une décision formelle au parlement. L'entité documente aussi bien l'objet du vote (la question) que la procédure (comment il a été voté) et le résultat (avec quel rapport de voix).
 
+### Rattachement au procès-verbal
+
+Les votes et les élections ont lieu au cours de la séance. `Voting` et `Election` se rattachent donc au procès-verbal par `parent_protocol` et non à l'ordre du jour publié à l'avance : ce qui a été mis à l'ordre du jour ne dit pas encore sur quoi il a effectivement été voté. Lorsque le vote a eu lieu sous un point de l'ordre du jour, `parent_protocol_item` renvoie en outre au point consigné (`ProtocolItem`) ; sans point de l'ordre du jour, ce champ reste vide et le rattachement découle de `parent_protocol` et `parent_meeting`. Inversement, `Protocol` reprend les votes et les élections sous forme de listes (`votings`, `elections`).
+
 ### Types de votes
 
 La norme distingue différents types de votes au moyen du champ **voting_type** :
