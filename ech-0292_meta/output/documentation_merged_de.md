@@ -153,7 +153,15 @@ GAP (https://www.go-fair.org/fair-principles/):
 
 # Richtext Definition
 
-+ Unicode
+In einigen Anwendungsfällen im Rahmen der politschen Geschäfte werden Texte strukturiert übermittelt. In diesem Falle enthalten die Texte verschiedene Formatierungselemente welche repräsentiert werden sollen. Im Grundsatz werden Formatierungen mit HTML Elemente ausgedrückt. Es sollen aber nicht alle Möglichkeiten von HTML erlaubt werden, sondern nur solche welche grundsätzliche Formatierungen erlauben. Schriftart, -grösse und farbe sind Grundsätzlich nicht erlaubt um Inkompatibilitäten zu vermeiden.
+
+Dieses Kapitel zeigt auf welche Elemente von HTML in diesen sogenannten "Richtext" Feldern erlaubt sind.
+
+## Erlaubte Codepages
+Im Grundsatz wird in allen Standards dieser eCH Gruppe nur Unicode erlaubt.
+
+## Auflistung der erlaubten und nicht erlau
+
 
 | Zweck        | Element                                         | HTML                                                              | Bemerkung                                                                                                                            |
 | ------------ | ----------------------------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
