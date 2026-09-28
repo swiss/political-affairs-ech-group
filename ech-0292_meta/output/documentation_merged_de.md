@@ -226,9 +226,9 @@ _FRBR Work: das abstrakte Dokument als solches, unabhängig von einer konkreten 
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> String | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> Uriorcurie | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> Uriorcurie | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| local_id | 0..1 <br/> String | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: HasIdentification |
+| global_uri | 1 <br/> Uriorcurie | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: HasIdentification |
+| wikidata_uri | 0..1 <br/> Uriorcurie | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: HasIdentification |
 | document_category | 0..1 <br/> [DocumentCategoryEnum](#DocumentCategoryEnum) | Kategorie des Dokuments. Wenn nicht gesetzt, wird automatisch 'other' verwendet.  |
 | expressions | * <br/> [Expression](#Expression) | Die Sprachfassungen (Expressions) eines Works.  |
 
@@ -331,17 +331,17 @@ _FRBR Expression: eine konkrete Sprachfassung eines Works._
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> String | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> Uriorcurie | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> Uriorcurie | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| local_id | 0..1 <br/> String | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: HasIdentification |
+| global_uri | 1 <br/> Uriorcurie | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: HasIdentification |
+| wikidata_uri | 0..1 <br/> Uriorcurie | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: HasIdentification |
 | expression_language | 1 <br/> String | Sprachcode im ISO 639-1-Format.  |
 | expression_title | 1 <br/> String | Titel der Sprachfassung.  |
 | expression_description | 0..1 <br/> String | Beschreibender Text zur Sprachfassung.  |
 | manifestations | * <br/> [Manifestation](#Manifestation) | Die Dateiformen (Manifestations) einer Expression.  |
-| date_created | 0..1 <br/> Date | Datum der Erstpublikation der Sprachfassung. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_created | 0..1 <br/> Datetime | Datum und Uhrzeit der Erstpublikation der Sprachfassung. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
-| date_modified | 0..1 <br/> Date | Datum der letzten Revision der Sprachfassung. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_modified | 0..1 <br/> Datetime | Datum und Uhrzeit der letzten Revision der Sprachfassung. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
+| date_created | 0..1 <br/> Date | Datum der Erstpublikation der Sprachfassung. <br/><br/>Vererbung: HasCreationModificationDates |
+| datetime_created | 0..1 <br/> Datetime | Datum und Uhrzeit der Erstpublikation der Sprachfassung. <br/><br/>Vererbung: HasCreationModificationDates |
+| date_modified | 0..1 <br/> Date | Datum der letzten Revision der Sprachfassung. <br/><br/>Vererbung: HasCreationModificationDates |
+| datetime_modified | 0..1 <br/> Datetime | Datum und Uhrzeit der letzten Revision der Sprachfassung. <br/><br/>Vererbung: HasCreationModificationDates |
 
 
 
@@ -401,15 +401,15 @@ _FRBR Manifestation: eine konkrete Dateiform einer Expression, über eine URL ad
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> String | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> Uriorcurie | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> Uriorcurie | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| local_id | 0..1 <br/> String | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: HasIdentification |
+| global_uri | 1 <br/> Uriorcurie | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: HasIdentification |
+| wikidata_uri | 0..1 <br/> Uriorcurie | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: HasIdentification |
 | format | 0..1 <br/> String | Das Dateiformat der Manifestation (z.B. pdf, html).  |
 | manifestation_url | 0..1 <br/> Uri | URL, unter der die Dateiform abgerufen werden kann.  |
-| date_created | 0..1 <br/> Date | Datum der Erstpublikation der Dateiform. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_created | 0..1 <br/> Datetime | Datum und Uhrzeit der Erstpublikation der Dateiform. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
-| date_modified | 0..1 <br/> Date | Datum der letzten Revision der Dateiform. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_modified | 0..1 <br/> Datetime | Datum und Uhrzeit der letzten Revision der Dateiform. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
+| date_created | 0..1 <br/> Date | Datum der Erstpublikation der Dateiform. <br/><br/>Vererbung: HasCreationModificationDates |
+| datetime_created | 0..1 <br/> Datetime | Datum und Uhrzeit der Erstpublikation der Dateiform. <br/><br/>Vererbung: HasCreationModificationDates |
+| date_modified | 0..1 <br/> Date | Datum der letzten Revision der Dateiform. <br/><br/>Vererbung: HasCreationModificationDates |
+| datetime_modified | 0..1 <br/> Datetime | Datum und Uhrzeit der letzten Revision der Dateiform. <br/><br/>Vererbung: HasCreationModificationDates |
 
 
 
@@ -440,112 +440,4 @@ _FRBR Manifestation: eine konkrete Dateiform einer Expression, über eine URL ad
 
 
 </div>
-
-
-### Klasse: HasIdentification []{#HasIdentification}
-
-
-_Eine Mixin-Klasse, die Slots für die Identifikation einer Entität zur Verfügung stellt. Sie wird für Entitäten verwendet, die aus sich heraus identifiziert sind; deren `global_uri` ist der Identifikator und daher obligatorisch._
-
-
-
-
-<div data-search-exclude markdown="1">
-
-
-
-
-#### Attribute
-
-| Name | Kardinalität und Wertebereich | Beschreibung |
-|------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> String | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.  |
-| global_uri | 1 <br/> Uriorcurie | Eine eindeutige, global gültige URI für die Entität.  |
-| wikidata_uri | 0..1 <br/> Uriorcurie | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans.  |
-
-
-
-#### Mixin-Verwendung
-
-[Work](#Work), [Expression](#Expression), [Manifestation](#Manifestation), WorkContainer
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-
-
-### Klasse: HasCreationModificationDates []{#HasCreationModificationDates}
-
-
-_Eine Mixin-Klasse, die Slots für die Modellierung von Erstellungs- und Änderungsdaten einer Entität zur Verfügung stellt._
-
-
-
-
-<div data-search-exclude markdown="1">
-
-
-
-
-#### Attribute
-
-| Name | Kardinalität und Wertebereich | Beschreibung |
-|------------------------|----------------------|------------------------------------------------------|
-| date_created | 0..1 <br/> Date | Das Datum, an dem eine Entität erstellt wurde.  |
-| datetime_created | 0..1 <br/> Datetime | Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.  |
-| date_modified | 0..1 <br/> Date | Das Datum, an dem eine Entität zuletzt geändert wurde.  |
-| datetime_modified | 0..1 <br/> Datetime | Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.  |
-
-
-
-#### Mixin-Verwendung
-
-[Expression](#Expression), [Manifestation](#Manifestation)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-
-\newpage
-
-list of topics/categories for affairs that can be mapped to any organization's list
-see: https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0297_consultations/misc/2026-06-19-session.md
-
-for next version
 
