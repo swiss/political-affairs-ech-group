@@ -6,8 +6,23 @@ _Internal note: update the next subgroup meeting in the [README](https://github.
 
 ## Next meeting: 28 September (15-16.00) – 4th MO of every month
 
+- to dos vom 24. August durchgehen
+    - 01_head.md: am Schluss erstellen
+    - 02_introduction.md: noch nichts, wird am Schluss erstellt
+    - 03_design_principles.md: ggf. noch umstellen
+    - 04_common_data_elements.md: herausgelöst, werden in einzelnen Kapiteln/Standards beschrieben
+    - 05_data_publishing.md: 
+    - 06_richtext_definition.md: Draft auf Basis Bund
+    - 07_legacy_documents.md: Draft, umbenannt
 - Glossar: https://docs.google.com/spreadsheets/d/1taUeu5BWyzboI01Hmde-G_TbGklVjgDgaKvjBqixMjs/edit?gid=0#gid=0
-    - Begrifflichkeiten: Sicht Gruppe und extern
+    - Allgemeine Begriffe
+        - Rollen: ...
+        - "Session"
+        - Abstimmungstypen
+    - Matrix mit Begriff pro Kanton; via OpenParlData?
+    - vs. via Schema? via
+    - via annotations?
+    - offene Frage: gehören Geschäftstypen etc. in Glossar?
 - 
 
 ## 24 August
