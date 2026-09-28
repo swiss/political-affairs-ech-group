@@ -14,15 +14,17 @@ _Internal note: update the next subgroup meeting in the [README](https://github.
     - 05_data_publishing.md: 
     - 06_richtext_definition.md: Draft auf Basis Bund
     - 07_legacy_documents.md: Draft, umbenannt
+    - --> offene To Dos bis 1 Woche vor nächster Sitzung 19.10.
 - Glossar: https://docs.google.com/spreadsheets/d/1taUeu5BWyzboI01Hmde-G_TbGklVjgDgaKvjBqixMjs/edit?gid=0#gid=0
-    - Allgemeine Begriffe
+    - Beispiele
         - Rollen: ...
         - "Session"
         - Abstimmungstypen
-    - Matrix mit Begriff pro Kanton; via OpenParlData?
-    - vs. via Schema? via
-    - via annotations?
-    - offene Frage: gehören Geschäftstypen etc. in Glossar?
+    - Matrix mit Begriff pro Kanton
+    - via annotations im YAML?
+    - offene Frage: gehören Geschäftstypen, Stati etc. in Glossar? --> via OpenParlData.ch -> YAML: Christian
+    - Inputs von Subgruppen holen
+    - to dos bis zur nächsten Sitzung (Michael und Christian)
 - 
 
 ## 24 August
