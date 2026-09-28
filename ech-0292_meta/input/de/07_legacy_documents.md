@@ -53,5 +53,3 @@ Both the Expression and the Manifestation carry creation and modification dates 
 
 
 {{include:ech-0292_meta/output/docs/Manifestation.md}}
-{{include:ech-0292_meta/output/docs/HasIdentification.md}}
-{{include:ech-0292_meta/output/docs/HasCreationModificationDates.md}}
