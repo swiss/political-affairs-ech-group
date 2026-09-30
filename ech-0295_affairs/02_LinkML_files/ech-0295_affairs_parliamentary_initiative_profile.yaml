@@ -3,7 +3,8 @@
 # Parliamentary-initiative profile: a thin schema that imports the affairs core
 # and defines the concrete ParliamentaryInitiative class. Built by copying the
 # Motion profile, changing the class, fixing `affair_type`, and adjusting the
-# allowed process steps in the `procedure_steps` slot_usage (any_of).
+# allowed step types in the `allowed_step_types` annotation of the
+# `procedure_steps` slot_usage.
 #
 # Key difference from the Motion profile: a parliamentary initiative asks the
 # parliament to draft an act itself; it does NOT instruct the executive. The
@@ -76,7 +77,9 @@ classes:
         Gibt der Erstrat der Initiative keine Folge, ist sie damit erledigt. Wird
         ihr Folge gegeben, arbeitet die einreichende Kommission (nach Zustimmung
         der Kommission des Zweitrats, sofern Zweikammersystem) den entsprechenden
-        Erlass aus, was als Umsetzungsschritt erfasst wird.
+        Erlass aus; die Exekutive nimmt zu diesem Erlassentwurf Stellung (erfasst
+        als ExecutiveResponseStep), danach beraten und verabschieden die Räte ihn
+        wie jede andere Vorlage.
     slot_usage:
       affair_type:
         equals_string: parliamentary_initiative
@@ -99,13 +102,4 @@ classes:
             der Vorprüfung NICHT vor; er tritt erst in der Ausarbeitungsphase auf,
             wenn die Exekutive zum von der Kommission ausgearbeiteten Erlass
             Stellung nimmt.
-        any_of:
-          - range: SubmissionStep
-          - range: WithdrawalStep
-          - range: ValidationStep
-          - range: AssignmentStep
-          - range: AgendaStep
-          - range: CommitteeDeliberationStep
-          - range: ExecutiveResponseStep
-          - range: PlenaryDebateStep
-          - range: ImplementationStep
+          allowed_step_types: submission withdrawal validation assignment agenda committee_deliberation executive_response plenary_debate implementation

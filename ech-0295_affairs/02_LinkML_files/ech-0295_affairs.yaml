@@ -29,6 +29,7 @@ prefixes:
   aff: https://ld.ech.ch/schema/0295/affairs/
   act: https://ld.ech.ch/schema/0294/actors/
   dcterms: http://purl.org/dc/terms/
+version: 0.2.0
 default_prefix: aff
 default_range: string
 imports:
@@ -88,25 +89,28 @@ classes:
     abstract: true
     description: |
       Abstract base class for a single step in the lifecycle of an affair. A step
-      is a dated, typed event with a processing status, a procedural phase, and a
-      stage discriminator. Concrete subclasses add the fields specific to that
-      stage. Steps are ordered chronologically within an affair via
+      is a dated, typed event with a processing status (step_status), a
+      procedural phase, a type discriminator (step_type), and optionally the
+      stage the affair as a whole has reached after this step (affair_stage).
+      Concrete subclasses add the fields specific to that step type. Steps are ordered chronologically within an affair via
       `procedure_steps`.
     annotations:
       description_de: |
         Abstrakte Basisklasse für einen einzelnen Schritt im Lebenszyklus eines
         Geschäfts. Ein Schritt ist ein datiertes, typisiertes Ereignis mit einem
-        Bearbeitungsstatus, einer Verfahrensphase und einem Stage-Diskriminator.
+        Bearbeitungsstatus (step_status), einer Verfahrensphase, einem
+        Typ-Diskriminator (step_type) und optional dem Stand, den das Geschäft als
+        Ganzes nach diesem Schritt erreicht hat (affair_stage).
         Konkrete Unterklassen ergänzen die für diese Stufe spezifischen Felder.
         Schritte werden innerhalb eines Geschäfts über `procedure_steps`
         chronologisch geordnet.
     slots:
       - step_uid
       - step_type
-      - as_of_date
-      - step_status
       - phase
+      - step_status
       - affair_stage
+      - as_of_date
       - texts
       - step_remarks
 
@@ -124,7 +128,7 @@ classes:
         erste Schritt jedes Geschäfts.
     slot_usage:
       step_type:
-       	equals_string: submission
+        equals_string: submission
       texts:
         required: true
     slots:
@@ -324,18 +328,27 @@ classes:
     description: |
       Links an actor (a person, or a group such as a faction or committee) to an
       affair in a sponsoring role (sponsor, co-sponsor, takeover), with a temporal
-      validity.
+      validity. Exactly one of `person_reference` or `group_reference` must be
+      given.
     annotations:
       description_de: |
         Verknüpft einen Akteur (eine Person oder eine Gruppe wie eine Fraktion
         oder Kommission) in einer urhebenden Rolle (Urheber/in, Mitunterzeichnung,
-        Übernahme) mit einem Geschäft, mit zeitlicher Gültigkeit.
+        Übernahme) mit einem Geschäft, mit zeitlicher Gültigkeit. Es ist genau
+        eines von `person_reference` oder `group_reference` anzugeben.
     mixins:
       - HasTemporalValidity
     slots:
       - person_reference
       - group_reference
       - sponsor_role
+    exactly_one_of:
+      - slot_conditions:
+          person_reference:
+            required: true
+      - slot_conditions:
+          group_reference:
+            required: true
 
   CommitteePosition:
     description: |
@@ -495,12 +508,12 @@ slots:
     description: |
       Chronologically ordered list of process steps documenting the lifecycle of
       the affair. Each item is an instance of a ProcessStep subclass; its concrete
-      type is given by `stage`.
+      type is given by `step_type`.
     annotations:
       description_de: |
         Chronologisch geordnete Liste der Verfahrensschritte, die den
         Lebenszyklus des Geschäfts dokumentieren. Jedes Element ist eine Instanz
-        einer ProcessStep-Unterklasse; sein konkreter Typ ergibt sich aus `stage`.
+        einer ProcessStep-Unterklasse; sein konkreter Typ ergibt sich aus `step_type`.
 
   remarks:
     slot_uri: aff:remarks
@@ -519,15 +532,20 @@ slots:
       description_de: |
         Eindeutiger, stabiler Identifikator des Verfahrensschritts.
     
-   step_type: 
-     range: stepTypeEnum
-     description: |
-       Name of step in which affair is currently in.
-     annotations:
-       description_de: |
-         Name des Steps. 
-     
-     
+  step_type:
+    slot_uri: aff:stepType
+    range: StepTypeEnum
+    required: true
+    description: |
+      Type of the process step (e.g., submission, plenary_debate). Acts as the
+      discriminator: each ProcessStep subclass fixes its value via slot_usage,
+      which determines which further fields are available.
+    annotations:
+      description_de: |
+        Typ des Verfahrensschritts (z.B. Einreichung, Ratsdebatte). Dient als
+        Diskriminator: jede ProcessStep-Unterklasse legt ihren Wert via
+        slot_usage fest, was bestimmt, welche weiteren Felder verfügbar sind.
+
   as_of_date:
     slot_uri: aff:asOfDate
     range: date
@@ -540,7 +558,7 @@ slots:
         (Snapshot-Datum).
 
   step_status:
-    slot_uri: aff:step_status
+    slot_uri: aff:stepStatus
     range: ProcedureStepStatusEnum
     description: |
       Processing status of the step (open or closed).
@@ -560,13 +578,17 @@ slots:
         parlamentarisch, nachparlamentarisch).
 
   affair_stage:
-    slot_uri: aff:affair_stage
+    slot_uri: aff:affairStage
     range: AffairStageEnum
     description: |
-      offen, abgelehnt, angenommen
+      Stage of the affair as a whole as it stands after this step (snapshot).
+      The affair_stage of the chronologically last step is the current stage of
+      the affair.
     annotations:
       description_de: |
-        offen, abgelehnt, angenommen
+        Stand des Geschäfts als Ganzes nach diesem Schritt (Momentaufnahme). Der
+        affair_stage des chronologisch letzten Schritts ist der aktuelle Stand
+        des Geschäfts.
 
   texts:
     slot_uri: aff:text
@@ -1275,54 +1297,62 @@ enums:
           description_de: |
             Anderer Geschäftstyp, nicht durch die Standardkategorien abgedeckt.
 
-     
   StepTypeEnum:
-	  description: 
-		  Namen der steps.
-	  annotations:
-	     description_de: |
-	         Namen des Steps. 
-     permissible_values:
-       submission:
-         description: Submission step (SubmissionStep).
-         annotations:
-           description_de: Einreichungsschritt (SubmissionStep).
-       withdrawal:
-         description: Withdrawal step (WithdrawalStep).
-         annotations:
-           description_de: Rückzugsschritt (WithdrawalStep).
-       validation:
-         description: Validation step (ValidationStep).
-         annotations:
-           description_de: Prüfungsschritt (ValidationStep).
-       assignment:
-         description: Assignment step (AssignmentStep).
-         annotations:
-           description_de: Zuweisungsschritt (AssignmentStep).
-       executive_response:
-         description: Executive response step (ExecutiveResponseStep).
-         annotations:
-           description_de: Stellungnahme-Schritt der Exekutive (ExecutiveResponseStep).
-       agenda:
-         description: Agenda placement step (AgendaStep).
-         annotations:
-           description_de: Traktandierungsschritt (AgendaStep).
-       committee_deliberation:
-         description: Committee deliberation step (CommitteeDeliberationStep).
-         annotations:
-           description_de: Kommissionsberatungsschritt (CommitteeDeliberationStep).
-       plenary_debate:
-         description: Plenary debate step (PlenaryDebateStep).
-         annotations:
-           description_de: Ratsdebattenschritt (PlenaryDebateStep).
-       implementation:
-         description: Implementation / write-off step (ImplementationStep).
-         annotations:
-           description_de: Umsetzungs- / Abschreibungsschritt (ImplementationStep).
-  
+    description: |
+      Types of process steps. Each value corresponds to one ProcessStep
+      subclass (see `meaning`).
+    annotations:
+      description_de: |
+        Typen von Verfahrensschritten. Jeder Wert entspricht einer
+        ProcessStep-Unterklasse (siehe `meaning`).
+    permissible_values:
+      submission:
+        meaning: aff:SubmissionStep
+        description: Submission step (SubmissionStep).
+        annotations:
+          description_de: Einreichung (SubmissionStep).
+      withdrawal:
+        meaning: aff:WithdrawalStep
+        description: Withdrawal step (WithdrawalStep).
+        annotations:
+          description_de: Rückzug (WithdrawalStep).
+      validation:
+        meaning: aff:ValidationStep
+        description: Validation step (ValidationStep).
+        annotations:
+          description_de: Prüfung (Zulässigkeit / Dringlichkeit) (ValidationStep).
+      assignment:
+        meaning: aff:AssignmentStep
+        description: Assignment step (AssignmentStep).
+        annotations:
+          description_de: Zuweisung (AssignmentStep).
+      executive_response:
+        meaning: aff:ExecutiveResponseStep
+        description: Executive response step (ExecutiveResponseStep).
+        annotations:
+          description_de: Stellungnahme der Exekutive (ExecutiveResponseStep).
+      agenda:
+        meaning: aff:AgendaStep
+        description: Agenda placement step (AgendaStep).
+        annotations:
+          description_de: Traktandierung (AgendaStep).
+      committee_deliberation:
+        meaning: aff:CommitteeDeliberationStep
+        description: Committee deliberation step (CommitteeDeliberationStep).
+        annotations:
+          description_de: Kommissionsberatung (CommitteeDeliberationStep).
+      plenary_debate:
+        meaning: aff:PlenaryDebateStep
+        description: Plenary debate step (PlenaryDebateStep).
+        annotations:
+          description_de: Ratsdebatte (PlenaryDebateStep).
+      implementation:
+        meaning: aff:ImplementationStep
+        description: Implementation / write-off step (ImplementationStep).
+        annotations:
+          description_de: Umsetzung / Abschreibung (ImplementationStep).
 
-
-  ProcedureStatusEnum:
+  ProcedureStepStatusEnum:
     description: |
       Processing status of a process step.
     annotations:
@@ -1360,19 +1390,31 @@ enums:
 
   AffairStageEnum:
     description: |
-        XX
+      Stage of the affair as a whole (not of an individual step).
     annotations:
       description_de: |
-        XX
+        Stand des Geschäfts als Ganzes (nicht eines einzelnen Schritts).
     permissible_values:
-      ongoing: |
-      	das Geschäft ist noch offen/in Bearbeitung
-      rejected: |
-      	das Geschäft ist abgeschlossen und verworfen worden
-      adopted: |
-      	das Geschätt ist abgeschlossen und überwiesen
-      concluded: | 
-       das Geschäft hat einen Bericht erhalten/whatever :)
+      ongoing:
+        description: The affair is still open / being processed.
+        annotations:
+          description_de: Das Geschäft ist noch offen / in Bearbeitung.
+      rejected:
+        description: The affair was not adopted and not transmitted.
+        annotations:
+          description_de: Das Geschäft wurde nicht angenommen und nicht überwiesen.
+      adopted:
+        description: The affair was adopted and transmitted (e.g., to the executive).
+        annotations:
+          description_de: Das Geschäft wurde angenommen und überwiesen.
+      concluded:
+        description: |
+          The affair is settled (erledigt) otherwise, e.g., answered, report
+          received, written off, or withdrawn.
+        annotations:
+          description_de: |
+            Das Geschäft ist auf andere Weise erledigt, z.B. beantwortet, Bericht
+            erhalten, abgeschrieben oder zurückgezogen.
 
   SponsorRoleEnum:
     description: |
@@ -1382,17 +1424,33 @@ enums:
         Rolle eines Akteurs in der Urheberschaft eines Geschäfts.
     permissible_values:
       sponsor:
-        description: Primary sponsor / first signatory (Urheber/in, Erstunterzeichnung).
+        description: Primary sponsor / first signatory / main author (Erstunterzeichnung, Hauptautor/in, Haupturheber/in).
         annotations:
-          description_de: Haupturheber/in / Erstunterzeichnung.
+          description_de: Erst-Unterzeichner/in / Hauptautor/in / Haupturheber/in.
+      second_signatory:
+        description: Second signatory (Zweitunterzeichnung).
+        annotations:
+          description_de: Zweit-Unterzeichner/in.
+      third_signatory:
+        description: Third signatory (Drittunterzeichnung).
+        annotations:
+          description_de: Dritt-Unterzeichner/in.
+      fourth_signatory:
+        description: Fourth signatory (Viertunterzeichnung).
+        annotations:
+          description_de: Viert-Unterzeichner/in.
       cosponsor:
         description: Co-sponsor / co-signatory (Mitunterzeichnung).
         annotations:
-          description_de: Mitunterzeichnung.
+          description_de: Mitunterzeichner/in.
+      co_author:
+        description: Co-author (Ko-Autorschaft).
+        annotations:
+          description_de: Ko-Autor/in.
       takeover:
         description: Actor who took over the affair from the original sponsor (Übernahme).
         annotations:
-          description_de: Akteur, der das Geschäft vom ursprünglichen Urheber übernommen hat (Übernahme).
+          description_de: Übernehmer/in.
 
   ValidationTypeEnum:
     description: |
@@ -1550,11 +1608,14 @@ enums:
 
   VoteResultEnum:
     description: |
-      Outcome of a vote or of a step that concludes with a vote.
+      Outcome of a vote or of a step that concludes with a vote. In committee
+      steps, the outcome is often a recommendation to the council rather than a
+      decision (recommendation_to_*).
     annotations:
       description_de: |
         Ergebnis einer Abstimmung oder eines mit einer Abstimmung abschliessenden
-        Schritts.
+        Schritts. Bei Kommissionsschritten ist das Ergebnis oft eine Empfehlung an
+        den Rat statt eines Entscheids (recommendation_to_*).
     permissible_values:
       accepted:
         description: Accepted / adopted.
@@ -1572,8 +1633,30 @@ enums:
         description: No decision reached (e.g., postponed).
         annotations:
           description_de: Kein Entscheid (z.B. verschoben).
-	recommendation to reject: 
-		#TODO ERGàNZEN!
+      recommendation_to_accept:
+        description: |
+          The vote results in a recommendation to accept (e.g., a committee
+          recommends that the council accept the affair).
+        annotations:
+          description_de: |
+            Die Abstimmung ergibt eine Empfehlung zur Annahme (z.B. die Kommission
+            beantragt dem Rat die Annahme).
+      recommendation_to_reject:
+        description: |
+          The vote results in a recommendation to reject (e.g., a committee
+          recommends that the council reject the affair).
+        annotations:
+          description_de: |
+            Die Abstimmung ergibt eine Empfehlung zur Ablehnung (z.B. die
+            Kommission beantragt dem Rat die Ablehnung).
+      recommendation_to_accept_as_postulate:
+        description: The vote results in a recommendation to accept the motion as a postulate.
+        annotations:
+          description_de: Die Abstimmung ergibt eine Empfehlung zur Annahme als Postulat.
+      recommendation_partial_acceptance:
+        description: The vote results in a recommendation of partial acceptance.
+        annotations:
+          description_de: Die Abstimmung ergibt eine Empfehlung zur teilweisen Annahme.
 
   DispositionEnum:
     description: |

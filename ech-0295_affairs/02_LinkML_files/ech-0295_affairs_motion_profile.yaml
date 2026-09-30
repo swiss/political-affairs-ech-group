@@ -3,7 +3,8 @@
 # Motion profile: a thin schema that imports the affairs core and defines the
 # concrete Motion class. To add another affair type (e.g., Postulate,
 # Interpellation), copy this file, change the class, fix `affair_type`, and
-# adjust the allowed process steps in the `procedure_steps` slot_usage (any_of).
+# adjust the allowed step types in the `allowed_step_types` annotation of the
+# `procedure_steps` slot_usage (space-separated StepTypeEnum values).
 
 id: https://ld.ech.ch/schema/0295/affairs/motion
 name: motion-profile
@@ -64,13 +65,4 @@ classes:
             Für eine Motion anwendbare Verfahrensschritte. Eine Motion kann jeden
             der folgenden Schritt-Typen verwenden; die Stellungnahme der Exekutive
             und mindestens eine Ratsdebatte sind normalerweise vorhanden.
-        any_of:
-          - range: SubmissionStep
-          - range: WithdrawalStep
-          - range: ValidationStep
-          - range: AssignmentStep
-          - range: ExecutiveResponseStep
-          - range: AgendaStep
-          - range: CommitteeDeliberationStep
-          - range: PlenaryDebateStep
-          - range: ImplementationStep
+          allowed_step_types: submission withdrawal validation assignment executive_response agenda committee_deliberation plenary_debate implementation
