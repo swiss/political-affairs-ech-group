@@ -708,7 +708,14 @@
             "description": "FRBR Work: the abstract document as such, independent of a concrete language version or file format.",
             "properties": {
                 "document_category": {
-                    "$ref": "#/$defs/DocumentCategoryEnum",
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/DocumentCategoryEnum"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "description": "Category of the document. If not set, 'other' is automatically used.\n"
                 },
                 "expressions": {
@@ -789,7 +796,7 @@
     "$id": "https://ch.paf.link/schema/meta",
     "$schema": "https://json-schema.org/draft/2019-09/schema",
     "additionalProperties": true,
-    "metamodel_version": "1.11.0",
+    "metamodel_version": "1.12.0",
     "title": "meta",
     "type": "object",
     "version": null
