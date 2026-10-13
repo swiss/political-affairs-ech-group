@@ -125,6 +125,24 @@ Caveats:
 - `gen-owl` emits each annotation as a triple `pv-uri annotation-key Literal(value)` without a language tag — language information lives in the annotation key (`label_de`), not as an RDF language tag. The recommended way to obtain proper RDF language tags is to maintain an external SKOS concept scheme referenced via `meaning`.
 - `gen-pydantic` ignores annotations on permissible values for class generation but they remain accessible via `SchemaView`.
 
+## Using Common Data Elements
+
+Elements that several standards need – e.g. the mixins `HasIdentification`, `HasTemporalValidity` and `HasCreationModificationDates` or the class `MultilingualValue` – are defined once in [`ech-0292_meta/input/schema_common.yaml`](ech-0292_meta/input/schema_common.yaml). They are not part of the eCH-0292 standard itself: each standard imports the file and documents the elements it uses in its own document.
+
+```yaml
+imports:
+  - linkml:types
+  - ../../ech-0292_meta/input/schema_common
+
+classes:
+  Person:
+    mixins:
+      - HasIdentification
+      - HasCreationModificationDates
+```
+
+Import it with exactly this path, also from within `ech-0292_meta`: some LinkML tools resolve imports relative to the importing standard, and a shorter path breaks there.
+
 ## Attributes vs Slots
 
 Properties can either be defined within a class as `attribute` and then, they are exclusive to that class or as `slot` which can be reused across different classes. If there are different classes that define the same `attribute` (even with different descriptions), this will result in a warning (but it seems that one can live with it).

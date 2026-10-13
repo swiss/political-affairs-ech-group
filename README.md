@@ -19,23 +19,11 @@ The meeting dates and Teams links of the subgroups are given here: [meeting date
 
 The eCH Specialist Group Political Affairs uses a data-centric approach to develop its data schemata. This means that the **data schemata are the primary artifacts**. [LinkML](https://linkml.io/linkml/) is used to describe the data schema which in turn is also used to auto-generate parts of the documentation.
 
-## Common Data Elements
+## Embedding Into the Currently Established eCH Workflow
 
-Elements that several standards need – e.g. the mixins `HasIdentification`, `HasTemporalValidity` and `HasCreationModificationDates` or the class `MultilingualValue` – are defined once in [`ech-0292_meta/input/schema_common.yaml`](ech-0292_meta/input/schema_common.yaml). They are not part of the eCH-0292 standard itself: each standard imports the file and documents the elements it uses in its own document.
+Currently, the eCH workflow is heavily document-based. The main artifacts are text documents - sometimes accompanied by XML schemas. The eCH Specialist Group Political Affairs is somehow a **pilot project** working on a **transition to a data-centric approach**. To fit the results of the data-centric approach into the currently established eCH workflow, there is some heavy lifting needed to generate the required documents from the LinkML schemata. Some of this work will probably no longer be needed once the eCH workflow is fully data-centric.
 
-```yaml
-imports:
-  - linkml:types
-  - ../../ech-0292_meta/input/schema_common
-
-classes:
-  Person:
-    mixins:
-      - HasIdentification
-      - HasCreationModificationDates
-```
-
-Import it with exactly this path, also from within `ech-0292_meta`: some LinkML tools resolve imports relative to the importing standard, and a shorter path breaks there.
+For users not interested in the usual eCH files, the LinkML framework creates usable documentation directly from the LinkML schemata. This markdown documentation is available via `output/docs/{lang}/index.md` in each subgroup.
 
 ## Important Documents
 

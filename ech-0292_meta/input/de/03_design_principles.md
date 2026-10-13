@@ -22,6 +22,10 @@ There is no general versioning of entities in the data schema. The main reason f
 
 An example of this would be the occupation of a person. Each occupation can have a start and end date, allowing to track changes over time without versioning the person entity itself.
 
+## Common Data Elements
+
+Elements that are needed in multiple standards of the eCH Specialist Group Political Affairs are defined once in a common schema and imported into the individual standards. This avoids duplication and ensures consistency across the different standards. These elements are called **Common Data Elements** (CDEs) and are defined in the subgroup **eCH-0292: Metaprozesse zu politischen Geschäften**. The CDEs are not part of the eCH-0292 standard itself, but are documented there.
+
 ## Local References
 
 Some entities are referenced "locally" in addition to linking to the full entity. This is done to have useful local data without too much query complexity. This will also generate some form of versioning implicitly, as the local reference will not change when the full entity changes.
