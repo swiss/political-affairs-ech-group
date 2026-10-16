@@ -1,124 +1,128 @@
-@prefix act: <https://ld.ech.ch/schema/0294/actors/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix mcm: <https://ld.ech.ch/schema/0292/meta-common/> .
-@prefix schema1: <http://schema.org/> .
+@prefix act: <https://ld.ech.ch/schema/0294/actors/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
+@prefix schema1: <http://schema.org/> .
 act:swiss_politicians_example a act:Container ;
-    act:person <https://parlament.winterthur.ch/behoerdenmitglieder/280958>,
-        <https://stadtrat.bern.ch/de/mitglieder/detail.php?gid=72c7232be92944e3876f3b6723824ff9>,
-        <https://www.admin.ch/de/beat-jans>,
-        <https://www.ur.ch/behoerdenmitglieder/6370>,
-        <https://www.ur.ch/behoerdenmitglieder/6447>,
-        <https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269> .
-
+	act:person <https://parlament.winterthur.ch/behoerdenmitglieder/280958> , <https://stadtrat.bern.ch/de/mitglieder/detail.php?gid=72c7232be92944e3876f3b6723824ff9> , <https://www.admin.ch/de/beat-jans> , <https://www.ur.ch/behoerdenmitglieder/6370> , <https://www.ur.ch/behoerdenmitglieder/6447> , <https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269> .
 <https://parlament.winterthur.ch/behoerdenmitglieder/280958> a act:Person ;
-    mcm:label "Cristina Bozzi-Brunel" ;
-    mcm:localId "280958" ;
-    act:name [ a act:Name ;
-            mcm:value "Cristina" ;
-            act:nameType "PersonFirstName" ],
-        [ a act:Name ;
-            mcm:value "Brunel" ;
-            act:nameType "PersonOriginalName" ],
-        [ a act:Name ;
-            mcm:value "Bozzi-Brunel" ;
-            act:nameType "PersonOfficialName" ] .
-
+	mcm:label "Cristina Bozzi-Brunel" ;
+	mcm:localId "280958" ;
+	act:name _:c14n17 , _:c14n7 , _:c14n8 .
 <https://stadtrat.bern.ch/de/mitglieder/detail.php?gid=72c7232be92944e3876f3b6723824ff9> a act:Person ;
-    mcm:label "Sofia Fisch" ;
-    mcm:localId "72c7232be92944e3876f3b6723824ff9" ;
-    act:birthYear 1996 ;
-    act:gender [ a act:Gender ;
-            mcm:label "divers" ;
-            act:genderCode "non_binary" ] ;
-    act:name [ a act:Name ;
-            mcm:value "Fisch" ;
-            act:nameType "PersonOfficialName" ],
-        [ a act:Name ;
-            mcm:value "Sofia" ;
-            act:nameType "PersonFirstName" ] ;
-    act:occupation [ a act:Occupation ;
-            mcm:isCurrent true ;
-            mcm:label "Jurist*in" ] ;
-    act:training [ a act:Training ;
-            mcm:value "MLaw" ;
-            act:trainingType "3223" ] .
-
-<https://www.admin.ch/de/beat-jans> a act:Person ;
-    schema1:birthDate "1964-07-12"^^xsd:date ;
-    mcm:label "Beat Jans" ;
-    mcm:labelLong "Beat Jans, dipl. nat. ETH" ;
-    mcm:localId "4032" ;
-    mcm:wikidataUri <http://www.wikidata.org/entity/Q813067> ;
-    act:address [ a act:Address ;
-            act:addressType "businessAddress" ;
-            act:postalLocality "Basel-Stadt" ] ;
-    act:birthYear 1964 ;
-    act:citizenship [ a act:Citizenship ;
-            schema1:validFrom "1964-07-12"^^xsd:date ;
-            act:country "CH" ] ;
-    act:contact [ a act:Contact ;
-            mcm:value "http://www.beat-jans.ch" ;
-            act:contactType "contact_website" ],
-        [ a act:Contact ;
-            mcm:value "beat.jans@admin.ch" ;
-            act:contactType "email" ] ;
-    act:gender [ a act:Gender ;
-            schema1:validFrom "1964-07-12"^^xsd:date ;
-            act:genderCode "male" ] ;
-    act:languageProficiency [ a act:LanguageProficiency ;
-            mcm:language "de" ;
-            act:isCorrespondence true ;
-            act:isNative true ] ;
-    act:name [ a act:Name ;
-            mcm:value "Beat" ;
-            act:nameType "PersonFirstName" ],
-        [ a act:Name ;
-            schema1:validFrom "1964-07-12"^^xsd:date ;
-            mcm:value "Jans" ;
-            act:nameType "PersonOfficialName" ] ;
-    act:occupation [ a act:Occupation ;
-            schema1:validFrom "1964-01-01"^^xsd:date ;
-            mcm:isCurrent true ;
-            mcm:label "Politiker" ] ;
-    act:picture <https://commons.wikimedia.org/wiki/File:Beat_Jans_(2026)_(cropped).jpg> ;
-    act:training [ a act:Training ;
-            mcm:value "dipl. nat. ETH" ;
-            act:trainingType "3223" ] .
-
+	mcm:label "Sofia Fisch" ;
+	mcm:localId "72c7232be92944e3876f3b6723824ff9" ;
+	act:birthYear 1996 ;
+	act:gender _:c14n2 ;
+	act:name _:c14n10 , _:c14n20 ;
+	act:occupation _:c14n0 ;
+	act:training _:c14n13 .
+<https://www.admin.ch/de/beat-jans> schema1:birthDate "1964-07-12"^^xsd:date ;
+	a act:Person ;
+	mcm:label "Beat Jans" ;
+	mcm:labelLong "Beat Jans, dipl. nat. ETH" ;
+	mcm:localId "4032" ;
+	mcm:wikidataUri <http://www.wikidata.org/entity/Q813067> ;
+	act:address _:c14n22 ;
+	act:birthYear 1964 ;
+	act:citizenship _:c14n21 ;
+	act:contact _:c14n24 , _:c14n4 ;
+	act:gender _:c14n23 ;
+	act:languageProficiency _:c14n18 ;
+	act:name _:c14n12 , _:c14n15 ;
+	act:occupation _:c14n14 ;
+	act:picture <https://commons.wikimedia.org/wiki/File:Beat_Jans_(2026)_(cropped).jpg> ;
+	act:training _:c14n16 .
 <https://www.ur.ch/behoerdenmitglieder/6370> a act:Person ;
-    mcm:label "Alois Arnold (1965)" ;
-    mcm:localId "6370" ;
-    act:birthYear 1965 ;
-    act:name [ a act:Name ;
-            mcm:value "Alois" ;
-            act:nameType "PersonFirstName" ],
-        [ a act:Name ;
-            mcm:value "Arnold" ;
-            act:nameType "PersonOfficialName" ] .
-
+	mcm:label "Alois Arnold (1965)" ;
+	mcm:localId "6370" ;
+	act:birthYear 1965 ;
+	act:name _:c14n1 , _:c14n11 .
 <https://www.ur.ch/behoerdenmitglieder/6447> a act:Person ;
-    mcm:label "Alois Arnold (1981)" ;
-    mcm:localId "6447" ;
-    act:birthYear 1981 ;
-    act:name [ a act:Name ;
-            mcm:value "Alois" ;
-            act:nameType "PersonFirstName" ],
-        [ a act:Name ;
-            mcm:value "Arnold" ;
-            act:nameType "PersonOfficialName" ] .
-
+	mcm:label "Alois Arnold (1981)" ;
+	mcm:localId "6447" ;
+	act:birthYear 1981 ;
+	act:name _:c14n19 , _:c14n9 .
 <https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269> a act:Person ;
-    mcm:label "Gerri Beretta-Piccoli" ;
-    mcm:localId "1269" ;
-    act:name [ a act:Name ;
-            mcm:value "Fausto" ;
-            act:nameType "PersonFirstName" ],
-        [ a act:Name ;
-            mcm:value "Gerri" ;
-            act:nameType "PersonCallFirstName" ],
-        [ a act:Name ;
-            mcm:value "Beretta-Piccoli" ;
-            act:nameType "PersonOfficialName" ] .
-
+	mcm:label "Gerri Beretta-Piccoli" ;
+	mcm:localId "1269" ;
+	act:name _:c14n3 , _:c14n5 , _:c14n6 .
+_:c14n0 a act:Occupation ;
+	mcm:isCurrent true ;
+	mcm:label "Jurist*in" .
+_:c14n1 a act:Name ;
+	mcm:value "Arnold" ;
+	act:nameType "PersonOfficialName" .
+_:c14n10 a act:Name ;
+	mcm:value "Sofia" ;
+	act:nameType "PersonFirstName" .
+_:c14n11 a act:Name ;
+	mcm:value "Alois" ;
+	act:nameType "PersonFirstName" .
+_:c14n12 schema1:validFrom "1964-07-12"^^xsd:date ;
+	a act:Name ;
+	mcm:value "Jans" ;
+	act:nameType "PersonOfficialName" .
+_:c14n13 a act:Training ;
+	mcm:value "MLaw" ;
+	act:trainingType "3223" .
+_:c14n14 schema1:validFrom "1964-01-01"^^xsd:date ;
+	a act:Occupation ;
+	mcm:isCurrent true ;
+	mcm:label "Politiker" .
+_:c14n15 a act:Name ;
+	mcm:value "Beat" ;
+	act:nameType "PersonFirstName" .
+_:c14n16 a act:Training ;
+	mcm:value "dipl. nat. ETH" ;
+	act:trainingType "3223" .
+_:c14n17 a act:Name ;
+	mcm:value "Bozzi-Brunel" ;
+	act:nameType "PersonOfficialName" .
+_:c14n18 a act:LanguageProficiency ;
+	mcm:language "de" ;
+	act:isCorrespondence true ;
+	act:isNative true .
+_:c14n19 a act:Name ;
+	mcm:value "Arnold" ;
+	act:nameType "PersonOfficialName" .
+_:c14n2 a act:Gender ;
+	mcm:label "divers" ;
+	act:genderCode "non_binary" .
+_:c14n20 a act:Name ;
+	mcm:value "Fisch" ;
+	act:nameType "PersonOfficialName" .
+_:c14n21 schema1:validFrom "1964-07-12"^^xsd:date ;
+	a act:Citizenship ;
+	act:country "CH" .
+_:c14n22 a act:Address ;
+	act:addressType "businessAddress" ;
+	act:postalLocality "Basel-Stadt" .
+_:c14n23 schema1:validFrom "1964-07-12"^^xsd:date ;
+	a act:Gender ;
+	act:genderCode "male" .
+_:c14n24 a act:Contact ;
+	mcm:value "beat.jans@admin.ch" ;
+	act:contactType "email" .
+_:c14n3 a act:Name ;
+	mcm:value "Fausto" ;
+	act:nameType "PersonFirstName" .
+_:c14n4 a act:Contact ;
+	mcm:value "http://www.beat-jans.ch" ;
+	act:contactType "contact_website" .
+_:c14n5 a act:Name ;
+	mcm:value "Beretta-Piccoli" ;
+	act:nameType "PersonOfficialName" .
+_:c14n6 a act:Name ;
+	mcm:value "Gerri" ;
+	act:nameType "PersonCallFirstName" .
+_:c14n7 a act:Name ;
+	mcm:value "Cristina" ;
+	act:nameType "PersonFirstName" .
+_:c14n8 a act:Name ;
+	mcm:value "Brunel" ;
+	act:nameType "PersonOriginalName" .
+_:c14n9 a act:Name ;
+	mcm:value "Alois" ;
+	act:nameType "PersonFirstName" .
 

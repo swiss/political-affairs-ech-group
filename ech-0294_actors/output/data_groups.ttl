@@ -1,290 +1,321 @@
-@prefix act: <https://ld.ech.ch/schema/0294/actors/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix mcm: <https://ld.ech.ch/schema/0292/meta-common/> .
-@prefix schema1: <http://schema.org/> .
+@prefix act: <https://ld.ech.ch/schema/0294/actors/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-act:groups_example a act:Container ;
-    act:group <https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/geschaeftspruefungskommission/>,
-        <https://grosserrat.bs.ch/gremien/parteien-und-fraktionen/mitte-evp>,
-        <https://grosserrat.bs.ch/gremien/praesidium-und-buero>,
-        <https://www.ar.ch/kantonsrat/>,
-        <https://www.bs.ch/regierungsrat/staatskanzlei>,
-        <https://www.evp-bs.ch/>,
-        <https://www.fr.ch/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5>,
-        <https://www.frc.ch/>,
-        <https://www.grosserrat.bs.ch/>,
-        <https://www.parlament.ch/de/organe/gruppen/konsumenteninformation-und-schutz>,
-        <https://www.regierungsrat.bs.ch/>,
-        <https://www.stadt.sg.ch/home/verwaltung-politik/demokratie-politik/stadtparlament.html>,
-        <https://www.weko.admin.ch/> .
-
+@prefix schema1: <http://schema.org/> .
 <https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/geschaeftspruefungskommission/> a act:Group ;
-    mcm:abbreviation [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "GPK" ] ;
-    mcm:label [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "Geschäftsprüfungskommission" ] ;
-    mcm:localId "3" ;
-    act:groupType [ a act:GroupType ;
-            mcm:label [ a mcm:MultilingualValue ;
-                    mcm:language "de" ;
-                    mcm:value "Kommission" ] ;
-            act:groupTypeEnum <https://ld.ech.ch/schema/0294/actors/enum/group_type/committee> ] ;
-    act:parentGroup [ a mcm:GroupReference ;
-            mcm:globalURI <https://www.ar.ch/kantonsrat/> ;
-            mcm:label "Kantonsrat Appenzell Ausserrhoden" ;
-            mcm:localId "34" ] ;
-    act:spatial "https://ld.admin.ch/canton/15" .
-
+	mcm:abbreviation _:c14n2 ;
+	mcm:label _:c14n68 ;
+	mcm:localId "3" ;
+	act:groupType _:c14n56 ;
+	act:parentGroup _:c14n1 ;
+	act:spatial "https://ld.admin.ch/canton/15" .
 <https://grosserrat.bs.ch/gremien/parteien-und-fraktionen/mitte-evp> a act:Group ;
-    mcm:label [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "Die Mitte / Evangelische Volkspartei" ] ;
-    mcm:localId "1266" ;
-    act:groupType [ a act:GroupType ;
-            mcm:label [ a mcm:MultilingualValue ;
-                    mcm:language "de" ;
-                    mcm:value "Fraktion" ] ;
-            act:groupTypeEnum <https://ld.ech.ch/schema/0294/actors/enum/group_type/parliamentary_group> ] ;
-    act:parentGroup [ a mcm:GroupReference ;
-            mcm:globalURI <https://www.grosserrat.bs.ch/> ;
-            mcm:label "Grosser Rat Basel-Stadt" ;
-            mcm:localId "33" ] ;
-    act:spatial "https://ld.admin.ch/canton/12" .
-
+	mcm:label _:c14n60 ;
+	mcm:localId "1266" ;
+	act:groupType _:c14n16 ;
+	act:parentGroup _:c14n17 ;
+	act:spatial "https://ld.admin.ch/canton/12" .
 <https://grosserrat.bs.ch/gremien/praesidium-und-buero> a act:Group ;
-    mcm:label [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "Büro des Grossen Rates" ] ;
-    mcm:localId "50" ;
-    act:groupType [ a act:GroupType ;
-            mcm:label [ a mcm:MultilingualValue ;
-                    mcm:language "de" ;
-                    mcm:value "Ratsbüro" ] ;
-            act:groupTypeEnum <https://ld.ech.ch/schema/0294/actors/enum/group_type/council_bureau> ] ;
-    act:parentGroup [ a mcm:GroupReference ;
-            mcm:globalURI <https://www.grosserrat.bs.ch/> ;
-            mcm:label "Grosser Rat Basel-Stadt" ;
-            mcm:localId "33" ] ;
-    act:spatial "https://ld.admin.ch/canton/12" .
-
-<https://www.bs.ch/regierungsrat/staatskanzlei> a act:Group ;
-    mcm:label [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "Staatskanzlei Basel-Stadt" ] ;
-    mcm:localId "7172" ;
-    act:groupType [ a act:GroupType ;
-            mcm:label [ a mcm:MultilingualValue ;
-                    mcm:language "de" ;
-                    mcm:value "Staatskanzlei" ] ;
-            act:groupTypeEnum <https://ld.ech.ch/schema/0294/actors/enum/group_type/council_secretariat> ] ;
-    act:parentGroup [ a mcm:GroupReference ;
-            mcm:globalURI <https://www.regierungsrat.bs.ch/> ;
-            mcm:label "Regierungsrat Basel-Stadt" ;
-            mcm:localId "1300" ] ;
-    act:spatial "https://ld.admin.ch/canton/12" .
-
-<https://www.evp-bs.ch/> a act:Group ;
-    mcm:abbreviation [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "EVP BS" ] ;
-    mcm:label [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "Evangelische Volkspartei Basel-Stadt" ] ;
-    act:groupType [ a act:GroupType ;
-            mcm:label [ a mcm:MultilingualValue ;
-                    mcm:language "de" ;
-                    mcm:value "Partei" ] ;
-            act:groupTypeEnum <https://ld.ech.ch/schema/0294/actors/enum/group_type/party> ] ;
-    act:parentGroup [ a mcm:GroupReference ;
-            mcm:abbreviation [ a mcm:MultilingualValue ;
-                    mcm:language "de" ;
-                    mcm:value "EVP" ] ;
-            mcm:globalURI <https://www.evppev.ch/> ;
-            mcm:label "Evangelische Volkspartei der Schweiz" ] ;
-    act:spatial "https://ld.admin.ch/canton/12" .
-
-<https://www.frc.ch/> a act:Group ;
-    mcm:abbreviation [ a mcm:MultilingualValue ;
-            mcm:language "fr" ;
-            mcm:value "FRC" ] ;
-    mcm:label [ a mcm:MultilingualValue ;
-            mcm:language "fr" ;
-            mcm:value "Fédération romande des consommateurs" ] ;
-    act:groupType [ a act:GroupType ;
-            mcm:label [ a mcm:MultilingualValue ;
-                    mcm:language "de" ;
-                    mcm:value "Verein" ] ;
-            act:groupTypeEnum <https://ld.ech.ch/schema/0294/actors/enum/group_type/association> ] ;
-    act:legalForm "0109" ;
-    act:organizationUid "CHE106063525" ;
-    act:spatial "https://ld.admin.ch/canton/22" .
-
-<https://www.parlament.ch/de/organe/gruppen/konsumenteninformation-und-schutz> a act:Group ;
-    schema1:validFrom "2012-01-01"^^xsd:date ;
-    mcm:label [ a mcm:MultilingualValue ;
-            mcm:language "fr" ;
-            mcm:value "Information et défense des consommateurs" ],
-        [ a mcm:MultilingualValue ;
-            mcm:language "it" ;
-            mcm:value "Informazione e tutela dei consumatori" ],
-        [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "Konsumenteninformation und -schutz" ] ;
-    mcm:localId "6627" ;
-    act:address [ a act:Address ;
-            act:addressType "businessAddress" ;
-            act:addressURI <https://geo.ld.admin.ch/location/address/101009806> ;
-            act:country "CH" ;
-            act:postalCode 1001 ;
-            act:postalLocality "Lausanne" ;
-            act:streetAddress "Fédération romande des consommateurs, Rue de Genève 17, case postale 585" ] ;
-    act:contact [ a act:Contact ;
-            mcm:label "Sekretariat" ;
-            mcm:value "+41 21 331 00 95" ;
-            act:contactType "phone" ],
-        [ a act:Contact ;
-            mcm:label "Sekretariat" ;
-            mcm:value "l.altwegg@frc.ch" ;
-            act:contactType "email" ] ;
-    act:description [ a mcm:MultilingualValue ;
-            mcm:language "fr" ;
-            mcm:value "L'intergroupe parlementaire « Information et défense des consommateurs » réunit toutes les sensibilités politiques. Cet intergroupe a pour mission d'informer et de sensibiliser les élu·e·s aux questions relatives à la défense des consommateur·rice·s en Suisse." ] ;
-    act:groupType [ a act:GroupType ;
-            mcm:label [ a mcm:MultilingualValue ;
-                    mcm:language "de" ;
-                    mcm:value "Interessengruppe" ],
-                [ a mcm:MultilingualValue ;
-                    mcm:language "fr" ;
-                    mcm:value "Groupe d'intérêt" ],
-                [ a mcm:MultilingualValue ;
-                    mcm:language "it" ;
-                    mcm:value "Gruppo d'interesse" ] ;
-            act:groupTypeEnum <https://ld.ech.ch/schema/0294/actors/enum/group_type/interest_group> ] ;
-    act:landingPage [ a mcm:MultilingualUri ;
-            mcm:language "de" ;
-            mcm:value <https://www.parlament.ch/centers/documents/de/gruppen-der-bundesversammlung.pdf> ] ;
-    act:spatial "https://ld.admin.ch/country/CHE" .
-
-<https://www.stadt.sg.ch/home/verwaltung-politik/demokratie-politik/stadtparlament.html> a act:Group ;
-    mcm:label [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "Stadtparlament St. Gallen" ] ;
-    mcm:localId "700" ;
-    act:groupType [ a act:GroupType ;
-            mcm:label [ a mcm:MultilingualValue ;
-                    mcm:language "de" ;
-                    mcm:value "Parlament (Legislativrat)" ] ;
-            act:groupTypeEnum <https://ld.ech.ch/schema/0294/actors/enum/group_type/council_legislative> ] ;
-    act:spatial "https://ld.admin.ch/municipality/3203" .
-
-<https://www.weko.admin.ch/> a act:Group ;
-    mcm:abbreviation [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "WEKO" ],
-        [ a mcm:MultilingualValue ;
-            mcm:language "fr" ;
-            mcm:value "COMCO" ],
-        [ a mcm:MultilingualValue ;
-            mcm:language "it" ;
-            mcm:value "COMCO" ] ;
-    mcm:label [ a mcm:MultilingualValue ;
-            mcm:language "it" ;
-            mcm:value "Commissione della concorrenza" ],
-        [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "Wettbewerbskommission" ],
-        [ a mcm:MultilingualValue ;
-            mcm:language "fr" ;
-            mcm:value "Commission de la concurrence" ] ;
-    act:groupType [ a act:GroupType ;
-            mcm:label [ a mcm:MultilingualValue ;
-                    mcm:language "de" ;
-                    mcm:value "Ausserparlamentarische Kommission" ] ;
-            act:groupTypeEnum <https://ld.ech.ch/schema/0294/actors/enum/group_type/committee_extraparliamentary> ] ;
-    act:landingPage [ a mcm:MultilingualUri ;
-            mcm:language "fr" ;
-            mcm:value <https://www.weko.admin.ch/fr> ],
-        [ a mcm:MultilingualUri ;
-            mcm:language "de" ;
-            mcm:value <https://www.weko.admin.ch/de> ],
-        [ a mcm:MultilingualUri ;
-            mcm:language "it" ;
-            mcm:value <https://www.weko.admin.ch/it> ] ;
-    act:spatial "https://ld.admin.ch/country/CHE" .
-
+	mcm:label _:c14n3 ;
+	mcm:localId "50" ;
+	act:groupType _:c14n20 ;
+	act:parentGroup _:c14n5 ;
+	act:spatial "https://ld.admin.ch/canton/12" .
+act:groups_example a act:Container ;
+	act:group <https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/geschaeftspruefungskommission/> , <https://grosserrat.bs.ch/gremien/parteien-und-fraktionen/mitte-evp> , <https://grosserrat.bs.ch/gremien/praesidium-und-buero> , <https://www.ar.ch/kantonsrat/> , <https://www.bs.ch/regierungsrat/staatskanzlei> , <https://www.evp-bs.ch/> , <https://www.fr.ch/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5> , <https://www.frc.ch/> , <https://www.grosserrat.bs.ch/> , <https://www.parlament.ch/de/organe/gruppen/konsumenteninformation-und-schutz> , <https://www.regierungsrat.bs.ch/> , <https://www.stadt.sg.ch/home/verwaltung-politik/demokratie-politik/stadtparlament.html> , <https://www.weko.admin.ch/> .
 <https://www.ar.ch/kantonsrat/> a act:Group ;
-    mcm:label [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "Kantonsrat Appenzell Ausserrhoden" ] ;
-    mcm:localId "34" ;
-    act:groupType [ a act:GroupType ;
-            mcm:label [ a mcm:MultilingualValue ;
-                    mcm:language "de" ;
-                    mcm:value "Parlament (Legislativrat)" ] ;
-            act:groupTypeEnum <https://ld.ech.ch/schema/0294/actors/enum/group_type/council_legislative> ] ;
-    act:spatial "https://ld.admin.ch/canton/15" .
-
-<https://www.fr.ch/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5> a act:Group ;
-    schema1:validFrom "2007-12-12"^^xsd:date ;
-    mcm:abbreviation [ a mcm:MultilingualValue ;
-            mcm:language "fr" ;
-            mcm:value "Del-DetPen" ],
-        [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "Del-StRFE" ] ;
-    mcm:label [ a mcm:MultilingualValue ;
-            mcm:language "fr" ;
-            mcm:value "Délégation FR à la CIP détention pénale" ],
-        [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "Freiburger Delegation IPK strafrechtliche Einschliessung" ] ;
-    mcm:localId "5000" ;
-    act:description [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "Die Interparlamentarische Aufsichtskommission strafrechtliche Einschliessung besteht aus 18 Grossrätinnen und Grossräten aus den sechs Vertragskantonen Freiburg, Genf, Jura, Neuenburg, Waadt und Wallis." ],
-        [ a mcm:MultilingualValue ;
-            mcm:language "fr" ;
-            mcm:value "La Commission interparlementaire de contrôle détention pénale est composée de 18 députés issus des six cantons partenaires : Fribourg, Genève, Jura, Neuchâtel, Vaud et Valais." ] ;
-    act:groupType [ a act:GroupType ;
-            mcm:label [ a mcm:MultilingualValue ;
-                    mcm:language "de" ;
-                    mcm:value "Delegation" ],
-                [ a mcm:MultilingualValue ;
-                    mcm:language "fr" ;
-                    mcm:value "Délégation" ] ;
-            act:groupTypeEnum <https://ld.ech.ch/schema/0294/actors/enum/group_type/delegation> ] ;
-    act:landingPage [ a mcm:MultilingualUri ;
-            mcm:language "de" ;
-            mcm:value <https://www.fr.ch/de/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5> ],
-        [ a mcm:MultilingualUri ;
-            mcm:language "fr" ;
-            mcm:value <https://www.fr.ch/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5> ] ;
-    act:spatial "https://ld.admin.ch/canton/10" .
-
-<https://www.regierungsrat.bs.ch/> a act:Group ;
-    mcm:label [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "Regierungsrat Basel-Stadt" ] ;
-    mcm:localId "1300" ;
-    act:groupType [ a act:GroupType ;
-            mcm:label [ a mcm:MultilingualValue ;
-                    mcm:language "de" ;
-                    mcm:value "Regierung (Exekutivrat)" ] ;
-            act:groupTypeEnum <https://ld.ech.ch/schema/0294/actors/enum/group_type/council_executive> ] ;
-    act:spatial "https://ld.admin.ch/canton/12" .
-
+	mcm:label _:c14n12 ;
+	mcm:localId "34" ;
+	act:groupType _:c14n43 ;
+	act:spatial "https://ld.admin.ch/canton/15" .
+<https://www.bs.ch/regierungsrat/staatskanzlei> a act:Group ;
+	mcm:label _:c14n22 ;
+	mcm:localId "7172" ;
+	act:groupType _:c14n57 ;
+	act:parentGroup _:c14n30 ;
+	act:spatial "https://ld.admin.ch/canton/12" .
+<https://www.evp-bs.ch/> a act:Group ;
+	mcm:abbreviation _:c14n63 ;
+	mcm:label _:c14n11 ;
+	act:groupType _:c14n26 ;
+	act:parentGroup _:c14n55 ;
+	act:spatial "https://ld.admin.ch/canton/12" .
+<https://www.fr.ch/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5> schema1:validFrom "2007-12-12"^^xsd:date ;
+	a act:Group ;
+	mcm:abbreviation _:c14n41 , _:c14n47 ;
+	mcm:label _:c14n21 , _:c14n49 ;
+	mcm:localId "5000" ;
+	act:description _:c14n29 , _:c14n58 ;
+	act:groupType _:c14n36 ;
+	act:landingPage _:c14n25 , _:c14n69 ;
+	act:spatial "https://ld.admin.ch/canton/10" .
+<https://www.frc.ch/> a act:Group ;
+	mcm:abbreviation _:c14n34 ;
+	mcm:label _:c14n23 ;
+	act:groupType _:c14n59 ;
+	act:legalForm "0109" ;
+	act:organizationUid "CHE106063525" ;
+	act:spatial "https://ld.admin.ch/canton/22" .
 <https://www.grosserrat.bs.ch/> a act:Group ;
-    mcm:label [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "Grosser Rat Basel-Stadt" ] ;
-    mcm:localId "33" ;
-    act:groupType [ a act:GroupType ;
-            mcm:label [ a mcm:MultilingualValue ;
-                    mcm:language "de" ;
-                    mcm:value "Parlament (Legislativrat)" ] ;
-            act:groupTypeEnum <https://ld.ech.ch/schema/0294/actors/enum/group_type/council_legislative> ] ;
-    act:spatial "https://ld.admin.ch/canton/12" .
-
+	mcm:label _:c14n27 ;
+	mcm:localId "33" ;
+	act:groupType _:c14n18 ;
+	act:spatial "https://ld.admin.ch/canton/12" .
+<https://www.parlament.ch/de/organe/gruppen/konsumenteninformation-und-schutz> schema1:validFrom "2012-01-01"^^xsd:date ;
+	a act:Group ;
+	mcm:label _:c14n40 , _:c14n65 , _:c14n7 ;
+	mcm:localId "6627" ;
+	act:address _:c14n24 ;
+	act:contact _:c14n32 , _:c14n52 ;
+	act:description _:c14n54 ;
+	act:groupType _:c14n42 ;
+	act:landingPage _:c14n14 ;
+	act:spatial "https://ld.admin.ch/country/CHE" .
+<https://www.regierungsrat.bs.ch/> a act:Group ;
+	mcm:label _:c14n9 ;
+	mcm:localId "1300" ;
+	act:groupType _:c14n61 ;
+	act:spatial "https://ld.admin.ch/canton/12" .
+<https://www.stadt.sg.ch/home/verwaltung-politik/demokratie-politik/stadtparlament.html> a act:Group ;
+	mcm:label _:c14n38 ;
+	mcm:localId "700" ;
+	act:groupType _:c14n50 ;
+	act:spatial "https://ld.admin.ch/municipality/3203" .
+<https://www.weko.admin.ch/> a act:Group ;
+	mcm:abbreviation _:c14n13 , _:c14n15 , _:c14n48 ;
+	mcm:label _:c14n19 , _:c14n4 , _:c14n8 ;
+	act:groupType _:c14n35 ;
+	act:landingPage _:c14n10 , _:c14n39 , _:c14n53 ;
+	act:spatial "https://ld.admin.ch/country/CHE" .
+_:c14n0 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "Verein" .
+_:c14n1 a mcm:GroupReference ;
+	mcm:globalURI <https://www.ar.ch/kantonsrat/> ;
+	mcm:label "Kantonsrat Appenzell Ausserrhoden" ;
+	mcm:localId "34" .
+_:c14n10 a mcm:MultilingualUri ;
+	mcm:language "it" ;
+	mcm:value <https://www.weko.admin.ch/it> .
+_:c14n11 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "Evangelische Volkspartei Basel-Stadt" .
+_:c14n12 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "Kantonsrat Appenzell Ausserrhoden" .
+_:c14n13 a mcm:MultilingualValue ;
+	mcm:language "fr" ;
+	mcm:value "COMCO" .
+_:c14n14 a mcm:MultilingualUri ;
+	mcm:language "de" ;
+	mcm:value <https://www.parlament.ch/centers/documents/de/gruppen-der-bundesversammlung.pdf> .
+_:c14n15 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "WEKO" .
+_:c14n16 a act:GroupType ;
+	mcm:label _:c14n37 ;
+	act:groupTypeEnum act:enum\/group_type\/parliamentary_group .
+_:c14n17 a mcm:GroupReference ;
+	mcm:globalURI <https://www.grosserrat.bs.ch/> ;
+	mcm:label "Grosser Rat Basel-Stadt" ;
+	mcm:localId "33" .
+_:c14n18 a act:GroupType ;
+	mcm:label _:c14n70 ;
+	act:groupTypeEnum act:enum\/group_type\/council_legislative .
+_:c14n19 a mcm:MultilingualValue ;
+	mcm:language "fr" ;
+	mcm:value "Commission de la concurrence" .
+_:c14n2 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "GPK" .
+_:c14n20 a act:GroupType ;
+	mcm:label _:c14n46 ;
+	act:groupTypeEnum act:enum\/group_type\/council_bureau .
+_:c14n21 a mcm:MultilingualValue ;
+	mcm:language "fr" ;
+	mcm:value "Délégation FR à la CIP détention pénale" .
+_:c14n22 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "Staatskanzlei Basel-Stadt" .
+_:c14n23 a mcm:MultilingualValue ;
+	mcm:language "fr" ;
+	mcm:value "Fédération romande des consommateurs" .
+_:c14n24 a act:Address ;
+	act:addressType "businessAddress" ;
+	act:addressURI <https://geo.ld.admin.ch/location/address/101009806> ;
+	act:country "CH" ;
+	act:postalCode 1001 ;
+	act:postalLocality "Lausanne" ;
+	act:streetAddress "Fédération romande des consommateurs, Rue de Genève 17, case postale 585" .
+_:c14n25 a mcm:MultilingualUri ;
+	mcm:language "de" ;
+	mcm:value <https://www.fr.ch/de/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5> .
+_:c14n26 a act:GroupType ;
+	mcm:label _:c14n44 ;
+	act:groupTypeEnum act:enum\/group_type\/party .
+_:c14n27 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "Grosser Rat Basel-Stadt" .
+_:c14n28 a mcm:MultilingualValue ;
+	mcm:language "it" ;
+	mcm:value "Gruppo d'interesse" .
+_:c14n29 a mcm:MultilingualValue ;
+	mcm:language "fr" ;
+	mcm:value "La Commission interparlementaire de contrôle détention pénale est composée de 18 députés issus des six cantons partenaires : Fribourg, Genève, Jura, Neuchâtel, Vaud et Valais." .
+_:c14n3 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "Büro des Grossen Rates" .
+_:c14n30 a mcm:GroupReference ;
+	mcm:globalURI <https://www.regierungsrat.bs.ch/> ;
+	mcm:label "Regierungsrat Basel-Stadt" ;
+	mcm:localId "1300" .
+_:c14n31 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "Kommission" .
+_:c14n32 a act:Contact ;
+	mcm:label "Sekretariat" ;
+	mcm:value "+41 21 331 00 95" ;
+	act:contactType "phone" .
+_:c14n33 a mcm:MultilingualValue ;
+	mcm:language "fr" ;
+	mcm:value "Groupe d'intérêt" .
+_:c14n34 a mcm:MultilingualValue ;
+	mcm:language "fr" ;
+	mcm:value "FRC" .
+_:c14n35 a act:GroupType ;
+	mcm:label _:c14n51 ;
+	act:groupTypeEnum act:enum\/group_type\/committee_extraparliamentary .
+_:c14n36 a act:GroupType ;
+	mcm:label _:c14n62 , _:c14n66 ;
+	act:groupTypeEnum act:enum\/group_type\/delegation .
+_:c14n37 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "Fraktion" .
+_:c14n38 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "Stadtparlament St. Gallen" .
+_:c14n39 a mcm:MultilingualUri ;
+	mcm:language "de" ;
+	mcm:value <https://www.weko.admin.ch/de> .
+_:c14n4 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "Wettbewerbskommission" .
+_:c14n40 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "Konsumenteninformation und -schutz" .
+_:c14n41 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "Del-StRFE" .
+_:c14n42 a act:GroupType ;
+	mcm:label _:c14n28 , _:c14n33 , _:c14n64 ;
+	act:groupTypeEnum act:enum\/group_type\/interest_group .
+_:c14n43 a act:GroupType ;
+	mcm:label _:c14n72 ;
+	act:groupTypeEnum act:enum\/group_type\/council_legislative .
+_:c14n44 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "Partei" .
+_:c14n45 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "Staatskanzlei" .
+_:c14n46 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "Ratsbüro" .
+_:c14n47 a mcm:MultilingualValue ;
+	mcm:language "fr" ;
+	mcm:value "Del-DetPen" .
+_:c14n48 a mcm:MultilingualValue ;
+	mcm:language "it" ;
+	mcm:value "COMCO" .
+_:c14n49 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "Freiburger Delegation IPK strafrechtliche Einschliessung" .
+_:c14n5 a mcm:GroupReference ;
+	mcm:globalURI <https://www.grosserrat.bs.ch/> ;
+	mcm:label "Grosser Rat Basel-Stadt" ;
+	mcm:localId "33" .
+_:c14n50 a act:GroupType ;
+	mcm:label _:c14n71 ;
+	act:groupTypeEnum act:enum\/group_type\/council_legislative .
+_:c14n51 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "Ausserparlamentarische Kommission" .
+_:c14n52 a act:Contact ;
+	mcm:label "Sekretariat" ;
+	mcm:value "l.altwegg@frc.ch" ;
+	act:contactType "email" .
+_:c14n53 a mcm:MultilingualUri ;
+	mcm:language "fr" ;
+	mcm:value <https://www.weko.admin.ch/fr> .
+_:c14n54 a mcm:MultilingualValue ;
+	mcm:language "fr" ;
+	mcm:value "L'intergroupe parlementaire « Information et défense des consommateurs » réunit toutes les sensibilités politiques. Cet intergroupe a pour mission d'informer et de sensibiliser les élu·e·s aux questions relatives à la défense des consommateur·rice·s en Suisse." .
+_:c14n55 a mcm:GroupReference ;
+	mcm:abbreviation _:c14n6 ;
+	mcm:globalURI <https://www.evppev.ch/> ;
+	mcm:label "Evangelische Volkspartei der Schweiz" .
+_:c14n56 a act:GroupType ;
+	mcm:label _:c14n31 ;
+	act:groupTypeEnum act:enum\/group_type\/committee .
+_:c14n57 a act:GroupType ;
+	mcm:label _:c14n45 ;
+	act:groupTypeEnum act:enum\/group_type\/council_secretariat .
+_:c14n58 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "Die Interparlamentarische Aufsichtskommission strafrechtliche Einschliessung besteht aus 18 Grossrätinnen und Grossräten aus den sechs Vertragskantonen Freiburg, Genf, Jura, Neuenburg, Waadt und Wallis." .
+_:c14n59 a act:GroupType ;
+	mcm:label _:c14n0 ;
+	act:groupTypeEnum act:enum\/group_type\/association .
+_:c14n6 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "EVP" .
+_:c14n60 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "Die Mitte / Evangelische Volkspartei" .
+_:c14n61 a act:GroupType ;
+	mcm:label _:c14n67 ;
+	act:groupTypeEnum act:enum\/group_type\/council_executive .
+_:c14n62 a mcm:MultilingualValue ;
+	mcm:language "fr" ;
+	mcm:value "Délégation" .
+_:c14n63 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "EVP BS" .
+_:c14n64 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "Interessengruppe" .
+_:c14n65 a mcm:MultilingualValue ;
+	mcm:language "it" ;
+	mcm:value "Informazione e tutela dei consumatori" .
+_:c14n66 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "Delegation" .
+_:c14n67 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "Regierung (Exekutivrat)" .
+_:c14n68 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "Geschäftsprüfungskommission" .
+_:c14n69 a mcm:MultilingualUri ;
+	mcm:language "fr" ;
+	mcm:value <https://www.fr.ch/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5> .
+_:c14n7 a mcm:MultilingualValue ;
+	mcm:language "fr" ;
+	mcm:value "Information et défense des consommateurs" .
+_:c14n70 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "Parlament (Legislativrat)" .
+_:c14n71 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "Parlament (Legislativrat)" .
+_:c14n72 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "Parlament (Legislativrat)" .
+_:c14n8 a mcm:MultilingualValue ;
+	mcm:language "it" ;
+	mcm:value "Commissione della concorrenza" .
+_:c14n9 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "Regierungsrat Basel-Stadt" .
 

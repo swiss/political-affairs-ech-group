@@ -23,7 +23,14 @@
             "description": "An address with a type (e.g., private address, business address) and a value.",
             "properties": {
                 "address_type": {
-                    "$ref": "#/$defs/AddressTypeEnum",
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/AddressTypeEnum"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "description": "Type of address.\n"
                 },
                 "address_uri": {
@@ -344,6 +351,21 @@
                 },
                 "addresses": {
                     "description": "Addresses with type (private, business, local).\n",
+                    "examples": [
+                        [
+                            {
+                                "address_URI": "https://ld.admin.ch/address/12345",
+                                "address_type": "businessAddress",
+                                "postal_code": "3003",
+                                "postal_locality": "Bern",
+                                "street_address": "Bundesplatz 3"
+                            },
+                            {
+                                "address_type": "privateAddress",
+                                "postal_locality": "Z\u00fcrich"
+                            }
+                        ]
+                    ],
                     "items": {
                         "$ref": "#/$defs/Address"
                     },
@@ -437,7 +459,14 @@
                     ]
                 },
                 "legal_form": {
-                    "$ref": "#/$defs/LegalFormEnum",
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/LegalFormEnum"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "description": "Legal form of the organization. See controlled vocabulary: https://register.ld.admin.ch/i14y/concept/legalForm\n"
                 },
                 "local_id": {
@@ -874,7 +903,14 @@
                     ]
                 },
                 "legal_form": {
-                    "$ref": "#/$defs/LegalFormEnum",
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/LegalFormEnum"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "description": "Legal form of the organization. See controlled vocabulary: https://register.ld.admin.ch/i14y/concept/legalForm\n"
                 },
                 "local_id": {
@@ -1568,6 +1604,21 @@
             "properties": {
                 "addresses": {
                     "description": "Addresses with type (private, business, local).\n",
+                    "examples": [
+                        [
+                            {
+                                "address_URI": "https://ld.admin.ch/address/12345",
+                                "address_type": "businessAddress",
+                                "postal_code": "3003",
+                                "postal_locality": "Bern",
+                                "street_address": "Bundesplatz 3"
+                            },
+                            {
+                                "address_type": "privateAddress",
+                                "postal_locality": "Z\u00fcrich"
+                            }
+                        ]
+                    ],
                     "items": {
                         "$ref": "#/$defs/Address"
                     },
@@ -1881,7 +1932,14 @@
                     ]
                 },
                 "role_type_enum": {
-                    "$ref": "#/$defs/RoleEnum",
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/RoleEnum"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "description": "Role of the person in the membership or function.\n"
                 }
             },
@@ -1944,7 +2002,14 @@
                     ]
                 },
                 "training_type": {
-                    "$ref": "#/$defs/TrainingTypeEnum",
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/TrainingTypeEnum"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "description": "Type of training or education.\n"
                 },
                 "valid_from": {
@@ -2027,9 +2092,9 @@
     },
     "$id": "https://ld.ech.ch/schema/0294/actors",
     "$schema": "https://json-schema.org/draft/2019-09/schema",
-    "additionalProperties": true,
+    "additionalProperties": false,
     "description": "Container for political actors, groups, and relationships.",
-    "metamodel_version": "1.11.0",
+    "metamodel_version": "1.12.0",
     "properties": {
         "global_uri": {
             "description": "A unique, globally valid URI for the entity.\n",

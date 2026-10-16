@@ -1,176 +1,192 @@
-@prefix act: <https://ld.ech.ch/schema/0294/actors/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix mcm: <https://ld.ech.ch/schema/0292/meta-common/> .
+@prefix act: <https://ld.ech.ch/schema/0294/actors/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-act:interest_links_example a act:Container ;
-    act:interestLink act:il_balaban_001,
-        act:il_beretta_001,
-        act:il_burkart_001,
-        act:il_burkart_005,
-        act:il_burkart_007,
-        act:il_dafond_001,
-        act:il_mauron_001,
-        act:il_quadranti_001,
-        act:il_zanini_001 .
-
 act:il_balaban_001 a act:InterestLink ;
-    act:committee [ a mcm:MultilingualValue ;
-            mcm:language "fr" ;
-            mcm:value "Conseil d'administration" ] ;
-    act:functionRole [ a mcm:MultilingualValue ;
-            mcm:language "fr" ;
-            mcm:value "Membre" ] ;
-    act:interestType <https://ld.ech.ch/schema/0294/actors/enum/interest_type/governing_body> ;
-    act:legalForm "0106" ;
-    act:organizationName [ a mcm:MultilingualValue ;
-            mcm:language "fr" ;
-            mcm:value "X-net SA" ] ;
-    act:personReference [ a mcm:PersonReference ;
-            mcm:globalURI <https://ge.ch/grandconseil/gc/depute/2517/> ;
-            mcm:groupLabel "LJS" ;
-            mcm:label "Stefan Balaban" ] .
-
+	act:committee _:c14n5 ;
+	act:functionRole _:c14n10 ;
+	act:interestType act:enum\/interest_type\/governing_body ;
+	act:legalForm "0106" ;
+	act:organizationName _:c14n15 ;
+	act:personReference _:c14n8 .
 act:il_beretta_001 a act:InterestLink ;
-    act:committee [ a mcm:MultilingualValue ;
-            mcm:language "it" ;
-            mcm:value "Consiglio di fondazione" ] ;
-    act:functionRole [ a mcm:MultilingualValue ;
-            mcm:language "it" ;
-            mcm:value "Vice Presidente" ] ;
-    act:interestType <https://ld.ech.ch/schema/0294/actors/enum/interest_type/governing_body> ;
-    act:legalForm "0110" ;
-    act:organizationName [ a mcm:MultilingualValue ;
-            mcm:language "it" ;
-            mcm:value "Fondazione Gruppo Intervento Maltrattamento Infantile (GIMI), Lugano" ] ;
-    act:personReference [ a mcm:PersonReference ;
-            mcm:globalURI <https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269> ;
-            mcm:label "Gerri Beretta-Piccoli" ;
-            mcm:localId "1269" ] .
-
+	act:committee _:c14n9 ;
+	act:functionRole _:c14n2 ;
+	act:interestType act:enum\/interest_type\/governing_body ;
+	act:legalForm "0110" ;
+	act:organizationName _:c14n20 ;
+	act:personReference _:c14n28 .
 act:il_burkart_001 a act:InterestLink ;
-    act:committee [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "Geschäftsleitung" ] ;
-    act:functionRole [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "Geschäftsführer" ] ;
-    act:interestType <https://ld.ech.ch/schema/0294/actors/enum/interest_type/professional_activity> ;
-    act:isPaid true ;
-    act:legalForm "0107" ;
-    act:organizationName [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "Burkart Advisory GmbH, Baden" ] ;
-    act:personReference [ a mcm:PersonReference ;
-            mcm:globalURI <http://www.wikidata.org/entity/Q23060472> ;
-            mcm:groupLabel "FDP.Die Liberalen" ;
-            mcm:label "Thierry Burkart" ] .
-
+	act:committee _:c14n36 ;
+	act:functionRole _:c14n1 ;
+	act:interestType act:enum\/interest_type\/professional_activity ;
+	act:isPaid true ;
+	act:legalForm "0107" ;
+	act:organizationName _:c14n31 ;
+	act:personReference _:c14n18 .
 act:il_burkart_005 a act:InterestLink ;
-    act:committee [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "Zentralvorstand" ] ;
-    act:functionRole [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "Präsident" ] ;
-    act:interestType <https://ld.ech.ch/schema/0294/actors/enum/interest_type/interest_group_mandate> ;
-    act:isPaid true ;
-    act:legalForm "0109" ;
-    act:organizationName [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "ASTAG Schweizerischer Nutzfahrzeugverband, Bern" ] ;
-    act:personReference [ a mcm:PersonReference ;
-            mcm:globalURI <http://www.wikidata.org/entity/Q23060472> ;
-            mcm:groupLabel "FDP.Die Liberalen" ;
-            mcm:label "Thierry Burkart" ] .
-
+	act:committee _:c14n19 ;
+	act:functionRole _:c14n26 ;
+	act:interestType act:enum\/interest_type\/interest_group_mandate ;
+	act:isPaid true ;
+	act:legalForm "0109" ;
+	act:organizationName _:c14n21 ;
+	act:personReference _:c14n6 .
 act:il_burkart_007 a act:InterestLink ;
-    act:committee [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "Stiftungsrat" ] ;
-    act:functionRole [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "Vizepräsident" ] ;
-    act:interestType <https://ld.ech.ch/schema/0294/actors/enum/interest_type/governing_body> ;
-    act:isPaid false ;
-    act:legalForm "0110" ;
-    act:organizationName [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "FONDATION SUISSE DE DEMINAGE (FSD), Genf" ] ;
-    act:organizationUid "CHE109810537" ;
-    act:personReference [ a mcm:PersonReference ;
-            mcm:globalURI <http://www.wikidata.org/entity/Q23060472> ;
-            mcm:groupLabel "FDP.Die Liberalen" ;
-            mcm:label "Thierry Burkart" ] .
-
+	act:committee _:c14n34 ;
+	act:functionRole _:c14n0 ;
+	act:interestType act:enum\/interest_type\/governing_body ;
+	act:isPaid false ;
+	act:legalForm "0110" ;
+	act:organizationName _:c14n29 ;
+	act:organizationUid "CHE109810537" ;
+	act:personReference _:c14n16 .
 act:il_dafond_001 a act:InterestLink ;
-    act:functionRole [ a mcm:MultilingualValue ;
-            mcm:language "it" ;
-            mcm:value "Sindaco" ] ;
-    act:interestType <https://ld.ech.ch/schema/0294/actors/enum/interest_type/public_mandate> ;
-    act:legalForm "0223" ;
-    act:organizationName [ a mcm:MultilingualValue ;
-            mcm:language "it" ;
-            mcm:value "Municipio di Minusio" ] ;
-    act:personReference [ a mcm:PersonReference ;
-            mcm:globalURI <https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=14> ;
-            mcm:groupLabel "PLR" ;
-            mcm:label "Felice Dafond" ] .
-
+	act:functionRole _:c14n11 ;
+	act:interestType act:enum\/interest_type\/public_mandate ;
+	act:legalForm "0223" ;
+	act:organizationName _:c14n24 ;
+	act:personReference _:c14n22 .
 act:il_mauron_001 a act:InterestLink ;
-    act:committee [ a mcm:MultilingualValue ;
-            mcm:language "fr" ;
-            mcm:value "Comité" ],
-        [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "Vorstand" ] ;
-    act:functionRole [ a mcm:MultilingualValue ;
-            mcm:language "fr" ;
-            mcm:value "Président" ],
-        [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "Präsident" ] ;
-    act:interestType <https://ld.ech.ch/schema/0294/actors/enum/interest_type/interest_group_mandate> ;
-    act:legalForm "0109" ;
-    act:organizationName [ a mcm:MultilingualValue ;
-            mcm:language "fr" ;
-            mcm:value "ASLOCA Fribourg" ],
-        [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "ASLOCA Freiburg" ] ;
-    act:personReference [ a mcm:PersonReference ;
-            mcm:globalURI <https://www.fr.ch/parlinfo/membres-du-grand-conseil/5ee6eb9754704902bfd4b4ee01dcf327> ;
-            mcm:groupLabel "Parti socialiste" ;
-            mcm:label "Pierre Mauron" ] .
-
+	act:committee _:c14n14 , _:c14n35 ;
+	act:functionRole _:c14n12 , _:c14n7 ;
+	act:interestType act:enum\/interest_type\/interest_group_mandate ;
+	act:legalForm "0109" ;
+	act:organizationName _:c14n23 , _:c14n27 ;
+	act:personReference _:c14n4 .
 act:il_quadranti_001 a act:InterestLink ;
-    act:functionRole [ a mcm:MultilingualValue ;
-            mcm:language "it" ;
-            mcm:value "Vice-presidente" ] ;
-    act:interestType <https://ld.ech.ch/schema/0294/actors/enum/interest_type/public_mandate> ;
-    act:organizationName [ a mcm:MultilingualValue ;
-            mcm:language "it" ;
-            mcm:value "Commissione Cantonale Cultura" ] ;
-    act:personReference [ a mcm:PersonReference ;
-            mcm:globalURI <https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1487> ;
-            mcm:groupLabel "Partito liberale radicale ticinese (PLR)" ;
-            mcm:label "Matteo Quadranti" ] .
-
+	act:functionRole _:c14n13 ;
+	act:interestType act:enum\/interest_type\/public_mandate ;
+	act:organizationName _:c14n17 ;
+	act:personReference _:c14n33 .
 act:il_zanini_001 a act:InterestLink ;
-    act:committee [ a mcm:MultilingualValue ;
-            mcm:language "it" ;
-            mcm:value "Consiglio di amministrazione" ] ;
-    act:functionRole [ a mcm:MultilingualValue ;
-            mcm:language "it" ;
-            mcm:value "Membro" ] ;
-    act:interestType <https://ld.ech.ch/schema/0294/actors/enum/interest_type/governing_body> ;
-    act:isExOfficio true ;
-    act:legalForm "0110" ;
-    act:organizationName [ a mcm:MultilingualValue ;
-            mcm:language "it" ;
-            mcm:value "Fondazione Giovanni Stamm" ] ;
-    act:personReference [ a mcm:PersonReference ;
-            mcm:globalURI <https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=2160> ;
-            mcm:groupLabel "PS, GISO e FA" ;
-            mcm:label "Cristina Zanini Barzaghi" ] .
-
+	act:committee _:c14n3 ;
+	act:functionRole _:c14n30 ;
+	act:interestType act:enum\/interest_type\/governing_body ;
+	act:isExOfficio true ;
+	act:legalForm "0110" ;
+	act:organizationName _:c14n25 ;
+	act:personReference _:c14n32 .
+act:interest_links_example a act:Container ;
+	act:interestLink act:il_balaban_001 , act:il_beretta_001 , act:il_burkart_001 , act:il_burkart_005 , act:il_burkart_007 , act:il_dafond_001 , act:il_mauron_001 , act:il_quadranti_001 , act:il_zanini_001 .
+_:c14n0 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "Vizepräsident" .
+_:c14n1 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "Geschäftsführer" .
+_:c14n10 a mcm:MultilingualValue ;
+	mcm:language "fr" ;
+	mcm:value "Membre" .
+_:c14n11 a mcm:MultilingualValue ;
+	mcm:language "it" ;
+	mcm:value "Sindaco" .
+_:c14n12 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "Präsident" .
+_:c14n13 a mcm:MultilingualValue ;
+	mcm:language "it" ;
+	mcm:value "Vice-presidente" .
+_:c14n14 a mcm:MultilingualValue ;
+	mcm:language "fr" ;
+	mcm:value "Comité" .
+_:c14n15 a mcm:MultilingualValue ;
+	mcm:language "fr" ;
+	mcm:value "X-net SA" .
+_:c14n16 a mcm:PersonReference ;
+	mcm:globalURI <http://www.wikidata.org/entity/Q23060472> ;
+	mcm:groupLabel "FDP.Die Liberalen" ;
+	mcm:label "Thierry Burkart" .
+_:c14n17 a mcm:MultilingualValue ;
+	mcm:language "it" ;
+	mcm:value "Commissione Cantonale Cultura" .
+_:c14n18 a mcm:PersonReference ;
+	mcm:globalURI <http://www.wikidata.org/entity/Q23060472> ;
+	mcm:groupLabel "FDP.Die Liberalen" ;
+	mcm:label "Thierry Burkart" .
+_:c14n19 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "Zentralvorstand" .
+_:c14n2 a mcm:MultilingualValue ;
+	mcm:language "it" ;
+	mcm:value "Vice Presidente" .
+_:c14n20 a mcm:MultilingualValue ;
+	mcm:language "it" ;
+	mcm:value "Fondazione Gruppo Intervento Maltrattamento Infantile (GIMI), Lugano" .
+_:c14n21 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "ASTAG Schweizerischer Nutzfahrzeugverband, Bern" .
+_:c14n22 a mcm:PersonReference ;
+	mcm:globalURI <https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=14> ;
+	mcm:groupLabel "PLR" ;
+	mcm:label "Felice Dafond" .
+_:c14n23 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "ASLOCA Freiburg" .
+_:c14n24 a mcm:MultilingualValue ;
+	mcm:language "it" ;
+	mcm:value "Municipio di Minusio" .
+_:c14n25 a mcm:MultilingualValue ;
+	mcm:language "it" ;
+	mcm:value "Fondazione Giovanni Stamm" .
+_:c14n26 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "Präsident" .
+_:c14n27 a mcm:MultilingualValue ;
+	mcm:language "fr" ;
+	mcm:value "ASLOCA Fribourg" .
+_:c14n28 a mcm:PersonReference ;
+	mcm:globalURI <https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269> ;
+	mcm:label "Gerri Beretta-Piccoli" ;
+	mcm:localId "1269" .
+_:c14n29 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "FONDATION SUISSE DE DEMINAGE (FSD), Genf" .
+_:c14n3 a mcm:MultilingualValue ;
+	mcm:language "it" ;
+	mcm:value "Consiglio di amministrazione" .
+_:c14n30 a mcm:MultilingualValue ;
+	mcm:language "it" ;
+	mcm:value "Membro" .
+_:c14n31 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "Burkart Advisory GmbH, Baden" .
+_:c14n32 a mcm:PersonReference ;
+	mcm:globalURI <https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=2160> ;
+	mcm:groupLabel "PS, GISO e FA" ;
+	mcm:label "Cristina Zanini Barzaghi" .
+_:c14n33 a mcm:PersonReference ;
+	mcm:globalURI <https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1487> ;
+	mcm:groupLabel "Partito liberale radicale ticinese (PLR)" ;
+	mcm:label "Matteo Quadranti" .
+_:c14n34 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "Stiftungsrat" .
+_:c14n35 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "Vorstand" .
+_:c14n36 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "Geschäftsleitung" .
+_:c14n4 a mcm:PersonReference ;
+	mcm:globalURI <https://www.fr.ch/parlinfo/membres-du-grand-conseil/5ee6eb9754704902bfd4b4ee01dcf327> ;
+	mcm:groupLabel "Parti socialiste" ;
+	mcm:label "Pierre Mauron" .
+_:c14n5 a mcm:MultilingualValue ;
+	mcm:language "fr" ;
+	mcm:value "Conseil d'administration" .
+_:c14n6 a mcm:PersonReference ;
+	mcm:globalURI <http://www.wikidata.org/entity/Q23060472> ;
+	mcm:groupLabel "FDP.Die Liberalen" ;
+	mcm:label "Thierry Burkart" .
+_:c14n7 a mcm:MultilingualValue ;
+	mcm:language "fr" ;
+	mcm:value "Président" .
+_:c14n8 a mcm:PersonReference ;
+	mcm:globalURI <https://ge.ch/grandconseil/gc/depute/2517/> ;
+	mcm:groupLabel "LJS" ;
+	mcm:label "Stefan Balaban" .
+_:c14n9 a mcm:MultilingualValue ;
+	mcm:language "it" ;
+	mcm:value "Consiglio di fondazione" .
 
