@@ -2964,7 +2964,7 @@ Groupe de spécialistes « Affaires politiques », sous-groupe « Acteurs politi
 |Julie Silberstein|Office fédéral de la statistique|
 |Laurence Brandenberger|Université de Zurich, IPZ|
 |Daniela Koller|Canton de Thurgovie|
-|Thomas Roth||
+|Thomas Roth|Lobbywatch.ch|
 |Stefan Oderbolz|EBP|
 |Fabian Davolio|Services du Parlement|
 |Orhan Saeedi|Canton de Bâle-Ville|
