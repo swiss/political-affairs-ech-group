@@ -46,7 +46,7 @@ Fachgruppe Politische Geschäfte, Subgruppe Politische Akteure:
 |Julie Silberstein|Bundesamt für Statistik|
 |Laurence Brandenberger|Universität Zürich, IPZ|
 |Daniela Koller|Kanton Thurgau|
-|Thomas Roth||
+|Thomas Roth|Lobbywatch.ch|
 |Stefan Oderbolz|EBP|
 |Fabian Davolio|Parlamentsdienste|
 |Orhan Saeedi|Kanton Basel-Stadt|

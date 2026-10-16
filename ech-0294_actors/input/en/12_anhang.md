@@ -46,7 +46,7 @@ Specialist group "Political Affairs", subgroup "Political Actors":
 |Julie Silberstein|Federal Statistical Office|
 |Laurence Brandenberger|University of Zurich, IPZ|
 |Daniela Koller|Canton of Thurgau|
-|Thomas Roth||
+|Thomas Roth|Lobbywatch.ch|
 |Stefan Oderbolz|EBP|
 |Fabian Davolio|Parliamentary Services|
 |Orhan Saeedi|Canton of Basel-Stadt|
