@@ -4,7 +4,14 @@ _Internal note: update the next subgroup meeting in the [README](https://github.
 
 **Meeting Link:** https://teams.microsoft.com/meet/3879512933733?p=rTdaRaFWPi0JWENkuE
 
-## Next meeting: 28 September (15-16.00) – 4th MO of every month
+## Next Meeting: 23 November (15-16.00) – 4th MO of every month
+
+## 26 October 
+
+- cf. 28 September
+- 
+
+## 28 September
 
 - to dos vom 24. August durchgehen
     - 01_head.md: am Schluss erstellen
