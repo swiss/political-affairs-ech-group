@@ -8,8 +8,7 @@ _Internal note: update the next subgroup meeting in the [README](https://github.
 
 ## 26 October 
 
-- cf. 28 September
-- 
+- to dos not done :(, next time
 
 ## 28 September
 
