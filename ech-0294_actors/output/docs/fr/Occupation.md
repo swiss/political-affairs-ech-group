@@ -19,7 +19,7 @@ _Métier ou profession d'une personne indiquant un libellé, un code ISCO-19, si
 |------------------------|----------------------|------------------------------------------------------|
 | is_paid | 0..1 <br/> [Boolean](Boolean.md) | Indique si l'activité est rémunérée.  |
 | occupation_code | 0..1 <br/> [String](String.md) | Code ISCO-19 du métier.  |
-| label | 0..1 <br/> [String](String.md) | Attribuer un label à une information structurée (par ex. nom d'affichage, poste, etc.).  |
+| label | * <br/> [MultilingualValue](MultilingualValue.md) | Désignation du métier ou de la profession avec la langue dans laquelle elle est publiée. Lorsque la désignation est publiée en plusieurs langues, une entrée est saisie par langue.  |
 | organization_uid | 0..1 <br/> [String](String.md) | IDE de l'organisation issu du registre fédéral IDE (uid.admin.ch), dans le format d'échange d'eCH-0108 : CHE suivi de neuf chiffres, sans séparateurs (p. ex. CHE106063525). Le dernier chiffre est un chiffre de contrôle calculé modulo 11. La forme pointée CHE-106.063.525 est la présentation utilisée par uid.admin.ch et n'est pas saisie ici.  |
 | organization_name | * <br/> [MultilingualValue](MultilingualValue.md) | Nom de l'organisation ou de l'entreprise, avec la langue dans laquelle il est publié. Les registres bilingues indiquent le nom dans les deux langues ; une entrée est saisie par langue.  |
 | valid_from | 0..1 <br/> [Date](Date.md) | La date à partir de laquelle l'information est valable. <br/><br/>Héritage : [HasTemporalValidity](HasTemporalValidity.md) |
@@ -63,20 +63,26 @@ Au moins l'un des champs suivants doit être renseigné :
 
 
 ### Exemples
-#### Exemple Occupation : swiss politicians Sofia Fisch Juristin
-
-```yaml
-occupations:
-- label: Jurist*in
-  is_active: true
-
-```
 #### Exemple Occupation : swiss politicians Beat Jans Politiker
 
 ```yaml
 occupations:
-- label: Politiker
+- label:
+  - value: Politiker
+    language: de
+  - value: Politicien
+    language: fr
   valid_from: 1964-01-01
+  is_active: true
+
+```
+#### Exemple Occupation : swiss politicians Sofia Fisch Juristin
+
+```yaml
+occupations:
+- label:
+  - value: Jurist*in
+    language: de
   is_active: true
 
 ```

@@ -192,39 +192,14 @@ _A person with identifiers, names, addresses, citizenships, and occupations._
 
 
 ### Examples
-#### Example Person: Non-binary gender entry with occupation and training
+#### Example Person: Telling apart persons with identical names via the label second person
 
 ```yaml
 persons:
-- local_id: 72c7232be92944e3876f3b6723824ff9
-  global_uri: >-
-    https://stadtrat.bern.ch/de/mitglieder/detail.php?gid=72c7232be92944e3876f3b6723824ff9
-  label: Sofia Fisch
-  birth_year: 1996
-  names:
-  - name_type: PersonFirstName
-    value: Sofia
-  - name_type: PersonOfficialName
-    value: Fisch
-  genders:
-  - gender_code: non_binary
-    label: divers
-  occupations:
-  - label: Jurist*in
-    is_active: true
-  trainings:
-  - training_type: '3223'
-    value: MLaw
-
-```
-#### Example Person: Telling apart persons with identical names via the label
-
-```yaml
-persons:
-- local_id: 6447
-  global_uri: https://www.ur.ch/behoerdenmitglieder/6447
-  label: Alois Arnold (1981)
-  birth_year: 1981
+- local_id: 6370
+  global_uri: https://www.ur.ch/behoerdenmitglieder/6370
+  label: Alois Arnold (1965)
+  birth_year: 1965
   names:
   - name_type: PersonFirstName
     value: Alois
@@ -265,21 +240,6 @@ persons:
     value: Brunel
 
 ```
-#### Example Person: Telling apart persons with identical names via the label second person
-
-```yaml
-persons:
-- local_id: 6370
-  global_uri: https://www.ur.ch/behoerdenmitglieder/6370
-  label: Alois Arnold (1965)
-  birth_year: 1965
-  names:
-  - name_type: PersonFirstName
-    value: Alois
-  - name_type: PersonOfficialName
-    value: Arnold
-
-```
 #### Example Person: Fully recorded person
 
 ```yaml
@@ -312,7 +272,11 @@ persons:
   - gender_code: male
     valid_from: 1964-07-12
   occupations:
-  - label: Politiker
+  - label:
+    - value: Politiker
+      language: de
+    - value: Politicien
+      language: fr
     valid_from: 1964-01-01
     is_active: true
   trainings:
@@ -323,6 +287,48 @@ persons:
     value: beat.jans@admin.ch
   - contact_type: contact_website
     value: http://www.beat-jans.ch
+
+```
+#### Example Person: Non-binary gender entry with occupation and training
+
+```yaml
+persons:
+- local_id: 72c7232be92944e3876f3b6723824ff9
+  global_uri: >-
+    https://stadtrat.bern.ch/de/mitglieder/detail.php?gid=72c7232be92944e3876f3b6723824ff9
+  label: Sofia Fisch
+  birth_year: 1996
+  names:
+  - name_type: PersonFirstName
+    value: Sofia
+  - name_type: PersonOfficialName
+    value: Fisch
+  genders:
+  - gender_code: non_binary
+    label: divers
+  occupations:
+  - label:
+    - value: Jurist*in
+      language: de
+    is_active: true
+  trainings:
+  - training_type: '3223'
+    value: MLaw
+
+```
+#### Example Person: Telling apart persons with identical names via the label
+
+```yaml
+persons:
+- local_id: 6447
+  global_uri: https://www.ur.ch/behoerdenmitglieder/6447
+  label: Alois Arnold (1981)
+  birth_year: 1981
+  names:
+  - name_type: PersonFirstName
+    value: Alois
+  - name_type: PersonOfficialName
+    value: Arnold
 
 ```
 
@@ -651,7 +657,7 @@ _Occupation or profession of a person indicating a label, an ISCO-19 code, wheth
 |------------------------|----------------------|------------------------------------------------------|
 | is_paid | 0..1 <br/> Boolean | Indicates whether the activity is paid.  |
 | occupation_code | 0..1 <br/> String | ISCO-19 code of the occupation.  |
-| label | 0..1 <br/> String | Assign a label to a structured piece of information (e.g., display name, position, etc.).  |
+| label | * <br/> MultilingualValue | Designation of the occupation, with the language it is published in. Where an occupation is published in several languages, one entry per language is recorded.  |
 | organization_uid | 0..1 <br/> String | UID of the organization from the federal UID register (uid.admin.ch), in the exchange format of eCH-0108: CHE followed by nine digits, without separators (e.g. CHE106063525). The last digit is a check digit calculated modulo 11. The dotted form CHE-106.063.525 is the presentation used by uid.admin.ch and is not recorded here.  |
 | organization_name | * <br/> MultilingualValue | Name of the organization or enterprise, with the language it is published in. Bilingual registers state the name in both languages; one entry is recorded per language.  |
 | valid_from | 0..1 <br/> Date | The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
@@ -695,20 +701,26 @@ At least one of the following must be set:
 
 
 ### Examples
-#### Example Occupation: swiss politicians Sofia Fisch Juristin
-
-```yaml
-occupations:
-- label: Jurist*in
-  is_active: true
-
-```
 #### Example Occupation: swiss politicians Beat Jans Politiker
 
 ```yaml
 occupations:
-- label: Politiker
+- label:
+  - value: Politiker
+    language: de
+  - value: Politicien
+    language: fr
   valid_from: 1964-01-01
+  is_active: true
+
+```
+#### Example Occupation: swiss politicians Sofia Fisch Juristin
+
+```yaml
+occupations:
+- label:
+  - value: Jurist*in
+    language: de
   is_active: true
 
 ```
@@ -978,75 +990,62 @@ _A political group, organization, or body (e.g., party, committee, parliament, d
 
 
 ### Examples
-#### Example Group: Extra-parliamentary commission with decision-making powers
+#### Example Group: Council bureau referencing its parliament
 
 ```yaml
 groups:
-- global_uri: https://www.weko.admin.ch/
+- local_id: 50
+  global_uri: https://grosserrat.bs.ch/gremien/praesidium-und-buero
   label:
-  - value: Wettbewerbskommission
-    language: de
-  - value: Commission de la concurrence
-    language: fr
-  - value: Commissione della concorrenza
-    language: it
-  abbreviation:
-  - value: WEKO
-    language: de
-  - value: COMCO
-    language: fr
-  - value: COMCO
-    language: it
-  landing_page:
-  - value: https://www.weko.admin.ch/de
-    language: de
-  - value: https://www.weko.admin.ch/fr
-    language: fr
-  - value: https://www.weko.admin.ch/it
-    language: it
-  group_type:
-    group_type_enum: committee_extraparliamentary
-    label:
-    - value: Ausserparlamentarische Kommission
-      language: de
-  spatial: https://ld.admin.ch/country/CHE
-
-```
-#### Example Group: Committee referencing its cantonal council
-
-```yaml
-groups:
-- local_id: 3
-  global_uri: >-
-    https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/geschaeftspruefungskommission/
-  label:
-  - value: Geschäftsprüfungskommission
-    language: de
-  abbreviation:
-  - value: GPK
+  - value: Büro des Grossen Rates
     language: de
   group_type:
-    group_type_enum: committee
+    group_type_enum: council_bureau
     label:
-    - value: Kommission
+    - value: Ratsbüro
       language: de
-  spatial: https://ld.admin.ch/canton/15
+  spatial: https://ld.admin.ch/canton/12
   parent_groups:
-  - local_id: 34
-    global_uri: https://www.ar.ch/kantonsrat/
-    label: Kantonsrat Appenzell Ausserrhoden
+  - local_id: 33
+    global_uri: https://www.grosserrat.bs.ch/
+    label: Grosser Rat Basel-Stadt
 
-- local_id: 34
-  global_uri: https://www.ar.ch/kantonsrat/
+- local_id: 33
+  global_uri: https://www.grosserrat.bs.ch/
   label:
-  - value: Kantonsrat Appenzell Ausserrhoden
+  - value: Grosser Rat Basel-Stadt
     language: de
   group_type:
     group_type_enum: council_legislative
     label:
     - value: Parlament (Legislativrat)
       language: de
-  spatial: https://ld.admin.ch/canton/15
+  spatial: https://ld.admin.ch/canton/12
+
+```
+#### Example Group: Cantonal party referencing its national party
+
+```yaml
+groups:
+- global_uri: https://www.evp-bs.ch/
+  label:
+  - value: Evangelische Volkspartei Basel-Stadt
+    language: de
+  abbreviation:
+  - value: EVP BS
+    language: de
+  group_type:
+    group_type_enum: party
+    label:
+    - value: Partei
+      language: de
+  spatial: https://ld.admin.ch/canton/12
+  parent_groups:
+  - global_uri: https://www.evppev.ch/
+    label: Evangelische Volkspartei der Schweiz
+    abbreviation:
+    - value: EVP
+      language: de
 
 ```
 #### Example Group: Parliamentary group referencing the parliament it belongs to
@@ -1109,31 +1108,6 @@ groups:
   spatial: https://ld.admin.ch/municipality/3203
 
 ```
-#### Example Group: Cantonal party referencing its national party
-
-```yaml
-groups:
-- global_uri: https://www.evp-bs.ch/
-  label:
-  - value: Evangelische Volkspartei Basel-Stadt
-    language: de
-  abbreviation:
-  - value: EVP BS
-    language: de
-  group_type:
-    group_type_enum: party
-    label:
-    - value: Partei
-      language: de
-  spatial: https://ld.admin.ch/canton/12
-  parent_groups:
-  - global_uri: https://www.evppev.ch/
-    label: Evangelische Volkspartei der Schweiz
-    abbreviation:
-    - value: EVP
-      language: de
-
-```
 #### Example Group: Interest group with a trilingual name and contact
 
 ```yaml
@@ -1185,6 +1159,43 @@ groups:
   valid_from: 2012-01-01
 
 ```
+#### Example Group: Committee referencing its cantonal council
+
+```yaml
+groups:
+- local_id: 3
+  global_uri: >-
+    https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/geschaeftspruefungskommission/
+  label:
+  - value: Geschäftsprüfungskommission
+    language: de
+  abbreviation:
+  - value: GPK
+    language: de
+  group_type:
+    group_type_enum: committee
+    label:
+    - value: Kommission
+      language: de
+  spatial: https://ld.admin.ch/canton/15
+  parent_groups:
+  - local_id: 34
+    global_uri: https://www.ar.ch/kantonsrat/
+    label: Kantonsrat Appenzell Ausserrhoden
+
+- local_id: 34
+  global_uri: https://www.ar.ch/kantonsrat/
+  label:
+  - value: Kantonsrat Appenzell Ausserrhoden
+    language: de
+  group_type:
+    group_type_enum: council_legislative
+    label:
+    - value: Parlament (Legislativrat)
+      language: de
+  spatial: https://ld.admin.ch/canton/15
+
+```
 #### Example Group: State chancellery referencing its government
 
 ```yaml
@@ -1216,6 +1227,40 @@ groups:
     - value: Regierung (Exekutivrat)
       language: de
   spatial: https://ld.admin.ch/canton/12
+
+```
+#### Example Group: Extra-parliamentary commission with decision-making powers
+
+```yaml
+groups:
+- global_uri: https://www.weko.admin.ch/
+  label:
+  - value: Wettbewerbskommission
+    language: de
+  - value: Commission de la concurrence
+    language: fr
+  - value: Commissione della concorrenza
+    language: it
+  abbreviation:
+  - value: WEKO
+    language: de
+  - value: COMCO
+    language: fr
+  - value: COMCO
+    language: it
+  landing_page:
+  - value: https://www.weko.admin.ch/de
+    language: de
+  - value: https://www.weko.admin.ch/fr
+    language: fr
+  - value: https://www.weko.admin.ch/it
+    language: it
+  group_type:
+    group_type_enum: committee_extraparliamentary
+    label:
+    - value: Ausserparlamentarische Kommission
+      language: de
+  spatial: https://ld.admin.ch/country/CHE
 
 ```
 #### Example Group: Bilingual delegation to an intercantonal body
@@ -1259,39 +1304,6 @@ groups:
       language: fr
   spatial: https://ld.admin.ch/canton/10
   valid_from: 2007-12-12
-
-```
-#### Example Group: Council bureau referencing its parliament
-
-```yaml
-groups:
-- local_id: 50
-  global_uri: https://grosserrat.bs.ch/gremien/praesidium-und-buero
-  label:
-  - value: Büro des Grossen Rates
-    language: de
-  group_type:
-    group_type_enum: council_bureau
-    label:
-    - value: Ratsbüro
-      language: de
-  spatial: https://ld.admin.ch/canton/12
-  parent_groups:
-  - local_id: 33
-    global_uri: https://www.grosserrat.bs.ch/
-    label: Grosser Rat Basel-Stadt
-
-- local_id: 33
-  global_uri: https://www.grosserrat.bs.ch/
-  label:
-  - value: Grosser Rat Basel-Stadt
-    language: de
-  group_type:
-    group_type_enum: council_legislative
-    label:
-    - value: Parlament (Legislativrat)
-      language: de
-  spatial: https://ld.admin.ch/canton/12
 
 ```
 
@@ -1534,49 +1546,6 @@ memberships:
   is_active: false
 
 ```
-#### Example Membership: Party membership without temporal information
-
-```yaml
-memberships:
-- global_uri: act:ms_jans_partei_sp
-  person_reference:
-    local_id: 4032
-    global_uri: https://www.admin.ch/de/beat-jans
-    label: Beat Jans
-  group_reference:
-    global_uri: https://www.sp-ps.ch/
-    label: Sozialdemokratische Partei der Schweiz
-  role_type:
-    role_type_enum: member
-  is_active: true
-
-```
-#### Example Membership: Person and group from the same delivery with electoral district
-
-```yaml
-memberships:
-- global_uri: act:ms_jans_grossrat_bs
-  person_reference:
-    local_id: 4032
-    global_uri: https://www.admin.ch/de/beat-jans
-    label: Beat Jans
-  group_reference:
-    local_id: 33
-    global_uri: https://www.grosserrat.bs.ch/
-    label: Grosser Rat Basel-Stadt
-  electoral_district:
-    global_uri: https://grosserrat.bs.ch/wahlkreise/kleinbasel
-    label:
-    - value: Kleinbasel
-      language: de
-  role_type:
-    role_type_enum: member
-  authorized_to_vote: true
-  valid_from: 2001-02-07
-  valid_through: 2011-04-30
-  is_active: false
-
-```
 #### Example Membership: Committee membership with a duration of its own
 
 ```yaml
@@ -1618,6 +1587,49 @@ memberships:
   authorized_to_vote: true
   valid_from: 2021-02-03
   valid_through: 2023-12-31
+  is_active: false
+
+```
+#### Example Membership: Party membership without temporal information
+
+```yaml
+memberships:
+- global_uri: act:ms_jans_partei_sp
+  person_reference:
+    local_id: 4032
+    global_uri: https://www.admin.ch/de/beat-jans
+    label: Beat Jans
+  group_reference:
+    global_uri: https://www.sp-ps.ch/
+    label: Sozialdemokratische Partei der Schweiz
+  role_type:
+    role_type_enum: member
+  is_active: true
+
+```
+#### Example Membership: Person and group from the same delivery with electoral district
+
+```yaml
+memberships:
+- global_uri: act:ms_jans_grossrat_bs
+  person_reference:
+    local_id: 4032
+    global_uri: https://www.admin.ch/de/beat-jans
+    label: Beat Jans
+  group_reference:
+    local_id: 33
+    global_uri: https://www.grosserrat.bs.ch/
+    label: Grosser Rat Basel-Stadt
+  electoral_district:
+    global_uri: https://grosserrat.bs.ch/wahlkreise/kleinbasel
+    label:
+    - value: Kleinbasel
+      language: de
+  role_type:
+    role_type_enum: member
+  authorized_to_vote: true
+  valid_from: 2001-02-07
+  valid_through: 2011-04-30
   is_active: false
 
 ```
@@ -1962,6 +1974,26 @@ At least one of the following must be set:
 
 
 ### Examples
+#### Example InterestLink: Public office at another federal level
+
+```yaml
+interest_links:
+- global_uri: act:il_dafond_001
+  person_reference:
+    global_uri: >-
+      https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=14
+    label: Felice Dafond
+    group_label: PLR
+  interest_type: public_mandate
+  organization_name:
+  - value: Municipio di Minusio
+    language: it
+  legal_form: '0223'
+  function_role:
+  - value: Sindaco
+    language: it
+
+```
 #### Example InterestLink: Board mandate without a UID and without payment information
 
 ```yaml
@@ -1984,25 +2016,49 @@ interest_links:
     language: fr
 
 ```
-#### Example InterestLink: Own company run operationally
+#### Example InterestLink: Foundation board mandate with the organisations UID
 
 ```yaml
 interest_links:
-- global_uri: act:il_burkart_001
+- global_uri: act:il_burkart_007
   person_reference:
     global_uri: http://www.wikidata.org/entity/Q23060472
     label: Thierry Burkart
     group_label: FDP.Die Liberalen
-  interest_type: professional_activity
+  interest_type: governing_body
   organization_name:
-  - value: Burkart Advisory GmbH, Baden
+  - value: FONDATION SUISSE DE DEMINAGE (FSD), Genf
     language: de
-  legal_form: '0107'
+  organization_uid: CHE109810537
+  legal_form: '0110'
   committee:
-  - value: Geschäftsleitung
+  - value: Stiftungsrat
     language: de
   function_role:
-  - value: Geschäftsführer
+  - value: Vizepräsident
+    language: de
+  is_paid: false
+
+```
+#### Example InterestLink: Federation presidency  the counterpart decides not the function
+
+```yaml
+interest_links:
+- global_uri: act:il_burkart_005
+  person_reference:
+    global_uri: http://www.wikidata.org/entity/Q23060472
+    label: Thierry Burkart
+    group_label: FDP.Die Liberalen
+  interest_type: interest_group_mandate
+  organization_name:
+  - value: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
+    language: de
+  legal_form: '0109'
+  committee:
+  - value: Zentralvorstand
+    language: de
+  function_role:
+  - value: Präsident
     language: de
   is_paid: true
 
@@ -2031,30 +2087,6 @@ interest_links:
   is_ex_officio: true
 
 ```
-#### Example InterestLink: Foundation board mandate with the organisations UID
-
-```yaml
-interest_links:
-- global_uri: act:il_burkart_007
-  person_reference:
-    global_uri: http://www.wikidata.org/entity/Q23060472
-    label: Thierry Burkart
-    group_label: FDP.Die Liberalen
-  interest_type: governing_body
-  organization_name:
-  - value: FONDATION SUISSE DE DEMINAGE (FSD), Genf
-    language: de
-  organization_uid: CHE109810537
-  legal_form: '0110'
-  committee:
-  - value: Stiftungsrat
-    language: de
-  function_role:
-  - value: Vizepräsident
-    language: de
-  is_paid: false
-
-```
 #### Example InterestLink: The same value for a seat on a body
 
 ```yaml
@@ -2071,26 +2103,6 @@ interest_links:
     language: it
   function_role:
   - value: Vice-presidente
-    language: it
-
-```
-#### Example InterestLink: Public office at another federal level
-
-```yaml
-interest_links:
-- global_uri: act:il_dafond_001
-  person_reference:
-    global_uri: >-
-      https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=14
-    label: Felice Dafond
-    group_label: PLR
-  interest_type: public_mandate
-  organization_name:
-  - value: Municipio di Minusio
-    language: it
-  legal_form: '0223'
-  function_role:
-  - value: Sindaco
     language: it
 
 ```
@@ -2146,25 +2158,25 @@ interest_links:
     language: de
 
 ```
-#### Example InterestLink: Federation presidency  the counterpart decides not the function
+#### Example InterestLink: Own company run operationally
 
 ```yaml
 interest_links:
-- global_uri: act:il_burkart_005
+- global_uri: act:il_burkart_001
   person_reference:
     global_uri: http://www.wikidata.org/entity/Q23060472
     label: Thierry Burkart
     group_label: FDP.Die Liberalen
-  interest_type: interest_group_mandate
+  interest_type: professional_activity
   organization_name:
-  - value: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
+  - value: Burkart Advisory GmbH, Baden
     language: de
-  legal_form: '0109'
+  legal_form: '0107'
   committee:
-  - value: Zentralvorstand
+  - value: Geschäftsleitung
     language: de
   function_role:
-  - value: Präsident
+  - value: Geschäftsführer
     language: de
   is_paid: true
 
@@ -2546,6 +2558,14 @@ At least one of the following must be set:
 
 
 ### Examples
+#### Example Address: swiss politicians Beat Jans 1
+
+```yaml
+addresses:
+- address_type: businessAddress
+  postal_locality: Basel-Stadt
+
+```
 #### Example Address: groups Konsumenteninformation und -schutz 1
 
 ```yaml
@@ -2557,14 +2577,6 @@ addresses:
   postal_code: '1001'
   postal_locality: Lausanne
   country: CH
-
-```
-#### Example Address: swiss politicians Beat Jans 1
-
-```yaml
-addresses:
-- address_type: businessAddress
-  postal_locality: Basel-Stadt
 
 ```
 

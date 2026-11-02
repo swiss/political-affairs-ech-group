@@ -29,7 +29,7 @@ URI: [mcm:label](https://ld.ech.ch/schema/0292/meta-common/label)
 | [Person](Person.md) | Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften und Be... |  yes  |
 | [Group](Group.md) | Eine politische Gruppe, Organisation oder Körperschaft (z |  yes  |
 | [Gender](Gender.md) | Geschlecht einer Person mit Angabe eines Geschlechtscodes und der zeitlichen ... |  no  |
-| [Occupation](Occupation.md) | Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19 Code... |  no  |
+| [Occupation](Occupation.md) | Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19 Code... |  yes  |
 | [Contact](Contact.md) | Kontaktinformation einer Person mit Angabe eines Typs (z |  no  |
 | [ElectoralDistrict](ElectoralDistrict.md) | Wahlkreis oder Wahlregion, die einer Mitgliedschaft zugeordnet ist |  yes  |
 | [GroupType](GroupType.md) | Art der Gruppe (z |  yes  |
