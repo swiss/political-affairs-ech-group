@@ -314,6 +314,21 @@ classes:
       - label
       - organization_uid
       - organization_name
+    slot_usage:
+      # An occupation is usually stated in the language of its source. Where it
+      # is published in several languages, the label carries one entry per
+      # language, as for groups.
+      label:
+        description: |
+          Designation of the occupation, with the language it is published in. Where an occupation is published in several languages, one entry per language is recorded.
+        annotations:
+          description_de: |
+            Bezeichnung des Berufs oder der Tätigkeit mit der Sprache, in der sie publiziert wird. Wird die Bezeichnung in mehreren Sprachen publiziert, wird pro Sprache ein Eintrag erfasst.
+          description_fr: |
+            Désignation du métier ou de la profession avec la langue dans laquelle elle est publiée. Lorsque la désignation est publiée en plusieurs langues, une entrée est saisie par langue.
+        range: MultilingualValue
+        multivalued: true
+        inlined_as_list: true
     any_of:
       - slot_conditions:
           occupation_code:
