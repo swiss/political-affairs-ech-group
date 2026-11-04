@@ -24,3 +24,15 @@ A delivery is a `Container`: an envelope with a `global_uri` of its own and one 
 The entities sit side by side in a flat structure and are connected by references — `parent_meeting`, `parent_voting`, `parent_attendance` and so on — rather than nested inside one another. A single sitting can thus be delivered later without resending the entire legislature, and the same entity can be referenced from several places. Where nesting renders the connection better, it remains possible: the session takes its sittings as a list, the protocol its agenda items, votings and speeches.
 
 {{include:ech-0293_operations/output/docs/Container.md}}
+
+## Common elements
+
+The three classes of the temporal organisation — Legislature, Session and Meeting — are deliberately built alike. The following fields have the same meaning on all levels.
+
+**Identification.** `global_uri` is the identifier and is mandatory. `local_id` takes the id of the delivering system, `wikidata_uri` points to the Wikidata entry where one exists.
+
+**Begin and end.** The temporal data is recorded twice: `date_begin_planned` and `date_end_planned` hold what was scheduled, `date_begin_actual` and `date_end_actual` what actually happened. Where the time of day matters, the `datetime_*` variants are available.
+
+**Space and body.** `spatial` points to the spatial unit according to LINDAS — country, canton, district or commune, thus `https://ld.admin.ch/canton/2` rather than "BE". It is the same field with which eCH-0294 locates its groups, so that council operations and the actors who carry them point to the same resource. Who convenes within that spatial unit is stated by `actor_id`, a lightweight reference to the body according to eCH-0294.
+
+**Linked documents.** `documents` links documents as FRBR works according to eCH-0292 — for the legislature, for instance, membership and affair registers, for the session the session programme, for the meeting the bulletin and annexes (the protocol, by contrast, via `has_protocol`).

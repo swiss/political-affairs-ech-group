@@ -1,7 +1,4 @@
 #
-# Syntaktisch korrekte Version
-# bitte in schema_working.yaml arbeiten!
-#
 # Mehrsprachigkeit: Englisch in `description:`, Deutsch in
 # `annotations.description_de:`, Franzoesisch in `annotations.description_fr:`.
 # Alle drei Sprachen sind synchron zu halten -- localize_schema.py erzeugt
@@ -425,12 +422,12 @@ classes:
 
   Attendance:
     description: |
-      Aggregated attendance record for a meeting (number of members present, absent, excused).
+      Aggregated attendance record for a meeting (number of members present, absent, excused): it records which members of a parliamentary body were present, absent or excused at a sitting. Attendance is captured on two levels — this aggregate with the totals for the meeting, and one IndividualAttendance per person, linked to it via parent_attendance. Attendance records serve the documentation of participation, the verification of the quorum, transparency towards the public, accountability for the fulfilment of duties, statistics on attendance rates and the administration of allowances and expenses.
     annotations:
       description_de: |
-        Aggregierte Anwesenheitsliste für eine Sitzung (Anzahl Anwesende, Abwesende, Entschuldigte).
+        Aggregierte Anwesenheitsliste für eine Sitzung (Anzahl Anwesende, Abwesende, Entschuldigte): Sie hält fest, welche Mitglieder eines parlamentarischen Organs bei einer Sitzung anwesend, abwesend oder entschuldigt waren. Die Anwesenheit wird auf zwei Ebenen erfasst — mit diesem Aggregat und den Gesamtzahlen für die Sitzung sowie mit je einer IndividualAttendance pro Person, die über parent_attendance daran hängt. Anwesenheitslisten dienen der Dokumentation der Teilnahme, der Prüfung der Beschlussfähigkeit, der Transparenz gegenüber der Öffentlichkeit, der Rechenschaft über die Pflichterfüllung, der Statistik von Anwesenheitsquoten sowie der Administration von Entschädigungen und Spesen.
       description_fr: |
-        Liste de présence agrégée pour une séance (nombre de membres présents, absents, excusés).
+        Liste de présence agrégée pour une séance (nombre de membres présents, absents, excusés) : elle retient quels membres d'un organe parlementaire étaient présents, absents ou excusés lors d'une séance. La présence est saisie à deux niveaux — par cet agrégat avec les totaux de la séance, et par une IndividualAttendance par personne, rattachée à celui-ci via parent_attendance. Les listes de présence servent à documenter la participation, à vérifier le quorum, à la transparence envers le public, à rendre compte de l'accomplissement des devoirs, à établir des statistiques sur les taux de présence ainsi qu'à administrer les indemnités et les frais.
     mixins:
       - HasIdentification
       - HasCreationModificationDates
@@ -453,15 +450,63 @@ classes:
             Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).
           description_fr: |
             Référence à l'organe agissant (instantané au moment de la mise en relation).
+      parent_meeting:
+        description: |
+          The meeting to which the attendance list belongs.
+        annotations:
+          description_de: |
+            Die Sitzung, zu der die Anwesenheitsliste gehört.
+          description_fr: |
+            La séance à laquelle se rapporte la liste de présence.
+      datetime_begin:
+        description: |
+          Date and time at which attendance was recorded.
+        annotations:
+          description_de: |
+            Datum und Uhrzeit, zu der die Anwesenheit erfasst wurde.
+          description_fr: |
+            Date et heure auxquelles la présence a été saisie.
+      total_count:
+        description: |
+          Total number of members of the body, the reference value for quorum calculations (e.g. 200 for the National Council, 46 for the Council of States). The quorum itself is not stored as a field of its own: it follows from the ratio of total_present to total_count and the quorum rules of the body, and is calculated on the data side when needed.
+        annotations:
+          description_de: |
+            Gesamtzahl aller Mitglieder des Gremiums, die Bezugsgrösse für Quorum-Berechnungen (z.B. 200 für den Nationalrat, 46 für den Ständerat). Die Beschlussfähigkeit selbst wird nicht als eigenes Feld gespeichert: Sie ergibt sich aus dem Verhältnis von total_present zu total_count und den Quorum-Regeln des Gremiums und wird bei Bedarf datenseitig berechnet.
+          description_fr: |
+            Nombre total de membres de l'organe, valeur de référence pour le calcul du quorum (p. ex. 200 pour le Conseil national, 46 pour le Conseil des États). Le quorum lui-même n'est pas enregistré dans un champ propre : il résulte du rapport entre total_present et total_count et des règles de quorum de l'organe, et est calculé au besoin à partir des données.
+      total_present:
+        description: |
+          Number of members present, e.g. 185 of 200.
+        annotations:
+          description_de: |
+            Anzahl anwesender Mitglieder, z.B. 185 von 200.
+          description_fr: |
+            Nombre de membres présents, p. ex. 185 sur 200.
+      total_excused:
+        description: |
+          Number of members whose absence was excused, e.g. 12 of 200.
+        annotations:
+          description_de: |
+            Anzahl Mitglieder, deren Abwesenheit entschuldigt war, z.B. 12 von 200.
+          description_fr: |
+            Nombre de membres dont l'absence était excusée, p. ex. 12 sur 200.
+      total_absent:
+        description: |
+          Number of members absent without excuse, e.g. 3 of 200.
+        annotations:
+          description_de: |
+            Anzahl unentschuldigt abwesender Mitglieder, z.B. 3 von 200.
+          description_fr: |
+            Nombre de membres absents sans excuse, p. ex. 3 sur 200.
 
   IndividualAttendance:
     description: |
-      Individual attendance record for a specific person at a meeting (linked via the parent Attendance aggregate).
+      Individual attendance record for a specific person at a meeting (linked via the parent Attendance aggregate). It concerns the meeting as a whole and differs from the individual vote (IndividualVote), which records the vote cast in a specific voting: a person present at the meeting (attendance_type present) can be recorded with not_voted in a single voting because they briefly left the chamber at that moment.
     annotations:
       description_de: |
-        Einzelne Anwesenheitsfeststellung einer Person an einer Sitzung (verknüpft über das übergeordnete Attendance-Aggregat).
+        Einzelne Anwesenheitsfeststellung einer Person an einer Sitzung (verknüpft über das übergeordnete Attendance-Aggregat). Sie betrifft die Sitzung als Ganzes und unterscheidet sich von der Einzelstimme (IndividualVote), welche die Stimmabgabe in einer bestimmten Abstimmung festhält: Eine an der Sitzung anwesende Person (attendance_type present) kann bei einer einzelnen Abstimmung mit not_voted erfasst werden, weil sie in diesem Moment kurz den Saal verlassen hat.
       description_fr: |
-        Constatation individuelle de la présence d'une personne à une séance (rattachée à l'agrégat Attendance parent).
+        Constatation individuelle de la présence d'une personne à une séance (rattachée à l'agrégat Attendance parent). Elle porte sur la séance dans son ensemble et se distingue de la voix individuelle (IndividualVote), qui retient la voix exprimée lors d'un vote déterminé : une personne présente à la séance (attendance_type present) peut être saisie avec not_voted lors d'un vote particulier parce qu'elle a brièvement quitté la salle à ce moment-là.
     mixins:
       - HasIdentification
       - HasCreationModificationDates
@@ -470,15 +515,32 @@ classes:
       - actor_id
       - attendance_type
       - reason
+    slot_usage:
+      parent_attendance:
+        description: |
+          The Attendance aggregate this record belongs to; since the aggregate in turn is attached to the meeting, the individual record is thereby assigned to the meeting.
+        annotations:
+          description_de: |
+            Das Attendance-Aggregat, zu dem dieser Eintrag gehört; da das Aggregat seinerseits an der Sitzung hängt, ist die einzelne Erfassung damit der Sitzung zugeordnet.
+          description_fr: |
+            L'agrégat Attendance auquel appartient cet enregistrement ; comme l'agrégat est lui-même rattaché à la séance, la saisie individuelle est ainsi attribuée à la séance.
+      actor_id:
+        description: |
+          The person whose attendance is recorded, as a reference to a person according to eCH-0294.
+        annotations:
+          description_de: |
+            Die Person, deren Anwesenheit erfasst wird, als Referenz auf eine Person gemäss eCH-0294.
+          description_fr: |
+            La personne dont la présence est saisie, sous forme de référence à une personne selon eCH-0294.
 
   Speech:
     description: |
-      A speech or statement made during a meeting (also called Votum or speaker segment).
+      A speech or statement made during a meeting (also called Votum or speaker segment): the oral contribution of a person in a parliamentary sitting and thus the central instrument of political debate and of expressing opinions in parliament. Speeches take various forms — main statements (detailed positions on an affair, justification of motions, presentation of the parliamentary group's opinion), short interventions (interjected questions, corrections), declarations by a parliamentary group delivered by its spokesperson, and statements by members of the government (answering questions, defending bills). A speech records who spoke when and under which agenda item, with the wording as text and, where available, as an audio or video recording. It can be delivered in two ways: embedded in the protocol (Protocol.speeches), where the meeting follows from the surrounding protocol but the agenda item does not, or flat in Container.speeches, where without references any link would be missing. parent_meeting and parent_agenda_item are therefore set in both cases; they carry the same values as on Voting and Election and make the speech evaluable regardless of the delivery form it came in.
     annotations:
       description_de: |
-        Eine Wortmeldung während einer Sitzung (auch Votum oder Redebeitrag genannt).
+        Eine Wortmeldung während einer Sitzung (auch Votum oder Redebeitrag genannt): der mündliche Beitrag einer Person in einer parlamentarischen Sitzung und damit das zentrale Instrument der politischen Debatte und Meinungsäusserung im Parlament. Wortmeldungen haben verschiedene Formen — Hauptvoten (ausführliche Stellungnahmen zu einem Geschäft, Begründung von Anträgen, Darlegung der Fraktionsmeinung), Kurzinterventionen (Zwischenfragen, Richtigstellungen), Fraktionserklärungen, vorgetragen durch die Fraktionssprecherin oder den Fraktionssprecher, sowie Regierungsvoten (Beantwortung von Fragen, Verteidigung von Vorlagen). Eine Wortmeldung hält fest, wer wann unter welchem Traktandum gesprochen hat, mit dem Wortlaut als Text und, wo vorhanden, als Audio- oder Videoaufzeichnung. Sie kann auf zwei Wegen geliefert werden: eingebettet im Protokoll (Protocol.speeches), wo sich die Sitzung aus dem umgebenden Protokoll ergibt, das Traktandum aber nicht, oder flach in Container.speeches, wo ohne Referenzen jeder Bezug fehlte. parent_meeting und parent_agenda_item werden deshalb in beiden Fällen geführt; sie tragen dieselben Werte wie bei Voting und Election und machen die Wortmeldung unabhängig davon auswertbar, aus welcher Lieferform sie stammt.
       description_fr: |
-        Une intervention prononcée au cours d'une séance (également appelée prise de parole).
+        Une intervention prononcée au cours d'une séance (également appelée prise de parole) : la contribution orale d'une personne lors d'une séance parlementaire et, partant, l'instrument central du débat politique et de l'expression des opinions au parlement. Les interventions revêtent différentes formes — interventions principales (prises de position détaillées sur une affaire, développement de propositions, exposé de l'avis du groupe parlementaire), interventions brèves (questions intermédiaires, rectifications), déclarations de groupe présentées par la porte-parole ou le porte-parole du groupe, ainsi qu'interventions du gouvernement (réponses à des questions, défense de projets). Une intervention retient qui a parlé, quand et sous quel point de l'ordre du jour, avec le texte prononcé et, le cas échéant, un enregistrement audio ou vidéo. Elle peut être livrée de deux manières : imbriquée dans le procès-verbal (Protocol.speeches), où la séance ressort du procès-verbal environnant mais non le point de l'ordre du jour, ou à plat dans Container.speeches, où tout rattachement ferait défaut sans références. parent_meeting et parent_agenda_item sont donc renseignés dans les deux cas ; ils portent les mêmes valeurs que pour Voting et Election et rendent l'intervention exploitable indépendamment de sa forme de livraison.
     mixins:
       - HasIdentification
       - HasCreationModificationDates
@@ -500,6 +562,95 @@ classes:
       - media_type
       - media_format
       - documents
+    slot_usage:
+      language:
+        description: |
+          Language in which the speech was given, e.g. de (German), fr (French), it (Italian), rm (Romansh) or en (English).
+        annotations:
+          description_de: |
+            Sprache, in der gesprochen wurde, z.B. de (Deutsch), fr (Französisch), it (Italienisch), rm (Rätoromanisch) oder en (Englisch).
+          description_fr: |
+            Langue dans laquelle l'intervention a été prononcée, p. ex. de (allemand), fr (français), it (italien), rm (romanche) ou en (anglais).
+      datetime_begin:
+        description: |
+          Date and time at which the speech began. Together with datetime_end it allows the speech to be located precisely in audio and video recordings, speaking time to be analysed per person or parliamentary group, and compliance with time limits to be checked.
+        annotations:
+          description_de: |
+            Datum und Uhrzeit, zu der die Wortmeldung begann. Zusammen mit datetime_end ermöglicht sie die genaue Referenzierung in Audio- und Videoaufzeichnungen, die Analyse der Redezeit pro Person oder Fraktion und die Kontrolle der Einhaltung von Zeitlimiten.
+          description_fr: |
+            Date et heure auxquelles l'intervention a commencé. Avec datetime_end, elle permet de situer précisément l'intervention dans les enregistrements audio et vidéo, d'analyser le temps de parole par personne ou par groupe parlementaire et de contrôler le respect des limites de temps.
+      datetime_end:
+        description: |
+          Date and time at which the speech ended; the speaking time results from the difference to datetime_begin.
+        annotations:
+          description_de: |
+            Datum und Uhrzeit, zu der die Wortmeldung endete; die Redezeit ergibt sich aus der Differenz zu datetime_begin.
+          description_fr: |
+            Date et heure auxquelles l'intervention s'est terminée ; le temps de parole résulte de la différence avec datetime_begin.
+      actor_id:
+        description: |
+          The speaking person, as a reference to a person according to eCH-0294.
+        annotations:
+          description_de: |
+            Die sprechende Person, als Referenz auf eine Person gemäss eCH-0294.
+          description_fr: |
+            La personne qui s'exprime, sous forme de référence à une personne selon eCH-0294.
+      actor_fullname:
+        description: |
+          Name of the speaking person, for quick access without resolving actor_id.
+        annotations:
+          description_de: |
+            Name der sprechenden Person, für den schnellen Zugriff ohne Auflösung von actor_id.
+          description_fr: |
+            Nom de la personne qui s'exprime, pour un accès rapide sans résolution de actor_id.
+      role:
+        description: |
+          Role in which the person speaks, e.g. president of a parliamentary group, rapporteur or member of the Federal Council.
+        annotations:
+          description_de: |
+            Rolle, in der die Person spricht, z.B. Fraktionspräsidentin oder Fraktionspräsident, Berichterstatterin oder Berichterstatter, Bundesrätin oder Bundesrat.
+          description_fr: |
+            Rôle dans lequel la personne s'exprime, p. ex. présidente ou président de groupe parlementaire, rapporteuse ou rapporteur, conseillère fédérale ou conseiller fédéral.
+      text:
+        description: |
+          Wording of the speech.
+        annotations:
+          description_de: |
+            Wortlaut der Wortmeldung.
+          description_fr: |
+            Texte prononcé de l'intervention.
+      text_type:
+        description: |
+          Version of the wording: the raw transcript (verbatim, unedited and including filler words, available directly after the sitting) or the edited transcript (editorially revised and grammatically corrected, the official protocol version).
+        annotations:
+          description_de: |
+            Fassung des Wortlauts: das Rohtranskript (wörtliche, unbearbeitete Niederschrift mit Füllwörtern, direkt nach der Sitzung verfügbar) oder das bearbeitete Transkript (redaktionell überarbeitet und grammatikalisch korrigiert, die offizielle Protokollversion).
+          description_fr: |
+            Version du texte : la transcription brute (transcription littérale, non retravaillée et avec les mots de remplissage, disponible directement après la séance) ou la transcription éditée (revue par la rédaction et corrigée sur le plan grammatical, la version officielle du procès-verbal).
+      media_url:
+        description: |
+          URL of the audio or video recording of the speech, or of the live stream during the sitting, which is archived afterwards.
+        annotations:
+          description_de: |
+            URL der Audio- oder Videoaufzeichnung der Wortmeldung oder des Livestreams während der Sitzung, der danach archiviert wird.
+          description_fr: |
+            URL de l'enregistrement audio ou vidéo de l'intervention, ou de la diffusion en direct pendant la séance, archivée par la suite.
+      media_type:
+        description: |
+          Type of the recording: audio (original sound of the speech) or video (visual recording, usually of plenary sittings).
+        annotations:
+          description_de: |
+            Art der Aufzeichnung: Audio (Originalton der Wortmeldung) oder Video (visuelle Aufzeichnung, in der Regel bei Plenarsitzungen).
+          description_fr: |
+            Type d'enregistrement : audio (son original de l'intervention) ou vidéo (enregistrement visuel, en général lors des séances plénières).
+      media_format:
+        description: |
+          MIME type of the recording, e.g. audio/mpeg (MP3), audio/wav, video/mp4 or video/webm.
+        annotations:
+          description_de: |
+            MIME-Typ der Aufzeichnung, z.B. audio/mpeg (MP3), audio/wav, video/mp4 oder video/webm.
+          description_fr: |
+            Type MIME de l'enregistrement, p. ex. audio/mpeg (MP3), audio/wav, video/mp4 ou video/webm.
 
   TextSegment:
     description: |
@@ -2009,21 +2160,21 @@ enums:
       "remote":
         meaning: ops:enum/attendance_type/remote
         description: |
-          Remote participation
+          Remote participation, e.g. via video conference
         annotations:
           description_de: |
-            Teilnahme per Fernzugriff
+            Teilnahme per Fernzugriff, z.B. per Videokonferenz
           description_fr: |
-            Participation à distance
+            Participation à distance, p. ex. par visioconférence
       "substitute":
         meaning: ops:enum/attendance_type/substitute
         description: |
-          Substitute (Stellvertretung)
+          Substitute (Stellvertretung): another person took part in place of the member
         annotations:
           description_de: |
-            Stellvertretung
+            Stellvertretung: Eine andere Person hat in Vertretung des Mitglieds teilgenommen
           description_fr: |
-            Suppléance
+            Suppléance : une autre personne a participé à la place du membre
       "present":
         meaning: ops:enum/attendance_type/present
         description: |

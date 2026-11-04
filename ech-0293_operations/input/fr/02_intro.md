@@ -24,3 +24,15 @@ Une livraison est un `Container` : une enveloppe dotée de sa propre `global_uri
 Les entités y sont placées côte à côte, à plat, et reliées par des références — `parent_meeting`, `parent_voting`, `parent_attendance`, et ainsi de suite — plutôt qu'imbriquées les unes dans les autres. Il est ainsi possible de livrer après coup une séance isolée sans réémettre toute la législature, et de référencer la même entité depuis plusieurs endroits. Là où l'imbrication rend mieux le lien, elle reste possible : la session reprend ses séances sous forme de liste, le procès-verbal ses points de l'ordre du jour, ses votes et ses interventions.
 
 {{include:ech-0293_operations/output/docs/Container.md}}
+
+## Éléments communs
+
+Les trois classes de l'organisation temporelle — Legislature, Session et Meeting — sont délibérément construites de la même manière. Les champs suivants ont la même signification à tous les niveaux.
+
+**Identification.** `global_uri` est l'identifiant et est obligatoire. `local_id` reprend l'identifiant du système livreur, `wikidata_uri` renvoie à l'entrée Wikidata, lorsqu'elle existe.
+
+**Début et fin.** Les indications temporelles sont consignées deux fois : `date_begin_planned` et `date_end_planned` retiennent ce qui était prévu, `date_begin_actual` et `date_end_actual` ce qui s'est effectivement passé. Lorsque l'heure importe, les variantes `datetime_*` sont à disposition.
+
+**Espace et organe.** `spatial` renvoie à l'unité spatiale selon LINDAS — pays, canton, district ou commune, donc `https://ld.admin.ch/canton/2` et non « BE ». C'est le champ avec lequel eCH-0294 localise ses groupes, de sorte qu'un fonctionnement de conseil et les acteurs qui le portent renvoient à la même ressource. Qui siège au sein de cette unité spatiale est indiqué par `actor_id`, référence abrégée à l'organe selon eCH-0294.
+
+**Documents liés.** `documents` relie des documents en tant que FRBR-Works selon eCH-0292 — pour la législature p. ex. les listes des membres et les répertoires des affaires, pour la session le programme de session, pour la séance le bulletin et les annexes (le procès-verbal, en revanche, via `has_protocol`).
