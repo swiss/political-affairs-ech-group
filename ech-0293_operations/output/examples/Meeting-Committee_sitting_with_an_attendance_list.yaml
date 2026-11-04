@@ -9,7 +9,7 @@ meetings:
   url:
   - text: https://www.gr.be.ch/kommissionen/wak/2025-05-12
     language: de
-  actor_id:
+  group_reference:
     global_uri: actors:committee_wak_be
     label: Kommission für Wirtschaft und Abgaben (WAK)
     abbreviation:

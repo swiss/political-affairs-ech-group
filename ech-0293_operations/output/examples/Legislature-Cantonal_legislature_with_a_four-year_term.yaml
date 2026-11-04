@@ -8,7 +8,7 @@ legislatures:
   - text: Législature 2022-2026
     language: fr
   landing_page: https://www.gr.be.ch/de/start/grosser-rat.html
-  actor_id:
+  group_reference:
     global_uri: actors:gr_be
     label: Grosser Rat Bern
     abbreviation:

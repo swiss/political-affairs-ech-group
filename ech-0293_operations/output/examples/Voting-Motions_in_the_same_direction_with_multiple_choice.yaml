@@ -30,7 +30,7 @@ votings:
   parent_protocol_item: ops:protocol_item_zh_gr_2024_2023_361
   parent_meeting: ops:meeting_zh_gr_2024_02_28
   affair_id: 2023/361
-  actor_id:
+  group_reference:
     global_uri: actors:gr_stadt_zuerich
     label: Gemeinderat der Stadt Zürich
     abbreviation:

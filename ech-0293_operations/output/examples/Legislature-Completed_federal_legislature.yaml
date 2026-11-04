@@ -13,7 +13,7 @@ legislatures:
     Amtsdauer der am 20. Oktober 2019 gewählten Bundesversammlung; sie endete am Vortag
     der konstituierenden Sitzung der 52. Legislaturperiode vom 4. Dezember 2023.
   landing_page: https://www.parlament.ch/de/ratsbetrieb/sessionen
-  actor_id:
+  group_reference:
     global_uri: actors:bundesversammlung
     label: Bundesversammlung
     abbreviation:

@@ -7,7 +7,7 @@ meetings:
   url:
   - text: https://www.landsgemeinde.gl.ch/2025
     language: de
-  actor_id:
+  group_reference:
     global_uri: actors:landsgemeinde_gl
     label: Landsgemeinde Glarus
     abbreviation:

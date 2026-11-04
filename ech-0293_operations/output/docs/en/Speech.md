@@ -26,8 +26,8 @@ _A speech or statement made during a meeting (also called Votum or speaker segme
 | start | 0..1 <br/> [String](String.md) | Start indicator or position.  |
 | datetime_begin | 0..1 <br/> [Datetime](Datetime.md) | Date and time at which the speech began. Together with datetime_end it allows the speech to be located precisely in audio and video recordings, speaking time to be analysed per person or parliamentary group, and compliance with time limits to be checked.  |
 | datetime_end | 0..1 <br/> [Datetime](Datetime.md) | Date and time at which the speech ended; the speaking time results from the difference to datetime_begin.  |
-| actor_fullname | 0..1 <br/> [String](String.md) | Name of the speaking person, for quick access without resolving actor_id.  |
-| actor_id | 0..1 <br/> [PersonReference](PersonReference.md) | The speaking person, as a reference to a person according to eCH-0294.  |
+| actor_fullname | 0..1 <br/> [String](String.md) | Name of the speaking person, for quick access without resolving person_reference.  |
+| person_reference | 0..1 <br/> [PersonReference](PersonReference.md) | The speaking person, as a reference to a person according to eCH-0294.  |
 | role | 0..1 <br/> [String](String.md) | Role in which the person speaks, e.g. president of a parliamentary group, rapporteur or member of the Federal Council.  |
 | text | 1 <br/> [String](String.md) | Wording of the speech.  |
 | text_format | 0..1 <br/> [String](String.md) | Format of text (text, html, html_with_timestamps).  |
@@ -78,7 +78,7 @@ speeches:
   datetime_begin: '2025-12-19T09:20:00+01:00'
   datetime_end: '2025-12-19T09:25:00+01:00'
   actor_fullname: Pascal Broulis
-  actor_id:
+  person_reference:
     global_uri: actors:person_pascal_broulis
     wikidata_uri: http://www.wikidata.org/entity/Q116407
     label: Pascal Broulis

@@ -25,7 +25,7 @@ _Durée du mandat d'un parlement en tant qu'assemblée législative. Elle est en
 | name | * <br/> [MultilingualString](MultilingualString.md) | Désignation complète multilingue.  |
 | description | 0..1 <br/> [String](String.md) | Texte descriptif de l'élément.  |
 | landing_page | 0..1 <br/> [String](String.md) | URL fournissant des informations complémentaires.  |
-| actor_id | 0..1 <br/> [GroupReference](GroupReference.md) | Référence à l'organe agissant (instantané au moment de la mise en relation).  |
+| group_reference | 0..1 <br/> [GroupReference](GroupReference.md) | Référence à l'organe agissant (instantané au moment de la mise en relation).  |
 | documents | * <br/> [Work](Work.md) | Liste des documents (FRBR Works) liés à l'entité.  |
 | date_begin_actual | 0..1 <br/> [Date](Date.md) | La date de début effective d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](IsEventWithDuration.md) |
 | datetime_begin_actual | 0..1 <br/> [Datetime](Datetime.md) | La date et l'heure de début effectives d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](IsEventWithDuration.md) |
@@ -76,7 +76,7 @@ legislatures:
     language: fr
   description: Le Grand Conseil vaudois est élu pour cinq ans.
   landing_page: https://www.vd.ch/gc
-  actor_id:
+  group_reference:
     global_uri: actors:gc_vd
     label: Grand Conseil du canton de Vaud
     abbreviation:
@@ -106,7 +106,7 @@ legislatures:
     Amtsdauer der am 20. Oktober 2019 gewählten Bundesversammlung; sie endete am Vortag
     der konstituierenden Sitzung der 52. Legislaturperiode vom 4. Dezember 2023.
   landing_page: https://www.parlament.ch/de/ratsbetrieb/sessionen
-  actor_id:
+  group_reference:
     global_uri: actors:bundesversammlung
     label: Bundesversammlung
     abbreviation:
@@ -131,7 +131,7 @@ legislatures:
   - text: Législature 2022-2026
     language: fr
   landing_page: https://www.gr.be.ch/de/start/grosser-rat.html
-  actor_id:
+  group_reference:
     global_uri: actors:gr_be
     label: Grosser Rat Bern
     abbreviation:

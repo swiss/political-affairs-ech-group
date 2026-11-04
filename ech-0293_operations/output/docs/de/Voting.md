@@ -44,7 +44,7 @@ _Eine Abstimmung über eine Sachfrage: der Abstimmungsgegenstand (Frage), das Ve
 | parent_protocol | 0..1 <br/> [Protocol](Protocol.md) | Das Protokoll, in dem die Abstimmung oder Wahl festgehalten ist. Abgestimmt wird im Verlauf der Sitzung, weshalb die Abstimmung im Protokoll und nicht in der vorgängig geplanten Traktandenliste verankert ist: Was traktandiert wurde, sagt noch nicht, worüber tatsächlich abgestimmt wurde. Umgekehrt führt das Protokoll seine Abstimmungen und Wahlen als Listen (votings, elections).  |
 | parent_protocol_item | 0..1 <br/> [ProtocolItem](ProtocolItem.md) | Das protokollierte Traktandum (ProtocolItem), unter dem abgestimmt oder gewählt wurde. Entfällt, wenn ohne Traktandierung abgestimmt wurde; die Zuordnung zur Sitzung ergibt sich dann allein aus parent_protocol und parent_meeting.  |
 | affair_id | 0..1 <br/> [String](String.md) | Identifikator des Geschäfts (eCH-0295), auf das sich der Eintrag bezieht. Administrative Traktanden (z.B. Genehmigung des Protokolls) haben kein Geschäft. Ein Geschäft durchläuft in der Regel mehrere Traktanden — in der Gesetzgebung etwa Eintretensdebatte, Detailberatung, Schlussabstimmung und gegebenenfalls die Differenzbereinigung zwischen den Räten.  |
-| actor_id | 0..1 <br/> [GroupReference](GroupReference.md) | Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
+| group_reference | 0..1 <br/> [GroupReference](GroupReference.md) | Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
 | documents | * <br/> [Work](Work.md) | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.  |
 | date_created | 0..1 <br/> [Date](Date.md) | Das Datum, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](HasCreationModificationDates.md) |
 | datetime_created | 0..1 <br/> [Datetime](Datetime.md) | Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](HasCreationModificationDates.md) |
@@ -101,7 +101,7 @@ votings:
   parent_protocol: ops:protocol_be_2025_06_05
   parent_protocol_item: ops:protocol_item_be_2025_042
   parent_meeting: ops:meeting_be_2025_06_05
-  actor_id:
+  group_reference:
     global_uri: actors:gr_be
     label: Grosser Rat Bern
     abbreviation:
@@ -133,7 +133,7 @@ votings:
   parent_protocol: ops:protocol_sg_2025_03_15
   parent_protocol_item: ops:protocol_item_sg_2025_015
   parent_meeting: ops:meeting_sg_2025_03_15
-  actor_id:
+  group_reference:
     global_uri: actors:kr_sg
     label: Kantonsrat St. Gallen
     abbreviation:
@@ -178,7 +178,7 @@ votings:
   parent_protocol_item: ops:protocol_item_zh_gr_2024_2023_361
   parent_meeting: ops:meeting_zh_gr_2024_02_28
   affair_id: 2023/361
-  actor_id:
+  group_reference:
     global_uri: actors:gr_stadt_zuerich
     label: Gemeinderat der Stadt Zürich
     abbreviation:
@@ -210,7 +210,7 @@ votings:
   parent_protocol: ops:protocol_zh_2025_11_20
   parent_protocol_item: ops:protocol_item_zh_budget_2026
   parent_meeting: ops:meeting_zh_2025_11_20
-  actor_id:
+  group_reference:
     global_uri: actors:kr_zh
     label: Kantonsrat Zürich
     abbreviation:

@@ -21,7 +21,7 @@
         }
       ],
       "actor_name": "Ständerat",
-      "actor_id": {
+      "group_reference": {
         "label": "Ständerat",
         "abbreviation": [
           {
@@ -96,7 +96,7 @@
       "datetime_begin": "2025-12-19T09:20:00+01:00",
       "datetime_end": "2025-12-19T09:25:00+01:00",
       "actor_fullname": "Pascal Broulis",
-      "actor_id": {
+      "person_reference": {
         "label": "Pascal Broulis",
         "global_uri": "actors:person_pascal_broulis",
         "wikidata_uri": "http://www.wikidata.org/entity/Q116407"

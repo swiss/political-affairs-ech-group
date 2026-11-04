@@ -25,7 +25,7 @@
         }
       ],
       "actor_name": "Regierungsrat Bern",
-      "actor_id": {
+      "group_reference": {
         "label": "Regierungsrat Bern",
         "abbreviation": [
           {
@@ -60,7 +60,7 @@
         }
       ],
       "actor_name": "Grosser Rat Bern",
-      "actor_id": {
+      "group_reference": {
         "label": "Grosser Rat Bern",
         "abbreviation": [
           {

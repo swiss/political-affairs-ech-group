@@ -26,8 +26,8 @@ _Une intervention prononcée au cours d'une séance (également appelée prise d
 | start | 0..1 <br/> [String](String.md) | Indication de début ou position.  |
 | datetime_begin | 0..1 <br/> [Datetime](Datetime.md) | Date et heure auxquelles l'intervention a commencé. Avec datetime_end, elle permet de situer précisément l'intervention dans les enregistrements audio et vidéo, d'analyser le temps de parole par personne ou par groupe parlementaire et de contrôler le respect des limites de temps.  |
 | datetime_end | 0..1 <br/> [Datetime](Datetime.md) | Date et heure auxquelles l'intervention s'est terminée ; le temps de parole résulte de la différence avec datetime_begin.  |
-| actor_fullname | 0..1 <br/> [String](String.md) | Nom de la personne qui s'exprime, pour un accès rapide sans résolution de actor_id.  |
-| actor_id | 0..1 <br/> [PersonReference](PersonReference.md) | La personne qui s'exprime, sous forme de référence à une personne selon eCH-0294.  |
+| actor_fullname | 0..1 <br/> [String](String.md) | Nom de la personne qui s'exprime, pour un accès rapide sans résolution de person_reference.  |
+| person_reference | 0..1 <br/> [PersonReference](PersonReference.md) | La personne qui s'exprime, sous forme de référence à une personne selon eCH-0294.  |
 | role | 0..1 <br/> [String](String.md) | Rôle dans lequel la personne s'exprime, p. ex. présidente ou président de groupe parlementaire, rapporteuse ou rapporteur, conseillère fédérale ou conseiller fédéral.  |
 | text | 1 <br/> [String](String.md) | Texte prononcé de l'intervention.  |
 | text_format | 0..1 <br/> [String](String.md) | Format du texte (text, html, html_with_timestamps).  |
@@ -78,7 +78,7 @@ speeches:
   datetime_begin: '2025-12-19T09:20:00+01:00'
   datetime_end: '2025-12-19T09:25:00+01:00'
   actor_fullname: Pascal Broulis
-  actor_id:
+  person_reference:
     global_uri: actors:person_pascal_broulis
     wikidata_uri: http://www.wikidata.org/entity/Q116407
     label: Pascal Broulis

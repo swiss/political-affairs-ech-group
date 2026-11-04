@@ -7,7 +7,7 @@ meetings:
   url:
   - text: https://www.ratsinfo.sg.ch/sessions/2025-03-15
     language: de
-  actor_id:
+  group_reference:
     global_uri: actors:kr_sg
     label: Kantonsrat St. Gallen
     abbreviation:

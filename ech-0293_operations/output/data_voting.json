@@ -23,7 +23,7 @@
       "parent_meeting": "ops:meeting_sg_2025_03_15",
       "parent_protocol": "ops:protocol_sg_2025_03_15",
       "parent_protocol_item": "ops:protocol_item_sg_2025_015",
-      "actor_id": {
+      "group_reference": {
         "label": "Kantonsrat St. Gallen",
         "abbreviation": [
           {
@@ -62,7 +62,7 @@
       "parent_meeting": "ops:meeting_be_2025_06_05",
       "parent_protocol": "ops:protocol_be_2025_06_05",
       "parent_protocol_item": "ops:protocol_item_be_2025_042",
-      "actor_id": {
+      "group_reference": {
         "label": "Grosser Rat Bern",
         "abbreviation": [
           {
@@ -97,7 +97,7 @@
       "parent_meeting": "ops:meeting_zh_2025_11_20",
       "parent_protocol": "ops:protocol_zh_2025_11_20",
       "parent_protocol_item": "ops:protocol_item_zh_budget_2026",
-      "actor_id": {
+      "group_reference": {
         "label": "Kantonsrat Zürich",
         "abbreviation": [
           {
@@ -149,7 +149,7 @@
       "parent_protocol": "ops:protocol_zh_gr_2024_02_28",
       "parent_protocol_item": "ops:protocol_item_zh_gr_2024_2023_361",
       "affair_id": "2023/361",
-      "actor_id": {
+      "group_reference": {
         "label": "Gemeinderat der Stadt Zürich",
         "abbreviation": [
           {
@@ -167,7 +167,7 @@
     {
       "global_uri": "ops:vote_zh_gr_2024_2023_361_a1",
       "parent_voting": "ops:voting_zh_gr_2024_2023_361",
-      "actor_id": {
+      "person_reference": {
         "label": "Mitglied Auswahl A",
         "global_uri": "actors:person_zh_stadt_1"
       },
@@ -179,7 +179,7 @@
     {
       "global_uri": "ops:vote_zh_gr_2024_2023_361_b1",
       "parent_voting": "ops:voting_zh_gr_2024_2023_361",
-      "actor_id": {
+      "person_reference": {
         "label": "Mitglied Auswahl B",
         "global_uri": "actors:person_zh_stadt_2"
       },
@@ -191,7 +191,7 @@
     {
       "global_uri": "ops:vote_zh_gr_2024_2023_361_c1",
       "parent_voting": "ops:voting_zh_gr_2024_2023_361",
-      "actor_id": {
+      "person_reference": {
         "label": "Mitglied Auswahl C",
         "global_uri": "actors:person_zh_stadt_3"
       },
@@ -203,7 +203,7 @@
     {
       "global_uri": "ops:vote_zh_gr_2024_2023_361_abs1",
       "parent_voting": "ops:voting_zh_gr_2024_2023_361",
-      "actor_id": {
+      "person_reference": {
         "label": "Abwesendes Mitglied",
         "global_uri": "actors:person_zh_stadt_4"
       },
@@ -214,7 +214,7 @@
     {
       "global_uri": "ops:vote_sg_2025_001_person_123",
       "parent_voting": "ops:voting_sg_2025_001",
-      "actor_id": {
+      "person_reference": {
         "label": "Paul Schlegel",
         "global_uri": "actors:person_paul_schlegel"
       },
@@ -225,7 +225,7 @@
     {
       "global_uri": "ops:vote_sg_2025_001_person_456",
       "parent_voting": "ops:voting_sg_2025_001",
-      "actor_id": {
+      "person_reference": {
         "label": "Andreas Eggenberger",
         "global_uri": "actors:person_andreas_eggenberger"
       },
@@ -236,7 +236,7 @@
     {
       "global_uri": "ops:vote_sg_2025_001_person_789",
       "parent_voting": "ops:voting_sg_2025_001",
-      "actor_id": {
+      "person_reference": {
         "label": "Thomas Ammann",
         "global_uri": "actors:person_thomas_ammann"
       },
@@ -247,7 +247,7 @@
     {
       "global_uri": "ops:vote_sg_2025_001_person_321",
       "parent_voting": "ops:voting_sg_2025_001",
-      "actor_id": {
+      "person_reference": {
         "label": "Ruedi Thomann",
         "global_uri": "actors:person_ruedi_thomann"
       },
@@ -258,7 +258,7 @@
     {
       "global_uri": "ops:vote_zh_budget_2026_person_101",
       "parent_voting": "ops:voting_zh_budget_2026",
-      "actor_id": {
+      "person_reference": {
         "label": "Thomas Wolf",
         "global_uri": "actors:person_thomas_wolf"
       },
@@ -269,7 +269,7 @@
     {
       "global_uri": "ops:vote_zh_budget_2026_person_102",
       "parent_voting": "ops:voting_zh_budget_2026",
-      "actor_id": {
+      "person_reference": {
         "label": "Jean-Daniel Strub",
         "global_uri": "actors:person_jean_daniel_strub"
       },

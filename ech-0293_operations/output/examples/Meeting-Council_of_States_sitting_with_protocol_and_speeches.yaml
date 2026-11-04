@@ -9,7 +9,7 @@ meetings:
   url:
   - text: https://www.parlament.ch/de/ratsbetrieb/suche-Amtliches-bulletin
     language: de
-  actor_id:
+  group_reference:
     global_uri: actors:staenderat
     label: Ständerat
     abbreviation:

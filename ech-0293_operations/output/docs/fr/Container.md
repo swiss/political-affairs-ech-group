@@ -64,7 +64,7 @@ meetings:
   url:
     - text: "https://www.ratsinfo.sg.ch/sessions/2025-03-15"
       language: "de"
-  actor_id:
+  group_reference:
     global_uri: "actors:kr_sg"
     label: "Kantonsrat St. Gallen"
     abbreviation:
@@ -109,7 +109,7 @@ meetings:
   url:
     - text: "https://www.gr.be.ch/kommissionen/wak/2025-05-12"
       language: "de"
-  actor_id:
+  group_reference:
     global_uri: "actors:committee_wak_be"
     label: "Kommission für Wirtschaft und Abgaben (WAK)"
     abbreviation:
@@ -156,7 +156,7 @@ meetings:
   url:
     - text: "https://www.landsgemeinde.gl.ch/2025"
       language: "de"
-  actor_id:
+  group_reference:
     global_uri: "actors:landsgemeinde_gl"
     label: "Landsgemeinde Glarus"
     abbreviation:
@@ -214,7 +214,7 @@ legislatures:
       language: "it"
   description: "Amtsdauer der am 20. Oktober 2019 gewählten Bundesversammlung; sie endete am Vortag der konstituierenden Sitzung der 52. Legislaturperiode vom 4. Dezember 2023."
   landing_page: "https://www.parlament.ch/de/ratsbetrieb/sessionen"
-  actor_id:
+  group_reference:
     global_uri: "actors:bundesversammlung"
     label: "Bundesversammlung"
     abbreviation:
@@ -236,7 +236,7 @@ legislatures:
     - text: "Législature 2022-2026"
       language: "fr"
   landing_page: "https://www.gr.be.ch/de/start/grosser-rat.html"
-  actor_id:
+  group_reference:
     global_uri: "actors:gr_be"
     label: "Grosser Rat Bern"
     abbreviation:
@@ -259,7 +259,7 @@ legislatures:
       language: "fr"
   description: "Le Grand Conseil vaudois est élu pour cinq ans."
   landing_page: "https://www.vd.ch/gc"
-  actor_id:
+  group_reference:
     global_uri: "actors:gc_vd"
     label: "Grand Conseil du canton de Vaud"
     abbreviation:
@@ -296,7 +296,7 @@ votings:
   parent_protocol: ops:protocol_sg_2025_03_15
   parent_protocol_item: ops:protocol_item_sg_2025_015
   parent_meeting: ops:meeting_sg_2025_03_15
-  actor_id:
+  group_reference:
     global_uri: "actors:kr_sg"
     label: "Kantonsrat St. Gallen"
     abbreviation:
@@ -325,7 +325,7 @@ votings:
   parent_protocol: ops:protocol_be_2025_06_05
   parent_protocol_item: ops:protocol_item_be_2025_042
   parent_meeting: ops:meeting_be_2025_06_05
-  actor_id:
+  group_reference:
     global_uri: "actors:gr_be"
     label: "Grosser Rat Bern"
     abbreviation:
@@ -352,7 +352,7 @@ votings:
   parent_protocol: ops:protocol_zh_2025_11_20
   parent_protocol_item: ops:protocol_item_zh_budget_2026
   parent_meeting: ops:meeting_zh_2025_11_20
-  actor_id:
+  group_reference:
     global_uri: "actors:kr_zh"
     label: "Kantonsrat Zürich"
     abbreviation:
@@ -394,7 +394,7 @@ votings:
   parent_protocol_item: ops:protocol_item_zh_gr_2024_2023_361
   parent_meeting: ops:meeting_zh_gr_2024_02_28
   affair_id: "2023/361"
-  actor_id:
+  group_reference:
     global_uri: "actors:gr_stadt_zuerich"
     label: "Gemeinderat der Stadt Zürich"
     abbreviation:
@@ -410,7 +410,7 @@ individual_votes:
 # je gewählter Option verwendet; abwesende Mitglieder erhalten "not_voted".
 - global_uri: ops:vote_zh_gr_2024_2023_361_a1
   parent_voting: ops:voting_zh_gr_2024_2023_361
-  actor_id:
+  person_reference:
     global_uri: "actors:person_zh_stadt_1"
     label: "Mitglied Auswahl A"
   seat_nr: "12"
@@ -420,7 +420,7 @@ individual_votes:
 
 - global_uri: ops:vote_zh_gr_2024_2023_361_b1
   parent_voting: ops:voting_zh_gr_2024_2023_361
-  actor_id:
+  person_reference:
     global_uri: "actors:person_zh_stadt_2"
     label: "Mitglied Auswahl B"
   seat_nr: "47"
@@ -430,7 +430,7 @@ individual_votes:
 
 - global_uri: ops:vote_zh_gr_2024_2023_361_c1
   parent_voting: ops:voting_zh_gr_2024_2023_361
-  actor_id:
+  person_reference:
     global_uri: "actors:person_zh_stadt_3"
     label: "Mitglied Auswahl C"
   seat_nr: "88"
@@ -440,7 +440,7 @@ individual_votes:
 
 - global_uri: ops:vote_zh_gr_2024_2023_361_abs1
   parent_voting: ops:voting_zh_gr_2024_2023_361
-  actor_id:
+  person_reference:
     global_uri: "actors:person_zh_stadt_4"
     label: "Abwesendes Mitglied"
   seat_nr: "103"
@@ -449,7 +449,7 @@ individual_votes:
 
 - global_uri: ops:vote_sg_2025_001_person_123
   parent_voting: ops:voting_sg_2025_001
-  actor_id:
+  person_reference:
     global_uri: "actors:person_paul_schlegel"
     label: "Paul Schlegel"
   seat_nr: "1"
@@ -458,7 +458,7 @@ individual_votes:
 
 - global_uri: ops:vote_sg_2025_001_person_456
   parent_voting: ops:voting_sg_2025_001
-  actor_id:
+  person_reference:
     global_uri: "actors:person_andreas_eggenberger"
     label: "Andreas Eggenberger"
   seat_nr: "2"
@@ -467,7 +467,7 @@ individual_votes:
 
 - global_uri: ops:vote_sg_2025_001_person_789
   parent_voting: ops:voting_sg_2025_001
-  actor_id:
+  person_reference:
     global_uri: "actors:person_thomas_ammann"
     label: "Thomas Ammann"
   seat_nr: "3"
@@ -476,7 +476,7 @@ individual_votes:
 
 - global_uri: ops:vote_sg_2025_001_person_321
   parent_voting: ops:voting_sg_2025_001
-  actor_id:
+  person_reference:
     global_uri: "actors:person_ruedi_thomann"
     label: "Ruedi Thomann"
   seat_nr: "4"
@@ -485,7 +485,7 @@ individual_votes:
 
 - global_uri: ops:vote_zh_budget_2026_person_101
   parent_voting: ops:voting_zh_budget_2026
-  actor_id:
+  person_reference:
     global_uri: "actors:person_thomas_wolf"
     label: "Thomas Wolf"
   seat_nr: "1"
@@ -494,7 +494,7 @@ individual_votes:
 
 - global_uri: ops:vote_zh_budget_2026_person_102
   parent_voting: ops:voting_zh_budget_2026
-  actor_id:
+  person_reference:
     global_uri: "actors:person_jean_daniel_strub"
     label: "Jean-Daniel Strub"
   seat_nr: "2"
@@ -852,7 +852,7 @@ meetings:
     url:
       - text: "https://www.parlament.ch/de/ratsbetrieb/suche-Amtliches-bulletin"
         language: "de"
-    actor_id:
+    group_reference:
       global_uri: "actors:staenderat"
       label: "Ständerat"
       abbreviation:
@@ -890,7 +890,7 @@ speeches:
     datetime_begin: "2025-12-19T09:20:00+01:00"
     datetime_end: "2025-12-19T09:25:00+01:00"
     actor_fullname: "Pascal Broulis"
-    actor_id:
+    person_reference:
       global_uri: "actors:person_pascal_broulis"
       wikidata_uri: "http://www.wikidata.org/entity/Q116407"
       label: "Pascal Broulis"
@@ -947,7 +947,7 @@ meetings:
         language: "de"
       - text: "https://www.rr.be.ch/fr/start/beschluesse/beschluesse-unterlagen-nach-sitzungen/sitzungs-detail?guid=340dcf932fb044dd8f8c5c943267fbcc"
         language: "fr"
-    actor_id:
+    group_reference:
       global_uri: "actors:rr_be"
       label: "Regierungsrat Bern"
       abbreviation:
@@ -969,7 +969,7 @@ meetings:
         language: "de"
       - text: "https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8"
         language: "fr"
-    actor_id:
+    group_reference:
       global_uri: "actors:gr_be"
       label: "Grosser Rat Bern"
       abbreviation:

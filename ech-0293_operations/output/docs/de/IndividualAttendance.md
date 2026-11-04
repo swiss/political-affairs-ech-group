@@ -21,7 +21,7 @@ _Einzelne Anwesenheitsfeststellung einer Person an einer Sitzung (verknüpft üb
 | global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](HasIdentification.md) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](HasIdentification.md) |
 | parent_attendance | 0..1 <br/> [Attendance](Attendance.md) | Das Attendance-Aggregat, zu dem dieser Eintrag gehört; da das Aggregat seinerseits an der Sitzung hängt, ist die einzelne Erfassung damit der Sitzung zugeordnet.  |
-| actor_id | 0..1 <br/> [PersonReference](PersonReference.md) | Die Person, deren Anwesenheit erfasst wird, als Referenz auf eine Person gemäss eCH-0294.  |
+| person_reference | 0..1 <br/> [PersonReference](PersonReference.md) | Die Person, deren Anwesenheit erfasst wird, als Referenz auf eine Person gemäss eCH-0294.  |
 | attendance_type | 0..1 <br/> [AttendanceTypeEnum](AttendanceTypeEnum.md) | Art der individuellen Anwesenheit.  |
 | reason | * <br/> [MultilingualString](MultilingualString.md) | Grund für Abwesenheit, Verspätung oder Vertretung (Freitext, mehrsprachig).  |
 | date_created | 0..1 <br/> [Date](Date.md) | Das Datum, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](HasCreationModificationDates.md) |

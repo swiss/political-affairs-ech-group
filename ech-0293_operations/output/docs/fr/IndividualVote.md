@@ -21,7 +21,7 @@ _La voix exprimée par un membre lors d'un vote. Les voix individuelles ne sont 
 | global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](HasIdentification.md) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](HasIdentification.md) |
 | parent_voting | 0..1 <br/> [Voting](Voting.md) | L'identifiant du vote auquel se rattache la voix individuelle.  |
-| actor_id | 0..1 <br/> [PersonReference](PersonReference.md) | Le membre qui a exprimé la voix, sous forme de référence à une personne selon eCH-0294.  |
+| person_reference | 0..1 <br/> [PersonReference](PersonReference.md) | Le membre qui a exprimé la voix, sous forme de référence à une personne selon eCH-0294.  |
 | seat_nr | 0..1 <br/> [String](String.md) | Le numéro de siège correspondant à la voix individuelle, le cas échéant.  |
 | weight | 0..1 <br/> [Integer](Integer.md) | Poids de la voix du membre ; normalement 1. D'autres valeurs se présentent par exemple lorsqu'un membre vote aussi pour un membre absent (représentation, poids 2), dans les assemblées communales où des personnes morales disposent de plusieurs voix, ou dans des systèmes historiques où différents groupes de personnes avaient un poids de voix différent.  |
 | individual_vote_type | 0..1 <br/> [IndividualVoteTypeEnum](IndividualVoteTypeEnum.md) | Type de voix exprimée (oui, non, abstention, n'a pas voté, etc.).  |
@@ -61,7 +61,7 @@ _La voix exprimée par un membre lors d'un vote. Les voix individuelles ne sont 
 individual_votes:
 - global_uri: ops:vote_zh_gr_2024_2023_361_abs1
   parent_voting: ops:voting_zh_gr_2024_2023_361
-  actor_id:
+  person_reference:
     global_uri: actors:person_zh_stadt_4
     label: Abwesendes Mitglied
   seat_nr: '103'
@@ -75,7 +75,7 @@ individual_votes:
 individual_votes:
 - global_uri: ops:vote_sg_2025_001_person_123
   parent_voting: ops:voting_sg_2025_001
-  actor_id:
+  person_reference:
     global_uri: actors:person_paul_schlegel
     label: Paul Schlegel
   seat_nr: '1'
@@ -89,7 +89,7 @@ individual_votes:
 individual_votes:
 - global_uri: ops:vote_sg_2025_001_person_456
   parent_voting: ops:voting_sg_2025_001
-  actor_id:
+  person_reference:
     global_uri: actors:person_andreas_eggenberger
     label: Andreas Eggenberger
   seat_nr: '2'
@@ -103,7 +103,7 @@ individual_votes:
 individual_votes:
 - global_uri: ops:vote_zh_gr_2024_2023_361_a1
   parent_voting: ops:voting_zh_gr_2024_2023_361
-  actor_id:
+  person_reference:
     global_uri: actors:person_zh_stadt_1
     label: Mitglied Auswahl A
   seat_nr: '12'
@@ -118,7 +118,7 @@ individual_votes:
 individual_votes:
 - global_uri: ops:vote_sg_2025_001_person_789
   parent_voting: ops:voting_sg_2025_001
-  actor_id:
+  person_reference:
     global_uri: actors:person_thomas_ammann
     label: Thomas Ammann
   seat_nr: '3'
@@ -132,7 +132,7 @@ individual_votes:
 individual_votes:
 - global_uri: ops:vote_zh_gr_2024_2023_361_c1
   parent_voting: ops:voting_zh_gr_2024_2023_361
-  actor_id:
+  person_reference:
     global_uri: actors:person_zh_stadt_3
     label: Mitglied Auswahl C
   seat_nr: '88'
@@ -147,7 +147,7 @@ individual_votes:
 individual_votes:
 - global_uri: ops:vote_sg_2025_001_person_321
   parent_voting: ops:voting_sg_2025_001
-  actor_id:
+  person_reference:
     global_uri: actors:person_ruedi_thomann
     label: Ruedi Thomann
   seat_nr: '4'
@@ -161,7 +161,7 @@ individual_votes:
 individual_votes:
 - global_uri: ops:vote_zh_budget_2026_person_102
   parent_voting: ops:voting_zh_budget_2026
-  actor_id:
+  person_reference:
     global_uri: actors:person_jean_daniel_strub
     label: Jean-Daniel Strub
   seat_nr: '2'
@@ -175,7 +175,7 @@ individual_votes:
 individual_votes:
 - global_uri: ops:vote_zh_budget_2026_person_101
   parent_voting: ops:voting_zh_budget_2026
-  actor_id:
+  person_reference:
     global_uri: actors:person_thomas_wolf
     label: Thomas Wolf
   seat_nr: '1'
@@ -189,7 +189,7 @@ individual_votes:
 individual_votes:
 - global_uri: ops:vote_zh_gr_2024_2023_361_b1
   parent_voting: ops:voting_zh_gr_2024_2023_361
-  actor_id:
+  person_reference:
     global_uri: actors:person_zh_stadt_2
     label: Mitglied Auswahl B
   seat_nr: '47'

@@ -6,10 +6,10 @@
 ops:agenda_item_be_2025_042 a ops:AgendaItem ;
 	ops:affair_id "affairs:be_2024_089_steuergesetz" ;
 	ops:agenda_item_category "Gesetzgebung" ;
-	ops:agenda_item_description _:c14n11 , _:c14n16 ;
+	ops:agenda_item_description _:c14n11 , _:c14n15 ;
 	ops:agenda_item_number "4.2" ;
 	ops:agenda_item_position 42 ;
-	ops:agenda_item_title _:c14n14 , _:c14n4 ;
+	ops:agenda_item_title _:c14n13 , _:c14n3 ;
 	ops:agenda_item_type ops:enum\/agenda_item_type\/item ;
 	ops:state_id "completed" ;
 	mcm:datetimeBeginActual "2025-05-12T15:15:00+00:00"^^xsd:dateTime ;
@@ -35,7 +35,7 @@ ops:agenda_item_zh_budget_2026 a ops:AgendaItem ;
 	ops:agenda_item_description _:c14n8 ;
 	ops:agenda_item_number "8" ;
 	ops:agenda_item_position 8 ;
-	ops:agenda_item_title _:c14n20 ;
+	ops:agenda_item_title _:c14n19 ;
 	ops:agenda_item_type ops:enum\/agenda_item_type\/item ;
 	ops:state_id "completed" ;
 	mcm:datetimeBeginActual "2025-11-20T16:45:00+00:00"^^xsd:dateTime ;
@@ -43,44 +43,43 @@ ops:agenda_item_zh_budget_2026 a ops:AgendaItem ;
 	mcm:datetimeCreated "2025-10-01T08:00:00+00:00"^^xsd:dateTime ;
 	mcm:datetimeModified "2025-11-20T16:50:00+00:00"^^xsd:dateTime .
 ops:meeting_be_committee_wak_2025_05_12 a ops:Meeting ;
-	ops:actor_id _:c14n0 ;
 	ops:actor_name "Kommission für Wirtschaft und Abgaben (WAK)" ;
 	ops:agendaItem ops:agenda_item_be_2025_042 ;
 	ops:location "Kommissionszimmer 301, Rathaus Bern" ;
-	ops:name _:c14n2 , _:c14n9 ;
+	ops:name _:c14n1 , _:c14n9 ;
 	ops:parent_legislature "ops:legislature_be_2022_2026" ;
 	ops:spatial "https://ld.admin.ch/canton/2" ;
 	ops:state ops:enum\/state\/planned ;
-	ops:url _:c14n15 ;
+	ops:url _:c14n14 ;
 	mcm:datetimeBeginActual "2025-05-12T14:10:00+00:00"^^xsd:dateTime ;
 	mcm:datetimeBeginPlanned "2025-05-12T14:00:00+00:00"^^xsd:dateTime ;
 	mcm:datetimeCreated "2025-04-15T09:00:00+00:00"^^xsd:dateTime ;
 	mcm:datetimeEndActual "2025-05-12T16:45:00+00:00"^^xsd:dateTime ;
 	mcm:datetimeEndPlanned "2025-05-12T17:00:00+00:00"^^xsd:dateTime ;
-	mcm:datetimeModified "2025-05-12T16:45:00+00:00"^^xsd:dateTime .
+	mcm:datetimeModified "2025-05-12T16:45:00+00:00"^^xsd:dateTime ;
+	actors:groupReference _:c14n10 .
 ops:meeting_examples_2025 a ops:Container ;
 	ops:meeting ops:meeting_be_committee_wak_2025_05_12 , ops:meeting_gl_landsgemeinde_2025 , ops:meeting_sg_2025_03_15 , ops:meeting_zh_2025_11_20 .
 ops:meeting_gl_landsgemeinde_2025 a ops:Meeting ;
-	ops:actor_id _:c14n10 ;
 	ops:actor_name "Landsgemeinde Glarus" ;
 	ops:location "Zaunplatz, Glarus" ;
-	ops:name _:c14n17 ;
+	ops:name _:c14n16 ;
 	ops:parent_session "ops:session_gl_landsgemeinde_2025" ;
 	ops:spatial "https://ld.admin.ch/canton/8" ;
 	ops:state ops:enum\/state\/planned ;
-	ops:url _:c14n19 ;
+	ops:url _:c14n18 ;
 	mcm:datetimeBeginActual "2025-05-04T09:30:00+00:00"^^xsd:dateTime ;
 	mcm:datetimeBeginPlanned "2025-05-04T09:30:00+00:00"^^xsd:dateTime ;
 	mcm:datetimeCreated "2025-01-10T12:00:00+00:00"^^xsd:dateTime ;
 	mcm:datetimeEndActual "2025-05-04T13:45:00+00:00"^^xsd:dateTime ;
 	mcm:datetimeEndPlanned "2025-05-04T14:00:00+00:00"^^xsd:dateTime ;
-	mcm:datetimeModified "2025-05-04T13:45:00+00:00"^^xsd:dateTime .
+	mcm:datetimeModified "2025-05-04T13:45:00+00:00"^^xsd:dateTime ;
+	actors:groupReference _:c14n4 .
 ops:meeting_sg_2025_03_15 a ops:Meeting ;
-	ops:actor_id _:c14n13 ;
 	ops:actor_name "Kantonsrat St. Gallen" ;
 	ops:agendaItem ops:agenda_item_sg_2025_015 ;
 	ops:location "Kantonsratssaal, Regierungsgebäude St. Gallen" ;
-	ops:name _:c14n18 ;
+	ops:name _:c14n17 ;
 	ops:parent_session "ops:session_sg_2025_03" ;
 	ops:spatial "https://ld.admin.ch/canton/17" ;
 	ops:state ops:enum\/state\/planned ;
@@ -90,61 +89,62 @@ ops:meeting_sg_2025_03_15 a ops:Meeting ;
 	mcm:datetimeCreated "2025-02-01T10:00:00+00:00"^^xsd:dateTime ;
 	mcm:datetimeEndActual "2025-03-15T17:30:00+00:00"^^xsd:dateTime ;
 	mcm:datetimeEndPlanned "2025-03-15T18:00:00+00:00"^^xsd:dateTime ;
-	mcm:datetimeModified "2025-03-15T17:30:00+00:00"^^xsd:dateTime .
+	mcm:datetimeModified "2025-03-15T17:30:00+00:00"^^xsd:dateTime ;
+	actors:groupReference _:c14n20 .
 ops:meeting_zh_2025_11_20 a ops:Meeting ;
 	ops:agendaItem ops:agenda_item_zh_budget_2026 ;
 	mcm:dateBeginPlanned "2025-11-20"^^xsd:date .
-_:c14n0 a mcm:GroupReference ;
+_:c14n0 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "LG" .
+_:c14n1 a ops:MultilingualString ;
+	ops:text "Sitzung Kommission für Wirtschaft und Abgaben" ;
+	mcm:language "de" .
+_:c14n10 a mcm:GroupReference ;
 	mcm:abbreviation _:c14n6 ;
 	mcm:globalURI actors:committee_wak_be ;
 	mcm:label "Kommission für Wirtschaft und Abgaben (WAK)" .
-_:c14n1 a mcm:MultilingualValue ;
-	mcm:language "de" ;
-	mcm:value "LG" .
-_:c14n10 a mcm:GroupReference ;
-	mcm:abbreviation _:c14n1 ;
-	mcm:globalURI actors:landsgemeinde_gl ;
-	mcm:label "Landsgemeinde Glarus" .
 _:c14n11 a ops:MultilingualString ;
 	ops:text "Beratung von Änderungsanträgen zu Artikel 5 des Steuergesetzes" ;
 	mcm:language "de" .
 _:c14n12 a ops:MultilingualString ;
 	ops:text "Schlussabstimmung über das revidierte Energiegesetz des Kantons St. Gallen" ;
 	mcm:language "de" .
-_:c14n13 a mcm:GroupReference ;
-	mcm:abbreviation _:c14n3 ;
-	mcm:globalURI actors:kr_sg ;
-	mcm:label "Kantonsrat St. Gallen" .
-_:c14n14 a ops:MultilingualString ;
+_:c14n13 a ops:MultilingualString ;
 	ops:text "Steuergesetz - Detailberatung Art. 5" ;
 	mcm:language "de" .
-_:c14n15 a ops:MultilingualString ;
+_:c14n14 a ops:MultilingualString ;
 	ops:text "https://www.gr.be.ch/kommissionen/wak/2025-05-12" ;
 	mcm:language "de" .
-_:c14n16 a ops:MultilingualString ;
+_:c14n15 a ops:MultilingualString ;
 	ops:text "Délibération sur les propositions de modification de l'article 5 de la loi fiscale" ;
 	mcm:language "fr" .
-_:c14n17 a ops:MultilingualString ;
+_:c14n16 a ops:MultilingualString ;
 	ops:text "Landsgemeinde 2025" ;
 	mcm:language "de" .
-_:c14n18 a ops:MultilingualString ;
+_:c14n17 a ops:MultilingualString ;
 	ops:text "Kantonsratssitzung vom 15. März 2025" ;
 	mcm:language "de" .
-_:c14n19 a ops:MultilingualString ;
+_:c14n18 a ops:MultilingualString ;
 	ops:text "https://www.landsgemeinde.gl.ch/2025" ;
 	mcm:language "de" .
-_:c14n2 a ops:MultilingualString ;
-	ops:text "Sitzung Kommission für Wirtschaft und Abgaben" ;
-	mcm:language "de" .
-_:c14n20 a ops:MultilingualString ;
+_:c14n19 a ops:MultilingualString ;
 	ops:text "Budget 2026" ;
 	mcm:language "de" .
-_:c14n3 a mcm:MultilingualValue ;
+_:c14n2 a mcm:MultilingualValue ;
 	mcm:language "de" ;
 	mcm:value "KR" .
-_:c14n4 a ops:MultilingualString ;
+_:c14n20 a mcm:GroupReference ;
+	mcm:abbreviation _:c14n2 ;
+	mcm:globalURI actors:kr_sg ;
+	mcm:label "Kantonsrat St. Gallen" .
+_:c14n3 a ops:MultilingualString ;
 	ops:text "Loi fiscale - Délibération détaillée art. 5" ;
 	mcm:language "fr" .
+_:c14n4 a mcm:GroupReference ;
+	mcm:abbreviation _:c14n0 ;
+	mcm:globalURI actors:landsgemeinde_gl ;
+	mcm:label "Landsgemeinde Glarus" .
 _:c14n5 a ops:MultilingualString ;
 	ops:text "https://www.ratsinfo.sg.ch/sessions/2025-03-15" ;
 	mcm:language "de" .

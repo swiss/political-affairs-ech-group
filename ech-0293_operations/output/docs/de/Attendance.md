@@ -22,7 +22,7 @@ _Aggregierte Anwesenheitsliste für eine Sitzung (Anzahl Anwesende, Abwesende, E
 | wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](HasIdentification.md) |
 | parent_meeting | 0..1 <br/> [String](String.md) | Die Sitzung, zu der die Anwesenheitsliste gehört.  |
 | datetime_begin | 0..1 <br/> [Datetime](Datetime.md) | Datum und Uhrzeit, zu der die Anwesenheit erfasst wurde.  |
-| actor_id | 0..1 <br/> [GroupReference](GroupReference.md) | Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
+| group_reference | 0..1 <br/> [GroupReference](GroupReference.md) | Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
 | total_count | 0..1 <br/> [Integer](Integer.md) | Gesamtzahl aller Mitglieder des Gremiums, die Bezugsgrösse für Quorum-Berechnungen (z.B. 200 für den Nationalrat, 46 für den Ständerat). Die Beschlussfähigkeit selbst wird nicht als eigenes Feld gespeichert: Sie ergibt sich aus dem Verhältnis von total_present zu total_count und den Quorum-Regeln des Gremiums und wird bei Bedarf datenseitig berechnet.  |
 | total_present | 0..1 <br/> [Integer](Integer.md) | Anzahl anwesender Mitglieder, z.B. 185 von 200.  |
 | total_absent | 0..1 <br/> [Integer](Integer.md) | Anzahl unentschuldigt abwesender Mitglieder, z.B. 3 von 200.  |

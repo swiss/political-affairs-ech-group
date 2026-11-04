@@ -17,7 +17,7 @@
         }
       ],
       "actor_name": "Kantonsrat St. Gallen",
-      "actor_id": {
+      "group_reference": {
         "label": "Kantonsrat St. Gallen",
         "abbreviation": [
           {
@@ -84,7 +84,7 @@
         }
       ],
       "actor_name": "Kommission für Wirtschaft und Abgaben (WAK)",
-      "actor_id": {
+      "group_reference": {
         "label": "Kommission für Wirtschaft und Abgaben (WAK)",
         "abbreviation": [
           {
@@ -155,7 +155,7 @@
         }
       ],
       "actor_name": "Landsgemeinde Glarus",
-      "actor_id": {
+      "group_reference": {
         "label": "Landsgemeinde Glarus",
         "abbreviation": [
           {

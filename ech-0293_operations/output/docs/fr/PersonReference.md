@@ -45,9 +45,9 @@ Au moins l'un des champs suivants doit être renseigné :
 
 | Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
-| [IndividualVote](IndividualVote.md) | [actor_id](actor_id.md) | range | [PersonReference](PersonReference.md) |
-| [IndividualAttendance](IndividualAttendance.md) | [actor_id](actor_id.md) | range | [PersonReference](PersonReference.md) |
-| [Speech](Speech.md) | [actor_id](actor_id.md) | range | [PersonReference](PersonReference.md) |
+| [IndividualVote](IndividualVote.md) | [person_reference](person_reference.md) | range | [PersonReference](PersonReference.md) |
+| [IndividualAttendance](IndividualAttendance.md) | [person_reference](person_reference.md) | range | [PersonReference](PersonReference.md) |
+| [Speech](Speech.md) | [person_reference](person_reference.md) | range | [PersonReference](PersonReference.md) |
 
 
 

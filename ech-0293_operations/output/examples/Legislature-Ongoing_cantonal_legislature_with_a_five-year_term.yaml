@@ -7,7 +7,7 @@ legislatures:
     language: fr
   description: Le Grand Conseil vaudois est élu pour cinq ans.
   landing_page: https://www.vd.ch/gc
-  actor_id:
+  group_reference:
     global_uri: actors:gc_vd
     label: Grand Conseil du canton de Vaud
     abbreviation:

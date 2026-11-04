@@ -31,8 +31,8 @@ _The individual sitting of a body — the level at which agenda items are delibe
 | sequential_number | 0..1 <br/> [Integer](Integer.md) | Sequential number of the session or meeting as an integer, used for ordering.  |
 | position | 0..1 <br/> [String](String.md) | Integer position within the superordinate sequence, e.g. of a session within the legislature.  |
 | meeting_abbreviation | 0..1 <br/> [String](String.md) | Short designation of the session or meeting (e.g. "FS24" for the 2024 spring session).  |
-| actor_name | 0..1 <br/> [String](String.md) | Name of the political body in plain text (e.g., Nationalrat), in addition to the reference `actor_id`.  |
-| actor_id | 0..1 <br/> [GroupReference](GroupReference.md) | Reference to the acting body/organ (lightweight snapshot at time of linking).  |
+| actor_name | 0..1 <br/> [String](String.md) | Name of the political body in plain text (e.g., Nationalrat), in addition to the reference `group_reference`.  |
+| group_reference | 0..1 <br/> [GroupReference](GroupReference.md) | Reference to the acting body/organ (lightweight snapshot at time of linking).  |
 | state | 0..1 <br/> [StateEnum](StateEnum.md) | Whether the meeting takes place as planned at all (planned, canceled, postponed). A diverging, free-text designation goes into `state_name`.  |
 | state_name | 0..1 <br/> [String](String.md) | Diverging, free-text status designation of the meeting, where the values of `state` do not suffice.  |
 | description | 0..1 <br/> [String](String.md) | Descriptive text of the element.  |
@@ -193,7 +193,7 @@ meetings:
   url:
   - text: https://www.ratsinfo.sg.ch/sessions/2025-03-15
     language: de
-  actor_id:
+  group_reference:
     global_uri: actors:kr_sg
     label: Kantonsrat St. Gallen
     abbreviation:
@@ -342,7 +342,7 @@ meetings:
   url:
   - text: https://www.gr.be.ch/kommissionen/wak/2025-05-12
     language: de
-  actor_id:
+  group_reference:
     global_uri: actors:committee_wak_be
     label: Kommission für Wirtschaft und Abgaben (WAK)
     abbreviation:
@@ -398,7 +398,7 @@ meetings:
   url:
   - text: https://www.parlament.ch/de/ratsbetrieb/suche-Amtliches-bulletin
     language: de
-  actor_id:
+  group_reference:
     global_uri: actors:staenderat
     label: Ständerat
     abbreviation:
@@ -441,7 +441,7 @@ meetings:
   url:
   - text: https://www.landsgemeinde.gl.ch/2025
     language: de
-  actor_id:
+  group_reference:
     global_uri: actors:landsgemeinde_gl
     label: Landsgemeinde Glarus
     abbreviation:
@@ -520,7 +520,7 @@ meetings:
   - text: >-
       https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8
     language: fr
-  actor_id:
+  group_reference:
     global_uri: actors:gr_be
     label: Grosser Rat Bern
     abbreviation:
@@ -551,7 +551,7 @@ meetings:
   - text: >-
       https://www.rr.be.ch/fr/start/beschluesse/beschluesse-unterlagen-nach-sitzungen/sitzungs-detail?guid=340dcf932fb044dd8f8c5c943267fbcc
     language: fr
-  actor_id:
+  group_reference:
     global_uri: actors:rr_be
     label: Regierungsrat Bern
     abbreviation:

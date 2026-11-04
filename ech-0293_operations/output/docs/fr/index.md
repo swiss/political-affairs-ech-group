@@ -58,7 +58,6 @@ Name: operations
 | --- | --- |
 | [abbreviation](abbreviation.md) | Abréviation (peut être multilingue) |
 | [actor_fullname](actor_fullname.md) | Nom complet de l'actrice ou de l'acteur, respectivement de la personne |
-| [actor_id](actor_id.md) | Référence à la personne agissante (instantané au moment de la mise en relatio... |
 | [actor_name](actor_name.md) | Nom de l'organe politique en clair (p |
 | [administrative_id](administrative_id.md) | Identifiant administratif du corps législatif, p |
 | [affair_id](affair_id.md) | Identifiant de l'affaire (eCH-0295) à laquelle se rapporte l'enregistrement |
@@ -106,6 +105,7 @@ Name: operations
 | [group_id](group_id.md) | Référence au groupe ou à l'organe (instantané au moment de la mise en relatio... |
 | [group_label](group_label.md) | Nom de l'organe/du groupe au moment de la liaison |
 | [group_name](group_name.md) | Nom du groupe ou de l'organe en clair, en complément de la référence `group_i... |
+| [group_reference](group_reference.md) | Référence abrégée à un groupe ou à un organe selon eCH-0294, retenant ses car... |
 | [has_protocol](has_protocol.md) | Référence au procès-verbal de cette séance, établi après celle-ci |
 | [has_resolution](has_resolution.md) | La décision formelle prise sur ce point de l'ordre du jour, p |
 | [individual_attendances](individual_attendances.md) | Ensemble des constatations individuelles de présence |
@@ -147,6 +147,7 @@ Name: operations
 | [parent_session](parent_session.md) | Identifiant de la session à laquelle la séance appartient |
 | [parent_type](parent_type.md) | Type de l'objet parent (séance, point de l'ordre du jour, intervention, affai... |
 | [parent_voting](parent_voting.md) | L'identifiant du vote auquel se rattache la voix individuelle |
+| [person_reference](person_reference.md) | Référence abrégée à une personne selon eCH-0294, retenant ses caractéristique... |
 | [position](position.md) | Position entière au sein de la séquence supérieure, p |
 | [protocol_items](protocol_items.md) | Points de l'ordre du jour tels qu'ils ont effectivement été consignés au proc... |
 | [protocols](protocols.md) | Ensemble des procès-verbaux |

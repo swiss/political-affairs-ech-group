@@ -17,7 +17,7 @@ votings:
   parent_protocol: ops:protocol_zh_2025_11_20
   parent_protocol_item: ops:protocol_item_zh_budget_2026
   parent_meeting: ops:meeting_zh_2025_11_20
-  actor_id:
+  group_reference:
     global_uri: actors:kr_zh
     label: Kantonsrat Zürich
     abbreviation:

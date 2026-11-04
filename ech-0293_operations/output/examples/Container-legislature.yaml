@@ -14,7 +14,7 @@ legislatures:
       language: "it"
   description: "Amtsdauer der am 20. Oktober 2019 gewählten Bundesversammlung; sie endete am Vortag der konstituierenden Sitzung der 52. Legislaturperiode vom 4. Dezember 2023."
   landing_page: "https://www.parlament.ch/de/ratsbetrieb/sessionen"
-  actor_id:
+  group_reference:
     global_uri: "actors:bundesversammlung"
     label: "Bundesversammlung"
     abbreviation:
@@ -36,7 +36,7 @@ legislatures:
     - text: "Législature 2022-2026"
       language: "fr"
   landing_page: "https://www.gr.be.ch/de/start/grosser-rat.html"
-  actor_id:
+  group_reference:
     global_uri: "actors:gr_be"
     label: "Grosser Rat Bern"
     abbreviation:
@@ -59,7 +59,7 @@ legislatures:
       language: "fr"
   description: "Le Grand Conseil vaudois est élu pour cinq ans."
   landing_page: "https://www.vd.ch/gc"
-  actor_id:
+  group_reference:
     global_uri: "actors:gc_vd"
     label: "Grand Conseil du canton de Vaud"
     abbreviation:

@@ -44,12 +44,12 @@ At least one of the following must be set:
 
 | Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
-| [Legislature](Legislature.md) | [actor_id](actor_id.md) | range | [GroupReference](GroupReference.md) |
+| [Legislature](Legislature.md) | [group_reference](group_reference.md) | range | [GroupReference](GroupReference.md) |
 | [Meeting](Meeting.md) | [group_id](group_id.md) | range | [GroupReference](GroupReference.md) |
-| [Meeting](Meeting.md) | [actor_id](actor_id.md) | range | [GroupReference](GroupReference.md) |
-| [Voting](Voting.md) | [actor_id](actor_id.md) | range | [GroupReference](GroupReference.md) |
-| [Election](Election.md) | [actor_id](actor_id.md) | range | [GroupReference](GroupReference.md) |
-| [Attendance](Attendance.md) | [actor_id](actor_id.md) | range | [GroupReference](GroupReference.md) |
+| [Meeting](Meeting.md) | [group_reference](group_reference.md) | range | [GroupReference](GroupReference.md) |
+| [Voting](Voting.md) | [group_reference](group_reference.md) | range | [GroupReference](GroupReference.md) |
+| [Election](Election.md) | [group_reference](group_reference.md) | range | [GroupReference](GroupReference.md) |
+| [Attendance](Attendance.md) | [group_reference](group_reference.md) | range | [GroupReference](GroupReference.md) |
 
 
 

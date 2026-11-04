@@ -6,7 +6,7 @@ search:
 # Slot: actor_name 
 
 
-_Nom de l'organe politique en clair (p. ex. Conseil national), en complément de la référence `actor_id`._
+_Nom de l'organe politique en clair (p. ex. Conseil national), en complément de la référence `group_reference`._
 
 
 
@@ -67,17 +67,17 @@ annotations:
   description_de:
     tag: description_de
     value: 'Name des politischen Organs im Klartext (z.B. Nationalrat), zusätzlich
-      zur Referenz `actor_id`.
+      zur Referenz `group_reference`.
 
       '
   description_fr:
     tag: description_fr
     value: 'Nom de l''organe politique en clair (p. ex. Conseil national), en complément
-      de la référence `actor_id`.
+      de la référence `group_reference`.
 
       '
 description: 'Nom de l''organe politique en clair (p. ex. Conseil national), en complément
-  de la référence `actor_id`.
+  de la référence `group_reference`.
 
   '
 from_schema: https://ch.paf.link/schema/operations

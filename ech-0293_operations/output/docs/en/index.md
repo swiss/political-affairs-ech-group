@@ -58,7 +58,6 @@ Name: operations
 | --- | --- |
 | [abbreviation](abbreviation.md) | Abbreviation (can be multilingual) |
 | [actor_fullname](actor_fullname.md) | Full name of the actor/person |
-| [actor_id](actor_id.md) | Reference to the acting person (lightweight snapshot at time of linking) |
 | [actor_name](actor_name.md) | Name of the political body in plain text (e |
 | [administrative_id](administrative_id.md) | Administrative ID of the legislative body, such as a municipality, canton, or... |
 | [affair_id](affair_id.md) | Identifier of the affair (eCH-0295) the record refers to |
@@ -106,6 +105,7 @@ Name: operations
 | [group_id](group_id.md) | Reference to the group or body (lightweight snapshot at time of linking) |
 | [group_label](group_label.md) | Name of the body/group at time of linking |
 | [group_name](group_name.md) | Name of the group or body in plain text, in addition to the reference `group_... |
+| [group_reference](group_reference.md) | Reference to a group or body according to eCH-0294 with snapshot data at time... |
 | [has_protocol](has_protocol.md) | Reference to the protocol (minutes) of this meeting, recorded after the meeti... |
 | [has_resolution](has_resolution.md) | The formal decision taken on this agenda item, e |
 | [individual_attendances](individual_attendances.md) | Collection of individual attendance records |
@@ -147,6 +147,7 @@ Name: operations
 | [parent_session](parent_session.md) | Identifier of the session to which the meeting belongs |
 | [parent_type](parent_type.md) | Type of parent object (meeting, agenda, speech, affair) |
 | [parent_voting](parent_voting.md) | The ID of the voting associated with the individual vote |
+| [person_reference](person_reference.md) | Reference to a person according to eCH-0294 with snapshot data at time of lin... |
 | [position](position.md) | Integer position within the superordinate sequence, e |
 | [protocol_items](protocol_items.md) | Agenda items as actually recorded in the protocol |
 | [protocols](protocols.md) | Collection of protocol records |

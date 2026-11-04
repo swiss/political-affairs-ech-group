@@ -58,7 +58,6 @@ Name: operations
 | --- | --- |
 | [abbreviation](abbreviation.md) | Abkürzung (kann mehrsprachig sein) |
 | [actor_fullname](actor_fullname.md) | Vollständiger Name der Akteurin oder des Akteurs bzw |
-| [actor_id](actor_id.md) | Referenz auf die handelnde Person (Momentaufnahme zum Zeitpunkt der Verknüpfu... |
 | [actor_name](actor_name.md) | Name des politischen Organs im Klartext (z |
 | [administrative_id](administrative_id.md) | Verwaltungs-ID des gesetzgebenden Körpers, wie z |
 | [affair_id](affair_id.md) | Identifikator des Geschäfts (eCH-0295), auf das sich der Eintrag bezieht |
@@ -106,6 +105,7 @@ Name: operations
 | [group_id](group_id.md) | Referenz auf die Gruppe oder das Gremium (Momentaufnahme zum Zeitpunkt der Ve... |
 | [group_label](group_label.md) | Name des Gremiums zum Zeitpunkt der Verknüpfung |
 | [group_name](group_name.md) | Name der Gruppe oder des Gremiums im Klartext, zusätzlich zur Referenz `group... |
+| [group_reference](group_reference.md) | Kurzreferenz auf eine Gruppe oder ein Organ gemäss eCH-0294, welche deren Mer... |
 | [has_protocol](has_protocol.md) | Referenz auf das nach der Sitzung erstellte Protokoll dieser Sitzung |
 | [has_resolution](has_resolution.md) | Der formale Beschluss zu diesem Traktandum, z |
 | [individual_attendances](individual_attendances.md) | Sammlung der einzelnen Anwesenheitsfeststellungen |
@@ -147,6 +147,7 @@ Name: operations
 | [parent_session](parent_session.md) | Identifikator der Session, zu der die Sitzung gehört |
 | [parent_type](parent_type.md) | Typ des übergeordneten Objekts (Sitzung, Traktandum, Wortmeldung, Geschäft) |
 | [parent_voting](parent_voting.md) | Die ID der Abstimmung, die mit der Einzelstimme verbunden ist |
+| [person_reference](person_reference.md) | Kurzreferenz auf eine Person gemäss eCH-0294, welche deren Merkmale zum Zeitp... |
 | [position](position.md) | Ganzzahlige Position innerhalb der übergeordneten Reihenfolge, z |
 | [protocol_items](protocol_items.md) | Traktanden, wie sie im Protokoll tatsächlich festgehalten wurden |
 | [protocols](protocols.md) | Sammlung der Protokolle |

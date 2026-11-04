@@ -25,7 +25,7 @@ _Amtsdauer eines Parlaments als gesetzgebender Versammlung. Dauert in der Regel 
 | name | * <br/> [MultilingualString](MultilingualString.md) | Mehrsprachige vollständige Bezeichnung.  |
 | description | 0..1 <br/> [String](String.md) | Beschreibender Text zum Element.  |
 | landing_page | 0..1 <br/> [String](String.md) | URL mit weiteren Informationen.  |
-| actor_id | 0..1 <br/> [GroupReference](GroupReference.md) | Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
+| group_reference | 0..1 <br/> [GroupReference](GroupReference.md) | Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
 | documents | * <br/> [Work](Work.md) | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.  |
 | date_begin_actual | 0..1 <br/> [Date](Date.md) | Das tatsächliche Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](IsEventWithDuration.md) |
 | datetime_begin_actual | 0..1 <br/> [Datetime](Datetime.md) | Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](IsEventWithDuration.md) |
@@ -76,7 +76,7 @@ legislatures:
     language: fr
   description: Le Grand Conseil vaudois est élu pour cinq ans.
   landing_page: https://www.vd.ch/gc
-  actor_id:
+  group_reference:
     global_uri: actors:gc_vd
     label: Grand Conseil du canton de Vaud
     abbreviation:
@@ -106,7 +106,7 @@ legislatures:
     Amtsdauer der am 20. Oktober 2019 gewählten Bundesversammlung; sie endete am Vortag
     der konstituierenden Sitzung der 52. Legislaturperiode vom 4. Dezember 2023.
   landing_page: https://www.parlament.ch/de/ratsbetrieb/sessionen
-  actor_id:
+  group_reference:
     global_uri: actors:bundesversammlung
     label: Bundesversammlung
     abbreviation:
@@ -131,7 +131,7 @@ legislatures:
   - text: Législature 2022-2026
     language: fr
   landing_page: https://www.gr.be.ch/de/start/grosser-rat.html
-  actor_id:
+  group_reference:
     global_uri: actors:gr_be
     label: Grosser Rat Bern
     abbreviation:

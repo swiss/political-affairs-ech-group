@@ -44,7 +44,7 @@ _Un vote sur une question matérielle : l'objet du vote (la question), la procé
 | parent_protocol | 0..1 <br/> [Protocol](Protocol.md) | Le procès-verbal dans lequel le vote ou l'élection est consigné. Le vote a lieu au cours de la séance et se rattache donc au procès-verbal, et non à l'ordre du jour planifié à l'avance : ce qui a été mis à l'ordre du jour ne dit pas encore sur quoi il a effectivement été voté. Inversement, le procès-verbal reprend ses votes et élections sous forme de listes (votings, elections).  |
 | parent_protocol_item | 0..1 <br/> [ProtocolItem](ProtocolItem.md) | Le point consigné au procès-verbal (ProtocolItem) sous lequel le vote ou l'élection a eu lieu. Absent lorsque le vote a eu lieu sans point de l'ordre du jour ; le rattachement à la séance découle alors uniquement de parent_protocol et parent_meeting.  |
 | affair_id | 0..1 <br/> [String](String.md) | Identifiant de l'affaire (eCH-0295) à laquelle se rapporte l'enregistrement. Les points administratifs (p. ex. approbation du procès-verbal) n'ont pas d'affaire. Une affaire passe en règle générale par plusieurs points de l'ordre du jour — dans la législation, par exemple, le débat d'entrée en matière, la discussion par article, le vote final et, le cas échéant, la procédure d'élimination des divergences entre les conseils.  |
-| actor_id | 0..1 <br/> [GroupReference](GroupReference.md) | Référence à l'organe agissant (instantané au moment de la mise en relation).  |
+| group_reference | 0..1 <br/> [GroupReference](GroupReference.md) | Référence à l'organe agissant (instantané au moment de la mise en relation).  |
 | documents | * <br/> [Work](Work.md) | Liste des documents (FRBR Works) liés à l'entité.  |
 | date_created | 0..1 <br/> [Date](Date.md) | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](HasCreationModificationDates.md) |
 | datetime_created | 0..1 <br/> [Datetime](Datetime.md) | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](HasCreationModificationDates.md) |
@@ -101,7 +101,7 @@ votings:
   parent_protocol: ops:protocol_be_2025_06_05
   parent_protocol_item: ops:protocol_item_be_2025_042
   parent_meeting: ops:meeting_be_2025_06_05
-  actor_id:
+  group_reference:
     global_uri: actors:gr_be
     label: Grosser Rat Bern
     abbreviation:
@@ -133,7 +133,7 @@ votings:
   parent_protocol: ops:protocol_sg_2025_03_15
   parent_protocol_item: ops:protocol_item_sg_2025_015
   parent_meeting: ops:meeting_sg_2025_03_15
-  actor_id:
+  group_reference:
     global_uri: actors:kr_sg
     label: Kantonsrat St. Gallen
     abbreviation:
@@ -178,7 +178,7 @@ votings:
   parent_protocol_item: ops:protocol_item_zh_gr_2024_2023_361
   parent_meeting: ops:meeting_zh_gr_2024_02_28
   affair_id: 2023/361
-  actor_id:
+  group_reference:
     global_uri: actors:gr_stadt_zuerich
     label: Gemeinderat der Stadt Zürich
     abbreviation:
@@ -210,7 +210,7 @@ votings:
   parent_protocol: ops:protocol_zh_2025_11_20
   parent_protocol_item: ops:protocol_item_zh_budget_2026
   parent_meeting: ops:meeting_zh_2025_11_20
-  actor_id:
+  group_reference:
     global_uri: actors:kr_zh
     label: Kantonsrat Zürich
     abbreviation:

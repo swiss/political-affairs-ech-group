@@ -3,10 +3,10 @@ search:
   boost: 5.0
 ---
 
-# Slot: actor_id 
+# Slot: group_reference 
 
 
-_Reference to the acting person (lightweight snapshot at time of linking)._
+_Reference to a group or body according to eCH-0294 with snapshot data at time of linking._
 
 
 
@@ -15,7 +15,7 @@ _Reference to the acting person (lightweight snapshot at time of linking)._
 
 
 
-URI: [ops:actor_id](https://ch.paf.link/schema/operations/actor_id)
+URI: [actors:groupReference](https://ld.ech.ch/schema/0294/actors/groupReference)
 <!-- no inheritance hierarchy -->
 
 
@@ -29,11 +29,8 @@ URI: [ops:actor_id](https://ch.paf.link/schema/operations/actor_id)
 | [Legislature](Legislature.md) | Term of office of a parliament as a legislative assembly |  yes  |
 | [Meeting](Meeting.md) | The individual sitting of a body — the level at which agenda items are delibe... |  yes  |
 | [Voting](Voting.md) | A voting on a substantive question: the subject (question), the procedure, th... |  yes  |
-| [IndividualVote](IndividualVote.md) | The vote cast by an individual member in a voting |  yes  |
 | [Election](Election.md) | An election in which a parliamentary body appoints one or several persons to ... |  yes  |
 | [Attendance](Attendance.md) | Aggregated attendance record for a meeting (number of members present, absent... |  yes  |
-| [IndividualAttendance](IndividualAttendance.md) | Individual attendance record for a specific person at a meeting (linked via t... |  yes  |
-| [Speech](Speech.md) | A speech or statement made during a meeting (also called Votum or speaker seg... |  yes  |
 
 
 
@@ -46,8 +43,9 @@ URI: [ops:actor_id](https://ch.paf.link/schema/operations/actor_id)
 
 | Property | Value |
 | --- | --- |
-| Range | [PersonReference](PersonReference.md) |
-| Domain Of | [Legislature](Legislature.md), [Meeting](Meeting.md), [Voting](Voting.md), [IndividualVote](IndividualVote.md), [Election](Election.md), [Attendance](Attendance.md), [IndividualAttendance](IndividualAttendance.md), [Speech](Speech.md) |
+| Range | [GroupReference](GroupReference.md) |
+| Domain Of | [Legislature](Legislature.md), [Meeting](Meeting.md), [Voting](Voting.md), [Election](Election.md), [Attendance](Attendance.md) |
+| Slot URI | [actors:groupReference](https://ld.ech.ch/schema/0294/actors/groupReference) |
 
 ### Cardinality and Requirements
 
@@ -69,34 +67,34 @@ URI: [ops:actor_id](https://ch.paf.link/schema/operations/actor_id)
 
 <details>
 ```yaml
-name: actor_id
+name: group_reference
 annotations:
   description_de:
     tag: description_de
-    value: 'Referenz auf die handelnde Person (Momentaufnahme zum Zeitpunkt der Verknüpfung).
+    value: 'Kurzreferenz auf eine Gruppe oder ein Organ gemäss eCH-0294, welche deren
+      Merkmale zum Zeitpunkt der Verknüpfung festhält.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Référence à la personne agissante (instantané au moment de la mise en
-      relation).
+    value: 'Référence abrégée à un groupe ou à un organe selon eCH-0294, retenant
+      ses caractéristiques au moment de la mise en relation.
 
       '
-description: 'Reference to the acting person (lightweight snapshot at time of linking).
+description: 'Reference to a group or body according to eCH-0294 with snapshot data
+  at time of linking.
 
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
+slot_uri: actors:groupReference
 domain_of:
 - Legislature
 - Meeting
 - Voting
-- IndividualVote
 - Election
 - Attendance
-- IndividualAttendance
-- Speech
-range: PersonReference
+range: GroupReference
 inlined: true
 
 ```

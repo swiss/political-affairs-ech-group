@@ -290,17 +290,6 @@
             "additionalProperties": false,
             "description": "Aggregated attendance record for a meeting (number of members present, absent, excused): it records which members of a parliamentary body were present, absent or excused at a sitting. Attendance is captured on two levels \u2014 this aggregate with the totals for the meeting, and one IndividualAttendance per person, linked to it via parent_attendance. Attendance records serve the documentation of participation, the verification of the quorum, transparency towards the public, accountability for the fulfilment of duties, statistics on attendance rates and the administration of allowances and expenses.",
             "properties": {
-                "actor_id": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/$defs/GroupReference"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "Reference to the acting body/organ (lightweight snapshot at time of linking).\n"
-                },
                 "date_created": {
                     "description": "The date when an entity was created.\n",
                     "format": "date",
@@ -344,6 +333,17 @@
                 "global_uri": {
                     "description": "A unique, globally valid URI for the entity.\n",
                     "type": "string"
+                },
+                "group_reference": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/GroupReference"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Reference to the acting body/organ (lightweight snapshot at time of linking).\n"
                 },
                 "local_id": {
                     "description": "Local identifier. For example, a UUID from the council information system.\n",
@@ -574,17 +574,6 @@
             "additionalProperties": false,
             "description": "An election in which a parliamentary body appoints one or several persons to an office or function. Unlike a voting (Voting), which decides substantive questions, an election is a decision on persons: it is often held by secret ballot and usually requires an absolute majority, whereas votings are mostly open. The presiding member, who does not take part in votings, does vote in elections. Each ballot is recorded as a separate election; the ballots of one election are linked through the common agenda item \u2014 for instance a first ballot requiring an absolute majority that remains without result, followed by a second ballot in which the relative majority suffices.",
             "properties": {
-                "actor_id": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/$defs/GroupReference"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "Reference to the acting body/organ (lightweight snapshot at time of linking).\n"
-                },
                 "affair_id": {
                     "description": "Identifier of the affair (eCH-0295) the record refers to. Administrative agenda items (e.g. approval of the minutes) have no affair. An affair usually runs through several agenda items \u2014 in legislation, for instance, the debate on entering into the matter, the detailed deliberation, the final vote and, where applicable, the procedure for resolving differences between the chambers.\n",
                     "type": [
@@ -664,6 +653,17 @@
                 "global_uri": {
                     "description": "A unique, globally valid URI for the entity.\n",
                     "type": "string"
+                },
+                "group_reference": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/GroupReference"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Reference to the acting body/organ (lightweight snapshot at time of linking).\n"
                 },
                 "landing_page": {
                     "description": "URL providing further information.\n",
@@ -1063,17 +1063,6 @@
             "additionalProperties": false,
             "description": "Individual attendance record for a specific person at a meeting (linked via the parent Attendance aggregate). It concerns the meeting as a whole and differs from the individual vote (IndividualVote), which records the vote cast in a specific voting: a person present at the meeting (attendance_type present) can be recorded with not_voted in a single voting because they briefly left the chamber at that moment.",
             "properties": {
-                "actor_id": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/$defs/PersonReference"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "The person whose attendance is recorded, as a reference to a person according to eCH-0294.\n"
-                },
                 "attendance_type": {
                     "anyOf": [
                         {
@@ -1135,6 +1124,17 @@
                         "null"
                     ]
                 },
+                "person_reference": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/PersonReference"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The person whose attendance is recorded, as a reference to a person according to eCH-0294.\n"
+                },
                 "reason": {
                     "description": "Reason for absence, lateness or substitution (free-text, multilingual).\n",
                     "items": {
@@ -1163,17 +1163,6 @@
             "additionalProperties": false,
             "description": "The vote cast by an individual member in a voting. Individual votes are only recorded for open votings; for secret votings only the overall result is published. An individual vote concerns one specific voting and differs from attendance (Attendance), which records presence at the meeting as a whole: a member present at the meeting may be recorded as not_voted in a single voting, for instance because they briefly left the room.",
             "properties": {
-                "actor_id": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/$defs/PersonReference"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "The member who cast the vote, as a reference to a person according to eCH-0294.\n"
-                },
                 "date_created": {
                     "description": "The date when an entity was created.\n",
                     "format": "date",
@@ -1234,6 +1223,17 @@
                         "string",
                         "null"
                     ]
+                },
+                "person_reference": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/PersonReference"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The member who cast the vote, as a reference to a person according to eCH-0294.\n"
                 },
                 "seat_nr": {
                     "description": "The seat number of the individual vote, if applicable.\n",
@@ -1677,17 +1677,6 @@
             "additionalProperties": false,
             "description": "Term of office of a parliament as a legislative assembly. Usually lasts four years.",
             "properties": {
-                "actor_id": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/$defs/GroupReference"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "Reference to the acting body/organ (lightweight snapshot at time of linking).\n"
-                },
                 "administrative_id": {
                     "description": "Administrative ID of the legislative body, such as a municipality, canton, or country.\n",
                     "type": [
@@ -1811,6 +1800,17 @@
                 "global_uri": {
                     "description": "A unique, globally valid URI for the entity.\n",
                     "type": "string"
+                },
+                "group_reference": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/GroupReference"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Reference to the acting body/organ (lightweight snapshot at time of linking).\n"
                 },
                 "landing_page": {
                     "description": "URL providing further information.\n",
@@ -2015,19 +2015,8 @@
             "additionalProperties": false,
             "description": "The individual sitting of a body \u2014 the level at which agenda items are deliberated, decisions taken and speeches recorded. The meeting is the node to which the other classes of this standard attach: its agenda items (AgendaItem) are embedded in it (agenda_items), while votings and elections (Voting, Election), speeches (Speech) and the attendance list (Attendance) reference it via `parent_meeting`. At this level, scheduled and actual times regularly diverge \u2014 a sitting scheduled for 14:00 only begins at 14:25 because of delays and ends at 17:30 instead of 18:00 \u2014 which is why both the planned and the actual begin and end are recorded.",
             "properties": {
-                "actor_id": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/$defs/GroupReference"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "Reference to the acting body/organ (lightweight snapshot at time of linking).\n"
-                },
                 "actor_name": {
-                    "description": "Name of the political body in plain text (e.g., Nationalrat), in addition to the reference `actor_id`.\n",
+                    "description": "Name of the political body in plain text (e.g., Nationalrat), in addition to the reference `group_reference`.\n",
                     "type": [
                         "string",
                         "null"
@@ -2184,6 +2173,17 @@
                         "string",
                         "null"
                     ]
+                },
+                "group_reference": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/GroupReference"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Reference to the acting body/organ (lightweight snapshot at time of linking).\n"
                 },
                 "has_protocol": {
                     "description": "Reference to the protocol (minutes) of this meeting, recorded after the meeting. Only the identifier of the protocol is given; the protocol itself is delivered in the container's `protocols` list. It is an entity in its own right with its own identifier and is usually published later than the meeting, so it is referenced rather than embedded.\n",
@@ -3218,22 +3218,11 @@
             "description": "A speech or statement made during a meeting (also called Votum or speaker segment): the oral contribution of a person in a parliamentary sitting and thus the central instrument of political debate and of expressing opinions in parliament. Speeches take various forms \u2014 main statements (detailed positions on an affair, justification of motions, presentation of the parliamentary group's opinion), short interventions (interjected questions, corrections), declarations by a parliamentary group delivered by its spokesperson, and statements by members of the government (answering questions, defending bills). A speech records who spoke when and under which agenda item, with the wording as text and, where available, as an audio or video recording. It can be delivered in two ways: embedded in the protocol (Protocol.speeches), where the meeting follows from the surrounding protocol but the agenda item does not, or flat in Container.speeches, where without references any link would be missing. parent_meeting and parent_agenda_item are therefore set in both cases; they carry the same values as on Voting and Election and make the speech evaluable regardless of the delivery form it came in.",
             "properties": {
                 "actor_fullname": {
-                    "description": "Name of the speaking person, for quick access without resolving actor_id.\n",
+                    "description": "Name of the speaking person, for quick access without resolving person_reference.\n",
                     "type": [
                         "string",
                         "null"
                     ]
-                },
-                "actor_id": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/$defs/PersonReference"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "The speaking person, as a reference to a person according to eCH-0294.\n"
                 },
                 "date_created": {
                     "description": "The date when an entity was created.\n",
@@ -3354,6 +3343,17 @@
                         "null"
                     ]
                 },
+                "person_reference": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/PersonReference"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The speaking person, as a reference to a person according to eCH-0294.\n"
+                },
                 "role": {
                     "description": "Role in which the person speaks, e.g. president of a parliamentary group, rapporteur or member of the Federal Council.\n",
                     "type": [
@@ -3471,17 +3471,6 @@
             "additionalProperties": false,
             "description": "A voting on a substantive question: the subject (question), the procedure, the result with its vote ratio and \u2014 for open votings \u2014 the individual votes of the members. A voting is held in the course of the sitting and is therefore anchored in the protocol (parent_protocol, parent_protocol_item); it is also linked to the meeting (parent_meeting) and to the affair (affair_id). The presiding member does not take part in votings but casts the deciding vote in case of a tie (tie_breaker). The categorical decision (accepted, rejected, noted \u2026) is not held on the voting but in the Resolution of the agenda item.",
             "properties": {
-                "actor_id": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/$defs/GroupReference"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "Reference to the acting body/organ (lightweight snapshot at time of linking).\n"
-                },
                 "affair_id": {
                     "description": "Identifier of the affair (eCH-0295) the record refers to. Administrative agenda items (e.g. approval of the minutes) have no affair. An affair usually runs through several agenda items \u2014 in legislation, for instance, the debate on entering into the matter, the detailed deliberation, the final vote and, where applicable, the procedure for resolving differences between the chambers.\n",
                     "type": [
@@ -3550,6 +3539,17 @@
                 "global_uri": {
                     "description": "A unique, globally valid URI for the entity.\n",
                     "type": "string"
+                },
+                "group_reference": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/GroupReference"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Reference to the acting body/organ (lightweight snapshot at time of linking).\n"
                 },
                 "label_abstention": {
                     "description": "Meaning of an 'abstention' vote.\n",

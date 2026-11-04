@@ -66,7 +66,7 @@ Die Familie umfasst:
 
 - **eCH-0292 – Gemeinsame Datenelemente (Meta):** Definiert die übergreifend genutzten Datenelemente und Metaprozesse, auf denen die übrigen Standards aufbauen. eCH-0293 übernimmt daraus unter anderem die Identifikations- und Datumselemente sowie die FRBR-Struktur für verknüpfte Dokumente.
 - **eCH-0293 – Öffentlicher Ratsbetrieb (Operations) – dieser Standard:** Beschreibt den öffentlichen Ratsbetrieb – Legislaturperioden und Sessionen, Sitzungen und Traktanden, Protokolle und Beschlüsse, Abstimmungen und Wahlen, Anwesenheiten sowie Wortmeldungen.
-- **eCH-0294 – Politische Akteure (Actors):** Definiert Personen, Gruppen und Organe im politischen Kontext sowie deren Mitgliedschaften und Interessenbindungen. eCH-0293 referenziert diese Akteure über `actor_id` – etwa welches Parlament getagt und welche Person abgestimmt hat.
+- **eCH-0294 – Politische Akteure (Actors):** Definiert Personen, Gruppen und Organe im politischen Kontext sowie deren Mitgliedschaften und Interessenbindungen. eCH-0293 referenziert diese Akteure über `group_reference` und `person_reference` – etwa welches Parlament getagt und welche Person abgestimmt hat.
 - **eCH-0295 – Parlamentarische Geschäfte (Affairs):** Beschreibt den Lebenszyklus politischer Geschäfte. Traktanden in eCH-0293 verweisen über `affair_id` auf das zugehörige Geschäft.
 - **eCH-0296 – Erlasse und Gesetzestexte (Laws):** Erfasst die Resultate des parlamentarischen Prozesses – die verabschiedeten Gesetze und Erlasse.
 - **eCH-0297 – Öffentliche Konsultationen (Consultations):** Strukturiert Vernehmlassungsverfahren, die oft Ausgangspunkt für parlamentarische Geschäfte sind.
@@ -139,7 +139,7 @@ meetings:
   url:
     - text: "https://www.ratsinfo.sg.ch/sessions/2025-03-15"
       language: "de"
-  actor_id:
+  group_reference:
     global_uri: "actors:kr_sg"
     label: "Kantonsrat St. Gallen"
     abbreviation:
@@ -184,7 +184,7 @@ meetings:
   url:
     - text: "https://www.gr.be.ch/kommissionen/wak/2025-05-12"
       language: "de"
-  actor_id:
+  group_reference:
     global_uri: "actors:committee_wak_be"
     label: "Kommission für Wirtschaft und Abgaben (WAK)"
     abbreviation:
@@ -231,7 +231,7 @@ meetings:
   url:
     - text: "https://www.landsgemeinde.gl.ch/2025"
       language: "de"
-  actor_id:
+  group_reference:
     global_uri: "actors:landsgemeinde_gl"
     label: "Landsgemeinde Glarus"
     abbreviation:
@@ -289,7 +289,7 @@ legislatures:
       language: "it"
   description: "Amtsdauer der am 20. Oktober 2019 gewählten Bundesversammlung; sie endete am Vortag der konstituierenden Sitzung der 52. Legislaturperiode vom 4. Dezember 2023."
   landing_page: "https://www.parlament.ch/de/ratsbetrieb/sessionen"
-  actor_id:
+  group_reference:
     global_uri: "actors:bundesversammlung"
     label: "Bundesversammlung"
     abbreviation:
@@ -311,7 +311,7 @@ legislatures:
     - text: "Législature 2022-2026"
       language: "fr"
   landing_page: "https://www.gr.be.ch/de/start/grosser-rat.html"
-  actor_id:
+  group_reference:
     global_uri: "actors:gr_be"
     label: "Grosser Rat Bern"
     abbreviation:
@@ -334,7 +334,7 @@ legislatures:
       language: "fr"
   description: "Le Grand Conseil vaudois est élu pour cinq ans."
   landing_page: "https://www.vd.ch/gc"
-  actor_id:
+  group_reference:
     global_uri: "actors:gc_vd"
     label: "Grand Conseil du canton de Vaud"
     abbreviation:
@@ -371,7 +371,7 @@ votings:
   parent_protocol: ops:protocol_sg_2025_03_15
   parent_protocol_item: ops:protocol_item_sg_2025_015
   parent_meeting: ops:meeting_sg_2025_03_15
-  actor_id:
+  group_reference:
     global_uri: "actors:kr_sg"
     label: "Kantonsrat St. Gallen"
     abbreviation:
@@ -400,7 +400,7 @@ votings:
   parent_protocol: ops:protocol_be_2025_06_05
   parent_protocol_item: ops:protocol_item_be_2025_042
   parent_meeting: ops:meeting_be_2025_06_05
-  actor_id:
+  group_reference:
     global_uri: "actors:gr_be"
     label: "Grosser Rat Bern"
     abbreviation:
@@ -427,7 +427,7 @@ votings:
   parent_protocol: ops:protocol_zh_2025_11_20
   parent_protocol_item: ops:protocol_item_zh_budget_2026
   parent_meeting: ops:meeting_zh_2025_11_20
-  actor_id:
+  group_reference:
     global_uri: "actors:kr_zh"
     label: "Kantonsrat Zürich"
     abbreviation:
@@ -469,7 +469,7 @@ votings:
   parent_protocol_item: ops:protocol_item_zh_gr_2024_2023_361
   parent_meeting: ops:meeting_zh_gr_2024_02_28
   affair_id: "2023/361"
-  actor_id:
+  group_reference:
     global_uri: "actors:gr_stadt_zuerich"
     label: "Gemeinderat der Stadt Zürich"
     abbreviation:
@@ -485,7 +485,7 @@ individual_votes:
 # je gewählter Option verwendet; abwesende Mitglieder erhalten "not_voted".
 - global_uri: ops:vote_zh_gr_2024_2023_361_a1
   parent_voting: ops:voting_zh_gr_2024_2023_361
-  actor_id:
+  person_reference:
     global_uri: "actors:person_zh_stadt_1"
     label: "Mitglied Auswahl A"
   seat_nr: "12"
@@ -495,7 +495,7 @@ individual_votes:
 
 - global_uri: ops:vote_zh_gr_2024_2023_361_b1
   parent_voting: ops:voting_zh_gr_2024_2023_361
-  actor_id:
+  person_reference:
     global_uri: "actors:person_zh_stadt_2"
     label: "Mitglied Auswahl B"
   seat_nr: "47"
@@ -505,7 +505,7 @@ individual_votes:
 
 - global_uri: ops:vote_zh_gr_2024_2023_361_c1
   parent_voting: ops:voting_zh_gr_2024_2023_361
-  actor_id:
+  person_reference:
     global_uri: "actors:person_zh_stadt_3"
     label: "Mitglied Auswahl C"
   seat_nr: "88"
@@ -515,7 +515,7 @@ individual_votes:
 
 - global_uri: ops:vote_zh_gr_2024_2023_361_abs1
   parent_voting: ops:voting_zh_gr_2024_2023_361
-  actor_id:
+  person_reference:
     global_uri: "actors:person_zh_stadt_4"
     label: "Abwesendes Mitglied"
   seat_nr: "103"
@@ -524,7 +524,7 @@ individual_votes:
 
 - global_uri: ops:vote_sg_2025_001_person_123
   parent_voting: ops:voting_sg_2025_001
-  actor_id:
+  person_reference:
     global_uri: "actors:person_paul_schlegel"
     label: "Paul Schlegel"
   seat_nr: "1"
@@ -533,7 +533,7 @@ individual_votes:
 
 - global_uri: ops:vote_sg_2025_001_person_456
   parent_voting: ops:voting_sg_2025_001
-  actor_id:
+  person_reference:
     global_uri: "actors:person_andreas_eggenberger"
     label: "Andreas Eggenberger"
   seat_nr: "2"
@@ -542,7 +542,7 @@ individual_votes:
 
 - global_uri: ops:vote_sg_2025_001_person_789
   parent_voting: ops:voting_sg_2025_001
-  actor_id:
+  person_reference:
     global_uri: "actors:person_thomas_ammann"
     label: "Thomas Ammann"
   seat_nr: "3"
@@ -551,7 +551,7 @@ individual_votes:
 
 - global_uri: ops:vote_sg_2025_001_person_321
   parent_voting: ops:voting_sg_2025_001
-  actor_id:
+  person_reference:
     global_uri: "actors:person_ruedi_thomann"
     label: "Ruedi Thomann"
   seat_nr: "4"
@@ -560,7 +560,7 @@ individual_votes:
 
 - global_uri: ops:vote_zh_budget_2026_person_101
   parent_voting: ops:voting_zh_budget_2026
-  actor_id:
+  person_reference:
     global_uri: "actors:person_thomas_wolf"
     label: "Thomas Wolf"
   seat_nr: "1"
@@ -569,7 +569,7 @@ individual_votes:
 
 - global_uri: ops:vote_zh_budget_2026_person_102
   parent_voting: ops:voting_zh_budget_2026
-  actor_id:
+  person_reference:
     global_uri: "actors:person_jean_daniel_strub"
     label: "Jean-Daniel Strub"
   seat_nr: "2"
@@ -927,7 +927,7 @@ meetings:
     url:
       - text: "https://www.parlament.ch/de/ratsbetrieb/suche-Amtliches-bulletin"
         language: "de"
-    actor_id:
+    group_reference:
       global_uri: "actors:staenderat"
       label: "Ständerat"
       abbreviation:
@@ -965,7 +965,7 @@ speeches:
     datetime_begin: "2025-12-19T09:20:00+01:00"
     datetime_end: "2025-12-19T09:25:00+01:00"
     actor_fullname: "Pascal Broulis"
-    actor_id:
+    person_reference:
       global_uri: "actors:person_pascal_broulis"
       wikidata_uri: "http://www.wikidata.org/entity/Q116407"
       label: "Pascal Broulis"
@@ -1022,7 +1022,7 @@ meetings:
         language: "de"
       - text: "https://www.rr.be.ch/fr/start/beschluesse/beschluesse-unterlagen-nach-sitzungen/sitzungs-detail?guid=340dcf932fb044dd8f8c5c943267fbcc"
         language: "fr"
-    actor_id:
+    group_reference:
       global_uri: "actors:rr_be"
       label: "Regierungsrat Bern"
       abbreviation:
@@ -1044,7 +1044,7 @@ meetings:
         language: "de"
       - text: "https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8"
         language: "fr"
-    actor_id:
+    group_reference:
       global_uri: "actors:gr_be"
       label: "Grosser Rat Bern"
       abbreviation:
@@ -1073,7 +1073,7 @@ Die drei Klassen der zeitlichen Organisation — Legislature, Session und Meetin
 
 **Beginn und Ende.** Die Zeitangaben werden doppelt geführt: `date_begin_planned` und `date_end_planned` halten fest, was angesetzt war, `date_begin_actual` und `date_end_actual`, was tatsächlich geschah. Wo die Uhrzeit relevant ist, stehen die Varianten `datetime_*` zur Verfügung.
 
-**Raum und Organ.** `spatial` verweist auf die Raumeinheit gemäss LINDAS — Land, Kanton, Bezirk oder Gemeinde, also `https://ld.admin.ch/canton/2` statt „BE". Es ist dasselbe Feld, mit dem eCH-0294 seine Gruppen verortet, sodass ein Ratsbetrieb und die Akteure, die ihn tragen, auf dieselbe Ressource zeigen. Wer innerhalb dieser Raumeinheit tagt, sagt `actor_id` als Kurzreferenz auf das Organ gemäss eCH-0294.
+**Raum und Organ.** `spatial` verweist auf die Raumeinheit gemäss LINDAS — Land, Kanton, Bezirk oder Gemeinde, also `https://ld.admin.ch/canton/2` statt „BE". Es ist dasselbe Feld, mit dem eCH-0294 seine Gruppen verortet, sodass ein Ratsbetrieb und die Akteure, die ihn tragen, auf dieselbe Ressource zeigen. Wer innerhalb dieser Raumeinheit tagt, sagt `group_reference` als Kurzreferenz auf das Organ gemäss eCH-0294.
 
 **Verlinkte Dokumente.** `documents` verknüpft Dokumente als FRBR-Works gemäss eCH-0292 — bei der Legislaturperiode etwa Mitglieder- und Geschäftsverzeichnisse, bei der Session das Sessionsprogramm, beim Meeting Tagblatt und Beilagen (das Protokoll hingegen über `has_protocol`).
 
@@ -1127,7 +1127,7 @@ _Amtsdauer eines Parlaments als gesetzgebender Versammlung. Dauert in der Regel 
 | name | * <br/> [MultilingualString](#MultilingualString) | Mehrsprachige vollständige Bezeichnung.  |
 | description | 0..1 <br/> String | Beschreibender Text zum Element.  |
 | landing_page | 0..1 <br/> String | URL mit weiteren Informationen.  |
-| actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
+| group_reference | 0..1 <br/> [GroupReference](#GroupReference) | Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
 | documents | * <br/> Work | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.  |
 | date_begin_actual | 0..1 <br/> Date | Das tatsächliche Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](#IsEventWithDuration) |
 | datetime_begin_actual | 0..1 <br/> Datetime | Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](#IsEventWithDuration) |
@@ -1178,7 +1178,7 @@ legislatures:
     language: fr
   description: Le Grand Conseil vaudois est élu pour cinq ans.
   landing_page: https://www.vd.ch/gc
-  actor_id:
+  group_reference:
     global_uri: actors:gc_vd
     label: Grand Conseil du canton de Vaud
     abbreviation:
@@ -1208,7 +1208,7 @@ legislatures:
     Amtsdauer der am 20. Oktober 2019 gewählten Bundesversammlung; sie endete am Vortag
     der konstituierenden Sitzung der 52. Legislaturperiode vom 4. Dezember 2023.
   landing_page: https://www.parlament.ch/de/ratsbetrieb/sessionen
-  actor_id:
+  group_reference:
     global_uri: actors:bundesversammlung
     label: Bundesversammlung
     abbreviation:
@@ -1233,7 +1233,7 @@ legislatures:
   - text: Législature 2022-2026
     language: fr
   landing_page: https://www.gr.be.ch/de/start/grosser-rat.html
-  actor_id:
+  group_reference:
     global_uri: actors:gr_be
     label: Grosser Rat Bern
     abbreviation:
@@ -1470,8 +1470,8 @@ _Die einzelne Sitzung eines Organs — die Ebene, auf der Traktanden beraten, Be
 | sequential_number | 0..1 <br/> Integer | Laufende Nummer der Session oder Sitzung als Ganzzahl, die zur Sortierung verwendet wird.  |
 | position | 0..1 <br/> String | Ganzzahlige Position innerhalb der übergeordneten Reihenfolge, z.B. einer Session innerhalb der Legislaturperiode.  |
 | meeting_abbreviation | 0..1 <br/> String | Kurzbezeichnung der Session oder Sitzung (z.B. „FS24“ für die Frühjahrssession 2024).  |
-| actor_name | 0..1 <br/> String | Name des politischen Organs im Klartext (z.B. Nationalrat), zusätzlich zur Referenz `actor_id`.  |
-| actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
+| actor_name | 0..1 <br/> String | Name des politischen Organs im Klartext (z.B. Nationalrat), zusätzlich zur Referenz `group_reference`.  |
+| group_reference | 0..1 <br/> [GroupReference](#GroupReference) | Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
 | state | 0..1 <br/> [StateEnum](#StateEnum) | Ob die Sitzung überhaupt wie vorgesehen stattfindet (geplant, abgesagt, verschoben). Eine abweichende, freitextliche Bezeichnung nimmt `state_name` auf.  |
 | state_name | 0..1 <br/> String | Abweichende, freitextliche Statusbezeichnung der Sitzung, wo die Werte von `state` nicht genügen.  |
 | description | 0..1 <br/> String | Beschreibender Text zum Element.  |
@@ -1632,7 +1632,7 @@ meetings:
   url:
   - text: https://www.ratsinfo.sg.ch/sessions/2025-03-15
     language: de
-  actor_id:
+  group_reference:
     global_uri: actors:kr_sg
     label: Kantonsrat St. Gallen
     abbreviation:
@@ -1781,7 +1781,7 @@ meetings:
   url:
   - text: https://www.gr.be.ch/kommissionen/wak/2025-05-12
     language: de
-  actor_id:
+  group_reference:
     global_uri: actors:committee_wak_be
     label: Kommission für Wirtschaft und Abgaben (WAK)
     abbreviation:
@@ -1837,7 +1837,7 @@ meetings:
   url:
   - text: https://www.parlament.ch/de/ratsbetrieb/suche-Amtliches-bulletin
     language: de
-  actor_id:
+  group_reference:
     global_uri: actors:staenderat
     label: Ständerat
     abbreviation:
@@ -1880,7 +1880,7 @@ meetings:
   url:
   - text: https://www.landsgemeinde.gl.ch/2025
     language: de
-  actor_id:
+  group_reference:
     global_uri: actors:landsgemeinde_gl
     label: Landsgemeinde Glarus
     abbreviation:
@@ -1959,7 +1959,7 @@ meetings:
   - text: >-
       https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8
     language: fr
-  actor_id:
+  group_reference:
     global_uri: actors:gr_be
     label: Grosser Rat Bern
     abbreviation:
@@ -1990,7 +1990,7 @@ meetings:
   - text: >-
       https://www.rr.be.ch/fr/start/beschluesse/beschluesse-unterlagen-nach-sitzungen/sitzungs-detail?guid=340dcf932fb044dd8f8c5c943267fbcc
     language: fr
-  actor_id:
+  group_reference:
     global_uri: actors:rr_be
     label: Regierungsrat Bern
     abbreviation:
@@ -3096,7 +3096,7 @@ _Eine Abstimmung über eine Sachfrage: der Abstimmungsgegenstand (Frage), das Ve
 | parent_protocol | 0..1 <br/> [Protocol](#Protocol) | Das Protokoll, in dem die Abstimmung oder Wahl festgehalten ist. Abgestimmt wird im Verlauf der Sitzung, weshalb die Abstimmung im Protokoll und nicht in der vorgängig geplanten Traktandenliste verankert ist: Was traktandiert wurde, sagt noch nicht, worüber tatsächlich abgestimmt wurde. Umgekehrt führt das Protokoll seine Abstimmungen und Wahlen als Listen (votings, elections).  |
 | parent_protocol_item | 0..1 <br/> [ProtocolItem](#ProtocolItem) | Das protokollierte Traktandum (ProtocolItem), unter dem abgestimmt oder gewählt wurde. Entfällt, wenn ohne Traktandierung abgestimmt wurde; die Zuordnung zur Sitzung ergibt sich dann allein aus parent_protocol und parent_meeting.  |
 | affair_id | 0..1 <br/> String | Identifikator des Geschäfts (eCH-0295), auf das sich der Eintrag bezieht. Administrative Traktanden (z.B. Genehmigung des Protokolls) haben kein Geschäft. Ein Geschäft durchläuft in der Regel mehrere Traktanden — in der Gesetzgebung etwa Eintretensdebatte, Detailberatung, Schlussabstimmung und gegebenenfalls die Differenzbereinigung zwischen den Räten.  |
-| actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
+| group_reference | 0..1 <br/> [GroupReference](#GroupReference) | Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
 | documents | * <br/> Work | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.  |
 | date_created | 0..1 <br/> Date | Das Datum, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
 | datetime_created | 0..1 <br/> Datetime | Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
@@ -3153,7 +3153,7 @@ votings:
   parent_protocol: ops:protocol_be_2025_06_05
   parent_protocol_item: ops:protocol_item_be_2025_042
   parent_meeting: ops:meeting_be_2025_06_05
-  actor_id:
+  group_reference:
     global_uri: actors:gr_be
     label: Grosser Rat Bern
     abbreviation:
@@ -3185,7 +3185,7 @@ votings:
   parent_protocol: ops:protocol_sg_2025_03_15
   parent_protocol_item: ops:protocol_item_sg_2025_015
   parent_meeting: ops:meeting_sg_2025_03_15
-  actor_id:
+  group_reference:
     global_uri: actors:kr_sg
     label: Kantonsrat St. Gallen
     abbreviation:
@@ -3230,7 +3230,7 @@ votings:
   parent_protocol_item: ops:protocol_item_zh_gr_2024_2023_361
   parent_meeting: ops:meeting_zh_gr_2024_02_28
   affair_id: 2023/361
-  actor_id:
+  group_reference:
     global_uri: actors:gr_stadt_zuerich
     label: Gemeinderat der Stadt Zürich
     abbreviation:
@@ -3262,7 +3262,7 @@ votings:
   parent_protocol: ops:protocol_zh_2025_11_20
   parent_protocol_item: ops:protocol_item_zh_budget_2026
   parent_meeting: ops:meeting_zh_2025_11_20
-  actor_id:
+  group_reference:
     global_uri: actors:kr_zh
     label: Kantonsrat Zürich
     abbreviation:
@@ -3425,7 +3425,7 @@ _Die Stimme, die ein einzelnes Mitglied in einer Abstimmung abgibt. Einzelstimme
 | global_uri | 1 <br/> Uriorcurie | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> Uriorcurie | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | parent_voting | 0..1 <br/> [Voting](#Voting) | Die ID der Abstimmung, die mit der Einzelstimme verbunden ist.  |
-| actor_id | 0..1 <br/> [PersonReference](#PersonReference) | Das Mitglied, das die Stimme abgegeben hat, als Referenz auf eine Person gemäss eCH-0294.  |
+| person_reference | 0..1 <br/> [PersonReference](#PersonReference) | Das Mitglied, das die Stimme abgegeben hat, als Referenz auf eine Person gemäss eCH-0294.  |
 | seat_nr | 0..1 <br/> String | Die Sitznummer der Einzelstimme, falls zutreffend.  |
 | weight | 0..1 <br/> Integer | Stimmgewicht des Mitglieds; im Normalfall 1. Andere Werte kommen etwa vor, wo ein Mitglied für ein abwesendes Mitglied mitstimmt (Stellvertretung, Gewicht 2), an Gemeindeversammlungen, an denen juristische Personen mehrere Stimmen haben, oder in historischen Systemen, in denen verschiedene Personengruppen unterschiedliches Stimmgewicht hatten.  |
 | individual_vote_type | 0..1 <br/> [IndividualVoteTypeEnum](#IndividualVoteTypeEnum) | Art der abgegebenen Stimme (Ja, Nein, Enthaltung, nicht abgestimmt, etc.).  |
@@ -3465,7 +3465,7 @@ _Die Stimme, die ein einzelnes Mitglied in einer Abstimmung abgibt. Einzelstimme
 individual_votes:
 - global_uri: ops:vote_zh_gr_2024_2023_361_abs1
   parent_voting: ops:voting_zh_gr_2024_2023_361
-  actor_id:
+  person_reference:
     global_uri: actors:person_zh_stadt_4
     label: Abwesendes Mitglied
   seat_nr: '103'
@@ -3479,7 +3479,7 @@ individual_votes:
 individual_votes:
 - global_uri: ops:vote_sg_2025_001_person_123
   parent_voting: ops:voting_sg_2025_001
-  actor_id:
+  person_reference:
     global_uri: actors:person_paul_schlegel
     label: Paul Schlegel
   seat_nr: '1'
@@ -3493,7 +3493,7 @@ individual_votes:
 individual_votes:
 - global_uri: ops:vote_sg_2025_001_person_456
   parent_voting: ops:voting_sg_2025_001
-  actor_id:
+  person_reference:
     global_uri: actors:person_andreas_eggenberger
     label: Andreas Eggenberger
   seat_nr: '2'
@@ -3507,7 +3507,7 @@ individual_votes:
 individual_votes:
 - global_uri: ops:vote_zh_gr_2024_2023_361_a1
   parent_voting: ops:voting_zh_gr_2024_2023_361
-  actor_id:
+  person_reference:
     global_uri: actors:person_zh_stadt_1
     label: Mitglied Auswahl A
   seat_nr: '12'
@@ -3522,7 +3522,7 @@ individual_votes:
 individual_votes:
 - global_uri: ops:vote_sg_2025_001_person_789
   parent_voting: ops:voting_sg_2025_001
-  actor_id:
+  person_reference:
     global_uri: actors:person_thomas_ammann
     label: Thomas Ammann
   seat_nr: '3'
@@ -3536,7 +3536,7 @@ individual_votes:
 individual_votes:
 - global_uri: ops:vote_zh_gr_2024_2023_361_c1
   parent_voting: ops:voting_zh_gr_2024_2023_361
-  actor_id:
+  person_reference:
     global_uri: actors:person_zh_stadt_3
     label: Mitglied Auswahl C
   seat_nr: '88'
@@ -3551,7 +3551,7 @@ individual_votes:
 individual_votes:
 - global_uri: ops:vote_sg_2025_001_person_321
   parent_voting: ops:voting_sg_2025_001
-  actor_id:
+  person_reference:
     global_uri: actors:person_ruedi_thomann
     label: Ruedi Thomann
   seat_nr: '4'
@@ -3565,7 +3565,7 @@ individual_votes:
 individual_votes:
 - global_uri: ops:vote_zh_budget_2026_person_102
   parent_voting: ops:voting_zh_budget_2026
-  actor_id:
+  person_reference:
     global_uri: actors:person_jean_daniel_strub
     label: Jean-Daniel Strub
   seat_nr: '2'
@@ -3579,7 +3579,7 @@ individual_votes:
 individual_votes:
 - global_uri: ops:vote_zh_budget_2026_person_101
   parent_voting: ops:voting_zh_budget_2026
-  actor_id:
+  person_reference:
     global_uri: actors:person_thomas_wolf
     label: Thomas Wolf
   seat_nr: '1'
@@ -3593,7 +3593,7 @@ individual_votes:
 individual_votes:
 - global_uri: ops:vote_zh_gr_2024_2023_361_b1
   parent_voting: ops:voting_zh_gr_2024_2023_361
-  actor_id:
+  person_reference:
     global_uri: actors:person_zh_stadt_2
     label: Mitglied Auswahl B
   seat_nr: '47'
@@ -3687,7 +3687,7 @@ _Eine Wahl, mit der ein parlamentarisches Organ eine oder mehrere Personen für 
 | parent_protocol | 0..1 <br/> [Protocol](#Protocol) | Das Protokoll, in dem die Abstimmung oder Wahl festgehalten ist. Abgestimmt wird im Verlauf der Sitzung, weshalb die Abstimmung im Protokoll und nicht in der vorgängig geplanten Traktandenliste verankert ist: Was traktandiert wurde, sagt noch nicht, worüber tatsächlich abgestimmt wurde. Umgekehrt führt das Protokoll seine Abstimmungen und Wahlen als Listen (votings, elections).  |
 | parent_protocol_item | 0..1 <br/> [ProtocolItem](#ProtocolItem) | Das protokollierte Traktandum (ProtocolItem), unter dem abgestimmt oder gewählt wurde. Entfällt, wenn ohne Traktandierung abgestimmt wurde; die Zuordnung zur Sitzung ergibt sich dann allein aus parent_protocol und parent_meeting.  |
 | affair_id | 0..1 <br/> String | Identifikator des Geschäfts (eCH-0295), auf das sich der Eintrag bezieht. Administrative Traktanden (z.B. Genehmigung des Protokolls) haben kein Geschäft. Ein Geschäft durchläuft in der Regel mehrere Traktanden — in der Gesetzgebung etwa Eintretensdebatte, Detailberatung, Schlussabstimmung und gegebenenfalls die Differenzbereinigung zwischen den Räten.  |
-| actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
+| group_reference | 0..1 <br/> [GroupReference](#GroupReference) | Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
 | documents | * <br/> Work | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.  |
 | date_created | 0..1 <br/> Date | Das Datum, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
 | datetime_created | 0..1 <br/> Datetime | Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
@@ -3789,7 +3789,7 @@ _Aggregierte Anwesenheitsliste für eine Sitzung (Anzahl Anwesende, Abwesende, E
 | wikidata_uri | 0..1 <br/> Uriorcurie | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | parent_meeting | 0..1 <br/> String | Die Sitzung, zu der die Anwesenheitsliste gehört.  |
 | datetime_begin | 0..1 <br/> Datetime | Datum und Uhrzeit, zu der die Anwesenheit erfasst wurde.  |
-| actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
+| group_reference | 0..1 <br/> [GroupReference](#GroupReference) | Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
 | total_count | 0..1 <br/> Integer | Gesamtzahl aller Mitglieder des Gremiums, die Bezugsgrösse für Quorum-Berechnungen (z.B. 200 für den Nationalrat, 46 für den Ständerat). Die Beschlussfähigkeit selbst wird nicht als eigenes Feld gespeichert: Sie ergibt sich aus dem Verhältnis von total_present zu total_count und den Quorum-Regeln des Gremiums und wird bei Bedarf datenseitig berechnet.  |
 | total_present | 0..1 <br/> Integer | Anzahl anwesender Mitglieder, z.B. 185 von 200.  |
 | total_absent | 0..1 <br/> Integer | Anzahl unentschuldigt abwesender Mitglieder, z.B. 3 von 200.  |
@@ -3855,7 +3855,7 @@ _Einzelne Anwesenheitsfeststellung einer Person an einer Sitzung (verknüpft üb
 | global_uri | 1 <br/> Uriorcurie | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> Uriorcurie | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | parent_attendance | 0..1 <br/> [Attendance](#Attendance) | Das Attendance-Aggregat, zu dem dieser Eintrag gehört; da das Aggregat seinerseits an der Sitzung hängt, ist die einzelne Erfassung damit der Sitzung zugeordnet.  |
-| actor_id | 0..1 <br/> [PersonReference](#PersonReference) | Die Person, deren Anwesenheit erfasst wird, als Referenz auf eine Person gemäss eCH-0294.  |
+| person_reference | 0..1 <br/> [PersonReference](#PersonReference) | Die Person, deren Anwesenheit erfasst wird, als Referenz auf eine Person gemäss eCH-0294.  |
 | attendance_type | 0..1 <br/> [AttendanceTypeEnum](#AttendanceTypeEnum) | Art der individuellen Anwesenheit.  |
 | reason | * <br/> [MultilingualString](#MultilingualString) | Grund für Abwesenheit, Verspätung oder Vertretung (Freitext, mehrsprachig).  |
 | date_created | 0..1 <br/> Date | Das Datum, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
@@ -3975,8 +3975,8 @@ _Eine Wortmeldung während einer Sitzung (auch Votum oder Redebeitrag genannt): 
 | start | 0..1 <br/> String | Startangabe oder Position.  |
 | datetime_begin | 0..1 <br/> Datetime | Datum und Uhrzeit, zu der die Wortmeldung begann. Zusammen mit datetime_end ermöglicht sie die genaue Referenzierung in Audio- und Videoaufzeichnungen, die Analyse der Redezeit pro Person oder Fraktion und die Kontrolle der Einhaltung von Zeitlimiten.  |
 | datetime_end | 0..1 <br/> Datetime | Datum und Uhrzeit, zu der die Wortmeldung endete; die Redezeit ergibt sich aus der Differenz zu datetime_begin.  |
-| actor_fullname | 0..1 <br/> String | Name der sprechenden Person, für den schnellen Zugriff ohne Auflösung von actor_id.  |
-| actor_id | 0..1 <br/> [PersonReference](#PersonReference) | Die sprechende Person, als Referenz auf eine Person gemäss eCH-0294.  |
+| actor_fullname | 0..1 <br/> String | Name der sprechenden Person, für den schnellen Zugriff ohne Auflösung von person_reference.  |
+| person_reference | 0..1 <br/> [PersonReference](#PersonReference) | Die sprechende Person, als Referenz auf eine Person gemäss eCH-0294.  |
 | role | 0..1 <br/> String | Rolle, in der die Person spricht, z.B. Fraktionspräsidentin oder Fraktionspräsident, Berichterstatterin oder Berichterstatter, Bundesrätin oder Bundesrat.  |
 | text | 1 <br/> String | Wortlaut der Wortmeldung.  |
 | text_format | 0..1 <br/> String | Format des Textes (text, html, html_with_timestamps).  |
@@ -4027,7 +4027,7 @@ speeches:
   datetime_begin: '2025-12-19T09:20:00+01:00'
   datetime_end: '2025-12-19T09:25:00+01:00'
   actor_fullname: Pascal Broulis
-  actor_id:
+  person_reference:
     global_uri: actors:person_pascal_broulis
     wikidata_uri: http://www.wikidata.org/entity/Q116407
     label: Pascal Broulis
@@ -4312,9 +4312,9 @@ Mindestens eines der folgenden Felder muss gesetzt sein:
 
 | Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
-| [IndividualVote](#IndividualVote) | actor_id | range | [PersonReference](#PersonReference) |
-| [IndividualAttendance](#IndividualAttendance) | actor_id | range | [PersonReference](#PersonReference) |
-| [Speech](#Speech) | actor_id | range | [PersonReference](#PersonReference) |
+| [IndividualVote](#IndividualVote) | person_reference | range | [PersonReference](#PersonReference) |
+| [IndividualAttendance](#IndividualAttendance) | person_reference | range | [PersonReference](#PersonReference) |
+| [Speech](#Speech) | person_reference | range | [PersonReference](#PersonReference) |
 
 
 
@@ -4382,12 +4382,12 @@ Mindestens eines der folgenden Felder muss gesetzt sein:
 
 | Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
-| [Legislature](#Legislature) | actor_id | range | [GroupReference](#GroupReference) |
+| [Legislature](#Legislature) | group_reference | range | [GroupReference](#GroupReference) |
 | [Meeting](#Meeting) | group_id | range | [GroupReference](#GroupReference) |
-| [Meeting](#Meeting) | actor_id | range | [GroupReference](#GroupReference) |
-| [Voting](#Voting) | actor_id | range | [GroupReference](#GroupReference) |
-| [Election](#Election) | actor_id | range | [GroupReference](#GroupReference) |
-| [Attendance](#Attendance) | actor_id | range | [GroupReference](#GroupReference) |
+| [Meeting](#Meeting) | group_reference | range | [GroupReference](#GroupReference) |
+| [Voting](#Voting) | group_reference | range | [GroupReference](#GroupReference) |
+| [Election](#Election) | group_reference | range | [GroupReference](#GroupReference) |
+| [Attendance](#Attendance) | group_reference | range | [GroupReference](#GroupReference) |
 
 
 

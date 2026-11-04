@@ -21,7 +21,7 @@ _Constatation individuelle de la présence d'une personne à une séance (rattac
 | global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](HasIdentification.md) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](HasIdentification.md) |
 | parent_attendance | 0..1 <br/> [Attendance](Attendance.md) | L'agrégat Attendance auquel appartient cet enregistrement ; comme l'agrégat est lui-même rattaché à la séance, la saisie individuelle est ainsi attribuée à la séance.  |
-| actor_id | 0..1 <br/> [PersonReference](PersonReference.md) | La personne dont la présence est saisie, sous forme de référence à une personne selon eCH-0294.  |
+| person_reference | 0..1 <br/> [PersonReference](PersonReference.md) | La personne dont la présence est saisie, sous forme de référence à une personne selon eCH-0294.  |
 | attendance_type | 0..1 <br/> [AttendanceTypeEnum](AttendanceTypeEnum.md) | Type de présence individuelle.  |
 | reason | * <br/> [MultilingualString](MultilingualString.md) | Motif de l'absence, du retard ou de la suppléance (texte libre, multilingue).  |
 | date_created | 0..1 <br/> [Date](Date.md) | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](HasCreationModificationDates.md) |

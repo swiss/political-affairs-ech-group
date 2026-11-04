@@ -31,8 +31,8 @@ _La séance individuelle d'un organe — le niveau auquel les points de l'ordre 
 | sequential_number | 0..1 <br/> [Integer](Integer.md) | Numéro d'ordre de la session ou de la séance sous forme de nombre entier, utilisé pour le tri.  |
 | position | 0..1 <br/> [String](String.md) | Position entière au sein de la séquence supérieure, p. ex. d'une session au sein de la législature.  |
 | meeting_abbreviation | 0..1 <br/> [String](String.md) | Désignation abrégée de la session ou de la séance (p. ex. « FS24 » pour la session de printemps 2024).  |
-| actor_name | 0..1 <br/> [String](String.md) | Nom de l'organe politique en clair (p. ex. Conseil national), en complément de la référence `actor_id`.  |
-| actor_id | 0..1 <br/> [GroupReference](GroupReference.md) | Référence à l'organe agissant (instantané au moment de la mise en relation).  |
+| actor_name | 0..1 <br/> [String](String.md) | Nom de l'organe politique en clair (p. ex. Conseil national), en complément de la référence `group_reference`.  |
+| group_reference | 0..1 <br/> [GroupReference](GroupReference.md) | Référence à l'organe agissant (instantané au moment de la mise en relation).  |
 | state | 0..1 <br/> [StateEnum](StateEnum.md) | Indique si la séance a lieu comme prévu (planifiée, annulée, reportée). Une désignation divergente, en texte libre, est reprise dans `state_name`.  |
 | state_name | 0..1 <br/> [String](String.md) | Désignation de statut divergente, en texte libre, de la séance, là où les valeurs de `state` ne suffisent pas.  |
 | description | 0..1 <br/> [String](String.md) | Texte descriptif de l'élément.  |
@@ -193,7 +193,7 @@ meetings:
   url:
   - text: https://www.ratsinfo.sg.ch/sessions/2025-03-15
     language: de
-  actor_id:
+  group_reference:
     global_uri: actors:kr_sg
     label: Kantonsrat St. Gallen
     abbreviation:
@@ -342,7 +342,7 @@ meetings:
   url:
   - text: https://www.gr.be.ch/kommissionen/wak/2025-05-12
     language: de
-  actor_id:
+  group_reference:
     global_uri: actors:committee_wak_be
     label: Kommission für Wirtschaft und Abgaben (WAK)
     abbreviation:
@@ -398,7 +398,7 @@ meetings:
   url:
   - text: https://www.parlament.ch/de/ratsbetrieb/suche-Amtliches-bulletin
     language: de
-  actor_id:
+  group_reference:
     global_uri: actors:staenderat
     label: Ständerat
     abbreviation:
@@ -441,7 +441,7 @@ meetings:
   url:
   - text: https://www.landsgemeinde.gl.ch/2025
     language: de
-  actor_id:
+  group_reference:
     global_uri: actors:landsgemeinde_gl
     label: Landsgemeinde Glarus
     abbreviation:
@@ -520,7 +520,7 @@ meetings:
   - text: >-
       https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8
     language: fr
-  actor_id:
+  group_reference:
     global_uri: actors:gr_be
     label: Grosser Rat Bern
     abbreviation:
@@ -551,7 +551,7 @@ meetings:
   - text: >-
       https://www.rr.be.ch/fr/start/beschluesse/beschluesse-unterlagen-nach-sitzungen/sitzungs-detail?guid=340dcf932fb044dd8f8c5c943267fbcc
     language: fr
-  actor_id:
+  group_reference:
     global_uri: actors:rr_be
     label: Regierungsrat Bern
     abbreviation:

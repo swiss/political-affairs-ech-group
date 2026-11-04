@@ -21,7 +21,7 @@ _Individual attendance record for a specific person at a meeting (linked via the
 | global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | parent_attendance | 0..1 <br/> [Attendance](Attendance.md) | The Attendance aggregate this record belongs to; since the aggregate in turn is attached to the meeting, the individual record is thereby assigned to the meeting.  |
-| actor_id | 0..1 <br/> [PersonReference](PersonReference.md) | The person whose attendance is recorded, as a reference to a person according to eCH-0294.  |
+| person_reference | 0..1 <br/> [PersonReference](PersonReference.md) | The person whose attendance is recorded, as a reference to a person according to eCH-0294.  |
 | attendance_type | 0..1 <br/> [AttendanceTypeEnum](AttendanceTypeEnum.md) | Type of individual attendance.  |
 | reason | * <br/> [MultilingualString](MultilingualString.md) | Reason for absence, lateness or substitution (free-text, multilingual).  |
 | date_created | 0..1 <br/> [Date](Date.md) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |

@@ -22,7 +22,7 @@ _Aggregated attendance record for a meeting (number of members present, absent, 
 | wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | parent_meeting | 0..1 <br/> [String](String.md) | The meeting to which the attendance list belongs.  |
 | datetime_begin | 0..1 <br/> [Datetime](Datetime.md) | Date and time at which attendance was recorded.  |
-| actor_id | 0..1 <br/> [GroupReference](GroupReference.md) | Reference to the acting body/organ (lightweight snapshot at time of linking).  |
+| group_reference | 0..1 <br/> [GroupReference](GroupReference.md) | Reference to the acting body/organ (lightweight snapshot at time of linking).  |
 | total_count | 0..1 <br/> [Integer](Integer.md) | Total number of members of the body, the reference value for quorum calculations (e.g. 200 for the National Council, 46 for the Council of States). The quorum itself is not stored as a field of its own: it follows from the ratio of total_present to total_count and the quorum rules of the body, and is calculated on the data side when needed.  |
 | total_present | 0..1 <br/> [Integer](Integer.md) | Number of members present, e.g. 185 of 200.  |
 | total_absent | 0..1 <br/> [Integer](Integer.md) | Number of members absent without excuse, e.g. 3 of 200.  |

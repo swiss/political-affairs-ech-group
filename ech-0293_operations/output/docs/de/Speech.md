@@ -26,8 +26,8 @@ _Eine Wortmeldung während einer Sitzung (auch Votum oder Redebeitrag genannt): 
 | start | 0..1 <br/> [String](String.md) | Startangabe oder Position.  |
 | datetime_begin | 0..1 <br/> [Datetime](Datetime.md) | Datum und Uhrzeit, zu der die Wortmeldung begann. Zusammen mit datetime_end ermöglicht sie die genaue Referenzierung in Audio- und Videoaufzeichnungen, die Analyse der Redezeit pro Person oder Fraktion und die Kontrolle der Einhaltung von Zeitlimiten.  |
 | datetime_end | 0..1 <br/> [Datetime](Datetime.md) | Datum und Uhrzeit, zu der die Wortmeldung endete; die Redezeit ergibt sich aus der Differenz zu datetime_begin.  |
-| actor_fullname | 0..1 <br/> [String](String.md) | Name der sprechenden Person, für den schnellen Zugriff ohne Auflösung von actor_id.  |
-| actor_id | 0..1 <br/> [PersonReference](PersonReference.md) | Die sprechende Person, als Referenz auf eine Person gemäss eCH-0294.  |
+| actor_fullname | 0..1 <br/> [String](String.md) | Name der sprechenden Person, für den schnellen Zugriff ohne Auflösung von person_reference.  |
+| person_reference | 0..1 <br/> [PersonReference](PersonReference.md) | Die sprechende Person, als Referenz auf eine Person gemäss eCH-0294.  |
 | role | 0..1 <br/> [String](String.md) | Rolle, in der die Person spricht, z.B. Fraktionspräsidentin oder Fraktionspräsident, Berichterstatterin oder Berichterstatter, Bundesrätin oder Bundesrat.  |
 | text | 1 <br/> [String](String.md) | Wortlaut der Wortmeldung.  |
 | text_format | 0..1 <br/> [String](String.md) | Format des Textes (text, html, html_with_timestamps).  |
@@ -78,7 +78,7 @@ speeches:
   datetime_begin: '2025-12-19T09:20:00+01:00'
   datetime_end: '2025-12-19T09:25:00+01:00'
   actor_fullname: Pascal Broulis
-  actor_id:
+  person_reference:
     global_uri: actors:person_pascal_broulis
     wikidata_uri: http://www.wikidata.org/entity/Q116407
     label: Pascal Broulis

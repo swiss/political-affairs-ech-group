@@ -22,7 +22,7 @@ _Liste de présence agrégée pour une séance (nombre de membres présents, abs
 | wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](HasIdentification.md) |
 | parent_meeting | 0..1 <br/> [String](String.md) | La séance à laquelle se rapporte la liste de présence.  |
 | datetime_begin | 0..1 <br/> [Datetime](Datetime.md) | Date et heure auxquelles la présence a été saisie.  |
-| actor_id | 0..1 <br/> [GroupReference](GroupReference.md) | Référence à l'organe agissant (instantané au moment de la mise en relation).  |
+| group_reference | 0..1 <br/> [GroupReference](GroupReference.md) | Référence à l'organe agissant (instantané au moment de la mise en relation).  |
 | total_count | 0..1 <br/> [Integer](Integer.md) | Nombre total de membres de l'organe, valeur de référence pour le calcul du quorum (p. ex. 200 pour le Conseil national, 46 pour le Conseil des États). Le quorum lui-même n'est pas enregistré dans un champ propre : il résulte du rapport entre total_present et total_count et des règles de quorum de l'organe, et est calculé au besoin à partir des données.  |
 | total_present | 0..1 <br/> [Integer](Integer.md) | Nombre de membres présents, p. ex. 185 sur 200.  |
 | total_absent | 0..1 <br/> [Integer](Integer.md) | Nombre de membres absents sans excuse, p. ex. 3 sur 200.  |
