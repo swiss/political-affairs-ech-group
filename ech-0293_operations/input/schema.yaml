@@ -74,12 +74,10 @@ classes:
       - name
       - description
       - landing_page
-      - actor_id
+      - group_reference
       - documents
     slot_usage:
-      actor_id:
-        range: GroupReference
-        inlined: true
+      group_reference:
         description: |
           Reference to the acting body/organ (lightweight snapshot at time of linking).
         annotations:
@@ -139,7 +137,7 @@ classes:
       - position
       - meeting_abbreviation
       - actor_name
-      - actor_id
+      - group_reference
       - state
       - state_name
       - description
@@ -152,9 +150,7 @@ classes:
       - has_protocol
       - joint_debates
     slot_usage:
-      actor_id:
-        range: GroupReference
-        inlined: true
+      group_reference:
         description: |
           Reference to the acting body/organ (lightweight snapshot at time of linking).
         annotations:
@@ -326,12 +322,10 @@ classes:
       - parent_protocol
       - parent_protocol_item
       - affair_id
-      - actor_id
+      - group_reference
       - documents
     slot_usage:
-      actor_id:
-        range: GroupReference
-        inlined: true
+      group_reference:
         description: |
           Reference to the acting body/organ (lightweight snapshot at time of linking).
         annotations:
@@ -356,13 +350,13 @@ classes:
       - HasCreationModificationDates
     slots:
       - parent_voting
-      - actor_id
+      - person_reference
       - seat_nr
       - weight
       - individual_vote_type
       - type_label
     slot_usage:
-      actor_id:
+      person_reference:
         description: |
           The member who cast the vote, as a reference to a person according to eCH-0294.
         annotations:
@@ -398,12 +392,10 @@ classes:
       - parent_protocol
       - parent_protocol_item
       - affair_id
-      - actor_id
+      - group_reference
       - documents
     slot_usage:
-      actor_id:
-        range: GroupReference
-        inlined: true
+      group_reference:
         description: |
           Reference to the acting body/organ (lightweight snapshot at time of linking).
         annotations:
@@ -434,15 +426,13 @@ classes:
     slots:
       - parent_meeting
       - datetime_begin
-      - actor_id
+      - group_reference
       - total_count
       - total_present
       - total_absent
       - total_excused
     slot_usage:
-      actor_id:
-        range: GroupReference
-        inlined: true
+      group_reference:
         description: |
           Reference to the acting body/organ (lightweight snapshot at time of linking).
         annotations:
@@ -512,7 +502,7 @@ classes:
       - HasCreationModificationDates
     slots:
       - parent_attendance
-      - actor_id
+      - person_reference
       - attendance_type
       - reason
     slot_usage:
@@ -524,7 +514,7 @@ classes:
             Das Attendance-Aggregat, zu dem dieser Eintrag gehört; da das Aggregat seinerseits an der Sitzung hängt, ist die einzelne Erfassung damit der Sitzung zugeordnet.
           description_fr: |
             L'agrégat Attendance auquel appartient cet enregistrement ; comme l'agrégat est lui-même rattaché à la séance, la saisie individuelle est ainsi attribuée à la séance.
-      actor_id:
+      person_reference:
         description: |
           The person whose attendance is recorded, as a reference to a person according to eCH-0294.
         annotations:
@@ -552,7 +542,7 @@ classes:
       - datetime_begin
       - datetime_end
       - actor_fullname
-      - actor_id
+      - person_reference
       - role
       - text
       - text_format
@@ -587,7 +577,7 @@ classes:
             Datum und Uhrzeit, zu der die Wortmeldung endete; die Redezeit ergibt sich aus der Differenz zu datetime_begin.
           description_fr: |
             Date et heure auxquelles l'intervention s'est terminée ; le temps de parole résulte de la différence avec datetime_begin.
-      actor_id:
+      person_reference:
         description: |
           The speaking person, as a reference to a person according to eCH-0294.
         annotations:
@@ -597,12 +587,12 @@ classes:
             La personne qui s'exprime, sous forme de référence à une personne selon eCH-0294.
       actor_fullname:
         description: |
-          Name of the speaking person, for quick access without resolving actor_id.
+          Name of the speaking person, for quick access without resolving person_reference.
         annotations:
           description_de: |
-            Name der sprechenden Person, für den schnellen Zugriff ohne Auflösung von actor_id.
+            Name der sprechenden Person, für den schnellen Zugriff ohne Auflösung von person_reference.
           description_fr: |
-            Nom de la personne qui s'exprime, pour un accès rapide sans résolution de actor_id.
+            Nom de la personne qui s'exprime, pour un accès rapide sans résolution de person_reference.
       role:
         description: |
           Role in which the person speaks, e.g. president of a parliamentary group, rapporteur or member of the Federal Council.
@@ -752,15 +742,30 @@ slots:
       description_fr: |
         Identifiant administratif du corps législatif, p. ex. commune, canton ou pays.
 
-  actor_id:
+  # Same slots as in eCH-0294 (name, slot_uri, range), so that a reference to
+  # a person or group reads alike in both standards.
+  person_reference:
+    slot_uri: actors:personReference
     description: |
-      Reference to the acting person (lightweight snapshot at time of linking).
+      Reference to a person according to eCH-0294 with snapshot data at time of linking.
     annotations:
       description_de: |
-        Referenz auf die handelnde Person (Momentaufnahme zum Zeitpunkt der Verknüpfung).
+        Kurzreferenz auf eine Person gemäss eCH-0294, welche deren Merkmale zum Zeitpunkt der Verknüpfung festhält.
       description_fr: |
-        Référence à la personne agissante (instantané au moment de la mise en relation).
+        Référence abrégée à une personne selon eCH-0294, retenant ses caractéristiques au moment de la mise en relation.
     range: PersonReference
+    inlined: true
+
+  group_reference:
+    slot_uri: actors:groupReference
+    description: |
+      Reference to a group or body according to eCH-0294 with snapshot data at time of linking.
+    annotations:
+      description_de: |
+        Kurzreferenz auf eine Gruppe oder ein Organ gemäss eCH-0294, welche deren Merkmale zum Zeitpunkt der Verknüpfung festhält.
+      description_fr: |
+        Référence abrégée à un groupe ou à un organe selon eCH-0294, retenant ses caractéristiques au moment de la mise en relation.
+    range: GroupReference
     inlined: true
 
   spatial:
@@ -903,12 +908,12 @@ slots:
 
   actor_name:
     description: |
-      Name of the political body in plain text (e.g., Nationalrat), in addition to the reference `actor_id`.
+      Name of the political body in plain text (e.g., Nationalrat), in addition to the reference `group_reference`.
     annotations:
       description_de: |
-        Name des politischen Organs im Klartext (z.B. Nationalrat), zusätzlich zur Referenz `actor_id`.
+        Name des politischen Organs im Klartext (z.B. Nationalrat), zusätzlich zur Referenz `group_reference`.
       description_fr: |
-        Nom de l'organe politique en clair (p. ex. Conseil national), en complément de la référence `actor_id`.
+        Nom de l'organe politique en clair (p. ex. Conseil national), en complément de la référence `group_reference`.
     range: string
 
   state_name:

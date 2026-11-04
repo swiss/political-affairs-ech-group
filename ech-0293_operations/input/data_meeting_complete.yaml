@@ -10,7 +10,7 @@ meetings:
   url:
     - text: "https://www.ratsinfo.sg.ch/sessions/2025-03-15"
       language: "de"
-  actor_id:
+  group_reference:
     global_uri: "actors:kr_sg"
     label: "Kantonsrat St. Gallen"
     abbreviation:
@@ -55,7 +55,7 @@ meetings:
   url:
     - text: "https://www.gr.be.ch/kommissionen/wak/2025-05-12"
       language: "de"
-  actor_id:
+  group_reference:
     global_uri: "actors:committee_wak_be"
     label: "Kommission für Wirtschaft und Abgaben (WAK)"
     abbreviation:
@@ -102,7 +102,7 @@ meetings:
   url:
     - text: "https://www.landsgemeinde.gl.ch/2025"
       language: "de"
-  actor_id:
+  group_reference:
     global_uri: "actors:landsgemeinde_gl"
     label: "Landsgemeinde Glarus"
     abbreviation:
