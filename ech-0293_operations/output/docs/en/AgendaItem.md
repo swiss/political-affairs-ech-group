@@ -76,91 +76,6 @@ _An agenda item of a meeting as planned beforehand. It structures the agenda and
 
 
 ### Examples
-#### Example AgendaItem: French-language agenda item postulate
-
-```yaml
-agenda_items:
-- global_uri: ops:2023_10_03-52
-  agenda_item_type: item
-  datetime_begin_planned: '2023-10-03T00:00:00Z'
-  agenda_item_position: 52
-  agenda_item_number: '52'
-  agenda_item_title:
-  - text: >-
-      Postulat de Mme Franziska MEINHERZ : « Lausanne sans publicité commerciale »
-      (FIM)
-    language: fr
-  state_id: postponed
-  agenda_item_category: RAPPORTS
-  affair_id: affairs:POS22/029
-  url:
-  - text: >-
-      https://www.lausanne.ch/apps/agir/affaire/81/b7157ea2a4994086b65cf176768c6381.htm
-    language: fr
-  datetime_created: '2025-02-08T12:33:10Z'
-  datetime_modified: '2025-02-08T12:33:10Z'
-
-```
-#### Example AgendaItem: Postulate with a voting
-
-```yaml
-agenda_items:
-- global_uri: ops:fa732e0e-7e5f-4d45-994a-fc74720c0781
-  agenda_item_type: item
-  datetime_begin_planned: '2025-01-28T00:00:00Z'
-  agenda_item_position: 14
-  agenda_item_number: '14'
-  agenda_item_title:
-  - text: >-
-      Postulat Stadelmann Karin Andrea und Mit. über die Überprüfung und Anpassung
-      der Kriterien zum früheren Eintritt von Kindern in die Basisstufe (den freiwilligen
-      Kindergarten) / Bildungs- und Kulturdepartement
-    language: de
-  agenda_item_category: voting
-  url:
-  - text: >-
-      https://www.lu.ch/kr/Sessionen/sessionsdaten_2020/Abstimmungsresultate/Detail?TraktandumGuid=fa732e0e-7e5f-4d45-994a-fc74720c0781
-    language: de
-  affair_id: affairs:2023P_102
-  datetime_created: '2025-01-29T06:59:41Z'
-  datetime_modified: '2025-01-29T06:59:41Z'
-
-```
-#### Example AgendaItem: session session gl landsgemeinde 2025 05 04 agenda item gl landsgemeinde 2025 01
-
-```yaml
-agenda_items:
-- global_uri: ops:agenda_item_gl_landsgemeinde_2025_01
-  agenda_item_type: item
-  agenda_item_number: '1'
-  agenda_item_position: 1
-  agenda_item_title:
-  - text: Eröffnung der Landsgemeinde
-    language: de
-
-```
-#### Example AgendaItem: Popular motion within a group of agenda items
-
-```yaml
-agenda_items:
-- global_uri: ops:16155798_4
-  agenda_item_type: item
-  datetime_begin_planned: '2025-03-31T00:00:00Z'
-  agenda_item_position: 3
-  agenda_item_number: '3'
-  agenda_item_title:
-  - text: >-
-      Volksmotion Nr. 2024/1 von Sandro Mamedow und Livia Schraff (Erstunterzeichnende)
-      sowie weitere 150 Mitunterzeichnende vom 22. März 2024 mit dem Titel: «Für eine
-      Stimme der Studierenden im Hochschulrat der Pädagogischen Hochschule Schaffhausen
-      (PHSH)»
-    language: de
-  agenda_item_category: Traktanden
-  affair_id: affairs:MOT_2024_1
-  datetime_created: '2025-05-02T11:23:49Z'
-  datetime_modified: '2025-05-02T11:23:49Z'
-
-```
 #### Example AgendaItem: Substantive affair without an agenda category
 
 ```yaml
@@ -177,113 +92,27 @@ agenda_items:
   datetime_modified: '2025-03-29T01:07:14Z'
 
 ```
-#### Example AgendaItem: Agenda item with a final vote
+#### Example AgendaItem: Interpellation of a parliamentary group
 
 ```yaml
 agenda_items:
-- global_uri: ops:agenda_item_sg_2025_015
+- global_uri: ops:cea750a5bd7b420fa4da1c914f801384
   agenda_item_type: item
-  agenda_item_number: '15'
-  agenda_item_position: 15
-  agenda_item_title:
-  - text: Energiegesetz - Schlussabstimmung
-    language: de
-  agenda_item_description:
-  - text: Schlussabstimmung über das revidierte Energiegesetz des Kantons St. Gallen
-    language: de
-  agenda_item_category: Gesetzgebung
-  state_id: completed
-  datetime_begin_planned: '2025-03-15T14:00:00Z'
-  datetime_begin_actual: '2025-03-15T14:30:00Z'
-  affair_id: affairs:sg_2024_123_energiegesetz
-  datetime_created: '2025-02-01T10:00:00Z'
-  datetime_modified: '2025-03-15T14:35:00Z'
-
-```
-#### Example AgendaItem: Petition as an agenda item
-
-```yaml
-agenda_items:
-- global_uri: ops:21c50b86d21b4b4baeb1a76738ff82a3_2025-04-02_1_de
-  agenda_item_type: item
-  datetime_begin_planned: '2025-04-02T00:00:00Z'
-  agenda_item_title:
-  - text: >-
-      Petition «Gleichberechtigung für Tagesfamilien: Gleich hohe Betreuungsgutscheine
-      für alle Anbieter im Kanton Bern». Regierungsrätliches Antwortschreiben
-    language: de
-  affair_id: affairs:2025.STA.622
-  url:
-  - text: >-
-      https://www.rr.be.ch/de/start/beschluesse/suche/geschaeftsdetail.html?guid=21c50b86d21b4b4baeb1a76738ff82a3
-    language: de
-  datetime_created: '2025-04-25T11:11:40Z'
-  datetime_modified: '2025-04-25T11:11:40Z'
-
-```
-#### Example AgendaItem: Agenda item of a Council of States sitting
-
-```yaml
-agenda_items:
-- global_uri: ops:69905
-  agenda_item_type: item
-  datetime_begin_planned: '2025-12-19T09:15:00+01:00'
-  datetime_begin_actual: '2025-12-19T09:20:00+01:00'
-  agenda_item_number: '6'
-  agenda_item_position: 4
-  agenda_item_title:
-  - text: >-
-      Postulat Broulis Pascal. Bauprojekte im Mobilitätsbereich. Einen Vergleich durchführen,
-      um die Verzögerungen zu verstehen
-    language: de
-  affair_id: affairs:24.4471
-  landing_page: >-
-    https://www.parlament.ch/de/ratsbetrieb/amtliches-bulletin/amtliches-bulletin-die-verhandlungen?SubjectId=69905#votum3
-  agenda_item_category: agenda_item
-  datetime_created: '2026-01-12T00:00:00+01:00'
-  datetime_modified: '2026-01-12T00:00:00+01:00'
-
-```
-#### Example AgendaItem: Postulate category voting
-
-```yaml
-agenda_items:
-- global_uri: ops:0de4ecdb-23f1-49ab-95b8-1afc2e4feb1a
-  agenda_item_type: item
-  datetime_begin_planned: '2025-01-28T00:00:00Z'
+  datetime_begin_planned: '2022-03-17T17:00:00Z'
   agenda_item_position: 29
-  agenda_item_number: '29'
+  agenda_item_number: '8'
   agenda_item_title:
   - text: >-
-      Postulat Widmer Reichlin Gisela und Mit. über Massnahmen zur Erfüllung des Sonderschulkonkordats
-      und zur gezielten Behebung des Fachkräftemangels im Bereich schulische Heilpädagogik
-      / Bildungs- und Kulturdepartement
+      Interpellation Fraktion GB/JA! (Katharina Gallizzi, GB): Welche Konsequenzen
+      haben die Klimaziele für das Gasnetz in Bern?
     language: de
-  agenda_item_category: voting
+  affair_id: affairs:2020.SR.000007
   url:
   - text: >-
-      https://www.lu.ch/kr/Sessionen/sessionsdaten_2020/Abstimmungsresultate/Detail?TraktandumGuid=0de4ecdb-23f1-49ab-95b8-1afc2e4feb1a
+      https://stadtrat.bern.ch/de/sitzungen/detail.php?gid=000d6cf5f0bc4d89a5171e0123cfbff5#cea750a5bd7b420fa4da1c914f801384
     language: de
-  affair_id: affairs:2024P_125
-  datetime_created: '2025-01-29T06:59:41Z'
-  datetime_modified: '2025-01-29T06:59:41Z'
-
-```
-#### Example AgendaItem: Interpellation as an agenda item
-
-```yaml
-agenda_items:
-- global_uri: ops:06fb582b753c416d8fdb05fa13873545
-  agenda_item_type: item
-  datetime_begin_planned: '2011-11-23T00:00:00Z'
-  agenda_item_position: 2
-  agenda_item_title:
-  - text: >-
-      Interpellation Peter Mark betr. elektronische Datenerfassung durch Mitarbeiter
-      im Werkhof – Versuchsphase
-    language: de
-  datetime_created: '2025-03-21T23:15:19Z'
-  datetime_modified: '2025-03-21T23:15:19Z'
+  datetime_created: '2025-01-17T21:25:52Z'
+  datetime_modified: '2025-01-17T21:25:52Z'
 
 ```
 #### Example AgendaItem: Urgent interpellation in French
@@ -311,64 +140,6 @@ agenda_items:
     language: fr
   datetime_created: '2025-06-07T23:50:18Z'
   datetime_modified: '2025-06-07T23:50:18Z'
-
-```
-#### Example AgendaItem: Motion within a group of agenda items
-
-```yaml
-agenda_items:
-- global_uri: ops:16155798_3
-  agenda_item_type: item
-  datetime_begin_planned: '2025-03-31T00:00:00Z'
-  agenda_item_position: 2
-  agenda_item_number: '2'
-  agenda_item_title:
-  - text: >-
-      Motion Nr. 2023/9 von Rainer Schmidig vom 18. Dezember 2023 betreffend zeitgemässe
-      Abzüge in den Art. 35 und 37 des Gesetzes über die direkten Steuern
-    language: de
-  agenda_item_category: Traktanden
-  affair_id: affairs:MOT_2023_9
-  datetime_created: '2025-05-02T11:23:49Z'
-  datetime_modified: '2025-05-02T11:23:49Z'
-
-```
-#### Example AgendaItem: Budget agenda item
-
-```yaml
-agenda_items:
-- global_uri: ops:agenda_item_zh_budget_2026
-  agenda_item_type: item
-  agenda_item_number: '8'
-  agenda_item_position: 8
-  agenda_item_title:
-  - text: Budget 2026
-    language: de
-  agenda_item_description:
-  - text: Beratung und Beschlussfassung über das Kantonsbudget für das Jahr 2026
-    language: de
-  agenda_item_category: Budget und Finanzen
-  state_id: completed
-  datetime_begin_planned: '2025-11-20T16:00:00Z'
-  datetime_begin_actual: '2025-11-20T16:45:00Z'
-  affair_id: affairs:zh_2025_budget_2026
-  datetime_created: '2025-10-01T08:00:00Z'
-  datetime_modified: '2025-11-20T16:50:00Z'
-
-```
-#### Example AgendaItem: Substantive affair from a cantonal parliamentary information system
-
-```yaml
-agenda_items:
-- global_uri: ops:87b69a72919445a493a061d9b0daeba3
-  agenda_item_type: item
-  datetime_begin_planned: '2025-06-02T00:00:00Z'
-  agenda_item_title:
-  - text: Differenzierte Anpassung des Gehalts von Lehrpersonen ohne Lehrdiplom
-    language: de
-  affair_id: affairs:2025.GRPARL.81
-  datetime_created: '2025-04-25T11:10:35Z'
-  datetime_modified: '2025-04-25T11:10:35Z'
 
 ```
 #### Example AgendaItem: Detailed deliberation of an article of an act
@@ -399,27 +170,92 @@ agenda_items:
   datetime_modified: '2025-05-12T15:20:00Z'
 
 ```
-#### Example AgendaItem: Interpellation of a parliamentary group
+#### Example AgendaItem: Postulate with a voting
 
 ```yaml
 agenda_items:
-- global_uri: ops:cea750a5bd7b420fa4da1c914f801384
+- global_uri: ops:fa732e0e-7e5f-4d45-994a-fc74720c0781
   agenda_item_type: item
-  datetime_begin_planned: '2022-03-17T17:00:00Z'
-  agenda_item_position: 29
-  agenda_item_number: '8'
+  datetime_begin_planned: '2025-01-28T00:00:00Z'
+  agenda_item_position: 14
+  agenda_item_number: '14'
   agenda_item_title:
   - text: >-
-      Interpellation Fraktion GB/JA! (Katharina Gallizzi, GB): Welche Konsequenzen
-      haben die Klimaziele für das Gasnetz in Bern?
+      Postulat Stadelmann Karin Andrea und Mit. über die Überprüfung und Anpassung
+      der Kriterien zum früheren Eintritt von Kindern in die Basisstufe (den freiwilligen
+      Kindergarten) / Bildungs- und Kulturdepartement
     language: de
-  affair_id: affairs:2020.SR.000007
+  agenda_item_category: voting
   url:
   - text: >-
-      https://stadtrat.bern.ch/de/sitzungen/detail.php?gid=000d6cf5f0bc4d89a5171e0123cfbff5#cea750a5bd7b420fa4da1c914f801384
+      https://www.lu.ch/kr/Sessionen/sessionsdaten_2020/Abstimmungsresultate/Detail?TraktandumGuid=fa732e0e-7e5f-4d45-994a-fc74720c0781
     language: de
-  datetime_created: '2025-01-17T21:25:52Z'
-  datetime_modified: '2025-01-17T21:25:52Z'
+  affair_id: affairs:2023P_102
+  datetime_created: '2025-01-29T06:59:41Z'
+  datetime_modified: '2025-01-29T06:59:41Z'
+
+```
+#### Example AgendaItem: Budget agenda item
+
+```yaml
+agenda_items:
+- global_uri: ops:agenda_item_zh_budget_2026
+  agenda_item_type: item
+  agenda_item_number: '8'
+  agenda_item_position: 8
+  agenda_item_title:
+  - text: Budget 2026
+    language: de
+  agenda_item_description:
+  - text: Beratung und Beschlussfassung über das Kantonsbudget für das Jahr 2026
+    language: de
+  agenda_item_category: Budget und Finanzen
+  state_id: completed
+  datetime_begin_planned: '2025-11-20T16:00:00Z'
+  datetime_begin_actual: '2025-11-20T16:45:00Z'
+  affair_id: affairs:zh_2025_budget_2026
+  datetime_created: '2025-10-01T08:00:00Z'
+  datetime_modified: '2025-11-20T16:50:00Z'
+
+```
+#### Example AgendaItem: Interpellation as an agenda item
+
+```yaml
+agenda_items:
+- global_uri: ops:06fb582b753c416d8fdb05fa13873545
+  agenda_item_type: item
+  datetime_begin_planned: '2011-11-23T00:00:00Z'
+  agenda_item_position: 2
+  agenda_item_title:
+  - text: >-
+      Interpellation Peter Mark betr. elektronische Datenerfassung durch Mitarbeiter
+      im Werkhof – Versuchsphase
+    language: de
+  datetime_created: '2025-03-21T23:15:19Z'
+  datetime_modified: '2025-03-21T23:15:19Z'
+
+```
+#### Example AgendaItem: Agenda item with a final vote
+
+```yaml
+agenda_items:
+- global_uri: ops:agenda_item_sg_2025_015
+  agenda_item_type: item
+  agenda_item_number: '15'
+  agenda_item_position: 15
+  agenda_item_title:
+  - text: Energiegesetz - Schlussabstimmung
+    language: de
+  agenda_item_description:
+  - text: Schlussabstimmung über das revidierte Energiegesetz des Kantons St. Gallen
+    language: de
+  agenda_item_category: Gesetzgebung
+  state_id: completed
+  datetime_begin_planned: '2025-03-15T14:00:00Z'
+  datetime_begin_actual: '2025-03-15T14:30:00Z'
+  affair_id: affairs:sg_2024_123_energiegesetz
+  datetime_created: '2025-02-01T10:00:00Z'
+  datetime_modified: '2025-03-15T14:35:00Z'
 
 ```
 #### Example AgendaItem: Partial revision of several ordinances in French
@@ -450,6 +286,170 @@ agenda_items:
     language: fr
   datetime_created: '2024-12-06T10:50:04Z'
   datetime_modified: '2024-12-06T10:50:04Z'
+
+```
+#### Example AgendaItem: Popular motion within a group of agenda items
+
+```yaml
+agenda_items:
+- global_uri: ops:16155798_4
+  agenda_item_type: item
+  datetime_begin_planned: '2025-03-31T00:00:00Z'
+  agenda_item_position: 3
+  agenda_item_number: '3'
+  agenda_item_title:
+  - text: >-
+      Volksmotion Nr. 2024/1 von Sandro Mamedow und Livia Schraff (Erstunterzeichnende)
+      sowie weitere 150 Mitunterzeichnende vom 22. März 2024 mit dem Titel: «Für eine
+      Stimme der Studierenden im Hochschulrat der Pädagogischen Hochschule Schaffhausen
+      (PHSH)»
+    language: de
+  agenda_item_category: Traktanden
+  affair_id: affairs:MOT_2024_1
+  datetime_created: '2025-05-02T11:23:49Z'
+  datetime_modified: '2025-05-02T11:23:49Z'
+
+```
+#### Example AgendaItem: Agenda item of a Council of States sitting
+
+```yaml
+agenda_items:
+- global_uri: ops:69905
+  agenda_item_type: item
+  datetime_begin_planned: '2025-12-19T09:15:00+01:00'
+  datetime_begin_actual: '2025-12-19T09:20:00+01:00'
+  agenda_item_number: '6'
+  agenda_item_position: 4
+  agenda_item_title:
+  - text: >-
+      Postulat Broulis Pascal. Bauprojekte im Mobilitätsbereich. Einen Vergleich durchführen,
+      um die Verzögerungen zu verstehen
+    language: de
+  affair_id: affairs:24.4471
+  landing_page: >-
+    https://www.parlament.ch/de/ratsbetrieb/amtliches-bulletin/amtliches-bulletin-die-verhandlungen?SubjectId=69905#votum3
+  agenda_item_category: agenda_item
+  datetime_created: '2026-01-12T00:00:00+01:00'
+  datetime_modified: '2026-01-12T00:00:00+01:00'
+
+```
+#### Example AgendaItem: French-language agenda item postulate
+
+```yaml
+agenda_items:
+- global_uri: ops:2023_10_03-52
+  agenda_item_type: item
+  datetime_begin_planned: '2023-10-03T00:00:00Z'
+  agenda_item_position: 52
+  agenda_item_number: '52'
+  agenda_item_title:
+  - text: >-
+      Postulat de Mme Franziska MEINHERZ : « Lausanne sans publicité commerciale »
+      (FIM)
+    language: fr
+  state_id: postponed
+  agenda_item_category: RAPPORTS
+  affair_id: affairs:POS22/029
+  url:
+  - text: >-
+      https://www.lausanne.ch/apps/agir/affaire/81/b7157ea2a4994086b65cf176768c6381.htm
+    language: fr
+  datetime_created: '2025-02-08T12:33:10Z'
+  datetime_modified: '2025-02-08T12:33:10Z'
+
+```
+#### Example AgendaItem: session session gl landsgemeinde 2025 05 04 agenda item gl landsgemeinde 2025 01
+
+```yaml
+agenda_items:
+- global_uri: ops:agenda_item_gl_landsgemeinde_2025_01
+  agenda_item_type: item
+  agenda_item_number: '1'
+  agenda_item_position: 1
+  agenda_item_title:
+  - text: Eröffnung der Landsgemeinde
+    language: de
+
+```
+#### Example AgendaItem: Substantive affair from a cantonal parliamentary information system
+
+```yaml
+agenda_items:
+- global_uri: ops:87b69a72919445a493a061d9b0daeba3
+  agenda_item_type: item
+  datetime_begin_planned: '2025-06-02T00:00:00Z'
+  agenda_item_title:
+  - text: Differenzierte Anpassung des Gehalts von Lehrpersonen ohne Lehrdiplom
+    language: de
+  affair_id: affairs:2025.GRPARL.81
+  datetime_created: '2025-04-25T11:10:35Z'
+  datetime_modified: '2025-04-25T11:10:35Z'
+
+```
+#### Example AgendaItem: Postulate category voting
+
+```yaml
+agenda_items:
+- global_uri: ops:0de4ecdb-23f1-49ab-95b8-1afc2e4feb1a
+  agenda_item_type: item
+  datetime_begin_planned: '2025-01-28T00:00:00Z'
+  agenda_item_position: 29
+  agenda_item_number: '29'
+  agenda_item_title:
+  - text: >-
+      Postulat Widmer Reichlin Gisela und Mit. über Massnahmen zur Erfüllung des Sonderschulkonkordats
+      und zur gezielten Behebung des Fachkräftemangels im Bereich schulische Heilpädagogik
+      / Bildungs- und Kulturdepartement
+    language: de
+  agenda_item_category: voting
+  url:
+  - text: >-
+      https://www.lu.ch/kr/Sessionen/sessionsdaten_2020/Abstimmungsresultate/Detail?TraktandumGuid=0de4ecdb-23f1-49ab-95b8-1afc2e4feb1a
+    language: de
+  affair_id: affairs:2024P_125
+  datetime_created: '2025-01-29T06:59:41Z'
+  datetime_modified: '2025-01-29T06:59:41Z'
+
+```
+#### Example AgendaItem: Petition as an agenda item
+
+```yaml
+agenda_items:
+- global_uri: ops:21c50b86d21b4b4baeb1a76738ff82a3_2025-04-02_1_de
+  agenda_item_type: item
+  datetime_begin_planned: '2025-04-02T00:00:00Z'
+  agenda_item_title:
+  - text: >-
+      Petition «Gleichberechtigung für Tagesfamilien: Gleich hohe Betreuungsgutscheine
+      für alle Anbieter im Kanton Bern». Regierungsrätliches Antwortschreiben
+    language: de
+  affair_id: affairs:2025.STA.622
+  url:
+  - text: >-
+      https://www.rr.be.ch/de/start/beschluesse/suche/geschaeftsdetail.html?guid=21c50b86d21b4b4baeb1a76738ff82a3
+    language: de
+  datetime_created: '2025-04-25T11:11:40Z'
+  datetime_modified: '2025-04-25T11:11:40Z'
+
+```
+#### Example AgendaItem: Motion within a group of agenda items
+
+```yaml
+agenda_items:
+- global_uri: ops:16155798_3
+  agenda_item_type: item
+  datetime_begin_planned: '2025-03-31T00:00:00Z'
+  agenda_item_position: 2
+  agenda_item_number: '2'
+  agenda_item_title:
+  - text: >-
+      Motion Nr. 2023/9 von Rainer Schmidig vom 18. Dezember 2023 betreffend zeitgemässe
+      Abzüge in den Art. 35 und 37 des Gesetzes über die direkten Steuern
+    language: de
+  agenda_item_category: Traktanden
+  affair_id: affairs:MOT_2023_9
+  datetime_created: '2025-05-02T11:23:49Z'
+  datetime_modified: '2025-05-02T11:23:49Z'
 
 ```
 

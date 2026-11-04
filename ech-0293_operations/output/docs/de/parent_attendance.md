@@ -26,7 +26,7 @@ URI: [ops:parentAttendance](https://ch.paf.link/schema/operations/parentAttendan
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [IndividualAttendance](IndividualAttendance.md) | Einzelne Anwesenheitsfeststellung einer Person an einer Sitzung (verknüpft üb... |  no  |
+| [IndividualAttendance](IndividualAttendance.md) | Einzelne Anwesenheitsfeststellung einer Person an einer Sitzung (verknüpft üb... |  yes  |
 
 
 

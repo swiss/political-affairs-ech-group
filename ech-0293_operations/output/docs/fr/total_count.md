@@ -26,7 +26,7 @@ URI: [ops:total_count](https://ch.paf.link/schema/operations/total_count)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Attendance](Attendance.md) | Liste de présence agrégée pour une séance (nombre de membres présents, absent... |  no  |
+| [Attendance](Attendance.md) | Liste de présence agrégée pour une séance (nombre de membres présents, absent... |  yes  |
 
 
 

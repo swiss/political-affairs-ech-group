@@ -26,7 +26,7 @@ URI: [ops:media_type](https://ch.paf.link/schema/operations/media_type)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Speech](Speech.md) | A speech or statement made during a meeting (also called Votum or speaker seg... |  no  |
+| [Speech](Speech.md) | A speech or statement made during a meeting (also called Votum or speaker seg... |  yes  |
 | [Media](Media.md) | Media files or documents (including protocols in PDF/HTML/WORD or links to au... |  no  |
 
 

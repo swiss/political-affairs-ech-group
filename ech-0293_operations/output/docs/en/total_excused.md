@@ -26,7 +26,7 @@ URI: [ops:total_excused](https://ch.paf.link/schema/operations/total_excused)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Attendance](Attendance.md) | Aggregated attendance record for a meeting (number of members present, absent... |  no  |
+| [Attendance](Attendance.md) | Aggregated attendance record for a meeting (number of members present, absent... |  yes  |
 
 
 

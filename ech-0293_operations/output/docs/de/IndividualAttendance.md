@@ -3,7 +3,7 @@
 ## Klasse: IndividualAttendance 
 
 
-_Einzelne Anwesenheitsfeststellung einer Person an einer Sitzung (verknüpft über das übergeordnete Attendance-Aggregat)._
+_Einzelne Anwesenheitsfeststellung einer Person an einer Sitzung (verknüpft über das übergeordnete Attendance-Aggregat). Sie betrifft die Sitzung als Ganzes und unterscheidet sich von der Einzelstimme (IndividualVote), welche die Stimmabgabe in einer bestimmten Abstimmung festhält: Eine an der Sitzung anwesende Person (attendance_type present) kann bei einer einzelnen Abstimmung mit not_voted erfasst werden, weil sie in diesem Moment kurz den Saal verlassen hat._
 
 
 
@@ -20,8 +20,8 @@ _Einzelne Anwesenheitsfeststellung einer Person an einer Sitzung (verknüpft üb
 | local_id | 0..1 <br/> [String](String.md) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](HasIdentification.md) |
 | global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](HasIdentification.md) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](HasIdentification.md) |
-| parent_attendance | 0..1 <br/> [Attendance](Attendance.md) | Das Attendance-Aggregat, zu dem dieser einzelne Anwesenheits-Eintrag gehört.  |
-| actor_id | 0..1 <br/> [PersonReference](PersonReference.md) | Referenz auf die handelnde Person (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
+| parent_attendance | 0..1 <br/> [Attendance](Attendance.md) | Das Attendance-Aggregat, zu dem dieser Eintrag gehört; da das Aggregat seinerseits an der Sitzung hängt, ist die einzelne Erfassung damit der Sitzung zugeordnet.  |
+| actor_id | 0..1 <br/> [PersonReference](PersonReference.md) | Die Person, deren Anwesenheit erfasst wird, als Referenz auf eine Person gemäss eCH-0294.  |
 | attendance_type | 0..1 <br/> [AttendanceTypeEnum](AttendanceTypeEnum.md) | Art der individuellen Anwesenheit.  |
 | reason | * <br/> [MultilingualString](MultilingualString.md) | Grund für Abwesenheit, Verspätung oder Vertretung (Freitext, mehrsprachig).  |
 | date_created | 0..1 <br/> [Date](Date.md) | Das Datum, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](HasCreationModificationDates.md) |

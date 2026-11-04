@@ -26,7 +26,7 @@ URI: [ops:role](https://ch.paf.link/schema/operations/role)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Speech](Speech.md) | Une intervention prononcée au cours d'une séance (également appelée prise de ... |  no  |
+| [Speech](Speech.md) | Une intervention prononcée au cours d'une séance (également appelée prise de ... |  yes  |
 
 
 

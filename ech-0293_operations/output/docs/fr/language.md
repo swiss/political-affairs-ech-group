@@ -26,7 +26,7 @@ URI: [mcm:language](https://ld.ech.ch/schema/0292/meta-common/language)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Speech](Speech.md) | Une intervention prononcée au cours d'une séance (également appelée prise de ... |  no  |
+| [Speech](Speech.md) | Une intervention prononcée au cours d'une séance (également appelée prise de ... |  yes  |
 | [MultilingualString](MultilingualString.md) | Une chaîne de caractères pouvant contenir du texte en plusieurs langues |  yes  |
 | [MultilingualValue](MultilingualValue.md) | Une chaîne de caractères multilingue avec indication de la langue |  no  |
 | [MultilingualUri](MultilingualUri.md) | Une URI accompagnée de la langue de la ressource vers laquelle elle renvoie |  yes  |

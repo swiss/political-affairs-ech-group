@@ -26,7 +26,7 @@ URI: [mcm:language](https://ld.ech.ch/schema/0292/meta-common/language)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Speech](Speech.md) | A speech or statement made during a meeting (also called Votum or speaker seg... |  no  |
+| [Speech](Speech.md) | A speech or statement made during a meeting (also called Votum or speaker seg... |  yes  |
 | [MultilingualString](MultilingualString.md) | A string that can contain text in multiple languages |  yes  |
 | [MultilingualValue](MultilingualValue.md) | A multilingual string with language specification |  no  |
 | [MultilingualUri](MultilingualUri.md) | A URI together with the language of the resource it points to |  yes  |

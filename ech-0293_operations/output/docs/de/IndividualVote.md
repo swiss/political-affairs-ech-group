@@ -55,46 +55,18 @@ _Die Stimme, die ein einzelnes Mitglied in einer Abstimmung abgibt. Einzelstimme
 
 
 ### Beispiele
-#### Beispiel IndividualVote: No vote
+#### Beispiel IndividualVote: Absent in a multiple-choice voting
 
 ```yaml
 individual_votes:
-- global_uri: ops:vote_sg_2025_001_person_456
-  parent_voting: ops:voting_sg_2025_001
+- global_uri: ops:vote_zh_gr_2024_2023_361_abs1
+  parent_voting: ops:voting_zh_gr_2024_2023_361
   actor_id:
-    global_uri: actors:person_andreas_eggenberger
-    label: Andreas Eggenberger
-  seat_nr: '2'
-  individual_vote_type: 'no'
-  datetime_created: '2025-03-15T14:30:00Z'
-
-```
-#### Beispiel IndividualVote: No vote on the budget
-
-```yaml
-individual_votes:
-- global_uri: ops:vote_zh_budget_2026_person_102
-  parent_voting: ops:voting_zh_budget_2026
-  actor_id:
-    global_uri: actors:person_jean_daniel_strub
-    label: Jean-Daniel Strub
-  seat_nr: '2'
-  individual_vote_type: 'no'
-  datetime_created: '2025-11-20T16:45:00Z'
-
-```
-#### Beispiel IndividualVote: Abstention
-
-```yaml
-individual_votes:
-- global_uri: ops:vote_sg_2025_001_person_789
-  parent_voting: ops:voting_sg_2025_001
-  actor_id:
-    global_uri: actors:person_thomas_ammann
-    label: Thomas Ammann
-  seat_nr: '3'
-  individual_vote_type: abstention
-  datetime_created: '2025-03-15T14:30:00Z'
+    global_uri: actors:person_zh_stadt_4
+    label: Abwesendes Mitglied
+  seat_nr: '103'
+  individual_vote_type: not_voted
+  datetime_created: '2024-02-28T00:00:00Z'
 
 ```
 #### Beispiel IndividualVote: Yes vote
@@ -111,19 +83,47 @@ individual_votes:
   datetime_created: '2025-03-15T14:30:00Z'
 
 ```
-#### Beispiel IndividualVote: Individual vote for selection option B
+#### Beispiel IndividualVote: No vote
 
 ```yaml
 individual_votes:
-- global_uri: ops:vote_zh_gr_2024_2023_361_b1
+- global_uri: ops:vote_sg_2025_001_person_456
+  parent_voting: ops:voting_sg_2025_001
+  actor_id:
+    global_uri: actors:person_andreas_eggenberger
+    label: Andreas Eggenberger
+  seat_nr: '2'
+  individual_vote_type: 'no'
+  datetime_created: '2025-03-15T14:30:00Z'
+
+```
+#### Beispiel IndividualVote: Individual vote for selection option A
+
+```yaml
+individual_votes:
+- global_uri: ops:vote_zh_gr_2024_2023_361_a1
   parent_voting: ops:voting_zh_gr_2024_2023_361
   actor_id:
-    global_uri: actors:person_zh_stadt_2
-    label: Mitglied Auswahl B
-  seat_nr: '47'
+    global_uri: actors:person_zh_stadt_1
+    label: Mitglied Auswahl A
+  seat_nr: '12'
   individual_vote_type: other
-  type_label: Auswahl B
+  type_label: Auswahl A
   datetime_created: '2024-02-28T00:00:00Z'
+
+```
+#### Beispiel IndividualVote: Abstention
+
+```yaml
+individual_votes:
+- global_uri: ops:vote_sg_2025_001_person_789
+  parent_voting: ops:voting_sg_2025_001
+  actor_id:
+    global_uri: actors:person_thomas_ammann
+    label: Thomas Ammann
+  seat_nr: '3'
+  individual_vote_type: abstention
+  datetime_created: '2025-03-15T14:30:00Z'
 
 ```
 #### Beispiel IndividualVote: Individual vote for selection option C
@@ -155,6 +155,20 @@ individual_votes:
   datetime_created: '2025-03-15T14:30:00Z'
 
 ```
+#### Beispiel IndividualVote: No vote on the budget
+
+```yaml
+individual_votes:
+- global_uri: ops:vote_zh_budget_2026_person_102
+  parent_voting: ops:voting_zh_budget_2026
+  actor_id:
+    global_uri: actors:person_jean_daniel_strub
+    label: Jean-Daniel Strub
+  seat_nr: '2'
+  individual_vote_type: 'no'
+  datetime_created: '2025-11-20T16:45:00Z'
+
+```
 #### Beispiel IndividualVote: Yes vote on the budget
 
 ```yaml
@@ -169,32 +183,18 @@ individual_votes:
   datetime_created: '2025-11-20T16:45:00Z'
 
 ```
-#### Beispiel IndividualVote: Individual vote for selection option A
+#### Beispiel IndividualVote: Individual vote for selection option B
 
 ```yaml
 individual_votes:
-- global_uri: ops:vote_zh_gr_2024_2023_361_a1
+- global_uri: ops:vote_zh_gr_2024_2023_361_b1
   parent_voting: ops:voting_zh_gr_2024_2023_361
   actor_id:
-    global_uri: actors:person_zh_stadt_1
-    label: Mitglied Auswahl A
-  seat_nr: '12'
+    global_uri: actors:person_zh_stadt_2
+    label: Mitglied Auswahl B
+  seat_nr: '47'
   individual_vote_type: other
-  type_label: Auswahl A
-  datetime_created: '2024-02-28T00:00:00Z'
-
-```
-#### Beispiel IndividualVote: Absent in a multiple-choice voting
-
-```yaml
-individual_votes:
-- global_uri: ops:vote_zh_gr_2024_2023_361_abs1
-  parent_voting: ops:voting_zh_gr_2024_2023_361
-  actor_id:
-    global_uri: actors:person_zh_stadt_4
-    label: Abwesendes Mitglied
-  seat_nr: '103'
-  individual_vote_type: not_voted
+  type_label: Auswahl B
   datetime_created: '2024-02-28T00:00:00Z'
 
 ```

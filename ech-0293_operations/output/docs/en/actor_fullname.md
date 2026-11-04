@@ -26,7 +26,7 @@ URI: [ops:actor_fullname](https://ch.paf.link/schema/operations/actor_fullname)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Speech](Speech.md) | A speech or statement made during a meeting (also called Votum or speaker seg... |  no  |
+| [Speech](Speech.md) | A speech or statement made during a meeting (also called Votum or speaker seg... |  yes  |
 
 
 

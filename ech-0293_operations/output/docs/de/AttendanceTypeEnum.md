@@ -15,9 +15,9 @@ URI: [ops:AttendanceTypeEnum](https://ch.paf.link/schema/operations/AttendanceTy
 ### Zulässige Werte
 | Wert | Beschreibung |
 |------------------------|----------------------------------------------------------------------------|
-| remote |  Teilnahme per Fernzugriff  |
+| remote |  Teilnahme per Fernzugriff, z.B. per Videokonferenz  |
 | | [ops:enum/attendance_type/remote](ops:enum/attendance_type/remote) |
-| substitute |  Stellvertretung  |
+| substitute |  Stellvertretung: Eine andere Person hat in Vertretung des Mitglieds teilgenommen  |
 | | [ops:enum/attendance_type/substitute](ops:enum/attendance_type/substitute) |
 | present |  Persönlich anwesend  |
 | | [ops:enum/attendance_type/present](ops:enum/attendance_type/present) |

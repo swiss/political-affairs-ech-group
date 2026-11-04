@@ -26,7 +26,7 @@ URI: [ops:actor_fullname](https://ch.paf.link/schema/operations/actor_fullname)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [Speech](Speech.md) | Eine Wortmeldung während einer Sitzung (auch Votum oder Redebeitrag genannt) |  no  |
+| [Speech](Speech.md) | Eine Wortmeldung während einer Sitzung (auch Votum oder Redebeitrag genannt):... |  yes  |
 
 
 

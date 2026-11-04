@@ -26,7 +26,7 @@ URI: [ops:total_count](https://ch.paf.link/schema/operations/total_count)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [Attendance](Attendance.md) | Aggregierte Anwesenheitsliste für eine Sitzung (Anzahl Anwesende, Abwesende, ... |  no  |
+| [Attendance](Attendance.md) | Aggregierte Anwesenheitsliste für eine Sitzung (Anzahl Anwesende, Abwesende, ... |  yes  |
 
 
 

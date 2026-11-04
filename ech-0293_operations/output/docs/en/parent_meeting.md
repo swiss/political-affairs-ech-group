@@ -30,7 +30,7 @@ URI: [ops:parent_meeting](https://ch.paf.link/schema/operations/parent_meeting)
 | [Protocol](Protocol.md) | The minutes of a meeting, recorded after the meeting and kept exactly once pe... |  no  |
 | [Voting](Voting.md) | A voting on a substantive question: the subject (question), the procedure, th... |  no  |
 | [Election](Election.md) | An election in which a parliamentary body appoints one or several persons to ... |  no  |
-| [Attendance](Attendance.md) | Aggregated attendance record for a meeting (number of members present, absent... |  no  |
+| [Attendance](Attendance.md) | Aggregated attendance record for a meeting (number of members present, absent... |  yes  |
 | [Speech](Speech.md) | A speech or statement made during a meeting (also called Votum or speaker seg... |  no  |
 
 

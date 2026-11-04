@@ -28,8 +28,8 @@ URI: [ops:datetime_begin](https://ch.paf.link/schema/operations/datetime_begin)
 | --- | --- | --- |
 | [Voting](Voting.md) | A voting on a substantive question: the subject (question), the procedure, th... |  no  |
 | [Election](Election.md) | An election in which a parliamentary body appoints one or several persons to ... |  no  |
-| [Attendance](Attendance.md) | Aggregated attendance record for a meeting (number of members present, absent... |  no  |
-| [Speech](Speech.md) | A speech or statement made during a meeting (also called Votum or speaker seg... |  no  |
+| [Attendance](Attendance.md) | Aggregated attendance record for a meeting (number of members present, absent... |  yes  |
+| [Speech](Speech.md) | A speech or statement made during a meeting (also called Votum or speaker seg... |  yes  |
 
 
 

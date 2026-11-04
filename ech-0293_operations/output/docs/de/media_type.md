@@ -26,7 +26,7 @@ URI: [ops:media_type](https://ch.paf.link/schema/operations/media_type)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [Speech](Speech.md) | Eine Wortmeldung während einer Sitzung (auch Votum oder Redebeitrag genannt) |  no  |
+| [Speech](Speech.md) | Eine Wortmeldung während einer Sitzung (auch Votum oder Redebeitrag genannt):... |  yes  |
 | [Media](Media.md) | Mediendateien oder Dokumente (einschliesslich Protokolle in PDF/HTML/WORD ode... |  no  |
 
 
