@@ -34,6 +34,7 @@ _Ein mehrsprachiger String mit Angabe der Sprache._
 | [InterestLink](InterestLink.md) | [organization_name](organization_name.md) | range | [MultilingualValue](MultilingualValue.md) |
 | [InterestLink](InterestLink.md) | [committee](committee.md) | range | [MultilingualValue](MultilingualValue.md) |
 | [InterestLink](InterestLink.md) | [function_role](function_role.md) | range | [MultilingualValue](MultilingualValue.md) |
+| [Occupation](Occupation.md) | [label](label.md) | range | [MultilingualValue](MultilingualValue.md) |
 | [Occupation](Occupation.md) | [organization_name](organization_name.md) | range | [MultilingualValue](MultilingualValue.md) |
 | [ElectoralDistrict](ElectoralDistrict.md) | [label](label.md) | range | [MultilingualValue](MultilingualValue.md) |
 | [GroupType](GroupType.md) | [label](label.md) | range | [MultilingualValue](MultilingualValue.md) |

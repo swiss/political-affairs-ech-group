@@ -19,7 +19,7 @@ _Occupation or profession of a person indicating a label, an ISCO-19 code, wheth
 |------------------------|----------------------|------------------------------------------------------|
 | is_paid | 0..1 <br/> [Boolean](Boolean.md) | Indicates whether the activity is paid.  |
 | occupation_code | 0..1 <br/> [String](String.md) | ISCO-19 code of the occupation.  |
-| label | 0..1 <br/> [String](String.md) | Assign a label to a structured piece of information (e.g., display name, position, etc.).  |
+| label | * <br/> [MultilingualValue](MultilingualValue.md) | Designation of the occupation, with the language it is published in. Where an occupation is published in several languages, one entry per language is recorded.  |
 | organization_uid | 0..1 <br/> [String](String.md) | UID of the organization from the federal UID register (uid.admin.ch), in the exchange format of eCH-0108: CHE followed by nine digits, without separators (e.g. CHE106063525). The last digit is a check digit calculated modulo 11. The dotted form CHE-106.063.525 is the presentation used by uid.admin.ch and is not recorded here.  |
 | organization_name | * <br/> [MultilingualValue](MultilingualValue.md) | Name of the organization or enterprise, with the language it is published in. Bilingual registers state the name in both languages; one entry is recorded per language.  |
 | valid_from | 0..1 <br/> [Date](Date.md) | The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](HasTemporalValidity.md) |
@@ -63,20 +63,26 @@ At least one of the following must be set:
 
 
 ### Examples
-#### Example Occupation: swiss politicians Sofia Fisch Juristin
-
-```yaml
-occupations:
-- label: Jurist*in
-  is_active: true
-
-```
 #### Example Occupation: swiss politicians Beat Jans Politiker
 
 ```yaml
 occupations:
-- label: Politiker
+- label:
+  - value: Politiker
+    language: de
+  - value: Politicien
+    language: fr
   valid_from: 1964-01-01
+  is_active: true
+
+```
+#### Example Occupation: swiss politicians Sofia Fisch Juristin
+
+```yaml
+occupations:
+- label:
+  - value: Jurist*in
+    language: de
   is_active: true
 
 ```

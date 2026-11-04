@@ -64,39 +64,14 @@ _Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften und Ber
 
 
 ### Beispiele
-#### Beispiel Person: Non-binary gender entry with occupation and training
+#### Beispiel Person: Telling apart persons with identical names via the label second person
 
 ```yaml
 persons:
-- local_id: 72c7232be92944e3876f3b6723824ff9
-  global_uri: >-
-    https://stadtrat.bern.ch/de/mitglieder/detail.php?gid=72c7232be92944e3876f3b6723824ff9
-  label: Sofia Fisch
-  birth_year: 1996
-  names:
-  - name_type: PersonFirstName
-    value: Sofia
-  - name_type: PersonOfficialName
-    value: Fisch
-  genders:
-  - gender_code: non_binary
-    label: divers
-  occupations:
-  - label: Jurist*in
-    is_active: true
-  trainings:
-  - training_type: '3223'
-    value: MLaw
-
-```
-#### Beispiel Person: Telling apart persons with identical names via the label
-
-```yaml
-persons:
-- local_id: 6447
-  global_uri: https://www.ur.ch/behoerdenmitglieder/6447
-  label: Alois Arnold (1981)
-  birth_year: 1981
+- local_id: 6370
+  global_uri: https://www.ur.ch/behoerdenmitglieder/6370
+  label: Alois Arnold (1965)
+  birth_year: 1965
   names:
   - name_type: PersonFirstName
     value: Alois
@@ -137,21 +112,6 @@ persons:
     value: Brunel
 
 ```
-#### Beispiel Person: Telling apart persons with identical names via the label second person
-
-```yaml
-persons:
-- local_id: 6370
-  global_uri: https://www.ur.ch/behoerdenmitglieder/6370
-  label: Alois Arnold (1965)
-  birth_year: 1965
-  names:
-  - name_type: PersonFirstName
-    value: Alois
-  - name_type: PersonOfficialName
-    value: Arnold
-
-```
 #### Beispiel Person: Fully recorded person
 
 ```yaml
@@ -184,7 +144,11 @@ persons:
   - gender_code: male
     valid_from: 1964-07-12
   occupations:
-  - label: Politiker
+  - label:
+    - value: Politiker
+      language: de
+    - value: Politicien
+      language: fr
     valid_from: 1964-01-01
     is_active: true
   trainings:
@@ -195,6 +159,48 @@ persons:
     value: beat.jans@admin.ch
   - contact_type: contact_website
     value: http://www.beat-jans.ch
+
+```
+#### Beispiel Person: Non-binary gender entry with occupation and training
+
+```yaml
+persons:
+- local_id: 72c7232be92944e3876f3b6723824ff9
+  global_uri: >-
+    https://stadtrat.bern.ch/de/mitglieder/detail.php?gid=72c7232be92944e3876f3b6723824ff9
+  label: Sofia Fisch
+  birth_year: 1996
+  names:
+  - name_type: PersonFirstName
+    value: Sofia
+  - name_type: PersonOfficialName
+    value: Fisch
+  genders:
+  - gender_code: non_binary
+    label: divers
+  occupations:
+  - label:
+    - value: Jurist*in
+      language: de
+    is_active: true
+  trainings:
+  - training_type: '3223'
+    value: MLaw
+
+```
+#### Beispiel Person: Telling apart persons with identical names via the label
+
+```yaml
+persons:
+- local_id: 6447
+  global_uri: https://www.ur.ch/behoerdenmitglieder/6447
+  label: Alois Arnold (1981)
+  birth_year: 1981
+  names:
+  - name_type: PersonFirstName
+    value: Alois
+  - name_type: PersonOfficialName
+    value: Arnold
 
 ```
 

@@ -29,7 +29,7 @@ URI: [mcm:label](https://ld.ech.ch/schema/0292/meta-common/label)
 | [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  yes  |
 | [Group](Group.md) | A political group, organization, or body (e |  yes  |
 | [Gender](Gender.md) | Gender of a person indicating a gender code and temporal validity |  no  |
-| [Occupation](Occupation.md) | Occupation or profession of a person indicating a label, an ISCO-19 code, whe... |  no  |
+| [Occupation](Occupation.md) | Occupation or profession of a person indicating a label, an ISCO-19 code, whe... |  yes  |
 | [Contact](Contact.md) | Contact information of a person indicating a type (e |  no  |
 | [ElectoralDistrict](ElectoralDistrict.md) | Electoral district or region associated with a membership |  yes  |
 | [GroupType](GroupType.md) | Type of group (e |  yes  |

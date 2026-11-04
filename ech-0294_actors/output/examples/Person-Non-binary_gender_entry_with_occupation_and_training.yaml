@@ -13,7 +13,9 @@ persons:
   - gender_code: non_binary
     label: divers
   occupations:
-  - label: Jurist*in
+  - label:
+    - value: Jurist*in
+      language: de
     is_active: true
   trainings:
   - training_type: '3223'

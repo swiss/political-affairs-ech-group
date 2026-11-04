@@ -1547,9 +1547,12 @@
                     ]
                 },
                 "label": {
-                    "description": "Assign a label to a structured piece of information (e.g., display name, position, etc.).\n",
+                    "description": "Designation of the occupation, with the language it is published in. Where an occupation is published in several languages, one entry per language is recorded.\n",
+                    "items": {
+                        "$ref": "#/$defs/MultilingualValue"
+                    },
                     "type": [
-                        "string",
+                        "array",
                         "null"
                     ]
                 },

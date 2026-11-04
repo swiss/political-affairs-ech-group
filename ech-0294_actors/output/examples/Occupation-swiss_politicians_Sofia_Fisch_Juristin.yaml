@@ -1,3 +1,5 @@
 occupations:
-- label: Jurist*in
+- label:
+  - value: Jurist*in
+    language: de
   is_active: true

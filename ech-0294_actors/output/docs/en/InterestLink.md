@@ -76,6 +76,26 @@ At least one of the following must be set:
 
 
 ### Examples
+#### Example InterestLink: Public office at another federal level
+
+```yaml
+interest_links:
+- global_uri: act:il_dafond_001
+  person_reference:
+    global_uri: >-
+      https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=14
+    label: Felice Dafond
+    group_label: PLR
+  interest_type: public_mandate
+  organization_name:
+  - value: Municipio di Minusio
+    language: it
+  legal_form: '0223'
+  function_role:
+  - value: Sindaco
+    language: it
+
+```
 #### Example InterestLink: Board mandate without a UID and without payment information
 
 ```yaml
@@ -98,25 +118,49 @@ interest_links:
     language: fr
 
 ```
-#### Example InterestLink: Own company run operationally
+#### Example InterestLink: Foundation board mandate with the organisations UID
 
 ```yaml
 interest_links:
-- global_uri: act:il_burkart_001
+- global_uri: act:il_burkart_007
   person_reference:
     global_uri: http://www.wikidata.org/entity/Q23060472
     label: Thierry Burkart
     group_label: FDP.Die Liberalen
-  interest_type: professional_activity
+  interest_type: governing_body
   organization_name:
-  - value: Burkart Advisory GmbH, Baden
+  - value: FONDATION SUISSE DE DEMINAGE (FSD), Genf
     language: de
-  legal_form: '0107'
+  organization_uid: CHE109810537
+  legal_form: '0110'
   committee:
-  - value: Geschäftsleitung
+  - value: Stiftungsrat
     language: de
   function_role:
-  - value: Geschäftsführer
+  - value: Vizepräsident
+    language: de
+  is_paid: false
+
+```
+#### Example InterestLink: Federation presidency  the counterpart decides not the function
+
+```yaml
+interest_links:
+- global_uri: act:il_burkart_005
+  person_reference:
+    global_uri: http://www.wikidata.org/entity/Q23060472
+    label: Thierry Burkart
+    group_label: FDP.Die Liberalen
+  interest_type: interest_group_mandate
+  organization_name:
+  - value: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
+    language: de
+  legal_form: '0109'
+  committee:
+  - value: Zentralvorstand
+    language: de
+  function_role:
+  - value: Präsident
     language: de
   is_paid: true
 
@@ -145,30 +189,6 @@ interest_links:
   is_ex_officio: true
 
 ```
-#### Example InterestLink: Foundation board mandate with the organisations UID
-
-```yaml
-interest_links:
-- global_uri: act:il_burkart_007
-  person_reference:
-    global_uri: http://www.wikidata.org/entity/Q23060472
-    label: Thierry Burkart
-    group_label: FDP.Die Liberalen
-  interest_type: governing_body
-  organization_name:
-  - value: FONDATION SUISSE DE DEMINAGE (FSD), Genf
-    language: de
-  organization_uid: CHE109810537
-  legal_form: '0110'
-  committee:
-  - value: Stiftungsrat
-    language: de
-  function_role:
-  - value: Vizepräsident
-    language: de
-  is_paid: false
-
-```
 #### Example InterestLink: The same value for a seat on a body
 
 ```yaml
@@ -185,26 +205,6 @@ interest_links:
     language: it
   function_role:
   - value: Vice-presidente
-    language: it
-
-```
-#### Example InterestLink: Public office at another federal level
-
-```yaml
-interest_links:
-- global_uri: act:il_dafond_001
-  person_reference:
-    global_uri: >-
-      https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=14
-    label: Felice Dafond
-    group_label: PLR
-  interest_type: public_mandate
-  organization_name:
-  - value: Municipio di Minusio
-    language: it
-  legal_form: '0223'
-  function_role:
-  - value: Sindaco
     language: it
 
 ```
@@ -260,25 +260,25 @@ interest_links:
     language: de
 
 ```
-#### Example InterestLink: Federation presidency  the counterpart decides not the function
+#### Example InterestLink: Own company run operationally
 
 ```yaml
 interest_links:
-- global_uri: act:il_burkart_005
+- global_uri: act:il_burkart_001
   person_reference:
     global_uri: http://www.wikidata.org/entity/Q23060472
     label: Thierry Burkart
     group_label: FDP.Die Liberalen
-  interest_type: interest_group_mandate
+  interest_type: professional_activity
   organization_name:
-  - value: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
+  - value: Burkart Advisory GmbH, Baden
     language: de
-  legal_form: '0109'
+  legal_form: '0107'
   committee:
-  - value: Zentralvorstand
+  - value: Geschäftsleitung
     language: de
   function_role:
-  - value: Präsident
+  - value: Geschäftsführer
     language: de
   is_paid: true
 

@@ -28,7 +28,11 @@ persons:
       - gender_code: male
         valid_from: 1964-07-12
     occupations:
-      - label: Politiker
+      - label:
+          - value: Politiker
+            language: de
+          - value: Politicien
+            language: fr
         valid_from: 1964-01-01
         is_active: true
     trainings:
@@ -105,7 +109,9 @@ persons:
       - gender_code: non_binary
         label: divers
     occupations:
-      - label: Jurist*in
+      - label:
+          - value: Jurist*in
+            language: de
         is_active: true
     trainings:
       - training_type: "3223"  # Master Universität, ETH (inklusive Lizentiat / Diplom)
