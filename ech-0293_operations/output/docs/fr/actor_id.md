@@ -32,8 +32,8 @@ URI: [ops:actor_id](https://ch.paf.link/schema/operations/actor_id)
 | [IndividualVote](IndividualVote.md) | La voix exprimée par un membre lors d'un vote |  yes  |
 | [Election](Election.md) | Une élection par laquelle un organe parlementaire désigne une ou plusieurs pe... |  yes  |
 | [Attendance](Attendance.md) | Liste de présence agrégée pour une séance (nombre de membres présents, absent... |  yes  |
-| [IndividualAttendance](IndividualAttendance.md) | Constatation individuelle de la présence d'une personne à une séance (rattach... |  no  |
-| [Speech](Speech.md) | Une intervention prononcée au cours d'une séance (également appelée prise de ... |  no  |
+| [IndividualAttendance](IndividualAttendance.md) | Constatation individuelle de la présence d'une personne à une séance (rattach... |  yes  |
+| [Speech](Speech.md) | Une intervention prononcée au cours d'une séance (également appelée prise de ... |  yes  |
 
 
 

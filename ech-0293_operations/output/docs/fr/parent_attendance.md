@@ -26,7 +26,7 @@ URI: [ops:parentAttendance](https://ch.paf.link/schema/operations/parentAttendan
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [IndividualAttendance](IndividualAttendance.md) | Constatation individuelle de la présence d'une personne à une séance (rattach... |  no  |
+| [IndividualAttendance](IndividualAttendance.md) | Constatation individuelle de la présence d'une personne à une séance (rattach... |  yes  |
 
 
 

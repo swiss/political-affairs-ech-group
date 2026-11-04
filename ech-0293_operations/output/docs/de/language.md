@@ -26,7 +26,7 @@ URI: [mcm:language](https://ld.ech.ch/schema/0292/meta-common/language)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [Speech](Speech.md) | Eine Wortmeldung während einer Sitzung (auch Votum oder Redebeitrag genannt) |  no  |
+| [Speech](Speech.md) | Eine Wortmeldung während einer Sitzung (auch Votum oder Redebeitrag genannt):... |  yes  |
 | [MultilingualString](MultilingualString.md) | Ein String, der Text in mehreren Sprachen enthalten kann |  yes  |
 | [MultilingualValue](MultilingualValue.md) | Ein mehrsprachiger String mit Angabe der Sprache |  no  |
 | [MultilingualUri](MultilingualUri.md) | Eine URI zusammen mit der Sprache der Ressource, auf die sie verweist |  yes  |

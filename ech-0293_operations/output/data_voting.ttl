@@ -1,237 +1,233 @@
-@prefix actors: <https://ld.ech.ch/schema/0294/actors/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix mcm: <https://ld.ech.ch/schema/0292/meta-common/> .
 @prefix ops: <https://ch.paf.link/schema/operations/> .
+@prefix actors: <https://ld.ech.ch/schema/0294/actors/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-ops:voting_examples_2025 a ops:Container ;
-    ops:individualVote ops:vote_sg_2025_001_person_123,
-        ops:vote_sg_2025_001_person_321,
-        ops:vote_sg_2025_001_person_456,
-        ops:vote_sg_2025_001_person_789,
-        ops:vote_zh_budget_2026_person_101,
-        ops:vote_zh_budget_2026_person_102,
-        ops:vote_zh_gr_2024_2023_361_a1,
-        ops:vote_zh_gr_2024_2023_361_abs1,
-        ops:vote_zh_gr_2024_2023_361_b1,
-        ops:vote_zh_gr_2024_2023_361_c1 ;
-    ops:voting ops:voting_be_2025_042,
-        ops:voting_sg_2025_001,
-        ops:voting_zh_budget_2026,
-        ops:voting_zh_gr_2024_2023_361 .
-
 ops:vote_sg_2025_001_person_123 a ops:IndividualVote ;
-    ops:actor_id [ a mcm:PersonReference ;
-            mcm:globalURI actors:person_paul_schlegel ;
-            mcm:label "Paul Schlegel" ] ;
-    ops:individual_vote_type <https://ch.paf.link/schema/operations/enum/individual_vote_type/yes> ;
-    ops:parentVoting ops:voting_sg_2025_001 ;
-    ops:seat_nr "1" ;
-    mcm:datetimeCreated "2025-03-15T14:30:00+00:00"^^xsd:dateTime .
-
+	ops:actor_id _:c14n22 ;
+	ops:individual_vote_type ops:enum\/individual_vote_type\/yes ;
+	ops:parentVoting ops:voting_sg_2025_001 ;
+	ops:seat_nr "1" ;
+	mcm:datetimeCreated "2025-03-15T14:30:00+00:00"^^xsd:dateTime .
 ops:vote_sg_2025_001_person_321 a ops:IndividualVote ;
-    ops:actor_id [ a mcm:PersonReference ;
-            mcm:globalURI actors:person_ruedi_thomann ;
-            mcm:label "Ruedi Thomann" ] ;
-    ops:individual_vote_type <https://ch.paf.link/schema/operations/enum/individual_vote_type/not_voted> ;
-    ops:parentVoting ops:voting_sg_2025_001 ;
-    ops:seat_nr "4" ;
-    mcm:datetimeCreated "2025-03-15T14:30:00+00:00"^^xsd:dateTime .
-
+	ops:actor_id _:c14n4 ;
+	ops:individual_vote_type ops:enum\/individual_vote_type\/not_voted ;
+	ops:parentVoting ops:voting_sg_2025_001 ;
+	ops:seat_nr "4" ;
+	mcm:datetimeCreated "2025-03-15T14:30:00+00:00"^^xsd:dateTime .
 ops:vote_sg_2025_001_person_456 a ops:IndividualVote ;
-    ops:actor_id [ a mcm:PersonReference ;
-            mcm:globalURI actors:person_andreas_eggenberger ;
-            mcm:label "Andreas Eggenberger" ] ;
-    ops:individual_vote_type <https://ch.paf.link/schema/operations/enum/individual_vote_type/no> ;
-    ops:parentVoting ops:voting_sg_2025_001 ;
-    ops:seat_nr "2" ;
-    mcm:datetimeCreated "2025-03-15T14:30:00+00:00"^^xsd:dateTime .
-
+	ops:actor_id _:c14n14 ;
+	ops:individual_vote_type ops:enum\/individual_vote_type\/no ;
+	ops:parentVoting ops:voting_sg_2025_001 ;
+	ops:seat_nr "2" ;
+	mcm:datetimeCreated "2025-03-15T14:30:00+00:00"^^xsd:dateTime .
 ops:vote_sg_2025_001_person_789 a ops:IndividualVote ;
-    ops:actor_id [ a mcm:PersonReference ;
-            mcm:globalURI actors:person_thomas_ammann ;
-            mcm:label "Thomas Ammann" ] ;
-    ops:individual_vote_type <https://ch.paf.link/schema/operations/enum/individual_vote_type/abstention> ;
-    ops:parentVoting ops:voting_sg_2025_001 ;
-    ops:seat_nr "3" ;
-    mcm:datetimeCreated "2025-03-15T14:30:00+00:00"^^xsd:dateTime .
-
+	ops:actor_id _:c14n6 ;
+	ops:individual_vote_type ops:enum\/individual_vote_type\/abstention ;
+	ops:parentVoting ops:voting_sg_2025_001 ;
+	ops:seat_nr "3" ;
+	mcm:datetimeCreated "2025-03-15T14:30:00+00:00"^^xsd:dateTime .
 ops:vote_zh_budget_2026_person_101 a ops:IndividualVote ;
-    ops:actor_id [ a mcm:PersonReference ;
-            mcm:globalURI actors:person_thomas_wolf ;
-            mcm:label "Thomas Wolf" ] ;
-    ops:individual_vote_type <https://ch.paf.link/schema/operations/enum/individual_vote_type/yes> ;
-    ops:parentVoting ops:voting_zh_budget_2026 ;
-    ops:seat_nr "1" ;
-    mcm:datetimeCreated "2025-11-20T16:45:00+00:00"^^xsd:dateTime .
-
+	ops:actor_id _:c14n16 ;
+	ops:individual_vote_type ops:enum\/individual_vote_type\/yes ;
+	ops:parentVoting ops:voting_zh_budget_2026 ;
+	ops:seat_nr "1" ;
+	mcm:datetimeCreated "2025-11-20T16:45:00+00:00"^^xsd:dateTime .
 ops:vote_zh_budget_2026_person_102 a ops:IndividualVote ;
-    ops:actor_id [ a mcm:PersonReference ;
-            mcm:globalURI actors:person_jean_daniel_strub ;
-            mcm:label "Jean-Daniel Strub" ] ;
-    ops:individual_vote_type <https://ch.paf.link/schema/operations/enum/individual_vote_type/no> ;
-    ops:parentVoting ops:voting_zh_budget_2026 ;
-    ops:seat_nr "2" ;
-    mcm:datetimeCreated "2025-11-20T16:45:00+00:00"^^xsd:dateTime .
-
+	ops:actor_id _:c14n18 ;
+	ops:individual_vote_type ops:enum\/individual_vote_type\/no ;
+	ops:parentVoting ops:voting_zh_budget_2026 ;
+	ops:seat_nr "2" ;
+	mcm:datetimeCreated "2025-11-20T16:45:00+00:00"^^xsd:dateTime .
 ops:vote_zh_gr_2024_2023_361_a1 a ops:IndividualVote ;
-    ops:actor_id [ a mcm:PersonReference ;
-            mcm:globalURI actors:person_zh_stadt_1 ;
-            mcm:label "Mitglied Auswahl A" ] ;
-    ops:individual_vote_type <https://ch.paf.link/schema/operations/enum/individual_vote_type/other> ;
-    ops:parentVoting ops:voting_zh_gr_2024_2023_361 ;
-    ops:seat_nr "12" ;
-    ops:type_label "Auswahl A" ;
-    mcm:datetimeCreated "2024-02-28T00:00:00+00:00"^^xsd:dateTime .
-
+	ops:actor_id _:c14n0 ;
+	ops:individual_vote_type ops:enum\/individual_vote_type\/other ;
+	ops:parentVoting ops:voting_zh_gr_2024_2023_361 ;
+	ops:seat_nr "12" ;
+	ops:type_label "Auswahl A" ;
+	mcm:datetimeCreated "2024-02-28T00:00:00+00:00"^^xsd:dateTime .
 ops:vote_zh_gr_2024_2023_361_abs1 a ops:IndividualVote ;
-    ops:actor_id [ a mcm:PersonReference ;
-            mcm:globalURI actors:person_zh_stadt_4 ;
-            mcm:label "Abwesendes Mitglied" ] ;
-    ops:individual_vote_type <https://ch.paf.link/schema/operations/enum/individual_vote_type/not_voted> ;
-    ops:parentVoting ops:voting_zh_gr_2024_2023_361 ;
-    ops:seat_nr "103" ;
-    mcm:datetimeCreated "2024-02-28T00:00:00+00:00"^^xsd:dateTime .
-
+	ops:actor_id _:c14n13 ;
+	ops:individual_vote_type ops:enum\/individual_vote_type\/not_voted ;
+	ops:parentVoting ops:voting_zh_gr_2024_2023_361 ;
+	ops:seat_nr "103" ;
+	mcm:datetimeCreated "2024-02-28T00:00:00+00:00"^^xsd:dateTime .
 ops:vote_zh_gr_2024_2023_361_b1 a ops:IndividualVote ;
-    ops:actor_id [ a mcm:PersonReference ;
-            mcm:globalURI actors:person_zh_stadt_2 ;
-            mcm:label "Mitglied Auswahl B" ] ;
-    ops:individual_vote_type <https://ch.paf.link/schema/operations/enum/individual_vote_type/other> ;
-    ops:parentVoting ops:voting_zh_gr_2024_2023_361 ;
-    ops:seat_nr "47" ;
-    ops:type_label "Auswahl B" ;
-    mcm:datetimeCreated "2024-02-28T00:00:00+00:00"^^xsd:dateTime .
-
+	ops:actor_id _:c14n9 ;
+	ops:individual_vote_type ops:enum\/individual_vote_type\/other ;
+	ops:parentVoting ops:voting_zh_gr_2024_2023_361 ;
+	ops:seat_nr "47" ;
+	ops:type_label "Auswahl B" ;
+	mcm:datetimeCreated "2024-02-28T00:00:00+00:00"^^xsd:dateTime .
 ops:vote_zh_gr_2024_2023_361_c1 a ops:IndividualVote ;
-    ops:actor_id [ a mcm:PersonReference ;
-            mcm:globalURI actors:person_zh_stadt_3 ;
-            mcm:label "Mitglied Auswahl C" ] ;
-    ops:individual_vote_type <https://ch.paf.link/schema/operations/enum/individual_vote_type/other> ;
-    ops:parentVoting ops:voting_zh_gr_2024_2023_361 ;
-    ops:seat_nr "88" ;
-    ops:type_label "Auswahl C" ;
-    mcm:datetimeCreated "2024-02-28T00:00:00+00:00"^^xsd:dateTime .
-
+	ops:actor_id _:c14n1 ;
+	ops:individual_vote_type ops:enum\/individual_vote_type\/other ;
+	ops:parentVoting ops:voting_zh_gr_2024_2023_361 ;
+	ops:seat_nr "88" ;
+	ops:type_label "Auswahl C" ;
+	mcm:datetimeCreated "2024-02-28T00:00:00+00:00"^^xsd:dateTime .
 ops:voting_be_2025_042 a ops:Voting ;
-    ops:actor_id [ a mcm:GroupReference ;
-            mcm:abbreviation [ a mcm:MultilingualValue ;
-                    mcm:language "de" ;
-                    mcm:value "GR" ] ;
-            mcm:globalURI actors:gr_be ;
-            mcm:label "Grosser Rat Bern" ] ;
-    ops:datetime_begin "2025-06-05T10:15:00+00:00"^^xsd:dateTime ;
-    ops:datetime_end "2025-06-05T10:17:00+00:00"^^xsd:dateTime ;
-    ops:majority_count 76 ;
-    ops:majority_type <https://ch.paf.link/schema/operations/enum/majority_type/absolute> ;
-    ops:parentProtocol ops:protocol_be_2025_06_05 ;
-    ops:parentProtocolItem ops:protocol_item_be_2025_042 ;
-    ops:parent_meeting "ops:meeting_be_2025_06_05" ;
-    ops:result_text "Mit 45 zu 87 Stimmen bei 8 Enthaltungen abgelehnt" ;
-    ops:total 150 ;
-    ops:total_absent 10 ;
-    ops:total_count_abstention 8 ;
-    ops:total_count_no 87 ;
-    ops:total_count_yes 45 ;
-    ops:voting_title [ a ops:MultilingualString ;
-            ops:text "Änderungsantrag Art. 5 Abs. 2" ;
-            mcm:language "de" ],
-        [ a ops:MultilingualString ;
-            ops:text "Proposition de modification art. 5 al. 2" ;
-            mcm:language "fr" ] ;
-    ops:voting_type <https://ch.paf.link/schema/operations/enum/voting_type/preliminary_vote> ;
-    mcm:datetimeCreated "2025-06-05T10:15:00+00:00"^^xsd:dateTime ;
-    mcm:datetimeModified "2025-06-05T10:15:00+00:00"^^xsd:dateTime .
-
-ops:voting_zh_budget_2026 a ops:Voting ;
-    ops:actor_id [ a mcm:GroupReference ;
-            mcm:abbreviation [ a mcm:MultilingualValue ;
-                    mcm:language "de" ;
-                    mcm:value "KR" ] ;
-            mcm:globalURI actors:kr_zh ;
-            mcm:label "Kantonsrat Zürich" ] ;
-    ops:datetime_begin "2025-11-20T16:45:00+00:00"^^xsd:dateTime ;
-    ops:datetime_end "2025-11-20T16:50:00+00:00"^^xsd:dateTime ;
-    ops:majority_count 91 ;
-    ops:majority_type <https://ch.paf.link/schema/operations/enum/majority_type/absolute> ;
-    ops:parentProtocol ops:protocol_zh_2025_11_20 ;
-    ops:parentProtocolItem ops:protocol_item_zh_budget_2026 ;
-    ops:parent_meeting "ops:meeting_zh_2025_11_20" ;
-    ops:result_text "Mit 105 zu 70 Stimmen bei 5 Enthaltungen angenommen" ;
-    ops:total 180 ;
-    ops:total_absent 0 ;
-    ops:total_count_abstention 5 ;
-    ops:total_count_no 70 ;
-    ops:total_count_yes 105 ;
-    ops:voting_title [ a ops:MultilingualString ;
-            ops:text "Budgetbeschluss 2026" ;
-            mcm:language "de" ] ;
-    ops:voting_type <https://ch.paf.link/schema/operations/enum/voting_type/final_vote> ;
-    mcm:datetimeCreated "2025-11-20T16:45:00+00:00"^^xsd:dateTime ;
-    mcm:datetimeModified "2025-11-20T16:50:00+00:00"^^xsd:dateTime .
-
+	ops:actor_id _:c14n8 ;
+	ops:datetime_begin "2025-06-05T10:15:00+00:00"^^xsd:dateTime ;
+	ops:datetime_end "2025-06-05T10:17:00+00:00"^^xsd:dateTime ;
+	ops:majority_count 76 ;
+	ops:majority_type ops:enum\/majority_type\/absolute ;
+	ops:parentProtocol ops:protocol_be_2025_06_05 ;
+	ops:parentProtocolItem ops:protocol_item_be_2025_042 ;
+	ops:parent_meeting "ops:meeting_be_2025_06_05" ;
+	ops:result_text "Mit 45 zu 87 Stimmen bei 8 Enthaltungen abgelehnt" ;
+	ops:total 150 ;
+	ops:total_absent 10 ;
+	ops:total_count_abstention 8 ;
+	ops:total_count_no 87 ;
+	ops:total_count_yes 45 ;
+	ops:voting_title _:c14n15 , _:c14n5 ;
+	ops:voting_type ops:enum\/voting_type\/preliminary_vote ;
+	mcm:datetimeCreated "2025-06-05T10:15:00+00:00"^^xsd:dateTime ;
+	mcm:datetimeModified "2025-06-05T10:15:00+00:00"^^xsd:dateTime .
+ops:voting_examples_2025 a ops:Container ;
+	ops:individualVote ops:vote_sg_2025_001_person_123 , ops:vote_sg_2025_001_person_321 , ops:vote_sg_2025_001_person_456 , ops:vote_sg_2025_001_person_789 , ops:vote_zh_budget_2026_person_101 , ops:vote_zh_budget_2026_person_102 , ops:vote_zh_gr_2024_2023_361_a1 , ops:vote_zh_gr_2024_2023_361_abs1 , ops:vote_zh_gr_2024_2023_361_b1 , ops:vote_zh_gr_2024_2023_361_c1 ;
+	ops:voting ops:voting_be_2025_042 , ops:voting_sg_2025_001 , ops:voting_zh_budget_2026 , ops:voting_zh_gr_2024_2023_361 .
 ops:voting_sg_2025_001 a ops:Voting ;
-    ops:actor_id [ a mcm:GroupReference ;
-            mcm:abbreviation [ a mcm:MultilingualValue ;
-                    mcm:language "de" ;
-                    mcm:value "KR" ] ;
-            mcm:globalURI actors:kr_sg ;
-            mcm:label "Kantonsrat St. Gallen" ] ;
-    ops:datetime_begin "2025-03-15T14:30:00+00:00"^^xsd:dateTime ;
-    ops:datetime_end "2025-03-15T14:35:00+00:00"^^xsd:dateTime ;
-    ops:majority_count 65 ;
-    ops:majority_type <https://ch.paf.link/schema/operations/enum/majority_type/absolute> ;
-    ops:parentProtocol ops:protocol_sg_2025_03_15 ;
-    ops:parentProtocolItem ops:protocol_item_sg_2025_015 ;
-    ops:parent_meeting "ops:meeting_sg_2025_03_15" ;
-    ops:result_text "Mit 78 zu 42 Stimmen bei 5 Enthaltungen angenommen" ;
-    ops:total 128 ;
-    ops:total_absent 3 ;
-    ops:total_count_abstention 5 ;
-    ops:total_count_no 42 ;
-    ops:total_count_yes 78 ;
-    ops:voting_title [ a ops:MultilingualString ;
-            ops:text "Schlussabstimmung Energiegesetz" ;
-            mcm:language "de" ] ;
-    ops:voting_type <https://ch.paf.link/schema/operations/enum/voting_type/final_vote> ;
-    mcm:datetimeCreated "2025-03-15T14:30:00+00:00"^^xsd:dateTime ;
-    mcm:datetimeModified "2025-03-15T14:35:00+00:00"^^xsd:dateTime .
-
+	ops:actor_id _:c14n11 ;
+	ops:datetime_begin "2025-03-15T14:30:00+00:00"^^xsd:dateTime ;
+	ops:datetime_end "2025-03-15T14:35:00+00:00"^^xsd:dateTime ;
+	ops:majority_count 65 ;
+	ops:majority_type ops:enum\/majority_type\/absolute ;
+	ops:parentProtocol ops:protocol_sg_2025_03_15 ;
+	ops:parentProtocolItem ops:protocol_item_sg_2025_015 ;
+	ops:parent_meeting "ops:meeting_sg_2025_03_15" ;
+	ops:result_text "Mit 78 zu 42 Stimmen bei 5 Enthaltungen angenommen" ;
+	ops:total 128 ;
+	ops:total_absent 3 ;
+	ops:total_count_abstention 5 ;
+	ops:total_count_no 42 ;
+	ops:total_count_yes 78 ;
+	ops:voting_title _:c14n3 ;
+	ops:voting_type ops:enum\/voting_type\/final_vote ;
+	mcm:datetimeCreated "2025-03-15T14:30:00+00:00"^^xsd:dateTime ;
+	mcm:datetimeModified "2025-03-15T14:35:00+00:00"^^xsd:dateTime .
+ops:voting_zh_budget_2026 a ops:Voting ;
+	ops:actor_id _:c14n12 ;
+	ops:datetime_begin "2025-11-20T16:45:00+00:00"^^xsd:dateTime ;
+	ops:datetime_end "2025-11-20T16:50:00+00:00"^^xsd:dateTime ;
+	ops:majority_count 91 ;
+	ops:majority_type ops:enum\/majority_type\/absolute ;
+	ops:parentProtocol ops:protocol_zh_2025_11_20 ;
+	ops:parentProtocolItem ops:protocol_item_zh_budget_2026 ;
+	ops:parent_meeting "ops:meeting_zh_2025_11_20" ;
+	ops:result_text "Mit 105 zu 70 Stimmen bei 5 Enthaltungen angenommen" ;
+	ops:total 180 ;
+	ops:total_absent 0 ;
+	ops:total_count_abstention 5 ;
+	ops:total_count_no 70 ;
+	ops:total_count_yes 105 ;
+	ops:voting_title _:c14n10 ;
+	ops:voting_type ops:enum\/voting_type\/final_vote ;
+	mcm:datetimeCreated "2025-11-20T16:45:00+00:00"^^xsd:dateTime ;
+	mcm:datetimeModified "2025-11-20T16:50:00+00:00"^^xsd:dateTime .
 ops:voting_zh_gr_2024_2023_361 a ops:Voting ;
-    ops:actor_id [ a mcm:GroupReference ;
-            mcm:abbreviation [ a mcm:MultilingualValue ;
-                    mcm:language "de" ;
-                    mcm:value "GR" ] ;
-            mcm:globalURI actors:gr_stadt_zuerich ;
-            mcm:label "Gemeinderat der Stadt Zürich" ] ;
-    ops:affair_id "2023/361" ;
-    ops:datetime_begin "2024-02-28T00:00:00+00:00"^^xsd:dateTime ;
-    ops:datetime_end "2024-02-28T00:00:00+00:00"^^xsd:dateTime ;
-    ops:landingPage "https://www.gemeinderat-zuerich.ch/abstimmungen/detail.php?aid=aa10c137274f424fa4eda877e7644a89" ;
-    ops:majority_type <https://ch.paf.link/schema/operations/enum/majority_type/other> ;
-    ops:parentProtocol ops:protocol_zh_gr_2024_02_28 ;
-    ops:parentProtocolItem ops:protocol_item_zh_gr_2024_2023_361 ;
-    ops:parent_meeting "ops:meeting_zh_gr_2024_02_28" ;
-    ops:result_text "Auswahl A mit 75 von 112 abgegebenen Stimmen angenommen (Auswahl B: 25, Auswahl C: 12, Auswahl D: 0; 13 abwesend von 125 Mitgliedern)." ;
-    ops:total 112 ;
-    ops:total_absent 13 ;
-    ops:total_other [ a ops:TotalOther ;
-            ops:count 25 ;
-            mcm:label "Auswahl B" ],
-        [ a ops:TotalOther ;
-            ops:count 12 ;
-            mcm:label "Auswahl C" ],
-        [ a ops:TotalOther ;
-            ops:count 0 ;
-            mcm:label "Auswahl D" ],
-        [ a ops:TotalOther ;
-            ops:count 75 ;
-            mcm:label "Auswahl A (siegreich)" ] ;
-    ops:type_label "Gleichgerichtete Anträge (Mehrfachauswahl)" ;
-    ops:voting_title [ a ops:MultilingualString ;
-            ops:text "Liegenschaften Stadt Zürich, Wohnhaus Magnusstrasse 27, Gesamtinstandsetzung, Grundrissanpassung, Netto-Zusatzkredit (Geschäft 2023/361)" ;
-            mcm:language "de" ] ;
-    ops:voting_type <https://ch.paf.link/schema/operations/enum/voting_type/other> ;
-    mcm:datetimeCreated "2024-02-28T00:00:00+00:00"^^xsd:dateTime ;
-    mcm:datetimeModified "2024-02-28T00:00:00+00:00"^^xsd:dateTime .
-
+	ops:actor_id _:c14n21 ;
+	ops:affair_id "2023/361" ;
+	ops:datetime_begin "2024-02-28T00:00:00+00:00"^^xsd:dateTime ;
+	ops:datetime_end "2024-02-28T00:00:00+00:00"^^xsd:dateTime ;
+	ops:landingPage "https://www.gemeinderat-zuerich.ch/abstimmungen/detail.php?aid=aa10c137274f424fa4eda877e7644a89" ;
+	ops:majority_type ops:enum\/majority_type\/other ;
+	ops:parentProtocol ops:protocol_zh_gr_2024_02_28 ;
+	ops:parentProtocolItem ops:protocol_item_zh_gr_2024_2023_361 ;
+	ops:parent_meeting "ops:meeting_zh_gr_2024_02_28" ;
+	ops:result_text "Auswahl A mit 75 von 112 abgegebenen Stimmen angenommen (Auswahl B: 25, Auswahl C: 12, Auswahl D: 0; 13 abwesend von 125 Mitgliedern)." ;
+	ops:total 112 ;
+	ops:total_absent 13 ;
+	ops:total_other _:c14n17 , _:c14n19 , _:c14n20 , _:c14n7 ;
+	ops:type_label "Gleichgerichtete Anträge (Mehrfachauswahl)" ;
+	ops:voting_title _:c14n2 ;
+	ops:voting_type ops:enum\/voting_type\/other ;
+	mcm:datetimeCreated "2024-02-28T00:00:00+00:00"^^xsd:dateTime ;
+	mcm:datetimeModified "2024-02-28T00:00:00+00:00"^^xsd:dateTime .
+_:c14n0 a mcm:PersonReference ;
+	mcm:globalURI actors:person_zh_stadt_1 ;
+	mcm:label "Mitglied Auswahl A" .
+_:c14n1 a mcm:PersonReference ;
+	mcm:globalURI actors:person_zh_stadt_3 ;
+	mcm:label "Mitglied Auswahl C" .
+_:c14n10 a ops:MultilingualString ;
+	ops:text "Budgetbeschluss 2026" ;
+	mcm:language "de" .
+_:c14n11 a mcm:GroupReference ;
+	mcm:abbreviation _:c14n26 ;
+	mcm:globalURI actors:kr_sg ;
+	mcm:label "Kantonsrat St. Gallen" .
+_:c14n12 a mcm:GroupReference ;
+	mcm:abbreviation _:c14n25 ;
+	mcm:globalURI actors:kr_zh ;
+	mcm:label "Kantonsrat Zürich" .
+_:c14n13 a mcm:PersonReference ;
+	mcm:globalURI actors:person_zh_stadt_4 ;
+	mcm:label "Abwesendes Mitglied" .
+_:c14n14 a mcm:PersonReference ;
+	mcm:globalURI actors:person_andreas_eggenberger ;
+	mcm:label "Andreas Eggenberger" .
+_:c14n15 a ops:MultilingualString ;
+	ops:text "Änderungsantrag Art. 5 Abs. 2" ;
+	mcm:language "de" .
+_:c14n16 a mcm:PersonReference ;
+	mcm:globalURI actors:person_thomas_wolf ;
+	mcm:label "Thomas Wolf" .
+_:c14n17 a ops:TotalOther ;
+	ops:count 0 ;
+	mcm:label "Auswahl D" .
+_:c14n18 a mcm:PersonReference ;
+	mcm:globalURI actors:person_jean_daniel_strub ;
+	mcm:label "Jean-Daniel Strub" .
+_:c14n19 a ops:TotalOther ;
+	ops:count 12 ;
+	mcm:label "Auswahl C" .
+_:c14n2 a ops:MultilingualString ;
+	ops:text "Liegenschaften Stadt Zürich, Wohnhaus Magnusstrasse 27, Gesamtinstandsetzung, Grundrissanpassung, Netto-Zusatzkredit (Geschäft 2023/361)" ;
+	mcm:language "de" .
+_:c14n20 a ops:TotalOther ;
+	ops:count 75 ;
+	mcm:label "Auswahl A (siegreich)" .
+_:c14n21 a mcm:GroupReference ;
+	mcm:abbreviation _:c14n23 ;
+	mcm:globalURI actors:gr_stadt_zuerich ;
+	mcm:label "Gemeinderat der Stadt Zürich" .
+_:c14n22 a mcm:PersonReference ;
+	mcm:globalURI actors:person_paul_schlegel ;
+	mcm:label "Paul Schlegel" .
+_:c14n23 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "GR" .
+_:c14n24 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "GR" .
+_:c14n25 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "KR" .
+_:c14n26 a mcm:MultilingualValue ;
+	mcm:language "de" ;
+	mcm:value "KR" .
+_:c14n3 a ops:MultilingualString ;
+	ops:text "Schlussabstimmung Energiegesetz" ;
+	mcm:language "de" .
+_:c14n4 a mcm:PersonReference ;
+	mcm:globalURI actors:person_ruedi_thomann ;
+	mcm:label "Ruedi Thomann" .
+_:c14n5 a ops:MultilingualString ;
+	ops:text "Proposition de modification art. 5 al. 2" ;
+	mcm:language "fr" .
+_:c14n6 a mcm:PersonReference ;
+	mcm:globalURI actors:person_thomas_ammann ;
+	mcm:label "Thomas Ammann" .
+_:c14n7 a ops:TotalOther ;
+	ops:count 25 ;
+	mcm:label "Auswahl B" .
+_:c14n8 a mcm:GroupReference ;
+	mcm:abbreviation _:c14n24 ;
+	mcm:globalURI actors:gr_be ;
+	mcm:label "Grosser Rat Bern" .
+_:c14n9 a mcm:PersonReference ;
+	mcm:globalURI actors:person_zh_stadt_2 ;
+	mcm:label "Mitglied Auswahl B" .
 

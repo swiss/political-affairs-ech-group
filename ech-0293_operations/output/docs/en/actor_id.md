@@ -32,8 +32,8 @@ URI: [ops:actor_id](https://ch.paf.link/schema/operations/actor_id)
 | [IndividualVote](IndividualVote.md) | The vote cast by an individual member in a voting |  yes  |
 | [Election](Election.md) | An election in which a parliamentary body appoints one or several persons to ... |  yes  |
 | [Attendance](Attendance.md) | Aggregated attendance record for a meeting (number of members present, absent... |  yes  |
-| [IndividualAttendance](IndividualAttendance.md) | Individual attendance record for a specific person at a meeting (linked via t... |  no  |
-| [Speech](Speech.md) | A speech or statement made during a meeting (also called Votum or speaker seg... |  no  |
+| [IndividualAttendance](IndividualAttendance.md) | Individual attendance record for a specific person at a meeting (linked via t... |  yes  |
+| [Speech](Speech.md) | A speech or statement made during a meeting (also called Votum or speaker seg... |  yes  |
 
 
 

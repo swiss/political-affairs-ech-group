@@ -26,7 +26,7 @@ URI: [ops:text](https://ch.paf.link/schema/operations/text)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [Speech](Speech.md) | Eine Wortmeldung während einer Sitzung (auch Votum oder Redebeitrag genannt) |  no  |
+| [Speech](Speech.md) | Eine Wortmeldung während einer Sitzung (auch Votum oder Redebeitrag genannt):... |  yes  |
 | [TextSegment](TextSegment.md) | Ein Textsegment wie Querverweise oder Zwischentitel |  no  |
 | [MultilingualString](MultilingualString.md) | Ein String, der Text in mehreren Sprachen enthalten kann |  no  |
 

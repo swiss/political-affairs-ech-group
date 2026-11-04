@@ -26,7 +26,7 @@ URI: [ops:media_type](https://ch.paf.link/schema/operations/media_type)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Speech](Speech.md) | Une intervention prononcée au cours d'une séance (également appelée prise de ... |  no  |
+| [Speech](Speech.md) | Une intervention prononcée au cours d'une séance (également appelée prise de ... |  yes  |
 | [Media](Media.md) | Fichiers médias ou documents (y compris les procès-verbaux en PDF/HTML/WORD o... |  no  |
 
 

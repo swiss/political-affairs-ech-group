@@ -26,7 +26,7 @@ URI: [ops:parentAttendance](https://ch.paf.link/schema/operations/parentAttendan
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [IndividualAttendance](IndividualAttendance.md) | Individual attendance record for a specific person at a meeting (linked via t... |  no  |
+| [IndividualAttendance](IndividualAttendance.md) | Individual attendance record for a specific person at a meeting (linked via t... |  yes  |
 
 
 

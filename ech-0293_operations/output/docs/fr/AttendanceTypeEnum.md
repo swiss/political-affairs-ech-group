@@ -15,9 +15,9 @@ URI: [ops:AttendanceTypeEnum](https://ch.paf.link/schema/operations/AttendanceTy
 ### Valeurs admissibles
 | Valeur | Description |
 |------------------------|----------------------------------------------------------------------------|
-| remote |  Participation à distance  |
+| remote |  Participation à distance, p. ex. par visioconférence  |
 | | [ops:enum/attendance_type/remote](ops:enum/attendance_type/remote) |
-| substitute |  Suppléance  |
+| substitute |  Suppléance : une autre personne a participé à la place du membre  |
 | | [ops:enum/attendance_type/substitute](ops:enum/attendance_type/substitute) |
 | present |  Présent en personne  |
 | | [ops:enum/attendance_type/present](ops:enum/attendance_type/present) |

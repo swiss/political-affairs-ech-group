@@ -26,7 +26,7 @@ URI: [ops:media_format](https://ch.paf.link/schema/operations/media_format)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [Speech](Speech.md) | Eine Wortmeldung während einer Sitzung (auch Votum oder Redebeitrag genannt) |  no  |
+| [Speech](Speech.md) | Eine Wortmeldung während einer Sitzung (auch Votum oder Redebeitrag genannt):... |  yes  |
 
 
 
