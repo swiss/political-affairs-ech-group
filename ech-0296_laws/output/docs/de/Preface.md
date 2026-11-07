@@ -45,24 +45,6 @@ _Der Vorspann des Erlasses (akn:preface) mit Dokumentnummer und -titel. Fedlex S
 
 
 ### Beispiele
-#### Beispiel Preface: bgoe 1 1
-
-```yaml
-preface_ref:
-  preface_paragraphs:
-  - inline_content:
-    - element_type: DocNumber
-      inline_content:
-      - …
-  - inline_content:
-    - element_type: DocTitle
-      inline_content:
-      - …
-      - …
-      - … 1 weitere
-  - … 2 weitere
-
-```
 #### Beispiel Preface: sr101 1 1
 
 ```yaml
@@ -98,6 +80,24 @@ preface_ref:
       inline_content:
       - …
     - … 3 weitere
+
+```
+#### Beispiel Preface: bgoe 1 1
+
+```yaml
+preface_ref:
+  preface_paragraphs:
+  - inline_content:
+    - element_type: DocNumber
+      inline_content:
+      - …
+  - inline_content:
+    - element_type: DocTitle
+      inline_content:
+      - …
+      - …
+      - … 1 weitere
+  - … 2 weitere
 
 ```
 
