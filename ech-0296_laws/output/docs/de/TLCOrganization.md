@@ -63,6 +63,15 @@ tlc_organizations:
   show_as: Staatskanzlei
 
 ```
+#### Beispiel TLCOrganization: zh idg 1 3
+
+```yaml
+tlc_organizations:
+- eId: JI
+  href: https://data.zh.ch/vocabulary/organizational-entity/JI
+  show_as: Direktion der Justiz und des Innern
+
+```
 #### Beispiel TLCOrganization: zh idg 1 1
 
 ```yaml
@@ -79,15 +88,6 @@ tlc_organizations:
 - eId: ch.bk
   href: https://fedlex.data.admin.ch/vocabulary/legal-institution/2
   show_as: Bundeskanzlei
-
-```
-#### Beispiel TLCOrganization: zh idg 1 3
-
-```yaml
-tlc_organizations:
-- eId: JI
-  href: https://data.zh.ch/vocabulary/organizational-entity/JI
-  show_as: Direktion der Justiz und des Innern
 
 ```
 

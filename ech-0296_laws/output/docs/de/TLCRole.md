@@ -45,42 +45,6 @@ _Eine benannte Rolle als Referenz im Dokument (akn:TLCRole). Beispiele: publishe
 
 
 ### Beispiele
-#### Beispiel TLCRole: zh idg 1 3
-
-```yaml
-tlc_roles:
-- eId: coEditor
-  href: https://data.zh.ch/vocabulary/role/coEditor
-  show_as: Mitwirkende Einheit
-
-```
-#### Beispiel TLCRole: zh idg 1 2
-
-```yaml
-tlc_roles:
-- eId: editor
-  href: https://data.zh.ch/vocabulary/role/leadEditor
-  show_as: Federführende Einheit
-
-```
-#### Beispiel TLCRole: bgoe 1 2
-
-```yaml
-tlc_roles:
-- eId: rightsHolder
-  href: http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder
-  show_as: Détenteur des droits
-
-```
-#### Beispiel TLCRole: zh idg 1 1
-
-```yaml
-tlc_roles:
-- eId: authority
-  href: https://data.zh.ch/vocabulary/role/author
-  show_as: Beschliessendes Organ
-
-```
 #### Beispiel TLCRole: Role publisher as an anchor
 
 ```yaml
@@ -97,6 +61,42 @@ tlc_roles:
 - eId: rightsHolder
   href: http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder
   show_as: Détenteur des droits
+
+```
+#### Beispiel TLCRole: zh idg 1 2
+
+```yaml
+tlc_roles:
+- eId: editor
+  href: https://data.zh.ch/vocabulary/role/leadEditor
+  show_as: Federführende Einheit
+
+```
+#### Beispiel TLCRole: zh idg 1 1
+
+```yaml
+tlc_roles:
+- eId: authority
+  href: https://data.zh.ch/vocabulary/role/author
+  show_as: Beschliessendes Organ
+
+```
+#### Beispiel TLCRole: bgoe 1 2
+
+```yaml
+tlc_roles:
+- eId: rightsHolder
+  href: http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder
+  show_as: Détenteur des droits
+
+```
+#### Beispiel TLCRole: zh idg 1 3
+
+```yaml
+tlc_roles:
+- eId: coEditor
+  href: https://data.zh.ch/vocabulary/role/coEditor
+  show_as: Mitwirkende Einheit
 
 ```
 
