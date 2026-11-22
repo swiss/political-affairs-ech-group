@@ -79,21 +79,19 @@ persons:
     value: Arnold
 
 ```
-#### Beispiel Person: Call name differing from the official first name
+#### Beispiel Person: Telling apart persons with identical names via the label
 
 ```yaml
 persons:
-- local_id: 1269
-  global_uri: >-
-    https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269
-  label: Gerri Beretta-Piccoli
+- local_id: 6447
+  global_uri: https://www.ur.ch/behoerdenmitglieder/6447
+  label: Alois Arnold (1981)
+  birth_year: 1981
   names:
   - name_type: PersonFirstName
-    value: Fausto
-  - name_type: PersonCallFirstName
-    value: Gerri
+    value: Alois
   - name_type: PersonOfficialName
-    value: Beretta-Piccoli
+    value: Arnold
 
 ```
 #### Beispiel Person: Name variant alongside the official double name
@@ -110,6 +108,23 @@ persons:
     value: Bozzi-Brunel
   - name_type: PersonOriginalName
     value: Brunel
+
+```
+#### Beispiel Person: Call name differing from the official first name
+
+```yaml
+persons:
+- local_id: 1269
+  global_uri: >-
+    https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269
+  label: Gerri Beretta-Piccoli
+  names:
+  - name_type: PersonFirstName
+    value: Fausto
+  - name_type: PersonCallFirstName
+    value: Gerri
+  - name_type: PersonOfficialName
+    value: Beretta-Piccoli
 
 ```
 #### Beispiel Person: Fully recorded person
@@ -186,21 +201,6 @@ persons:
   trainings:
   - training_type: '3223'
     value: MLaw
-
-```
-#### Beispiel Person: Telling apart persons with identical names via the label
-
-```yaml
-persons:
-- local_id: 6447
-  global_uri: https://www.ur.ch/behoerdenmitglieder/6447
-  label: Alois Arnold (1981)
-  birth_year: 1981
-  names:
-  - name_type: PersonFirstName
-    value: Alois
-  - name_type: PersonOfficialName
-    value: Arnold
 
 ```
 

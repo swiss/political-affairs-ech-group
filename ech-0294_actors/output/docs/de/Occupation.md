@@ -63,6 +63,16 @@ Mindestens eines der folgenden Felder muss gesetzt sein:
 
 
 ### Beispiele
+#### Beispiel Occupation: swiss politicians Sofia Fisch Juristin
+
+```yaml
+occupations:
+- label:
+  - value: Jurist*in
+    language: de
+  is_active: true
+
+```
 #### Beispiel Occupation: swiss politicians Beat Jans Politiker
 
 ```yaml
@@ -73,16 +83,6 @@ occupations:
   - value: Politicien
     language: fr
   valid_from: 1964-01-01
-  is_active: true
-
-```
-#### Beispiel Occupation: swiss politicians Sofia Fisch Juristin
-
-```yaml
-occupations:
-- label:
-  - value: Jurist*in
-    language: de
   is_active: true
 
 ```
