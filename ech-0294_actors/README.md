@@ -5,7 +5,7 @@ Datenstandard für die Akteure des politischen Betriebs: **Personen**, **Gruppen
 sowie die **Interessenbindungen** zu Organisationen ausserhalb dieses Schemas.
 
 Massgeblich ist `input/schema.yaml` — eine LinkML-Definition, aus der alle weiteren
-Artefakte erzeugt werden: JSON Schema, OWL/RDF, die Dokumentation und das Word-Dokument
+Artefakte erzeugt werden: JSON Schema, OWL/RDF, XML Schema (XSD) mit Schematron, die Dokumentation und das Word-Dokument
 in Deutsch, Französisch und Englisch.
 
 ---
@@ -24,7 +24,8 @@ ech-0294_actors/
 └── output/                                 # Automatisch erzeugt — nicht von Hand ändern
     ├── schema.json                         # JSON Schema
     ├── schema.ttl                          # OWL-Ontologie
-    ├── data_*.json / data_*.ttl            # Beispieldaten als JSON und RDF/Turtle
+    ├── schema.xsd / schema.sch             # XML Schema + Schematron (linkml-xsd)
+    ├── data_*.json / data_*.ttl / data_*.xml  # Beispieldaten als JSON, RDF/Turtle und XML
     ├── examples/                           # Aus den Daten geschnittene Einzelbeispiele
     ├── docs/{de,fr,en}/                    # Seite je Klasse, Slot, Enum (gen-doc)
     ├── documentation_merged_{de,fr,en}.md  # Verfasste Kapitel + generierte Doku

@@ -3,7 +3,7 @@ name: Release ech-0294
 # Manueller Release: du wählst die Versionsnummer selbst (z. B. 1.0.1) —
 # unabhängig von der Anzahl Commits. Der Workflow taggt den aktuellen Stand
 # als `ech-0294-v<version>` und veröffentlicht die generierten Artefakte
-# (Word, Schema, Beispiele) als GitHub Release.
+# (Word, Schema inkl. XSD/Schematron, Beispiele inkl. XML) als GitHub Release.
 
 on:
   workflow_dispatch:
@@ -52,9 +52,11 @@ jobs:
           cp ech-0294_actors/input/schema.yaml   release/ech-0294_actors_schema.yaml
           cp ech-0294_actors/output/schema.json  release/ech-0294_actors_schema.json
           cp ech-0294_actors/output/schema.ttl   release/ech-0294_actors_schema.ttl
+          cp ech-0294_actors/output/schema.xsd   release/ech-0294_actors_schema.xsd
+          cp ech-0294_actors/output/schema.sch   release/ech-0294_actors_schema.sch
           # Beispieldaten (Quelle + generierte Formate)
           for f in ech-0294_actors/input/data_*.yaml; do cp "$f" release/; done
-          for f in ech-0294_actors/output/data_*.json ech-0294_actors/output/data_*.ttl; do
+          for f in ech-0294_actors/output/data_*.json ech-0294_actors/output/data_*.ttl ech-0294_actors/output/data_*.xml; do
             [ -f "$f" ] && cp "$f" release/
           done
           # Zusätzlich alles als ein ZIP bündeln
@@ -83,5 +85,5 @@ jobs:
           gh release create "$TAG" release/* \
             --target "${{ github.sha }}" \
             --title "eCH-0294 Politische Akteure — v${{ inputs.version }}" \
-            --notes "Generierte Artefakte für eCH-0294 v${{ inputs.version }} (Word + PDF in de/fr/en, Schema, Beispieldaten). Stand: Commit ${{ github.sha }}." \
+            --notes "Generierte Artefakte für eCH-0294 v${{ inputs.version }} (Word + PDF in de/fr/en, Schema als LinkML/JSON/OWL/XSD + Schematron, Beispieldaten als YAML/JSON/RDF/XML). Stand: Commit ${{ github.sha }}." \
             $FLAGS
