@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Container xmlns="https://ld.ech.ch/schema/0294/actors/">
+  <groups>
+    <group_type>
+      <group_type_enum>interest_group</group_type_enum>
+      <label>
+        <value>Interessengruppe</value>
+        <language>de</language>
+      </label>
+      <label>
+        <value>Groupe d'intérêt</value>
+        <language>fr</language>
+      </label>
+      <label>
+        <value>Gruppo d'interesse</value>
+        <language>it</language>
+      </label>
+    </group_type>
+    <label>
+      <value>Konsumenteninformation und -schutz</value>
+      <language>de</language>
+    </label>
+    <label>
+      <value>Information et défense des consommateurs</value>
+      <language>fr</language>
+    </label>
+    <label>
+      <value>Informazione e tutela dei consumatori</value>
+      <language>it</language>
+    </label>
+    <description>
+      <value>L'intergroupe parlementaire « Information et défense des consommateurs » réunit toutes les sensibilités politiques. Cet intergroupe a pour mission d'informer et de sensibiliser les élu·e·s aux questions relatives à la défense des consommateur·rice·s en Suisse.</value>
+      <language>fr</language>
+    </description>
+    <landing_page>
+      <value>https://www.parlament.ch/centers/documents/de/gruppen-der-bundesversammlung.pdf</value>
+      <language>de</language>
+    </landing_page>
+    <spatial>https://ld.admin.ch/country/CHE</spatial>
+    <contacts>
+      <contact_type>email</contact_type>
+      <value>l.altwegg@frc.ch</value>
+      <label>Sekretariat</label>
+    </contacts>
+    <contacts>
+      <contact_type>phone</contact_type>
+      <value>+41 21 331 00 95</value>
+      <label>Sekretariat</label>
+    </contacts>
+    <addresses>
+      <address_type>businessAddress</address_type>
+      <address_uri>https://geo.ld.admin.ch/location/address/101009806</address_uri>
+      <street_address>Fédération romande des consommateurs, Rue de Genève 17, case postale 585</street_address>
+      <postal_code>1001</postal_code>
+      <postal_locality>Lausanne</postal_locality>
+      <country>CH</country>
+    </addresses>
+    <local_id>6627</local_id>
+    <global_uri>https://www.parlament.ch/de/organe/gruppen/konsumenteninformation-und-schutz</global_uri>
+    <valid_from>2012-01-01</valid_from>
+  </groups>
+  <groups>
+    <group_type>
+      <group_type_enum>association</group_type_enum>
+      <label>
+        <value>Verein</value>
+        <language>de</language>
+      </label>
+    </group_type>
+    <label>
+      <value>Fédération romande des consommateurs</value>
+      <language>fr</language>
+    </label>
+    <abbreviation>
+      <value>FRC</value>
+      <language>fr</language>
+    </abbreviation>
+    <organization_uid>CHE106063525</organization_uid>
+    <legal_form>0109</legal_form>
+    <spatial>https://ld.admin.ch/canton/22</spatial>
+    <global_uri>https://www.frc.ch/</global_uri>
+  </groups>
+  <groups>
+    <group_type>
+      <group_type_enum>council_legislative</group_type_enum>
+      <label>
+        <value>Parlament (Legislativrat)</value>
+        <language>de</language>
+      </label>
+    </group_type>
+    <label>
+      <value>Stadtparlament St. Gallen</value>
+      <language>de</language>
+    </label>
+    <spatial>https://ld.admin.ch/municipality/3203</spatial>
+    <local_id>700</local_id>
+    <global_uri>https://www.stadt.sg.ch/home/verwaltung-politik/demokratie-politik/stadtparlament.html</global_uri>
+  </groups>
+  <groups>
+    <group_type>
+      <group_type_enum>committee_extraparliamentary</group_type_enum>
+      <label>
+        <value>Ausserparlamentarische Kommission</value>
+        <language>de</language>
+      </label>
+    </group_type>
+    <label>
+      <value>Wettbewerbskommission</value>
+      <language>de</language>
+    </label>
+    <label>
+      <value>Commission de la concurrence</value>
+      <language>fr</language>
+    </label>
+    <label>
+      <value>Commissione della concorrenza</value>
+      <language>it</language>
+    </label>
+    <abbreviation>
+      <value>WEKO</value>
+      <language>de</language>
+    </abbreviation>
+    <abbreviation>
+      <value>COMCO</value>
+      <language>fr</language>
+    </abbreviation>
+    <abbreviation>
+      <value>COMCO</value>
+      <language>it</language>
+    </abbreviation>
+    <landing_page>
+      <value>https://www.weko.admin.ch/de</value>
+      <language>de</language>
+    </landing_page>
+    <landing_page>
+      <value>https://www.weko.admin.ch/fr</value>
+      <language>fr</language>
+    </landing_page>
+    <landing_page>
+      <value>https://www.weko.admin.ch/it</value>
+      <language>it</language>
+    </landing_page>
+    <spatial>https://ld.admin.ch/country/CHE</spatial>
+    <global_uri>https://www.weko.admin.ch/</global_uri>
+  </groups>
+  <groups>
+    <group_type>
+      <group_type_enum>council_legislative</group_type_enum>
+      <label>
+        <value>Parlament (Legislativrat)</value>
+        <language>de</language>
+      </label>
+    </group_type>
+    <label>
+      <value>Grosser Rat Basel-Stadt</value>
+      <language>de</language>
+    </label>
+    <spatial>https://ld.admin.ch/canton/12</spatial>
+    <local_id>33</local_id>
+    <global_uri>https://www.grosserrat.bs.ch/</global_uri>
+  </groups>
+  <groups>
+    <group_type>
+      <group_type_enum>council_executive</group_type_enum>
+      <label>
+        <value>Regierung (Exekutivrat)</value>
+        <language>de</language>
+      </label>
+    </group_type>
+    <label>
+      <value>Regierungsrat Basel-Stadt</value>
+      <language>de</language>
+    </label>
+    <spatial>https://ld.admin.ch/canton/12</spatial>
+    <local_id>1300</local_id>
+    <global_uri>https://www.regierungsrat.bs.ch/</global_uri>
+  </groups>
+  <groups>
+    <group_type>
+      <group_type_enum>council_secretariat</group_type_enum>
+      <label>
+        <value>Staatskanzlei</value>
+        <language>de</language>
+      </label>
+    </group_type>
+    <label>
+      <value>Staatskanzlei Basel-Stadt</value>
+      <language>de</language>
+    </label>
+    <parent_groups>
+      <label>Regierungsrat Basel-Stadt</label>
+      <local_id>1300</local_id>
+      <global_uri>https://www.regierungsrat.bs.ch/</global_uri>
+    </parent_groups>
+    <spatial>https://ld.admin.ch/canton/12</spatial>
+    <local_id>7172</local_id>
+    <global_uri>https://www.bs.ch/regierungsrat/staatskanzlei</global_uri>
+  </groups>
+  <groups>
+    <group_type>
+      <group_type_enum>party</group_type_enum>
+      <label>
+        <value>Partei</value>
+        <language>de</language>
+      </label>
+    </group_type>
+    <label>
+      <value>Evangelische Volkspartei Basel-Stadt</value>
+      <language>de</language>
+    </label>
+    <abbreviation>
+      <value>EVP BS</value>
+      <language>de</language>
+    </abbreviation>
+    <parent_groups>
+      <label>Evangelische Volkspartei der Schweiz</label>
+      <abbreviation>
+        <value>EVP</value>
+        <language>de</language>
+      </abbreviation>
+      <global_uri>https://www.evppev.ch/</global_uri>
+    </parent_groups>
+    <spatial>https://ld.admin.ch/canton/12</spatial>
+    <global_uri>https://www.evp-bs.ch/</global_uri>
+  </groups>
+  <groups>
+    <group_type>
+      <group_type_enum>parliamentary_group</group_type_enum>
+      <label>
+        <value>Fraktion</value>
+        <language>de</language>
+      </label>
+    </group_type>
+    <label>
+      <value>Die Mitte / Evangelische Volkspartei</value>
+      <language>de</language>
+    </label>
+    <parent_groups>
+      <label>Grosser Rat Basel-Stadt</label>
+      <local_id>33</local_id>
+      <global_uri>https://www.grosserrat.bs.ch/</global_uri>
+    </parent_groups>
+    <spatial>https://ld.admin.ch/canton/12</spatial>
+    <local_id>1266</local_id>
+    <global_uri>https://grosserrat.bs.ch/gremien/parteien-und-fraktionen/mitte-evp</global_uri>
+  </groups>
+  <groups>
+    <group_type>
+      <group_type_enum>council_legislative</group_type_enum>
+      <label>
+        <value>Parlament (Legislativrat)</value>
+        <language>de</language>
+      </label>
+    </group_type>
+    <label>
+      <value>Kantonsrat Appenzell Ausserrhoden</value>
+      <language>de</language>
+    </label>
+    <spatial>https://ld.admin.ch/canton/15</spatial>
+    <local_id>34</local_id>
+    <global_uri>https://www.ar.ch/kantonsrat/</global_uri>
+  </groups>
+  <groups>
+    <group_type>
+      <group_type_enum>committee</group_type_enum>
+      <label>
+        <value>Kommission</value>
+        <language>de</language>
+      </label>
+    </group_type>
+    <label>
+      <value>Geschäftsprüfungskommission</value>
+      <language>de</language>
+    </label>
+    <abbreviation>
+      <value>GPK</value>
+      <language>de</language>
+    </abbreviation>
+    <parent_groups>
+      <label>Kantonsrat Appenzell Ausserrhoden</label>
+      <local_id>34</local_id>
+      <global_uri>https://www.ar.ch/kantonsrat/</global_uri>
+    </parent_groups>
+    <spatial>https://ld.admin.ch/canton/15</spatial>
+    <local_id>3</local_id>
+    <global_uri>https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/geschaeftspruefungskommission/</global_uri>
+  </groups>
+  <groups>
+    <group_type>
+      <group_type_enum>council_bureau</group_type_enum>
+      <label>
+        <value>Ratsbüro</value>
+        <language>de</language>
+      </label>
+    </group_type>
+    <label>
+      <value>Büro des Grossen Rates</value>
+      <language>de</language>
+    </label>
+    <parent_groups>
+      <label>Grosser Rat Basel-Stadt</label>
+      <local_id>33</local_id>
+      <global_uri>https://www.grosserrat.bs.ch/</global_uri>
+    </parent_groups>
+    <spatial>https://ld.admin.ch/canton/12</spatial>
+    <local_id>50</local_id>
+    <global_uri>https://grosserrat.bs.ch/gremien/praesidium-und-buero</global_uri>
+  </groups>
+  <groups>
+    <group_type>
+      <group_type_enum>delegation</group_type_enum>
+      <label>
+        <value>Delegation</value>
+        <language>de</language>
+      </label>
+      <label>
+        <value>Délégation</value>
+        <language>fr</language>
+      </label>
+    </group_type>
+    <label>
+      <value>Freiburger Delegation IPK strafrechtliche Einschliessung</value>
+      <language>de</language>
+    </label>
+    <label>
+      <value>Délégation FR à la CIP détention pénale</value>
+      <language>fr</language>
+    </label>
+    <abbreviation>
+      <value>Del-StRFE</value>
+      <language>de</language>
+    </abbreviation>
+    <abbreviation>
+      <value>Del-DetPen</value>
+      <language>fr</language>
+    </abbreviation>
+    <description>
+      <value>Die Interparlamentarische Aufsichtskommission strafrechtliche Einschliessung besteht aus 18 Grossrätinnen und Grossräten aus den sechs Vertragskantonen Freiburg, Genf, Jura, Neuenburg, Waadt und Wallis.</value>
+      <language>de</language>
+    </description>
+    <description>
+      <value>La Commission interparlementaire de contrôle détention pénale est composée de 18 députés issus des six cantons partenaires : Fribourg, Genève, Jura, Neuchâtel, Vaud et Valais.</value>
+      <language>fr</language>
+    </description>
+    <landing_page>
+      <value>https://www.fr.ch/de/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5</value>
+      <language>de</language>
+    </landing_page>
+    <landing_page>
+      <value>https://www.fr.ch/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5</value>
+      <language>fr</language>
+    </landing_page>
+    <spatial>https://ld.admin.ch/canton/10</spatial>
+    <local_id>5000</local_id>
+    <global_uri>https://www.fr.ch/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5</global_uri>
+    <valid_from>2007-12-12</valid_from>
+  </groups>
+  <global_uri>act:groups_example</global_uri>
+</Container>

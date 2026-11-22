@@ -83,9 +83,11 @@ Main artifact groups:
 - Schema exports:
   - `output/schema.json`
   - `output/schema.ttl`
+  - `output/schema.xsd`, `output/schema.sch` (XML Schema + Schematron, linkml-xsd)
 - Converted data examples:
   - `output/data_*.json`
   - `output/data_*.ttl`
+  - `output/data_*.xml` (validated against `schema.xsd` + `schema.sch`)
 - Generated documentation:
   - `output/docs/{de,fr,en}/...`
   - `output/documentation_merged_{de,fr,en}.md`
@@ -100,7 +102,8 @@ Canonical sequence:
 
 1. Clean and prepare `output/`
 2. Generate schema artifacts from `input/schema.yaml`
-3. Convert each `input/data_*.yaml` to JSON and RDF/Turtle
+3. Convert each `input/data_*.yaml` to JSON, RDF/Turtle and XML; generate XSD + Schematron
+   and validate every XML against them (the run stops on a failure)
 4. Extract examples using `pipeline_examples_generator_config.yaml`
 5. Generate localized docs (`de`, `fr`, `en`)
 6. Merge docs and render DOCX/PDF

@@ -2,3 +2,4 @@ linkml
 jupyter
 yamlmagic
 lxml
+linkml-xsd>=0.4.2

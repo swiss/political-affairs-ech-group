@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Container xmlns="https://ld.ech.ch/schema/0294/actors/">
+  <interest_links>
+    <person_reference>
+      <label>Thierry Burkart</label>
+      <group_label>FDP.Die Liberalen</group_label>
+      <global_uri>http://www.wikidata.org/entity/Q23060472</global_uri>
+    </person_reference>
+    <interest_type>professional_activity</interest_type>
+    <organization_name>
+      <value>Burkart Advisory GmbH, Baden</value>
+      <language>de</language>
+    </organization_name>
+    <legal_form>0107</legal_form>
+    <is_paid>true</is_paid>
+    <committee>
+      <value>Geschäftsleitung</value>
+      <language>de</language>
+    </committee>
+    <function_role>
+      <value>Geschäftsführer</value>
+      <language>de</language>
+    </function_role>
+    <global_uri>act:il_burkart_001</global_uri>
+  </interest_links>
+  <interest_links>
+    <person_reference>
+      <label>Thierry Burkart</label>
+      <group_label>FDP.Die Liberalen</group_label>
+      <global_uri>http://www.wikidata.org/entity/Q23060472</global_uri>
+    </person_reference>
+    <interest_type>interest_group_mandate</interest_type>
+    <organization_name>
+      <value>ASTAG Schweizerischer Nutzfahrzeugverband, Bern</value>
+      <language>de</language>
+    </organization_name>
+    <legal_form>0109</legal_form>
+    <is_paid>true</is_paid>
+    <committee>
+      <value>Zentralvorstand</value>
+      <language>de</language>
+    </committee>
+    <function_role>
+      <value>Präsident</value>
+      <language>de</language>
+    </function_role>
+    <global_uri>act:il_burkart_005</global_uri>
+  </interest_links>
+  <interest_links>
+    <person_reference>
+      <label>Thierry Burkart</label>
+      <group_label>FDP.Die Liberalen</group_label>
+      <global_uri>http://www.wikidata.org/entity/Q23060472</global_uri>
+    </person_reference>
+    <interest_type>governing_body</interest_type>
+    <organization_name>
+      <value>FONDATION SUISSE DE DEMINAGE (FSD), Genf</value>
+      <language>de</language>
+    </organization_name>
+    <organization_uid>CHE109810537</organization_uid>
+    <legal_form>0110</legal_form>
+    <is_paid>false</is_paid>
+    <committee>
+      <value>Stiftungsrat</value>
+      <language>de</language>
+    </committee>
+    <function_role>
+      <value>Vizepräsident</value>
+      <language>de</language>
+    </function_role>
+    <global_uri>act:il_burkart_007</global_uri>
+  </interest_links>
+  <interest_links>
+    <person_reference>
+      <label>Gerri Beretta-Piccoli</label>
+      <local_id>1269</local_id>
+      <global_uri>https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269</global_uri>
+    </person_reference>
+    <interest_type>governing_body</interest_type>
+    <organization_name>
+      <value>Fondazione Gruppo Intervento Maltrattamento Infantile (GIMI), Lugano</value>
+      <language>it</language>
+    </organization_name>
+    <legal_form>0110</legal_form>
+    <committee>
+      <value>Consiglio di fondazione</value>
+      <language>it</language>
+    </committee>
+    <function_role>
+      <value>Vice Presidente</value>
+      <language>it</language>
+    </function_role>
+    <global_uri>act:il_beretta_001</global_uri>
+  </interest_links>
+  <interest_links>
+    <person_reference>
+      <label>Felice Dafond</label>
+      <group_label>PLR</group_label>
+      <global_uri>https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=14</global_uri>
+    </person_reference>
+    <interest_type>public_mandate</interest_type>
+    <organization_name>
+      <value>Municipio di Minusio</value>
+      <language>it</language>
+    </organization_name>
+    <legal_form>0223</legal_form>
+    <function_role>
+      <value>Sindaco</value>
+      <language>it</language>
+    </function_role>
+    <global_uri>act:il_dafond_001</global_uri>
+  </interest_links>
+  <interest_links>
+    <person_reference>
+      <label>Matteo Quadranti</label>
+      <group_label>Partito liberale radicale ticinese (PLR)</group_label>
+      <global_uri>https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1487</global_uri>
+    </person_reference>
+    <interest_type>public_mandate</interest_type>
+    <organization_name>
+      <value>Commissione Cantonale Cultura</value>
+      <language>it</language>
+    </organization_name>
+    <function_role>
+      <value>Vice-presidente</value>
+      <language>it</language>
+    </function_role>
+    <global_uri>act:il_quadranti_001</global_uri>
+  </interest_links>
+  <interest_links>
+    <person_reference>
+      <label>Cristina Zanini Barzaghi</label>
+      <group_label>PS, GISO e FA</group_label>
+      <global_uri>https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=2160</global_uri>
+    </person_reference>
+    <interest_type>governing_body</interest_type>
+    <organization_name>
+      <value>Fondazione Giovanni Stamm</value>
+      <language>it</language>
+    </organization_name>
+    <legal_form>0110</legal_form>
+    <is_ex_officio>true</is_ex_officio>
+    <committee>
+      <value>Consiglio di amministrazione</value>
+      <language>it</language>
+    </committee>
+    <function_role>
+      <value>Membro</value>
+      <language>it</language>
+    </function_role>
+    <global_uri>act:il_zanini_001</global_uri>
+  </interest_links>
+  <interest_links>
+    <person_reference>
+      <label>Stefan Balaban</label>
+      <group_label>LJS</group_label>
+      <global_uri>https://ge.ch/grandconseil/gc/depute/2517/</global_uri>
+    </person_reference>
+    <interest_type>governing_body</interest_type>
+    <organization_name>
+      <value>X-net SA</value>
+      <language>fr</language>
+    </organization_name>
+    <legal_form>0106</legal_form>
+    <committee>
+      <value>Conseil d'administration</value>
+      <language>fr</language>
+    </committee>
+    <function_role>
+      <value>Membre</value>
+      <language>fr</language>
+    </function_role>
+    <global_uri>act:il_balaban_001</global_uri>
+  </interest_links>
+  <interest_links>
+    <person_reference>
+      <label>Pierre Mauron</label>
+      <group_label>Parti socialiste</group_label>
+      <global_uri>https://www.fr.ch/parlinfo/membres-du-grand-conseil/5ee6eb9754704902bfd4b4ee01dcf327</global_uri>
+    </person_reference>
+    <interest_type>interest_group_mandate</interest_type>
+    <organization_name>
+      <value>ASLOCA Fribourg</value>
+      <language>fr</language>
+    </organization_name>
+    <organization_name>
+      <value>ASLOCA Freiburg</value>
+      <language>de</language>
+    </organization_name>
+    <legal_form>0109</legal_form>
+    <committee>
+      <value>Comité</value>
+      <language>fr</language>
+    </committee>
+    <committee>
+      <value>Vorstand</value>
+      <language>de</language>
+    </committee>
+    <function_role>
+      <value>Président</value>
+      <language>fr</language>
+    </function_role>
+    <function_role>
+      <value>Präsident</value>
+      <language>de</language>
+    </function_role>
+    <global_uri>act:il_mauron_001</global_uri>
+  </interest_links>
+  <global_uri>act:interest_links_example</global_uri>
+</Container>
