@@ -52,26 +52,18 @@ Politische Daten ändern sich laufend, und Nutzerinnen und Nutzer müssen ihre K
 * **DP-19 Abfrage nach Änderungen:** Die Schnittstelle soll Filter auf Erstellungs- und Änderungszeitpunkt anbieten (z. B. `modified_since`), damit nur Änderungen seit dem letzten Abruf geholt werden müssen.
 
 * **DP-20 Löschungen sichtbar machen:** Entitäten sollen nicht einfach verschwinden. Eine gelöschte oder zurückgezogene Entität soll als solche markiert weiter ausgeliefert werden (Identifikator, Typ und Löschzeitpunkt), zumindest in Abfragen nach Änderungen. Ihre URI antwortet mit HTTP 410 (DP-09). Nur so erfahren Nutzerinnen und Nutzer, dass sie den Datensatz in ihrer Kopie entfernen müssen.
- 
-* **DP-22 Aktualisierungsrhythmus angeben:** Die Periodizität der Aktualisierung (z. B. täglich, nach jeder Sitzung, laufend) soll in den Metadaten angegeben werden und der Realität entsprechen. Gesamtbezüge sollen mit Stichtag versehen werden.
- 
-* **DP-23 Datenströme (Ausblick):** Für Anwendungen, die zeitnah reagieren müssen (z. B. Abstimmungsresultate während der Sitzung), können Änderungen zusätzlich als Feed oder Strom angeboten werden (z. B. Atom mit Tombstones nach RFC 6721, WebSub oder Server-Sent Events). Die Abfrage nach Änderungen (DP-19) bleibt die Mindestvariante.
 
 ## Metadaten und Auffindbarkeit
 
-* **DP-24 Katalogisierung nach DCAT-AP CH:** Jeder Datensatz soll mit Metadaten nach eCH-0200 (DCAT-AP CH) beschrieben und in einem Katalog verzeichnet werden (opendata.swiss und/oder I14Y). Pflichtangaben sind dort u. a. Titel, Beschreibung, Identifikator, publizierende Stelle, Kontakt und Lizenz.
+* **DP-24 Katalogisierung nach DCAT-AP CH:** Jeder Datensatz soll mit Metadaten nach eCH-0200 (DCAT-AP CH) beschrieben und in einem Katalog verzeichnet werden (opendata.swiss). Pflichtangaben sind dort u. a. Titel, Beschreibung, Identifikator, publizierende Stelle, Kontakt und Lizenz.
 * **DP-25 Publizierende Stelle eindeutig ausweisen:** Die Metadaten sollen festhalten,
   * wer die Daten publiziert, mit einer stabilen Kontaktadresse, die laufend bearbeitet wird;
-  * ob es sich um die **erstpublizierende Stelle** oder um eine **aggregierende Stelle** handelt, die Daten Dritter sammelt und weitergibt (mit Verweis auf die Quelle);
   * welche Staatsebene (Bund, Kanton, Gemeinde) und welche Gewalt (Legislative, Exekutive) die Daten betreffen;
   * ab welchem Zeitpunkt die Daten vollständig vorliegen (ältere Bestände sind oft lückenhaft).
-* **DP-26 Herkunft des Systems angeben:** Die Schnittstelle soll angeben, mit welchem Produkt (Herstellerin bzw. Hersteller, Produkt, Version) und nach welcher Version des Standards die Daten erzeugt wurden. Das erleichtert die Fehlersuche bei systematischen Abweichungen.
-* **DP-27 Einheitliche Schlagwörter:** Für die Kataloge sollen die Schlagwörter aus Sicht der Nutzerinnen und Nutzer gewählt und zwischen den Räten einheitlich verwendet werden (mindestens die Bezeichnung des Rats, „Parlament", die Nummer des eCH-Standards und der Datentyp, z. B. „Abstimmungen"). Wo möglich, sollen Themen und Körperschaften mit Wikidata verknüpft werden.
-* **DP-28 Menschenlesbare Darstellung verlinken:** Zu jeder Entität soll, wo vorhanden, die Webseite der Entität im Ratsinformationssystem verlinkt sein, damit Nutzerinnen und Nutzer die Daten mit der offiziellen Darstellung abgleichen können.
 
 ## Lizenz
 
-* **DP-29 Offene Lizenz:** Daten sollen unter einer offenen Lizenz publiziert werden, welche die Weiterverwendung einschliesslich kommerzieller Nutzung erlaubt. Empfohlen sind CC0 oder CC BY 4.0 bzw. die entsprechenden Nutzungsbedingungen von opendata.swiss (`terms_open`, `terms_by`). eCH-0205 empfiehlt CC0, weil sie die Verknüpfung mit anderen Daten (z. B. Wikidata) am wenigsten einschränkt. Für die Bundesverwaltung gilt zusätzlich Art. 10 EMBAG.
+* **DP-29 Offene Lizenz:** Daten sollen unter einer offenen Lizenz publiziert werden, welche die Weiterverwendung einschliesslich kommerzieller Nutzung erlaubt. Empfohlen sind CC0 bzw. die entsprechenden Nutzungsbedingungen von opendata.swiss (`terms_open`, `terms_by`). eCH-0205 empfiehlt CC0, weil sie die Verknüpfung mit anderen Daten (z. B. Wikidata) am wenigsten einschränkt. Für die Bundesverwaltung gilt zusätzlich Art. 10 EMBAG.
 * **DP-30 Lizenz einmal angeben, Abweichungen ausweisen:** Die Lizenz soll maschinenlesbar (als URI aus dem Vokabular von eCH-0200) auf Ebene des Datensatzes angegeben werden und gilt dann für alle enthaltenen Entitäten. Abweichende Lizenzen einzelner Dokumente (z. B. Fotos, Gutachten Dritter) sollen am Dokument selbst angegeben werden. Ändert die Lizenz, soll der Zeitpunkt der Änderung festgehalten werden.
 
 ## Pakete und Benennung
