@@ -129,7 +129,7 @@ Dieses Kapitel enthält **Empfehlungen** für die Publikation von Daten nach den
 * **Parlamentsdienste und Ratssekretariate**, welche die Daten als Erste publizieren, und
 * **Herstellerinnen und Hersteller von Ratsinformationssystemen**, welche Exporte und Schnittstellen in ihre Produkte einbauen.
 
-Die Empfehlungen sind mit `DP-nn` nummeriert, damit in Ausschreibungen, Pflichtenheften oder Konformitätserklärungen auf einzelne Punkte verwiesen werden kann. Sie übernehmen, wo möglich, bewährte Regeln bestehender Standards, namentlich eCH-0200 (DCAT-AP CH), eCH-0205 (Linked Open Data), der deutschen Spezifikation OParl für Ratsinformationssysteme und der W3C *Data on the Web Best Practices* (DWBP). Zusammen sollen sie die Daten im Sinne der FAIR-Prinzipien auffindbar, zugänglich, interoperabel und wiederverwendbar machen.
+Die Empfehlungen sind mit `DP-nn` nummeriert, damit in Ausschreibungen, Pflichtenheften oder Konformitätserklärungen auf einzelne Punkte verwiesen werden kann. Sie übernehmen, wo möglich, bewährte Regeln bestehender Standards, namentlich eCH-0200 (DCAT-AP CH), eCH-0205 (Linked Open Data) und der W3C *Data on the Web Best Practices* (DWBP). Zusammen sollen sie die Daten im Sinne der FAIR-Prinzipien auffindbar, zugänglich, interoperabel und wiederverwendbar machen.
 
 Ob und in welchem Umfang Daten veröffentlicht werden, entscheidet die publizierende Stelle auf Basis der für sie geltenden Rechtsgrundlagen. Die Empfehlungen dieses Kapitels betreffen nur das *Wie* der Publikation. Für Personendaten gelten zusätzlich die Hinweise zum Datenschutz in eCH-0294.
 
@@ -221,7 +221,6 @@ Folgende Fragen sind in der Fachgruppe noch zu klären:
 * eCH-0200 DCAT-Anwendungsprofil für Datenportale in der Schweiz (DCAT-AP CH), V3.0.1: <https://www.ech.ch/de/ech/ech-0200/3.0.1>
 * eCH-0205 Linked Open Data, V1.0: <https://www.ech.ch/de/ech/ech-0205/1.0>
 * eCH-0160 Archivische Ablieferungsschnittstelle, V1.3.0: <https://www.ech.ch/de/ech/ech-0160/1.3.0>
-* OParl 1.1, Spezifikation: <https://oparl.org/spezifikation/online-ansicht/>
 * W3C, Data on the Web Best Practices: <https://www.w3.org/TR/dwbp/>
 * W3C, Cool URIs don't change: <https://www.w3.org/Provider/Style/URI>
 * W3C, Cool URIs for the Semantic Web: <https://www.w3.org/TR/cooluris/>
