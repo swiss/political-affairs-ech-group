@@ -155,21 +155,21 @@ GAP (https://www.go-fair.org/fair-principles/):
 
 \newpage
 
-# Richtext Definition
+# Richtext-Definition
 
-In einigen Anwendungsfällen im Rahmen der politschen Geschäfte werden Texte strukturiert übermittelt. In diesem Falle enthalten die Texte verschiedene Formatierungselemente welche repräsentiert werden sollen. Im Grundsatz werden Formatierungen mit HTML Elemente ausgedrückt. Es sollen aber nicht alle Möglichkeiten von HTML erlaubt werden, sondern nur solche welche grundsätzliche Formatierungen erlauben. Schriftart, -grösse und farbe sind Grundsätzlich nicht erlaubt um Inkompatibilitäten zu vermeiden.
+In einigen Anwendungsfällen im Rahmen der politischen Geschäfte werden Texte strukturiert übermittelt. In diesem Fall enthalten die Texte verschiedene Formatierungselemente, welche repräsentiert werden sollen. Im Grundsatz werden Formatierungen mit HTML-Elementen ausgedrückt. Es sollen aber nicht alle Möglichkeiten von HTML erlaubt werden, sondern nur solche, welche grundsätzliche Formatierungen erlauben. Schriftart, -grösse und -farbe sind grundsätzlich nicht erlaubt, um Inkompatibilitäten zu vermeiden.
 
-Dieses Kapitel zeigt auf welche Elemente von HTML in diesen sogenannten "Richtext" Feldern erlaubt sind.
+Dieses Kapitel zeigt auf, welche Elemente von HTML in diesen sogenannten "Richtext"-Feldern erlaubt sind.
 
 ## Erlaubte Codepages
-Im Grundsatz wird in allen Standards dieser eCH Gruppe nur Unicode erlaubt.
+Im Grundsatz ist in allen Standards dieser eCH-Gruppe nur Unicode erlaubt.
 
-## Auflistung der erlaubten und nicht erlau
+## Auflistung der erlaubten und nicht erlaubten Elemente
 
 
 | Zweck        | Element                                         | HTML                                                              | Bemerkung                                                                                                                            |
 | ------------ | ----------------------------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| Gliederung   | Paragraph                                       | `<p>`                                                            | CSS-Styles, Klassen und in-line Definitionen sind nicht erlaubt.                                                                     |
+| Gliederung   | Paragraph                                       | `<p>`                                                            | CSS-Styles, Klassen und Inline-Definitionen sind nicht erlaubt.                                                                      |
 | Gliederung   | Titel                                           | `<h2>`–`<h4>`                                                   | Nur `<h2>`, `<h3>` und `<h4>` sind erlaubt. H1 wird meist als eigenes Titeldatenfeld mitgeliefert.                                |
 | Elemente     | Tabelle Kopf Inhalt                             | `<table>` `<thead>` `<tbody>` `<tr>` `<td>`                  | Styles sind auch in Tabellen nicht erlaubt. Ein angehängtes `<figure>` ist erlaubt.                                                 |
 | Elemente     | Bild                                            | `<img>`                                                          | Bilder in einem Text müssen inline mit BASE64 geliefert werden. Externe Links sind nicht erlaubt.                                    |
