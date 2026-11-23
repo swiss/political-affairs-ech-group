@@ -69,6 +69,51 @@ _Eine Session: eine zusammenhängende Sitzungsperiode innerhalb einer Legislatur
 
 
 ### Beispiele
+#### Beispiel Session: Federal session with a trilingual designation
+
+```yaml
+sessions:
+- global_uri: ops:session_5207
+  spatial: https://ld.admin.ch/country/CHE
+  name:
+  - text: Frühjahrssession 2025
+    language: de
+  - text: Session de printemps 2025
+    language: fr
+  - text: Sessione primaverile 2025
+    language: it
+  url:
+  - text: https://www.parlament.ch/de/ratsbetrieb/sessionen/fruehjahr-2025
+    language: de
+  - text: https://www.parlament.ch/fr/ratsbetrieb/sessionen/fruehjahr-2025
+    language: fr
+  - text: https://www.parlament.ch/it/ratsbetrieb/sessionen/fruehjahr-2025
+    language: it
+  date_begin_planned: '2025-03-03'
+  date_end_planned: '2025-03-21'
+  parent_legislature: ops:legislature_51
+  datetime_modified: '2025-04-24T00:19:37Z'
+  datetime_created: '2025-03-20T14:27:09Z'
+
+```
+#### Beispiel Session: One-day sitting period of a cantonal parliament
+
+```yaml
+sessions:
+- global_uri: ops:session_gl_landrat_2025_02_26
+  spatial: https://ld.admin.ch/canton/8
+  name:
+  - text: Sitzung des Landrates vom 26.02.2025
+    language: de
+  url:
+  - text: https://www.gl.ch/parlament/landrat/landratsprotokolle-ab-30-juni-2010.html/239
+    language: de
+  date_begin_planned: '2025-02-26'
+  date_end_planned: '2025-02-26'
+  datetime_modified: '2025-04-25T13:40:34Z'
+  datetime_created: '2025-04-23T22:58:39Z'
+
+```
 #### Beispiel Session: Landsgemeinde as a sitting period
 
 ```yaml
@@ -117,51 +162,6 @@ sessions:
   date_end_planned: '2025-06-12'
   datetime_modified: '2025-05-19T01:06:44Z'
   datetime_created: '2025-04-25T11:10:24Z'
-
-```
-#### Beispiel Session: One-day sitting period of a cantonal parliament
-
-```yaml
-sessions:
-- global_uri: ops:session_gl_landrat_2025_02_26
-  spatial: https://ld.admin.ch/canton/8
-  name:
-  - text: Sitzung des Landrates vom 26.02.2025
-    language: de
-  url:
-  - text: https://www.gl.ch/parlament/landrat/landratsprotokolle-ab-30-juni-2010.html/239
-    language: de
-  date_begin_planned: '2025-02-26'
-  date_end_planned: '2025-02-26'
-  datetime_modified: '2025-04-25T13:40:34Z'
-  datetime_created: '2025-04-23T22:58:39Z'
-
-```
-#### Beispiel Session: Federal session with a trilingual designation
-
-```yaml
-sessions:
-- global_uri: ops:session_5207
-  spatial: https://ld.admin.ch/country/CHE
-  name:
-  - text: Frühjahrssession 2025
-    language: de
-  - text: Session de printemps 2025
-    language: fr
-  - text: Sessione primaverile 2025
-    language: it
-  url:
-  - text: https://www.parlament.ch/de/ratsbetrieb/sessionen/fruehjahr-2025
-    language: de
-  - text: https://www.parlament.ch/fr/ratsbetrieb/sessionen/fruehjahr-2025
-    language: fr
-  - text: https://www.parlament.ch/it/ratsbetrieb/sessionen/fruehjahr-2025
-    language: it
-  date_begin_planned: '2025-03-03'
-  date_end_planned: '2025-03-21'
-  parent_legislature: ops:legislature_51
-  datetime_modified: '2025-04-24T00:19:37Z'
-  datetime_created: '2025-03-20T14:27:09Z'
 
 ```
 

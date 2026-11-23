@@ -69,61 +69,18 @@ individual_votes:
   datetime_created: '2024-02-28T00:00:00Z'
 
 ```
-#### Example IndividualVote: Yes vote
+#### Example IndividualVote: No vote on the budget
 
 ```yaml
 individual_votes:
-- global_uri: ops:vote_sg_2025_001_person_123
-  parent_voting: ops:voting_sg_2025_001
+- global_uri: ops:vote_zh_budget_2026_person_102
+  parent_voting: ops:voting_zh_budget_2026
   person_reference:
-    global_uri: actors:person_paul_schlegel
-    label: Paul Schlegel
-  seat_nr: '1'
-  individual_vote_type: 'yes'
-  datetime_created: '2025-03-15T14:30:00Z'
-
-```
-#### Example IndividualVote: No vote
-
-```yaml
-individual_votes:
-- global_uri: ops:vote_sg_2025_001_person_456
-  parent_voting: ops:voting_sg_2025_001
-  person_reference:
-    global_uri: actors:person_andreas_eggenberger
-    label: Andreas Eggenberger
+    global_uri: actors:person_jean_daniel_strub
+    label: Jean-Daniel Strub
   seat_nr: '2'
   individual_vote_type: 'no'
-  datetime_created: '2025-03-15T14:30:00Z'
-
-```
-#### Example IndividualVote: Individual vote for selection option A
-
-```yaml
-individual_votes:
-- global_uri: ops:vote_zh_gr_2024_2023_361_a1
-  parent_voting: ops:voting_zh_gr_2024_2023_361
-  person_reference:
-    global_uri: actors:person_zh_stadt_1
-    label: Mitglied Auswahl A
-  seat_nr: '12'
-  individual_vote_type: other
-  type_label: Auswahl A
-  datetime_created: '2024-02-28T00:00:00Z'
-
-```
-#### Example IndividualVote: Abstention
-
-```yaml
-individual_votes:
-- global_uri: ops:vote_sg_2025_001_person_789
-  parent_voting: ops:voting_sg_2025_001
-  person_reference:
-    global_uri: actors:person_thomas_ammann
-    label: Thomas Ammann
-  seat_nr: '3'
-  individual_vote_type: abstention
-  datetime_created: '2025-03-15T14:30:00Z'
+  datetime_created: '2025-11-20T16:45:00Z'
 
 ```
 #### Example IndividualVote: Individual vote for selection option C
@@ -141,34 +98,6 @@ individual_votes:
   datetime_created: '2024-02-28T00:00:00Z'
 
 ```
-#### Example IndividualVote: Did not vote
-
-```yaml
-individual_votes:
-- global_uri: ops:vote_sg_2025_001_person_321
-  parent_voting: ops:voting_sg_2025_001
-  person_reference:
-    global_uri: actors:person_ruedi_thomann
-    label: Ruedi Thomann
-  seat_nr: '4'
-  individual_vote_type: not_voted
-  datetime_created: '2025-03-15T14:30:00Z'
-
-```
-#### Example IndividualVote: No vote on the budget
-
-```yaml
-individual_votes:
-- global_uri: ops:vote_zh_budget_2026_person_102
-  parent_voting: ops:voting_zh_budget_2026
-  person_reference:
-    global_uri: actors:person_jean_daniel_strub
-    label: Jean-Daniel Strub
-  seat_nr: '2'
-  individual_vote_type: 'no'
-  datetime_created: '2025-11-20T16:45:00Z'
-
-```
 #### Example IndividualVote: Yes vote on the budget
 
 ```yaml
@@ -183,6 +112,20 @@ individual_votes:
   datetime_created: '2025-11-20T16:45:00Z'
 
 ```
+#### Example IndividualVote: Abstention
+
+```yaml
+individual_votes:
+- global_uri: ops:vote_sg_2025_001_person_789
+  parent_voting: ops:voting_sg_2025_001
+  person_reference:
+    global_uri: actors:person_thomas_ammann
+    label: Thomas Ammann
+  seat_nr: '3'
+  individual_vote_type: abstention
+  datetime_created: '2025-03-15T14:30:00Z'
+
+```
 #### Example IndividualVote: Individual vote for selection option B
 
 ```yaml
@@ -195,6 +138,63 @@ individual_votes:
   seat_nr: '47'
   individual_vote_type: other
   type_label: Auswahl B
+  datetime_created: '2024-02-28T00:00:00Z'
+
+```
+#### Example IndividualVote: No vote
+
+```yaml
+individual_votes:
+- global_uri: ops:vote_sg_2025_001_person_456
+  parent_voting: ops:voting_sg_2025_001
+  person_reference:
+    global_uri: actors:person_andreas_eggenberger
+    label: Andreas Eggenberger
+  seat_nr: '2'
+  individual_vote_type: 'no'
+  datetime_created: '2025-03-15T14:30:00Z'
+
+```
+#### Example IndividualVote: Yes vote
+
+```yaml
+individual_votes:
+- global_uri: ops:vote_sg_2025_001_person_123
+  parent_voting: ops:voting_sg_2025_001
+  person_reference:
+    global_uri: actors:person_paul_schlegel
+    label: Paul Schlegel
+  seat_nr: '1'
+  individual_vote_type: 'yes'
+  datetime_created: '2025-03-15T14:30:00Z'
+
+```
+#### Example IndividualVote: Did not vote
+
+```yaml
+individual_votes:
+- global_uri: ops:vote_sg_2025_001_person_321
+  parent_voting: ops:voting_sg_2025_001
+  person_reference:
+    global_uri: actors:person_ruedi_thomann
+    label: Ruedi Thomann
+  seat_nr: '4'
+  individual_vote_type: not_voted
+  datetime_created: '2025-03-15T14:30:00Z'
+
+```
+#### Example IndividualVote: Individual vote for selection option A
+
+```yaml
+individual_votes:
+- global_uri: ops:vote_zh_gr_2024_2023_361_a1
+  parent_voting: ops:voting_zh_gr_2024_2023_361
+  person_reference:
+    global_uri: actors:person_zh_stadt_1
+    label: Mitglied Auswahl A
+  seat_nr: '12'
+  individual_vote_type: other
+  type_label: Auswahl A
   datetime_created: '2024-02-28T00:00:00Z'
 
 ```

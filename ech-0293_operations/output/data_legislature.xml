@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Container xmlns="https://ch.paf.link/schema/operations/">
+  <legislatures>
+    <spatial>https://ld.admin.ch/country/CHE</spatial>
+    <name>
+      <text>51. Legislaturperiode</text>
+      <language>de</language>
+    </name>
+    <name>
+      <text>51e législature</text>
+      <language>fr</language>
+    </name>
+    <name>
+      <text>51ª legislatura</text>
+      <language>it</language>
+    </name>
+    <description>Amtsdauer der am 20. Oktober 2019 gewählten Bundesversammlung; sie endete am Vortag der konstituierenden Sitzung der 52. Legislaturperiode vom 4. Dezember 2023.</description>
+    <landing_page>https://www.parlament.ch/de/ratsbetrieb/sessionen</landing_page>
+    <group_reference>
+      <label>Bundesversammlung</label>
+      <abbreviation>
+        <value>BV</value>
+        <language>de</language>
+      </abbreviation>
+      <global_uri>actors:bundesversammlung</global_uri>
+    </group_reference>
+    <global_uri>ops:legislature_51</global_uri>
+    <wikidata_uri>http://www.wikidata.org/entity/Q71712404</wikidata_uri>
+    <date_begin_actual>2019-12-02</date_begin_actual>
+    <date_end_actual>2023-12-03</date_end_actual>
+    <datetime_created>2019-12-02T09:00:00+01:00</datetime_created>
+    <datetime_modified>2023-12-04T08:30:00+01:00</datetime_modified>
+  </legislatures>
+  <legislatures>
+    <spatial>https://ld.admin.ch/canton/2</spatial>
+    <name>
+      <text>Legislatur 2022–2026</text>
+      <language>de</language>
+    </name>
+    <name>
+      <text>Législature 2022-2026</text>
+      <language>fr</language>
+    </name>
+    <landing_page>https://www.gr.be.ch/de/start/grosser-rat.html</landing_page>
+    <group_reference>
+      <label>Grosser Rat Bern</label>
+      <abbreviation>
+        <value>GR</value>
+        <language>de</language>
+      </abbreviation>
+      <global_uri>actors:gr_be</global_uri>
+    </group_reference>
+    <local_id>GR-BE-2022-2026</local_id>
+    <global_uri>ops:legislature_be_2022_2026</global_uri>
+    <date_begin_actual>2022-06-01</date_begin_actual>
+    <date_begin_planned>2022-06-01</date_begin_planned>
+    <date_end_actual>2026-05-31</date_end_actual>
+    <date_end_planned>2026-05-31</date_end_planned>
+    <datetime_created>2022-04-01T10:15:00+02:00</datetime_created>
+    <datetime_modified>2026-06-01T07:00:00+02:00</datetime_modified>
+  </legislatures>
+  <legislatures>
+    <spatial>https://ld.admin.ch/canton/22</spatial>
+    <name>
+      <text>Législature 2022-2027</text>
+      <language>fr</language>
+    </name>
+    <description>Le Grand Conseil vaudois est élu pour cinq ans.</description>
+    <landing_page>https://www.vd.ch/gc</landing_page>
+    <group_reference>
+      <label>Grand Conseil du canton de Vaud</label>
+      <abbreviation>
+        <value>GC</value>
+        <language>fr</language>
+      </abbreviation>
+      <global_uri>actors:gc_vd</global_uri>
+    </group_reference>
+    <global_uri>ops:legislature_vd_2022_2027</global_uri>
+    <wikidata_uri>http://www.wikidata.org/entity/Q131627357</wikidata_uri>
+    <date_begin_actual>2022-07-01</date_begin_actual>
+    <date_end_planned>2027-06-30</date_end_planned>
+    <datetime_created>2022-05-10T14:00:00+02:00</datetime_created>
+    <datetime_modified>2025-01-08T11:20:00+01:00</datetime_modified>
+  </legislatures>
+  <global_uri>ops:legislature_examples</global_uri>
+</Container>
