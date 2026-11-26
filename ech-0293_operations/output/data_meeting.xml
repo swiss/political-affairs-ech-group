@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Container xmlns="https://ch.paf.link/schema/operations/">
+  <meetings>
+    <spatial>https://ld.admin.ch/canton/2</spatial>
+    <name>
+      <text>Regierungssitzung vom 31. März 2021</text>
+      <language>de</language>
+    </name>
+    <name>
+      <text>Séance du gouvernement du 31 mars 2021</text>
+      <language>fr</language>
+    </name>
+    <url>
+      <text>https://www.rr.be.ch/de/start/beschluesse/beschluesse-unterlagen-nach-sitzungen/sitzungs-detail?guid=340dcf932fb044dd8f8c5c943267fbcc</text>
+      <language>de</language>
+    </url>
+    <url>
+      <text>https://www.rr.be.ch/fr/start/beschluesse/beschluesse-unterlagen-nach-sitzungen/sitzungs-detail?guid=340dcf932fb044dd8f8c5c943267fbcc</text>
+      <language>fr</language>
+    </url>
+    <actor_name>Regierungsrat Bern</actor_name>
+    <group_reference>
+      <label>Regierungsrat Bern</label>
+      <abbreviation>
+        <value>RR</value>
+        <language>de</language>
+      </abbreviation>
+      <global_uri>actors:rr_be</global_uri>
+    </group_reference>
+    <global_uri>ops:340dcf932fb044dd8f8c5c943267fbcc</global_uri>
+    <date_begin_planned>2021-03-31</date_begin_planned>
+    <date_end_planned>2021-03-31</date_end_planned>
+    <datetime_created>2024-10-28T01:22:26Z</datetime_created>
+    <datetime_modified>2024-11-27T20:40:57Z</datetime_modified>
+  </meetings>
+  <meetings>
+    <spatial>https://ld.admin.ch/canton/2</spatial>
+    <name>
+      <text>Donnerstag (Nachmittag)</text>
+      <language>de</language>
+    </name>
+    <url>
+      <text>https://www.gr.be.ch/de/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8</text>
+      <language>de</language>
+    </url>
+    <url>
+      <text>https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8</text>
+      <language>fr</language>
+    </url>
+    <actor_name>Grosser Rat Bern</actor_name>
+    <group_reference>
+      <label>Grosser Rat Bern</label>
+      <abbreviation>
+        <value>GR</value>
+        <language>de</language>
+      </abbreviation>
+      <global_uri>actors:gr_be</global_uri>
+    </group_reference>
+    <global_uri>ops:e7c5d453-848a-430a-b024-1dd2f6873aa6</global_uri>
+    <date_begin_planned>2025-06-05</date_begin_planned>
+    <date_end_planned>2025-06-05</date_end_planned>
+    <datetime_created>2025-04-25T11:10:25Z</datetime_created>
+    <datetime_modified>2025-05-19T01:06:45Z</datetime_modified>
+  </meetings>
+  <global_uri>ops:meetings_1</global_uri>
+</Container>

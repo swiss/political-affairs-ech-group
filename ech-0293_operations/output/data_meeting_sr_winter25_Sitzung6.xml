@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Container xmlns="https://ch.paf.link/schema/operations/">
+  <meetings>
+    <spatial>https://ld.admin.ch/country/CHE</spatial>
+    <name>
+      <text>Sechste Sitzung</text>
+      <language>de</language>
+    </name>
+    <name>
+      <text>Sixième séance</text>
+      <language>fr</language>
+    </name>
+    <url>
+      <text>https://www.parlament.ch/de/ratsbetrieb/suche-Amtliches-bulletin</text>
+      <language>de</language>
+    </url>
+    <actor_name>Ständerat</actor_name>
+    <group_reference>
+      <label>Ständerat</label>
+      <abbreviation>
+        <value>SR</value>
+        <language>de</language>
+      </abbreviation>
+      <global_uri>actors:staenderat</global_uri>
+    </group_reference>
+    <agenda_items>
+      <global_uri>ops:69905</global_uri>
+      <datetime_begin_actual>2025-12-19T09:20:00+01:00</datetime_begin_actual>
+      <datetime_begin_planned>2025-12-19T09:15:00+01:00</datetime_begin_planned>
+      <datetime_created>2026-01-12T00:00:00+01:00</datetime_created>
+      <datetime_modified>2026-01-12T00:00:00+01:00</datetime_modified>
+      <agenda_item_type>item</agenda_item_type>
+      <agenda_item_number>6</agenda_item_number>
+      <agenda_item_position>4</agenda_item_position>
+      <agenda_item_title>
+        <text>Postulat Broulis Pascal. Bauprojekte im Mobilitätsbereich. Einen Vergleich durchführen, um die Verzögerungen zu verstehen</text>
+        <language>de</language>
+      </agenda_item_title>
+      <affair_id>affairs:24.4471</affair_id>
+      <landing_page>https://www.parlament.ch/de/ratsbetrieb/amtliches-bulletin/amtliches-bulletin-die-verhandlungen?SubjectId=69905#votum3</landing_page>
+      <agenda_item_category>agenda_item</agenda_item_category>
+    </agenda_items>
+    <has_protocol>ops:protokoll_sr_winter25_sitzung_6</has_protocol>
+    <global_uri>parl:sr_winter25_sitzung_6</global_uri>
+    <datetime_begin_planned>2025-12-19T08:15:00+01:00</datetime_begin_planned>
+    <datetime_created>2026-01-12T00:00:00+01:00</datetime_created>
+    <datetime_modified>2026-01-12T00:00:00+01:00</datetime_modified>
+  </meetings>
+  <protocols>
+    <parent_meeting>parl:sr_winter25_sitzung_6</parent_meeting>
+    <protocol_items>
+      <global_uri>ops:protokollpunkt_69905</global_uri>
+      <datetime_begin_actual>2025-12-19T09:20:00+01:00</datetime_begin_actual>
+      <datetime_created>2026-01-12T00:00:00+01:00</datetime_created>
+      <datetime_modified>2026-01-12T00:00:00+01:00</datetime_modified>
+      <agenda_item_type>item</agenda_item_type>
+      <agenda_item_number>6</agenda_item_number>
+      <agenda_item_position>4</agenda_item_position>
+      <agenda_item_title>
+        <text>Postulat Broulis Pascal. Bauprojekte im Mobilitätsbereich. Einen Vergleich durchführen, um die Verzögerungen zu verstehen</text>
+        <language>de</language>
+      </agenda_item_title>
+      <affair_id>affairs:24.4471</affair_id>
+      <landing_page>https://www.parlament.ch/de/ratsbetrieb/amtliches-bulletin/amtliches-bulletin-die-verhandlungen?SubjectId=69905#votum3</landing_page>
+      <agenda_item_category>agenda_item</agenda_item_category>
+    </protocol_items>
+    <global_uri>ops:protokoll_sr_winter25_sitzung_6</global_uri>
+    <datetime_created>2026-01-12T00:00:00+01:00</datetime_created>
+    <datetime_modified>2026-01-12T00:00:00+01:00</datetime_modified>
+  </protocols>
+  <speeches>
+    <parent_meeting>parl:sr_winter25_sitzung_6</parent_meeting>
+    <parent_agenda_item>ops:69905</parent_agenda_item>
+    <language>fr</language>
+    <datetime_begin>2025-12-19T09:20:00+01:00</datetime_begin>
+    <datetime_end>2025-12-19T09:25:00+01:00</datetime_end>
+    <actor_fullname>Pascal Broulis</actor_fullname>
+    <person_reference>
+      <label>Pascal Broulis</label>
+      <global_uri>actors:person_pascal_broulis</global_uri>
+      <wikidata_uri>http://www.wikidata.org/entity/Q116407</wikidata_uri>
+    </person_reference>
+    <role>speaker</role>
+    <text>Je remercie la rapporteuse pour son rapport exhaustif. J'ai également lu avec attention les différents commentaires qui ont été effectués sur mon postulat. Cela reste un postulat, ce n'est pas une motion. D'abord, je ne partage pas l'avis selon lequel ce postulat n'apporterait pas une valeur ajoutée. En effet, un "benchmark", à savoir un modèle chiffré de performance, permettrait de mieux comprendre les raisons des retards que notre pays rencontre en comparaison avec les principaux pays européens.</text>
+    <text_format>html</text_format>
+    <text_type>final</text_type>
+    <landing_page>https://www.parlament.ch/de/ratsbetrieb/amtliches-bulletin/amtliches-bulletin-die-videos?TranscriptId=366631</landing_page>
+    <media_url>https://par-pcache.simplex.tv/content?externalid=366631</media_url>
+    <media_type>video</media_type>
+    <media_format>video/mp4</media_format>
+    <global_uri>ops:366631</global_uri>
+  </speeches>
+  <global_uri>ops:data_meeting_sr_winter25_Sitzung6</global_uri>
+</Container>

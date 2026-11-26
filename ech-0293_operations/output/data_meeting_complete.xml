@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Container xmlns="https://ch.paf.link/schema/operations/">
+  <meetings>
+    <spatial>https://ld.admin.ch/canton/17</spatial>
+    <name>
+      <text>Kantonsratssitzung vom 15. März 2025</text>
+      <language>de</language>
+    </name>
+    <url>
+      <text>https://www.ratsinfo.sg.ch/sessions/2025-03-15</text>
+      <language>de</language>
+    </url>
+    <actor_name>Kantonsrat St. Gallen</actor_name>
+    <group_reference>
+      <label>Kantonsrat St. Gallen</label>
+      <abbreviation>
+        <value>KR</value>
+        <language>de</language>
+      </abbreviation>
+      <global_uri>actors:kr_sg</global_uri>
+    </group_reference>
+    <state>planned</state>
+    <location>Kantonsratssaal, Regierungsgebäude St. Gallen</location>
+    <parent_session>ops:session_sg_2025_03</parent_session>
+    <agenda_items>
+      <global_uri>ops:agenda_item_sg_2025_015</global_uri>
+      <datetime_begin_actual>2025-03-15T14:30:00Z</datetime_begin_actual>
+      <datetime_begin_planned>2025-03-15T14:00:00Z</datetime_begin_planned>
+      <datetime_created>2025-02-01T10:00:00Z</datetime_created>
+      <datetime_modified>2025-03-15T14:35:00Z</datetime_modified>
+      <agenda_item_type>item</agenda_item_type>
+      <agenda_item_number>15</agenda_item_number>
+      <agenda_item_position>15</agenda_item_position>
+      <agenda_item_title>
+        <text>Energiegesetz - Schlussabstimmung</text>
+        <language>de</language>
+      </agenda_item_title>
+      <affair_id>affairs:sg_2024_123_energiegesetz</affair_id>
+      <agenda_item_description>
+        <text>Schlussabstimmung über das revidierte Energiegesetz des Kantons St. Gallen</text>
+        <language>de</language>
+      </agenda_item_description>
+      <state_id>completed</state_id>
+      <agenda_item_category>Gesetzgebung</agenda_item_category>
+    </agenda_items>
+    <global_uri>ops:meeting_sg_2025_03_15</global_uri>
+    <datetime_begin_actual>2025-03-15T08:15:00Z</datetime_begin_actual>
+    <datetime_begin_planned>2025-03-15T08:00:00Z</datetime_begin_planned>
+    <datetime_end_actual>2025-03-15T17:30:00Z</datetime_end_actual>
+    <datetime_end_planned>2025-03-15T18:00:00Z</datetime_end_planned>
+    <datetime_created>2025-02-01T10:00:00Z</datetime_created>
+    <datetime_modified>2025-03-15T17:30:00Z</datetime_modified>
+  </meetings>
+  <meetings>
+    <spatial>https://ld.admin.ch/canton/2</spatial>
+    <name>
+      <text>Sitzung Kommission für Wirtschaft und Abgaben</text>
+      <language>de</language>
+    </name>
+    <name>
+      <text>Séance Commission de l'économie et des redevances</text>
+      <language>fr</language>
+    </name>
+    <url>
+      <text>https://www.gr.be.ch/kommissionen/wak/2025-05-12</text>
+      <language>de</language>
+    </url>
+    <actor_name>Kommission für Wirtschaft und Abgaben (WAK)</actor_name>
+    <group_reference>
+      <label>Kommission für Wirtschaft und Abgaben (WAK)</label>
+      <abbreviation>
+        <value>WAK</value>
+        <language>de</language>
+      </abbreviation>
+      <global_uri>actors:committee_wak_be</global_uri>
+    </group_reference>
+    <state>planned</state>
+    <location>Kommissionszimmer 301, Rathaus Bern</location>
+    <parent_legislature>ops:legislature_be_2022_2026</parent_legislature>
+    <agenda_items>
+      <global_uri>ops:agenda_item_be_2025_042</global_uri>
+      <datetime_begin_actual>2025-05-12T15:15:00Z</datetime_begin_actual>
+      <datetime_begin_planned>2025-05-12T15:00:00Z</datetime_begin_planned>
+      <datetime_created>2025-04-15T09:00:00Z</datetime_created>
+      <datetime_modified>2025-05-12T15:20:00Z</datetime_modified>
+      <agenda_item_type>item</agenda_item_type>
+      <agenda_item_number>4.2</agenda_item_number>
+      <agenda_item_position>42</agenda_item_position>
+      <agenda_item_title>
+        <text>Steuergesetz - Detailberatung Art. 5</text>
+        <language>de</language>
+      </agenda_item_title>
+      <agenda_item_title>
+        <text>Loi fiscale - Délibération détaillée art. 5</text>
+        <language>fr</language>
+      </agenda_item_title>
+      <affair_id>affairs:be_2024_089_steuergesetz</affair_id>
+      <agenda_item_description>
+        <text>Beratung von Änderungsanträgen zu Artikel 5 des Steuergesetzes</text>
+        <language>de</language>
+      </agenda_item_description>
+      <agenda_item_description>
+        <text>Délibération sur les propositions de modification de l'article 5 de la loi fiscale</text>
+        <language>fr</language>
+      </agenda_item_description>
+      <state_id>completed</state_id>
+      <agenda_item_category>Gesetzgebung</agenda_item_category>
+    </agenda_items>
+    <global_uri>ops:meeting_be_committee_wak_2025_05_12</global_uri>
+    <datetime_begin_actual>2025-05-12T14:10:00Z</datetime_begin_actual>
+    <datetime_begin_planned>2025-05-12T14:00:00Z</datetime_begin_planned>
+    <datetime_end_actual>2025-05-12T16:45:00Z</datetime_end_actual>
+    <datetime_end_planned>2025-05-12T17:00:00Z</datetime_end_planned>
+    <datetime_created>2025-04-15T09:00:00Z</datetime_created>
+    <datetime_modified>2025-05-12T16:45:00Z</datetime_modified>
+  </meetings>
+  <meetings>
+    <spatial>https://ld.admin.ch/canton/8</spatial>
+    <name>
+      <text>Landsgemeinde 2025</text>
+      <language>de</language>
+    </name>
+    <url>
+      <text>https://www.landsgemeinde.gl.ch/2025</text>
+      <language>de</language>
+    </url>
+    <actor_name>Landsgemeinde Glarus</actor_name>
+    <group_reference>
+      <label>Landsgemeinde Glarus</label>
+      <abbreviation>
+        <value>LG</value>
+        <language>de</language>
+      </abbreviation>
+      <global_uri>actors:landsgemeinde_gl</global_uri>
+    </group_reference>
+    <state>planned</state>
+    <location>Zaunplatz, Glarus</location>
+    <parent_session>ops:session_gl_landsgemeinde_2025</parent_session>
+    <global_uri>ops:meeting_gl_landsgemeinde_2025</global_uri>
+    <datetime_begin_actual>2025-05-04T09:30:00Z</datetime_begin_actual>
+    <datetime_begin_planned>2025-05-04T09:30:00Z</datetime_begin_planned>
+    <datetime_end_actual>2025-05-04T13:45:00Z</datetime_end_actual>
+    <datetime_end_planned>2025-05-04T14:00:00Z</datetime_end_planned>
+    <datetime_created>2025-01-10T12:00:00Z</datetime_created>
+    <datetime_modified>2025-05-04T13:45:00Z</datetime_modified>
+  </meetings>
+  <meetings>
+    <agenda_items>
+      <global_uri>ops:agenda_item_zh_budget_2026</global_uri>
+      <datetime_begin_actual>2025-11-20T16:45:00Z</datetime_begin_actual>
+      <datetime_begin_planned>2025-11-20T16:00:00Z</datetime_begin_planned>
+      <datetime_created>2025-10-01T08:00:00Z</datetime_created>
+      <datetime_modified>2025-11-20T16:50:00Z</datetime_modified>
+      <agenda_item_type>item</agenda_item_type>
+      <agenda_item_number>8</agenda_item_number>
+      <agenda_item_position>8</agenda_item_position>
+      <agenda_item_title>
+        <text>Budget 2026</text>
+        <language>de</language>
+      </agenda_item_title>
+      <affair_id>affairs:zh_2025_budget_2026</affair_id>
+      <agenda_item_description>
+        <text>Beratung und Beschlussfassung über das Kantonsbudget für das Jahr 2026</text>
+        <language>de</language>
+      </agenda_item_description>
+      <state_id>completed</state_id>
+      <agenda_item_category>Budget und Finanzen</agenda_item_category>
+    </agenda_items>
+    <global_uri>ops:meeting_zh_2025_11_20</global_uri>
+    <date_begin_planned>2025-11-20</date_begin_planned>
+  </meetings>
+  <global_uri>ops:meeting_examples_2025</global_uri>
+</Container>

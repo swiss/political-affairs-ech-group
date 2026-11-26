@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Container xmlns="https://ch.paf.link/schema/operations/">
+  <votings>
+    <datetime_begin>2025-03-15T14:30:00Z</datetime_begin>
+    <datetime_end>2025-03-15T14:35:00Z</datetime_end>
+    <voting_type>final_vote</voting_type>
+    <voting_title>
+      <text>Schlussabstimmung Energiegesetz</text>
+      <language>de</language>
+    </voting_title>
+    <total_count_yes>78</total_count_yes>
+    <total_count_no>42</total_count_no>
+    <total_count_abstention>5</total_count_abstention>
+    <total_absent>3</total_absent>
+    <total>128</total>
+    <majority_type>absolute</majority_type>
+    <majority_count>65</majority_count>
+    <result_text>Mit 78 zu 42 Stimmen bei 5 Enthaltungen angenommen</result_text>
+    <parent_meeting>ops:meeting_sg_2025_03_15</parent_meeting>
+    <parent_protocol>ops:protocol_sg_2025_03_15</parent_protocol>
+    <parent_protocol_item>ops:protocol_item_sg_2025_015</parent_protocol_item>
+    <group_reference>
+      <label>Kantonsrat St. Gallen</label>
+      <abbreviation>
+        <value>KR</value>
+        <language>de</language>
+      </abbreviation>
+      <global_uri>actors:kr_sg</global_uri>
+    </group_reference>
+    <global_uri>ops:voting_sg_2025_001</global_uri>
+    <datetime_created>2025-03-15T14:30:00Z</datetime_created>
+    <datetime_modified>2025-03-15T14:35:00Z</datetime_modified>
+  </votings>
+  <votings>
+    <datetime_begin>2025-06-05T10:15:00Z</datetime_begin>
+    <datetime_end>2025-06-05T10:17:00Z</datetime_end>
+    <voting_type>preliminary_vote</voting_type>
+    <voting_title>
+      <text>Änderungsantrag Art. 5 Abs. 2</text>
+      <language>de</language>
+    </voting_title>
+    <voting_title>
+      <text>Proposition de modification art. 5 al. 2</text>
+      <language>fr</language>
+    </voting_title>
+    <total_count_yes>45</total_count_yes>
+    <total_count_no>87</total_count_no>
+    <total_count_abstention>8</total_count_abstention>
+    <total_absent>10</total_absent>
+    <total>150</total>
+    <majority_type>absolute</majority_type>
+    <majority_count>76</majority_count>
+    <result_text>Mit 45 zu 87 Stimmen bei 8 Enthaltungen abgelehnt</result_text>
+    <parent_meeting>ops:meeting_be_2025_06_05</parent_meeting>
+    <parent_protocol>ops:protocol_be_2025_06_05</parent_protocol>
+    <parent_protocol_item>ops:protocol_item_be_2025_042</parent_protocol_item>
+    <group_reference>
+      <label>Grosser Rat Bern</label>
+      <abbreviation>
+        <value>GR</value>
+        <language>de</language>
+      </abbreviation>
+      <global_uri>actors:gr_be</global_uri>
+    </group_reference>
+    <global_uri>ops:voting_be_2025_042</global_uri>
+    <datetime_created>2025-06-05T10:15:00Z</datetime_created>
+    <datetime_modified>2025-06-05T10:15:00Z</datetime_modified>
+  </votings>
+  <votings>
+    <datetime_begin>2025-11-20T16:45:00Z</datetime_begin>
+    <datetime_end>2025-11-20T16:50:00Z</datetime_end>
+    <voting_type>final_vote</voting_type>
+    <voting_title>
+      <text>Budgetbeschluss 2026</text>
+      <language>de</language>
+    </voting_title>
+    <total_count_yes>105</total_count_yes>
+    <total_count_no>70</total_count_no>
+    <total_count_abstention>5</total_count_abstention>
+    <total_absent>0</total_absent>
+    <total>180</total>
+    <majority_type>absolute</majority_type>
+    <majority_count>91</majority_count>
+    <result_text>Mit 105 zu 70 Stimmen bei 5 Enthaltungen angenommen</result_text>
+    <parent_meeting>ops:meeting_zh_2025_11_20</parent_meeting>
+    <parent_protocol>ops:protocol_zh_2025_11_20</parent_protocol>
+    <parent_protocol_item>ops:protocol_item_zh_budget_2026</parent_protocol_item>
+    <group_reference>
+      <label>Kantonsrat Zürich</label>
+      <abbreviation>
+        <value>KR</value>
+        <language>de</language>
+      </abbreviation>
+      <global_uri>actors:kr_zh</global_uri>
+    </group_reference>
+    <global_uri>ops:voting_zh_budget_2026</global_uri>
+    <datetime_created>2025-11-20T16:45:00Z</datetime_created>
+    <datetime_modified>2025-11-20T16:50:00Z</datetime_modified>
+  </votings>
+  <votings>
+    <datetime_begin>2024-02-28T00:00:00Z</datetime_begin>
+    <datetime_end>2024-02-28T00:00:00Z</datetime_end>
+    <voting_type>other</voting_type>
+    <type_label>Gleichgerichtete Anträge (Mehrfachauswahl)</type_label>
+    <voting_title>
+      <text>Liegenschaften Stadt Zürich, Wohnhaus Magnusstrasse 27, Gesamtinstandsetzung, Grundrissanpassung, Netto-Zusatzkredit (Geschäft 2023/361)</text>
+      <language>de</language>
+    </voting_title>
+    <landing_page>https://www.gemeinderat-zuerich.ch/abstimmungen/detail.php?aid=aa10c137274f424fa4eda877e7644a89</landing_page>
+    <total_other>
+      <count>75</count>
+      <label>Auswahl A (siegreich)</label>
+    </total_other>
+    <total_other>
+      <count>25</count>
+      <label>Auswahl B</label>
+    </total_other>
+    <total_other>
+      <count>12</count>
+      <label>Auswahl C</label>
+    </total_other>
+    <total_other>
+      <count>0</count>
+      <label>Auswahl D</label>
+    </total_other>
+    <total_absent>13</total_absent>
+    <total>112</total>
+    <majority_type>other</majority_type>
+    <result_text>Auswahl A mit 75 von 112 abgegebenen Stimmen angenommen (Auswahl B: 25, Auswahl C: 12, Auswahl D: 0; 13 abwesend von 125 Mitgliedern).</result_text>
+    <parent_meeting>ops:meeting_zh_gr_2024_02_28</parent_meeting>
+    <parent_protocol>ops:protocol_zh_gr_2024_02_28</parent_protocol>
+    <parent_protocol_item>ops:protocol_item_zh_gr_2024_2023_361</parent_protocol_item>
+    <affair_id>2023/361</affair_id>
+    <group_reference>
+      <label>Gemeinderat der Stadt Zürich</label>
+      <abbreviation>
+        <value>GR</value>
+        <language>de</language>
+      </abbreviation>
+      <global_uri>actors:gr_stadt_zuerich</global_uri>
+    </group_reference>
+    <global_uri>ops:voting_zh_gr_2024_2023_361</global_uri>
+    <datetime_created>2024-02-28T00:00:00Z</datetime_created>
+    <datetime_modified>2024-02-28T00:00:00Z</datetime_modified>
+  </votings>
+  <individual_votes>
+    <parent_voting>ops:voting_zh_gr_2024_2023_361</parent_voting>
+    <person_reference>
+      <label>Mitglied Auswahl A</label>
+      <global_uri>actors:person_zh_stadt_1</global_uri>
+    </person_reference>
+    <seat_nr>12</seat_nr>
+    <individual_vote_type>other</individual_vote_type>
+    <type_label>Auswahl A</type_label>
+    <global_uri>ops:vote_zh_gr_2024_2023_361_a1</global_uri>
+    <datetime_created>2024-02-28T00:00:00Z</datetime_created>
+  </individual_votes>
+  <individual_votes>
+    <parent_voting>ops:voting_zh_gr_2024_2023_361</parent_voting>
+    <person_reference>
+      <label>Mitglied Auswahl B</label>
+      <global_uri>actors:person_zh_stadt_2</global_uri>
+    </person_reference>
+    <seat_nr>47</seat_nr>
+    <individual_vote_type>other</individual_vote_type>
+    <type_label>Auswahl B</type_label>
+    <global_uri>ops:vote_zh_gr_2024_2023_361_b1</global_uri>
+    <datetime_created>2024-02-28T00:00:00Z</datetime_created>
+  </individual_votes>
+  <individual_votes>
+    <parent_voting>ops:voting_zh_gr_2024_2023_361</parent_voting>
+    <person_reference>
+      <label>Mitglied Auswahl C</label>
+      <global_uri>actors:person_zh_stadt_3</global_uri>
+    </person_reference>
+    <seat_nr>88</seat_nr>
+    <individual_vote_type>other</individual_vote_type>
+    <type_label>Auswahl C</type_label>
+    <global_uri>ops:vote_zh_gr_2024_2023_361_c1</global_uri>
+    <datetime_created>2024-02-28T00:00:00Z</datetime_created>
+  </individual_votes>
+  <individual_votes>
+    <parent_voting>ops:voting_zh_gr_2024_2023_361</parent_voting>
+    <person_reference>
+      <label>Abwesendes Mitglied</label>
+      <global_uri>actors:person_zh_stadt_4</global_uri>
+    </person_reference>
+    <seat_nr>103</seat_nr>
+    <individual_vote_type>not_voted</individual_vote_type>
+    <global_uri>ops:vote_zh_gr_2024_2023_361_abs1</global_uri>
+    <datetime_created>2024-02-28T00:00:00Z</datetime_created>
+  </individual_votes>
+  <individual_votes>
+    <parent_voting>ops:voting_sg_2025_001</parent_voting>
+    <person_reference>
+      <label>Paul Schlegel</label>
+      <global_uri>actors:person_paul_schlegel</global_uri>
+    </person_reference>
+    <seat_nr>1</seat_nr>
+    <individual_vote_type>yes</individual_vote_type>
+    <global_uri>ops:vote_sg_2025_001_person_123</global_uri>
+    <datetime_created>2025-03-15T14:30:00Z</datetime_created>
+  </individual_votes>
+  <individual_votes>
+    <parent_voting>ops:voting_sg_2025_001</parent_voting>
+    <person_reference>
+      <label>Andreas Eggenberger</label>
+      <global_uri>actors:person_andreas_eggenberger</global_uri>
+    </person_reference>
+    <seat_nr>2</seat_nr>
+    <individual_vote_type>no</individual_vote_type>
+    <global_uri>ops:vote_sg_2025_001_person_456</global_uri>
+    <datetime_created>2025-03-15T14:30:00Z</datetime_created>
+  </individual_votes>
+  <individual_votes>
+    <parent_voting>ops:voting_sg_2025_001</parent_voting>
+    <person_reference>
+      <label>Thomas Ammann</label>
+      <global_uri>actors:person_thomas_ammann</global_uri>
+    </person_reference>
+    <seat_nr>3</seat_nr>
+    <individual_vote_type>abstention</individual_vote_type>
+    <global_uri>ops:vote_sg_2025_001_person_789</global_uri>
+    <datetime_created>2025-03-15T14:30:00Z</datetime_created>
+  </individual_votes>
+  <individual_votes>
+    <parent_voting>ops:voting_sg_2025_001</parent_voting>
+    <person_reference>
+      <label>Ruedi Thomann</label>
+      <global_uri>actors:person_ruedi_thomann</global_uri>
+    </person_reference>
+    <seat_nr>4</seat_nr>
+    <individual_vote_type>not_voted</individual_vote_type>
+    <global_uri>ops:vote_sg_2025_001_person_321</global_uri>
+    <datetime_created>2025-03-15T14:30:00Z</datetime_created>
+  </individual_votes>
+  <individual_votes>
+    <parent_voting>ops:voting_zh_budget_2026</parent_voting>
+    <person_reference>
+      <label>Thomas Wolf</label>
+      <global_uri>actors:person_thomas_wolf</global_uri>
+    </person_reference>
+    <seat_nr>1</seat_nr>
+    <individual_vote_type>yes</individual_vote_type>
+    <global_uri>ops:vote_zh_budget_2026_person_101</global_uri>
+    <datetime_created>2025-11-20T16:45:00Z</datetime_created>
+  </individual_votes>
+  <individual_votes>
+    <parent_voting>ops:voting_zh_budget_2026</parent_voting>
+    <person_reference>
+      <label>Jean-Daniel Strub</label>
+      <global_uri>actors:person_jean_daniel_strub</global_uri>
+    </person_reference>
+    <seat_nr>2</seat_nr>
+    <individual_vote_type>no</individual_vote_type>
+    <global_uri>ops:vote_zh_budget_2026_person_102</global_uri>
+    <datetime_created>2025-11-20T16:45:00Z</datetime_created>
+  </individual_votes>
+  <global_uri>ops:voting_examples_2025</global_uri>
+</Container>

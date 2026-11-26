@@ -57,6 +57,24 @@ jobs:
             linkml-convert -s schema.yaml -t rdf "$yaml_file" > "../output/${base_name}.ttl"
           done
 
+          # XML: XSD + Schematron (rules XSD 1.0 cannot express, e.g. any_of on
+          # a class) from the schema, every example as XML (linkml-xsd, profile
+          # ech: description_de/_fr become xs:documentation with xml:lang).
+          # --no-check-references: a reference may point to an object in another
+          # delivery (data_voting.yaml names protocols of the meeting examples);
+          # identifiers stay unique within a document (xs:key).
+          gen-xsd schema.yaml --profile ech --no-check-references \
+            --schematron ../output/schema.sch -o ../output/schema.xsd
+          for yaml_file in data_*.yaml; do
+            base_name=$(basename "$yaml_file" .yaml)
+            linkml2xsd instance "$yaml_file" -s schema.yaml --profile ech \
+              -o "../output/${base_name}.xml"
+          done
+
+      - name: Validate example XML against the generated XSD and Schematron
+        # Fails the run before anything is committed or released.
+        run: python .github/workflows/scripts/validate_xml.py ech-0293_operations
+
       - name: Extract examples from data files
         # Inject examples into the schema used by gen-doc.
         run: python .github/workflows/scripts/extract_examples.py ech-0293_operations

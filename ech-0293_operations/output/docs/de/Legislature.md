@@ -64,30 +64,6 @@ _Amtsdauer eines Parlaments als gesetzgebender Versammlung. Dauert in der Regel 
 
 
 ### Beispiele
-#### Beispiel Legislature: Ongoing cantonal legislature with a five-year term
-
-```yaml
-legislatures:
-- global_uri: ops:legislature_vd_2022_2027
-  wikidata_uri: http://www.wikidata.org/entity/Q131627357
-  spatial: https://ld.admin.ch/canton/22
-  name:
-  - text: Législature 2022-2027
-    language: fr
-  description: Le Grand Conseil vaudois est élu pour cinq ans.
-  landing_page: https://www.vd.ch/gc
-  group_reference:
-    global_uri: actors:gc_vd
-    label: Grand Conseil du canton de Vaud
-    abbreviation:
-    - value: GC
-      language: fr
-  date_begin_actual: '2022-07-01'
-  date_end_planned: '2027-06-30'
-  datetime_created: '2022-05-10T14:00:00+02:00'
-  datetime_modified: '2025-01-08T11:20:00+01:00'
-
-```
 #### Beispiel Legislature: Completed federal legislature
 
 ```yaml
@@ -116,6 +92,30 @@ legislatures:
   date_end_actual: '2023-12-03'
   datetime_created: '2019-12-02T09:00:00+01:00'
   datetime_modified: '2023-12-04T08:30:00+01:00'
+
+```
+#### Beispiel Legislature: Ongoing cantonal legislature with a five-year term
+
+```yaml
+legislatures:
+- global_uri: ops:legislature_vd_2022_2027
+  wikidata_uri: http://www.wikidata.org/entity/Q131627357
+  spatial: https://ld.admin.ch/canton/22
+  name:
+  - text: Législature 2022-2027
+    language: fr
+  description: Le Grand Conseil vaudois est élu pour cinq ans.
+  landing_page: https://www.vd.ch/gc
+  group_reference:
+    global_uri: actors:gc_vd
+    label: Grand Conseil du canton de Vaud
+    abbreviation:
+    - value: GC
+      language: fr
+  date_begin_actual: '2022-07-01'
+  date_end_planned: '2027-06-30'
+  datetime_created: '2022-05-10T14:00:00+02:00'
+  datetime_modified: '2025-01-08T11:20:00+01:00'
 
 ```
 #### Beispiel Legislature: Cantonal legislature with a four-year term
