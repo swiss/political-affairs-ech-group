@@ -49,177 +49,96 @@ _Ein Absatz innerhalb eines Artikels oder Unterabschnitts (akn:paragraph). Const
 
 
 ### Beispiele
-#### Beispiel Paragraph: zh idg 5 1
+#### Beispiel Paragraph: zh idg 5 2
 
 ```yaml
 paragraphs:
-- eId: title_2__chp_G__art_34__para_1
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: '1'
-  content_ref:
-    eId: title_7__art_34__para_1__content
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-    - element_type: BlockList
-      style: ''
-      eId: title_7__art_34__para_1__content__blocklist_1
-      items:
-      - …
-      - …
-      - … 5 weitere
-
-```
-#### Beispiel Paragraph: zh idg 4 1
-
-```yaml
-paragraphs:
-- eId: title_9__art_44__para_1
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: '1'
-  content_ref:
-    eId: title_9__art_44__para___content
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-    - element_type: BlockList
-      eId: title_9__art_44__para___content__blocklist_1
-      items:
-      - …
-
-```
-#### Beispiel Paragraph: zh idg 3 1
-
-```yaml
-paragraphs:
-- eId: title_9__art_43__para_1
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: '1'
-  content_ref:
-    eId: title_9__art_43__para_1__content
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-
-```
-#### Beispiel Paragraph: zh idg 7 1
-
-```yaml
-paragraphs:
-- eId: title_7__art_36__para_1
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: '1'
-  content_ref:
-    eId: title_7__art_36__para_1__content
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-
-```
-#### Beispiel Paragraph: sr101 5 2
-
-```yaml
-paragraphs:
-- eId: art_5/para_2
+- eId: title_6__art_28__para_2
   num:
     inline_content:
     - element_type: TextRun
       text: '2'
   content_ref:
+    eId: title_6__art_28__para_2__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
       - …
 
 ```
-#### Beispiel Paragraph: sr101 3 1
+#### Beispiel Paragraph: zh idg 6 1
 
 ```yaml
 paragraphs:
-- eId: art_3/para
-  content_ref:
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-
-```
-#### Beispiel Paragraph: zh idg 10 1
-
-```yaml
-paragraphs:
-- eId: title_7__art_39__para_1
+- eId: title_7__art_35__para_1
   num:
     inline_content:
     - element_type: TextRun
       text: '1'
   content_ref:
-    eId: title_7__art_39__para_1__content
+    eId: title_7__art_35__para_1__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
       - …
 
 ```
-#### Beispiel Paragraph: zh idg 4 2
+#### Beispiel Paragraph: zh idg 3 2
 
 ```yaml
 paragraphs:
-- eId: title_7__art_33__para_2
+- eId: title_7__art_32__para_2
   num:
     inline_content:
     - element_type: TextRun
       text: '2'
   content_ref:
-    eId: title_7__art_33__para_2__content
+    eId: title_7__art_32__para_2__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
       - …
 
 ```
-#### Beispiel Paragraph: zh idg 7 3
+#### Beispiel Paragraph: sr101 6 1
 
 ```yaml
 paragraphs:
-- eId: title_7__art_36__para_3
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: '3'
+- eId: art_5_a/para
   content_ref:
-    eId: title_7__art_36__para_3__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
       - …
-      - …
-      - … 1 weitere
 
 ```
-#### Beispiel Paragraph: zh idg 6 2
+#### Beispiel Paragraph: zh idg 1 2
 
 ```yaml
 paragraphs:
-- eId: title_7__art_35__para_2
+- eId: title_8__art_40__para_2
   num:
     inline_content:
     - element_type: TextRun
       text: '2'
   content_ref:
-    eId: title_7__art_35__para_2__content
+    eId: title_8__art_40__para_2__content
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+#### Beispiel Paragraph: sr101 5 1
+
+```yaml
+paragraphs:
+- eId: art_5/para_1
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '1'
+  content_ref:
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -248,11 +167,54 @@ paragraphs:
       - …
 
 ```
-#### Beispiel Paragraph: sr101 6 1
+#### Beispiel Paragraph: zh idg 4 2
 
 ```yaml
 paragraphs:
-- eId: art_5_a/para
+- eId: title_7__art_33__para_2
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '2'
+  content_ref:
+    eId: title_7__art_33__para_2__content
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+#### Beispiel Paragraph: zh idg 1 1
+
+```yaml
+paragraphs:
+- eId: title_9__art_41__para_1
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '1'
+  content_ref:
+    eId: title_9__art_41__para_1__content
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+    - element_type: BlockList
+      eId: title_9__art_41__para_1__content__blocklist_1
+      items:
+      - …
+      - …
+
+```
+#### Beispiel Paragraph: sr101 5 4
+
+```yaml
+paragraphs:
+- eId: art_5/para_4
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '4'
   content_ref:
     content_blocks:
     - element_type: BlockParagraph
@@ -260,17 +222,52 @@ paragraphs:
       - …
 
 ```
-#### Beispiel Paragraph: zh idg 6 3
+#### Beispiel Paragraph: zh idg 4 1
 
 ```yaml
 paragraphs:
-- eId: title_6__art_29__para_3
+- eId: title_9__art_44__para_1
   num:
     inline_content:
     - element_type: TextRun
-      text: '3'
+      text: '1'
   content_ref:
-    eId: title_6__art_29__para_3__content
+    eId: title_9__art_44__para___content
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+    - element_type: BlockList
+      eId: title_9__art_44__para___content__blocklist_1
+      items:
+      - …
+
+```
+#### Beispiel Paragraph: zh idg 9 1
+
+```yaml
+paragraphs:
+- eId: title_7__art_38__para_1
+  num: {}
+  content_ref:
+    eId: title_7__art_38__para_1__content
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+#### Beispiel Paragraph: zh idg 3 1
+
+```yaml
+paragraphs:
+- eId: title_9__art_43__para_1
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '1'
+  content_ref:
+    eId: title_9__art_43__para_1__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -286,6 +283,149 @@ paragraphs:
     inline_content:
     - element_type: TextRun
       text: '4'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+#### Beispiel Paragraph: zh idg 6 4
+
+```yaml
+paragraphs:
+- eId: title_6__art_29__para_4
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '4'
+  content_ref:
+    eId: title_6__art_29__para_4__content
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+#### Beispiel Paragraph: zh idg 3 3
+
+```yaml
+paragraphs:
+- eId: title_7__art_32__para_3
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '3'
+  content_ref:
+    eId: title_7__art_32__para_3__content
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+#### Beispiel Paragraph: zh idg 5 1
+
+```yaml
+paragraphs:
+- eId: title_2__chp_G__art_34__para_1
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '1'
+  content_ref:
+    eId: title_7__art_34__para_1__content
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+    - element_type: BlockList
+      style: ''
+      eId: title_7__art_34__para_1__content__blocklist_1
+      items:
+      - …
+      - …
+      - … 5 weitere
+
+```
+#### Beispiel Paragraph: zh idg 1 3
+
+```yaml
+paragraphs:
+- eId: title_5__art_23__para_3
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '3'
+  content_ref:
+    eId: title_5__art_23__para_3__content
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+#### Beispiel Paragraph: zh idg 7 1
+
+```yaml
+paragraphs:
+- eId: title_7__art_36__para_1
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '1'
+  content_ref:
+    eId: title_7__art_36__para_1__content
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+#### Beispiel Paragraph: zh idg 7 3
+
+```yaml
+paragraphs:
+- eId: title_7__art_36__para_3
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '3'
+  content_ref:
+    eId: title_7__art_36__para_3__content
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+      - …
+      - … 1 weitere
+
+```
+#### Beispiel Paragraph: sr101 2 2
+
+```yaml
+paragraphs:
+- eId: art_2/para_2
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '2'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+#### Beispiel Paragraph: sr101 2 3
+
+```yaml
+paragraphs:
+- eId: art_2/para_3
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '3'
   content_ref:
     content_blocks:
     - element_type: BlockParagraph
@@ -310,11 +450,44 @@ paragraphs:
       - …
 
 ```
-#### Beispiel Paragraph: sr101 5 1
+#### Beispiel Paragraph: sr101 5 2
 
 ```yaml
 paragraphs:
-- eId: art_5/para_1
+- eId: art_5/para_2
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '2'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+#### Beispiel Paragraph: zh idg 6 2
+
+```yaml
+paragraphs:
+- eId: title_7__art_35__para_2
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '2'
+  content_ref:
+    eId: title_7__art_35__para_2__content
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+#### Beispiel Paragraph: Paragraph with a list instead of running text
+
+```yaml
+paragraphs:
+- eId: art_2/para_1
   num:
     inline_content:
     - element_type: TextRun
@@ -326,11 +499,98 @@ paragraphs:
       - …
 
 ```
+#### Beispiel Paragraph: sr101 3 1
+
+```yaml
+paragraphs:
+- eId: art_3/para
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+#### Beispiel Paragraph: Paragraph with running text
+
+```yaml
+paragraphs:
+- eId: art_1/para
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+#### Beispiel Paragraph: zh idg 6 3
+
+```yaml
+paragraphs:
+- eId: title_6__art_29__para_3
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '3'
+  content_ref:
+    eId: title_6__art_29__para_3__content
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+#### Beispiel Paragraph: zh idg 10 1
+
+```yaml
+paragraphs:
+- eId: title_7__art_39__para_1
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '1'
+  content_ref:
+    eId: title_7__art_39__para_1__content
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
 #### Beispiel Paragraph: sr101 4 1
 
 ```yaml
 paragraphs:
 - eId: art_4/para
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+#### Beispiel Paragraph: zh idg 8 1
+
+```yaml
+paragraphs:
+- eId: title_7__art_37__para_1
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '1'
+  content_ref:
+    eId: title_7__art_37__para_1__content
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+#### Beispiel Paragraph: sr101 7 1
+
+```yaml
+paragraphs:
+- eId: art_6/para
   content_ref:
     content_blocks:
     - element_type: BlockParagraph
@@ -371,121 +631,6 @@ paragraphs:
       - …
 
 ```
-#### Beispiel Paragraph: Paragraph with a list instead of running text
-
-```yaml
-paragraphs:
-- eId: art_2/para_1
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: '1'
-  content_ref:
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-
-```
-#### Beispiel Paragraph: zh idg 6 4
-
-```yaml
-paragraphs:
-- eId: title_6__art_29__para_4
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: '4'
-  content_ref:
-    eId: title_6__art_29__para_4__content
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-
-```
-#### Beispiel Paragraph: zh idg 1 1
-
-```yaml
-paragraphs:
-- eId: title_9__art_41__para_1
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: '1'
-  content_ref:
-    eId: title_9__art_41__para_1__content
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-    - element_type: BlockList
-      eId: title_9__art_41__para_1__content__blocklist_1
-      items:
-      - …
-      - …
-
-```
-#### Beispiel Paragraph: zh idg 6 1
-
-```yaml
-paragraphs:
-- eId: title_7__art_35__para_1
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: '1'
-  content_ref:
-    eId: title_7__art_35__para_1__content
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-
-```
-#### Beispiel Paragraph: zh idg 7 2
-
-```yaml
-paragraphs:
-- eId: title_7__art_36__para_2
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: '2'
-  content_ref:
-    eId: title_7__art_36__para_2__content
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-
-```
-#### Beispiel Paragraph: sr101 7 1
-
-```yaml
-paragraphs:
-- eId: art_6/para
-  content_ref:
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-
-```
-#### Beispiel Paragraph: zh idg 9 1
-
-```yaml
-paragraphs:
-- eId: title_7__art_38__para_1
-  num: {}
-  content_ref:
-    eId: title_7__art_38__para_1__content
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-
-```
 #### Beispiel Paragraph: zh idg 2 1
 
 ```yaml
@@ -508,162 +653,17 @@ paragraphs:
       - …
 
 ```
-#### Beispiel Paragraph: zh idg 8 1
+#### Beispiel Paragraph: zh idg 7 2
 
 ```yaml
 paragraphs:
-- eId: title_7__art_37__para_1
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: '1'
-  content_ref:
-    eId: title_7__art_37__para_1__content
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-
-```
-#### Beispiel Paragraph: sr101 5 4
-
-```yaml
-paragraphs:
-- eId: art_5/para_4
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: '4'
-  content_ref:
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-
-```
-#### Beispiel Paragraph: sr101 2 2
-
-```yaml
-paragraphs:
-- eId: art_2/para_2
+- eId: title_7__art_36__para_2
   num:
     inline_content:
     - element_type: TextRun
       text: '2'
   content_ref:
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-
-```
-#### Beispiel Paragraph: zh idg 1 2
-
-```yaml
-paragraphs:
-- eId: title_8__art_40__para_2
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: '2'
-  content_ref:
-    eId: title_8__art_40__para_2__content
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-
-```
-#### Beispiel Paragraph: sr101 2 3
-
-```yaml
-paragraphs:
-- eId: art_2/para_3
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: '3'
-  content_ref:
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-
-```
-#### Beispiel Paragraph: Paragraph with running text
-
-```yaml
-paragraphs:
-- eId: art_1/para
-  content_ref:
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-
-```
-#### Beispiel Paragraph: zh idg 3 3
-
-```yaml
-paragraphs:
-- eId: title_7__art_32__para_3
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: '3'
-  content_ref:
-    eId: title_7__art_32__para_3__content
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-
-```
-#### Beispiel Paragraph: zh idg 1 3
-
-```yaml
-paragraphs:
-- eId: title_5__art_23__para_3
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: '3'
-  content_ref:
-    eId: title_5__art_23__para_3__content
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-
-```
-#### Beispiel Paragraph: zh idg 5 2
-
-```yaml
-paragraphs:
-- eId: title_6__art_28__para_2
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: '2'
-  content_ref:
-    eId: title_6__art_28__para_2__content
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-
-```
-#### Beispiel Paragraph: zh idg 3 2
-
-```yaml
-paragraphs:
-- eId: title_7__art_32__para_2
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: '2'
-  content_ref:
-    eId: title_7__art_32__para_2__content
+    eId: title_7__art_36__para_2__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:

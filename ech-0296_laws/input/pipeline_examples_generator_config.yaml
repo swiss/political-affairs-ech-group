@@ -54,7 +54,6 @@ slots:
   - as_role
   - short_form
   - xml_lang
-  - doc_number
   - element_type
   - text
   - doc_name
@@ -108,7 +107,3 @@ example_titles:
     de: Absatz mit Aufzählung statt Fliesstext
     fr: Alinéa avec énumération au lieu de texte suivi
     en: Paragraph with a list instead of running text
-  "art_2/para_1/lst":
-    de: Aufzählung mit Einleitungssatz
-    fr: Énumération avec phrase introductive
-    en: List with an introductory sentence

@@ -48,6 +48,29 @@ _FRBR-Expression-Ebene (akn:FRBRExpression): eine sprachspezifische Version des 
 
 
 ### Beispiele
+#### Beispiel FRBRExpression: sr101 1 1
+
+```yaml
+frbr_expression:
+  frbr_this:
+    value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/main-text
+  frbr_uri:
+    value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de
+  frbr_dates:
+  - date_value: '2000-01-01'
+    frbr_date_name: jolux:dateEntryInForce
+  - date_value: '1999-04-18'
+    frbr_date_name: jolux:dateDocument
+  - … 1 weitere
+  frbr_authors:
+  - href: '#ch.bk'
+    as_role: '#publisher'
+  - href: '#ch.bk'
+    as_role: '#rightsHolder'
+  frbr_language:
+    language_value: de
+
+```
 #### Beispiel FRBRExpression: zh idg 1 1
 
 ```yaml
@@ -80,29 +103,6 @@ frbr_expression:
   - date_value: '2006-07-01'
     frbr_date_name: jolux:dateEntryInForce
   - date_value: '2004-12-17'
-    frbr_date_name: jolux:dateDocument
-  - … 1 weitere
-  frbr_authors:
-  - href: '#ch.bk'
-    as_role: '#publisher'
-  - href: '#ch.bk'
-    as_role: '#rightsHolder'
-  frbr_language:
-    language_value: de
-
-```
-#### Beispiel FRBRExpression: sr101 1 1
-
-```yaml
-frbr_expression:
-  frbr_this:
-    value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/main-text
-  frbr_uri:
-    value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de
-  frbr_dates:
-  - date_value: '2000-01-01'
-    frbr_date_name: jolux:dateEntryInForce
-  - date_value: '1999-04-18'
     frbr_date_name: jolux:dateDocument
   - … 1 weitere
   frbr_authors:

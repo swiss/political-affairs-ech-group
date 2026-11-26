@@ -46,33 +46,47 @@ _Der Inhalt eines Absatzes (akn:content). Enthält Block-Elemente: akn:p (Fliess
 
 
 ### Beispiele
-#### Beispiel Content: zh idg 2 1
+#### Beispiel Content: zh idg 3 1
 
 ```yaml
 content_ref:
-  eId: title_9__art_42__para_2__content
+  eId: title_7__art_36__para_3__content
   content_blocks:
   - element_type: BlockParagraph
     inline_content:
     - element_type: TextRun
       text: >-
-        In den folgenden Gesetzen wird der Ausdruck «besonders schützenswerte Personendaten»
-        oder «besonders schützenswerte Daten» ersetzt durch den Ausdruck «besondere
-        Personendaten»:
+        Die oder der Beauftragte ist berechtigt, die Verfügung nach Massgabe des Verwaltungsrechtspflegegesetzes
+        vom 24. Mai 19596
+    - element_type: NoteRef
+      href: '#note_2'
+      marker: '2'
+    - … 1 weitere
+
+```
+#### Beispiel Content: zh idg 1 1
+
+```yaml
+content_ref:
+  eId: title_9__art_44__para___content
+  content_blocks:
+  - element_type: BlockParagraph
+    inline_content:
+    - element_type: TextRun
+      text: 'Die nachfolgenden Gesetze werden wie folgt geändert:'
   - element_type: BlockList
-    eId: title_9__art_42__para_2__content__blocklist_1
+    eId: title_9__art_44__para___content__blocklist_1
     items:
-    - eId: title_9__art_42__para_2__content__blocklist_1__item_a
+    - eId: title_9__art_44__para___content__blocklist_1__item_a
       content_blocks:
       - …
       num:
         inline_content:
         - …
-    - eId: title_9__art_42__para_2__content__blocklist_1__item_b
-      content_blocks:
-      - …
-      num:
+      heading:
+        eId: title_9__art_44__para___content__blocklist_1__item_a__heading
         inline_content:
+        - …
         - …
 
 ```
@@ -103,61 +117,6 @@ content_ref:
         sein.
 
 ```
-#### Beispiel Content: sr101 4 1
-
-```yaml
-content_ref:
-  content_blocks:
-  - element_type: BlockParagraph
-    inline_content:
-    - element_type: TextRun
-      text: Bund und Kantone beachten das Völkerrecht.
-
-```
-#### Beispiel Content: zh idg 1 1
-
-```yaml
-content_ref:
-  eId: title_9__art_44__para___content
-  content_blocks:
-  - element_type: BlockParagraph
-    inline_content:
-    - element_type: TextRun
-      text: 'Die nachfolgenden Gesetze werden wie folgt geändert:'
-  - element_type: BlockList
-    eId: title_9__art_44__para___content__blocklist_1
-    items:
-    - eId: title_9__art_44__para___content__blocklist_1__item_a
-      content_blocks:
-      - …
-      num:
-        inline_content:
-        - …
-      heading:
-        eId: title_9__art_44__para___content__blocklist_1__item_a__heading
-        inline_content:
-        - …
-        - …
-
-```
-#### Beispiel Content: zh idg 3 1
-
-```yaml
-content_ref:
-  eId: title_7__art_36__para_3__content
-  content_blocks:
-  - element_type: BlockParagraph
-    inline_content:
-    - element_type: TextRun
-      text: >-
-        Die oder der Beauftragte ist berechtigt, die Verfügung nach Massgabe des Verwaltungsrechtspflegegesetzes
-        vom 24. Mai 19596
-    - element_type: NoteRef
-      href: '#note_2'
-      marker: '2'
-    - … 1 weitere
-
-```
 #### Beispiel Content: sr101 1 1
 
 ```yaml
@@ -171,6 +130,36 @@ content_ref:
         Kräften zur Bewältigung der Aufgaben in Staat und Gesellschaft bei.
 
 ```
+#### Beispiel Content: zh idg 2 1
+
+```yaml
+content_ref:
+  eId: title_9__art_42__para_2__content
+  content_blocks:
+  - element_type: BlockParagraph
+    inline_content:
+    - element_type: TextRun
+      text: >-
+        In den folgenden Gesetzen wird der Ausdruck «besonders schützenswerte Personendaten»
+        oder «besonders schützenswerte Daten» ersetzt durch den Ausdruck «besondere
+        Personendaten»:
+  - element_type: BlockList
+    eId: title_9__art_42__para_2__content__blocklist_1
+    items:
+    - eId: title_9__art_42__para_2__content__blocklist_1__item_a
+      content_blocks:
+      - …
+      num:
+        inline_content:
+        - …
+    - eId: title_9__art_42__para_2__content__blocklist_1__item_b
+      content_blocks:
+      - …
+      num:
+        inline_content:
+        - …
+
+```
 #### Beispiel Content: sr101 3 1
 
 ```yaml
@@ -180,6 +169,17 @@ content_ref:
     inline_content:
     - element_type: TextRun
       text: Staatliche Organe und Private handeln nach Treu und Glauben.
+
+```
+#### Beispiel Content: sr101 4 1
+
+```yaml
+content_ref:
+  content_blocks:
+  - element_type: BlockParagraph
+    inline_content:
+    - element_type: TextRun
+      text: Bund und Kantone beachten das Völkerrecht.
 
 ```
 

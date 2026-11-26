@@ -44,6 +44,30 @@ _Ein Vorspann-Absatz (akn:p). Fedlex verlangt akn:docNumber und akn:docTitle irg
 
 
 ### Beispiele
+#### Beispiel PrefaceP: bgoe 1 2
+
+```yaml
+preface_paragraphs:
+- inline_content:
+  - element_type: DocTitle
+    inline_content:
+    - element_type: TextRun
+      text: Bundesgesetz
+    - element_type: Br
+    - … 1 weitere
+
+```
+#### Beispiel PrefaceP: bgoe 1 1
+
+```yaml
+preface_paragraphs:
+- inline_content:
+  - element_type: DocNumber
+    inline_content:
+    - element_type: TextRun
+      text: '152.3'
+
+```
 #### Beispiel PrefaceP: sr101 1 1
 
 ```yaml
@@ -53,6 +77,24 @@ preface_paragraphs:
     inline_content:
     - element_type: TextRun
       text: '101'
+
+```
+#### Beispiel PrefaceP: bgoe 1 3
+
+```yaml
+preface_paragraphs:
+- inline_content:
+  - element_type: TextRun
+    text: (Öffentlichkeitsgesetz, BGÖ)
+
+```
+#### Beispiel PrefaceP: bgoe 1 4
+
+```yaml
+preface_paragraphs:
+- inline_content:
+  - element_type: TextRun
+    text: vom 17. Dezember 2004 (Stand am 1. November 2023)
 
 ```
 #### Beispiel PrefaceP: sr101 1 2
@@ -77,28 +119,6 @@ preface_paragraphs:
     text: vom 18. April 1999 (Stand am 3. März 2024)
 
 ```
-#### Beispiel PrefaceP: bgoe 1 3
-
-```yaml
-preface_paragraphs:
-- inline_content:
-  - element_type: TextRun
-    text: (Öffentlichkeitsgesetz, BGÖ)
-
-```
-#### Beispiel PrefaceP: bgoe 1 2
-
-```yaml
-preface_paragraphs:
-- inline_content:
-  - element_type: DocTitle
-    inline_content:
-    - element_type: TextRun
-      text: Bundesgesetz
-    - element_type: Br
-    - … 1 weitere
-
-```
 #### Beispiel PrefaceP: zh idg 1 1
 
 ```yaml
@@ -117,26 +137,6 @@ preface_paragraphs:
     - element_type: TextRun
       text: Gesetz über die Information und den Datenschutz
   - … 3 weitere
-
-```
-#### Beispiel PrefaceP: bgoe 1 1
-
-```yaml
-preface_paragraphs:
-- inline_content:
-  - element_type: DocNumber
-    inline_content:
-    - element_type: TextRun
-      text: '152.3'
-
-```
-#### Beispiel PrefaceP: bgoe 1 4
-
-```yaml
-preface_paragraphs:
-- inline_content:
-  - element_type: TextRun
-    text: vom 17. Dezember 2004 (Stand am 1. November 2023)
 
 ```
 

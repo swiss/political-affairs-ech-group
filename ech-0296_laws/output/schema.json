@@ -131,8 +131,7 @@
                             "type": "null"
                         }
                     ],
-                    "description": "Type of the act (akn:act/@name). The permissible values of ActTypeEnum are those Fedlex uses; cantonal collections name their own types, which is why a free string remains admissible.\n",
-                    "type": "string"
+                    "description": "Type of the act (akn:act/@name). The permissible values of ActTypeEnum are those Fedlex uses; cantonal collections name their own types, which is why a free string remains admissible.\n"
                 },
                 "attachments_ref": {
                     "anyOf": [
@@ -807,7 +806,14 @@
             "description": "A generic block (akn:block) whose @name states its purpose; carries mixed content.",
             "properties": {
                 "block_name": {
-                    "$ref": "#/$defs/BlockNameEnum",
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/BlockNameEnum"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "description": "Purpose of the block (akn:block/@name)."
                 },
                 "inline_content": {
@@ -1055,7 +1061,14 @@
                     ]
                 },
                 "fedlex_role": {
-                    "$ref": "#/$defs/FedlexRoleEnum",
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/FedlexRoleEnum"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "description": "Fedlex extension attribute fedlex:role. FLX-XF-003 permits 'marginal' (only on akn:level, FLX-XF-004) and 'reference' (only on akn:subheading, FLX-XF-005); the published Federal Constitution additionally carries 'heading' on a preamble paragraph.\n"
                 },
                 "inline_content": {
@@ -1612,7 +1625,14 @@
                     ]
                 },
                 "container_name": {
-                    "$ref": "#/$defs/ContainerNameEnum",
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/ContainerNameEnum"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "description": "Purpose of the container (akn:container/@name)."
                 }
             },
@@ -1903,7 +1923,14 @@
             "description": "An embedded document (akn:doc). Its @name states the kind; Fedlex uses 'annex'. It carries its own identification, which in the Fedlex files repeats the URIs of the act it belongs to.",
             "properties": {
                 "doc_name": {
-                    "$ref": "#/$defs/DocNameEnum",
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/DocNameEnum"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "description": "Kind of the embedded document (akn:doc/@name)."
                 },
                 "main_body": {
@@ -2499,8 +2526,7 @@
                             "type": "null"
                         }
                     ],
-                    "description": "Type of this date (akn:FRBRdate/@name). Fedlex uses the JoLux vocabulary; the permissible values of FrbrDateNameEnum carry the corresponding ELI property. Cantonal publishers use their own designations, which is why a free string remains admissible.\n",
-                    "type": "string"
+                    "description": "Type of this date (akn:FRBRdate/@name). Fedlex uses the JoLux vocabulary; the permissible values of FrbrDateNameEnum carry the corresponding ELI property. Cantonal publishers use their own designations, which is why a free string remains admissible.\n"
                 }
             },
             "title": "FRBRDate",
@@ -2850,8 +2876,7 @@
                             "type": "null"
                         }
                     ],
-                    "description": "Kind of the modification (@type); the permissible values are those of Akoma Ntoso.",
-                    "type": "string"
+                    "description": "Kind of the modification (@type); the permissible values are those of Akoma Ntoso."
                 },
                 "period": {
                     "description": "The temporal group during which the modification applies (@period).",
@@ -3241,7 +3266,14 @@
             "description": "A holder carrying a single @language attribute (akn:FRBRlanguage).",
             "properties": {
                 "language_value": {
-                    "$ref": "#/$defs/DocumentLanguageEnum",
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/DocumentLanguageEnum"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "description": "The @language attribute of akn:FRBRlanguage, e.g. 'de'."
                 },
                 "show_as": {
@@ -3305,7 +3337,14 @@
                     "type": "string"
                 },
                 "fedlex_role": {
-                    "$ref": "#/$defs/FedlexRoleEnum",
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/FedlexRoleEnum"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "description": "When set, must be 'marginal' (FLX-XF-004). The value 'reference' is not allowed on level; it is reserved for subheading (FLX-XF-005).\n"
                 },
                 "heading": {
@@ -4352,7 +4391,14 @@
             "description": "A preface paragraph (akn:p). Fedlex requires akn:docNumber and akn:docTitle somewhere in the preface (FLX-PF-001/002); cantonal collections additionally mark up the systematic number, the short title, the abbreviation and the date.",
             "properties": {
                 "fedlex_role": {
-                    "$ref": "#/$defs/FedlexRoleEnum",
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/FedlexRoleEnum"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "description": "Fedlex extension attribute fedlex:role. FLX-XF-003 permits 'marginal' (only on akn:level, FLX-XF-004) and 'reference' (only on akn:subheading, FLX-XF-005); the published Federal Constitution additionally carries 'heading' on a preamble paragraph.\n"
                 },
                 "inline_content": {
@@ -5979,8 +6025,7 @@
                             "type": "null"
                         }
                     ],
-                    "description": "Kind of the modification (@type); the permissible values are those of Akoma Ntoso.",
-                    "type": "string"
+                    "description": "Kind of the modification (@type); the permissible values are those of Akoma Ntoso."
                 },
                 "period": {
                     "description": "The temporal group during which the modification applies (@period).",
@@ -6271,9 +6316,9 @@
     },
     "$id": "https://ld.ech.ch/schema/0296/laws",
     "$schema": "https://json-schema.org/draft/2019-09/schema",
-    "additionalProperties": true,
+    "additionalProperties": false,
     "description": "Root element of a Fedlex AkomaNtoso document (akn:akomaNtoso). Must contain exactly one akn:act element and no other children (FLX-RT-001). Carries the AkomaNtoso namespace declaration and the Fedlex extension namespace.",
-    "metamodel_version": "1.11.0",
+    "metamodel_version": "1.12.0",
     "properties": {
         "act_ref": {
             "$ref": "#/$defs/Act",

@@ -324,59 +324,6 @@ _FRBR-Identifikationsblock (akn:identification) mit Work-, Expression- und Manif
 
 
 #### Beispiele
-##### Beispiel Identification: zh idg 1 1
-
-```yaml
-identification_ref:
-  source: ''
-  frbr_work:
-    frbr_this:
-      value_uri: /akn/CH-ZH/act/2007-02-12/62-121/!main
-    frbr_uri:
-      value_uri: /akn/CH-ZH/act/2007-02-12/62-121
-    frbr_dates:
-    - date_value: '2007-02-12'
-      frbr_date_name: ''
-    frbr_authors:
-    - href: '#kantonsrat'
-      as_role: '#authority'
-    frbr_country:
-      value: CH-ZH
-    frbr_subtype:
-      value: Gesetz
-    frbr_number:
-      value: 62-121
-  frbr_expression:
-    frbr_this:
-      value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@/!main
-    frbr_uri:
-      value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@
-    frbr_dates:
-    - date_value: '2007-02-12'
-      frbr_date_name: ''
-    frbr_authors:
-    - href: '#SK'
-      as_role: '#editor'
-    - href: '#JI'
-      as_role: '#coEditor'
-    frbr_language:
-      language_value: ger
-  frbr_manifestation:
-    frbr_this:
-      value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@.akn/!main
-    frbr_uri:
-      value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@.akn
-    frbr_dates:
-    - date_value: '2007-02-12'
-      frbr_date_name: ''
-    frbr_authors:
-    - href: '#SK-Publ'
-      as_role: '#publisher'
-    frbr_format:
-      value: '#akn'
-      show_as: akn
-
-```
 ##### Beispiel Identification: sr101 1 1
 
 ```yaml
@@ -528,6 +475,59 @@ identification_ref:
     frbr_format:
       value: xml
       fedlex_generator: 2024-q4-rel-1.6.5
+
+```
+##### Beispiel Identification: zh idg 1 1
+
+```yaml
+identification_ref:
+  source: ''
+  frbr_work:
+    frbr_this:
+      value_uri: /akn/CH-ZH/act/2007-02-12/62-121/!main
+    frbr_uri:
+      value_uri: /akn/CH-ZH/act/2007-02-12/62-121
+    frbr_dates:
+    - date_value: '2007-02-12'
+      frbr_date_name: ''
+    frbr_authors:
+    - href: '#kantonsrat'
+      as_role: '#authority'
+    frbr_country:
+      value: CH-ZH
+    frbr_subtype:
+      value: Gesetz
+    frbr_number:
+      value: 62-121
+  frbr_expression:
+    frbr_this:
+      value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@/!main
+    frbr_uri:
+      value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@
+    frbr_dates:
+    - date_value: '2007-02-12'
+      frbr_date_name: ''
+    frbr_authors:
+    - href: '#SK'
+      as_role: '#editor'
+    - href: '#JI'
+      as_role: '#coEditor'
+    frbr_language:
+      language_value: ger
+  frbr_manifestation:
+    frbr_this:
+      value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@.akn/!main
+    frbr_uri:
+      value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@.akn
+    frbr_dates:
+    - date_value: '2007-02-12'
+      frbr_date_name: ''
+    frbr_authors:
+    - href: '#SK-Publ'
+      as_role: '#publisher'
+    frbr_format:
+      value: '#akn'
+      show_as: akn
 
 ```
 
@@ -745,6 +745,29 @@ _FRBR-Expression-Ebene (akn:FRBRExpression): eine sprachspezifische Version des 
 
 
 #### Beispiele
+##### Beispiel FRBRExpression: sr101 1 1
+
+```yaml
+frbr_expression:
+  frbr_this:
+    value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/main-text
+  frbr_uri:
+    value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de
+  frbr_dates:
+  - date_value: '2000-01-01'
+    frbr_date_name: jolux:dateEntryInForce
+  - date_value: '1999-04-18'
+    frbr_date_name: jolux:dateDocument
+  - … 1 weitere
+  frbr_authors:
+  - href: '#ch.bk'
+    as_role: '#publisher'
+  - href: '#ch.bk'
+    as_role: '#rightsHolder'
+  frbr_language:
+    language_value: de
+
+```
 ##### Beispiel FRBRExpression: zh idg 1 1
 
 ```yaml
@@ -777,29 +800,6 @@ frbr_expression:
   - date_value: '2006-07-01'
     frbr_date_name: jolux:dateEntryInForce
   - date_value: '2004-12-17'
-    frbr_date_name: jolux:dateDocument
-  - … 1 weitere
-  frbr_authors:
-  - href: '#ch.bk'
-    as_role: '#publisher'
-  - href: '#ch.bk'
-    as_role: '#rightsHolder'
-  frbr_language:
-    language_value: de
-
-```
-##### Beispiel FRBRExpression: sr101 1 1
-
-```yaml
-frbr_expression:
-  frbr_this:
-    value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/main-text
-  frbr_uri:
-    value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de
-  frbr_dates:
-  - date_value: '2000-01-01'
-    frbr_date_name: jolux:dateEntryInForce
-  - date_value: '1999-04-18'
     frbr_date_name: jolux:dateDocument
   - … 1 weitere
   frbr_authors:
@@ -868,23 +868,28 @@ _FRBR-Manifestations-Ebene (akn:FRBRManifestation): ein spezifisches Dateiformat
 
 
 #### Beispiele
-##### Beispiel FRBRManifestation: zh idg 1 1
+##### Beispiel FRBRManifestation: sr101 1 1
 
 ```yaml
 frbr_manifestation:
   frbr_this:
-    value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@.akn/!main
+    value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/xml/main-text
   frbr_uri:
-    value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@.akn
+    value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/xml
   frbr_dates:
-  - date_value: '2007-02-12'
-    frbr_date_name: ''
+  - date_value: '2000-01-01'
+    frbr_date_name: jolux:dateEntryInForce
+  - date_value: '1999-04-18'
+    frbr_date_name: jolux:dateDocument
+  - … 1 weitere
   frbr_authors:
-  - href: '#SK-Publ'
+  - href: '#ch.bk'
     as_role: '#publisher'
+  - href: '#ch.bk'
+    as_role: '#rightsHolder'
   frbr_format:
-    value: '#akn'
-    show_as: akn
+    value: xml
+    fedlex_generator: 2026-q1-rel-1.8.5
 
 ```
 ##### Beispiel FRBRManifestation: bgoe 1 1
@@ -911,28 +916,23 @@ frbr_manifestation:
     fedlex_generator: 2024-q4-rel-1.6.5
 
 ```
-##### Beispiel FRBRManifestation: sr101 1 1
+##### Beispiel FRBRManifestation: zh idg 1 1
 
 ```yaml
 frbr_manifestation:
   frbr_this:
-    value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/xml/main-text
+    value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@.akn/!main
   frbr_uri:
-    value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/xml
+    value_uri: /akn/CH-ZH/act/2007-02-12/62-121/ger@.akn
   frbr_dates:
-  - date_value: '2000-01-01'
-    frbr_date_name: jolux:dateEntryInForce
-  - date_value: '1999-04-18'
-    frbr_date_name: jolux:dateDocument
-  - … 1 weitere
+  - date_value: '2007-02-12'
+    frbr_date_name: ''
   frbr_authors:
-  - href: '#ch.bk'
+  - href: '#SK-Publ'
     as_role: '#publisher'
-  - href: '#ch.bk'
-    as_role: '#rightsHolder'
   frbr_format:
-    value: xml
-    fedlex_generator: 2026-q1-rel-1.8.5
+    value: '#akn'
+    show_as: akn
 
 ```
 
@@ -991,20 +991,20 @@ _Ein Datumseintrag einer FRBR-Entität (akn:FRBRdate). Das @name-Attribut verwen
 
 
 #### Beispiele
+##### Beispiel FRBRDate: sr101 1 1
+
+```yaml
+frbr_dates:
+- date_value: '2000-01-01'
+  frbr_date_name: jolux:dateEntryInForce
+
+```
 ##### Beispiel FRBRDate: bgoe 1 3
 
 ```yaml
 frbr_dates:
 - date_value: '2023-11-01'
   frbr_date_name: jolux:dateApplicability
-
-```
-##### Beispiel FRBRDate: sr101 1 2
-
-```yaml
-frbr_dates:
-- date_value: '1999-04-18'
-  frbr_date_name: jolux:dateDocument
 
 ```
 ##### Beispiel FRBRDate: bgoe 1 1
@@ -1039,12 +1039,12 @@ frbr_dates:
   frbr_date_name: jolux:dateDocument
 
 ```
-##### Beispiel FRBRDate: sr101 1 1
+##### Beispiel FRBRDate: sr101 1 2
 
 ```yaml
 frbr_dates:
-- date_value: '2000-01-01'
-  frbr_date_name: jolux:dateEntryInForce
+- date_value: '1999-04-18'
+  frbr_date_name: jolux:dateDocument
 
 ```
 
@@ -1135,12 +1135,12 @@ _Ein Autoren- oder Rechteinhaber-Eintrag einer FRBR-Entität (akn:FRBRauthor). @
 
 
 #### Beispiele
-##### Beispiel FRBRAuthor: sr101 1 1
+##### Beispiel FRBRAuthor: bgoe 1 2
 
 ```yaml
 frbr_authors:
 - href: '#ch.bk'
-  as_role: '#publisher'
+  as_role: '#rightsHolder'
 
 ```
 ##### Beispiel FRBRAuthor: zh idg 1 2
@@ -1151,7 +1151,15 @@ frbr_authors:
   as_role: '#coEditor'
 
 ```
-##### Beispiel FRBRAuthor: bgoe 1 2
+##### Beispiel FRBRAuthor: sr101 1 1
+
+```yaml
+frbr_authors:
+- href: '#ch.bk'
+  as_role: '#publisher'
+
+```
+##### Beispiel FRBRAuthor: sr101 1 2
 
 ```yaml
 frbr_authors:
@@ -1173,14 +1181,6 @@ frbr_authors:
 frbr_authors:
 - href: '#ch.bk'
   as_role: '#publisher'
-
-```
-##### Beispiel FRBRAuthor: sr101 1 2
-
-```yaml
-frbr_authors:
-- href: '#ch.bk'
-  as_role: '#rightsHolder'
 
 ```
 
@@ -1238,15 +1238,26 @@ _Ein mehrsprachiger Namenseintrag des FRBR-Works (akn:FRBRname). Enthält den of
 
 
 #### Beispiele
-##### Beispiel FRBRName: bgoe 1 1
+##### Beispiel FRBRName: bgoe 1 2
 
 ```yaml
 frbr_names:
-- xml_lang: it
+- xml_lang: fr
   value: >-
-    Legge federale del 17 dicembre 2004 sul principio di trasparenza dell'amministrazione
-    (Legge sulla trasparenza, LTras)
-  short_form: LTras
+    Loi fédérale du 17 décembre 2004 sur le principe de la transparence dans l'administration
+    (Loi sur la transparence, LTrans)
+  short_form: LTrans
+
+```
+##### Beispiel FRBRName: bgoe 1 5
+
+```yaml
+frbr_names:
+- xml_lang: rm
+  value: >-
+    Lescha federala dals 17 da december 2004 davart il princip da la transparenza
+    da l'administraziun (Lescha da transparenza, LTrans)
+  short_form: LTrans
 
 ```
 ##### Beispiel FRBRName: sr101 1 2
@@ -1258,24 +1269,33 @@ frbr_names:
   short_form: Cst.
 
 ```
-##### Beispiel FRBRName: sr101 1 3
-
-```yaml
-frbr_names:
-- xml_lang: en
-  value: Federal Constitution of 18 April 1999 of the Swiss Confederation
-  short_form: Cst.
-
-```
-##### Beispiel FRBRName: bgoe 1 3
+##### Beispiel FRBRName: sr101 1 1
 
 ```yaml
 frbr_names:
 - xml_lang: de
+  value: Bundesverfassung der Schweizerischen Eidgenossenschaft vom 18. April 1999
+  short_form: BV
+
+```
+##### Beispiel FRBRName: bgoe 1 1
+
+```yaml
+frbr_names:
+- xml_lang: it
   value: >-
-    Bundesgesetz vom 17. Dezember 2004 über das Öffentlichkeitsprinzip der Verwaltung
-    (Öffentlichkeitsgesetz, BGÖ)
-  short_form: BGÖ
+    Legge federale del 17 dicembre 2004 sul principio di trasparenza dell'amministrazione
+    (Legge sulla trasparenza, LTras)
+  short_form: LTras
+
+```
+##### Beispiel FRBRName: sr101 1 5
+
+```yaml
+frbr_names:
+- xml_lang: it
+  value: Costituzione federale della Confederazione Svizzera del 18 aprile 1999
+  short_form: Cost.
 
 ```
 ##### Beispiel FRBRName: bgoe 1 4
@@ -1289,13 +1309,13 @@ frbr_names:
   short_form: FoIA
 
 ```
-##### Beispiel FRBRName: sr101 1 5
+##### Beispiel FRBRName: sr101 1 3
 
 ```yaml
 frbr_names:
-- xml_lang: it
-  value: Costituzione federale della Confederazione Svizzera del 18 aprile 1999
-  short_form: Cost.
+- xml_lang: en
+  value: Federal Constitution of 18 April 1999 of the Swiss Confederation
+  short_form: Cst.
 
 ```
 ##### Beispiel FRBRName: sr101 1 4
@@ -1307,35 +1327,15 @@ frbr_names:
   short_form: Cst.
 
 ```
-##### Beispiel FRBRName: bgoe 1 2
-
-```yaml
-frbr_names:
-- xml_lang: fr
-  value: >-
-    Loi fédérale du 17 décembre 2004 sur le principe de la transparence dans l'administration
-    (Loi sur la transparence, LTrans)
-  short_form: LTrans
-
-```
-##### Beispiel FRBRName: sr101 1 1
+##### Beispiel FRBRName: bgoe 1 3
 
 ```yaml
 frbr_names:
 - xml_lang: de
-  value: Bundesverfassung der Schweizerischen Eidgenossenschaft vom 18. April 1999
-  short_form: BV
-
-```
-##### Beispiel FRBRName: bgoe 1 5
-
-```yaml
-frbr_names:
-- xml_lang: rm
   value: >-
-    Lescha federala dals 17 da december 2004 davart il princip da la transparenza
-    da l'administraziun (Lescha da transparenza, LTrans)
-  short_form: LTrans
+    Bundesgesetz vom 17. Dezember 2004 über das Öffentlichkeitsprinzip der Verwaltung
+    (Öffentlichkeitsgesetz, BGÖ)
+  short_form: BGÖ
 
 ```
 
@@ -1503,195 +1503,6 @@ _Das Erlasselement (akn:act). Hauptinhaltselement eines AkomaNtoso-Dokuments. Da
 
 
 #### Beispiele
-##### Beispiel Act: bgoe 1
-
-```yaml
-act_ref:
-  act_name: publicLaw
-  meta:
-    identification_ref:
-      source: '#ch.bk'
-      frbr_work:
-        frbr_this:
-          value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/main-text
-        frbr_uri:
-          value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101
-        frbr_dates:
-        - date_value: '2006-07-01'
-          frbr_date_name: jolux:dateEntryInForce
-        - date_value: '2004-12-17'
-          frbr_date_name: jolux:dateDocument
-        - … 1 weitere
-        frbr_authors:
-        - href: '#ch.bk'
-          as_role: '#publisher'
-        - href: '#ch.bk'
-          as_role: '#rightsHolder'
-        frbr_country:
-          value: CH
-        frbr_number:
-          value: '152.3'
-        frbr_names:
-        - xml_lang: it
-          value: >-
-            Legge federale del 17 dicembre 2004 sul principio di trasparenza dell'amministrazione
-            (Legge sulla trasparenza, LTras)
-          short_form: LTras
-        - xml_lang: fr
-          value: >-
-            Loi fédérale du 17 décembre 2004 sur le principe de la transparence dans
-            l'administration (Loi sur la transparence, LTrans)
-          short_form: LTrans
-        - … 3 weitere
-        frbr_authoritative:
-          value: 'true'
-      frbr_expression:
-        frbr_this:
-          value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de/main-text
-        frbr_uri:
-          value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de
-        frbr_dates:
-        - date_value: '2006-07-01'
-          frbr_date_name: jolux:dateEntryInForce
-        - date_value: '2004-12-17'
-          frbr_date_name: jolux:dateDocument
-        - … 1 weitere
-        frbr_authors:
-        - href: '#ch.bk'
-          as_role: '#publisher'
-        - href: '#ch.bk'
-          as_role: '#rightsHolder'
-        frbr_language:
-          language_value: de
-      frbr_manifestation:
-        frbr_this:
-          value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de/xml/main-text
-        frbr_uri:
-          value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de/xml
-        frbr_dates:
-        - date_value: '2006-07-01'
-          frbr_date_name: jolux:dateEntryInForce
-        - date_value: '2004-12-17'
-          frbr_date_name: jolux:dateDocument
-        - … 1 weitere
-        frbr_authors:
-        - href: '#ch.bk'
-          as_role: '#publisher'
-        - href: '#ch.bk'
-          as_role: '#rightsHolder'
-        frbr_format:
-          value: xml
-          fedlex_generator: 2024-q4-rel-1.6.5
-    references_ref:
-      source: '#ch.bk'
-      tlc_organizations:
-      - eId: ch.bk
-        href: https://fedlex.data.admin.ch/vocabulary/legal-institution/2
-        show_as: Bundeskanzlei
-      tlc_roles:
-      - eId: publisher
-        href: http://data.legilux.public.lu/resource/ontology/jolux#publisher
-        show_as: Editeur
-      - eId: rightsHolder
-        href: http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder
-        show_as: Détenteur des droits
-      tlc_references:
-      - name_attr: language
-        href: http://publications.europa.eu/resource/authority/language/DEU
-        show_as: de
-      - name_attr: format
-        href: https://fedlex.data.admin.ch/vocabulary/user-format/xml
-        show_as: xml
-  preface_ref:
-    preface_paragraphs:
-    - inline_content:
-      - element_type: DocNumber
-        inline_content:
-        - …
-    - inline_content:
-      - element_type: DocTitle
-        inline_content:
-        - …
-        - …
-        - … 1 weitere
-    - … 2 weitere
-  preamble_ref:
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - element_type: TextRun
-        text: Die Bundesversammlung der Schweizerischen Eidgenossenschaft,
-    - element_type: BlockParagraph
-      inline_content:
-      - element_type: TextRun
-        text: gestützt auf Artikel 173 Absatz 2 der Bundesverfassung
-      - element_type: AuthorialNote
-        content_blocks:
-        - …
-      - … 5 weitere
-    - … 1 weitere
-  body:
-    sections:
-    - eId: sec_1
-      num:
-        inline_content:
-        - …
-      heading:
-        inline_content:
-        - …
-      articles:
-      - eId: art_1
-        num: …
-        heading: …
-        paragraphs:
-        - …
-      - eId: art_2
-        num: …
-        heading: …
-        paragraphs:
-        - …
-        - …
-        - … 1 weitere
-      - … 3 weitere
-    - eId: sec_2
-      num:
-        inline_content:
-        - …
-      heading:
-        inline_content:
-        - …
-      articles:
-      - eId: art_6
-        num: …
-        heading: …
-        paragraphs:
-        - …
-        - …
-        - … 1 weitere
-      - eId: art_7
-        num: …
-        heading: …
-        paragraphs:
-        - …
-        - …
-      - … 2 weitere
-    - … 3 weitere
-  components_ref:
-    component_list:
-    - doc_ref:
-        doc_name: annex
-        meta:
-          identification_ref: …
-        preface_ref:
-          containers:
-          - …
-        main_body:
-          content_blocks:
-          - …
-          levels:
-          - …
-
-```
 ##### Beispiel Act: zh idg 1
 
 ```yaml
@@ -2136,6 +1947,195 @@ act_ref:
       - … 24 weitere
 
 ```
+##### Beispiel Act: bgoe 1
+
+```yaml
+act_ref:
+  act_name: publicLaw
+  meta:
+    identification_ref:
+      source: '#ch.bk'
+      frbr_work:
+        frbr_this:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/main-text
+        frbr_uri:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101
+        frbr_dates:
+        - date_value: '2006-07-01'
+          frbr_date_name: jolux:dateEntryInForce
+        - date_value: '2004-12-17'
+          frbr_date_name: jolux:dateDocument
+        - … 1 weitere
+        frbr_authors:
+        - href: '#ch.bk'
+          as_role: '#publisher'
+        - href: '#ch.bk'
+          as_role: '#rightsHolder'
+        frbr_country:
+          value: CH
+        frbr_number:
+          value: '152.3'
+        frbr_names:
+        - xml_lang: it
+          value: >-
+            Legge federale del 17 dicembre 2004 sul principio di trasparenza dell'amministrazione
+            (Legge sulla trasparenza, LTras)
+          short_form: LTras
+        - xml_lang: fr
+          value: >-
+            Loi fédérale du 17 décembre 2004 sur le principe de la transparence dans
+            l'administration (Loi sur la transparence, LTrans)
+          short_form: LTrans
+        - … 3 weitere
+        frbr_authoritative:
+          value: 'true'
+      frbr_expression:
+        frbr_this:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de/main-text
+        frbr_uri:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de
+        frbr_dates:
+        - date_value: '2006-07-01'
+          frbr_date_name: jolux:dateEntryInForce
+        - date_value: '2004-12-17'
+          frbr_date_name: jolux:dateDocument
+        - … 1 weitere
+        frbr_authors:
+        - href: '#ch.bk'
+          as_role: '#publisher'
+        - href: '#ch.bk'
+          as_role: '#rightsHolder'
+        frbr_language:
+          language_value: de
+      frbr_manifestation:
+        frbr_this:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de/xml/main-text
+        frbr_uri:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/2006/355/20231101/de/xml
+        frbr_dates:
+        - date_value: '2006-07-01'
+          frbr_date_name: jolux:dateEntryInForce
+        - date_value: '2004-12-17'
+          frbr_date_name: jolux:dateDocument
+        - … 1 weitere
+        frbr_authors:
+        - href: '#ch.bk'
+          as_role: '#publisher'
+        - href: '#ch.bk'
+          as_role: '#rightsHolder'
+        frbr_format:
+          value: xml
+          fedlex_generator: 2024-q4-rel-1.6.5
+    references_ref:
+      source: '#ch.bk'
+      tlc_organizations:
+      - eId: ch.bk
+        href: https://fedlex.data.admin.ch/vocabulary/legal-institution/2
+        show_as: Bundeskanzlei
+      tlc_roles:
+      - eId: publisher
+        href: http://data.legilux.public.lu/resource/ontology/jolux#publisher
+        show_as: Editeur
+      - eId: rightsHolder
+        href: http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder
+        show_as: Détenteur des droits
+      tlc_references:
+      - name_attr: language
+        href: http://publications.europa.eu/resource/authority/language/DEU
+        show_as: de
+      - name_attr: format
+        href: https://fedlex.data.admin.ch/vocabulary/user-format/xml
+        show_as: xml
+  preface_ref:
+    preface_paragraphs:
+    - inline_content:
+      - element_type: DocNumber
+        inline_content:
+        - …
+    - inline_content:
+      - element_type: DocTitle
+        inline_content:
+        - …
+        - …
+        - … 1 weitere
+    - … 2 weitere
+  preamble_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - element_type: TextRun
+        text: Die Bundesversammlung der Schweizerischen Eidgenossenschaft,
+    - element_type: BlockParagraph
+      inline_content:
+      - element_type: TextRun
+        text: gestützt auf Artikel 173 Absatz 2 der Bundesverfassung
+      - element_type: AuthorialNote
+        content_blocks:
+        - …
+      - … 5 weitere
+    - … 1 weitere
+  body:
+    sections:
+    - eId: sec_1
+      num:
+        inline_content:
+        - …
+      heading:
+        inline_content:
+        - …
+      articles:
+      - eId: art_1
+        num: …
+        heading: …
+        paragraphs:
+        - …
+      - eId: art_2
+        num: …
+        heading: …
+        paragraphs:
+        - …
+        - …
+        - … 1 weitere
+      - … 3 weitere
+    - eId: sec_2
+      num:
+        inline_content:
+        - …
+      heading:
+        inline_content:
+        - …
+      articles:
+      - eId: art_6
+        num: …
+        heading: …
+        paragraphs:
+        - …
+        - …
+        - … 1 weitere
+      - eId: art_7
+        num: …
+        heading: …
+        paragraphs:
+        - …
+        - …
+      - … 2 weitere
+    - … 3 weitere
+  components_ref:
+    component_list:
+    - doc_ref:
+        doc_name: annex
+        meta:
+          identification_ref: …
+        preface_ref:
+          containers:
+          - …
+        main_body:
+          content_blocks:
+          - …
+          levels:
+          - …
+
+```
 
 
 
@@ -2226,24 +2226,6 @@ _Der Vorspann des Erlasses (akn:preface) mit Dokumentnummer und -titel. Fedlex S
 
 
 #### Beispiele
-##### Beispiel Preface: bgoe 1 1
-
-```yaml
-preface_ref:
-  preface_paragraphs:
-  - inline_content:
-    - element_type: DocNumber
-      inline_content:
-      - …
-  - inline_content:
-    - element_type: DocTitle
-      inline_content:
-      - …
-      - …
-      - … 1 weitere
-  - … 2 weitere
-
-```
 ##### Beispiel Preface: sr101 1 1
 
 ```yaml
@@ -2279,6 +2261,24 @@ preface_ref:
       inline_content:
       - …
     - … 3 weitere
+
+```
+##### Beispiel Preface: bgoe 1 1
+
+```yaml
+preface_ref:
+  preface_paragraphs:
+  - inline_content:
+    - element_type: DocNumber
+      inline_content:
+      - …
+  - inline_content:
+    - element_type: DocTitle
+      inline_content:
+      - …
+      - …
+      - … 1 weitere
+  - … 2 weitere
 
 ```
 
@@ -2335,6 +2335,30 @@ _Ein Vorspann-Absatz (akn:p). Fedlex verlangt akn:docNumber und akn:docTitle irg
 
 
 #### Beispiele
+##### Beispiel PrefaceP: bgoe 1 2
+
+```yaml
+preface_paragraphs:
+- inline_content:
+  - element_type: DocTitle
+    inline_content:
+    - element_type: TextRun
+      text: Bundesgesetz
+    - element_type: Br
+    - … 1 weitere
+
+```
+##### Beispiel PrefaceP: bgoe 1 1
+
+```yaml
+preface_paragraphs:
+- inline_content:
+  - element_type: DocNumber
+    inline_content:
+    - element_type: TextRun
+      text: '152.3'
+
+```
 ##### Beispiel PrefaceP: sr101 1 1
 
 ```yaml
@@ -2344,6 +2368,24 @@ preface_paragraphs:
     inline_content:
     - element_type: TextRun
       text: '101'
+
+```
+##### Beispiel PrefaceP: bgoe 1 3
+
+```yaml
+preface_paragraphs:
+- inline_content:
+  - element_type: TextRun
+    text: (Öffentlichkeitsgesetz, BGÖ)
+
+```
+##### Beispiel PrefaceP: bgoe 1 4
+
+```yaml
+preface_paragraphs:
+- inline_content:
+  - element_type: TextRun
+    text: vom 17. Dezember 2004 (Stand am 1. November 2023)
 
 ```
 ##### Beispiel PrefaceP: sr101 1 2
@@ -2368,28 +2410,6 @@ preface_paragraphs:
     text: vom 18. April 1999 (Stand am 3. März 2024)
 
 ```
-##### Beispiel PrefaceP: bgoe 1 3
-
-```yaml
-preface_paragraphs:
-- inline_content:
-  - element_type: TextRun
-    text: (Öffentlichkeitsgesetz, BGÖ)
-
-```
-##### Beispiel PrefaceP: bgoe 1 2
-
-```yaml
-preface_paragraphs:
-- inline_content:
-  - element_type: DocTitle
-    inline_content:
-    - element_type: TextRun
-      text: Bundesgesetz
-    - element_type: Br
-    - … 1 weitere
-
-```
 ##### Beispiel PrefaceP: zh idg 1 1
 
 ```yaml
@@ -2408,26 +2428,6 @@ preface_paragraphs:
     - element_type: TextRun
       text: Gesetz über die Information und den Datenschutz
   - … 3 weitere
-
-```
-##### Beispiel PrefaceP: bgoe 1 1
-
-```yaml
-preface_paragraphs:
-- inline_content:
-  - element_type: DocNumber
-    inline_content:
-    - element_type: TextRun
-      text: '152.3'
-
-```
-##### Beispiel PrefaceP: bgoe 1 4
-
-```yaml
-preface_paragraphs:
-- inline_content:
-  - element_type: TextRun
-    text: vom 17. Dezember 2004 (Stand am 1. November 2023)
 
 ```
 
@@ -3313,52 +3313,78 @@ _Titel-Ebene eines Erlasses (akn:title). Erlaubte Kinder: book, part, chapter, s
 
 
 #### Beispiele
-##### Beispiel Title: zh idg 1 6
+##### Beispiel Title: Titel mit Nummer, Überschrift und Artikeln
 
 ```yaml
 titles:
-- eId: title_6
+- eId: tit_1
   num:
     inline_content:
     - element_type: TextRun
-      text: '6. Abschnitt:'
+      text: '1. Titel:'
   heading:
-    eId: title_2__chp_F__heading
     inline_content:
     - element_type: TextRun
-      text: Verfahren auf Zugang zu Information
+      text: Allgemeine Bestimmungen
   articles:
-  - eId: title_6__art_24
+  - eId: art_1
     num:
       inline_content:
       - …
     heading:
-      eId: title_6__art_24__heading
       inline_content:
       - …
     paragraphs:
-    - eId: title_6__art_24__para_1
-      num: …
+    - eId: art_1/para
       content_ref: …
-    - eId: title_6__art_24__para_2
-      num: …
-      content_ref: …
-  - eId: ttitle_6__art_25
+  - eId: art_2
     num:
       inline_content:
       - …
     heading:
-      eId: title_6_art_25__heading
       inline_content:
       - …
     paragraphs:
-    - eId: ttitle_6__art_25__para_1
+    - eId: art_2/para_1
       num: …
       content_ref: …
-    - eId: title_6__art_25__para_2
+    - eId: art_2/para_2
       num: …
       content_ref: …
-  - … 4 weitere
+    - … 2 weitere
+  - … 5 weitere
+
+```
+##### Beispiel Title: zh idg 1 8
+
+```yaml
+titles:
+- eId: title_8
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '8. Abschnitt:'
+  heading:
+    eId: title_8__heading
+    inline_content:
+    - element_type: TextRun
+      text: Strafbestimmungen
+  articles:
+  - eId: title_8__art_40
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_8__art_40__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_8__art_40__para_1
+      num: …
+      content_ref: …
+    - eId: title_8__art_40__para_2
+      num: …
+      content_ref: …
 
 ```
 ##### Beispiel Title: zh idg 1 3
@@ -3410,53 +3436,156 @@ titles:
   - … 4 weitere
 
 ```
-##### Beispiel Title: zh idg 1 7
+##### Beispiel Title: zh idg 1 4
 
 ```yaml
 titles:
-- eId: title_7
+- eId: title_4
   num:
     inline_content:
     - element_type: TextRun
-      text: 7. Abschnitt
+      text: '4.'
   heading:
-    eId: title_7__heading
+    eId: title_2__chp_D__heading
     inline_content:
     - element_type: TextRun
-      text: 'Abschnitt: Beauftragte oder Beauftragter für Datenschutz'
+      text: 'Abschnit: Informationszugangsrecht und weitere Rechtsansprüche'
   articles:
-  - eId: title_7__art_30
+  - eId: title_4__art_20
     num:
       inline_content:
       - …
     heading:
-      eId: title_7__art_30__heading
+      eId: title_4__art_20__heading
       inline_content:
       - …
     paragraphs:
-    - eId: title_7__art_30__para_1
+    - eId: title_4__art_20__para_1
       num: …
       content_ref: …
-    - eId: title_7__art_30__para_2
-      num: …
-      content_ref: …
-  - eId: title_7__art_31
-    num:
-      inline_content:
-      - …
-    heading:
-      eId: title_7_art_31__heading
-      inline_content:
-      - …
-    paragraphs:
-    - eId: title_7__art_31__para_1
-      num: …
-      content_ref: …
-    - eId: title_7__art_31__para_2
+    - eId: title_4__art_20__para_2
       num: …
       content_ref: …
     - … 1 weitere
-  - … 8 weitere
+  - eId: title_4__art_21
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_4__art_21__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_4__art_21__para_1
+      num: …
+      content_ref: …
+  - … 1 weitere
+
+```
+##### Beispiel Title: zh idg 1 1
+
+```yaml
+titles:
+- eId: title_1
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '1. Abschnitt:'
+  heading:
+    eId: title_1__heading_1
+    inline_content:
+    - element_type: TextRun
+      text: Allgemeine Bestimmungen
+  articles:
+  - eId: title_1__art_1
+    num:
+      inline_content:
+      - …
+    heading:
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_1__art_1__para_1
+      num: …
+      content_ref: …
+    - eId: ltitle_1__art_1__para_2
+      num: …
+      content_ref: …
+  - eId: title_1__art_2
+    num:
+      inline_content:
+      - …
+    heading:
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_1__art_2__para_1
+      num: …
+      content_ref: …
+    - eId: title_1__art_2__para_2
+      num: …
+      content_ref: …
+  - … 1 weitere
+
+```
+##### Beispiel Title: zh idg 1 2
+
+```yaml
+titles:
+- eId: title_2
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '2. Abschnitt:'
+  heading:
+    eId: title_2__heading_1
+    inline_content:
+    - element_type: TextRun
+      text: Grundsätze im Umgang mit Informationen
+  chapters:
+  - eId: title_2__chp_A
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_2__chp_A__heading
+      inline_content:
+      - …
+    articles:
+    - eId: title_2__chp_A__art_4
+      num: …
+      heading: …
+      paragraphs:
+      - …
+    - eId: title_2__chp_A__art_5
+      num: …
+      heading: …
+      paragraphs:
+      - …
+      - …
+      - … 2 weitere
+    - … 2 weitere
+  - eId: title_2__chp_B
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_2__chp_B__heading
+      inline_content:
+      - …
+    articles:
+    - eId: title_2__chp_B__art_8
+      num: …
+      heading: …
+      paragraphs:
+      - …
+      - …
+    - num: …
+      heading: …
+      paragraphs:
+      - …
+      - …
+    - … 4 weitere
 
 ```
 ##### Beispiel Title: sr101 1 3
@@ -3522,37 +3651,98 @@ titles:
   - … 1 weitere
 
 ```
-##### Beispiel Title: zh idg 1 5
+##### Beispiel Title: zh idg 1 9
 
 ```yaml
 titles:
-- eId: title_5
+- eId: title_9
   num:
     inline_content:
     - element_type: TextRun
-      text: '5. Abschnitt:'
+      text: '9. Abschnitt:'
   heading:
-    eId: title_5__heading
+    eId: title_9__heading
     inline_content:
     - element_type: TextRun
-      text: Interessenabwägung
+      text: Schluss- und Übergangsbestimmungen
   articles:
-  - eId: title_5__art_23
+  - eId: title_9__art_41
     num:
       inline_content:
       - …
     heading:
-      eId: title_5__art_23__heading
+      eId: title_9__art_41__heading
       inline_content:
       - …
     paragraphs:
-    - eId: title_5__art_23__para_1
+    - eId: title_9__art_41__para_1
       num: …
       content_ref: …
-    - eId: title_5__art_23__para_2
+  - eId: title_9__art_42
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_9__art_42__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_9__art_42__para_1
+      num: …
+      content_ref: …
+    - eId: title_9__art_42__para_2
+      num: …
+      content_ref: …
+  - … 2 weitere
+
+```
+##### Beispiel Title: zh idg 1 7
+
+```yaml
+titles:
+- eId: title_7
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: 7. Abschnitt
+  heading:
+    eId: title_7__heading
+    inline_content:
+    - element_type: TextRun
+      text: 'Abschnitt: Beauftragte oder Beauftragter für Datenschutz'
+  articles:
+  - eId: title_7__art_30
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_7__art_30__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_7__art_30__para_1
+      num: …
+      content_ref: …
+    - eId: title_7__art_30__para_2
+      num: …
+      content_ref: …
+  - eId: title_7__art_31
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_7_art_31__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_7__art_31__para_1
+      num: …
+      content_ref: …
+    - eId: title_7__art_31__para_2
       num: …
       content_ref: …
     - … 1 weitere
+  - … 8 weitere
 
 ```
 ##### Beispiel Title: sr101 1 5
@@ -3616,275 +3806,61 @@ titles:
   - … 2 weitere
 
 ```
-##### Beispiel Title: zh idg 1 1
+##### Beispiel Title: sr101 1 4
 
 ```yaml
 titles:
-- eId: title_1
+- eId: tit_4
   num:
     inline_content:
     - element_type: TextRun
-      text: '1. Abschnitt:'
-  heading:
-    eId: title_1__heading_1
-    inline_content:
-    - element_type: TextRun
-      text: Allgemeine Bestimmungen
-  articles:
-  - eId: title_1__art_1
-    num:
-      inline_content:
-      - …
-    heading:
-      inline_content:
-      - …
-    paragraphs:
-    - eId: title_1__art_1__para_1
-      num: …
-      content_ref: …
-    - eId: ltitle_1__art_1__para_2
-      num: …
-      content_ref: …
-  - eId: title_1__art_2
-    num:
-      inline_content:
-      - …
-    heading:
-      inline_content:
-      - …
-    paragraphs:
-    - eId: title_1__art_2__para_1
-      num: …
-      content_ref: …
-    - eId: title_1__art_2__para_2
-      num: …
-      content_ref: …
-  - … 1 weitere
-
-```
-##### Beispiel Title: zh idg 1 9
-
-```yaml
-titles:
-- eId: title_9
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: '9. Abschnitt:'
-  heading:
-    eId: title_9__heading
-    inline_content:
-    - element_type: TextRun
-      text: Schluss- und Übergangsbestimmungen
-  articles:
-  - eId: title_9__art_41
-    num:
-      inline_content:
-      - …
-    heading:
-      eId: title_9__art_41__heading
-      inline_content:
-      - …
-    paragraphs:
-    - eId: title_9__art_41__para_1
-      num: …
-      content_ref: …
-  - eId: title_9__art_42
-    num:
-      inline_content:
-      - …
-    heading:
-      eId: title_9__art_42__heading
-      inline_content:
-      - …
-    paragraphs:
-    - eId: title_9__art_42__para_1
-      num: …
-      content_ref: …
-    - eId: title_9__art_42__para_2
-      num: …
-      content_ref: …
-  - … 2 weitere
-
-```
-##### Beispiel Title: zh idg 1 8
-
-```yaml
-titles:
-- eId: title_8
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: '8. Abschnitt:'
-  heading:
-    eId: title_8__heading
-    inline_content:
-    - element_type: TextRun
-      text: Strafbestimmungen
-  articles:
-  - eId: title_8__art_40
-    num:
-      inline_content:
-      - …
-    heading:
-      eId: title_8__art_40__heading
-      inline_content:
-      - …
-    paragraphs:
-    - eId: title_8__art_40__para_1
-      num: …
-      content_ref: …
-    - eId: title_8__art_40__para_2
-      num: …
-      content_ref: …
-
-```
-##### Beispiel Title: zh idg 1 4
-
-```yaml
-titles:
-- eId: title_4
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: '4.'
-  heading:
-    eId: title_2__chp_D__heading
-    inline_content:
-    - element_type: TextRun
-      text: 'Abschnit: Informationszugangsrecht und weitere Rechtsansprüche'
-  articles:
-  - eId: title_4__art_20
-    num:
-      inline_content:
-      - …
-    heading:
-      eId: title_4__art_20__heading
-      inline_content:
-      - …
-    paragraphs:
-    - eId: title_4__art_20__para_1
-      num: …
-      content_ref: …
-    - eId: title_4__art_20__para_2
-      num: …
-      content_ref: …
-    - … 1 weitere
-  - eId: title_4__art_21
-    num:
-      inline_content:
-      - …
-    heading:
-      eId: title_4__art_21__heading
-      inline_content:
-      - …
-    paragraphs:
-    - eId: title_4__art_21__para_1
-      num: …
-      content_ref: …
-  - … 1 weitere
-
-```
-##### Beispiel Title: Title with number heading and articles
-
-```yaml
-titles:
-- eId: tit_1
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: '1. Titel:'
+      text: '4. Titel:'
   heading:
     inline_content:
     - element_type: TextRun
-      text: Allgemeine Bestimmungen
-  articles:
-  - eId: art_1
-    num:
-      inline_content:
-      - …
-    heading:
-      inline_content:
-      - …
-    paragraphs:
-    - eId: art_1/para
-      content_ref: …
-  - eId: art_2
-    num:
-      inline_content:
-      - …
-    heading:
-      inline_content:
-      - …
-    paragraphs:
-    - eId: art_2/para_1
-      num: …
-      content_ref: …
-    - eId: art_2/para_2
-      num: …
-      content_ref: …
-    - … 2 weitere
-  - … 5 weitere
-
-```
-##### Beispiel Title: zh idg 1 2
-
-```yaml
-titles:
-- eId: title_2
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: '2. Abschnitt:'
-  heading:
-    eId: title_2__heading_1
-    inline_content:
-    - element_type: TextRun
-      text: Grundsätze im Umgang mit Informationen
+      text: Volk und Stände
   chapters:
-  - eId: title_2__chp_A
+  - eId: tit_4/chap_1
     num:
       inline_content:
       - …
     heading:
-      eId: title_2__chp_A__heading
       inline_content:
       - …
     articles:
-    - eId: title_2__chp_A__art_4
-      num: …
-      heading: …
-      paragraphs:
-      - …
-    - eId: title_2__chp_A__art_5
+    - eId: art_136
       num: …
       heading: …
       paragraphs:
       - …
       - …
-      - … 2 weitere
-    - … 2 weitere
-  - eId: title_2__chp_B
+    - eId: art_137
+      num: …
+      heading: …
+      paragraphs:
+      - …
+  - eId: tit_4/chap_2
     num:
       inline_content:
       - …
     heading:
-      eId: title_2__chp_B__heading
       inline_content:
       - …
     articles:
-    - eId: title_2__chp_B__art_8
+    - eId: art_138
       num: …
       heading: …
       paragraphs:
       - …
       - …
-    - num: …
+    - eId: art_139
+      num: …
       heading: …
       paragraphs:
       - …
       - …
-    - … 4 weitere
+      - … 3 weitere
+    - … 6 weitere
 
 ```
 ##### Beispiel Title: sr101 1 6
@@ -3947,6 +3923,54 @@ titles:
       - … 14 weitere
 
 ```
+##### Beispiel Title: zh idg 1 6
+
+```yaml
+titles:
+- eId: title_6
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '6. Abschnitt:'
+  heading:
+    eId: title_2__chp_F__heading
+    inline_content:
+    - element_type: TextRun
+      text: Verfahren auf Zugang zu Information
+  articles:
+  - eId: title_6__art_24
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_6__art_24__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: title_6__art_24__para_1
+      num: …
+      content_ref: …
+    - eId: title_6__art_24__para_2
+      num: …
+      content_ref: …
+  - eId: ttitle_6__art_25
+    num:
+      inline_content:
+      - …
+    heading:
+      eId: title_6_art_25__heading
+      inline_content:
+      - …
+    paragraphs:
+    - eId: ttitle_6__art_25__para_1
+      num: …
+      content_ref: …
+    - eId: title_6__art_25__para_2
+      num: …
+      content_ref: …
+  - … 4 weitere
+
+```
 ##### Beispiel Title: sr101 1 2
 
 ```yaml
@@ -4007,61 +4031,37 @@ titles:
   - … 1 weitere
 
 ```
-##### Beispiel Title: sr101 1 4
+##### Beispiel Title: zh idg 1 5
 
 ```yaml
 titles:
-- eId: tit_4
+- eId: title_5
   num:
     inline_content:
     - element_type: TextRun
-      text: '4. Titel:'
+      text: '5. Abschnitt:'
   heading:
+    eId: title_5__heading
     inline_content:
     - element_type: TextRun
-      text: Volk und Stände
-  chapters:
-  - eId: tit_4/chap_1
+      text: Interessenabwägung
+  articles:
+  - eId: title_5__art_23
     num:
       inline_content:
       - …
     heading:
+      eId: title_5__art_23__heading
       inline_content:
       - …
-    articles:
-    - eId: art_136
+    paragraphs:
+    - eId: title_5__art_23__para_1
       num: …
-      heading: …
-      paragraphs:
-      - …
-      - …
-    - eId: art_137
+      content_ref: …
+    - eId: title_5__art_23__para_2
       num: …
-      heading: …
-      paragraphs:
-      - …
-  - eId: tit_4/chap_2
-    num:
-      inline_content:
-      - …
-    heading:
-      inline_content:
-      - …
-    articles:
-    - eId: art_138
-      num: …
-      heading: …
-      paragraphs:
-      - …
-      - …
-    - eId: art_139
-      num: …
-      heading: …
-      paragraphs:
-      - …
-      - …
-      - … 3 weitere
-    - … 6 weitere
+      content_ref: …
+    - … 1 weitere
 
 ```
 
@@ -4523,39 +4523,38 @@ _Ein Artikel, die primäre legislative Einheit (akn:article). Constraints (FLX-A
 
 
 #### Beispiele
-##### Beispiel Article: zh idg 9 2
+##### Beispiel Article: zh idg 4 1
 
 ```yaml
 articles:
-- eId: title_9__art_42
+- eId: title_4__art_20
   num:
     inline_content:
     - element_type: TextRun
-      text: § 42.
+      text: § 20.
   heading:
-    eId: title_9__art_42__heading
+    eId: title_4__art_20__heading
     inline_content:
     - element_type: TextRun
-      text: Anpassung von Bezeichnungen
+      text: Zugang zu Informationen
   paragraphs:
-  - eId: title_9__art_42__para_1
+  - eId: title_4__art_20__para_1
     num:
       inline_content:
       - …
     content_ref:
-      eId: title_9__art_42__para_1__content
+      eId: title_4__art_20__para_1__content
       content_blocks:
       - …
-      - …
-  - eId: title_9__art_42__para_2
+  - eId: title_4__art_20__para_2
     num:
       inline_content:
       - …
     content_ref:
-      eId: title_9__art_42__para_2__content
+      eId: title_4__art_20__para_2__content
       content_blocks:
       - …
-      - …
+  - … 1 weitere
 
 ```
 ##### Beispiel Article: sr101 1 3
@@ -4579,84 +4578,96 @@ articles:
       - …
 
 ```
-##### Beispiel Article: Article with a bold article number
+##### Beispiel Article: zh idg 8 1
 
 ```yaml
 articles:
-- eId: art_1
+- eId: title_8__art_40
   num:
     inline_content:
-    - element_type: B
-      inline_content:
-      - …
+    - element_type: TextRun
+      text: § 40.
   heading:
+    eId: title_8__art_40__heading
     inline_content:
     - element_type: TextRun
-      text: Schweizerische Eidgenossenschaft
+      text: Vertragswidriges Bearbeiten von Personendaten
   paragraphs:
-  - eId: art_1/para
+  - eId: title_8__art_40__para_1
+    num:
+      inline_content:
+      - …
     content_ref:
+      eId: title_8__art_40__para_1__content
+      content_blocks:
+      - …
+  - eId: title_8__art_40__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      eId: title_8__art_40__para_2__content
       content_blocks:
       - …
 
 ```
-##### Beispiel Article: zh idg 3 6
+##### Beispiel Article: zh idg 7 8
 
 ```yaml
 articles:
-- eId: title_3__art_19
+- eId: title_7__art_37
   num:
     inline_content:
     - element_type: TextRun
-      text: § 19.
-  subheading:
-    eId: title_3__art_19__subheading
+      text: § 37.
+  heading:
+    eId: title_7__art_37__heading
     inline_content:
     - element_type: TextRun
-      text: d. Grenzüberschreitend
+      text: Zusammenarbeit
   paragraphs:
-  - eId: title_3__art_19__para_1
+  - eId: title_7__art_37__para_1
     num:
       inline_content:
       - …
     content_ref:
-      eId: title_3__art_19__para_1__content
+      eId: title_7__art_37__para_1__content
       content_blocks:
-      - …
       - …
 
 ```
-##### Beispiel Article: zh idg 7 4
+##### Beispiel Article: zh idg 7 3
 
 ```yaml
 articles:
-- eId: title_7__art_33
+- eId: title_7__art_32
   num:
     inline_content:
     - element_type: TextRun
-      text: § 33.
+      text: § 32.
   heading:
-    eId: title_7__art_33__heading
+    eId: title_7__art_32__heading
     inline_content:
     - element_type: TextRun
-      text: Beauftragte in Gemeinden und Organisationen
+      text: Voranschlag und Haushaltführung
   paragraphs:
-  - eId: title_7__art_33__para_1
+  - eId: title_7__art_32__para_1
     num:
       inline_content:
       - …
     content_ref:
-      eId: title_7__art_33__para_1__content
+      eId: title_7__art_32__para_1__content
       content_blocks:
       - …
-  - eId: title_7__art_33__para_2
+  - eId: title_7__art_32__para_2
     num:
       inline_content:
       - …
     content_ref:
-      eId: title_7__art_33__para_2__content
+      eId: title_7__art_32__para_2__content
       content_blocks:
       - …
+  - … 1 weitere
 
 ```
 ##### Beispiel Article: zh idg 3 5
@@ -4688,6 +4699,265 @@ articles:
       - …
     content_ref:
       eId: title_3__art_18__para_2__content
+      content_blocks:
+      - …
+
+```
+##### Beispiel Article: zh idg 6 2
+
+```yaml
+articles:
+- eId: ttitle_6__art_25
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 25.
+  heading:
+    eId: title_6_art_25__heading
+    inline_content:
+    - element_type: TextRun
+      text: Prüfung des Gesuchs
+  paragraphs:
+  - eId: ttitle_6__art_25__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      eId: title_6__art_25__para_1__content
+      content_blocks:
+      - …
+  - eId: title_6__art_25__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      eId: title_6__art_25__para_2__content
+      content_blocks:
+      - …
+
+```
+##### Beispiel Article: sr101 1 5
+
+```yaml
+articles:
+- eId: art_5
+  num:
+    inline_content:
+    - element_type: B
+      inline_content:
+      - …
+  heading:
+    inline_content:
+    - element_type: TextRun
+      text: Grundsätze rechtsstaatlichen Handelns
+  paragraphs:
+  - eId: art_5/para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: art_5/para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - … 2 weitere
+
+```
+##### Beispiel Article: zh idg 3 1
+
+```yaml
+articles:
+- eId: title_3__art_14
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 14.
+  heading:
+    eId: title_3__art_14__heading
+    inline_content:
+    - element_type: TextRun
+      text: Informationstätigkeit von Amtes wegen
+  paragraphs:
+  - eId: title_3__art_14__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      eId: title_3__art_14__para_1__content
+      content_blocks:
+      - …
+  - eId: title_3__art_14__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      eId: title_3__art_14__para_2__content
+      content_blocks:
+      - …
+  - … 2 weitere
+
+```
+##### Beispiel Article: zh idg 6 6
+
+```yaml
+articles:
+- eId: title_6__art_29
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 29.
+  heading:
+    eId: title_6__art_29__heading
+    inline_content:
+    - element_type: TextRun
+      text: Gebühren und Entgelte
+  paragraphs:
+  - eId: title_6__art_29__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      eId: title_6__art_29__para_1__content
+      content_blocks:
+      - …
+  - eId: title_6__art_29__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      eId: title_6__art_29__para_2__content
+      content_blocks:
+      - …
+      - …
+  - … 2 weitere
+
+```
+##### Beispiel Article: zh idg 7 2
+
+```yaml
+articles:
+- eId: title_7__art_31
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 31.
+  heading:
+    eId: title_7_art_31__heading
+    inline_content:
+    - element_type: TextRun
+      text: Personal
+  paragraphs:
+  - eId: title_7__art_31__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      eId: title_7__art_31__para_1__content
+      content_blocks:
+      - …
+  - eId: title_7__art_31__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      eId: title_7__art_31__para_2__content
+      content_blocks:
+      - …
+  - … 1 weitere
+
+```
+##### Beispiel Article: sr101 1 6
+
+```yaml
+articles:
+- eId: art_5_a
+  num:
+    inline_content:
+    - element_type: B
+      inline_content:
+      - …
+    - element_type: I
+      inline_content:
+      - …
+    - … 1 weitere
+  heading:
+    inline_content:
+    - element_type: TextRun
+      text: Subsidiarität
+  paragraphs:
+  - eId: art_5_a/para
+    content_ref:
+      content_blocks:
+      - …
+
+```
+##### Beispiel Article: zh idg 3 2
+
+```yaml
+articles:
+- eId: title_3__art_15
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 15.
+  heading:
+    eId: title_3_art_15__heading
+    inline_content:
+    - element_type: TextRun
+      text: Medien
+  paragraphs:
+  - eId: title_3__art_15__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      eId: title_3__art_15__para_1__content
+      content_blocks:
+      - …
+  - eId: title_3__art_15__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      eId: title_3__art_15__para_2__content
+      content_blocks:
+      - …
+
+```
+##### Beispiel Article: zh idg 7 6
+
+```yaml
+articles:
+- eId: ttitle_7__art_35
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 35.
+  heading:
+    eId: title_7__art_35__heading
+    inline_content:
+    - element_type: TextRun
+      text: Kontrollbefugnisse
+  paragraphs:
+  - eId: title_7__art_35__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      eId: title_7__art_35__para_1__content
+      content_blocks:
+      - …
+  - eId: title_7__art_35__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      eId: title_7__art_35__para_2__content
       content_blocks:
       - …
 
@@ -4731,6 +5001,183 @@ articles:
       - …
 
 ```
+##### Beispiel Article: Article with numbered paragraphs
+
+```yaml
+articles:
+- eId: art_2
+  num:
+    inline_content:
+    - element_type: B
+      inline_content:
+      - …
+  heading:
+    inline_content:
+    - element_type: TextRun
+      text: Zweck
+  paragraphs:
+  - eId: art_2/para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: art_2/para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - … 2 weitere
+
+```
+##### Beispiel Article: Article with a bold article number
+
+```yaml
+articles:
+- eId: art_1
+  num:
+    inline_content:
+    - element_type: B
+      inline_content:
+      - …
+  heading:
+    inline_content:
+    - element_type: TextRun
+      text: Schweizerische Eidgenossenschaft
+  paragraphs:
+  - eId: art_1/para
+    content_ref:
+      content_blocks:
+      - …
+
+```
+##### Beispiel Article: zh idg 1 3
+
+```yaml
+articles:
+- eId: title_1__art_3
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 3.
+  heading:
+    inline_content:
+    - element_type: TextRun
+      text: Begriffe
+  paragraphs:
+  - eId: title_1__art_3__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      eId: title_1__art_3__para_1__content
+      content_blocks:
+      - …
+      - …
+      - … 5 weitere
+
+```
+##### Beispiel Article: zh idg 6 4
+
+```yaml
+articles:
+- eId: title_6__art_27
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 27.
+  heading:
+    eId: ttitle_6__art_27__heading
+    inline_content:
+    - element_type: TextRun
+      text: Verfügung
+  paragraphs:
+  - eId: title_2__chp_F__art_27__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      eId: title_6__art_27__para_1__content
+      content_blocks:
+      - …
+  - eId: title_6__art_27__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      eId: title_6__art_27__para_2__content
+      content_blocks:
+      - …
+
+```
+##### Beispiel Article: zh idg 1 1
+
+```yaml
+articles:
+- eId: title_1__art_1
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 1.
+  heading:
+    inline_content:
+    - element_type: TextRun
+      text: Gegenstand und Zweck
+  paragraphs:
+  - eId: title_1__art_1__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      content_blocks:
+      - …
+  - eId: ltitle_1__art_1__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      eId: title_1__art_1__content
+      content_blocks:
+      - …
+      - …
+
+```
+##### Beispiel Article: zh idg 7 4
+
+```yaml
+articles:
+- eId: title_7__art_33
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 33.
+  heading:
+    eId: title_7__art_33__heading
+    inline_content:
+    - element_type: TextRun
+      text: Beauftragte in Gemeinden und Organisationen
+  paragraphs:
+  - eId: title_7__art_33__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      eId: title_7__art_33__para_1__content
+      content_blocks:
+      - …
+  - eId: title_7__art_33__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      eId: title_7__art_33__para_2__content
+      content_blocks:
+      - …
+
+```
 ##### Beispiel Article: zh idg 1 2
 
 ```yaml
@@ -4760,6 +5207,57 @@ articles:
     content_ref:
       eId: level_I__art_2__para_2__content
       content_blocks:
+      - …
+
+```
+##### Beispiel Article: zh idg 7 10
+
+```yaml
+articles:
+- eId: title_7__art_39
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 39.
+  heading:
+    eId: title_7__art_39__heading
+    inline_content:
+    - element_type: TextRun
+      text: Berichterstattung
+  paragraphs:
+  - eId: title_7__art_39__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      eId: title_7__art_39__para_1__content
+      content_blocks:
+      - …
+
+```
+##### Beispiel Article: zh idg 9 1
+
+```yaml
+articles:
+- eId: title_9__art_41
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 41.
+  heading:
+    eId: title_9__art_41__heading
+    inline_content:
+    - element_type: TextRun
+      text: Übergangsrecht
+  paragraphs:
+  - eId: title_9__art_41__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      eId: title_9__art_41__para_1__content
+      content_blocks:
+      - …
       - …
 
 ```
@@ -4797,193 +5295,27 @@ articles:
   - … 1 weitere
 
 ```
-##### Beispiel Article: zh idg 7 10
+##### Beispiel Article: zh idg 9 3
 
 ```yaml
 articles:
-- eId: title_7__art_39
+- eId: title_9__art_43
   num:
     inline_content:
     - element_type: TextRun
-      text: § 39.
+      text: § 43.
   heading:
-    eId: title_7__art_39__heading
+    eId: title_9__art_43__heading
     inline_content:
     - element_type: TextRun
-      text: Berichterstattung
+      text: Aufhebung bisherigen Rechts
   paragraphs:
-  - eId: title_7__art_39__para_1
+  - eId: title_9__art_43__para_1
     num:
       inline_content:
       - …
     content_ref:
-      eId: title_7__art_39__para_1__content
-      content_blocks:
-      - …
-
-```
-##### Beispiel Article: Article with numbered paragraphs
-
-```yaml
-articles:
-- eId: art_2
-  num:
-    inline_content:
-    - element_type: B
-      inline_content:
-      - …
-  heading:
-    inline_content:
-    - element_type: TextRun
-      text: Zweck
-  paragraphs:
-  - eId: art_2/para_1
-    num:
-      inline_content:
-      - …
-    content_ref:
-      content_blocks:
-      - …
-  - eId: art_2/para_2
-    num:
-      inline_content:
-      - …
-    content_ref:
-      content_blocks:
-      - …
-  - … 2 weitere
-
-```
-##### Beispiel Article: zh idg 6 6
-
-```yaml
-articles:
-- eId: title_6__art_29
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: § 29.
-  heading:
-    eId: title_6__art_29__heading
-    inline_content:
-    - element_type: TextRun
-      text: Gebühren und Entgelte
-  paragraphs:
-  - eId: title_6__art_29__para_1
-    num:
-      inline_content:
-      - …
-    content_ref:
-      eId: title_6__art_29__para_1__content
-      content_blocks:
-      - …
-  - eId: title_6__art_29__para_2
-    num:
-      inline_content:
-      - …
-    content_ref:
-      eId: title_6__art_29__para_2__content
-      content_blocks:
-      - …
-      - …
-  - … 2 weitere
-
-```
-##### Beispiel Article: zh idg 3 2
-
-```yaml
-articles:
-- eId: title_3__art_15
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: § 15.
-  heading:
-    eId: title_3_art_15__heading
-    inline_content:
-    - element_type: TextRun
-      text: Medien
-  paragraphs:
-  - eId: title_3__art_15__para_1
-    num:
-      inline_content:
-      - …
-    content_ref:
-      eId: title_3__art_15__para_1__content
-      content_blocks:
-      - …
-  - eId: title_3__art_15__para_2
-    num:
-      inline_content:
-      - …
-    content_ref:
-      eId: title_3__art_15__para_2__content
-      content_blocks:
-      - …
-
-```
-##### Beispiel Article: zh idg 6 3
-
-```yaml
-articles:
-- eId: title_6__art_26
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: § 26.
-  heading:
-    eId: title_6__art_26__heading
-    inline_content:
-    - element_type: TextRun
-      text: Anhörung betroffener Dritter
-  paragraphs:
-  - eId: ttitle_6__art_26__para_1
-    num:
-      inline_content:
-      - …
-    content_ref:
-      eId: title_6__art_26__para_1__content
-      content_blocks:
-      - …
-  - eId: title_6__art_26__para_2
-    num:
-      inline_content:
-      - …
-    content_ref:
-      eId: title_6__art_26__para_2__content
-      content_blocks:
-      - …
-
-```
-##### Beispiel Article: zh idg 6 4
-
-```yaml
-articles:
-- eId: title_6__art_27
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: § 27.
-  heading:
-    eId: ttitle_6__art_27__heading
-    inline_content:
-    - element_type: TextRun
-      text: Verfügung
-  paragraphs:
-  - eId: title_2__chp_F__art_27__para_1
-    num:
-      inline_content:
-      - …
-    content_ref:
-      eId: title_6__art_27__para_1__content
-      content_blocks:
-      - …
-  - eId: title_6__art_27__para_2
-    num:
-      inline_content:
-      - …
-    content_ref:
-      eId: title_6__art_27__para_2__content
+      eId: title_9__art_43__para_1__content
       content_blocks:
       - …
 
@@ -5017,62 +5349,6 @@ articles:
       - …
     content_ref:
       eId: title_7__art_30__para_2__content
-      content_blocks:
-      - …
-
-```
-##### Beispiel Article: zh idg 6 2
-
-```yaml
-articles:
-- eId: ttitle_6__art_25
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: § 25.
-  heading:
-    eId: title_6_art_25__heading
-    inline_content:
-    - element_type: TextRun
-      text: Prüfung des Gesuchs
-  paragraphs:
-  - eId: ttitle_6__art_25__para_1
-    num:
-      inline_content:
-      - …
-    content_ref:
-      eId: title_6__art_25__para_1__content
-      content_blocks:
-      - …
-  - eId: title_6__art_25__para_2
-    num:
-      inline_content:
-      - …
-    content_ref:
-      eId: title_6__art_25__para_2__content
-      content_blocks:
-      - …
-
-```
-##### Beispiel Article: zh idg 7 9
-
-```yaml
-articles:
-- eId: title_7__art_38
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: § 37.
-  heading:
-    eId: title_7__art_38__heading
-    inline_content:
-    - element_type: TextRun
-      text: Zusammenarbeit
-  paragraphs:
-  - eId: title_7__art_38__para_1
-    num: {}
-    content_ref:
-      eId: title_7__art_38__para_1__content
       content_blocks:
       - …
 
@@ -5111,82 +5387,106 @@ articles:
       - …
 
 ```
-##### Beispiel Article: zh idg 8 1
+##### Beispiel Article: zh idg 5 1
 
 ```yaml
 articles:
-- eId: title_8__art_40
+- eId: title_5__art_23
   num:
     inline_content:
     - element_type: TextRun
-      text: § 40.
+      text: § 23
   heading:
-    eId: title_8__art_40__heading
+    eId: title_5__art_23__heading
     inline_content:
     - element_type: TextRun
-      text: Vertragswidriges Bearbeiten von Personendaten
+      text: Interessenabwägung
   paragraphs:
-  - eId: title_8__art_40__para_1
+  - eId: title_5__art_23__para_1
     num:
       inline_content:
       - …
     content_ref:
-      eId: title_8__art_40__para_1__content
+      eId: ttitle_5__art_23__para_1__content
       content_blocks:
       - …
-  - eId: title_8__art_40__para_2
+  - eId: title_5__art_23__para_2
     num:
       inline_content:
       - …
     content_ref:
-      eId: title_8__art_40__para_2__content
+      eId: title_5__art_23__para_2__content
+      content_blocks:
+      - …
+      - …
+  - … 1 weitere
+
+```
+##### Beispiel Article: zh idg 4 3
+
+```yaml
+articles:
+- eId: title_4__art_22
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 22.
+  heading:
+    eId: ttitle_4__art_22__heading
+    inline_content:
+    - element_type: TextRun
+      text: Sperren von Personendaten
+  paragraphs:
+  - eId: ttitle_4__art_22__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      eId: title_4__art_22__para_1__content
+      content_blocks:
+      - …
+  - eId: title_4__art_22__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      eId: title_4__art_22__para_2__content
       content_blocks:
       - …
 
 ```
-##### Beispiel Article: sr101 1 4
+##### Beispiel Article: zh idg 9 2
 
 ```yaml
 articles:
-- eId: art_4
-  num:
-    inline_content:
-    - element_type: B
-      inline_content:
-      - …
-  heading:
-    inline_content:
-    - element_type: TextRun
-      text: Landessprachen
-  paragraphs:
-  - eId: art_4/para
-    content_ref:
-      content_blocks:
-      - …
-
-```
-##### Beispiel Article: zh idg 9 3
-
-```yaml
-articles:
-- eId: title_9__art_43
+- eId: title_9__art_42
   num:
     inline_content:
     - element_type: TextRun
-      text: § 43.
+      text: § 42.
   heading:
-    eId: title_9__art_43__heading
+    eId: title_9__art_42__heading
     inline_content:
     - element_type: TextRun
-      text: Aufhebung bisherigen Rechts
+      text: Anpassung von Bezeichnungen
   paragraphs:
-  - eId: title_9__art_43__para_1
+  - eId: title_9__art_42__para_1
     num:
       inline_content:
       - …
     content_ref:
-      eId: title_9__art_43__para_1__content
+      eId: title_9__art_42__para_1__content
       content_blocks:
+      - …
+      - …
+  - eId: title_9__art_42__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      eId: title_9__art_42__para_2__content
+      content_blocks:
+      - …
       - …
 
 ```
@@ -5223,53 +5523,87 @@ articles:
       - …
 
 ```
-##### Beispiel Article: zh idg 1 3
+##### Beispiel Article: zh idg 7 5
 
 ```yaml
 articles:
-- eId: title_1__art_3
+- eId: title_7__art_34
   num:
     inline_content:
     - element_type: TextRun
-      text: § 3.
+      text: § 34.
   heading:
+    eId: title_7__art_34__heading
     inline_content:
     - element_type: TextRun
-      text: Begriffe
+      text: Aufgaben
   paragraphs:
-  - eId: title_1__art_3__para_1
+  - eId: title_2__chp_G__art_34__para_1
     num:
       inline_content:
       - …
     content_ref:
-      eId: title_1__art_3__para_1__content
+      eId: title_7__art_34__para_1__content
       content_blocks:
       - …
       - …
-      - … 5 weitere
 
 ```
-##### Beispiel Article: sr101 1 6
+##### Beispiel Article: zh idg 4 2
 
 ```yaml
 articles:
-- eId: art_5_a
+- eId: title_4__art_21
   num:
     inline_content:
-    - element_type: B
-      inline_content:
-      - …
-    - element_type: I
-      inline_content:
-      - …
-    - … 1 weitere
+    - element_type: TextRun
+      text: § 21.
   heading:
+    eId: title_4__art_21__heading
     inline_content:
     - element_type: TextRun
-      text: Subsidiarität
+      text: Schutz eigener Personendaten
   paragraphs:
-  - eId: art_5_a/para
+  - eId: title_4__art_21__para_1
+    num:
+      inline_content:
+      - …
     content_ref:
+      eId: title_4__art_21__para_1__content
+      content_blocks:
+      - …
+      - …
+
+```
+##### Beispiel Article: zh idg 6 3
+
+```yaml
+articles:
+- eId: title_6__art_26
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 26.
+  heading:
+    eId: title_6__art_26__heading
+    inline_content:
+    - element_type: TextRun
+      text: Anhörung betroffener Dritter
+  paragraphs:
+  - eId: ttitle_6__art_26__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      eId: title_6__art_26__para_1__content
+      content_blocks:
+      - …
+  - eId: title_6__art_26__para_2
+    num:
+      inline_content:
+      - …
+    content_ref:
+      eId: title_6__art_26__para_2__content
       content_blocks:
       - …
 
@@ -5295,27 +5629,77 @@ articles:
       - …
 
 ```
-##### Beispiel Article: zh idg 7 8
+##### Beispiel Article: zh idg 3 6
 
 ```yaml
 articles:
-- eId: title_7__art_37
+- eId: title_3__art_19
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 19.
+  subheading:
+    eId: title_3__art_19__subheading
+    inline_content:
+    - element_type: TextRun
+      text: d. Grenzüberschreitend
+  paragraphs:
+  - eId: title_3__art_19__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      eId: title_3__art_19__para_1__content
+      content_blocks:
+      - …
+      - …
+
+```
+##### Beispiel Article: zh idg 9 4
+
+```yaml
+articles:
+- eId: title_9__art_44
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: § 44.
+  heading:
+    eId: title_9__art_44__heading
+    inline_content:
+    - element_type: TextRun
+      text: Anpassung anderer Erlasse
+  paragraphs:
+  - eId: title_9__art_44__para_1
+    num:
+      inline_content:
+      - …
+    content_ref:
+      eId: title_9__art_44__para___content
+      content_blocks:
+      - …
+      - …
+
+```
+##### Beispiel Article: zh idg 7 9
+
+```yaml
+articles:
+- eId: title_7__art_38
   num:
     inline_content:
     - element_type: TextRun
       text: § 37.
   heading:
-    eId: title_7__art_37__heading
+    eId: title_7__art_38__heading
     inline_content:
     - element_type: TextRun
       text: Zusammenarbeit
   paragraphs:
-  - eId: title_7__art_37__para_1
-    num:
-      inline_content:
-      - …
+  - eId: title_7__art_38__para_1
+    num: {}
     content_ref:
-      eId: title_7__art_37__para_1__content
+      eId: title_7__art_38__para_1__content
       content_blocks:
       - …
 
@@ -5353,350 +5737,11 @@ articles:
       - …
 
 ```
-##### Beispiel Article: zh idg 3 1
+##### Beispiel Article: sr101 1 4
 
 ```yaml
 articles:
-- eId: title_3__art_14
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: § 14.
-  heading:
-    eId: title_3__art_14__heading
-    inline_content:
-    - element_type: TextRun
-      text: Informationstätigkeit von Amtes wegen
-  paragraphs:
-  - eId: title_3__art_14__para_1
-    num:
-      inline_content:
-      - …
-    content_ref:
-      eId: title_3__art_14__para_1__content
-      content_blocks:
-      - …
-  - eId: title_3__art_14__para_2
-    num:
-      inline_content:
-      - …
-    content_ref:
-      eId: title_3__art_14__para_2__content
-      content_blocks:
-      - …
-  - … 2 weitere
-
-```
-##### Beispiel Article: zh idg 7 5
-
-```yaml
-articles:
-- eId: title_7__art_34
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: § 34.
-  heading:
-    eId: title_7__art_34__heading
-    inline_content:
-    - element_type: TextRun
-      text: Aufgaben
-  paragraphs:
-  - eId: title_2__chp_G__art_34__para_1
-    num:
-      inline_content:
-      - …
-    content_ref:
-      eId: title_7__art_34__para_1__content
-      content_blocks:
-      - …
-      - …
-
-```
-##### Beispiel Article: zh idg 4 3
-
-```yaml
-articles:
-- eId: title_4__art_22
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: § 22.
-  heading:
-    eId: ttitle_4__art_22__heading
-    inline_content:
-    - element_type: TextRun
-      text: Sperren von Personendaten
-  paragraphs:
-  - eId: ttitle_4__art_22__para_1
-    num:
-      inline_content:
-      - …
-    content_ref:
-      eId: title_4__art_22__para_1__content
-      content_blocks:
-      - …
-  - eId: title_4__art_22__para_2
-    num:
-      inline_content:
-      - …
-    content_ref:
-      eId: title_4__art_22__para_2__content
-      content_blocks:
-      - …
-
-```
-##### Beispiel Article: zh idg 4 1
-
-```yaml
-articles:
-- eId: title_4__art_20
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: § 20.
-  heading:
-    eId: title_4__art_20__heading
-    inline_content:
-    - element_type: TextRun
-      text: Zugang zu Informationen
-  paragraphs:
-  - eId: title_4__art_20__para_1
-    num:
-      inline_content:
-      - …
-    content_ref:
-      eId: title_4__art_20__para_1__content
-      content_blocks:
-      - …
-  - eId: title_4__art_20__para_2
-    num:
-      inline_content:
-      - …
-    content_ref:
-      eId: title_4__art_20__para_2__content
-      content_blocks:
-      - …
-  - … 1 weitere
-
-```
-##### Beispiel Article: zh idg 1 1
-
-```yaml
-articles:
-- eId: title_1__art_1
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: § 1.
-  heading:
-    inline_content:
-    - element_type: TextRun
-      text: Gegenstand und Zweck
-  paragraphs:
-  - eId: title_1__art_1__para_1
-    num:
-      inline_content:
-      - …
-    content_ref:
-      content_blocks:
-      - …
-  - eId: ltitle_1__art_1__para_2
-    num:
-      inline_content:
-      - …
-    content_ref:
-      eId: title_1__art_1__content
-      content_blocks:
-      - …
-      - …
-
-```
-##### Beispiel Article: zh idg 7 3
-
-```yaml
-articles:
-- eId: title_7__art_32
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: § 32.
-  heading:
-    eId: title_7__art_32__heading
-    inline_content:
-    - element_type: TextRun
-      text: Voranschlag und Haushaltführung
-  paragraphs:
-  - eId: title_7__art_32__para_1
-    num:
-      inline_content:
-      - …
-    content_ref:
-      eId: title_7__art_32__para_1__content
-      content_blocks:
-      - …
-  - eId: title_7__art_32__para_2
-    num:
-      inline_content:
-      - …
-    content_ref:
-      eId: title_7__art_32__para_2__content
-      content_blocks:
-      - …
-  - … 1 weitere
-
-```
-##### Beispiel Article: zh idg 4 2
-
-```yaml
-articles:
-- eId: title_4__art_21
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: § 21.
-  heading:
-    eId: title_4__art_21__heading
-    inline_content:
-    - element_type: TextRun
-      text: Schutz eigener Personendaten
-  paragraphs:
-  - eId: title_4__art_21__para_1
-    num:
-      inline_content:
-      - …
-    content_ref:
-      eId: title_4__art_21__para_1__content
-      content_blocks:
-      - …
-      - …
-
-```
-##### Beispiel Article: zh idg 7 6
-
-```yaml
-articles:
-- eId: ttitle_7__art_35
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: § 35.
-  heading:
-    eId: title_7__art_35__heading
-    inline_content:
-    - element_type: TextRun
-      text: Kontrollbefugnisse
-  paragraphs:
-  - eId: title_7__art_35__para_1
-    num:
-      inline_content:
-      - …
-    content_ref:
-      eId: title_7__art_35__para_1__content
-      content_blocks:
-      - …
-  - eId: title_7__art_35__para_2
-    num:
-      inline_content:
-      - …
-    content_ref:
-      eId: title_7__art_35__para_2__content
-      content_blocks:
-      - …
-
-```
-##### Beispiel Article: zh idg 9 4
-
-```yaml
-articles:
-- eId: title_9__art_44
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: § 44.
-  heading:
-    eId: title_9__art_44__heading
-    inline_content:
-    - element_type: TextRun
-      text: Anpassung anderer Erlasse
-  paragraphs:
-  - eId: title_9__art_44__para_1
-    num:
-      inline_content:
-      - …
-    content_ref:
-      eId: title_9__art_44__para___content
-      content_blocks:
-      - …
-      - …
-
-```
-##### Beispiel Article: zh idg 9 1
-
-```yaml
-articles:
-- eId: title_9__art_41
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: § 41.
-  heading:
-    eId: title_9__art_41__heading
-    inline_content:
-    - element_type: TextRun
-      text: Übergangsrecht
-  paragraphs:
-  - eId: title_9__art_41__para_1
-    num:
-      inline_content:
-      - …
-    content_ref:
-      eId: title_9__art_41__para_1__content
-      content_blocks:
-      - …
-      - …
-
-```
-##### Beispiel Article: zh idg 5 1
-
-```yaml
-articles:
-- eId: title_5__art_23
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: § 23
-  heading:
-    eId: title_5__art_23__heading
-    inline_content:
-    - element_type: TextRun
-      text: Interessenabwägung
-  paragraphs:
-  - eId: title_5__art_23__para_1
-    num:
-      inline_content:
-      - …
-    content_ref:
-      eId: ttitle_5__art_23__para_1__content
-      content_blocks:
-      - …
-  - eId: title_5__art_23__para_2
-    num:
-      inline_content:
-      - …
-    content_ref:
-      eId: title_5__art_23__para_2__content
-      content_blocks:
-      - …
-      - …
-  - … 1 weitere
-
-```
-##### Beispiel Article: sr101 1 5
-
-```yaml
-articles:
-- eId: art_5
+- eId: art_4
   num:
     inline_content:
     - element_type: B
@@ -5705,57 +5750,12 @@ articles:
   heading:
     inline_content:
     - element_type: TextRun
-      text: Grundsätze rechtsstaatlichen Handelns
+      text: Landessprachen
   paragraphs:
-  - eId: art_5/para_1
-    num:
-      inline_content:
-      - …
+  - eId: art_4/para
     content_ref:
       content_blocks:
       - …
-  - eId: art_5/para_2
-    num:
-      inline_content:
-      - …
-    content_ref:
-      content_blocks:
-      - …
-  - … 2 weitere
-
-```
-##### Beispiel Article: zh idg 7 2
-
-```yaml
-articles:
-- eId: title_7__art_31
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: § 31.
-  heading:
-    eId: title_7_art_31__heading
-    inline_content:
-    - element_type: TextRun
-      text: Personal
-  paragraphs:
-  - eId: title_7__art_31__para_1
-    num:
-      inline_content:
-      - …
-    content_ref:
-      eId: title_7__art_31__para_1__content
-      content_blocks:
-      - …
-  - eId: title_7__art_31__para_2
-    num:
-      inline_content:
-      - …
-    content_ref:
-      eId: title_7__art_31__para_2__content
-      content_blocks:
-      - …
-  - … 1 weitere
 
 ```
 
@@ -5872,177 +5872,96 @@ _Ein Absatz innerhalb eines Artikels oder Unterabschnitts (akn:paragraph). Const
 
 
 #### Beispiele
-##### Beispiel Paragraph: zh idg 5 1
+##### Beispiel Paragraph: zh idg 5 2
 
 ```yaml
 paragraphs:
-- eId: title_2__chp_G__art_34__para_1
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: '1'
-  content_ref:
-    eId: title_7__art_34__para_1__content
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-    - element_type: BlockList
-      style: ''
-      eId: title_7__art_34__para_1__content__blocklist_1
-      items:
-      - …
-      - …
-      - … 5 weitere
-
-```
-##### Beispiel Paragraph: zh idg 4 1
-
-```yaml
-paragraphs:
-- eId: title_9__art_44__para_1
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: '1'
-  content_ref:
-    eId: title_9__art_44__para___content
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-    - element_type: BlockList
-      eId: title_9__art_44__para___content__blocklist_1
-      items:
-      - …
-
-```
-##### Beispiel Paragraph: zh idg 3 1
-
-```yaml
-paragraphs:
-- eId: title_9__art_43__para_1
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: '1'
-  content_ref:
-    eId: title_9__art_43__para_1__content
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-
-```
-##### Beispiel Paragraph: zh idg 7 1
-
-```yaml
-paragraphs:
-- eId: title_7__art_36__para_1
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: '1'
-  content_ref:
-    eId: title_7__art_36__para_1__content
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-
-```
-##### Beispiel Paragraph: sr101 5 2
-
-```yaml
-paragraphs:
-- eId: art_5/para_2
+- eId: title_6__art_28__para_2
   num:
     inline_content:
     - element_type: TextRun
       text: '2'
   content_ref:
+    eId: title_6__art_28__para_2__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
       - …
 
 ```
-##### Beispiel Paragraph: sr101 3 1
+##### Beispiel Paragraph: zh idg 6 1
 
 ```yaml
 paragraphs:
-- eId: art_3/para
-  content_ref:
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-
-```
-##### Beispiel Paragraph: zh idg 10 1
-
-```yaml
-paragraphs:
-- eId: title_7__art_39__para_1
+- eId: title_7__art_35__para_1
   num:
     inline_content:
     - element_type: TextRun
       text: '1'
   content_ref:
-    eId: title_7__art_39__para_1__content
+    eId: title_7__art_35__para_1__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
       - …
 
 ```
-##### Beispiel Paragraph: zh idg 4 2
+##### Beispiel Paragraph: zh idg 3 2
 
 ```yaml
 paragraphs:
-- eId: title_7__art_33__para_2
+- eId: title_7__art_32__para_2
   num:
     inline_content:
     - element_type: TextRun
       text: '2'
   content_ref:
-    eId: title_7__art_33__para_2__content
+    eId: title_7__art_32__para_2__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
       - …
 
 ```
-##### Beispiel Paragraph: zh idg 7 3
+##### Beispiel Paragraph: sr101 6 1
 
 ```yaml
 paragraphs:
-- eId: title_7__art_36__para_3
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: '3'
+- eId: art_5_a/para
   content_ref:
-    eId: title_7__art_36__para_3__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
       - …
-      - …
-      - … 1 weitere
 
 ```
-##### Beispiel Paragraph: zh idg 6 2
+##### Beispiel Paragraph: zh idg 1 2
 
 ```yaml
 paragraphs:
-- eId: title_7__art_35__para_2
+- eId: title_8__art_40__para_2
   num:
     inline_content:
     - element_type: TextRun
       text: '2'
   content_ref:
-    eId: title_7__art_35__para_2__content
+    eId: title_8__art_40__para_2__content
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+##### Beispiel Paragraph: sr101 5 1
+
+```yaml
+paragraphs:
+- eId: art_5/para_1
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '1'
+  content_ref:
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -6071,11 +5990,54 @@ paragraphs:
       - …
 
 ```
-##### Beispiel Paragraph: sr101 6 1
+##### Beispiel Paragraph: zh idg 4 2
 
 ```yaml
 paragraphs:
-- eId: art_5_a/para
+- eId: title_7__art_33__para_2
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '2'
+  content_ref:
+    eId: title_7__art_33__para_2__content
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+##### Beispiel Paragraph: zh idg 1 1
+
+```yaml
+paragraphs:
+- eId: title_9__art_41__para_1
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '1'
+  content_ref:
+    eId: title_9__art_41__para_1__content
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+    - element_type: BlockList
+      eId: title_9__art_41__para_1__content__blocklist_1
+      items:
+      - …
+      - …
+
+```
+##### Beispiel Paragraph: sr101 5 4
+
+```yaml
+paragraphs:
+- eId: art_5/para_4
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '4'
   content_ref:
     content_blocks:
     - element_type: BlockParagraph
@@ -6083,17 +6045,52 @@ paragraphs:
       - …
 
 ```
-##### Beispiel Paragraph: zh idg 6 3
+##### Beispiel Paragraph: zh idg 4 1
 
 ```yaml
 paragraphs:
-- eId: title_6__art_29__para_3
+- eId: title_9__art_44__para_1
   num:
     inline_content:
     - element_type: TextRun
-      text: '3'
+      text: '1'
   content_ref:
-    eId: title_6__art_29__para_3__content
+    eId: title_9__art_44__para___content
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+    - element_type: BlockList
+      eId: title_9__art_44__para___content__blocklist_1
+      items:
+      - …
+
+```
+##### Beispiel Paragraph: zh idg 9 1
+
+```yaml
+paragraphs:
+- eId: title_7__art_38__para_1
+  num: {}
+  content_ref:
+    eId: title_7__art_38__para_1__content
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+##### Beispiel Paragraph: zh idg 3 1
+
+```yaml
+paragraphs:
+- eId: title_9__art_43__para_1
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '1'
+  content_ref:
+    eId: title_9__art_43__para_1__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -6109,6 +6106,149 @@ paragraphs:
     inline_content:
     - element_type: TextRun
       text: '4'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+##### Beispiel Paragraph: zh idg 6 4
+
+```yaml
+paragraphs:
+- eId: title_6__art_29__para_4
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '4'
+  content_ref:
+    eId: title_6__art_29__para_4__content
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+##### Beispiel Paragraph: zh idg 3 3
+
+```yaml
+paragraphs:
+- eId: title_7__art_32__para_3
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '3'
+  content_ref:
+    eId: title_7__art_32__para_3__content
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+##### Beispiel Paragraph: zh idg 5 1
+
+```yaml
+paragraphs:
+- eId: title_2__chp_G__art_34__para_1
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '1'
+  content_ref:
+    eId: title_7__art_34__para_1__content
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+    - element_type: BlockList
+      style: ''
+      eId: title_7__art_34__para_1__content__blocklist_1
+      items:
+      - …
+      - …
+      - … 5 weitere
+
+```
+##### Beispiel Paragraph: zh idg 1 3
+
+```yaml
+paragraphs:
+- eId: title_5__art_23__para_3
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '3'
+  content_ref:
+    eId: title_5__art_23__para_3__content
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+##### Beispiel Paragraph: zh idg 7 1
+
+```yaml
+paragraphs:
+- eId: title_7__art_36__para_1
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '1'
+  content_ref:
+    eId: title_7__art_36__para_1__content
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+##### Beispiel Paragraph: zh idg 7 3
+
+```yaml
+paragraphs:
+- eId: title_7__art_36__para_3
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '3'
+  content_ref:
+    eId: title_7__art_36__para_3__content
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+      - …
+      - … 1 weitere
+
+```
+##### Beispiel Paragraph: sr101 2 2
+
+```yaml
+paragraphs:
+- eId: art_2/para_2
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '2'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+##### Beispiel Paragraph: sr101 2 3
+
+```yaml
+paragraphs:
+- eId: art_2/para_3
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '3'
   content_ref:
     content_blocks:
     - element_type: BlockParagraph
@@ -6133,11 +6273,44 @@ paragraphs:
       - …
 
 ```
-##### Beispiel Paragraph: sr101 5 1
+##### Beispiel Paragraph: sr101 5 2
 
 ```yaml
 paragraphs:
-- eId: art_5/para_1
+- eId: art_5/para_2
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '2'
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+##### Beispiel Paragraph: zh idg 6 2
+
+```yaml
+paragraphs:
+- eId: title_7__art_35__para_2
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '2'
+  content_ref:
+    eId: title_7__art_35__para_2__content
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+##### Beispiel Paragraph: Paragraph with a list instead of running text
+
+```yaml
+paragraphs:
+- eId: art_2/para_1
   num:
     inline_content:
     - element_type: TextRun
@@ -6149,11 +6322,98 @@ paragraphs:
       - …
 
 ```
+##### Beispiel Paragraph: sr101 3 1
+
+```yaml
+paragraphs:
+- eId: art_3/para
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+##### Beispiel Paragraph: Paragraph with running text
+
+```yaml
+paragraphs:
+- eId: art_1/para
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+##### Beispiel Paragraph: zh idg 6 3
+
+```yaml
+paragraphs:
+- eId: title_6__art_29__para_3
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '3'
+  content_ref:
+    eId: title_6__art_29__para_3__content
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+##### Beispiel Paragraph: zh idg 10 1
+
+```yaml
+paragraphs:
+- eId: title_7__art_39__para_1
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '1'
+  content_ref:
+    eId: title_7__art_39__para_1__content
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
 ##### Beispiel Paragraph: sr101 4 1
 
 ```yaml
 paragraphs:
 - eId: art_4/para
+  content_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+##### Beispiel Paragraph: zh idg 8 1
+
+```yaml
+paragraphs:
+- eId: title_7__art_37__para_1
+  num:
+    inline_content:
+    - element_type: TextRun
+      text: '1'
+  content_ref:
+    eId: title_7__art_37__para_1__content
+    content_blocks:
+    - element_type: BlockParagraph
+      inline_content:
+      - …
+
+```
+##### Beispiel Paragraph: sr101 7 1
+
+```yaml
+paragraphs:
+- eId: art_6/para
   content_ref:
     content_blocks:
     - element_type: BlockParagraph
@@ -6194,121 +6454,6 @@ paragraphs:
       - …
 
 ```
-##### Beispiel Paragraph: Paragraph with a list instead of running text
-
-```yaml
-paragraphs:
-- eId: art_2/para_1
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: '1'
-  content_ref:
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-
-```
-##### Beispiel Paragraph: zh idg 6 4
-
-```yaml
-paragraphs:
-- eId: title_6__art_29__para_4
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: '4'
-  content_ref:
-    eId: title_6__art_29__para_4__content
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-
-```
-##### Beispiel Paragraph: zh idg 1 1
-
-```yaml
-paragraphs:
-- eId: title_9__art_41__para_1
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: '1'
-  content_ref:
-    eId: title_9__art_41__para_1__content
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-    - element_type: BlockList
-      eId: title_9__art_41__para_1__content__blocklist_1
-      items:
-      - …
-      - …
-
-```
-##### Beispiel Paragraph: zh idg 6 1
-
-```yaml
-paragraphs:
-- eId: title_7__art_35__para_1
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: '1'
-  content_ref:
-    eId: title_7__art_35__para_1__content
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-
-```
-##### Beispiel Paragraph: zh idg 7 2
-
-```yaml
-paragraphs:
-- eId: title_7__art_36__para_2
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: '2'
-  content_ref:
-    eId: title_7__art_36__para_2__content
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-
-```
-##### Beispiel Paragraph: sr101 7 1
-
-```yaml
-paragraphs:
-- eId: art_6/para
-  content_ref:
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-
-```
-##### Beispiel Paragraph: zh idg 9 1
-
-```yaml
-paragraphs:
-- eId: title_7__art_38__para_1
-  num: {}
-  content_ref:
-    eId: title_7__art_38__para_1__content
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-
-```
 ##### Beispiel Paragraph: zh idg 2 1
 
 ```yaml
@@ -6331,162 +6476,17 @@ paragraphs:
       - …
 
 ```
-##### Beispiel Paragraph: zh idg 8 1
+##### Beispiel Paragraph: zh idg 7 2
 
 ```yaml
 paragraphs:
-- eId: title_7__art_37__para_1
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: '1'
-  content_ref:
-    eId: title_7__art_37__para_1__content
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-
-```
-##### Beispiel Paragraph: sr101 5 4
-
-```yaml
-paragraphs:
-- eId: art_5/para_4
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: '4'
-  content_ref:
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-
-```
-##### Beispiel Paragraph: sr101 2 2
-
-```yaml
-paragraphs:
-- eId: art_2/para_2
+- eId: title_7__art_36__para_2
   num:
     inline_content:
     - element_type: TextRun
       text: '2'
   content_ref:
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-
-```
-##### Beispiel Paragraph: zh idg 1 2
-
-```yaml
-paragraphs:
-- eId: title_8__art_40__para_2
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: '2'
-  content_ref:
-    eId: title_8__art_40__para_2__content
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-
-```
-##### Beispiel Paragraph: sr101 2 3
-
-```yaml
-paragraphs:
-- eId: art_2/para_3
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: '3'
-  content_ref:
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-
-```
-##### Beispiel Paragraph: Paragraph with running text
-
-```yaml
-paragraphs:
-- eId: art_1/para
-  content_ref:
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-
-```
-##### Beispiel Paragraph: zh idg 3 3
-
-```yaml
-paragraphs:
-- eId: title_7__art_32__para_3
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: '3'
-  content_ref:
-    eId: title_7__art_32__para_3__content
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-
-```
-##### Beispiel Paragraph: zh idg 1 3
-
-```yaml
-paragraphs:
-- eId: title_5__art_23__para_3
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: '3'
-  content_ref:
-    eId: title_5__art_23__para_3__content
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-
-```
-##### Beispiel Paragraph: zh idg 5 2
-
-```yaml
-paragraphs:
-- eId: title_6__art_28__para_2
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: '2'
-  content_ref:
-    eId: title_6__art_28__para_2__content
-    content_blocks:
-    - element_type: BlockParagraph
-      inline_content:
-      - …
-
-```
-##### Beispiel Paragraph: zh idg 3 2
-
-```yaml
-paragraphs:
-- eId: title_7__art_32__para_2
-  num:
-    inline_content:
-    - element_type: TextRun
-      text: '2'
-  content_ref:
-    eId: title_7__art_32__para_2__content
+    eId: title_7__art_36__para_2__content
     content_blocks:
     - element_type: BlockParagraph
       inline_content:
@@ -6726,33 +6726,47 @@ _Der Inhalt eines Absatzes (akn:content). Enthält Block-Elemente: akn:p (Fliess
 
 
 #### Beispiele
-##### Beispiel Content: zh idg 2 1
+##### Beispiel Content: zh idg 3 1
 
 ```yaml
 content_ref:
-  eId: title_9__art_42__para_2__content
+  eId: title_7__art_36__para_3__content
   content_blocks:
   - element_type: BlockParagraph
     inline_content:
     - element_type: TextRun
       text: >-
-        In den folgenden Gesetzen wird der Ausdruck «besonders schützenswerte Personendaten»
-        oder «besonders schützenswerte Daten» ersetzt durch den Ausdruck «besondere
-        Personendaten»:
+        Die oder der Beauftragte ist berechtigt, die Verfügung nach Massgabe des Verwaltungsrechtspflegegesetzes
+        vom 24. Mai 19596
+    - element_type: NoteRef
+      href: '#note_2'
+      marker: '2'
+    - … 1 weitere
+
+```
+##### Beispiel Content: zh idg 1 1
+
+```yaml
+content_ref:
+  eId: title_9__art_44__para___content
+  content_blocks:
+  - element_type: BlockParagraph
+    inline_content:
+    - element_type: TextRun
+      text: 'Die nachfolgenden Gesetze werden wie folgt geändert:'
   - element_type: BlockList
-    eId: title_9__art_42__para_2__content__blocklist_1
+    eId: title_9__art_44__para___content__blocklist_1
     items:
-    - eId: title_9__art_42__para_2__content__blocklist_1__item_a
+    - eId: title_9__art_44__para___content__blocklist_1__item_a
       content_blocks:
       - …
       num:
         inline_content:
         - …
-    - eId: title_9__art_42__para_2__content__blocklist_1__item_b
-      content_blocks:
-      - …
-      num:
+      heading:
+        eId: title_9__art_44__para___content__blocklist_1__item_a__heading
         inline_content:
+        - …
         - …
 
 ```
@@ -6783,61 +6797,6 @@ content_ref:
         sein.
 
 ```
-##### Beispiel Content: sr101 4 1
-
-```yaml
-content_ref:
-  content_blocks:
-  - element_type: BlockParagraph
-    inline_content:
-    - element_type: TextRun
-      text: Bund und Kantone beachten das Völkerrecht.
-
-```
-##### Beispiel Content: zh idg 1 1
-
-```yaml
-content_ref:
-  eId: title_9__art_44__para___content
-  content_blocks:
-  - element_type: BlockParagraph
-    inline_content:
-    - element_type: TextRun
-      text: 'Die nachfolgenden Gesetze werden wie folgt geändert:'
-  - element_type: BlockList
-    eId: title_9__art_44__para___content__blocklist_1
-    items:
-    - eId: title_9__art_44__para___content__blocklist_1__item_a
-      content_blocks:
-      - …
-      num:
-        inline_content:
-        - …
-      heading:
-        eId: title_9__art_44__para___content__blocklist_1__item_a__heading
-        inline_content:
-        - …
-        - …
-
-```
-##### Beispiel Content: zh idg 3 1
-
-```yaml
-content_ref:
-  eId: title_7__art_36__para_3__content
-  content_blocks:
-  - element_type: BlockParagraph
-    inline_content:
-    - element_type: TextRun
-      text: >-
-        Die oder der Beauftragte ist berechtigt, die Verfügung nach Massgabe des Verwaltungsrechtspflegegesetzes
-        vom 24. Mai 19596
-    - element_type: NoteRef
-      href: '#note_2'
-      marker: '2'
-    - … 1 weitere
-
-```
 ##### Beispiel Content: sr101 1 1
 
 ```yaml
@@ -6851,6 +6810,36 @@ content_ref:
         Kräften zur Bewältigung der Aufgaben in Staat und Gesellschaft bei.
 
 ```
+##### Beispiel Content: zh idg 2 1
+
+```yaml
+content_ref:
+  eId: title_9__art_42__para_2__content
+  content_blocks:
+  - element_type: BlockParagraph
+    inline_content:
+    - element_type: TextRun
+      text: >-
+        In den folgenden Gesetzen wird der Ausdruck «besonders schützenswerte Personendaten»
+        oder «besonders schützenswerte Daten» ersetzt durch den Ausdruck «besondere
+        Personendaten»:
+  - element_type: BlockList
+    eId: title_9__art_42__para_2__content__blocklist_1
+    items:
+    - eId: title_9__art_42__para_2__content__blocklist_1__item_a
+      content_blocks:
+      - …
+      num:
+        inline_content:
+        - …
+    - eId: title_9__art_42__para_2__content__blocklist_1__item_b
+      content_blocks:
+      - …
+      num:
+        inline_content:
+        - …
+
+```
 ##### Beispiel Content: sr101 3 1
 
 ```yaml
@@ -6860,6 +6849,17 @@ content_ref:
     inline_content:
     - element_type: TextRun
       text: Staatliche Organe und Private handeln nach Treu und Glauben.
+
+```
+##### Beispiel Content: sr101 4 1
+
+```yaml
+content_ref:
+  content_blocks:
+  - element_type: BlockParagraph
+    inline_content:
+    - element_type: TextRun
+      text: Bund und Kantone beachten das Völkerrecht.
 
 ```
 
@@ -7734,200 +7734,6 @@ act_ref:
           - …
 
 ```
-##### Beispiel Container: sr101
-
-```yaml
-act_ref:
-  act_name: publicLaw
-  meta:
-    identification_ref:
-      source: '#ch.bk'
-      frbr_work:
-        frbr_this:
-          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/main-text
-        frbr_uri:
-          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303
-        frbr_dates:
-        - date_value: '2000-01-01'
-          frbr_date_name: jolux:dateEntryInForce
-        - date_value: '1999-04-18'
-          frbr_date_name: jolux:dateDocument
-        - … 1 weitere
-        frbr_authors:
-        - href: '#ch.bk'
-          as_role: '#publisher'
-        - href: '#ch.bk'
-          as_role: '#rightsHolder'
-        frbr_country:
-          value: CH
-        frbr_number:
-          value: '101'
-        frbr_names:
-        - xml_lang: de
-          value: Bundesverfassung der Schweizerischen Eidgenossenschaft vom 18. April
-            1999
-          short_form: BV
-        - xml_lang: fr
-          value: Constitution fédérale de la Confédération suisse du 18 avril 1999
-          short_form: Cst.
-        - … 3 weitere
-        frbr_authoritative:
-          value: 'true'
-      frbr_expression:
-        frbr_this:
-          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/main-text
-        frbr_uri:
-          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de
-        frbr_dates:
-        - date_value: '2000-01-01'
-          frbr_date_name: jolux:dateEntryInForce
-        - date_value: '1999-04-18'
-          frbr_date_name: jolux:dateDocument
-        - … 1 weitere
-        frbr_authors:
-        - href: '#ch.bk'
-          as_role: '#publisher'
-        - href: '#ch.bk'
-          as_role: '#rightsHolder'
-        frbr_language:
-          language_value: de
-      frbr_manifestation:
-        frbr_this:
-          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/xml/main-text
-        frbr_uri:
-          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/xml
-        frbr_dates:
-        - date_value: '2000-01-01'
-          frbr_date_name: jolux:dateEntryInForce
-        - date_value: '1999-04-18'
-          frbr_date_name: jolux:dateDocument
-        - … 1 weitere
-        frbr_authors:
-        - href: '#ch.bk'
-          as_role: '#publisher'
-        - href: '#ch.bk'
-          as_role: '#rightsHolder'
-        frbr_format:
-          value: xml
-          fedlex_generator: 2026-q1-rel-1.8.5
-    references_ref:
-      source: '#ch.bk'
-      tlc_organizations:
-      - eId: ch.bk
-        href: https://fedlex.data.admin.ch/vocabulary/legal-institution/2
-        show_as: Bundeskanzlei
-      tlc_roles:
-      - eId: publisher
-        href: http://data.legilux.public.lu/resource/ontology/jolux#publisher
-        show_as: Editeur
-      - eId: rightsHolder
-        href: http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder
-        show_as: Détenteur des droits
-      tlc_references:
-      - name_attr: language
-        href: http://publications.europa.eu/resource/authority/language/DEU
-        show_as: de
-      - name_attr: format
-        href: https://fedlex.data.admin.ch/vocabulary/user-format/xml
-        show_as: xml
-  preface_ref:
-    preface_paragraphs:
-    - inline_content:
-      - element_type: DocNumber
-        inline_content:
-        - …
-    - inline_content:
-      - element_type: DocTitle
-        inline_content:
-        - …
-        - …
-        - … 1 weitere
-    - … 1 weitere
-  preamble_ref:
-    content_blocks:
-    - element_type: BlockParagraph
-      fedlex_role: heading
-      inline_content:
-      - element_type: B
-        inline_content:
-        - …
-    - element_type: BlockParagraph
-      inline_content:
-      - element_type: TextRun
-        text: Im Namen Gottes des Allmächtigen!
-    - … 7 weitere
-  body:
-    titles:
-    - eId: tit_1
-      num:
-        inline_content:
-        - …
-      heading:
-        inline_content:
-        - …
-      articles:
-      - eId: art_1
-        num: …
-        heading: …
-        paragraphs:
-        - …
-      - eId: art_2
-        num: …
-        heading: …
-        paragraphs:
-        - …
-        - …
-        - … 2 weitere
-      - … 5 weitere
-    - eId: tit_2
-      num:
-        inline_content:
-        - …
-      heading:
-        inline_content:
-        - …
-      chapters:
-      - eId: tit_2/chap_1
-        num: …
-        heading: …
-        articles:
-        - …
-        - …
-        - … 30 weitere
-      - eId: tit_2/chap_2
-        num: …
-        heading: …
-        articles:
-        - …
-        - …
-        - … 2 weitere
-      - … 1 weitere
-    - … 4 weitere
-    provisos:
-    - eId: disp_u1
-      heading:
-        inline_content:
-        - …
-      paragraphs:
-      - eId: disp_u1/para
-        content_ref: …
-    - eId: disp_u2
-      heading:
-        inline_content:
-        - …
-      paragraphs:
-      - eId: disp_u2/para
-        content_ref: …
-      levels:
-      - eId: disp_u2/lvl_A
-        num: …
-        content_ref: …
-      - eId: disp_u2/lvl_B
-        num: …
-        content_ref: …
-      - … 24 weitere
-
-```
 ##### Beispiel Container: zh idg
 
 ```yaml
@@ -8176,6 +7982,200 @@ act_ref:
         body:
           component_refs:
           - …
+
+```
+##### Beispiel Container: sr101
+
+```yaml
+act_ref:
+  act_name: publicLaw
+  meta:
+    identification_ref:
+      source: '#ch.bk'
+      frbr_work:
+        frbr_this:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/main-text
+        frbr_uri:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303
+        frbr_dates:
+        - date_value: '2000-01-01'
+          frbr_date_name: jolux:dateEntryInForce
+        - date_value: '1999-04-18'
+          frbr_date_name: jolux:dateDocument
+        - … 1 weitere
+        frbr_authors:
+        - href: '#ch.bk'
+          as_role: '#publisher'
+        - href: '#ch.bk'
+          as_role: '#rightsHolder'
+        frbr_country:
+          value: CH
+        frbr_number:
+          value: '101'
+        frbr_names:
+        - xml_lang: de
+          value: Bundesverfassung der Schweizerischen Eidgenossenschaft vom 18. April
+            1999
+          short_form: BV
+        - xml_lang: fr
+          value: Constitution fédérale de la Confédération suisse du 18 avril 1999
+          short_form: Cst.
+        - … 3 weitere
+        frbr_authoritative:
+          value: 'true'
+      frbr_expression:
+        frbr_this:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/main-text
+        frbr_uri:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de
+        frbr_dates:
+        - date_value: '2000-01-01'
+          frbr_date_name: jolux:dateEntryInForce
+        - date_value: '1999-04-18'
+          frbr_date_name: jolux:dateDocument
+        - … 1 weitere
+        frbr_authors:
+        - href: '#ch.bk'
+          as_role: '#publisher'
+        - href: '#ch.bk'
+          as_role: '#rightsHolder'
+        frbr_language:
+          language_value: de
+      frbr_manifestation:
+        frbr_this:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/xml/main-text
+        frbr_uri:
+          value_uri: https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/xml
+        frbr_dates:
+        - date_value: '2000-01-01'
+          frbr_date_name: jolux:dateEntryInForce
+        - date_value: '1999-04-18'
+          frbr_date_name: jolux:dateDocument
+        - … 1 weitere
+        frbr_authors:
+        - href: '#ch.bk'
+          as_role: '#publisher'
+        - href: '#ch.bk'
+          as_role: '#rightsHolder'
+        frbr_format:
+          value: xml
+          fedlex_generator: 2026-q1-rel-1.8.5
+    references_ref:
+      source: '#ch.bk'
+      tlc_organizations:
+      - eId: ch.bk
+        href: https://fedlex.data.admin.ch/vocabulary/legal-institution/2
+        show_as: Bundeskanzlei
+      tlc_roles:
+      - eId: publisher
+        href: http://data.legilux.public.lu/resource/ontology/jolux#publisher
+        show_as: Editeur
+      - eId: rightsHolder
+        href: http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder
+        show_as: Détenteur des droits
+      tlc_references:
+      - name_attr: language
+        href: http://publications.europa.eu/resource/authority/language/DEU
+        show_as: de
+      - name_attr: format
+        href: https://fedlex.data.admin.ch/vocabulary/user-format/xml
+        show_as: xml
+  preface_ref:
+    preface_paragraphs:
+    - inline_content:
+      - element_type: DocNumber
+        inline_content:
+        - …
+    - inline_content:
+      - element_type: DocTitle
+        inline_content:
+        - …
+        - …
+        - … 1 weitere
+    - … 1 weitere
+  preamble_ref:
+    content_blocks:
+    - element_type: BlockParagraph
+      fedlex_role: heading
+      inline_content:
+      - element_type: B
+        inline_content:
+        - …
+    - element_type: BlockParagraph
+      inline_content:
+      - element_type: TextRun
+        text: Im Namen Gottes des Allmächtigen!
+    - … 7 weitere
+  body:
+    titles:
+    - eId: tit_1
+      num:
+        inline_content:
+        - …
+      heading:
+        inline_content:
+        - …
+      articles:
+      - eId: art_1
+        num: …
+        heading: …
+        paragraphs:
+        - …
+      - eId: art_2
+        num: …
+        heading: …
+        paragraphs:
+        - …
+        - …
+        - … 2 weitere
+      - … 5 weitere
+    - eId: tit_2
+      num:
+        inline_content:
+        - …
+      heading:
+        inline_content:
+        - …
+      chapters:
+      - eId: tit_2/chap_1
+        num: …
+        heading: …
+        articles:
+        - …
+        - …
+        - … 30 weitere
+      - eId: tit_2/chap_2
+        num: …
+        heading: …
+        articles:
+        - …
+        - …
+        - … 2 weitere
+      - … 1 weitere
+    - … 4 weitere
+    provisos:
+    - eId: disp_u1
+      heading:
+        inline_content:
+        - …
+      paragraphs:
+      - eId: disp_u1/para
+        content_ref: …
+    - eId: disp_u2
+      heading:
+        inline_content:
+        - …
+      paragraphs:
+      - eId: disp_u2/para
+        content_ref: …
+      levels:
+      - eId: disp_u2/lvl_A
+        num: …
+        content_ref: …
+      - eId: disp_u2/lvl_B
+        num: …
+        content_ref: …
+      - … 24 weitere
 
 ```
 
@@ -9751,31 +9751,6 @@ references_ref:
     show_as: xml
 
 ```
-##### Beispiel References: sr101 1 1
-
-```yaml
-references_ref:
-  source: '#ch.bk'
-  tlc_organizations:
-  - eId: ch.bk
-    href: https://fedlex.data.admin.ch/vocabulary/legal-institution/2
-    show_as: Bundeskanzlei
-  tlc_roles:
-  - eId: publisher
-    href: http://data.legilux.public.lu/resource/ontology/jolux#publisher
-    show_as: Editeur
-  - eId: rightsHolder
-    href: http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder
-    show_as: Détenteur des droits
-  tlc_references:
-  - name_attr: language
-    href: http://publications.europa.eu/resource/authority/language/DEU
-    show_as: de
-  - name_attr: format
-    href: https://fedlex.data.admin.ch/vocabulary/user-format/xml
-    show_as: xml
-
-```
 ##### Beispiel References: zh idg 1 1
 
 ```yaml
@@ -9819,6 +9794,31 @@ references_ref:
   - eId: inForce
     href: ''
     show_as: ''
+
+```
+##### Beispiel References: sr101 1 1
+
+```yaml
+references_ref:
+  source: '#ch.bk'
+  tlc_organizations:
+  - eId: ch.bk
+    href: https://fedlex.data.admin.ch/vocabulary/legal-institution/2
+    show_as: Bundeskanzlei
+  tlc_roles:
+  - eId: publisher
+    href: http://data.legilux.public.lu/resource/ontology/jolux#publisher
+    show_as: Editeur
+  - eId: rightsHolder
+    href: http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder
+    show_as: Détenteur des droits
+  tlc_references:
+  - name_attr: language
+    href: http://publications.europa.eu/resource/authority/language/DEU
+    show_as: de
+  - name_attr: format
+    href: https://fedlex.data.admin.ch/vocabulary/user-format/xml
+    show_as: xml
 
 ```
 
@@ -9894,6 +9894,15 @@ tlc_organizations:
   show_as: Staatskanzlei
 
 ```
+##### Beispiel TLCOrganization: zh idg 1 3
+
+```yaml
+tlc_organizations:
+- eId: JI
+  href: https://data.zh.ch/vocabulary/organizational-entity/JI
+  show_as: Direktion der Justiz und des Innern
+
+```
 ##### Beispiel TLCOrganization: zh idg 1 1
 
 ```yaml
@@ -9910,15 +9919,6 @@ tlc_organizations:
 - eId: ch.bk
   href: https://fedlex.data.admin.ch/vocabulary/legal-institution/2
   show_as: Bundeskanzlei
-
-```
-##### Beispiel TLCOrganization: zh idg 1 3
-
-```yaml
-tlc_organizations:
-- eId: JI
-  href: https://data.zh.ch/vocabulary/organizational-entity/JI
-  show_as: Direktion der Justiz und des Innern
 
 ```
 
@@ -9976,43 +9976,7 @@ _Eine benannte Rolle als Referenz im Dokument (akn:TLCRole). Beispiele: publishe
 
 
 #### Beispiele
-##### Beispiel TLCRole: zh idg 1 3
-
-```yaml
-tlc_roles:
-- eId: coEditor
-  href: https://data.zh.ch/vocabulary/role/coEditor
-  show_as: Mitwirkende Einheit
-
-```
-##### Beispiel TLCRole: zh idg 1 2
-
-```yaml
-tlc_roles:
-- eId: editor
-  href: https://data.zh.ch/vocabulary/role/leadEditor
-  show_as: Federführende Einheit
-
-```
-##### Beispiel TLCRole: bgoe 1 2
-
-```yaml
-tlc_roles:
-- eId: rightsHolder
-  href: http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder
-  show_as: Détenteur des droits
-
-```
-##### Beispiel TLCRole: zh idg 1 1
-
-```yaml
-tlc_roles:
-- eId: authority
-  href: https://data.zh.ch/vocabulary/role/author
-  show_as: Beschliessendes Organ
-
-```
-##### Beispiel TLCRole: Role publisher as an anchor
+##### Beispiel TLCRole: Rolle „Herausgeber“ als Anker
 
 ```yaml
 tlc_roles:
@@ -10028,6 +9992,42 @@ tlc_roles:
 - eId: rightsHolder
   href: http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder
   show_as: Détenteur des droits
+
+```
+##### Beispiel TLCRole: zh idg 1 2
+
+```yaml
+tlc_roles:
+- eId: editor
+  href: https://data.zh.ch/vocabulary/role/leadEditor
+  show_as: Federführende Einheit
+
+```
+##### Beispiel TLCRole: zh idg 1 1
+
+```yaml
+tlc_roles:
+- eId: authority
+  href: https://data.zh.ch/vocabulary/role/author
+  show_as: Beschliessendes Organ
+
+```
+##### Beispiel TLCRole: bgoe 1 2
+
+```yaml
+tlc_roles:
+- eId: rightsHolder
+  href: http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder
+  show_as: Détenteur des droits
+
+```
+##### Beispiel TLCRole: zh idg 1 3
+
+```yaml
+tlc_roles:
+- eId: coEditor
+  href: https://data.zh.ch/vocabulary/role/coEditor
+  show_as: Mitwirkende Einheit
 
 ```
 

@@ -46,12 +46,12 @@ _Ein Autoren- oder Rechteinhaber-Eintrag einer FRBR-Entität (akn:FRBRauthor). @
 
 
 ### Beispiele
-#### Beispiel FRBRAuthor: sr101 1 1
+#### Beispiel FRBRAuthor: bgoe 1 2
 
 ```yaml
 frbr_authors:
 - href: '#ch.bk'
-  as_role: '#publisher'
+  as_role: '#rightsHolder'
 
 ```
 #### Beispiel FRBRAuthor: zh idg 1 2
@@ -62,7 +62,15 @@ frbr_authors:
   as_role: '#coEditor'
 
 ```
-#### Beispiel FRBRAuthor: bgoe 1 2
+#### Beispiel FRBRAuthor: sr101 1 1
+
+```yaml
+frbr_authors:
+- href: '#ch.bk'
+  as_role: '#publisher'
+
+```
+#### Beispiel FRBRAuthor: sr101 1 2
 
 ```yaml
 frbr_authors:
@@ -84,14 +92,6 @@ frbr_authors:
 frbr_authors:
 - href: '#ch.bk'
   as_role: '#publisher'
-
-```
-#### Beispiel FRBRAuthor: sr101 1 2
-
-```yaml
-frbr_authors:
-- href: '#ch.bk'
-  as_role: '#rightsHolder'
 
 ```
 

@@ -46,20 +46,20 @@ _Ein Datumseintrag einer FRBR-Entität (akn:FRBRdate). Das @name-Attribut verwen
 
 
 ### Beispiele
+#### Beispiel FRBRDate: sr101 1 1
+
+```yaml
+frbr_dates:
+- date_value: '2000-01-01'
+  frbr_date_name: jolux:dateEntryInForce
+
+```
 #### Beispiel FRBRDate: bgoe 1 3
 
 ```yaml
 frbr_dates:
 - date_value: '2023-11-01'
   frbr_date_name: jolux:dateApplicability
-
-```
-#### Beispiel FRBRDate: sr101 1 2
-
-```yaml
-frbr_dates:
-- date_value: '1999-04-18'
-  frbr_date_name: jolux:dateDocument
 
 ```
 #### Beispiel FRBRDate: bgoe 1 1
@@ -94,12 +94,12 @@ frbr_dates:
   frbr_date_name: jolux:dateDocument
 
 ```
-#### Beispiel FRBRDate: sr101 1 1
+#### Beispiel FRBRDate: sr101 1 2
 
 ```yaml
 frbr_dates:
-- date_value: '2000-01-01'
-  frbr_date_name: jolux:dateEntryInForce
+- date_value: '1999-04-18'
+  frbr_date_name: jolux:dateDocument
 
 ```
 

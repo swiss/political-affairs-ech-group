@@ -45,15 +45,26 @@ _Ein mehrsprachiger Namenseintrag des FRBR-Works (akn:FRBRname). Enthält den of
 
 
 ### Beispiele
-#### Beispiel FRBRName: bgoe 1 1
+#### Beispiel FRBRName: bgoe 1 2
 
 ```yaml
 frbr_names:
-- xml_lang: it
+- xml_lang: fr
   value: >-
-    Legge federale del 17 dicembre 2004 sul principio di trasparenza dell'amministrazione
-    (Legge sulla trasparenza, LTras)
-  short_form: LTras
+    Loi fédérale du 17 décembre 2004 sur le principe de la transparence dans l'administration
+    (Loi sur la transparence, LTrans)
+  short_form: LTrans
+
+```
+#### Beispiel FRBRName: bgoe 1 5
+
+```yaml
+frbr_names:
+- xml_lang: rm
+  value: >-
+    Lescha federala dals 17 da december 2004 davart il princip da la transparenza
+    da l'administraziun (Lescha da transparenza, LTrans)
+  short_form: LTrans
 
 ```
 #### Beispiel FRBRName: sr101 1 2
@@ -65,24 +76,33 @@ frbr_names:
   short_form: Cst.
 
 ```
-#### Beispiel FRBRName: sr101 1 3
-
-```yaml
-frbr_names:
-- xml_lang: en
-  value: Federal Constitution of 18 April 1999 of the Swiss Confederation
-  short_form: Cst.
-
-```
-#### Beispiel FRBRName: bgoe 1 3
+#### Beispiel FRBRName: sr101 1 1
 
 ```yaml
 frbr_names:
 - xml_lang: de
+  value: Bundesverfassung der Schweizerischen Eidgenossenschaft vom 18. April 1999
+  short_form: BV
+
+```
+#### Beispiel FRBRName: bgoe 1 1
+
+```yaml
+frbr_names:
+- xml_lang: it
   value: >-
-    Bundesgesetz vom 17. Dezember 2004 über das Öffentlichkeitsprinzip der Verwaltung
-    (Öffentlichkeitsgesetz, BGÖ)
-  short_form: BGÖ
+    Legge federale del 17 dicembre 2004 sul principio di trasparenza dell'amministrazione
+    (Legge sulla trasparenza, LTras)
+  short_form: LTras
+
+```
+#### Beispiel FRBRName: sr101 1 5
+
+```yaml
+frbr_names:
+- xml_lang: it
+  value: Costituzione federale della Confederazione Svizzera del 18 aprile 1999
+  short_form: Cost.
 
 ```
 #### Beispiel FRBRName: bgoe 1 4
@@ -96,13 +116,13 @@ frbr_names:
   short_form: FoIA
 
 ```
-#### Beispiel FRBRName: sr101 1 5
+#### Beispiel FRBRName: sr101 1 3
 
 ```yaml
 frbr_names:
-- xml_lang: it
-  value: Costituzione federale della Confederazione Svizzera del 18 aprile 1999
-  short_form: Cost.
+- xml_lang: en
+  value: Federal Constitution of 18 April 1999 of the Swiss Confederation
+  short_form: Cst.
 
 ```
 #### Beispiel FRBRName: sr101 1 4
@@ -114,35 +134,15 @@ frbr_names:
   short_form: Cst.
 
 ```
-#### Beispiel FRBRName: bgoe 1 2
-
-```yaml
-frbr_names:
-- xml_lang: fr
-  value: >-
-    Loi fédérale du 17 décembre 2004 sur le principe de la transparence dans l'administration
-    (Loi sur la transparence, LTrans)
-  short_form: LTrans
-
-```
-#### Beispiel FRBRName: sr101 1 1
+#### Beispiel FRBRName: bgoe 1 3
 
 ```yaml
 frbr_names:
 - xml_lang: de
-  value: Bundesverfassung der Schweizerischen Eidgenossenschaft vom 18. April 1999
-  short_form: BV
-
-```
-#### Beispiel FRBRName: bgoe 1 5
-
-```yaml
-frbr_names:
-- xml_lang: rm
   value: >-
-    Lescha federala dals 17 da december 2004 davart il princip da la transparenza
-    da l'administraziun (Lescha da transparenza, LTrans)
-  short_form: LTrans
+    Bundesgesetz vom 17. Dezember 2004 über das Öffentlichkeitsprinzip der Verwaltung
+    (Öffentlichkeitsgesetz, BGÖ)
+  short_form: BGÖ
 
 ```
 

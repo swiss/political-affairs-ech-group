@@ -74,31 +74,6 @@ references_ref:
     show_as: xml
 
 ```
-#### Beispiel References: sr101 1 1
-
-```yaml
-references_ref:
-  source: '#ch.bk'
-  tlc_organizations:
-  - eId: ch.bk
-    href: https://fedlex.data.admin.ch/vocabulary/legal-institution/2
-    show_as: Bundeskanzlei
-  tlc_roles:
-  - eId: publisher
-    href: http://data.legilux.public.lu/resource/ontology/jolux#publisher
-    show_as: Editeur
-  - eId: rightsHolder
-    href: http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder
-    show_as: Détenteur des droits
-  tlc_references:
-  - name_attr: language
-    href: http://publications.europa.eu/resource/authority/language/DEU
-    show_as: de
-  - name_attr: format
-    href: https://fedlex.data.admin.ch/vocabulary/user-format/xml
-    show_as: xml
-
-```
 #### Beispiel References: zh idg 1 1
 
 ```yaml
@@ -142,6 +117,31 @@ references_ref:
   - eId: inForce
     href: ''
     show_as: ''
+
+```
+#### Beispiel References: sr101 1 1
+
+```yaml
+references_ref:
+  source: '#ch.bk'
+  tlc_organizations:
+  - eId: ch.bk
+    href: https://fedlex.data.admin.ch/vocabulary/legal-institution/2
+    show_as: Bundeskanzlei
+  tlc_roles:
+  - eId: publisher
+    href: http://data.legilux.public.lu/resource/ontology/jolux#publisher
+    show_as: Editeur
+  - eId: rightsHolder
+    href: http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder
+    show_as: Détenteur des droits
+  tlc_references:
+  - name_attr: language
+    href: http://publications.europa.eu/resource/authority/language/DEU
+    show_as: de
+  - name_attr: format
+    href: https://fedlex.data.admin.ch/vocabulary/user-format/xml
+    show_as: xml
 
 ```
 
